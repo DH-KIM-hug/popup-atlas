@@ -46,6 +46,9 @@ const CROSS_POOLS: Array[String] = ["conifer", "tree", "autumn", "blossom", "bus
 const CROSS_P := {"conifer": 0.6, "tree": 0.4, "autumn": 0.35, "blossom": 0.3, "bush": 0.22}
 const FOOT_MIN_H := 0.2  ## PE r2: cards this tall get a glued foot tab (r1 0.14: tabs under flowers read as plaques)
 const STRUT_MIN_H := 0.5  ## static cards this tall get an easel strut behind
+## PE r3: low wide pieces turn off the print plane by a site hash (not the layout RNG), so their cut edges and
+## glue feet show in perspective instead of every card facing the lens like a billboard.
+const TURN_POOLS := {"hedge": 0.6, "fence": 0.45, "bush": 0.4, "mushroom": 0.45, "prop": 0.35, "bank": 0.4, "crop": 0.35}
 const SWAY_POOLS := {"grass": 0.07, "flower": 0.06, "reeds": 0.08, "crop": 0.05, "tree": 0.018, "conifer": 0.014, "blossom": 0.02, "autumn": 0.018, "bush": 0.025}
 
 var rng := RandomNumberGenerator.new()
@@ -276,6 +279,8 @@ func _try(pool_or_id: String, c: Vector2, spread: float, s0 := 0.85, s1 := 1.15,
 			if cross:
 				# both cards ~45° off the view axis (A to one side, B to the other), never edge-on
 				yaw = _cam_yaw + (PI * 0.25 if yaw >= yaw_bias else -PI * 0.25) + (yaw - yaw_bias) * 0.25
+			elif TURN_POOLS.has(pool):
+				yaw += (_hash01(q, 31) - 0.5) * 2.0 * float(TURN_POOLS[pool])
 			_place(it, h, q, yaw, cross, w)
 			lib.mark(id)
 			return true
@@ -305,6 +310,8 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 		contact.add(pos, yaw, w, clampf(h * 0.35, 0.04, 0.16), 1.0)
 	card_count += 2 if (cross or vfold > 0.0) else 1
 	var is_static := force_static or not pop_on_load or q.distance_to(_start) > pop_radius
+	if is_static and h >= STRUT_MIN_H and not cross and vfold <= 0.0 and pool != "hill":
+		tilt = -0.055 + tilt * 0.5  # PE r3: tall static cards rest back on their easel strut (not a vertical billboard)
 	_add_feet(it, h, pos, yaw, cross, vfold, is_static, lean, tilt)
 	if is_static:
 		statics.add(it["path"], float(it["h"]), h, pos, yaw, lean, cross, tilt, vfold)
@@ -367,7 +374,7 @@ func _add_feet(it: Dictionary, h: float, pos: Vector3, yaw: float, cross: bool, 
 	var bi := PaperCard.base_info(_tex_of(it["path"]))
 	var col: Color = (bi["col"] as Color).darkened(0.12)
 	var thick := clampf(h * 0.04, 0.011, 0.04)
-	var depth := clampf(h * 0.075, 0.024, 0.055)
+	var depth := clampf(h * 0.1, 0.03, 0.07)  # PE r3: 7.5% -> 10% of h (tabs were too small to read at view distance)
 	var x0: float = float(bi["x0"]) * h
 	var x1: float = float(bi["x1"]) * h
 	if vfold > 0.0:
@@ -711,7 +718,7 @@ func _folded_platforms() -> void:
 		var top_c := cc + back * size.y * (0.25 if steps == 2 else 0.0)
 		if made % 2 == 1:
 			for k in 3:
-				_place_on(HAY_IDS, top_c + right * (k - 1) * size.x * 0.28, 0.85, yaw)
+				_place_on([["bush"], ["flower"], ["sapling"]][k], top_c + right * (k - 1) * size.x * 0.28, 0.8, yaw)
 		else:
 			var fid := lib.pick("fence")
 			var fe := lib.get_card(fid)
@@ -759,7 +766,8 @@ func _place_on(pool_or_ids: Array, q: Vector2, s: float, yaw: float) -> void:
 ## Open felt gets purposeful clusters (fence runs, hay, stone piles, raised flower beds, woodpiles)
 ## instead of uniform tufts: each one is a small built thing, with negative space around it.
 func _purposeful_clusters() -> void:
-	var kinds := ["fence", "hay", "stones", "bed", "fence", "stones", "bed", "hay", "wood"]
+	# PE r3: hay, woodpiles and raised beds dropped (read as CG cylinders / brown slabs); layered flower patches instead
+	var kinds := ["fence", "patch", "stones", "patch", "fence", "patch", "stones"]
 	var made := 0
 	for k in 1600:
 		if made >= 40:
@@ -807,6 +815,14 @@ func _purposeful_clusters() -> void:
 				_place_on(["flower"], c - back * 0.14 - right * 0.14, 0.65, yaw)
 			"bed":
 				_flower_bed(c)
+			"patch":
+				# layered group: taller back row, flowers in the middle, low tufts in front (overlap = depth)
+				for j in 2:
+					_place_on(["bush", "sapling"], c + right * (j - 0.5) * 0.24 + back * 0.13, 0.8, yaw)
+				for j in 3:
+					_place_on(["flower"], c + right * (j - 1) * 0.16 + back * rng.randf_range(-0.02, 0.03), 0.8, yaw)
+				for j in 3:
+					_place_on(["grass", "flower"], c + right * (j - 1) * 0.18 - back * 0.13, 0.62, yaw)
 			"wood":
 				for j in 3:
 					_place_on(WOOD_IDS, c + right * (j - 1) * 0.16 + back * (0.05 if j == 1 else -0.03), 0.95, yaw)

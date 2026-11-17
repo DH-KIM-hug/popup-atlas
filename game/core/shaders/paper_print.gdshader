@@ -12,8 +12,8 @@ uniform bool plain = false;
 uniform vec4 plain_color : source_color = vec4(0.93, 0.89, 0.8, 1.0);
 uniform float translucency = 0.32;   // light through thin paper from behind
 // Die-cut cream rim just inside the cut line (world units).
-uniform float rim_width = 0.0024;  // INT r1: was 0.006 (read as a white sticker halo)
-uniform float rim_mix = 0.35;  // INT r3: 0.5 -> 0.35, less sticker outline (r1 note: lightens toward cream)
+uniform float rim_width = 0.003;  // PE r3: 0.0024 -> 0.003 (INT r1 0.006 read as a sticker halo; critics still ask for the cut-edge band)
+uniform float rim_mix = 0.48;  // PE r3: 0.35 -> 0.48, the die-cut core shows as a light band (INT r3 had cut it to 0.35)
 uniform vec4 rim_color : source_color = vec4(0.97, 0.92, 0.80, 1.0);
 // Baked contact darkening near the hinge (world units of card height).
 uniform float foot_ao_height = 0.06;

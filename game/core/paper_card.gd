@@ -104,7 +104,7 @@ static func _materials(tex: Texture2D, back_print_: bool, edge: Color, size: Vec
 	var side := ShaderMaterial.new()
 	side.shader = EDGE_SHADER
 	# INT r3: darker coloured core edge (r2: lerp 0.3). PE r1: slotted / folded cards take the print colour.
-	side.set_shader_parameter("edge_color", avg.darkened(0.22) if edge_print else edge.lerp(avg, 0.42).darkened(0.1))
+	side.set_shader_parameter("edge_color", avg.darkened(0.22) if edge_print else edge.lerp(avg, 0.32))  # PE r3: lighter core on the cut (critics: show the white-core edge band)
 	side.set_shader_parameter("fibre_tex", FIBRE)
 	var mats := [front, back, side]
 	_mat_cache[key] = mats
