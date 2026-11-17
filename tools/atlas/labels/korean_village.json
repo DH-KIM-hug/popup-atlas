@@ -1,0 +1,182 @@
+{
+ "biome": "korean_village",
+ "season": "any",
+ "tags": [
+  "korean_traditional",
+  "village"
+ ],
+ "items": {
+  "00": [
+   "choga thatched cottage",
+   "building",
+   0.65,
+   0
+  ],
+  "01": [
+   "choga thatched house large",
+   "building",
+   0.65,
+   0
+  ],
+  "02": [
+   "hanok tiled house",
+   "building",
+   0.75,
+   0
+  ],
+  "03": [
+   "hanok gate daemun",
+   "building",
+   0.6,
+   0
+  ],
+  "04": [
+   "jeongja pavilion",
+   "building",
+   0.8,
+   0
+  ],
+  "05": [
+   "doldam wall tiled cap",
+   "wall",
+   0.2,
+   0
+  ],
+  "06": [
+   "stone wall",
+   "wall",
+   0.17,
+   0
+  ],
+  "07": [
+   "jangdokdae onggi jars",
+   "prop",
+   0.2,
+   0
+  ],
+  "08": [
+   "onggi jar tall",
+   "prop",
+   0.15,
+   0
+  ],
+  "09": [
+   "onggi jar squat",
+   "prop",
+   0.11,
+   0
+  ],
+  "10": [
+   "stone well with lid",
+   "prop",
+   0.16,
+   0
+  ],
+  "11": [
+   "sotdae bird pole",
+   "prop",
+   0.45,
+   0
+  ],
+  "12": "drop",
+  "13": "drop",
+  "14": [
+   "straw fence",
+   "fence",
+   0.16,
+   0
+  ],
+  "15": [
+   "jige A-frame carrier",
+   "prop",
+   0.24,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "16": [
+   "straw stack",
+   "crop",
+   0.26,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "17": [
+   "millstone",
+   "prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "18": [
+   "small shrine",
+   "building",
+   0.4,
+   0
+  ],
+  "19": [
+   "plum blossom tree small",
+   "tree",
+   0.55,
+   0,
+   {
+    "season": "spring"
+   }
+  ],
+  "20": [
+   "persimmon tree small",
+   "tree",
+   0.55,
+   1,
+   {
+    "season": "autumn"
+   }
+  ],
+  "21": [
+   "willow small",
+   "tree",
+   0.6,
+   1,
+   {
+    "tags": [
+     "water"
+    ]
+   }
+  ],
+  "22": [
+   "chrysanthemums cream",
+   "flower",
+   0.14,
+   0,
+   {
+    "season": "autumn"
+   }
+  ],
+  "23": [
+   "red chrysanthemums",
+   "flower",
+   0.14,
+   0,
+   {
+    "season": "autumn"
+   }
+  ],
+  "24": [
+   "berry shrub",
+   "bush",
+   0.16,
+   1
+  ]
+ }
+}

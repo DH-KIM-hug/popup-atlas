@@ -1,0 +1,453 @@
+{
+ "sheet": "forest_broadleaf",
+ "bg": [
+  0.984,
+  0.008,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "forest_broadleaf_00",
+   "bbox": [
+    21,
+    58,
+    270,
+    326
+   ],
+   "area": 41555,
+   "size": [
+    257,
+    276
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_01",
+   "bbox": [
+    286,
+    102,
+    468,
+    326
+   ],
+   "area": 25503,
+   "size": [
+    190,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_02",
+   "bbox": [
+    480,
+    97,
+    644,
+    326
+   ],
+   "area": 23131,
+   "size": [
+    172,
+    237
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_03",
+   "bbox": [
+    667,
+    15,
+    750,
+    326
+   ],
+   "area": 17552,
+   "size": [
+    91,
+    319
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_04",
+   "bbox": [
+    774,
+    36,
+    923,
+    326
+   ],
+   "area": 25670,
+   "size": [
+    157,
+    298
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_05",
+   "bbox": [
+    937,
+    52,
+    1130,
+    326
+   ],
+   "area": 33128,
+   "size": [
+    201,
+    282
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_06",
+   "bbox": [
+    1143,
+    114,
+    1300,
+    326
+   ],
+   "area": 21030,
+   "size": [
+    165,
+    220
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_07",
+   "bbox": [
+    1313,
+    58,
+    1508,
+    326
+   ],
+   "area": 34124,
+   "size": [
+    203,
+    276
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_08",
+   "bbox": [
+    20,
+    492,
+    96,
+    637
+   ],
+   "area": 3795,
+   "size": [
+    84,
+    153
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_09",
+   "bbox": [
+    108,
+    372,
+    370,
+    637
+   ],
+   "area": 44398,
+   "size": [
+    270,
+    273
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_10",
+   "bbox": [
+    375,
+    386,
+    548,
+    637
+   ],
+   "area": 26448,
+   "size": [
+    181,
+    259
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_11",
+   "bbox": [
+    559,
+    410,
+    705,
+    637
+   ],
+   "area": 20380,
+   "size": [
+    154,
+    235
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_12",
+   "bbox": [
+    718,
+    431,
+    862,
+    637
+   ],
+   "area": 18825,
+   "size": [
+    152,
+    214
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_13",
+   "bbox": [
+    877,
+    368,
+    1158,
+    639
+   ],
+   "area": 49063,
+   "size": [
+    289,
+    279
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_14",
+   "bbox": [
+    1170,
+    480,
+    1238,
+    637
+   ],
+   "area": 4277,
+   "size": [
+    76,
+    165
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_15",
+   "bbox": [
+    1259,
+    346,
+    1340,
+    637
+   ],
+   "area": 15377,
+   "size": [
+    89,
+    299
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_16",
+   "bbox": [
+    1358,
+    382,
+    1516,
+    637
+   ],
+   "area": 23848,
+   "size": [
+    166,
+    263
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_17",
+   "bbox": [
+    17,
+    687,
+    234,
+    975
+   ],
+   "area": 39037,
+   "size": [
+    225,
+    296
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_18",
+   "bbox": [
+    257,
+    701,
+    432,
+    975
+   ],
+   "area": 31611,
+   "size": [
+    183,
+    282
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_19",
+   "bbox": [
+    448,
+    736,
+    607,
+    975
+   ],
+   "area": 23072,
+   "size": [
+    167,
+    247
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_20",
+   "bbox": [
+    616,
+    822,
+    708,
+    975
+   ],
+   "area": 5568,
+   "size": [
+    100,
+    161
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_21",
+   "bbox": [
+    714,
+    708,
+    935,
+    975
+   ],
+   "area": 37155,
+   "size": [
+    229,
+    275
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_22",
+   "bbox": [
+    951,
+    701,
+    1088,
+    975
+   ],
+   "area": 19902,
+   "size": [
+    145,
+    282
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_23",
+   "bbox": [
+    1113,
+    663,
+    1196,
+    975
+   ],
+   "area": 16844,
+   "size": [
+    91,
+    320
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_24",
+   "bbox": [
+    1216,
+    732,
+    1398,
+    975
+   ],
+   "area": 26472,
+   "size": [
+    190,
+    251
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "forest_broadleaf_25",
+   "bbox": [
+    1411,
+    808,
+    1514,
+    975
+   ],
+   "area": 6020,
+   "size": [
+    111,
+    175
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "biome": "meadow",
+ "season": "spring",
+ "tags": [
+  "spring",
+  "blossom"
+ ],
+ "items": {
+  "00": [
+   "cherry blossom tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "01": [
+   "cherry blossom tree deep pink",
+   "tree",
+   0.8,
+   1
+  ],
+  "02": [
+   "pear blossom tree",
+   "tree",
+   0.8,
+   1,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "03": [
+   "apple blossom tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "04": [
+   "magnolia tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "05": [
+   "hawthorn bush",
+   "bush",
+   0.3,
+   1
+  ],
+  "06": [
+   "pink blossom bush",
+   "bush",
+   0.26,
+   1
+  ],
+  "07": [
+   "tulip bed",
+   "flower",
+   0.13,
+   0,
+   {
+    "tags": [
+     "garden"
+    ]
+   }
+  ],
+  "08": [
+   "daffodils",
+   "flower",
+   0.15,
+   0
+  ],
+  "09": [
+   "beehive with flowers",
+   "prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "10": [
+   "bench under blossom arch",
+   "prop",
+   0.38,
+   0,
+   {
+    "tags": [
+     "garden"
+    ]
+   }
+  ],
+  "11": [
+   "birdhouse red roof",
+   "prop",
+   0.36,
+   0
+  ],
+  "12": [
+   "spring sapling",
+   "tree",
+   0.5,
+   0
+  ],
+  "13": [
+   "willow with catkins",
+   "tree",
+   0.8,
+   1,
+   {
+    "tags": [
+     "water"
+    ]
+   }
+  ],
+  "14": [
+   "lilac bush",
+   "bush",
+   0.28,
+   1
+  ],
+  "15": [
+   "flower cart",
+   "prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "garden"
+    ]
+   }
+  ],
+  "16": [
+   "primroses",
+   "flower",
+   0.11,
+   0
+  ],
+  "17": [
+   "bunny among flowers",
+   "animal",
+   0.12,
+   0,
+   {
+    "tags": [
+     "animals"
+    ]
+   }
+  ],
+  "18": [
+   "birdhouse green roof",
+   "prop",
+   0.34,
+   0
+  ],
+  "19": [
+   "cherry branch sprig",
+   "flower",
+   0.16,
+   0
+  ],
+  "20": [
+   "blossom sprig white",
+   "flower",
+   0.16,
+   0
+  ],
+  "21": [
+   "apple blossom sprig",
+   "flower",
+   0.16,
+   0
+  ],
+  "22": [
+   "magnolia sprig",
+   "flower",
+   0.16,
+   0
+  ],
+  "23": [
+   "wood anemones",
+   "flower",
+   0.12,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "24": [
+   "bluebells",
+   "flower",
+   0.14,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "25": [
+   "lily of the valley",
+   "flower",
+   0.14,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ]
+ }
+}

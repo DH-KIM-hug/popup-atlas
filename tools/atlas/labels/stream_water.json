@@ -1,0 +1,195 @@
+{
+ "biome": "stream",
+ "season": "summer",
+ "tags": [
+  "water",
+  "stream"
+ ],
+ "items": {
+  "00": [
+   "cattails",
+   "reeds",
+   0.26,
+   0
+  ],
+  "01": [
+   "cattails tall",
+   "reeds",
+   0.3,
+   0
+  ],
+  "02": [
+   "reeds with seed heads",
+   "reeds",
+   0.26,
+   0
+  ],
+  "03": [
+   "yellow iris clump",
+   "reeds",
+   0.26,
+   0
+  ],
+  "04": [
+   "yellow iris",
+   "reeds",
+   0.22,
+   0
+  ],
+  "05": [
+   "iris bud",
+   "reeds",
+   0.18,
+   0
+  ],
+  "06": [
+   "water reeds flowering",
+   "reeds",
+   0.24,
+   0
+  ],
+  "07": [
+   "arched stone bridge",
+   "bridge",
+   0.22,
+   0
+  ],
+  "08": [
+   "arched wooden bridge",
+   "bridge",
+   0.22,
+   0
+  ],
+  "09": [
+   "plank footbridge",
+   "bridge",
+   0.08,
+   0
+  ],
+  "10": [
+   "rope bridge",
+   "bridge",
+   0.2,
+   0
+  ],
+  "11": [
+   "rowboat",
+   "prop",
+   0.12,
+   0
+  ],
+  "12": [
+   "jetty",
+   "prop",
+   0.17,
+   0
+  ],
+  "13": [
+   "waterwheel",
+   "building",
+   0.35,
+   0
+  ],
+  "14": [
+   "waterfall rocks",
+   "water",
+   0.3,
+   0
+  ],
+  "15": [
+   "weeping willow",
+   "tree",
+   0.8,
+   1
+  ],
+  "16": [
+   "lily pond lotus",
+   "water",
+   0.12,
+   0
+  ],
+  "17": [
+   "wave strip long",
+   "water",
+   0.05,
+   0
+  ],
+  "18": [
+   "wave strip",
+   "water",
+   0.045,
+   0
+  ],
+  "19": [
+   "wave strip short",
+   "water",
+   0.06,
+   0
+  ],
+  "20": [
+   "river rocks",
+   "rock",
+   0.12,
+   0
+  ],
+  "21": [
+   "stepping stone",
+   "rock",
+   0.06,
+   0
+  ],
+  "22": [
+   "stepping stone",
+   "rock",
+   0.06,
+   0
+  ],
+  "23": [
+   "stepping stones pair",
+   "rock",
+   0.04,
+   0
+  ],
+  "24": [
+   "mallard duck",
+   "animal",
+   0.13,
+   0
+  ],
+  "25": [
+   "heron",
+   "animal",
+   0.22,
+   0
+  ],
+  "26": [
+   "frog on stone",
+   "animal",
+   0.1,
+   0
+  ],
+  "27": [
+   "fishing rod post",
+   "prop",
+   0.22,
+   0
+  ],
+  "28": [
+   "mossy log",
+   "prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "29": [
+   "cattails bunch",
+   "reeds",
+   0.26,
+   0
+  ]
+ }
+}

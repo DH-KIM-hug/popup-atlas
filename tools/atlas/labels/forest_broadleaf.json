@@ -1,0 +1,185 @@
+{
+ "biome": "forest",
+ "season": "summer",
+ "tags": [
+  "trees",
+  "forest",
+  "countryside"
+ ],
+ "items": {
+  "00": [
+   "oak with acorns",
+   "tree",
+   0.85,
+   1
+  ],
+  "01": [
+   "apple tree",
+   "tree",
+   0.75,
+   1,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "02": [
+   "pear tree",
+   "tree",
+   0.75,
+   1,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "03": [
+   "poplar",
+   "tree",
+   1.0,
+   0
+  ],
+  "04": [
+   "birch",
+   "tree",
+   0.9,
+   0
+  ],
+  "05": [
+   "beech",
+   "tree",
+   0.9,
+   1
+  ],
+  "06": [
+   "round folk tree",
+   "tree",
+   0.7,
+   1
+  ],
+  "07": [
+   "layered canopy tree",
+   "tree",
+   0.9,
+   1
+  ],
+  "08": [
+   "sapling",
+   "tree",
+   0.4,
+   0
+  ],
+  "09": [
+   "chestnut in bloom",
+   "tree",
+   0.95,
+   1
+  ],
+  "10": [
+   "lime tree blossom",
+   "tree",
+   0.85,
+   1
+  ],
+  "11": [
+   "leaf-vein tree",
+   "tree",
+   0.75,
+   1
+  ],
+  "12": [
+   "ochre fruit tree",
+   "tree",
+   0.7,
+   1,
+   {
+    "season": "autumn"
+   }
+  ],
+  "13": [
+   "hollow old oak",
+   "tree",
+   0.95,
+   1
+  ],
+  "14": [
+   "young sapling",
+   "tree",
+   0.45,
+   0
+  ],
+  "15": [
+   "poplar slim",
+   "tree",
+   0.95,
+   0
+  ],
+  "16": [
+   "birch bushy",
+   "tree",
+   0.85,
+   1
+  ],
+  "17": [
+   "layered lime tree",
+   "tree",
+   0.95,
+   1
+  ],
+  "18": [
+   "golden beech",
+   "tree",
+   0.9,
+   1
+  ],
+  "19": [
+   "apple tree light",
+   "tree",
+   0.75,
+   1,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "20": [
+   "oak sapling",
+   "tree",
+   0.45,
+   0
+  ],
+  "21": [
+   "big oak",
+   "tree",
+   0.9,
+   1
+  ],
+  "22": [
+   "birch weeping",
+   "tree",
+   0.9,
+   0
+  ],
+  "23": [
+   "poplar green",
+   "tree",
+   1.0,
+   0
+  ],
+  "24": [
+   "teal blossom tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "25": [
+   "sapling leaves",
+   "tree",
+   0.45,
+   0
+  ]
+ }
+}

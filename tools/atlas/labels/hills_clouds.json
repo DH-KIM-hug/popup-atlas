@@ -1,0 +1,210 @@
+{
+ "biome": "hills",
+ "season": "any",
+ "tags": [
+  "backdrop",
+  "hills"
+ ],
+ "items": {
+  "00": [
+   "rolling hills sage ochre",
+   "hill",
+   0.42,
+   0
+  ],
+  "01": [
+   "hill with trees",
+   "hill",
+   0.48,
+   0
+  ],
+  "02": [
+   "field-stripe hills",
+   "hill",
+   0.4,
+   0
+  ],
+  "03": [
+   "red ochre mountains",
+   "hill",
+   0.6,
+   0
+  ],
+  "04": [
+   "forest strip",
+   "hill",
+   0.35,
+   0
+  ],
+  "05": [
+   "village skyline",
+   "hill",
+   0.42,
+   0,
+   {
+    "tags": [
+     "village"
+    ]
+   }
+  ],
+  "06": [
+   "hedge row strip",
+   "hill",
+   0.3,
+   0
+  ],
+  "07": [
+   "vineyard hill",
+   "hill",
+   0.38,
+   0
+  ],
+  "08": [
+   "windswept hill tree",
+   "hill",
+   0.5,
+   0
+  ],
+  "09": [
+   "layered hills",
+   "hill",
+   0.37,
+   0
+  ],
+  "10": [
+   "patchwork field hills",
+   "hill",
+   0.37,
+   0
+  ],
+  "11": [
+   "hill with poplars",
+   "hill",
+   0.4,
+   0
+  ],
+  "12": [
+   "hill with round trees",
+   "hill",
+   0.4,
+   0
+  ],
+  "13": [
+   "flower band hills",
+   "hill",
+   0.34,
+   0
+  ],
+  "14": [
+   "hill blossom trees",
+   "hill",
+   0.4,
+   0,
+   {
+    "season": "spring"
+   }
+  ],
+  "15": [
+   "cloud scalloped",
+   "cloud",
+   0.35,
+   0,
+   {
+    "tags": [
+     "sky"
+    ]
+   }
+  ],
+  "16": [
+   "cloud leaves",
+   "cloud",
+   0.38,
+   0,
+   {
+    "tags": [
+     "sky"
+    ]
+   }
+  ],
+  "17": [
+   "cloud stitched",
+   "cloud",
+   0.3,
+   0,
+   {
+    "tags": [
+     "sky"
+    ]
+   }
+  ],
+  "18": [
+   "long thin cloud",
+   "cloud",
+   0.2,
+   0,
+   {
+    "tags": [
+     "sky"
+    ]
+   }
+  ],
+  "19": [
+   "rainbow",
+   "cloud",
+   0.5,
+   0,
+   {
+    "tags": [
+     "sky"
+    ]
+   }
+  ],
+  "20": [
+   "cloud fan motif",
+   "cloud",
+   0.3,
+   0,
+   {
+    "tags": [
+     "sky"
+    ]
+   }
+  ],
+  "21": [
+   "hill with pines",
+   "hill",
+   0.4,
+   0
+  ],
+  "22": [
+   "patchwork hills",
+   "hill",
+   0.36,
+   0
+  ],
+  "23": [
+   "hill with tree row",
+   "hill",
+   0.4,
+   0
+  ],
+  "24": [
+   "hill with poppies",
+   "hill",
+   0.38,
+   0
+  ],
+  "25": [
+   "misty mountains pines",
+   "hill",
+   0.4,
+   0
+  ],
+  "26": [
+   "flowered hill",
+   "hill",
+   0.33,
+   0
+  ]
+ }
+}

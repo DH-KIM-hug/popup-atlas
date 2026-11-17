@@ -1,0 +1,196 @@
+{
+ "biome": "snow",
+ "season": "winter",
+ "tags": [
+  "winter",
+  "snow"
+ ],
+ "items": {
+  "00": [
+   "snowy fir",
+   "tree",
+   0.9,
+   1
+  ],
+  "01": [
+   "snowy spruce",
+   "tree",
+   0.95,
+   1
+  ],
+  "02": [
+   "snowy fir round tiers",
+   "tree",
+   0.85,
+   1
+  ],
+  "03": [
+   "snowy pine slim",
+   "tree",
+   0.85,
+   1
+  ],
+  "04": [
+   "snowy fir with berries",
+   "tree",
+   0.85,
+   1
+  ],
+  "05": [
+   "bare tree with snow",
+   "tree",
+   0.85,
+   0
+  ],
+  "06": [
+   "snowy berry bush",
+   "bush",
+   0.24,
+   1
+  ],
+  "07": [
+   "snowy red-berry shrub",
+   "bush",
+   0.24,
+   1
+  ],
+  "08": [
+   "snowy bush",
+   "bush",
+   0.22,
+   1
+  ],
+  "09": [
+   "snowy cottage lit windows",
+   "building",
+   0.75,
+   0,
+   {
+    "tags": [
+     "village",
+     "night_glow"
+    ]
+   }
+  ],
+  "10": [
+   "snowy red barn",
+   "building",
+   0.75,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "11": [
+   "snowman",
+   "prop",
+   0.26,
+   0
+  ],
+  "12": [
+   "sled",
+   "prop",
+   0.1,
+   0
+  ],
+  "13": [
+   "snowy fence",
+   "fence",
+   0.15,
+   0
+  ],
+  "14": [
+   "snowy rocks",
+   "rock",
+   0.12,
+   0
+  ],
+  "15": [
+   "snowy lantern post",
+   "lantern",
+   0.3,
+   0,
+   {
+    "tags": [
+     "night_glow"
+    ]
+   }
+  ],
+  "16": [
+   "frozen pond icicles",
+   "water",
+   0.1,
+   0,
+   {
+    "tags": [
+     "water"
+    ]
+   }
+  ],
+  "17": [
+   "snow drift",
+   "hill",
+   0.12,
+   0
+  ],
+  "18": [
+   "snowy woodshed",
+   "prop",
+   0.24,
+   0
+  ],
+  "19": [
+   "snowy signpost",
+   "sign",
+   0.26,
+   0,
+   {
+    "tags": [
+     "roadside"
+    ]
+   }
+  ],
+  "20": [
+   "snowy holly bush",
+   "bush",
+   0.2,
+   1
+  ],
+  "21": [
+   "deer winter",
+   "animal",
+   0.28,
+   0,
+   {
+    "tags": [
+     "animals",
+     "wild"
+    ]
+   }
+  ],
+  "22": [
+   "snowy well",
+   "prop",
+   0.36,
+   0,
+   {
+    "tags": [
+     "village"
+    ]
+   }
+  ],
+  "23": [
+   "snowy hills with pines",
+   "hill",
+   0.4,
+   0,
+   {
+    "tags": [
+     "backdrop"
+    ]
+   }
+  ]
+ }
+}

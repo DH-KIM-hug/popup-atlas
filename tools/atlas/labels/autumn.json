@@ -1,0 +1,231 @@
+{
+ "biome": "forest",
+ "season": "autumn",
+ "tags": [
+  "autumn",
+  "harvest"
+ ],
+ "items": {
+  "00": [
+   "orange tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "01": [
+   "yellow berry tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "02": [
+   "red tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "03": [
+   "golden tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "04": [
+   "maple leaf tree",
+   "tree",
+   0.8,
+   1
+  ],
+  "05": [
+   "golden birch",
+   "tree",
+   0.85,
+   0
+  ],
+  "06": [
+   "half-bare tree",
+   "tree",
+   0.75,
+   0
+  ],
+  "07": [
+   "bare twisty tree",
+   "tree",
+   0.7,
+   0,
+   {
+    "season": "any",
+    "tags": [
+     "winter",
+     "spooky"
+    ]
+   }
+  ],
+  "08": [
+   "red bush",
+   "bush",
+   0.22,
+   1
+  ],
+  "09": [
+   "yellow berry bush",
+   "bush",
+   0.24,
+   1
+  ],
+  "10": [
+   "green-ochre bush",
+   "bush",
+   0.22,
+   1
+  ],
+  "11": [
+   "autumn pine",
+   "tree",
+   0.75,
+   1
+  ],
+  "12": [
+   "autumn grass",
+   "grass",
+   0.15,
+   0
+  ],
+  "13": [
+   "autumn grass low",
+   "grass",
+   0.11,
+   0
+  ],
+  "14": [
+   "pumpkin",
+   "prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "15": [
+   "stacked pumpkins",
+   "prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "16": [
+   "pumpkin cart",
+   "prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "17": [
+   "corn shocks",
+   "crop",
+   0.26,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "18": [
+   "apple basket",
+   "prop",
+   0.13,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "19": [
+   "fallen leaf pile",
+   "grass",
+   0.1,
+   0
+  ],
+  "20": [
+   "hay bale with pumpkins",
+   "prop",
+   0.18,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "21": [
+   "autumn scarecrow",
+   "prop",
+   0.38,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "22": [
+   "mushrooms in leaves",
+   "mushroom",
+   0.13,
+   0
+  ],
+  "23": [
+   "acorn pile",
+   "prop",
+   0.08,
+   0
+  ],
+  "24": [
+   "crow on post",
+   "animal",
+   0.2,
+   0,
+   {
+    "tags": [
+     "animals"
+    ]
+   }
+  ],
+  "25": [
+   "squirrel",
+   "animal",
+   0.1,
+   0,
+   {
+    "tags": [
+     "animals",
+     "wild"
+    ]
+   }
+  ],
+  "26": [
+   "autumn grass catkins",
+   "grass",
+   0.15,
+   0
+  ],
+  "27": [
+   "autumn leaf clump",
+   "bush",
+   0.16,
+   0
+  ]
+ }
+}

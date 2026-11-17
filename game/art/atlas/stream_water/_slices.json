@@ -1,0 +1,521 @@
+{
+ "sheet": "stream_water",
+ "bg": [
+  0.984,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "stream_water_00",
+   "bbox": [
+    43,
+    60,
+    189,
+    221
+   ],
+   "area": 9592,
+   "size": [
+    154,
+    169
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_01",
+   "bbox": [
+    260,
+    23,
+    423,
+    221
+   ],
+   "area": 14677,
+   "size": [
+    171,
+    206
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_02",
+   "bbox": [
+    505,
+    54,
+    662,
+    221
+   ],
+   "area": 11976,
+   "size": [
+    165,
+    175
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_03",
+   "bbox": [
+    737,
+    18,
+    948,
+    221
+   ],
+   "area": 22884,
+   "size": [
+    219,
+    211
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_04",
+   "bbox": [
+    1017,
+    63,
+    1144,
+    221
+   ],
+   "area": 9380,
+   "size": [
+    135,
+    166
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_05",
+   "bbox": [
+    1203,
+    100,
+    1287,
+    220
+   ],
+   "area": 3830,
+   "size": [
+    92,
+    128
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_06",
+   "bbox": [
+    1352,
+    42,
+    1490,
+    221
+   ],
+   "area": 9050,
+   "size": [
+    146,
+    187
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_07",
+   "bbox": [
+    22,
+    259,
+    368,
+    396
+   ],
+   "area": 32266,
+   "size": [
+    354,
+    145
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_08",
+   "bbox": [
+    406,
+    247,
+    753,
+    396
+   ],
+   "area": 27879,
+   "size": [
+    355,
+    157
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_09",
+   "bbox": [
+    792,
+    322,
+    1142,
+    396
+   ],
+   "area": 16958,
+   "size": [
+    358,
+    82
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_10",
+   "bbox": [
+    1181,
+    257,
+    1497,
+    396
+   ],
+   "area": 17379,
+   "size": [
+    324,
+    147
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_11",
+   "bbox": [
+    28,
+    513,
+    286,
+    626
+   ],
+   "area": 19082,
+   "size": [
+    266,
+    121
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_12",
+   "bbox": [
+    325,
+    484,
+    607,
+    626
+   ],
+   "area": 22450,
+   "size": [
+    290,
+    150
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_13",
+   "bbox": [
+    648,
+    430,
+    877,
+    626
+   ],
+   "area": 33218,
+   "size": [
+    237,
+    204
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_14",
+   "bbox": [
+    910,
+    440,
+    1220,
+    629
+   ],
+   "area": 44512,
+   "size": [
+    318,
+    197
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_15",
+   "bbox": [
+    1241,
+    402,
+    1509,
+    638
+   ],
+   "area": 43722,
+   "size": [
+    276,
+    244
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_16",
+   "bbox": [
+    15,
+    664,
+    330,
+    782
+   ],
+   "area": 28342,
+   "size": [
+    323,
+    126
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_17",
+   "bbox": [
+    359,
+    726,
+    734,
+    774
+   ],
+   "area": 12915,
+   "size": [
+    383,
+    56
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_18",
+   "bbox": [
+    360,
+    663,
+    763,
+    705
+   ],
+   "area": 11316,
+   "size": [
+    411,
+    50
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_19",
+   "bbox": [
+    758,
+    735,
+    923,
+    770
+   ],
+   "area": 4312,
+   "size": [
+    173,
+    43
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_20",
+   "bbox": [
+    947,
+    667,
+    1164,
+    766
+   ],
+   "area": 14113,
+   "size": [
+    225,
+    107
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_21",
+   "bbox": [
+    1194,
+    700,
+    1284,
+    750
+   ],
+   "area": 3729,
+   "size": [
+    98,
+    58
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_22",
+   "bbox": [
+    1296,
+    702,
+    1371,
+    744
+   ],
+   "area": 2580,
+   "size": [
+    83,
+    50
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_23",
+   "bbox": [
+    1383,
+    707,
+    1514,
+    742
+   ],
+   "area": 3034,
+   "size": [
+    139,
+    43
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 2
+  },
+  {
+   "id": "stream_water_24",
+   "bbox": [
+    27,
+    855,
+    210,
+    1000
+   ],
+   "area": 10885,
+   "size": [
+    191,
+    153
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_25",
+   "bbox": [
+    266,
+    811,
+    411,
+    1000
+   ],
+   "area": 8672,
+   "size": [
+    153,
+    197
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_26",
+   "bbox": [
+    460,
+    857,
+    637,
+    995
+   ],
+   "area": 16017,
+   "size": [
+    185,
+    146
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_27",
+   "bbox": [
+    710,
+    814,
+    893,
+    999
+   ],
+   "area": 6907,
+   "size": [
+    191,
+    193
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_28",
+   "bbox": [
+    953,
+    850,
+    1247,
+    995
+   ],
+   "area": 28806,
+   "size": [
+    302,
+    153
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "stream_water_29",
+   "bbox": [
+    1316,
+    801,
+    1474,
+    994
+   ],
+   "area": 11774,
+   "size": [
+    166,
+    201
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

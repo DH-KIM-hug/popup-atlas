@@ -1,0 +1,162 @@
+{
+ "biome": "village",
+ "season": "any",
+ "tags": [
+  "village",
+  "western_cottage"
+ ],
+ "items": {
+  "00": [
+   "cottage terracotta roof",
+   "building",
+   0.8,
+   0
+  ],
+  "01": [
+   "half-timbered house",
+   "building",
+   0.85,
+   0
+  ],
+  "02": [
+   "thatched stone cottage",
+   "building",
+   0.75,
+   0
+  ],
+  "03": [
+   "tall townhouse",
+   "building",
+   1.0,
+   0
+  ],
+  "04": [
+   "red barn",
+   "building",
+   0.85,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "05": [
+   "windmill",
+   "building",
+   1.05,
+   0,
+   {
+    "tags": [
+     "farm",
+     "fairytale"
+    ]
+   }
+  ],
+  "06": [
+   "stone chapel",
+   "building",
+   1.0,
+   0
+  ],
+  "07": [
+   "bakery",
+   "building",
+   0.8,
+   0
+  ],
+  "08": [
+   "round tower",
+   "building",
+   1.0,
+   0,
+   {
+    "tags": [
+     "fairytale"
+    ]
+   }
+  ],
+  "09": [
+   "woodshed",
+   "building",
+   0.5,
+   0
+  ],
+  "10": [
+   "roofed stone well",
+   "prop",
+   0.45,
+   0
+  ],
+  "11": [
+   "dovecote on pole",
+   "prop",
+   0.5,
+   0
+  ],
+  "12": [
+   "garden shed",
+   "building",
+   0.5,
+   0
+  ],
+  "13": [
+   "cottage blue shutters",
+   "building",
+   0.7,
+   0
+  ],
+  "14": [
+   "cottage flower boxes",
+   "building",
+   0.72,
+   0
+  ],
+  "15": [
+   "long thatched farmhouse",
+   "building",
+   0.65,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "16": [
+   "gatehouse arch",
+   "building",
+   0.75,
+   0,
+   {
+    "tags": [
+     "fairytale"
+    ]
+   }
+  ],
+  "17": [
+   "market hall",
+   "building",
+   0.6,
+   0
+  ],
+  "18": [
+   "cottage dormers slate roof",
+   "building",
+   0.75,
+   0
+  ],
+  "19": [
+   "cottage vine",
+   "building",
+   0.75,
+   0
+  ],
+  "20": [
+   "thatched cottage",
+   "building",
+   0.72,
+   0
+  ]
+ }
+}

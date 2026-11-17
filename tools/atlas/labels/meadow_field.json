@@ -1,0 +1,240 @@
+{
+ "biome": "meadow",
+ "season": "summer",
+ "tags": [
+  "meadow",
+  "field",
+  "countryside"
+ ],
+ "items": {
+  "00": [
+   "wheat clump large",
+   "crop",
+   0.3,
+   0
+  ],
+  "01": [
+   "wheat clump",
+   "crop",
+   0.24,
+   0
+  ],
+  "02": [
+   "wheat clump small",
+   "crop",
+   0.18,
+   0
+  ],
+  "03": [
+   "wheat sheaf",
+   "crop",
+   0.26,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "04": [
+   "wheat sheaf small",
+   "crop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "05": [
+   "haystack conical",
+   "crop",
+   0.42,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "06": [
+   "round hay bale",
+   "crop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "07": [
+   "hay bale stack",
+   "crop",
+   0.26,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "08": [
+   "meadow grass tall",
+   "grass",
+   0.24,
+   0
+  ],
+  "09": [
+   "meadow grass",
+   "grass",
+   0.2,
+   0
+  ],
+  "10": [
+   "grass tuft",
+   "grass",
+   0.13,
+   0
+  ],
+  "11": [
+   "cornflowers",
+   "flower",
+   0.17,
+   0
+  ],
+  "12": [
+   "poppies",
+   "flower",
+   0.17,
+   0
+  ],
+  "13": [
+   "dandelions",
+   "flower",
+   0.15,
+   0
+  ],
+  "14": [
+   "daisies",
+   "flower",
+   0.15,
+   0
+  ],
+  "15": [
+   "clover patch",
+   "flower",
+   0.11,
+   0
+  ],
+  "16": [
+   "scarecrow",
+   "prop",
+   0.4,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "17": [
+   "rail fence",
+   "fence",
+   0.17,
+   0
+  ],
+  "18": [
+   "wattle fence",
+   "fence",
+   0.17,
+   0
+  ],
+  "19": [
+   "dry stone wall",
+   "wall",
+   0.14,
+   0
+  ],
+  "20": [
+   "field gate",
+   "fence",
+   0.18,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "21": [
+   "field shed",
+   "building",
+   0.38,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "22": [
+   "hay rake",
+   "prop",
+   0.26,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "23": [
+   "wheelbarrow of hay",
+   "prop",
+   0.17,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "24": [
+   "field boulder",
+   "rock",
+   0.13,
+   0
+  ],
+  "25": [
+   "milestone",
+   "sign",
+   0.17,
+   0,
+   {
+    "tags": [
+     "roadside"
+    ]
+   }
+  ],
+  "26": [
+   "bird on post",
+   "prop",
+   0.25,
+   0
+  ],
+  "27": [
+   "sunflowers",
+   "flower",
+   0.26,
+   0
+  ],
+  "28": [
+   "thistle",
+   "flower",
+   0.24,
+   0
+  ]
+ }
+}

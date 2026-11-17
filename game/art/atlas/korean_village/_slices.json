@@ -1,0 +1,436 @@
+{
+ "sheet": "korean_village",
+ "bg": [
+  0.98,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "korean_village_00",
+   "bbox": [
+    25,
+    77,
+    316,
+    284
+   ],
+   "area": 47296,
+   "size": [
+    299,
+    215
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_01",
+   "bbox": [
+    335,
+    50,
+    715,
+    284
+   ],
+   "area": 72283,
+   "size": [
+    388,
+    242
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_02",
+   "bbox": [
+    741,
+    39,
+    1171,
+    284
+   ],
+   "area": 81250,
+   "size": [
+    438,
+    253
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_03",
+   "bbox": [
+    1193,
+    62,
+    1494,
+    284
+   ],
+   "area": 52128,
+   "size": [
+    309,
+    230
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_04",
+   "bbox": [
+    25,
+    301,
+    306,
+    561
+   ],
+   "area": 38441,
+   "size": [
+    289,
+    268
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_05",
+   "bbox": [
+    324,
+    402,
+    601,
+    546
+   ],
+   "area": 34627,
+   "size": [
+    285,
+    152
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_06",
+   "bbox": [
+    630,
+    418,
+    875,
+    546
+   ],
+   "area": 29800,
+   "size": [
+    253,
+    136
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_07",
+   "bbox": [
+    902,
+    384,
+    1204,
+    549
+   ],
+   "area": 39580,
+   "size": [
+    310,
+    173
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_08",
+   "bbox": [
+    1238,
+    397,
+    1353,
+    550
+   ],
+   "area": 14686,
+   "size": [
+    123,
+    161
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_09",
+   "bbox": [
+    1385,
+    445,
+    1500,
+    547
+   ],
+   "area": 9681,
+   "size": [
+    123,
+    110
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_10",
+   "bbox": [
+    47,
+    641,
+    238,
+    791
+   ],
+   "area": 25396,
+   "size": [
+    199,
+    158
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_11",
+   "bbox": [
+    293,
+    570,
+    408,
+    791
+   ],
+   "area": 6645,
+   "size": [
+    123,
+    229
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_12",
+   "bbox": [
+    480,
+    591,
+    537,
+    791
+   ],
+   "area": 10066,
+   "size": [
+    65,
+    208
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_13",
+   "bbox": [
+    560,
+    615,
+    615,
+    790
+   ],
+   "area": 8676,
+   "size": [
+    63,
+    183
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_14",
+   "bbox": [
+    686,
+    643,
+    995,
+    785
+   ],
+   "area": 36449,
+   "size": [
+    317,
+    150
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_15",
+   "bbox": [
+    1056,
+    596,
+    1240,
+    790
+   ],
+   "area": 12697,
+   "size": [
+    192,
+    202
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_16",
+   "bbox": [
+    1297,
+    598,
+    1482,
+    791
+   ],
+   "area": 22379,
+   "size": [
+    193,
+    201
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_17",
+   "bbox": [
+    25,
+    862,
+    198,
+    984
+   ],
+   "area": 17739,
+   "size": [
+    181,
+    130
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_18",
+   "bbox": [
+    220,
+    819,
+    405,
+    984
+   ],
+   "area": 22174,
+   "size": [
+    193,
+    173
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_19",
+   "bbox": [
+    420,
+    818,
+    638,
+    984
+   ],
+   "area": 13066,
+   "size": [
+    226,
+    174
+   ],
+   "halo": 3,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_20",
+   "bbox": [
+    656,
+    808,
+    828,
+    984
+   ],
+   "area": 15066,
+   "size": [
+    180,
+    184
+   ],
+   "halo": 2,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_21",
+   "bbox": [
+    846,
+    808,
+    1010,
+    984
+   ],
+   "area": 16728,
+   "size": [
+    172,
+    184
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_22",
+   "bbox": [
+    1028,
+    855,
+    1172,
+    982
+   ],
+   "area": 12734,
+   "size": [
+    152,
+    135
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_23",
+   "bbox": [
+    1193,
+    859,
+    1335,
+    982
+   ],
+   "area": 10890,
+   "size": [
+    150,
+    131
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_village_24",
+   "bbox": [
+    1363,
+    864,
+    1511,
+    984
+   ],
+   "area": 12426,
+   "size": [
+    156,
+    128
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

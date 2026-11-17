@@ -1,0 +1,8170 @@
+[
+ {
+  "id": "autumn_00",
+  "path": "art/atlas/autumn/autumn_00.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "orange tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   216,
+   228
+  ]
+ },
+ {
+  "id": "autumn_01",
+  "path": "art/atlas/autumn/autumn_01.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "yellow berry tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   192,
+   232
+  ]
+ },
+ {
+  "id": "autumn_02",
+  "path": "art/atlas/autumn/autumn_02.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "red tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   196,
+   232
+  ]
+ },
+ {
+  "id": "autumn_03",
+  "path": "art/atlas/autumn/autumn_03.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "golden tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   195,
+   235
+  ]
+ },
+ {
+  "id": "autumn_04",
+  "path": "art/atlas/autumn/autumn_04.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "maple leaf tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   196,
+   234
+  ]
+ },
+ {
+  "id": "autumn_05",
+  "path": "art/atlas/autumn/autumn_05.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "golden birch",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   147,
+   246
+  ]
+ },
+ {
+  "id": "autumn_06",
+  "path": "art/atlas/autumn/autumn_06.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "half-bare tree",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   190,
+   230
+  ]
+ },
+ {
+  "id": "autumn_07",
+  "path": "art/atlas/autumn/autumn_07.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "bare twisty tree",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "autumn",
+   "harvest",
+   "spooky",
+   "winter"
+  ],
+  "px": [
+   213,
+   203
+  ]
+ },
+ {
+  "id": "autumn_08",
+  "path": "art/atlas/autumn/autumn_08.webp",
+  "sheet": "autumn",
+  "category": "bush",
+  "label": "red bush",
+  "height_units": 0.22,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   191,
+   133
+  ]
+ },
+ {
+  "id": "autumn_09",
+  "path": "art/atlas/autumn/autumn_09.webp",
+  "sheet": "autumn",
+  "category": "bush",
+  "label": "yellow berry bush",
+  "height_units": 0.24,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   202,
+   156
+  ]
+ },
+ {
+  "id": "autumn_10",
+  "path": "art/atlas/autumn/autumn_10.webp",
+  "sheet": "autumn",
+  "category": "bush",
+  "label": "green-ochre bush",
+  "height_units": 0.22,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   196,
+   144
+  ]
+ },
+ {
+  "id": "autumn_11",
+  "path": "art/atlas/autumn/autumn_11.webp",
+  "sheet": "autumn",
+  "category": "tree",
+  "label": "autumn pine",
+  "height_units": 0.75,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   192,
+   205
+  ]
+ },
+ {
+  "id": "autumn_12",
+  "path": "art/atlas/autumn/autumn_12.webp",
+  "sheet": "autumn",
+  "category": "grass",
+  "label": "autumn grass",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   172,
+   164
+  ]
+ },
+ {
+  "id": "autumn_13",
+  "path": "art/atlas/autumn/autumn_13.webp",
+  "sheet": "autumn",
+  "category": "grass",
+  "label": "autumn grass low",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   187,
+   133
+  ]
+ },
+ {
+  "id": "autumn_14",
+  "path": "art/atlas/autumn/autumn_14.webp",
+  "sheet": "autumn",
+  "category": "prop",
+  "label": "pumpkin",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "farm",
+   "harvest"
+  ],
+  "px": [
+   150,
+   143
+  ]
+ },
+ {
+  "id": "autumn_15",
+  "path": "art/atlas/autumn/autumn_15.webp",
+  "sheet": "autumn",
+  "category": "prop",
+  "label": "stacked pumpkins",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "farm",
+   "harvest"
+  ],
+  "px": [
+   146,
+   185
+  ]
+ },
+ {
+  "id": "autumn_16",
+  "path": "art/atlas/autumn/autumn_16.webp",
+  "sheet": "autumn",
+  "category": "prop",
+  "label": "pumpkin cart",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "farm",
+   "harvest"
+  ],
+  "px": [
+   231,
+   187
+  ]
+ },
+ {
+  "id": "autumn_17",
+  "path": "art/atlas/autumn/autumn_17.webp",
+  "sheet": "autumn",
+  "category": "crop",
+  "label": "corn shocks",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "farm",
+   "harvest"
+  ],
+  "px": [
+   189,
+   196
+  ]
+ },
+ {
+  "id": "autumn_18",
+  "path": "art/atlas/autumn/autumn_18.webp",
+  "sheet": "autumn",
+  "category": "prop",
+  "label": "apple basket",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "farm",
+   "harvest"
+  ],
+  "px": [
+   162,
+   168
+  ]
+ },
+ {
+  "id": "autumn_19",
+  "path": "art/atlas/autumn/autumn_19.webp",
+  "sheet": "autumn",
+  "category": "grass",
+  "label": "fallen leaf pile",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   234,
+   140
+  ]
+ },
+ {
+  "id": "autumn_20",
+  "path": "art/atlas/autumn/autumn_20.webp",
+  "sheet": "autumn",
+  "category": "prop",
+  "label": "hay bale with pumpkins",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "farm",
+   "harvest"
+  ],
+  "px": [
+   207,
+   181
+  ]
+ },
+ {
+  "id": "autumn_21",
+  "path": "art/atlas/autumn/autumn_21.webp",
+  "sheet": "autumn",
+  "category": "prop",
+  "label": "autumn scarecrow",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "farm",
+   "harvest"
+  ],
+  "px": [
+   200,
+   232
+  ]
+ },
+ {
+  "id": "autumn_22",
+  "path": "art/atlas/autumn/autumn_22.webp",
+  "sheet": "autumn",
+  "category": "mushroom",
+  "label": "mushrooms in leaves",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   199,
+   171
+  ]
+ },
+ {
+  "id": "autumn_23",
+  "path": "art/atlas/autumn/autumn_23.webp",
+  "sheet": "autumn",
+  "category": "prop",
+  "label": "acorn pile",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   220,
+   132
+  ]
+ },
+ {
+  "id": "autumn_24",
+  "path": "art/atlas/autumn/autumn_24.webp",
+  "sheet": "autumn",
+  "category": "animal",
+  "label": "crow on post",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "animals",
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   158,
+   218
+  ]
+ },
+ {
+  "id": "autumn_25",
+  "path": "art/atlas/autumn/autumn_25.webp",
+  "sheet": "autumn",
+  "category": "animal",
+  "label": "squirrel",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "animals",
+   "autumn",
+   "harvest",
+   "wild"
+  ],
+  "px": [
+   196,
+   177
+  ]
+ },
+ {
+  "id": "autumn_26",
+  "path": "art/atlas/autumn/autumn_26.webp",
+  "sheet": "autumn",
+  "category": "grass",
+  "label": "autumn grass catkins",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   174,
+   177
+  ]
+ },
+ {
+  "id": "autumn_27",
+  "path": "art/atlas/autumn/autumn_27.webp",
+  "sheet": "autumn",
+  "category": "bush",
+  "label": "autumn leaf clump",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "harvest"
+  ],
+  "px": [
+   184,
+   177
+  ]
+ },
+ {
+  "id": "bushes_hedges_00",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_00.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "sage bush",
+  "height_units": 0.26,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   203,
+   167
+  ]
+ },
+ {
+  "id": "bushes_hedges_01",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_01.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "olive leaf bush",
+  "height_units": 0.26,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   200,
+   165
+  ]
+ },
+ {
+  "id": "bushes_hedges_02",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_02.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "oak-leaf bush",
+  "height_units": 0.26,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   200,
+   169
+  ]
+ },
+ {
+  "id": "bushes_hedges_03",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_03.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "teal bush",
+  "height_units": 0.26,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   206,
+   163
+  ]
+ },
+ {
+  "id": "bushes_hedges_04",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_04.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "red berry bush",
+  "height_units": 0.26,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   198,
+   167
+  ]
+ },
+ {
+  "id": "bushes_hedges_05",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_05.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "pink flower bush",
+  "height_units": 0.26,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   199,
+   159
+  ]
+ },
+ {
+  "id": "bushes_hedges_06",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_06.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "yellow flower bush",
+  "height_units": 0.25,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   207,
+   157
+  ]
+ },
+ {
+  "id": "bushes_hedges_07",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_07.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "elderflower bush",
+  "height_units": 0.32,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   200,
+   207
+  ]
+ },
+ {
+  "id": "bushes_hedges_08",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_08.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "rose bush",
+  "height_units": 0.3,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   189,
+   201
+  ]
+ },
+ {
+  "id": "bushes_hedges_09",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_09.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "hydrangea bush",
+  "height_units": 0.28,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   228,
+   191
+  ]
+ },
+ {
+  "id": "bushes_hedges_10",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_10.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "gorse bush",
+  "height_units": 0.28,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   202,
+   197
+  ]
+ },
+ {
+  "id": "bushes_hedges_11",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_11.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "heather clump",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   198,
+   177
+  ]
+ },
+ {
+  "id": "bushes_hedges_12",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_12.webp",
+  "sheet": "bushes_hedges",
+  "category": "grass",
+  "label": "tall grass clump",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   212,
+   200
+  ]
+ },
+ {
+  "id": "bushes_hedges_13",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_13.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "berry bramble bush",
+  "height_units": 0.28,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   221,
+   188
+  ]
+ },
+ {
+  "id": "bushes_hedges_14",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_14.webp",
+  "sheet": "bushes_hedges",
+  "category": "hedge",
+  "label": "low hedges pair",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   447,
+   104
+  ]
+ },
+ {
+  "id": "bushes_hedges_15",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_15.webp",
+  "sheet": "bushes_hedges",
+  "category": "hedge",
+  "label": "pink flower hedge",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   220,
+   99
+  ]
+ },
+ {
+  "id": "bushes_hedges_16",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_16.webp",
+  "sheet": "bushes_hedges",
+  "category": "hedge",
+  "label": "box hedge",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   197,
+   100
+  ]
+ },
+ {
+  "id": "bushes_hedges_17",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_17.webp",
+  "sheet": "bushes_hedges",
+  "category": "hedge",
+  "label": "scalloped low hedge",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   201,
+   109
+  ]
+ },
+ {
+  "id": "bushes_hedges_18",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_18.webp",
+  "sheet": "bushes_hedges",
+  "category": "hedge",
+  "label": "red berry hedge",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   188,
+   102
+  ]
+ },
+ {
+  "id": "bushes_hedges_19",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_19.webp",
+  "sheet": "bushes_hedges",
+  "category": "hedge",
+  "label": "white flower hedge",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   209,
+   107
+  ]
+ },
+ {
+  "id": "bushes_hedges_20",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_20.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "topiary ball",
+  "height_units": 0.3,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   155,
+   188
+  ]
+ },
+ {
+  "id": "bushes_hedges_21",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_21.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "topiary double",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   134,
+   207
+  ]
+ },
+ {
+  "id": "bushes_hedges_22",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_22.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "topiary triple",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   126,
+   228
+  ]
+ },
+ {
+  "id": "bushes_hedges_23",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_23.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "cone topiary",
+  "height_units": 0.34,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   144,
+   217
+  ]
+ },
+ {
+  "id": "bushes_hedges_24",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_24.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "layered scalloped shrub",
+  "height_units": 0.3,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   266,
+   204
+  ]
+ },
+ {
+  "id": "bushes_hedges_25",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_25.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "leafy bush large",
+  "height_units": 0.3,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   264,
+   191
+  ]
+ },
+ {
+  "id": "bushes_hedges_26",
+  "path": "art/atlas/bushes_hedges/bushes_hedges_26.webp",
+  "sheet": "bushes_hedges",
+  "category": "bush",
+  "label": "berry bush large",
+  "height_units": 0.3,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "bushes",
+   "garden"
+  ],
+  "px": [
+   234,
+   185
+  ]
+ },
+ {
+  "id": "fairytale_west_00",
+  "path": "art/atlas/fairytale_west/fairytale_west_00.webp",
+  "sheet": "fairytale_west",
+  "category": "wall",
+  "label": "castle wall",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "castle",
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   319,
+   162
+  ]
+ },
+ {
+  "id": "fairytale_west_01",
+  "path": "art/atlas/fairytale_west/fairytale_west_01.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "castle tower",
+  "height_units": 1.05,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "castle",
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   129,
+   285
+  ]
+ },
+ {
+  "id": "fairytale_west_02",
+  "path": "art/atlas/fairytale_west/fairytale_west_02.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "castle gate",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "castle",
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   283,
+   198
+  ]
+ },
+ {
+  "id": "fairytale_west_03",
+  "path": "art/atlas/fairytale_west/fairytale_west_03.webp",
+  "sheet": "fairytale_west",
+  "category": "bridge",
+  "label": "stone bridge to gate",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "water",
+   "western_cottage"
+  ],
+  "px": [
+   303,
+   131
+  ]
+ },
+ {
+  "id": "fairytale_west_04",
+  "path": "art/atlas/fairytale_west/fairytale_west_04.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "log cabin",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "forest",
+   "western_cottage"
+  ],
+  "px": [
+   277,
+   206
+  ]
+ },
+ {
+  "id": "fairytale_west_05",
+  "path": "art/atlas/fairytale_west/fairytale_west_05.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "gingerbread cottage",
+  "height_units": 0.72,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   250,
+   246
+  ]
+ },
+ {
+  "id": "fairytale_west_06",
+  "path": "art/atlas/fairytale_west/fairytale_west_06.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "crooked witch cottage",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "forest",
+   "spooky",
+   "western_cottage"
+  ],
+  "px": [
+   237,
+   257
+  ]
+ },
+ {
+  "id": "fairytale_west_07",
+  "path": "art/atlas/fairytale_west/fairytale_west_07.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "crooked tower",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   130,
+   280
+  ]
+ },
+ {
+  "id": "fairytale_west_08",
+  "path": "art/atlas/fairytale_west/fairytale_west_08.webp",
+  "sheet": "fairytale_west",
+  "category": "prop",
+  "label": "roofed well",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   187,
+   211
+  ]
+ },
+ {
+  "id": "fairytale_west_09",
+  "path": "art/atlas/fairytale_west/fairytale_west_09.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "windmill",
+  "height_units": 0.9,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "farm",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   208,
+   261
+  ]
+ },
+ {
+  "id": "fairytale_west_10",
+  "path": "art/atlas/fairytale_west/fairytale_west_10.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "mushroom cottage",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "forest",
+   "western_cottage"
+  ],
+  "px": [
+   263,
+   215
+  ]
+ },
+ {
+  "id": "fairytale_west_11",
+  "path": "art/atlas/fairytale_west/fairytale_west_11.webp",
+  "sheet": "fairytale_west",
+  "category": "wall",
+  "label": "stone wall with ivy",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   339,
+   142
+  ]
+ },
+ {
+  "id": "fairytale_west_12",
+  "path": "art/atlas/fairytale_west/fairytale_west_12.webp",
+  "sheet": "fairytale_west",
+  "category": "fence",
+  "label": "wrought iron gate",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "western_cottage"
+  ],
+  "px": [
+   294,
+   185
+  ]
+ },
+ {
+  "id": "fairytale_west_13",
+  "path": "art/atlas/fairytale_west/fairytale_west_13.webp",
+  "sheet": "fairytale_west",
+  "category": "hedge",
+  "label": "hedge maze section",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "castle",
+   "fairytale",
+   "garden",
+   "western_cottage"
+  ],
+  "px": [
+   373,
+   167
+  ]
+ },
+ {
+  "id": "fairytale_west_14",
+  "path": "art/atlas/fairytale_west/fairytale_west_14.webp",
+  "sheet": "fairytale_west",
+  "category": "prop",
+  "label": "log cart",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   296,
+   158
+  ]
+ },
+ {
+  "id": "fairytale_west_15",
+  "path": "art/atlas/fairytale_west/fairytale_west_15.webp",
+  "sheet": "fairytale_west",
+  "category": "prop",
+  "label": "fountain",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   247,
+   215
+  ]
+ },
+ {
+  "id": "fairytale_west_16",
+  "path": "art/atlas/fairytale_west/fairytale_west_16.webp",
+  "sheet": "fairytale_west",
+  "category": "prop",
+  "label": "stone market cross",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   159,
+   215
+  ]
+ },
+ {
+  "id": "fairytale_west_17",
+  "path": "art/atlas/fairytale_west/fairytale_west_17.webp",
+  "sheet": "fairytale_west",
+  "category": "tree",
+  "label": "twisted enchanted tree",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "forest",
+   "spooky",
+   "western_cottage"
+  ],
+  "px": [
+   280,
+   213
+  ]
+ },
+ {
+  "id": "fairytale_west_18",
+  "path": "art/atlas/fairytale_west/fairytale_west_18.webp",
+  "sheet": "fairytale_west",
+  "category": "hedge",
+  "label": "thorny rose hedge",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   333,
+   152
+  ]
+ },
+ {
+  "id": "fairytale_west_19",
+  "path": "art/atlas/fairytale_west/fairytale_west_19.webp",
+  "sheet": "fairytale_west",
+  "category": "building",
+  "label": "tower ruin",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "western_cottage"
+  ],
+  "px": [
+   245,
+   210
+  ]
+ },
+ {
+  "id": "farm_animals_00",
+  "path": "art/atlas/farm_animals/farm_animals_00.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "brown cow",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   235,
+   191
+  ]
+ },
+ {
+  "id": "farm_animals_01",
+  "path": "art/atlas/farm_animals/farm_animals_01.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "spotted cow",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   222,
+   188
+  ]
+ },
+ {
+  "id": "farm_animals_02",
+  "path": "art/atlas/farm_animals/farm_animals_02.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "sheep",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   186,
+   165
+  ]
+ },
+ {
+  "id": "farm_animals_03",
+  "path": "art/atlas/farm_animals/farm_animals_03.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "black-faced sheep",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   180,
+   165
+  ]
+ },
+ {
+  "id": "farm_animals_04",
+  "path": "art/atlas/farm_animals/farm_animals_04.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "sheep flowered",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   179,
+   158
+  ]
+ },
+ {
+  "id": "farm_animals_05",
+  "path": "art/atlas/farm_animals/farm_animals_05.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "horse",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   246,
+   221
+  ]
+ },
+ {
+  "id": "farm_animals_06",
+  "path": "art/atlas/farm_animals/farm_animals_06.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "pony",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   209,
+   162
+  ]
+ },
+ {
+  "id": "farm_animals_07",
+  "path": "art/atlas/farm_animals/farm_animals_07.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "pig",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   212,
+   143
+  ]
+ },
+ {
+  "id": "farm_animals_08",
+  "path": "art/atlas/farm_animals/farm_animals_08.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "goat",
+  "height_units": 0.19,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   182,
+   201
+  ]
+ },
+ {
+  "id": "farm_animals_09",
+  "path": "art/atlas/farm_animals/farm_animals_09.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "hen",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   136,
+   174
+  ]
+ },
+ {
+  "id": "farm_animals_10",
+  "path": "art/atlas/farm_animals/farm_animals_10.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "rooster",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   166,
+   198
+  ]
+ },
+ {
+  "id": "farm_animals_11",
+  "path": "art/atlas/farm_animals/farm_animals_11.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "hen with chicks",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   271,
+   158
+  ]
+ },
+ {
+  "id": "farm_animals_12",
+  "path": "art/atlas/farm_animals/farm_animals_12.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "duck",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm",
+   "water"
+  ],
+  "px": [
+   162,
+   161
+  ]
+ },
+ {
+  "id": "farm_animals_13",
+  "path": "art/atlas/farm_animals/farm_animals_13.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "goose",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   189,
+   196
+  ]
+ },
+ {
+  "id": "farm_animals_14",
+  "path": "art/atlas/farm_animals/farm_animals_14.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "farm dog",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   257,
+   186
+  ]
+ },
+ {
+  "id": "farm_animals_15",
+  "path": "art/atlas/farm_animals/farm_animals_15.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "cat sitting",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   139,
+   183
+  ]
+ },
+ {
+  "id": "farm_animals_16",
+  "path": "art/atlas/farm_animals/farm_animals_16.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "rabbit",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm",
+   "wild"
+  ],
+  "px": [
+   145,
+   176
+  ]
+ },
+ {
+  "id": "farm_animals_17",
+  "path": "art/atlas/farm_animals/farm_animals_17.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "fox",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm",
+   "forest",
+   "wild"
+  ],
+  "px": [
+   235,
+   174
+  ]
+ },
+ {
+  "id": "farm_animals_18",
+  "path": "art/atlas/farm_animals/farm_animals_18.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "deer",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm",
+   "forest",
+   "wild"
+  ],
+  "px": [
+   203,
+   238
+  ]
+ },
+ {
+  "id": "farm_animals_19",
+  "path": "art/atlas/farm_animals/farm_animals_19.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "hedgehog",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm",
+   "forest",
+   "wild"
+  ],
+  "px": [
+   172,
+   115
+  ]
+ },
+ {
+  "id": "farm_animals_20",
+  "path": "art/atlas/farm_animals/farm_animals_20.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "owl on post",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm",
+   "forest",
+   "night",
+   "wild"
+  ],
+  "px": [
+   108,
+   198
+  ]
+ },
+ {
+  "id": "farm_animals_21",
+  "path": "art/atlas/farm_animals/farm_animals_21.webp",
+  "sheet": "farm_animals",
+  "category": "prop",
+  "label": "beehive skep",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   173,
+   195
+  ]
+ },
+ {
+  "id": "farm_animals_22",
+  "path": "art/atlas/farm_animals/farm_animals_22.webp",
+  "sheet": "farm_animals",
+  "category": "prop",
+  "label": "feeding trough",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   236,
+   114
+  ]
+ },
+ {
+  "id": "farm_animals_23",
+  "path": "art/atlas/farm_animals/farm_animals_23.webp",
+  "sheet": "farm_animals",
+  "category": "building",
+  "label": "dog house",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   222,
+   183
+  ]
+ },
+ {
+  "id": "farm_animals_24",
+  "path": "art/atlas/farm_animals/farm_animals_24.webp",
+  "sheet": "farm_animals",
+  "category": "building",
+  "label": "chicken coop",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   250,
+   196
+  ]
+ },
+ {
+  "id": "farm_animals_25",
+  "path": "art/atlas/farm_animals/farm_animals_25.webp",
+  "sheet": "farm_animals",
+  "category": "animal",
+  "label": "donkey",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "farm",
+  "season": "any",
+  "tags": [
+   "animals",
+   "farm"
+  ],
+  "px": [
+   265,
+   220
+  ]
+ },
+ {
+  "id": "forest_broadleaf_00",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_00.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "oak with acorns",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   257,
+   276
+  ]
+ },
+ {
+  "id": "forest_broadleaf_01",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_01.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "apple tree",
+  "height_units": 0.75,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   190,
+   232
+  ]
+ },
+ {
+  "id": "forest_broadleaf_02",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_02.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "pear tree",
+  "height_units": 0.75,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   172,
+   237
+  ]
+ },
+ {
+  "id": "forest_broadleaf_03",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_03.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "poplar",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   91,
+   319
+  ]
+ },
+ {
+  "id": "forest_broadleaf_04",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_04.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "birch",
+  "height_units": 0.9,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   157,
+   298
+  ]
+ },
+ {
+  "id": "forest_broadleaf_05",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_05.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "beech",
+  "height_units": 0.9,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   201,
+   282
+  ]
+ },
+ {
+  "id": "forest_broadleaf_06",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_06.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "round folk tree",
+  "height_units": 0.7,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   165,
+   220
+  ]
+ },
+ {
+  "id": "forest_broadleaf_07",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_07.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "layered canopy tree",
+  "height_units": 0.9,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   203,
+   276
+  ]
+ },
+ {
+  "id": "forest_broadleaf_08",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_08.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "sapling",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   84,
+   153
+  ]
+ },
+ {
+  "id": "forest_broadleaf_09",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_09.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "chestnut in bloom",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   270,
+   273
+  ]
+ },
+ {
+  "id": "forest_broadleaf_10",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_10.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "lime tree blossom",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   181,
+   259
+  ]
+ },
+ {
+  "id": "forest_broadleaf_11",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_11.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "leaf-vein tree",
+  "height_units": 0.75,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   154,
+   235
+  ]
+ },
+ {
+  "id": "forest_broadleaf_12",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_12.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "ochre fruit tree",
+  "height_units": 0.7,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "autumn",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   152,
+   214
+  ]
+ },
+ {
+  "id": "forest_broadleaf_13",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_13.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "hollow old oak",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   289,
+   279
+  ]
+ },
+ {
+  "id": "forest_broadleaf_14",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_14.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "young sapling",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   76,
+   165
+  ]
+ },
+ {
+  "id": "forest_broadleaf_15",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_15.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "poplar slim",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   89,
+   299
+  ]
+ },
+ {
+  "id": "forest_broadleaf_16",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_16.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "birch bushy",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   166,
+   263
+  ]
+ },
+ {
+  "id": "forest_broadleaf_17",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_17.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "layered lime tree",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   225,
+   296
+  ]
+ },
+ {
+  "id": "forest_broadleaf_18",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_18.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "golden beech",
+  "height_units": 0.9,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   183,
+   282
+  ]
+ },
+ {
+  "id": "forest_broadleaf_19",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_19.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "apple tree light",
+  "height_units": 0.75,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   167,
+   247
+  ]
+ },
+ {
+  "id": "forest_broadleaf_20",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_20.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "oak sapling",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   100,
+   161
+  ]
+ },
+ {
+  "id": "forest_broadleaf_21",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_21.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "big oak",
+  "height_units": 0.9,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   229,
+   275
+  ]
+ },
+ {
+  "id": "forest_broadleaf_22",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_22.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "birch weeping",
+  "height_units": 0.9,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   145,
+   282
+  ]
+ },
+ {
+  "id": "forest_broadleaf_23",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_23.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "poplar green",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   91,
+   320
+  ]
+ },
+ {
+  "id": "forest_broadleaf_24",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_24.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "teal blossom tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   190,
+   251
+  ]
+ },
+ {
+  "id": "forest_broadleaf_25",
+  "path": "art/atlas/forest_broadleaf/forest_broadleaf_25.webp",
+  "sheet": "forest_broadleaf",
+  "category": "tree",
+  "label": "sapling leaves",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   111,
+   175
+  ]
+ },
+ {
+  "id": "forest_conifer_00",
+  "path": "art/atlas/forest_conifer/forest_conifer_00.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "pine",
+  "height_units": 1.0,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   226,
+   329
+  ]
+ },
+ {
+  "id": "forest_conifer_01",
+  "path": "art/atlas/forest_conifer/forest_conifer_01.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "fir light",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   193,
+   313
+  ]
+ },
+ {
+  "id": "forest_conifer_02",
+  "path": "art/atlas/forest_conifer/forest_conifer_02.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "spruce teal",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   185,
+   303
+  ]
+ },
+ {
+  "id": "forest_conifer_03",
+  "path": "art/atlas/forest_conifer/forest_conifer_03.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "slim pine",
+  "height_units": 1.0,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   155,
+   303
+  ]
+ },
+ {
+  "id": "forest_conifer_04",
+  "path": "art/atlas/forest_conifer/forest_conifer_04.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "cypress dark",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   107,
+   322
+  ]
+ },
+ {
+  "id": "forest_conifer_05",
+  "path": "art/atlas/forest_conifer/forest_conifer_05.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "cypress",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   91,
+   295
+  ]
+ },
+ {
+  "id": "forest_conifer_06",
+  "path": "art/atlas/forest_conifer/forest_conifer_06.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "twin pines",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   248,
+   273
+  ]
+ },
+ {
+  "id": "forest_conifer_07",
+  "path": "art/atlas/forest_conifer/forest_conifer_07.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "tall red pine",
+  "height_units": 1.1,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   230,
+   332
+  ]
+ },
+ {
+  "id": "forest_conifer_08",
+  "path": "art/atlas/forest_conifer/forest_conifer_08.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "lopsided old pine",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   279,
+   207
+  ]
+ },
+ {
+  "id": "forest_conifer_09",
+  "path": "art/atlas/forest_conifer/forest_conifer_09.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "pine sapling",
+  "height_units": 0.35,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   101,
+   133
+  ]
+ },
+ {
+  "id": "forest_conifer_10",
+  "path": "art/atlas/forest_conifer/forest_conifer_10.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "pine sapling",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   132,
+   176
+  ]
+ },
+ {
+  "id": "forest_conifer_11",
+  "path": "art/atlas/forest_conifer/forest_conifer_11.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "bushy young pine",
+  "height_units": 0.42,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   157,
+   166
+  ]
+ },
+ {
+  "id": "forest_conifer_12",
+  "path": "art/atlas/forest_conifer/forest_conifer_12.webp",
+  "sheet": "forest_conifer",
+  "category": "tree",
+  "label": "pine seedling",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   84,
+   107
+  ]
+ },
+ {
+  "id": "forest_conifer_13",
+  "path": "art/atlas/forest_conifer/forest_conifer_13.webp",
+  "sheet": "forest_conifer",
+  "category": "prop",
+  "label": "tree stump",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   235,
+   138
+  ]
+ },
+ {
+  "id": "forest_conifer_14",
+  "path": "art/atlas/forest_conifer/forest_conifer_14.webp",
+  "sheet": "forest_conifer",
+  "category": "prop",
+  "label": "fallen mossy log",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   363,
+   158
+  ]
+ },
+ {
+  "id": "forest_conifer_15",
+  "path": "art/atlas/forest_conifer/forest_conifer_15.webp",
+  "sheet": "forest_conifer",
+  "category": "grass",
+  "label": "fern clump",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   287,
+   166
+  ]
+ },
+ {
+  "id": "forest_conifer_16",
+  "path": "art/atlas/forest_conifer/forest_conifer_16.webp",
+  "sheet": "forest_conifer",
+  "category": "grass",
+  "label": "fiddlehead fern",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   221,
+   155
+  ]
+ },
+ {
+  "id": "forest_conifer_17",
+  "path": "art/atlas/forest_conifer/forest_conifer_17.webp",
+  "sheet": "forest_conifer",
+  "category": "grass",
+  "label": "fern flowering",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   164,
+   132
+  ]
+ },
+ {
+  "id": "forest_conifer_18",
+  "path": "art/atlas/forest_conifer/forest_conifer_18.webp",
+  "sheet": "forest_conifer",
+  "category": "mushroom",
+  "label": "red toadstools",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   190,
+   155
+  ]
+ },
+ {
+  "id": "forest_conifer_19",
+  "path": "art/atlas/forest_conifer/forest_conifer_19.webp",
+  "sheet": "forest_conifer",
+  "category": "mushroom",
+  "label": "brown mushrooms",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   185,
+   141
+  ]
+ },
+ {
+  "id": "forest_conifer_20",
+  "path": "art/atlas/forest_conifer/forest_conifer_20.webp",
+  "sheet": "forest_conifer",
+  "category": "rock",
+  "label": "mossy boulder",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   298,
+   147
+  ]
+ },
+ {
+  "id": "forest_conifer_21",
+  "path": "art/atlas/forest_conifer/forest_conifer_21.webp",
+  "sheet": "forest_conifer",
+  "category": "prop",
+  "label": "chopping block axe",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   191,
+   212
+  ]
+ },
+ {
+  "id": "forest_conifer_22",
+  "path": "art/atlas/forest_conifer/forest_conifer_22.webp",
+  "sheet": "forest_conifer",
+  "category": "sign",
+  "label": "forest signpost",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   170,
+   212
+  ]
+ },
+ {
+  "id": "forest_conifer_23",
+  "path": "art/atlas/forest_conifer/forest_conifer_23.webp",
+  "sheet": "forest_conifer",
+  "category": "flower",
+  "label": "foxgloves",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   211,
+   248
+  ]
+ },
+ {
+  "id": "forest_conifer_24",
+  "path": "art/atlas/forest_conifer/forest_conifer_24.webp",
+  "sheet": "forest_conifer",
+  "category": "bush",
+  "label": "juniper bush",
+  "height_units": 0.2,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   275,
+   194
+  ]
+ },
+ {
+  "id": "forest_conifer_25",
+  "path": "art/atlas/forest_conifer/forest_conifer_25.webp",
+  "sheet": "forest_conifer",
+  "category": "bush",
+  "label": "bramble with berries",
+  "height_units": 0.2,
+  "cross_slot": true,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   285,
+   207
+  ]
+ },
+ {
+  "id": "forest_conifer_26",
+  "path": "art/atlas/forest_conifer/forest_conifer_26.webp",
+  "sheet": "forest_conifer",
+  "category": "prop",
+  "label": "pinecone pile",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "forest",
+  "season": "any",
+  "tags": [
+   "conifer",
+   "forest",
+   "trees"
+  ],
+  "px": [
+   183,
+   126
+  ]
+ },
+ {
+  "id": "hills_clouds_00",
+  "path": "art/atlas/hills_clouds/hills_clouds_00.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "rolling hills sage ochre",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   356,
+   122
+  ]
+ },
+ {
+  "id": "hills_clouds_01",
+  "path": "art/atlas/hills_clouds/hills_clouds_01.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hill with trees",
+  "height_units": 0.48,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   297,
+   136
+  ]
+ },
+ {
+  "id": "hills_clouds_02",
+  "path": "art/atlas/hills_clouds/hills_clouds_02.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "field-stripe hills",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   300,
+   113
+  ]
+ },
+ {
+  "id": "hills_clouds_03",
+  "path": "art/atlas/hills_clouds/hills_clouds_03.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "red ochre mountains",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   303,
+   148
+  ]
+ },
+ {
+  "id": "hills_clouds_04",
+  "path": "art/atlas/hills_clouds/hills_clouds_04.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "forest strip",
+  "height_units": 0.35,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   343,
+   105
+  ]
+ },
+ {
+  "id": "hills_clouds_05",
+  "path": "art/atlas/hills_clouds/hills_clouds_05.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "village skyline",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills",
+   "village"
+  ],
+  "px": [
+   371,
+   135
+  ]
+ },
+ {
+  "id": "hills_clouds_06",
+  "path": "art/atlas/hills_clouds/hills_clouds_06.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hedge row strip",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   317,
+   91
+  ]
+ },
+ {
+  "id": "hills_clouds_07",
+  "path": "art/atlas/hills_clouds/hills_clouds_07.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "vineyard hill",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   309,
+   114
+  ]
+ },
+ {
+  "id": "hills_clouds_08",
+  "path": "art/atlas/hills_clouds/hills_clouds_08.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "windswept hill tree",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   312,
+   149
+  ]
+ },
+ {
+  "id": "hills_clouds_09",
+  "path": "art/atlas/hills_clouds/hills_clouds_09.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "layered hills",
+  "height_units": 0.37,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   336,
+   112
+  ]
+ },
+ {
+  "id": "hills_clouds_10",
+  "path": "art/atlas/hills_clouds/hills_clouds_10.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "patchwork field hills",
+  "height_units": 0.37,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   336,
+   112
+  ]
+ },
+ {
+  "id": "hills_clouds_11",
+  "path": "art/atlas/hills_clouds/hills_clouds_11.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hill with poplars",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   309,
+   120
+  ]
+ },
+ {
+  "id": "hills_clouds_12",
+  "path": "art/atlas/hills_clouds/hills_clouds_12.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hill with round trees",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   323,
+   119
+  ]
+ },
+ {
+  "id": "hills_clouds_13",
+  "path": "art/atlas/hills_clouds/hills_clouds_13.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "flower band hills",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   333,
+   104
+  ]
+ },
+ {
+  "id": "hills_clouds_14",
+  "path": "art/atlas/hills_clouds/hills_clouds_14.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hill blossom trees",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "spring",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   331,
+   120
+  ]
+ },
+ {
+  "id": "hills_clouds_15",
+  "path": "art/atlas/hills_clouds/hills_clouds_15.webp",
+  "sheet": "hills_clouds",
+  "category": "cloud",
+  "label": "cloud scalloped",
+  "height_units": 0.35,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills",
+   "sky"
+  ],
+  "px": [
+   285,
+   112
+  ]
+ },
+ {
+  "id": "hills_clouds_16",
+  "path": "art/atlas/hills_clouds/hills_clouds_16.webp",
+  "sheet": "hills_clouds",
+  "category": "cloud",
+  "label": "cloud leaves",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills",
+   "sky"
+  ],
+  "px": [
+   259,
+   109
+  ]
+ },
+ {
+  "id": "hills_clouds_17",
+  "path": "art/atlas/hills_clouds/hills_clouds_17.webp",
+  "sheet": "hills_clouds",
+  "category": "cloud",
+  "label": "cloud stitched",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills",
+   "sky"
+  ],
+  "px": [
+   208,
+   92
+  ]
+ },
+ {
+  "id": "hills_clouds_18",
+  "path": "art/atlas/hills_clouds/hills_clouds_18.webp",
+  "sheet": "hills_clouds",
+  "category": "cloud",
+  "label": "long thin cloud",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills",
+   "sky"
+  ],
+  "px": [
+   279,
+   63
+  ]
+ },
+ {
+  "id": "hills_clouds_19",
+  "path": "art/atlas/hills_clouds/hills_clouds_19.webp",
+  "sheet": "hills_clouds",
+  "category": "cloud",
+  "label": "rainbow",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills",
+   "sky"
+  ],
+  "px": [
+   285,
+   151
+  ]
+ },
+ {
+  "id": "hills_clouds_20",
+  "path": "art/atlas/hills_clouds/hills_clouds_20.webp",
+  "sheet": "hills_clouds",
+  "category": "cloud",
+  "label": "cloud fan motif",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills",
+   "sky"
+  ],
+  "px": [
+   230,
+   93
+  ]
+ },
+ {
+  "id": "hills_clouds_21",
+  "path": "art/atlas/hills_clouds/hills_clouds_21.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hill with pines",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   281,
+   117
+  ]
+ },
+ {
+  "id": "hills_clouds_22",
+  "path": "art/atlas/hills_clouds/hills_clouds_22.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "patchwork hills",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   270,
+   100
+  ]
+ },
+ {
+  "id": "hills_clouds_23",
+  "path": "art/atlas/hills_clouds/hills_clouds_23.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hill with tree row",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   256,
+   115
+  ]
+ },
+ {
+  "id": "hills_clouds_24",
+  "path": "art/atlas/hills_clouds/hills_clouds_24.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "hill with poppies",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   259,
+   105
+  ]
+ },
+ {
+  "id": "hills_clouds_25",
+  "path": "art/atlas/hills_clouds/hills_clouds_25.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "misty mountains pines",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   275,
+   109
+  ]
+ },
+ {
+  "id": "hills_clouds_26",
+  "path": "art/atlas/hills_clouds/hills_clouds_26.webp",
+  "sheet": "hills_clouds",
+  "category": "hill",
+  "label": "flowered hill",
+  "height_units": 0.33,
+  "cross_slot": false,
+  "biome": "hills",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "hills"
+  ],
+  "px": [
+   274,
+   93
+  ]
+ },
+ {
+  "id": "korean_nature_00",
+  "path": "art/atlas/korean_nature/korean_nature_00.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "korean red pine",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   281,
+   212
+  ]
+ },
+ {
+  "id": "korean_nature_01",
+  "path": "art/atlas/korean_nature/korean_nature_01.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "korean red pine low",
+  "height_units": 0.55,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   286,
+   166
+  ]
+ },
+ {
+  "id": "korean_nature_02",
+  "path": "art/atlas/korean_nature/korean_nature_02.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "korean red pine twisted",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   232,
+   197
+  ]
+ },
+ {
+  "id": "korean_nature_03",
+  "path": "art/atlas/korean_nature/korean_nature_03.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "korean red pine tall",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   230,
+   216
+  ]
+ },
+ {
+  "id": "korean_nature_04",
+  "path": "art/atlas/korean_nature/korean_nature_04.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "persimmon tree",
+  "height_units": 0.75,
+  "cross_slot": true,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   222,
+   197
+  ]
+ },
+ {
+  "id": "korean_nature_05",
+  "path": "art/atlas/korean_nature/korean_nature_05.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "persimmon tree bare with fruit",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   231,
+   197
+  ]
+ },
+ {
+  "id": "korean_nature_06",
+  "path": "art/atlas/korean_nature/korean_nature_06.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "zelkova village tree",
+  "height_units": 1.0,
+  "cross_slot": true,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   416,
+   261
+  ]
+ },
+ {
+  "id": "korean_nature_07",
+  "path": "art/atlas/korean_nature/korean_nature_07.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "bamboo clump",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   225,
+   257
+  ]
+ },
+ {
+  "id": "korean_nature_08",
+  "path": "art/atlas/korean_nature/korean_nature_08.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "bamboo clump small",
+  "height_units": 0.65,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   183,
+   228
+  ]
+ },
+ {
+  "id": "korean_nature_09",
+  "path": "art/atlas/korean_nature/korean_nature_09.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "plum blossom tree",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "spring",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   302,
+   235
+  ]
+ },
+ {
+  "id": "korean_nature_10",
+  "path": "art/atlas/korean_nature/korean_nature_10.webp",
+  "sheet": "korean_nature",
+  "category": "tree",
+  "label": "pine on rock",
+  "height_units": 0.65,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   278,
+   224
+  ]
+ },
+ {
+  "id": "korean_nature_11",
+  "path": "art/atlas/korean_nature/korean_nature_11.webp",
+  "sheet": "korean_nature",
+  "category": "bush",
+  "label": "azalea bush",
+  "height_units": 0.24,
+  "cross_slot": true,
+  "biome": "korean_countryside",
+  "season": "spring",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   248,
+   171
+  ]
+ },
+ {
+  "id": "korean_nature_12",
+  "path": "art/atlas/korean_nature/korean_nature_12.webp",
+  "sheet": "korean_nature",
+  "category": "bush",
+  "label": "azalea bush small",
+  "height_units": 0.2,
+  "cross_slot": true,
+  "biome": "korean_countryside",
+  "season": "spring",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   171,
+   143
+  ]
+ },
+ {
+  "id": "korean_nature_13",
+  "path": "art/atlas/korean_nature/korean_nature_13.webp",
+  "sheet": "korean_nature",
+  "category": "crop",
+  "label": "rice paddy strip",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "korean_traditional",
+   "water"
+  ],
+  "px": [
+   348,
+   146
+  ]
+ },
+ {
+  "id": "korean_nature_14",
+  "path": "art/atlas/korean_nature/korean_nature_14.webp",
+  "sheet": "korean_nature",
+  "category": "crop",
+  "label": "rice straw stook",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "countryside",
+   "farm",
+   "korean_traditional"
+  ],
+  "px": [
+   156,
+   183
+  ]
+ },
+ {
+  "id": "korean_nature_15",
+  "path": "art/atlas/korean_nature/korean_nature_15.webp",
+  "sheet": "korean_nature",
+  "category": "crop",
+  "label": "rice straw stook small",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "countryside",
+   "farm",
+   "korean_traditional"
+  ],
+  "px": [
+   117,
+   146
+  ]
+ },
+ {
+  "id": "korean_nature_16",
+  "path": "art/atlas/korean_nature/korean_nature_16.webp",
+  "sheet": "korean_nature",
+  "category": "prop",
+  "label": "stone pagoda",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   131,
+   200
+  ]
+ },
+ {
+  "id": "korean_nature_17",
+  "path": "art/atlas/korean_nature/korean_nature_17.webp",
+  "sheet": "korean_nature",
+  "category": "lantern",
+  "label": "stone lantern",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   123,
+   196
+  ]
+ },
+ {
+  "id": "korean_nature_18",
+  "path": "art/atlas/korean_nature/korean_nature_18.webp",
+  "sheet": "korean_nature",
+  "category": "prop",
+  "label": "wooden ox cart",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "farm",
+   "korean_traditional"
+  ],
+  "px": [
+   273,
+   156
+  ]
+ },
+ {
+  "id": "korean_nature_19",
+  "path": "art/atlas/korean_nature/korean_nature_19.webp",
+  "sheet": "korean_nature",
+  "category": "animal",
+  "label": "ox",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "animals",
+   "countryside",
+   "farm",
+   "korean_traditional"
+  ],
+  "px": [
+   257,
+   182
+  ]
+ },
+ {
+  "id": "korean_nature_20",
+  "path": "art/atlas/korean_nature/korean_nature_20.webp",
+  "sheet": "korean_nature",
+  "category": "animal",
+  "label": "magpie on branch",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "animals",
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   220,
+   171
+  ]
+ },
+ {
+  "id": "korean_nature_21",
+  "path": "art/atlas/korean_nature/korean_nature_21.webp",
+  "sheet": "korean_nature",
+  "category": "hill",
+  "label": "korean mountains misty",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "backdrop",
+   "countryside",
+   "korean_traditional"
+  ],
+  "px": [
+   425,
+   165
+  ]
+ },
+ {
+  "id": "korean_nature_22",
+  "path": "art/atlas/korean_nature/korean_nature_22.webp",
+  "sheet": "korean_nature",
+  "category": "fence",
+  "label": "gourd vine fence",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "any",
+  "tags": [
+   "countryside",
+   "farm",
+   "korean_traditional"
+  ],
+  "px": [
+   266,
+   181
+  ]
+ },
+ {
+  "id": "korean_village_00",
+  "path": "art/atlas/korean_village/korean_village_00.webp",
+  "sheet": "korean_village",
+  "category": "building",
+  "label": "choga thatched cottage",
+  "height_units": 0.65,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   299,
+   215
+  ]
+ },
+ {
+  "id": "korean_village_01",
+  "path": "art/atlas/korean_village/korean_village_01.webp",
+  "sheet": "korean_village",
+  "category": "building",
+  "label": "choga thatched house large",
+  "height_units": 0.65,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   388,
+   242
+  ]
+ },
+ {
+  "id": "korean_village_02",
+  "path": "art/atlas/korean_village/korean_village_02.webp",
+  "sheet": "korean_village",
+  "category": "building",
+  "label": "hanok tiled house",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   438,
+   253
+  ]
+ },
+ {
+  "id": "korean_village_03",
+  "path": "art/atlas/korean_village/korean_village_03.webp",
+  "sheet": "korean_village",
+  "category": "building",
+  "label": "hanok gate daemun",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   309,
+   230
+  ]
+ },
+ {
+  "id": "korean_village_04",
+  "path": "art/atlas/korean_village/korean_village_04.webp",
+  "sheet": "korean_village",
+  "category": "building",
+  "label": "jeongja pavilion",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   289,
+   268
+  ]
+ },
+ {
+  "id": "korean_village_05",
+  "path": "art/atlas/korean_village/korean_village_05.webp",
+  "sheet": "korean_village",
+  "category": "wall",
+  "label": "doldam wall tiled cap",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   285,
+   152
+  ]
+ },
+ {
+  "id": "korean_village_06",
+  "path": "art/atlas/korean_village/korean_village_06.webp",
+  "sheet": "korean_village",
+  "category": "wall",
+  "label": "stone wall",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   253,
+   136
+  ]
+ },
+ {
+  "id": "korean_village_07",
+  "path": "art/atlas/korean_village/korean_village_07.webp",
+  "sheet": "korean_village",
+  "category": "prop",
+  "label": "jangdokdae onggi jars",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   310,
+   173
+  ]
+ },
+ {
+  "id": "korean_village_08",
+  "path": "art/atlas/korean_village/korean_village_08.webp",
+  "sheet": "korean_village",
+  "category": "prop",
+  "label": "onggi jar tall",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   123,
+   161
+  ]
+ },
+ {
+  "id": "korean_village_09",
+  "path": "art/atlas/korean_village/korean_village_09.webp",
+  "sheet": "korean_village",
+  "category": "prop",
+  "label": "onggi jar squat",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   123,
+   110
+  ]
+ },
+ {
+  "id": "korean_village_10",
+  "path": "art/atlas/korean_village/korean_village_10.webp",
+  "sheet": "korean_village",
+  "category": "prop",
+  "label": "stone well with lid",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   199,
+   158
+  ]
+ },
+ {
+  "id": "korean_village_11",
+  "path": "art/atlas/korean_village/korean_village_11.webp",
+  "sheet": "korean_village",
+  "category": "prop",
+  "label": "sotdae bird pole",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   123,
+   229
+  ]
+ },
+ {
+  "id": "korean_village_14",
+  "path": "art/atlas/korean_village/korean_village_14.webp",
+  "sheet": "korean_village",
+  "category": "fence",
+  "label": "straw fence",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   317,
+   150
+  ]
+ },
+ {
+  "id": "korean_village_15",
+  "path": "art/atlas/korean_village/korean_village_15.webp",
+  "sheet": "korean_village",
+  "category": "prop",
+  "label": "jige A-frame carrier",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   192,
+   202
+  ]
+ },
+ {
+  "id": "korean_village_16",
+  "path": "art/atlas/korean_village/korean_village_16.webp",
+  "sheet": "korean_village",
+  "category": "crop",
+  "label": "straw stack",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   193,
+   201
+  ]
+ },
+ {
+  "id": "korean_village_17",
+  "path": "art/atlas/korean_village/korean_village_17.webp",
+  "sheet": "korean_village",
+  "category": "prop",
+  "label": "millstone",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   181,
+   130
+  ]
+ },
+ {
+  "id": "korean_village_18",
+  "path": "art/atlas/korean_village/korean_village_18.webp",
+  "sheet": "korean_village",
+  "category": "building",
+  "label": "small shrine",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   193,
+   173
+  ]
+ },
+ {
+  "id": "korean_village_19",
+  "path": "art/atlas/korean_village/korean_village_19.webp",
+  "sheet": "korean_village",
+  "category": "tree",
+  "label": "plum blossom tree small",
+  "height_units": 0.55,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "spring",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   226,
+   174
+  ]
+ },
+ {
+  "id": "korean_village_20",
+  "path": "art/atlas/korean_village/korean_village_20.webp",
+  "sheet": "korean_village",
+  "category": "tree",
+  "label": "persimmon tree small",
+  "height_units": 0.55,
+  "cross_slot": true,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   180,
+   184
+  ]
+ },
+ {
+  "id": "korean_village_21",
+  "path": "art/atlas/korean_village/korean_village_21.webp",
+  "sheet": "korean_village",
+  "category": "tree",
+  "label": "willow small",
+  "height_units": 0.6,
+  "cross_slot": true,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village",
+   "water"
+  ],
+  "px": [
+   172,
+   184
+  ]
+ },
+ {
+  "id": "korean_village_22",
+  "path": "art/atlas/korean_village/korean_village_22.webp",
+  "sheet": "korean_village",
+  "category": "flower",
+  "label": "chrysanthemums cream",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   152,
+   135
+  ]
+ },
+ {
+  "id": "korean_village_23",
+  "path": "art/atlas/korean_village/korean_village_23.webp",
+  "sheet": "korean_village",
+  "category": "flower",
+  "label": "red chrysanthemums",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   150,
+   131
+  ]
+ },
+ {
+  "id": "korean_village_24",
+  "path": "art/atlas/korean_village/korean_village_24.webp",
+  "sheet": "korean_village",
+  "category": "bush",
+  "label": "berry shrub",
+  "height_units": 0.16,
+  "cross_slot": true,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "korean_traditional",
+   "village"
+  ],
+  "px": [
+   156,
+   128
+  ]
+ },
+ {
+  "id": "meadow_field_00",
+  "path": "art/atlas/meadow_field/meadow_field_00.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "wheat clump large",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   225,
+   230
+  ]
+ },
+ {
+  "id": "meadow_field_01",
+  "path": "art/atlas/meadow_field/meadow_field_01.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "wheat clump",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   140,
+   189
+  ]
+ },
+ {
+  "id": "meadow_field_02",
+  "path": "art/atlas/meadow_field/meadow_field_02.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "wheat clump small",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   86,
+   142
+  ]
+ },
+ {
+  "id": "meadow_field_03",
+  "path": "art/atlas/meadow_field/meadow_field_03.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "wheat sheaf",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   164,
+   210
+  ]
+ },
+ {
+  "id": "meadow_field_04",
+  "path": "art/atlas/meadow_field/meadow_field_04.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "wheat sheaf small",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   120,
+   159
+  ]
+ },
+ {
+  "id": "meadow_field_05",
+  "path": "art/atlas/meadow_field/meadow_field_05.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "haystack conical",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   221,
+   245
+  ]
+ },
+ {
+  "id": "meadow_field_06",
+  "path": "art/atlas/meadow_field/meadow_field_06.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "round hay bale",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   177,
+   150
+  ]
+ },
+ {
+  "id": "meadow_field_07",
+  "path": "art/atlas/meadow_field/meadow_field_07.webp",
+  "sheet": "meadow_field",
+  "category": "crop",
+  "label": "hay bale stack",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   233,
+   170
+  ]
+ },
+ {
+  "id": "meadow_field_08",
+  "path": "art/atlas/meadow_field/meadow_field_08.webp",
+  "sheet": "meadow_field",
+  "category": "grass",
+  "label": "meadow grass tall",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   219,
+   203
+  ]
+ },
+ {
+  "id": "meadow_field_09",
+  "path": "art/atlas/meadow_field/meadow_field_09.webp",
+  "sheet": "meadow_field",
+  "category": "grass",
+  "label": "meadow grass",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   96,
+   153
+  ]
+ },
+ {
+  "id": "meadow_field_10",
+  "path": "art/atlas/meadow_field/meadow_field_10.webp",
+  "sheet": "meadow_field",
+  "category": "grass",
+  "label": "grass tuft",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   79,
+   109
+  ]
+ },
+ {
+  "id": "meadow_field_11",
+  "path": "art/atlas/meadow_field/meadow_field_11.webp",
+  "sheet": "meadow_field",
+  "category": "flower",
+  "label": "cornflowers",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   167,
+   182
+  ]
+ },
+ {
+  "id": "meadow_field_12",
+  "path": "art/atlas/meadow_field/meadow_field_12.webp",
+  "sheet": "meadow_field",
+  "category": "flower",
+  "label": "poppies",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   180,
+   184
+  ]
+ },
+ {
+  "id": "meadow_field_13",
+  "path": "art/atlas/meadow_field/meadow_field_13.webp",
+  "sheet": "meadow_field",
+  "category": "flower",
+  "label": "dandelions",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   171,
+   170
+  ]
+ },
+ {
+  "id": "meadow_field_14",
+  "path": "art/atlas/meadow_field/meadow_field_14.webp",
+  "sheet": "meadow_field",
+  "category": "flower",
+  "label": "daisies",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   169,
+   169
+  ]
+ },
+ {
+  "id": "meadow_field_15",
+  "path": "art/atlas/meadow_field/meadow_field_15.webp",
+  "sheet": "meadow_field",
+  "category": "flower",
+  "label": "clover patch",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   194,
+   143
+  ]
+ },
+ {
+  "id": "meadow_field_16",
+  "path": "art/atlas/meadow_field/meadow_field_16.webp",
+  "sheet": "meadow_field",
+  "category": "prop",
+  "label": "scarecrow",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   207,
+   235
+  ]
+ },
+ {
+  "id": "meadow_field_17",
+  "path": "art/atlas/meadow_field/meadow_field_17.webp",
+  "sheet": "meadow_field",
+  "category": "fence",
+  "label": "rail fence",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   214,
+   148
+  ]
+ },
+ {
+  "id": "meadow_field_18",
+  "path": "art/atlas/meadow_field/meadow_field_18.webp",
+  "sheet": "meadow_field",
+  "category": "fence",
+  "label": "wattle fence",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   211,
+   147
+  ]
+ },
+ {
+  "id": "meadow_field_19",
+  "path": "art/atlas/meadow_field/meadow_field_19.webp",
+  "sheet": "meadow_field",
+  "category": "wall",
+  "label": "dry stone wall",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   276,
+   137
+  ]
+ },
+ {
+  "id": "meadow_field_20",
+  "path": "art/atlas/meadow_field/meadow_field_20.webp",
+  "sheet": "meadow_field",
+  "category": "fence",
+  "label": "field gate",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   246,
+   156
+  ]
+ },
+ {
+  "id": "meadow_field_21",
+  "path": "art/atlas/meadow_field/meadow_field_21.webp",
+  "sheet": "meadow_field",
+  "category": "building",
+  "label": "field shed",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   231,
+   206
+  ]
+ },
+ {
+  "id": "meadow_field_22",
+  "path": "art/atlas/meadow_field/meadow_field_22.webp",
+  "sheet": "meadow_field",
+  "category": "prop",
+  "label": "hay rake",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   149,
+   225
+  ]
+ },
+ {
+  "id": "meadow_field_23",
+  "path": "art/atlas/meadow_field/meadow_field_23.webp",
+  "sheet": "meadow_field",
+  "category": "prop",
+  "label": "wheelbarrow of hay",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "farm",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   292,
+   179
+  ]
+ },
+ {
+  "id": "meadow_field_24",
+  "path": "art/atlas/meadow_field/meadow_field_24.webp",
+  "sheet": "meadow_field",
+  "category": "rock",
+  "label": "field boulder",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   208,
+   125
+  ]
+ },
+ {
+  "id": "meadow_field_25",
+  "path": "art/atlas/meadow_field/meadow_field_25.webp",
+  "sheet": "meadow_field",
+  "category": "sign",
+  "label": "milestone",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow",
+   "roadside"
+  ],
+  "px": [
+   110,
+   157
+  ]
+ },
+ {
+  "id": "meadow_field_26",
+  "path": "art/atlas/meadow_field/meadow_field_26.webp",
+  "sheet": "meadow_field",
+  "category": "prop",
+  "label": "bird on post",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   92,
+   213
+  ]
+ },
+ {
+  "id": "meadow_field_27",
+  "path": "art/atlas/meadow_field/meadow_field_27.webp",
+  "sheet": "meadow_field",
+  "category": "flower",
+  "label": "sunflowers",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   202,
+   225
+  ]
+ },
+ {
+  "id": "meadow_field_28",
+  "path": "art/atlas/meadow_field/meadow_field_28.webp",
+  "sheet": "meadow_field",
+  "category": "flower",
+  "label": "thistle",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "countryside",
+   "field",
+   "meadow"
+  ],
+  "px": [
+   192,
+   224
+  ]
+ },
+ {
+  "id": "small_decor_00",
+  "path": "art/atlas/small_decor/small_decor_00.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "pink flowers",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   148,
+   188
+  ]
+ },
+ {
+  "id": "small_decor_01",
+  "path": "art/atlas/small_decor/small_decor_01.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "yellow buttercups",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   148,
+   187
+  ]
+ },
+ {
+  "id": "small_decor_02",
+  "path": "art/atlas/small_decor/small_decor_02.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "white daisies",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   141,
+   182
+  ]
+ },
+ {
+  "id": "small_decor_03",
+  "path": "art/atlas/small_decor/small_decor_03.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "red flowers",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   147,
+   185
+  ]
+ },
+ {
+  "id": "small_decor_04",
+  "path": "art/atlas/small_decor/small_decor_04.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "blue forget-me-nots",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   130,
+   186
+  ]
+ },
+ {
+  "id": "small_decor_05",
+  "path": "art/atlas/small_decor/small_decor_05.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "red tulips",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   145,
+   185
+  ]
+ },
+ {
+  "id": "small_decor_06",
+  "path": "art/atlas/small_decor/small_decor_06.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "bluebells",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "decor",
+   "forest",
+   "ground"
+  ],
+  "px": [
+   150,
+   183
+  ]
+ },
+ {
+  "id": "small_decor_07",
+  "path": "art/atlas/small_decor/small_decor_07.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "lily of the valley",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "decor",
+   "forest",
+   "ground"
+  ],
+  "px": [
+   146,
+   173
+  ]
+ },
+ {
+  "id": "small_decor_08",
+  "path": "art/atlas/small_decor/small_decor_08.webp",
+  "sheet": "small_decor",
+  "category": "mushroom",
+  "label": "red toadstools",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "forest",
+   "ground"
+  ],
+  "px": [
+   159,
+   160
+  ]
+ },
+ {
+  "id": "small_decor_09",
+  "path": "art/atlas/small_decor/small_decor_09.webp",
+  "sheet": "small_decor",
+  "category": "mushroom",
+  "label": "brown mushrooms",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "forest",
+   "ground"
+  ],
+  "px": [
+   141,
+   154
+  ]
+ },
+ {
+  "id": "small_decor_10",
+  "path": "art/atlas/small_decor/small_decor_10.webp",
+  "sheet": "small_decor",
+  "category": "grass",
+  "label": "grass tuft",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   143,
+   156
+  ]
+ },
+ {
+  "id": "small_decor_11",
+  "path": "art/atlas/small_decor/small_decor_11.webp",
+  "sheet": "small_decor",
+  "category": "grass",
+  "label": "grass tuft seeded",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   143,
+   130
+  ]
+ },
+ {
+  "id": "small_decor_12",
+  "path": "art/atlas/small_decor/small_decor_12.webp",
+  "sheet": "small_decor",
+  "category": "grass",
+  "label": "grass with seed heads",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   138,
+   174
+  ]
+ },
+ {
+  "id": "small_decor_13",
+  "path": "art/atlas/small_decor/small_decor_13.webp",
+  "sheet": "small_decor",
+  "category": "grass",
+  "label": "fern frond",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "forest",
+   "ground"
+  ],
+  "px": [
+   174,
+   183
+  ]
+ },
+ {
+  "id": "small_decor_14",
+  "path": "art/atlas/small_decor/small_decor_14.webp",
+  "sheet": "small_decor",
+  "category": "rock",
+  "label": "grey rock leaf print",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   141,
+   93
+  ]
+ },
+ {
+  "id": "small_decor_15",
+  "path": "art/atlas/small_decor/small_decor_15.webp",
+  "sheet": "small_decor",
+  "category": "rock",
+  "label": "mossy rock",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   191,
+   129
+  ]
+ },
+ {
+  "id": "small_decor_16",
+  "path": "art/atlas/small_decor/small_decor_16.webp",
+  "sheet": "small_decor",
+  "category": "rock",
+  "label": "two rocks",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   160,
+   96
+  ]
+ },
+ {
+  "id": "small_decor_17",
+  "path": "art/atlas/small_decor/small_decor_17.webp",
+  "sheet": "small_decor",
+  "category": "rock",
+  "label": "pebble pile",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   148,
+   85
+  ]
+ },
+ {
+  "id": "small_decor_18",
+  "path": "art/atlas/small_decor/small_decor_18.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "clover",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   148,
+   152
+  ]
+ },
+ {
+  "id": "small_decor_19",
+  "path": "art/atlas/small_decor/small_decor_19.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "strawberry plant",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   185,
+   168
+  ]
+ },
+ {
+  "id": "small_decor_21",
+  "path": "art/atlas/small_decor/small_decor_21.webp",
+  "sheet": "small_decor",
+  "category": "animal",
+  "label": "snail on leaf",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "animals",
+   "decor",
+   "ground"
+  ],
+  "px": [
+   178,
+   130
+  ]
+ },
+ {
+  "id": "small_decor_22",
+  "path": "art/atlas/small_decor/small_decor_22.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "butterfly on flower",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   133,
+   181
+  ]
+ },
+ {
+  "id": "small_decor_23",
+  "path": "art/atlas/small_decor/small_decor_23.webp",
+  "sheet": "small_decor",
+  "category": "animal",
+  "label": "ladybird on leaf",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "animals",
+   "decor",
+   "ground"
+  ],
+  "px": [
+   179,
+   124
+  ]
+ },
+ {
+  "id": "small_decor_24",
+  "path": "art/atlas/small_decor/small_decor_24.webp",
+  "sheet": "small_decor",
+  "category": "sign",
+  "label": "tiny arrow sign",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground",
+   "roadside"
+  ],
+  "px": [
+   181,
+   205
+  ]
+ },
+ {
+  "id": "small_decor_25",
+  "path": "art/atlas/small_decor/small_decor_25.webp",
+  "sheet": "small_decor",
+  "category": "lantern",
+  "label": "lantern on stake",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground",
+   "night_glow"
+  ],
+  "px": [
+   142,
+   205
+  ]
+ },
+ {
+  "id": "small_decor_26",
+  "path": "art/atlas/small_decor/small_decor_26.webp",
+  "sheet": "small_decor",
+  "category": "mushroom",
+  "label": "toadstool ring",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "fairytale",
+   "forest",
+   "ground"
+  ],
+  "px": [
+   233,
+   157
+  ]
+ },
+ {
+  "id": "small_decor_27",
+  "path": "art/atlas/small_decor/small_decor_27.webp",
+  "sheet": "small_decor",
+  "category": "grass",
+  "label": "seedling sprout",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   135,
+   142
+  ]
+ },
+ {
+  "id": "small_decor_28",
+  "path": "art/atlas/small_decor/small_decor_28.webp",
+  "sheet": "small_decor",
+  "category": "bush",
+  "label": "berry shrub",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   199,
+   195
+  ]
+ },
+ {
+  "id": "small_decor_29",
+  "path": "art/atlas/small_decor/small_decor_29.webp",
+  "sheet": "small_decor",
+  "category": "flower",
+  "label": "thistle",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground"
+  ],
+  "px": [
+   160,
+   210
+  ]
+ },
+ {
+  "id": "small_decor_30",
+  "path": "art/atlas/small_decor/small_decor_30.webp",
+  "sheet": "small_decor",
+  "category": "rock",
+  "label": "stone cairn",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "decor",
+   "ground",
+   "roadside"
+  ],
+  "px": [
+   172,
+   195
+  ]
+ },
+ {
+  "id": "spring_blossom_00",
+  "path": "art/atlas/spring_blossom/spring_blossom_00.webp",
+  "sheet": "spring_blossom",
+  "category": "tree",
+  "label": "cherry blossom tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   255,
+   243
+  ]
+ },
+ {
+  "id": "spring_blossom_01",
+  "path": "art/atlas/spring_blossom/spring_blossom_01.webp",
+  "sheet": "spring_blossom",
+  "category": "tree",
+  "label": "cherry blossom tree deep pink",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   235,
+   236
+  ]
+ },
+ {
+  "id": "spring_blossom_02",
+  "path": "art/atlas/spring_blossom/spring_blossom_02.webp",
+  "sheet": "spring_blossom",
+  "category": "tree",
+  "label": "pear blossom tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "farm",
+   "spring"
+  ],
+  "px": [
+   230,
+   246
+  ]
+ },
+ {
+  "id": "spring_blossom_03",
+  "path": "art/atlas/spring_blossom/spring_blossom_03.webp",
+  "sheet": "spring_blossom",
+  "category": "tree",
+  "label": "apple blossom tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   224,
+   237
+  ]
+ },
+ {
+  "id": "spring_blossom_04",
+  "path": "art/atlas/spring_blossom/spring_blossom_04.webp",
+  "sheet": "spring_blossom",
+  "category": "tree",
+  "label": "magnolia tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   236,
+   242
+  ]
+ },
+ {
+  "id": "spring_blossom_05",
+  "path": "art/atlas/spring_blossom/spring_blossom_05.webp",
+  "sheet": "spring_blossom",
+  "category": "bush",
+  "label": "hawthorn bush",
+  "height_units": 0.3,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   249,
+   187
+  ]
+ },
+ {
+  "id": "spring_blossom_06",
+  "path": "art/atlas/spring_blossom/spring_blossom_06.webp",
+  "sheet": "spring_blossom",
+  "category": "bush",
+  "label": "pink blossom bush",
+  "height_units": 0.26,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   241,
+   171
+  ]
+ },
+ {
+  "id": "spring_blossom_07",
+  "path": "art/atlas/spring_blossom/spring_blossom_07.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "tulip bed",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "garden",
+   "spring"
+  ],
+  "px": [
+   271,
+   143
+  ]
+ },
+ {
+  "id": "spring_blossom_08",
+  "path": "art/atlas/spring_blossom/spring_blossom_08.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "daffodils",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   176,
+   176
+  ]
+ },
+ {
+  "id": "spring_blossom_09",
+  "path": "art/atlas/spring_blossom/spring_blossom_09.webp",
+  "sheet": "spring_blossom",
+  "category": "prop",
+  "label": "beehive with flowers",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "farm",
+   "spring"
+  ],
+  "px": [
+   210,
+   170
+  ]
+ },
+ {
+  "id": "spring_blossom_10",
+  "path": "art/atlas/spring_blossom/spring_blossom_10.webp",
+  "sheet": "spring_blossom",
+  "category": "prop",
+  "label": "bench under blossom arch",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "garden",
+   "spring"
+  ],
+  "px": [
+   307,
+   245
+  ]
+ },
+ {
+  "id": "spring_blossom_11",
+  "path": "art/atlas/spring_blossom/spring_blossom_11.webp",
+  "sheet": "spring_blossom",
+  "category": "prop",
+  "label": "birdhouse red roof",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   120,
+   234
+  ]
+ },
+ {
+  "id": "spring_blossom_12",
+  "path": "art/atlas/spring_blossom/spring_blossom_12.webp",
+  "sheet": "spring_blossom",
+  "category": "tree",
+  "label": "spring sapling",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   166,
+   221
+  ]
+ },
+ {
+  "id": "spring_blossom_13",
+  "path": "art/atlas/spring_blossom/spring_blossom_13.webp",
+  "sheet": "spring_blossom",
+  "category": "tree",
+  "label": "willow with catkins",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring",
+   "water"
+  ],
+  "px": [
+   255,
+   205
+  ]
+ },
+ {
+  "id": "spring_blossom_14",
+  "path": "art/atlas/spring_blossom/spring_blossom_14.webp",
+  "sheet": "spring_blossom",
+  "category": "bush",
+  "label": "lilac bush",
+  "height_units": 0.28,
+  "cross_slot": true,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   232,
+   192
+  ]
+ },
+ {
+  "id": "spring_blossom_15",
+  "path": "art/atlas/spring_blossom/spring_blossom_15.webp",
+  "sheet": "spring_blossom",
+  "category": "prop",
+  "label": "flower cart",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "garden",
+   "spring"
+  ],
+  "px": [
+   265,
+   202
+  ]
+ },
+ {
+  "id": "spring_blossom_16",
+  "path": "art/atlas/spring_blossom/spring_blossom_16.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "primroses",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   196,
+   141
+  ]
+ },
+ {
+  "id": "spring_blossom_17",
+  "path": "art/atlas/spring_blossom/spring_blossom_17.webp",
+  "sheet": "spring_blossom",
+  "category": "animal",
+  "label": "bunny among flowers",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "animals",
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   259,
+   172
+  ]
+ },
+ {
+  "id": "spring_blossom_18",
+  "path": "art/atlas/spring_blossom/spring_blossom_18.webp",
+  "sheet": "spring_blossom",
+  "category": "prop",
+  "label": "birdhouse green roof",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   137,
+   207
+  ]
+ },
+ {
+  "id": "spring_blossom_19",
+  "path": "art/atlas/spring_blossom/spring_blossom_19.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "cherry branch sprig",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   162,
+   161
+  ]
+ },
+ {
+  "id": "spring_blossom_20",
+  "path": "art/atlas/spring_blossom/spring_blossom_20.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "blossom sprig white",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   169,
+   163
+  ]
+ },
+ {
+  "id": "spring_blossom_21",
+  "path": "art/atlas/spring_blossom/spring_blossom_21.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "apple blossom sprig",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   156,
+   161
+  ]
+ },
+ {
+  "id": "spring_blossom_22",
+  "path": "art/atlas/spring_blossom/spring_blossom_22.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "magnolia sprig",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "spring"
+  ],
+  "px": [
+   183,
+   161
+  ]
+ },
+ {
+  "id": "spring_blossom_23",
+  "path": "art/atlas/spring_blossom/spring_blossom_23.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "wood anemones",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "forest",
+   "spring"
+  ],
+  "px": [
+   171,
+   150
+  ]
+ },
+ {
+  "id": "spring_blossom_24",
+  "path": "art/atlas/spring_blossom/spring_blossom_24.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "bluebells",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "forest",
+   "spring"
+  ],
+  "px": [
+   133,
+   160
+  ]
+ },
+ {
+  "id": "spring_blossom_25",
+  "path": "art/atlas/spring_blossom/spring_blossom_25.webp",
+  "sheet": "spring_blossom",
+  "category": "flower",
+  "label": "lily of the valley",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "spring",
+  "tags": [
+   "blossom",
+   "forest",
+   "spring"
+  ],
+  "px": [
+   157,
+   157
+  ]
+ },
+ {
+  "id": "stream_water_00",
+  "path": "art/atlas/stream_water/stream_water_00.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "cattails",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   154,
+   169
+  ]
+ },
+ {
+  "id": "stream_water_01",
+  "path": "art/atlas/stream_water/stream_water_01.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "cattails tall",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   171,
+   206
+  ]
+ },
+ {
+  "id": "stream_water_02",
+  "path": "art/atlas/stream_water/stream_water_02.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "reeds with seed heads",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   165,
+   175
+  ]
+ },
+ {
+  "id": "stream_water_03",
+  "path": "art/atlas/stream_water/stream_water_03.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "yellow iris clump",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   219,
+   211
+  ]
+ },
+ {
+  "id": "stream_water_04",
+  "path": "art/atlas/stream_water/stream_water_04.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "yellow iris",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   135,
+   166
+  ]
+ },
+ {
+  "id": "stream_water_05",
+  "path": "art/atlas/stream_water/stream_water_05.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "iris bud",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   92,
+   128
+  ]
+ },
+ {
+  "id": "stream_water_06",
+  "path": "art/atlas/stream_water/stream_water_06.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "water reeds flowering",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   146,
+   187
+  ]
+ },
+ {
+  "id": "stream_water_07",
+  "path": "art/atlas/stream_water/stream_water_07.webp",
+  "sheet": "stream_water",
+  "category": "bridge",
+  "label": "arched stone bridge",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   354,
+   145
+  ]
+ },
+ {
+  "id": "stream_water_08",
+  "path": "art/atlas/stream_water/stream_water_08.webp",
+  "sheet": "stream_water",
+  "category": "bridge",
+  "label": "arched wooden bridge",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   355,
+   157
+  ]
+ },
+ {
+  "id": "stream_water_09",
+  "path": "art/atlas/stream_water/stream_water_09.webp",
+  "sheet": "stream_water",
+  "category": "bridge",
+  "label": "plank footbridge",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   358,
+   82
+  ]
+ },
+ {
+  "id": "stream_water_10",
+  "path": "art/atlas/stream_water/stream_water_10.webp",
+  "sheet": "stream_water",
+  "category": "bridge",
+  "label": "rope bridge",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   324,
+   147
+  ]
+ },
+ {
+  "id": "stream_water_11",
+  "path": "art/atlas/stream_water/stream_water_11.webp",
+  "sheet": "stream_water",
+  "category": "prop",
+  "label": "rowboat",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   266,
+   121
+  ]
+ },
+ {
+  "id": "stream_water_12",
+  "path": "art/atlas/stream_water/stream_water_12.webp",
+  "sheet": "stream_water",
+  "category": "prop",
+  "label": "jetty",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   290,
+   150
+  ]
+ },
+ {
+  "id": "stream_water_13",
+  "path": "art/atlas/stream_water/stream_water_13.webp",
+  "sheet": "stream_water",
+  "category": "building",
+  "label": "waterwheel",
+  "height_units": 0.35,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   237,
+   204
+  ]
+ },
+ {
+  "id": "stream_water_14",
+  "path": "art/atlas/stream_water/stream_water_14.webp",
+  "sheet": "stream_water",
+  "category": "water",
+  "label": "waterfall rocks",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   318,
+   197
+  ]
+ },
+ {
+  "id": "stream_water_15",
+  "path": "art/atlas/stream_water/stream_water_15.webp",
+  "sheet": "stream_water",
+  "category": "tree",
+  "label": "weeping willow",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   276,
+   244
+  ]
+ },
+ {
+  "id": "stream_water_16",
+  "path": "art/atlas/stream_water/stream_water_16.webp",
+  "sheet": "stream_water",
+  "category": "water",
+  "label": "lily pond lotus",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   323,
+   126
+  ]
+ },
+ {
+  "id": "stream_water_17",
+  "path": "art/atlas/stream_water/stream_water_17.webp",
+  "sheet": "stream_water",
+  "category": "water",
+  "label": "wave strip long",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   383,
+   56
+  ]
+ },
+ {
+  "id": "stream_water_18",
+  "path": "art/atlas/stream_water/stream_water_18.webp",
+  "sheet": "stream_water",
+  "category": "water",
+  "label": "wave strip",
+  "height_units": 0.045,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   411,
+   50
+  ]
+ },
+ {
+  "id": "stream_water_19",
+  "path": "art/atlas/stream_water/stream_water_19.webp",
+  "sheet": "stream_water",
+  "category": "water",
+  "label": "wave strip short",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   173,
+   43
+  ]
+ },
+ {
+  "id": "stream_water_20",
+  "path": "art/atlas/stream_water/stream_water_20.webp",
+  "sheet": "stream_water",
+  "category": "rock",
+  "label": "river rocks",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   225,
+   107
+  ]
+ },
+ {
+  "id": "stream_water_21",
+  "path": "art/atlas/stream_water/stream_water_21.webp",
+  "sheet": "stream_water",
+  "category": "rock",
+  "label": "stepping stone",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   98,
+   58
+  ]
+ },
+ {
+  "id": "stream_water_22",
+  "path": "art/atlas/stream_water/stream_water_22.webp",
+  "sheet": "stream_water",
+  "category": "rock",
+  "label": "stepping stone",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   83,
+   50
+  ]
+ },
+ {
+  "id": "stream_water_23",
+  "path": "art/atlas/stream_water/stream_water_23.webp",
+  "sheet": "stream_water",
+  "category": "rock",
+  "label": "stepping stones pair",
+  "height_units": 0.04,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   139,
+   43
+  ]
+ },
+ {
+  "id": "stream_water_24",
+  "path": "art/atlas/stream_water/stream_water_24.webp",
+  "sheet": "stream_water",
+  "category": "animal",
+  "label": "mallard duck",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   191,
+   153
+  ]
+ },
+ {
+  "id": "stream_water_25",
+  "path": "art/atlas/stream_water/stream_water_25.webp",
+  "sheet": "stream_water",
+  "category": "animal",
+  "label": "heron",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   153,
+   197
+  ]
+ },
+ {
+  "id": "stream_water_26",
+  "path": "art/atlas/stream_water/stream_water_26.webp",
+  "sheet": "stream_water",
+  "category": "animal",
+  "label": "frog on stone",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   185,
+   146
+  ]
+ },
+ {
+  "id": "stream_water_27",
+  "path": "art/atlas/stream_water/stream_water_27.webp",
+  "sheet": "stream_water",
+  "category": "prop",
+  "label": "fishing rod post",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   191,
+   193
+  ]
+ },
+ {
+  "id": "stream_water_28",
+  "path": "art/atlas/stream_water/stream_water_28.webp",
+  "sheet": "stream_water",
+  "category": "prop",
+  "label": "mossy log",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "forest",
+   "stream",
+   "water"
+  ],
+  "px": [
+   302,
+   153
+  ]
+ },
+ {
+  "id": "stream_water_29",
+  "path": "art/atlas/stream_water/stream_water_29.webp",
+  "sheet": "stream_water",
+  "category": "reeds",
+  "label": "cattails bunch",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "stream",
+  "season": "summer",
+  "tags": [
+   "stream",
+   "water"
+  ],
+  "px": [
+   166,
+   201
+  ]
+ },
+ {
+  "id": "village_houses_00",
+  "path": "art/atlas/village_houses/village_houses_00.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "cottage terracotta roof",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   231,
+   241
+  ]
+ },
+ {
+  "id": "village_houses_01",
+  "path": "art/atlas/village_houses/village_houses_01.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "half-timbered house",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   216,
+   247
+  ]
+ },
+ {
+  "id": "village_houses_02",
+  "path": "art/atlas/village_houses/village_houses_02.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "thatched stone cottage",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   269,
+   237
+  ]
+ },
+ {
+  "id": "village_houses_03",
+  "path": "art/atlas/village_houses/village_houses_03.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "tall townhouse",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   163,
+   272
+  ]
+ },
+ {
+  "id": "village_houses_04",
+  "path": "art/atlas/village_houses/village_houses_04.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "red barn",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   238,
+   223
+  ]
+ },
+ {
+  "id": "village_houses_05",
+  "path": "art/atlas/village_houses/village_houses_05.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "windmill",
+  "height_units": 1.05,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "farm",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   196,
+   265
+  ]
+ },
+ {
+  "id": "village_houses_06",
+  "path": "art/atlas/village_houses/village_houses_06.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "stone chapel",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   216,
+   271
+  ]
+ },
+ {
+  "id": "village_houses_07",
+  "path": "art/atlas/village_houses/village_houses_07.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "bakery",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   242,
+   237
+  ]
+ },
+ {
+  "id": "village_houses_08",
+  "path": "art/atlas/village_houses/village_houses_08.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "round tower",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   148,
+   273
+  ]
+ },
+ {
+  "id": "village_houses_09",
+  "path": "art/atlas/village_houses/village_houses_09.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "woodshed",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   243,
+   188
+  ]
+ },
+ {
+  "id": "village_houses_10",
+  "path": "art/atlas/village_houses/village_houses_10.webp",
+  "sheet": "village_houses",
+  "category": "prop",
+  "label": "roofed stone well",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   187,
+   212
+  ]
+ },
+ {
+  "id": "village_houses_11",
+  "path": "art/atlas/village_houses/village_houses_11.webp",
+  "sheet": "village_houses",
+  "category": "prop",
+  "label": "dovecote on pole",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   141,
+   259
+  ]
+ },
+ {
+  "id": "village_houses_12",
+  "path": "art/atlas/village_houses/village_houses_12.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "garden shed",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   236,
+   189
+  ]
+ },
+ {
+  "id": "village_houses_13",
+  "path": "art/atlas/village_houses/village_houses_13.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "cottage blue shutters",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   299,
+   195
+  ]
+ },
+ {
+  "id": "village_houses_14",
+  "path": "art/atlas/village_houses/village_houses_14.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "cottage flower boxes",
+  "height_units": 0.72,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   284,
+   202
+  ]
+ },
+ {
+  "id": "village_houses_15",
+  "path": "art/atlas/village_houses/village_houses_15.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "long thatched farmhouse",
+  "height_units": 0.65,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   438,
+   192
+  ]
+ },
+ {
+  "id": "village_houses_16",
+  "path": "art/atlas/village_houses/village_houses_16.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "gatehouse arch",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   266,
+   198
+  ]
+ },
+ {
+  "id": "village_houses_17",
+  "path": "art/atlas/village_houses/village_houses_17.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "market hall",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   311,
+   184
+  ]
+ },
+ {
+  "id": "village_houses_18",
+  "path": "art/atlas/village_houses/village_houses_18.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "cottage dormers slate roof",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   246,
+   193
+  ]
+ },
+ {
+  "id": "village_houses_19",
+  "path": "art/atlas/village_houses/village_houses_19.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "cottage vine",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   251,
+   200
+  ]
+ },
+ {
+  "id": "village_houses_20",
+  "path": "art/atlas/village_houses/village_houses_20.webp",
+  "sheet": "village_houses",
+  "category": "building",
+  "label": "thatched cottage",
+  "height_units": 0.72,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "village",
+   "western_cottage"
+  ],
+  "px": [
+   246,
+   194
+  ]
+ },
+ {
+  "id": "village_props_00",
+  "path": "art/atlas/village_props/village_props_00.webp",
+  "sheet": "village_props",
+  "category": "lantern",
+  "label": "lantern post curled",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "night_glow",
+   "street",
+   "village"
+  ],
+  "px": [
+   126,
+   238
+  ]
+ },
+ {
+  "id": "village_props_01",
+  "path": "art/atlas/village_props/village_props_01.webp",
+  "sheet": "village_props",
+  "category": "lantern",
+  "label": "lantern post",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "night_glow",
+   "street",
+   "village"
+  ],
+  "px": [
+   69,
+   248
+  ]
+ },
+ {
+  "id": "village_props_02",
+  "path": "art/atlas/village_props/village_props_02.webp",
+  "sheet": "village_props",
+  "category": "lantern",
+  "label": "triple lantern post",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "night_glow",
+   "street",
+   "village"
+  ],
+  "px": [
+   143,
+   247
+  ]
+ },
+ {
+  "id": "village_props_03",
+  "path": "art/atlas/village_props/village_props_03.webp",
+  "sheet": "village_props",
+  "category": "lantern",
+  "label": "lantern post slim",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "night_glow",
+   "street",
+   "village"
+  ],
+  "px": [
+   81,
+   247
+  ]
+ },
+ {
+  "id": "village_props_04",
+  "path": "art/atlas/village_props/village_props_04.webp",
+  "sheet": "village_props",
+  "category": "sign",
+  "label": "signpost arrows",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "roadside",
+   "street",
+   "village"
+  ],
+  "px": [
+   170,
+   236
+  ]
+ },
+ {
+  "id": "village_props_05",
+  "path": "art/atlas/village_props/village_props_05.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "mailbox",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   128,
+   225
+  ]
+ },
+ {
+  "id": "village_props_06",
+  "path": "art/atlas/village_props/village_props_06.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "bench",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   298,
+   174
+  ]
+ },
+ {
+  "id": "village_props_07",
+  "path": "art/atlas/village_props/village_props_07.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "hand cart",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   299,
+   158
+  ]
+ },
+ {
+  "id": "village_props_08",
+  "path": "art/atlas/village_props/village_props_08.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "hay wagon",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "street",
+   "village"
+  ],
+  "px": [
+   268,
+   205
+  ]
+ },
+ {
+  "id": "village_props_09",
+  "path": "art/atlas/village_props/village_props_09.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "barrel",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   127,
+   166
+  ]
+ },
+ {
+  "id": "village_props_10",
+  "path": "art/atlas/village_props/village_props_10.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "barrel small",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   109,
+   135
+  ]
+ },
+ {
+  "id": "village_props_11",
+  "path": "art/atlas/village_props/village_props_11.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "crate stack",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   213,
+   175
+  ]
+ },
+ {
+  "id": "village_props_12",
+  "path": "art/atlas/village_props/village_props_12.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "market stall",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   285,
+   203
+  ]
+ },
+ {
+  "id": "village_props_13",
+  "path": "art/atlas/village_props/village_props_13.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "laundry line",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   293,
+   149
+  ]
+ },
+ {
+  "id": "village_props_14",
+  "path": "art/atlas/village_props/village_props_14.webp",
+  "sheet": "village_props",
+  "category": "flower",
+  "label": "flower pot daisies",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   120,
+   149
+  ]
+ },
+ {
+  "id": "village_props_15",
+  "path": "art/atlas/village_props/village_props_15.webp",
+  "sheet": "village_props",
+  "category": "flower",
+  "label": "flower pot pink",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   92,
+   132
+  ]
+ },
+ {
+  "id": "village_props_16",
+  "path": "art/atlas/village_props/village_props_16.webp",
+  "sheet": "village_props",
+  "category": "flower",
+  "label": "flower pot yellow",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   85,
+   142
+  ]
+ },
+ {
+  "id": "village_props_17",
+  "path": "art/atlas/village_props/village_props_17.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "woodpile",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   197,
+   139
+  ]
+ },
+ {
+  "id": "village_props_18",
+  "path": "art/atlas/village_props/village_props_18.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "wheelbarrow",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   283,
+   125
+  ]
+ },
+ {
+  "id": "village_props_19",
+  "path": "art/atlas/village_props/village_props_19.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "bunting poles",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   288,
+   148
+  ]
+ },
+ {
+  "id": "village_props_20",
+  "path": "art/atlas/village_props/village_props_20.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "water pump",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   146,
+   176
+  ]
+ },
+ {
+  "id": "village_props_21",
+  "path": "art/atlas/village_props/village_props_21.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "wooden bucket",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   111,
+   145
+  ]
+ },
+ {
+  "id": "village_props_22",
+  "path": "art/atlas/village_props/village_props_22.webp",
+  "sheet": "village_props",
+  "category": "fence",
+  "label": "picket fence",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   228,
+   129
+  ]
+ },
+ {
+  "id": "village_props_23",
+  "path": "art/atlas/village_props/village_props_23.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "rose arch",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   182,
+   177
+  ]
+ },
+ {
+  "id": "village_props_24",
+  "path": "art/atlas/village_props/village_props_24.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "stone water trough",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "street",
+   "village"
+  ],
+  "px": [
+   251,
+   109
+  ]
+ },
+ {
+  "id": "village_props_25",
+  "path": "art/atlas/village_props/village_props_25.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "milk cans",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "street",
+   "village"
+  ],
+  "px": [
+   153,
+   143
+  ]
+ },
+ {
+  "id": "village_props_26",
+  "path": "art/atlas/village_props/village_props_26.webp",
+  "sheet": "village_props",
+  "category": "sign",
+  "label": "notice board",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   198,
+   180
+  ]
+ },
+ {
+  "id": "village_props_27",
+  "path": "art/atlas/village_props/village_props_27.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "sacks",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "farm",
+   "street",
+   "village"
+  ],
+  "px": [
+   249,
+   169
+  ]
+ },
+ {
+  "id": "village_props_28",
+  "path": "art/atlas/village_props/village_props_28.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "well with roof",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   216,
+   207
+  ]
+ },
+ {
+  "id": "village_props_29",
+  "path": "art/atlas/village_props/village_props_29.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "bird bath",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   166,
+   174
+  ]
+ },
+ {
+  "id": "village_props_30",
+  "path": "art/atlas/village_props/village_props_30.webp",
+  "sheet": "village_props",
+  "category": "prop",
+  "label": "ladder",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   137,
+   208
+  ]
+ },
+ {
+  "id": "village_props_31",
+  "path": "art/atlas/village_props/village_props_31.webp",
+  "sheet": "village_props",
+  "category": "fence",
+  "label": "wooden gate",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "street",
+   "village"
+  ],
+  "px": [
+   291,
+   179
+  ]
+ },
+ {
+  "id": "winter_snow_00",
+  "path": "art/atlas/winter_snow/winter_snow_00.webp",
+  "sheet": "winter_snow",
+  "category": "tree",
+  "label": "snowy fir",
+  "height_units": 0.9,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   250,
+   285
+  ]
+ },
+ {
+  "id": "winter_snow_01",
+  "path": "art/atlas/winter_snow/winter_snow_01.webp",
+  "sheet": "winter_snow",
+  "category": "tree",
+  "label": "snowy spruce",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   211,
+   289
+  ]
+ },
+ {
+  "id": "winter_snow_02",
+  "path": "art/atlas/winter_snow/winter_snow_02.webp",
+  "sheet": "winter_snow",
+  "category": "tree",
+  "label": "snowy fir round tiers",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   194,
+   269
+  ]
+ },
+ {
+  "id": "winter_snow_03",
+  "path": "art/atlas/winter_snow/winter_snow_03.webp",
+  "sheet": "winter_snow",
+  "category": "tree",
+  "label": "snowy pine slim",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   190,
+   258
+  ]
+ },
+ {
+  "id": "winter_snow_04",
+  "path": "art/atlas/winter_snow/winter_snow_04.webp",
+  "sheet": "winter_snow",
+  "category": "tree",
+  "label": "snowy fir with berries",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   225,
+   262
+  ]
+ },
+ {
+  "id": "winter_snow_05",
+  "path": "art/atlas/winter_snow/winter_snow_05.webp",
+  "sheet": "winter_snow",
+  "category": "tree",
+  "label": "bare tree with snow",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   226,
+   281
+  ]
+ },
+ {
+  "id": "winter_snow_06",
+  "path": "art/atlas/winter_snow/winter_snow_06.webp",
+  "sheet": "winter_snow",
+  "category": "bush",
+  "label": "snowy berry bush",
+  "height_units": 0.24,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   220,
+   194
+  ]
+ },
+ {
+  "id": "winter_snow_07",
+  "path": "art/atlas/winter_snow/winter_snow_07.webp",
+  "sheet": "winter_snow",
+  "category": "bush",
+  "label": "snowy red-berry shrub",
+  "height_units": 0.24,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   174,
+   191
+  ]
+ },
+ {
+  "id": "winter_snow_08",
+  "path": "art/atlas/winter_snow/winter_snow_08.webp",
+  "sheet": "winter_snow",
+  "category": "bush",
+  "label": "snowy bush",
+  "height_units": 0.22,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   186,
+   170
+  ]
+ },
+ {
+  "id": "winter_snow_09",
+  "path": "art/atlas/winter_snow/winter_snow_09.webp",
+  "sheet": "winter_snow",
+  "category": "building",
+  "label": "snowy cottage lit windows",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "night_glow",
+   "snow",
+   "village",
+   "winter"
+  ],
+  "px": [
+   310,
+   249
+  ]
+ },
+ {
+  "id": "winter_snow_10",
+  "path": "art/atlas/winter_snow/winter_snow_10.webp",
+  "sheet": "winter_snow",
+  "category": "building",
+  "label": "snowy red barn",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "farm",
+   "snow",
+   "winter"
+  ],
+  "px": [
+   280,
+   227
+  ]
+ },
+ {
+  "id": "winter_snow_11",
+  "path": "art/atlas/winter_snow/winter_snow_11.webp",
+  "sheet": "winter_snow",
+  "category": "prop",
+  "label": "snowman",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   179,
+   232
+  ]
+ },
+ {
+  "id": "winter_snow_12",
+  "path": "art/atlas/winter_snow/winter_snow_12.webp",
+  "sheet": "winter_snow",
+  "category": "prop",
+  "label": "sled",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   251,
+   116
+  ]
+ },
+ {
+  "id": "winter_snow_13",
+  "path": "art/atlas/winter_snow/winter_snow_13.webp",
+  "sheet": "winter_snow",
+  "category": "fence",
+  "label": "snowy fence",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   232,
+   144
+  ]
+ },
+ {
+  "id": "winter_snow_14",
+  "path": "art/atlas/winter_snow/winter_snow_14.webp",
+  "sheet": "winter_snow",
+  "category": "rock",
+  "label": "snowy rocks",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   204,
+   124
+  ]
+ },
+ {
+  "id": "winter_snow_15",
+  "path": "art/atlas/winter_snow/winter_snow_15.webp",
+  "sheet": "winter_snow",
+  "category": "lantern",
+  "label": "snowy lantern post",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "night_glow",
+   "snow",
+   "winter"
+  ],
+  "px": [
+   134,
+   185
+  ]
+ },
+ {
+  "id": "winter_snow_16",
+  "path": "art/atlas/winter_snow/winter_snow_16.webp",
+  "sheet": "winter_snow",
+  "category": "water",
+  "label": "frozen pond icicles",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "water",
+   "winter"
+  ],
+  "px": [
+   277,
+   135
+  ]
+ },
+ {
+  "id": "winter_snow_17",
+  "path": "art/atlas/winter_snow/winter_snow_17.webp",
+  "sheet": "winter_snow",
+  "category": "hill",
+  "label": "snow drift",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   304,
+   115
+  ]
+ },
+ {
+  "id": "winter_snow_18",
+  "path": "art/atlas/winter_snow/winter_snow_18.webp",
+  "sheet": "winter_snow",
+  "category": "prop",
+  "label": "snowy woodshed",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   222,
+   207
+  ]
+ },
+ {
+  "id": "winter_snow_19",
+  "path": "art/atlas/winter_snow/winter_snow_19.webp",
+  "sheet": "winter_snow",
+  "category": "sign",
+  "label": "snowy signpost",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "roadside",
+   "snow",
+   "winter"
+  ],
+  "px": [
+   161,
+   206
+  ]
+ },
+ {
+  "id": "winter_snow_20",
+  "path": "art/atlas/winter_snow/winter_snow_20.webp",
+  "sheet": "winter_snow",
+  "category": "bush",
+  "label": "snowy holly bush",
+  "height_units": 0.2,
+  "cross_slot": true,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "winter"
+  ],
+  "px": [
+   231,
+   166
+  ]
+ },
+ {
+  "id": "winter_snow_21",
+  "path": "art/atlas/winter_snow/winter_snow_21.webp",
+  "sheet": "winter_snow",
+  "category": "animal",
+  "label": "deer winter",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "animals",
+   "snow",
+   "wild",
+   "winter"
+  ],
+  "px": [
+   196,
+   211
+  ]
+ },
+ {
+  "id": "winter_snow_22",
+  "path": "art/atlas/winter_snow/winter_snow_22.webp",
+  "sheet": "winter_snow",
+  "category": "prop",
+  "label": "snowy well",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "snow",
+   "village",
+   "winter"
+  ],
+  "px": [
+   205,
+   220
+  ]
+ },
+ {
+  "id": "winter_snow_23",
+  "path": "art/atlas/winter_snow/winter_snow_23.webp",
+  "sheet": "winter_snow",
+  "category": "hill",
+  "label": "snowy hills with pines",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "snow",
+  "season": "winter",
+  "tags": [
+   "backdrop",
+   "snow",
+   "winter"
+  ],
+  "px": [
+   383,
+   168
+  ]
+ }
+]

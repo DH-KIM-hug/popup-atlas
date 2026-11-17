@@ -1,0 +1,173 @@
+{
+ "biome": "forest",
+ "season": "any",
+ "tags": [
+  "trees",
+  "forest",
+  "conifer"
+ ],
+ "items": {
+  "00": [
+   "pine",
+   "tree",
+   1.0,
+   1
+  ],
+  "01": [
+   "fir light",
+   "tree",
+   0.95,
+   1
+  ],
+  "02": [
+   "spruce teal",
+   "tree",
+   0.95,
+   1
+  ],
+  "03": [
+   "slim pine",
+   "tree",
+   1.0,
+   1
+  ],
+  "04": [
+   "cypress dark",
+   "tree",
+   1.0,
+   0
+  ],
+  "05": [
+   "cypress",
+   "tree",
+   0.95,
+   0
+  ],
+  "06": [
+   "twin pines",
+   "tree",
+   0.95,
+   0
+  ],
+  "07": [
+   "tall red pine",
+   "tree",
+   1.1,
+   0
+  ],
+  "08": [
+   "lopsided old pine",
+   "tree",
+   0.7,
+   0
+  ],
+  "09": [
+   "pine sapling",
+   "tree",
+   0.35,
+   0
+  ],
+  "10": [
+   "pine sapling",
+   "tree",
+   0.42,
+   0
+  ],
+  "11": [
+   "bushy young pine",
+   "tree",
+   0.42,
+   1
+  ],
+  "12": [
+   "pine seedling",
+   "tree",
+   0.28,
+   0
+  ],
+  "13": [
+   "tree stump",
+   "prop",
+   0.13,
+   0
+  ],
+  "14": [
+   "fallen mossy log",
+   "prop",
+   0.12,
+   0
+  ],
+  "15": [
+   "fern clump",
+   "grass",
+   0.18,
+   0
+  ],
+  "16": [
+   "fiddlehead fern",
+   "grass",
+   0.16,
+   0
+  ],
+  "17": [
+   "fern flowering",
+   "grass",
+   0.15,
+   0
+  ],
+  "18": [
+   "red toadstools",
+   "mushroom",
+   0.15,
+   0
+  ],
+  "19": [
+   "brown mushrooms",
+   "mushroom",
+   0.15,
+   0
+  ],
+  "20": [
+   "mossy boulder",
+   "rock",
+   0.15,
+   0
+  ],
+  "21": [
+   "chopping block axe",
+   "prop",
+   0.2,
+   0
+  ],
+  "22": [
+   "forest signpost",
+   "sign",
+   0.28,
+   0
+  ],
+  "23": [
+   "foxgloves",
+   "flower",
+   0.26,
+   0
+  ],
+  "24": [
+   "juniper bush",
+   "bush",
+   0.2,
+   1
+  ],
+  "25": [
+   "bramble with berries",
+   "bush",
+   0.2,
+   1
+  ],
+  "26": [
+   "pinecone pile",
+   "prop",
+   0.1,
+   0
+  ]
+ }
+}

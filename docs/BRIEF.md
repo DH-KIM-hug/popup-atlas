@@ -8,7 +8,7 @@ Lead-owned. Components may propose changes to contracts in their report; only th
 - A story app in a **pop-up-book concept**: each page/scene folds up out of the open book like a real pop-up book;
   characters can walk around the diorama.
 - First story: **「해와 바람」** (sun_wind). Source app 톡톡 동화극장 (`~/projects/2026/patjuk-game`).
-  Reuse **only** the voice script (`tales/sun_wind/voice_script_el.json`, recorded audio) and **character designs**
+  Reuse the voice script as a draft (see "Asset reuse" update below; characters are made new) — originally: voice script and **character designs**
   (`assets/v3w/sw_trav_*`, `sw_sun`, `sw_wind*`, `sw_hat`, `sw_coat`). Everything else (backgrounds, props, scenes,
   code) is made new. Backgrounds may be shared across future stories.
 - Quality bar: the user's screen recording `art_src/reference/video/v_*.jpg` (papercraft diorama world) and the
@@ -24,6 +24,26 @@ Lead-owned. Components may propose changes to contracts in their report; only th
 - Trees/bushes may be **cross-slotted card pairs** (two cards at 90°, the second collapsing as the hinge folds).
 - Characters keep their 톡톡 designs (faces, clothes, proportions).
 - Light: warm low key light (late afternoon) + cool fill; glow from windows/lanterns allowed as light, not paint.
+
+## Asset reuse across stories (user decision 2026-11-18: "동화마다 돌려 쓸 수 있는 것들은 돌려 쓰자")
+- Two tiers. **Shared library** `game/art/atlas/**` (+ `catalog.json`): story-agnostic props, trees, buildings, ground
+  pieces, hills, sky, animals, seasonal variants — usable by any tale. **Story-only art** `game/stories/<tale_id>/art/**`:
+  only what is unique to one story (its characters, its key props such as the traveller's coat and hat).
+- Before making a new asset for a story, look it up in the catalog; make a new one only if nothing fits, and if it is
+  not story-specific, add it to the shared library (with catalog tags), not to the story folder.
+- Catalog tags so stories can query instead of hard-coding paths: `category`, `biome`, `season`, `tags[]`
+  (e.g. "village", "korean_traditional", "night"), `height_units`, `cross_slot`. Scenes reference cards by catalog id.
+- Same for scenes: reusable ground layouts/biomes (meadow, village, stream, forest, snow) are scene templates that
+  stories dress; a story adds its characters and key props on top.
+- **Update 2026-11-18 (user: "사실상 대본만 같다고 보는게 맞겠다. 근데 대본도 상황에 따라 다를 수 있을듯")**:
+  the only thing carried over from 톡톡 동화극장 is the **script**, and it is a starting draft, not fixed.
+  - Characters are made new for the pop-up look. The 톡톡 character art in `game/art/chars/` is a design reference and
+    placeholder only. Generic characters (traveller, granny, animals, villagers) go into a shared **cast** library
+    (`game/art/cast/**`, catalogued like props) so other tales can reuse them; only truly unique ones stay per story.
+  - Script: each tale keeps its own editable script in the new app (`game/stories/<tale_id>/script.json`), seeded from
+    톡톡's `voice_script_el.json` and adapted to the pop-up scenes and interactions (walking, folding, taps). Recorded
+    audio is reused only where a line is unchanged; changed lines are re-recorded with the same voice IDs
+    (listed in the seed file), and the script file marks which lines need recording.
 
 ## World contracts
 - Units: 1 unit = 10 cm of paper. Page surface y = 0, +X right, +Z toward camera.
@@ -47,10 +67,12 @@ Lead-owned. Components may propose changes to contracts in their report; only th
 | tiltshift_ratio (mid sharp / top+bottom) | 1.3 – 2.5 | 2.24 |
 | edge_density (prop busyness) | 0.06 – 0.11 | 0.057 |
 | props in frame at default camera | ≥ 60 distinct cards | ~40 |
+| asset library (cards) | ≥ 200 (user 2026-11-18: make many new assets) | 6 test props |
 
 ## Component checklist (one owner each; owner touches only its files)
 | # | component | owns | done when |
 |---|---|---|---|
+| A0 | **Atlas kit (2026-11-18 user: "새 애셋을 많이 새로 만들어야")** — many sprite ATLAS sheets (≈20–30 sprites each) generated, keyed and auto-sliced into cards; reference `art_src/reference/step4_atlas_and_cards.jpg` | `art_src/atlas/**`, `game/art/atlas/**`, `tools/atlas/**` | ≥ 200 clean cards across ≥ 4 biomes (meadow/field, village, stream, forest; later snow, autumn), `game/art/atlas/catalog.json` |
 | A | **Card art kit** — new pop-up prop cards for the 해와 바람 world (meadow, field, stream, hill, village edge, sky) | `game/art/cards/**`, `art_src/cards/**`, `tools/art/**` | ≥ 30 clean RGBA cards; blind critic rates kit ≥ reference-level on style/detail |
 | B | **Look-dev** — lighting, colour grade, DOF, page/ground layering (felt green ground, cut-paper path & stream layers, book edge, table) | `game/core/shaders/**`, `game/scenes/look/**`, `game/core/look/**` | all metrics in range; blind A/B vs video ≤ 60 % pick rate for reference |
 | C | **Pop-up motion + sound** — hinge spring feel, staggered waves, cross-slot collapse, paper flap/step SFX | `game/core/pop_hinge.gd`, `game/core/cross_card.gd`, `game/audio/**`, `game/core/audio/**` | critic on a capture sequence: overshoot+wobble reads as paper; 60 fps with 150 cards moving |

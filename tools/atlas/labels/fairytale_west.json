@@ -1,0 +1,205 @@
+{
+ "biome": "fairytale",
+ "season": "any",
+ "tags": [
+  "fairytale",
+  "western_cottage"
+ ],
+ "items": {
+  "00": [
+   "castle wall",
+   "wall",
+   0.4,
+   0,
+   {
+    "tags": [
+     "castle"
+    ]
+   }
+  ],
+  "01": [
+   "castle tower",
+   "building",
+   1.05,
+   0,
+   {
+    "tags": [
+     "castle"
+    ]
+   }
+  ],
+  "02": [
+   "castle gate",
+   "building",
+   0.8,
+   0,
+   {
+    "tags": [
+     "castle"
+    ]
+   }
+  ],
+  "03": [
+   "stone bridge to gate",
+   "bridge",
+   0.3,
+   0,
+   {
+    "tags": [
+     "water"
+    ]
+   }
+  ],
+  "04": [
+   "log cabin",
+   "building",
+   0.7,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "05": [
+   "gingerbread cottage",
+   "building",
+   0.72,
+   0
+  ],
+  "06": [
+   "crooked witch cottage",
+   "building",
+   0.8,
+   0,
+   {
+    "tags": [
+     "forest",
+     "spooky"
+    ]
+   }
+  ],
+  "07": [
+   "crooked tower",
+   "building",
+   1.0,
+   0
+  ],
+  "08": [
+   "roofed well",
+   "prop",
+   0.42,
+   0,
+   {
+    "tags": [
+     "village"
+    ]
+   }
+  ],
+  "09": [
+   "windmill",
+   "building",
+   0.9,
+   0,
+   {
+    "tags": [
+     "farm",
+     "village"
+    ]
+   }
+  ],
+  "10": [
+   "mushroom cottage",
+   "building",
+   0.6,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "11": [
+   "stone wall with ivy",
+   "wall",
+   0.2,
+   0
+  ],
+  "12": [
+   "wrought iron gate",
+   "fence",
+   0.32,
+   0,
+   {
+    "tags": [
+     "garden"
+    ]
+   }
+  ],
+  "13": [
+   "hedge maze section",
+   "hedge",
+   0.22,
+   0,
+   {
+    "tags": [
+     "garden",
+     "castle"
+    ]
+   }
+  ],
+  "14": [
+   "log cart",
+   "prop",
+   0.2,
+   0
+  ],
+  "15": [
+   "fountain",
+   "prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "village",
+     "garden"
+    ]
+   }
+  ],
+  "16": [
+   "stone market cross",
+   "prop",
+   0.4,
+   0,
+   {
+    "tags": [
+     "village"
+    ]
+   }
+  ],
+  "17": [
+   "twisted enchanted tree",
+   "tree",
+   0.75,
+   0,
+   {
+    "tags": [
+     "forest",
+     "spooky"
+    ]
+   }
+  ],
+  "18": [
+   "thorny rose hedge",
+   "hedge",
+   0.2,
+   0
+  ],
+  "19": [
+   "tower ruin",
+   "building",
+   0.7,
+   0
+  ]
+ }
+}

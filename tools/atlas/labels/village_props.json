@@ -1,0 +1,247 @@
+{
+ "biome": "village",
+ "season": "any",
+ "tags": [
+  "village",
+  "street"
+ ],
+ "items": {
+  "00": [
+   "lantern post curled",
+   "lantern",
+   0.4,
+   0,
+   {
+    "tags": [
+     "night_glow"
+    ]
+   }
+  ],
+  "01": [
+   "lantern post",
+   "lantern",
+   0.4,
+   0,
+   {
+    "tags": [
+     "night_glow"
+    ]
+   }
+  ],
+  "02": [
+   "triple lantern post",
+   "lantern",
+   0.42,
+   0,
+   {
+    "tags": [
+     "night_glow"
+    ]
+   }
+  ],
+  "03": [
+   "lantern post slim",
+   "lantern",
+   0.4,
+   0,
+   {
+    "tags": [
+     "night_glow"
+    ]
+   }
+  ],
+  "04": [
+   "signpost arrows",
+   "sign",
+   0.34,
+   0,
+   {
+    "tags": [
+     "roadside"
+    ]
+   }
+  ],
+  "05": [
+   "mailbox",
+   "prop",
+   0.3,
+   0
+  ],
+  "06": [
+   "bench",
+   "prop",
+   0.17,
+   0
+  ],
+  "07": [
+   "hand cart",
+   "prop",
+   0.17,
+   0
+  ],
+  "08": [
+   "hay wagon",
+   "prop",
+   0.28,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "09": [
+   "barrel",
+   "prop",
+   0.16,
+   0
+  ],
+  "10": [
+   "barrel small",
+   "prop",
+   0.13,
+   0
+  ],
+  "11": [
+   "crate stack",
+   "prop",
+   0.2,
+   0
+  ],
+  "12": [
+   "market stall",
+   "prop",
+   0.36,
+   0
+  ],
+  "13": [
+   "laundry line",
+   "prop",
+   0.24,
+   0
+  ],
+  "14": [
+   "flower pot daisies",
+   "flower",
+   0.15,
+   0
+  ],
+  "15": [
+   "flower pot pink",
+   "flower",
+   0.14,
+   0
+  ],
+  "16": [
+   "flower pot yellow",
+   "flower",
+   0.15,
+   0
+  ],
+  "17": [
+   "woodpile",
+   "prop",
+   0.18,
+   0
+  ],
+  "18": [
+   "wheelbarrow",
+   "prop",
+   0.13,
+   0
+  ],
+  "19": [
+   "bunting poles",
+   "prop",
+   0.24,
+   0
+  ],
+  "20": [
+   "water pump",
+   "prop",
+   0.24,
+   0
+  ],
+  "21": [
+   "wooden bucket",
+   "prop",
+   0.12,
+   0
+  ],
+  "22": [
+   "picket fence",
+   "fence",
+   0.16,
+   0
+  ],
+  "23": [
+   "rose arch",
+   "prop",
+   0.38,
+   0
+  ],
+  "24": [
+   "stone water trough",
+   "prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "25": [
+   "milk cans",
+   "prop",
+   0.13,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "26": [
+   "notice board",
+   "sign",
+   0.28,
+   0
+  ],
+  "27": [
+   "sacks",
+   "prop",
+   0.13,
+   0,
+   {
+    "tags": [
+     "farm"
+    ]
+   }
+  ],
+  "28": [
+   "well with roof",
+   "prop",
+   0.38,
+   0
+  ],
+  "29": [
+   "bird bath",
+   "prop",
+   0.16,
+   0
+  ],
+  "30": [
+   "ladder",
+   "prop",
+   0.3,
+   0
+  ],
+  "31": [
+   "wooden gate",
+   "fence",
+   0.17,
+   0
+  ]
+ }
+}

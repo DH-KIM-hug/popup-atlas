@@ -1,0 +1,261 @@
+{
+ "biome": "meadow",
+ "season": "any",
+ "tags": [
+  "decor",
+  "ground"
+ ],
+ "items": {
+  "00": [
+   "pink flowers",
+   "flower",
+   0.13,
+   0,
+   {
+    "season": "spring"
+   }
+  ],
+  "01": [
+   "yellow buttercups",
+   "flower",
+   0.13,
+   0
+  ],
+  "02": [
+   "white daisies",
+   "flower",
+   0.13,
+   0
+  ],
+  "03": [
+   "red flowers",
+   "flower",
+   0.13,
+   0
+  ],
+  "04": [
+   "blue forget-me-nots",
+   "flower",
+   0.13,
+   0
+  ],
+  "05": [
+   "red tulips",
+   "flower",
+   0.13,
+   0,
+   {
+    "season": "spring"
+   }
+  ],
+  "06": [
+   "bluebells",
+   "flower",
+   0.13,
+   0,
+   {
+    "season": "spring",
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "07": [
+   "lily of the valley",
+   "flower",
+   0.12,
+   0,
+   {
+    "season": "spring",
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "08": [
+   "red toadstools",
+   "mushroom",
+   0.12,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "09": [
+   "brown mushrooms",
+   "mushroom",
+   0.12,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "10": [
+   "grass tuft",
+   "grass",
+   0.12,
+   0
+  ],
+  "11": [
+   "grass tuft seeded",
+   "grass",
+   0.1,
+   0
+  ],
+  "12": [
+   "grass with seed heads",
+   "grass",
+   0.13,
+   0
+  ],
+  "13": [
+   "fern frond",
+   "grass",
+   0.14,
+   0,
+   {
+    "tags": [
+     "forest"
+    ]
+   }
+  ],
+  "14": [
+   "grey rock leaf print",
+   "rock",
+   0.08,
+   0
+  ],
+  "15": [
+   "mossy rock",
+   "rock",
+   0.09,
+   0
+  ],
+  "16": [
+   "two rocks",
+   "rock",
+   0.07,
+   0
+  ],
+  "17": [
+   "pebble pile",
+   "rock",
+   0.06,
+   0
+  ],
+  "18": [
+   "clover",
+   "flower",
+   0.1,
+   0
+  ],
+  "19": [
+   "strawberry plant",
+   "flower",
+   0.11,
+   0,
+   {
+    "season": "summer"
+   }
+  ],
+  "20": "drop",
+  "21": [
+   "snail on leaf",
+   "animal",
+   0.07,
+   0,
+   {
+    "tags": [
+     "animals"
+    ]
+   }
+  ],
+  "22": [
+   "butterfly on flower",
+   "flower",
+   0.13,
+   0
+  ],
+  "23": [
+   "ladybird on leaf",
+   "animal",
+   0.06,
+   0,
+   {
+    "tags": [
+     "animals"
+    ]
+   }
+  ],
+  "24": [
+   "tiny arrow sign",
+   "sign",
+   0.13,
+   0,
+   {
+    "tags": [
+     "roadside"
+    ]
+   }
+  ],
+  "25": [
+   "lantern on stake",
+   "lantern",
+   0.15,
+   0,
+   {
+    "tags": [
+     "night_glow"
+    ]
+   }
+  ],
+  "26": [
+   "toadstool ring",
+   "mushroom",
+   0.08,
+   0,
+   {
+    "tags": [
+     "forest",
+     "fairytale"
+    ]
+   }
+  ],
+  "27": [
+   "seedling sprout",
+   "grass",
+   0.08,
+   0,
+   {
+    "season": "spring"
+   }
+  ],
+  "28": [
+   "berry shrub",
+   "bush",
+   0.15,
+   0
+  ],
+  "29": [
+   "thistle",
+   "flower",
+   0.15,
+   0
+  ],
+  "30": [
+   "stone cairn",
+   "rock",
+   0.13,
+   0,
+   {
+    "tags": [
+     "roadside"
+    ]
+   }
+  ]
+ }
+}

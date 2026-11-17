@@ -1,0 +1,172 @@
+{
+ "biome": "meadow",
+ "season": "summer",
+ "tags": [
+  "bushes",
+  "garden"
+ ],
+ "items": {
+  "00": [
+   "sage bush",
+   "bush",
+   0.26,
+   1
+  ],
+  "01": [
+   "olive leaf bush",
+   "bush",
+   0.26,
+   1
+  ],
+  "02": [
+   "oak-leaf bush",
+   "bush",
+   0.26,
+   1
+  ],
+  "03": [
+   "teal bush",
+   "bush",
+   0.26,
+   1
+  ],
+  "04": [
+   "red berry bush",
+   "bush",
+   0.26,
+   1
+  ],
+  "05": [
+   "pink flower bush",
+   "bush",
+   0.26,
+   1
+  ],
+  "06": [
+   "yellow flower bush",
+   "bush",
+   0.25,
+   1
+  ],
+  "07": [
+   "elderflower bush",
+   "bush",
+   0.32,
+   1
+  ],
+  "08": [
+   "rose bush",
+   "bush",
+   0.3,
+   1
+  ],
+  "09": [
+   "hydrangea bush",
+   "bush",
+   0.28,
+   1
+  ],
+  "10": [
+   "gorse bush",
+   "bush",
+   0.28,
+   1
+  ],
+  "11": [
+   "heather clump",
+   "bush",
+   0.24,
+   0
+  ],
+  "12": [
+   "tall grass clump",
+   "grass",
+   0.28,
+   0
+  ],
+  "13": [
+   "berry bramble bush",
+   "bush",
+   0.28,
+   1
+  ],
+  "14": [
+   "low hedges pair",
+   "hedge",
+   0.1,
+   0
+  ],
+  "15": [
+   "pink flower hedge",
+   "hedge",
+   0.14,
+   0
+  ],
+  "16": [
+   "box hedge",
+   "hedge",
+   0.15,
+   0
+  ],
+  "17": [
+   "scalloped low hedge",
+   "hedge",
+   0.15,
+   0
+  ],
+  "18": [
+   "red berry hedge",
+   "hedge",
+   0.15,
+   0
+  ],
+  "19": [
+   "white flower hedge",
+   "hedge",
+   0.15,
+   0
+  ],
+  "20": [
+   "topiary ball",
+   "bush",
+   0.3,
+   1
+  ],
+  "21": [
+   "topiary double",
+   "bush",
+   0.34,
+   0
+  ],
+  "22": [
+   "topiary triple",
+   "bush",
+   0.36,
+   0
+  ],
+  "23": [
+   "cone topiary",
+   "bush",
+   0.34,
+   1
+  ],
+  "24": [
+   "layered scalloped shrub",
+   "bush",
+   0.3,
+   1
+  ],
+  "25": [
+   "leafy bush large",
+   "bush",
+   0.3,
+   1
+  ],
+  "26": [
+   "berry bush large",
+   "bush",
+   0.3,
+   1
+  ]
+ }
+}

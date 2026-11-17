@@ -1,0 +1,201 @@
+{
+ "biome": "farm",
+ "season": "any",
+ "tags": [
+  "animals",
+  "farm"
+ ],
+ "items": {
+  "00": [
+   "brown cow",
+   "animal",
+   0.24,
+   0
+  ],
+  "01": [
+   "spotted cow",
+   "animal",
+   0.24,
+   0
+  ],
+  "02": [
+   "sheep",
+   "animal",
+   0.17,
+   0
+  ],
+  "03": [
+   "black-faced sheep",
+   "animal",
+   0.17,
+   0
+  ],
+  "04": [
+   "sheep flowered",
+   "animal",
+   0.17,
+   0
+  ],
+  "05": [
+   "horse",
+   "animal",
+   0.3,
+   0
+  ],
+  "06": [
+   "pony",
+   "animal",
+   0.22,
+   0
+  ],
+  "07": [
+   "pig",
+   "animal",
+   0.14,
+   0
+  ],
+  "08": [
+   "goat",
+   "animal",
+   0.19,
+   0
+  ],
+  "09": [
+   "hen",
+   "animal",
+   0.1,
+   0
+  ],
+  "10": [
+   "rooster",
+   "animal",
+   0.13,
+   0
+  ],
+  "11": [
+   "hen with chicks",
+   "animal",
+   0.08,
+   0
+  ],
+  "12": [
+   "duck",
+   "animal",
+   0.1,
+   0,
+   {
+    "tags": [
+     "water"
+    ]
+   }
+  ],
+  "13": [
+   "goose",
+   "animal",
+   0.13,
+   0
+  ],
+  "14": [
+   "farm dog",
+   "animal",
+   0.15,
+   0
+  ],
+  "15": [
+   "cat sitting",
+   "animal",
+   0.12,
+   0
+  ],
+  "16": [
+   "rabbit",
+   "animal",
+   0.1,
+   0,
+   {
+    "tags": [
+     "wild"
+    ]
+   }
+  ],
+  "17": [
+   "fox",
+   "animal",
+   0.14,
+   0,
+   {
+    "tags": [
+     "wild",
+     "forest"
+    ]
+   }
+  ],
+  "18": [
+   "deer",
+   "animal",
+   0.3,
+   0,
+   {
+    "tags": [
+     "wild",
+     "forest"
+    ]
+   }
+  ],
+  "19": [
+   "hedgehog",
+   "animal",
+   0.07,
+   0,
+   {
+    "tags": [
+     "wild",
+     "forest"
+    ]
+   }
+  ],
+  "20": [
+   "owl on post",
+   "animal",
+   0.22,
+   0,
+   {
+    "tags": [
+     "wild",
+     "forest",
+     "night"
+    ]
+   }
+  ],
+  "21": [
+   "beehive skep",
+   "prop",
+   0.2,
+   0
+  ],
+  "22": [
+   "feeding trough",
+   "prop",
+   0.08,
+   0
+  ],
+  "23": [
+   "dog house",
+   "building",
+   0.2,
+   0
+  ],
+  "24": [
+   "chicken coop",
+   "building",
+   0.25,
+   0
+  ],
+  "25": [
+   "donkey",
+   "animal",
+   0.25,
+   0
+  ]
+ }
+}

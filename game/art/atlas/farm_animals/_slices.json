@@ -1,0 +1,453 @@
+{
+ "sheet": "farm_animals",
+ "bg": [
+  0.984,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "farm_animals_00",
+   "bbox": [
+    24,
+    67,
+    251,
+    250
+   ],
+   "area": 22615,
+   "size": [
+    235,
+    191
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_01",
+   "bbox": [
+    266,
+    70,
+    480,
+    250
+   ],
+   "area": 21135,
+   "size": [
+    222,
+    188
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_02",
+   "bbox": [
+    500,
+    93,
+    678,
+    250
+   ],
+   "area": 16629,
+   "size": [
+    186,
+    165
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_03",
+   "bbox": [
+    698,
+    93,
+    870,
+    250
+   ],
+   "area": 16262,
+   "size": [
+    180,
+    165
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_04",
+   "bbox": [
+    893,
+    100,
+    1064,
+    250
+   ],
+   "area": 15896,
+   "size": [
+    179,
+    158
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_05",
+   "bbox": [
+    1083,
+    37,
+    1321,
+    250
+   ],
+   "area": 22380,
+   "size": [
+    246,
+    221
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_06",
+   "bbox": [
+    1309,
+    96,
+    1510,
+    250
+   ],
+   "area": 17074,
+   "size": [
+    209,
+    162
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_07",
+   "bbox": [
+    20,
+    358,
+    224,
+    493
+   ],
+   "area": 18692,
+   "size": [
+    212,
+    143
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_08",
+   "bbox": [
+    260,
+    300,
+    434,
+    493
+   ],
+   "area": 15086,
+   "size": [
+    182,
+    201
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_09",
+   "bbox": [
+    466,
+    328,
+    594,
+    494
+   ],
+   "area": 11115,
+   "size": [
+    136,
+    174
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_10",
+   "bbox": [
+    635,
+    303,
+    793,
+    493
+   ],
+   "area": 17003,
+   "size": [
+    166,
+    198
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_11",
+   "bbox": [
+    840,
+    344,
+    1103,
+    494
+   ],
+   "area": 16160,
+   "size": [
+    271,
+    158
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_12",
+   "bbox": [
+    1157,
+    343,
+    1311,
+    496
+   ],
+   "area": 10396,
+   "size": [
+    162,
+    161
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_13",
+   "bbox": [
+    1336,
+    309,
+    1517,
+    497
+   ],
+   "area": 12807,
+   "size": [
+    189,
+    196
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_14",
+   "bbox": [
+    19,
+    565,
+    268,
+    743
+   ],
+   "area": 20460,
+   "size": [
+    257,
+    186
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_15",
+   "bbox": [
+    305,
+    567,
+    436,
+    742
+   ],
+   "area": 14025,
+   "size": [
+    139,
+    183
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_16",
+   "bbox": [
+    472,
+    574,
+    609,
+    742
+   ],
+   "area": 11916,
+   "size": [
+    145,
+    176
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_17",
+   "bbox": [
+    638,
+    576,
+    865,
+    742
+   ],
+   "area": 16104,
+   "size": [
+    235,
+    174
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_18",
+   "bbox": [
+    899,
+    512,
+    1094,
+    742
+   ],
+   "area": 15694,
+   "size": [
+    203,
+    238
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_19",
+   "bbox": [
+    1121,
+    635,
+    1285,
+    742
+   ],
+   "area": 12076,
+   "size": [
+    172,
+    115
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_20",
+   "bbox": [
+    1348,
+    552,
+    1448,
+    742
+   ],
+   "area": 12016,
+   "size": [
+    108,
+    198
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_21",
+   "bbox": [
+    93,
+    796,
+    258,
+    983
+   ],
+   "area": 19402,
+   "size": [
+    173,
+    195
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_22",
+   "bbox": [
+    316,
+    877,
+    544,
+    983
+   ],
+   "area": 17331,
+   "size": [
+    236,
+    114
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_23",
+   "bbox": [
+    597,
+    808,
+    811,
+    983
+   ],
+   "area": 29838,
+   "size": [
+    222,
+    183
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_24",
+   "bbox": [
+    876,
+    796,
+    1118,
+    984
+   ],
+   "area": 33180,
+   "size": [
+    250,
+    196
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "farm_animals_25",
+   "bbox": [
+    1178,
+    771,
+    1435,
+    983
+   ],
+   "area": 24029,
+   "size": [
+    265,
+    220
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

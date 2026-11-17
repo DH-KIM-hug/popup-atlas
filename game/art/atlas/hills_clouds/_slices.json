@@ -1,0 +1,470 @@
+{
+ "sheet": "hills_clouds",
+ "bg": [
+  0.984,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "hills_clouds_00",
+   "bbox": [
+    30,
+    63,
+    378,
+    177
+   ],
+   "area": 30899,
+   "size": [
+    356,
+    122
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_01",
+   "bbox": [
+    419,
+    49,
+    708,
+    177
+   ],
+   "area": 21019,
+   "size": [
+    297,
+    136
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_02",
+   "bbox": [
+    749,
+    72,
+    1041,
+    177
+   ],
+   "area": 26916,
+   "size": [
+    300,
+    113
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_03",
+   "bbox": [
+    1083,
+    37,
+    1378,
+    177
+   ],
+   "area": 25324,
+   "size": [
+    303,
+    148
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_04",
+   "bbox": [
+    1409,
+    80,
+    1744,
+    177
+   ],
+   "area": 22459,
+   "size": [
+    343,
+    105
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_05",
+   "bbox": [
+    24,
+    232,
+    387,
+    359
+   ],
+   "area": 26761,
+   "size": [
+    371,
+    135
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_06",
+   "bbox": [
+    417,
+    276,
+    726,
+    359
+   ],
+   "area": 21451,
+   "size": [
+    317,
+    91
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_07",
+   "bbox": [
+    756,
+    253,
+    1057,
+    359
+   ],
+   "area": 26646,
+   "size": [
+    309,
+    114
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_08",
+   "bbox": [
+    1087,
+    218,
+    1391,
+    359
+   ],
+   "area": 19402,
+   "size": [
+    312,
+    149
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 3
+  },
+  {
+   "id": "hills_clouds_09",
+   "bbox": [
+    1422,
+    255,
+    1750,
+    359
+   ],
+   "area": 26166,
+   "size": [
+    336,
+    112
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_10",
+   "bbox": [
+    24,
+    425,
+    352,
+    529
+   ],
+   "area": 29676,
+   "size": [
+    336,
+    112
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_11",
+   "bbox": [
+    381,
+    415,
+    682,
+    527
+   ],
+   "area": 21407,
+   "size": [
+    309,
+    120
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_12",
+   "bbox": [
+    721,
+    417,
+    1036,
+    528
+   ],
+   "area": 23434,
+   "size": [
+    323,
+    119
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_13",
+   "bbox": [
+    1066,
+    432,
+    1391,
+    528
+   ],
+   "area": 26640,
+   "size": [
+    333,
+    104
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_14",
+   "bbox": [
+    1427,
+    419,
+    1750,
+    531
+   ],
+   "area": 24723,
+   "size": [
+    331,
+    120
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_15",
+   "bbox": [
+    25,
+    583,
+    302,
+    687
+   ],
+   "area": 18690,
+   "size": [
+    285,
+    112
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_16",
+   "bbox": [
+    341,
+    587,
+    592,
+    688
+   ],
+   "area": 16610,
+   "size": [
+    259,
+    109
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_17",
+   "bbox": [
+    633,
+    603,
+    833,
+    687
+   ],
+   "area": 11746,
+   "size": [
+    208,
+    92
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_18",
+   "bbox": [
+    876,
+    616,
+    1147,
+    671
+   ],
+   "area": 9270,
+   "size": [
+    279,
+    63
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_19",
+   "bbox": [
+    1190,
+    559,
+    1467,
+    702
+   ],
+   "area": 25843,
+   "size": [
+    285,
+    151
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_20",
+   "bbox": [
+    1517,
+    601,
+    1739,
+    686
+   ],
+   "area": 12705,
+   "size": [
+    230,
+    93
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_21",
+   "bbox": [
+    24,
+    745,
+    297,
+    854
+   ],
+   "area": 19184,
+   "size": [
+    281,
+    117
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_22",
+   "bbox": [
+    327,
+    762,
+    589,
+    854
+   ],
+   "area": 22530,
+   "size": [
+    270,
+    100
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_23",
+   "bbox": [
+    619,
+    747,
+    867,
+    854
+   ],
+   "area": 16458,
+   "size": [
+    256,
+    115
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_24",
+   "bbox": [
+    897,
+    758,
+    1148,
+    855
+   ],
+   "area": 20451,
+   "size": [
+    259,
+    105
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_25",
+   "bbox": [
+    1179,
+    754,
+    1446,
+    855
+   ],
+   "area": 19679,
+   "size": [
+    275,
+    109
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "hills_clouds_26",
+   "bbox": [
+    1485,
+    771,
+    1751,
+    856
+   ],
+   "area": 17759,
+   "size": [
+    274,
+    93
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
