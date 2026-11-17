@@ -452,3 +452,12 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   Open: atlas prints are still low-res (~200 px). There is no card bow (style rule) and no visible fold tabs. Vulkan
   draws are about 4700 (region chunking is still to do, and the cover pass could be cut for iPad). v3 tiltshift
   is 4.6, above the target.
+- 2026-11-18 lead: integration loop single-critic rates r1 0 / r2 0 / r3 0.17 / r4 0.83 (reference pick rate; lower =
+  ours preferred). Loop exit was flawed (critic "impressed" meant the weaker side, which was often the reference).
+  Re-judged INT_r3 and INT_r4 with 3 independent blind critics (art director / pop-up paper engineer / picture-book
+  editor), scored against the key: r3 ref-pick avg 0.50, ours-impressed 0.39; r4 ref-pick avg 0.44, ours-impressed
+  0.72. → r4 KEPT (the r4 single-critic 0.83 was noise). Pass bar (≤0.6 ref pick, majority impressed) met on average.
+  Consistent dissent (paper-engineer lens, prefers reference 6/6): pieces don't read as engineered paper — add fold
+  tabs/glue feet, slotted mechanisms (cross-slot without the edge-on seam), V-fold hills/rocks, tiered folded ground,
+  slight lean; less empty lawn; traveller must stay the focal point. Future loops: ≥3 critics per round, impressed asked
+  per side.
