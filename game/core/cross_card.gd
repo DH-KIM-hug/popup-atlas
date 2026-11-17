@@ -25,6 +25,7 @@ var slot: Node3D  ## B's pivot on the vertical slot line
 var _hinge: PopHinge
 var _yaw := 0.0
 var _yaw_vel := 0.0
+var _side := 1.0
 
 
 func _ready() -> void:
@@ -33,12 +34,15 @@ func _ready() -> void:
 	card_a.height = height
 	card_a.thickness = thickness
 	card_a.back_print = true
+	card_a.slot = 1  # PE r1: real half-slots, A notched from the top, B from the bottom (they interlock)
+	card_a.edge_from_print = true
 	add_child(card_a)
 	slot = Node3D.new()
 	slot.name = "Slot"
 	# B sits a hair in front of A so that it lands on A's printed face when flat.
 	# (Behind A for a forward-folding hinge, whose back faces up when flat.)
 	var side := float((get_parent() as PopHinge).fold) if get_parent() is PopHinge else 1.0
+	_side = side
 	slot.position = Vector3(0, 0, thickness * 1.1 * side)
 	add_child(slot)
 	card_b = PaperCard.new()
@@ -46,6 +50,8 @@ func _ready() -> void:
 	card_b.height = height_b if height_b > 0.0 else height * 0.96
 	card_b.thickness = thickness
 	card_b.back_print = true
+	card_b.slot = -1
+	card_b.edge_from_print = true
 	slot.add_child(card_b)
 	_hinge = get_parent() as PopHinge
 	if _hinge:
@@ -96,3 +102,6 @@ func _process(dt: float) -> void:
 func _apply() -> void:
 	if slot:
 		slot.rotation.y = _yaw
+		# PE r1: open, B sits in A's slot (centred, interlocked); folding, it slides onto A's face.
+		var k := clampf(_yaw / deg_to_rad(open_angle), 0.0, 1.0)
+		slot.position.z = thickness * 1.1 * _side * (1.0 - k)

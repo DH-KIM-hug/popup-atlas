@@ -10,8 +10,10 @@ extends GroundLayers
 ## work (`surface_y` knows tiers, verges, road, deck).
 
 const SKIRT_SHADER := preload("res://core/shaders/drop_skirt.gdshader")
+const RISER_SHADER := preload("res://core/shaders/fold_riser.gdshader")
+const CARD_T := 0.012  ## PE r1: thickness of a single folded card (box-pop tops, bridge deck)
 
-@export var tier_t := 0.05  ## terrain tier thickness (INT r3: 3.2 -> 5 mm so each cut step reads)
+@export var tier_t := 0.06  ## terrain tier riser height (INT r3: 3.2 -> 5 mm; PE r1: 6 mm, folded riser faces)
 @export var verge_w := 0.15
 @export var verge_t := 0.022
 @export var deckle := 0.010  ## road edge jitter (world units)
@@ -24,6 +26,7 @@ var _verges: Array[PackedVector2Array] = []
 var _deck_poly := PackedVector2Array()
 var _skirt_st: SurfaceTool
 var _deck_y := 0.0
+var _steps: Array = []  ## PE r1: [poly, top_y] step-fold treads at the bridge ends
 var tiers_built := 0
 
 
@@ -93,7 +96,7 @@ func build() -> void:
 		road_keep = road_parts
 		_build_verges(top, felt_rect, stream_cut)
 		if _deck_poly.size() >= 3:
-			_deck_y = top + 0.03
+			_deck_y = top + 0.085  # PE r1: box-pop bridge: thin deck card on folded legs, open underneath
 			var dm := ShaderMaterial.new()
 			dm.shader = preload("res://core/shaders/plank_deck.gdshader")
 			dm.set_shader_parameter("wood", deck_color)
@@ -104,8 +107,10 @@ func build() -> void:
 				if Geometry2D.is_point_in_polygon(_path_line[i], _deck_poly) and absf(stream_distance(_path_line[i])) < bd:
 					bd = absf(stream_distance(_path_line[i]))
 					ci = i
-			dm.set_shader_parameter("along", _tangent(_path_line, ci))
-			_add_slab(_deck_poly, 0.004, _deck_y - 0.004, dm, _edge_mat(Color("d9c09a")), "BridgeDeck")
+			var along := _tangent(_path_line, ci)
+			dm.set_shader_parameter("along", along)
+			_add_slab(_deck_poly, _deck_y - CARD_T, CARD_T, dm, _edge_mat(Color("d9c09a")), "BridgeDeck")
+			_bridge_box(along, top, stream_cut, pm)
 	# Rolling terrain tiers (cut cardstock, stacked).
 	_build_tiers(top)
 	_build_patches(half - Vector2(page_margin + 0.3, page_margin + 0.3), top)
@@ -128,6 +133,9 @@ func surface_y(p: Vector2) -> float:
 			return h[1]
 	if _deck_poly.size() >= 3 and Geometry2D.is_point_in_polygon(p, _deck_poly):
 		return _deck_y
+	for st in _steps:
+		if Geometry2D.is_point_in_polygon(p, st[0]):
+			return st[1]
 	for v in _verges:
 		if Geometry2D.is_point_in_polygon(p, v):
 			return FELT_T + verge_t
@@ -206,7 +214,9 @@ func _build_tiers(top: float) -> void:
 			gm.set_shader_parameter("fibre_strength", 0.34)
 			gm.set_shader_parameter("grain_strength", 0.26)
 			gm.set_shader_parameter("bump", 0.9)
-			var em := _edge_mat(col.lerp(Color("efe6c8"), 0.5))  # r3: 0.68 read as white planks at grazing angles
+			# PE r1: the riser is the same stock folded down (printed, darker), with a cut-line lip at the fold
+			# (was a cream cut wall: read as stacked slabs, not folded steps).
+			var em := _riser_mat(col.darkened(0.16), col.lerp(Color("efe6c8"), 0.6), 0.22)
 			for pp in parts:
 				var yb := _hill_y_at(pp, top)
 				_add_slab(pp, yb, tier_t, gm, em, "Tier%d" % k)
@@ -261,6 +271,127 @@ func _build_verges(top: float, felt_rect: PackedVector2Array, stream_cut: Packed
 			_add_slab(part, top, verge_t, vm, ve, "Verge")
 			_add_skirt(part, top, 0.06, 0.75)
 			_verges.append(part)
+
+
+# ------------------------------------------------------------------ PE r1: folded structures
+
+## Box-pop bridge: the deck is one thin card held up by two legs folded down at its ends (over the banks),
+## open underneath so the water runs through; a step-fold tread on each bank leads up to it.
+func _bridge_box(along: Vector2, top: float, stream_cut: PackedVector2Array, road_mat: Material) -> void:
+	var leg_mat := _riser_mat(deck_color.darkened(0.25), deck_color.lerp(Color("efe2c4"), 0.5), 0.12, 0.0, true)
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	var n := _deck_poly.size()
+	var u := 0.0
+	for i in n:
+		var a := _deck_poly[i]
+		var b := _deck_poly[(i + 1) % n]
+		var d := b - a
+		if d.length() < 1e-4 or absf(d.normalized().dot(along)) > 0.55:
+			continue
+		var y1 := _deck_y - CARD_T
+		_wall2(st, a, b, 0.004, y1, u)
+		u += d.length()
+	var mi := MeshInstance3D.new()
+	mi.name = "BridgeLegs"
+	st.generate_tangents()
+	mi.mesh = st.commit()
+	mi.material_override = leg_mat
+	add_child(mi)
+	if stream_cut.size() < 3:
+		return
+	var inner := _ribbon(_stream_line, stream_width * 0.5 + 0.1, 0.0, 0.0)
+	var outer := _ribbon(_stream_line, stream_width * 0.5 + 0.27, 0.0, 0.0)
+	var road_r := _ribbon(_path_line, path_width * 0.5 + 0.015, 0.0, 0.0)
+	var y0 := top + PATH_T
+	var th := (_deck_y - y0) * 0.5
+	var rm := _riser_mat(path_color.darkened(0.18), Color("f4ecd6"), 0.2)
+	for piece in Geometry2D.intersect_polygons(road_r, outer):
+		for q in _solid(Geometry2D.clip_polygons(piece, inner)):
+			if absf(_signed_area(q)) < 0.01:
+				continue
+			_add_slab(q, y0, th, road_mat, rm, "BridgeStep")
+			_add_skirt(q, y0, 0.05, 0.8)
+			_steps.append([q, y0 + th])
+
+
+## Box-pop platform (two parallel folds): a thin printed top card held up by a front and a back face folded
+## down to the page; the sides stay open. yaw turns it like a card (local +Z = front face). Registers its
+## top for surface_y and returns the top height.
+func add_box_pop(c: Vector2, yaw: float, size: Vector2, h: float, top_col: Color, face_col: Color, nm := "BoxPop") -> float:
+	var y0 := surface_y(c)
+	var hx := size.x * 0.5
+	var hz := size.y * 0.5
+	var P := func(x: float, z: float) -> Vector2: return c + Vector2(x, z).rotated(-yaw)
+	var poly := PackedVector2Array()
+	var k := 10
+	for i in k + 1:  # front edge (slightly hand-cut)
+		poly.append(P.call(lerpf(-hx, hx, float(i) / k), hz + _rng.randf_range(-0.004, 0.004)))
+	for i in k + 1:
+		poly.append(P.call(lerpf(hx, -hx, float(i) / k), -hz + _rng.randf_range(-0.004, 0.004)))
+	var y1 := y0 + h
+	var gm := _ground_mat(top_col, top_col.darkened(0.2), 0.8, 0.0)
+	gm.set_shader_parameter("mottle_scale", 0.3)
+	gm.set_shader_parameter("fibre_strength", 0.34)
+	_add_slab(poly, y1 - CARD_T, CARD_T, gm, _edge_mat(top_col.lerp(Color("efe6c8"), 0.6)), nm + "Top")
+	var st := SurfaceTool.new()
+	st.begin(Mesh.PRIMITIVE_TRIANGLES)
+	# front and back faces (fold lines along the top's front/back edges), both sides drawn (open box)
+	_wall2(st, P.call(-hx, hz - 0.002), P.call(hx, hz - 0.002), y0, y1 - CARD_T, 0.0)
+	_wall2(st, P.call(hx, -hz + 0.002), P.call(-hx, -hz + 0.002), y0, y1 - CARD_T, 0.0)
+	# underside of the top card (seen through the open sides)
+	var a: Vector2 = P.call(-hx, hz)
+	var b: Vector2 = P.call(hx, hz)
+	var cc: Vector2 = P.call(hx, -hz)
+	var d: Vector2 = P.call(-hx, -hz)
+	var yu := y1 - CARD_T
+	_quad(st, Vector3(a.x, yu, a.y), Vector3(b.x, yu, b.y), Vector3(cc.x, yu, cc.y), Vector3(d.x, yu, d.y), Vector3.DOWN,
+		[Vector2(0, 1), Vector2(1, 1), Vector2(1, 1), Vector2(0, 1)])
+	var mi := MeshInstance3D.new()
+	mi.name = nm + "Faces"
+	st.generate_tangents()
+	mi.mesh = st.commit()
+	mi.material_override = _riser_mat(face_col, face_col.lerp(Color("efe6c8"), 0.55), 0.1, 0.0, true)
+	add_child(mi)
+	_hills.append([poly, y1, 9])
+	_hills.sort_custom(func(p, q): return p[1] > q[1])
+	return y1
+
+
+## Step-fold: `steps` box-pops stacked back to front out of one strip (each step set back and higher).
+func add_step_fold(c: Vector2, yaw: float, size: Vector2, h: float, steps: int, top_col: Color, face_col: Color) -> float:
+	var y := 0.0
+	var back := Vector2(0, -1).rotated(-yaw)
+	for k in steps:
+		var dep := size.y * (1.0 - float(k) / float(steps))
+		var cc := c + back * (size.y - dep) * 0.5
+		y = add_box_pop(cc, yaw, Vector2(size.x * (1.0 - 0.04 * k), dep), h * float(k + 1) / float(steps),
+			top_col.lightened(0.05 * k), face_col, "StepFold")
+	return y
+
+
+## A vertical card face a→b from y0 to y1, drawn on both sides (UV.y 0 at the top fold).
+func _wall2(st: SurfaceTool, a: Vector2, b: Vector2, y0: float, y1: float, u: float) -> void:
+	var d := b - a
+	var L := d.length()
+	if L < 1e-5:
+		return
+	var n2 := Vector2(d.y, -d.x) / L
+	for sd: float in [1.0, -1.0]:
+		var n3 := Vector3(n2.x, 0, n2.y) * sd
+		_quad(st, Vector3(a.x, y1, a.y), Vector3(b.x, y1, b.y), Vector3(b.x, y0, b.y), Vector3(a.x, y0, a.y), n3,
+			[Vector2(u, 0), Vector2(u + L, 0), Vector2(u + L, 1), Vector2(u, 1)])
+
+
+func _riser_mat(stock: Color, lip_c: Color, lip_share: float, stripe := 0.0, double := false) -> ShaderMaterial:
+	var m := ShaderMaterial.new()
+	m.shader = RISER_SHADER
+	m.set_shader_parameter("stock_color", stock)
+	m.set_shader_parameter("lip_color", lip_c)
+	m.set_shader_parameter("lip", lip_share)
+	m.set_shader_parameter("stripe", stripe)
+	m.set_shader_parameter("fibre_tex", FIBRE)
+	return m
 
 
 ## One-sided strip between offsets d0..d1 from the line (side = +1 left / -1 right), outer edge deckled.

@@ -39,7 +39,12 @@ const POOL_SCALE := {"conifer": 1.5, "tree": 1.25, "autumn": 1.2, "blossom": 1.1
 	"flower": 0.72, "grass": 0.8, "mushroom": 0.75, "bush": 0.85, "sapling": 0.85, "hedge": 0.85}
 const HERO_CLEAR := 1.3  ## r2: open clearing around the traveller (hierarchy, negative space)
 ## r4: no cross-slotted cards. The slotted second card, seen edge-on, read as a white seam through trees (critic).
-const CROSS_POOLS: Array[String] = []
+## PE r1: back on a share of trees/bushes, with real half-slots, print on both faces, print-coloured cut edges
+## and the pair turned ~45° off the view axis (neither card is ever edge-on to the lens).
+const CROSS_POOLS: Array[String] = ["conifer", "tree", "autumn", "blossom", "bush"]
+const CROSS_P := {"conifer": 0.45, "tree": 0.35, "autumn": 0.35, "blossom": 0.3, "bush": 0.25}
+const FOOT_MIN_H := 0.14  ## PE r1: cards this tall or more get a glued foot tab
+const STRUT_MIN_H := 0.5  ## PE r1: static cards this tall get an easel strut behind
 const SWAY_POOLS := {"grass": 0.07, "flower": 0.06, "reeds": 0.08, "crop": 0.05, "tree": 0.018, "conifer": 0.014, "blossom": 0.02, "autumn": 0.018, "bush": 0.025}
 
 var rng := RandomNumberGenerator.new()
@@ -47,6 +52,7 @@ var lib: CardLibrary
 var ground: MeadowGround
 var contact: ContactShadows
 var statics: StaticCards
+var feet: GlueFeet
 var sway: WindSway
 var rig: LookRig
 var walker: Walker
@@ -62,6 +68,7 @@ var _tex := {}
 var _grid := {}  ## Vector2i -> Array of [Vector2 pos, float r]
 var _start := Vector2.ZERO  ## traveller start on the page
 var _cam_ground := Vector2.ZERO
+var _cam_yaw := 0.0  ## PE r1: view yaw (rad); cross pairs and V-folds are turned against it
 var _houses: Array = []  ## [pos, h, yaw] for chimney smoke
 var _fill_mask: FastNoiseLite  ## r2: low-frequency density mask (clearings vs clumps)
 
@@ -81,6 +88,9 @@ func _ready() -> void:
 	_start = Vector2(sp.x, sp.z)
 	var yw := deg_to_rad(float(v[2]))
 	_cam_ground = _start + Vector2(sin(yw), cos(yw)) * float(v[3]) * cos(deg_to_rad(float(v[1])))
+	_cam_yaw = yw
+	feet = GlueFeet.new()
+	feet.name = "GlueFeet"
 	contact = ContactShadows.new()
 	contact.name = "ContactShadows"
 	statics = StaticCards.new()
@@ -97,6 +107,8 @@ func _ready() -> void:
 	add_child(contact)
 	add_child(statics)
 	statics.commit()
+	add_child(feet)
+	feet.commit()
 	_build_camera_and_traveller(v, off)
 	_build_life()
 	if with_audio:
@@ -243,28 +255,42 @@ func _try(pool_or_id: String, c: Vector2, spread: float, s0 := 0.85, s1 := 1.15,
 			continue
 		if _free(q, r, road_gap):
 			_reserve(q, r)
-			var cross: bool = pool in CROSS_POOLS
+			var cross: bool = pool in CROSS_POOLS and rng.randf() < float(CROSS_P.get(pool, 0.0)) and h > 0.22
 			var yaw := rng.randf_range(-0.35, 0.35) + yaw_bias
+			if cross:
+				# PE r1: both cards ~45° off the view axis (A to one side, B to the other), never edge-on
+				yaw = _cam_yaw + (PI * 0.25 if yaw >= yaw_bias else -PI * 0.25) + (yaw - yaw_bias) * 0.25
 			_place(it, h, q, yaw, cross, w)
 			lib.mark(id)
 			return true
 	return false
 
 
-func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w := -1.0, force_static := false) -> void:
+func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w := -1.0, force_static := false, vfold := -1.0) -> void:
 	var pos := Vector3(q.x, ground.surface_y(q), q.y)
 	var lean := rng.randf_range(-0.04, 0.04)
 	var tilt := rng.randf_range(-0.03, 0.02)
 	if w < 0.0:
 		w = h * float(it["aspect"])
-	if cross:
-		contact.add_round(pos, clampf(w * 0.32, 0.05, 0.3), 1.0)
+	var pool: String = it["pool"]
+	if vfold < 0.0:
+		vfold = 0.0
+		if pool == "rock" and h > 0.07:
+			# PE r1: rocks are V-folded cards, a mountain crease pointing at the lens (one lit, one shadow face)
+			vfold = rng.randf_range(0.5, 0.72)
+			yaw = _cam_yaw + clampf(yaw, -0.4, 0.4) * 0.6
+	if vfold > 0.0:
+		lean = 0.0
+		tilt = 0.0
+	if cross or vfold > 0.0:
+		contact.add_round(pos, clampf(w * (0.32 if cross else 0.26), 0.05, 0.3), 1.0)
 	else:
 		contact.add(pos, yaw, w, clampf(h * 0.35, 0.04, 0.16), 1.0)
-	card_count += 2 if cross else 1
-	var pool: String = it["pool"]
-	if force_static or not pop_on_load or q.distance_to(_start) > pop_radius:
-		statics.add(it["path"], float(it["h"]), h, pos, yaw, lean, cross, tilt)
+	card_count += 2 if (cross or vfold > 0.0) else 1
+	var is_static := force_static or not pop_on_load or q.distance_to(_start) > pop_radius
+	_add_feet(it, h, pos, yaw, cross, vfold, is_static)
+	if is_static:
+		statics.add(it["path"], float(it["h"]), h, pos, yaw, lean, cross, tilt, vfold)
 		return
 	var base := Node3D.new()
 	base.position = pos
@@ -284,6 +310,19 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 		cc.height = h
 		cc.thickness = thick
 		hinge.add_child(cc)
+	elif vfold > 0.0:
+		for sd: int in [-1, 1]:
+			var face := PaperCard.new()
+			# shift each face toward the crease so the two printed faces meet on one fold line (no V gap)
+			face.position.x = -sd * thick * 0.5 * sin(vfold)
+			face.texture = _tex_of(it["path"])
+			face.height = h
+			face.thickness = thick
+			face.back_print = true
+			face.half = sd
+			face.edge_from_print = true
+			face.rotation.y = vfold * sd
+			hinge.add_child(face)
 	else:
 		var card := PaperCard.new()
 		card.texture = _tex_of(it["path"])
@@ -293,6 +332,29 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 		hinge.add_child(card)
 	if SWAY_POOLS.has(pool) and rng.randf() < 0.7:
 		sway.add(base, float(SWAY_POOLS[pool]) * rng.randf_range(0.6, 1.2), rng.randf_range(0.35, 0.7), rng.randf() * TAU)
+
+
+## PE r1: glue foot tabs (and an easel strut behind tall static cards), coloured from the print's base.
+func _add_feet(it: Dictionary, h: float, pos: Vector3, yaw: float, cross: bool, vfold: float, is_static: bool) -> void:
+	var pool: String = it["pool"]
+	if h < FOOT_MIN_H or pool == "hill":
+		return
+	var bi := PaperCard.base_info(_tex_of(it["path"]))
+	var col: Color = (bi["col"] as Color).darkened(0.1)
+	var thick := clampf(h * 0.04, 0.011, 0.04)
+	var depth := clampf(h * 0.085, 0.026, 0.065)
+	var x0: float = float(bi["x0"]) * h
+	var x1: float = float(bi["x1"]) * h
+	if vfold > 0.0:
+		feet.add_foot(pos, yaw, minf(x0, -0.01), 0.0, thick, depth, col, -vfold)
+		feet.add_foot(pos, yaw, 0.0, maxf(x1, 0.01), thick, depth, col, vfold)
+		return
+	feet.add_foot(pos, yaw, x0, x1, thick, depth, col)
+	if cross:
+		feet.add_foot(pos, yaw, -x1, -x0, thick, depth, col, PI)
+		return
+	if is_static and h >= STRUT_MIN_H:
+		feet.add_strut(pos, yaw, h, thick, col.darkened(0.1))
 
 
 func _tex_of(path_: String) -> Texture2D:
@@ -322,6 +384,8 @@ func _dress() -> void:
 	_meadow_groves()
 	_foreground()
 	_lens_foreground()
+	_folded_platforms()
+	_purposeful_clusters()
 	_meadow_fill()
 
 
@@ -460,7 +524,9 @@ func _back_hills() -> void:
 			var w: float = h * float(e["aspect"])
 			var q := Vector2(x + w * 0.5, z + rng.randf_range(-0.15, 0.15))
 			_reserve(q, 0.3)
-			_place(e, h, q, rng.randf_range(-0.08, 0.08), false, w, true)
+			# PE r1: every third hill card is a shallow V-fold (a folded ridge, not a flat print)
+			var vf := 0.34 if (lib.used.get(id, 0) + int(x * 3.0)) % 3 == 0 else 0.0
+			_place(e, h, q, rng.randf_range(-0.08, 0.08), false, w, true, vf)
 			lib.mark(id)
 			x += w * rng.randf_range(0.55, 0.85)
 
@@ -568,7 +634,7 @@ func _meadow_fill() -> void:
 		var m := _fill_mask.get_noise_2d(c.x, c.y)
 		if m < -0.22 or rng.randf() > 0.6 + m * 1.4:
 			# r3: open felt keeps a sparse ground cover (single low tufts) so clearings are not bare sheet
-			if m > -0.6 and rng.randf() < 0.6:  # r4: denser low cover (critic: large empty green fields)
+			if m > -0.6 and rng.randf() < 0.35:  # r4: denser low cover; PE r1: 0.6 -> 0.35, clusters fill instead
 				for j in rng.randi_range(1, 3):
 					_try("grass" if rng.randf() < 0.55 else "flower", c, 0.14, 0.55, 0.8)
 			continue
@@ -576,11 +642,163 @@ func _meadow_fill() -> void:
 		for j in rng.randi_range(3, 7):
 			_try(base if j < 2 else pools[rng.randi() % pools.size()], c, 0.22, 0.8, 1.15, 0.0, 0.62)
 	# r4: low ground-cover pass (tiny grass/flower tufts) so open felt reads as meadow, not an empty sheet
-	for k in 1800:
+	# PE r1: 1800 -> 600 tries: purposeful clusters (fences, hay, stones, beds) fill the lawn, not uniform tufts
+	for k in 600:
 		var c := Vector2(rng.randf_range(-12.5, 12.5), rng.randf_range(-8.0, 9.0))
 		if c.distance_to(_start) < HERO_CLEAR * 0.7:
 			continue
 		_try("grass" if rng.randf() < 0.65 else "flower", c, 0.05, 0.6, 0.9, 0.0, 0.7)
+
+
+# ------------------------------------------------------------------ PE r1: engineered clusters
+
+const HAY_IDS := ["meadow_field_05", "meadow_field_06", "meadow_field_07", "field_hay_bale_round", "field_hay_bale_square",
+	"field_hay_bales_stack", "field_haystack", "field_wheat_stook", "autumn_20"]
+const WOOD_IDS := ["village_props_17", "forest_conifer_14", "stream_water_28", "meadow_field_23", "meadow_field_22"]
+const STONE_IDS := ["small_decor_17", "small_decor_30"]
+
+
+## Step-fold and box-pop platforms on the meadow, each dressed as a little scene (parallel-fold mechanisms).
+func _folded_platforms() -> void:
+	var spots := [Vector2(2.6, 4.4), Vector2(-3.6, 0.0), Vector2(4.4, -1.4), Vector2(-6.8, 2.2), Vector2(7.6, 3.4), Vector2(-1.2, 6.6)]
+	var made := 0
+	for c: Vector2 in spots:
+		var cc := c + Vector2(rng.randf_range(-0.3, 0.3), rng.randf_range(-0.3, 0.3))
+		if made >= 4 or cc.distance_to(_start) < HERO_CLEAR + 0.9 or _blocks_view(cc, 0.6):
+			continue
+		if ground.path_distance(cc) < 0.75 or ground.stream_distance(cc) < 0.7 or not _free(cc, 1.0):
+			continue
+		var yaw := _cam_yaw + rng.randf_range(-0.45, 0.45)
+		var size := Vector2(rng.randf_range(0.9, 1.2), rng.randf_range(0.55, 0.75))
+		var steps := 2 if made % 2 == 0 else 1
+		var top := Color("8fa265") if steps == 2 else Color("9a8a5c")
+		ground.add_step_fold(cc, yaw, size, 0.07 * steps, steps, top, Color("6d7f4c") if steps == 2 else Color("8a6e4a"))
+		contact.add(Vector3(cc.x, ground.surface_y(cc + Vector2(0, 0.6).rotated(-yaw)) - 0.001, cc.y), yaw, size.x * 0.9, 0.12, 0.8)
+		_reserve(cc, 0.9)
+		made += 1
+		var right := Vector2(1, 0).rotated(-yaw)
+		var back := Vector2(0, -1).rotated(-yaw)
+		# dress the top: a hay group or a fence + flowers on the upper step, flowers along the lower tread
+		var top_c := cc + back * size.y * (0.25 if steps == 2 else 0.0)
+		if made % 2 == 1:
+			for k in 3:
+				_place_on(HAY_IDS, top_c + right * (k - 1) * size.x * 0.28, 0.85, yaw)
+		else:
+			var fid := lib.pick("fence")
+			var fe := lib.get_card(fid)
+			for k in 2:
+				var fh: float = float(fe["h"]) * 0.95
+				_place(fe, fh, top_c + back * 0.12 + right * (k - 0.5) * fh * float(fe["aspect"]) * 0.92, yaw, false)
+			lib.mark(fid)
+		for k in 5:
+			_place_on(["flower"], cc + right * (float(k) / 4.0 - 0.5) * size.x * 0.8 + back * (-size.y * 0.32 if steps == 2 else -0.1), 0.6, yaw)
+
+
+## Place one card (pool or id list) exactly at q, no spacing test (dressing on a platform / bed).
+func _place_on(pool_or_ids: Array, q: Vector2, s: float, yaw: float) -> void:
+	var ids: Array = []
+	for x in pool_or_ids:
+		if lib.has(x):
+			ids.append(x)
+		else:
+			ids.append_array(lib.pools.get(x, []))
+	if ids.is_empty():
+		return
+	var id := lib.pick(ids)
+	var it := lib.get_card(id)
+	var pool: String = it["pool"]
+	var h: float = float(it["h"]) * s * rng.randf_range(0.9, 1.1) * float(POOL_SCALE.get(pool, 1.0))
+	_place(it, h, q, yaw + rng.randf_range(-0.2, 0.2), false)
+	_reserve(q, h * float(it["aspect"]) * 0.3)
+	lib.mark(id)
+
+
+## Open felt gets purposeful clusters (fence runs, hay, stone piles, raised flower beds, woodpiles)
+## instead of uniform tufts: each one is a small built thing, with negative space around it.
+func _purposeful_clusters() -> void:
+	var kinds := ["fence", "hay", "stones", "bed", "fence", "stones", "bed", "hay", "wood"]
+	var made := 0
+	for k in 700:
+		if made >= 64:
+			break
+		var c := Vector2(rng.randf_range(-11.5, 11.5), rng.randf_range(-6.8, 8.6))
+		if _fill_mask.get_noise_2d(c.x, c.y) > 0.2 or c.distance_to(_start) < HERO_CLEAR + 1.0:
+			continue
+		if ground.path_distance(c) < 0.5 or ground.stream_distance(c) < 0.45 or not _free(c, 0.5):
+			continue
+		if _blocks_view(c, 0.4):
+			continue
+		match kinds[made % kinds.size()]:
+			"fence":
+				_fence_run(c)
+			"hay":
+				for j in rng.randi_range(3, 5):
+					_try(HAY_IDS[rng.randi() % HAY_IDS.size()], c, 0.28, 0.85, 1.05, 0.0, 0.55)
+				for j in 3:
+					_try("grass", c + Vector2(0, 0.2), 0.3, 0.6, 0.8)
+			"stones":
+				for j in rng.randi_range(3, 5):
+					_try("rock", c, 0.18, 0.55, 0.85, 0.0, 0.5)
+				for j in 2:
+					_try(STONE_IDS[j], c, 0.2, 0.9, 1.1)
+				for j in 2:
+					_try("grass" if j == 0 else "flower", c, 0.25, 0.6, 0.8)
+			"bed":
+				_flower_bed(c)
+			"wood":
+				for j in 3:
+					_try(WOOD_IDS[rng.randi() % WOOD_IDS.size()], c, 0.22, 0.9, 1.05)
+				for j in 2:
+					_try("mushroom", c, 0.25, 0.7, 0.9)
+		made += 1
+
+
+func _fence_run(c: Vector2) -> void:
+	var fid := lib.pick("fence")
+	var e := lib.get_card(fid)
+	if e.is_empty():
+		return
+	var h: float = float(e["h"]) * rng.randf_range(0.95, 1.05)
+	var w: float = h * float(e["aspect"])
+	var yaw := _cam_yaw + rng.randf_range(-0.55, 0.55)  # runs across the view, prints toward the lens
+	var d := Vector2(cos(yaw), -sin(yaw))
+	var n := rng.randi_range(3, 6)
+	var p0 := c - d * w * 0.92 * (n - 1) * 0.5
+	var placed := 0
+	for i in n:
+		var q := p0 + d * w * 0.92 * i
+		if _blocks_view(q, h) or not _free(q, w * 0.25):
+			break
+		_reserve(q, w * 0.4)
+		_place(e, h, q, yaw + rng.randf_range(-0.04, 0.04), false, w)
+		placed += 1
+	if placed == 0:
+		return
+	lib.mark(fid)
+	var nn := Vector2(-d.y, d.x)
+	for i in placed + 2:
+		var t := rng.randf_range(-0.5, 0.5) * w * 0.92 * placed
+		_try("flower" if i % 2 == 0 else "grass", c + d * t + nn * rng.randf_range(0.08, 0.16), 0.04, 0.55, 0.8)
+
+
+## Raised flower bed: a low box-pop (soil-printed top, folded green faces) planted in rows.
+func _flower_bed(c: Vector2) -> void:
+	var yaw := _cam_yaw + rng.randf_range(-0.4, 0.4)
+	var size := Vector2(rng.randf_range(0.55, 0.85), rng.randf_range(0.28, 0.38))
+	ground.add_box_pop(c, yaw, size, rng.randf_range(0.045, 0.065), Color("7a5a3e"), Color("667a48"), "Bed")
+	contact.add(Vector3(c.x, ground.surface_y(c + Vector2(0, size.y).rotated(-yaw)) , c.y), yaw, size.x, 0.1, 0.7)
+	_reserve(c, size.x * 0.7)
+	var right := Vector2(1, 0).rotated(-yaw)
+	var back := Vector2(0, -1).rotated(-yaw)
+	var rows := [lib.pick("flower"), lib.pick("flower")]
+	for r in 2:
+		var it := lib.get_card(rows[r])
+		var n := 4 + r
+		for i in n:
+			var q := c + right * (float(i) / float(n - 1) - 0.5) * size.x * 0.82 + back * (r * 0.4 - 0.2) * size.y + Vector2(rng.randf_range(-0.01, 0.01), 0)
+			var h: float = float(it["h"]) * 0.6 * rng.randf_range(0.9, 1.1)
+			_place(it, h, q, yaw + rng.randf_range(-0.15, 0.15), false)
+		lib.mark(rows[r])
 
 
 # ------------------------------------------------------------------ traveller, camera, life
@@ -600,7 +818,7 @@ func _build_camera_and_traveller(v: Array, off: float) -> void:
 	rig.dof_near_transition = 1.1
 	rig.dof_far_transition = 3.2
 	rig.dof_amount = 0.07
-	rig.tilt_blur = 0.58  # r4: 0.66 -> 0.58 (v0/v1/v5 tiltshift above 3.5)
+	rig.tilt_blur = 0.46  # r4: 0.66 -> 0.58 (v0/v1/v5 tiltshift above 3.5); PE r1: 0.46 (crisp tabs lift mid sharpness)
 	rig.tilt_focus_y = 0.55
 	rig.tilt_band_half = 0.16
 	rig.tilt_band_soft = 0.36
