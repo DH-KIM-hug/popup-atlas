@@ -31,3 +31,15 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
 
 ## Log
 - 2026-11-18 scaffold created (create_threejs_game.py), git init. Concept frames c1–c5 queued via Codex imagegen.
+- 2026-11-18 USER supplied reference sheet "Step 1: references" (6 frames) → `art_src/reference/step1_sheet.jpg`,
+  split to `r1_book_overview … r6_flat_map.png`. These now take precedence over the earlier c1–c5 frames as the critic target
+  (user's explicit input overrides). Observed targets, used by the component checklist:
+  - Scene framing: open hardback on dark walnut table, lantern glow + bokeh in a corner, cream page-stack edges visible,
+    warm graded light (screen-avg colour ≈ #9b6f3c–#ab7f4f under AgX), strong tilt-shift (top/bottom ~25% blurred).
+  - Page: faint printed tile grid (r4, r6) — the WFC grid is meant to show; tiles are flat printed squares when folded.
+  - Rising (r2): tiles stand up as A-frame / V-fold tents and box-steps; hinge creases + white folds visible.
+  - Palette (limited, matte): sage green, olive, mustard/ochre, terracotta/brick, teal-blue water, cream paper; deckled white edges.
+  - Kit: round layered-canopy trees (green/ochre/terracotta) on flat brown trunks, cream houses + terracotta roofs + glowing
+    windows, arched bridges (cream or terracotta) with rails, cut-paper river with cream wave strips, lantern posts,
+    cattails, grey paper rocks, layered hill silhouettes along the back.
+  - Traveller (r3, r6): small, brown hair, bedroll rucksack, red/orange scarf, walking stick, boots; reads at ~6% frame height.
