@@ -1,0 +1,8 @@
+node_modules/
+dist/
+test-results/
+artifacts/*
+!artifacts/game-progress.md
+*.log
+.DS_Store
+.impeccable/

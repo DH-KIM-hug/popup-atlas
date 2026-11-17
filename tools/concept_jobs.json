@@ -1,0 +1,37 @@
+[
+ {
+  "id": "c1_overview",
+  "kind": "bg",
+  "aspect": "landscape (3:2 or 16:9, either is fine)",
+  "out": "art_src/concept/c1_overview.png",
+  "prompt": "Tilt-shift macro photograph of a handmade papercraft pop-up book diorama on a wooden table. A huge open book, its two cream pages flat, and out of the pages rise folded cardstock hills, little paper houses with gable roofs, round paper trees on folded stands, a paper bridge over a cut-paper blue river. A tiny paper traveller figure (2 cm tall, simple cut-paper body, little cloak and backpack) walks across the page. High camera angle about 50 degrees looking down, strong tilt-shift depth of field blur at top and bottom. Matte cardstock, visible cut paper edges with white core, visible paper fibre, layered cut-paper silhouettes, soft contact shadows between layers. Limited warm palette: cream, ochre, terracotta, sage green, muted teal, dusty brown. Warm lantern key light from upper left, cool blue fill from right. No text, no logos."
+ },
+ {
+  "id": "c2_rising",
+  "kind": "bg",
+  "aspect": "landscape (3:2 or 16:9, either is fine)",
+  "out": "art_src/concept/c2_rising.png",
+  "prompt": "Tilt-shift macro photograph of a papercraft pop-up book. Close view of square hinged paper tiles on an open book page: in the foreground tiles lie flat as printed squares on the page, in the middle some tiles are mid-fold, standing at 45 degrees on paper hinges, and further back they are fully standing: folded paper hill, a paper cottage, two layered paper pine trees. A tiny cut-paper traveller with a lantern stands at the edge. Visible creases, tabs and glued hinge strips, matte cardstock, paper fibre, white cut edges. Warm lantern light, cool fill, strong depth of field. Limited warm palette: cream, ochre, terracotta, sage, teal. No text."
+ },
+ {
+  "id": "c3_dusk",
+  "kind": "bg",
+  "aspect": "landscape (3:2 or 16:9, either is fine)",
+  "out": "art_src/concept/c3_dusk.png",
+  "prompt": "Tilt-shift photograph, high angle, of an endless open pop-up storybook landscape at dusk, papercraft diorama. Paper village of small cardstock houses with glowing warm windows, paper river made of layered blue cut paper strips with a folded paper arch bridge, rolling folded paper hills in 3 layered silhouettes, round paper trees. A tiny paper traveller walks on a paper path. Warm lantern key light, cool blue fill shadows, soft shadows between paper layers. Matte cardstock, paper fibre and cut edges visible. Limited warm palette. Strong tilt-shift blur. No text."
+ },
+ {
+  "id": "c4_traveller",
+  "kind": "bg",
+  "aspect": "landscape (3:2 or 16:9, either is fine)",
+  "out": "art_src/concept/c4_traveller.png",
+  "prompt": "Macro photograph of a tiny papercraft traveller figure, about 3 cm tall, made of folded matte cardstock: cone-shaped terracotta cloak, round cream head with no face details except two small dots, ochre backpack, little paper walking stick. Standing on the cream page of an open pop-up book next to a folded paper tree. Visible paper fibre, cut edges with white core, slight creases. Warm lantern light from left, cool fill from right, very shallow depth of field. No text."
+ },
+ {
+  "id": "c5_tiles",
+  "kind": "bg",
+  "aspect": "landscape (3:2 or 16:9, either is fine)",
+  "out": "art_src/concept/c5_tiles.png",
+  "prompt": "Top-down three-quarter product photograph of a set of square papercraft pop-up tiles laid out in a grid on a cream paper page, each tile 5 cm square with a paper hinge: grass tile, folded hill tile, tile with two layered paper trees, cottage tile, straight river tile of blue cut paper, river corner tile, paper arch bridge tile over river, path tile. Matte cardstock, limited warm palette (cream, ochre, terracotta, sage green, muted teal), visible fibre and cut edges, soft shadows, warm key light, cool fill. Neutral, clean, no text."
+ }
+]

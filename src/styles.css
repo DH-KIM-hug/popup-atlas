@@ -1,0 +1,41 @@
+:root {
+  background: #e9dcc0;
+  font-family: "Iowan Old Style", "Palatino", Georgia, serif;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+#game-canvas {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  outline: none;
+  touch-action: none;
+  cursor: pointer;
+}
+
+/* The only text on screen: a quiet printed caption that leaves after the first step. */
+#hint {
+  position: absolute;
+  left: 50%;
+  bottom: max(20px, env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  margin: 0;
+  color: rgba(74, 52, 36, 0.62);
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: 0.02em;
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+#hint.gone {
+  opacity: 0;
+}

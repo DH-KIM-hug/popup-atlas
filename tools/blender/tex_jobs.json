@@ -1,0 +1,10 @@
+[
+  {"id": "tx_fibre", "kind": "sprite", "aspect": "square 1:1", "out": "art_src/tex/fibre.png",
+   "prompt": "Seamless tileable texture, perfectly flat orthographic top-down scan of plain matte cream cardstock paper (colour about #efe3c8). Visible soft paper fibres, tiny darker flecks, subtle uneven mottling, very low contrast, evenly lit, no shadows, no vignette, no folds, no edges, no objects, no text. The texture must tile seamlessly on all four sides."},
+  {"id": "tx_grass", "kind": "sprite", "aspect": "square 1:1", "out": "art_src/tex/grass_print.png",
+   "prompt": "Seamless tileable texture, flat top-down illustration printed on matte cream paper in a vintage children's picture-book gouache / risograph print style: a soft sage green meadow (#9fae7f to #8a9c6c) with small hand-painted grass tufts strokes, a few tiny cream and ochre flower dots, slight print grain and paper fibre showing through, low contrast, evenly lit, no shadows, no perspective, no objects, no text. Must tile seamlessly on all four sides."},
+  {"id": "tx_path", "kind": "sprite", "aspect": "square 1:1", "out": "art_src/tex/path_print.png",
+   "prompt": "Seamless tileable texture, flat top-down illustration printed on matte cream paper in a vintage children's picture-book gouache / risograph print style: a sandy ochre dirt path surface (#d9b77e to #c9a46a) with tiny hand-painted pebbles in dusty brown and a few faint footprint dabs, slight print grain and paper fibre, low contrast, evenly lit, no shadows, no perspective, no borders, no text. Must tile seamlessly on all four sides."},
+  {"id": "tx_water", "kind": "sprite", "aspect": "square 1:1", "out": "art_src/tex/water_print.png",
+   "prompt": "Seamless tileable texture, flat top-down illustration printed on matte cream paper in a vintage children's picture-book gouache / risograph print style: calm muted teal-blue water (#6f9fa8 to #5b8c98) with short hand-painted pale cream ripple dashes and soft lighter streaks, slight print grain and paper fibre, low contrast, evenly lit, no shadows, no perspective, no borders, no text. Must tile seamlessly on all four sides."}
+]

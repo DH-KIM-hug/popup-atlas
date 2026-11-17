@@ -1,0 +1,4 @@
+[
+ {"id": "page_paper", "kind": "bg", "aspect": "square 1:1", "out": "art_src/tex/page_paper.png",
+  "prompt": "Seamless tileable texture, flat orthographic scan of thick matte cream cardstock paper, the page of an old storybook. Very even soft lighting, no shadows, no vignette, no objects, no text. Colour around #efe3c8 warm cream. Subtle visible paper fibre, tiny darker flecks, faint felt-like grain, extremely gentle tonal variation. Must tile seamlessly on all edges."}
+]
