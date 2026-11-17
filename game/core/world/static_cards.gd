@@ -37,8 +37,31 @@ func add(path: String, h0: float, h: float, pos: Vector3, yaw: float, lean := 0.
 		_group(path, h0, -1, 0)["xforms"].append(Transform3D(bb, pos))
 		count += 2
 		return
-	_group(path, h0)["xforms"].append(Transform3D(b, pos))
+	var g := _group(path, h0)
+	g["xforms"].append(Transform3D(b, pos))
+	if not g.has("hs"):
+		g["hs"] = []
+	g["hs"].append(h)
 	count += 1
+
+
+## PE r2: remove plain cards shorter than max_h standing within r of c (lawn tufts a built cluster replaces).
+func clear_area(c: Vector2, r: float, max_h: float) -> int:
+	var n := 0
+	for key: String in _groups:
+		var g: Dictionary = _groups[key]
+		if not g.has("hs"):
+			continue
+		var xs: Array = g["xforms"]
+		var hs: Array = g["hs"]
+		for i in range(xs.size() - 1, -1, -1):
+			var o: Vector3 = (xs[i] as Transform3D).origin
+			if float(hs[i]) < max_h and Vector2(o.x, o.z).distance_to(c) < r:
+				xs.remove_at(i)
+				hs.remove_at(i)
+				n += 1
+	count -= n
+	return n
 
 
 func commit() -> void:
@@ -68,6 +91,8 @@ func commit() -> void:
 		mm.transform_format = MultiMesh.TRANSFORM_3D
 		mm.mesh = mesh
 		var xs: Array = g["xforms"]
+		if xs.is_empty():
+			continue
 		mm.instance_count = xs.size()
 		for i in xs.size():
 			mm.set_instance_transform(i, xs[i])

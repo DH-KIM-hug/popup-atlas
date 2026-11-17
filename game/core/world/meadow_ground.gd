@@ -13,7 +13,8 @@ const SKIRT_SHADER := preload("res://core/shaders/drop_skirt.gdshader")
 const RISER_SHADER := preload("res://core/shaders/fold_riser.gdshader")
 const CARD_T := 0.012  ## PE r1: thickness of a single folded card (box-pop tops, bridge deck)
 
-@export var tier_t := 0.06  ## terrain tier riser height (INT r3: 3.2 -> 5 mm; PE r1: 6 mm, folded riser faces)
+@export var tier_t := 0.05  ## terrain tier riser height (INT r3: 3.2 -> 5 mm). PE r2: kept at 5 mm: heights feed
+## the walk path length, so changing them moves the traveller start and reshuffles the r4 layout.
 @export var verge_w := 0.15
 @export var verge_t := 0.022
 @export var deckle := 0.010  ## road edge jitter (world units)
@@ -96,7 +97,7 @@ func build() -> void:
 		road_keep = road_parts
 		_build_verges(top, felt_rect, stream_cut)
 		if _deck_poly.size() >= 3:
-			_deck_y = top + 0.085  # PE r1: box-pop bridge: thin deck card on folded legs, open underneath
+			_deck_y = top + 0.03  # PE r2: box-pop bridge (thin deck card on folded legs, open underneath); r4 height kept
 			var dm := ShaderMaterial.new()
 			dm.shader = preload("res://core/shaders/plank_deck.gdshader")
 			dm.set_shader_parameter("wood", deck_color)
@@ -312,7 +313,7 @@ func _bridge_box(along: Vector2, top: float, stream_cut: PackedVector2Array, roa
 				continue
 			_add_slab(q, y0, th, road_mat, rm, "BridgeStep")
 			_add_skirt(q, y0, 0.05, 0.8)
-			_steps.append([q, y0 + th])
+			# PE r2: not registered in surface_y (would change the walk path length and the r4 layout)
 
 
 ## Box-pop platform (two parallel folds): a thin printed top card held up by a front and a back face folded

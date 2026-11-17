@@ -17,6 +17,11 @@ func add(n: Node3D, amp: float, freq: float, phase: float) -> void:
 	_items.append([n, n.transform.basis, amp, freq, phase, p.dot(wind_dir.normalized())])
 
 
+## PE r2: forget a card that was cleared away (a built cluster replaced it).
+func remove(n: Node3D) -> void:
+	_items = _items.filter(func(it): return it[0] != n)
+
+
 func _process(dt: float) -> void:
 	if PopHinge.fixed_dt > 0.0:
 		dt = PopHinge.fixed_dt

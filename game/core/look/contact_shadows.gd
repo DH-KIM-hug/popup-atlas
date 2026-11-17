@@ -24,6 +24,11 @@ func add_round(pos: Vector3, radius: float, s := 1.0) -> void:
 	_items.append([pos, 0.0, radius * 2.0, radius * 1.6, s, 0.0])
 
 
+## PE r2: drop the shadows of small cards (width < max_w) within r of c (a built cluster replaced them).
+func clear_area(c: Vector2, r: float, max_w: float) -> void:
+	_items = _items.filter(func(it): return float(it[2]) >= max_w or Vector2((it[0] as Vector3).x, (it[0] as Vector3).z).distance_to(c) > r)
+
+
 func commit() -> void:
 	var mm := MultiMesh.new()
 	mm.transform_format = MultiMesh.TRANSFORM_3D

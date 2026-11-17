@@ -36,6 +36,8 @@ func _ready() -> void:
 				if n is MeshInstance3D:
 					p = (n as MeshInstance3D).get_aabb().get_center()
 				var d := p.distance_to(start)
+				if find == "vfold":
+					d -= float(n.get_meta("card_h", 0.0)) * 20.0  # PE r2: prefer the biggest folded rock
 				if d < bd:
 					bd = d
 					best = n
