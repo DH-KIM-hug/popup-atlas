@@ -6,3 +6,5 @@ artifacts/*
 *.log
 .DS_Store
 .impeccable/
+game/.agent_out/
+game/.godot/

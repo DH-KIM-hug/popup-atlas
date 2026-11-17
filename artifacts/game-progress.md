@@ -43,3 +43,11 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     windows, arched bridges (cream or terracotta) with rails, cut-paper river with cream wave strips, lantern posts,
     cattails, grey paper rocks, layered hill silhouettes along the back.
   - Traveller (r3, r6): small, brown hair, bedroll rucksack, red/orange scarf, walking stick, boots; reads at ~6% frame height.
+- 2026-11-18 USER direction change: this repo becomes a NEW iPad pop-up storybook app. Engine **Godot 4.7.2** (user
+  chose after comparison with Swift/web), project `game/`, Mobile renderer. First story 「해와 바람」 (user's pick over
+  팥죽할멈). Reuse only voice script + character designs from 톡톡 동화극장; all else new. Quality bar: user's screen
+  recording (frames in `art_src/reference/video/`). Brief, contracts, component checklist: `docs/BRIEF.md`.
+- 2026-11-18 lead: `PaperCard` (alpha contour → extruded card, print/back/edge materials, cached) + `PopHinge`
+  (under-damped spring, page bounce, twist wobble) + look bench `scenes/test_diorama`. Fixed: contour triangulation
+  fallback (Delaunay + inside test). look_v3 metrics vs reference logged in BRIEF (too bright, shallow shadows,
+  low saturation, low density). Web prototype superseded.

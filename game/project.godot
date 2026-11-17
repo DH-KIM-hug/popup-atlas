@@ -1,0 +1,27 @@
+; Engine configuration file.
+; Written by scenario-godot-expert gd_env.new_project (explicit settings, see SKILL.md).
+
+config_version=5
+
+[application]
+
+config/name="Popup Storybook"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1366
+window/size/viewport_height=1024
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
