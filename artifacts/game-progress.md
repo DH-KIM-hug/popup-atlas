@@ -461,3 +461,130 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   tabs/glue feet, slotted mechanisms (cross-slot without the edge-on seam), V-fold hills/rocks, tiered folded ground,
   slight lean; less empty lawn; traveller must stay the focal point. Future loops: ≥3 critics per round, impressed asked
   per side.
+- 2026-11-18 PE round 1 (paper-engineering integrator, branch `pe-loop`, commit 9b79a0a, from INT_r4). Answers the
+  paper-engineer critic ("printed illustrations stood up, not a built pop-up").
+  Changes:
+  - Glue feet (`core/world/glue_feet.gd`, `glue_foot.gdshader`): every standing card >= 0.14 tall gets a single-ply
+    tab of its own stock folded flat in front of its base. The width comes from the print's opaque base span and
+    the colour from the bottom third of the print, skipping cream paper (`PaperCard.base_info`). The tab has a dark
+    crease line at the fold and a print-tinted cut edge. Static cards >= 0.5 tall also get an easel strut behind.
+    Two MultiMesh draws for the whole spread. Instance colours are converted sRGB -> linear in the shader; without
+    that the tabs washed out to pale plaques.
+  - Cross-slots are back (`CROSS_POOLS` conifer .45 / tree .35 / autumn .35 / blossom .3 / bush .25, h > 0.22).
+    `PaperCard.slot` cuts real half-slots: A is notched from the top to mid height, B from the bottom, and the
+    notch is one board thick, so the pair interlocks at the centre. Both faces are printed, and the cut edges are
+    coloured from the print (`edge_from_print`). The pair is yawed to view-yaw +/-45 deg, so neither card is
+    edge-on. `CrossCard` slides B into the slot as it opens. StaticCards batches the A and B cuts as their own groups.
+  - V-folds: rock-pool cards are now two half-prints (`PaperCard.half`) folded 29-41 deg back about a centre crease
+    that points at the lens, giving one lit face and one shadow face. Each half is shifted toward the crease so
+    the two printed fronts meet on one fold line. Every third back-hill card is a shallow V-fold (0.34 rad).
+  - Folded ground (`meadow_ground.gd`, `fold_riser.gdshader`): tier risers (now 6 mm) are folded stock: print colour
+    darkened, with a cream cut-line lip at the top fold and a crease shadow at the foot. Before, they were cream
+    slab walls. The bridge is now a box-pop: a thin deck card on two folded legs, open underneath so the water runs
+    through, with a step-fold tread on each bank. New `add_box_pop` / `add_step_fold`: up to 4 step-fold / box-pop
+    platforms dressed with hay or a fence plus flowers, and raised flower beds (box-pops with a soil top and
+    flowers planted in rows).
+  - Lawn: the r4 ground-cover pass is cut from 1800 to 600 tries, and rejected-site tufts from 60% to 35%. They are
+    replaced by up to 64 purposeful clusters in open felt, away from the hero clearing and the lens line: fence runs
+    across the view with flowers at the posts, hay groups, V-fold stone piles with pebbles and cairns, raised
+    flower beds, and woodpiles with logs and mushrooms.
+  - Draw calls: a card with a printed back now draws front and back in one surface (2 draws per print, was 3).
+  - Lens: tilt_blur 0.58 -> 0.46.
+  - Check rig: `scenes/world/cap/pe_closeup.tscn` plus `tools/world/capture_closeup.py`, which aims a free camera
+    at the cross pair, V-fold or bed nearest the traveller.
+  Metrics PE r1 v0-5 (settled, frame 170): lum .388-.440, p05 .076-.209, p95 .651-.670, sat .578-.612,
+  warmth .259-.295, edge .054-.067, tiltshift v0 3.70, v1 3.27, v2 2.31, v3 2.92, v4 3.94, v5 4.77 (r4 3.72 / 1.96 /
+  1.94 / 4.63 / 2.31 / 3.27). ~5260-5410 cards per spread (590-700 hinged).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 11.7 ms, 3629 draws; Vulkan p95 12.5 ms (GPU p95 ~12.2),
+  3629 draws, 9.5M primitives, 0 hitches. The r4 baseline was re-measured in the same session: Metal 13.2 ms,
+  Vulkan 13.9 ms, 4696 draws, 11.2M primitives.
+  check_all: clean (32 scripts).
+  Captures: `artifacts/world/pe_r1/` (meadow_pe1_v0..5, closeup_cross_slot, closeup_vfold_rock).
+  Blind A/B: `artifacts/ab/PE_r1` (seed 11; refs v_01, 03, 04, 06, 12, 13).
+  Open: tiltshift is above 3.5 on v0, v4 and v5 (v5 4.8; the crisp tabs raise mid-band sharpness and the thinner
+  cover lowers it at the bottom). Tabs under small flowers can read as little plaques from far away. Hinged tall
+  cards have no strut, because it would stand alone during the pop wave. Fence runs are rare in the 6 views.
+  Box-pop beds and platforms are separate MeshInstances (~3 draws each).
+- 2026-11-18 PE round 2 (paper-engineering integrator, branch `pe-loop`, commit afb7cbb). PE r1 scored worse than
+  INT_r4 (ref-pick 0.83, ours impressed 0.06), so this round starts from INT_r4 (f6fe113) game/ + tools/ and takes
+  back only r1's mechanisms (PaperCard slot/half cuts + merged print surface, CrossCard slide, StaticCards cut groups,
+  GlueFeet, fold-riser shader, box-pop/step-fold builders).
+  Diagnosis of r1: its new code used the shared layout RNG (cross dice, V-fold angles, clusters before the fill),
+  and it changed ground heights (tier 6 mm, bridge deck +8.5 cm, step treads in surface_y). Heights feed the walk
+  path length, so the traveller start moved and the r4 spread was reshuffled. Examples: a giant oak at the v0 lens
+  and emptier lawns. The critics judged a different, weaker composition rather than the engineering.
+  Changes (the r4 layout is card-for-card identical; verified by re-rendering r4 v0 from a worktree):
+  - The cross-slot choice (conifer .6 / tree .4 / autumn .35 / blossom .3 / bush .22, h > 0.22) and the V-fold
+    rock angle come from a site hash (`_hash01`), not the RNG. The cross and rock yaw overrides are applied after
+    the RNG draw.
+  - Ground heights are back to r4: tier 5 mm with the folded-riser look, the box-pop bridge deck at +3 cm, and the
+    step treads are not registered in surface_y.
+  - Glue feet only on cards 0.2 tall or more (r1 0.14: tabs under flowers read as plaques). Tab depth is 7.5% of h.
+    Struts behind static cards 0.5 tall or more.
+  - Built lawn clusters (fence runs, hay groups, V-fold stone piles, raised box-pop flower beds, woodpiles), plus
+    step-fold platforms. They run after `_meadow_fill` on a side RNG seed and the RNG state is restored afterwards.
+    Three of four sites are drawn from the band each camera actually sees (fov 20: about ±1.6 wide at the
+    traveller). They are kept out of the hero clearing (1.6), off the road and stream, and away from cards 0.16 or
+    larger (`_free_big`). Each cluster clears the uniform tufts under its footprint (`StaticCards.clear_area`,
+    `ContactShadows.clear_area`, hinged tufts freed and taken out of `WindSway`), so it replaces the tufts rather
+    than piling on them. 40 clusters per spread.
+  - tilt_blur stays at the r4 value of 0.58.
+  Metrics PE r2 v0-5 (settled, frame 170): lum .379-.449, p05 .095-.227, p95 .650-.674, sat .562-.631,
+  warmth .240-.318, edge .048-.069, tiltshift v0 3.46, v1 1.95, v2 1.99, v3 4.58, v4 2.58, v5 3.17 (r4 3.72 / 1.96 /
+  1.94 / 4.63 / 2.31 / 3.27). ~6130-6240 cards per spread (710-780 hinged).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 9.75 ms, max 1682 draws. Vulkan p95 13.75 ms
+  (GPU max 13.8), 3693 draws (r4 4696).
+  check_all: clean (32 scripts).
+  Captures: `artifacts/world/pe_r2/` (meadow_pe2_v0..5, closeup_cross_slot, closeup_vfold_rock).
+  Blind A/B: `artifacts/ab/PE_r2` (seed 12; refs v_01, 03, 04, 06, 12, 13).
+  Open:
+  - v1 and v2 look almost the same as r4: their lawn bands are already full, so no cluster fits in them.
+  - v3 tiltshift is 4.6 (same as r4).
+  - Beds read as plain brown slabs from far away.
+  - Hinged tall cards have no strut.
+  - The material notes (grain, curl) and the path strip (cut edge, lift) from the r1 critics are still not done.
+- 2026-11-18 PE round 3 (paper-engineering integrator, branch `pe-loop`, commit e53be11). PE r2 still scored below
+  INT_r4 (avg ref-pick 0.61, paper engineer 0.83, ours impressed 0.22). As instructed, game/ and tools/ were first
+  restored from INT_r4 (f6fe113). The round then builds on r2's mechanism code (afb7cbb), because that code keeps
+  the r4 layout card for card, and changes what the r2 critics and my own comparison of r4 and r2 flagged. In the r2
+  views, the hay bales read as CG cylinders, the woodpile as 3D logs, the raised beds as brown slabs, and every card
+  still faced the lens like a billboard.
+  Changes (`core/world/meadow.gd`, `core/paper_card.gd`, `core/shaders/paper_print.gdshader`; 22 lines):
+  - Lawn clusters: hay groups, woodpiles and raised beds are gone. They are replaced by layered flower patches: a back
+    row of 2 bush or sapling cards, a middle row of 3 flowers and a front row of 3 low tufts, so the cards overlap and
+    give depth. Fence runs and V-fold stone piles stay. Step-fold platforms are dressed with bush, flower and sapling
+    instead of hay. Clusters still run on the side RNG, so the r4 layout is unchanged.
+  - Cards turned off the print plane: low wide pools (hedge .6, fence .45, bush .4, mushroom .45, prop .35,
+    bank .4, crop .35 rad) get an extra yaw from a site hash (`_hash01(q, 31)`). The layout RNG is not touched. Their
+    cut edges and feet now show in perspective instead of every card facing the lens.
+  - Tall static cards (0.5 or taller, not cross or V-fold, not hills) lean back about 3° onto their easel strut.
+  - Glue-foot depth goes from 7.5% to 10% of the card height (clamp 0.03-0.07), so the tabs read at view distance.
+  - Cut edge: the side-wall core is lighter (`edge.lerp(avg, 0.32)`, no longer darkened). The die-cut rim band is
+    stronger (rim_width 0.0024 -> 0.003, rim_mix 0.35 -> 0.48). All three critics asked for a visible light cut-edge
+    band in r1 and again in r2.
+  - Kept from r2: half-slot cross trees (no seam), V-fold rocks and ridge hills, folded tier risers at r4 heights, the
+    box-pop bridge, glue feet and struts, the hero clearing, and tilt_blur 0.58.
+  Metrics PE r3 v0-5 (settled, frame 170): lum .384-.449, p05 .096-.225, p95 .651-.675, sat .559-.624,
+  warmth .239-.311, edge .051-.071, tiltshift v0 3.65, v1 2.02, v2 1.95, v3 4.41, v4 2.63, v5 3.30 (r4 3.72 / 1.96 /
+  1.94 / 4.63 / 2.31 / 3.27). About 6170-6290 cards per spread (720-810 hinged).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 10.45 ms, max 1733 draws, 0 hitches. Vulkan p95 14.48 ms
+  (GPU p95 14.48), 3778 draws (r4 4696), 0 hitches.
+  check_all: clean (32 scripts).
+  Captures: `artifacts/world/pe_r3/` (meadow_pe3_v0..5, closeup_cross_slot, closeup_vfold_rock).
+  Blind A/B: `artifacts/ab/PE_r3` (seed 13; refs v_01, 03, 04, 06, 12, 13).
+  Open:
+  - v3 tiltshift is still 4.4.
+  - The stronger rim shows as a light outline on close-ups. Revert rim_mix if critics call it a sticker halo again.
+  - Hinged tall cards still have no strut.
+  - The cards have no curl (style rule).
+  - Vulkan p95 is 0.8 ms above r4.
+- 2026-11-18 lead: paper-engineering loop PE r1-r3 (branch `pe-loop`, commits 9b79a0a / afb7cbb / e53be11, NOT merged).
+  3 blind critics per round vs the reference: avg ref-pick r1 0.83 / r2 0.61 / r3 0.83; paper-engineer 1.0 / 0.83 / 1.0;
+  ours-impressed 0.06 / 0.22 / 0.00 (INT_r4 baseline 0.44 / 1.0 / 0.72, judged in an earlier session).
+  Blind head-to-head INT_r4 vs PE_r2 at the same 6 camera stations (3 critics, sheets artifacts/ab/H2H_r4_pe2): PE_r2
+  picked 0.50 / 0.33 / 0.17 (avg 0.33) → INT_r4 KEPT on main. Critics: hay bales, raised beds and woodpiles read as dropped-in
+  3D props and clutter; cross-slot trees read as doubled/ghosted silhouettes at this camera; differences otherwise slight.
+  Lesson: the gap to the reference is not mechanisms. Every critic cites lens and light: the reference reads as a
+  photographed tabletop (lower camera, strong shallow DOF, contrasty low light, textured felt ground, dense tree rows),
+  ours as crisp, evenly lit vector cards on a flat lawn. Worth keeping from pe-loop if revisited: merged print surfaces
+  (Vulkan draws 4696 → 3629), glue feet. Next loop should target camera/lens/light/ground texture, not new props.
