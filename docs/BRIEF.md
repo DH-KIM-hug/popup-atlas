@@ -52,7 +52,9 @@ Lead-owned. Components may propose changes to contracts in their report; only th
   Card art = RGBA PNG/WebP, transparent background, subject touching the bottom edge (that edge is the hinge).
 - `PopHinge` (`core/pop_hinge.gd`): parent of cards; `pop_up(delay)`, `fold_down(delay)`, `snap(up)`;
   signal `flapped(up, weight)` for sound, `settled(up)`.
-- Camera: high angle 40–55°, fov 20–28, focus on the traveller, DOF near+far for tilt-shift.
+- Camera: low angle 24–40° (integrator 2026-11-18, was 40–55°; INT r2 24–27° in the meadow), fov 18–24,
+  distance ~7–10 (INT r2 meadow 7.2–7.6, so the traveller is the focal point), focus on the traveller, DOF near+far for tilt-shift; target tiltshift_ratio 2–3.5.
+- World template: `scenes/world/meadow.tscn` (`core/world/meadow.gd`, MeadowWorld) — seed-placed meadow spread; stories dress it.
 - Capture: `gd_run.capture_scene(game, scene, size=(1366,1024))` (iPad 4:3 landscape). Metrics:
   `python3 tools/look/look_metrics.py IMG`.
 

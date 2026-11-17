@@ -12,7 +12,8 @@ uniform bool plain = false;
 uniform vec4 plain_color : source_color = vec4(0.93, 0.89, 0.8, 1.0);
 uniform float translucency = 0.32;   // light through thin paper from behind
 // Die-cut cream rim just inside the cut line (world units).
-uniform float rim_width = 0.006;
+uniform float rim_width = 0.0024;  // INT r1: was 0.006 (read as a white sticker halo)
+uniform float rim_mix = 0.35;  // INT r3: 0.5 -> 0.35, less sticker outline (r1 note: lightens toward cream)
 uniform vec4 rim_color : source_color = vec4(0.97, 0.92, 0.80, 1.0);
 // Baked contact darkening near the hinge (world units of card height).
 uniform float foot_ao_height = 0.06;
@@ -46,7 +47,7 @@ void fragment() {
 		m = min(m, alpha_at(UV + vec2(-r.x, r.y) * 0.7071));
 		// Do not draw the rim along the hinge (bottom) edge.
 		float not_bottom = step(UV.y, 0.985);
-		col = mix(col, rim_color.rgb, (1.0 - smoothstep(0.25, 0.6, m)) * not_bottom);
+		col = mix(col, rim_color.rgb, (1.0 - smoothstep(0.25, 0.6, m)) * not_bottom * rim_mix);
 	}
 	vec2 fuv = UV * card_size * fibre_density;
 	float f = texture(fibre_tex, fuv).r;

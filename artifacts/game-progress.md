@@ -322,3 +322,133 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     purpose: the r2 critic asked for heavy DOF; the metric and the critic disagree, as B and C also logged).
   Blind A/B: artifacts/ab/A_art_r3 (seed 3; ours art_src/cards/bench_r3/art_r3_v0..4; refs v_01, 03, 04, 06, 12).
   Proposals: traveller 0.6 in benches; cards still can't bend under the style rule.
+- 2026-11-18 INT round 1 (integrator: one unified world). Story stays 「해와 바람」.
+  New reusable template `game/scenes/world/meadow.tscn` (script `core/world/meadow.gd`, class MeadowWorld, exports
+  seed_value/view/fixed_step/pop_on_load/pop_radius/walk). Seed 1, page 28x20: winding road front→back, stream across
+  with a plank bridge, village edge (cottages + barn, yard props, fences, chimney smoke), wheat field of broken crop
+  rows with haystacks/cart, forest edges on the high tiers, 3 rows of hill cards at the back, groves, folded rocks.
+  New files in `core/world/`:
+  - `card_library.gd` (CardLibrary): loads atlas (A0) + card kit (A) catalogs, `query(category, tags, biome, season)`,
+    pools, seeded least-used `pick()`. Excludes winter/korean/fairytale sheets for this meadow.
+  - `meadow_ground.gd` (MeadowGround extends B's GroundLayers): stacked relief. Felt base, recessed printed water card,
+    cut stream banks, 29 rolling terrain tiers (1-5 high, 3.2 mm each, each stacked inside the one below, cream cut
+    edge), raised paper verges along the road, the road as its own die-cut layer with a deckled edge, plank deck over
+    the stream (`shaders/plank_deck.gdshader`), and soft drop-shadow skirts outside every raised cut edge, stronger
+    on the side away from the key (`shaders/drop_skirt.gdshader`, one draw).
+  - `static_cards.gd` (StaticCards): batches non-moving cards into one MultiMesh per print, using PaperCard's mesh
+    and materials (cross cards are 2 instances).
+  - `wind_sway.gd`: a travelling gust rocks rigid cards about their base (grass/flowers/reeds/crops more, trees barely).
+  - `chimney_smoke.gd`: cut-paper puff cards that rise, grow and shrink away.
+  Integration: cards within pop_radius 4.2 of the traveller are PopHinge/CrossCard (C) and rise in a PopWave from
+  the traveller on load (speed 4, wave ends ~1.7-2.2 s). Everything else is static MultiMesh. PaperAudio watches all
+  hinges and steps. PaperAmbient (C) adds butterflies and leaves near the traveller. D's Walker + PaperPuppet
+  (0.36 tall) auto-walks the road, and the FollowFocus camera follows. LookRig (B) is set to elevation 28-30, fov
+  20-21, distance ~10, near/far DOF, post tilt 0.55, haze from focus+0.8, vignette 0.14, post saturation 0.9, and
+  a muted stream.
+  Per-view lens foreground: 6 tall cards just above the bottom edge use a separate RNG. A start-view keep-out
+  stops tall cards from standing between the camera and the traveller.
+  Card edges:
+  - New `tools/world/clean_atlas.py` runs A's strip_rim over all 395 non-winter atlas cards and writes the results to
+    `game/art/atlas_clean/` (originals untouched; CardLibrary uses the clean copies). Only 56 had a printed rim.
+  - The main halo was the shader rim, so `paper_print.gdshader` rim_width goes from 0.006 to 0.0024, with a new
+    rim_mix 0.5 (it lightens toward cream rather than replacing). This changes every bench that uses PaperCard.
+  BRIEF "World contracts": camera line changed to 28-40°, fov 18-24, tiltshift target 2-3.5, and the template is listed.
+  ~4700 cards per spread (550-650 hinged, ~4050 static), 386-397 distinct ids used.
+  Metrics r1 v0-5 (settled, frame 170 @ fixed 1/60):
+  - lum .365-.416, p05 .10-.17, p95 .63-.67, sat .56-.64, warmth .23-.28, edge .073-.095: all in range.
+  - tiltshift 3.26-4.84 (v1-v4 are 3.3-4.0, v0 4.84). Above the 2-3.5 target, though down from 5-13 in the benches.
+  Profile (meadow.tscn, walking, 1366x1024):
+  - Metal frame p95 9.0 ms (120 Hz cap), 0 hitches, ~1600 draw calls.
+  - Vulkan GPU p95 11.6 ms, 4569 draw calls.
+  Captures: `artifacts/world/int_r1/` (meadow_r1_v0..5 + meadow_r1_midwave_v0 at frame 52).
+  Tool: `tools/world/capture_meadow.py TAG [frames] [views]`; capture scenes `scenes/world/cap/meadow_v0..5.tscn`.
+  Blind A/B: `artifacts/ab/INT_r1` (seed 1; refs v_01, 03, 04, 06, 12, 13).
+  Open issues:
+  - The lens keep-out and lens foreground draw from the shared RNG/attempts, so card counts differ slightly between views (seed+view is deterministic).
+  - Back hills only show in views near the far end.
+  - The camera is still higher and wider than the reference's close, low lens.
+  - Flat felt still shows between clumps in places.
+  - Vulkan GPU at 11.6 ms on the Mac leaves little iPad headroom; draw calls should be chunked by region.
+- 2026-11-18 INT round 2 (integrator). Answers the r1 critic, whose fix list for our (crisp folk-art) side was:
+  clearings and a hierarchy around a tiny hero, printed rocks instead of grey folded triangles, path with edge/lift/
+  shadow instead of cream blobs, terrain lift, a coloured core edge, mild DOF and atmospheric falloff.
+  Changes (r1 scripts backed up in the session scratchpad; all edits in game/core/world + 2 shared files):
+  - Camera (`meadow.gd` VIEWS): distance 10 → 7.2-7.6, elevation 28-30 → 25-27, fov 20. The traveller is now
+    ~110 px tall and the focal point of every view; views placed on vignettes (bridge, village edge, forest bend).
+  - Hierarchy: HERO_CLEAR 1.3 clearing reserved around the traveller start; `_meadow_fill` now gated by a seeded
+    low-frequency FastNoiseLite mask (clumps vs open felt clearings, no even confetti). Cards per spread 4700 → ~3100.
+  - Rocks: grey folded-triangle rock clusters replaced by printed rock cards (`rock` pool, scale 1.5). Green folded
+    hillocks kept, a bit smaller.
+  - Road: warm sand print `d9bf8a` (cream cut edge now contrasts), stronger cast skirt (0.08 wide, 0.85); verges a
+    distinct yellow-green card, 2.2 mm thick (was 1.6) with a stronger skirt. `cover_patches` 70 → 28 (the pale lobes
+    read as spilled paint).
+  - Bridge: the two edge-on bridge-image cards replaced by fence-print rail cards along both deck edges.
+  - Card edge: thickness h*0.024 → h*0.03 (hinged + StaticCards); `paper_card.gd` side walls now tinted 30% toward
+    the print's average colour (coloured core, not pure cream). Shared file: every PaperCard bench changes.
+  - Grade/haze: key energy 1.85 → 2.05, dof_amount 0.06 → 0.05, haze length 8 → 5.5, amount 0.62 → 0.7;
+    hills_clouds_03 (saturated red mountains) excluded from the back rows.
+  - BRIEF "World contracts" camera line: 24-40°, distance ~7-10.
+  Metrics r2 v0-5 (settled, frame 170): lum .382-.434, p05 .123-.187, p95 .643-.663, sat .537-.623,
+  warmth .236-.257, edge .052-.082 (v3/v4 .052-.053 slightly under .06), tiltshift 2.28-4.08
+  (v0 3.18, v1 3.19, v2 2.28, v3 3.53, v4 2.64, v5 4.08; r1 was 3.26-4.84).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 9.4 ms (120 Hz cap), Vulkan p95 9.2 ms, 0 hitches.
+  Captures: `artifacts/world/int_r2/` (meadow_r2_v0..5 + meadow_r2_midwave_v0 at frame 52).
+  Blind A/B: `artifacts/ab/INT_r2` (seed 2; refs v_01, 03, 04, 06, 12, 13).
+  Open: felt still flat-coloured over large open areas; back-hill row still only in far views; rail cards thin when
+  seen along the road; no card bow (style rule says cards never bend); v5 tiltshift 4.1 above target.
+- 2026-11-18 INT round 3 (integrator). Answers the r2 critic, whose list for our (crisp folk-art) side was: flat floor,
+  zero-thickness cards with white rims, no lens character ("game camera"), even scatter, hero the height of a flower,
+  no paper tooth, flat water/paths. r2 scripts backed up in the session scratchpad (world_r2_backup).
+  Changes:
+  - Relief (`meadow_ground.gd`, `meadow.gd` hill_specs): tier_t 3.2 → 5 mm; 9 new broad low plateaus (1-2 tiers)
+    over the near meadow, so road and stream now run in channels between raised board and every view shows
+    stacked cut steps (43 tier slabs, was 29). Stream bank lip 8 → 26 mm (channel reads sunk). Tier cut edges
+    less white (cream lerp 0.68 → 0.5; read as planks at grazing angles). Tier print mottle stronger and larger
+    (strength 1.0, scale 0.11, darker/ochre mottle); felt + tier fibre 0.2 → 0.34-0.36, grain 0.16 → 0.26-0.28,
+    bump 0.9. Road gets printed gravel speckle (0.45, umber).
+  - Lens (`meadow.gd`): elevation 25-27 → 21-23° (more overlap, longer view into haze); DOF amount 0.05 → 0.07,
+    near margin 1.2 → 0.9, near transition 1.4 → 1.1; tilt_blur 0.55 → 0.66; lens-foreground cards nearer the lens
+    and 20% taller so one or two blurred cards frame the shot. Haze warmer (dcc49a, amount 0.62, length 6).
+  - Scale/hierarchy: POOL_SCALE flower 0.72, grass 0.8, mushroom 0.75, bush/sapling/hedge 0.85 (traveller stays 0.36).
+  - Clustering: meadow fill clumps of 3-7 at spread 0.22, pack 0.62 (overlapping front/mid/back); rejected sites in
+    open felt get a sparse single low tuft (30%) so clearings are not bare sheet.
+  - Card edges (shared files, every PaperCard bench changes): thickness h*0.03 → h*0.04 (min 11 mm, max 40 mm) in
+    hinged + StaticCards; `paper_card.gd` side wall edge.lerp(avg, 0.42).darkened(0.1) (darker coloured core);
+    `paper_print.gdshader` rim_mix 0.5 → 0.35 (less sticker outline).
+  Metrics r3 v0-5 (settled, frame 170): lum .372-.453, p05 .111-.214, p95 .642-.670, sat .539-.638, warmth .256-.276,
+  edge .043-.062, tiltshift 2.60-5.22 (v0 5.22, v1 4.04, v2 2.64, v3 3.46, v4 2.60, v5 4.31; r2 2.28-4.08).
+  Tiltshift is above the 2-3.5 target on v0/v1/v5 on purpose: the r2 critic asked for more lens character; the crisp
+  mid band of our prints inflates the ratio.
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 8.8 ms (120 Hz cap), max 1355 draws; Vulkan p95 10.9 ms,
+  4391 draws.
+  Captures: `artifacts/world/int_r3/` (meadow_r3_v0..5 + meadow_r3_midwave_v0 at frame 52). ~4000-4200 cards per spread.
+  Blind A/B: `artifacts/ab/INT_r3` (seed 3; refs v_01, 03, 04, 06, 12, 13).
+  Open: atlas prints are low-res (~200 px), which limits mid-distance detail and can't be fixed without new art;
+  no fold tabs at card bases (contact shadows only); no card bow (style rule); Vulkan draw calls ~4400 (region
+  chunking still to do); tiltshift high on 3 views.
+- 2026-11-18 INT round 4 (integrator). Answers the r3 critic. Our folk-print side won 5 of 6 pairs. It lost pair 2 to a
+  vertical white seam through the foreground pine, a huge blurred foreground bush, and empty green fields. r3
+  scripts are backed up in the session scratchpad (world_r3_backup). Only `core/world/meadow.gd` changed.
+  Changes:
+  - Seam: cross-slotted cards are off (`CROSS_POOLS` is empty and the catalog `cross_slot` flag is ignored). The
+    slotted second card, seen edge-on, read as a pale vertical strip through every big tree. Trees are now single
+    thick cards on contact shadows.
+  - Lens foreground: 4 low cards (grass, flower, sapling) at the frame edges only (lateral 1.5-2.4). It was 6 cards
+    of any pool, trees included. `_blocks_view` now also rejects any card taller than 0.22 in the near-lens band
+    (t 0.4-0.85, within 1.4 of the line), so no big blurred bush covers the bottom third.
+  - Empty fields: rejected open-felt sites get 1-3 low tufts (60%, was a single tuft at 30%). A new ground-cover
+    pass adds 1800 tries of small grass and flower tufts (0.6-0.9 scale) everywhere except the hero clearing.
+  - Back hills: the red/ochre field hill cards hills_clouds_10/14/19/22 are excluded (03 already was), because one
+    filled the top of v4 with a flat salmon slab.
+  - Lens: tilt_blur 0.66 → 0.58.
+  Metrics r4 v0-5 (settled, frame 170): lum .379-.460, p05 .082-.242, p95 .651-.675, sat .555-.608, warmth .238-.284,
+  edge .050-.066, tiltshift v0 3.72, v1 1.96, v2 1.94, v3 4.63, v4 2.31, v5 3.27 (r3 2.60-5.22). Mid-wave frame 52
+  tiltshift 3.83. ~5400-5500 cards per spread (~700-760 hinged).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 9.9 ms (120 Hz cap), max 1454 draws; Vulkan p95 13.7 ms,
+  4696 draws (r3 10.9 ms, 4391). The extra cost comes from the ground-cover pass.
+  check_all: clean (30 scripts, 0 errors).
+  Captures: `artifacts/world/int_r4/` (meadow_r4_v0..5 + meadow_r4_midwave_v0 at frame 52).
+  Blind A/B: `artifacts/ab/INT_r4` (seed 4; refs v_01, 03, 04, 06, 12, 13).
+  Open: atlas prints are still low-res (~200 px). There is no card bow (style rule) and no visible fold tabs. Vulkan
+  draws are about 4700 (region chunking is still to do, and the cover pass could be cut for iPad). v3 tiltshift
+  is 4.6, above the target.
