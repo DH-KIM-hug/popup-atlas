@@ -1,0 +1,968 @@
+{
+ "sh_cottage_a_00": [
+  "house_cottage_terracotta",
+  "house",
+  0.85,
+  false
+ ],
+ "sh_cottage_a_01": [
+  "house_cottage_thatch",
+  "house",
+  0.75,
+  false
+ ],
+ "sh_village_props_00": [
+  "village_well",
+  "village",
+  0.38,
+  false
+ ],
+ "sh_village_props_01": [
+  "village_signpost",
+  "village",
+  0.4,
+  false
+ ],
+ "sh_village_props_02": [
+  "village_lantern_post",
+  "village",
+  0.48,
+  false
+ ],
+ "sh_village_props_03": [
+  "village_wheelbarrow",
+  "village",
+  0.18,
+  false
+ ],
+ "sh_village_props_04": [
+  "village_bench",
+  "village",
+  0.18,
+  false
+ ],
+ "sh_village_props_05": [
+  "village_trough",
+  "village",
+  0.15,
+  false
+ ],
+ "sh_grass_reeds_00": [
+  "grass_tuft_sage",
+  "grass",
+  0.14,
+  false
+ ],
+ "sh_grass_reeds_01": [
+  "grass_tuft_dark",
+  "grass",
+  0.15,
+  false
+ ],
+ "sh_grass_reeds_02": [
+  "grass_tuft_olive",
+  "grass",
+  0.14,
+  false
+ ],
+ "sh_grass_reeds_03": [
+  "water_cattails_a",
+  "water",
+  0.3,
+  false
+ ],
+ "sh_grass_reeds_04": [
+  "water_cattails_b",
+  "water",
+  0.3,
+  false
+ ],
+ "sh_grass_reeds_05": [
+  "water_reeds_olive",
+  "water",
+  0.3,
+  false
+ ],
+ "sh_grass_reeds_06": [
+  "water_reeds_teal",
+  "water",
+  0.3,
+  false
+ ],
+ "sh_grass_reeds_07": [
+  "water_rushes_seed",
+  "water",
+  0.28,
+  false
+ ],
+ "sh_fences_bridge_00": [
+  "fence_picket_cream",
+  "fence",
+  0.16,
+  false
+ ],
+ "sh_fences_bridge_01": [
+  "fence_split_rail",
+  "fence",
+  0.17,
+  false
+ ],
+ "sh_fences_bridge_02": [
+  "fence_wattle",
+  "fence",
+  0.16,
+  false
+ ],
+ "sh_fences_bridge_03": [
+  "fence_gate",
+  "fence",
+  0.2,
+  false
+ ],
+ "sh_fences_bridge_04": [
+  "bridge_arch_cream",
+  "bridge",
+  0.22,
+  false
+ ],
+ "sh_cottage_b_00": [
+  "house_tall_slate",
+  "house",
+  0.95,
+  false
+ ],
+ "sh_cottage_b_01": [
+  "house_barn_terracotta",
+  "house",
+  0.8,
+  false
+ ],
+ "sh_rocks_mush_00": [
+  "rock_round_grey",
+  "rock",
+  0.2,
+  false
+ ],
+ "sh_rocks_mush_01": [
+  "rock_low_grey",
+  "rock",
+  0.12,
+  false
+ ],
+ "sh_rocks_mush_02": [
+  "rock_mossy",
+  "rock",
+  0.2,
+  false
+ ],
+ "sh_rocks_mush_03": [
+  "mushroom_red_pair",
+  "mushroom",
+  0.17,
+  false
+ ],
+ "sh_rocks_mush_04": [
+  "mushroom_red_cluster",
+  "mushroom",
+  0.17,
+  false
+ ],
+ "sh_rocks_mush_05": [
+  "mushroom_tan_cluster",
+  "mushroom",
+  0.16,
+  false
+ ],
+ "sh_rocks_mush_06": [
+  "rock_stump_mossy",
+  "mushroom",
+  0.17,
+  false
+ ],
+ "sh_stream_bank_00": [
+  "bank_reeds_ripple",
+  "bank",
+  0.13,
+  false
+ ],
+ "sh_stream_bank_01": [
+  "bank_grass_stones",
+  "bank",
+  0.09,
+  false
+ ],
+ "sh_stream_bank_02": [
+  "bank_pebbles_ripple",
+  "bank",
+  0.09,
+  false
+ ],
+ "sh_hills_far_00": [
+  "hill_far_blue",
+  "hill",
+  1.2,
+  false
+ ],
+ "sh_hills_gold_00": [
+  "hill_patchwork_gold",
+  "hill",
+  1.0,
+  false
+ ],
+ "sh_wheat_hay_00": [
+  "field_wheat_row_a",
+  "field",
+  0.2,
+  false
+ ],
+ "sh_wheat_hay_01": [
+  "field_wheat_row_b",
+  "field",
+  0.19,
+  false
+ ],
+ "sh_wheat_hay_02": [
+  "field_wheat_sheaf",
+  "field",
+  0.28,
+  false
+ ],
+ "sh_wheat_hay_03": [
+  "field_hay_bale_round",
+  "field",
+  0.2,
+  false
+ ],
+ "sh_wheat_hay_05": [
+  "field_haystack",
+  "field",
+  0.26,
+  false
+ ],
+ "sh_hills_green_00": [
+  "hill_rolling_green",
+  "hill",
+  1.0,
+  false
+ ],
+ "sh_animals_00": [
+  "animal_sheep_grazing",
+  "animal",
+  0.13,
+  false
+ ],
+ "sh_animals_01": [
+  "animal_sheep_standing",
+  "animal",
+  0.15,
+  false
+ ],
+ "sh_animals_02": [
+  "animal_sheep_lying",
+  "animal",
+  0.11,
+  false
+ ],
+ "sh_animals_03": [
+  "animal_bird_red_post",
+  "animal",
+  0.2,
+  false
+ ],
+ "sh_animals_04": [
+  "animal_bird_blue_post",
+  "animal",
+  0.2,
+  false
+ ],
+ "sh_animals_05": [
+  "animal_goose",
+  "animal",
+  0.15,
+  false
+ ],
+ "sh_trees_mixed_00": [
+  "tree_poplar_olive",
+  "tree",
+  1.0,
+  false
+ ],
+ "sh_trees_mixed_01": [
+  "tree_willow_sage",
+  "tree",
+  0.9,
+  false
+ ],
+ "sh_trees_mixed_02": [
+  "tree_spiral_terracotta",
+  "tree",
+  0.85,
+  true
+ ],
+ "sh_trees_mixed_03": [
+  "tree_birch_yellow",
+  "tree",
+  0.85,
+  false
+ ],
+ "sh2_hills_layer_a_00": [
+  "hill_layer_moss",
+  "hill",
+  0.8,
+  false
+ ],
+ "sh2_hills_layer_a_01": [
+  "hill_layer_sage",
+  "hill",
+  0.7,
+  false
+ ],
+ "sh2_hills_layer_a_02": [
+  "hill_layer_olive",
+  "hill",
+  0.85,
+  false
+ ],
+ "sh2_hills_layer_b_00": [
+  "hill_layer_ochre",
+  "hill",
+  0.75,
+  false
+ ],
+ "sh2_hills_layer_b_01": [
+  "hill_layer_terracotta",
+  "hill",
+  0.78,
+  false
+ ],
+ "sh2_hills_layer_b_02": [
+  "hill_layer_far_teal",
+  "hill",
+  0.8,
+  false
+ ],
+ "sh2_hills_wooded_00": [
+  "hill_wooded_grove",
+  "hill",
+  1.1,
+  false
+ ],
+ "sh2_hills_wooded_01": [
+  "hill_wooded_firs",
+  "hill",
+  0.95,
+  false
+ ],
+ "sh2_wheat_patch_00": [
+  "field_wheat_clump_short",
+  "field",
+  0.17,
+  false
+ ],
+ "sh2_wheat_patch_01": [
+  "field_wheat_clump_tall",
+  "field",
+  0.3,
+  false
+ ],
+ "sh2_wheat_patch_02": [
+  "field_wheat_patch_poppy",
+  "field",
+  0.17,
+  false
+ ],
+ "sh2_wheat_patch_03": [
+  "field_wheat_stalks",
+  "field",
+  0.2,
+  false
+ ],
+ "sh2_wheat_patch_04": [
+  "field_wheat_stook",
+  "field",
+  0.28,
+  false
+ ],
+ "sh2_wheat_patch_05": [
+  "field_wheat_clump_pale",
+  "field",
+  0.2,
+  false
+ ],
+ "sh2_hay_farm_00": [
+  "field_hay_bale_square",
+  "field",
+  0.16,
+  false
+ ],
+ "sh2_hay_farm_01": [
+  "field_hay_bales_stack",
+  "field",
+  0.26,
+  false
+ ],
+ "sh2_hay_farm_02": [
+  "field_haystack_pole",
+  "field",
+  0.34,
+  false
+ ],
+ "sh2_hay_farm_03": [
+  "field_hay_cart",
+  "field",
+  0.24,
+  false
+ ],
+ "sh2_hay_farm_04": [
+  "village_woodpile",
+  "village",
+  0.2,
+  false
+ ],
+ "sh2_hay_farm_05": [
+  "village_ladder",
+  "village",
+  0.32,
+  false
+ ],
+ "sh2_water_00": [
+  "bridge_plank",
+  "bridge",
+  0.2,
+  false
+ ],
+ "sh2_water_01": [
+  "water_stepping_stones",
+  "water",
+  0.09,
+  false
+ ],
+ "sh2_water_02": [
+  "animal_duck_cream",
+  "animal",
+  0.12,
+  false
+ ],
+ "sh2_water_03": [
+  "animal_duck_brown",
+  "animal",
+  0.12,
+  false
+ ],
+ "sh2_water_04": [
+  "water_lily_pads",
+  "water",
+  0.1,
+  false
+ ],
+ "sh2_water_05": [
+  "bridge_jetty",
+  "bridge",
+  0.16,
+  false
+ ],
+ "sh2_trees_green_b_00": [
+  "tree_oak_moss",
+  "tree",
+  0.95,
+  true
+ ],
+ "sh2_trees_green_b_01": [
+  "tree_egg_spring",
+  "tree",
+  0.9,
+  false
+ ],
+ "sh2_trees_green_b_02": [
+  "tree_flat_sage",
+  "tree",
+  0.85,
+  true
+ ],
+ "sh2_trees_green_b_03": [
+  "tree_twin_olive",
+  "tree",
+  0.85,
+  false
+ ],
+ "sh2_trees_warm_b_00": [
+  "tree_oval_terracotta",
+  "tree",
+  0.95,
+  false
+ ],
+ "sh2_trees_warm_b_01": [
+  "tree_small_ochre",
+  "tree",
+  0.65,
+  false
+ ],
+ "sh2_trees_warm_b_02": [
+  "tree_mixed_rust",
+  "tree",
+  0.9,
+  true
+ ],
+ "sh2_trees_warm_b_03": [
+  "tree_heart_orange",
+  "tree",
+  0.7,
+  false
+ ],
+ "sh2_conifers_b_00": [
+  "conifer_fir_dark_tall",
+  "conifer",
+  1.1,
+  false
+ ],
+ "sh2_conifers_b_01": [
+  "conifer_pine_tiered_olive",
+  "conifer",
+  0.85,
+  true
+ ],
+ "sh2_conifers_b_02": [
+  "conifer_fir_young",
+  "conifer",
+  0.5,
+  false
+ ],
+ "sh2_conifers_b_03": [
+  "conifer_fir_pair",
+  "conifer",
+  0.9,
+  false
+ ],
+ "sh2_conifers_b_04a": [
+  "conifer_spruce_grey",
+  "conifer",
+  0.8,
+  false
+ ],
+ "sh2_conifers_b_04b": [
+  "conifer_juniper",
+  "conifer",
+  0.45,
+  false
+ ],
+ "sh2_foreground_00": [
+  "fg_fern_big",
+  "foreground",
+  0.4,
+  false
+ ],
+ "sh2_foreground_01": [
+  "fg_meadow_grass",
+  "foreground",
+  0.38,
+  false
+ ],
+ "sh2_foreground_02": [
+  "fg_dandelion",
+  "foreground",
+  0.3,
+  false
+ ],
+ "sh2_foreground_03": [
+  "fg_burdock",
+  "foreground",
+  0.36,
+  false
+ ],
+ "sh2_foreground_04": [
+  "fg_foxtail",
+  "foreground",
+  0.4,
+  false
+ ],
+ "sh2_village_b_00": [
+  "house_stone_moss",
+  "house",
+  0.8,
+  false
+ ],
+ "sh2_village_b_01": [
+  "house_round_thatch",
+  "house",
+  0.72,
+  false
+ ],
+ "sh2_village_props_b_00": [
+  "village_flower_pots",
+  "village",
+  0.18,
+  false
+ ],
+ "sh2_village_props_b_01": [
+  "village_washing_line",
+  "village",
+  0.3,
+  false
+ ],
+ "sh2_village_props_b_02": [
+  "village_pump",
+  "village",
+  0.26,
+  false
+ ],
+ "sh2_village_props_b_03": [
+  "village_beehive",
+  "village",
+  0.2,
+  false
+ ],
+ "sh2_village_props_b_04": [
+  "village_coop",
+  "village",
+  0.28,
+  false
+ ],
+ "sh2_village_props_b_05": [
+  "village_barrel",
+  "village",
+  0.16,
+  false
+ ],
+ "sh2_animals_b_00": [
+  "animal_hen_brown",
+  "animal",
+  0.13,
+  false
+ ],
+ "sh2_animals_b_01": [
+  "animal_hen_white",
+  "animal",
+  0.13,
+  false
+ ],
+ "sh2_animals_b_02": [
+  "animal_cow_lying",
+  "animal",
+  0.2,
+  false
+ ],
+ "sh2_animals_b_03": [
+  "animal_rabbit",
+  "animal",
+  0.12,
+  false
+ ],
+ "sh2_animals_b_04": [
+  "animal_duckling_a",
+  "animal",
+  0.07,
+  false
+ ],
+ "sh2_animals_b_05": [
+  "animal_duckling_b",
+  "animal",
+  0.07,
+  false
+ ],
+ "sh2_animals_b_06": [
+  "animal_cat",
+  "animal",
+  0.13,
+  false
+ ],
+ "sh2_bush_flower_b_00": [
+  "flower_lavender",
+  "flower",
+  0.2,
+  false
+ ],
+ "sh2_bush_flower_b_01": [
+  "flower_thistle",
+  "flower",
+  0.22,
+  false
+ ],
+ "sh2_bush_flower_b_02": [
+  "bush_wild_rose",
+  "bush",
+  0.26,
+  false
+ ],
+ "sh2_bush_flower_b_03": [
+  "flower_clover",
+  "flower",
+  0.12,
+  false
+ ],
+ "sh2_bush_flower_b_04": [
+  "flower_forgetmenot",
+  "flower",
+  0.15,
+  false
+ ],
+ "sh2_bush_flower_b_05": [
+  "bush_blackberry",
+  "bush",
+  0.26,
+  false
+ ],
+ "sh2_bush_flower_b_06": [
+  "flower_daisy_white",
+  "flower",
+  0.14,
+  false
+ ],
+ "sh2_bush_flower_b_07": [
+  "bush_boxwood",
+  "bush",
+  0.24,
+  false
+ ],
+ "sh3_hero_trees_00": [
+  "tree_hero_oak",
+  "tree",
+  1.45,
+  true
+ ],
+ "sh3_hero_trees_01": [
+  "tree_hero_willow",
+  "tree",
+  1.35,
+  false
+ ],
+ "sh3_hero_trees_02": [
+  "tree_hero_chestnut",
+  "tree",
+  1.3,
+  true
+ ],
+ "sh3_logs_stones_00": [
+  "rock_log_mossy",
+  "rock",
+  0.16,
+  false
+ ],
+ "sh3_logs_stones_01": [
+  "rock_stump_mushroom",
+  "rock",
+  0.17,
+  false
+ ],
+ "sh3_logs_stones_02": [
+  "rock_boulder_lichen",
+  "rock",
+  0.2,
+  false
+ ],
+ "sh3_logs_stones_03": [
+  "rock_stacked_flat",
+  "rock",
+  0.15,
+  false
+ ],
+ "sh3_logs_stones_04": [
+  "rock_log_pile",
+  "rock",
+  0.15,
+  false
+ ],
+ "sh3_logs_stones_05": [
+  "rock_stone_fern",
+  "rock",
+  0.2,
+  false
+ ],
+ "sh3_logs_stones_06": [
+  "rock_moss_mound",
+  "rock",
+  0.11,
+  false
+ ],
+ "sh3_logs_stones_07": [
+  "rock_stump_ivy",
+  "rock",
+  0.17,
+  false
+ ],
+ "sh3_fillers_a_00": [
+  "grass_spiky_olive",
+  "grass",
+  0.13,
+  false
+ ],
+ "sh3_fillers_a_01": [
+  "flower_clover_mound",
+  "flower",
+  0.12,
+  false
+ ],
+ "sh3_fillers_a_02": [
+  "grass_broad_leaves",
+  "grass",
+  0.14,
+  false
+ ],
+ "sh3_fillers_a_03": [
+  "grass_fern_sprout",
+  "grass",
+  0.15,
+  false
+ ],
+ "sh3_fillers_a_04": [
+  "flower_bluebell",
+  "flower",
+  0.16,
+  false
+ ],
+ "sh3_fillers_a_05": [
+  "flower_marigold_buds",
+  "flower",
+  0.16,
+  false
+ ],
+ "sh3_fillers_a_06": [
+  "flower_red_berries",
+  "flower",
+  0.16,
+  false
+ ],
+ "sh3_fillers_a_07": [
+  "grass_seed_feather",
+  "grass",
+  0.15,
+  false
+ ],
+ "sh3_fillers_a_08": [
+  "flower_star_white",
+  "flower",
+  0.13,
+  false
+ ],
+ "sh3_fillers_a_09": [
+  "grass_moss_mound",
+  "grass",
+  0.09,
+  false
+ ],
+ "sh3_fillers_b_00": [
+  "flower_rust_weed",
+  "flower",
+  0.22,
+  false
+ ],
+ "sh3_fillers_b_01": [
+  "flower_ochre_seedhead",
+  "flower",
+  0.22,
+  false
+ ],
+ "sh3_fillers_b_02": [
+  "mushroom_terracotta_trio",
+  "mushroom",
+  0.17,
+  false
+ ],
+ "sh3_fillers_b_03": [
+  "flower_buttercup_sprig",
+  "flower",
+  0.2,
+  false
+ ],
+ "sh3_fillers_b_04": [
+  "flower_clover_purple",
+  "flower",
+  0.19,
+  false
+ ],
+ "sh3_fillers_b_05": [
+  "flower_foxglove_pink",
+  "flower",
+  0.3,
+  false
+ ],
+ "sh3_fillers_b_06": [
+  "bush_bramble_arch",
+  "bush",
+  0.24,
+  false
+ ],
+ "sh3_fillers_b_07": [
+  "grass_dry_gold",
+  "grass",
+  0.22,
+  false
+ ],
+ "sh3_fillers_b_08": [
+  "flower_tansy",
+  "flower",
+  0.22,
+  false
+ ],
+ "sh3_fillers_b_09": [
+  "water_cattail_pair",
+  "water",
+  0.28,
+  false
+ ],
+ "sh3_bushes_c_00": [
+  "bush_column_pine",
+  "bush",
+  0.42,
+  false
+ ],
+ "sh3_bushes_c_01": [
+  "bush_bramble_low",
+  "bush",
+  0.22,
+  false
+ ],
+ "sh3_bushes_c_02": [
+  "bush_rust_round",
+  "bush",
+  0.32,
+  false
+ ],
+ "sh3_bushes_c_03": [
+  "bush_elder_flower",
+  "bush",
+  0.32,
+  false
+ ],
+ "sh3_bushes_c_04": [
+  "bush_lumpy_olive",
+  "bush",
+  0.28,
+  false
+ ],
+ "sh3_bushes_c_05": [
+  "bush_gorse",
+  "bush",
+  0.26,
+  false
+ ],
+ "sh3_trees_mixed_c_00": [
+  "tree_birch_slim",
+  "tree",
+  0.95,
+  false
+ ],
+ "sh3_trees_mixed_c_01": [
+  "tree_lollipop_fruit",
+  "tree",
+  0.8,
+  true
+ ],
+ "sh3_trees_mixed_c_02": [
+  "tree_poplar_slim",
+  "tree",
+  1.05,
+  false
+ ],
+ "sh3_trees_mixed_c_03": [
+  "tree_hawthorn_bent",
+  "tree",
+  0.8,
+  false
+ ],
+ "sh3_trees_mixed_c_04": [
+  "tree_rowan",
+  "tree",
+  0.85,
+  true
+ ]
+}

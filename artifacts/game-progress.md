@@ -119,3 +119,206 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   md5 duplicates + eyeball every raw; (2) Godot import sometimes leaves `valid=false` for webps written while another agent's
   editor imports — delete the .import and re-import; (3) paper_print rim (fixed 0.006 world units) turns thin leaves/grass of
   small cards fully cream — B should scale rim_width with card size or skip features narrower than ~2× rim.
+- 2026-11-18 A_art round 1 (card art kit, 해와 바람 world). 18 Codex imagegen sheets (shared style anchor STYLE_V1 in
+  `tools/art/mk_jobs_cards.py`, ref = sw_trav_walk for paper/palette only, magenta bg) → `tools/art/key_cards.py`
+  (magenta key with band-limited soft alpha + hot-pink cleanup + despill, connected-component split, trim, hinge at
+  bottom) → `tools/art/publish_cards.py` → **78 cards** in `game/art/cards/<cat>/` + `catalog.json`
+  (tree 12, conifer 5, bush 6, flower 8, grass 3, water/reeds 5, bank 3, field 5, rock 3, mushroom 4, fence 4,
+  bridge 1, house 4, village 6, animal 6, hill 3). Kit sheet: `art_src/cards/_kit_contact.png`. Codex refuses
+  non-square output for "square" jobs → sheets use 3:2 / flexible aspect.
+  Bench `game/scenes/art_bench/art_bench{,_v1..v4}.tscn` (copy of lead bench): path village→wheat→stream+bridge→
+  meadow→forest, groves/field rows/hedgerows; 3055 cards, 88–140 in frame per view. Found bug in lead bench
+  `_add_card`: hinge.position set under a yaw-rotated base swings every card around the origin (fixed in my copy).
+  Bench look tweaks (mine only): focus 6.2, exposure 0.78, stronger DOF, ground tint 7fa477.
+  Metrics r1 views v0..v4: lum_mean .47–.58, p05 .13–.27, p95 .77, sat .46–.53, warmth .21–.36,
+  tiltshift 1.47–2.06, edge_density .074–.13. Blind A/B: artifacts/ab/A_art_r1 (refs v_09,01,06,03,04).
+  Open: shadows long/hard + high camera vs ref low angle (look-dev/lead); no bank strips in bench (read edge-on).
+- 2026-11-18 B_look round 2 (look-dev). Story stays 「해와 바람」 (user's note prefers it over 팥죽할멈; BRIEF agrees).
+  Applied the r1 critic fixes. LookRig: lower camera (27-30 deg, fov 20-21, distance 8-9.5); key raised to 52 deg at
+  1.75 energy; shadow_opacity 0.78 (new export), blur 2.0, angular size 2.5; warm-sage ambient 0.62; exposure 0.84;
+  vignette .32->.14. Tilt-shift band is narrower (half .13, soft .26), the near foreground blurs more than the far
+  (new export tilt_top_bias .4), and physical DOF is tighter around the focus point. Post grade shadow tint is now
+  sage-warm, not brown. Ground felt is lighter sage with more visible fibre; the cover patches are darker greens
+  with no ochre or pale blobs; the table shader now has walnut planks, rings, pores and a varnish sheen.
+  paper_print rim_width .0035->.006, so the die-cut border is wider.
+  Bench is rewritten on art/cards/catalog.json (component A). It is built as vignettes with open felt between them:
+  an autumn grove, a blossom orchard, conifer edges with grey rocks, a sheep pasture (fence, gate, haystack, bale,
+  wheelbarrow, well, trough), a bench, lantern and signpost by the traveller, reeds with geese, an arch bridge where
+  the path crosses the stream, path-verge clumps, and a few windswept sun_wind trees. Trees and conifers are
+  CrossCard (slotted pairs). Card thickness is about 2.4% of height. Scale ranges 0.7-1.3x and cards have a slight
+  random lean. Each view has hero cards in the near foreground (a mushroom, a stump and a fern).
+  1296 card meshes (CrossCard counts as 2); about 80-150 in frame.
+  Metrics r2e v0-4: lum .50-.52 ok; p05 .19-.22 ok; p95 .66-.79 ok; sat .59-.64 ok; warmth .26-.33 ok;
+  edge_density .031-.059 (low: the path and stream take up large areas); tiltshift_ratio 6.8-9.3 (OUT: the band
+  blur is heavy because the critic asked for that; the metric and the critic disagree here).
+  Profile on Metal: p95 frame 10.2 ms (vsync-capped), 879 draw calls. On Vulkan: max GPU 6.4 ms, 2565 draw calls.
+  Blind A/B: artifacts/ab/B_look_r2 (seed 2; refs v_01, 03, 04, 05, 12).
+- 2026-11-18 C_motion r2. Story still 「해와 바람」 (user's pick over 팥죽할멈; unchanged). Applied the r1 critic's motion fixes.
+  `core/pop_hinge.gd` rise: an eased page pull (0.24/0.32/0.45 s to vertical for w 0.5/1/2.2) followed by a stiff spring
+  (4.5 Hz·w^-0.15, zeta 0.75·(0.88+0.12w)). Measured: overshoot 4.4/3.5/2.4°, one rebound, ±0.5° reached +0.12/0.12/0.14 s
+  after vertical (0.35/0.45/0.59 s total), twist ≤1.4/0.9/0.6°. Twist now turns about the card's own vertical (Basis X·Y);
+  the r1 Euler order spun tilted cards in the page plane, which read as sideways slivers. Fold: same topple, page bounce
+  e 0.32→0.12, rebound 0.5°, at rest 0.42–0.54 s. New `twist()` accessor. This deliberately departs from the brief's
+  8–15° / 0.6–0.9 s spec, because the critic called that "jelly".
+  `core/cross_card.gd`: B's follower is stiffer and better damped (3.8 Hz, zeta 0.72).
+  `core/pop_wave.gd`: new `cover_pairs()` occlusion order. A piece standing inside another's flat footprint rises
+  ≥0.12 s after it and folds ≥0.14 s before it, so nothing pushes up through a flat card. Footprints use metas `card_h`/`half_w`.
+  Bench `scenes/motion/motion_bench.gd` rebuilt: 179 cards from art/cards/catalog.json (16 categories, clustered: groves
+  with warm accents, a cottage, well, fence and lantern landmark, stream banks, animals, undergrowth) on B's GroundLayers
+  (narrow 0.3 path, 6 cover patches) under B's LookRig (elev 37°, dist 6.8, narrow DOF, slow ±4° yaw drift).
+  All pieces fold back with the print up, so the folded page shows the printed art and no plain-back "ghosts".
+  The wave runs outward from the traveller at 3.2 u/s.
+  Look metrics (rise frames 5/10/15): lum .45–.52, p05 .14–.30, sat .63–.66, warmth .30–.34, edge .065–.072 all in range;
+  tiltshift 4.7–5.3 is high, as in B's r1 (a stronger DOF variant, sat .69, was reverted).
+  Profile, 179 cards looping at 1366×1024: Metal frame p95 8.9 ms (120 Hz cap), 1 hitch; Vulkan GPU p95 4.5 ms; script p95 0.27 ms; 322 draw calls (Metal).
+  Audio: 179-card rise, 179 requested → 31 played (15/s, gaps ≥33 ms); fold 358 → 38.
+  Artifacts: `artifacts/motion/` (angle_curve_r2.png, curves_r2.json, rise_r2/, fold_r2/, still_up_r2.png).
+  Blind A/B: `artifacts/ab/C_motion_r2` (seed 2, strip, ref video_seq s_157–172).
+- 2026-11-18 D_chars round 2 (characters & walking). Story stays 「해와 바람」 (user's pick over 팥죽할멈).
+  Puppet: `art/chars_rig/cut_rig.py` re-cut all 4 rigged poses as body + **hips** + leg_l + leg_r. The hips piece sits in
+  front of the leg tops down to just below the crotch, with rounded hems. Hidden leg tops are now a flat median pants
+  colour with a rounded cap (the r1 tiled repaint copied dark lining blotches). Brass **brads** are drawn at the leg
+  pivots, which moved down onto the visible hip piece. Classifier holes are filled (hold pose), and the original
+  die-cut alpha is used below the hem. Parts are **cropped to their alpha bbox**: with full-canvas textures,
+  paper_print's UV rim (computed from card_size) covered whole leg cards in cream. That was the r1 "ghosting/double
+  limb" and white-pants look. `seat` → `hips` in rig.json.
+  PaperPuppet: hips z in front of the legs. Swing uses a snappy hold-then-snap smootherstep, so it reads as a hinged
+  card, not a tween. foot_lift 0.035 → 0.024. Rim width is thinned on puppet materials (body 0.0028, joints 0.0016),
+  so there is no sticker keyline around joints.
+  Bench `scenes/chars/walk_bench.gd` rebuilt on B's GroundLayers: felt sheet, raised path card with edge, stream cut,
+  ground-cover patches. It is dressed in depth bands from both catalogs (A + A0):
+  - foreground side trees (0.6-0.85) and hedges, cropped at the bottom;
+  - near verge: scalloped/berry hedge run with gaps, rail fence, hens on the verge ahead of the walk, pebbles,
+    milestone, signpost;
+  - behind the path: fenced sheep pasture, scarecrow, haystack, orchard clump;
+  - stream with reeds and ducks, copses, conifer line, two rows of layered hills;
+  - clustered meadow clumps with open felt between them.
+  Life: animals hop/rock, and grass and flowers flap on a gusting wind (185 animated cards). The bench sets its own
+  light: key 63° (shorter shadows), angular 7, shadow_blur 4, opacity 0.7, fill 0.7, vignette 0.07, tilt_blur 1.0,
+  physical DOF near margin 1.5 / amount 0.07. Camera elevation 25°, distance 7, fov 21: the hero is ~11-12 % of frame
+  height (r1 ~6 % in the bench). Demo events now start at 1.4 s, so the opening walk is clean.
+  Metrics walk f0/f10: lum .50, p05 .15, p95 .80, sat .61, warmth .30, edge .065 (all in range).
+  tiltshift 6.2 is OUT of range: the mid band is very sharp, sharp_bot 31 vs ref 108. It is lower than the 8.9 of the
+  first r2 try, which had a big blurred foreground willow, and r1's 3.0 had no foreground layer.
+  A/B `artifacts/ab/D_chars_r2` (seed 2, strip, ours 16 frames every 3 at 960x720 fixed 1/60 vs ref s_206..s_221).
+  Proposals:
+  - for B: paper_print's rim should use texel size, not rim_width/card_size, when a texture has big transparent margins.
+  - for lead: PaperCard could auto-crop to the alpha bbox.
+  - for A0: atlas animal heights are fine.
+- 2026-11-18 D_chars round 3. Story stays 「해와 바람」 (user's pick over 팥죽할멈).
+  PaperPuppet (`core/characters/paper_puppet.gd`):
+  - Legs now swing as hinged paper cards. The swing is in the card plane, about the card normal, clamped to ±27°, with
+    a small out-of-plane tilt for depth walking (±14°). This fixes the r2 "sideways kick": the leg used to aim straight
+    at the world footprint, so on a yawed card the back foot poked out sideways.
+  - Card yaw toward the walk is down from 38° to 20°, and the swing hang is shorter (it starts at s 0.04, was 0.1).
+  - New forward lean into the walk, 3°: roll for sideways walking, pitch for depth walking.
+  - New coat lag: the body card trails the waddle on a soft spring, pivoting at the hips, clamped to ±0.05 rad.
+  - Close-up check: `.agent_out/captures/d3_close/`. The back foot now steps instead of kicking.
+  Walk bench (`scenes/chars/walk_bench.gd`):
+  - Camera: elevation 31°, distance 5.4, fov 20, plus a ±5° yaw drift, so the layers slide against each other.
+    Walk speed is 0.38. The hero is about 13% of frame height.
+  - Light: low warm key (36°, LookRig exports) with darker directional shadows (opacity 0.82). The r2 high-sun overrides
+    are removed. Ambient 0.44, a less orange key colour, vignette 0.17.
+  - Ground: sage felt (71895f) instead of mint, and the path is narrower (0.38).
+  - Layout: placement overlap is allowed (radius factor 0.32), cards lean ±5° (critic asked for 3-10°), meadow clumps
+    went from 70 to 150, and there is a near occluder row of dark pines and hedges.
+  - Palette: 60% of flower and bush cards use a dusty print variant (own material set via edge_color, ink_saturation
+    0.82). In total 699 cards, 357 of them animated.
+  Metrics on walk frames f0/f15:
+  - lum .43, p05 .19-.20, p95 .69, sat .51, warmth .22, edge .063-.064: all in range.
+  - tiltshift 3.8-4.1 is still OUT of range (1.3-2.5), but better than r2's 6.2.
+  - Versus r2 f10 (lum .50, sat .61), the frame is darker and less saturated, as the critic asked.
+  A/B `artifacts/ab/D_chars_r3` (seed 3, strip, ours `.agent_out/captures/d3_walk_seq` 16 frames every 3 at 960x720,
+  ref s_206..s_221).
+  Proposals:
+  - for lead/B: a lit-side cream edge band and a darker core on card side faces (PaperCard/paper_edge), which the critic
+    asked for in r1 and r2;
+  - for C: motion_bench.gd currently fails to parse (`_ambient_step` missing), which makes check_all fail.
+- 2026-11-18 C_motion r3. Story still 「해와 바람」 (the user's pick over 팥죽할멈). Applied the r2 critic's motion fixes.
+  `core/pop_hinge.gd`: rise AND fold are now page-driven. An eased path (92% smoothstep) is followed by a stiff spring
+  (5.2 Hz·w^-0.15); the old topple physics and the `fall_hz`/`bounce` exports are removed, and new `fold_time`, `ease_share`
+  and `settle_lift` exports are added. Rise measured (curve_job): vertical at 0.30/0.41/0.57 s (small/medium/large),
+  overshoot 2.4/1.8/1.2°, one rebound, ±0.5° reached 0.10 s after vertical, twist ≤1.4°. Fold: slow start, fastest at 45°,
+  decelerates into contact at 0.40/0.52/0.69 s, then a soft air-cushion settle of 1.8/1.4/1.0°; at rest by 0.47/0.60/0.76 s.
+  PaperAudio pat gain is rescaled to the softer landing speed (speed/1.8).
+  Bench: 360 hinges. Shared atlas small props are added (critters, props, crops, flowers, mushrooms, rocks) and the
+  undergrowth is about 0.68x size and clustered. D's PaperPuppet (h 0.45) now strolls the path. New
+  `scenes/motion/paper_ambient.gd` adds cut-paper butterflies (hinged wings) and falling leaves; textures are generated
+  by `make_ambient_tex.py`. Reeds, grass and flowers sway rigidly about their base once standing. The camera has a
+  continuous yaw and dolly drift (8–11 s periods) at elev 32°, dist 6.0, fov 22. Felt is shifted to yellow-sage 85995a.
+  Tilt-shift: tilt_blur 1.4 and band 0.10. The 2.2/0.085 variant (tiltshift 50–64, edge .03) was too extreme and is not kept.
+  Metrics still: lum .445, p05 .15, p95 .73, sat .57, warmth .27 (in range). tiltshift 13.5 and edge .034 are out of
+  range: the critic asked for heavy DOF, and the metric and the critic disagree here.
+  Profile (loop, 1366×1024): Metal frame p95 9.4 ms (120 Hz cap), 3 hitches in 953 frames; Vulkan GPU p95 4.5 ms; 586 draw calls on Metal.
+  Audio: 150-card job, rise 149 requested → 27 played; fold 298 → 24. Samples unchanged: flap 132–174 ms at −3 dBFS,
+  centroid 3.1–5.0 kHz; fold_down 201–243 ms at −6 dBFS, 1.1–1.7 kHz; pat 68–98 ms at −4 dBFS.
+  Artifacts: artifacts/motion/{angle_curve_r3.png, curves_r3.json, rise_r3/, fold_r3/, still_up_r3.png}.
+  Blind A/B: artifacts/ab/C_motion_r3 (seed 3, strip, ref video_seq s_157–172).
+  Proposals for B: clamp the facing-ratio darkening in paper_print to ≤15% (the red-tree value pop). The look_metrics
+  tiltshift target range likely needs re-baselining against the critic's DOF ask.
+- 2026-11-18 B_look round 3 (look-dev). The story stays 「해와 바람」, as the user asked; the bench uses the traveller and the windswept sun_wind trees.
+  Applied the r2 critic fixes:
+  - Ground relief. `GroundLayers.hill_specs` adds stacked felt hill tiers (0.06 thick, cut edges, clipped off the path and stream; `surface_y` and `hill_level` know about them). New `add_folded_rock()` makes tented paper rocks with two printed faces and a crease (`shaders/folded_rock.gdshader`). New `add_patch()` lays dark moss under groves. The felt is desaturated (819a78), with large low-frequency mottling.
+  - Anchoring. New `core/look/contact_shadows.gd` (ContactShadows, one MultiMesh draw) plus `shaders/contact_shadow.gdshader` put a soft ellipse and a dark crease at every card base. The key light is now 44°, with shadow blur 1.1, opacity 0.86 and angular size 1.2, so shadows are shorter and crisper.
+  - Grade. Warm depth haze (FOG_MODE_DEPTH, past the focus), contrast 1.03, saturation 0.98 plus a 0.92 post pass, exposure 0.8, vignette 0.2. Tilt-shift is milder: max_lod 0.95, band ±0.15/0.34, bias 0.9, dof_amount 0.05. In r2 the bottom third was about 25x blurrier than the reference.
+  - Cards. paper_print gets a weak satin sheen (roughness about 0.74, specular 0.22), and the rim width scales with card height, which is A0's note about thin leaves.
+  - Bench. It now draws from both catalogs (cards plus atlas, no winter), about 270 distinct ids per view, picking the least-used id from each pool. Conifers are 1.55x and broad trees 1.25x, with conifer lines on the far hills. There are hedgerows along the path, 10 folded-rock clusters, and animals and props around every view's focus. A lens keep-out stops tall cards from landing in front of the camera. All single cards use back_print, which ends the plain-back ghosts. 2250-2380 card meshes.
+  Metrics r3g v0-4: lum .41-.44, p05 .11-.16, p95 .61-.74, sat .50-.59, warmth .19-.29 (all in range); edge_density .055-.10
+  (in range or close); tiltshift 3.7-7.4 (still above 2.5 but down from 6.8-9.3; the reference's top and bottom thirds are much sharper).
+  Profile (1366x1024): Metal p95 9.0 ms (120 Hz cap), 1381 draw calls; Vulkan max GPU 6.1 ms.
+  Blind A/B: artifacts/ab/B_look_r3 (seed 3; refs v_01, 03, 04, 12, 13).
+  Proposals for the lead: (1) the BRIEF tree heights (0.6-1.1) are too short against bushes for the critic, and the bench scales conifers about 1.5x; (2) the critic keeps asking for a slight card bend, but the style rule says cards never bend, so the bench does not bend them.
+- 2026-11-18 A_art round 2 (card kit + bench, 「해와 바람」 kept per user's pick). 14 new Codex sheets
+  (`tools/art/mk_jobs_cards_r2.py`: STYLE_V1 anchor unchanged + "print grain" addendum against the r1 "vector sticker"
+  note; reference 2 = r1 sheet sh_trees_green for kit consistency; launcher `tools/art/run_r2.sh`; 2 jobs were rejected
+  as "portrait, not 3:2" and were rerun with flexible aspect). New `tools/art/split_manual.py` for touching objects.
+  Catalog 78 -> **146 cards** (ids of r1 unchanged; new: 8 layered hill strips/wooded hills, 6 wheat patches incl. stook,
+  hay square/stack/pole-stack/cart, woodpile, ladder, plank bridge, jetty, stepping stones, lily pads, ducks, ducklings,
+  hens, cow, rabbit, cat, 8 trees, 6 conifers, 5 large foreground plants (new category `foreground`), lavender, thistle,
+  clover, forget-me-not, white daisies, wild rose, blackberry, boxwood, stone and round cottages, flower pots, washing
+  line, pump, beehive, coop, barrel). Hill webp max width raised 1600->2048.
+  Bench `scenes/art_bench/art_bench.gd` rebuilt on B's LookRig + GroundLayers (was own lights/flat page): one 22x15
+  spread, village (lit windows/lanterns via small warm OmniLights), wheat field of broken rows with varied lengths
+  plus haystack/stook/cart clearings, stream with reed clumps, ducks, lily pads, side-on plank bridge, sheep meadow, forest edge,
+  three rows of hill cards at the back and wooded hills mid-distance. Props are clustered (3-7, scale 0.7-1.4, overlap),
+  gaps are filled with single-species clumps, cards lean ±3.7°/tilt ±2-3° and face the reader side of the view, and
+  big foreground plants sit near the camera. The traveller is 0.44 tall in the bench only (critic asked ~1.3x; the brief
+  contract is 0.36, so this is a proposal for the lead and D). ~1900 cards; 242-650 in frame per view. Cameras: elevation 24-27°.
+  Metrics r2 v0-4: lum .41-.50, p05 .17-.25, p95 .66-.73, sat .57-.61, warmth .25-.32, edge .075-.083 (all in range);
+  tiltshift_ratio 5.8-7.0 (out; it comes from LookRig's DOF/post. I tried tilt_blur 1.4 and it didn't move the
+  ratio, so I reverted to B's default). r1 for comparison: sat .46-.53, edge .074-.13, tiltshift 1.5-2.1.
+  Blind A/B: artifacts/ab/A_art_r2 (seed 2; ours art_src/cards/bench_r2/art_r2_v0..4; refs v_01,03,04,06,12).
+- 2026-11-18 A_art round 3 (card kit + bench; story stays 「해와 바람」, as the user chose over 팥죽할멈).
+  Kit:
+  - New `tools/art/strip_rim.py`, wired into `publish_cards.py` (STRIP_RIM). It strips the printed cream outline from
+    every card: ring-by-ring peeling while the ring is mostly cream, plus one transition ring, speck removal and a
+    1 px antialiased re-cut. This answers r2's "uniform white sticker border". The paper_print shader rim still
+    draws the thin cream core.
+  - All 146 r1/r2 webps are republished in place with the same ids; the old ones are backed up in
+    `art_src/cards/backup_r2_ship/` for revert.
+  - 6 new Codex sheets (`mk_jobs_cards_r3.py`, `run_r3.sh`). STYLE_V3 = STYLE_V1 with "no outline/no light rim",
+    plus the print-grain addendum and ref sh2_trees_green_b.
+  - The catalog goes from 146 to **188 cards**:
+    - 3 hero trees: oak, willow, chestnut (1.3-1.45 tall)
+    - 8 logs/stumps/boulders/stacked stones
+    - 20 small fillers with distinct silhouettes
+    - 6 bushes
+    - 5 trees: birch, lollipop fruit, poplar, wind-bent hawthorn, rowan
+  Bench (`scenes/art_bench/art_bench.gd`):
+  - Camera is closer and lower: distance 6.2-6.4 (r2: 10-10.5), elevation 20-22°, fov 21. The backdrop hills and the
+    table now show in frame.
+  - The traveller is 0.6 tall (bench only; proposal for lead/D) and placed on a third via a lateral focus offset.
+    It has a 0.75 clear ring, and a lens keep-out keeps tall cards off the hero-camera line.
+  - Stronger DOF overrides: tilt_blur 1.35, band 0.11/0.3, dof_amount 0.075, near 0.6, far 1.8.
+  - Ground and relief: B's ContactShadows under every card, hill_specs felt tiers, moss patches under groves,
+    10 folded-rock clusters.
+  - Variety: least-used id picking. Each view gets 2 flat hero trees behind/beside the hero.
+  - Back hills are 4 depth rows with gaps (parallax).
+  - Density: wheat rows about 40% fewer and shorter; path 0.44 wide (was 0.56); gap-fill 420 clumps (was 520).
+  - Totals: ~1650 cards in the spread, 161-286 in frame.
+  Metrics r3 v0-4:
+  - In range: lum .40-.47, p05 .15-.21, sat .53-.64, warmth .23-.31.
+  - Out of range: edge .041-.058 (just below .06, from the blur and open felt) and tiltshift 7.6-12 (out, on
+    purpose: the r2 critic asked for heavy DOF; the metric and the critic disagree, as B and C also logged).
+  Blind A/B: artifacts/ab/A_art_r3 (seed 3; ours art_src/cards/bench_r3/art_r3_v0..4; refs v_01, 03, 04, 06, 12).
+  Proposals: traveller 0.6 in benches; cards still can't bend under the style rule.

@@ -1,0 +1,1694 @@
+[
+ {
+  "id": "animal_bird_blue_post",
+  "path": "res://art/cards/animal/animal_bird_blue_post.webp",
+  "category": "animal",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 0.726,
+  "src": "sh_animals_04"
+ },
+ {
+  "id": "animal_bird_red_post",
+  "path": "res://art/cards/animal/animal_bird_red_post.webp",
+  "category": "animal",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 0.775,
+  "src": "sh_animals_03"
+ },
+ {
+  "id": "animal_cat",
+  "path": "res://art/cards/animal/animal_cat.webp",
+  "category": "animal",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "aspect": 0.742,
+  "src": "sh2_animals_b_06"
+ },
+ {
+  "id": "animal_cow_lying",
+  "path": "res://art/cards/animal/animal_cow_lying.webp",
+  "category": "animal",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.297,
+  "src": "sh2_animals_b_02"
+ },
+ {
+  "id": "animal_duck_brown",
+  "path": "res://art/cards/animal/animal_duck_brown.webp",
+  "category": "animal",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "aspect": 1.625,
+  "src": "sh2_water_03"
+ },
+ {
+  "id": "animal_duck_cream",
+  "path": "res://art/cards/animal/animal_duck_cream.webp",
+  "category": "animal",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "aspect": 1.64,
+  "src": "sh2_water_02"
+ },
+ {
+  "id": "animal_duckling_a",
+  "path": "res://art/cards/animal/animal_duckling_a.webp",
+  "category": "animal",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "aspect": 0.885,
+  "src": "sh2_animals_b_04"
+ },
+ {
+  "id": "animal_duckling_b",
+  "path": "res://art/cards/animal/animal_duckling_b.webp",
+  "category": "animal",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "aspect": 0.865,
+  "src": "sh2_animals_b_05"
+ },
+ {
+  "id": "animal_goose",
+  "path": "res://art/cards/animal/animal_goose.webp",
+  "category": "animal",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 0.807,
+  "src": "sh_animals_05"
+ },
+ {
+  "id": "animal_hen_brown",
+  "path": "res://art/cards/animal/animal_hen_brown.webp",
+  "category": "animal",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "aspect": 1.025,
+  "src": "sh2_animals_b_00"
+ },
+ {
+  "id": "animal_hen_white",
+  "path": "res://art/cards/animal/animal_hen_white.webp",
+  "category": "animal",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "aspect": 0.992,
+  "src": "sh2_animals_b_01"
+ },
+ {
+  "id": "animal_rabbit",
+  "path": "res://art/cards/animal/animal_rabbit.webp",
+  "category": "animal",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "aspect": 0.764,
+  "src": "sh2_animals_b_03"
+ },
+ {
+  "id": "animal_sheep_grazing",
+  "path": "res://art/cards/animal/animal_sheep_grazing.webp",
+  "category": "animal",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "aspect": 1.324,
+  "src": "sh_animals_00"
+ },
+ {
+  "id": "animal_sheep_lying",
+  "path": "res://art/cards/animal/animal_sheep_lying.webp",
+  "category": "animal",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "aspect": 1.42,
+  "src": "sh_animals_02"
+ },
+ {
+  "id": "animal_sheep_standing",
+  "path": "res://art/cards/animal/animal_sheep_standing.webp",
+  "category": "animal",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 1.012,
+  "src": "sh_animals_01"
+ },
+ {
+  "id": "bank_grass_stones",
+  "path": "res://art/cards/bank/bank_grass_stones.webp",
+  "category": "bank",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "aspect": 13.653,
+  "src": "sh_stream_bank_01"
+ },
+ {
+  "id": "bank_pebbles_ripple",
+  "path": "res://art/cards/bank/bank_pebbles_ripple.webp",
+  "category": "bank",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "aspect": 12.488,
+  "src": "sh_stream_bank_02"
+ },
+ {
+  "id": "bank_reeds_ripple",
+  "path": "res://art/cards/bank/bank_reeds_ripple.webp",
+  "category": "bank",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "aspect": 7.938,
+  "src": "sh_stream_bank_00"
+ },
+ {
+  "id": "bridge_arch_cream",
+  "path": "res://art/cards/bridge/bridge_arch_cream.webp",
+  "category": "bridge",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 3.513,
+  "src": "sh_fences_bridge_04"
+ },
+ {
+  "id": "bridge_jetty",
+  "path": "res://art/cards/bridge/bridge_jetty.webp",
+  "category": "bridge",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 1.89,
+  "src": "sh2_water_05"
+ },
+ {
+  "id": "bridge_plank",
+  "path": "res://art/cards/bridge/bridge_plank.webp",
+  "category": "bridge",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 2.291,
+  "src": "sh2_water_00"
+ },
+ {
+  "id": "bush_blackberry",
+  "path": "res://art/cards/bush/bush_blackberry.webp",
+  "category": "bush",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "aspect": 1.741,
+  "src": "sh2_bush_flower_b_05"
+ },
+ {
+  "id": "bush_boxwood",
+  "path": "res://art/cards/bush/bush_boxwood.webp",
+  "category": "bush",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "aspect": 1.605,
+  "src": "sh2_bush_flower_b_07"
+ },
+ {
+  "id": "bush_bramble_arch",
+  "path": "res://art/cards/bush/bush_bramble_arch.webp",
+  "category": "bush",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "aspect": 1.103,
+  "src": "sh3_fillers_b_06"
+ },
+ {
+  "id": "bush_bramble_low",
+  "path": "res://art/cards/bush/bush_bramble_low.webp",
+  "category": "bush",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 1.894,
+  "src": "sh3_bushes_c_01"
+ },
+ {
+  "id": "bush_column_pine",
+  "path": "res://art/cards/bush/bush_column_pine.webp",
+  "category": "bush",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "aspect": 0.634,
+  "src": "sh3_bushes_c_00"
+ },
+ {
+  "id": "bush_elder_flower",
+  "path": "res://art/cards/bush/bush_elder_flower.webp",
+  "category": "bush",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "aspect": 1.626,
+  "src": "sh3_bushes_c_03"
+ },
+ {
+  "id": "bush_fern",
+  "path": "res://art/cards/bush/bush_fern.webp",
+  "category": "bush",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "aspect": 1.322,
+  "src": "sh_bushes_05"
+ },
+ {
+  "id": "bush_gorse",
+  "path": "res://art/cards/bush/bush_gorse.webp",
+  "category": "bush",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "aspect": 1.46,
+  "src": "sh3_bushes_c_05"
+ },
+ {
+  "id": "bush_hedge_dark",
+  "path": "res://art/cards/bush/bush_hedge_dark.webp",
+  "category": "bush",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "aspect": 1.395,
+  "src": "sh_bushes_01"
+ },
+ {
+  "id": "bush_lumpy_olive",
+  "path": "res://art/cards/bush/bush_lumpy_olive.webp",
+  "category": "bush",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "aspect": 1.589,
+  "src": "sh3_bushes_c_04"
+ },
+ {
+  "id": "bush_mustard_autumn",
+  "path": "res://art/cards/bush/bush_mustard_autumn.webp",
+  "category": "bush",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 1.392,
+  "src": "sh_bushes_04"
+ },
+ {
+  "id": "bush_olive_berry",
+  "path": "res://art/cards/bush/bush_olive_berry.webp",
+  "category": "bush",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 1.361,
+  "src": "sh_bushes_02"
+ },
+ {
+  "id": "bush_rust_round",
+  "path": "res://art/cards/bush/bush_rust_round.webp",
+  "category": "bush",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "aspect": 1.277,
+  "src": "sh3_bushes_c_02"
+ },
+ {
+  "id": "bush_sage_leaf",
+  "path": "res://art/cards/bush/bush_sage_leaf.webp",
+  "category": "bush",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 1.312,
+  "src": "sh_bushes_00"
+ },
+ {
+  "id": "bush_teal_blossom",
+  "path": "res://art/cards/bush/bush_teal_blossom.webp",
+  "category": "bush",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "aspect": 1.288,
+  "src": "sh_bushes_03"
+ },
+ {
+  "id": "bush_wild_rose",
+  "path": "res://art/cards/bush/bush_wild_rose.webp",
+  "category": "bush",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "aspect": 1.561,
+  "src": "sh2_bush_flower_b_02"
+ },
+ {
+  "id": "conifer_fir_dark_tall",
+  "path": "res://art/cards/conifer/conifer_fir_dark_tall.webp",
+  "category": "conifer",
+  "height_units": 1.1,
+  "cross_slot": false,
+  "aspect": 0.364,
+  "src": "sh2_conifers_b_00"
+ },
+ {
+  "id": "conifer_fir_green",
+  "path": "res://art/cards/conifer/conifer_fir_green.webp",
+  "category": "conifer",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "aspect": 0.774,
+  "src": "sh_conifers_04"
+ },
+ {
+  "id": "conifer_fir_pair",
+  "path": "res://art/cards/conifer/conifer_fir_pair.webp",
+  "category": "conifer",
+  "height_units": 0.9,
+  "cross_slot": false,
+  "aspect": 0.777,
+  "src": "sh2_conifers_b_03"
+ },
+ {
+  "id": "conifer_fir_tall",
+  "path": "res://art/cards/conifer/conifer_fir_tall.webp",
+  "category": "conifer",
+  "height_units": 1.1,
+  "cross_slot": true,
+  "aspect": 0.495,
+  "src": "sh_conifers_02"
+ },
+ {
+  "id": "conifer_fir_young",
+  "path": "res://art/cards/conifer/conifer_fir_young.webp",
+  "category": "conifer",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "aspect": 0.575,
+  "src": "sh2_conifers_b_02"
+ },
+ {
+  "id": "conifer_juniper",
+  "path": "res://art/cards/conifer/conifer_juniper.webp",
+  "category": "conifer",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "aspect": 1.206,
+  "src": "sh2_conifers_b_04b"
+ },
+ {
+  "id": "conifer_olive_redtrunk",
+  "path": "res://art/cards/conifer/conifer_olive_redtrunk.webp",
+  "category": "conifer",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 0.647,
+  "src": "sh_conifers_00"
+ },
+ {
+  "id": "conifer_pine_bushy",
+  "path": "res://art/cards/conifer/conifer_pine_bushy.webp",
+  "category": "conifer",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "aspect": 0.975,
+  "src": "sh_conifers_03"
+ },
+ {
+  "id": "conifer_pine_tiered_olive",
+  "path": "res://art/cards/conifer/conifer_pine_tiered_olive.webp",
+  "category": "conifer",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "aspect": 0.61,
+  "src": "sh2_conifers_b_01"
+ },
+ {
+  "id": "conifer_spruce_blue",
+  "path": "res://art/cards/conifer/conifer_spruce_blue.webp",
+  "category": "conifer",
+  "height_units": 1.05,
+  "cross_slot": false,
+  "aspect": 0.369,
+  "src": "sh_conifers_01"
+ },
+ {
+  "id": "conifer_spruce_grey",
+  "path": "res://art/cards/conifer/conifer_spruce_grey.webp",
+  "category": "conifer",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 0.709,
+  "src": "sh2_conifers_b_04a"
+ },
+ {
+  "id": "fence_gate",
+  "path": "res://art/cards/fence/fence_gate.webp",
+  "category": "fence",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.465,
+  "src": "sh_fences_bridge_03"
+ },
+ {
+  "id": "fence_picket_cream",
+  "path": "res://art/cards/fence/fence_picket_cream.webp",
+  "category": "fence",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 2.321,
+  "src": "sh_fences_bridge_00"
+ },
+ {
+  "id": "fence_split_rail",
+  "path": "res://art/cards/fence/fence_split_rail.webp",
+  "category": "fence",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 2.067,
+  "src": "sh_fences_bridge_01"
+ },
+ {
+  "id": "fence_wattle",
+  "path": "res://art/cards/fence/fence_wattle.webp",
+  "category": "fence",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 2.368,
+  "src": "sh_fences_bridge_02"
+ },
+ {
+  "id": "field_hay_bale_round",
+  "path": "res://art/cards/field/field_hay_bale_round.webp",
+  "category": "field",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.131,
+  "src": "sh_wheat_hay_03"
+ },
+ {
+  "id": "field_hay_bale_square",
+  "path": "res://art/cards/field/field_hay_bale_square.webp",
+  "category": "field",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 1.041,
+  "src": "sh2_hay_farm_00"
+ },
+ {
+  "id": "field_hay_bales_stack",
+  "path": "res://art/cards/field/field_hay_bales_stack.webp",
+  "category": "field",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "aspect": 1.061,
+  "src": "sh2_hay_farm_01"
+ },
+ {
+  "id": "field_hay_cart",
+  "path": "res://art/cards/field/field_hay_cart.webp",
+  "category": "field",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "aspect": 1.307,
+  "src": "sh2_hay_farm_03"
+ },
+ {
+  "id": "field_haystack",
+  "path": "res://art/cards/field/field_haystack.webp",
+  "category": "field",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "aspect": 1.166,
+  "src": "sh_wheat_hay_05"
+ },
+ {
+  "id": "field_haystack_pole",
+  "path": "res://art/cards/field/field_haystack_pole.webp",
+  "category": "field",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "aspect": 0.848,
+  "src": "sh2_hay_farm_02"
+ },
+ {
+  "id": "field_wheat_clump_pale",
+  "path": "res://art/cards/field/field_wheat_clump_pale.webp",
+  "category": "field",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.612,
+  "src": "sh2_wheat_patch_05"
+ },
+ {
+  "id": "field_wheat_clump_short",
+  "path": "res://art/cards/field/field_wheat_clump_short.webp",
+  "category": "field",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 2.127,
+  "src": "sh2_wheat_patch_00"
+ },
+ {
+  "id": "field_wheat_clump_tall",
+  "path": "res://art/cards/field/field_wheat_clump_tall.webp",
+  "category": "field",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 0.84,
+  "src": "sh2_wheat_patch_01"
+ },
+ {
+  "id": "field_wheat_patch_poppy",
+  "path": "res://art/cards/field/field_wheat_patch_poppy.webp",
+  "category": "field",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 2.322,
+  "src": "sh2_wheat_patch_02"
+ },
+ {
+  "id": "field_wheat_row_a",
+  "path": "res://art/cards/field/field_wheat_row_a.webp",
+  "category": "field",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 3.492,
+  "src": "sh_wheat_hay_00"
+ },
+ {
+  "id": "field_wheat_row_b",
+  "path": "res://art/cards/field/field_wheat_row_b.webp",
+  "category": "field",
+  "height_units": 0.19,
+  "cross_slot": false,
+  "aspect": 3.651,
+  "src": "sh_wheat_hay_01"
+ },
+ {
+  "id": "field_wheat_sheaf",
+  "path": "res://art/cards/field/field_wheat_sheaf.webp",
+  "category": "field",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "aspect": 0.632,
+  "src": "sh_wheat_hay_02"
+ },
+ {
+  "id": "field_wheat_stalks",
+  "path": "res://art/cards/field/field_wheat_stalks.webp",
+  "category": "field",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.429,
+  "src": "sh2_wheat_patch_03"
+ },
+ {
+  "id": "field_wheat_stook",
+  "path": "res://art/cards/field/field_wheat_stook.webp",
+  "category": "field",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "aspect": 1.276,
+  "src": "sh2_wheat_patch_04"
+ },
+ {
+  "id": "flower_bluebell",
+  "path": "res://art/cards/flower/flower_bluebell.webp",
+  "category": "flower",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 0.939,
+  "src": "sh3_fillers_a_04"
+ },
+ {
+  "id": "flower_buttercup",
+  "path": "res://art/cards/flower/flower_buttercup.webp",
+  "category": "flower",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 0.788,
+  "src": "sh_flowers_07"
+ },
+ {
+  "id": "flower_buttercup_sprig",
+  "path": "res://art/cards/flower/flower_buttercup_sprig.webp",
+  "category": "flower",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 0.623,
+  "src": "sh3_fillers_b_03"
+ },
+ {
+  "id": "flower_chamomile",
+  "path": "res://art/cards/flower/flower_chamomile.webp",
+  "category": "flower",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 0.703,
+  "src": "sh_flowers_02"
+ },
+ {
+  "id": "flower_clover",
+  "path": "res://art/cards/flower/flower_clover.webp",
+  "category": "flower",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "aspect": 1.867,
+  "src": "sh2_bush_flower_b_03"
+ },
+ {
+  "id": "flower_clover_mound",
+  "path": "res://art/cards/flower/flower_clover_mound.webp",
+  "category": "flower",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "aspect": 1.596,
+  "src": "sh3_fillers_a_01"
+ },
+ {
+  "id": "flower_clover_purple",
+  "path": "res://art/cards/flower/flower_clover_purple.webp",
+  "category": "flower",
+  "height_units": 0.19,
+  "cross_slot": false,
+  "aspect": 0.78,
+  "src": "sh3_fillers_b_04"
+ },
+ {
+  "id": "flower_cornflower",
+  "path": "res://art/cards/flower/flower_cornflower.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.772,
+  "src": "sh_flowers_03"
+ },
+ {
+  "id": "flower_daisy_white",
+  "path": "res://art/cards/flower/flower_daisy_white.webp",
+  "category": "flower",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "aspect": 1.823,
+  "src": "sh2_bush_flower_b_06"
+ },
+ {
+  "id": "flower_daisy_yellow",
+  "path": "res://art/cards/flower/flower_daisy_yellow.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.718,
+  "src": "sh_flowers_00"
+ },
+ {
+  "id": "flower_forgetmenot",
+  "path": "res://art/cards/flower/flower_forgetmenot.webp",
+  "category": "flower",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 1.613,
+  "src": "sh2_bush_flower_b_04"
+ },
+ {
+  "id": "flower_foxglove",
+  "path": "res://art/cards/flower/flower_foxglove.webp",
+  "category": "flower",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 0.595,
+  "src": "sh_flowers_06"
+ },
+ {
+  "id": "flower_foxglove_pink",
+  "path": "res://art/cards/flower/flower_foxglove_pink.webp",
+  "category": "flower",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 0.448,
+  "src": "sh3_fillers_b_05"
+ },
+ {
+  "id": "flower_lavender",
+  "path": "res://art/cards/flower/flower_lavender.webp",
+  "category": "flower",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.419,
+  "src": "sh2_bush_flower_b_00"
+ },
+ {
+  "id": "flower_marigold",
+  "path": "res://art/cards/flower/flower_marigold.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.763,
+  "src": "sh_flowers_04"
+ },
+ {
+  "id": "flower_marigold_buds",
+  "path": "res://art/cards/flower/flower_marigold_buds.webp",
+  "category": "flower",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 0.976,
+  "src": "sh3_fillers_a_05"
+ },
+ {
+  "id": "flower_ochre_seedhead",
+  "path": "res://art/cards/flower/flower_ochre_seedhead.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.743,
+  "src": "sh3_fillers_b_01"
+ },
+ {
+  "id": "flower_poppy_red",
+  "path": "res://art/cards/flower/flower_poppy_red.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.773,
+  "src": "sh_flowers_01"
+ },
+ {
+  "id": "flower_red_berries",
+  "path": "res://art/cards/flower/flower_red_berries.webp",
+  "category": "flower",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 1.0,
+  "src": "sh3_fillers_a_06"
+ },
+ {
+  "id": "flower_rust_weed",
+  "path": "res://art/cards/flower/flower_rust_weed.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.615,
+  "src": "sh3_fillers_b_00"
+ },
+ {
+  "id": "flower_star_white",
+  "path": "res://art/cards/flower/flower_star_white.webp",
+  "category": "flower",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "aspect": 1.463,
+  "src": "sh3_fillers_a_08"
+ },
+ {
+  "id": "flower_tansy",
+  "path": "res://art/cards/flower/flower_tansy.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.726,
+  "src": "sh3_fillers_b_08"
+ },
+ {
+  "id": "flower_thistle",
+  "path": "res://art/cards/flower/flower_thistle.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 1.469,
+  "src": "sh2_bush_flower_b_01"
+ },
+ {
+  "id": "flower_tulip_cream",
+  "path": "res://art/cards/flower/flower_tulip_cream.webp",
+  "category": "flower",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.78,
+  "src": "sh_flowers_05"
+ },
+ {
+  "id": "fg_burdock",
+  "path": "res://art/cards/foreground/fg_burdock.webp",
+  "category": "foreground",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "aspect": 1.532,
+  "src": "sh2_foreground_03"
+ },
+ {
+  "id": "fg_dandelion",
+  "path": "res://art/cards/foreground/fg_dandelion.webp",
+  "category": "foreground",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 2.118,
+  "src": "sh2_foreground_02"
+ },
+ {
+  "id": "fg_fern_big",
+  "path": "res://art/cards/foreground/fg_fern_big.webp",
+  "category": "foreground",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "aspect": 1.648,
+  "src": "sh2_foreground_00"
+ },
+ {
+  "id": "fg_foxtail",
+  "path": "res://art/cards/foreground/fg_foxtail.webp",
+  "category": "foreground",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "aspect": 1.425,
+  "src": "sh2_foreground_04"
+ },
+ {
+  "id": "fg_meadow_grass",
+  "path": "res://art/cards/foreground/fg_meadow_grass.webp",
+  "category": "foreground",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "aspect": 1.53,
+  "src": "sh2_foreground_01"
+ },
+ {
+  "id": "grass_broad_leaves",
+  "path": "res://art/cards/grass/grass_broad_leaves.webp",
+  "category": "grass",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "aspect": 1.362,
+  "src": "sh3_fillers_a_02"
+ },
+ {
+  "id": "grass_dry_gold",
+  "path": "res://art/cards/grass/grass_dry_gold.webp",
+  "category": "grass",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "aspect": 0.615,
+  "src": "sh3_fillers_b_07"
+ },
+ {
+  "id": "grass_fern_sprout",
+  "path": "res://art/cards/grass/grass_fern_sprout.webp",
+  "category": "grass",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 0.932,
+  "src": "sh3_fillers_a_03"
+ },
+ {
+  "id": "grass_moss_mound",
+  "path": "res://art/cards/grass/grass_moss_mound.webp",
+  "category": "grass",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "aspect": 2.213,
+  "src": "sh3_fillers_a_09"
+ },
+ {
+  "id": "grass_seed_feather",
+  "path": "res://art/cards/grass/grass_seed_feather.webp",
+  "category": "grass",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 1.332,
+  "src": "sh3_fillers_a_07"
+ },
+ {
+  "id": "grass_spiky_olive",
+  "path": "res://art/cards/grass/grass_spiky_olive.webp",
+  "category": "grass",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "aspect": 1.538,
+  "src": "sh3_fillers_a_00"
+ },
+ {
+  "id": "grass_tuft_dark",
+  "path": "res://art/cards/grass/grass_tuft_dark.webp",
+  "category": "grass",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 1.227,
+  "src": "sh_grass_reeds_01"
+ },
+ {
+  "id": "grass_tuft_olive",
+  "path": "res://art/cards/grass/grass_tuft_olive.webp",
+  "category": "grass",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "aspect": 1.195,
+  "src": "sh_grass_reeds_02"
+ },
+ {
+  "id": "grass_tuft_sage",
+  "path": "res://art/cards/grass/grass_tuft_sage.webp",
+  "category": "grass",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "aspect": 1.166,
+  "src": "sh_grass_reeds_00"
+ },
+ {
+  "id": "hill_far_blue",
+  "path": "res://art/cards/hill/hill_far_blue.webp",
+  "category": "hill",
+  "height_units": 1.2,
+  "cross_slot": false,
+  "aspect": 3.923,
+  "src": "sh_hills_far_00"
+ },
+ {
+  "id": "hill_layer_far_teal",
+  "path": "res://art/cards/hill/hill_layer_far_teal.webp",
+  "category": "hill",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 10.723,
+  "src": "sh2_hills_layer_b_02"
+ },
+ {
+  "id": "hill_layer_moss",
+  "path": "res://art/cards/hill/hill_layer_moss.webp",
+  "category": "hill",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 9.942,
+  "src": "sh2_hills_layer_a_00"
+ },
+ {
+  "id": "hill_layer_ochre",
+  "path": "res://art/cards/hill/hill_layer_ochre.webp",
+  "category": "hill",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "aspect": 11.13,
+  "src": "sh2_hills_layer_b_00"
+ },
+ {
+  "id": "hill_layer_olive",
+  "path": "res://art/cards/hill/hill_layer_olive.webp",
+  "category": "hill",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "aspect": 9.022,
+  "src": "sh2_hills_layer_a_02"
+ },
+ {
+  "id": "hill_layer_sage",
+  "path": "res://art/cards/hill/hill_layer_sage.webp",
+  "category": "hill",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "aspect": 12.118,
+  "src": "sh2_hills_layer_a_01"
+ },
+ {
+  "id": "hill_layer_terracotta",
+  "path": "res://art/cards/hill/hill_layer_terracotta.webp",
+  "category": "hill",
+  "height_units": 0.78,
+  "cross_slot": false,
+  "aspect": 10.723,
+  "src": "sh2_hills_layer_b_01"
+ },
+ {
+  "id": "hill_patchwork_gold",
+  "path": "res://art/cards/hill/hill_patchwork_gold.webp",
+  "category": "hill",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "aspect": 4.303,
+  "src": "sh_hills_gold_00"
+ },
+ {
+  "id": "hill_rolling_green",
+  "path": "res://art/cards/hill/hill_rolling_green.webp",
+  "category": "hill",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "aspect": 3.471,
+  "src": "sh_hills_green_00"
+ },
+ {
+  "id": "hill_wooded_firs",
+  "path": "res://art/cards/hill/hill_wooded_firs.webp",
+  "category": "hill",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "aspect": 2.064,
+  "src": "sh2_hills_wooded_01"
+ },
+ {
+  "id": "hill_wooded_grove",
+  "path": "res://art/cards/hill/hill_wooded_grove.webp",
+  "category": "hill",
+  "height_units": 1.1,
+  "cross_slot": false,
+  "aspect": 1.43,
+  "src": "sh2_hills_wooded_00"
+ },
+ {
+  "id": "house_barn_terracotta",
+  "path": "res://art/cards/house/house_barn_terracotta.webp",
+  "category": "house",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 1.111,
+  "src": "sh_cottage_b_01"
+ },
+ {
+  "id": "house_cottage_terracotta",
+  "path": "res://art/cards/house/house_cottage_terracotta.webp",
+  "category": "house",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "aspect": 1.173,
+  "src": "sh_cottage_a_00"
+ },
+ {
+  "id": "house_cottage_thatch",
+  "path": "res://art/cards/house/house_cottage_thatch.webp",
+  "category": "house",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "aspect": 1.061,
+  "src": "sh_cottage_a_01"
+ },
+ {
+  "id": "house_round_thatch",
+  "path": "res://art/cards/house/house_round_thatch.webp",
+  "category": "house",
+  "height_units": 0.72,
+  "cross_slot": false,
+  "aspect": 0.964,
+  "src": "sh2_village_b_01"
+ },
+ {
+  "id": "house_stone_moss",
+  "path": "res://art/cards/house/house_stone_moss.webp",
+  "category": "house",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 1.12,
+  "src": "sh2_village_b_00"
+ },
+ {
+  "id": "house_tall_slate",
+  "path": "res://art/cards/house/house_tall_slate.webp",
+  "category": "house",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "aspect": 0.833,
+  "src": "sh_cottage_b_00"
+ },
+ {
+  "id": "mushroom_red_cluster",
+  "path": "res://art/cards/mushroom/mushroom_red_cluster.webp",
+  "category": "mushroom",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 0.889,
+  "src": "sh_rocks_mush_04"
+ },
+ {
+  "id": "mushroom_red_pair",
+  "path": "res://art/cards/mushroom/mushroom_red_pair.webp",
+  "category": "mushroom",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 0.84,
+  "src": "sh_rocks_mush_03"
+ },
+ {
+  "id": "mushroom_tan_cluster",
+  "path": "res://art/cards/mushroom/mushroom_tan_cluster.webp",
+  "category": "mushroom",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 0.969,
+  "src": "sh_rocks_mush_05"
+ },
+ {
+  "id": "mushroom_terracotta_trio",
+  "path": "res://art/cards/mushroom/mushroom_terracotta_trio.webp",
+  "category": "mushroom",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 0.832,
+  "src": "sh3_fillers_b_02"
+ },
+ {
+  "id": "rock_stump_mossy",
+  "path": "res://art/cards/mushroom/rock_stump_mossy.webp",
+  "category": "mushroom",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 1.374,
+  "src": "sh_rocks_mush_06"
+ },
+ {
+  "id": "rock_boulder_lichen",
+  "path": "res://art/cards/rock/rock_boulder_lichen.webp",
+  "category": "rock",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.833,
+  "src": "sh3_logs_stones_02"
+ },
+ {
+  "id": "rock_log_mossy",
+  "path": "res://art/cards/rock/rock_log_mossy.webp",
+  "category": "rock",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 1.972,
+  "src": "sh3_logs_stones_00"
+ },
+ {
+  "id": "rock_log_pile",
+  "path": "res://art/cards/rock/rock_log_pile.webp",
+  "category": "rock",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 1.835,
+  "src": "sh3_logs_stones_04"
+ },
+ {
+  "id": "rock_low_grey",
+  "path": "res://art/cards/rock/rock_low_grey.webp",
+  "category": "rock",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "aspect": 1.928,
+  "src": "sh_rocks_mush_01"
+ },
+ {
+  "id": "rock_moss_mound",
+  "path": "res://art/cards/rock/rock_moss_mound.webp",
+  "category": "rock",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "aspect": 2.58,
+  "src": "sh3_logs_stones_06"
+ },
+ {
+  "id": "rock_mossy",
+  "path": "res://art/cards/rock/rock_mossy.webp",
+  "category": "rock",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.306,
+  "src": "sh_rocks_mush_02"
+ },
+ {
+  "id": "rock_round_grey",
+  "path": "res://art/cards/rock/rock_round_grey.webp",
+  "category": "rock",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.318,
+  "src": "sh_rocks_mush_00"
+ },
+ {
+  "id": "rock_stacked_flat",
+  "path": "res://art/cards/rock/rock_stacked_flat.webp",
+  "category": "rock",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 1.884,
+  "src": "sh3_logs_stones_03"
+ },
+ {
+  "id": "rock_stone_fern",
+  "path": "res://art/cards/rock/rock_stone_fern.webp",
+  "category": "rock",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.631,
+  "src": "sh3_logs_stones_05"
+ },
+ {
+  "id": "rock_stump_ivy",
+  "path": "res://art/cards/rock/rock_stump_ivy.webp",
+  "category": "rock",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 1.664,
+  "src": "sh3_logs_stones_07"
+ },
+ {
+  "id": "rock_stump_mushroom",
+  "path": "res://art/cards/rock/rock_stump_mushroom.webp",
+  "category": "rock",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "aspect": 1.382,
+  "src": "sh3_logs_stones_01"
+ },
+ {
+  "id": "tree_apple",
+  "path": "res://art/cards/tree/tree_apple.webp",
+  "category": "tree",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 0.833,
+  "src": "sh_trees_warm_03"
+ },
+ {
+  "id": "tree_birch_slim",
+  "path": "res://art/cards/tree/tree_birch_slim.webp",
+  "category": "tree",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "aspect": 0.515,
+  "src": "sh3_trees_mixed_c_00"
+ },
+ {
+  "id": "tree_birch_yellow",
+  "path": "res://art/cards/tree/tree_birch_yellow.webp",
+  "category": "tree",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "aspect": 0.674,
+  "src": "sh_trees_mixed_03"
+ },
+ {
+  "id": "tree_cloud_olive",
+  "path": "res://art/cards/tree/tree_cloud_olive.webp",
+  "category": "tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "aspect": 1.117,
+  "src": "sh_trees_green_02"
+ },
+ {
+  "id": "tree_egg_spring",
+  "path": "res://art/cards/tree/tree_egg_spring.webp",
+  "category": "tree",
+  "height_units": 0.9,
+  "cross_slot": false,
+  "aspect": 0.548,
+  "src": "sh2_trees_green_b_01"
+ },
+ {
+  "id": "tree_flat_sage",
+  "path": "res://art/cards/tree/tree_flat_sage.webp",
+  "category": "tree",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "aspect": 1.057,
+  "src": "sh2_trees_green_b_02"
+ },
+ {
+  "id": "tree_hawthorn_bent",
+  "path": "res://art/cards/tree/tree_hawthorn_bent.webp",
+  "category": "tree",
+  "height_units": 0.8,
+  "cross_slot": false,
+  "aspect": 0.944,
+  "src": "sh3_trees_mixed_c_03"
+ },
+ {
+  "id": "tree_heart_orange",
+  "path": "res://art/cards/tree/tree_heart_orange.webp",
+  "category": "tree",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "aspect": 0.672,
+  "src": "sh2_trees_warm_b_03"
+ },
+ {
+  "id": "tree_hero_chestnut",
+  "path": "res://art/cards/tree/tree_hero_chestnut.webp",
+  "category": "tree",
+  "height_units": 1.3,
+  "cross_slot": true,
+  "aspect": 1.03,
+  "src": "sh3_hero_trees_02"
+ },
+ {
+  "id": "tree_hero_oak",
+  "path": "res://art/cards/tree/tree_hero_oak.webp",
+  "category": "tree",
+  "height_units": 1.45,
+  "cross_slot": true,
+  "aspect": 1.249,
+  "src": "sh3_hero_trees_00"
+ },
+ {
+  "id": "tree_hero_willow",
+  "path": "res://art/cards/tree/tree_hero_willow.webp",
+  "category": "tree",
+  "height_units": 1.35,
+  "cross_slot": false,
+  "aspect": 0.962,
+  "src": "sh3_hero_trees_01"
+ },
+ {
+  "id": "tree_layer_terracotta",
+  "path": "res://art/cards/tree/tree_layer_terracotta.webp",
+  "category": "tree",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "aspect": 0.836,
+  "src": "sh_trees_warm_01"
+ },
+ {
+  "id": "tree_lollipop_fruit",
+  "path": "res://art/cards/tree/tree_lollipop_fruit.webp",
+  "category": "tree",
+  "height_units": 0.8,
+  "cross_slot": true,
+  "aspect": 0.692,
+  "src": "sh3_trees_mixed_c_01"
+ },
+ {
+  "id": "tree_mixed_rust",
+  "path": "res://art/cards/tree/tree_mixed_rust.webp",
+  "category": "tree",
+  "height_units": 0.9,
+  "cross_slot": true,
+  "aspect": 0.981,
+  "src": "sh2_trees_warm_b_02"
+ },
+ {
+  "id": "tree_oak_moss",
+  "path": "res://art/cards/tree/tree_oak_moss.webp",
+  "category": "tree",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "aspect": 0.77,
+  "src": "sh2_trees_green_b_00"
+ },
+ {
+  "id": "tree_oval_sage",
+  "path": "res://art/cards/tree/tree_oval_sage.webp",
+  "category": "tree",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "aspect": 0.475,
+  "src": "sh_trees_green_01"
+ },
+ {
+  "id": "tree_oval_terracotta",
+  "path": "res://art/cards/tree/tree_oval_terracotta.webp",
+  "category": "tree",
+  "height_units": 0.95,
+  "cross_slot": false,
+  "aspect": 0.533,
+  "src": "sh2_trees_warm_b_00"
+ },
+ {
+  "id": "tree_poplar_olive",
+  "path": "res://art/cards/tree/tree_poplar_olive.webp",
+  "category": "tree",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "aspect": 0.35,
+  "src": "sh_trees_mixed_00"
+ },
+ {
+  "id": "tree_poplar_slim",
+  "path": "res://art/cards/tree/tree_poplar_slim.webp",
+  "category": "tree",
+  "height_units": 1.05,
+  "cross_slot": false,
+  "aspect": 0.387,
+  "src": "sh3_trees_mixed_c_02"
+ },
+ {
+  "id": "tree_round_moss",
+  "path": "res://art/cards/tree/tree_round_moss.webp",
+  "category": "tree",
+  "height_units": 0.95,
+  "cross_slot": true,
+  "aspect": 0.783,
+  "src": "sh_trees_green_00"
+ },
+ {
+  "id": "tree_round_ochre",
+  "path": "res://art/cards/tree/tree_round_ochre.webp",
+  "category": "tree",
+  "height_units": 0.9,
+  "cross_slot": true,
+  "aspect": 0.88,
+  "src": "sh_trees_warm_00"
+ },
+ {
+  "id": "tree_rowan",
+  "path": "res://art/cards/tree/tree_rowan.webp",
+  "category": "tree",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "aspect": 0.799,
+  "src": "sh3_trees_mixed_c_04"
+ },
+ {
+  "id": "tree_small_ochre",
+  "path": "res://art/cards/tree/tree_small_ochre.webp",
+  "category": "tree",
+  "height_units": 0.65,
+  "cross_slot": false,
+  "aspect": 0.631,
+  "src": "sh2_trees_warm_b_01"
+ },
+ {
+  "id": "tree_spiral_terracotta",
+  "path": "res://art/cards/tree/tree_spiral_terracotta.webp",
+  "category": "tree",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "aspect": 0.767,
+  "src": "sh_trees_mixed_02"
+ },
+ {
+  "id": "tree_twin_olive",
+  "path": "res://art/cards/tree/tree_twin_olive.webp",
+  "category": "tree",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "aspect": 0.895,
+  "src": "sh2_trees_green_b_03"
+ },
+ {
+  "id": "tree_twotone_olive_ochre",
+  "path": "res://art/cards/tree/tree_twotone_olive_ochre.webp",
+  "category": "tree",
+  "height_units": 0.85,
+  "cross_slot": true,
+  "aspect": 0.83,
+  "src": "sh_trees_warm_02"
+ },
+ {
+  "id": "tree_willow_sage",
+  "path": "res://art/cards/tree/tree_willow_sage.webp",
+  "category": "tree",
+  "height_units": 0.9,
+  "cross_slot": false,
+  "aspect": 0.922,
+  "src": "sh_trees_mixed_01"
+ },
+ {
+  "id": "tree_young_green",
+  "path": "res://art/cards/tree/tree_young_green.webp",
+  "category": "tree",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "aspect": 0.6,
+  "src": "sh_trees_green_03"
+ },
+ {
+  "id": "village_barrel",
+  "path": "res://art/cards/village/village_barrel.webp",
+  "category": "village",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "aspect": 0.875,
+  "src": "sh2_village_props_b_05"
+ },
+ {
+  "id": "village_beehive",
+  "path": "res://art/cards/village/village_beehive.webp",
+  "category": "village",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 0.839,
+  "src": "sh2_village_props_b_03"
+ },
+ {
+  "id": "village_bench",
+  "path": "res://art/cards/village/village_bench.webp",
+  "category": "village",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "aspect": 1.301,
+  "src": "sh_village_props_04"
+ },
+ {
+  "id": "village_coop",
+  "path": "res://art/cards/village/village_coop.webp",
+  "category": "village",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "aspect": 1.142,
+  "src": "sh2_village_props_b_04"
+ },
+ {
+  "id": "village_flower_pots",
+  "path": "res://art/cards/village/village_flower_pots.webp",
+  "category": "village",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "aspect": 0.978,
+  "src": "sh2_village_props_b_00"
+ },
+ {
+  "id": "village_ladder",
+  "path": "res://art/cards/village/village_ladder.webp",
+  "category": "village",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "aspect": 0.616,
+  "src": "sh2_hay_farm_05"
+ },
+ {
+  "id": "village_lantern_post",
+  "path": "res://art/cards/village/village_lantern_post.webp",
+  "category": "village",
+  "height_units": 0.48,
+  "cross_slot": false,
+  "aspect": 0.57,
+  "src": "sh_village_props_02"
+ },
+ {
+  "id": "village_pump",
+  "path": "res://art/cards/village/village_pump.webp",
+  "category": "village",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "aspect": 0.769,
+  "src": "sh2_village_props_b_02"
+ },
+ {
+  "id": "village_signpost",
+  "path": "res://art/cards/village/village_signpost.webp",
+  "category": "village",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "aspect": 0.696,
+  "src": "sh_village_props_01"
+ },
+ {
+  "id": "village_trough",
+  "path": "res://art/cards/village/village_trough.webp",
+  "category": "village",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "aspect": 1.874,
+  "src": "sh_village_props_05"
+ },
+ {
+  "id": "village_washing_line",
+  "path": "res://art/cards/village/village_washing_line.webp",
+  "category": "village",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 1.43,
+  "src": "sh2_village_props_b_01"
+ },
+ {
+  "id": "village_well",
+  "path": "res://art/cards/village/village_well.webp",
+  "category": "village",
+  "height_units": 0.38,
+  "cross_slot": false,
+  "aspect": 0.75,
+  "src": "sh_village_props_00"
+ },
+ {
+  "id": "village_wheelbarrow",
+  "path": "res://art/cards/village/village_wheelbarrow.webp",
+  "category": "village",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "aspect": 1.678,
+  "src": "sh_village_props_03"
+ },
+ {
+  "id": "village_woodpile",
+  "path": "res://art/cards/village/village_woodpile.webp",
+  "category": "village",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "aspect": 1.068,
+  "src": "sh2_hay_farm_04"
+ },
+ {
+  "id": "water_cattail_pair",
+  "path": "res://art/cards/water/water_cattail_pair.webp",
+  "category": "water",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "aspect": 0.517,
+  "src": "sh3_fillers_b_09"
+ },
+ {
+  "id": "water_cattails_a",
+  "path": "res://art/cards/water/water_cattails_a.webp",
+  "category": "water",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 0.791,
+  "src": "sh_grass_reeds_03"
+ },
+ {
+  "id": "water_cattails_b",
+  "path": "res://art/cards/water/water_cattails_b.webp",
+  "category": "water",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 0.851,
+  "src": "sh_grass_reeds_04"
+ },
+ {
+  "id": "water_lily_pads",
+  "path": "res://art/cards/water/water_lily_pads.webp",
+  "category": "water",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "aspect": 1.892,
+  "src": "sh2_water_04"
+ },
+ {
+  "id": "water_reeds_olive",
+  "path": "res://art/cards/water/water_reeds_olive.webp",
+  "category": "water",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 0.774,
+  "src": "sh_grass_reeds_05"
+ },
+ {
+  "id": "water_reeds_teal",
+  "path": "res://art/cards/water/water_reeds_teal.webp",
+  "category": "water",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "aspect": 0.739,
+  "src": "sh_grass_reeds_06"
+ },
+ {
+  "id": "water_rushes_seed",
+  "path": "res://art/cards/water/water_rushes_seed.webp",
+  "category": "water",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "aspect": 0.82,
+  "src": "sh_grass_reeds_07"
+ },
+ {
+  "id": "water_stepping_stones",
+  "path": "res://art/cards/water/water_stepping_stones.webp",
+  "category": "water",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "aspect": 3.369,
+  "src": "sh2_water_01"
+ }
+]
