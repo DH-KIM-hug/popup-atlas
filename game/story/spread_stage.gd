@@ -412,6 +412,9 @@ func _build_set(list: Array) -> void:
 			if not h in sp.wave_hinges():
 				(h.get_parent() as Node3D).visible = false
 		sets[nm] = sp
+		if e.get("inside_only", false):
+			sp.set_meta("inside_only", true)
+			sp.visible = false
 		_check_footprint(sp, e)
 		_clear_area(p, sp.height * 0.75 + 0.12, float(e.get("clear", 1.0)))
 		await _slicer.tick()
@@ -1304,8 +1307,40 @@ func _process(dt: float) -> void:
 		_counter_v = cs.y
 		_counter.scale = Vector3.ONE * maxf(cs.x, 0.001)
 		_counter.visible = cs.x > 0.02
+	_camera_inside_check()
 	if handler:
 		handler.step(dt)
+
+
+## The camera may go INSIDE a house (a refuge's walls stay closed in-story): while it is behind a banded facade or
+## within a hand's breadth in front of it, that facade's wall bands (door included) and whoever stands at its windows
+## are hidden, so the camera never shows a card edge or the back of a face. The roof is behind the camera then.
+var camera_inside := ""
+
+
+func _camera_inside_check() -> void:
+	var cam := camera()
+	if cam == null:
+		return
+	var now := ""
+	for k in sets:
+		var sp: SetPiece = sets[k]
+		if sp.bands.is_empty() or sp.walls == null:
+			continue
+		var l := sp.global_transform.affine_inverse() * cam.global_position
+		var inside := l.z < 0.16 and absf(l.x) < sp.width * 0.62 and l.z > -1.5
+		sp.walls.visible = not inside
+		if inside:
+			now = str(k)
+	for k in sets:
+		if (sets[k] as SetPiece).has_meta("inside_only"):
+			(sets[k] as SetPiece).visible = now != ""
+	if now != camera_inside:
+		camera_inside = now
+		for r in actors:
+			var a: StoryActor = actors[r]
+			if a.has_meta("inside"):
+				a.visible = now == "" or str(a.get_meta("inside")) != now
 
 
 static func _make_disc_texture(fill: Color, rim: Color) -> Texture2D:

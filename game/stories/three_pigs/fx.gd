@@ -228,6 +228,16 @@ func fx(name: String) -> bool:
 				for k in 5:
 					var p0 := w.global_position + Vector3(0, 0.02, 0)
 					fly("steam", p0, p0 + stage.dir_vec("right" if k % 2 == 0 else "left") * randf_range(0.12, 0.25) + Vector3(0, randf_range(0.03, 0.1), 0), 0.08, 0.8, 0.05, 1.0, 1.6)
+		"room_ready":
+			_room_ready()
+		"inside_view":
+			# into the house: the camera glides in through the front (the wall hides only while it passes); the
+			# brothers are at the hearth when it arrives
+			stage.shot_to("inside", "in_focus")
+			get_tree().create_timer(1.0).timeout.connect(_pigs_to_room)
+		"outside_view":
+			stage.shot_to("roof", "focus")
+			get_tree().create_timer(0.9).timeout.connect(_pigs_to_windows)
 		"cutaway_open":
 			_cutaway(true)
 		"cutaway_close":
@@ -380,6 +390,37 @@ func _fire_glow(level: int) -> void:
 	_fire_light.omni_range = 0.6
 	_fire_light.light_energy = [0.5, 0.9, 1.3][clampi(level, 0, 2)]
 	_fire_light.visible = true
+
+
+## The room behind the closed front wall: every k_* piece and the small fire stand from the start of the beat
+## (hidden by the facade from outside; nothing pops on screen later).
+func _room_ready() -> void:
+	for k in stage.sets:
+		var sp: SetPiece = stage.sets[k]
+		if str(k).begins_with("k_") or str(k) == "fire":
+			sp.pop_card(0.0)
+			for h in sp.all_hinges():
+				h.snap(true)
+	_fire_glow(0)
+
+
+func _pigs_to_room() -> void:
+	var spots := {"pig_a": "in_a", "pig_b": "in_b", "pig_c": "in_c"}
+	for r in spots:
+		var a := _a(r)
+		if a == null:
+			continue
+		stage.clear_inside(a)
+		a.visible = true
+		a.place_at(stage.spot_point(spots[r]))
+		a.set_pose("calm" if r != "pig_c" else "brave")
+
+
+func _pigs_to_windows() -> void:
+	var wins := {"pig_c": 0, "pig_a": 1, "pig_b": 1}
+	for r in wins:
+		if _a(r):
+			stage.put_inside(r, "house", wins[r])
 
 
 func _flame(level: int) -> void:

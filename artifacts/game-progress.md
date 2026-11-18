@@ -1219,3 +1219,17 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Tiles: artifacts/three_pigs/tiles/three_pigs_chimney_v6_12frames.jpg, three_pigs_chimney_v6_climb_8fps.jpg.
     Videos: artifacts/video/three_pigs_chimney_v6.mp4, three_pigs_full_v6.mp4. Full run STORY_DONE 286.9 s
     missing_audio=[] (reimport needed after recording: the first run still listed the two lines).
+
+## 2026-11-19 — three_pigs v7: the brick house never opens; the camera goes inside after the wolf
+  - User: "방이 열려도 앞 벽은 막혀있어야하는거아닌지" / "굴뚝으로 들어가면 그제서야 안을 보여주면 되자너". The front wall no longer
+    folds. Chimney beat: closed house, the brothers' faces in the glowing windows, the wolf walks to the ladder, climbs
+    (back view), walks the roof (side gait) and sinks into the chimney under a closer roof shot; only then the camera
+    glides in through the front (SpreadStage hides a banded facade's wall bands only while the camera is within 0.16 of
+    it or behind it; actors at its windows are hidden then) to an inside shot ([0.6, 5°, 0.26, fov 68]) of the room
+    built inside the house footprint from the start of the beat (fx room_ready: back wall, side walls edge-on to the
+    outside camera, two floor boards, a plank ceiling shown only while the camera is inside (`inside_only`), hearth
+    with flue, fire, pot, table, shelf). Fire taps, the drop down the flue into the pot, splash, "앗, 뜨거워!", then the
+    camera glides back out to the closed house and he shoots out of the chimney. The ending shows the closed house.
+  - Still off: mid-glide, the widening lens briefly shows the dark sky above the template's back hills.
+  - Videos: artifacts/video/three_pigs_chimney_v7.mp4 (tiles three_pigs_chimney_v7_12frames.jpg, _glide_in.jpg),
+    three_pigs_full_v7.mp4 (full run STORY_DONE 288.3 s, missing_audio=[]).

@@ -91,7 +91,9 @@ RUIN = {"straw": "story_houses_02", "wood": "story_houses_05"}
 # standing at the page pop (0 = empty lot, popped later by build / fx). Ruins / kitchen / new houses wait at stage 0.
 HANDLER = "res://stories/three_pigs/fx.gd"
 SHOTS = {"stage": [4.6, 13.0, 0.3, 20.0], "story": [3.7, 13.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
-         "roof": [5.0, 13.0, 0.62, 20.0], "village": [6.6, 13.0, 0.34, 20.0]}
+         "roof": [3.9, 12.0, 0.52, 20.0], "village": [6.6, 13.0, 0.34, 20.0],
+         # inside the brick house (camera just behind the closed front wall, looking at the hearth)
+         "inside": [0.6, 5.0, 0.26, 68.0]}
 CAST = {
     "pig_a": {"kind": "actor", "skin": "pig_a", "views": ["front", "side", "back"], "label": "첫째 (straw hat + scarf)"},
     "pig_b": {"kind": "actor", "skin": "pig_b", "views": ["front", "side", "back"], "label": "둘째 (blue overalls)"},
@@ -106,24 +108,32 @@ UI = {  # cover / end card pictures (cast ids) and caption speaker chips
                  "pigb": ["둘째", "4f7fb0", "cast_pig_b_calm"], "pigc": ["셋째", "b5402f", "cast_pig_c_calm"],
                  "wolf": ["늑대", "6f6a66", "cast_wolf_calm"]},
 }
-KITCHEN = [  # brick house interior (chimney beat): a pop-up ROOM (story_room sheet) that folds up as the front wall
-    # folds down (user 2026-11-19: "벽돌집. 그럼 집 뒤편도 있어야하지않을까유"): back wall, two side walls angled in like a
-    # pop-up box, a plank floor, the hearth set against the back wall with its flue running up into the roof under the
-    # outside chimney; logs, fire and the pot over it; table and shelf on the floor. Popped by cutaway_open (k_* / fire).
-    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.02], "stage": 0, "flat": True, "name": "k_floor", "clear": 0, "scale": 1.3},
-    {"card": "story_room_00", "at": "lot", "off": [0.0, -0.36], "stage": 0, "name": "k_back", "clear": 0},
-    {"card": "story_room_01", "at": "lot", "off": [-0.5, -0.2], "stage": 0, "name": "k_side_l", "clear": 0, "yaw": 62},
-    {"card": "story_room_02", "at": "lot", "off": [0.5, -0.2], "stage": 0, "name": "k_side_r", "clear": 0, "yaw": -62},
-    {"card": "story_room_04", "at": "lot", "off": [0.33, -0.31], "stage": 0, "name": "k_flue", "clear": 0, "lift": 0.36},
-    {"card": "story_hearth_00", "at": "lot", "off": [0.33, -0.3], "stage": 0, "name": "k_hearth", "clear": 0},
-    # logs and fire inside the hearth's arched opening (just in front of the hearth card), the pot hanging over them
-    {"card": "story_hearth_05", "at": "lot", "off": [0.33, -0.285], "stage": 0, "name": "k_logs", "clear": 0, "scale": 0.8},
-    {"card": "story_hearth_02", "at": "lot", "off": [0.33, -0.28], "stage": 0, "name": "fire", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_03", "at": "lot", "off": [0.33, -0.278], "stage": 0, "name": "fire_m", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_04", "at": "lot", "off": [0.33, -0.276], "stage": 0, "name": "fire_l", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_01", "at": "lot", "off": [0.33, -0.2], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.06, "scale": 1.2},
-    {"card": "story_hearth_12", "at": "lot", "off": [-0.3, -0.22], "stage": 0, "name": "k_table", "clear": 0},
-    {"card": "story_hearth_14", "at": "lot", "off": [-0.22, -0.33], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6, "lift": 0.3},
+KITCHEN = [  # the room INSIDE the brick house footprint (user 2026-11-19: "방이 열려도 앞 벽은 막혀있어야하는거아닌지":
+    # the front wall never opens; the camera goes inside). Back wall at the rear, side walls edge-on to the outside
+    # camera, two floor boards, the hearth against the back wall with its flue under the outside chimney, fire inside
+    # the hearth, pot over it, table and shelf. Stood up by fx room_ready at the start of the chimney beat (hidden by
+    # the closed facade from outside).
+    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.04], "stage": 0, "flat": True, "name": "k_floor", "clear": 0, "scale": 1.3},
+    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.4], "stage": 0, "flat": True, "name": "k_floor2", "clear": 0, "scale": 1.3},
+    {"card": "story_room_00", "at": "lot", "off": [0.0, -0.74], "stage": 0, "name": "k_back", "clear": 0},
+    {"card": "story_room_01", "at": "lot", "off": [-0.5, -0.2], "stage": 0, "name": "k_side_l", "clear": 0, "yaw": 90},
+    {"card": "story_room_01", "at": "lot", "off": [-0.5, -0.53], "stage": 0, "name": "k_side_l2", "clear": 0, "yaw": 90},
+    {"card": "story_room_02", "at": "lot", "off": [0.5, -0.2], "stage": 0, "name": "k_side_r", "clear": 0, "yaw": -90},
+    {"card": "story_room_02", "at": "lot", "off": [0.5, -0.53], "stage": 0, "name": "k_side_r2", "clear": 0, "yaw": -90},
+    # plank ceiling over the room, shown only while the camera is inside (from outside it could peek over the roof)
+    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.02], "stage": 0, "flat": True, "name": "k_ceil", "clear": 0,
+     "scale": 1.3, "lift": 0.56, "inside_only": True},
+    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.4], "stage": 0, "flat": True, "name": "k_ceil2", "clear": 0,
+     "scale": 1.3, "lift": 0.56, "inside_only": True},
+    {"card": "story_room_04", "at": "lot", "off": [0.33, -0.71], "stage": 0, "name": "k_flue", "clear": 0, "lift": 0.36},
+    {"card": "story_hearth_00", "at": "lot", "off": [0.33, -0.7], "stage": 0, "name": "k_hearth", "clear": 0},
+    {"card": "story_hearth_05", "at": "lot", "off": [0.33, -0.685], "stage": 0, "name": "k_logs", "clear": 0, "scale": 0.8},
+    {"card": "story_hearth_02", "at": "lot", "off": [0.33, -0.68], "stage": 0, "name": "fire", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_03", "at": "lot", "off": [0.33, -0.678], "stage": 0, "name": "fire_m", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_04", "at": "lot", "off": [0.33, -0.676], "stage": 0, "name": "fire_l", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_01", "at": "lot", "off": [0.33, -0.6], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.06, "scale": 1.2},
+    {"card": "story_hearth_12", "at": "lot", "off": [-0.36, -0.71], "stage": 0, "name": "k_table", "clear": 0},
+    {"card": "story_hearth_14", "at": "lot", "off": [-0.22, -0.72], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6, "lift": 0.3},
 ]
 # view 2: the stream runs diagonally just behind the anchor; the straw lot is on the near-left grass
 STRAW_SPOTS = {"lot": [-1.1, -0.05], "pile": [-0.64, 0.26], "pig_a": [-0.48, 0.42], "wolf": [-1.72, 0.32],
@@ -139,7 +149,8 @@ WOOD_SPOTS = {"lot": [1.0, -0.62], "pile": [1.85, -0.38], "pig_b": [1.62, -0.3],
 # spots (in_*) keep their offsets from the lot
 BRICK_SPOTS = {"lot": [-0.85, -0.6], "pile": [-1.22, -0.12], "pig_c": [-0.1, -0.45], "tease": [-0.85, 0.16],
                "wolf": [-1.52, 0.02], "pig_a": [-0.12, -0.72], "pig_b": [0.06, -0.74], "lot_left": [-2.05, -1.3],
-               "lot_right": [1.2, -1.2], "in_a": [-1.17, -0.72], "in_b": [-0.97, -0.7], "in_c": [-0.79, -0.68],
+               "lot_right": [1.2, -1.2], "in_a": [-1.18, -1.2], "in_b": [-1.0, -1.19], "in_c": [-0.82, -1.18],
+               "in_focus": [-0.82, -1.24],
                "wolf_land": [-1.8, 0.1], "mom": [-0.2, 0.02], "focus": [-0.75, -0.42], "village": [-0.45, -0.9],
                "brothers_in": [0.55, 0.2], "wolf_focus": [-0.95, -0.3], "out_a": [-1.15, -0.25], "out_b": [-0.92, -0.2], "out_c": [-0.62, -0.22]}
 BEATS = [
@@ -281,18 +292,19 @@ BEATS = [
     ]},
     {"id": "chimney", "title": "보글보글", "spread": {"seed": 1, "view": 4, "place": "brick_lot", "light": "dusk",
      "spots": BRICK_SPOTS, "set": []},
-     "enter": {"who": {"wolf": "side_prowl"}, "left": {"wolf": 0}},
+     # the house stays CLOSED (it protects them): the brothers are at the windows, the room stands behind the wall
+     "enter": {"who": {"wolf": "side_prowl", "pig_a": "scared", "pig_b": "scared", "pig_c": "brave"},
+               "inside": {"pig_c": ["house", 0], "pig_a": ["house", 1], "pig_b": ["house", 1]}, "left": {"wolf": 0}},
      "steps": [
-        # the page opens the house first (user: "그전에 집이 올라와있어도 문제없지않나"): the front wall folds down, the
-        # room pops up with the pigs inside at the hearth; the camera frames the room and the roof together
-        {"do": "cam", "shot": "roof", "at": "lot", "wait": 0.2},
-        {"do": "fx", "fx": "cutaway_open", "wait": 1.4},
-        # he walks to the ladder, climbs it (back view), tiptoes up the roof slope and along the ridge (side view),
+        {"do": "fx", "fx": "room_ready", "wait": 0.1},
+        {"do": "cam", "shot": "roof", "at": "lot", "wait": 0.6},
+        # he walks to the ladder, climbs it (back view), walks up the roof slope and along the ridge (side view),
         # steps onto the chimney top and sinks into it
         {"do": "climb", "who": "wolf", "on": "house", "pose": "side_prowl", "speed": 0.16, "line": "tp_048", "sink": True,
          "path": [[-1.05, 0.0, 0.12], [-0.62, 0.0, 0.12], [-0.62, 0.53, 0.12], [-0.52, 0.64, 0.07],
                   [-0.33, 0.86, 0.07], [0.22, 0.86, 0.07], [0.33, 1.0, 0.03]]},
-        {"do": "cam", "shot": "close", "at": "lot"},
+        # into the house: the camera glides in through the front (nothing folds or pops)
+        {"do": "fx", "fx": "inside_view", "wait": 2.2},
         {"do": "say", "line": "tp_049"},
         # tap the fire x3: small -> medium -> large flame, the pot steams and bubbles
         {"do": "tap_steps", "target": "fire", "prompt": "tp_050", "hint": "tp_050", "steps": [
@@ -302,10 +314,9 @@ BEATS = [
         {"do": "fx", "fx": "splash"},
         {"do": "pose", "who": "wolf", "pose": "ouch"},
         {"do": "say", "line": "tp_052"},
-        # he shoots back up the flue and out of the chimney, the wall folds back up, he runs off LEFT
-        {"do": "cam", "shot": "roof", "at": "focus", "wait": 0.2},
+        # back out: the camera pulls out to the closed house, he shoots out of the chimney and runs off LEFT
+        {"do": "fx", "fx": "outside_view", "wait": 1.6},
         {"do": "fx", "fx": "wolf_launch", "wait": 1.0},
-        {"do": "fx", "fx": "cutaway_close", "wait": 0.7},
         {"do": "walk", "who": "wolf", "dir": "left", "pose": "run_away", "dist": 1.6, "speed": 0.5, "line": "tp_053", "exit": True},
     ]},
     {"id": "ending", "title": "벽돌 집", "spread": {"seed": 1, "view": 4, "place": "brick_lot",

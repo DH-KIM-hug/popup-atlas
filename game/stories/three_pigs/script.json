@@ -67,9 +67,9 @@
    20.0
   ],
   "roof": [
-   5.0,
-   13.0,
-   0.62,
+   3.9,
+   12.0,
+   0.52,
    20.0
   ],
   "village": [
@@ -77,6 +77,12 @@
    13.0,
    0.34,
    20.0
+  ],
+  "inside": [
+   0.6,
+   5.0,
+   0.26,
+   68.0
   ]
  },
  "ui": {
@@ -598,16 +604,20 @@
       -1.2
      ],
      "in_a": [
-      -1.17,
-      -0.72
+      -1.18,
+      -1.2
      ],
      "in_b": [
-      -0.97,
-      -0.7
+      -1.0,
+      -1.19
      ],
      "in_c": [
-      -0.79,
-      -0.68
+      -0.82,
+      -1.18
+     ],
+     "in_focus": [
+      -0.82,
+      -1.24
      ],
      "wolf_land": [
       -1.8,
@@ -1027,16 +1037,20 @@
       -1.2
      ],
      "in_a": [
-      -1.17,
-      -0.72
+      -1.18,
+      -1.2
      ],
      "in_b": [
-      -0.97,
-      -0.7
+      -1.0,
+      -1.19
      ],
      "in_c": [
-      -0.79,
-      -0.68
+      -0.82,
+      -1.18
+     ],
+     "in_focus": [
+      -0.82,
+      -1.24
      ],
      "wolf_land": [
       -1.8,
@@ -1098,7 +1112,7 @@
       "at": "lot",
       "off": [
        0.0,
-       -0.02
+       -0.04
       ],
       "stage": 0,
       "flat": true,
@@ -1107,11 +1121,24 @@
       "scale": 1.3
      },
      {
+      "card": "story_room_03",
+      "at": "lot",
+      "off": [
+       0.0,
+       -0.4
+      ],
+      "stage": 0,
+      "flat": true,
+      "name": "k_floor2",
+      "clear": 0,
+      "scale": 1.3
+     },
+     {
       "card": "story_room_00",
       "at": "lot",
       "off": [
        0.0,
-       -0.36
+       -0.74
       ],
       "stage": 0,
       "name": "k_back",
@@ -1127,7 +1154,19 @@
       "stage": 0,
       "name": "k_side_l",
       "clear": 0,
-      "yaw": 62
+      "yaw": 90
+     },
+     {
+      "card": "story_room_01",
+      "at": "lot",
+      "off": [
+       -0.5,
+       -0.53
+      ],
+      "stage": 0,
+      "name": "k_side_l2",
+      "clear": 0,
+      "yaw": 90
      },
      {
       "card": "story_room_02",
@@ -1139,14 +1178,56 @@
       "stage": 0,
       "name": "k_side_r",
       "clear": 0,
-      "yaw": -62
+      "yaw": -90
+     },
+     {
+      "card": "story_room_02",
+      "at": "lot",
+      "off": [
+       0.5,
+       -0.53
+      ],
+      "stage": 0,
+      "name": "k_side_r2",
+      "clear": 0,
+      "yaw": -90
+     },
+     {
+      "card": "story_room_03",
+      "at": "lot",
+      "off": [
+       0.0,
+       -0.02
+      ],
+      "stage": 0,
+      "flat": true,
+      "name": "k_ceil",
+      "clear": 0,
+      "scale": 1.3,
+      "lift": 0.56,
+      "inside_only": true
+     },
+     {
+      "card": "story_room_03",
+      "at": "lot",
+      "off": [
+       0.0,
+       -0.4
+      ],
+      "stage": 0,
+      "flat": true,
+      "name": "k_ceil2",
+      "clear": 0,
+      "scale": 1.3,
+      "lift": 0.56,
+      "inside_only": true
      },
      {
       "card": "story_room_04",
       "at": "lot",
       "off": [
        0.33,
-       -0.31
+       -0.71
       ],
       "stage": 0,
       "name": "k_flue",
@@ -1158,7 +1239,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.3
+       -0.7
       ],
       "stage": 0,
       "name": "k_hearth",
@@ -1169,7 +1250,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.285
+       -0.685
       ],
       "stage": 0,
       "name": "k_logs",
@@ -1181,7 +1262,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.28
+       -0.68
       ],
       "stage": 0,
       "name": "fire",
@@ -1193,7 +1274,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.278
+       -0.678
       ],
       "stage": 0,
       "name": "fire_m",
@@ -1205,7 +1286,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.276
+       -0.676
       ],
       "stage": 0,
       "name": "fire_l",
@@ -1217,7 +1298,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.2
+       -0.6
       ],
       "stage": 0,
       "name": "k_pot",
@@ -1229,8 +1310,8 @@
       "card": "story_hearth_12",
       "at": "lot",
       "off": [
-       -0.3,
-       -0.22
+       -0.36,
+       -0.71
       ],
       "stage": 0,
       "name": "k_table",
@@ -1241,7 +1322,7 @@
       "at": "lot",
       "off": [
        -0.22,
-       -0.33
+       -0.72
       ],
       "stage": 0,
       "name": "k_shelf",
@@ -1374,16 +1455,20 @@
       -1.2
      ],
      "in_a": [
-      -1.17,
-      -0.72
+      -1.18,
+      -1.2
      ],
      "in_b": [
-      -0.97,
-      -0.7
+      -1.0,
+      -1.19
      ],
      "in_c": [
-      -0.79,
-      -0.68
+      -0.82,
+      -1.18
+     ],
+     "in_focus": [
+      -0.82,
+      -1.24
      ],
      "wolf_land": [
       -1.8,
@@ -1426,7 +1511,24 @@
    },
    "enter": {
     "who": {
-     "wolf": "side_prowl"
+     "wolf": "side_prowl",
+     "pig_a": "scared",
+     "pig_b": "scared",
+     "pig_c": "brave"
+    },
+    "inside": {
+     "pig_c": [
+      "house",
+      0
+     ],
+     "pig_a": [
+      "house",
+      1
+     ],
+     "pig_b": [
+      "house",
+      1
+     ]
     },
     "left": {
      "wolf": 0
@@ -1434,15 +1536,15 @@
    },
    "steps": [
     {
+     "do": "fx",
+     "fx": "room_ready",
+     "wait": 0.1
+    },
+    {
      "do": "cam",
      "shot": "roof",
      "at": "lot",
-     "wait": 0.2
-    },
-    {
-     "do": "fx",
-     "fx": "cutaway_open",
-     "wait": 1.4
+     "wait": 0.6
     },
     {
      "do": "climb",
@@ -1491,9 +1593,9 @@
      ]
     },
     {
-     "do": "cam",
-     "shot": "close",
-     "at": "lot"
+     "do": "fx",
+     "fx": "inside_view",
+     "wait": 2.2
     },
     {
      "do": "say",
@@ -1541,20 +1643,14 @@
      "line": "tp_052"
     },
     {
-     "do": "cam",
-     "shot": "roof",
-     "at": "focus",
-     "wait": 0.2
+     "do": "fx",
+     "fx": "outside_view",
+     "wait": 1.6
     },
     {
      "do": "fx",
      "fx": "wolf_launch",
      "wait": 1.0
-    },
-    {
-     "do": "fx",
-     "fx": "cutaway_close",
-     "wait": 0.7
     },
     {
      "do": "walk",
@@ -1613,16 +1709,20 @@
       -1.2
      ],
      "in_a": [
-      -1.17,
-      -0.72
+      -1.18,
+      -1.2
      ],
      "in_b": [
-      -0.97,
-      -0.7
+      -1.0,
+      -1.19
      ],
      "in_c": [
-      -0.79,
-      -0.68
+      -0.82,
+      -1.18
+     ],
+     "in_focus": [
+      -0.82,
+      -1.24
      ],
      "wolf_land": [
       -1.8,
