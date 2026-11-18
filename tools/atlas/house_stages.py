@@ -36,6 +36,19 @@ OPENINGS = {
     "story_houses_08": [],
     "story_houses_09": [],
 }
+# die-cut window glass (x0, y0, x1, y1; the blue panes inside go transparent, mullions stay) so a pig standing just
+# behind the front wall shows its face in the window, framed by it (2026-11-18 user: "아기돼지들 집에 있어야하지 않겠니?")
+GLASS = {
+    "story_houses_00": [(85, 170, 138, 223)],
+    "story_houses_03": [(78, 142, 123, 200), (308, 142, 353, 200)],
+    "story_houses_06": [(62, 188, 105, 243), (290, 188, 333, 243)],
+}
+# door leaf (x0, y0 top of the leaf, x1; bottom = base; arch = round top) cut out as its own card on a side hinge
+DOORS = {
+    "story_houses_00": (166, 172, 267, True),
+    "story_houses_03": (168, 138, 260, False),
+    "story_houses_06": (157, 193, 237, True),
+}
 # hand-picked wall cut rows (bottom → top) where the window rows leave too little room for even bands: a cut through a
 # window row steps up around the windows, so they stand whole on the band below
 # wood (v2, user: "the first stage is a lone door"): band 0 = floor, sill and the plank walls up to the windows + door
@@ -57,6 +70,29 @@ def cut_house(cid, n, cat):
     while y > top and abs(widths[y] - wall_w) < 0.06 * wall_w:
         y -= 1
     roof_y = y + 1  # first row of the wall band below the eave
+    extra = {}
+    for (gx0, gy0, gx1, gy1) in GLASS.get(cid, []):
+        sub = im[gy0:gy1, gx0:gx1].astype(int)
+        blue = (sub[..., 2] > sub[..., 0] + 15) & (sub[..., 3] > 0)
+        im[gy0:gy1, gx0:gx1][blue] = 0
+    if GLASS.get(cid):
+        extra["windows"] = [[(g[0] + g[2]) / 2.0, (g[1] + g[3]) / 2.0] for g in GLASS[cid]]
+    if cid in DOORS:
+        dx0, dy0, dx1, arch = DOORS[cid]
+        yy, xx = np.mgrid[0:h, 0:w]
+        r = (dx1 - dx0) / 2.0
+        cx = (dx0 + dx1) / 2.0
+        leaf = (xx >= dx0) & (xx < dx1) & (yy >= dy0) & (yy < base)
+        if arch:
+            leaf &= (yy >= dy0 + r) | ((xx + 0.5 - cx) ** 2 + (yy + 0.5 - (dy0 + r)) ** 2 <= r * r)
+        door = np.where(leaf[..., None], im, 0).astype(np.uint8)
+        im[leaf] = 0
+        out_dir0 = os.path.join(ATLAS, e["sheet"], "stages")
+        os.makedirs(out_dir0, exist_ok=True)
+        Image.fromarray(door[dy0:base, dx0:dx1]).save(os.path.join(out_dir0, f"{cid}_door.webp"), "WEBP", lossless=True,
+                                                      quality=100, method=6)
+        extra["door"] = {"file": f"art/atlas/{e['sheet']}/stages/{cid}_door.webp", "x0": dx0, "x1": dx1, "y0": dy0,
+                         "y1": int(base)}
     grey = im[..., :3].astype(float).mean(-1)
     edge = np.abs(np.diff(grey, axis=0)).sum(1)  # row y = edge between y and y+1
     wall_h = base - roof_y
@@ -122,7 +158,7 @@ def cut_house(cid, n, cat):
                       "img_y0": iy0, "img_y1": iy1,
                       "hinge_units": round((base - y1) * scale, 4), "height_units": round((y1 - y0) * scale, 4),
                       "roof": k == len(bounds) - 2})
-    return {"bands": bands, "height_units": hu, "px": [w, h], "base_y": base, "roof_y": roof_y}
+    return {"bands": bands, "height_units": hu, "px": [w, h], "base_y": base, "roof_y": roof_y, **extra}
 
 
 def main():

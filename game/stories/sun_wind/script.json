@@ -139,8 +139,7 @@
     {
      "do": "tap",
      "target": "wind",
-     "prompt": "sw_004",
-     "hint": "sw_005",
+     "prompt": "",
      "react": "wind_puff",
      "lines": [
       "sw_006"
@@ -154,7 +153,7 @@
     {
      "do": "tap",
      "target": "traveller",
-     "prompt": "sw_n04",
+     "prompt": "",
      "react": "show_coat",
      "lines": [
       "sw_009"
@@ -345,21 +344,18 @@
     {
      "do": "shine",
      "prompt": "sw_026",
-     "hint": "sw_027",
      "steps": [
       {
        "fx": "warm1",
        "lines": [
         "sw_028"
-       ],
-       "next": "sw_029"
+       ]
       },
       {
        "fx": "warm2",
        "lines": [
         "sw_030"
-       ],
-       "next": "sw_031"
+       ]
       },
       {
        "fx": "coat_off",
@@ -387,53 +383,6 @@
     },
     {
      "do": "stop"
-    }
-   ]
-  },
-  {
-   "id": "moral",
-   "title": "누가 이겼을까?",
-   "enter": {
-    "pose": "shirt"
-   },
-   "spread": {
-    "seed": 1,
-    "view": 1,
-    "route": [
-     1.6,
-     -1.6
-    ]
-   },
-   "steps": [
-    {
-     "do": "fx",
-     "fx": "pick_coat"
-    },
-    {
-     "do": "flash",
-     "key": "cold",
-     "side": "left",
-     "line": "sw_034"
-    },
-    {
-     "do": "flash",
-     "key": "warm",
-     "side": "right",
-     "line": "sw_035"
-    },
-    {
-     "do": "quiz",
-     "prompt": "sw_036",
-     "answer": "sun",
-     "wrong": {
-      "wind": [
-       "sw_x_wrong_cold"
-      ]
-     },
-     "right": [
-      "sw_040",
-      "sw_041"
-     ]
     }
    ]
   },
@@ -476,7 +425,6 @@
     {
      "do": "gentle",
      "prompt": "sw_053",
-     "hint": "sw_054",
      "taps": 3,
      "lines": [
       "sw_055"
@@ -629,9 +577,9 @@
    "speaker": "nar",
    "text": "이번엔 바람을 톡!",
    "status": "reuse",
-   "beat": "sky",
-   "interaction": "tap",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -651,9 +599,9 @@
    "speaker": "nar",
    "text": "볼 빵빵 바람을 톡!",
    "status": "reuse",
-   "beat": "sky",
-   "interaction": "tap",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1171,9 +1119,9 @@
    "speaker": "nar",
    "text": "해님을 톡톡 눌러 봐요!",
    "status": "reuse",
-   "beat": "sun_turn",
-   "interaction": "shine",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1224,9 +1172,9 @@
    "speaker": "nar",
    "text": "조금 더 톡톡!",
    "status": "reuse",
-   "beat": "sun_turn",
-   "interaction": "shine",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1277,9 +1225,9 @@
    "speaker": "nar",
    "text": "한 번 더 톡톡!",
    "status": "reuse",
-   "beat": "sun_turn",
-   "interaction": "shine",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1352,9 +1300,9 @@
    "speaker": "nar",
    "text": "바람이 불 때, 나그네는 외투를 꽉 여몄어요.",
    "status": "reuse",
-   "beat": "moral",
-   "interaction": "flashback",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1374,9 +1322,9 @@
    "speaker": "nar",
    "text": "해님이 비출 때는 외투를 벗었지요.",
    "status": "reuse",
-   "beat": "moral",
-   "interaction": "flashback",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1396,9 +1344,9 @@
    "speaker": "nar",
    "text": "누가 외투를 벗게 했을까요? 해님일까요, 바람일까요?",
    "status": "reuse",
-   "beat": "moral",
-   "interaction": "quiz",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1484,9 +1432,9 @@
    "speaker": "nar",
    "text": "맞아요, 해님이에요! 따뜻한 해님이 이겼어요.",
    "status": "reuse",
-   "beat": "moral",
-   "interaction": "quiz",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1506,9 +1454,9 @@
    "speaker": "nar",
    "text": "세게 미는 것보다 다정한 게 더 힘이 세요.",
    "status": "reuse",
-   "beat": "moral",
-   "interaction": "quiz",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -1792,9 +1740,9 @@
    "speaker": "nar",
    "text": "바람을 살살 톡톡 눌러 봐요!",
    "status": "reuse",
-   "beat": "stream",
-   "interaction": "gentle",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -2010,9 +1958,9 @@
    "speaker": "man",
    "text": "\"으으, 추워!\"",
    "status": "reuse",
-   "beat": "moral",
-   "interaction": "quiz",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "man",
@@ -2115,8 +2063,8 @@
    "speaker": "nar",
    "text": "나그네를 톡 눌러 볼까요?",
    "status": "changed-recorded",
-   "beat": "sky",
-   "interaction": "tap",
+   "beat": "",
+   "interaction": "",
    "used": true,
    "segs": [
     {

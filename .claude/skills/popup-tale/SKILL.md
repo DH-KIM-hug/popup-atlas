@@ -15,6 +15,16 @@ The user talks in Korean, wants to SEE results (send recordings and contact shee
 - **Reuse first**: shared card library `game/art/atlas/catalog.json` (419 cards, tags category/biome/season), shared cast `game/art/cast/catalog.json`, world template `scenes/world/meadow.tscn`. New generic art (a wolf, a pig, a straw house) goes into the shared libraries with tags so later tales reuse it; only truly tale-unique art goes in `game/stories/<tale_id>/art/`.
 - The look is fixed (user chose the photographed-miniature look: low lens, shallow DOF, raking warm light, felt ground). Don't re-tune the template look per tale; dress it.
 
+## The book tells the tale (user, 2026-11-18: "팝업북은 어떤 교육적인 요소보다는 그냥 동화의 전달에 좀 의미를 뒀으면")
+- No quizzes, no counting drills, no spoken or printed morals. Cut source lines that count ("열 장", "여덟 번",
+  "하나, 둘, 셋") or teach; if a clip's count sits in its own sentence, trim the clip at the pause instead of
+  re-recording (`TRIM` in tools/story/tales/<tale>.py) and say so; otherwise drop the line or list it for the user.
+- Taps drive the story: a few natural taps per moment (about 3 to build a house, 3 huffs), never a tally on screen.
+- Voice a tap instruction only for the first tap of each kind; later taps show only the ring hint.
+- Characters are where the story says they are: someone "at home" is in the house — peeking out of a die-cut
+  window, answering from inside, running in through the door (house_stages.py GLASS / DOORS, `enter.inside`,
+  `go_inside`); when the house falls they are revealed where it stood (user: "아기돼지들 집에 있어야하지 않겠니?").
+
 ## Pipeline (one tale)
 
 1. **Plan** (`references/planning.md`): list beats → spreads (which template, seed/view, route), the cast with every pose/expression each beat needs, props, the taps/holds per beat, and which lines change. Write `game/stories/<tale_id>/script.json` with `tools/story/seed_script.py` and edit it (schema: `references/script_schema.md`).

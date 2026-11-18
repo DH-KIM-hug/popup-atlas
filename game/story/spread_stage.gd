@@ -484,6 +484,7 @@ func set_piece(nm: String) -> SetPiece:
 func _enter_cast(enter: Dictionary, first: bool) -> void:
 	var who: Dictionary = enter.get("who", {})
 	var at: Dictionary = enter.get("at", {})
+	var inside: Dictionary = enter.get("inside", {})
 	var keep: Array = enter.get("keep", [])
 	for role in actors:
 		var a: StoryActor = actors[role]
@@ -493,10 +494,15 @@ func _enter_cast(enter: Dictionary, first: bool) -> void:
 			var visible_now := a.pop_target > 0.5
 			if first or not visible_now or at.has(role):
 				a.place_at(spot_point(at.get(role, role if spots.has(role) else "anchor")))
+				a.lift = 0.0
+				a.remove_meta("inside")
 			a.pose = p
 			if left >= 0:
 				a.facing_left = left == 1
 			a.puppet.set_figure(p, a.facing_left and a.view_of(p) == "side", first or not visible_now)
+			if inside.has(role):
+				var ins: Array = inside[role]
+				put_inside(str(role), str(ins[0]), int(ins[1]) if ins.size() > 1 else 0)
 			if not first and not visible_now:
 				a.pop_delay = 0.1
 				a.pop_target = 1.0
@@ -507,6 +513,35 @@ func _enter_cast(enter: Dictionary, first: bool) -> void:
 		for role in who:
 			if actors.has(role):
 				(actors[role] as StoryActor).set_meta("in_page", true)
+
+
+## At home (2026-11-18 user: "아기돼지들 집에 있어야하지 않겠니?"): the actor stands just behind the house's front
+## wall at window i, raised so its eyes are at the window's middle; the die-cut window frames its face, the wall hides
+## the rest. Speaking from inside it bobs (runner); when the house falls (huff) reveal_inside() brings it out.
+func put_inside(role: String, house: String, win: int) -> void:
+	var a := actor(role)
+	var sp := set_piece(house)
+	if a == null or sp == null:
+		return
+	var ws: Array = sp.window_spot(win, dir_vec("toward"))
+	a.place_at(ws[0])
+	a.lift = float(ws[1]) - a.puppet.height * 0.74
+	a.set_meta("inside", house)
+	if a.view_of(a.pose) != "front":
+		a.set_pose("calm")
+
+
+## The house is gone: whoever was inside is out in the open where it stood, with a startled hop.
+func reveal_inside(house: String, pose := "scared") -> void:
+	for r in actors:
+		var a: StoryActor = actors[r]
+		if str(a.get_meta("inside", "")) != house:
+			continue
+		a.remove_meta("inside")
+		a.lift = 0.0
+		a.place_at(a.global_position + dir_vec("toward") * 0.1)
+		a.hop_v = 1.1
+		a.set_pose(pose)
 
 
 ## Same page, next beat: new set pieces pop, light changes, cast steps in / out.

@@ -348,6 +348,8 @@ func _cutaway(open: bool) -> void:
 			continue
 		if open:
 			a.place_at(stage.spot_point(spots[r]))
+			a.lift = 0.0
+			a.remove_meta("inside")
 			a.pop_s = 0.02
 			a.pop_delay = t
 			a.pop_target = 1.0

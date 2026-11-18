@@ -407,6 +407,8 @@ func _apply_expr(l: Dictionary, seg_i: int) -> void:
 			p = str(v)
 		if a.has_pose(p) and a.view_of(p) != "back":
 			a.set_pose(p)
+			if a.has_meta("inside") and seg_i < (l["segs"] as Array).size() and str(l["segs"][seg_i]["speaker"]) != "nar":
+				a.hop_v = maxf(a.hop_v, 0.45)  # speaking from inside: a little bob in the window
 
 
 func _wait_actors(roles: Array, guard_s := 30.0) -> void:
@@ -489,6 +491,8 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 					guard += await _frame()
 		"climb":
 			await _step_climb(st)
+		"go_inside":
+			await _step_go_inside(st)
 		"tap":
 			await _say(str(st.get("prompt", "")))
 			var hit := await _wait_tap([str(st["target"])], str(st.get("hint", "")))
@@ -562,6 +566,54 @@ func _step_walk_actors(st: Dictionary) -> void:
 			var a2 := stage.actor(str(r))
 			if a2:
 				a2.pop_target = 0.02
+
+
+## go_inside {who, house, from (spot, for actors not on the page yet), windows [index per actor], line, speed}:
+## each runs to the door, the door swings open, in they go (back view through the doorway), the door shuts, and
+## their face appears in a window.
+func _step_go_inside(st: Dictionary) -> void:
+	var house := str(st.get("house", "house"))
+	var sp := stage.set_piece(house)
+	var roles := _who(st)
+	var wins: Array = st.get("windows", [])
+	if st.has("line"):
+		_say.bind(str(st["line"])).call()
+	if sp == null or not sp.has_door():
+		for i in roles.size():
+			stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
+		return
+	var toward := stage.dir_vec("toward")
+	var spd := float(st.get("speed", 0.4))
+	for i in roles.size():
+		var a := stage.actor(str(roles[i]))
+		if a == null:
+			continue
+		if a.pop_target < 0.5:
+			var fr := stage.spot_point(st.get("from", "anchor")) + stage.dir_vec("right") * 0.15 * i
+			a.place_at(fr)
+			a.lift = 0.0
+			a.pop_delay = 0.0
+			a.pop_target = 1.0
+		a.walk_to(sp.door_point(true, toward), spd, "")
+	# one after another through the door
+	for i in roles.size():
+		var a := stage.actor(str(roles[i]))
+		if a == null:
+			continue
+		var g := 0.0
+		while a.moving() and g < 12.0:
+			g += await _frame()
+		sp.open_door(true)
+		await _wait(0.3)
+		a.walk_to(sp.door_point(false, toward), spd * 0.8, "")
+		g = 0.0
+		while a.moving() and g < 6.0:
+			g += await _frame()
+		stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
+		sp.open_door(false)
+		await _wait(0.35)
+	while _line_busy:
+		await _frame()
 
 
 ## climb {who, on (set piece), path [[x, y] in set heights from its base centre], pose, speed, line}.
@@ -682,6 +734,7 @@ func _step_huff(st: Dictionary) -> void:
 					else:
 						sp.collapse(0.05)
 						stage.fx("pop:" + str(st.get("ruin", "")))
+						get_tree().create_timer(0.45).timeout.connect(stage.reveal_inside.bind(house))
 				"collapse":
 					if i < taps:
 						sp.wobble(0.05 + 0.06 * i)
@@ -689,6 +742,7 @@ func _step_huff(st: Dictionary) -> void:
 						sp.wobble(0.4)
 						sp.collapse(0.25)
 						stage.fx("pop:" + str(st.get("ruin", "")))
+						get_tree().create_timer(0.7).timeout.connect(stage.reveal_inside.bind(house))
 				_:
 					sp.shiver(0.6)
 		if st.get("counter", false):

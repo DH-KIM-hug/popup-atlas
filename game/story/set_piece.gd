@@ -22,6 +22,15 @@ var facade: Node3D  ## parent of the bands / card; rocks for wobble and shiver
 var walls: Node3D  ## the wall bands (not the roof): fold forward together for the cutaway, the roof stays up
 var roof: Node3D  ## roof band root (banded houses)
 var shown := 0  ## bands standing (or 1/0 for a plain card)
+var door_pivot: Node3D  ## door leaf on its side hinge (child of band 0's hinge, so it rises / folds with it)
+var _door := 0.0
+var _door_v := 0.0
+var _door_t := 0.0
+var _px_scale := 0.0  ## world per facade px
+var _px_w := 0.0
+var _base_px := 0.0
+var _windows: Array = []  ## [cx, cy] facade px of the die-cut windows
+var _door_box: Dictionary = {}
 
 var _wob := 0.0
 var _wob_v := 0.0
@@ -82,6 +91,11 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 	var base_px := float(st["base_y"])
 	var s := height / (base_px - top_px)  # world per facade px
 	width = float(px[0]) * s
+	_px_scale = s
+	_px_w = float(px[0])
+	_base_px = base_px
+	_windows = st.get("windows", [])
+	_door_box = st.get("door", {})
 	for k in (st["bands"] as Array).size():
 		var b: Dictionary = st["bands"][k]
 		var tex: Texture2D = load("res://" + str(b["file"]))
@@ -115,8 +129,53 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 		h.add_child(c)
 		bands.append(h)
 		band_cards.append(c)
+		if k == 0 and not _door_box.is_empty():
+			_add_door(h, root, s)
 		root.visible = k < n_up
 	shown = clampi(n_up, 0, bands.size())
+
+
+## The door leaf: its own card, hinged on its left edge, a hair in front of the wall (the wall has the hole).
+func _add_door(h: PopHinge, root: Node3D, s: float) -> void:
+	var tex: Texture2D = load("res://" + str(_door_box["file"]))
+	var x0 := float(_door_box["x0"])
+	var x1 := float(_door_box["x1"])
+	door_pivot = Node3D.new()
+	door_pivot.name = "DoorHinge"
+	door_pivot.position = Vector3((x0 - _px_w * 0.5) * s - root.position.x, (_base_px - float(_door_box["y1"])) * s, 0.004)
+	h.add_child(door_pivot)
+	var c := PaperCard.new()
+	c.texture = tex
+	c.height = (float(_door_box["y1"]) - float(_door_box["y0"])) * s
+	c.thickness = 0.008
+	c.position = Vector3((x1 - x0) * 0.5 * s, 0, 0)
+	door_pivot.add_child(c)
+
+
+func has_door() -> bool:
+	return door_pivot != null
+
+
+## Door swings open toward the reader (about its left edge) or shut.
+func open_door(open: bool) -> void:
+	_door_t = 1.0 if open else 0.0
+
+
+## Ground point in front of / behind the door (a pig steps through it).
+func door_point(front: bool, cam_toward: Vector3) -> Vector3:
+	var cx := (float(_door_box.get("x0", _px_w * 0.5)) + float(_door_box.get("x1", _px_w * 0.5))) * 0.5
+	var r := global_transform.basis.x.normalized()
+	return global_position + r * (cx - _px_w * 0.5) * _px_scale + cam_toward * (0.12 if front else -0.08)
+
+
+## Where a pig stands behind window i so its face shows in it: [ground point behind the wall, window centre height].
+func window_spot(i: int, cam_toward: Vector3) -> Array:
+	if _windows.is_empty():
+		return [global_position - cam_toward * 0.08, height * 0.4]
+	var w: Array = _windows[clampi(i, 0, _windows.size() - 1)]
+	var r := global_transform.basis.x.normalized()
+	var p := global_position + r * (float(w[0]) - _px_w * 0.5) * _px_scale - cam_toward * 0.07
+	return [p, (_base_px - float(w[1])) * _px_scale]
 
 
 func band_count() -> int:
@@ -247,5 +306,10 @@ func _process(dt: float) -> void:
 	_cut = cs.x
 	_cut_v = cs.y
 	facade.rotation = Vector3(0.0, ry, rz)
+	if door_pivot:
+		var ds := PaperSpring.step(_door, _door_v, _door_t, 9.0, 0.55, dt)
+		_door = ds.x
+		_door_v = ds.y
+		door_pivot.rotation.y = -1.75 * _door
 	walls.rotation = Vector3(_cut * PI * 0.5 * 0.97, 0.0, 0.0)
 	facade.scale = Vector3(1.0 - 0.02 * _bounce, 1.0 + 0.04 * _bounce, 1.0)

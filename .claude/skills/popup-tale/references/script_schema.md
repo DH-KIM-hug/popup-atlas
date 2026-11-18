@@ -49,7 +49,9 @@ template view frame; "anchor" = itself; also used as "focus"), `focus` (spot the
 popped, "full"), name, scale (× height_units, default 1.25), yaw, clear (× radius of meadow cards hidden around it,
 0 = none)}], `light` ("dusk"). Use `tools/story/probe_spots.gd` (ground map: water / road / grass around the anchor)
 before choosing spots — view 2's anchor sits on the stream.
-`enter`: {who: {role: pose}, at: {role: spot}, left: {role: 0|1}, keep: [roles]}; actors not in `who` step off
+`enter`: {who: {role: pose}, at: {role: spot}, inside: {role: [house set name, window index]}, left: {role: 0|1}, keep: [roles]};
+`inside` actors stand just behind the front wall with their eyes at the window; they bob when they speak; a huff
+that blows the house apart / collapses it reveals them (scared, hop) where it stood; actors not in `who` step off
 the page on a same-page beat change unless kept.
 
 ## step verbs (generic, any tale)
@@ -57,6 +59,7 @@ the page on a same-page beat change unless kept.
 |---|---|---|
 | walk | who (role / list), dir (toward / away / left / right), dist, to (spot), from (spot), pose, speed, line, exit, async, end_pose | actors walk; an actor not on the page steps in from `from` (or dist back along dir); figures follow the travel direction (front / back / side, side flipped), `pose` is used while walking when its view fits; exit = pops off at the end |
 | pose | who, pose, left, hop, wait | standing figure of actors (no `who`: the walker) |
+| go_inside | who, house, from (spot for actors not yet on the page), windows [index per actor], speed, line | each runs to the door, the door swings open, in through the doorway (back view), door shuts, the face appears in a die-cut window |
 | climb | who, on (set piece), path [[x, y, z]] in set heights from its base centre, pose, speed, line | waypoints off the ground (roof, chimney) |
 | tap_each | targets, prompt, hint, react {role: [pose, fx...]}, lines | every target once, any order |
 | tap_steps | target, prompt, hint, steps [{target?, fx, lines, next, wait}] | one tap per step (generalised shine) |

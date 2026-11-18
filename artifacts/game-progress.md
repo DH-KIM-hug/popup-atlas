@@ -1154,3 +1154,24 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     sun_wind STORY_DONE 238.5 s missing_audio=[]; artifacts/video/three_pigs_full.mp4 re-recorded (24.9 MB).
   - Videos: artifacts/video/three_pigs_wood_v2.mp4, three_pigs_brick_v2.mp4, three_pigs_wolf_wood_v2.mp4; tiles
     artifacts/three_pigs/tiles/v2_*.jpg (8 fps: wood build, brothers' tease walk, wolf entrance, pigs' run).
+
+## 2026-11-18 — three_pigs v3: the pigs are at home; both tales tell the tale (no counting, quiz or moral)
+  - User: "아기돼지들 집에 있어야하지 않겠니?" House facades now have die-cut window glass and a door leaf on its own
+    side hinge (tools/atlas/house_stages.py GLASS / DOORS -> stages.json windows / door; SetPiece.open_door,
+    window_spot, door_point). `enter.inside` puts a pig just behind the front wall with its eyes at a window (the
+    frame overlaps it); speaking from inside it bobs; the straw / wood house falling reveals them where it stood
+    (scared, hop) before they run. brick_wolf: 셋째 is home (left window), 첫째 and 둘째 run up the road and in
+    through the door (door opens, back view through the doorway, door shuts) and peek from the right window; the
+    chimney cutaway shows them in the kitchen. Straw build ends with 첫째 playing in his doorway; every wolf page opens
+    with the pigs inside. Tiles: artifacts/three_pigs/tiles/v3_*.jpg/png.
+  - User: "팝업북은 어떤 교육적인 요소보다는 그냥 동화의 전달에 좀 의미를 뒀으면". three_pigs: tap counters gone; 3 taps
+    per build and per huff; tp_045 / tp_046 (counting) and tp_055 / tp_056 (plot taps, "하나, 둘, 셋") dropped; tp_042
+    (셋째 "셋이서 함께라서 무섭지 않아!", existing clip) answers the huffs; tp_024 / tp_025 lose "열 장" by trimming the
+    existing clips at their sentence pause (nar_506a46173c_s1.mp3, nar_33372fce4a_s2.mp3 — please listen); the
+    ending is the brothers and mom safe in front of the brick house (tp_057), no moral. sun_wind: the moral beat is
+    gone (flashback cards, the sw_036 quiz, sw_040 / sw_041), the sun's win flows into the stream. Both: voiced tap
+    instructions only for the first tap of each kind, later taps show only the ring. All through the
+    tools/story/tales/*.py tables (TRIM support added to seed_script.py).
+  - Verify: check_all clean. three_pigs STORY_DONE 281.3 s (4:41, was 5:22; missing_audio tp_n01 / tp_n02 pending),
+    sun_wind STORY_DONE 210.5 s (3:31, was ~3:59) missing_audio=[]. Videos: artifacts/video/three_pigs_full_v3.mp4
+    (22.7 MB), sun_wind_full_v3.mp4 (25.5 MB, crf 32), three_pigs_wolf_straw_v3 / wolf_wood_v3 / brick_wolf_v3.mp4.

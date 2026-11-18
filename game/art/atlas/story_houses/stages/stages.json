@@ -38,7 +38,20 @@
    306
   ],
   "base_y": 302,
-  "roof_y": 149
+  "roof_y": 149,
+  "windows": [
+   [
+    111.5,
+    196.5
+   ]
+  ],
+  "door": {
+   "file": "art/atlas/story_houses/stages/story_houses_00_door.webp",
+   "x0": 166,
+   "x1": 267,
+   "y0": 172,
+   "y1": 302
+  }
  },
  "story_houses_03": {
   "bands": [
@@ -99,7 +112,24 @@
    286
   ],
   "base_y": 282,
-  "roof_y": 121
+  "roof_y": 121,
+  "windows": [
+   [
+    100.5,
+    171.0
+   ],
+   [
+    330.5,
+    171.0
+   ]
+  ],
+  "door": {
+   "file": "art/atlas/story_houses/stages/story_houses_03_door.webp",
+   "x0": 168,
+   "x1": 260,
+   "y0": 138,
+   "y1": 282
+  }
  },
  "story_houses_06": {
   "bands": [
@@ -160,7 +190,24 @@
    313
   ],
   "base_y": 309,
-  "roof_y": 154
+  "roof_y": 154,
+  "windows": [
+   [
+    83.5,
+    215.5
+   ],
+   [
+    311.5,
+    215.5
+   ]
+  ],
+  "door": {
+   "file": "art/atlas/story_houses/stages/story_houses_06_door.webp",
+   "x0": 157,
+   "x1": 237,
+   "y0": 193,
+   "y1": 309
+  }
  },
  "story_houses_08": {
   "bands": [

@@ -29,9 +29,22 @@ NEW_LINES = {
 #  4-12 clothes quiz (the tap-each-pig intro shows who wears what), 13-17 fan/wind shop test (the build + huff beats show
 #  how strong each material is), 26 used only once as the huff prompt, 30 (첫째 runs: shown), 35-39 "which house?"
 #  quiz (cut for time; optional beat in PLAN.md), 40-42 inside count, 54 (53 already says he never came back).
-DROPPED = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 30, 35, 36, 37, 38, 39, 40, 41, 42, 54}
+DROPPED = {4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 30, 35, 36, 37, 38, 39, 40, 41, 45, 46, 54, 55, 56}
 
 # Expression per line (wiring as data): role -> pose name (PLAN.md cast sheet).
+# 2026-11-18 (user: "팝업북은 어떤 교육적인 요소보다는 그냥 동화의 전달에"): the book tells the tale — no counting
+# lines (45 "몇 번 부는지 세어 봐요", 46 "여덟 번이나", 56 "하나, 둘, 셋!"), no plot-tapping ending (55), and the brick
+# lines lose their "열 장": the existing clips are trimmed at their sentence pause (no new recording):
+#   tp_024 nar_506a46173c.mp3 0-3.05 s -> nar_506a46173c_s1.mp3 "셋째는 벽돌로 집을 짓기로 했어요."
+#   tp_025 nar_33372fce4a.mp3 2.70 s-end -> nar_33372fce4a_s2.mp3 "튼튼한 벽돌 집이 완성됐어요!"
+# (ffmpeg -t 3.05 + 0.15 s fade-out / -ss 2.70 + 0.08 s fade-in, 128 kbps). tp_042 (셋째: "셋이서 함께라서 무섭지
+# 않아!") is the brothers' answer to the huffing instead of the counted tp_046.
+TRIM = {
+    "tp_024": ("셋째는 벽돌로 집을 짓기로 했어요.", "res://audio/voice/three_pigs/nar_506a46173c_s1.mp3",
+               "audio/el/nar_506a46173c.mp3 (trimmed 0-3.05 s)"),
+    "tp_025": ("튼튼한 벽돌 집이 완성됐어요!", "res://audio/voice/three_pigs/nar_33372fce4a_s2.mp3",
+               "audio/el/nar_33372fce4a.mp3 (trimmed 2.70 s-end)"),
+}
 LINE_META = {
     # NEW lines, not recorded (ElevenLabs spend not approved): caption only with a timed pause, reported in missing_audio
     "tp_n01": {"status": "pending", "pending": "needs recording (user OK for ElevenLabs)"},
@@ -56,6 +69,7 @@ LINE_META = {
     "tp_043": {"expr": {"wolf": ["side_prowl", "shout"], "pig_c": "brave"}},
     "tp_044": {"expr": {"pig_c": "defiant", "wolf": "shout"}},
     "tp_046": {"expr": {"pig_a": "happy_wave", "pig_b": "happy_wave", "pig_c": "proud", "wolf": "huff"}},
+    "tp_042": {"expr": {"pig_c": "brave", "pig_a": "defiant", "pig_b": "defiant"}},
     "tp_047": {"expr": {"wolf": "exhausted"}},
     "tp_048": {"expr": {"wolf": "tiptoe"}},
     "tp_049": {"expr": {"pig_c": "brave", "pig_a": "calm", "pig_b": "calm"}},
@@ -105,7 +119,7 @@ KITCHEN = [  # brick house interior (beat 8), behind the front wall, popped by c
 ]
 # view 2: the stream runs diagonally just behind the anchor; the straw lot is on the near-left grass
 STRAW_SPOTS = {"lot": [-1.1, -0.05], "pile": [-0.64, 0.26], "pig_a": [-0.48, 0.42], "wolf": [-1.8, 0.28],
-               "pig_a_door": [-0.42, 0.1], "focus": [-1.2, 0.1]}
+               "pig_a_door": [-1.02, 0.1], "focus": [-1.2, 0.1]}
 # view 3 (2026-11-18 v2, user: "houses built across the road"): the road runs straight up the middle (x -0.2..0.4),
 # the stream crosses the front; the wood lot is on the meadow right of the road, the wolf comes up the road
 WOOD_SPOTS = {"lot": [1.0, -0.62], "pile": [1.85, -0.38], "pig_b": [1.62, -0.3], "pig_a": [1.88, -0.18],
@@ -116,7 +130,8 @@ WOOD_SPOTS = {"lot": [1.0, -0.62], "pile": [1.85, -0.38], "pig_b": [1.62, -0.3],
 BRICK_SPOTS = {"lot": [-0.85, -0.6], "pile": [-1.22, -0.12], "pig_c": [-0.1, -0.45], "tease": [-0.85, 0.16],
                "wolf": [-1.8, -0.08], "pig_a": [-0.12, -0.72], "pig_b": [0.06, -0.74], "lot_left": [-2.05, -1.3],
                "lot_right": [1.2, -1.2], "in_a": [-1.17, -0.72], "in_b": [-0.97, -0.7], "in_c": [-0.79, -0.68],
-               "wolf_land": [-1.8, 0.1], "mom": [-0.2, 0.02], "focus": [-0.75, -0.42], "village": [-0.45, -0.9]}
+               "wolf_land": [-1.8, 0.1], "mom": [-0.2, 0.02], "focus": [-0.75, -0.42], "village": [-0.45, -0.9],
+               "brothers_in": [0.55, 0.2], "out_a": [-1.15, -0.25], "out_b": [-0.92, -0.2], "out_c": [-0.62, -0.22]}
 BEATS = [
     {"id": "cover", "title": "아기 돼지 삼형제", "spread": None, "steps": [{"do": "cover", "prompt": "tp_n01"}]},
     {"id": "home", "title": "엄마의 배웅", "spread": {"seed": 1, "view": 5, "place": "home",
@@ -168,8 +183,8 @@ BEATS = [
         {"do": "cam", "shot": "story", "wait": 1.2},
         {"do": "say", "line": "tp_021"},
         # tap the house x5: bang! a plank flies from the stack, a plank band folds up per tap
-        {"do": "build", "house": "house", "target": "house", "taps": 5, "hint": "tp_018", "walker": "pig_b",
-         "fx": "hammer_bang", "gap": 0.5},
+        {"do": "build", "house": "house", "target": "house", "taps": 3, "walker": "pig_b", "fx": "hammer_bang",
+         "gap": 0.5},
         {"do": "fx", "fx": "star_burst"},
         {"do": "pose", "who": "pig_b", "pose": "violin"},
         {"do": "fx", "fx": "violin_notes"},
@@ -187,9 +202,8 @@ BEATS = [
         {"do": "say", "line": "tp_024"},
         # tap x10, counted on the page: a brick flies onto the wall each tap, every 2nd tap a brick band folds up;
         # at tap 5 the brothers stroll in from the left and tease (tp_023), at 7 they wander off
-        {"do": "build", "house": "house", "target": "house", "taps": 10, "hint": "tp_018", "walker": "pig_c",
-         "fx": "brick_thunk", "counter": True, "gap": 0.35,
-         "steps": [{"at": 5, "fx": "brothers_tease", "lines": ["tp_023"]}, {"at": 7, "fx": "brothers_leave"}]},
+        {"do": "build", "house": "house", "target": "house", "taps": 3, "walker": "pig_c", "fx": "brick_thunk",
+         "gap": 0.45, "steps": [{"at": 2, "fx": "brothers_tease", "lines": ["tp_023"]}, {"at": 3, "fx": "brothers_leave"}]},
         {"do": "fx", "fx": "star_burst"},
         {"do": "pose", "who": "pig_c", "pose": "proud"},
         {"do": "say", "line": "tp_025"},
@@ -197,8 +211,9 @@ BEATS = [
     {"id": "wolf_straw", "title": "후~ 짚 집", "spread": {"seed": 1, "view": 2, "place": "straw_lot",
      "spots": STRAW_SPOTS,
      "set": [{"card": "story_houses_00", "at": "lot", "stage": "full", "name": "house"},
-             {"card": "story_houses_02", "at": "lot", "off": [0.0, 0.05], "stage": 0, "name": "ruin", "scale": 1.3}]},
-     "enter": {"who": {"pig_a": "calm"}, "at": {"pig_a": "pig_a_door"}},
+             {"card": "story_houses_02", "at": "lot", "off": [0.0, -0.18], "stage": 0, "name": "ruin", "scale": 1.3}]},
+     # at home: 첫째 peeks out of the round window (he answers from inside); the heap lands behind him
+     "enter": {"who": {"pig_a": "calm"}, "inside": {"pig_a": ["house", 0]}},
      "steps": [
         {"do": "cam", "shot": "stage"},
         # the wolf prowls in from the left, sniffing (side view, facing right)
@@ -209,7 +224,6 @@ BEATS = [
         # tap the wolf x3: each tap = one 후~; the straw bands peel off from the top, the 3rd blows it all apart
         {"do": "huff", "house": "house", "taps": 3, "prompt": "tp_026", "hint": "tp_026", "result": "blow_apart",
          "ruin": "story_houses_02", "fx": "straw_fly", "gap": 0.7},
-        {"do": "pose", "who": "pig_a", "pose": "scared", "hop": True},
         {"do": "say", "line": "tp_029"},
         # he runs off toward the reader (front view, scared face), out of the page
         {"do": "walk", "who": "pig_a", "dir": "toward", "pose": "scared", "dist": 1.3, "speed": 0.45, "exit": True},
@@ -217,8 +231,9 @@ BEATS = [
     {"id": "wolf_wood", "title": "후~ 나무 집", "spread": {"seed": 1, "view": 3, "place": "wood_lot",
      "spots": WOOD_SPOTS,
      "set": [{"card": "story_houses_03", "at": "lot", "stage": "full", "name": "house", "scale": 1.0},
-             {"card": "story_houses_05", "at": "lot", "off": [0.0, 0.05], "stage": 0, "name": "ruin", "scale": 1.0}]},
-     "enter": {"who": {"pig_a": "scared", "pig_b": "calm"}},
+             {"card": "story_houses_05", "at": "lot", "off": [0.0, -0.18], "stage": 0, "name": "ruin", "scale": 1.0}]},
+     # at home: both brothers peek out of the two windows
+     "enter": {"who": {"pig_a": "scared", "pig_b": "calm"}, "inside": {"pig_a": ["house", 0], "pig_b": ["house", 1]}},
      "steps": [
         {"do": "cam", "shot": "stage"},
         {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.6, "pose": "side_prowl", "speed": 0.2, "line": "tp_031"},
@@ -226,9 +241,8 @@ BEATS = [
         {"do": "pose", "who": ["pig_a", "pig_b"], "pose": "defiant"},
         {"do": "say", "line": "tp_032"},
         # tap the wolf x5: the wood house rocks harder each time (흔들흔들), the 5th knocks it down
-        {"do": "huff", "house": "house", "taps": 5, "hint": "tp_026", "result": "collapse", "ruin": "story_houses_05",
-         "fx": "wood_wobble", "gap": 0.6},
-        {"do": "pose", "who": ["pig_a", "pig_b"], "pose": "scared", "hop": True, "wait": 0.2},
+        {"do": "huff", "house": "house", "taps": 3, "result": "collapse", "ruin": "story_houses_05",
+         "fx": "wood_wobble", "gap": 0.7},
         {"do": "say", "line": "tp_033"},
         {"do": "walk", "who": ["pig_a", "pig_b"], "dir": "right", "pose": "run", "dist": 1.8, "speed": 0.5,
          "line": "tp_034", "exit": True},
@@ -236,17 +250,18 @@ BEATS = [
     {"id": "brick_wolf", "title": "쿵쿵쿵!", "spread": {"seed": 1, "view": 4, "place": "brick_lot", "light": "dusk",
      "spots": BRICK_SPOTS,
      "set": [{"card": "story_houses_06", "at": "lot", "stage": "full", "name": "house"}] + KITCHEN},
-     # the three brothers peek out from beside the brick house
-     "enter": {"who": {"pig_a": "scared", "pig_b": "scared", "pig_c": "brave"}},
+     # 셋째 is at home (left window); his brothers come running up the road and in through the door (right window)
+     "enter": {"who": {"pig_c": "brave"}, "inside": {"pig_c": ["house", 0]}},
      "steps": [
         {"do": "cam", "shot": "stage"},
+        {"do": "go_inside", "who": ["pig_a", "pig_b"], "house": "house", "from": "brothers_in", "windows": [1, 1],
+         "speed": 0.45},
         {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.6, "pose": "side_prowl", "speed": 0.2, "line": "tp_043"},
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "say", "line": "tp_044"},
-        # tap the house x8, counted: 후~ every time, the house only shivers, the pigs cheer
-        {"do": "huff", "house": "house", "target": "house", "taps": 8, "prompt": "tp_045", "hint": "tp_045",
-         "result": "hold", "fx": "brick_huff", "counter": True, "gap": 0.4},
-        {"do": "say", "line": "tp_046"},
+        # tap the wolf x3: 후~ every time, the brick house only shivers; the brothers bob in the windows
+        {"do": "huff", "house": "house", "taps": 3, "result": "hold", "fx": "brick_huff", "gap": 0.6},
+        {"do": "say", "line": "tp_042"},
         {"do": "pose", "who": "wolf", "pose": "exhausted"},
         {"do": "fx", "fx": "thud_dust"},
         {"do": "say", "line": "tp_047"},
@@ -277,22 +292,16 @@ BEATS = [
         {"do": "fx", "fx": "cutaway_close", "wait": 0.7},
         {"do": "walk", "who": "wolf", "dir": "left", "pose": "run_away", "dist": 1.6, "speed": 0.5, "line": "tp_053", "exit": True},
     ]},
-    {"id": "ending", "title": "벽돌 마을", "spread": {"seed": 1, "view": 4, "place": "brick_lot",
-     "spots": BRICK_SPOTS,
-     "set": [{"card": "story_houses_08", "at": "lot_left", "stage": 0, "name": "house_l"},
-             {"card": "story_houses_09", "at": "lot_right", "stage": 0, "name": "house_r"},
-             {"card": "story_build_props_08", "at": "lot_left", "off": [0.0, 0.25], "name": "plot_l", "scale": 1.3},
-             {"card": "story_build_props_08", "at": "lot_right", "off": [0.0, 0.25], "name": "plot_r", "scale": 1.3}]},
-     "enter": {"who": {"pig_a": "happy_wave", "pig_b": "happy_wave", "pig_c": "proud", "mom": "calm"},
-               "at": {"pig_a": "in_a", "pig_b": "in_b", "pig_c": "in_c"}},
+    {"id": "ending", "title": "벽돌 집", "spread": {"seed": 1, "view": 4, "place": "brick_lot",
+     "spots": BRICK_SPOTS, "set": []},
+     # the wolf is gone: the brothers come out in front of the brick house, safe and happy, mom joins them
+     "enter": {"who": {"pig_a": "happy_wave", "pig_b": "happy_wave", "pig_c": "cheer", "mom": "wave"},
+               "at": {"pig_a": "out_a", "pig_b": "out_b", "pig_c": "out_c", "mom": "mom"}},
      "steps": [
-        {"do": "cam", "shot": "village", "at": "village"},
-        # tap the empty plots: each tap pops a whole new brick cottage up
-        {"do": "tap_steps", "prompt": "tp_055", "hint": "tp_055", "steps": [
-            {"target": "plot_l", "fx": "pop:story_houses_08"}, {"target": "plot_r", "fx": "pop:story_houses_09"}]},
-        {"do": "pose", "who": "pig_c", "pose": "cheer"},
-        {"do": "say", "line": "tp_056"},
+        {"do": "cam", "shot": "stage", "at": "focus"},
+        {"do": "fx", "fx": "pigs_cheer", "wait": 0.6},
         {"do": "say", "line": "tp_057"},
+        {"do": "fx", "fx": "pigs_cheer", "wait": 0.8},
         {"do": "end", "after": "tp_n02"},
     ]},
 ]

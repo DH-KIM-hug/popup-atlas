@@ -32,6 +32,10 @@ NEW_LINES = {
     "sw_n04": [["nar", "나그네를 톡 눌러 볼까요?", None, "[cheerful, inviting, curious]"]],
 }
 # Lines from the source app's mini-games that the pop-up book does not use (kept out of the beats).
+# 2026-11-18 (user: "팝업북은 어떤 교육적인 요소보다는 그냥 동화의 전달에"): the app tells the tale. The moral beat is
+# gone (flashback cards, the sw_036 quiz, the right/wrong answers and the spoken moral sw_041); the sun's win flows
+# into the stream. Voiced tap instructions only for the first tap of each kind (sun tap, wind hold, shine, gentle
+# breeze, cover, replay); later taps show only the ring hint.
 # r2 pacing (critics: under ~3 min, say the moral once): sw_007 (folded into the two tap lines), sw_039 (the hint
 # gave the quiz answer away), sw_061 (moral said a second time) and the extra "휴우~" line are left out too.
 DROPPED = {7, 37, 38, 39, 42, 43, 44, 45, 46, 47, 48, 49, 50, 58, 59, 61}
@@ -70,14 +74,9 @@ BEATS = [{'id': 'cover', 'title': '해와 바람', 'spread': None, 'steps': [{'d
              'hint': 'sw_002',
              'react': 'sun_proud',
              'lines': ['sw_003']},
-            {'do': 'tap',
-             'target': 'wind',
-             'prompt': 'sw_004',
-             'hint': 'sw_005',
-             'react': 'wind_puff',
-             'lines': ['sw_006']},
+            {'do': 'tap', 'target': 'wind', 'prompt': '', 'react': 'wind_puff', 'lines': ['sw_006']},
             {'do': 'walk', 'dist': 0.6, 'line': 'sw_008'},
-            {'do': 'tap', 'target': 'traveller', 'prompt': 'sw_n04', 'react': 'show_coat', 'lines': ['sw_009']}]},
+            {'do': 'tap', 'target': 'traveller', 'prompt': '', 'react': 'show_coat', 'lines': ['sw_009']}]},
  {'id': 'bet',
   'title': '내기',
   'enter': {'pose': 'walk_calm'},
@@ -123,27 +122,14 @@ BEATS = [{'id': 'cover', 'title': '해와 바람', 'spread': None, 'steps': [{'d
             {'do': 'say', 'line': 'sw_025'},
             {'do': 'shine',
              'prompt': 'sw_026',
-             'hint': 'sw_027',
-             'steps': [{'fx': 'warm1', 'lines': ['sw_028'], 'next': 'sw_029'},
-                       {'fx': 'warm2', 'lines': ['sw_030'], 'next': 'sw_031'},
+             'steps': [{'fx': 'warm1', 'lines': ['sw_028']},
+                       {'fx': 'warm2', 'lines': ['sw_030']},
                        {'fx': 'coat_off', 'lines': ['sw_032']}]},
             {'do': 'snap', 'key': 'warm'},
             {'do': 'fx', 'fx': 'walk_on'},
             {'do': 'fx', 'fx': 'sun_wins'},
             {'do': 'say', 'line': 'sw_033'},
             {'do': 'stop'}]},
- {'id': 'moral',
-  'title': '누가 이겼을까?',
-  'enter': {'pose': 'shirt'},
-  'spread': {'seed': 1, 'view': 1, 'route': [1.6, -1.6]},
-  'steps': [{'do': 'fx', 'fx': 'pick_coat'},
-            {'do': 'flash', 'key': 'cold', 'side': 'left', 'line': 'sw_034'},
-            {'do': 'flash', 'key': 'warm', 'side': 'right', 'line': 'sw_035'},
-            {'do': 'quiz',
-             'prompt': 'sw_036',
-             'answer': 'sun',
-             'wrong': {'wind': ['sw_x_wrong_cold']},
-             'right': ['sw_040', 'sw_041']}]},
  {'id': 'stream',
   'title': '개울가',
   'enter': {'pose': 'shirt_calm'},
@@ -153,7 +139,7 @@ BEATS = [{'id': 'cover', 'title': '해와 바람', 'spread': None, 'steps': [{'d
             {'do': 'pose', 'pose': 'relieved'},
             {'do': 'fx', 'fx': 'splash'},
             {'do': 'say', 'line': 'sw_052'},
-            {'do': 'gentle', 'prompt': 'sw_053', 'hint': 'sw_054', 'taps': 3, 'lines': ['sw_055']},
+            {'do': 'gentle', 'prompt': 'sw_053', 'taps': 3, 'lines': ['sw_055']},
             {'do': 'fx', 'fx': 'friends'},
             {'do': 'say', 'line': 'sw_056'},
             {'do': 'say', 'line': 'sw_057'}]},
