@@ -38,6 +38,7 @@ var hop := 0.0
 var hop_v := 0.0
 var lift := 0.0  ## extra height (falling, launched); set by tale fx
 var _root: Node3D
+var _climb_t := 0.0
 
 
 func setup(role_: String, skin: String, height: float, cam: Camera3D, ground_: MeadowGround) -> void:
@@ -176,7 +177,15 @@ func _process(dt: float) -> void:
 				_target = _path.pop_front()
 			else:
 				_moving = false
-		_pick_view(to / maxf(dist, 1e-5))
+		var dn := to / maxf(dist, 1e-5)
+		if _fly and absf(dn.y) > 0.92 and puppet.has_pose("back_walk"):
+			# climbing straight up / down (a ladder): seen from behind, a little rung-to-rung bob
+			view = "back"
+			puppet.set_figure("back_walk", false)
+			puppet.position.y += absf(sin(_climb_t * 9.0)) * puppet.height * 0.025
+			_climb_t += dt
+		else:
+			_pick_view(dn)
 	elif _v < 0.01 and puppet.pose != pose and _flip_ok():
 		puppet.set_figure(pose, facing_left and view_of(pose) == "side")
 

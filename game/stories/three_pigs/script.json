@@ -1083,6 +1083,17 @@
       "name": "house"
      },
      {
+      "card": "village_props_30",
+      "at": "lot",
+      "off": [
+       -0.56,
+       0.06
+      ],
+      "name": "ladder",
+      "scale": 1.7,
+      "clear": 0
+     },
+     {
       "card": "story_room_03",
       "at": "lot",
       "off": [
@@ -1158,7 +1169,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.2
+       -0.285
       ],
       "stage": 0,
       "name": "k_logs",
@@ -1170,7 +1181,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.17
+       -0.28
       ],
       "stage": 0,
       "name": "fire",
@@ -1182,7 +1193,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.165
+       -0.278
       ],
       "stage": 0,
       "name": "fire_m",
@@ -1194,7 +1205,7 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.16
+       -0.276
       ],
       "stage": 0,
       "name": "fire_l",
@@ -1206,12 +1217,13 @@
       "at": "lot",
       "off": [
        0.33,
-       -0.1
+       -0.2
       ],
       "stage": 0,
       "name": "k_pot",
       "clear": 0,
-      "lift": 0.11
+      "lift": 0.06,
+      "scale": 1.2
      },
      {
       "card": "story_hearth_12",
@@ -1414,24 +1426,10 @@
    },
    "enter": {
     "who": {
-     "wolf": "tiptoe",
-     "pig_a": "calm",
-     "pig_b": "calm",
-     "pig_c": "brave"
+     "wolf": "side_prowl"
     },
-    "inside": {
-     "pig_c": [
-      "house",
-      0
-     ],
-     "pig_a": [
-      "house",
-      1
-     ],
-     "pig_b": [
-      "house",
-      1
-     ]
+    "left": {
+     "wolf": 0
     }
    },
    "steps": [
@@ -1439,47 +1437,58 @@
      "do": "cam",
      "shot": "roof",
      "at": "lot",
-     "wait": 0.3
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "cutaway_open",
+     "wait": 1.4
     },
     {
      "do": "climb",
      "who": "wolf",
      "on": "house",
-     "pose": "tiptoe",
+     "pose": "side_prowl",
      "speed": 0.16,
      "line": "tp_048",
+     "sink": true,
      "path": [
       [
-       -0.82,
+       -1.05,
        0.0,
-       0.06
+       0.12
       ],
       [
-       -0.68,
+       -0.62,
+       0.0,
+       0.12
+      ],
+      [
+       -0.62,
        0.53,
-       0.06
+       0.12
       ],
       [
-       -0.34,
+       -0.52,
+       0.64,
+       0.07
+      ],
+      [
+       -0.33,
        0.86,
-       0.06
+       0.07
       ],
       [
-       0.16,
+       0.22,
        0.86,
-       0.06
+       0.07
       ],
       [
-       0.26,
-       0.9,
-       0.06
+       0.33,
+       1.0,
+       0.03
       ]
      ]
-    },
-    {
-     "do": "fx",
-     "fx": "cutaway_open",
-     "wait": 1.0
     },
     {
      "do": "cam",
@@ -2953,9 +2962,7 @@
    ],
    "source_index": 48,
    "source_text": "늑대는 지붕으로 살금살금 올라갔어요. 굴뚝으로 몰래 들어가려고요.",
-   "expr": {
-    "wolf": "tiptoe"
-   }
+   "expr": {}
   },
   {
    "id": "tp_049",
@@ -3190,7 +3197,7 @@
    "id": "tp_n01",
    "speaker": "nar",
    "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "cover",
    "interaction": "cover",
    "used": true,
@@ -3200,19 +3207,18 @@
      "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
      "emotion": null,
      "tags": "[cheerful, inviting, warm]",
-     "audio": "",
+     "audio": "res://audio/voice/three_pigs/nar_63ae712910.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
-   "new": true,
-   "pending": "needs recording (user OK for ElevenLabs)"
+   "new": true
   },
   {
    "id": "tp_n02",
    "speaker": "nar",
    "text": "또 보고 싶으면 '다시 보기'를 톡!",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "ending",
    "interaction": "end",
    "used": true,
@@ -3222,13 +3228,12 @@
      "text": "또 보고 싶으면 '다시 보기'를 톡!",
      "emotion": null,
      "tags": "[cheerful, inviting]",
-     "audio": "",
+     "audio": "res://audio/voice/three_pigs/nar_643e01190e.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
-   "new": true,
-   "pending": "needs recording (user OK for ElevenLabs)"
+   "new": true
   }
  ]
 }

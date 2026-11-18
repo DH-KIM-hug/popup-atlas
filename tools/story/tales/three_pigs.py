@@ -46,9 +46,7 @@ TRIM = {
                "audio/el/nar_33372fce4a.mp3 (trimmed 2.70 s-end)"),
 }
 LINE_META = {
-    # NEW lines, not recorded (ElevenLabs spend not approved): caption only with a timed pause, reported in missing_audio
-    "tp_n01": {"status": "pending", "pending": "needs recording (user OK for ElevenLabs)"},
-    "tp_n02": {"status": "pending", "pending": "needs recording (user OK for ElevenLabs)"},
+    # NEW lines tp_n01 / tp_n02: recorded 2026-11-19 after the user's OK (ElevenLabs, narrator voice, recorded.json)
     "tp_000": {"expr": {"pig_a": "calm", "pig_b": "calm", "pig_c": "calm", "mom": "calm"}},
     "tp_001": {"expr": {"mom": "talk"}},
     "tp_003": {"expr": {"mom": "wave", "pig_a": "back_walk", "pig_b": "back_walk", "pig_c": "back_walk"}},
@@ -71,7 +69,7 @@ LINE_META = {
     "tp_046": {"expr": {"pig_a": "happy_wave", "pig_b": "happy_wave", "pig_c": "proud", "wolf": "huff"}},
     "tp_042": {"expr": {"pig_c": "brave", "pig_a": "defiant", "pig_b": "defiant"}},
     "tp_047": {"expr": {"wolf": "exhausted"}},
-    "tp_048": {"expr": {"wolf": "tiptoe"}},
+    "tp_048": {"expr": {}},
     "tp_049": {"expr": {"pig_c": "brave", "pig_a": "calm", "pig_b": "calm"}},
     "tp_051": {"expr": {"wolf": "falling", "pig_a": "scared", "pig_b": "scared", "pig_c": "startled"}},
     "tp_052": {"expr": {"wolf": "ouch"}},
@@ -118,11 +116,12 @@ KITCHEN = [  # brick house interior (chimney beat): a pop-up ROOM (story_room sh
     {"card": "story_room_02", "at": "lot", "off": [0.5, -0.2], "stage": 0, "name": "k_side_r", "clear": 0, "yaw": -62},
     {"card": "story_room_04", "at": "lot", "off": [0.33, -0.31], "stage": 0, "name": "k_flue", "clear": 0, "lift": 0.36},
     {"card": "story_hearth_00", "at": "lot", "off": [0.33, -0.3], "stage": 0, "name": "k_hearth", "clear": 0},
-    {"card": "story_hearth_05", "at": "lot", "off": [0.33, -0.2], "stage": 0, "name": "k_logs", "clear": 0, "scale": 0.8},
-    {"card": "story_hearth_02", "at": "lot", "off": [0.33, -0.17], "stage": 0, "name": "fire", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_03", "at": "lot", "off": [0.33, -0.165], "stage": 0, "name": "fire_m", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_04", "at": "lot", "off": [0.33, -0.16], "stage": 0, "name": "fire_l", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_01", "at": "lot", "off": [0.33, -0.1], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.11},
+    # logs and fire inside the hearth's arched opening (just in front of the hearth card), the pot hanging over them
+    {"card": "story_hearth_05", "at": "lot", "off": [0.33, -0.285], "stage": 0, "name": "k_logs", "clear": 0, "scale": 0.8},
+    {"card": "story_hearth_02", "at": "lot", "off": [0.33, -0.28], "stage": 0, "name": "fire", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_03", "at": "lot", "off": [0.33, -0.278], "stage": 0, "name": "fire_m", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_04", "at": "lot", "off": [0.33, -0.276], "stage": 0, "name": "fire_l", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_01", "at": "lot", "off": [0.33, -0.2], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.06, "scale": 1.2},
     {"card": "story_hearth_12", "at": "lot", "off": [-0.3, -0.22], "stage": 0, "name": "k_table", "clear": 0},
     {"card": "story_hearth_14", "at": "lot", "off": [-0.22, -0.33], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6, "lift": 0.3},
 ]
@@ -260,7 +259,10 @@ BEATS = [
     ]},
     {"id": "brick_wolf", "title": "쿵쿵쿵!", "spread": {"seed": 1, "view": 4, "place": "brick_lot", "light": "dusk",
      "spots": BRICK_SPOTS,
-     "set": [{"card": "story_houses_06", "at": "lot", "stage": "full", "name": "house"}] + KITCHEN},
+     "set": [{"card": "story_houses_06", "at": "lot", "stage": "full", "name": "house"},
+             # a ladder against the left wall under the eave (the wolf's way up in the chimney beat)
+             {"card": "village_props_30", "at": "lot", "off": [-0.56, 0.06], "name": "ladder", "scale": 1.7, "clear": 0}]
+            + KITCHEN},
      # 셋째 is at home (left window); his brothers come running up the road and in through the door (right window)
      "enter": {"who": {"pig_c": "brave"}, "inside": {"pig_c": ["house", 0]}},
      "steps": [
@@ -279,15 +281,17 @@ BEATS = [
     ]},
     {"id": "chimney", "title": "보글보글", "spread": {"seed": 1, "view": 4, "place": "brick_lot", "light": "dusk",
      "spots": BRICK_SPOTS, "set": []},
-     "enter": {"who": {"wolf": "tiptoe", "pig_a": "calm", "pig_b": "calm", "pig_c": "brave"},
-               "inside": {"pig_c": ["house", 0], "pig_a": ["house", 1], "pig_b": ["house", 1]}},
+     "enter": {"who": {"wolf": "side_prowl"}, "left": {"wolf": 0}},
      "steps": [
-        {"do": "cam", "shot": "roof", "at": "lot", "wait": 0.3},
-        # he tiptoes up the roof slope to the chimney (side view, a paper hop: the tiptoe figure is one card)
-        {"do": "climb", "who": "wolf", "on": "house", "pose": "tiptoe", "speed": 0.16, "line": "tp_048",
-         "path": [[-0.82, 0.0, 0.06], [-0.68, 0.53, 0.06], [-0.34, 0.86, 0.06], [0.16, 0.86, 0.06], [0.26, 0.9, 0.06]]},
-        # BIG POP-UP SET PIECE: the brick front wall folds DOWN toward the reader, the kitchen pops up behind it
-        {"do": "fx", "fx": "cutaway_open", "wait": 1.0},
+        # the page opens the house first (user: "그전에 집이 올라와있어도 문제없지않나"): the front wall folds down, the
+        # room pops up with the pigs inside at the hearth; the camera frames the room and the roof together
+        {"do": "cam", "shot": "roof", "at": "lot", "wait": 0.2},
+        {"do": "fx", "fx": "cutaway_open", "wait": 1.4},
+        # he walks to the ladder, climbs it (back view), tiptoes up the roof slope and along the ridge (side view),
+        # steps onto the chimney top and sinks into it
+        {"do": "climb", "who": "wolf", "on": "house", "pose": "side_prowl", "speed": 0.16, "line": "tp_048", "sink": True,
+         "path": [[-1.05, 0.0, 0.12], [-0.62, 0.0, 0.12], [-0.62, 0.53, 0.12], [-0.52, 0.64, 0.07],
+                  [-0.33, 0.86, 0.07], [0.22, 0.86, 0.07], [0.33, 1.0, 0.03]]},
         {"do": "cam", "shot": "close", "at": "lot"},
         {"do": "say", "line": "tp_049"},
         # tap the fire x3: small -> medium -> large flame, the pot steams and bubbles

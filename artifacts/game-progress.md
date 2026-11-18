@@ -1203,3 +1203,19 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     0.45 washed the faces out; 0 left them in shadow).
   - Videos: artifacts/video/three_pigs_chimney_v5.mp4 (12-frame tile
     artifacts/three_pigs/tiles/three_pigs_chimney_v5_12frames.jpg), three_pigs_full_v5.mp4.
+
+## 2026-11-19 — three_pigs v6: new lines recorded, the wolf climbs a ladder, the room is open before he climbs
+  - Voice (user approved ElevenLabs for these two only): tp_n01 "그림책을 톡 눌러서 펼쳐 볼까요?" and tp_n02 "또 보고 싶으면
+    '다시 보기'를 톡!" recorded with tools/story/record_lines.py --tale three_pigs (narrator voice + settings from
+    script.json, 86 characters) -> nar_63ae712910.mp3 (3.04 s), nar_643e01190e.mp3 (2.96 s), recorded.json; reseeded:
+    status changed-recorded, missing_audio []. Nobody has listened to them yet.
+  - Chimney beat (user: "늑대 굴뚝 올라갈때 이상", "굴뚝 내려올때 집 올라오는게 이상"): the cutaway opens first (front wall down,
+    room up, pigs inside, fire lit) under a shot framing room + roof; a ladder (village_props_30, shared) leans against
+    the left wall under the eave; the wolf walks to it (side view), climbs it (back view: StoryActor shows back_walk on
+    near-vertical path segments with a rung bob), steps onto the eave and walks up the slope and along the ridge with
+    the side gait, steps onto the chimney top and sinks into it (`climb sink`: the card squashes onto its feet). When he
+    comes down the flue nothing pops; he drops into the pot.
+  - Fire set inside the hearth opening behind the pot; a warm fire light (grows with the flame) lights the pot rim.
+  - Tiles: artifacts/three_pigs/tiles/three_pigs_chimney_v6_12frames.jpg, three_pigs_chimney_v6_climb_8fps.jpg.
+    Videos: artifacts/video/three_pigs_chimney_v6.mp4, three_pigs_full_v6.mp4. Full run STORY_DONE 286.9 s
+    missing_audio=[] (reimport needed after recording: the first run still listed the two lines).

@@ -634,6 +634,11 @@ func _step_climb(st: Dictionary) -> void:
 	if st.has("line"):
 		_say.bind(str(st["line"])).call()
 	await _wait_actors([str(st["who"])])
+	if st.get("sink", false):
+		# into the chimney: the card squashes down onto its feet (its base stays on the chimney top), gone
+		a.pop_delay = 0.0
+		a.pop_target = 0.02
+		await _wait(0.7)
 
 
 ## tap_each {targets, prompt, hint, react{role: [pose, fx]}, lines}: every target once, in any order.

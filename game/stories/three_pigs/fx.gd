@@ -329,6 +329,10 @@ func _cutaway(open: bool) -> void:
 	var h := stage.set_piece("house")
 	if h:
 		h.cutaway(open)
+	if open:
+		get_tree().create_timer(0.8).timeout.connect(_fire_glow.bind(0))
+	elif _fire_light:
+		_fire_light.visible = false
 	var t := 0.25
 	for k in stage.sets:
 		var sp: SetPiece = stage.sets[k]
@@ -358,7 +362,28 @@ func _cutaway(open: bool) -> void:
 			a.pop_delay = 0.0
 
 
+var _fire_light: OmniLight3D
+
+
+## The fire's glow on the pot and the room (grows with the flame).
+func _fire_glow(level: int) -> void:
+	var f := stage.set_piece("fire")
+	if f == null:
+		return
+	if _fire_light == null:
+		_fire_light = OmniLight3D.new()
+		_fire_light.light_color = Color(1.0, 0.62, 0.3)
+		_fire_light.shadow_enabled = false
+		_fire_light.light_specular = 0.0
+		stage.add_child(_fire_light)
+	_fire_light.global_position = f.global_position + Vector3(0, 0.12, 0) + stage.dir_vec("toward") * 0.12
+	_fire_light.omni_range = 0.6
+	_fire_light.light_energy = [0.5, 0.9, 1.3][clampi(level, 0, 2)]
+	_fire_light.visible = true
+
+
 func _flame(level: int) -> void:
+	_fire_glow(level)
 	var names := ["fire", "fire_m", "fire_l"]
 	for i in names.size():
 		var sp := stage.set_piece(names[i])
@@ -400,6 +425,9 @@ func _wolf_drop() -> void:
 	var goal := pot.global_position + stage.dir_vec("away") * 0.04
 	goal.y = pot.global_position.y
 	w.place_at(top)
+	w.pop_s = 1.0  # he sank into the chimney top; now he comes down the flue whole
+	w.pop_target = 1.0
+	w.pop_delay = -1.0
 	w.set_pose("falling")
 	w.puppet.set_figure("falling", false, true)
 	_drop = {"from": top, "to": goal + Vector3(0, pot.height * 0.3, 0), "t": 0.0, "dur": 0.9}
