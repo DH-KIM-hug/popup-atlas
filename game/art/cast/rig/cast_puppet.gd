@@ -49,14 +49,14 @@ const SKINS := {
 ##  - arms (rig.json parts.arm_l/arm_r, calm walking figures): swing opposite to the legs, forward = toward the camera
 ##    (pitch) and a little inward, on a lagging spring (overlap). Off = the base gait (old benches).
 @export var front_gait := false
-@export var front_roll_deg := 1.5  ## weight-shift roll toward the stance foot per step
-@export var front_bob := 0.007  ## extra hip rise at the passing position (world units, before height scaling)
-@export var front_bounce := 0.08  ## heel-strike dip impulse (world units / s, before height scaling)
+@export var front_roll_deg := 0.6  ## weight-shift roll toward the stance foot per step
+@export var front_bob := 0.003  ## extra hip rise at the passing position (world units, before height scaling)
+@export var front_bounce := 0.04  ## heel-strike dip impulse (world units / s, before height scaling)
 @export var front_lift := 1.0  ## swing foot lift multiplier (story sets it lower for struggling steps)
 @export var front_lift_frac := 0.25  ## full swing-foot lift as a fraction of the leg length
 @export var front_droop := 0.0  ## 0..1 heat: lower lift, smaller arm swing, slower and heavier body lag
 @export var front_arm_swing := 1.0  ## arm swing multiplier (story: less while pushing into the wind)
-@export var arm_roll_deg := 9.0  ## in-plane part of the arm swing (forward hand moves in toward the body)
+@export var arm_roll_deg := 5.0  ## in-plane part of the arm swing (forward hand moves in toward the body)
 @export var arm_pitch_deg := 20.0  ## out-of-plane part (forward hand comes toward the camera)
 ## 0..1 pushing into the wind: hunched (body card squashed, a little lower), arms tucked in toward the coat front
 ## (as if clutching it shut), their swing damped. Story: spread_stage sets it while the wind blows.
@@ -192,10 +192,10 @@ func _front_step(dt: float) -> void:
 	_rl = rl.x
 	_rl_v = rl.y
 	var dy := clampf(_hl - h, -0.006 * hs, 0.006 * hs)
-	var lag := clampf(_rl - _roll_f, -0.015, 0.015)
+	var lag := clampf(_rl - _roll_f, -0.006, 0.006)
 	var hp := (_hip_local[0] + _hip_local[1]) * 0.5
 	hp.z = 0.0
-	var bb := Basis(Vector3(0, 0, 1), lag) * Basis(Vector3.UP, deg_to_rad(1.0) * cos(PI * _phase) * k)
+	var bb := Basis(Vector3(0, 0, 1), lag) * Basis(Vector3.UP, deg_to_rad(0.5) * cos(PI * _phase) * k)
 	_body.position = hp + bb * (_body_rest - hp) + Vector3(0, dy, 0)
 	_body.rotation = bb.get_euler()
 	_squash = 1.0 + clampf(_bounce / maxf(height, 0.01) * 1.3, -0.03, 0.02) - 0.035 * clampf(front_hunch, 0.0, 1.0)

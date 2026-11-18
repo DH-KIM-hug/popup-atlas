@@ -660,14 +660,14 @@ func _step_stroll(dt: float) -> void:
 		var struggle := 1.0 if _blowing else (0.5 if _shiver > 0.3 else 0.0)
 		var e := 1.0 - exp(-3.0 * dt)
 		pp.set("front_lift", lerpf(float(pp.get("front_lift")), 1.0 - 0.55 * struggle, e))
-		pp.set("front_roll_deg", lerpf(float(pp.get("front_roll_deg")), 1.5 + 1.0 * struggle, e))
+		pp.set("front_roll_deg", lerpf(float(pp.get("front_roll_deg")), 0.6 + 0.6 * struggle, e))
 		pp.set("front_arm_swing", lerpf(float(pp.get("front_arm_swing")), 1.0 - 0.7 * struggle, e))
 		pp.set("front_hunch", lerpf(float(pp.get("front_hunch")), struggle, e))  # hunched, arms tucked to the coat
 		# heat: slow, droopy while he still has the coat on; light again once it is off
 		var cool := pp.pose.begins_with("shirt") or pp.pose.begins_with("relieved")
 		pp.set("front_droop", lerpf(float(pp.get("front_droop")), clampf(_warm, 0.0, 1.0) * (0.25 if cool else 1.0), e))
 	if "push_lean_deg" in pp:
-		pp.set("push_lean_deg", lerpf(float(pp.get("push_lean_deg")), 4.0 if _blowing else (2.0 if _shiver > 0.3 else 0.0), 1.0 - exp(-3.0 * dt)))
+		pp.set("push_lean_deg", lerpf(float(pp.get("push_lean_deg")), 2.5 if _blowing else (1.0 if _shiver > 0.3 else 0.0), 1.0 - exp(-3.0 * dt)))
 
 
 ## Gale: the wind shoves him back half a step, he plants and leans in again.
