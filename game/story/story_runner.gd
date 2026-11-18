@@ -43,6 +43,7 @@ var _expect: Array = []  ## targets the current step waits for
 var _mode := "idle"  ## idle | cover | tap | blow | end
 var _line_busy := false
 var _pose := "walk"
+var quit_on_done := false
 var _streams: Dictionary = {}
 var _auto_press_t := 0.0
 var _auto_cycle := 0.0
@@ -91,6 +92,8 @@ func _parse_args() -> void:
 			mute = true
 		elif a == "--nosubs":
 			subtitles = false
+		elif a == "--quit-on-done":  # recordings: quit 2 s after the story ends (movie maker writes the file)
+			quit_on_done = true
 
 
 func _load_script() -> void:
@@ -307,6 +310,9 @@ func _run() -> void:
 		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio, " beats=", beat_times)
 		story_finished.emit(total)
 		if autoplay:
+			if quit_on_done:
+				await _wait(2.0)
+				get_tree().quit()
 			return
 		while not _replay:
 			await _frame()

@@ -858,3 +858,42 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Open: the warm grade washes the hot/fan flush toward pink at full warmth; the open-coat figures show a light notch
     at the crotch under the coat opening; --beat=wind_turn starts him at the route start (in the full flow he arrives
     from bet).
+- 2026-11-18 traveller walks TOWARD the reader + front-facing step gait (cast/story owner; not committed). User on
+  trav_wind/trav_sun: "뒤로 걷는 게 아니라 앞으로 걸어야 하지 않을까? 그리고 걷는 거 이상한데 괜찮니?" Lead decision:
+  keep the front-facing figures (faces carry the story) and make him walk toward the camera.
+  - Route (script.json): seed 1's road runs from the far edge (+Z offsets high) toward the camera side, so walking
+    toward the camera = decreasing offset. bet/wind_turn route [-1.6, 3.6] → [2.8, -2.4]; sun_turn/moral [-1.4, 1.8] →
+    [1.6, -1.6] (he comes over the bridge toward us); sky walk 0.4 → 0.6 (now toward us); stream view 2 → view 3 with
+    route [0.5, -0.3] (he starts beyond the water and walks toward the camera to the camera-side bank); ending
+    walk_away 1.6 → 3.2: the camera stops and he walks down the road toward the reader and out of the bottom of the
+    frame (no back-view art exists, so he never walks away from the camera).
+  - Road camera (spread_stage.gd `road_cam`): the rig yaw follows the road heading at his position (7-sample average
+    from 0.3 behind to 1.2 ahead, clamped ±38° because every meadow card faces +Z; eased 0.9/s + 1.6/s), so the
+    story camera stands ahead of him on the road looking back along it and the follow focus dollies it back as he
+    comes on. `_stroll_dir` = road sign toward the camera side (`_toward_cam_sign`) when no route; walk_by(dist)
+    walks along it. Sun / wind layout offsets are turned with the yaw (`_sky_rel`, anchors re-faced) so they keep
+    their screen spots. Sightline clearing runs per stop with that stop's road yaw, and now also (a) hides any hinged
+    card within 0.9 + half width of the camera on the ground (first full run: the camera backed through a big tree
+    card at the end of the wind route = whole frame of blurred leaf) and (b) runs the same tests on the template's
+    static MultiMesh cards (`_clear_statics_here`, collapsed instances) since the camera now travels past the pop
+    radius. Log: hidden hinged/static per spread 34/4, 179/90, 95/53, 62/15, 38/3.
+  - Gait (cast_puppet.gd `front_gait`, off by default so benches keep the base gait; the story turns it on): the
+    base still owns phase, footprints, stepping SFX; `_front_step` rewrites body + legs in the unscaled turn frame:
+    whole figure rolls (4°, 6° struggling) about the STANCE SOLE (legs stay parallel, no splay), hips solved so the
+    straight stance leg reaches its print + a 0.009×scale bob on passing (the stance leg drops out from under the coat
+    up to 16 % so the sole stays exactly on its print: headless probe stance sole y constant 0.032 through the stance,
+    screen x drift ≤ 1 px), swing leg lifts (slides up behind the coat 70 % + shortens 30 %, a bent knee from the
+    front), peak lift ≈ 0.06 world ≈ 25 px, and comes down ahead (toward the camera). Story puppet: step_period 0.46,
+    stride 0.05-0.13 (≈ 2 steps/s strolling, ≈ 1/s pushing into the wind), walker speed 0.36 → 0.26. Wind:
+    front_lift 0.8 + roll 6° while blowing (struggling, heavier), lean/shiver/fan layered on top unchanged.
+  - Story runner: `--quit-on-done` (with --autoplay) quits 2 s after STORY_DONE, for movie-maker recordings.
+  - Checks: leg close-ups at 8 fps over 2 s `artifacts/cast/walk_legs_closeup.png` (top: bet stroll, alternate boots
+    clearly lift while the other stays planted, body rolls; bottom: wind, slow low steps with lean + shiver), also
+    _calm / _wind separately. Full unattended run (no --beat): STORY_DONE 242 s, all 8 beats, no errors.
+  - Videos: `artifacts/video/walk_wind.mp4` (21 MB), `walk_sun.mp4` (14 MB) at 1366x1024 crf 26;
+    `walk_full_story.mp4` (24 MB, 1024x768 crf 30). check_all clean (39 scripts).
+  - Open: the road meanders, so on the bends he drifts toward one side of the frame for a few seconds while the yaw
+    catches up (card turns ≤ 20° toward the drift, never walks away); walk_wind/walk_sun were recorded before the
+    static-card clearing (those --beat runs never reach the occluding card; the full run includes the fix); the
+    ending shows ~10 s of empty road after he exits (narration still running); the toward-camera stride itself is
+    mostly read through the lift/roll/bob, since depth motion is small on screen at the 15° lens.

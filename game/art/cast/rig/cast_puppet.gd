@@ -36,6 +36,17 @@ const SKINS := {
 ## walk goes into depth, read as skating). Story walks run mostly into depth.
 @export var plant_exact := true
 @export var max_leg_deg := 40.0
+## Front-facing step gait (story, 2026-11-18): the card faces the camera and he walks toward it, so the steps must
+## read from the front. Replaces the base gait's leg/body solve while walking (the base still owns the phase, the
+## footprints and the stepping): the whole figure rolls a few degrees over the planted stance foot (pivot at that
+## sole, so the legs stay parallel: no outward splay), the hips bob up on the passing position, the stance leg is
+## aimed exactly at its footprint (fixed in the world while the body advances, stretched/shrunk a hair so the sole
+## never leaves its print), the swing leg lifts (slides up behind the coat + shortens a little, like a bent knee
+## seen from the front) and comes down ahead (toward the camera). Off = the base gait (old benches).
+@export var front_gait := false
+@export var front_roll_deg := 4.0  ## side-to-side roll over the stance foot per step
+@export var front_bob := 0.009  ## extra hip rise at the passing position (world units, before height scaling)
+@export var front_lift := 1.0  ## swing foot lift multiplier (story sets it lower for struggling steps)
 
 var _skin_rig := {}
 var _arm: Node3D  ## pivot (wrist) of an extra hinged arm part, e.g. the hat fanning in his hand
@@ -67,6 +78,57 @@ func _aim_legs_exact() -> void:
 		_legs[i].global_transform = Transform3D(Basis(q) * tb, hip_w)
 
 
+## See `front_gait`. Works in the unscaled turn frame (x = card right, y = up, z = toward the camera) and writes the
+## tilt node (local to the turn node) and the top-level legs (through the turn node's transform, so a pose-flip squash
+## still applies on top).
+func _front_step() -> void:
+	var T := Transform3D(Basis(Vector3.UP, _face_total), global_position)
+	var Ti := T.affine_inverse()
+	var sw := int(floorf(_phase)) % 2
+	var st := 1 - sw
+	var s: float = _phase - floorf(_phase)
+	var k := clampf(speed / 0.12, 0.45, 1.0)
+	var arc := sin(PI * s)
+	var roll := deg_to_rad(front_roll_deg) * arc * k * (1.0 if st == 0 else -1.0)
+	var B := Basis(Vector3(0, 0, 1), roll) * Basis(Vector3(1, 0, 0), _lean.y) * Basis(Vector3(0, 0, 1), _lean.x)
+	var f_st := Ti * _feet[st]
+	var piv := Vector3(_sole_x[st], 0.0, f_st.z)
+	var P := piv - B * piv
+	# Stance hip height: the straight stance leg reaches its footprint (inverted pendulum: highest on passing).
+	var L_st := _leg_rest[st].length()
+	var v := P + B * _hip_local[st] - f_st
+	var hz := v.x * v.x + v.z * v.z
+	var h := -v.y + sqrt(maxf(L_st * L_st - hz, L_st * L_st * 0.8))
+	h += front_bob * (height / 0.36) * arc * k
+	_tilt.transform = Transform3D(B, P + Vector3(0, h, 0))
+	var tb := _turn.global_transform
+	for i in 2:
+		var hip := P + Vector3(0, h, 0) + B * _hip_local[i]
+		var foot := Ti * _feet[i]
+		var L := _leg_rest[i].length()
+		if i == sw:
+			# lift: base swing arc height, scaled by how brisk the walk is (struggling = low, shuffling steps)
+			foot.y = foot_lift * front_lift * (0.7 + 0.3 * k) * 1.6 * arc
+		var to := foot - hip
+		var rest := B * _leg_rest[i]
+		var q := Quaternion.IDENTITY
+		var ang := rest.angle_to(to)
+		if ang > 1e-4:
+			var ax := rest.cross(to)
+			if ax.length() > 1e-6:
+				q = Quaternion(ax.normalized(), minf(ang, deg_to_rad(max_leg_deg)))
+		var ratio := clampf(to.length() / maxf(L, 1e-4), 0.62, 1.16)
+		# > 0: lifted foot (slides up behind the coat + shortens a little, a bent knee seen from the front);
+		# < 0: the stance leg drops out from under the coat as the hips bob up, so the sole stays on its print.
+		var short := L * (1.0 - ratio)
+		var sq := 1.0 - (0.3 * short / L if short > 0.0 else 0.0)
+		var slide := short * (0.7 if short > 0.0 else 1.0)
+		var R := Basis(q) * B
+		var dirn := (R * _leg_rest[i]).normalized()
+		var lt := Transform3D(R * Basis.from_scale(Vector3(1, sq, 1)), hip - dirn * slide)
+		_legs[i].global_transform = tb * lt
+
+
 ## Same as PaperPuppet.set_pose (animated card flip unless `instant`), but accepts every pose the skin maps.
 func set_pose(p: String, instant := false) -> void:
 	if not _skin_ok():
@@ -90,7 +152,9 @@ func _process(dt: float) -> void:
 	var fdt := PaperSpring.frame_dt(dt)
 	if fdt <= 0.0 or not _rigged:
 		return
-	if plant_exact and _walking:
+	if front_gait and _walking and _flip_t < 0.0:
+		_front_step()
+	elif plant_exact and _walking:
 		_aim_legs_exact()
 	if _arm and _arm.visible:
 		# fanning: quick flaps (out fast, back a bit slower), body pumps a touch with each stroke

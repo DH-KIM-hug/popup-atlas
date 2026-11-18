@@ -90,6 +90,15 @@ var _stroll_dir := 1.0
 var _pause := 0.0
 var _push := 0.0  ## gale: pushed back a step
 var _start_off := 0.0
+## 2026-11-18 walk toward the reader: the traveller card faces the camera, so every walking stretch runs down the road
+## TOWARD the camera (he walked away from it before and read as moonwalking). The story camera stands ahead of him
+## on the road looking back along it: the rig yaw follows the road heading at his position (smoothed), the follow
+## focus dollies it back as he comes on, and the sun / wind hang in the same screen spots (their layout turns with
+## the yaw). `_stroll_dir` is the road direction (offset sign) that heads toward the camera side of the page.
+var road_cam := true
+var _yaw0 := 0.0  ## rig yaw the sky layout was made at
+var _yaw_t := 0.0
+var _statics_hidden := 0
 
 
 func _init() -> void:
@@ -114,7 +123,7 @@ func build(seed_v: int, view_i: int, with_audio: bool) -> void:
 	w.keys_enabled = false
 	w.auto_walk = false
 	w.target_offset = w.offset
-	w.speed = 0.36
+	w.speed = 0.26
 	_start_off = w.offset
 	if route != Vector2.ZERO:
 		var L := world.path.curve.get_baked_length()
@@ -123,6 +132,12 @@ func build(seed_v: int, view_i: int, with_audio: bool) -> void:
 		w.global_position = world.path.global_transform * world.path.curve.sample_baked(w.offset)
 		world.focus.snap()
 		_stroll_dir = signf(route.y - route.x) if route.y != route.x else 1.0
+	else:
+		_stroll_dir = _toward_cam_sign(w.offset)
+	if road_cam:
+		world.rig.yaw_deg = road_yaw(w.offset)
+		_yaw_t = world.rig.yaw_deg
+		world.rig.snap()
 	_origin = w.global_position
 	_swap_puppet()
 	var rig := world.rig
@@ -161,6 +176,15 @@ func _swap_puppet() -> void:
 	pp.min_stride = old.min_stride * TRAV_H / 0.36
 	pp.foot_lift = old.foot_lift * TRAV_H / 0.36
 	pp.hop = old.hop * TRAV_H / 0.36
+	# Front-facing steps toward the camera (CastPuppet.front_gait): fewer, longer steps than the template walk so
+	# each lift reads (≈2 steps/s at the stroll pace, ≈1/s pushing into the wind).
+	if "front_gait" in pp:
+		pp.set("front_gait", true)
+		pp.step_period = 0.46
+		pp.min_stride = 0.05
+		pp.max_stride = 0.13
+		pp.foot_lift = 0.03 * TRAV_H / 0.36
+		pp.waddle_deg = 4.0
 	var parent := old.get_parent()
 	parent.remove_child(old)
 	old.queue_free()
@@ -168,6 +192,40 @@ func _swap_puppet() -> void:
 	world.puppet = pp
 	if world.audio:
 		pp.stepped.connect(func(_f, s): world.audio.step(world.walker.global_position, s))
+
+
+## Road offset sign that walks toward the camera side of the page (cards face +Z, the template cameras sit at +Z).
+func _toward_cam_sign(o: float) -> float:
+	var c := world.path.curve
+	var L := c.get_baked_length()
+	var a := world.path.global_transform * c.sample_baked(clampf(o - 0.3, 0.0, L))
+	var b := world.path.global_transform * c.sample_baked(clampf(o + 0.3, 0.0, L))
+	return 1.0 if b.z > a.z else -1.0
+
+
+## Camera yaw (deg) that looks back along the road at offset `o` while he walks toward the camera (`_stroll_dir`):
+## the walk heading averaged over the stretch just behind and ahead of him, clamped to the range the meadow's
+## cards read from (they all face +Z, template views use -30..32).
+func road_yaw(o: float) -> float:
+	var c := world.path.curve
+	var L := c.get_baked_length()
+	var acc := Vector2.ZERO
+	for j in 7:
+		var a := clampf(o + _stroll_dir * (-0.3 + 0.25 * j), 0.0, L)
+		var p0 := world.path.global_transform * c.sample_baked(clampf(a - 0.1 * _stroll_dir, 0.0, L))
+		var p1 := world.path.global_transform * c.sample_baked(clampf(a + 0.1 * _stroll_dir, 0.0, L))
+		var d := Vector2(p1.x - p0.x, p1.z - p0.z)
+		if d.length() > 1e-4:
+			acc += d.normalized()
+	if acc.length() < 1e-4:
+		return world.rig.yaw_deg
+	return clampf(rad_to_deg(atan2(acc.x, acc.y)), -38.0, 38.0)
+
+
+## Sky cast offset from the traveller, turned with the camera yaw since the layout.
+func _sky_rel(i: int, yaw_deg: float = NAN) -> Vector3:
+	var yw := world.rig.yaw_deg if is_nan(yaw_deg) else yaw_deg
+	return Basis(Vector3.UP, deg_to_rad(yw - _yaw0)) * (_sky[i]["rel"] as Vector3)
 
 
 func _ground_dirs() -> Array:
@@ -253,6 +311,7 @@ func _layout_sky() -> void:
 		(_sky[i]["anchor"] as Node3D).rotation.y = yaw
 		_sky[i]["face"] = yaw
 		_add_backing(h, i == 0)
+	_yaw0 = world.rig.yaw_deg
 	_apply_shot_now("wide")
 
 
@@ -291,12 +350,16 @@ func _clear_sightlines() -> void:
 			stops.append(clampf(_start_off + lerpf(route.x, route.y, float(i) / n), 0.0, L))
 	var keep_all: Array[PopHinge] = world.hinges.duplicate()
 	var hidden: Array[Vector3] = []
+	var yaw_home := world.rig.yaw_deg
 	for o in stops:
 		w.global_position = world.path.global_transform * world.path.curve.sample_baked(o)
 		world.focus.snap()
+		if road_cam:
+			world.rig.yaw_deg = road_yaw(o)
 		_clear_sightlines_here(keep_all, hidden)
 	w.global_position = world.path.global_transform * world.path.curve.sample_baked(home)
 	world.focus.snap()
+	world.rig.yaw_deg = yaw_home
 	var keep: Array[PopHinge] = []
 	for hinge: PopHinge in world.hinges:
 		if (hinge.get_parent() as Node3D).visible:
@@ -304,7 +367,7 @@ func _clear_sightlines() -> void:
 	world.hinges = keep
 	_hide_contact_blobs(hidden)
 	_apply_shot_now("wide")
-	print("SPREAD view=", view, " route=", route, " sightline cards hidden=", hidden.size())
+	print("SPREAD view=", view, " route=", route, " sightline cards hidden=", hidden.size(), " statics hidden=", _statics_hidden)
 
 
 func _clear_sightlines_here(all: Array[PopHinge], hidden: Array[Vector3]) -> void:
@@ -314,7 +377,7 @@ func _clear_sightlines_here(all: Array[PopHinge], hidden: Array[Vector3]) -> voi
 	var rects: Array = []
 	for i in 2:
 		var h: SkyHanger = _sky[i]["h"]
-		var anchor: Vector3 = traveller_pos() + (_sky[i]["rel"] as Vector3)
+		var anchor: Vector3 = traveller_pos() + _sky_rel(i)
 		var c := anchor - Vector3(0, h.stem_height + h.card_height * 0.5, 0)
 		var a := cam.unproject_position(c)
 		var b := cam.unproject_position(c + Vector3(0, h.card_height * 0.7, 0))
@@ -337,6 +400,12 @@ func _clear_sightlines_here(all: Array[PopHinge], hidden: Array[Vector3]) -> voi
 		var ppu := absf(a.y - b.y) / maxf(hh, 0.001)
 		var r := Rect2(a.x - hw * ppu, b.y, hw * ppu * 2.0, a.y - b.y).abs()
 		var blocks := false
+		# The road camera walks backwards down the road: a card it passes through (or that stands right at the
+		# lens, base just behind it) fills the frame with a blurred leaf. Anything that close goes.
+		if Vector2(p.x - cp.x, p.z - cp.z).length() < 0.9 + hw:
+			base.visible = false
+			hidden.append(p)
+			continue
 		if cam.is_position_behind(p) or cam.is_position_behind(p + Vector3(0, hh, 0)):
 			continue
 		for sr in rects:
@@ -345,6 +414,42 @@ func _clear_sightlines_here(all: Array[PopHinge], hidden: Array[Vector3]) -> voi
 		if blocks:
 			base.visible = false
 			hidden.append(p)
+	_clear_statics_here(cam, rects)
+
+
+## Same test for the template's static (MultiMesh) cards, which lie beyond the pop radius: the road camera now
+## travels with him, so it can reach them. Hidden instances are collapsed to zero size.
+func _clear_statics_here(cam: Camera3D, rects: Array) -> void:
+	if world.statics == null:
+		return
+	var cp := cam.global_position
+	for mmi in world.statics.get_children():
+		if not (mmi is MultiMeshInstance3D):
+			continue
+		var mm := (mmi as MultiMeshInstance3D).multimesh
+		if mm == null or mm.mesh == null:
+			continue
+		var ab := mm.mesh.get_aabb()
+		for i in mm.instance_count:
+			var xf := mm.get_instance_transform(i)
+			var sc := xf.basis.get_scale()
+			if sc.y < 0.01:
+				continue
+			var p := xf.origin
+			var hh := ab.end.y * sc.y
+			var hw := maxf(absf(ab.position.x), absf(ab.end.x)) * sc.x
+			var hide := Vector2(p.x - cp.x, p.z - cp.z).length() < 0.9 + hw
+			if not hide and not (cam.is_position_behind(p) or cam.is_position_behind(p + Vector3(0, hh, 0))):
+				var a := cam.unproject_position(p)
+				var b := cam.unproject_position(p + Vector3(0, hh, 0))
+				var ppu := absf(a.y - b.y) / maxf(hh, 0.001)
+				var r := Rect2(a.x - hw * ppu, b.y, hw * ppu * 2.0, a.y - b.y).abs()
+				for sr in rects:
+					if cp.distance_to(p) < float(sr[1]) and r.intersects(sr[0]):
+						hide = true
+			if hide:
+				mm.set_instance_transform(i, Transform3D(Basis.from_scale(Vector3(0.0001, 0.0001, 0.0001)), p))
+				_statics_hidden += 1
 
 
 func _hide_contact_blobs(points: Array[Vector3]) -> void:
@@ -446,9 +551,10 @@ func set_pose(p: String, instant := false) -> void:
 		_fan.visible = false
 
 
+## `dist` > 0 = on along his way (down the road toward the camera, see road_cam).
 func walk_by(dist: float) -> void:
 	var w := world.walker
-	w.target_offset = clampf(w.offset + dist, 0.0, world.path.curve.get_baked_length())
+	w.target_offset = clampf(w.offset + _stroll_dir * dist, 0.0, world.path.curve.get_baked_length())
 
 
 func walk_to_offset(o: float) -> void:
@@ -529,6 +635,10 @@ func _step_stroll(dt: float) -> void:
 		lo = clampf(_start_off + minf(route.x, route.y), 0.0, L)
 		hi = clampf(_start_off + maxf(route.x, route.y), 0.0, L)
 	w.target_offset = clampf(w.offset + _stroll_dir * 0.6, lo, hi)
+	if "front_lift" in pp:  # struggling steps in the wind: low shuffling lift, heavier roll; light steps otherwise
+		var struggle := 1.0 if _blowing else (0.5 if _shiver > 0.3 else 0.0)
+		pp.set("front_lift", lerpf(float(pp.get("front_lift")), 1.0 - 0.2 * struggle, 1.0 - exp(-3.0 * dt)))
+		pp.set("front_roll_deg", lerpf(float(pp.get("front_roll_deg")), 4.0 + 2.0 * struggle, 1.0 - exp(-3.0 * dt)))
 	if "push_lean_deg" in pp:
 		pp.set("push_lean_deg", lerpf(float(pp.get("push_lean_deg")), 7.0 if _blowing else (3.0 if _shiver > 0.3 else 0.0), 1.0 - exp(-3.0 * dt)))
 
@@ -792,6 +902,11 @@ func _process(dt: float) -> void:
 	rig.elevation_deg = lerpf(rig.elevation_deg, float(_cam[1]), k)
 	rig.focus_height = lerpf(rig.focus_height, float(_cam[2]), k)
 	rig.fov = lerpf(rig.fov, float(_cam[3]), k)
+	# Road camera: stands ahead of him on the road looking back along it (see road_cam); frozen once the ending
+	# camera stops following or he leaves the road for the stream bank.
+	if road_cam and _cam_anchor == null and world.walker.path != null:
+		_yaw_t = lerpf(_yaw_t, road_yaw(world.walker.offset), 1.0 - exp(-0.9 * dt))
+		rig.yaw_deg = lerpf(rig.yaw_deg, _yaw_t, 1.0 - exp(-1.6 * dt))
 	# Sky cast: hangs relative to the traveller, drops in on its strings, turns toward each other for "friends".
 	_pull = lerpf(_pull, _pull_t, 1.0 - exp(-1.5 * dt))
 	for i in _sky.size():
@@ -804,13 +919,16 @@ func _process(dt: float) -> void:
 		s["drop"] = float(s["drop"]) + float(s["v"]) * dt
 		s["yaw"] = lerpf(float(s["yaw"]), float(s["yaw_t"]), 1.0 - exp(-3.0 * dt))
 		var an := s["anchor"] as Node3D
-		var base: Vector3 = s.get("base", trav + (s["rel"] as Vector3))
-		var mid: Vector3 = ((_sky[0]["rel"] as Vector3) + (_sky[1]["rel"] as Vector3)) * 0.5
-		var rel: Vector3 = (s["rel"] as Vector3).lerp(Vector3(mid.x, (s["rel"] as Vector3).y, mid.z), _pull)
+		var rel0 := _sky_rel(i)
+		var base: Vector3 = s.get("base", trav + rel0)
+		var mid: Vector3 = (_sky_rel(0) + _sky_rel(1)) * 0.5
+		var rel: Vector3 = rel0.lerp(Vector3(mid.x, rel0.y, mid.z), _pull)
 		if follow_sky:
 			base = base.lerp(trav + rel, 1.0 - exp(-2.0 * dt))
 		s["base"] = base
 		an.global_position = base + Vector3(0, float(s["drop"]), 0)
+		if s.has("face"):
+			an.rotation.y = float(s["face"]) + deg_to_rad(rig.yaw_deg - _yaw0)
 		(s["h"] as SkyHanger).rotation.y = float(s["yaw"])
 	# Traveller pop (scale on the walker, springy), hop, sink, shiver.
 	if _trav_delay >= 0.0:
