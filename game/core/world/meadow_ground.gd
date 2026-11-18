@@ -31,6 +31,7 @@ func build() -> void:
 	for c in get_children():
 		c.queue_free()
 	_rng.seed = seed_value
+	_slab_groups.clear()
 	_skirt_st = SurfaceTool.new()
 	_skirt_st.begin(Mesh.PRIMITIVE_TRIANGLES)
 	_path_line = _resample(path_points, 0.04)
@@ -41,6 +42,7 @@ func build() -> void:
 		_build_table()
 	if with_book:
 		_build_book(half)
+	await _tick()
 	var top := FELT_T
 	var stream_cut := PackedVector2Array()
 	if _stream_line.size() >= 2:
@@ -62,9 +64,11 @@ func build() -> void:
 		if Geometry2D.is_polygon_clockwise(part) != Geometry2D.is_polygon_clockwise(felt_rect):
 			continue
 		_add_slab(part, 0.0, FELT_T, felt_mat, felt_edge, "Felt")
+		await _tick()
 	# Cut stream banks: a narrow lighter card strip on each side of the cut, sitting on the felt.
 	if _stream_line.size() >= 2:
 		_build_banks(top, felt_rect)
+	await _tick()
 	# Road: own die-cut layer with deckled edges; gap over the stream (deck instead).
 	var road_keep := []
 	if _path_line.size() >= 2:
@@ -93,8 +97,10 @@ func build() -> void:
 		for part in road_parts:
 			_add_slab(part, top, PATH_T, pm, pe, "Road")
 			_add_skirt(part, top, 0.08, 0.85)  # r2: stronger cast shadow off the road lift
+			await _tick()
 		road_keep = road_parts
 		_build_verges(top, felt_rect, stream_cut)
+		await _tick()
 		if _deck_poly.size() >= 3:
 			_deck_y = top + 0.03
 			var dm := ShaderMaterial.new()
@@ -110,8 +116,15 @@ func build() -> void:
 			dm.set_shader_parameter("along", _tangent(_path_line, ci))
 			_add_slab(_deck_poly, 0.004, _deck_y - 0.004, dm, _edge_mat(Color("d9c09a")), "BridgeDeck")
 	# Rolling terrain tiers (cut cardstock, stacked).
-	_build_tiers(top)
-	_build_patches(half - Vector2(page_margin + 0.3, page_margin + 0.3), top)
+	if slicer:
+		slicer.phase("ground_tiers")
+	await _build_tiers(top)
+	await _tick()
+	if slicer:
+		slicer.phase("ground_patches")
+	await _build_patches(half - Vector2(page_margin + 0.3, page_margin + 0.3), top)
+	await _tick()
+	flush_slabs()
 	# Commit the shadow skirts (one draw).
 	var sm := ShaderMaterial.new()
 	sm.shader = SKIRT_SHADER
@@ -173,6 +186,7 @@ func _build_tiers(top: float) -> void:
 	if _stream_line.size() >= 2:
 		keep_out.append(_ribbon(_stream_line, stream_width * 0.5 + 0.34, 0.06, 1.1))
 	for spec in hill_specs:
+		await _tick()
 		var c: Vector2 = spec[0]
 		var r: float = spec[1]
 		var tiers: int = spec[2]
@@ -180,10 +194,12 @@ func _build_tiers(top: float) -> void:
 		var off := Vector2.ZERO
 		var prev_parts: Array = []
 		for k in tiers:
+			await _tick()
 			var rr := r * (1.0 - 0.21 * k) * _rng.randf_range(0.92, 1.05)
 			off += Vector2(_rng.randf_range(-0.14, 0.14), _rng.randf_range(-0.16, 0.0)) * r
 			var parts: Array = [_rolling_blob(c + off, rr, squash)]
 			for ko in keep_out:
+				await _tick()
 				var nxt: Array = []
 				for pp in parts:
 					for q in _solid(Geometry2D.clip_polygons(pp, ko)):
@@ -194,6 +210,7 @@ func _build_tiers(top: float) -> void:
 				# Stack inside the tier below (no overhanging slabs): clip to it, shrunk a little.
 				var inside: Array = []
 				for pp in parts:
+					await _tick()
 					for lower in prev_parts:
 						for sh in _solid(Geometry2D.offset_polygon(lower, -0.1)):
 							for q in _solid(Geometry2D.intersect_polygons(pp, sh)):
@@ -212,6 +229,7 @@ func _build_tiers(top: float) -> void:
 			gm.set_shader_parameter("clump_strength", 0.38)
 			var em := _edge_mat(col.lerp(Color("efe6c8"), 0.5))  # r3: 0.68 read as white planks at grazing angles
 			for pp in parts:
+				await _tick()
 				var yb := _hill_y_at(pp, top)
 				_add_slab(pp, yb, tier_t, gm, em, "Tier%d" % k)
 				_add_skirt(pp, yb, 0.07 + 0.02 * k, 0.75)

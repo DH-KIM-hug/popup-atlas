@@ -109,6 +109,21 @@ func _init() -> void:
 
 ## Build the spread synchronously (the caller hides the hitch under a page turn).
 func build(seed_v: int, view_i: int, with_audio: bool) -> void:
+	await build_async(seed_v, view_i, with_audio, 0.0)
+
+
+## perf: build over several frames, at most ~budget_ms of work per frame (0 = all at once, same result).
+## The story runner prebuilds the next spread this way while the current page plays (SpreadStage under an
+## off-screen SubViewport with its own World3D, moved into the story when its page turns).
+var perf_phases := {}
+var build_frames := 0
+var max_slice_ms := 0.0
+var is_built := false
+var _slicer: BuildSlicer
+
+
+func build_async(seed_v: int, view_i: int, with_audio: bool, budget_ms: float) -> void:
+	_slicer = BuildSlicer.new(budget_ms, get_tree())
 	seed_value = seed_v
 	view = view_i
 	world = MEADOW.instantiate() as MeadowWorld
@@ -118,7 +133,11 @@ func build(seed_v: int, view_i: int, with_audio: bool) -> void:
 	world.pop_on_load = true
 	world.walk = false
 	world.with_audio = with_audio
+	world.slicer = _slicer
 	add_child(world)
+	if not world.is_built:
+		await world.built
+	_slicer.phase("stage")
 	PopWave.snap_all(world.hinges, false)  # cancel the template's own load wave; the page turn pops it
 	var w := world.walker
 	w.tap_enabled = false
@@ -141,14 +160,23 @@ func build(seed_v: int, view_i: int, with_audio: bool) -> void:
 		_yaw_t = world.rig.yaw_deg
 		world.rig.snap()
 	_origin = w.global_position
+	await _slicer.tick()
 	_swap_puppet()
+	await _slicer.tick()
 	var rig := world.rig
 	_wide = [rig.distance, rig.elevation_deg, rig.focus_height, rig.fov]
 	_cam = _wide.duplicate()
 	_build_sky()
+	await _slicer.tick()
 	_layout_sky()
-	_clear_sightlines()
-	_find_stream()
+	await _slicer.tick()
+	_slicer.phase("sightlines")
+	await _clear_sightlines()
+	_slicer.phase("stream")
+	await _slicer.tick()
+	await _find_stream()
+	await _slicer.tick()
+	_slicer.phase("finish")
 	if rig.key:
 		_key_e0 = rig.key.light_energy
 		_key_c0 = rig.key.light_color
@@ -160,6 +188,11 @@ func build(seed_v: int, view_i: int, with_audio: bool) -> void:
 	_trav_s = 0.02
 	_trav_target = 0.02
 	_apply_trav()
+	_slicer.finish()
+	perf_phases = _slicer.phases.duplicate()
+	build_frames = _slicer.frames
+	max_slice_ms = _slicer.max_slice_ms
+	is_built = true
 
 
 ## Cast library skin for the traveller (CastPuppet, same pose names) when it exists; scaled for the story.
@@ -358,7 +391,8 @@ func _clear_sightlines() -> void:
 		world.focus.snap()
 		if road_cam:
 			world.rig.yaw_deg = road_yaw(o)
-		_clear_sightlines_here(keep_all, hidden)
+		await _clear_sightlines_here(keep_all, hidden)
+		await _slicer.tick()
 	w.global_position = world.path.global_transform * world.path.curve.sample_baked(home)
 	world.focus.snap()
 	world.rig.yaw_deg = yaw_home
@@ -416,42 +450,42 @@ func _clear_sightlines_here(all: Array[PopHinge], hidden: Array[Vector3]) -> voi
 		if blocks:
 			base.visible = false
 			hidden.append(p)
-	_clear_statics_here(cam, rects)
+	await _slicer.tick()
+	await _clear_statics_here(cam, rects)
 
 
-## Same test for the template's static (MultiMesh) cards, which lie beyond the pop radius: the road camera now
+## Same test for the template's static cards (CardBatch), which lie beyond the pop radius: the road camera now
 ## travels with him, so it can reach them. Hidden instances are collapsed to zero size.
 func _clear_statics_here(cam: Camera3D, rects: Array) -> void:
-	if world.statics == null:
+	if world.batch == null:
 		return
 	var cp := cam.global_position
-	for mmi in world.statics.get_children():
-		if not (mmi is MultiMeshInstance3D):
+	var bt := world.batch
+	var n := 0
+	for r in bt.static_ids():
+		n += 1
+		if n % 256 == 0:
+			await _slicer.tick()
+		if bt.is_static_hidden(r):
 			continue
-		var mm := (mmi as MultiMeshInstance3D).multimesh
-		if mm == null or mm.mesh == null:
-			continue
-		var ab := mm.mesh.get_aabb()
-		for i in mm.instance_count:
-			var xf := mm.get_instance_transform(i)
-			var sc := xf.basis.get_scale()
-			if sc.y < 0.01:
-				continue
-			var p := xf.origin
-			var hh := ab.end.y * sc.y
-			var hw := maxf(absf(ab.position.x), absf(ab.end.x)) * sc.x
-			var hide := Vector2(p.x - cp.x, p.z - cp.z).length() < 0.9 + hw
-			if not hide and not (cam.is_position_behind(p) or cam.is_position_behind(p + Vector3(0, hh, 0))):
-				var a := cam.unproject_position(p)
-				var b := cam.unproject_position(p + Vector3(0, hh, 0))
-				var ppu := absf(a.y - b.y) / maxf(hh, 0.001)
-				var r := Rect2(a.x - hw * ppu, b.y, hw * ppu * 2.0, a.y - b.y).abs()
-				for sr in rects:
-					if cp.distance_to(p) < float(sr[1]) and r.intersects(sr[0]):
-						hide = true
-			if hide:
-				mm.set_instance_transform(i, Transform3D(Basis.from_scale(Vector3(0.0001, 0.0001, 0.0001)), p))
-				_statics_hidden += 1
+		var xf := bt.static_xform(r)
+		var ab := bt.static_aabb(r)
+		var sc := xf.basis.get_scale()
+		var p := xf.origin
+		var hh := ab.end.y * sc.y
+		var hw := maxf(absf(ab.position.x), absf(ab.end.x)) * sc.x
+		var hide := Vector2(p.x - cp.x, p.z - cp.z).length() < 0.9 + hw
+		if not hide and not (cam.is_position_behind(p) or cam.is_position_behind(p + Vector3(0, hh, 0))):
+			var a := cam.unproject_position(p)
+			var b := cam.unproject_position(p + Vector3(0, hh, 0))
+			var ppu := absf(a.y - b.y) / maxf(hh, 0.001)
+			var rr := Rect2(a.x - hw * ppu, b.y, hw * ppu * 2.0, a.y - b.y).abs()
+			for sr in rects:
+				if cp.distance_to(p) < float(sr[1]) and rr.intersects(sr[0]):
+					hide = true
+		if hide:
+			bt.hide_static(r)  # collapsed to zero size, shadow quad too (was: MultiMesh instance scaled to 0.0001)
+			_statics_hidden += 1
 
 
 func _hide_contact_blobs(points: Array[Vector3]) -> void:
@@ -476,6 +510,7 @@ func _find_stream() -> void:
 	var best := INF
 	var o := 0.0
 	while o < L:
+		await _slicer.tick()
 		var p := world.path.global_transform * c.sample_baked(o)
 		var d := absf(world.ground.stream_distance(Vector2(p.x, p.z)) + world.ground.stream_width * 0.5)
 		if d < best:
@@ -496,6 +531,7 @@ func _find_stream() -> void:
 	var bs := INF
 	_bank = p0
 	for ai in 48:
+		await _slicer.tick()
 		var ang := TAU * ai / 48.0
 		for ri in 14:
 			var r := 0.3 + ri * 0.06
@@ -918,7 +954,7 @@ func _face_each_other(a: float) -> void:
 
 func _process(dt: float) -> void:
 	dt = PaperSpring.frame_dt(dt)
-	if world == null:
+	if world == null or not is_built:
 		return
 	_t += dt
 	var trav := traveller_pos()

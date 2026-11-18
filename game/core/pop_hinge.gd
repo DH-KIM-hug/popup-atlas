@@ -21,6 +21,8 @@ signal snapped(up: bool)  ## snap() was called (no motion, followers should jump
 ## When > 0 every hinge advances by this fixed step per frame instead of the frame delta
 ## (deterministic captures and offline curve dumps). 0 = real time.
 static var fixed_dt := 0.0
+## CardBatch drawing this hinge's card (perf): told when the hinge transform changes.
+var batch: CardBatch = null
 
 @export_enum("Back:1", "Forward:-1") var fold := 1
 @export var freq_hz := 5.2  ## follower spring frequency for weight 1 (scales weight^-0.15)
@@ -217,3 +219,5 @@ func _apply() -> void:
 	# Hinge first, then twist about the card's own (tilted) vertical, so a tilted card never
 	# spins in the page plane (that read as sideways-sliding slivers in round 1).
 	transform.basis = Basis(Vector3.RIGHT, _angle) * Basis(Vector3.UP, _twist)
+	if batch:
+		batch.mark(self)

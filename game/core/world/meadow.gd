@@ -49,6 +49,7 @@ var lib: CardLibrary
 var ground: MeadowGround
 var contact: ContactShadows
 var statics: StaticCards
+var batch: CardBatch  ## perf: draws every card (static + hinged) in per-print MultiMeshes + one shadow MultiMesh
 var sway: WindSway
 var rig: LookRig
 var walker: Walker
@@ -67,17 +68,29 @@ var _cam_ground := Vector2.ZERO
 var _cam_h := 2.0  ## camera height above the page (lens keep-out)
 var _houses: Array = []  ## [pos, h, yaw] for chimney smoke
 var _fill_mask: FastNoiseLite  ## r2: low-frequency density mask (clearings vs clumps)
+## perf: set before add_child to spread the build over frames (BuildSlicer budget); null = build in _ready at once.
+var slicer: BuildSlicer
+var is_built := false
+var perf_phases := {}
 
 
 func _ready() -> void:
+	if slicer == null:
+		slicer = BuildSlicer.new()
+	slicer.phase("ground")
 	rng.seed = seed_value
 	seed(seed_value * 7919 + view)
 	if fixed_step:
 		PopHinge.fixed_dt = 1.0 / 60.0
 		PaperSpring.fixed_dt = 1.0 / 60.0
+	slicer.phase("ground_lib")
 	lib = CardLibrary.new(rng)
-	_build_ground()
+	await slicer.tick()
+	slicer.phase("ground")
+	await _build_ground()
+	await slicer.tick()
 	_build_walk_path()
+	await slicer.tick()
 	var v: Array = VIEWS[clampi(view, 0, VIEWS.size() - 1)]
 	var off: float = path.curve.get_baked_length() * float(v[0])
 	var sp := path.curve.sample_baked(off)
@@ -89,8 +102,9 @@ func _ready() -> void:
 	contact.strength = 1.25  # LOOKF r1: firmer contact (photographed cards sit in their own shadow)
 	contact.tint = Color(0.07, 0.09, 0.04)
 	contact.name = "ContactShadows"
-	statics = StaticCards.new()
-	statics.name = "StaticCards"
+	batch = CardBatch.new()
+	batch.name = "Cards"
+	statics = StaticCards.new(batch)
 	sway = WindSway.new()
 	sway.name = "Wind"
 	add_child(sway)
@@ -98,13 +112,25 @@ func _ready() -> void:
 	_fill_mask = FastNoiseLite.new()
 	_fill_mask.seed = seed_value * 17 + 3
 	_fill_mask.frequency = 0.16
-	_dress()
+	slicer.phase("dress")
+	await _dress()
+	slicer.phase("cards")
+	ground.flush_slabs()  # patches added while dressing
 	contact.commit()
 	add_child(contact)
-	add_child(statics)
-	statics.commit()
+	_preload_catalog()
+	await batch.atlas.build_sliced(slicer)
+	await slicer.tick()
+	add_child(batch)
+	batch.commit()
+	await slicer.tick()
+	slicer.phase("life")
+	batch.set_wind_dir0(sway.wind_dir.normalized())
+	sway.batch = batch
 	_build_camera_and_traveller(v, off)
+	await slicer.tick()
 	_build_life()
+	await slicer.tick()
 	if with_audio:
 		audio = PaperAudio.new()
 		audio.name = "PaperAudio"
@@ -115,8 +141,11 @@ func _ready() -> void:
 		var wave := PopWave.new()
 		wave.speed = 4.0
 		wave_end = wave.pop(hinges, Vector3(_start.x, 0, _start.y), 0.25)
+	slicer.finish()
+	perf_phases = slicer.phases
 	print("MEADOW seed=", seed_value, " view=", view, " cards=", card_count, " hinged=", hinges.size(),
 		" static=", statics.count, " ids=", lib.used.size(), " tiers=", ground.tier_count(), " wave_end=", snappedf(wave_end, 0.01))
+	is_built = true
 	built.emit()
 
 
@@ -153,7 +182,10 @@ func _build_ground() -> void:
 		[Vector2(3.6, 1.2), 2.6, 1, 0.55], [Vector2(-9.6, -1.4), 3.2, 2, 0.55], [Vector2(9.0, -2.6), 3.2, 2, 0.55],
 		[Vector2(-2.6, -1.8), 2.0, 1, 0.6], [Vector2(-11.2, 7.0), 2.6, 1, 0.6], [Vector2(11.4, 6.8), 2.6, 1, 0.6],
 	]
+	ground.slicer = slicer
 	add_child(ground)
+	if not ground.is_built:
+		await ground.ground_built
 	_mute_stream()
 
 
@@ -207,7 +239,7 @@ func _reserve(p: Vector2, r: float) -> void:
 func _free(p: Vector2, r: float, road_gap := 0.05) -> bool:
 	if not ground.on_page(p, 0.25):
 		return false
-	if ground.path_distance(p) < r * 0.45 + road_gap or ground.stream_distance(p) < r * 0.45 + 0.06:
+	if ground.path_closer_than(p, r * 0.45 + road_gap) or ground.stream_closer_than(p, r * 0.45 + 0.06):
 		return false
 	var k := _cell(p)
 	for dx in range(-2, 3):
@@ -287,6 +319,7 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 	base.add_child(hinge)
 	hinges.append(hinge)
 	var thick := clampf(h * 0.04, 0.011, 0.04)  # r3: thicker board
+	var rec := -1
 	if cross:
 		var cc := CrossCard.new()
 		cc.texture_a = _tex_of(it["path"])
@@ -294,14 +327,24 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 		cc.thickness = thick
 		hinge.add_child(cc)
 	else:
-		var card := PaperCard.new()
-		card.texture = _tex_of(it["path"])
-		card.height = h
-		card.thickness = thick
-		card.back_print = true
-		hinge.add_child(card)
+		# perf: the card (PaperCard at height h, printed back) is drawn by CardBatch; the hinge still animates it.
+		rec = batch.add_hinged(hinge, it["path"], float(it["h"]), h, thick)
 	if SWAY_POOLS.has(pool) and rng.randf() < 0.7:
-		sway.add(base, float(SWAY_POOLS[pool]) * rng.randf_range(0.6, 1.2), rng.randf_range(0.35, 0.7), rng.randf() * TAU)
+		var amp := float(SWAY_POOLS[pool]) * rng.randf_range(0.6, 1.2)
+		var freq := rng.randf_range(0.35, 0.7)
+		var phase := rng.randf() * TAU
+		if rec >= 0:
+			batch.set_sway(rec, amp, freq, phase)  # same rocking, in the card shader
+		else:
+			sway.add(base, amp, freq, phase)
+
+
+## perf: every print of the card library goes into the shared atlas on the first spread, so later spreads (other
+## views pick a few other prints) never rebuild it during a page turn.
+func _preload_catalog() -> void:
+	for id in lib.cards:
+		var e: Dictionary = lib.cards[id]
+		batch.atlas.index_of(e["path"], float(e["h"]))
 
 
 func _tex_of(path_: String) -> Texture2D:
@@ -320,19 +363,45 @@ func _road_at(f: float) -> Array:
 # ------------------------------------------------------------------ dressing
 
 func _dress() -> void:
-	_bridge()
-	_road_edges()
-	_village(Vector2(-4.4, -4.2))
-	_wheat_field(Vector2(5.6, 3.2))
-	_forest_edge()
-	_back_hills()
-	_rocks_and_folds()
-	_stream_banks()
-	_meadow_groves()
-	_tree_rows()
-	_foreground()
-	_lens_foreground()
-	_meadow_fill()
+	slicer.phase("dress_bridge")
+	await _bridge()
+	await slicer.tick()
+	slicer.phase("dress_road_edges")
+	await _road_edges()
+	await slicer.tick()
+	slicer.phase("dress_village")
+	await _village(Vector2(-4.4, -4.2))
+	await slicer.tick()
+	slicer.phase("dress_wheat_field")
+	await _wheat_field(Vector2(5.6, 3.2))
+	await slicer.tick()
+	slicer.phase("dress_forest_edge")
+	await _forest_edge()
+	await slicer.tick()
+	slicer.phase("dress_back_hills")
+	await _back_hills()
+	await slicer.tick()
+	slicer.phase("dress_rocks_and_folds")
+	await _rocks_and_folds()
+	await slicer.tick()
+	slicer.phase("dress_stream_banks")
+	await _stream_banks()
+	await slicer.tick()
+	slicer.phase("dress_meadow_groves")
+	await _meadow_groves()
+	await slicer.tick()
+	slicer.phase("dress_tree_rows")
+	await _tree_rows()
+	await slicer.tick()
+	slicer.phase("dress_foreground")
+	await _foreground()
+	await slicer.tick()
+	slicer.phase("dress_lens_foreground")
+	await _lens_foreground()
+	await slicer.tick()
+	slicer.phase("dress_meadow_fill")
+	await _meadow_fill()
+	await slicer.tick()
 
 
 func _bridge() -> void:
@@ -340,6 +409,7 @@ func _bridge() -> void:
 	var bi := 0
 	var bd := INF
 	for i in line.size():
+		await slicer.tick()
 		var d := absf(ground.stream_distance(line[i]) + ground.stream_width * 0.5)
 		if d < bd:
 			bd = d
@@ -348,6 +418,7 @@ func _bridge() -> void:
 	var n := Vector2(-t.y, t.x)
 	var yaw := atan2(-t.y, t.x)  # card plane along the road (rails)
 	for sd: float in [-1.0, 1.0]:
+		await slicer.tick()
 		var q := line[bi] + n * sd * (ground.path_width * 0.5 + 0.05)
 		_reserve(q, 0.4)
 		# r2: rail cards (fence prints) standing along both edges of the deck
@@ -358,8 +429,10 @@ func _bridge() -> void:
 				_place(lib.get_card(fid), 0.17, qq, yaw + (PI if sd < 0 else 0.0), false, 0.4)
 	# reeds and a duck pair by the bridge
 	for k in 6:
+		await slicer.tick()
 		_try("reeds", line[bi] + n * rng.randf_range(-1.6, 1.6), 0.35, 0.8, 1.1)
 	for k in 2:
+		await slicer.tick()
 		_try("water_animal", line[bi] + n * rng.randf_range(0.9, 2.0) * (1 if k == 0 else -1), 0.3)
 
 
@@ -369,6 +442,7 @@ func _road_edges() -> void:
 	var line := ground.path_line()
 	var step := 5
 	for i in range(step, line.size() - step, step):
+		await slicer.tick()
 		var tn := (line[i + 1] - line[i - 1]).normalized()
 		var yaw := atan2(-tn.y, tn.x)
 		for sd: float in [-1.0, 1.0]:
@@ -380,6 +454,7 @@ func _road_edges() -> void:
 			var pool := "hedge" if r < 0.4 else ("grass" if r < 0.65 else ("flower" if r < 0.88 else "bush"))
 			_try(pool, c, 0.03, 0.75, 1.0, yaw * 0.25, 0.45, -0.2)
 	for f in [0.12, 0.33, 0.52, 0.71, 0.9]:
+		await slicer.tick()
 		var ra := _road_at(f)
 		var n := Vector2(-ra[1].y, ra[1].x) * (1.0 if rng.randf() < 0.5 else -1.0)
 		var props := ["village_signpost", "meadow_field_25", "village_lantern_post", "forest_conifer_22", "village_props_04"]
@@ -393,11 +468,13 @@ func _village(c: Vector2) -> void:
 	var houses := lib.query("building", [], "", "") + lib.query("house")
 	var keep := []
 	for id in houses:
+		await slicer.tick()
 		var e := lib.get_card(id)
 		if e["pool"] == "house" and not ("castle" in e["label"] or "tower" in e["label"] or "chapel" in e["label"] or "windmill" in e["label"] or "market" in e["label"] or "gatehouse" in e["label"]):
 			keep.append(id)
 	var spots := [Vector2(-1.4, -0.8), Vector2(0.2, -1.4), Vector2(1.6, -0.6), Vector2(-2.6, 0.4), Vector2(-0.4, 0.6), Vector2(2.2, 0.9), Vector2(-1.6, 1.8)]
 	for s in spots:
+		await slicer.tick()
 		var id := lib.pick(keep)
 		var e := lib.get_card(id)
 		var h: float = float(e["h"]) * rng.randf_range(0.95, 1.1)
@@ -411,14 +488,19 @@ func _village(c: Vector2) -> void:
 			_houses.append([Vector3(q.x, ground.surface_y(q), q.y), h, yaw, h * float(e["aspect"])])
 	# yard props, fences, lanterns, a well, washing line, garden flowers
 	for k in 14:
+		await slicer.tick()
 		_try("prop", c + Vector2(rng.randf_range(-2.4, 2.6), rng.randf_range(-1.6, 2.2)), 0.3, 0.95, 1.1)
 	for k in 6:
+		await slicer.tick()
 		_try("fence", c + Vector2(rng.randf_range(-2.4, 2.6), rng.randf_range(0.6, 2.4)), 0.2, 0.95, 1.05)
 	for k in 6:
+		await slicer.tick()
 		_try("farm_animal", c + Vector2(rng.randf_range(-1.6, 2.6), rng.randf_range(0.4, 2.4)), 0.4, 1.0, 1.15)
 	for k in 10:
+		await slicer.tick()
 		_try("blossom" if k % 3 == 0 else "tree", c + Vector2(rng.randf_range(-3.2, 3.0), rng.randf_range(-2.6, -0.6)), 0.6, 0.8, 1.1)
 	for k in 24:
+		await slicer.tick()
 		_try("flower" if k % 2 == 0 else "bush", c + Vector2(rng.randf_range(-2.8, 2.8), rng.randf_range(-1.8, 2.6)), 0.4, 0.8, 1.05)
 
 
@@ -426,6 +508,7 @@ func _wheat_field(c: Vector2) -> void:
 	# Broken rows of wheat cards on the field tier, with a haystack clearing and a cart.
 	var rows := 7
 	for rI in rows:
+		await slicer.tick()
 		var z := c.y - 1.8 + rI * 0.55
 		var x0 := c.x - 2.6 + rng.randf_range(-0.3, 0.4)
 		var x1 := c.x + 2.4 + rng.randf_range(-0.6, 0.3)
@@ -437,9 +520,11 @@ func _wheat_field(c: Vector2) -> void:
 			_try("crop", Vector2(x, z + rng.randf_range(-0.06, 0.06)), 0.02, 0.85, 1.15, rng.randf_range(-0.1, 0.1), 0.55)
 			x += rng.randf_range(0.18, 0.3)
 	for id in ["meadow_field_05", "field_haystack", "field_hay_cart", "meadow_field_06", "field_wheat_stook", "village_props_04"]:
+		await slicer.tick()
 		if lib.has(id):
 			_try(id, c + Vector2(rng.randf_range(-2.0, 2.0), rng.randf_range(-1.6, 1.6)), 0.4)
 	for k in 6:
+		await slicer.tick()
 		_try("fence", c + Vector2(-3.0 + k * 0.5, 2.3), 0.05, 0.95, 1.05, 0.0, 0.8)
 	_try("wild_animal", c + Vector2(0.4, 0.2), 1.0)
 	_try("farm_animal", c + Vector2(-1.2, 1.4), 0.8)
@@ -448,6 +533,7 @@ func _wheat_field(c: Vector2) -> void:
 func _forest_edge() -> void:
 	# Right-back forest on the high tiers, left-back pine line, conifers fading into haze.
 	for c in [Vector2(8.6, -3.0), Vector2(5.4, -6.6), Vector2(9.8, -6.8), Vector2(2.8, -8.4), Vector2(-9.8, -6.2), Vector2(-4.2, -8.8), Vector2(11.0, -1.0)]:
+		await slicer.tick()
 		ground.add_patch(c, 1.3, 5)
 		for i in 16:
 			_try("conifer" if i % 3 != 2 else "tree", c, 1.6, 0.8, 1.3, 0.0, 0.7)
@@ -462,6 +548,7 @@ func _back_hills() -> void:
 	var ids: Array = lib.pools.get("hill", []).filter(func(i): return not (i in ["hills_clouds_03", "hills_clouds_10", "hills_clouds_14", "hills_clouds_19", "hills_clouds_22",
 		"hills_clouds_02", "hills_clouds_05", "hills_clouds_07", "hills_clouds_24", "hills_clouds_00", "hills_clouds_08", "hills_clouds_13", "hills_clouds_09"]))  # LOOKF r1: low lens shows the back rows; ochre/salmon slabs out  # r2/r4: red fields too loud
 	for row in 3:
+		await slicer.tick()
 		var z := -9.0 + row * 0.55
 		var x := -13.0 + rng.randf_range(0.0, 1.0)
 		while x < 13.0:
@@ -487,6 +574,7 @@ func _rocks_and_folds() -> void:
 	# Folded paper hillocks: big green V-folded tents, mid and back.
 	var greens := [Color("6f8a58"), Color("7d955f"), Color("8a9a62"), Color("66804f")]
 	for c in [Vector2(-3.4, -5.2), Vector2(1.8, -6.0), Vector2(-8.6, -0.6), Vector2(8.2, 0.6), Vector2(-5.0, 6.8), Vector2(7.8, -5.0), Vector2(-11.0, -4.0), Vector2(11.4, -3.6)]:
+		await slicer.tick()
 		var s := rng.randf_range(0.34, 0.52)
 		if _free(c, s * 2.2):
 			_reserve(c, s * 2.2)
@@ -499,6 +587,7 @@ func _rocks_and_folds() -> void:
 func _stream_banks() -> void:
 	var line := ground.stream_line()
 	for i in range(2, line.size() - 2, 3):
+		await slicer.tick()
 		if rng.randf() < 0.35:
 			continue
 		var tn := (line[i + 1] - line[i - 1]).normalized()
@@ -508,6 +597,7 @@ func _stream_banks() -> void:
 		for j in rng.randi_range(1, 3):
 			_try(pool, q, 0.12, 0.8, 1.1, atan2(-tn.y, tn.x) * 0.5)
 	for k in 8:
+		await slicer.tick()
 		var i := rng.randi_range(2, line.size() - 3)
 		var tn := (line[i + 1] - line[i - 1]).normalized()
 		_try("water_animal", line[i] + Vector2(-tn.y, tn.x) * (ground.stream_width * 0.5 + 0.08) * (1 if k % 2 == 0 else -1), 0.05)
@@ -522,6 +612,7 @@ func _meadow_groves() -> void:
 		[Vector2(1.6, -4.4), ["conifer", "tree", "autumn"]], [Vector2(-1.6, 8.8), ["tree", "autumn"]],
 	]
 	for g in groves:
+		await slicer.tick()
 		var c: Vector2 = g[0]
 		ground.add_patch(c + Vector2(0, 0.15), rng.randf_range(0.7, 1.0), 4 if rng.randf() < 0.4 else 5)
 		var n := rng.randi_range(3, 6)
@@ -532,8 +623,10 @@ func _meadow_groves() -> void:
 			_try(skirt[rng.randi() % skirt.size()], c + Vector2(0, 0.35), 0.95, 0.8, 1.15)
 	# sheep pasture, left meadow
 	for k in 6:
+		await slicer.tick()
 		_try("farm_animal", Vector2(-6.4, 4.6) + Vector2(rng.randf_range(-1.4, 1.4), rng.randf_range(-0.8, 0.8)), 0.3)
 	for k in 6:
+		await slicer.tick()
 		_try("wild_animal", Vector2(rng.randf_range(-6, 6), rng.randf_range(-6, 7)), 0.6)
 
 
@@ -543,6 +636,7 @@ func _tree_rows() -> void:
 	var r3 := RandomNumberGenerator.new()
 	r3.seed = seed_value * 577 + 11
 	for k in 40:
+		await slicer.tick()
 		var c := Vector2(r3.randf_range(-11.5, 11.5), r3.randf_range(-7.5, 8.0))
 		if c.distance_to(_start) < 2.2:
 			continue
@@ -563,6 +657,7 @@ func _tree_rows() -> void:
 func _foreground() -> void:
 	var line := ground.path_line()
 	for i in range(6, line.size() - 6, 9):
+		await slicer.tick()
 		var tn := (line[i + 1] - line[i - 1]).normalized()
 		for sd: float in [-1.0, 1.0]:
 			if rng.randf() < 0.35:
@@ -585,6 +680,7 @@ func _lens_foreground() -> void:
 	var saved := rng
 	rng = r2
 	for k in 4:
+		await slicer.tick()
 		var side := -1.0 if k % 2 == 0 else 1.0
 		var q := _start + to_cam * r2.randf_range(2.4, 3.2) + right * side * r2.randf_range(1.5, 2.4)
 		_try(pools[r2.randi() % pools.size()], q, 0.2, 0.95, 1.15)
@@ -594,6 +690,7 @@ func _lens_foreground() -> void:
 func _meadow_fill() -> void:
 	var pools := ["flower", "grass", "bush", "flower", "mushroom", "grass", "rock", "sapling", "flower"]
 	for k in 1100:
+		await slicer.tick()
 		var c := Vector2(rng.randf_range(-12.5, 12.5), rng.randf_range(-8.0, 9.0))
 		var base: String = pools[rng.randi() % pools.size()]
 		# r2: clumps where the mask is high, open felt clearings where it is low (no even confetti)
@@ -609,6 +706,7 @@ func _meadow_fill() -> void:
 			_try(base if j < 2 else pools[rng.randi() % pools.size()], c, 0.22, 0.8, 1.15, 0.0, 0.62)
 	# r4: low ground-cover pass (tiny grass/flower tufts) so open felt reads as meadow, not an empty sheet
 	for k in 1150:  # LOOKF r1: was 1800; the low lens + DOF hide the tiniest tufts, the budget goes to tree rows
+		await slicer.tick()
 		var c := Vector2(rng.randf_range(-12.5, 12.5), rng.randf_range(-8.0, 9.0))
 		if c.distance_to(_start) < HERO_CLEAR * 0.7:
 			continue

@@ -1038,3 +1038,56 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Open: 6 figures unrigged (legs overlap: pig_a_carry_straw, pig_b_run, wolf_back_walk/tiptoe/run_away/hungry) —
     hop them as static cards or regenerate with a leg gap; wolf front: thin leg-top sliver beside the left thigh; house
     bands cut through windows/doors and wall bands keep tiny eave tips; no story.tscn yet (runner verbs are phase 2).
+
+## 2026-11-18 — F perf: card batching, sliced spread prebuild, iOS export (no look change intended)
+  - Profiled on this Mac (M4 Pro, 1366x1024, windowed; Metal has no GPU timer, so GPU = Vulkan/MoltenVK). Before =
+    HEAD 6385db7 in a temp worktree, same harness (tools/perf/profile.py; rows in artifacts/perf/final_profiles.jsonl).
+    | scene | draws (Vk max) | draws (Metal max) | primitives | Vk GPU p95 | Metal frame p95 | worst frame |
+    |---|---|---|---|---|---|---|
+    | meadow v0 before | 5069 | 1559 | 11.26 M | 14.16 ms | 10.53 ms | 10.7 ms |
+    | meadow v0 after  | 466  | 432  | 4.25 M  | 9.15 ms  | 9.60 ms  | 11.1 ms |
+    | wind_turn before | 3838 | 1348 | 11.1 M  | 13.46 ms | 13.78 ms (120 s run) | 3861 ms (page turn to sun_turn) |
+    | wind_turn after  | 566  | 466  | 4.25 M  | 9.29 ms  | 9.37 ms  | 45 ms (startup frame; story frames ≤ 36 ms) |
+    | sun_turn before  | 4494 | 1335 | 11.2 M  | 13.50 ms | 9.82 ms  | 44.9 ms |
+    | sun_turn after   | 490  | 440  | 4.27 M  | 8.96 ms  | 9.64 ms  | 43.9 ms (startup) |
+    Page turn wind_turn -> sun_turn: before one 2.0-3.9 s frame (synchronous spread build); after the next spread is
+    prebuilt and moved in at the turn in 1.5 ms; no frame over 50 ms in the 120 s wind_turn->sun_turn->moral->stream run.
+  - Cards (core/world/card_batch.gd, card_atlas.gd, shaders/card_batch|card_shadow|card_wind): every meadow card
+    (static + hinged) is drawn from ONE MultiMesh per print with ONE shared material. PaperCard's print/back/wall
+    surfaces became one indexed surface (UV2 = part, print index), print textures are copied texel-for-texel into a
+    wrap-padded Texture2DArray atlas (no mips, like the lossless prints; params texture holds rect/size/edge colour);
+    the shader is a line-by-line port of paper_print + paper_edge. Hinged cards keep their PopHinge nodes (springs,
+    audio, visibility); a moving hinge marks itself and its instance is rewritten once per frame. WindSway rocking
+    moved into the vertex shader (same formula, WindSway feeds t/strength/axis). Shadows: one SHADOWS_ONLY MultiMesh
+    of quads (light-facing face plane, print alpha, mirrored on the back, inside the rasterized cut contour) instead
+    of every card mesh in both splits (card shadows 4.5 ms -> 0.7 ms GPU). Vertex outputs trimmed (params fetched in
+    the fragment), wall quads share corner vertices: the card pass is vertex-bound (6.2 M verts/frame -> 4.1 M).
+    Static merging into chunk meshes was considered and not done: unique merged geometry would be ~150-200 MB of
+    vertex data and a 1-2 s build; the per-print MultiMesh with one material gives the same draw-count win.
+  - Ground: slabs batched per identical material (116 MeshInstances / 112 materials -> one surface per material).
+  - Hitches: spreads build time-sliced (BuildSlicer, 3 ms/frame) in an off-screen SubViewport with its own World3D
+    while the previous page plays, processing disabled until moved in (not in --fixed runs: captures/recordings build
+    at the turn exactly as before, same RNG sequence). Exact speed-ups: road/stream distance grid (placement 1.5 s ->
+    0.43 s, identical counts), PopWave.cover_pairs grid (60 ms -> 2 ms per pop/fold, identical pair list, verified by
+    tools/perf/check_pairs.gd), PaperCard contour cache per texture, catalog JSON parsed once, traveller figure +
+    cast prop prints traced/loaded ahead (pose-change hitches 33-46 ms gone).
+  - Look check (tools/perf/capture.py + compare.py; 6 meadow views at frame 170 + wind_turn/sun_turn at frame 600;
+    sheet artifacts/perf/before_after_sheet.png, PNGs in artifacts/perf/captures/): noise floor (same build twice,
+    film grain) mean 2.83 / max 12. After vs before: mean 2.64-3.32 on 7 of 8 views (>24 diff on 0.07-0.94 % of pixels),
+    view 1 mean 3.91 / 2.3 %. Main pass is at the noise floor (with old-style mesh shadows view 0 = 2.87 mean,
+    0.003 % >24); all remaining difference is thin shadow edges: the quads do not cast the 1-4 mm cut-wall
+    thickness, visible on cards lit almost edge-on (view 1). Exact mesh shadows: CARD_SHADOW_MODE=mesh env var
+    (+2.5 ms GPU, ~+550 draws in view 1).
+  - Not met: "< 8 ms Metal p95" (Metal frame p95 9.4-9.6 ms; Vulkan GPU p95 9.0-9.3 ms; the card pass is now
+    vertex-bound, ~4 M visible-pass vertices for 5,400 cards). Next levers need sign-off (look-affecting): contour
+    decimation for small/far cards, per-instance frustum culling (needs chunked MultiMeshes = more draws), fewer
+    ground-cover tufts.
+  - iOS: export preset "iOS" (game/export_presets.cfg: Xcode project only, bundle com.house4k2b.popupstorybook, team
+    66DAQSBX4V from the Apple Development cert OU, iPad only). project.godot: import_etc2_astc=true, handheld
+    orientation sensor-landscape. StoryRunner renders 3D at <=1024 px tall on mobile (iPad 2388x1668 -> 0.61, the
+    approved 1366x1024 pixel density; UI native). Export -> build/ios (gitignored; pck 128 MB). Unsigned device
+    build: BUILD SUCCEEDED. Simulator: Godot 4.7.2's template ships an x86_64-only simulator lib and the iOS 27
+    simulators are arm64-only; retagged the arm64 device objects as iossim (+2 Metal error-domain stubs) -> build,
+    install and launch OK, but Godot stops with "Apple GPU does not support image cube arrays" (simulator GPU limit,
+    Metal and MoltenVK; GLES3 fallback crashes in the canvas renderer) -> artifacts/perf/ios_sim_ipadpro11.png.
+    Signed device build stops at "No Accounts" (no Apple ID in Xcode). check_all clean (43).

@@ -10,6 +10,8 @@ extends Node3D
 
 var _items: Array = []  ## [node, rest_basis, amp, freq, phase, along]
 var _t := 0.0
+## CardBatch (perf): cards it draws sway in its vertex shader; this node only feeds it the clock and wind.
+var batch: CardBatch
 
 
 func add(n: Node3D, amp: float, freq: float, phase: float) -> void:
@@ -23,6 +25,8 @@ func _process(dt: float) -> void:
 	_t += dt
 	var wd := wind_dir.normalized()
 	var axis := Vector3(-wd.y, 0, wd.x)  # roll about the axis across the wind (cards nod downwind)
+	if batch:
+		batch.set_wind(_t, strength, axis, gust_speed)
 	for it in _items:
 		var n: Node3D = it[0]
 		var along: float = it[5]

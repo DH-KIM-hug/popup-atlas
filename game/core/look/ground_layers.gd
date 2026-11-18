@@ -51,13 +51,27 @@ var _hills: Array = []  ## [PackedVector2Array poly, float top_y], highest first
 var _patch_mats: Array = []
 var _patch_edge: ShaderMaterial
 var _rng := RandomNumberGenerator.new()
+## perf: spreads built ahead of their page slice the ground build too (BuildSlicer; null = all at once).
+var slicer: BuildSlicer
+var is_built := false
+
+
+signal ground_built
 
 
 func _ready() -> void:
-	build()
+	await build()
+	is_built = true
+	ground_built.emit()
+
+
+func _tick() -> void:
+	if slicer:
+		await slicer.tick()
 
 
 func build() -> void:
+	_slab_groups.clear()
 	for c in get_children():
 		c.queue_free()
 	_rng.seed = seed_value
@@ -99,7 +113,8 @@ func build() -> void:
 	# Stacked hill tiers (cut felt card, visible edges).
 	_build_hills(top)
 	# Ground cover: lobed felt patches, some stacked two deep.
-	_build_patches(half - Vector2(page_margin + 0.3, page_margin + 0.3), top)
+	await _build_patches(half - Vector2(page_margin + 0.3, page_margin + 0.3), top)
+	flush_slabs()
 
 
 # ------------------------------------------------------------------ queries
@@ -358,9 +373,9 @@ func _build_patches(h: Vector2, top: float) -> void:
 		tries += 1
 		var c := Vector2(_rng.randf_range(-h.x, h.x), _rng.randf_range(-h.y, h.y))
 		var r := _rng.randf_range(0.14, 0.5)
-		if _path_line.size() > 1 and path_distance(c) < r + 0.06:
+		if _path_line.size() > 1 and path_closer_than(c, r + 0.06):
 			continue
-		if _stream_line.size() > 1 and stream_distance(c) < r + 0.1:
+		if _stream_line.size() > 1 and stream_closer_than(c, r + 0.1):
 			continue
 		if hill_level(c) > 0:
 			continue
@@ -375,6 +390,7 @@ func _build_patches(h: Vector2, top: float) -> void:
 			var c2 := c + Vector2(_rng.randf_range(-0.15, 0.15), _rng.randf_range(-0.15, 0.15)) * r
 			_add_slab(_blob(c2, r * _rng.randf_range(0.45, 0.65), 0.9), top + COVER_T, COVER_T, mats[k2], edge, "Cover2")
 		placed += 1
+		await _tick()
 
 
 ## Extrude a 2D polygon (XZ) into a slab [y0, y0 + t]: top face + side walls (bottom omitted).
@@ -411,17 +427,76 @@ func _add_slab(poly: PackedVector2Array, y0: float, t: float, top_mat: Material,
 		_quad(st_side, Vector3(a.x, y1, a.y), Vector3(b.x, y1, b.y), Vector3(b.x, y0 - 0.002, b.y),
 			Vector3(a.x, y0 - 0.002, a.y), n3, [Vector2(u, 0), Vector2(u + seg, 0), Vector2(u + seg, 1), Vector2(u, 1)])
 		u += seg
-	var mesh := ArrayMesh.new()
 	st_top.generate_tangents()
-	st_top.commit(mesh)
 	st_side.generate_tangents()
-	st_side.commit(mesh)
-	var mi := MeshInstance3D.new()
-	mi.name = nm
-	mi.mesh = mesh
-	mi.set_surface_override_material(0, top_mat)
-	mi.set_surface_override_material(1, side_mat)
-	add_child(mi)
+	# perf: no MeshInstance per slab; the triangles join the batch of every slab with an identical material
+	# (flush_slabs draws one surface per batch), same vertices and materials as before.
+	_slab_add(top_mat, st_top.commit_to_arrays())
+	_slab_add(side_mat, st_side.commit_to_arrays())
+	if is_built:
+		_queue_flush()
+
+
+# ------------------------------------------------------------------ perf: slab batches
+
+var _slab_groups := {}  ## material key -> {"mat", "arrays", "mi", "dirty"}
+var _flush_queued := false
+
+
+func _slab_add(mat: Material, arrays: Array) -> void:
+	if arrays.is_empty() or arrays[Mesh.ARRAY_VERTEX] == null or (arrays[Mesh.ARRAY_VERTEX] as PackedVector3Array).is_empty():
+		return
+	var key := _mat_key(mat)
+	var g: Dictionary = _slab_groups.get(key, {})
+	if g.is_empty():
+		g = {"mat": mat, "arrays": arrays, "mi": null, "dirty": true}
+		_slab_groups[key] = g
+		return
+	var dst: Array = g["arrays"]
+	for i in Mesh.ARRAY_MAX:
+		if arrays[i] != null and dst[i] != null:
+			dst[i].append_array(arrays[i])
+	g["dirty"] = true
+
+
+## Same shader + same uniform values = same material for drawing.
+static func _mat_key(m: Material) -> String:
+	if not (m is ShaderMaterial) or (m as ShaderMaterial).shader == null:
+		return str(m.get_instance_id())
+	var sm := m as ShaderMaterial
+	var parts := PackedStringArray([str(sm.shader.get_instance_id())])
+	for u: Dictionary in sm.shader.get_shader_uniform_list():
+		var v: Variant = sm.get_shader_parameter(u["name"])
+		parts.append(str(v.get_instance_id()) if v is Object else var_to_str(v))
+	return "|".join(parts)
+
+
+func _queue_flush() -> void:
+	if not _flush_queued:
+		_flush_queued = true
+		flush_slabs.call_deferred()
+
+
+## Builds / refreshes one MeshInstance per slab batch (called at the end of build and after late add_patch).
+func flush_slabs() -> void:
+	_flush_queued = false
+	var n := 0
+	for key: String in _slab_groups:
+		var g: Dictionary = _slab_groups[key]
+		n += 1
+		if not g["dirty"]:
+			continue
+		g["dirty"] = false
+		var mesh := ArrayMesh.new()
+		mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, g["arrays"])
+		var mi: MeshInstance3D = g["mi"]
+		if mi == null or not is_instance_valid(mi):
+			mi = MeshInstance3D.new()
+			mi.name = "Slabs%d" % n
+			add_child(mi)
+			g["mi"] = mi
+		mi.mesh = mesh
+		mi.set_surface_override_material(0, g["mat"])
 
 
 # ------------------------------------------------------------------ geometry helpers
@@ -503,6 +578,62 @@ func _blob(c: Vector2, r: float, squash: float) -> PackedVector2Array:
 		var v := Vector2(cos(a) * rr, sin(a) * rr * squash).rotated(rot)
 		out.append(c + v)
 	return out
+
+
+## perf (placement): path_distance(p) < d, answered from a segment grid (only segments near p are measured).
+## Same distance arithmetic as path_distance on the segments that can be closer than d, so the answer is identical.
+func path_closer_than(p: Vector2, d: float) -> bool:
+	return _line_closer(_path_line, 0, p, d, path_width * 0.5)
+
+
+## stream_distance(p) < d (see path_closer_than).
+func stream_closer_than(p: Vector2, d: float) -> bool:
+	return _line_closer(_stream_line, 1, p, d, stream_width * 0.5)
+
+
+const _SEG_CELL := 0.5
+var _seg_grids := [{}, {}]  ## per line: {"n": size, "a": first point, "cells": {Vector2i: PackedInt32Array}}
+
+
+func _line_closer(line: PackedVector2Array, which: int, p: Vector2, d: float, half_w: float) -> bool:
+	if line.size() < 2:
+		return INF - half_w < d
+	var g: Dictionary = _seg_grids[which]
+	if g.get("n", -1) != line.size() or g.get("a", Vector2.INF) != line[0]:
+		g = _build_seg_grid(line)
+		_seg_grids[which] = g
+	var cells: Dictionary = g["cells"]
+	var r := d + half_w + 0.01
+	if r <= 0.0:
+		return false
+	var c0 := Vector2i(floori((p.x - r) / _SEG_CELL), floori((p.y - r) / _SEG_CELL))
+	var c1 := Vector2i(floori((p.x + r) / _SEG_CELL), floori((p.y + r) / _SEG_CELL))
+	var best := INF
+	for cx in range(c0.x, c1.x + 1):
+		for cy in range(c0.y, c1.y + 1):
+			var ids: PackedInt32Array = cells.get(Vector2i(cx, cy), PackedInt32Array())
+			for i in ids:
+				var q := Geometry2D.get_closest_point_to_segment(p, line[i], line[i + 1])
+				best = minf(best, q.distance_squared_to(p))
+	return sqrt(best) - half_w < d
+
+
+func _build_seg_grid(line: PackedVector2Array) -> Dictionary:
+	var cells := {}
+	for i in line.size() - 1:
+		var a := line[i]
+		var b := line[i + 1]
+		var c0 := Vector2i(floori(minf(a.x, b.x) / _SEG_CELL), floori(minf(a.y, b.y) / _SEG_CELL))
+		var c1 := Vector2i(floori(maxf(a.x, b.x) / _SEG_CELL), floori(maxf(a.y, b.y) / _SEG_CELL))
+		for cx in range(c0.x, c1.x + 1):
+			for cy in range(c0.y, c1.y + 1):
+				var k := Vector2i(cx, cy)
+				if not cells.has(k):
+					cells[k] = PackedInt32Array()
+				var arr: PackedInt32Array = cells[k]
+				arr.append(i)
+				cells[k] = arr
+	return {"n": line.size(), "a": line[0], "cells": cells}
 
 
 func _line_distance(line: PackedVector2Array, p: Vector2) -> float:

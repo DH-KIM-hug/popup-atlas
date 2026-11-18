@@ -61,17 +61,41 @@ func pop(hinges: Array, origin: Vector3, start := 0.0) -> float:
 ## Footprint = the card's height along its fold side and half its width across; the height comes
 ## from meta "card_h" (else weight * 0.4) and the half width from meta "half_w" (else height * 0.5).
 static func cover_pairs(hinges: Array) -> Array:
+	# perf (2026-11-18): same pairs in the same (i, j) order as the all-pairs loop, but j is only tested when it is
+	# near enough to lie inside a's footprint (grid over the page; frames are rotations, distances are kept).
+	var n := hinges.size()
+	var pos := PackedVector3Array()
+	pos.resize(n)
+	for i in n:
+		pos[i] = (hinges[i] as PopHinge).global_position
+	const CELL := 0.5
+	var grid := {}
+	for i in n:
+		var k := Vector2i(floori(pos[i].x / CELL), floori(pos[i].z / CELL))
+		if not grid.has(k):
+			grid[k] = PackedInt32Array()
+		var arr: PackedInt32Array = grid[k]
+		arr.append(i)
+		grid[k] = arr
 	var out := []
-	for i in hinges.size():
+	for i in n:
 		var a: PopHinge = hinges[i]
 		var h: float = a.get_meta("card_h", a.weight * 0.4)
 		var hw: float = a.get_meta("half_w", h * 0.5)
 		var frame := (a.get_parent() as Node3D).global_transform.affine_inverse() if a.get_parent() is Node3D else Transform3D()
-		var o := frame * a.global_position
-		for j in hinges.size():
+		var o := frame * pos[i]
+		var r := sqrt(pow(h * 0.95, 2.0) + pow(hw * 0.9, 2.0)) * 1.01 + 0.01
+		var c0 := Vector2i(floori((pos[i].x - r) / CELL), floori((pos[i].z - r) / CELL))
+		var c1 := Vector2i(floori((pos[i].x + r) / CELL), floori((pos[i].z + r) / CELL))
+		var cand := PackedInt32Array()
+		for cx in range(c0.x, c1.x + 1):
+			for cz in range(c0.y, c1.y + 1):
+				cand.append_array(grid.get(Vector2i(cx, cz), PackedInt32Array()))
+		cand.sort()
+		for j in cand:
 			if i == j:
 				continue
-			var p: Vector3 = frame * (hinges[j] as PopHinge).global_position - o
+			var p: Vector3 = frame * pos[j] - o
 			var along := -p.z * float(a.fold)
 			if along > 0.0 and along < h * 0.95 and absf(p.x) < hw * 0.9:
 				out.append([i, j])

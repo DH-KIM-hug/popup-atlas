@@ -49,11 +49,16 @@ var _auto_press_t := 0.0
 var _auto_cycle := 0.0
 var _replay := false
 var _snaps: Dictionary = {}  ## key -> Texture2D kept for the recap flashbacks
+## perf: next spread built ahead, a few ms per frame, while the current page plays (key -> {stage, vp, beat}).
+var _prebuilt: Dictionary = {}
+var _last_line := ""
+const PREBUILD_BUDGET_MS := 3.0
 var _choosing := false
 
 
 func _ready() -> void:
 	_parse_args()
+	_apply_render_scale()
 	if fixed_step:
 		PopHinge.fixed_dt = 1.0 / 60.0
 		PaperSpring.fixed_dt = 1.0 / 60.0
@@ -68,6 +73,21 @@ func _ready() -> void:
 	ui.replay_pressed.connect(func(): _replay = true)
 	ui.pointer_source = Callable()
 	_run.call_deferred()
+
+
+## perf (device): the look was approved at 1366x1024; on a phone/tablet the 3D view renders at about that height
+## (iPad Pro 11" 2388x1668 -> 3D scale 0.61, the depth-of-field / tilt-shift blur hides the upscale) while the UI
+## stays at native resolution. Desktop windows are unchanged.
+const RENDER_HEIGHT := 1024.0
+
+
+func _apply_render_scale() -> void:
+	if not OS.has_feature("mobile"):
+		return
+	var h := float(DisplayServer.window_get_size().y)
+	if h > RENDER_HEIGHT:
+		get_viewport().scaling_3d_scale = clampf(RENDER_HEIGHT / h, 0.5, 1.0)
+	print("PERF render_scale=", get_viewport().scaling_3d_scale, " window=", DisplayServer.window_get_size())
 
 
 func _parse_args() -> void:
@@ -136,6 +156,8 @@ func _wait(sec: float, skippable := false) -> void:
 
 
 func _process(dt: float) -> void:
+	if dt > 0.03 and clock > 1.0:
+		print("PERF hitch ms=", snappedf(dt * 1000.0, 0.1), " t=", snappedf(clock, 0.01), " mode=", _mode, " line=", _last_line)
 	dt = PaperSpring.frame_dt(dt)
 	clock += dt
 	ui.step(dt)
@@ -234,6 +256,7 @@ func _say(id: String) -> void:
 	_line_busy = true
 	_skip = false
 	print("LINE ", id, " t=", snappedf(clock, 0.01), " ", l["text"])
+	_last_line = id
 	var segs: Array = l["segs"]
 	for i in segs.size():
 		var s: Dictionary = segs[i]
@@ -304,6 +327,9 @@ func _run() -> void:
 			for i in beats.size():
 				if str(beats[i]["id"]) == start_beat:
 					i0 = i
+		if start_beat == "":
+			_prebuild_after(i0 - 1)  # first spread builds behind the cover page
+		_warm_cast()
 		for i in range(i0, beats.size()):
 			await _play_beat(beats[i])
 		var total := clock - t0
@@ -545,6 +571,7 @@ func _enter_spread(b: Dictionary) -> void:
 	if key == _spread_key and stage:
 		return
 	var had := stage != null and is_instance_valid(stage)
+	var pre: Dictionary = _prebuilt.get(key, {})
 	ui.hide_line()
 	ui.pointer_source = Callable()
 	ui.show_page_title("")
@@ -564,13 +591,30 @@ func _enter_spread(b: Dictionary) -> void:
 		stage.queue_free()
 		stage = null
 		await _frame()
-	stage = SpreadStage.new()
-	stage.name = "Spread_" + str(b["id"])
-	add_child(stage)
-	var rt: Array = sp.get("route", [])
-	if rt.size() == 2:
-		stage.route = Vector2(float(rt[0]), float(rt[1]))
-	stage.build(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute)
+	var t_build := Time.get_ticks_usec()
+	if not pre.is_empty():
+		var ps: SpreadStage = pre["stage"]
+		while not ps.is_built:  # normally done long ago; otherwise it keeps slicing under the cover
+			await _frame()
+		var t_move := Time.get_ticks_usec()
+		var vp: SubViewport = pre["vp"]
+		vp.remove_child(ps)
+		ps.name = "Spread_" + str(b["id"])
+		add_child(ps)
+		vp.queue_free()
+		_prebuilt.erase(key)
+		stage = ps
+		print("PERF spread_prebuilt ", key, " frames=", ps.build_frames, " max_slice_ms=", snappedf(ps.max_slice_ms, 0.1),
+			" phases=", ps.perf_phases, " move_ms=", snappedf((Time.get_ticks_usec() - t_move) / 1000.0, 0.1))
+	else:
+		stage = SpreadStage.new()
+		stage.name = "Spread_" + str(b["id"])
+		add_child(stage)
+		var rt: Array = sp.get("route", [])
+		if rt.size() == 2:
+			stage.route = Vector2(float(rt[0]), float(rt[1]))
+		stage.build(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute)
+		print("PERF spread_build ", key, " ms=", snappedf((Time.get_ticks_usec() - t_build) / 1000.0, 0.1))
 	stage.set_pose(_pose, true)
 	_spread_key = key
 	await _frame()
@@ -583,4 +627,75 @@ func _enter_spread(b: Dictionary) -> void:
 			await _frame()
 	wave_t = stage.pop(0.0)
 	ui.show_page_title(str(b.get("title", "")))
+	_prebuild_after(beats.find(b))
 	await _wait(clampf(wave_t * 0.6, 0.9, 1.8))
+
+
+# ------------------------------------------------------------------ perf: spread prebuild
+
+static func _key_of(sp: Dictionary) -> String:
+	return "%d:%d" % [int(sp.get("seed", 1)), int(sp.get("view", 0))]
+
+
+## Start building the first spread after beat index i that differs from the one on screen (no-op if already going).
+## It lives in an off-screen SubViewport with its own World3D (its camera, lights and environment do not touch the
+## page on screen; nothing is rendered there) until _enter_spread moves it into the story.
+## Not in fixed-step runs (captures, recordings): there each spread is built at its page turn exactly as before, so
+## the global RNG sequence (hinge jitter, gusts) and every frame stay reproducible.
+func _prebuild_after(i: int) -> void:
+	if fixed_step:
+		return
+	for j in range(i + 1, beats.size()):
+		var sp: Variant = beats[j].get("spread")
+		if not sp is Dictionary:
+			continue
+		var key := _key_of(sp)
+		if key == _spread_key:
+			continue  # later beats on the page on screen
+		if _prebuilt.has(key):
+			return
+		var vp := SubViewport.new()
+		vp.name = "Prebuild_" + key.replace(":", "_")
+		vp.own_world_3d = true
+		vp.size = Vector2i(get_viewport().get_visible_rect().size)
+		vp.render_target_update_mode = SubViewport.UPDATE_DISABLED
+		vp.audio_listener_enable_3d = false
+		vp.process_mode = Node.PROCESS_MODE_DISABLED  # nothing in the waiting spread ticks (the build runs on process_frame)
+		add_child(vp)
+		var st := SpreadStage.new()
+		var rt: Array = sp.get("route", [])
+		if rt.size() == 2:
+			st.route = Vector2(float(rt[0]), float(rt[1]))
+		vp.add_child(st)
+		_prebuilt[key] = {"stage": st, "vp": vp}
+		st.build_async(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute, PREBUILD_BUDGET_MS)
+		return
+
+
+## perf: trace every traveller figure print ahead (a few ms per frame), so a pose change mid-page (coat open, fan,
+## coat off, hat back) only builds its card meshes instead of tracing new outlines in that frame (30-45 ms hitches).
+const CAST_RIG_DIR := "res://art/cast/rig/"
+var _cast_textures: Array[Texture2D] = []  ## kept loaded: a pose swap must not decode its figure from disk either
+
+
+func _warm_cast() -> void:
+	if not _cast_textures.is_empty():
+		return
+	var sl := BuildSlicer.new(2.0, get_tree())
+	for f in ResourceLoader.list_directory(CAST_RIG_DIR):
+		if not (f.begins_with("cast_traveller") and f.ends_with(".png")):
+			continue
+		var tex := load(CAST_RIG_DIR + f) as Texture2D
+		if tex:
+			_cast_textures.append(tex)
+			PaperCard.warm(tex)
+		await sl.tick()
+	for cast: String in CastSkins.CAST_IDS:
+		for variant: String in CastSkins.CAST_IDS[cast]:
+			var tex := CastSkins.texture(cast, variant)
+			if tex:
+				_cast_textures.append(tex)
+				PaperCard.warm(tex)
+			await sl.tick()
+	print("PERF cast_warm textures=", _cast_textures.size(), " frames=", sl.frames)
+

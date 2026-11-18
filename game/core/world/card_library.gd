@@ -15,16 +15,21 @@ var cards := {}  ## id -> Dictionary (path, category, sheet, label, tags, biome,
 var pools := {}  ## pool -> Array[String] ids
 var used := {}  ## id -> times used
 var rng: RandomNumberGenerator
+static var _parsed := {}  ## catalog path -> parsed JSON (perf: every spread build reused the same files)
 
 
 func _init(rng_: RandomNumberGenerator, exclude_seasons := ["winter"]) -> void:
 	rng = rng_
 	for cpath in CATALOGS:
-		var f := FileAccess.open(cpath, FileAccess.READ)
-		if f == null:
-			push_error("CardLibrary: no catalog " + cpath)
-			continue
-		for it in JSON.parse_string(f.get_as_text()):
+		var parsed: Variant = _parsed.get(cpath)
+		if parsed == null:
+			var f := FileAccess.open(cpath, FileAccess.READ)
+			if f == null:
+				push_error("CardLibrary: no catalog " + cpath)
+				continue
+			parsed = JSON.parse_string(f.get_as_text())
+			_parsed[cpath] = parsed  # perf: parsed once per run (read-only below)
+		for it in parsed:
 			var d: Dictionary = it
 			var sheet := str(d.get("sheet", d.get("src", "")))
 			if str(d.get("season", "")) in exclude_seasons or sheet in EXCLUDE_SHEETS:
