@@ -11,9 +11,11 @@ old sole line and its width at the first visible row (rig.json parts.leg_*.vis, 
 matches the old leg there, then centred on that span. The top is capped round (hidden behind the body/hips anyway) like
 the cutter's. The side-view legs from the cutter are kept in art_src/cast/legs_side/ (backup, not used).
 """
-import json, os, shutil
+import json, os, shutil, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from PIL import Image
+from characters import CHARS, char_of, is_front, sliced_path
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 RIG = os.path.join(ROOT, "game", "art", "cast", "rig")
@@ -101,19 +103,36 @@ def match_colours(a, by, fig, vis_y, vx0, vx1, sole_y, xa, xb):
     return gains
 
 
+def load_pieces(ch, variant):
+    """{(kind, side): tight RGBA array} of a character's leg sheet (characters.CHARS)."""
+    sheet = ch["legs"][variant]
+    out = {}
+    for k, idx in ch["pieces"].items():
+        im = np.array(Image.open(sliced_path(sheet, idx, ch["order"])).convert("RGBA"))
+        ys, xs = np.where(im[..., 3] > 8)
+        out[k] = im[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
+    return out
+
+
 def main():
     rig_p = os.path.join(RIG, "rig.json")
     rig = json.load(open(rig_p))
-    pieces = {}
-    for k, idx in PIECES.items():
-        im = np.array(Image.open(os.path.join(SL, f"cast_traveller_legs_front_{idx:02d}.webp")).convert("RGBA"))
-        ys, xs = np.where(im[..., 3] > 8)
-        pieces[k] = im[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
     os.makedirs(BACKUP, exist_ok=True)
-    for fid, r in rig.items():
-        if not fid.startswith("cast_traveller"):
+    # 2026-11-18: per character (tools/cast/characters.py); the traveller entry = the original single-character path
+    for cname, ch in CHARS.items():
+        if not os.path.isdir(os.path.join(os.path.dirname(SL), ch["legs"]["front"])):
             continue
-        kind = "nocoat" if "_nocoat" in fid else "coat"
+        if any(char_of(f) == cname and is_front(f) for f in rig):
+            main_char(rig, cname, ch)
+    json.dump(rig, open(rig_p, "w"), indent=1)
+
+
+def main_char(rig, cname, ch):
+    pieces = load_pieces(ch, "front")
+    for fid, r in rig.items():
+        if char_of(fid) != cname or not is_front(fid):
+            continue
+        kind = ch["kind"](fid)
         for side in ("leg_l", "leg_r"):
             p = r["parts"][side]
             name = f"{fid}_{side}.png"
@@ -128,7 +147,7 @@ def main():
             a, x0, ty, s, sx, by = fit_leg(pieces[(kind, side)], top_y + 4, sole_y, vis_y, vx0, vx1)
             fig = np.array(Image.open(os.path.join(SRC, fid + ".webp")).convert("RGBA"))
             xa, xb = (0, r["split"]) if side == "leg_l" else (r["split"], fig.shape[1])
-            gains = match_colours(a, by, fig, vis_y, vx0, vx1, sole_y, xa, xb)
+            gains = match_colours(a, by, fig, vis_y, vx0, vx1, sole_y, xa, xb) if ch["match"] else [np.ones(3)]
             ys, xs = np.where(a[..., 3] > 8)
             a = a[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
             bb = [x0 + int(xs.min()), ty + int(ys.min()), x0 + int(xs.max()) + 1, ty + int(ys.max()) + 1]
@@ -136,7 +155,6 @@ def main():
             p["bbox"] = bb
             p["front"] = True
             print(f"{fid} {side} scale {s:.3f} x{sx:.3f} gain {np.round(gains, 2).tolist()} bbox {bb} hip {p['hip']}")
-    json.dump(rig, open(rig_p, "w"), indent=1)
 
 
 if __name__ == "__main__":

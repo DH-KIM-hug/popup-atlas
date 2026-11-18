@@ -1,0 +1,243 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "story",
+  "kitchen",
+  "interior",
+  "three_pigs"
+ ],
+ "items": {
+  "00": [
+   "fireplace hearth with flue",
+   "story_building",
+   0.5,
+   0,
+   {
+    "tags": [
+     "hearth",
+     "fireplace",
+     "brick"
+    ]
+   }
+  ],
+  "01": [
+   "iron cooking pot (cauldron)",
+   "story_prop",
+   0.14,
+   0,
+   {
+    "tags": [
+     "pot",
+     "cooking"
+    ]
+   }
+  ],
+  "02": [
+   "flame small",
+   "story_fx",
+   0.06,
+   0,
+   {
+    "tags": [
+     "fire",
+     "flame"
+    ]
+   }
+  ],
+  "03": [
+   "flame medium",
+   "story_fx",
+   0.09,
+   0,
+   {
+    "tags": [
+     "fire",
+     "flame"
+    ]
+   }
+  ],
+  "04": [
+   "flame large",
+   "story_fx",
+   0.13,
+   0,
+   {
+    "tags": [
+     "fire",
+     "flame"
+    ]
+   }
+  ],
+  "05": [
+   "firewood logs",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "fire",
+     "wood"
+    ]
+   }
+  ],
+  "06": [
+   "steam puff small",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "steam",
+     "cloud",
+     "particle"
+    ]
+   }
+  ],
+  "07": [
+   "steam puff medium",
+   "story_fx",
+   0.08,
+   0,
+   {
+    "tags": [
+     "steam",
+     "cloud",
+     "particle"
+    ]
+   }
+  ],
+  "08": [
+   "steam puff large",
+   "story_fx",
+   0.11,
+   0,
+   {
+    "tags": [
+     "steam",
+     "cloud",
+     "particle"
+    ]
+   }
+  ],
+  "09": [
+   "water splash",
+   "story_fx",
+   0.1,
+   0,
+   {
+    "tags": [
+     "water",
+     "splash"
+    ]
+   }
+  ],
+  "10": [
+   "soot puff",
+   "story_fx",
+   0.09,
+   0,
+   {
+    "tags": [
+     "smoke",
+     "soot",
+     "particle"
+    ]
+   }
+  ],
+  "11": [
+   "chimney top with smoke",
+   "story_prop",
+   0.16,
+   0,
+   {
+    "tags": [
+     "chimney",
+     "smoke",
+     "brick"
+    ]
+   }
+  ],
+  "12": [
+   "kitchen table",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "furniture"
+    ]
+   }
+  ],
+  "13": [
+   "stool",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "furniture"
+    ]
+   }
+  ],
+  "14": [
+   "wall shelf with jars",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "furniture",
+     "wall"
+    ]
+   }
+  ],
+  "15": [
+   "window with gingham curtains",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "window",
+     "wall"
+    ]
+   }
+  ],
+  "16": [
+   "braided rug",
+   "story_prop",
+   0.04,
+   0,
+   {
+    "tags": [
+     "furniture",
+     "floor"
+    ]
+   }
+  ],
+  "17": [
+   "ladle",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "cooking"
+    ]
+   }
+  ],
+  "18": [
+   "comic star burst",
+   "story_fx",
+   0.1,
+   0,
+   {
+    "tags": [
+     "burst",
+     "comic"
+    ]
+   }
+  ]
+ }
+}

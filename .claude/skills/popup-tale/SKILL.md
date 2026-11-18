@@ -50,6 +50,15 @@ Run long work through background agents/workflows with narrow ownership (one own
 - When vs-reference critics and vs-previous-version critics disagree, the user sided with vs-reference (photographed miniature). Show the user a comparison grid and let them pick.
 - Single critics are noise (0.83 → 0.44 on re-judge). Use ≥3 lens-diverse critics and ask "impressed" per side.
 
+**Learned on the second tale (three_pigs phase 1)**
+- After seeding, `script.json` is the source of truth; hand-edited beats live in `tools/story/tales/<tale>.py` so a `--force` reseed reproduces them.
+- Adding cards to the shared library can change existing spreads (templates pick cards by category). Give story-specific set pieces their own categories (`story_building`, `story_prop`, `story_fx`) or check sun_wind's layout is unchanged.
+- The slicer numbers pieces by rows, not left to right — map pieces by bbox, not by index.
+- Fold-up buildings: generate one finished front and cut it into layers along mortar/plank/straw lines (`tools/atlas/house_stages.py`); generating separate aligned pieces is unreliable.
+- Rig tools are per character (`tools/cast/characters.py`): tails join legs, ears get mistaken for arms (search arms between shoulders and hips), figures from different sheets come out at different scales (normalise per character), and figures drawn with overlapping legs can't be rigged — ask for a visible gap between the legs in walking/running prompts or plan them as static cards with a paper hop.
+- 톡톡 scripts run ~4+ min of narration; measure clip durations while planning and cut ~40% to reach ~3 min.
+- Codex image jobs take ~1 min each; 4 in parallel worked without duplicates.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

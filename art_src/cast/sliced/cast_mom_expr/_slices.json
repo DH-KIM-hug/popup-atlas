@@ -1,0 +1,45 @@
+{
+ "sheet": "cast_mom_expr",
+ "bg": [
+  0.984,
+  0.043,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_mom_expr_00",
+   "bbox": [
+    277,
+    53,
+    751,
+    832
+   ],
+   "area": 234664,
+   "size": [
+    482,
+    787
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_mom_expr_01",
+   "bbox": [
+    1017,
+    54,
+    1452,
+    832
+   ],
+   "area": 231004,
+   "size": [
+    443,
+    786
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

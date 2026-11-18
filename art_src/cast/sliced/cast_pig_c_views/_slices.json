@@ -1,0 +1,96 @@
+{
+ "sheet": "cast_pig_c_views",
+ "bg": [
+  0.973,
+  0.027,
+  0.969
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_pig_c_views_00",
+   "bbox": [
+    57,
+    201,
+    343,
+    741
+   ],
+   "area": 94550,
+   "size": [
+    294,
+    548
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pig_c_views_01",
+   "bbox": [
+    381,
+    201,
+    694,
+    740
+   ],
+   "area": 105264,
+   "size": [
+    321,
+    547
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pig_c_views_02",
+   "bbox": [
+    718,
+    201,
+    1047,
+    740
+   ],
+   "area": 109701,
+   "size": [
+    337,
+    547
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pig_c_views_03",
+   "bbox": [
+    1068,
+    201,
+    1390,
+    740
+   ],
+   "area": 109450,
+   "size": [
+    330,
+    547
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pig_c_views_04",
+   "bbox": [
+    1411,
+    138,
+    1748,
+    740
+   ],
+   "area": 108612,
+   "size": [
+    345,
+    610
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 4
+  }
+ ]
+}

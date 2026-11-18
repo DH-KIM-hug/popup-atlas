@@ -1,0 +1,296 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "story",
+  "building_material",
+  "three_pigs"
+ ],
+ "items": {
+  "00": [
+   "straw sheaf bundle",
+   "story_prop",
+   0.16,
+   0,
+   {
+    "tags": [
+     "straw",
+     "carry"
+    ]
+   }
+  ],
+  "01": [
+   "straw pile",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "straw",
+     "pile"
+    ]
+   }
+  ],
+  "02": [
+   "flying straw tuft a",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "straw",
+     "fly",
+     "particle"
+    ]
+   }
+  ],
+  "03": [
+   "flying straw tuft b",
+   "story_fx",
+   0.06,
+   0,
+   {
+    "tags": [
+     "straw",
+     "fly",
+     "particle"
+    ]
+   }
+  ],
+  "04": [
+   "flying straw tuft c",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "straw",
+     "fly",
+     "particle"
+    ]
+   }
+  ],
+  "05": [
+   "plank stack",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "wood",
+     "plank",
+     "pile"
+    ]
+   }
+  ],
+  "06": [
+   "single plank standing",
+   "story_prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "wood",
+     "plank",
+     "carry"
+    ]
+   }
+  ],
+  "07": [
+   "two crossed planks",
+   "story_prop",
+   0.18,
+   0,
+   {
+    "tags": [
+     "wood",
+     "plank"
+    ]
+   }
+  ],
+  "08": [
+   "brick pile",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "brick",
+     "pile"
+    ]
+   }
+  ],
+  "09": [
+   "single brick",
+   "story_prop",
+   0.035,
+   0,
+   {
+    "tags": [
+     "brick",
+     "carry",
+     "particle"
+    ]
+   }
+  ],
+  "10": [
+   "brick on end",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "brick"
+    ]
+   }
+  ],
+  "11": [
+   "hammer",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "tool",
+     "wood"
+    ]
+   }
+  ],
+  "12": [
+   "trowel",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "tool",
+     "brick"
+    ]
+   }
+  ],
+  "13": [
+   "mortar bucket",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "tool",
+     "brick"
+    ]
+   }
+  ],
+  "14": [
+   "wooden flute",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "instrument",
+     "music"
+    ]
+   }
+  ],
+  "15": [
+   "violin with bow",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "instrument",
+     "music"
+    ]
+   }
+  ],
+  "16": [
+   "red drum with sticks",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "instrument",
+     "music"
+    ]
+   }
+  ],
+  "17": [
+   "wheelbarrow of bricks",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "brick",
+     "cart"
+    ]
+   }
+  ],
+  "18": [
+   "loose plank door",
+   "story_prop",
+   0.16,
+   0,
+   {
+    "tags": [
+     "wood",
+     "door",
+     "ruin"
+    ]
+   }
+  ],
+  "19": [
+   "broken plank roof piece",
+   "story_prop",
+   0.14,
+   0,
+   {
+    "tags": [
+     "wood",
+     "roof",
+     "ruin"
+    ]
+   }
+  ],
+  "20": [
+   "splintered plank",
+   "story_fx",
+   0.06,
+   0,
+   {
+    "tags": [
+     "wood",
+     "ruin",
+     "particle"
+    ]
+   }
+  ],
+  "21": [
+   "splintered plank small",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "wood",
+     "ruin",
+     "particle"
+    ]
+   }
+  ],
+  "22": [
+   "sawhorse",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "wood",
+     "tool"
+    ]
+   }
+  ]
+ }
+}

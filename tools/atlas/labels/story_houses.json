@@ -1,0 +1,163 @@
+{
+ "biome": "fairytale",
+ "season": "any",
+ "tags": [
+  "fairytale",
+  "story",
+  "three_pigs"
+ ],
+ "items": {
+  "00": [
+   "straw house facade (fold-up in 3 bands)",
+   "story_building",
+   0.6,
+   0,
+   {
+    "tags": [
+     "straw",
+     "house",
+     "fold_stages",
+     "facade"
+    ]
+   }
+  ],
+  "01": [
+   "straw house side wall",
+   "story_building",
+   0.36,
+   0,
+   {
+    "tags": [
+     "straw",
+     "house",
+     "side_wall"
+    ]
+   }
+  ],
+  "02": [
+   "straw house blown apart (heap with door)",
+   "story_building",
+   0.2,
+   0,
+   {
+    "tags": [
+     "straw",
+     "house",
+     "collapsed",
+     "ruin"
+    ]
+   }
+  ],
+  "03": [
+   "wood plank house facade (fold-up in 5 bands)",
+   "story_building",
+   0.62,
+   0,
+   {
+    "tags": [
+     "wood",
+     "house",
+     "fold_stages",
+     "facade"
+    ]
+   }
+  ],
+  "04": [
+   "wood house side wall",
+   "story_building",
+   0.37,
+   0,
+   {
+    "tags": [
+     "wood",
+     "house",
+     "side_wall"
+    ]
+   }
+  ],
+  "05": [
+   "wood house collapsed (plank pile + roof)",
+   "story_building",
+   0.24,
+   0,
+   {
+    "tags": [
+     "wood",
+     "house",
+     "collapsed",
+     "ruin"
+    ]
+   }
+  ],
+  "06": [
+   "brick house facade with chimney (fold-up in 5 bands)",
+   "story_building",
+   0.74,
+   0,
+   {
+    "tags": [
+     "brick",
+     "house",
+     "fold_stages",
+     "facade",
+     "chimney"
+    ]
+   }
+  ],
+  "07": [
+   "brick house side wall",
+   "story_building",
+   0.37,
+   0,
+   {
+    "tags": [
+     "brick",
+     "house",
+     "side_wall"
+    ]
+   }
+  ],
+  "08": [
+   "brick cottage b (round window, ochre door)",
+   "story_building",
+   0.72,
+   0,
+   {
+    "tags": [
+     "brick",
+     "house",
+     "facade",
+     "chimney",
+     "village"
+    ]
+   }
+  ],
+  "09": [
+   "brick cottage c (sage door, centre chimney)",
+   "story_building",
+   0.7,
+   0,
+   {
+    "tags": [
+     "brick",
+     "house",
+     "facade",
+     "chimney",
+     "village"
+    ]
+   }
+  ],
+  "10": [
+   "brick chimney stack",
+   "story_prop",
+   0.24,
+   0,
+   {
+    "tags": [
+     "brick",
+     "chimney"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,334 @@
+{
+ "sheet": "story_hearth",
+ "bg": [
+  0.988,
+  0.008,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_hearth_00",
+   "bbox": [
+    42,
+    22,
+    422,
+    373
+   ],
+   "area": 101418,
+   "size": [
+    388,
+    359
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_01",
+   "bbox": [
+    464,
+    172,
+    713,
+    369
+   ],
+   "area": 36151,
+   "size": [
+    257,
+    205
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_02",
+   "bbox": [
+    755,
+    228,
+    851,
+    338
+   ],
+   "area": 6945,
+   "size": [
+    104,
+    118
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_03",
+   "bbox": [
+    876,
+    184,
+    1005,
+    338
+   ],
+   "area": 13414,
+   "size": [
+    137,
+    162
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_04",
+   "bbox": [
+    1028,
+    120,
+    1210,
+    338
+   ],
+   "area": 26468,
+   "size": [
+    190,
+    226
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_05",
+   "bbox": [
+    1253,
+    181,
+    1505,
+    336
+   ],
+   "area": 30658,
+   "size": [
+    260,
+    163
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_06",
+   "bbox": [
+    65,
+    504,
+    154,
+    589
+   ],
+   "area": 5434,
+   "size": [
+    97,
+    93
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_07",
+   "bbox": [
+    191,
+    457,
+    329,
+    586
+   ],
+   "area": 12715,
+   "size": [
+    146,
+    137
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_08",
+   "bbox": [
+    364,
+    414,
+    560,
+    586
+   ],
+   "area": 25658,
+   "size": [
+    204,
+    180
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_09",
+   "bbox": [
+    628,
+    432,
+    915,
+    586
+   ],
+   "area": 21122,
+   "size": [
+    295,
+    162
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 5
+  },
+  {
+   "id": "story_hearth_10",
+   "bbox": [
+    977,
+    437,
+    1167,
+    584
+   ],
+   "area": 20701,
+   "size": [
+    198,
+    155
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_11",
+   "bbox": [
+    1251,
+    359,
+    1464,
+    598
+   ],
+   "area": 27516,
+   "size": [
+    221,
+    247
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_12",
+   "bbox": [
+    42,
+    642,
+    369,
+    842
+   ],
+   "area": 40853,
+   "size": [
+    335,
+    208
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_13",
+   "bbox": [
+    432,
+    651,
+    595,
+    831
+   ],
+   "area": 18629,
+   "size": [
+    171,
+    188
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_14",
+   "bbox": [
+    653,
+    638,
+    1018,
+    805
+   ],
+   "area": 35653,
+   "size": [
+    373,
+    175
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_15",
+   "bbox": [
+    1112,
+    629,
+    1458,
+    830
+   ],
+   "area": 59408,
+   "size": [
+    354,
+    209
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_16",
+   "bbox": [
+    295,
+    888,
+    678,
+    1006
+   ],
+   "area": 36698,
+   "size": [
+    391,
+    126
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_17",
+   "bbox": [
+    791,
+    803,
+    884,
+    1003
+   ],
+   "area": 8133,
+   "size": [
+    101,
+    208
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_hearth_18",
+   "bbox": [
+    987,
+    851,
+    1227,
+    1004
+   ],
+   "area": 19490,
+   "size": [
+    248,
+    161
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

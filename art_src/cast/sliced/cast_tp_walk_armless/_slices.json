@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_tp_walk_armless",
+ "bg": [
+  0.984,
+  0.035,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tp_walk_armless_00",
+   "bbox": [
+    1275,
+    31,
+    1630,
+    829
+   ],
+   "area": 149809,
+   "size": [
+    363,
+    806
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_walk_armless_01",
+   "bbox": [
+    49,
+    207,
+    420,
+    827
+   ],
+   "area": 139285,
+   "size": [
+    379,
+    628
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_walk_armless_02",
+   "bbox": [
+    464,
+    239,
+    834,
+    828
+   ],
+   "area": 127128,
+   "size": [
+    378,
+    597
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_walk_armless_03",
+   "bbox": [
+    871,
+    214,
+    1245,
+    827
+   ],
+   "area": 134989,
+   "size": [
+    382,
+    621
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

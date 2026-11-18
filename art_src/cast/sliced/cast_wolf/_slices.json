@@ -1,0 +1,62 @@
+{
+ "sheet": "cast_wolf",
+ "bg": [
+  0.988,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_wolf_00",
+   "bbox": [
+    38,
+    45,
+    448,
+    970
+   ],
+   "area": 198159,
+   "size": [
+    418,
+    933
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wolf_01",
+   "bbox": [
+    475,
+    45,
+    995,
+    968
+   ],
+   "area": 193820,
+   "size": [
+    528,
+    931
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wolf_02",
+   "bbox": [
+    1092,
+    46,
+    1471,
+    969
+   ],
+   "area": 193752,
+   "size": [
+    387,
+    931
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

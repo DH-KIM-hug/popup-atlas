@@ -1,0 +1,209 @@
+{
+ "story_houses_00": {
+  "bands": [
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_00_b0.webp",
+    "y0": 233,
+    "y1": 302,
+    "hinge_units": 0.0,
+    "height_units": 0.1389,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_00_b1.webp",
+    "y0": 149,
+    "y1": 233,
+    "hinge_units": 0.1389,
+    "height_units": 0.1691,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_00_b2.webp",
+    "y0": 4,
+    "y1": 149,
+    "hinge_units": 0.3081,
+    "height_units": 0.2919,
+    "roof": true
+   }
+  ],
+  "height_units": 0.6,
+  "px": [
+   407,
+   306
+  ],
+  "base_y": 302,
+  "roof_y": 149
+ },
+ "story_houses_03": {
+  "bands": [
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_03_b0.webp",
+    "y0": 237,
+    "y1": 282,
+    "hinge_units": 0.0,
+    "height_units": 0.1004,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_03_b1.webp",
+    "y0": 208,
+    "y1": 237,
+    "hinge_units": 0.1004,
+    "height_units": 0.0647,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_03_b2.webp",
+    "y0": 155,
+    "y1": 208,
+    "hinge_units": 0.165,
+    "height_units": 0.1182,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_03_b3.webp",
+    "y0": 121,
+    "y1": 155,
+    "hinge_units": 0.2832,
+    "height_units": 0.0758,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_03_b4.webp",
+    "y0": 4,
+    "y1": 121,
+    "hinge_units": 0.3591,
+    "height_units": 0.2609,
+    "roof": true
+   }
+  ],
+  "height_units": 0.62,
+  "px": [
+   422,
+   286
+  ],
+  "base_y": 282,
+  "roof_y": 121
+ },
+ "story_houses_06": {
+  "bands": [
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_06_b0.webp",
+    "y0": 269,
+    "y1": 309,
+    "hinge_units": 0.0,
+    "height_units": 0.097,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_06_b1.webp",
+    "y0": 233,
+    "y1": 269,
+    "hinge_units": 0.097,
+    "height_units": 0.0873,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_06_b2.webp",
+    "y0": 190,
+    "y1": 233,
+    "hinge_units": 0.1844,
+    "height_units": 0.1043,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_06_b3.webp",
+    "y0": 154,
+    "y1": 190,
+    "hinge_units": 0.2887,
+    "height_units": 0.0873,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_06_b4.webp",
+    "y0": 4,
+    "y1": 154,
+    "hinge_units": 0.3761,
+    "height_units": 0.3639,
+    "roof": true
+   }
+  ],
+  "height_units": 0.74,
+  "px": [
+   391,
+   313
+  ],
+  "base_y": 309,
+  "roof_y": 154
+ },
+ "story_houses_08": {
+  "bands": [
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_08_b0.webp",
+    "y0": 218,
+    "y1": 289,
+    "hinge_units": 0.0,
+    "height_units": 0.1794,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_08_b1.webp",
+    "y0": 137,
+    "y1": 218,
+    "hinge_units": 0.1794,
+    "height_units": 0.2046,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_08_b2.webp",
+    "y0": 4,
+    "y1": 137,
+    "hinge_units": 0.384,
+    "height_units": 0.336,
+    "roof": true
+   }
+  ],
+  "height_units": 0.72,
+  "px": [
+   269,
+   293
+  ],
+  "base_y": 289,
+  "roof_y": 137
+ },
+ "story_houses_09": {
+  "bands": [
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_09_b0.webp",
+    "y0": 220,
+    "y1": 303,
+    "hinge_units": 0.0,
+    "height_units": 0.1943,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_09_b1.webp",
+    "y0": 148,
+    "y1": 220,
+    "hinge_units": 0.1943,
+    "height_units": 0.1686,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_houses/stages/story_houses_09_b2.webp",
+    "y0": 4,
+    "y1": 148,
+    "hinge_units": 0.3629,
+    "height_units": 0.3371,
+    "roof": true
+   }
+  ],
+  "height_units": 0.7,
+  "px": [
+   355,
+   307
+  ],
+  "base_y": 303,
+  "roof_y": 148
+ }
+}

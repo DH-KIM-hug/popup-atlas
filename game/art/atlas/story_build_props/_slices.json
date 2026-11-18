@@ -1,0 +1,402 @@
+{
+ "sheet": "story_build_props",
+ "bg": [
+  0.984,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_build_props_00",
+   "bbox": [
+    36,
+    22,
+    228,
+    267
+   ],
+   "area": 29558,
+   "size": [
+    200,
+    253
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_01",
+   "bbox": [
+    261,
+    127,
+    550,
+    258
+   ],
+   "area": 24155,
+   "size": [
+    297,
+    139
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_02",
+   "bbox": [
+    592,
+    166,
+    686,
+    230
+   ],
+   "area": 1728,
+   "size": [
+    102,
+    72
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_03",
+   "bbox": [
+    700,
+    142,
+    852,
+    237
+   ],
+   "area": 4104,
+   "size": [
+    160,
+    103
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_04",
+   "bbox": [
+    877,
+    169,
+    972,
+    230
+   ],
+   "area": 1644,
+   "size": [
+    103,
+    69
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_05",
+   "bbox": [
+    1013,
+    123,
+    1352,
+    248
+   ],
+   "area": 39533,
+   "size": [
+    347,
+    133
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_06",
+   "bbox": [
+    1435,
+    34,
+    1491,
+    248
+   ],
+   "area": 11968,
+   "size": [
+    64,
+    222
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_07",
+   "bbox": [
+    50,
+    310,
+    213,
+    512
+   ],
+   "area": 20511,
+   "size": [
+    171,
+    210
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_08",
+   "bbox": [
+    278,
+    332,
+    590,
+    501
+   ],
+   "area": 33826,
+   "size": [
+    320,
+    177
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_09",
+   "bbox": [
+    651,
+    441,
+    785,
+    503
+   ],
+   "area": 7950,
+   "size": [
+    142,
+    70
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_10",
+   "bbox": [
+    830,
+    382,
+    903,
+    505
+   ],
+   "area": 8578,
+   "size": [
+    81,
+    131
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_11",
+   "bbox": [
+    971,
+    316,
+    1103,
+    512
+   ],
+   "area": 9510,
+   "size": [
+    140,
+    204
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_12",
+   "bbox": [
+    1169,
+    310,
+    1250,
+    512
+   ],
+   "area": 7976,
+   "size": [
+    89,
+    210
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_13",
+   "bbox": [
+    1319,
+    342,
+    1491,
+    513
+   ],
+   "area": 23930,
+   "size": [
+    180,
+    179
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_14",
+   "bbox": [
+    153,
+    555,
+    193,
+    765
+   ],
+   "area": 6031,
+   "size": [
+    48,
+    218
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_15",
+   "bbox": [
+    360,
+    529,
+    518,
+    777
+   ],
+   "area": 21033,
+   "size": [
+    166,
+    256
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_16",
+   "bbox": [
+    660,
+    584,
+    846,
+    771
+   ],
+   "area": 28081,
+   "size": [
+    194,
+    195
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_17",
+   "bbox": [
+    980,
+    555,
+    1418,
+    772
+   ],
+   "area": 46496,
+   "size": [
+    446,
+    225
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_18",
+   "bbox": [
+    65,
+    805,
+    269,
+    993
+   ],
+   "area": 28790,
+   "size": [
+    212,
+    196
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_19",
+   "bbox": [
+    336,
+    811,
+    739,
+    993
+   ],
+   "area": 30780,
+   "size": [
+    411,
+    190
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_20",
+   "bbox": [
+    807,
+    881,
+    959,
+    993
+   ],
+   "area": 8811,
+   "size": [
+    160,
+    120
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_21",
+   "bbox": [
+    980,
+    903,
+    1092,
+    993
+   ],
+   "area": 5391,
+   "size": [
+    120,
+    98
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_build_props_22",
+   "bbox": [
+    1189,
+    820,
+    1472,
+    993
+   ],
+   "area": 29399,
+   "size": [
+    291,
+    181
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

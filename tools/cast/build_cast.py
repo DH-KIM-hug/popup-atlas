@@ -13,6 +13,8 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from cut_cast_rig import components
 from PIL import Image
+import three_pigs_cast
+from characters import sliced_path
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 SL = os.path.join(ROOT, "art_src", "cast", "sliced")
@@ -52,6 +54,54 @@ CAST = [
     ("cast_wind_v2", 2, "cast_wind_tired", 0.32, "wind", "tired", ["wind", "cloud", "sky", "hanging", "weather", "face"], False, "wind cloud, tired"),
 ]
 
+def drop_specks(src, dst):
+    """Drop printed motion lines / specks that float free of the figure (a die-cut card is one piece)."""
+    im = np.array(Image.open(src).convert("RGBA"))
+    lab, n = components(im[..., 3] > 24)
+    if n > 1:
+        sizes = np.bincount(lab.ravel())[1:]
+        main = 1 + int(np.argmax(sizes))
+        for i in range(1, n + 1):
+            if i != main and sizes[i - 1] < 0.03 * sizes.max():
+                im[lab == i, 3] = 0
+    Image.fromarray(im).save(dst, "WEBP", lossless=True, quality=100, method=6)
+
+
+def three_pigs_entries():
+    """2026-11-18 shared cast for 「아기 돼지 삼형제」 (tools/cast/three_pigs_cast.py)."""
+    out = []
+    ref_h = {}
+    for e in three_pigs_cast.ENTRIES:
+        key = (e["sheet"], tuple(e["ref_x"]))
+        if key not in ref_h:
+            hs = []
+            for k in e["ref_x"]:
+                a = np.array(Image.open(sliced_path(e["sheet"], k, "x")).convert("RGBA"))[..., 3] > 128
+                ys = np.where(a.any(1))[0]
+                hs.append(ys[-1] - ys[0] + 1)
+            ref_h[key] = float(np.median(hs))
+        src = sliced_path(e["sheet"], e["x"], "x")
+        dst = os.path.join(OUT, e["id"] + ".webp")
+        drop_specks(src, dst)
+        a = np.array(Image.open(dst).convert("RGBA"))
+        ys = np.where((a[..., 3] > 128).any(1))[0]
+        hu = round(e["h"] * (ys[-1] - ys[0] + 1) / ref_h[key], 3)
+        w, h = a.shape[1], a.shape[0]
+        c = {"id": e["id"], "path": f"art/cast/{e['id']}.webp", "sheet": e["sheet"], "category": "cast", "role": e["role"],
+             "variant": e["pose"], "pose": e["pose"], "view": e["view"], "facing": "right" if e["view"] == "side" else
+             e["view"], "label": e["label"], "height_units": hu, "cross_slot": False, "biome": "any", "season": "any",
+             "tags": e["tags"], "px": [w, h], "hanging": False}
+        if e["rigged"]:
+            c["rig"] = "art/cast/rig/rig.json"
+            c["skin"] = e["role"]
+            c["parts"] = {p: f"art/cast/rig/{e['id']}_{p}.png" for p in RIG_PARTS}
+        else:
+            c["skin"] = e["role"]
+            c["parts"] = {}
+        out.append(c)
+    return out
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     cat = []
@@ -84,5 +134,7 @@ if __name__ == "__main__":
         else:
             e["parts"] = {}
         cat.append(e)
+    if os.path.isdir(os.path.join(SL, "cast_pigs")):
+        cat += three_pigs_entries()
     json.dump(cat, open(os.path.join(OUT, "catalog.json"), "w"), ensure_ascii=False, indent=1)
     print(len(cat), "cast cards ->", os.path.join(OUT, "catalog.json"))

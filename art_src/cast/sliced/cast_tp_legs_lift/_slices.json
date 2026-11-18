@@ -1,0 +1,147 @@
+{
+ "sheet": "cast_tp_legs_lift",
+ "bg": [
+  0.984,
+  0.02,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tp_legs_lift_00",
+   "bbox": [
+    95,
+    199,
+    256,
+    587
+   ],
+   "area": 53562,
+   "size": [
+    169,
+    396
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_lift_01",
+   "bbox": [
+    345,
+    199,
+    506,
+    588
+   ],
+   "area": 53712,
+   "size": [
+    169,
+    397
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_lift_02",
+   "bbox": [
+    605,
+    198,
+    783,
+    587
+   ],
+   "area": 55889,
+   "size": [
+    186,
+    397
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_lift_03",
+   "bbox": [
+    854,
+    198,
+    1032,
+    588
+   ],
+   "area": 55844,
+   "size": [
+    186,
+    398
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_lift_04",
+   "bbox": [
+    1121,
+    198,
+    1301,
+    587
+   ],
+   "area": 56611,
+   "size": [
+    188,
+    397
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_lift_05",
+   "bbox": [
+    1377,
+    198,
+    1556,
+    587
+   ],
+   "area": 56576,
+   "size": [
+    187,
+    397
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_lift_06",
+   "bbox": [
+    1657,
+    127,
+    1816,
+    616
+   ],
+   "area": 63414,
+   "size": [
+    167,
+    497
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_lift_07",
+   "bbox": [
+    1912,
+    126,
+    2072,
+    616
+   ],
+   "area": 63459,
+   "size": [
+    168,
+    498
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

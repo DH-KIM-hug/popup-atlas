@@ -110,6 +110,62 @@ SHEETS = {
     "with twisted branches, a rose-covered thorny hedge, a stone tower ruin."),
 }
 
+
+# 2026-11-18 「아기 돼지 삼형제」: SHARED story props (houses that fold up in stages, building materials, a kitchen hearth).
+# Own style block (skill lesson: per-category blocks, no botanical prints on buildings/props). Catalogued under categories
+# the meadow template never queries ("story_building", "story_prop", "story_fx") so sun_wind's seeded layout is unchanged.
+BUILD_ANCHOR = (
+    "A SPRITE ATLAS sheet for a children's pop-up storybook: separate die-cut cardstock pieces arranged in loose horizontal "
+    "rows on a perfectly flat, uniform, solid pure MAGENTA background (#FF00FF, RGB 255,0,255) with no texture, no gradient, "
+    "no vignette, no shadows on the background. Every piece is fully separate and isolated, with a clear empty magenta gap of "
+    "at least 40 pixels on every side; pieces never touch or overlap each other and never touch the image border. No grid "
+    "lines, no labels, no text, no numbers, no letters. STYLE (same for every piece): flat front-on orthographic view like a "
+    "printed die-cut pop-up book piece, no perspective, no cast shadows, no drop shadows, no glow, no outline stroke in "
+    "magenta, no white sticker border. Each piece has ONE main base colour per part plus finely PRINTED material detail: "
+    "straw strands and tied bands, wood grain lines and nail dots, brick courses with cream mortar lines, stitched dashes, "
+    "stamped dots, subtle matte cardstock grain, slightly gouache/screen-printed look, warm friendly cut-paper style. NO "
+    "flower, leaf or vine motifs on buildings or props. No faces on objects. Matte, no gloss, no photo texture, no 3D render. "
+    "PALETTE (muted warm storybook): golden straw, ochre/mustard, warm wood browns, brick red / terracotta, cream, soft grey "
+    "stone, charcoal, sky blue, sage green accents. Absolutely no magenta, purple or hot pink in any piece. Each standing piece "
+    "ends in a clean flat horizontal bottom edge, all parts of one piece connected into a single silhouette. "
+)
+STORY_SHEETS = {
+ "story_houses": ("THIS SHEET: three little storybook houses for the tale of the three little pigs, each house a flat FRONT "
+    "FACADE card (front wall + roof as one silhouette, symmetric, the same footprint width for all three, clear horizontal "
+    "structure so it can be cut into horizontal layers), plus matching pieces, 11 pieces in three rows. ROW 1 (STRAW): (1) the "
+    "STRAW HOUSE facade: walls of tied golden straw bundles in clear horizontal rows, a round-topped wooden door in the middle, "
+    "one small round window, a shaggy thatched straw roof with a tied ridge; (2) the matching straw SIDE WALL panel (a plain "
+    "rectangle of straw rows, no roof, same wall height); (3) the straw house BLOWN APART: a low wide messy heap of scattered "
+    "straw with the little door lying flat on top, flat bottom. ROW 2 (WOOD): (4) the WOOD HOUSE facade: walls of horizontal "
+    "warm-brown wooden planks with nail dots, a plank door with a Z brace, two square windows with little shutters, a pitched "
+    "plank roof in darker brown; (5) the matching wood SIDE WALL panel (plain rectangle of planks, no roof); (6) the wood house "
+    "COLLAPSED: a low wide pile of tumbled planks and a broken roof piece on top, flat bottom. ROW 3 (BRICK): (7) the BRICK "
+    "HOUSE facade: walls of brick-red bricks in clear horizontal courses with cream mortar, a sturdy arched wooden door, two "
+    "windows with cream frames and sky-blue shutters, a pitched terracotta tile roof, a tall BRICK CHIMNEY standing on the "
+    "right side of the roof; (8) the matching brick SIDE WALL panel (plain rectangle of brick courses); (9) a second brick "
+    "cottage facade (slightly narrower, round window, ochre door, chimney on the left); (10) a third brick cottage facade "
+    "(slightly wider, two doors' width, sage green door, chimney in the middle); (11) a separate brick CHIMNEY piece (tall "
+    "brick stack with a cap, flat bottom)."),
+ "story_build_props": ("THIS SHEET: building materials, tools and toys for the three little pigs (about 22 pieces): a tied "
+    "golden STRAW SHEAF bundle standing up, a low STRAW PILE heap, three loose flying STRAW TUFTS (small wisps, different "
+    "shapes), a STACK of wooden PLANKS lying flat (seen from the front, flat bottom), a single long wooden plank standing on "
+    "its end, two planks leaning crossed, a PILE of red BRICKS (stacked pyramid), a single red brick lying flat, a single "
+    "brick standing on its end, a small wooden HAMMER standing on its handle end, a mason's TROWEL standing on its tip "
+    "handle-up, a wooden mortar BUCKET with grey mortar, a small wooden FLUTE (recorder), a small VIOLIN with its bow, a small "
+    "red DRUM with sticks, a wooden WHEELBARROW loaded with bricks, a loose wooden plank DOOR lying tipped, a broken pitched "
+    "ROOF piece of planks, two small splintered plank pieces, a wooden SAWHORSE."),
+ "story_hearth": ("THIS SHEET: a cosy brick-house kitchen and its fire for the three little pigs (about 18 pieces): a big "
+    "FIREPLACE HEARTH front (warm grey stone and red brick surround with a dark charcoal arched opening and a wooden mantel "
+    "shelf, a chimney flue going up from the top centre, flat bottom); a big round black IRON COOKING POT (cauldron) with a "
+    "rim and two little ear handles, standing on three short legs; THREE FLAMES of increasing size (small, medium, large), "
+    "layered cut-paper flames in red, warm orange, ochre and cream, each on a flat bottom; a pile of firewood LOGS; three "
+    "white-cream STEAM PUFF clouds (small, medium, large, curly, flat bottom); a WATER SPLASH crown (sky-blue and cream drops "
+    "connected into one splash shape, flat bottom); a dark grey SOOT PUFF cloud; a chimney TOP stack with a curl of grey SMOKE "
+    "attached; a wooden kitchen TABLE; a wooden STOOL; a wall SHELF with three jars and a jug; an inside WINDOW with "
+    "red gingham curtains; a round braided RUG (seen from the front as a low flat oval band); a wooden LADLE standing up; a "
+    "cream comic STAR-BURST shape (a jagged bang shape, no text)."),
+}
+
 def main():
     jobs = []
     for sid, items in SHEETS.items():
@@ -117,6 +173,10 @@ def main():
                      "aspect": "landscape 3:2 at the largest available size (1536x1024)",
                      "out": f"art_src/atlas/raw/{sid}.png",
                      "prompt": ANCHOR + "THIS SHEET: " + items})
+    for sid, items in STORY_SHEETS.items():
+        jobs.append({"id": f"atlas_{sid}", "kind": "bg",
+                     "aspect": "landscape 3:2 at the largest available size (1536x1024)",
+                     "out": f"art_src/atlas/raw/{sid}.png", "prompt": BUILD_ANCHOR + items})
     json.dump(jobs, open(os.path.join(HERE, "atlas_jobs.json"), "w"), ensure_ascii=False, indent=1)
     print(len(jobs), "jobs")
 if __name__ == "__main__":

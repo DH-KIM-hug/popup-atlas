@@ -16,9 +16,11 @@
 rig.json parts.arm_l / arm_r = {bbox, pivot} (figure px). Old body PNGs are kept in art_src/cast/rig_backup_v3/.
 Expression figures with arms in a pose (hugging, fanning, hands on head) keep baked arms.
 """
-import json, os
+import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from PIL import Image
+from characters import CHARS, sliced_path
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 SRC = os.path.join(ROOT, "game", "art", "cast")
@@ -113,9 +115,73 @@ def dilate(m, n):
     return m
 
 
+def components_of(mask):
+    from cut_cast_rig import components
+    return components(mask)
+
+
+def auto_spec(fid, body, armless_sheet, idx):
+    """2026-11-18, other characters: no hand-drawn seams. Register the character's armless figure (Codex sheet) to the
+    figure; arm = body pixels outside the registered armless silhouette (dilated 2 px), largest component per side,
+    between the shoulder and the hip line. Pivot = the top of that component (shoulder), cap radius scaled to the figure.
+    Returns (masks, reg, iou, s, spec)."""
+    a = body[..., 3]
+    h, w = a.shape
+    src = np.array(Image.open(sliced_path(armless_sheet, idx, "x")).convert("RGBA"))
+    ys, xs = np.where(src[..., 3] > 8)
+    src = src[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
+    reg, iou, sc = register(a, src, np.zeros_like(a, bool))
+    ys, xs = np.where(a > 128)
+    H = ys.max() - ys.min()
+    cap = max(8, int(round(CAP * H / 700.0)))
+    extra = (a > 128) & ~dilate(reg[..., 3] > 128, 2)
+    # arms hang between the shoulders and the hips: ignore the head (ears, hat brims differ from the armless sheet; a
+    # pig's ear was picked as an arm) and anything below the crotch
+    extra[: int(ys.min() + 0.40 * H)] = False
+    extra[int(ys.min() + 0.84 * H):] = False
+    cx = (xs.min() + xs.max()) / 2.0
+    lab, n = components_of(extra)
+    masks, spec = {}, {}
+    for side in ("arm_l", "arm_r"):
+        best, bsz = None, 0
+        for i in range(1, n + 1):
+            m = lab == i
+            yy, xx = np.where(m)
+            if (xx.mean() < cx) != (side == "arm_l") or len(yy) < 0.002 * a.size:
+                continue
+            if len(yy) > bsz:
+                best, bsz = m, len(yy)
+        if best is None:
+            raise RuntimeError(f"{fid}: no {side} found outside the armless silhouette")
+        yy, xx = np.where(best)
+        top = yy.min()
+        px = int(round(xx[yy < top + max(3, cap // 2)].mean()))
+        py = int(top + cap * 0.6)
+        YY, XX = np.mgrid[0:h, 0:w]
+        disc = (XX - px) ** 2 + (YY - py) ** 2 <= cap * cap
+        masks[side] = (a > 0) & (dilate(best, 1) | disc)
+        spec[side] = {"pivot": [px, py], "cap": cap}
+    return masks, reg, iou, sc, spec
+
+
 def main(figs=None):
     rig_p = os.path.join(RIG, "rig.json")
     rig = json.load(open(rig_p))
+    for ch in CHARS.values():
+        for fid, idx in ch.get("arms_auto", {}).items():
+            if fid not in rig or (figs is not None and fid not in figs):
+                continue
+            if not os.path.isdir(os.path.join(os.path.dirname(ARMLESS), ch["armless"])):
+                continue
+            r = rig[fid]
+            if "arm_l" in r["parts"]:
+                raise RuntimeError(f"{fid}: body already has its arms cut off; re-run tools/cast/cut_cast_rig.py {fid}")
+            fig = np.array(Image.open(os.path.join(SRC, fid + ".webp")).convert("RGBA"))
+            bb = r["parts"]["body"]["bbox"]
+            body = np.zeros_like(fig)
+            body[bb[1]:bb[3], bb[0]:bb[2]] = np.array(Image.open(os.path.join(RIG, f"{fid}_body.png")).convert("RGBA"))
+            masks, reg, iou, s, spec = auto_spec(fid, body, ch["armless"], idx)
+            _apply(fid, r, fig, body, masks, reg, iou, s, spec)
     for fid, spec in ARMS.items():
         if figs is not None and fid not in figs:
             continue
@@ -156,6 +222,32 @@ def main(figs=None):
         print(f"{fid}: armless iou {iou:.3f} scale {s:.3f} gain {np.round(g, 2).tolist()} body {nbb} "
               f"arms {r['parts']['arm_l']['bbox']} {r['parts']['arm_r']['bbox']}")
     json.dump(rig, open(rig_p, "w"), indent=1)
+
+
+def _apply(fid, r, fig, body, masks, reg, iou, s, spec):
+    """Same fill / cut / save steps as the traveller loop above (kept separate so his path stays untouched)."""
+    allarm = masks["arm_l"] | masks["arm_r"]
+    fill = allarm.copy()
+    band = dilate(allarm, 10) & ~dilate(allarm, 3)
+    g = colour_match(reg, fig, fill, band)
+    newbody = body.copy()
+    newbody[fill] = 0
+    take = fill & (reg[..., 3] > 0)
+    newbody[take] = reg[take]
+    for side in ("arm_l", "arm_r"):
+        arm = np.zeros_like(body)
+        arm[masks[side]] = body[masks[side]]
+        ys, xs = np.where(arm[..., 3] > 8)
+        abb = [int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1]
+        Image.fromarray(arm[abb[1]:abb[3], abb[0]:abb[2]]).save(os.path.join(RIG, f"{fid}_{side}.png"))
+        r["parts"][side] = {"bbox": abb, "pivot": list(spec[side]["pivot"])}
+    ys, xs = np.where(newbody[..., 3] > 8)
+    nbb = [int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1]
+    Image.fromarray(newbody[nbb[1]:nbb[3], nbb[0]:nbb[2]]).save(os.path.join(RIG, f"{fid}_body.png"))
+    r["parts"]["body"]["bbox"] = nbb
+    print(f"{fid}: auto arms, armless iou {iou:.3f} scale {s:.3f} gain {np.round(g, 2).tolist()} body {nbb} "
+          f"arms {r['parts']['arm_l']['bbox']} {r['parts']['arm_r']['bbox']} pivots {spec['arm_l']['pivot']} "
+          f"{spec['arm_r']['pivot']}")
 
 
 if __name__ == "__main__":

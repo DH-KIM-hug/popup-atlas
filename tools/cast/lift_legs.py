@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import numpy as np
 from PIL import Image
 import front_legs as fl
+from characters import CHARS, char_of, is_front
 
 ROOT = fl.ROOT
 RIG = fl.RIG
@@ -96,11 +97,24 @@ def match_to(a, ref):
 def main():
     rig_p = os.path.join(RIG, "rig.json")
     rig = json.load(open(rig_p))
-    sheets = {v: load_pieces(sh) for v, (sh, _) in VARIANTS.items()}
-    for fid, r in rig.items():
-        if not fid.startswith("cast_traveller"):
+    # 2026-11-18: per character (tools/cast/characters.py); the traveller entry = the original path
+    for cname, ch in CHARS.items():
+        if not all(os.path.isdir(os.path.join(SLICED, ch["legs"][v])) for v in VARIANTS):
             continue
-        kind = "nocoat" if "_nocoat" in fid else "coat"
+        if any(char_of(f) == cname and is_front(f) for f in rig):
+            main_char(rig, cname, ch)
+    json.dump(rig, open(rig_p, "w"), indent=1)
+
+
+def main_char(rig, cname, ch):
+    if cname == "traveller":
+        sheets = {v: load_pieces(sh) for v, (sh, _) in VARIANTS.items()}
+    else:
+        sheets = {v: fl.load_pieces(ch, v) for v in VARIANTS}
+    for fid, r in rig.items():
+        if char_of(fid) != cname or not is_front(fid):
+            continue
+        kind = ch["kind"](fid)
         H = r["full_bbox"][3] - r["full_bbox"][1]
         for side in ("leg_l", "leg_r"):
             p = r["parts"][side]
@@ -113,7 +127,7 @@ def main():
             for v, (_, ratio) in VARIANTS.items():
                 sole_v = int(round(hip_y + ratio * (sole_y - hip_y)))
                 a, x0, ty, s, sx, _ = fl.fit_leg(sheets[v][(kind, side)], top_y + 4, sole_v, vis_y, vx0, vx1)
-                g = match_to(a, ref)
+                g = match_to(a, ref) if ch["match"] else []
                 ys, xs = np.where(a[..., 3] > 8)
                 a = a[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
                 bb = [x0 + int(xs.min()), ty + int(ys.min()), x0 + int(xs.max()) + 1, ty + int(ys.max()) + 1]
@@ -121,7 +135,6 @@ def main():
                 alt[v] = {"bbox": bb, "ratio": ratio}
                 print(f"{fid} {side} {v} bbox {bb} gain {np.round(g, 2).tolist()}")
             p["alt"] = alt
-    json.dump(rig, open(rig_p, "w"), indent=1)
 
 
 if __name__ == "__main__":

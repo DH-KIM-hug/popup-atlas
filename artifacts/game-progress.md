@@ -999,3 +999,42 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     too); on the no-coat figure the bottom edge of the hips (trouser-top) piece is faintly visible as a horizontal line
     at the crotch when the legs are lit differently (pre-existing art/rig seam, not a gap); the carrying walk is slow, so
     its steps are small.
+
+## 2026-11-18 — 「아기 돼지 삼형제」 (three_pigs) phase 1: plan, script, tools by tale, shared cast + props (not committed)
+  - Plan: game/stories/three_pigs/PLAN.md (beats, cast sheet with every pose per line, interactions, pop-up moments,
+    asset list, phase-2 runner verbs). 10 beats on meadow seed 1: cover · home (tap each piglet → wave + its material
+    pops up; they walk AWAY, back views) · straw_build (tap ×3, straw house folds up band by band; 첫째 carries straw in
+    SIDE view) · wood_build (tap ×5, hammer) · brick_build (tap ×10 counted, 2 taps per band; brothers tease at tap 5) ·
+    wolf_straw (wolf prowls in SIDE view; tap ×3 = 후~, bands fold down, blown-apart heap) · wolf_wood (tap ×5, wobble →
+    collapse) · brick_wolf (tap ×8 counted, house only shivers; wolf sits 털썩) · chimney (SET PIECE: brick facade folds
+    down into the kitchen; tap the fire ×3; wolf drops into the pot, 앗 뜨거워, runs off LEFT) · ending (tap plots ×2 →
+    two brick cottages pop up). Estimated 3:20–3:30 (narration ≈ 165 s); further cuts listed in PLAN.md.
+  - Script: tools/story/tales/three_pigs.py → game/stories/three_pigs/script.json (60 lines, 36 used: 34 reuse,
+    2 new). Seg trims reuse clips (001 mom only, 023, 028, 032 without narrator lead-ins). `expr` per line (LINE_META).
+    39 clips copied to game/audio/voice/three_pigs/. Recording dry-run: tp_n01 cover + tp_n02 replay, 86 chars — NOT
+    recorded (needs the user's OK).
+  - Tools by tale: seed_script.py / record_lines.py take `--tale` (default sun_wind); per-tale tables in
+    tools/story/tales/<tale>.py. sun_wind's BEATS there are the LIVE beats of its script.json (the seeder's copy had
+    gone stale: script.json beats were hand-edited after seeding), so `--tale sun_wind --out X` is byte-identical to
+    game/stories/sun_wind/script.json (lines also identical to the old seeder's output).
+  - Shared props (Codex, md5-unique): story_houses (11: straw / wood / brick facades, side walls, straw heap, wood ruin,
+    2 extra brick cottages, chimney), story_build_props (23), story_hearth (19), catalogued in game/art/atlas/catalog.json
+    under new categories story_building / story_prop / story_fx (the meadow template queries by category, e.g.
+    query("building"), so these never enter sun_wind's spreads; old 419 entries unchanged). tools/atlas/house_stages.py
+    cuts a facade into fold-up bands (cuts snapped to mortar / plank / straw lines; roof = last band) →
+    game/art/atlas/story_houses/stages/ (+ stages.json with hinge heights).
+  - Shared cast (Codex, refs = round-1 sheets, ANIMAL_STYLE block: prints only on clothing, peach-pink pigs): 3 piglets
+    (11 figures each: front calm/happy/scared|brave/startled/defiant/…, side walk/run/carry, back walk), mother pig (3),
+    wolf (12: front calm/shout/hungry/ouch/falling, side prowl/sniff/huff/exhausted/tiptoe/run_away, back). Walk parts:
+    front legs + half + lift (8 legs each sheet), armless calm torsos, side legs. 74 cast cards in game/art/cast/catalog.json.
+  - Rig tools generalised by character (tools/cast/characters.py registry, tools/cast/three_pigs_cast.py entries):
+    front_legs / lift_legs per character; walk_arms auto mode (arm = figure minus the registered armless figure, rows
+    0.40–0.84 H — first try picked a pig's ear as an arm); cut_cast_rig: per-figure min leg gap (piglets 7 %), leg
+    column trim for front/back figures (the wolf's tail had joined his leg), hips clipped to the figure; new
+    tools/cast/side_legs.py (side walkers: drawn side legs on ONE hip joint + a round joint cap). Traveller outputs
+    verified byte-identical (all rig PNG/webp md5s, rig.json + catalog entries, rig_preview.png).
+  - Contact sheets: artifacts/three_pigs/cast_contact.png, artifacts/three_pigs/props_contact.png;
+    rig preview art_src/cast/qa/rig_preview_three_pigs.png. gd_run import + check_all clean (43 scripts).
+  - Open: 6 figures unrigged (legs overlap: pig_a_carry_straw, pig_b_run, wolf_back_walk/tiptoe/run_away/hungry) —
+    hop them as static cards or regenerate with a leg gap; wolf front: thin leg-top sliver beside the left thigh; house
+    bands cut through windows/doors and wall bands keep tiny eave tips; no story.tscn yet (runner verbs are phase 2).

@@ -1,0 +1,2308 @@
+{
+ "tale_id": "three_pigs",
+ "title": "아기 돼지 삼형제",
+ "seeded_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/three_pigs/voice_script_el.json",
+ "clip_map_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/three_pigs/narration_el.js",
+ "voices": {
+  "nar": "Lb7qkOn5hF8p7qfCDH8q",
+  "mom": "hpp4J3VqNfWAUOO0d1Us",
+  "piga": "ygoBNrnmTEdu5NtDTmAY",
+  "pigb": "rBkiq5ZQ43ogwd6i4uIQ",
+  "pigc": "MIl0Flub6Sc9KSkX2A42",
+  "wolf": "EkK5I93UQWFDigLMpZcX"
+ },
+ "models": {
+  "nar": "eleven_v4",
+  "mom": "eleven_v4",
+  "piga": "eleven_v4",
+  "pigb": "eleven_v4",
+  "pigc": "eleven_v4",
+  "wolf": "eleven_v4"
+ },
+ "settings": {
+  "nar": {
+   "stability": 0.45,
+   "style": 0.35
+  },
+  "mom": {
+   "stability": 0.4,
+   "style": 0.4
+  },
+  "piga": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "pigb": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "pigc": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "wolf": {
+   "stability": 0.3,
+   "style": 0.5
+  }
+ },
+ "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Annie, mom=Bella, piga=Hopsi, pigb=Peanut, pigc=Mithi, wolf=Brian. 아기·꼬마 역(piga, pigb, pigc)은 아기 말투 태그([baby voice, lisping, very young child, giggly])를 대사 방향에 부여.",
+ "cast": {
+  "pig_a": {
+   "skin": "pig_a",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "첫째 (straw hat + scarf)"
+  },
+  "pig_b": {
+   "skin": "pig_b",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "둘째 (blue overalls)"
+  },
+  "pig_c": {
+   "skin": "pig_c",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "셋째 (white cap + red overalls)"
+  },
+  "mom": {
+   "skin": "mother_pig",
+   "views": [
+    "front"
+   ],
+   "label": "엄마 돼지"
+  },
+  "wolf": {
+   "skin": "wolf",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "늑대"
+  }
+ },
+ "moral": "튼튼한 집은 하나씩 정성껏 쌓아서 만들어요.",
+ "beats": [
+  {
+   "id": "cover",
+   "title": "아기 돼지 삼형제",
+   "spread": null,
+   "steps": [
+    {
+     "do": "cover",
+     "prompt": "tp_n01"
+    }
+   ]
+  },
+  {
+   "id": "home",
+   "title": "엄마의 배웅",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "home",
+    "set": [
+     {
+      "card": "village_houses_20",
+      "at": "home_house"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "mom": "calm",
+     "pig_a": "calm",
+     "pig_b": "calm",
+     "pig_c": "calm"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "say",
+     "line": "tp_000"
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "talk"
+    },
+    {
+     "do": "say",
+     "line": "tp_001"
+    },
+    {
+     "do": "tap_each",
+     "targets": [
+      "pig_a",
+      "pig_b",
+      "pig_c"
+     ],
+     "prompt": "tp_002",
+     "hint": "tp_002",
+     "react": {
+      "pig_a": [
+       "happy_wave",
+       "pop:story_build_props_00"
+      ],
+      "pig_b": [
+       "happy_wave",
+       "pop:story_build_props_06"
+      ],
+      "pig_c": [
+       "happy_wave",
+       "pop:story_build_props_09"
+      ]
+     }
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "wave"
+    },
+    {
+     "do": "walk",
+     "who": [
+      "pig_a",
+      "pig_b",
+      "pig_c"
+     ],
+     "dir": "away",
+     "dist": 1.4,
+     "line": "tp_003"
+    }
+   ]
+  },
+  {
+   "id": "straw_build",
+   "title": "첫째의 짚 집",
+   "spread": {
+    "seed": 1,
+    "view": 2,
+    "place": "straw_lot",
+    "set": [
+     {
+      "card": "story_houses_00",
+      "at": "lot",
+      "stage": 0
+     },
+     {
+      "card": "story_build_props_01",
+      "at": "pile"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "pig_a": "side_walk"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "say",
+     "line": "tp_019"
+    },
+    {
+     "do": "build",
+     "house": "straw",
+     "target": "pile",
+     "taps": 3,
+     "hint": "tp_018",
+     "walker": "pig_a",
+     "carry": "carry_straw",
+     "fx": "straw_pop"
+    },
+    {
+     "do": "fx",
+     "fx": "star_burst"
+    },
+    {
+     "do": "pose",
+     "who": "pig_a",
+     "pose": "flute"
+    },
+    {
+     "do": "fx",
+     "fx": "flute_notes"
+    },
+    {
+     "do": "say",
+     "line": "tp_020"
+    }
+   ]
+  },
+  {
+   "id": "wood_build",
+   "title": "둘째의 나무 집",
+   "spread": {
+    "seed": 1,
+    "view": 3,
+    "place": "wood_lot",
+    "set": [
+     {
+      "card": "story_houses_03",
+      "at": "lot",
+      "stage": 0
+     },
+     {
+      "card": "story_build_props_05",
+      "at": "pile"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "pig_b": "hammer"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "say",
+     "line": "tp_021"
+    },
+    {
+     "do": "build",
+     "house": "wood",
+     "target": "house",
+     "taps": 5,
+     "hint": "tp_018",
+     "walker": "pig_b",
+     "carry": "hammer",
+     "fx": "hammer_bang"
+    },
+    {
+     "do": "fx",
+     "fx": "star_burst"
+    },
+    {
+     "do": "pose",
+     "who": "pig_b",
+     "pose": "violin"
+    },
+    {
+     "do": "fx",
+     "fx": "violin_notes"
+    },
+    {
+     "do": "say",
+     "line": "tp_022"
+    }
+   ]
+  },
+  {
+   "id": "brick_build",
+   "title": "셋째의 벽돌 집",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "brick_lot",
+    "set": [
+     {
+      "card": "story_houses_06",
+      "at": "lot",
+      "stage": 0
+     },
+     {
+      "card": "story_build_props_08",
+      "at": "pile"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "pig_c": "lay_brick"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "say",
+     "line": "tp_024"
+    },
+    {
+     "do": "build",
+     "house": "brick",
+     "target": "house",
+     "taps": 10,
+     "hint": "tp_018",
+     "walker": "pig_c",
+     "carry": "lay_brick",
+     "fx": "brick_thunk",
+     "counter": true,
+     "steps": [
+      {
+       "at": 5,
+       "fx": "brothers_tease",
+       "lines": [
+        "tp_023"
+       ]
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "star_burst"
+    },
+    {
+     "do": "pose",
+     "who": "pig_c",
+     "pose": "proud"
+    },
+    {
+     "do": "say",
+     "line": "tp_025"
+    }
+   ]
+  },
+  {
+   "id": "wolf_straw",
+   "title": "후~ 짚 집",
+   "spread": {
+    "seed": 1,
+    "view": 2,
+    "place": "straw_lot",
+    "set": [
+     {
+      "card": "story_houses_00",
+      "at": "lot",
+      "stage": "full"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "pig_a": "calm"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "wide"
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "dir": "right",
+     "pose": "sniff",
+     "dist": 1.2,
+     "line": "tp_027"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "shout"
+    },
+    {
+     "do": "pose",
+     "who": "pig_a",
+     "pose": "defiant"
+    },
+    {
+     "do": "say",
+     "line": "tp_028"
+    },
+    {
+     "do": "huff",
+     "house": "straw",
+     "taps": 3,
+     "prompt": "tp_026",
+     "hint": "tp_026",
+     "result": "blow_apart",
+     "ruin": "story_houses_02",
+     "fx": "straw_fly"
+    },
+    {
+     "do": "pose",
+     "who": "pig_a",
+     "pose": "scared"
+    },
+    {
+     "do": "say",
+     "line": "tp_029"
+    },
+    {
+     "do": "walk",
+     "who": "pig_a",
+     "dir": "right",
+     "pose": "run",
+     "dist": 2.0,
+     "speed": 0.5
+    }
+   ]
+  },
+  {
+   "id": "wolf_wood",
+   "title": "후~ 나무 집",
+   "spread": {
+    "seed": 1,
+    "view": 3,
+    "place": "wood_lot",
+    "set": [
+     {
+      "card": "story_houses_03",
+      "at": "lot",
+      "stage": "full"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "pig_a": "scared",
+     "pig_b": "calm"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "wide"
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "dir": "right",
+     "pose": "side_prowl",
+     "dist": 1.0,
+     "line": "tp_031"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "shout"
+    },
+    {
+     "do": "pose",
+     "who": [
+      "pig_a",
+      "pig_b"
+     ],
+     "pose": "defiant"
+    },
+    {
+     "do": "say",
+     "line": "tp_032"
+    },
+    {
+     "do": "huff",
+     "house": "wood",
+     "taps": 5,
+     "hint": "tp_026",
+     "result": "collapse",
+     "ruin": "story_houses_05",
+     "fx": "wood_wobble"
+    },
+    {
+     "do": "say",
+     "line": "tp_033"
+    },
+    {
+     "do": "walk",
+     "who": [
+      "pig_a",
+      "pig_b"
+     ],
+     "dir": "right",
+     "pose": "run",
+     "dist": 2.0,
+     "speed": 0.5,
+     "line": "tp_034"
+    }
+   ]
+  },
+  {
+   "id": "brick_wolf",
+   "title": "쿵쿵쿵!",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "brick_lot",
+    "light": "dusk",
+    "set": [
+     {
+      "card": "story_houses_06",
+      "at": "lot",
+      "stage": "full"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "pig_a": "calm",
+     "pig_b": "calm",
+     "pig_c": "brave"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "wide"
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "dir": "right",
+     "pose": "side_prowl",
+     "dist": 1.0,
+     "line": "tp_043"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "shout"
+    },
+    {
+     "do": "say",
+     "line": "tp_044"
+    },
+    {
+     "do": "huff",
+     "house": "brick",
+     "taps": 8,
+     "prompt": "tp_045",
+     "hint": "tp_045",
+     "result": "hold",
+     "fx": "house_shiver",
+     "counter": true
+    },
+    {
+     "do": "say",
+     "line": "tp_046"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "exhausted"
+    },
+    {
+     "do": "fx",
+     "fx": "thud_dust"
+    },
+    {
+     "do": "say",
+     "line": "tp_047"
+    }
+   ]
+  },
+  {
+   "id": "chimney",
+   "title": "보글보글",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "brick_lot",
+    "light": "dusk",
+    "set": [
+     {
+      "card": "story_houses_06",
+      "at": "lot",
+      "stage": "full"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "wolf": "tiptoe"
+    }
+   },
+   "steps": [
+    {
+     "do": "climb",
+     "who": "wolf",
+     "to": "chimney",
+     "pose": "tiptoe",
+     "line": "tp_048"
+    },
+    {
+     "do": "fx",
+     "fx": "cutaway_open"
+    },
+    {
+     "do": "cam",
+     "shot": "close"
+    },
+    {
+     "do": "say",
+     "line": "tp_049"
+    },
+    {
+     "do": "tap_steps",
+     "target": "fire",
+     "prompt": "tp_050",
+     "hint": "tp_050",
+     "steps": [
+      {
+       "fx": "flame_m"
+      },
+      {
+       "fx": "flame_l"
+      },
+      {
+       "fx": "boil",
+       "lines": []
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "wolf_drop"
+    },
+    {
+     "do": "say",
+     "line": "tp_051"
+    },
+    {
+     "do": "fx",
+     "fx": "splash"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "ouch"
+    },
+    {
+     "do": "say",
+     "line": "tp_052"
+    },
+    {
+     "do": "fx",
+     "fx": "wolf_launch"
+    },
+    {
+     "do": "fx",
+     "fx": "cutaway_close"
+    },
+    {
+     "do": "cam",
+     "shot": "wide"
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "dir": "left",
+     "pose": "run_away",
+     "dist": 3.0,
+     "speed": 0.6,
+     "line": "tp_053"
+    }
+   ]
+  },
+  {
+   "id": "ending",
+   "title": "벽돌 마을",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "brick_lot",
+    "set": [
+     {
+      "card": "story_houses_06",
+      "at": "lot",
+      "stage": "full"
+     },
+     {
+      "card": "story_houses_08",
+      "at": "lot_left",
+      "stage": 0
+     },
+     {
+      "card": "story_houses_09",
+      "at": "lot_right",
+      "stage": 0
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "pig_a": "happy_wave",
+     "pig_b": "happy_wave",
+     "pig_c": "proud"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "wide"
+    },
+    {
+     "do": "tap_steps",
+     "target": "plot",
+     "prompt": "tp_055",
+     "hint": "tp_055",
+     "steps": [
+      {
+       "fx": "pop:story_houses_08"
+      },
+      {
+       "fx": "pop:story_houses_09"
+      }
+     ]
+    },
+    {
+     "do": "pose",
+     "who": "pig_c",
+     "pose": "cheer"
+    },
+    {
+     "do": "say",
+     "line": "tp_056"
+    },
+    {
+     "do": "say",
+     "line": "tp_057"
+    },
+    {
+     "do": "end",
+     "after": "tp_n02"
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": "tp_000",
+   "speaker": "nar",
+   "text": "옛날 옛날에 아기 돼지 삼 형제가 살았어요.",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "옛날 옛날에 아기 돼지 삼 형제가 살았어요.",
+     "emotion": null,
+     "tags": "[warm, gentle storytelling]",
+     "audio": "res://audio/voice/three_pigs/nar_edc4cedd8a.mp3",
+     "source_audio": "audio/el/three_pigs/nar_edc4cedd8a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 0,
+   "source_text": "옛날 옛날에 아기 돼지 삼 형제가 살았어요.",
+   "expr": {
+    "pig_a": "calm",
+    "pig_b": "calm",
+    "pig_c": "calm",
+    "mom": "calm"
+   }
+  },
+  {
+   "id": "tp_001",
+   "speaker": "mom",
+   "text": "\"이제 너희도 다 컸구나. 세상에 나가서 각자 집을 지어 보렴.\"",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "이제 너희도 다 컸구나. 세상에 나가서 각자 집을 지어 보렴.",
+     "emotion": "happy",
+     "tags": "[warm, loving, encouraging]",
+     "audio": "res://audio/voice/three_pigs/mom_af8eb8966f.mp3",
+     "source_audio": "audio/el/three_pigs/mom_af8eb8966f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 1,
+   "source_text": "엄마 돼지가 말했어요. \"이제 너희도 다 컸구나. 세상에 나가서 각자 집을 지어 보렴.\"",
+   "trimmed_segs": [
+    1
+   ],
+   "expr": {
+    "mom": "talk"
+   }
+  },
+  {
+   "id": "tp_002",
+   "speaker": "nar",
+   "text": "아기 돼지를 톡 눌러 봐요.",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "tap_each",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 돼지를 톡 눌러 봐요.",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/three_pigs/nar_d7b988abee.mp3",
+     "source_audio": "audio/el/three_pigs/nar_d7b988abee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 2,
+   "source_text": "아기 돼지를 톡 눌러 봐요."
+  },
+  {
+   "id": "tp_003",
+   "speaker": "nar",
+   "text": "삼 형제는 엄마께 인사하고 길을 떠났어요.",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "삼 형제는 엄마께 인사하고 길을 떠났어요.",
+     "emotion": null,
+     "tags": "[warm, bright storytelling]",
+     "audio": "res://audio/voice/three_pigs/nar_457e5aaa96.mp3",
+     "source_audio": "audio/el/three_pigs/nar_457e5aaa96.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 3,
+   "source_text": "삼 형제는 엄마께 인사하고 길을 떠났어요.",
+   "expr": {
+    "mom": "wave",
+    "pig_a": "back_walk",
+    "pig_b": "back_walk",
+    "pig_c": "back_walk"
+   }
+  },
+  {
+   "id": "tp_004",
+   "speaker": "nar",
+   "text": "아기 돼지들의 옷을 잘 보세요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 돼지들의 옷을 잘 보세요.",
+     "emotion": null,
+     "tags": "[warm, gentle, curious]",
+     "audio": "res://audio/voice/three_pigs/nar_0cd8cc5b73.mp3",
+     "source_audio": "audio/el/three_pigs/nar_0cd8cc5b73.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 4,
+   "source_text": "아기 돼지들의 옷을 잘 보세요."
+  },
+  {
+   "id": "tp_005",
+   "speaker": "nar",
+   "text": "목도리를 두른 돼지는 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "목도리를 두른 돼지는 누구일까요?",
+     "emotion": null,
+     "tags": "[friendly, curious question]",
+     "audio": "res://audio/voice/three_pigs/nar_5ccd882420.mp3",
+     "source_audio": "audio/el/three_pigs/nar_5ccd882420.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 5,
+   "source_text": "목도리를 두른 돼지는 누구일까요?"
+  },
+  {
+   "id": "tp_006",
+   "speaker": "nar",
+   "text": "노란 모자를 쓴 돼지는 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "노란 모자를 쓴 돼지는 누구일까요?",
+     "emotion": null,
+     "tags": "[friendly, curious question]",
+     "audio": "res://audio/voice/three_pigs/nar_075652b17b.mp3",
+     "source_audio": "audio/el/three_pigs/nar_075652b17b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 6,
+   "source_text": "노란 모자를 쓴 돼지는 누구일까요?"
+  },
+  {
+   "id": "tp_007",
+   "speaker": "nar",
+   "text": "하얀 모자를 쓴 돼지는 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하얀 모자를 쓴 돼지는 누구일까요?",
+     "emotion": null,
+     "tags": "[friendly, curious question]",
+     "audio": "res://audio/voice/three_pigs/nar_09f81267fc.mp3",
+     "source_audio": "audio/el/three_pigs/nar_09f81267fc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 7,
+   "source_text": "하얀 모자를 쓴 돼지는 누구일까요?"
+  },
+  {
+   "id": "tp_008",
+   "speaker": "nar",
+   "text": "파란 멜빵바지를 입은 돼지는 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파란 멜빵바지를 입은 돼지는 누구일까요?",
+     "emotion": null,
+     "tags": "[friendly, curious question]",
+     "audio": "res://audio/voice/three_pigs/nar_7156da9dc4.mp3",
+     "source_audio": "audio/el/three_pigs/nar_7156da9dc4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 8,
+   "source_text": "파란 멜빵바지를 입은 돼지는 누구일까요?"
+  },
+  {
+   "id": "tp_009",
+   "speaker": "nar",
+   "text": "빨간 멜빵바지를 입은 돼지는 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨간 멜빵바지를 입은 돼지는 누구일까요?",
+     "emotion": null,
+     "tags": "[friendly, curious question]",
+     "audio": "res://audio/voice/three_pigs/nar_dce3a4762d.mp3",
+     "source_audio": "audio/el/three_pigs/nar_dce3a4762d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 9,
+   "source_text": "빨간 멜빵바지를 입은 돼지는 누구일까요?"
+  },
+  {
+   "id": "tp_010",
+   "speaker": "nar",
+   "text": "맞아요! 이 돼지예요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요! 이 돼지예요.",
+     "emotion": null,
+     "tags": "[warm, gentle, curious]",
+     "audio": "res://audio/voice/three_pigs/nar_290e46f001.mp3",
+     "source_audio": "audio/el/three_pigs/nar_290e46f001.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 10,
+   "source_text": "맞아요! 이 돼지예요."
+  },
+  {
+   "id": "tp_011",
+   "speaker": "nar",
+   "text": "다시 한번 잘 보세요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다시 한번 잘 보세요.",
+     "emotion": null,
+     "tags": "[warm, gentle, curious]",
+     "audio": "res://audio/voice/three_pigs/nar_b3aa15ab02.mp3",
+     "source_audio": "audio/el/three_pigs/nar_b3aa15ab02.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 11,
+   "source_text": "다시 한번 잘 보세요."
+  },
+  {
+   "id": "tp_012",
+   "speaker": "nar",
+   "text": "반짝이는 돼지를 눌러 보세요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "반짝이는 돼지를 눌러 보세요.",
+     "emotion": null,
+     "tags": "[warm, gentle, curious]",
+     "audio": "res://audio/voice/three_pigs/nar_e7a641c3b8.mp3",
+     "source_audio": "audio/el/three_pigs/nar_e7a641c3b8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 12,
+   "source_text": "반짝이는 돼지를 눌러 보세요."
+  },
+  {
+   "id": "tp_013",
+   "speaker": "nar",
+   "text": "가게에서 바람을 불어 보기로 했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "가게에서 바람을 불어 보기로 했어요.",
+     "emotion": null,
+     "tags": "[curious, playful]",
+     "audio": "res://audio/voice/three_pigs/nar_f3da155099.mp3",
+     "source_audio": "audio/el/three_pigs/nar_f3da155099.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 13,
+   "source_text": "가게에서 바람을 불어 보기로 했어요."
+  },
+  {
+   "id": "tp_014",
+   "speaker": "nar",
+   "text": "짚은 훨훨 날아가요. 아주 가벼워요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "짚은 훨훨 날아가요. 아주 가벼워요.",
+     "emotion": null,
+     "tags": "[playful, light, breezy]",
+     "audio": "res://audio/voice/three_pigs/nar_2065533e23.mp3",
+     "source_audio": "audio/el/three_pigs/nar_2065533e23.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 14,
+   "source_text": "짚은 훨훨 날아가요. 아주 가벼워요."
+  },
+  {
+   "id": "tp_015",
+   "speaker": "nar",
+   "text": "나무는 흔들흔들! 조금 튼튼해요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "나무는 흔들흔들! 조금 튼튼해요.",
+     "emotion": null,
+     "tags": "[playful, wobbly]",
+     "audio": "res://audio/voice/three_pigs/nar_f955d7d13c.mp3",
+     "source_audio": "audio/el/three_pigs/nar_f955d7d13c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 15,
+   "source_text": "나무는 흔들흔들! 조금 튼튼해요."
+  },
+  {
+   "id": "tp_016",
+   "speaker": "nar",
+   "text": "벽돌은 끄떡없어요! 아주 아주 튼튼해요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "벽돌은 끄떡없어요! 아주 아주 튼튼해요.",
+     "emotion": null,
+     "tags": "[proud, firm, cheerful]",
+     "audio": "res://audio/voice/three_pigs/nar_f5e94c3141.mp3",
+     "source_audio": "audio/el/three_pigs/nar_f5e94c3141.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 16,
+   "source_text": "벽돌은 끄떡없어요! 아주 아주 튼튼해요."
+  },
+  {
+   "id": "tp_017",
+   "speaker": "nar",
+   "text": "손가락으로 톡 눌러서 바람을 불어 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "손가락으로 톡 눌러서 바람을 불어 봐요.",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/three_pigs/nar_82fb029e89.mp3",
+     "source_audio": "audio/el/three_pigs/nar_82fb029e89.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 17,
+   "source_text": "손가락으로 톡 눌러서 바람을 불어 봐요."
+  },
+  {
+   "id": "tp_018",
+   "speaker": "nar",
+   "text": "쌓을 것을 톡톡 눌러요.",
+   "status": "reuse",
+   "beat": "straw_build",
+   "interaction": "build",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쌓을 것을 톡톡 눌러요.",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/three_pigs/nar_2717ba5396.mp3",
+     "source_audio": "audio/el/three_pigs/nar_2717ba5396.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 18,
+   "source_text": "쌓을 것을 톡톡 눌러요."
+  },
+  {
+   "id": "tp_019",
+   "speaker": "nar",
+   "text": "첫째는 짚으로 집을 짓기로 했어요. 짚을 톡톡톡 쌓아요!",
+   "status": "reuse",
+   "beat": "straw_build",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "첫째는 짚으로 집을 짓기로 했어요. 짚을 톡톡톡 쌓아요!",
+     "emotion": null,
+     "tags": "[cheerful, busy]",
+     "audio": "res://audio/voice/three_pigs/nar_7eb4baabed.mp3",
+     "source_audio": "audio/el/three_pigs/nar_7eb4baabed.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 19,
+   "source_text": "첫째는 짚으로 집을 짓기로 했어요. 짚을 톡톡톡 쌓아요!",
+   "expr": {
+    "pig_a": "carry_straw"
+   }
+  },
+  {
+   "id": "tp_020",
+   "speaker": "nar",
+   "text": "뚝딱! 짚 집이 완성됐어요. 첫째는 피리를 불며 놀았어요.",
+   "status": "reuse",
+   "beat": "straw_build",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뚝딱! 짚 집이 완성됐어요. 첫째는 피리를 불며 놀았어요.",
+     "emotion": null,
+     "tags": "[cheerful, playful]",
+     "audio": "res://audio/voice/three_pigs/nar_44bcba26d7.mp3",
+     "source_audio": "audio/el/three_pigs/nar_44bcba26d7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 20,
+   "source_text": "뚝딱! 짚 집이 완성됐어요. 첫째는 피리를 불며 놀았어요.",
+   "expr": {
+    "pig_a": "flute"
+   }
+  },
+  {
+   "id": "tp_021",
+   "speaker": "nar",
+   "text": "둘째는 나무로 집을 짓기로 했어요. 망치로 톡톡톡톡톡!",
+   "status": "reuse",
+   "beat": "wood_build",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "둘째는 나무로 집을 짓기로 했어요. 망치로 톡톡톡톡톡!",
+     "emotion": null,
+     "tags": "[cheerful, rhythmic]",
+     "audio": "res://audio/voice/three_pigs/nar_a5b67ca7c1.mp3",
+     "source_audio": "audio/el/three_pigs/nar_a5b67ca7c1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 21,
+   "source_text": "둘째는 나무로 집을 짓기로 했어요. 망치로 톡톡톡톡톡!",
+   "expr": {
+    "pig_b": "hammer"
+   }
+  },
+  {
+   "id": "tp_022",
+   "speaker": "nar",
+   "text": "쿵쾅쿵쾅! 나무 집이 완성됐어요. 둘째는 바이올린을 켜며 놀았어요.",
+   "status": "reuse",
+   "beat": "wood_build",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쿵쾅쿵쾅! 나무 집이 완성됐어요. 둘째는 바이올린을 켜며 놀았어요.",
+     "emotion": null,
+     "tags": "[cheerful, playful]",
+     "audio": "res://audio/voice/three_pigs/nar_2c32db5271.mp3",
+     "source_audio": "audio/el/three_pigs/nar_2c32db5271.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 22,
+   "source_text": "쿵쾅쿵쾅! 나무 집이 완성됐어요. 둘째는 바이올린을 켜며 놀았어요.",
+   "expr": {
+    "pig_b": "violin"
+   }
+  },
+  {
+   "id": "tp_023",
+   "speaker": "piga+nar",
+   "text": "\"아직도 해? 우리랑 놀자!\" 그래도 셋째는 천천히 벽돌을 쌓았어요.",
+   "status": "reuse",
+   "beat": "brick_build",
+   "interaction": "build",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "piga",
+     "text": "아직도 해? 우리랑 놀자!",
+     "emotion": "happy",
+     "tags": "[teasing, cheeky, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/three_pigs/piga_2446202064.mp3",
+     "source_audio": "audio/el/three_pigs/piga_2446202064.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "그래도 셋째는 천천히 벽돌을 쌓았어요.",
+     "emotion": null,
+     "tags": "[gentle, determined]",
+     "audio": "res://audio/voice/three_pigs/nar_e60143ebdb.mp3",
+     "source_audio": "audio/el/three_pigs/nar_e60143ebdb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 23,
+   "source_text": "형들이 놀렸어요. \"아직도 해? 우리랑 놀자!\" 그래도 셋째는 천천히 벽돌을 쌓았어요.",
+   "trimmed_segs": [
+    1,
+    2
+   ],
+   "expr": {
+    "pig_a": "tease",
+    "pig_b": "violin",
+    "pig_c": "lay_brick"
+   }
+  },
+  {
+   "id": "tp_024",
+   "speaker": "nar",
+   "text": "셋째는 벽돌로 집을 짓기로 했어요. 벽돌은 무거워서 열 장을 천천히 쌓아요.",
+   "status": "reuse",
+   "beat": "brick_build",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "셋째는 벽돌로 집을 짓기로 했어요. 벽돌은 무거워서 열 장을 천천히 쌓아요.",
+     "emotion": null,
+     "tags": "[slow, steady, patient]",
+     "audio": "res://audio/voice/three_pigs/nar_506a46173c.mp3",
+     "source_audio": "audio/el/three_pigs/nar_506a46173c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 24,
+   "source_text": "셋째는 벽돌로 집을 짓기로 했어요. 벽돌은 무거워서 열 장을 천천히 쌓아요.",
+   "expr": {
+    "pig_c": "lay_brick"
+   }
+  },
+  {
+   "id": "tp_025",
+   "speaker": "nar",
+   "text": "벽돌을 열 장 다 쌓았어요. 튼튼한 벽돌 집이 완성됐어요!",
+   "status": "reuse",
+   "beat": "brick_build",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "벽돌을 열 장 다 쌓았어요. 튼튼한 벽돌 집이 완성됐어요!",
+     "emotion": null,
+     "tags": "[proud, cheerful]",
+     "audio": "res://audio/voice/three_pigs/nar_33372fce4a.mp3",
+     "source_audio": "audio/el/three_pigs/nar_33372fce4a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 25,
+   "source_text": "벽돌을 열 장 다 쌓았어요. 튼튼한 벽돌 집이 완성됐어요!",
+   "expr": {
+    "pig_c": "proud"
+   }
+  },
+  {
+   "id": "tp_026",
+   "speaker": "nar",
+   "text": "손가락으로 톡톡 눌러서 늑대와 같이 후~ 불어요.",
+   "status": "reuse",
+   "beat": "wolf_straw",
+   "interaction": "huff",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "손가락으로 톡톡 눌러서 늑대와 같이 후~ 불어요.",
+     "emotion": null,
+     "tags": "[playful, encouraging]",
+     "audio": "res://audio/voice/three_pigs/nar_e27c62d66d.mp3",
+     "source_audio": "audio/el/three_pigs/nar_e27c62d66d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 26,
+   "source_text": "손가락으로 톡톡 눌러서 늑대와 같이 후~ 불어요."
+  },
+  {
+   "id": "tp_027",
+   "speaker": "nar+wolf",
+   "text": "그때 배고픈 늑대가 킁킁 냄새를 맡으며 왔어요. \"아기 돼지야, 문 열어라!\"",
+   "status": "reuse",
+   "beat": "wolf_straw",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그때 배고픈 늑대가 킁킁 냄새를 맡으며 왔어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/three_pigs/nar_3b69d3463e.mp3",
+     "source_audio": "audio/el/three_pigs/nar_3b69d3463e.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wolf",
+     "text": "아기 돼지야, 문 열어라!",
+     "emotion": "angry:1.1",
+     "tags": "[comically sly, grumbling, hungry]",
+     "audio": "res://audio/voice/three_pigs/wolf_dfcd44f958.mp3",
+     "source_audio": "audio/el/three_pigs/wolf_dfcd44f958.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 27,
+   "source_text": "그때 배고픈 늑대가 킁킁 냄새를 맡으며 왔어요. \"아기 돼지야, 문 열어라!\"",
+   "expr": {
+    "wolf": [
+     "sniff",
+     "shout"
+    ]
+   }
+  },
+  {
+   "id": "tp_028",
+   "speaker": "piga+wolf",
+   "text": "\"싫어요, 싫어요!\" \"그럼 후~ 불어서 날려 버릴 테야!\"",
+   "status": "reuse",
+   "beat": "wolf_straw",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "piga",
+     "text": "싫어요, 싫어요!",
+     "emotion": "happy",
+     "tags": "[defiant, childlike, cheerful, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/three_pigs/piga_9034aa1032.mp3",
+     "source_audio": "audio/el/three_pigs/piga_9034aa1032.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wolf",
+     "text": "그럼 후~ 불어서 날려 버릴 테야!",
+     "emotion": "angry:1.1",
+     "tags": "[puffing up, comically huffy]",
+     "audio": "res://audio/voice/three_pigs/wolf_2060345d9c.mp3",
+     "source_audio": "audio/el/three_pigs/wolf_2060345d9c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 28,
+   "source_text": "첫째가 말했어요. \"싫어요, 싫어요!\" 늑대가 말했어요. \"그럼 후~ 불어서 날려 버릴 테야!\"",
+   "trimmed_segs": [
+    1,
+    3
+   ],
+   "expr": {
+    "pig_a": "defiant",
+    "wolf": "shout"
+   }
+  },
+  {
+   "id": "tp_029",
+   "speaker": "nar",
+   "text": "짚 집이 훨훨 날아가 버렸어요!",
+   "status": "reuse",
+   "beat": "wolf_straw",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "짚 집이 훨훨 날아가 버렸어요!",
+     "emotion": null,
+     "tags": "[playful, whoosh, comic]",
+     "audio": "res://audio/voice/three_pigs/nar_e1e0b6005e.mp3",
+     "source_audio": "audio/el/three_pigs/nar_e1e0b6005e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 29,
+   "source_text": "짚 집이 훨훨 날아가 버렸어요!",
+   "expr": {
+    "pig_a": "scared",
+    "wolf": "huff"
+   }
+  },
+  {
+   "id": "tp_030",
+   "speaker": "nar",
+   "text": "첫째는 둘째네 집으로 달려갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "첫째는 둘째네 집으로 달려갔어요.",
+     "emotion": null,
+     "tags": "[quick, lively]",
+     "audio": "res://audio/voice/three_pigs/nar_9d853b1fbb.mp3",
+     "source_audio": "audio/el/three_pigs/nar_9d853b1fbb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 30,
+   "source_text": "첫째는 둘째네 집으로 달려갔어요."
+  },
+  {
+   "id": "tp_031",
+   "speaker": "nar+wolf",
+   "text": "늑대가 나무 집에도 왔어요. \"아기 돼지야, 문 열어라!\"",
+   "status": "reuse",
+   "beat": "wolf_wood",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대가 나무 집에도 왔어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/three_pigs/nar_f53da4c050.mp3",
+     "source_audio": "audio/el/three_pigs/nar_f53da4c050.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wolf",
+     "text": "아기 돼지야, 문 열어라!",
+     "emotion": "angry:1.1",
+     "tags": "[comically sly, grumbling, hungry]",
+     "audio": "res://audio/voice/three_pigs/wolf_dfcd44f958.mp3",
+     "source_audio": "audio/el/three_pigs/wolf_dfcd44f958.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 31,
+   "source_text": "늑대가 나무 집에도 왔어요. \"아기 돼지야, 문 열어라!\"",
+   "expr": {
+    "wolf": [
+     "side_prowl",
+     "shout"
+    ],
+    "pig_a": "scared",
+    "pig_b": "scared"
+   }
+  },
+  {
+   "id": "tp_032",
+   "speaker": "pigb+wolf",
+   "text": "\"싫어요, 싫어요!\" \"그럼 후~ 후~ 불어 주지!\"",
+   "status": "reuse",
+   "beat": "wolf_wood",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "pigb",
+     "text": "싫어요, 싫어요!",
+     "emotion": "happy",
+     "tags": "[defiant, childlike, cheerful, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/three_pigs/pigb_81f94893f9.mp3",
+     "source_audio": "audio/el/three_pigs/pigb_81f94893f9.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wolf",
+     "text": "그럼 후~ 후~ 불어 주지!",
+     "emotion": "angry:1.1",
+     "tags": "[puffing up, comically huffy]",
+     "audio": "res://audio/voice/three_pigs/wolf_61e2f65ffa.mp3",
+     "source_audio": "audio/el/three_pigs/wolf_61e2f65ffa.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 32,
+   "source_text": "첫째와 둘째가 말했어요. \"싫어요, 싫어요!\" 늑대가 말했어요. \"그럼 후~ 후~ 불어 주지!\"",
+   "trimmed_segs": [
+    1,
+    3
+   ],
+   "expr": {
+    "pig_a": "defiant",
+    "pig_b": "defiant",
+    "wolf": "shout"
+   }
+  },
+  {
+   "id": "tp_033",
+   "speaker": "nar",
+   "text": "나무 집이 와르르 무너졌어요!",
+   "status": "reuse",
+   "beat": "wolf_wood",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "나무 집이 와르르 무너졌어요!",
+     "emotion": null,
+     "tags": "[comic, playful]",
+     "audio": "res://audio/voice/three_pigs/nar_b21c365f9a.mp3",
+     "source_audio": "audio/el/three_pigs/nar_b21c365f9a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 33,
+   "source_text": "나무 집이 와르르 무너졌어요!",
+   "expr": {
+    "pig_a": "scared",
+    "pig_b": "scared"
+   }
+  },
+  {
+   "id": "tp_034",
+   "speaker": "nar",
+   "text": "아기 돼지 둘은 막내네 집으로 달려갔어요.",
+   "status": "reuse",
+   "beat": "wolf_wood",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 돼지 둘은 막내네 집으로 달려갔어요.",
+     "emotion": null,
+     "tags": "[quick, lively]",
+     "audio": "res://audio/voice/three_pigs/nar_bf1f7eae6d.mp3",
+     "source_audio": "audio/el/three_pigs/nar_bf1f7eae6d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 34,
+   "source_text": "아기 돼지 둘은 막내네 집으로 달려갔어요.",
+   "expr": {
+    "pig_a": "run",
+    "pig_b": "run"
+   }
+  },
+  {
+   "id": "tp_035",
+   "speaker": "nar",
+   "text": "두 형은 숨이 차서 헉헉! 어느 집으로 가야 할까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "두 형은 숨이 차서 헉헉! 어느 집으로 가야 할까요?",
+     "emotion": null,
+     "tags": "[panting, concerned]",
+     "audio": "res://audio/voice/three_pigs/nar_08f1520a05.mp3",
+     "source_audio": "audio/el/three_pigs/nar_08f1520a05.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 35,
+   "source_text": "두 형은 숨이 차서 헉헉! 어느 집으로 가야 할까요?"
+  },
+  {
+   "id": "tp_036",
+   "speaker": "nar",
+   "text": "가장 튼튼한 집을 골라 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "가장 튼튼한 집을 골라 봐요!",
+     "emotion": null,
+     "tags": "[encouraging, cheerful]",
+     "audio": "res://audio/voice/three_pigs/nar_a1f9ebe1c5.mp3",
+     "source_audio": "audio/el/three_pigs/nar_a1f9ebe1c5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 36,
+   "source_text": "가장 튼튼한 집을 골라 봐요!"
+  },
+  {
+   "id": "tp_037",
+   "speaker": "nar",
+   "text": "짚은 너무 가벼워요. 다시 골라 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "짚은 너무 가벼워요. 다시 골라 봐요.",
+     "emotion": null,
+     "tags": "[gentle, encouraging]",
+     "audio": "res://audio/voice/three_pigs/nar_f9bf7b9b5c.mp3",
+     "source_audio": "audio/el/three_pigs/nar_f9bf7b9b5c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 37,
+   "source_text": "짚은 너무 가벼워요. 다시 골라 봐요."
+  },
+  {
+   "id": "tp_038",
+   "speaker": "nar",
+   "text": "벽돌 집이 가장 튼튼해요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "벽돌 집이 가장 튼튼해요!",
+     "emotion": null,
+     "tags": "[proud, cheerful]",
+     "audio": "res://audio/voice/three_pigs/nar_3ffc110997.mp3",
+     "source_audio": "audio/el/three_pigs/nar_3ffc110997.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 38,
+   "source_text": "벽돌 집이 가장 튼튼해요!"
+  },
+  {
+   "id": "tp_039",
+   "speaker": "nar",
+   "text": "맞아요! 가장 튼튼한 벽돌 집이에요. 삼 형제는 문을 꼭 닫았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요! 가장 튼튼한 벽돌 집이에요. 삼 형제는 문을 꼭 닫았어요.",
+     "emotion": null,
+     "tags": "[relieved, warm]",
+     "audio": "res://audio/voice/three_pigs/nar_0bf0b7559b.mp3",
+     "source_audio": "audio/el/three_pigs/nar_0bf0b7559b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 39,
+   "source_text": "맞아요! 가장 튼튼한 벽돌 집이에요. 삼 형제는 문을 꼭 닫았어요."
+  },
+  {
+   "id": "tp_040",
+   "speaker": "nar",
+   "text": "삼 형제는 모두 모였어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "삼 형제는 모두 모였어요.",
+     "emotion": null,
+     "tags": "[cheerful, counting]",
+     "audio": "res://audio/voice/three_pigs/nar_49cbbe2c9a.mp3",
+     "source_audio": "audio/el/three_pigs/nar_49cbbe2c9a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 40,
+   "source_text": "삼 형제는 모두 모였어요."
+  },
+  {
+   "id": "tp_041",
+   "speaker": "nar",
+   "text": "아기 돼지를 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 돼지를 톡 눌러요.",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/three_pigs/nar_05db384808.mp3",
+     "source_audio": "audio/el/three_pigs/nar_05db384808.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 41,
+   "source_text": "아기 돼지를 톡 눌러요."
+  },
+  {
+   "id": "tp_042",
+   "speaker": "pigc",
+   "text": "\"셋이서 함께라서 무섭지 않아!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "pigc",
+     "text": "셋이서 함께라서 무섭지 않아!",
+     "emotion": "happy",
+     "tags": "[brave, cheerful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/three_pigs/pigc_20620d6d32.mp3",
+     "source_audio": "audio/el/three_pigs/pigc_20620d6d32.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 42,
+   "source_text": "\"셋이서 함께라서 무섭지 않아!\""
+  },
+  {
+   "id": "tp_043",
+   "speaker": "nar+wolf",
+   "text": "늑대가 벽돌 집에 왔어요. \"아기 돼지야, 문 열어라!\"",
+   "status": "reuse",
+   "beat": "brick_wolf",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대가 벽돌 집에 왔어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/three_pigs/nar_20cb1b35cc.mp3",
+     "source_audio": "audio/el/three_pigs/nar_20cb1b35cc.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wolf",
+     "text": "아기 돼지야, 문 열어라!",
+     "emotion": "angry:1.1",
+     "tags": "[comically sly, huffy]",
+     "audio": "res://audio/voice/three_pigs/wolf_7899dd3490.mp3",
+     "source_audio": "audio/el/three_pigs/wolf_7899dd3490.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 43,
+   "source_text": "늑대가 벽돌 집에 왔어요. \"아기 돼지야, 문 열어라!\"",
+   "expr": {
+    "wolf": [
+     "side_prowl",
+     "shout"
+    ],
+    "pig_c": "brave"
+   }
+  },
+  {
+   "id": "tp_044",
+   "speaker": "pigc+wolf",
+   "text": "\"싫어요, 싫어요!\" \"그럼 후~ 후~ 불어 주지!\"",
+   "status": "reuse",
+   "beat": "brick_wolf",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "pigc",
+     "text": "싫어요, 싫어요!",
+     "emotion": "happy",
+     "tags": "[defiant, brave, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/three_pigs/pigc_f854716975.mp3",
+     "source_audio": "audio/el/three_pigs/pigc_f854716975.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wolf",
+     "text": "그럼 후~ 후~ 불어 주지!",
+     "emotion": "angry:1.1",
+     "tags": "[puffing up, comically huffy]",
+     "audio": "res://audio/voice/three_pigs/wolf_61e2f65ffa.mp3",
+     "source_audio": "audio/el/three_pigs/wolf_61e2f65ffa.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 44,
+   "source_text": "\"싫어요, 싫어요!\" \"그럼 후~ 후~ 불어 주지!\"",
+   "expr": {
+    "pig_c": "defiant",
+    "wolf": "shout"
+   }
+  },
+  {
+   "id": "tp_045",
+   "speaker": "nar",
+   "text": "집을 톡톡 눌러서 몇 번 부는지 세어 봐요.",
+   "status": "reuse",
+   "beat": "brick_wolf",
+   "interaction": "huff",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "집을 톡톡 눌러서 몇 번 부는지 세어 봐요.",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/three_pigs/nar_3e86b963f4.mp3",
+     "source_audio": "audio/el/three_pigs/nar_3e86b963f4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 45,
+   "source_text": "집을 톡톡 눌러서 몇 번 부는지 세어 봐요."
+  },
+  {
+   "id": "tp_046",
+   "speaker": "nar",
+   "text": "후~ 후~ 여덟 번이나 불었지만 벽돌 집은 끄떡없어요!",
+   "status": "reuse",
+   "beat": "brick_wolf",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "후~ 후~ 여덟 번이나 불었지만 벽돌 집은 끄떡없어요!",
+     "emotion": null,
+     "tags": "[triumphant, playful]",
+     "audio": "res://audio/voice/three_pigs/nar_f451ae4d2a.mp3",
+     "source_audio": "audio/el/three_pigs/nar_f451ae4d2a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 46,
+   "source_text": "후~ 후~ 여덟 번이나 불었지만 벽돌 집은 끄떡없어요!",
+   "expr": {
+    "pig_a": "happy_wave",
+    "pig_b": "happy_wave",
+    "pig_c": "proud",
+    "wolf": "huff"
+   }
+  },
+  {
+   "id": "tp_047",
+   "speaker": "nar",
+   "text": "늑대는 숨이 차서 털썩 주저앉았어요.",
+   "status": "reuse",
+   "beat": "brick_wolf",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 숨이 차서 털썩 주저앉았어요.",
+     "emotion": null,
+     "tags": "[playful, tired]",
+     "audio": "res://audio/voice/three_pigs/nar_ed34ea7a0b.mp3",
+     "source_audio": "audio/el/three_pigs/nar_ed34ea7a0b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 47,
+   "source_text": "늑대는 숨이 차서 털썩 주저앉았어요.",
+   "expr": {
+    "wolf": "exhausted"
+   }
+  },
+  {
+   "id": "tp_048",
+   "speaker": "nar",
+   "text": "늑대는 지붕으로 살금살금 올라갔어요. 굴뚝으로 몰래 들어가려고요.",
+   "status": "reuse",
+   "beat": "chimney",
+   "interaction": "climb",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 지붕으로 살금살금 올라갔어요. 굴뚝으로 몰래 들어가려고요.",
+     "emotion": null,
+     "tags": "[whispers, sneaky, playful]",
+     "audio": "res://audio/voice/three_pigs/nar_2558a8824d.mp3",
+     "source_audio": "audio/el/three_pigs/nar_2558a8824d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 48,
+   "source_text": "늑대는 지붕으로 살금살금 올라갔어요. 굴뚝으로 몰래 들어가려고요.",
+   "expr": {
+    "wolf": "tiptoe"
+   }
+  },
+  {
+   "id": "tp_049",
+   "speaker": "nar",
+   "text": "아기 돼지들은 큰 솥에 물을 팔팔 끓였어요.",
+   "status": "reuse",
+   "beat": "chimney",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 돼지들은 큰 솥에 물을 팔팔 끓였어요.",
+     "emotion": null,
+     "tags": "[busy, cheerful]",
+     "audio": "res://audio/voice/three_pigs/nar_2fba6d1646.mp3",
+     "source_audio": "audio/el/three_pigs/nar_2fba6d1646.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 49,
+   "source_text": "아기 돼지들은 큰 솥에 물을 팔팔 끓였어요.",
+   "expr": {
+    "pig_c": "brave",
+    "pig_a": "calm",
+    "pig_b": "calm"
+   }
+  },
+  {
+   "id": "tp_050",
+   "speaker": "nar",
+   "text": "불을 톡톡 눌러서 크게 해 줘요.",
+   "status": "reuse",
+   "beat": "chimney",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "불을 톡톡 눌러서 크게 해 줘요.",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/three_pigs/nar_2b608813f3.mp3",
+     "source_audio": "audio/el/three_pigs/nar_2b608813f3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 50,
+   "source_text": "불을 톡톡 눌러서 크게 해 줘요."
+  },
+  {
+   "id": "tp_051",
+   "speaker": "nar",
+   "text": "보글보글 물이 끓어요! 그때 굴뚝에서 늑대가 쑥 내려왔어요.",
+   "status": "reuse",
+   "beat": "chimney",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "보글보글 물이 끓어요! 그때 굴뚝에서 늑대가 쑥 내려왔어요.",
+     "emotion": null,
+     "tags": "[building suspense, playful]",
+     "audio": "res://audio/voice/three_pigs/nar_ed7a174e07.mp3",
+     "source_audio": "audio/el/three_pigs/nar_ed7a174e07.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 51,
+   "source_text": "보글보글 물이 끓어요! 그때 굴뚝에서 늑대가 쑥 내려왔어요.",
+   "expr": {
+    "wolf": "falling",
+    "pig_a": "scared",
+    "pig_b": "scared",
+    "pig_c": "startled"
+   }
+  },
+  {
+   "id": "tp_052",
+   "speaker": "wolf",
+   "text": "\"앗, 뜨거워!\"",
+   "status": "reuse",
+   "beat": "chimney",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "앗, 뜨거워!",
+     "emotion": "angry:1.1",
+     "tags": "[yelps, startled, comic]",
+     "audio": "res://audio/voice/three_pigs/wolf_4584505897.mp3",
+     "source_audio": "audio/el/three_pigs/wolf_4584505897.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 52,
+   "source_text": "\"앗, 뜨거워!\"",
+   "expr": {
+    "wolf": "ouch"
+   }
+  },
+  {
+   "id": "tp_053",
+   "speaker": "nar",
+   "text": "늑대는 굴뚝으로 휙! 날아가서 멀리멀리 도망쳤어요. 다시는 오지 않았어요.",
+   "status": "reuse",
+   "beat": "chimney",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 굴뚝으로 휙! 날아가서 멀리멀리 도망쳤어요. 다시는 오지 않았어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/three_pigs/nar_dbe3a96560.mp3",
+     "source_audio": "audio/el/three_pigs/nar_dbe3a96560.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 53,
+   "source_text": "늑대는 굴뚝으로 휙! 날아가서 멀리멀리 도망쳤어요. 다시는 오지 않았어요.",
+   "expr": {
+    "wolf": "run_away",
+    "pig_a": "happy_wave",
+    "pig_b": "happy_wave",
+    "pig_c": "cheer"
+   }
+  },
+  {
+   "id": "tp_054",
+   "speaker": "nar",
+   "text": "이제 늑대는 오지 않아요. 아기 돼지들은 벽돌 집을 더 지었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이제 늑대는 오지 않아요. 아기 돼지들은 벽돌 집을 더 지었어요.",
+     "emotion": null,
+     "tags": "[calm, warm]",
+     "audio": "res://audio/voice/three_pigs/nar_90958a5726.mp3",
+     "source_audio": "audio/el/three_pigs/nar_90958a5726.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 54,
+   "source_text": "이제 늑대는 오지 않아요. 아기 돼지들은 벽돌 집을 더 지었어요."
+  },
+  {
+   "id": "tp_055",
+   "speaker": "nar",
+   "text": "집을 톡 눌러서 새 집을 지어요.",
+   "status": "reuse",
+   "beat": "ending",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "집을 톡 눌러서 새 집을 지어요.",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/three_pigs/nar_f68f46f841.mp3",
+     "source_audio": "audio/el/three_pigs/nar_f68f46f841.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 55,
+   "source_text": "집을 톡 눌러서 새 집을 지어요."
+  },
+  {
+   "id": "tp_056",
+   "speaker": "nar",
+   "text": "하나, 둘, 셋! 튼튼한 벽돌 집이 세 채가 되었어요.",
+   "status": "reuse",
+   "beat": "ending",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하나, 둘, 셋! 튼튼한 벽돌 집이 세 채가 되었어요.",
+     "emotion": null,
+     "tags": "[cheerful, counting]",
+     "audio": "res://audio/voice/three_pigs/nar_a46e5be600.mp3",
+     "source_audio": "audio/el/three_pigs/nar_a46e5be600.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 56,
+   "source_text": "하나, 둘, 셋! 튼튼한 벽돌 집이 세 채가 되었어요.",
+   "expr": {
+    "pig_a": "happy_wave",
+    "pig_b": "happy_wave",
+    "pig_c": "cheer"
+   }
+  },
+  {
+   "id": "tp_057",
+   "speaker": "nar",
+   "text": "삼 형제는 튼튼한 집에서 오래오래 행복하게 살았어요.",
+   "status": "reuse",
+   "beat": "ending",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "삼 형제는 튼튼한 집에서 오래오래 행복하게 살았어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, slow, conclusive]",
+     "audio": "res://audio/voice/three_pigs/nar_a9f95a8a82.mp3",
+     "source_audio": "audio/el/three_pigs/nar_a9f95a8a82.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 57,
+   "source_text": "삼 형제는 튼튼한 집에서 오래오래 행복하게 살았어요.",
+   "expr": {
+    "pig_a": "calm",
+    "pig_b": "calm",
+    "pig_c": "proud",
+    "mom": "wave"
+   }
+  },
+  {
+   "id": "tp_n01",
+   "speaker": "nar",
+   "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+   "status": "changed-needs-recording",
+   "beat": "cover",
+   "interaction": "cover",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, warm]",
+     "audio": "",
+     "source_audio": "",
+     "status": "changed-needs-recording"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "tp_n02",
+   "speaker": "nar",
+   "text": "또 보고 싶으면 '다시 보기'를 톡!",
+   "status": "changed-needs-recording",
+   "beat": "ending",
+   "interaction": "end",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "또 보고 싶으면 '다시 보기'를 톡!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "",
+     "source_audio": "",
+     "status": "changed-needs-recording"
+    }
+   ],
+   "new": true
+  }
+ ]
+}

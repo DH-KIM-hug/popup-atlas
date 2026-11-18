@@ -2,23 +2,24 @@
 """Record the changed / new lines of a tale's script.json with ElevenLabs, using the SAME voice ids, models and
 voice settings as 톡톡 동화극장 (the `voices`, `models`, `settings` tables kept in script.json).
 
-  python3 tools/story/record_lines.py            # record every used seg with status changed-needs-recording
-  python3 tools/story/record_lines.py --dry      # list what would be recorded (and the character count)
+  python3 tools/story/record_lines.py [--tale sun_wind]   # record every used seg with status changed-needs-recording
+  python3 tools/story/record_lines.py --tale three_pigs --dry      # list what would be recorded (and the character count)
   python3 tools/story/record_lines.py --redo sw_013,sw_n01   # record these lines again
 
 Sent text follows 톡톡's gen_tale.py: the seg's acting tags ("[cheerful, ...]") + " " + text.
 Clip name follows 톡톡 too: <speaker>_<md5(voice|model|sent|settings)[:10]>.mp3, so a changed text gets a new file.
 After saving, each clip is polished with 톡톡's tools/elevenlabs/polish.py (log=False: nothing is written into the
-read-only source app). Clips go to game/audio/voice/sun_wind/ and are listed in recorded.json
-("speaker|tags|text" -> file name); then tools/story/seed_script.py --force fills them into script.json
+read-only source app). Clips go to game/audio/voice/<tale>/ and are listed in recorded.json
+("speaker|tags|text" -> file name); then tools/story/seed_script.py --tale <tale> --force fills them into script.json
 (status "changed-recorded"). API key: ~/.config/elevenlabs/key (never stored in the repo).
 """
 import hashlib, json, os, sys, time, urllib.error, urllib.request
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-SCRIPT = REPO / "game/stories/sun_wind/script.json"
-OUT = REPO / "game/audio/voice/sun_wind"
+TALE_ID = sys.argv[sys.argv.index("--tale") + 1] if "--tale" in sys.argv else "sun_wind"
+SCRIPT = REPO / f"game/stories/{TALE_ID}/script.json"
+OUT = REPO / f"game/audio/voice/{TALE_ID}"
 MANIFEST = OUT / "recorded.json"
 SRC_TOOLS = Path("/Users/house_of_4k2b/projects/2026/patjuk-game/tools/elevenlabs")
 BASE_SETTINGS = {"stability": 0.5, "similarity_boost": 0.75, "style": 0.3}
@@ -48,8 +49,10 @@ def main() -> None:
     sc = json.loads(SCRIPT.read_text(encoding="utf-8"))
     voices, models, sets = sc["voices"], sc.get("models", {}), sc.get("settings", {})
     man = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
-    sys.path.insert(0, str(SRC_TOOLS))
-    from polish import polish  # noqa: E402  (read-only import; polish(path, log=False) touches only `path`)
+    if not dry:
+        sys.path.insert(0, str(SRC_TOOLS))
+        from polish import polish  # noqa: E402  (read-only import; polish(path, log=False) touches only `path`)
+        OUT.mkdir(parents=True, exist_ok=True)
     chars = 0
     for l in sc["lines"]:
         if not l.get("used", True):
@@ -77,7 +80,7 @@ def main() -> None:
     print("chars", chars)
     if not dry:
         MANIFEST.write_text(json.dumps(man, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-        print("wrote", MANIFEST, "- now run: python3 tools/story/seed_script.py --force")
+        print("wrote", MANIFEST, f"- now run: python3 tools/story/seed_script.py --tale {TALE_ID} --force")
 
 
 if __name__ == "__main__":

@@ -32,6 +32,15 @@ ARM_PARTS = {
     "cast_traveller_coat_open_fan": {"fan": {"poly": [(0, 89), (104, 89), (119, 100), (122, 135), (105, 175), (85, 205),
                                                      (70, 232), (60, 246), (20, 248), (0, 238)], "pivot": [40, 246]}},
 }
+try:  # 2026-11-18 three_pigs walkers (tools/cast/three_pigs_cast.py), cut the same way; side/back figures keep drawn legs
+    import three_pigs_cast
+    FIGS_TP = [f for f in three_pigs_cast.RIGGED if os.path.exists(os.path.join(SRC, f + ".webp"))]
+except ImportError:
+    FIGS_TP = []
+try:  # front and back figures of the non-traveller walkers: legs trimmed to their own column (tails, held props)
+    COLUMN_TRIM = {e["id"] for e in three_pigs_cast.ENTRIES if e["rigged"] and e["view"] != "side"}
+except NameError:
+    COLUMN_TRIM = set()
 TARGET_H = None  # None: keep the sliced card resolution (no resampling); an int resamples the figure to that height
 
 
@@ -119,7 +128,8 @@ def cut(fid):
     while y > fy0 and not colA[y]:
         y -= 1
     crotch = y + 1  # first open row below the body at the split
-    if crotch > fy1 - 0.12 * H:
+    min_leg = 0.12 if fid.startswith("cast_traveller") else 0.07  # piglets have short legs (~20 % of H)
+    if crotch > fy1 - min_leg * H:
         raise RuntimeError(f"{fid}: no gap between the legs (crotch {crotch}, bottom {fy1})")
     below = op.copy()
     below[:crotch] = False
@@ -128,6 +138,17 @@ def cut(fid):
         m = np.zeros_like(op)
         m[:, xa:xb] = below[:, xa:xb]
         m = comp_touching_bottom(m)
+        if fid in COLUMN_TRIM:
+            # 2026-11-18 (wolf: his tail hangs beside his leg and joined the leg component): keep, per row, only the
+            # pixels inside the leg's own column, measured on the shin/foot rows (front and back views stand straight)
+            fr = [yy for yy in range(h) if m[yy].any()]
+            low = [yy for yy in fr if yy > fr[-1] - 0.25 * (fr[-1] - fr[0])]
+            spans = [np.where(m[yy])[0] for yy in low]
+            cxl = float(np.median([(sp[0] + sp[-1]) / 2.0 for sp in spans]))
+            wl = float(np.median([sp[-1] - sp[0] for sp in spans]))
+            xs_ = np.arange(w)
+            m &= (np.abs(xs_ - cxl) <= (0.7 if fid.startswith("cast_wolf") else 1.2) * wl + 2)[None, :]
+            m = comp_touching_bottom(m)
         ext = {yy: (int(np.where(m[yy])[0][0]), int(np.where(m[yy])[0][-1])) for yy in range(h) if m[yy].any()}
         yl = sorted(ext)
         span = yl[-1] - yl[0]
@@ -137,6 +158,8 @@ def cut(fid):
         wide = [yy for yy in yl if yy < yl[0] + 0.5 * span and widths[yy] > ref_w * 1.3]
         full_y = (max(wide) + 3) if wide else yl[0] + 2
         x0f, x1f = ext[full_y]
+        if fid in COLUMN_TRIM:  # the leg's span at its top row, kept to its own column (a tail beside it widened it)
+            x0f, x1f = max(x0f, int(cxl - 0.6 * wl)), min(x1f, int(cxl + 0.6 * wl))
         # leg pixels keep their print from full_y down; above, flat trouser colour up to the hip
         samp_rows = slice(full_y + 4, min(h, full_y + int(0.12 * H)))
         sm = m[samp_rows, x0f + 3: x1f - 2]
@@ -196,6 +219,8 @@ def cut(fid):
                     continue
                 hips[yy, x, :3] = np.clip(col + rng.normal(0, 3.0), 0, 255).astype(np.uint8)
                 hips[yy, x, 3] = 255
+    if fid in COLUMN_TRIM:  # never wider than the drawn figure (the wolf's seat block showed beside his thigh)
+        hips[a[..., 3] < 128] = 0
     body = a.copy()
     body[legmask, 3] = 0
     lab, n = components(body[..., 3] > 8)
@@ -252,20 +277,27 @@ def preview(rig, path):
     tw = max(t.width for t in tiles) + 10
     cols = 6
     rows = (len(tiles) + cols - 1) // cols
-    sheet = Image.new("RGB", (tw * cols, 770 * rows), (128, 128, 124))
+    rh = max(770, max(t.height for t in tiles) + 10)  # 770 for the traveller (his sheet unchanged); taller wolf
+    sheet = Image.new("RGB", (tw * cols, rh * rows), (128, 128, 124))
     for k, t in enumerate(tiles):
-        sheet.paste(t, ((k % cols) * tw, (k // cols) * 770), t)
+        sheet.paste(t, ((k % cols) * tw, (k // cols) * rh), t)
     sheet.save(path)
     return path
 
 
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
-    figs = sys.argv[1:] or FIGS
+    figs = sys.argv[1:] or FIGS + FIGS_TP
     rig_p = os.path.join(OUT, "rig.json")
     rig = json.load(open(rig_p)) if os.path.exists(rig_p) else {}
+    failed = []
     for f in figs:
-        rig[f] = cut(f)
+        try:
+            rig[f] = cut(f)
+        except (RuntimeError, IndexError, ValueError) as e:  # legs drawn together: stays an unrigged (static) card
+            print("NOT RIGGED", e)
+            failed.append(f)
+            continue
         print(f, "crotch", rig[f]["crotch"], "hips", rig[f]["parts"]["leg_l"]["hip"], rig[f]["parts"]["leg_r"]["hip"])
     json.dump(rig, open(rig_p, "w"), indent=1)
     # 2026-11-18: swap the side-view legs (toes out = duck walk toward the camera) for the front-view leg sheet
@@ -278,8 +310,18 @@ if __name__ == "__main__":
     if os.path.isdir(os.path.join(lift_legs.SLICED, "cast_traveller_legs_lift")):
         lift_legs.main()
     if os.path.isdir(walk_arms.ARMLESS):
-        cut_now = [f for f in walk_arms.ARMS if f in figs]
+        import characters
+        auto = [f for ch in characters.CHARS.values() for f in ch.get("arms_auto", {})]
+        cut_now = [f for f in list(walk_arms.ARMS) + auto if f in figs and f in rig]
         if cut_now:
             walk_arms.main(cut_now)
+    import side_legs  # 2026-11-18 side-view walkers: drawn side legs on one hip joint
+    side_legs.main([f for f in figs if f in rig])
     rig = json.load(open(rig_p))
-    print(preview(rig, os.path.join(ROOT, "art_src", "cast", "qa", "rig_preview.png")))
+    trav = {k: v for k, v in rig.items() if k.startswith("cast_traveller")}
+    other = {k: v for k, v in rig.items() if not k.startswith("cast_traveller")}
+    print(preview(trav, os.path.join(ROOT, "art_src", "cast", "qa", "rig_preview.png")))
+    if other:
+        print(preview(other, os.path.join(ROOT, "art_src", "cast", "qa", "rig_preview_three_pigs.png")))
+    if failed:
+        print("not rigged:", failed)

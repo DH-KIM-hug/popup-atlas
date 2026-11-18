@@ -1,0 +1,147 @@
+{
+ "sheet": "cast_tp_legs_half",
+ "bg": [
+  0.988,
+  0.02,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tp_legs_half_00",
+   "bbox": [
+    82,
+    187,
+    228,
+    591
+   ],
+   "area": 49031,
+   "size": [
+    154,
+    412
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_half_01",
+   "bbox": [
+    332,
+    187,
+    477,
+    591
+   ],
+   "area": 49056,
+   "size": [
+    153,
+    412
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_half_02",
+   "bbox": [
+    597,
+    187,
+    772,
+    591
+   ],
+   "area": 53601,
+   "size": [
+    183,
+    412
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_half_03",
+   "bbox": [
+    854,
+    187,
+    1029,
+    591
+   ],
+   "area": 53835,
+   "size": [
+    183,
+    412
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_half_04",
+   "bbox": [
+    1144,
+    187,
+    1318,
+    591
+   ],
+   "area": 53481,
+   "size": [
+    182,
+    412
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_half_05",
+   "bbox": [
+    1401,
+    187,
+    1575,
+    591
+   ],
+   "area": 53357,
+   "size": [
+    182,
+    412
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_half_06",
+   "bbox": [
+    1695,
+    90,
+    1846,
+    617
+   ],
+   "area": 64755,
+   "size": [
+    159,
+    535
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_half_07",
+   "bbox": [
+    1935,
+    91,
+    2086,
+    619
+   ],
+   "area": 64672,
+   "size": [
+    159,
+    536
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
