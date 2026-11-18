@@ -588,3 +588,136 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   photographed tabletop (lower camera, strong shallow DOF, contrasty low light, textured felt ground, dense tree rows),
   ours as crisp, evenly lit vector cards on a flat lawn. Worth keeping from pe-loop if revisited: merged print surfaces
   (Vulkan draws 4696 → 3629), glue feet. Next loop should target camera/lens/light/ground texture, not new props.
+- 2026-11-18 cast library (new pop-up characters for 「해와 바람」; owner of `game/art/cast/**`, `art_src/cast/**`,
+  `tools/cast/**`). User decision: characters are made new; the 톡톡 art in `game/art/chars/` is a design reference only.
+  Generation: 4 magenta sheets through `tools/run_jobs.py tools/cast/cast_jobs.json` (prompts in `tools/cast/make_jobs.py`,
+  same style block as the atlas sheets, no refs). Raw outputs in `art_src/cast/raw/`; md5 checked, unique against each
+  other and all 16 atlas raws. All 4 sheets accepted on the first pass (no extra limbs, the wind faces left, no halo).
+  They were sliced with `tools/atlas/slice_atlas.py --out art_src/cast/sliced` (16 sprites, 0 halo px).
+  `tools/cast/build_cast.py` copies them to `game/art/cast/<id>.webp` and writes `game/art/cast/catalog.json`
+  (category "cast", role, variant, tags, height_units, hanging, parts).
+  Cast ids (16):
+  - Traveller, generic and rigged (skin "traveller", parts in `game/art/cast/rig/`): cast_traveller_coat (0.36),
+    cast_traveller_coat_nohat, cast_traveller_coat_hold (clutching the coat), cast_traveller_nocoat (shirt, suspenders,
+    hat; the ending), cast_traveller_nocoat_nohat.
+  - Clothes cards: cast_coat_hung, cast_coat_folded (in hand), cast_coat_ground, cast_hat, cast_hat_ground.
+  - Sky (hanging): cast_sun_smile, cast_sun_proud, cast_sun_beaming; cast_wind_boast, cast_wind_blow, cast_wind_tired.
+  Rig: `tools/cast/cut_cast_rig.py` cuts figures without a colour classifier. It takes the split from the gap between
+  the feet and the crotch from the top of that gap. Legs are the bottom-touching components, trimmed where they widen
+  into the coat hem. Leg tops are repainted in a flat trouser colour, tapered. A hips piece and brads are added. Output
+  is `game/art/cast/rig/rig.json` in the chars_rig format.
+  First capture bug: the soft alpha of the leg outline stayed in the body PNG. The body card was then stretched to full
+  height, so the figure looked sunk into the ground. Fixed by giving the leg its 3 px soft rim and clearing faint body
+  pixels below the crotch. QA: `art_src/cast/qa/cast_contact.png`, `rig_preview.png`.
+  Walk-rig skin: new `CastPuppet extends PaperPuppet` (`game/art/cast/rig/cast_puppet.gd`), with `@export skin`
+  ("traveller"; "" = legacy art). It uses the same pose names (walk, walk_nohat, hold, shirt; fan and sit map to
+  nocoat_nohat), so story code is unchanged. `core/characters/paper_puppet.gd` is NOT modified, so the old puppet and
+  the old bench are unchanged.
+  Benches (mine): `art/cast/bench/cast_closeup{,_shirt}.tscn`, `cast_walk_bench.tscn` (extends walk_bench, with cast
+  puppet, sun and wind, and expression swaps on the demo timeline), `cast_lineup.tscn`.
+  Captures: `artifacts/cast/` (cast_closeup_walk, cast_closeup_shirt, cast_walk_bench 12 frames at 1366x1024,
+  cast_lineup.png). The walk reads as a paper toy, the hold pose reads in the bench, and the cards key cleanly.
+  check_all clean (36 scripts).
+  Open:
+  - No-coat figures: the trouser seat is part of the body card and has a straight bottom cut (it reads like
+    lederhosen). The hips piece corner can show for a frame on wide swings.
+  - The figures have no fan or sit art (they fall back to the shirt figure).
+  - Lead: to make cast the default, swap `PaperPuppet.new()` for `CastPuppet.new()` in story or bench code (D's files),
+    and point sun and wind at the cast ids.
+- 2026-11-18 E story flow round 1 (component E, not committed). The whole 「해와 바람」 now plays start to end as a pop-up
+  book. Main scene: `res://stories/sun_wind/story.tscn` (StoryRunner).
+  - Script: `game/stories/sun_wind/script.json`, seeded by `tools/story/seed_script.py` from 톡톡's voice_script_el.json.
+    It keeps the voices/models/settings tables. Per line: id, speaker, text, segs (emotion, tags, audio, source_audio,
+    status), beat, interaction, used. Clip mapping is parsed from 톡톡's `tales/sun_wind/narration_el.js`: full line
+    text -> one clip per seg, in seg order; extras come from VOICE_LINES. 55 MP3 clips were copied to
+    `game/audio/voice/sun_wind/`. They stay MP3, since Godot imports MP3 natively. 54 lines are used: 48 reuse,
+    6 changed-needs-recording.
+    - Changed: sw_013/014/015, where the tap became a press-and-hold to blow ("꾹").
+    - New: sw_n01 (cover), sw_n02 (ending walk), sw_n03 ("다시 보기").
+    - Dropped (used=false): the clothes quiz 42-50, weather play 58-59, and 37/38, cut_pant, wrong_hot.
+    - The stream rest now comes before the moral.
+  - Runner (`game/story/`):
+    - story_runner: beats -> spreads, step kinds say/walk/walk_to/pose/tap/blow/shine/quiz/gentle/fx/end/cover.
+    - spread_stage: builds meadow.tscn by seed + view with its look untouched. It snaps the template's load wave and
+      pops the spread after the page turn. It adds the sun and wind as SkyHanger cards on PopHinges inside the hero
+      clearing, and hides hinged cards that block their sightline (4-6 per spread). It also handles the hat flight,
+      the coat drop, leaf cards, gust sway, and warm key light + sun lamp.
+    - page_turn: snapshot curl; the next spread is built under it.
+    - story_ui: cover, paper caption strip with speaker chip, subtitle toggle, page tab, tap pointer + hold ring,
+      ripples, and the end card with 다시 보기 (Pretendard font, OFL, in story/fonts).
+    - cast_skins: looks up a cast id + variant in res://art/cast/catalog.json and falls back to the art/chars
+      placeholders. The traveller is still D's PaperPuppet.
+  - Spreads: cover -> sky v5 -> bet+wind_turn v0 -> sun_turn v1 -> stream v2 -> moral v3 -> ending v4. Each is the same
+    seed-1 meadow, further along the road.
+  - Verify mode: `-- --beat=<id> --autoplay --fixed --mute --nosubs`, or `--agent-args {"beat","autoplay","fixed",
+    "mute"}`. `stories/sun_wind/cap/story_autoplay.tscn` sets autoplay + fixed + mute. Autoplay simulates the taps
+    and holds, and in the quiz it taps the wrong answer once.
+  - Autoplay total: 246.8 s of story time. Beat starts: sky 3.6, bet 33.0, wind 46.9, sun 101.3, stream 152.3,
+    moral 185.2, ending 222.5 s. Missing audio: sw_013, sw_014, sw_015, sw_n01, sw_n02, sw_n03. Those lines are
+    timed from their text.
+  - Profile, busiest beat (wind_turn: pop wave + held blowing, 16 s, 1366x1024 Metal): p95 10.68 ms, p99 15.3 ms,
+    1 hitch, max 1519 draws.
+  - check_all: clean (39 scripts).
+  - Captures: `artifacts/story/sun_wind_r1/` (60 frames, one every 250 frames = 4.2 s) and the contact sheet
+    `artifacts/story/sun_wind_r1_sheet.jpg`.
+  - Open:
+    - The 6 changed lines need recording with the same voice ids.
+    - The end card was widened after the capture (the moral wrapped "세\n요").
+    - The traveller is small at the template camera (~60 px), so tapping him only gives a little reaction.
+    - Hidden sightline cards leave their contact-shadow blobs on the ground.
+    - The new cast library is not wired into PaperPuppet yet. The cast_skins hook covers sun, wind, hat and coat
+      only.
+    - Each page turn rebuilds the meadow, a 1-2 s hitch hidden under the snapshot.
+- 2026-11-18 E story flow round 2 (fix round after 3 critics 5.5/5/5, not committed). Sheet:
+  `artifacts/story/sun_wind_r2_sheet.jpg` (66 frames, one every 210 frames = 3.5 s, `artifacts/story/sun_wind_r2/`,
+  with the run log `story_log.txt`). Autoplay total 224.1 s (r1 246.8). Beat starts: sky 3.5, bet 31.6,
+  wind_turn 46.6, sun_turn 99.1, moral 144.0, stream 170.4, ending 202.7. Missing audio: none.
+  - Voice: the 6 changed lines and a new sw_n04 ("나그네를 톡 눌러 볼까요?") were recorded with ElevenLabs. They use 톡톡's
+    voice ids, models and settings, the same hash naming, and 톡톡's polish chain (log=False). The tool is
+    `tools/story/record_lines.py`; the manifest is `game/audio/voice/sun_wind/recorded.json`. The seed fills them
+    in as status "changed-recorded". Unused clip copies were removed (51 clips are in use).
+  - Script (seed_script.py BEATS): sw_007, sw_039 (it gave the answer away), sw_061 (the moral said twice) and
+    sw_x_cut_off are dropped.
+    - The recap and quiz now come right after the coat comes off, on the same page (no page turn). Two paper-photo
+      flashbacks are kept from the page itself during sw_034/035: the cold picture is taken at the end of the
+      blowing, the warm one after the coat comes off.
+    - The quiz uses two big bobbing picture cards. A wrong tap shakes the card, a cold gust blows and he shivers,
+      and the child tries again. The right card grows and sparkles.
+    - The bet beat now has a tap on the traveller (he hops). The hold to blow needs 3.0 s, down from 4.2.
+  - Stage: the story camera shots work on the template rig: wide for the page pop, story at 3.3, and close at 2.85
+    only on coat-off. The template's look and layout are unchanged.
+    - The traveller is the cast library's CastPuppet, scaled to 0.47, about 25% of the frame height.
+    - The sun and wind are cast cards (smile/proud/beaming, boast/blow/tired). They hang on strings in the top band
+      of the story shot (laid out by project_position), on cream and pale-blue paper discs, and follow the
+      traveller. They drop in when the page opens. For "friends" they slide together and turn toward each other.
+    - The hat flies up and off the page, then flutters back down. Fanning shows the hat in his hand.
+    - The coat drops to the ground, then he carries it on his arm (cast_coat_folded) to the end.
+    - At the stream he leaves the road to the bank and stands in the water to the knees, with paper ring ripples and
+      splash drops.
+    - At the end the camera stops following and he walks off down the road.
+    - The traveller pops with the page wave and folds with it. The new page lies flat under the page turn and rises
+      after it lands. The contact-shadow blobs of hidden sightline cards are hidden too.
+  - UI: the caption is 48 px in one ink colour, and the speaker chip has a face icon. Korean lines break between
+    words only (a word joiner between letters). The toggle reads 자막 켜짐/꺼짐.
+    - The tap ring goes around the whole card with the finger tab under it, and the wind's cheeks puff while held.
+    - The end card shows sun and wind, "끝" and 다시 보기, with no moral text.
+  - Profile, wind_turn (pop wave + held blowing, 16 s, 1366x1024 Metal, windowed): p95 10.1 ms, p99 14.3 ms,
+    max 20.5 ms, 0 frames over 33 ms, max 1524 draws.
+  - check_all: clean.
+  - Open:
+    - 224 s is still over the critics' ~3 min target.
+    - There is no sit art (he wades standing).
+    - The audio sync and the new recordings were not checked by ear.
+    - Not yet tested on an iPad.
+
+## 2026-11-18 Sun and wind cast cards regenerated without botanical prints
+- The user asked why the sun and wind had leaf prints. Their prompts reused the shared STYLE block ("tiny repeated flower
+  and leaf motifs"). `tools/cast/make_jobs.py` now has a SKY_STYLE (no green, no flowers/leaves/petals/plants/vines plus an
+  explicit negative) for new jobs `cast_sun_v2` and `cast_wind_v2`. Sun detail is now stamped dots, dash lines, a scalloped
+  dashed ring and radiating ticks. Wind detail is now stitched swirls, wavy air streaks and dots, and it still blows LEFT.
+  The traveller jobs are unchanged.
+- Raws: `art_src/cast/raw/cast_{sun,wind}_v2.png` (originals kept), sliced to `art_src/cast/sliced/cast_{sun,wind}_v2/`,
+  `build_cast.py` sources the v2 sheets into the same ids (`game/art/cast/cast_sun_*`, `cast_wind_*`), catalog rebuilt, halo 0.
+  Codex said FAILED only because the size was not 1536x1024 (it returns 2172x724), so the v2 jobs now accept any wide size.
+- QA: `art_src/cast/qa/cast_contact.png`; the story frame (wind_turn, autoplay, 13 s) is `artifacts/cast/sun_wind_v2_story.png`.
+  Import and check_all are clean.

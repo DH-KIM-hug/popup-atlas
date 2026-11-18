@@ -1,0 +1,62 @@
+{
+ "sheet": "cast_sun_v2",
+ "bg": [
+  0.984,
+  0.02,
+  0.969
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sun_v2_00",
+   "bbox": [
+    56,
+    72,
+    671,
+    660
+   ],
+   "area": 199510,
+   "size": [
+    623,
+    596
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sun_v2_01",
+   "bbox": [
+    738,
+    34,
+    1405,
+    667
+   ],
+   "area": 226202,
+   "size": [
+    675,
+    641
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sun_v2_02",
+   "bbox": [
+    1439,
+    19,
+    2143,
+    698
+   ],
+   "area": 249584,
+   "size": [
+    712,
+    687
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

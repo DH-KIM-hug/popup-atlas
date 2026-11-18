@@ -1,0 +1,2046 @@
+{
+ "tale_id": "sun_wind",
+ "title": "해와 바람",
+ "seeded_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/sun_wind/voice_script_el.json",
+ "clip_map_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/sun_wind/narration_el.js",
+ "voices": {
+  "nar": "gnWujHp24oqX3I03lRbU",
+  "sun": "pFZP5JQG7iQjIQuC4Bku",
+  "wind": "N2lVS1w4EtoT3dr4eOWO",
+  "man": "qAZH0aMXY8tw1QufPN0D"
+ },
+ "models": {
+  "nar": "eleven_v4",
+  "sun": "eleven_v4",
+  "wind": "eleven_v4",
+  "man": "eleven_v4"
+ },
+ "settings": {
+  "wind": {
+   "stability": 0.3,
+   "style": 0.5
+  },
+  "sun": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "man": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "nar": {
+   "stability": 0.45,
+   "style": 0.35
+  }
+ },
+ "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Huelyn, sun=Lily, wind=Callum, man=Eric",
+ "cast": {
+  "traveller": {
+   "skin": "traveller"
+  },
+  "sun": {
+   "skin": "sun"
+  },
+  "wind": {
+   "skin": "wind"
+  },
+  "hat": {
+   "skin": "hat"
+  },
+  "coat": {
+   "skin": "coat"
+  }
+ },
+ "moral": "세게 미는 것보다 다정한 게 더 힘이 세요.",
+ "beats": [
+  {
+   "id": "cover",
+   "title": "해와 바람",
+   "spread": null,
+   "steps": [
+    {
+     "do": "cover",
+     "prompt": "sw_n01"
+    }
+   ]
+  },
+  {
+   "id": "sky",
+   "title": "하늘 높이",
+   "enter": {
+    "pose": "walk"
+   },
+   "spread": {
+    "seed": 1,
+    "view": 5
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "say",
+     "line": "sw_000"
+    },
+    {
+     "do": "tap",
+     "target": "sun",
+     "prompt": "sw_001",
+     "hint": "sw_002",
+     "react": "sun_proud",
+     "lines": [
+      "sw_003"
+     ]
+    },
+    {
+     "do": "tap",
+     "target": "wind",
+     "prompt": "sw_004",
+     "hint": "sw_005",
+     "react": "wind_puff",
+     "lines": [
+      "sw_006"
+     ]
+    },
+    {
+     "do": "walk",
+     "dist": 0.4,
+     "line": "sw_008"
+    },
+    {
+     "do": "tap",
+     "target": "traveller",
+     "prompt": "sw_n04",
+     "react": "show_coat",
+     "lines": [
+      "sw_009"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bet",
+   "title": "내기",
+   "enter": {
+    "pose": "walk"
+   },
+   "spread": {
+    "seed": 1,
+    "view": 0
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "fx",
+     "fx": "wind_boast"
+    },
+    {
+     "do": "say",
+     "line": "sw_010"
+    },
+    {
+     "do": "fx",
+     "fx": "sun_proud"
+    },
+    {
+     "do": "say",
+     "line": "sw_011"
+    }
+   ]
+  },
+  {
+   "id": "wind_turn",
+   "title": "바람 차례",
+   "enter": {
+    "pose": "walk"
+   },
+   "spread": {
+    "seed": 1,
+    "view": 0
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "wind_puff"
+    },
+    {
+     "do": "say",
+     "line": "sw_012"
+    },
+    {
+     "do": "blow",
+     "prompt": "sw_013",
+     "hint": "sw_014",
+     "more": "sw_015",
+     "steps": [
+      {
+       "need": 0.6,
+       "fx": "leaves",
+       "lines": [
+        "sw_016"
+       ]
+      },
+      {
+       "need": 1.2,
+       "fx": "hat_off",
+       "lines": [
+        "sw_017"
+       ]
+      },
+      {
+       "need": 1.8,
+       "fx": "flap",
+       "lines": [
+        "sw_018"
+       ]
+      },
+      {
+       "need": 2.4,
+       "fx": "clutch",
+       "lines": [
+        "sw_019",
+        "sw_020"
+       ]
+      },
+      {
+       "need": 3.0,
+       "fx": "gale",
+       "lines": [
+        "sw_021"
+       ]
+      }
+     ]
+    },
+    {
+     "do": "snap",
+     "key": "cold"
+    },
+    {
+     "do": "fx",
+     "fx": "wind_tired"
+    },
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "say",
+     "line": "sw_022"
+    },
+    {
+     "do": "say",
+     "line": "sw_023"
+    },
+    {
+     "do": "fx",
+     "fx": "hat_back"
+    },
+    {
+     "do": "say",
+     "line": "sw_024"
+    }
+   ]
+  },
+  {
+   "id": "sun_turn",
+   "title": "해님 차례",
+   "enter": {
+    "pose": "walk"
+   },
+   "spread": {
+    "seed": 1,
+    "view": 1
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "fx",
+     "fx": "wind_calm"
+    },
+    {
+     "do": "say",
+     "line": "sw_025"
+    },
+    {
+     "do": "shine",
+     "prompt": "sw_026",
+     "hint": "sw_027",
+     "steps": [
+      {
+       "fx": "warm1",
+       "lines": [
+        "sw_028"
+       ],
+       "next": "sw_029"
+      },
+      {
+       "fx": "warm2",
+       "lines": [
+        "sw_030"
+       ],
+       "next": "sw_031"
+      },
+      {
+       "fx": "coat_off",
+       "lines": [
+        "sw_032"
+       ]
+      }
+     ]
+    },
+    {
+     "do": "snap",
+     "key": "warm"
+    },
+    {
+     "do": "fx",
+     "fx": "sun_wins"
+    },
+    {
+     "do": "say",
+     "line": "sw_033"
+    }
+   ]
+  },
+  {
+   "id": "moral",
+   "title": "누가 이겼을까?",
+   "enter": {
+    "pose": "shirt"
+   },
+   "spread": {
+    "seed": 1,
+    "view": 1
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "pick_coat"
+    },
+    {
+     "do": "flash",
+     "key": "cold",
+     "side": "left",
+     "line": "sw_034"
+    },
+    {
+     "do": "flash",
+     "key": "warm",
+     "side": "right",
+     "line": "sw_035"
+    },
+    {
+     "do": "quiz",
+     "prompt": "sw_036",
+     "answer": "sun",
+     "wrong": {
+      "wind": [
+       "sw_x_wrong_cold"
+      ]
+     },
+     "right": [
+      "sw_040",
+      "sw_041"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "stream",
+   "title": "개울가",
+   "enter": {
+    "pose": "shirt"
+   },
+   "spread": {
+    "seed": 1,
+    "view": 2
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "walk_to",
+     "place": "stream",
+     "line": "sw_051"
+    },
+    {
+     "do": "pose",
+     "pose": "sit"
+    },
+    {
+     "do": "fx",
+     "fx": "splash"
+    },
+    {
+     "do": "say",
+     "line": "sw_052"
+    },
+    {
+     "do": "gentle",
+     "prompt": "sw_053",
+     "hint": "sw_054",
+     "taps": 3,
+     "lines": [
+      "sw_055"
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "friends"
+    },
+    {
+     "do": "say",
+     "line": "sw_056"
+    },
+    {
+     "do": "say",
+     "line": "sw_057"
+    }
+   ]
+  },
+  {
+   "id": "ending",
+   "title": "끝",
+   "enter": {
+    "pose": "shirt"
+   },
+   "spread": {
+    "seed": 1,
+    "view": 4
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "fx",
+     "fx": "carry_coat"
+    },
+    {
+     "do": "fx",
+     "fx": "friends"
+    },
+    {
+     "do": "walk_away",
+     "dist": 1.6,
+     "line": "sw_n02"
+    },
+    {
+     "do": "say",
+     "line": "sw_060"
+    },
+    {
+     "do": "end",
+     "after": "sw_n03"
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": "sw_000",
+   "speaker": "nar",
+   "text": "하늘 높이 해님과 바람이 살았어요.",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하늘 높이 해님과 바람이 살았어요.",
+     "emotion": "happy:1.0",
+     "tags": "[calm, warm, storytelling, wide-eyed]",
+     "audio": "res://audio/voice/sun_wind/nar_26c6e135a3.mp3",
+     "source_audio": "audio/el/sun_wind/nar_26c6e135a3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 0,
+   "source_text": "하늘 높이 해님과 바람이 살았어요."
+  },
+  {
+   "id": "sw_001",
+   "speaker": "nar",
+   "text": "해님을 톡 눌러 볼까요?",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님을 톡 눌러 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/sun_wind/nar_c7e2946015.mp3",
+     "source_audio": "audio/el/sun_wind/nar_c7e2946015.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 1,
+   "source_text": "해님을 톡 눌러 볼까요?"
+  },
+  {
+   "id": "sw_002",
+   "speaker": "nar",
+   "text": "웃고 있는 해님을 톡!",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "웃고 있는 해님을 톡!",
+     "emotion": null,
+     "tags": "[cheerful, warm, smiling]",
+     "audio": "res://audio/voice/sun_wind/nar_50bf870b37.mp3",
+     "source_audio": "audio/el/sun_wind/nar_50bf870b37.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 2,
+   "source_text": "웃고 있는 해님을 톡!"
+  },
+  {
+   "id": "sw_003",
+   "speaker": "sun",
+   "text": "\"내가 제일 따뜻해!\"",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "sun",
+     "text": "내가 제일 따뜻해!",
+     "emotion": "happy:1.4",
+     "tags": "[warm, proud, gentle, sunny cheer]",
+     "audio": "res://audio/voice/sun_wind/sun_7e5a139312.mp3",
+     "source_audio": "audio/el/sun_wind/sun_7e5a139312.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 3,
+   "source_text": "\"내가 제일 따뜻해!\""
+  },
+  {
+   "id": "sw_004",
+   "speaker": "nar",
+   "text": "이번엔 바람을 톡!",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이번엔 바람을 톡!",
+     "emotion": null,
+     "tags": "[cheerful, playful, inviting]",
+     "audio": "res://audio/voice/sun_wind/nar_fad597d1b5.mp3",
+     "source_audio": "audio/el/sun_wind/nar_fad597d1b5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 4,
+   "source_text": "이번엔 바람을 톡!"
+  },
+  {
+   "id": "sw_005",
+   "speaker": "nar",
+   "text": "볼 빵빵 바람을 톡!",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "볼 빵빵 바람을 톡!",
+     "emotion": null,
+     "tags": "[playful, giggles softly, inviting]",
+     "audio": "res://audio/voice/sun_wind/nar_ba4c1dd010.mp3",
+     "source_audio": "audio/el/sun_wind/nar_ba4c1dd010.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 5,
+   "source_text": "볼 빵빵 바람을 톡!"
+  },
+  {
+   "id": "sw_006",
+   "speaker": "wind",
+   "text": "\"아니야, 내가 제일 세!\"",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wind",
+     "text": "아니야, 내가 제일 세!",
+     "emotion": "angry:1.3",
+     "tags": "[boastful, loud, cocky, puffing]",
+     "audio": "res://audio/voice/sun_wind/wind_991dec3324.mp3",
+     "source_audio": "audio/el/sun_wind/wind_991dec3324.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 6,
+   "source_text": "\"아니야, 내가 제일 세!\""
+  },
+  {
+   "id": "sw_007",
+   "speaker": "nar",
+   "text": "해님과 바람은 서로 자기가 최고래요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님과 바람은 서로 자기가 최고래요.",
+     "emotion": null,
+     "tags": "[amused, playful, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_c74ec3cc63.mp3",
+     "source_audio": "audio/el/sun_wind/nar_c74ec3cc63.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 7,
+   "source_text": "해님과 바람은 서로 자기가 최고래요."
+  },
+  {
+   "id": "sw_008",
+   "speaker": "nar",
+   "text": "저 아래 길로 나그네가 걸어가요.",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "저 아래 길로 나그네가 걸어가요.",
+     "emotion": null,
+     "tags": "[calm, gentle, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_784b3e5eeb.mp3",
+     "source_audio": "audio/el/sun_wind/nar_784b3e5eeb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 8,
+   "source_text": "저 아래 길로 나그네가 걸어가요."
+  },
+  {
+   "id": "sw_009",
+   "speaker": "nar",
+   "text": "나그네는 두툼한 외투를 입었어요.",
+   "status": "reuse",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "나그네는 두툼한 외투를 입었어요.",
+     "emotion": null,
+     "tags": "[warm, light, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_e189698744.mp3",
+     "source_audio": "audio/el/sun_wind/nar_e189698744.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 9,
+   "source_text": "나그네는 두툼한 외투를 입었어요."
+  },
+  {
+   "id": "sw_010",
+   "speaker": "nar+wind",
+   "text": "바람이 말했어요. \"저 외투를 먼저 벗기는 쪽이 이기기!\"",
+   "status": "reuse",
+   "beat": "bet",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람이 말했어요.",
+     "emotion": null,
+     "tags": "[bright, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_929d93a99b.mp3",
+     "source_audio": "audio/el/sun_wind/nar_929d93a99b.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wind",
+     "text": "저 외투를 먼저 벗기는 쪽이 이기기!",
+     "emotion": "toneup:1.4",
+     "tags": "[challenging, boastful, cocky, energetic]",
+     "audio": "res://audio/voice/sun_wind/wind_fdee0bb123.mp3",
+     "source_audio": "audio/el/sun_wind/wind_fdee0bb123.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 10,
+   "source_text": "바람이 말했어요. \"저 외투를 먼저 벗기는 쪽이 이기기!\""
+  },
+  {
+   "id": "sw_011",
+   "speaker": "nar+sun",
+   "text": "해님이 웃었어요. \"좋아. 바람아, 너 먼저 해 봐.\"",
+   "status": "reuse",
+   "beat": "bet",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님이 웃었어요.",
+     "emotion": null,
+     "tags": "[warm, bright, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_e17289225f.mp3",
+     "source_audio": "audio/el/sun_wind/nar_e17289225f.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "sun",
+     "text": "좋아. 바람아, 너 먼저 해 봐.",
+     "emotion": "happy:1.0",
+     "tags": "[calm, kind, warm, relaxed, smiling]",
+     "audio": "res://audio/voice/sun_wind/sun_10b90fc0f2.mp3",
+     "source_audio": "audio/el/sun_wind/sun_10b90fc0f2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 11,
+   "source_text": "해님이 웃었어요. \"좋아. 바람아, 너 먼저 해 봐.\""
+  },
+  {
+   "id": "sw_012",
+   "speaker": "nar",
+   "text": "바람이 볼을 빵빵하게 부풀렸어요.",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람이 볼을 빵빵하게 부풀렸어요.",
+     "emotion": "toneup:1.2",
+     "tags": "[playful, amused, building anticipation]",
+     "audio": "res://audio/voice/sun_wind/nar_5782294768.mp3",
+     "source_audio": "audio/el/sun_wind/nar_5782294768.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 12,
+   "source_text": "바람이 볼을 빵빵하게 부풀렸어요."
+  },
+  {
+   "id": "sw_013",
+   "speaker": "nar",
+   "text": "바람을 꾹 누르고 있으면 후~ 불어요!",
+   "status": "changed-recorded",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람을 꾹 누르고 있으면 후~ 불어요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging, playful]",
+     "audio": "res://audio/voice/sun_wind/nar_751c8f1f6d.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "source_index": 13,
+   "source_text": "바람을 톡 눌러서 후~ 불어 줘요!"
+  },
+  {
+   "id": "sw_014",
+   "speaker": "nar",
+   "text": "바람을 꾹 눌러 봐요!",
+   "status": "changed-recorded",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람을 꾹 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/sun_wind/nar_2039a4db73.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "source_index": 14,
+   "source_text": "바람을 톡 눌러서 불어 봐요!"
+  },
+  {
+   "id": "sw_015",
+   "speaker": "nar",
+   "text": "더 세게, 꾹~!",
+   "status": "changed-recorded",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "더 세게, 꾹~!",
+     "emotion": "toneup:1.3",
+     "tags": "[excited, encouraging, playful]",
+     "audio": "res://audio/voice/sun_wind/nar_b38b152194.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "source_index": 15,
+   "source_text": "더 세게, 톡!"
+  },
+  {
+   "id": "sw_016",
+   "speaker": "nar",
+   "text": "휘잉~ 나뭇잎이 날아가요!",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "휘잉~ 나뭇잎이 날아가요!",
+     "emotion": "toneup:1.3",
+     "tags": "[whooshing, lively, bright, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_7d48a914fa.mp3",
+     "source_audio": "audio/el/sun_wind/nar_7d48a914fa.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 16,
+   "source_text": "휘잉~ 나뭇잎이 날아가요!"
+  },
+  {
+   "id": "sw_017",
+   "speaker": "man+nar",
+   "text": "\"앗, 내 모자!\" 모자가 훨훨 날아갔어요.",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "앗, 내 모자!",
+     "emotion": "toneup:1.6",
+     "tags": "[startled, surprised, loud, comical]",
+     "audio": "res://audio/voice/sun_wind/man_14bc1668c9.mp3",
+     "source_audio": "audio/el/sun_wind/man_14bc1668c9.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "모자가 훨훨 날아갔어요.",
+     "emotion": null,
+     "tags": "[amused, light, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_113bd78933.mp3",
+     "source_audio": "audio/el/sun_wind/nar_113bd78933.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 17,
+   "source_text": "\"앗, 내 모자!\" 모자가 훨훨 날아갔어요."
+  },
+  {
+   "id": "sw_018",
+   "speaker": "nar",
+   "text": "외투 자락이 펄럭펄럭!",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "외투 자락이 펄럭펄럭!",
+     "emotion": null,
+     "tags": "[lively, playful, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_9a41773a1b.mp3",
+     "source_audio": "audio/el/sun_wind/nar_9a41773a1b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 18,
+   "source_text": "외투 자락이 펄럭펄럭!"
+  },
+  {
+   "id": "sw_019",
+   "speaker": "man+nar",
+   "text": "\"으으, 추워!\" 나그네는 외투를 꽉 여몄어요.",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "으으, 추워!",
+     "emotion": "sad:1.5",
+     "tags": "[shivering, cold, grumbling, hugging himself]",
+     "audio": "res://audio/voice/sun_wind/man_64fd341b7c.mp3",
+     "source_audio": "audio/el/sun_wind/man_64fd341b7c.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "나그네는 외투를 꽉 여몄어요.",
+     "emotion": null,
+     "tags": "[soft, amused, gentle storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_a5cff03367.mp3",
+     "source_audio": "audio/el/sun_wind/nar_a5cff03367.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 19,
+   "source_text": "\"으으, 추워!\" 나그네는 외투를 꽉 여몄어요."
+  },
+  {
+   "id": "sw_020",
+   "speaker": "nar",
+   "text": "단추까지 꼭꼭 채웠어요. 외투는 꼼짝도 안 해요!",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "단추까지 꼭꼭 채웠어요. 외투는 꼼짝도 안 해요!",
+     "emotion": "tonedown:1.1",
+     "tags": "[amused, playful, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_318f652479.mp3",
+     "source_audio": "audio/el/sun_wind/nar_318f652479.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 20,
+   "source_text": "단추까지 꼭꼭 채웠어요. 외투는 꼼짝도 안 해요!"
+  },
+  {
+   "id": "sw_021",
+   "speaker": "nar",
+   "text": "바람은 더 세게 불었어요. 쓱!",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "blow",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람은 더 세게 불었어요. 쓱!",
+     "emotion": null,
+     "tags": "[determined, energetic, lively, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_8446bc3ae6.mp3",
+     "source_audio": "audio/el/sun_wind/nar_8446bc3ae6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 21,
+   "source_text": "바람은 더 세게 불었어요. 쓱!"
+  },
+  {
+   "id": "sw_022",
+   "speaker": "nar",
+   "text": "바람은 숨이 차서 헉헉, 볼이 쭈글쭈글해졌어요.",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람은 숨이 차서 헉헉, 볼이 쭈글쭈글해졌어요.",
+     "emotion": "sad:1.0",
+     "tags": "[tired, soft, comical, panting lightly]",
+     "audio": "res://audio/voice/sun_wind/nar_bae6a463c6.mp3",
+     "source_audio": "audio/el/sun_wind/nar_bae6a463c6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 22,
+   "source_text": "바람은 숨이 차서 헉헉, 볼이 쭈글쭈글해졌어요."
+  },
+  {
+   "id": "sw_023",
+   "speaker": "wind",
+   "text": "\"에이, 안 되네!\"",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wind",
+     "text": "에이, 안 되네!",
+     "emotion": "sad:1.5",
+     "tags": "[panting, exhausted, disappointed, huffs]",
+     "audio": "res://audio/voice/sun_wind/wind_fe6ecaa865.mp3",
+     "source_audio": "audio/el/sun_wind/wind_fe6ecaa865.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 23,
+   "source_text": "\"에이, 안 되네!\""
+  },
+  {
+   "id": "sw_024",
+   "speaker": "nar",
+   "text": "어? 날아간 모자가 나그네 머리에 쏙 떨어졌어요!",
+   "status": "reuse",
+   "beat": "wind_turn",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어? 날아간 모자가 나그네 머리에 쏙 떨어졌어요!",
+     "emotion": null,
+     "tags": "[surprised, delighted, comical, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_6df4658c63.mp3",
+     "source_audio": "audio/el/sun_wind/nar_6df4658c63.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 24,
+   "source_text": "어? 날아간 모자가 나그네 머리에 쏙 떨어졌어요!"
+  },
+  {
+   "id": "sw_025",
+   "speaker": "nar",
+   "text": "이번엔 해님 차례예요.",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이번엔 해님 차례예요.",
+     "emotion": "happy:1.1",
+     "tags": "[warm, bright, shifting to gentle]",
+     "audio": "res://audio/voice/sun_wind/nar_61da3b8cdf.mp3",
+     "source_audio": "audio/el/sun_wind/nar_61da3b8cdf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 25,
+   "source_text": "이번엔 해님 차례예요."
+  },
+  {
+   "id": "sw_026",
+   "speaker": "nar",
+   "text": "해님을 톡톡 눌러서 따뜻하게 비춰 줘요!",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "shine",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님을 톡톡 눌러서 따뜻하게 비춰 줘요!",
+     "emotion": null,
+     "tags": "[soft, warm, encouraging]",
+     "audio": "res://audio/voice/sun_wind/nar_b763fa48b1.mp3",
+     "source_audio": "audio/el/sun_wind/nar_b763fa48b1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 26,
+   "source_text": "해님을 톡톡 눌러서 따뜻하게 비춰 줘요!"
+  },
+  {
+   "id": "sw_027",
+   "speaker": "nar",
+   "text": "해님을 톡톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "shine",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님을 톡톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[soft, warm, encouraging]",
+     "audio": "res://audio/voice/sun_wind/nar_42f3296f08.mp3",
+     "source_audio": "audio/el/sun_wind/nar_42f3296f08.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 27,
+   "source_text": "해님을 톡톡 눌러 봐요!"
+  },
+  {
+   "id": "sw_028",
+   "speaker": "man+nar",
+   "text": "\"아, 따뜻하다~\" 나그네가 단추를 풀었어요.",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "shine",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "아, 따뜻하다~",
+     "emotion": "happy:1.3",
+     "tags": "[relaxed, pleased, sighs happily, warm]",
+     "audio": "res://audio/voice/sun_wind/man_1826f5e666.mp3",
+     "source_audio": "audio/el/sun_wind/man_1826f5e666.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "나그네가 단추를 풀었어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_3d77fc90f2.mp3",
+     "source_audio": "audio/el/sun_wind/nar_3d77fc90f2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 28,
+   "source_text": "\"아, 따뜻하다~\" 나그네가 단추를 풀었어요."
+  },
+  {
+   "id": "sw_029",
+   "speaker": "nar",
+   "text": "조금 더 톡톡!",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "shine",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "조금 더 톡톡!",
+     "emotion": null,
+     "tags": "[warm, encouraging, soft]",
+     "audio": "res://audio/voice/sun_wind/nar_5b3b8a178e.mp3",
+     "source_audio": "audio/el/sun_wind/nar_5b3b8a178e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 29,
+   "source_text": "조금 더 톡톡!"
+  },
+  {
+   "id": "sw_030",
+   "speaker": "man+nar",
+   "text": "\"아이, 더워!\" 모자로 부채질을 해요.",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "shine",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "아이, 더워!",
+     "emotion": "toneup:1.3",
+     "tags": "[warm, uncomfortable, puffing, fanning himself, mildly hot]",
+     "audio": "res://audio/voice/sun_wind/man_7112792135.mp3",
+     "source_audio": "audio/el/sun_wind/man_7112792135.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "모자로 부채질을 해요.",
+     "emotion": null,
+     "tags": "[amused, gentle, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_19fa188393.mp3",
+     "source_audio": "audio/el/sun_wind/nar_19fa188393.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 30,
+   "source_text": "\"아이, 더워!\" 모자로 부채질을 해요."
+  },
+  {
+   "id": "sw_031",
+   "speaker": "nar",
+   "text": "한 번 더 톡톡!",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "shine",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "한 번 더 톡톡!",
+     "emotion": null,
+     "tags": "[warm, encouraging, soft]",
+     "audio": "res://audio/voice/sun_wind/nar_a50e4f0a9a.mp3",
+     "source_audio": "audio/el/sun_wind/nar_a50e4f0a9a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 31,
+   "source_text": "한 번 더 톡톡!"
+  },
+  {
+   "id": "sw_032",
+   "speaker": "nar",
+   "text": "훌러덩! 나그네가 외투를 벗었어요!",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "shine",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "훌러덩! 나그네가 외투를 벗었어요!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, amused, delighted]",
+     "audio": "res://audio/voice/sun_wind/nar_a8aab41f40.mp3",
+     "source_audio": "audio/el/sun_wind/nar_a8aab41f40.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 32,
+   "source_text": "훌러덩! 나그네가 외투를 벗었어요!"
+  },
+  {
+   "id": "sw_033",
+   "speaker": "nar+wind",
+   "text": "바람이 깜짝 놀랐어요. \"우와, 해님이 해냈네!\"",
+   "status": "reuse",
+   "beat": "sun_turn",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람이 깜짝 놀랐어요.",
+     "emotion": null,
+     "tags": "[surprised, wide-eyed, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_6cd1b27292.mp3",
+     "source_audio": "audio/el/sun_wind/nar_6cd1b27292.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "wind",
+     "text": "우와, 해님이 해냈네!",
+     "emotion": "toneup:1.5",
+     "tags": "[impressed, breathless, admiring, laughs softly]",
+     "audio": "res://audio/voice/sun_wind/wind_b438f4b3f4.mp3",
+     "source_audio": "audio/el/sun_wind/wind_b438f4b3f4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 33,
+   "source_text": "바람이 깜짝 놀랐어요. \"우와, 해님이 해냈네!\""
+  },
+  {
+   "id": "sw_034",
+   "speaker": "nar",
+   "text": "바람이 불 때, 나그네는 외투를 꽉 여몄어요.",
+   "status": "reuse",
+   "beat": "moral",
+   "interaction": "flashback",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람이 불 때, 나그네는 외투를 꽉 여몄어요.",
+     "emotion": null,
+     "tags": "[soft, calm, storytelling, slow]",
+     "audio": "res://audio/voice/sun_wind/nar_7ff5e981a7.mp3",
+     "source_audio": "audio/el/sun_wind/nar_7ff5e981a7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 34,
+   "source_text": "바람이 불 때, 나그네는 외투를 꽉 여몄어요."
+  },
+  {
+   "id": "sw_035",
+   "speaker": "nar",
+   "text": "해님이 비출 때는 외투를 벗었지요.",
+   "status": "reuse",
+   "beat": "moral",
+   "interaction": "flashback",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님이 비출 때는 외투를 벗었지요.",
+     "emotion": null,
+     "tags": "[soft, warm, storytelling, slow]",
+     "audio": "res://audio/voice/sun_wind/nar_88193b8461.mp3",
+     "source_audio": "audio/el/sun_wind/nar_88193b8461.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 35,
+   "source_text": "해님이 비출 때는 외투를 벗었지요."
+  },
+  {
+   "id": "sw_036",
+   "speaker": "nar",
+   "text": "누가 외투를 벗게 했을까요? 해님일까요, 바람일까요?",
+   "status": "reuse",
+   "beat": "moral",
+   "interaction": "quiz",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "누가 외투를 벗게 했을까요? 해님일까요, 바람일까요?",
+     "emotion": null,
+     "tags": "[curious, playful, inviting]",
+     "audio": "res://audio/voice/sun_wind/nar_634d576bcd.mp3",
+     "source_audio": "audio/el/sun_wind/nar_634d576bcd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 36,
+   "source_text": "누가 외투를 벗게 했을까요? 해님일까요, 바람일까요?"
+  },
+  {
+   "id": "sw_037",
+   "speaker": "nar",
+   "text": "누가 외투를 벗게 했을까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "누가 외투를 벗게 했을까요?",
+     "emotion": null,
+     "tags": "[curious, playful, inviting]",
+     "audio": "res://audio/voice/sun_wind/nar_5da5c7f30f.mp3",
+     "source_audio": "audio/el/sun_wind/nar_5da5c7f30f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 37,
+   "source_text": "누가 외투를 벗게 했을까요?"
+  },
+  {
+   "id": "sw_038",
+   "speaker": "nar",
+   "text": "외투를 벗은 나그네 쪽 하늘을 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "외투를 벗은 나그네 쪽 하늘을 봐요!",
+     "emotion": null,
+     "tags": "[gentle, hinting, curious]",
+     "audio": "res://audio/voice/sun_wind/nar_838ffbb915.mp3",
+     "source_audio": "audio/el/sun_wind/nar_838ffbb915.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 38,
+   "source_text": "외투를 벗은 나그네 쪽 하늘을 봐요!"
+  },
+  {
+   "id": "sw_039",
+   "speaker": "nar",
+   "text": "해님이에요! 반짝이는 해님을 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님이에요! 반짝이는 해님을 눌러 봐요!",
+     "emotion": null,
+     "tags": "[delighted, bright, encouraging]",
+     "audio": "res://audio/voice/sun_wind/nar_473d0ab68b.mp3",
+     "source_audio": "audio/el/sun_wind/nar_473d0ab68b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 39,
+   "source_text": "해님이에요! 반짝이는 해님을 눌러 봐요!"
+  },
+  {
+   "id": "sw_040",
+   "speaker": "nar",
+   "text": "맞아요, 해님이에요! 따뜻한 해님이 이겼어요.",
+   "status": "reuse",
+   "beat": "moral",
+   "interaction": "quiz",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요, 해님이에요! 따뜻한 해님이 이겼어요.",
+     "emotion": "happy:1.3",
+     "tags": "[delighted, warm, praising, proud]",
+     "audio": "res://audio/voice/sun_wind/nar_9e515b0757.mp3",
+     "source_audio": "audio/el/sun_wind/nar_9e515b0757.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 40,
+   "source_text": "맞아요, 해님이에요! 따뜻한 해님이 이겼어요."
+  },
+  {
+   "id": "sw_041",
+   "speaker": "nar",
+   "text": "세게 미는 것보다 다정한 게 더 힘이 세요.",
+   "status": "reuse",
+   "beat": "moral",
+   "interaction": "quiz",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "세게 미는 것보다 다정한 게 더 힘이 세요.",
+     "emotion": "happy:0.9",
+     "tags": "[gentle, wise, reassuring, slow]",
+     "audio": "res://audio/voice/sun_wind/nar_f6b71e3762.mp3",
+     "source_audio": "audio/el/sun_wind/nar_f6b71e3762.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 41,
+   "source_text": "세게 미는 것보다 다정한 게 더 힘이 세요."
+  },
+  {
+   "id": "sw_042",
+   "speaker": "nar",
+   "text": "눈이 펑펑 오는 날엔 무엇을 입을까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "눈이 펑펑 오는 날엔 무엇을 입을까요?",
+     "emotion": null,
+     "tags": "[curious, playful, inviting]",
+     "audio": "res://audio/voice/sun_wind/nar_3c2d9fdcba.mp3",
+     "source_audio": "audio/el/sun_wind/nar_3c2d9fdcba.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 42,
+   "source_text": "눈이 펑펑 오는 날엔 무엇을 입을까요?"
+  },
+  {
+   "id": "sw_043",
+   "speaker": "nar",
+   "text": "추운 날엔 따뜻한 옷이 좋아요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "추운 날엔 따뜻한 옷이 좋아요.",
+     "emotion": null,
+     "tags": "[soft, warm, thoughtful]",
+     "audio": "res://audio/voice/sun_wind/nar_7fd646e42b.mp3",
+     "source_audio": "audio/el/sun_wind/nar_7fd646e42b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 43,
+   "source_text": "추운 날엔 따뜻한 옷이 좋아요."
+  },
+  {
+   "id": "sw_044",
+   "speaker": "nar",
+   "text": "외투예요! 반짝이는 걸 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "외투예요! 반짝이는 걸 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/sun_wind/nar_d76bab0062.mp3",
+     "source_audio": "audio/el/sun_wind/nar_d76bab0062.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 44,
+   "source_text": "외투예요! 반짝이는 걸 눌러 봐요!"
+  },
+  {
+   "id": "sw_045",
+   "speaker": "nar",
+   "text": "맞아요! 따뜻한 외투를 입으니 포근해요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요! 따뜻한 외투를 입으니 포근해요.",
+     "emotion": "happy:1.2",
+     "tags": "[delighted, cozy, praising]",
+     "audio": "res://audio/voice/sun_wind/nar_13f787e396.mp3",
+     "source_audio": "audio/el/sun_wind/nar_13f787e396.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 45,
+   "source_text": "맞아요! 따뜻한 외투를 입으니 포근해요."
+  },
+  {
+   "id": "sw_046",
+   "speaker": "nar",
+   "text": "해가 쨍쨍한 날엔 무엇을 입을까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해가 쨍쨍한 날엔 무엇을 입을까요?",
+     "emotion": null,
+     "tags": "[curious, bright, playful]",
+     "audio": "res://audio/voice/sun_wind/nar_256ce8243c.mp3",
+     "source_audio": "audio/el/sun_wind/nar_256ce8243c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 46,
+   "source_text": "해가 쨍쨍한 날엔 무엇을 입을까요?"
+  },
+  {
+   "id": "sw_047",
+   "speaker": "nar",
+   "text": "더운 날엔 시원한 옷이 좋아요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "더운 날엔 시원한 옷이 좋아요.",
+     "emotion": null,
+     "tags": "[light, refreshing, thoughtful]",
+     "audio": "res://audio/voice/sun_wind/nar_2030e2a56c.mp3",
+     "source_audio": "audio/el/sun_wind/nar_2030e2a56c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 47,
+   "source_text": "더운 날엔 시원한 옷이 좋아요."
+  },
+  {
+   "id": "sw_048",
+   "speaker": "nar",
+   "text": "반팔이에요! 반짝이는 걸 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "반팔이에요! 반짝이는 걸 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/sun_wind/nar_d40edab26a.mp3",
+     "source_audio": "audio/el/sun_wind/nar_d40edab26a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 48,
+   "source_text": "반팔이에요! 반짝이는 걸 눌러 봐요!"
+  },
+  {
+   "id": "sw_049",
+   "speaker": "nar",
+   "text": "맞아요! 반팔을 입으니 시원해요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요! 반팔을 입으니 시원해요.",
+     "emotion": "happy:1.2",
+     "tags": "[delighted, refreshing, praising]",
+     "audio": "res://audio/voice/sun_wind/nar_167d56b9ac.mp3",
+     "source_audio": "audio/el/sun_wind/nar_167d56b9ac.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 49,
+   "source_text": "맞아요! 반팔을 입으니 시원해요."
+  },
+  {
+   "id": "sw_050",
+   "speaker": "nar",
+   "text": "추우면 입고, 더우면 벗어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "추우면 입고, 더우면 벗어요.",
+     "emotion": null,
+     "tags": "[gentle, wise, reassuring]",
+     "audio": "res://audio/voice/sun_wind/nar_a1035c4f48.mp3",
+     "source_audio": "audio/el/sun_wind/nar_a1035c4f48.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 50,
+   "source_text": "추우면 입고, 더우면 벗어요."
+  },
+  {
+   "id": "sw_051",
+   "speaker": "nar",
+   "text": "나그네는 개울가에서 쉬어요.",
+   "status": "reuse",
+   "beat": "stream",
+   "interaction": "walk_to",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "나그네는 개울가에서 쉬어요.",
+     "emotion": null,
+     "tags": "[calm, relaxed, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_f0d4e38bf1.mp3",
+     "source_audio": "audio/el/sun_wind/nar_f0d4e38bf1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 51,
+   "source_text": "나그네는 개울가에서 쉬어요."
+  },
+  {
+   "id": "sw_052",
+   "speaker": "nar",
+   "text": "시원한 물에 발을 퐁당 담갔어요.",
+   "status": "reuse",
+   "beat": "stream",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "시원한 물에 발을 퐁당 담갔어요.",
+     "emotion": null,
+     "tags": "[soft, refreshing, delighted, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_54b69649dc.mp3",
+     "source_audio": "audio/el/sun_wind/nar_54b69649dc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 52,
+   "source_text": "시원한 물에 발을 퐁당 담갔어요."
+  },
+  {
+   "id": "sw_053",
+   "speaker": "nar",
+   "text": "바람아, 이번엔 살살 불어 줄래? 톡, 살살~",
+   "status": "reuse",
+   "beat": "stream",
+   "interaction": "gentle",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람아, 이번엔 살살 불어 줄래? 톡, 살살~",
+     "emotion": "whisper",
+     "tags": "[gentle, coaxing, soft, playful]",
+     "audio": "res://audio/voice/sun_wind/nar_5bd3e774c7.mp3",
+     "source_audio": "audio/el/sun_wind/nar_5bd3e774c7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 53,
+   "source_text": "바람아, 이번엔 살살 불어 줄래? 톡, 살살~"
+  },
+  {
+   "id": "sw_054",
+   "speaker": "nar",
+   "text": "바람을 살살 톡톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "stream",
+   "interaction": "gentle",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바람을 살살 톡톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[soft, gentle, encouraging]",
+     "audio": "res://audio/voice/sun_wind/nar_d10958a72a.mp3",
+     "source_audio": "audio/el/sun_wind/nar_d10958a72a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 54,
+   "source_text": "바람을 살살 톡톡 눌러 봐요!"
+  },
+  {
+   "id": "sw_055",
+   "speaker": "man",
+   "text": "\"아, 시원해. 고마워, 바람아!\"",
+   "status": "reuse",
+   "beat": "stream",
+   "interaction": "gentle",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "아, 시원해. 고마워, 바람아!",
+     "emotion": "happy:1.3",
+     "tags": "[relaxed, content, sighs happily, warm, grateful]",
+     "audio": "res://audio/voice/sun_wind/man_9649bbca2e.mp3",
+     "source_audio": "audio/el/sun_wind/man_9649bbca2e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 55,
+   "source_text": "\"아, 시원해. 고마워, 바람아!\""
+  },
+  {
+   "id": "sw_056",
+   "speaker": "nar",
+   "text": "해님과 바람이 마주 보고 웃었어요.",
+   "status": "reuse",
+   "beat": "stream",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님과 바람이 마주 보고 웃었어요.",
+     "emotion": "happy:1.1",
+     "tags": "[warm, tender, smiling, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_cacace9582.mp3",
+     "source_audio": "audio/el/sun_wind/nar_cacace9582.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 56,
+   "source_text": "해님과 바람이 마주 보고 웃었어요."
+  },
+  {
+   "id": "sw_057",
+   "speaker": "wind",
+   "text": "\"우리, 사이좋게 지내자!\"",
+   "status": "reuse",
+   "beat": "stream",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wind",
+     "text": "우리, 사이좋게 지내자!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, friendly, warm, sincere]",
+     "audio": "res://audio/voice/sun_wind/wind_cdb5957342.mp3",
+     "source_audio": "audio/el/sun_wind/wind_cdb5957342.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 57,
+   "source_text": "\"우리, 사이좋게 지내자!\""
+  },
+  {
+   "id": "sw_058",
+   "speaker": "nar",
+   "text": "하늘을 톡 눌러서 날씨를 바꿔 볼까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하늘을 톡 눌러서 날씨를 바꿔 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, playful]",
+     "audio": "res://audio/voice/sun_wind/nar_0d76780d10.mp3",
+     "source_audio": "audio/el/sun_wind/nar_0d76780d10.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 58,
+   "source_text": "하늘을 톡 눌러서 날씨를 바꿔 볼까요?"
+  },
+  {
+   "id": "sw_059",
+   "speaker": "nar",
+   "text": "옷도 저절로 바뀐대요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "옷도 저절로 바뀐대요!",
+     "emotion": null,
+     "tags": "[amazed, playful, delighted]",
+     "audio": "res://audio/voice/sun_wind/nar_ece890daeb.mp3",
+     "source_audio": "audio/el/sun_wind/nar_ece890daeb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 59,
+   "source_text": "옷도 저절로 바뀐대요!"
+  },
+  {
+   "id": "sw_060",
+   "speaker": "nar",
+   "text": "해님과 바람은 오늘도 사이좋게 하늘을 지켜요.",
+   "status": "reuse",
+   "beat": "ending",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해님과 바람은 오늘도 사이좋게 하늘을 지켜요.",
+     "emotion": null,
+     "tags": "[warm, content, calm, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_d7c351c26b.mp3",
+     "source_audio": "audio/el/sun_wind/nar_d7c351c26b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 60,
+   "source_text": "해님과 바람은 오늘도 사이좋게 하늘을 지켜요."
+  },
+  {
+   "id": "sw_061",
+   "speaker": "nar",
+   "text": "다정한 마음이 제일 힘이 세답니다. 끝!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다정한 마음이 제일 힘이 세답니다. 끝!",
+     "emotion": "happy:1.2",
+     "tags": "[gentle, warm, loving, slow, closing]",
+     "audio": "res://audio/voice/sun_wind/nar_26365046a4.mp3",
+     "source_audio": "audio/el/sun_wind/nar_26365046a4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 61,
+   "source_text": "다정한 마음이 제일 힘이 세답니다. 끝!"
+  },
+  {
+   "id": "sw_x_cut_pant",
+   "speaker": "wind",
+   "text": "\"헉헉… 너무 힘들어…\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wind",
+     "text": "헉헉… 너무 힘들어…",
+     "emotion": "sad:1.5",
+     "tags": "[panting, exhausted, breathless, whining]",
+     "audio": "res://audio/voice/sun_wind/wind_9546dd147d.mp3",
+     "source_audio": "audio/el/sun_wind/wind_9546dd147d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_pant"
+  },
+  {
+   "id": "sw_x_cut_off",
+   "speaker": "man",
+   "text": "\"휴우~ 이제 시원하다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "휴우~ 이제 시원하다!",
+     "emotion": "happy:1.4",
+     "tags": "[relieved, happy sigh, refreshed, cheerful]",
+     "audio": "res://audio/voice/sun_wind/man_fb494c814d.mp3",
+     "source_audio": "audio/el/sun_wind/man_fb494c814d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_off"
+  },
+  {
+   "id": "sw_x_wrong_cold",
+   "speaker": "man",
+   "text": "\"으으, 추워!\"",
+   "status": "reuse",
+   "beat": "moral",
+   "interaction": "quiz",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "으으, 추워!",
+     "emotion": "sad:1.5",
+     "tags": "[shivering, cold, grumbling]",
+     "audio": "res://audio/voice/sun_wind/man_9f651cae01.mp3",
+     "source_audio": "audio/el/sun_wind/man_9f651cae01.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "wrong_cold"
+  },
+  {
+   "id": "sw_x_wrong_hot",
+   "speaker": "man",
+   "text": "\"아이, 더워!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "man",
+     "text": "아이, 더워!",
+     "emotion": "toneup:1.3",
+     "tags": "[hot, sweaty, groaning, fanning himself]",
+     "audio": "res://audio/voice/sun_wind/man_1941d0c9b1.mp3",
+     "source_audio": "audio/el/sun_wind/man_1941d0c9b1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "wrong_hot"
+  },
+  {
+   "id": "sw_n01",
+   "speaker": "nar",
+   "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+   "status": "changed-recorded",
+   "beat": "cover",
+   "interaction": "cover",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, warm]",
+     "audio": "res://audio/voice/sun_wind/nar_e0cd6dbf3a.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "sw_n02",
+   "speaker": "nar",
+   "text": "외투를 팔에 걸고, 나그네는 다시 즐겁게 길을 떠나요.",
+   "status": "changed-recorded",
+   "beat": "ending",
+   "interaction": "walk_away",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "외투를 팔에 걸고, 나그네는 다시 즐겁게 길을 떠나요.",
+     "emotion": null,
+     "tags": "[calm, gentle, storytelling]",
+     "audio": "res://audio/voice/sun_wind/nar_5f0684d530.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "sw_n03",
+   "speaker": "nar",
+   "text": "또 보고 싶으면 '다시 보기'를 톡!",
+   "status": "changed-recorded",
+   "beat": "ending",
+   "interaction": "end",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "또 보고 싶으면 '다시 보기'를 톡!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/sun_wind/nar_19cdeae20b.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "sw_n04",
+   "speaker": "nar",
+   "text": "나그네를 톡 눌러 볼까요?",
+   "status": "changed-recorded",
+   "beat": "sky",
+   "interaction": "tap",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "나그네를 톡 눌러 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, curious]",
+     "audio": "res://audio/voice/sun_wind/nar_1b7acbd869.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  }
+ ]
+}
