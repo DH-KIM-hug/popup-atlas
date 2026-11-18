@@ -1,0 +1,113 @@
+{
+ "sheet": "story_room",
+ "bg": [
+  0.984,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_room_00",
+   "bbox": [
+    58,
+    99,
+    797,
+    507
+   ],
+   "area": 301482,
+   "size": [
+    747,
+    416
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_room_01",
+   "bbox": [
+    878,
+    97,
+    1118,
+    507
+   ],
+   "area": 98160,
+   "size": [
+    248,
+    418
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_room_02",
+   "bbox": [
+    1223,
+    97,
+    1458,
+    507
+   ],
+   "area": 96100,
+   "size": [
+    243,
+    418
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_room_03",
+   "bbox": [
+    55,
+    648,
+    744,
+    902
+   ],
+   "area": 174250,
+   "size": [
+    697,
+    262
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_room_04",
+   "bbox": [
+    823,
+    574,
+    931,
+    954
+   ],
+   "area": 40860,
+   "size": [
+    116,
+    388
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_room_05",
+   "bbox": [
+    993,
+    722,
+    1483,
+    829
+   ],
+   "area": 28905,
+   "size": [
+    498,
+    115
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

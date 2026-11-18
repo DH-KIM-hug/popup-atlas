@@ -398,12 +398,13 @@ func _build_set(list: Array) -> void:
 		add_child(sp)
 		var stg: Variant = e.get("stage", "full")
 		var n_up := 99 if str(stg) == "full" else int(stg)
-		sp.setup(ce, float(e.get("scale", SET_SCALE)), e.has("stage"), n_up)
+		sp.setup(ce, float(e.get("scale", SET_SCALE)), e.has("stage") and not e.get("flat", false), n_up, bool(e.get("flat", false)))
 		var p := spot_point(e.get("at", "anchor"))
 		if e.has("off"):
 			var o: Array = e["off"]
 			p += dir_vec("right") * float(o[0]) + dir_vec("toward") * float(o[1])
 			p.y = world.ground.surface_y(Vector2(p.x, p.z))
+		p.y += float(e.get("lift", 0.0))  # raised pieces: a pot over the fire, a flue above the hearth
 		sp.global_position = p
 		sp.rotation.y = deg_to_rad(world.rig.yaw_deg) + deg_to_rad(float(e.get("yaw", 0.0)))
 		for h in sp.all_hinges():
@@ -524,7 +525,9 @@ func put_inside(role: String, house: String, win: int) -> void:
 		return
 	var ws: Array = sp.window_spot(win, dir_vec("toward"))
 	a.place_at(ws[0])
-	a.lift = float(ws[1]) - a.puppet.height * 0.74
+	# a bigger face behind the window so it fills the opening (the wall hides the rest)
+	a.puppet.scale = Vector3.ONE * INSIDE_SCALE
+	a.lift = float(ws[1]) - a.puppet.height * 0.74 * INSIDE_SCALE
 	a.set_meta("inside", house)
 	# a small warm fill in front of the face, between it and the wall: the wall's own shadow made faces read as dark
 	# blobs in the windows (no shadow from this light, so it only brightens the face)
@@ -533,22 +536,26 @@ func put_inside(role: String, house: String, win: int) -> void:
 		lt = OmniLight3D.new()
 		lt.name = "InsideFill"
 		lt.light_color = Color(1.0, 0.86, 0.66)
-		lt.light_energy = 0.45
-		lt.omni_range = 0.22
+		lt.light_energy = 0.09
+		lt.omni_range = 0.2
 		lt.omni_attenuation = 1.2
 		lt.shadow_enabled = false
 		lt.light_specular = 0.0
 		lt.top_level = true
 		a.add_child(lt)
 	lt.visible = true
-	lt.global_position = a.global_position + Vector3(0, float(ws[1]), 0) + dir_vec("toward") * 0.05
+	lt.global_position = a.global_position + Vector3(0, float(ws[1]), 0) + dir_vec("toward") * 0.045
 	if a.view_of(a.pose) != "front":
 		a.set_pose("calm")
+
+
+const INSIDE_SCALE := 1.45
 
 
 func clear_inside(a: StoryActor) -> void:
 	a.remove_meta("inside")
 	a.lift = 0.0
+	a.puppet.scale = Vector3.ONE
 	var lt := a.get_node_or_null("InsideFill") as Node3D
 	if lt:
 		lt.visible = false

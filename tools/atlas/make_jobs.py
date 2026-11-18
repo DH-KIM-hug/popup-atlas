@@ -164,6 +164,19 @@ STORY_SHEETS = {
     "attached; a wooden kitchen TABLE; a wooden STOOL; a wall SHELF with three jars and a jug; an inside WINDOW with "
     "red gingham curtains; a round braided RUG (seen from the front as a low flat oval band); a wooden LADLE standing up; a "
     "cream comic STAR-BURST shape (a jagged bang shape, no text)."),
+ # 2026-11-19 (user: "벽돌집. 그럼 집 뒤편도 있어야하지않을까유"): the brick house's pop-up ROOM for the chimney cutaway
+ "story_room": ("THIS SHEET: the INSIDE of the little brick house as pop-up room pieces (6 pieces, large, in two rows, "
+    "everything seen straight on, flat front-on view). (1) the room's BACK WALL seen from inside: one very WIDE landscape "
+    "rectangle (about 1.6 times as wide as tall), warm cream-ochre PLASTER on the upper three quarters with soft printed "
+    "plaster texture and a thin wooden picture rail, a band of red BRICK courses with cream mortar along the bottom quarter, "
+    "a wooden skirting board at the very bottom, flat bottom edge, straight top edge; (2) a SIDE WALL seen from inside: an "
+    "upright rectangle (about 0.6 times as wide as tall) with the same cream plaster above and the same brick band below, a "
+    "wooden corner post along its left edge, flat bottom; (3) a second identical SIDE WALL but with the wooden corner post "
+    "along its RIGHT edge; (4) a PLANK FLOOR seen from straight above: a wide landscape rectangle of warm brown wooden "
+    "floorboards running left to right with nail dots and wood grain, about 2.4 times as wide as tall; (5) a tall narrow "
+    "brick CHIMNEY FLUE column seen from inside the room: red brick courses with cream mortar, a soot-darkened charcoal "
+    "stripe down its middle, about 4 times as tall as wide, flat bottom, flat top; (6) a wooden ROOF BEAM: a long horizontal "
+    "dark wood beam with two little brackets, flat bottom."),
 }
 
 def main():

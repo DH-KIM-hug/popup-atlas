@@ -104,6 +104,9 @@ Run long work through background agents/workflows with narrow ownership (one own
   actor's mark and the set piece (`cam at`), not on the set piece alone.
 - Faces behind die-cut windows sit in the wall's shadow: light them with a small shadowless fill between face and
   wall (too strong blows the window out; 0.45 at range 0.22 read well).
+- A cutaway needs a room: when a facade folds open, pop up a back wall, angled side walls and a floor (story_room
+  sheet) with the furniture standing in it, and connect the hearth to the outside chimney with a flue; otherwise the
+  meadow shows through and the roof floats (user: "집 뒤편도 있어야하지않을까유").
 - Story lines that open a beat start after the camera has landed (`cam` wait ≥ 1.2 s after a page pop).
 - Pace: 36 reused lines play ~189 s on their own; 9 page turns (~5 s each) and ~37 taps put the first full run at
   5:21. Count narration + turns + taps before promising a length.

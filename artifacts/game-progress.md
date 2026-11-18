@@ -1187,3 +1187,19 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     stays hidden until the collapse.
   - Videos: artifacts/video/three_pigs_wolf_straw_v4.mp4, three_pigs_wolf_wood_v4.mp4, three_pigs_brick_wolf_v4.mp4,
     three_pigs_full_v4.mp4.
+
+## 2026-11-19 — three_pigs v5: the brick house gets a real pop-up room; bigger window faces
+  - User: "벽돌집. 그럼 집 뒤편도 있어야하지않을까유" (the cutaway showed meadow through a house with no inside). New
+    shared sheet story_room (Codex, BUILD_ANCHOR style block, tools/atlas/make_jobs.py; raw md5 76e43f20… unique;
+    looked at before slicing; tools/atlas/labels/story_room.json, category story_building / story_prop): plastered back
+    wall with a brick dado, two side walls with corner posts, plank floor, brick chimney flue, roof beam.
+  - Cutaway room (KITCHEN in tools/story/tales/three_pigs.py): back wall behind the roof line, side walls angled in like
+    a pop-up box, flat plank floor (SetPiece `flat`: lies on the page, pops with a paper bounce), the hearth against the
+    back wall with the flue rising from it under the outside chimney, logs, fire (1.8× scale) and the pot raised over it
+    (`lift`), table and shelf; everything folds up as the front wall folds down. The wolf drops from the chimney top
+    down the flue into the pot; the fire grows small → medium → large under the pot. The chimney beat opens with the
+    pigs at the windows (they're home), then inside the room.
+  - Window faces: pigs behind windows scaled 1.45× so a face fills the opening, fill light lowered to 0.09 (0.22 /
+    0.45 washed the faces out; 0 left them in shadow).
+  - Videos: artifacts/video/three_pigs_chimney_v5.mp4 (12-frame tile
+    artifacts/three_pigs/tiles/three_pigs_chimney_v5_12frames.jpg), three_pigs_full_v5.mp4.

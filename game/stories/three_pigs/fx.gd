@@ -391,12 +391,18 @@ func _wolf_drop() -> void:
 	if w == null or pot == null:
 		return
 	_boil = 0.0  # the steam would hide him
+	# down the flue: just in front of the flue card (behind the roof until he is below the eaves), into the pot
+	var flue := stage.set_piece("k_flue")
 	var top := _chimney_top() + stage.dir_vec("away") * 0.06
-	var goal := pot.global_position + stage.dir_vec("toward") * -0.03
+	if flue:
+		var fp := flue.global_position + stage.dir_vec("toward") * 0.03
+		top = Vector3(fp.x, top.y, fp.z)
+	var goal := pot.global_position + stage.dir_vec("away") * 0.04
+	goal.y = pot.global_position.y
 	w.place_at(top)
 	w.set_pose("falling")
 	w.puppet.set_figure("falling", false, true)
-	_drop = {"from": top, "to": goal + Vector3(0, pot.height * 0.35, 0), "t": 0.0, "dur": 0.75}
+	_drop = {"from": top, "to": goal + Vector3(0, pot.height * 0.3, 0), "t": 0.0, "dur": 0.9}
 
 
 ## "앗, 뜨거워!" — he shoots back up the flue and out of the chimney, arcs over and lands far to the left.

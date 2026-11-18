@@ -1,0 +1,13 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": ["story", "interior", "room", "three_pigs", "brick"],
+ "items": {
+  "00": ["room back wall (plaster over brick, inside view)", "story_building", 0.45, 0, {"tags": ["wall", "back_wall"]}],
+  "01": ["room side wall, corner post left (inside view)", "story_building", 0.45, 0, {"tags": ["wall", "side_wall"]}],
+  "02": ["room side wall, corner post right (inside view)", "story_building", 0.45, 0, {"tags": ["wall", "side_wall"]}],
+  "03": ["plank floor (top view, lies flat)", "story_building", 0.3, 0, {"tags": ["floor"]}],
+  "04": ["brick chimney flue (inside view)", "story_building", 0.5, 0, {"tags": ["flue", "chimney"]}],
+  "05": ["wooden roof beam", "story_prop", 0.08, 0, {"tags": ["beam"]}]
+ }
+}

@@ -7326,6 +7326,148 @@
   ]
  },
  {
+  "id": "story_room_00",
+  "path": "art/atlas/story_room/story_room_00.webp",
+  "sheet": "story_room",
+  "category": "story_building",
+  "label": "room back wall (plaster over brick, inside view)",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "back_wall",
+   "brick",
+   "interior",
+   "room",
+   "story",
+   "three_pigs",
+   "wall"
+  ],
+  "px": [
+   747,
+   416
+  ]
+ },
+ {
+  "id": "story_room_01",
+  "path": "art/atlas/story_room/story_room_01.webp",
+  "sheet": "story_room",
+  "category": "story_building",
+  "label": "room side wall, corner post left (inside view)",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "brick",
+   "interior",
+   "room",
+   "side_wall",
+   "story",
+   "three_pigs",
+   "wall"
+  ],
+  "px": [
+   248,
+   418
+  ]
+ },
+ {
+  "id": "story_room_02",
+  "path": "art/atlas/story_room/story_room_02.webp",
+  "sheet": "story_room",
+  "category": "story_building",
+  "label": "room side wall, corner post right (inside view)",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "brick",
+   "interior",
+   "room",
+   "side_wall",
+   "story",
+   "three_pigs",
+   "wall"
+  ],
+  "px": [
+   243,
+   418
+  ]
+ },
+ {
+  "id": "story_room_03",
+  "path": "art/atlas/story_room/story_room_03.webp",
+  "sheet": "story_room",
+  "category": "story_building",
+  "label": "plank floor (top view, lies flat)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "brick",
+   "floor",
+   "interior",
+   "room",
+   "story",
+   "three_pigs"
+  ],
+  "px": [
+   697,
+   262
+  ]
+ },
+ {
+  "id": "story_room_04",
+  "path": "art/atlas/story_room/story_room_04.webp",
+  "sheet": "story_room",
+  "category": "story_building",
+  "label": "brick chimney flue (inside view)",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "brick",
+   "chimney",
+   "flue",
+   "interior",
+   "room",
+   "story",
+   "three_pigs"
+  ],
+  "px": [
+   116,
+   388
+  ]
+ },
+ {
+  "id": "story_room_05",
+  "path": "art/atlas/story_room/story_room_05.webp",
+  "sheet": "story_room",
+  "category": "story_prop",
+  "label": "wooden roof beam",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "beam",
+   "brick",
+   "interior",
+   "room",
+   "story",
+   "three_pigs"
+  ],
+  "px": [
+   498,
+   115
+  ]
+ },
+ {
   "id": "stream_water_00",
   "path": "art/atlas/stream_water/stream_water_00.webp",
   "sheet": "stream_water",

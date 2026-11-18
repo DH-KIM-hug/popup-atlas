@@ -57,7 +57,14 @@ static func stages_for(path: String) -> Dictionary:
 
 
 ## entry: catalog entry {id, path, height_units}; scale: story scale on height_units; banded: use fold-up bands.
-func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
+var flat := false  ## lies flat on the page (a floor): no hinge, it appears / disappears with a small paper bounce
+var _flat_s := 0.0
+var _flat_v := 0.0
+var _flat_t := 0.0
+
+
+func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int, flat_ := false) -> void:
+	flat = flat_
 	id = str(entry["id"])
 	var path := str(entry["path"])
 	if not path.begins_with("res://"):
@@ -70,6 +77,26 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 	walls.name = "Walls"
 	facade.add_child(walls)
 	var st: Dictionary = stages_for(path).get(id, {}) if banded else {}
+	if st.is_empty() and flat:
+		var fb := Node3D.new()
+		fb.name = "Flat"
+		fb.rotation.x = -PI * 0.5  # lies back: its bottom edge at the origin, the rest away from the camera
+		fb.position.y = 0.003
+		walls.add_child(fb)
+		card = PaperCard.new()
+		card.texture = load(path)
+		card.height = height
+		card.thickness = 0.004
+		card.back_print = false
+		fb.add_child(card)
+		var ts0 := card.texture.get_size()
+		width = height * ts0.x / maxf(ts0.y, 1.0)
+		shown = 1 if n_up != 0 else 0
+		_flat_t = float(shown)
+		_flat_s = _flat_t
+		facade.scale = Vector3.ONE * maxf(_flat_s, 0.001)
+		facade.visible = shown > 0
+		return
 	if st.is_empty():
 		var base := Node3D.new()
 		walls.add_child(base)
@@ -204,6 +231,12 @@ func all_hinges() -> Array[PopHinge]:
 
 ## Raise bands up to n (one after another, `gap` s apart). Returns the time the last one starts.
 func bands_up(n: int, delay := 0.0, gap := 0.18) -> float:
+	if flat:
+		if n > 0:
+			_flat_t = 1.0
+			shown = 1
+			facade.visible = true
+		return delay
 	if hinge:
 		if n > 0 and shown == 0:
 			hinge.get_parent().visible = true
@@ -221,6 +254,10 @@ func bands_up(n: int, delay := 0.0, gap := 0.18) -> float:
 
 ## Fold band k down (blown off) and hide it once flat.
 func band_down(k: int, delay := 0.0) -> void:
+	if flat:
+		_flat_t = 0.0
+		shown = 0
+		return
 	if hinge:
 		hinge.fold_down(delay)
 		_hide_later(hinge, delay + 0.7)
@@ -243,6 +280,9 @@ func _hide_later(h: PopHinge, t: float) -> void:
 ## Everything falls: top band first, staggered.
 func collapse(delay := 0.0) -> float:
 	var t := delay
+	if flat:
+		band_down(0)
+		return t
 	if hinge:
 		band_down(0, t)
 		return t + 0.6
@@ -286,6 +326,13 @@ func _process(dt: float) -> void:
 	if dt <= 0.0 or facade == null:
 		return
 	_t += dt
+	if flat:
+		var fs := PaperSpring.step(_flat_s, _flat_v, _flat_t, 8.0, 0.6, dt)
+		_flat_s = fs.x
+		_flat_v = fs.y
+		facade.scale = Vector3.ONE * maxf(_flat_s, 0.001)
+		facade.visible = _flat_s > 0.02
+		return
 	# wobble: an underdamped rock about the base (wood house: 흔들흔들)
 	var w := TAU * 2.2
 	_wob_v += (-w * w * _wob - 2.0 * 0.12 * w * _wob_v) * dt

@@ -108,14 +108,23 @@ UI = {  # cover / end card pictures (cast ids) and caption speaker chips
                  "pigb": ["둘째", "4f7fb0", "cast_pig_b_calm"], "pigc": ["셋째", "b5402f", "cast_pig_c_calm"],
                  "wolf": ["늑대", "6f6a66", "cast_wolf_calm"]},
 }
-KITCHEN = [  # brick house interior (beat 8), behind the front wall, popped by cutaway_open
-    {"card": "story_hearth_00", "at": "lot", "off": [0.32, -0.26], "stage": 0, "name": "k_hearth", "clear": 0},
-    {"card": "story_hearth_02", "at": "lot", "off": [0.34, -0.17], "stage": 0, "name": "fire", "clear": 0},
-    {"card": "story_hearth_03", "at": "lot", "off": [0.34, -0.165], "stage": 0, "name": "fire_m", "clear": 0},
-    {"card": "story_hearth_04", "at": "lot", "off": [0.34, -0.16], "stage": 0, "name": "fire_l", "clear": 0},
-    {"card": "story_hearth_01", "at": "lot", "off": [0.34, -0.1], "stage": 0, "name": "k_pot", "clear": 0},
-    {"card": "story_hearth_12", "at": "lot", "off": [-0.3, -0.2], "stage": 0, "name": "k_table", "clear": 0},
-    {"card": "story_hearth_14", "at": "lot", "off": [-0.25, -0.3], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6},
+KITCHEN = [  # brick house interior (chimney beat): a pop-up ROOM (story_room sheet) that folds up as the front wall
+    # folds down (user 2026-11-19: "벽돌집. 그럼 집 뒤편도 있어야하지않을까유"): back wall, two side walls angled in like a
+    # pop-up box, a plank floor, the hearth set against the back wall with its flue running up into the roof under the
+    # outside chimney; logs, fire and the pot over it; table and shelf on the floor. Popped by cutaway_open (k_* / fire).
+    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.02], "stage": 0, "flat": True, "name": "k_floor", "clear": 0, "scale": 1.3},
+    {"card": "story_room_00", "at": "lot", "off": [0.0, -0.36], "stage": 0, "name": "k_back", "clear": 0},
+    {"card": "story_room_01", "at": "lot", "off": [-0.5, -0.2], "stage": 0, "name": "k_side_l", "clear": 0, "yaw": 62},
+    {"card": "story_room_02", "at": "lot", "off": [0.5, -0.2], "stage": 0, "name": "k_side_r", "clear": 0, "yaw": -62},
+    {"card": "story_room_04", "at": "lot", "off": [0.33, -0.31], "stage": 0, "name": "k_flue", "clear": 0, "lift": 0.36},
+    {"card": "story_hearth_00", "at": "lot", "off": [0.33, -0.3], "stage": 0, "name": "k_hearth", "clear": 0},
+    {"card": "story_hearth_05", "at": "lot", "off": [0.33, -0.2], "stage": 0, "name": "k_logs", "clear": 0, "scale": 0.8},
+    {"card": "story_hearth_02", "at": "lot", "off": [0.33, -0.17], "stage": 0, "name": "fire", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_03", "at": "lot", "off": [0.33, -0.165], "stage": 0, "name": "fire_m", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_04", "at": "lot", "off": [0.33, -0.16], "stage": 0, "name": "fire_l", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_01", "at": "lot", "off": [0.33, -0.1], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.11},
+    {"card": "story_hearth_12", "at": "lot", "off": [-0.3, -0.22], "stage": 0, "name": "k_table", "clear": 0},
+    {"card": "story_hearth_14", "at": "lot", "off": [-0.22, -0.33], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6, "lift": 0.3},
 ]
 # view 2: the stream runs diagonally just behind the anchor; the straw lot is on the near-left grass
 STRAW_SPOTS = {"lot": [-1.1, -0.05], "pile": [-0.64, 0.26], "pig_a": [-0.48, 0.42], "wolf": [-1.72, 0.32],
@@ -270,7 +279,8 @@ BEATS = [
     ]},
     {"id": "chimney", "title": "보글보글", "spread": {"seed": 1, "view": 4, "place": "brick_lot", "light": "dusk",
      "spots": BRICK_SPOTS, "set": []},
-     "enter": {"who": {"wolf": "tiptoe", "pig_a": "calm", "pig_b": "calm", "pig_c": "brave"}},
+     "enter": {"who": {"wolf": "tiptoe", "pig_a": "calm", "pig_b": "calm", "pig_c": "brave"},
+               "inside": {"pig_c": ["house", 0], "pig_a": ["house", 1], "pig_b": ["house", 1]}},
      "steps": [
         {"do": "cam", "shot": "roof", "at": "lot", "wait": 0.3},
         # he tiptoes up the roof slope to the chimney (side view, a paper hop: the tiptoe figure is one card)
