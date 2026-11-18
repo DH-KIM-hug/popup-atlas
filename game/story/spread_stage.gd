@@ -411,8 +411,31 @@ func _build_set(list: Array) -> void:
 			if not h in sp.wave_hinges():
 				(h.get_parent() as Node3D).visible = false
 		sets[nm] = sp
+		_check_footprint(sp, e)
 		_clear_area(p, sp.height * 0.75 + 0.12, float(e.get("clear", 1.0)))
 		await _slicer.tick()
+
+
+## Set pieces stand on the meadow: none on the road (path felt) or in the stream. Samples the card's base line (and a
+## little in front / behind it) and prints SET_CHECK <name> road=<n> water=<n> (both 0 = clear); `allow_road`
+## in the set entry for pieces meant to sit on the road (none so far).
+func _check_footprint(sp: SetPiece, e: Dictionary) -> void:
+	var g := world.ground
+	var r: Vector3 = dir_vec("right")
+	var t: Vector3 = dir_vec("toward")
+	var road := 0
+	var water := 0
+	for i in 9:
+		for dz: float in [-0.04, 0.0, 0.06]:
+			var q3: Vector3 = sp.global_position + r * (float(i) / 8.0 - 0.5) * sp.width * 0.92 + t * dz
+			var q := Vector2(q3.x, q3.z)
+			if g.path_distance(q) < 0.0:
+				road += 1
+			if g.stream_distance(q) < 0.0:
+				water += 1
+	print("SET_CHECK ", sp.piece_name, " road=", road, " water=", water, " w=", snappedf(sp.width, 0.01))
+	if (road > 0 and not e.get("allow_road", false)) or water > 0:
+		push_warning("SpreadStage: set piece %s on the road / in the water (road %d, water %d)" % [sp.piece_name, road, water])
 
 
 ## Hide meadow cards standing inside a set piece / spot (hinged ones and the batched statics), with their blobs.
@@ -1130,7 +1153,7 @@ func show_counter(n: int, over: String) -> void:
 	_counter.text = str(n)
 	var sp := set_piece(over)
 	# beside the house, upper left (above it the roof / chimney run out of the frame)
-	var p := sp.global_position + Vector3(0, sp.height * 0.62, 0) + dir_vec("left") * sp.height * 0.95 if sp else _anchor + Vector3(0, 0.6, 0)
+	var p := sp.global_position + Vector3(0, sp.height * 0.8, 0) + dir_vec("left") * sp.height * 0.42 + dir_vec("toward") * 0.1 if sp else _anchor + Vector3(0, 0.6, 0)
 	_counter.global_position = p
 	_counter_s = 1.0
 	_counter_v = 6.0

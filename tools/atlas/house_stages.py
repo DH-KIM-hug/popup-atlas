@@ -38,7 +38,9 @@ OPENINGS = {
 }
 # hand-picked wall cut rows (bottom → top) where the window rows leave too little room for even bands: a cut through a
 # window row steps up around the windows, so they stand whole on the band below
-CUTS = {"story_houses_06": [293, 275, 214], "story_houses_03": [262, 245, 172]}
+# wood (v2, user: "the first stage is a lone door"): band 0 = floor, sill and the plank walls up to the windows + door
+# starts as a foundation, not a floating door
+CUTS = {"story_houses_06": [293, 275, 214], "story_houses_03": [211, 172, 140]}
 
 
 def cut_house(cid, n, cat):
@@ -93,8 +95,12 @@ def cut_house(cid, n, cat):
             for (ox0, oy0, ox1, oy1) in OPENINGS.get(cid, []):
                 if oy0 < c < oy1:
                     row[ox0:ox1] = np.minimum(row[ox0:ox1], oy0)  # the opening stays whole in the band below
-            # eave tips (outside the wall's own width) belong to the roof: no wall band there
-            row[(xs_all < wx0) | (xs_all > wx1)] = base
+            # eave tips (outside the wall's own width, just under the roof line) belong to the roof; lower down, pixels
+            # outside the measured wall width are wall edge (nail heads, shutters) and stay with their band (v2: sending
+            # them to the roof stretched the roof card's bounds to the floor and the roof drew as a giant gable)
+            if k == len(bounds) - 2:
+                tip = roof_y + max(4, int(0.12 * (base - roof_y)))
+                row[(xs_all < wx0) | (xs_all > wx1)] = tip
         bnd.append(row)
     for k in range(1, len(bnd)):  # keep boundaries ordered (a band never has negative height)
         bnd[k] = np.minimum(bnd[k], bnd[k - 1])

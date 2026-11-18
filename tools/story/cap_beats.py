@@ -14,7 +14,7 @@ for b in sys.argv[4:]:
     errs = (r.get("parse_errors", []) + r.get("script_errors", []) + r.get("engine_errors", []))
     print(b, "ok" if r.get("ok") and res.get("ok") else "FAIL " + str(r.get("error"))[:300], (res.get("images") or [""])[0], flush=True)
     for p in r.get("prints", []):
-        if p.startswith(("LINE", "BEAT", "SPREAD", "STORY")):
+        if p.startswith(("LINE", "BEAT", "SPREAD", "STORY", "SET_CHECK")):
             print("   ", p[:160])
     for e in errs[:8]:
         print("  ERR", str(e)[:400])

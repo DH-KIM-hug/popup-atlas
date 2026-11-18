@@ -1135,3 +1135,22 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Still off: the wolf in the pot is small and half behind the pot rim; the brothers' tease walk arrives late in
     their line; the first page still waits ~8 s behind the cover in recordings; nobody has listened to the reused
     clips in context.
+
+## 2026-11-18 — three_pigs v2 fixes (user: houses across the road, odd wood-house start)
+  - Lots moved onto open meadow beside the road (ground maps from tools/story/probe_spots.gd): view 3 wood lot
+    [1.0, -0.62] right of the road, wolf comes up the road; view 4 brick lot [-0.85, -0.6] left of it, pile in front
+    left, brothers tease in front, pigs peek out on the road side, kitchen spots keep their lot offsets, ending
+    cottages left-back [-2.05, -1.3] and right of the road [1.2, -1.2] with a wider "village" shot. Home brick pile
+    and straw pile nudged off the road. New SpreadStage footprint check: SET_CHECK road=0 water=0 for every set
+    piece of all 9 beats.
+  - Wood house: scale 1.0 (≈ the brick house's on-screen size); the "giant A-frame" was the roof band stretched to
+    the floor by stray edge pixels the eave-tip rule had sent to it (fixed in tools/atlas/house_stages.py); first
+    band = floor, sill, lower plank walls and the door (cut rows 211 / 172 / 140), standing when the page opens
+    ("stage": 1), 5 taps raise the window row, the upper wall, the top strip and the roof (build counts from the
+    standing bands). Build-beat opening lines (tp_019 / 021 / 024) now start after the story shot lands (cam wait
+    1.2 s; tp_021 began mid-glide).
+  - Counter moved to the upper left of the house (inside the frame), wolf_wood wolf spot nudged into frame.
+  - Verify: check_all clean; full autoplay three_pigs STORY_DONE 322.2 s (missing_audio tp_n01 / tp_n02, pending),
+    sun_wind STORY_DONE 238.5 s missing_audio=[]; artifacts/video/three_pigs_full.mp4 re-recorded (24.9 MB).
+  - Videos: artifacts/video/three_pigs_wood_v2.mp4, three_pigs_brick_v2.mp4, three_pigs_wolf_wood_v2.mp4; tiles
+    artifacts/three_pigs/tiles/v2_*.jpg (8 fps: wood build, brothers' tease walk, wolf entrance, pigs' run).

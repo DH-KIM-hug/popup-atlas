@@ -81,6 +81,15 @@ Run long work through background agents/workflows with narrow ownership (one own
   cheaper than regenerating; keep them for runs, tiptoe and hungry poses.
 - The movie maker runs time-sliced builds per frame at 30 fps: the first page behind the cover took 21 s of story
   time at 3 ms/frame; it now builds at 10 ms/frame (the cover is a still page).
+- Houses go on open meadow beside the road, never across it (user: "the brick and wood houses are built across the
+  road"). SpreadStage prints `SET_CHECK <name> road=<n> water=<n>` for every set piece (base-line samples against the
+  path felt and stream); run all beats (`tools/story/cap_beats.py TALE tag 40 <beats...>`) and require zeros.
+- A house's first build stage must read as a house beginning (floor, lower walls, door), not a lone door; stand it
+  at the page open (`"stage": 1`) and let the taps raise the rest (the build verb counts from the bands standing).
+- Stray pixels in a band image stretch its card: PaperCard sizes `height` to its contour bounds (specks dropped)
+  while the stage positions by the image's opaque rect; the wood roof band carried a few edge pixels down to the
+  floor and drew as a giant gable. Keep band images free of specks (house_stages.py eave-tip rule).
+- Story lines that open a beat start after the camera has landed (`cam` wait ≥ 1.2 s after a page pop).
 - Pace: 36 reused lines play ~189 s on their own; 9 page turns (~5 s each) and ~37 taps put the first full run at
   5:21. Count narration + turns + taps before promising a length.
 

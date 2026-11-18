@@ -631,11 +631,12 @@ func _step_build(st: Dictionary) -> void:
 		"target": str(st.get("target", house))}
 	if st.has("prompt"):
 		await _say(str(st["prompt"]))
+	var shown0 := sp.shown if sp else 0  # bands already standing (a foundation) are not rebuilt
 	for i in range(1, taps + 1):
 		await _wait_tap([str(st.get("target", house))], str(st.get("hint", "")))
 		stage.build_ctx["tap"] = i
 		if sp:
-			var n := ceili(float(i) * sp.band_count() / taps)
+			var n := shown0 + ceili(float(i) * (sp.band_count() - shown0) / taps)
 			sp.bands_up(n, 0.08)
 		stage.fx(str(st.get("fx", "")))
 		if st.get("counter", false):

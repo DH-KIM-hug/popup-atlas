@@ -26,7 +26,7 @@
     "y0": 4,
     "y1": 149,
     "img_y0": 4,
-    "img_y1": 302,
+    "img_y1": 167,
     "hinge_units": 0.3081,
     "height_units": 0.2919,
     "roof": true
@@ -44,42 +44,42 @@
   "bands": [
    {
     "file": "art/atlas/story_houses/stages/story_houses_03_b0.webp",
-    "y0": 262,
+    "y0": 211,
     "y1": 282,
     "img_y0": 130,
     "img_y1": 282,
     "hinge_units": 0.0,
-    "height_units": 0.0446,
+    "height_units": 0.1583,
     "roof": false
    },
    {
     "file": "art/atlas/story_houses/stages/story_houses_03_b1.webp",
-    "y0": 245,
-    "y1": 262,
-    "img_y0": 245,
-    "img_y1": 262,
-    "hinge_units": 0.0446,
-    "height_units": 0.0379,
+    "y0": 172,
+    "y1": 211,
+    "img_y0": 130,
+    "img_y1": 211,
+    "hinge_units": 0.1583,
+    "height_units": 0.087,
     "roof": false
    },
    {
     "file": "art/atlas/story_houses/stages/story_houses_03_b2.webp",
-    "y0": 172,
-    "y1": 245,
-    "img_y0": 130,
-    "img_y1": 245,
-    "hinge_units": 0.0825,
-    "height_units": 0.1628,
+    "y0": 140,
+    "y1": 172,
+    "img_y0": 140,
+    "img_y1": 172,
+    "hinge_units": 0.2453,
+    "height_units": 0.0714,
     "roof": false
    },
    {
     "file": "art/atlas/story_houses/stages/story_houses_03_b3.webp",
     "y0": 121,
-    "y1": 172,
+    "y1": 140,
     "img_y0": 121,
-    "img_y1": 172,
-    "hinge_units": 0.2453,
-    "height_units": 0.1137,
+    "img_y1": 140,
+    "hinge_units": 0.3167,
+    "height_units": 0.0424,
     "roof": false
    },
    {
@@ -87,7 +87,7 @@
     "y0": 4,
     "y1": 121,
     "img_y0": 4,
-    "img_y1": 282,
+    "img_y1": 140,
     "hinge_units": 0.3591,
     "height_units": 0.2609,
     "roof": true
@@ -148,7 +148,7 @@
     "y0": 4,
     "y1": 154,
     "img_y0": 4,
-    "img_y1": 309,
+    "img_y1": 172,
     "hinge_units": 0.3761,
     "height_units": 0.3639,
     "roof": true
@@ -189,7 +189,7 @@
     "y0": 4,
     "y1": 137,
     "img_y0": 4,
-    "img_y1": 289,
+    "img_y1": 155,
     "hinge_units": 0.384,
     "height_units": 0.336,
     "roof": true
@@ -230,7 +230,7 @@
     "y0": 4,
     "y1": 148,
     "img_y0": 4,
-    "img_y1": 303,
+    "img_y1": 166,
     "hinge_units": 0.3629,
     "height_units": 0.3371,
     "roof": true

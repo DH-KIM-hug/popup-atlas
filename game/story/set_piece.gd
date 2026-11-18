@@ -13,6 +13,7 @@ static var _stages_cache := {}
 var id := ""
 var piece_name := ""
 var height := 0.5  ## world height of the whole card
+var width := 0.5  ## world width of the whole card (base line)
 var bands: Array[PopHinge] = []  ## bottom → top (banded houses); empty for a plain card
 var band_cards: Array[PaperCard] = []
 var hinge: PopHinge  ## plain card
@@ -68,6 +69,8 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 		base.add_child(hinge)
 		card = PaperCard.new()
 		card.texture = load(path)
+		var ts := card.texture.get_size()
+		width = height * ts.x / maxf(ts.y, 1.0)
 		card.height = height
 		card.thickness = clampf(height * 0.035, 0.01, 0.03)
 		card.back_print = false
@@ -78,6 +81,7 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 	var top_px := float(st["bands"][st["bands"].size() - 1]["y0"])
 	var base_px := float(st["base_y"])
 	var s := height / (base_px - top_px)  # world per facade px
+	width = float(px[0]) * s
 	for k in (st["bands"] as Array).size():
 		var b: Dictionary = st["bands"][k]
 		var tex: Texture2D = load("res://" + str(b["file"]))
