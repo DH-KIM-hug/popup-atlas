@@ -16,6 +16,8 @@ uniform float grade = 1.0;
 uniform float saturation = 1.0;
 uniform float contrast = 1.0;
 uniform float lift = 0.012;
+uniform float grain = 0.0;          // LOOKF r1: sensor grain (photo, not vector-clean)
+uniform float toe = 0.0;            // LOOKF r1: crush the darkest stops a little (real shadow depth)
 
 vec3 sample_blur(vec2 uv, float lod, vec2 px) {
 	if (lod < 0.02) return textureLod(screen_tex, uv, 0.0).rgb;
@@ -39,7 +41,13 @@ void fragment() {
 	vec3 g = c * mix(shadow_tint.rgb * 2.0 + 0.68, highlight_tint.rgb, smoothstep(0.05, 0.75, l));
 	g = mix(vec3(l), g, saturation);
 	g = (g - 0.45) * contrast + 0.45 + lift;
+	g = mix(g, g * smoothstep(0.0, 0.35, l + 0.08), toe);
 	c = mix(c, g, grade);
+	if (grain > 0.0) {
+		vec2 gp = floor(FRAGCOORD.xy * 0.75);
+		float n = fract(sin(dot(gp, vec2(12.9898, 78.233)) + TIME * 7.0) * 43758.5453) - 0.5;
+		c += n * grain * (0.6 + 0.8 * (1.0 - l));
+	}
 	vec2 v = uv - 0.5;
 	float vig = 1.0 - vignette * smoothstep(0.25, 0.85, dot(v * vec2(1.1, 1.0), v * vec2(1.1, 1.0)) * 2.2);
 	COLOR = vec4(max(c * vig, 0.0), 1.0);

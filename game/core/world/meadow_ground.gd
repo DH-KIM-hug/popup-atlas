@@ -53,9 +53,10 @@ func build() -> void:
 		felt_parts = Geometry2D.clip_polygons(felt_rect, stream_cut)
 	var felt_mat := _ground_mat(felt_color, felt_mottle, felt_mottle_strength, 0.0)
 	felt_mat.set_shader_parameter("mottle_scale", 0.04)
-	felt_mat.set_shader_parameter("fibre_strength", 0.36)  # INT r3: visible felt tooth
-	felt_mat.set_shader_parameter("grain_strength", 0.28)
-	felt_mat.set_shader_parameter("bump", 0.9)
+	felt_mat.set_shader_parameter("fibre_strength", 0.5)  # LOOKF r1: macro felt nap (was 0.36)
+	felt_mat.set_shader_parameter("grain_strength", 0.36)
+	felt_mat.set_shader_parameter("bump", 1.6)
+	felt_mat.set_shader_parameter("clump_strength", 0.42)
 	var felt_edge := _edge_mat(felt_color.lerp(Color("e9e2c4"), 0.6))
 	for part in felt_parts:
 		if Geometry2D.is_polygon_clockwise(part) != Geometry2D.is_polygon_clockwise(felt_rect):
@@ -81,8 +82,10 @@ func build() -> void:
 			if dk.size() > 0:
 				_deck_poly = dk[0]
 		var pm := _ground_mat(path_color, path_color.darkened(0.12), 0.45, 0.6)
-		pm.set_shader_parameter("fibre_strength", 0.1)
-		pm.set_shader_parameter("grain_strength", 0.08)
+		pm.set_shader_parameter("fibre_strength", 0.2)  # LOOKF r1: handmade-paper tooth on the road
+		pm.set_shader_parameter("grain_strength", 0.14)
+		pm.set_shader_parameter("clump_strength", 0.22)
+		pm.set_shader_parameter("bump", 1.0)
 		pm.set_shader_parameter("mottle_scale", 0.12)
 		pm.set_shader_parameter("speckle", 0.45)  # INT r3: printed gravel / wear
 		pm.set_shader_parameter("speckle_color", Color("8a6a48"))
@@ -203,9 +206,10 @@ func _build_tiers(top: float) -> void:
 			# r3: stronger low-frequency print variation (flat tier tops read as one sage sheet)
 			var gm := _ground_mat(col, col.darkened(0.2).lerp(Color("9c9450"), 0.3), 1.0, 0.0)
 			gm.set_shader_parameter("mottle_scale", 0.11)
-			gm.set_shader_parameter("fibre_strength", 0.34)
-			gm.set_shader_parameter("grain_strength", 0.26)
-			gm.set_shader_parameter("bump", 0.9)
+			gm.set_shader_parameter("fibre_strength", 0.46)
+			gm.set_shader_parameter("grain_strength", 0.34)
+			gm.set_shader_parameter("bump", 1.5)
+			gm.set_shader_parameter("clump_strength", 0.38)
 			var em := _edge_mat(col.lerp(Color("efe6c8"), 0.5))  # r3: 0.68 read as white planks at grazing angles
 			for pp in parts:
 				var yb := _hill_y_at(pp, top)
