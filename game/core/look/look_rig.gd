@@ -125,7 +125,7 @@ func _build() -> void:
 	key.light_color = key_color
 	key.light_energy = key_energy
 	key.shadow_enabled = true
-	key.shadow_bias = 0.02
+	key.shadow_bias = 0.08  # LOOKF r2: 0.02 drew shadow acne as a diagonal rib on the felt
 	key.shadow_normal_bias = 0.6
 	key.shadow_blur = shadow_softness
 	key.shadow_opacity = shadow_opacity

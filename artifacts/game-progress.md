@@ -721,3 +721,103 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   Codex said FAILED only because the size was not 1536x1024 (it returns 2172x724), so the v2 jobs now accept any wide size.
 - QA: `art_src/cast/qa/cast_contact.png`; the story frame (wind_turn, autoplay, 13 s) is `artifacts/cast/sun_wind_v2_story.png`.
   Import and check_all are clean.
+- 2026-11-18 LOOKF round 1 (look pass, worktree `/Users/house_of_4k2b/orca/popup-atlas-look`, branch `look-fable`,
+  commit 4df8cde, from INT_r4 on main b17a12c). Goal: the photographed-miniature look, with no new prop types.
+  Changes:
+  - Lens (`meadow.gd` VIEWS + rig): elevation 21-23° → 15-17° at the same 6 road stations, yaw, distance and fov.
+    DOF is a thin slab around the traveller (near margin 0.7, far 1.1, amount 0.07 → 0.12), tilt_blur 0.5, plus a
+    little global lens softness (0.14), sensor grain (0.035) and a shadow toe in `post_grade.gdshader`.
+  - Light: key elevation 34° → 25°, yaw -60° → -70°, energy 2.05 → 2.7; fill 0.55 → 0.34; ambient 0.46 → 0.37;
+    shadow opacity 0.8 → 0.93, softness 1.4 → 1.0; contact shadows 1.25x and darker; vignette 0.24. A small
+    unshadowed warm omni ("HeroBounce") rides with the traveller so a long tree shadow never buries him.
+  - Ground: `ground_layer.gdshader` fibre layers at unrelated angles warped by the mottling, plus a mid-scale wool
+    clump term (`clump_strength`) on felt, tiers, cover patches and road; bump 0.9 → 1.5-1.6. Felt 7d9366 / 556b45.
+    The blue-green cover patch is greener (it read as puddles).
+  - Road: width 0.5 → 0.38, colour d9bf8a → c9ae7c.
+  - Trees: new `_tree_rows()` places 40 rows of 5-9 mid-height trees (existing conifer/tree/autumn/blossom pools)
+    with bush skirts. POOL_SCALE conifer 1.5 → 1.25, tree 1.25 → 1.08, autumn 1.05, blossom 1.02.
+  - Lens keep-out: `_blocks_view` also rejects any card that rises into the camera-to-traveller sightline.
+  - Back rows: ochre/orange hill cards 00, 02, 05, 07, 08, 09, 13, 24 excluded too; haze dcc49a → b4bd9c, 0.72.
+  - Budget trades: ground-cover pass 1800 → 1150 tries; `pop_radius` 4.2 → 3.85 (fewer hinged cards = fewer draws).
+  Metrics v0-5 (settled, frame 170): lum .341-.455, p05 .040-.189, p95 .595-.706, sat .573-.632, warmth .219-.317,
+  edge .046-.066, tiltshift 2.25-3.14. ~5320-5490 cards per spread (493-630 hinged).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 10.56 ms, 1559 draws (INT_r4 re-measured in the same
+  session: 9.86 ms, 1454). Vulkan p95 14.19 ms (GPU max 14.28), 5069 draws (INT_r4 13.79 ms, 4696): +3 % time,
+  +8 % draws. Draw count swings about ±5 % with how many hinged cards the seed puts near the traveller.
+  check_all: clean (30 scripts).
+  Captures: `artifacts/world/look_f1/v0..v5.png`. Blind A/B: `artifacts/ab/LOOKF_r1` (seed 21; refs v_01, 03, 04,
+  06, 12, 13). Head-to-head vs INT_r4: `artifacts/ab/H2HF_r1` (seed 21). Not judged yet.
+  Open: the felt nap still shows a faint regular rib at mid distance; v1 p05 is 0.04 (dark conifers in shadow,
+  below the reference 0.09); warmth and saturation sit at the top of the reference range; v0 has one large blurred
+  pine in the near foreground; the story agent's spreads will inherit the narrower road and smaller pop radius.
+- 2026-11-18 LOOKF round 2 (look pass, worktree `/Users/house_of_4k2b/orca/popup-atlas-look`, branch `look-fable`,
+  commit 88fa45b; main merged in first, so the branch carries the story-flow commits). r1 was rejected head-to-head
+  (0.39): critics liked its lower lens, tree layers and warm light, and disliked the blurred foreground clutter,
+  foggy backdrop, overall softness and the small hero. r2 restarts the look values from INT_r4 and keeps it crisp.
+  Changes (no new prop types):
+  - Lens (`meadow.gd` VIEWS + rig): elevation 21-23° → 18-19.5°, distance 7.2-7.6 → 6.8-7.0 (traveller ~8 % larger),
+    same stations, yaw and fov. DOF is a wide sharp slab (near margin 1.6, far 1.5, amount 0.075): blur falls on the
+    far rows only. tilt_blur 0.58 → 0.36. No global lens softness, no grain. Shadow toe 0.2, contrast 1.06.
+  - Light: key elevation 34° → 28°, yaw -60° → -66°, energy 2.05 → 2.5, colour ffdcb2; fill 88a6dc at 0.46; ambient
+    0.43; shadow opacity 0.9; contact shadows 1.2x. The warm unshadowed "HeroBounce" omni rides with the traveller.
+  - Shadow acne: the regular diagonal rib on the ground (r1 open issue, also faint in INT_r4) was shadow-map acne
+    under the raking key, not the felt. Key `shadow_bias` 0.02 → 0.08 in `look_rig.gd` removes it.
+  - Ground: r1's matted-wool shader kept (clump term), retuned: felt fibre 0.4 / grain 0.42 / clump 0.8, tiers
+    0.36 / 0.4 / 0.75, road 0.14 / 0.2. Felt 7e9567 / 586e48. Road width 0.5 → 0.44, colour d9bf8a → d2b684.
+  - Trees: `_tree_rows()` (44 tries, single-family rows of 5-9 mid-height trees) only beside and behind the
+    traveller, never on the camera side. POOL_SCALE conifer 1.5 → 1.32, tree 1.25 → 1.1, autumn 1.08, blossom 1.05
+    (the lower lens cropped the giants to trunks).
+  - Lens keep-out (`_blocks_view`): cards over 0.3 are kept out of the band in front of the traveller, trees over
+    0.5 out of everything nearer than him within 1.7, and nothing rises into the sightline.
+  - Back rows: `hill_layer_terracotta`, `hills_clouds_24`, `hills_clouds_26` excluded (red slab, giant flowers);
+    warm haze e0c69a at 0.5 (was dcc49a 0.62), begins 1.6 past the focus.
+  Metrics v0-5 (settled, frame 170): lum .413-.464, p05 .098-.194, p95 .703-.735, sat .585-.654, warmth .269-.314,
+  edge .085-.123 (v0 .123 and v1 .106 near/above the .11 top), tiltshift 1.83-3.05. 5545-5801 cards per spread
+  (660-812 hinged).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Metal p95 10.66 ms, 1572 draws. Vulkan p95 14.62 ms (GPU max
+  14.73), 5061 draws: +6.7 % time and +7.8 % draws over INT_r4 (13.7 ms, 4696), inside the 10 % limit.
+  check_all: clean (39 scripts).
+  Captures: `artifacts/world/look_f2/v0..v5.png`. Blind A/B: `artifacts/ab/LOOKF_r2` (seed 22; refs v_01, 03, 04,
+  06, 12, 13). Head-to-head vs INT_r4: `artifacts/ab/H2HF_r2` (seed 22). Not judged yet.
+  Open: v4's back hill dome sits large behind the road; v0 is the busiest frame; draws are 2 % under the limit and
+  swing about ±5 % with the seed; the narrower road, smaller trees and shadow bias are template defaults that the
+  story spreads inherit on merge.
+- 2026-11-18 LOOKF round 3 (look pass, worktree `/Users/house_of_4k2b/orca/popup-atlas-look`, branch `look-fable`,
+  commit 2fa03ab, on top of r2 88fa45b). r2 was kept (head-to-head 0.89) but its blind A/B vs the reference got
+  worse (ref-pick 0.56, impressed 0.33): critics called our cards flat digital decals, everything equally sharp,
+  and the lower half empty lawn. r3 keeps r2's composition and light and adds physical paper and a graded lens.
+  Changes (no new prop types):
+  - Lens (`meadow.gd` VIEWS + rig): distance 6.8-7.0 → 6.5-6.6 at the same stations, elevation, yaw and fov
+    (traveller ~6 % larger, less lawn in frame). DOF: near margin 1.6 → 1.25, far margin 1.5 → 1.15, far
+    transition 3.4 → 2.8, amount 0.075 → 0.09, tilt_blur 0.36 → 0.5: the far rows melt clearly, the traveller's
+    band stays crisp, the nearest strip softens only slightly. Still no global softness or grain.
+  - Paper: card thickness 4 % → 5 % of height (min 0.014, max 0.05; `meadow.gd`, `static_cards.gd`); cut-edge core
+    paler (`paper_card.gd` lerp to print colour 0.42 → 0.24, no darkening; `paper_edge` brightness 1.08 → 1.16);
+    die-cut rim 0.0024 → 0.0032 wide, mix 0.35 → 0.5; print tooth `fibre_strength` 0.16 → 0.3 plus a broad
+    ink-blotch term in `paper_print.gdshader`.
+  - Hand-set cards: lean ±0.04 → ±0.065 rad, tilt -0.03..0.02 → -0.075..0.015 (most lean back a touch).
+  - Foreground: `_lens_foreground()` adds up to 56 clumps of 3-6 low cover cards (all under 0.3 tall) in the
+    meadow in front of and beside the traveller, so the lower half is a dense bed with no tall blurred card.
+  - Budget trades: new `_hinge_r` override; the tiny ground-cover tufts are hinged only within 1.8 of the
+    traveller and the new foreground bed within 2.6 (the rest are static MultiMesh); tuft pass 1800 → 1500 tries.
+  Metrics v0-5 (settled, frame 170): lum .434-.493, p05 .119-.208, p95 .715-.760, sat .572-.630, warmth .281-.335,
+  edge .092-.126 (v0 .115, v4 .126, v5 .116 above the .11 reference top), tiltshift 2.61-3.18 (above the 1.3-2.5
+  reference range, inside the 2-3.5 brief target). 5590-5847 cards per spread (693-767 hinged).
+  Profile (meadow.tscn walking, 1366x1024, 6 s): Vulkan p95 14.48 ms (max 14.65), 4957 draws max (4614 mean):
+  +5.7 % time and +5.6 % draws over INT_r4 (13.7 ms, 4696), inside the 10 % limit; r2 re-measured in the same
+  session: 14.62 ms, 5061. Metal p95 13.96 ms, 4957 draws. Metal now reports the same draw count as Vulkan and a
+  higher frame time than the r2 log entry (10.66 ms, 1572); r2 was not re-measured on Metal this session, so the
+  Metal numbers are not comparable to earlier entries.
+  check_all: clean (39 scripts).
+  Captures: `artifacts/world/look_f3/v0..v5.png`. Blind A/B: `artifacts/ab/LOOKF_r3` (seed 23; refs v_01, 03, 04,
+  06, 12, 13). Head-to-head vs r2 (`look_f2`): `artifacts/ab/H2HF_r3` (seed 23). Not judged yet.
+  Open: edge density is above the reference top in three views; v3 keeps a bare lawn patch on the right bank and
+  a cropped cypress/oak pair at the right edge; the paper_print / paper_edge / thickness changes are shared
+  defaults, so every card in the story spreads inherits them on merge.
+- 2026-11-18 lead: Fable look loop LOOKF r1-r3 (branch look-fable, worktree ../popup-atlas-look). Scores (3 critics each):
+  r1 vs-ref 0.28 / impressed 0.94 / h2h vs INT_r4 0.39; r2 0.56 / 0.33 / 0.89; r3 0.33 / 0.67 / 0.17 (vs r2).
+  Signals conflicted (h2h critics prefer crisp clarity, vs-reference critics prefer the photographed miniature).
+  USER chose Fable r1 → cherry-picked onto main (4f79cb0) + r2's shadow-acne fix (key shadow_bias 0.02 → 0.08).
+  Story verified with the new template (wind_turn beat recorded, artifacts/video/sun_wind_wind_turn_v2.mp4).
+  Note: --write-movie runs on this Mac crop the frame edges slightly (page tab / 자막 button cut); capture_scene and
+  the r2 sheet show them in place, so it is a capture-window artefact, not a layout bug.
