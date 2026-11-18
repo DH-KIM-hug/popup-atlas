@@ -1,4 +1,12 @@
-# Front-facing paper-puppet walk (CastPuppet, game/art/cast/rig/cast_puppet.gd, `front_gait = true`)
+# Paper-puppet walk (all directions)
+
+Walkers can go toward the camera, away from it, or sideways (user, 2026-11-18: "앞뒤 왼쪽 오른쪽도 되긴 해"). The rule is only that the visible figure faces the travel direction:
+- **front** figure when moving toward the camera (rig below),
+- **back** figure (back of head/clothes, heels toward us) when moving away — same rig, mirrored logic: legs in front of nothing, feet show heels,
+- **side profile** figure when moving across the frame: legs pivot fore/aft at the hip (classic brad-jointed paper puppet: leg swing ±20–25°, knee-bend cards, arms swing opposite), flip the card (scale.x = -1 or a mirrored print) for the other direction; side walkers read best and are the cheapest.
+Choose the view each frame from the camera-relative travel direction with hysteresis (~30°) and a quick paper 'turn' (card yaw flip over ~0.15 s) when it changes. Expressions are needed per view the beat uses (side faces show emotion well too).
+
+## Front-facing walk details (CastPuppet, game/art/cast/rig/cast_puppet.gd, `front_gait = true`)
 
 What finally read as "a child walking toward me" (sun_wind v7, user: "이 정도는 괜찮다"):
 - Direction: walks toward the camera along a road; story camera ahead, looking back, dollying; card yaw toward the

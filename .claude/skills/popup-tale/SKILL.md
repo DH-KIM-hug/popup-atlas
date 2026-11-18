@@ -31,7 +31,7 @@ Run long work through background agents/workflows with narrow ownership (one own
 
 **Characters and motion** (details: `references/walk_rig.md`)
 - One smiling figure is not a character. Give every narrated emotion its own figure: calm walking face, surprised, cold/shivering, hot/sweating, relieved, sad/angry as the tale needs. Map line → expression in script.json; no beat may show a grin over "앗!" or "추워!".
-- Front-facing cards must walk TOWARD the camera (the direction they face); walking away/sideways reads as moonwalking. The story camera stands ahead on the road looking back and dollies with the walker.
+- A card must face the way it travels, or it reads as moonwalking (sun_wind's first walk: a front-facing card moving away). Characters may walk in any direction — toward the camera, away, left, right — as long as the figure for that direction exists: front view (walking toward us), back view (walking away), side profile (left/right; flip the card for the other side). Pick the figure from the travel direction relative to the camera each frame (with a short turn when it changes). Plan which directions each walker needs and generate those views; front-only walkers are limited to walking toward the camera.
 - Front-facing legs need front-view boots/feet (toes at the viewer). Side-view feet → 팔자걸음.
 - Legs live behind the garment (per-figure depth deep enough for max leg tilt; cap tilt ~20° fwd/24° back); never shorten/slide a leg so its top shows; use pre-drawn half-bent and lifted leg cards; steps narrow (inside the coat width).
 - Swinging arms (separate arm cards with a round shoulder cap) stop the "soldier march"; posed-arm expressions keep baked arms.

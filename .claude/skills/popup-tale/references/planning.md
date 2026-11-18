@@ -10,9 +10,8 @@ Write this plan into the progress log before building; it is what every agent ge
    runs toward the camera for every walking stretch.
 3. **Cast sheet** (one row per character): role, reusable? (→ shared `game/art/cast/`), walker (front-facing rig) or
    hanger/prop, every pose and expression per beat (start from the lines: each emotional line needs a face), props worn
-   or carried, how they enter/exit. Animals that walk on 4 legs: decide early whether they are front-facing upright
-   puppets (like the traveller) or side-view cards that may only move sideways across the camera (then flip the card
-   to face the travel direction — never move a card backward relative to where it faces).
+   or carried, how they enter/exit. For each walker list the directions it travels in each beat (toward / away / left / right) and generate the
+   matching views (front, back, side profile — flip for the other side). Never move a card in a direction it doesn't face.
 4. **Interactions**: one meaningful tap/hold per beat for a 3–7-year-old (tap a character → line; hold to blow; tap to
    build). Each must have a visible payoff on the page, not only in the narration (critics: "the story cheats the child
    when key moments are only spoken").
