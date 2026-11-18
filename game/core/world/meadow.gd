@@ -29,12 +29,13 @@ const VIEWS := [
 	## r3: lower lens (21-23°) for more overlap and a longer view into the haze, like the footage.
 	## LOOKF r2: 18-19.5° (r1's 15-17° lost the road and filled the bottom with blurred clutter), a little closer
 	## so the traveller is larger.
-	[0.36, 18.5, 10.0, 6.9, 20.0],
-	[0.46, 18.0, -24.0, 6.9, 20.0],
-	[0.555, 19.5, 32.0, 6.8, 20.0],
-	[0.62, 19.0, 26.0, 7.0, 20.0],
-	[0.72, 18.5, 16.0, 6.9, 20.0],
-	[0.28, 18.5, -30.0, 6.9, 20.0],
+	## LOOKF r3: a little closer again (6.8-7.0 -> 6.5-6.6): larger hero, less bare lawn in frame.
+	[0.36, 18.5, 10.0, 6.5, 20.0],
+	[0.46, 18.0, -24.0, 6.5, 20.0],
+	[0.555, 19.5, 32.0, 6.5, 20.0],
+	[0.62, 19.0, 26.0, 6.6, 20.0],
+	[0.72, 18.5, 16.0, 6.5, 20.0],
+	[0.28, 18.5, -30.0, 6.5, 20.0],
 ]
 ## r3: small props scaled down so the 0.36 traveller reads above the flowers (critic: "hero is the height of a flower")
 const POOL_SCALE := {"conifer": 1.32, "tree": 1.1, "autumn": 1.08, "blossom": 1.05,  # LOOKF r2: was 1.5/1.25/1.2/1.15 (lower lens cropped the giants to trunks)
@@ -68,6 +69,7 @@ var _cam_ground := Vector2.ZERO
 var _cam_h := 2.0  ## camera height above the page (lens keep-out)
 var _houses: Array = []  ## [pos, h, yaw] for chimney smoke
 var _fill_mask: FastNoiseLite  ## r2: low-frequency density mask (clearings vs clumps)
+var _hinge_r := -1.0  ## LOOKF r3: when > 0, overrides pop_radius for the cards being placed (tiny cover stays static)
 
 
 func _ready() -> void:
@@ -269,8 +271,9 @@ func _try(pool_or_id: String, c: Vector2, spread: float, s0 := 0.85, s1 := 1.15,
 
 func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w := -1.0, force_static := false) -> void:
 	var pos := Vector3(q.x, ground.surface_y(q), q.y)
-	var lean := rng.randf_range(-0.04, 0.04)
-	var tilt := rng.randf_range(-0.03, 0.02)
+	# LOOKF r3: hand-set cards (a few degrees off square, most lean back a touch), not a sprite grid
+	var lean := rng.randf_range(-0.065, 0.065)
+	var tilt := rng.randf_range(-0.075, 0.015)
 	if w < 0.0:
 		w = h * float(it["aspect"])
 	if cross:
@@ -279,7 +282,7 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 		contact.add(pos, yaw, w, clampf(h * 0.35, 0.04, 0.16), 1.0)
 	card_count += 2 if cross else 1
 	var pool: String = it["pool"]
-	if force_static or not pop_on_load or q.distance_to(_start) > pop_radius:
+	if force_static or not pop_on_load or q.distance_to(_start) > (_hinge_r if _hinge_r > 0.0 else pop_radius):
 		statics.add(it["path"], float(it["h"]), h, pos, yaw, lean, cross, tilt)
 		return
 	var base := Node3D.new()
@@ -293,7 +296,7 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 	hinge.set_meta("half_w", w * 0.5)
 	base.add_child(hinge)
 	hinges.append(hinge)
-	var thick := clampf(h * 0.04, 0.011, 0.04)  # r3: thicker board
+	var thick := clampf(h * 0.05, 0.014, 0.05)  # LOOKF r3: thicker board, visible cut edge
 	if cross:
 		var cc := CrossCard.new()
 		cc.texture_a = _tex_of(it["path"])
@@ -597,6 +600,19 @@ func _lens_foreground() -> void:
 		var side := -1.0 if k % 2 == 0 else 1.0
 		var q := _start + to_cam * r2.randf_range(2.4, 3.2) + right * side * r2.randf_range(1.5, 2.4)
 		_try(pools[r2.randi() % pools.size()], q, 0.2, 0.95, 1.15)
+	# LOOKF r3: the near meadow in front of the traveller is a dense bed of low cover in overlapping clumps
+	# (critics: "large empty lawn in the lower half"). Nothing here is taller than 0.3, so nothing becomes a
+	# blurred blob in front of the lens.
+	var low := ["flower", "grass", "bush", "flower", "mushroom", "sapling", "grass", "flower"]
+	_hinge_r = 2.6
+	for k in 56:
+		var c := _start + to_cam * r2.randf_range(-0.9, 4.4) + right * r2.randf_range(-2.6, 2.6)
+		if _fill_mask.get_noise_2d(c.x * 1.7, c.y * 1.7) < -0.3:
+			continue
+		for j in r2.randi_range(3, 6):
+			var pl: String = low[r2.randi() % low.size()]
+			_try(pl, c, 0.26, 0.55 if pl == "bush" or pl == "sapling" else 0.75, 0.8 if pl == "bush" or pl == "sapling" else 1.05, 0.0, 0.6)
+	_hinge_r = -1.0
 	rng = saved
 
 
@@ -617,11 +633,15 @@ func _meadow_fill() -> void:
 		for j in rng.randi_range(3, 7):
 			_try(base if j < 2 else pools[rng.randi() % pools.size()], c, 0.22, 0.8, 1.15, 0.0, 0.62)
 	# r4: low ground-cover pass (tiny grass/flower tufts) so open felt reads as meadow, not an empty sheet
-	for k in 1800:
+	# LOOKF r3: these tufts are hinged only close to the traveller (their pop is invisible further out; the
+	# draws saved pay for the denser foreground cover).
+	_hinge_r = 1.8
+	for k in 1500:
 		var c := Vector2(rng.randf_range(-12.5, 12.5), rng.randf_range(-8.0, 9.0))
 		if c.distance_to(_start) < HERO_CLEAR * 0.7:
 			continue
 		_try("grass" if rng.randf() < 0.65 else "flower", c, 0.05, 0.6, 0.9, 0.0, 0.7)
+	_hinge_r = -1.0
 
 
 # ------------------------------------------------------------------ traveller, camera, life
@@ -638,12 +658,14 @@ func _build_camera_and_traveller(v: Array, off: float) -> void:
 	# r3: more lens character (critic: "reads as a game camera"); r1 showed 30-40% smear is too much.
 	# LOOKF r2: photographed, but crisp where it counts. Wide sharp slab (traveller, his surroundings and the
 	# near ground stay sharp), blur only on the far rows; no global softness or grain (r1: "upscaled video").
-	rig.dof_near_margin = 1.6
-	rig.dof_far_margin = 1.5
-	rig.dof_near_transition = 2.4
-	rig.dof_far_transition = 3.4
-	rig.dof_amount = 0.075
-	rig.tilt_blur = 0.36
+	# LOOKF r3: a real lens falloff again, but graded: the traveller's band and 1.2 either side stay crisp,
+	# the far rows melt clearly, the nearest strip softens a little (r2 critics: "everything equally sharp").
+	rig.dof_near_margin = 1.25
+	rig.dof_far_margin = 1.15
+	rig.dof_near_transition = 2.6
+	rig.dof_far_transition = 2.8
+	rig.dof_amount = 0.09
+	rig.tilt_blur = 0.5
 	rig.tilt_top_bias = 1.0
 	rig.toe = 0.2
 	rig.post_contrast = 1.06

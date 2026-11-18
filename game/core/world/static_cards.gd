@@ -19,7 +19,7 @@ func add(path: String, h0: float, h: float, pos: Vector3, yaw: float, lean := 0.
 	g["xforms"].append(Transform3D(b, pos))
 	count += 1
 	if cross:
-		var thick := clampf(float(g["h0"]) * 0.04, 0.011, 0.04)
+		var thick := clampf(float(g["h0"]) * 0.05, 0.014, 0.05)
 		var bb := b * Basis(Vector3.UP, PI * 0.5) * Basis.from_scale(Vector3(1, 0.96, 1))
 		g["xforms"].append(Transform3D(bb, pos + b * Vector3(0, 0, thick * 1.1)))
 		count += 1
@@ -32,7 +32,7 @@ func commit() -> void:
 		if tex == null:
 			continue
 		var h0: float = g["h0"]
-		var thick := clampf(h0 * 0.04, 0.011, 0.04)
+		var thick := clampf(h0 * 0.05, 0.014, 0.05)
 		var key := "%s|%.4f|%.4f|%.2f|%s" % [tex.resource_path, h0, thick, 1.6, true]
 		var entry: Dictionary = PaperCard._mesh_cache.get(key, {})
 		if entry.is_empty():

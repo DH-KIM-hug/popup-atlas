@@ -90,7 +90,7 @@ static func _materials(tex: Texture2D, back_print_: bool, edge: Color, size: Vec
 	back.set_shader_parameter("plain_color", avg.lerp(edge, 0.55).darkened(0.08))
 	var side := ShaderMaterial.new()
 	side.shader = EDGE_SHADER
-	side.set_shader_parameter("edge_color", edge.lerp(avg, 0.42).darkened(0.1))  # INT r3: darker coloured core edge (r2: lerp 0.3)
+	side.set_shader_parameter("edge_color", edge.lerp(avg, 0.24))  # LOOKF r3: paler core (cut edge must read as cardstock thickness)  # INT r3: darker coloured core edge (r2: lerp 0.3)
 	side.set_shader_parameter("fibre_tex", FIBRE)
 	var mats := [front, back, side]
 	_mat_cache[key] = mats

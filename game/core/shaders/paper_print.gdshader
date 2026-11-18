@@ -7,13 +7,14 @@ uniform sampler2D albedo_tex : source_color, filter_linear_mipmap_anisotropic;
 uniform sampler2D fibre_tex : hint_default_white, filter_linear_mipmap, repeat_enable;
 uniform vec2 card_size = vec2(0.4);
 uniform float fibre_density = 7.0;   // repeats per world unit
-uniform float fibre_strength = 0.16;
+uniform float fibre_strength = 0.3;  // LOOKF r3: visible paper tooth on the print (was 0.16, read as vector decals)
 uniform bool plain = false;
 uniform vec4 plain_color : source_color = vec4(0.93, 0.89, 0.8, 1.0);
 uniform float translucency = 0.32;   // light through thin paper from behind
 // Die-cut cream rim just inside the cut line (world units).
-uniform float rim_width = 0.0024;  // INT r1: was 0.006 (read as a white sticker halo)
-uniform float rim_mix = 0.35;  // INT r3: 0.5 -> 0.35, less sticker outline (r1 note: lightens toward cream)
+uniform float rim_width = 0.0032;  // INT r1: was 0.006 (read as a white sticker halo)
+uniform float rim_mix = 0.5;  // LOOKF r3: die-cut pale lip reads again (critics: no visible cut edge)
+//  // INT r3: 0.5 -> 0.35, less sticker outline (r1 note: lightens toward cream)
 uniform vec4 rim_color : source_color = vec4(0.97, 0.92, 0.80, 1.0);
 // Baked contact darkening near the hinge (world units of card height).
 uniform float foot_ao_height = 0.06;
@@ -52,7 +53,9 @@ void fragment() {
 	vec2 fuv = UV * card_size * fibre_density;
 	float f = texture(fibre_tex, fuv).r;
 	float f2 = texture(fibre_tex, fuv * 2.7 + 0.31).r;
-	float fibre = mix(f, f2, 0.4) - 0.5;
+	// LOOKF r3: a broad blotch under the fibre (uneven ink on toothy stock, like the photographed cards)
+	float f3 = texture(fibre_tex, fuv * 0.31 + 0.57).r;
+	float fibre = mix(f, f2, 0.4) - 0.5 + (f3 - 0.5) * 0.55;
 	float h = (1.0 - UV.y) * card_size.y;
 	float ao = mix(1.0 - foot_ao_strength, 1.0, smoothstep(0.0, foot_ao_height, h));
 	ALBEDO = col * (1.0 + fibre * fibre_strength * 2.0) * ao;

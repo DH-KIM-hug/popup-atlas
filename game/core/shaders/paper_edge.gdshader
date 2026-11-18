@@ -4,7 +4,7 @@ render_mode cull_back, diffuse_burley, specular_disabled;
 
 uniform vec4 edge_color : source_color = vec4(0.96, 0.92, 0.82, 1.0);
 uniform sampler2D fibre_tex : hint_default_white, filter_linear_mipmap, repeat_enable;
-uniform float brightness = 1.08;  // the core catches light: a touch brighter than the stock
+uniform float brightness = 1.16;  // the core catches light: a touch brighter than the stock
 
 void fragment() {
 	// UV.x runs along the cut in world units, UV.y across the thickness.
