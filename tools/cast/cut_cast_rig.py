@@ -11,6 +11,7 @@ of that gap; each leg = the bottom-touching opaque component on its side below t
 the coat hem; the hidden leg top up to the hip is repainted in the leg's own flat trouser colour with a rounded cap.
 """
 import json, os, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from collections import deque
 import numpy as np
 from PIL import Image, ImageDraw
@@ -178,7 +179,9 @@ def cut(fid):
                     out[yy, x, :3] = np.clip(col * shade + rng.normal(0, 3.0), 0, 255).astype(np.uint8)
                     out[yy, x, 3] = 255
         legmask |= keep
-        parts[side] = {"hip": [int(round(cx_leg)), piv_y], "_out": out}
+        # vis = first visible leg row (below the coat hem / at the crotch) and its x span: tools/cast/front_legs.py fits the
+        # front-view legs to it
+        parts[side] = {"hip": [int(round(cx_leg)), piv_y], "vis": [int(full_y), int(x0f), int(x1f) + 1], "_out": out}
         info[side] = (lo_in, hi_in, col, hip_y, full_y)
     # hips piece (behind body, in front of the leg tops): trouser seat from hip_y to just below the crotch
     hips = np.zeros_like(a)
@@ -265,4 +268,9 @@ if __name__ == "__main__":
         rig[f] = cut(f)
         print(f, "crotch", rig[f]["crotch"], "hips", rig[f]["parts"]["leg_l"]["hip"], rig[f]["parts"]["leg_r"]["hip"])
     json.dump(rig, open(rig_p, "w"), indent=1)
+    # 2026-11-18: swap the side-view legs (toes out = duck walk toward the camera) for the front-view leg sheet
+    import front_legs
+    if os.path.isdir(front_legs.SL):
+        front_legs.main()
+        rig = json.load(open(rig_p))
     print(preview(rig, os.path.join(ROOT, "art_src", "cast", "qa", "rig_preview.png")))

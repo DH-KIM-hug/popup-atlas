@@ -47,6 +47,15 @@ const SKINS := {
 @export var front_roll_deg := 4.0  ## side-to-side roll over the stance foot per step
 @export var front_bob := 0.009  ## extra hip rise at the passing position (world units, before height scaling)
 @export var front_lift := 1.0  ## swing foot lift multiplier (story sets it lower for struggling steps)
+## Billboard (front_gait only): keep only this fraction of the base gait's card turn toward the walk direction
+## (max_turn_deg), so the card faces the camera. 2026-11-18: on diagonal stretches (stream) the card was turned up to
+## 20° toward the walk, the toward-the-card stride was seen obliquely and the legs opened into an A-frame on screen.
+@export var front_turn_keep := 0.2
+## Screen-sideways part of each foot's offset from under its hip (see _front_foot): kept at
+## this fraction and soft-limited to front_max_side (world, at height 0.36), so legs stay near-parallel; the sideways
+## travel of a diagonal walk is carried by the body (a few mm of sole slip instead of an A).
+@export var front_side_keep := 0.35
+@export var front_max_side := 0.012
 
 var _skin_rig := {}
 var _arm: Node3D  ## pivot (wrist) of an extra hinged arm part, e.g. the hat fanning in his hand
@@ -78,6 +87,24 @@ func _aim_legs_exact() -> void:
 		_legs[i].global_transform = Transform3D(Basis(q) * tb, hip_w)
 
 
+## Foot position in the turn frame with its SCREEN-sideways offset from under hip i compressed (see front_side_keep).
+## Screen-sideways = horizontal perpendicular to the puppet→camera direction (not the card x: the card may be turned a
+## little toward the walk, and he may stand off the camera axis), so a toward-the-camera stride stays a depth stride.
+func _front_foot(i: int, Ti: Transform3D, hip_x: float) -> Vector3:
+	var f := Ti * _feet[i]
+	var sv := Vector3(1, 0, 0)
+	if camera:
+		var c := Ti.basis * (camera.global_position - global_position)
+		c.y = 0.0
+		if c.length() > 1e-4:
+			c = c.normalized()
+			sv = Vector3(c.z, 0, -c.x)
+	var a := (f - Vector3(hip_x, f.y, 0.0)).dot(sv)
+	var ms := front_max_side * (height / 0.36)
+	f -= sv * (a - ms * tanh(a * front_side_keep / ms))
+	return f
+
+
 ## See `front_gait`. Works in the unscaled turn frame (x = card right, y = up, z = toward the camera) and writes the
 ## tilt node (local to the turn node) and the top-level legs (through the turn node's transform, so a pose-flip squash
 ## still applies on top).
@@ -91,7 +118,7 @@ func _front_step() -> void:
 	var arc := sin(PI * s)
 	var roll := deg_to_rad(front_roll_deg) * arc * k * (1.0 if st == 0 else -1.0)
 	var B := Basis(Vector3(0, 0, 1), roll) * Basis(Vector3(1, 0, 0), _lean.y) * Basis(Vector3(0, 0, 1), _lean.x)
-	var f_st := Ti * _feet[st]
+	var f_st := _front_foot(st, Ti, _hip_local[st].x + _leg_rest[st].x)
 	var piv := Vector3(_sole_x[st], 0.0, f_st.z)
 	var P := piv - B * piv
 	# Stance hip height: the straight stance leg reaches its footprint (inverted pendulum: highest on passing).
@@ -104,7 +131,7 @@ func _front_step() -> void:
 	var tb := _turn.global_transform
 	for i in 2:
 		var hip := P + Vector3(0, h, 0) + B * _hip_local[i]
-		var foot := Ti * _feet[i]
+		var foot := _front_foot(i, Ti, hip.x + _leg_rest[i].x)
 		var L := _leg_rest[i].length()
 		if i == sw:
 			# lift: base swing arc height, scaled by how brisk the walk is (struggling = low, shuffling steps)
@@ -148,7 +175,12 @@ func _process(dt: float) -> void:
 		_base_lean = lean_deg
 	# The base lean scales with speed/0.3; divide that back out so a slow, struggling walk still leans in.
 	lean_deg = _base_lean + push_lean_deg / clampf(speed / 0.3, 0.12, 1.0)
+	# Billboard: the base turns the card max_turn_deg toward the walk direction; front_gait keeps only a fraction.
+	var mt := max_turn_deg
+	if front_gait:
+		max_turn_deg = mt * front_turn_keep
 	super._process(dt)
+	max_turn_deg = mt
 	var fdt := PaperSpring.frame_dt(dt)
 	if fdt <= 0.0 or not _rigged:
 		return

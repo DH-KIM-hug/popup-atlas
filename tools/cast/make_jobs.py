@@ -135,6 +135,34 @@ JOBS += [
      "ahead, small calm closed mouth as a short flat line (NOT a grin, not smiling), soft coral cheeks."},
 ]
 
+# 2026-11-18 front-facing leg parts (user: "팔자걸음인딩?"). The figures stand with their boots in SIDE view, toes pointing
+# outward, so a boy walking toward the reader duck-walks. These legs replace every traveller figure's leg_l/leg_r (shared
+# across expressions, see tools/cast/front_legs.py). Reference = the current lower bodies (colour/cuff/boot match).
+LEG_REF = ["art_src/cast/raw/ref_traveller_legs.png", "art_src/cast/raw/cast_traveller.png"]
+JOBS += [
+    {"id": "cast_traveller_legs_front", "kind": "bg", "refs": LEG_REF,
+     "aspect": "landscape 3:2 at the largest available size (1536x1024)",
+     "out": "art_src/cast/raw/cast_traveller_legs_front.png",
+     "prompt": "A SPRITE SHEET for a children's pop-up storybook: FOUR separate die-cut cardstock LEG pieces for the paper puppet "
+     "of the traveller boy in the reference images, in one horizontal row, all the same height, " + BG + STYLE.replace(
+         "tiny repeated flower and leaf motifs, ", "") +
+     "MATCH THE REFERENCE EXACTLY: same felt/cardstock texture, same trouser browns, same dark plum-brown boots with the cream "
+     "dashed stitch line along the sole. Each piece is ONE single leg, cut off straight across at the top of the thigh (a flat "
+     "horizontal top edge, no hips, no body, no coat, no hands), hanging perfectly straight and vertical, seen EXACTLY FROM THE "
+     "FRONT as if the boy walks straight toward the viewer. THE BOOT IS SEEN FROM THE FRONT, NOT FROM THE SIDE: the boot toe points "
+     "straight AT the viewer, so the foot reads as a rounded toe cap facing us, symmetric left-right, only a little wider than the "
+     "boot shaft, with a thin strip of darker sole and the cream dashed sole stitch running across the front of the toe at the "
+     "bottom; the bottom edge is flat. The toe must NOT stick out to the left or to the right (no side-view boot, no profile foot, no "
+     "heel showing, no toes pointing outward). THE FOUR PIECES, left to right: (1) and (2) a LEFT and a RIGHT leg in plain dark "
+     "chocolate-brown trousers (no stitch line on the trousers), the trouser leg straight and slightly baggy, ending in a slightly "
+     "wider turned-up cuff at mid-shin, then the front-view boot shaft and toe cap below; (3) and (4) a LEFT and a RIGHT leg in the "
+     "warm medium brown trousers of the reference's right figure, with a dashed ochre-yellow stitched seam running down the OUTER "
+     "side of each leg (on piece 3 the seam is along its left edge, on piece 4 along its right edge), the trouser leg straight, "
+     "ending in a cuff at mid-shin over the same front-view boot. Each leg about 3 times taller than it is wide (thigh width), "
+     "each about 80 percent of the image height, all four with their soles on one common baseline, a wide magenta gap between "
+     "the pieces." + NO_BOTANY},
+]
+
 if __name__ == "__main__":
     p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cast_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)

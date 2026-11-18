@@ -897,3 +897,43 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     static-card clearing (those --beat runs never reach the occluding card; the full run includes the fix); the
     ending shows ~10 s of empty road after he exits (narration still running); the toward-camera stride itself is
     mostly read through the lift/roll/bob, since depth motion is small on screen at the 15° lens.
+
+## 2026-11-18 — Front-view boots (user: "팔자걸음인딩?")
+  - Cause: every traveller figure was drawn standing with SIDE-view boots, toes pointing outward, so the walk toward
+    the reader read as a duck walk. Fix in the leg art, not the gait (front_gait already rolls the whole figure about
+    the stance sole, no per-leg yaw/outward roll; the lift stays a bent knee seen from the front).
+  - New sheet `art_src/cast/raw/cast_traveller_legs_front.png` (Codex, job `cast_traveller_legs_front` in
+    tools/cast/make_jobs.py, refs = `ref_traveller_legs.png` crop of the current lower bodies + the traveller sheet;
+    fresh md5): 4 single legs, front view, boot toe cap facing the viewer: coat trousers L/R (plain chocolate, cuff),
+    no-coat trousers L/R (ochre outer seam). Sliced to art_src/cast/sliced/cast_traveller_legs_front/.
+  - `tools/cast/front_legs.py` (cut_cast_rig.py now calls it after cutting): for all 15 traveller figures, each leg_l /
+    leg_r is replaced by the matching front leg, hip pivot unchanged, sole on the old sole line, width fitted to the
+    first visible row below the coat hem / at the crotch (new rig.json `parts.leg_*.vis`), round top cap, per-channel
+    colour match to that figure's own trouser and boot print (sampled from the figure). rig.json leg bboxes updated
+    (`front: true`); body/hips PNGs byte-identical. Side-view legs kept in art_src/cast/legs_side/ (30 PNGs).
+  - Checks: rest-pose sheet art_src/cast/qa/rig_preview.png; 8 fps leg close-ups over 2 s
+    `artifacts/cast/walk_legs_closeup_v2.png` (rows: wind_turn, sun_turn, stream/no-coat): boots point at the reader
+    in every frame, alternate lift reads as a knee bend, no 팔자. Video `artifacts/video/walk_feet_v2.mp4` (sun_turn,
+    20 s, 6.8 MB). check_all clean (39 scripts).
+  - Open: on the stream approach the card is yawed ~30° from the camera (_face_total ≈ 0.52 rad while the road
+    camera lags), so the toward-the-card stride is seen obliquely and the legs open into an A-frame on screen
+    (feet still face front). Probe showed the sideways foot offsets in the card frame are small (~0.03), so clamping
+    them doesn't help (tried, reverted); the fix is to face the card at the camera / scale the stride pitch by the
+    card-to-camera yaw. Front boots are a bit narrower than the side-view ones were (reads slimmer).
+
+## 2026-11-18 — Stream walk A-frame fixed (billboard + screen-sideways compression)
+  - Cause (probe): front_gait steps toward the CARD, but the base gait turns the card up to max_turn_deg (20°) toward
+    the walk; on the diagonal stream approach the stride was seen obliquely and the legs opened sideways into an A on
+    screen (sideways offsets in the card frame were only ~0.03, so a card-x clamp did nothing).
+  - cast_puppet.gd (front_gait only): `front_turn_keep` 0.2: max_turn_deg is scaled around super._process, so the card
+    turns at most ~4° off the camera (done at the source because the legs are top-level and the base gait places them
+    against the turned card when standing); `_front_foot`: each foot's offset from under its hip along the true
+    screen-sideways axis (horizontal perpendicular to puppet→camera, in the turn frame) is kept at `front_side_keep`
+    0.35 and soft-limited (tanh) to `front_max_side` 0.012 × height/0.36; used for the stance pivot/height solve and
+    both leg aims. The diagonal travel is carried by the body (small sole slip instead of an A).
+  - Checks: `artifacts/cast/walk_legs_closeup_v3.png` (8 fps × 2 s; rows: stream, wind_turn, sun_turn): stream legs
+    stay parallel, boots to the reader, no A; wind/sun unchanged in read. Videos: `artifacts/video/walk_stream_v3.mp4`
+    (20 s, 5.3 MB), `walk_feet_v2.mp4` re-recorded (sun_turn, 6.8 MB) since the gait change applies to all walks.
+    check_all clean (39). Supersedes the "Open: stream A-frame" note above.
+  - Open: on the stream close-up a couple of frames show the legs drawing slightly together (feet nearly touching)
+    mid-stride; sole slip sideways on diagonals is not visible at story distance but would show in a close camera.
