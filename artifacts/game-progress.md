@@ -1175,3 +1175,15 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Verify: check_all clean. three_pigs STORY_DONE 281.3 s (4:41, was 5:22; missing_audio tp_n01 / tp_n02 pending),
     sun_wind STORY_DONE 210.5 s (3:31, was ~3:59) missing_audio=[]. Videos: artifacts/video/three_pigs_full_v3.mp4
     (22.7 MB), sun_wind_full_v3.mp4 (25.5 MB, crf 32), three_pigs_wolf_straw_v3 / wolf_wood_v3 / brick_wolf_v3.mp4.
+
+## 2026-11-18 — three_pigs v4: the wolf in frame, readable window faces, 첫째 hidden until the straw house falls
+  - Coordinator review of brick_wolf_v3 (12 frames): the wolf was almost never visible. The three wolf beats now use
+    the closer story shot focused between the wolf's mark and the house (`wolf_focus` spots), wolf marks moved in
+    (straw [-1.72, 0.32], wood [0.38, -0.12], brick [-1.52, 0.02]); he stands fully in frame left of the house for his
+    arrival, line, every huff (puffed cheeks + wind curls toward the house) and 털썩.
+  - Window faces lit by a small warm shadowless fill between face and wall (OmniLight 0.45, range 0.22; 1.6 blew the
+    windows out); they read as faces at iPad size (artifacts/three_pigs/tiles/*_v4_12frames.jpg).
+  - Straw huffs: the first takes only the roof, the next ones rock the walls, the last blows it all away, so 첫째
+    stays hidden until the collapse.
+  - Videos: artifacts/video/three_pigs_wolf_straw_v4.mp4, three_pigs_wolf_wood_v4.mp4, three_pigs_brick_wolf_v4.mp4,
+    three_pigs_full_v4.mp4.

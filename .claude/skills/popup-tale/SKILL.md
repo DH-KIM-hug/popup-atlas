@@ -99,6 +99,11 @@ Run long work through background agents/workflows with narrow ownership (one own
 - Stray pixels in a band image stretch its card: PaperCard sizes `height` to its contour bounds (specks dropped)
   while the stage positions by the image's opaque rect; the wood roof band carried a few edge pixels down to the
   floor and drew as a giant gable. Keep band images free of specks (house_stages.py eave-tip rule).
+- Review a beat with ~12 evenly spaced frames and require the acting characters in every one: the wolf beats
+  first used the wide stage shot and the wolf stood at the frame edge the whole time. Frame the shot between the
+  actor's mark and the set piece (`cam at`), not on the set piece alone.
+- Faces behind die-cut windows sit in the wall's shadow: light them with a small shadowless fill between face and
+  wall (too strong blows the window out; 0.45 at range 0.22 read well).
 - Story lines that open a beat start after the camera has landed (`cam` wait ≥ 1.2 s after a page pop).
 - Pace: 36 reused lines play ~189 s on their own; 9 page turns (~5 s each) and ~37 taps put the first full run at
   5:21. Count narration + turns + taps before promising a length.

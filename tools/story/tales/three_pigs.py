@@ -118,20 +118,22 @@ KITCHEN = [  # brick house interior (beat 8), behind the front wall, popped by c
     {"card": "story_hearth_14", "at": "lot", "off": [-0.25, -0.3], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6},
 ]
 # view 2: the stream runs diagonally just behind the anchor; the straw lot is on the near-left grass
-STRAW_SPOTS = {"lot": [-1.1, -0.05], "pile": [-0.64, 0.26], "pig_a": [-0.48, 0.42], "wolf": [-1.8, 0.28],
-               "pig_a_door": [-1.02, 0.1], "focus": [-1.2, 0.1]}
+STRAW_SPOTS = {"lot": [-1.1, -0.05], "pile": [-0.64, 0.26], "pig_a": [-0.48, 0.42], "wolf": [-1.72, 0.32],
+               "pig_a_door": [-1.02, 0.1], "focus": [-1.2, 0.1],
+               "wolf_focus": [-1.25, 0.12]}
 # view 3 (2026-11-18 v2, user: "houses built across the road"): the road runs straight up the middle (x -0.2..0.4),
 # the stream crosses the front; the wood lot is on the meadow right of the road, the wolf comes up the road
 WOOD_SPOTS = {"lot": [1.0, -0.62], "pile": [1.85, -0.38], "pig_b": [1.62, -0.3], "pig_a": [1.88, -0.18],
-              "wolf": [0.4, -0.2], "focus": [0.98, -0.38]}
+              "wolf": [0.38, -0.12], "focus": [0.98, -0.38],
+              "wolf_focus": [0.86, -0.3]}
 # view 4 v2: the road climbs from the middle to the right (x -0.2..0.6); the brick lot is on the open meadow left of
 # it (house x -1.43..-0.27), the pile and the wolf further left, the brothers peek out on the road side; kitchen
 # spots (in_*) keep their offsets from the lot
 BRICK_SPOTS = {"lot": [-0.85, -0.6], "pile": [-1.22, -0.12], "pig_c": [-0.1, -0.45], "tease": [-0.85, 0.16],
-               "wolf": [-1.8, -0.08], "pig_a": [-0.12, -0.72], "pig_b": [0.06, -0.74], "lot_left": [-2.05, -1.3],
+               "wolf": [-1.52, 0.02], "pig_a": [-0.12, -0.72], "pig_b": [0.06, -0.74], "lot_left": [-2.05, -1.3],
                "lot_right": [1.2, -1.2], "in_a": [-1.17, -0.72], "in_b": [-0.97, -0.7], "in_c": [-0.79, -0.68],
                "wolf_land": [-1.8, 0.1], "mom": [-0.2, 0.02], "focus": [-0.75, -0.42], "village": [-0.45, -0.9],
-               "brothers_in": [0.55, 0.2], "out_a": [-1.15, -0.25], "out_b": [-0.92, -0.2], "out_c": [-0.62, -0.22]}
+               "brothers_in": [0.55, 0.2], "wolf_focus": [-0.95, -0.3], "out_a": [-1.15, -0.25], "out_b": [-0.92, -0.2], "out_c": [-0.62, -0.22]}
 BEATS = [
     {"id": "cover", "title": "아기 돼지 삼형제", "spread": None, "steps": [{"do": "cover", "prompt": "tp_n01"}]},
     {"id": "home", "title": "엄마의 배웅", "spread": {"seed": 1, "view": 5, "place": "home",
@@ -215,7 +217,7 @@ BEATS = [
      # at home: 첫째 peeks out of the round window (he answers from inside); the heap lands behind him
      "enter": {"who": {"pig_a": "calm"}, "inside": {"pig_a": ["house", 0]}},
      "steps": [
-        {"do": "cam", "shot": "stage"},
+        {"do": "cam", "shot": "story", "at": "wolf_focus"},
         # the wolf prowls in from the left, sniffing (side view, facing right)
         {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.75, "pose": "sniff", "speed": 0.2, "line": "tp_027"},
         {"do": "pose", "who": "wolf", "pose": "shout"},
@@ -235,7 +237,7 @@ BEATS = [
      # at home: both brothers peek out of the two windows
      "enter": {"who": {"pig_a": "scared", "pig_b": "calm"}, "inside": {"pig_a": ["house", 0], "pig_b": ["house", 1]}},
      "steps": [
-        {"do": "cam", "shot": "stage"},
+        {"do": "cam", "shot": "story", "at": "wolf_focus"},
         {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.6, "pose": "side_prowl", "speed": 0.2, "line": "tp_031"},
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "pose", "who": ["pig_a", "pig_b"], "pose": "defiant"},
@@ -253,7 +255,7 @@ BEATS = [
      # 셋째 is at home (left window); his brothers come running up the road and in through the door (right window)
      "enter": {"who": {"pig_c": "brave"}, "inside": {"pig_c": ["house", 0]}},
      "steps": [
-        {"do": "cam", "shot": "stage"},
+        {"do": "cam", "shot": "story", "at": "wolf_focus"},
         {"do": "go_inside", "who": ["pig_a", "pig_b"], "house": "house", "from": "brothers_in", "windows": [1, 1],
          "speed": 0.45},
         {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.6, "pose": "side_prowl", "speed": 0.2, "line": "tp_043"},

@@ -494,8 +494,7 @@ func _enter_cast(enter: Dictionary, first: bool) -> void:
 			var visible_now := a.pop_target > 0.5
 			if first or not visible_now or at.has(role):
 				a.place_at(spot_point(at.get(role, role if spots.has(role) else "anchor")))
-				a.lift = 0.0
-				a.remove_meta("inside")
+				clear_inside(a)
 			a.pose = p
 			if left >= 0:
 				a.facing_left = left == 1
@@ -527,8 +526,32 @@ func put_inside(role: String, house: String, win: int) -> void:
 	a.place_at(ws[0])
 	a.lift = float(ws[1]) - a.puppet.height * 0.74
 	a.set_meta("inside", house)
+	# a small warm fill in front of the face, between it and the wall: the wall's own shadow made faces read as dark
+	# blobs in the windows (no shadow from this light, so it only brightens the face)
+	var lt := a.get_node_or_null("InsideFill") as OmniLight3D
+	if lt == null:
+		lt = OmniLight3D.new()
+		lt.name = "InsideFill"
+		lt.light_color = Color(1.0, 0.86, 0.66)
+		lt.light_energy = 0.45
+		lt.omni_range = 0.22
+		lt.omni_attenuation = 1.2
+		lt.shadow_enabled = false
+		lt.light_specular = 0.0
+		lt.top_level = true
+		a.add_child(lt)
+	lt.visible = true
+	lt.global_position = a.global_position + Vector3(0, float(ws[1]), 0) + dir_vec("toward") * 0.05
 	if a.view_of(a.pose) != "front":
 		a.set_pose("calm")
+
+
+func clear_inside(a: StoryActor) -> void:
+	a.remove_meta("inside")
+	a.lift = 0.0
+	var lt := a.get_node_or_null("InsideFill") as Node3D
+	if lt:
+		lt.visible = false
 
 
 ## The house is gone: whoever was inside is out in the open where it stood, with a startled hop.
@@ -537,8 +560,7 @@ func reveal_inside(house: String, pose := "scared") -> void:
 		var a: StoryActor = actors[r]
 		if str(a.get_meta("inside", "")) != house:
 			continue
-		a.remove_meta("inside")
-		a.lift = 0.0
+		clear_inside(a)
 		a.place_at(a.global_position + dir_vec("toward") * 0.1)
 		a.hop_v = 1.1
 		a.set_pose(pose)

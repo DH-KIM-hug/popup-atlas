@@ -729,8 +729,11 @@ func _step_huff(st: Dictionary) -> void:
 			match result:
 				"blow_apart":
 					if i < taps:
-						sp.band_down(sp.shown - 1, 0.1)
-						sp.wobble(0.1)
+						# the roof goes first; after that the walls only rock (whoever is inside stays hidden
+						# until the last huff blows everything away)
+						if sp.shown >= sp.band_count() and sp.band_count() > 1:
+							sp.band_down(sp.shown - 1, 0.1)
+						sp.wobble(0.12 + 0.05 * i)
 					else:
 						sp.collapse(0.05)
 						stage.fx("pop:" + str(st.get("ruin", "")))
