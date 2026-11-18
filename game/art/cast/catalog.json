@@ -1,0 +1,466 @@
+[
+ {
+  "id": "cast_traveller_coat",
+  "path": "art/cast/cast_traveller_coat.webp",
+  "sheet": "cast_traveller",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_hat",
+  "label": "thick red folk-art coat + brown hat, standing",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter"
+  ],
+  "px": [
+   347,
+   700
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_nohat",
+  "path": "art/cast/cast_traveller_coat_nohat.webp",
+  "sheet": "cast_traveller",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat",
+  "label": "coat, no hat",
+  "height_units": 0.345,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter"
+  ],
+  "px": [
+   350,
+   680
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_nohat_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_nohat_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_nohat_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_nohat_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_hold",
+  "path": "art/cast/cast_traveller_coat_hold.webp",
+  "sheet": "cast_traveller",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_hat_hold",
+  "label": "clutching the coat shut in the wind",
+  "height_units": 0.355,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "cold",
+   "wind"
+  ],
+  "px": [
+   305,
+   690
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_hold_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_hold_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_hold_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_hold_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_nocoat",
+  "path": "art/cast/cast_traveller_nocoat.webp",
+  "sheet": "cast_traveller",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "shirt_hat",
+  "label": "coat off (ending): green shirt, suspenders, hat",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "hat",
+   "summer",
+   "warm"
+  ],
+  "px": [
+   315,
+   701
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_nocoat_body.png",
+   "hips": "art/cast/rig/cast_traveller_nocoat_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_nocoat_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_nocoat_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_nocoat_nohat",
+  "path": "art/cast/cast_traveller_nocoat_nohat.webp",
+  "sheet": "cast_traveller",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "shirt",
+  "label": "coat and hat off, warm",
+  "height_units": 0.345,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "summer",
+   "warm"
+  ],
+  "px": [
+   315,
+   680
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_nocoat_nohat_body.png",
+   "hips": "art/cast/rig/cast_traveller_nocoat_nohat_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_nocoat_nohat_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_nocoat_nohat_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_coat_hung",
+  "path": "art/cast/cast_coat_hung.webp",
+  "sheet": "cast_traveller_props",
+  "category": "cast",
+  "role": "coat",
+  "variant": "flat",
+  "label": "the coat flat, empty (hung / held up)",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "coat",
+   "clothing",
+   "prop"
+  ],
+  "px": [
+   624,
+   643
+  ],
+  "hanging": false,
+  "parts": {}
+ },
+ {
+  "id": "cast_coat_folded",
+  "path": "art/cast/cast_coat_folded.webp",
+  "sheet": "cast_traveller_props",
+  "category": "cast",
+  "role": "coat",
+  "variant": "folded",
+  "label": "the coat folded over, as carried on an arm",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "coat",
+   "clothing",
+   "prop",
+   "in_hand"
+  ],
+  "px": [
+   504,
+   397
+  ],
+  "hanging": false,
+  "parts": {}
+ },
+ {
+  "id": "cast_coat_ground",
+  "path": "art/cast/cast_coat_ground.webp",
+  "sheet": "cast_traveller_props",
+  "category": "cast",
+  "role": "coat",
+  "variant": "ground",
+  "label": "the coat dropped on the ground",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "coat",
+   "clothing",
+   "prop",
+   "on_ground"
+  ],
+  "px": [
+   588,
+   279
+  ],
+  "hanging": false,
+  "parts": {}
+ },
+ {
+  "id": "cast_hat",
+  "path": "art/cast/cast_hat.webp",
+  "sheet": "cast_traveller_props",
+  "category": "cast",
+  "role": "hat",
+  "variant": "front",
+  "label": "the hat, front",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "hat",
+   "clothing",
+   "prop"
+  ],
+  "px": [
+   404,
+   231
+  ],
+  "hanging": false,
+  "parts": {}
+ },
+ {
+  "id": "cast_hat_ground",
+  "path": "art/cast/cast_hat_ground.webp",
+  "sheet": "cast_traveller_props",
+  "category": "cast",
+  "role": "hat",
+  "variant": "ground",
+  "label": "the hat tipped on the ground",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "hat",
+   "clothing",
+   "prop",
+   "on_ground"
+  ],
+  "px": [
+   350,
+   273
+  ],
+  "hanging": false,
+  "parts": {}
+ },
+ {
+  "id": "cast_sun_smile",
+  "path": "art/cast/cast_sun_smile.webp",
+  "sheet": "cast_sun",
+  "category": "cast",
+  "role": "sun",
+  "variant": "smile",
+  "label": "sun, gentle smile",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "sun",
+   "sky",
+   "hanging",
+   "weather",
+   "face"
+  ],
+  "px": [
+   607,
+   584
+  ],
+  "hanging": true,
+  "parts": {}
+ },
+ {
+  "id": "cast_sun_proud",
+  "path": "art/cast/cast_sun_proud.webp",
+  "sheet": "cast_sun",
+  "category": "cast",
+  "role": "sun",
+  "variant": "proud",
+  "label": "sun, proud wink",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "sun",
+   "sky",
+   "hanging",
+   "weather",
+   "face"
+  ],
+  "px": [
+   697,
+   688
+  ],
+  "hanging": true,
+  "parts": {}
+ },
+ {
+  "id": "cast_sun_beaming",
+  "path": "art/cast/cast_sun_beaming.webp",
+  "sheet": "cast_sun",
+  "category": "cast",
+  "role": "sun",
+  "variant": "beaming_hot",
+  "label": "sun, beaming hot",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "sun",
+   "sky",
+   "hanging",
+   "weather",
+   "face",
+   "hot"
+  ],
+  "px": [
+   689,
+   693
+  ],
+  "hanging": true,
+  "parts": {}
+ },
+ {
+  "id": "cast_wind_boast",
+  "path": "art/cast/cast_wind_boast.webp",
+  "sheet": "cast_wind",
+  "category": "cast",
+  "role": "wind",
+  "variant": "boast",
+  "label": "wind cloud, boasting smirk",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "wind",
+   "cloud",
+   "sky",
+   "hanging",
+   "weather",
+   "face"
+  ],
+  "px": [
+   635,
+   431
+  ],
+  "hanging": true,
+  "parts": {}
+ },
+ {
+  "id": "cast_wind_blow",
+  "path": "art/cast/cast_wind_blow.webp",
+  "sheet": "cast_wind",
+  "category": "cast",
+  "role": "wind",
+  "variant": "blowing_hard",
+  "label": "wind cloud, blowing hard (to the left)",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "wind",
+   "cloud",
+   "sky",
+   "hanging",
+   "weather",
+   "face"
+  ],
+  "px": [
+   764,
+   432
+  ],
+  "hanging": true,
+  "parts": {}
+ },
+ {
+  "id": "cast_wind_tired",
+  "path": "art/cast/cast_wind_tired.webp",
+  "sheet": "cast_wind",
+  "category": "cast",
+  "role": "wind",
+  "variant": "tired",
+  "label": "wind cloud, tired",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "wind",
+   "cloud",
+   "sky",
+   "hanging",
+   "weather",
+   "face"
+  ],
+  "px": [
+   626,
+   375
+  ],
+  "hanging": true,
+  "parts": {}
+ }
+]

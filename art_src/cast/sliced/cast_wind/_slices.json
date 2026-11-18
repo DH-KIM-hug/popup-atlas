@@ -1,0 +1,62 @@
+{
+ "sheet": "cast_wind",
+ "bg": [
+  0.988,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_wind_00",
+   "bbox": [
+    28,
+    150,
+    655,
+    573
+   ],
+   "area": 169409,
+   "size": [
+    635,
+    431
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wind_01",
+   "bbox": [
+    689,
+    149,
+    1445,
+    573
+   ],
+   "area": 209774,
+   "size": [
+    764,
+    432
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wind_02",
+   "bbox": [
+    1515,
+    197,
+    2133,
+    564
+   ],
+   "area": 142059,
+   "size": [
+    626,
+    375
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
