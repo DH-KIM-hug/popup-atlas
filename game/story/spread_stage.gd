@@ -249,9 +249,14 @@ func _add_backing(h: SkyHanger, is_sun: bool) -> void:
 	disc.height = h.card_height * (1.12 if is_sun else 1.05)
 	disc.thickness = 0.01
 	disc.back_print = false
-	disc.position = c.position + Vector3(0, -h.card_height * (0.06 if is_sun else 0.1), -0.03)
-	c.get_parent().add_child(disc)
-	c.get_parent().move_child(disc, 0)
+	# Child of the card itself so it always follows it (as a sibling it kept a stale position when a story
+	# started mid-way with --beat, and the discs were left lying on the meadow).
+	disc.name = "SkyDisc"
+	disc.position = Vector3(0, -h.card_height * (0.06 if is_sun else 0.1), -0.03)
+	for old in c.get_children():
+		if old.name == "SkyDisc":
+			old.queue_free()
+	c.add_child(disc)
 
 
 ## Story dressing on top of the template: hinged meadow cards standing between the story camera and the sun /
