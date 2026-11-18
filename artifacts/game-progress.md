@@ -937,3 +937,43 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     check_all clean (39). Supersedes the "Open: stream A-frame" note above.
   - Open: on the stream close-up a couple of frames show the legs drawing slightly together (feet nearly touching)
     mid-stride; sole slip sideways on diagonals is not visible at story distance but would show in a close camera.
+
+## 2026-11-18 — Walk v4: no cut legs, swinging arms, loose child-like gait; stream feet in the WATER
+  - User: "잘린 다리가 코트 위를 삐져나와서 이상해 그리고 군인처럼 걷는 거 같아" + stream bug (he sank his feet into the bank,
+    not the water). Old rig backed up in art_src/cast/rig_backup_v3/ (all rig PNGs + rig.json).
+  - Legs (no slide, no squash): new Codex sheets `cast_traveller_legs_half` (knee slightly bent) and `cast_traveller_legs_lift`
+    (knee up, short foreshortened shin, boot toward us), refs = the front-legs sheet + ref_traveller_legs (fresh md5s).
+    `tools/cast/lift_legs.py` fits them to every traveller figure like front_legs (same hidden top line, hip pivot, width at the
+    visible row; natural length 0.90 / 0.76 of hip→sole; per-class mean/std colour transfer to that figure's straight leg) →
+    `<fig>_leg_{l,r}_{half,lift}.png`, rig.json `parts.leg_*.alt`. CastPuppet swaps the swing leg to the variant nearest the
+    hip→foot length and only stretches ≤8 % about the hidden hip; the top is never exposed.
+  - Arms: `tools/cast/walk_arms.py` for coat_calm, coat_nohat_calm, nocoat_calm (= every calm walking figure; shirt_calm also
+    carries the coat): arm cards are the figure's OWN sleeve+hand pixels cut along the sleeve seam, top capped by a disc around
+    the shoulder pivot (rotation-invariant edge); the torso under the arm is filled from the Codex armless sheet
+    `cast_traveller_walk_armless` (registered to the figure, colour-matched, used only under the arms). rig.json
+    `parts.arm_l/arm_r {bbox, pivot}`. The Codex `cast_traveller_walk_arms` sheet was generated but not used (cut arms match
+    exactly). Expression poses (cold hug, fan, hands on head, hot) keep baked arms. cut_cast_rig.py now runs front_legs →
+    lift_legs → walk_arms (verified: a full re-cut reproduces the rig byte-identically).
+  - Gait (cast_puppet.gd `_front_step`): continuous weight-shift roll (±4°, spring-lagged) about the ground point between the
+    feet so the hips sway over the planted foot; pendulum bob + heel-strike dip/recover spring; body card (head/hat) trails the
+    hips (lag spring), squashes ≤3 % on the dip, counter-twists ±2.5°; quick-lift swing profile; arms swing opposite to the
+    legs (pitch toward the camera 20° forward / 6° back + 9° inward roll) on an underdamped spring (overlap); no arm shadows
+    (they threw dark blocks on the coat). Story knobs (spread_stage): wind → front_lift 0.45, front_arm_swing 0.3, front_hunch 1
+    (body squashed, arms tucked to the coat front); heat → front_droop = warmth while the coat is on (lower lift, heavier lag,
+    smaller arms); carrying the coat → arm_hold = 1 (that arm doesn't swing).
+  - Seams: light line at the no-coat crotch was the body card's EDGE WALL (proved by tinting it blue), not the rim. New
+    game/art/cast/rig/cast_edge.gdshader (+ cast_print.gdshader: rim window, no texture wrap) swapped onto the puppet's own
+    material copies: join edges (no-coat seat, hips piece, hidden leg tops, arm shoulder caps) take the garment colour.
+  - Stream: `_find_stream` picks a spot INSIDE the felt cut polygon (≥0.13 from its edge) instead of the centreline-distance
+    band at the bank; off the road the stage follows the real ground height (`_ground_dy`, steps down onto the water card),
+    sink 0.13·H (shins), splash/ripple rings on the water surface. Opaque water hides the sunk legs; bank lip behind him.
+  - Bench: game/art/cast/bench/cast_front_bench.tscn (`-- --pose=… --droop= --lift= --arms=`), close camera, front gait.
+  - Checks: artifacts/cast/walk_body_closeup_v4.png (8 fps × 2 s full body; rows sun_turn, wind_turn blowing, stream),
+    artifacts/cast/stream_feet_in_water.png; videos artifacts/video/walk_v4_{sun,wind,stream}.mp4 (6.9 / 7.7 / 5.0 MB).
+    check_all clean (40). The "2 ObjectDB leaked" warning at exit in sun/wind recordings is pre-existing (same with HEAD
+    cast_puppet.gd).
+  - Open: the lifted coat leg shows mostly cuff + boot under the hem (the knee is behind the coat) — reads as a step but a
+    little stubby; the swaps between straight/half/lift are discrete (paper-toy pops, visible on close inspection at 30 fps);
+    the armless-torso fill under the arms is generated art and only shows as a sliver when an arm swings out; the in-wind
+    "clutch" is only a tuck of the free arms (the real clutch is the baked cold/hold pose); head/hat lag is subtle because the
+    head is on the body card (no separate head card).

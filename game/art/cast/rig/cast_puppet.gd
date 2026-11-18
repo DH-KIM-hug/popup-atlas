@@ -36,17 +36,32 @@ const SKINS := {
 ## walk goes into depth, read as skating). Story walks run mostly into depth.
 @export var plant_exact := true
 @export var max_leg_deg := 40.0
-## Front-facing step gait (story, 2026-11-18): the card faces the camera and he walks toward it, so the steps must
-## read from the front. Replaces the base gait's leg/body solve while walking (the base still owns the phase, the
-## footprints and the stepping): the whole figure rolls a few degrees over the planted stance foot (pivot at that
-## sole, so the legs stay parallel: no outward splay), the hips bob up on the passing position, the stance leg is
-## aimed exactly at its footprint (fixed in the world while the body advances, stretched/shrunk a hair so the sole
-## never leaves its print), the swing leg lifts (slides up behind the coat + shortens a little, like a bent knee
-## seen from the front) and comes down ahead (toward the camera). Off = the base gait (old benches).
+## Front-facing step gait (story, 2026-11-18; v4 the same day after "잘린 다리가 코트 위를 삐져나와서 이상해 그리고
+## 군인처럼 걷는 거 같아"). The card faces the camera and he walks toward it. Replaces the base gait's leg/body solve
+## while walking (the base still owns the phase, the footprints and the stepping):
+##  - weight shift: the whole figure rolls a few degrees toward the stance foot about the ground point between the feet
+##    (hips sway over the planted foot), driven by a continuous signal through a soft spring, so it lags and settles;
+##  - hips: inverted pendulum (highest on passing) + a small heel-strike dip-and-recover (bounce spring);
+##  - body card (head/hat) trails the hips a beat (lag spring), squashes a touch on each heel strike, counter-twists;
+##  - legs are NEVER slid or squashed: the stance leg is aimed at its footprint and stretched about the hidden hip
+##    (≤ 8 %); the swing leg swaps to a pre-drawn bent-knee card (rig.json parts.leg_*.alt half/lift, front view, foot
+##    coming toward us) matched to the hip→foot length, so no leg top or cuff band is ever exposed under the hem;
+##  - arms (rig.json parts.arm_l/arm_r, calm walking figures): swing opposite to the legs, forward = toward the camera
+##    (pitch) and a little inward, on a lagging spring (overlap). Off = the base gait (old benches).
 @export var front_gait := false
-@export var front_roll_deg := 4.0  ## side-to-side roll over the stance foot per step
-@export var front_bob := 0.009  ## extra hip rise at the passing position (world units, before height scaling)
+@export var front_roll_deg := 4.0  ## weight-shift roll toward the stance foot per step
+@export var front_bob := 0.007  ## extra hip rise at the passing position (world units, before height scaling)
+@export var front_bounce := 0.15  ## heel-strike dip impulse (world units / s, before height scaling)
 @export var front_lift := 1.0  ## swing foot lift multiplier (story sets it lower for struggling steps)
+@export var front_lift_frac := 0.25  ## full swing-foot lift as a fraction of the leg length
+@export var front_droop := 0.0  ## 0..1 heat: lower lift, smaller arm swing, slower and heavier body lag
+@export var front_arm_swing := 1.0  ## arm swing multiplier (story: less while pushing into the wind)
+@export var arm_roll_deg := 9.0  ## in-plane part of the arm swing (forward hand moves in toward the body)
+@export var arm_pitch_deg := 20.0  ## out-of-plane part (forward hand comes toward the camera)
+## 0..1 pushing into the wind: hunched (body card squashed, a little lower), arms tucked in toward the coat front
+## (as if clutching it shut), their swing damped. Story: spread_stage sets it while the wind blows.
+@export var front_hunch := 0.0
+@export var arm_hold := -1  ## arm index (0 = image-left, 1 = image-right) that holds something: no swing
 ## Billboard (front_gait only): keep only this fraction of the base gait's card turn toward the walk direction
 ## (max_turn_deg), so the card faces the camera. 2026-11-18: on diagonal stretches (stream) the card was turned up to
 ## 20° toward the walk, the toward-the-card stride was seen obliquely and the legs opened into an A-frame on screen.
@@ -57,11 +72,34 @@ const SKINS := {
 @export var front_side_keep := 0.35
 @export var front_max_side := 0.012
 
+const CAST_PRINT := preload("res://art/cast/rig/cast_print.gdshader")
+const CAST_EDGE := preload("res://art/cast/rig/cast_edge.gdshader")
+
 var _skin_rig := {}
 var _arm: Node3D  ## pivot (wrist) of an extra hinged arm part, e.g. the hat fanning in his hand
 var _arm_card: PaperCard
 var _shv := 0.0
 var _base_lean := -1.0
+## per leg: [{card, rest (hip→sole), ratio}], [0] = straight (the base _leg_cards[i]), then half / lift if the rig has them
+var _leg_vars: Array = [[], []]
+var _leg_shown := [0, 0]
+var _arms: Array[Node3D] = []  ## shoulder pivots of the swinging arm cards (children of the body card)
+var _arm_cards: Array[PaperCard] = []
+var _arm_a := [0.0, 0.0]  ## arm swing (-1 back .. 1 forward), spring state
+var _arm_v := [0.0, 0.0]
+var _roll_f := 0.0  ## front gait weight-shift roll (spring)
+var _roll_fv := 0.0
+var _bounce := 0.0  ## heel-strike dip (spring)
+var _bounce_v := 0.0
+var _hl := 0.0  ## lagged hip height (body card trails it)
+var _hl_v := 0.0
+var _hl_ok := false
+var _rl := 0.0  ## lagged roll (body card trails it)
+var _rl_v := 0.0
+var _last_step := -1
+var _squash := 1.0
+var _front_on := false
+var _rim_retry := 0
 
 
 func _skin_ok() -> bool:
@@ -106,37 +144,84 @@ func _front_foot(i: int, Ti: Transform3D, hip_x: float) -> Vector3:
 
 
 ## See `front_gait`. Works in the unscaled turn frame (x = card right, y = up, z = toward the camera) and writes the
-## tilt node (local to the turn node) and the top-level legs (through the turn node's transform, so a pose-flip squash
-## still applies on top).
-func _front_step() -> void:
+## tilt node (local to the turn node), the body card (lag/squash/twist, local to the tilt) and the top-level legs
+## (through the turn node's transform, so a pose-flip squash still applies on top).
+func _front_step(dt: float) -> void:
 	var T := Transform3D(Basis(Vector3.UP, _face_total), global_position)
 	var Ti := T.affine_inverse()
-	var sw := int(floorf(_phase)) % 2
+	var n := int(floorf(_phase))
+	var sw := n % 2
 	var st := 1 - sw
 	var s: float = _phase - floorf(_phase)
 	var k := clampf(speed / 0.12, 0.45, 1.0)
-	var arc := sin(PI * s)
-	var roll := deg_to_rad(front_roll_deg) * arc * k * (1.0 if st == 0 else -1.0)
-	var B := Basis(Vector3(0, 0, 1), roll) * Basis(Vector3(1, 0, 0), _lean.y) * Basis(Vector3(0, 0, 1), _lean.x)
+	var dr := clampf(front_droop, 0.0, 1.0)
+	var hs := height / 0.36
+	if n != _last_step:  # heel strike of the foot that just landed: dip, recover with a little overshoot
+		if _last_step >= 0:
+			_bounce_v -= front_bounce * hs * k * (1.0 - 0.4 * dr)
+		_last_step = n
+	var bs := PaperSpring.step(_bounce, _bounce_v, 0.0, 15.0, 0.42, dt)
+	_bounce = bs.x
+	_bounce_v = bs.y
+	# Weight shift: continuous (passes 0 at each heel strike), toward the stance foot (foot 0 is -X: roll +Z), lagged.
+	var want_roll := -deg_to_rad(front_roll_deg) * sin(PI * _phase) * k
+	var rs := PaperSpring.step(_roll_f, _roll_fv, want_roll, 11.0 - 3.0 * dr, 0.6, dt)
+	_roll_f = rs.x
+	_roll_fv = rs.y
+	var B := Basis(Vector3(0, 0, 1), _roll_f) * Basis(Vector3(1, 0, 0), _lean.y) * Basis(Vector3(0, 0, 1), _lean.x)
 	var f_st := _front_foot(st, Ti, _hip_local[st].x + _leg_rest[st].x)
-	var piv := Vector3(_sole_x[st], 0.0, f_st.z)
+	var piv := Vector3((_sole_x[0] + _sole_x[1]) * 0.5, 0.0, f_st.z)
 	var P := piv - B * piv
 	# Stance hip height: the straight stance leg reaches its footprint (inverted pendulum: highest on passing).
 	var L_st := _leg_rest[st].length()
 	var v := P + B * _hip_local[st] - f_st
 	var hz := v.x * v.x + v.z * v.z
 	var h := -v.y + sqrt(maxf(L_st * L_st - hz, L_st * L_st * 0.8))
-	h += front_bob * (height / 0.36) * arc * k
+	h += front_bob * hs * sin(PI * s) * k * (1.0 - 0.5 * dr) + _bounce - 0.006 * hs * dr
 	_tilt.transform = Transform3D(B, P + Vector3(0, h, 0))
+	# Body card (head, hat, coat): trails the hips' bob and roll a beat, squashes on the dip, shoulders counter-twist.
+	if not _hl_ok:
+		_hl = h
+		_rl = _roll_f
+		_hl_ok = true
+	var w_lag := 17.0 - 6.0 * dr
+	var hl := PaperSpring.step(_hl, _hl_v, h, w_lag, 0.55, dt)
+	_hl = hl.x
+	_hl_v = hl.y
+	var rl := PaperSpring.step(_rl, _rl_v, _roll_f, w_lag * 0.7, 0.45, dt)
+	_rl = rl.x
+	_rl_v = rl.y
+	var dy := clampf(_hl - h, -0.006 * hs, 0.006 * hs)
+	var lag := clampf(_rl - _roll_f, -0.05, 0.05)
+	var hp := (_hip_local[0] + _hip_local[1]) * 0.5
+	hp.z = 0.0
+	var bb := Basis(Vector3(0, 0, 1), lag) * Basis(Vector3.UP, deg_to_rad(2.5) * cos(PI * _phase) * k)
+	_body.position = hp + bb * (_body_rest - hp) + Vector3(0, dy, 0)
+	_body.rotation = bb.get_euler()
+	_squash = 1.0 + clampf(_bounce / maxf(height, 0.01) * 1.3, -0.03, 0.02) - 0.035 * clampf(front_hunch, 0.0, 1.0)
+	# Legs.
 	var tb := _turn.global_transform
+	var lift := front_lift_frac * front_lift * (1.0 - 0.35 * dr) * (0.7 + 0.3 * k)
 	for i in 2:
 		var hip := P + Vector3(0, h, 0) + B * _hip_local[i]
 		var foot := _front_foot(i, Ti, hip.x + _leg_rest[i].x)
 		var L := _leg_rest[i].length()
 		if i == sw:
-			# lift: base swing arc height, scaled by how brisk the walk is (struggling = low, shuffling steps)
-			foot.y = foot_lift * front_lift * (0.7 + 0.3 * k) * 1.6 * arc
+			# quick lift, then it comes down ahead of him (toward the camera)
+			foot.y = lift * L * sin(PI * pow(s, 0.75))
 		var to := foot - hip
+		var ratio := to.length() / maxf(L, 1e-4)
+		var vi := 0
+		var vars: Array = _leg_vars[i]
+		if i == sw:
+			var best := 9.0
+			for j in vars.size():
+				var d := absf(ratio - float(vars[j]["ratio"])) - (0.03 if j == _leg_shown[i] else 0.0)
+				if d < best:
+					best = d
+					vi = j
+		_show_leg(i, vi)
+		var vr: Dictionary = vars[vi] if vars.size() > vi else {"rest": _leg_rest[i], "ratio": 1.0}
 		var rest := B * _leg_rest[i]
 		var q := Quaternion.IDENTITY
 		var ang := rest.angle_to(to)
@@ -144,16 +229,39 @@ func _front_step() -> void:
 			var ax := rest.cross(to)
 			if ax.length() > 1e-6:
 				q = Quaternion(ax.normalized(), minf(ang, deg_to_rad(max_leg_deg)))
-		var ratio := clampf(to.length() / maxf(L, 1e-4), 0.62, 1.16)
-		# > 0: lifted foot (slides up behind the coat + shortens a little, a bent knee seen from the front);
-		# < 0: the stance leg drops out from under the coat as the hips bob up, so the sole stays on its print.
-		var short := L * (1.0 - ratio)
-		var sq := 1.0 - (0.3 * short / L if short > 0.0 else 0.0)
-		var slide := short * (0.7 if short > 0.0 else 1.0)
+		# stretch about the hip (the top stays hidden), never slide
+		var sy := clampf(ratio / float(vr["ratio"]), 0.92, 1.08)
 		var R := Basis(q) * B
-		var dirn := (R * _leg_rest[i]).normalized()
-		var lt := Transform3D(R * Basis.from_scale(Vector3(1, sq, 1)), hip - dirn * slide)
-		_legs[i].global_transform = tb * lt
+		_legs[i].global_transform = tb * Transform3D(R * Basis.from_scale(Vector3(1, sy, 1)), hip)
+	# Arms: opposite to the legs (arm 0 goes with leg 1). Leg forwardness: swing leg -1 → +1, stance +1 → -1.
+	var fw := [0.0, 0.0]
+	fw[sw] = -cos(PI * s)
+	fw[st] = cos(PI * s)
+	_step_arms(dt, [fw[1], fw[0]], k * (1.0 - 0.5 * dr) * front_arm_swing)
+
+
+func _step_arms(dt: float, want: Array, amp: float) -> void:
+	if _arms.is_empty() or not _arms[0].visible:
+		return
+	for j in 2:
+		var tgt: float = 0.0 if j == arm_hold else float(want[j]) * amp
+		var r := PaperSpring.step(_arm_a[j], _arm_v[j], tgt, 10.0, 0.5, dt)
+		_arm_a[j] = r.x
+		_arm_v[j] = r.y
+		var a: float = _arm_a[j]
+		var tuck := clampf(front_hunch, 0.0, 1.0) if _front_on else 0.0
+		var pitch := -a * deg_to_rad(arm_pitch_deg) * (1.0 if a > 0.0 else 0.3) - deg_to_rad(14.0) * tuck
+		var roll := (a * deg_to_rad(arm_roll_deg) + deg_to_rad(9.0) * tuck) * (1.0 if j == 0 else -1.0)
+		_arms[j].rotation = Vector3(pitch, 0.0, roll)
+
+
+func _show_leg(i: int, vi: int) -> void:
+	if _leg_shown[i] == vi:
+		return
+	_leg_shown[i] = vi
+	var vars: Array = _leg_vars[i]
+	for j in vars.size():
+		(vars[j]["card"] as PaperCard).visible = j == vi
 
 
 ## Same as PaperPuppet.set_pose (animated card flip unless `instant`), but accepts every pose the skin maps.
@@ -184,10 +292,20 @@ func _process(dt: float) -> void:
 	var fdt := PaperSpring.frame_dt(dt)
 	if fdt <= 0.0 or not _rigged:
 		return
+	_squash = 1.0
 	if front_gait and _walking and _flip_t < 0.0:
-		_front_step()
-	elif plant_exact and _walking:
-		_aim_legs_exact()
+		_front_step(fdt)
+		_front_on = true
+	else:
+		if _front_on:  # back to the straight legs, arms relax
+			_front_on = false
+			_hl_ok = false
+			_last_step = -1
+			for i in 2:
+				_show_leg(i, 0)
+		if plant_exact and _walking:
+			_aim_legs_exact()
+		_step_arms(fdt, [0.0, 0.0], 0.0)
 	if _arm and _arm.visible:
 		# fanning: quick flaps (out fast, back a bit slower), body pumps a touch with each stroke
 		# swings only outward (away from his face): 0 .. 0.42 rad, a quick flick out and a softer return
@@ -198,7 +316,7 @@ func _process(dt: float) -> void:
 		_body.position.y += height * 0.004 * f
 	_shv = lerpf(_shv, shiver, 1.0 - exp(-(9.0 if shiver > _shv else 0.9) * fdt))
 	if _shv < 0.003:
-		_body.scale = Vector3.ONE
+		_body.scale = Vector3(1.0 + 0.5 * (1.0 - _squash), _squash, 1.0)
 		return
 	var ph := _t * TAU * 12.0 + 0.7 * sin(_t * 7.3)
 	var roll := deg_to_rad(3.4) * _shv * sin(ph)
@@ -259,7 +377,9 @@ func _apply_pose(p: String) -> void:
 		_leg_rest[i] = c.position
 		_sole_x[i] = (lcx - cxf) * s
 		_legs[i].visible = true
+		_setup_leg_vars(i, part, dir + key + "_" + side, s)
 	_apply_arm(r, s, bb)
+	_apply_swing_arms(r, s, bb, dir + key)
 	_fix_materials.call_deferred()
 	pose_changed.emit(p)
 
@@ -269,7 +389,7 @@ func _apply_pose(p: String) -> void:
 func _apply_arm(r: Dictionary, s: float, bb: Array) -> void:
 	var name_ := ""
 	for k in (r["parts"] as Dictionary).keys():
-		if not (k in ["body", "hips", "leg_l", "leg_r"]):
+		if not (k in ["body", "hips", "leg_l", "leg_r", "arm_l", "arm_r"]):
 			name_ = k
 	if name_ == "":
 		if _arm:
@@ -296,3 +416,173 @@ func _apply_arm(r: Dictionary, s: float, bb: Array) -> void:
 	_arm_card.position = Vector3(((ab[0] + ab[2]) * 0.5 - pv[0]) * s, (pv[1] - ab[3]) * s, 0.0)
 	_arm.rotation = Vector3.ZERO
 	_arm.visible = true
+
+
+## Leg variants (rig.json parts.leg_*.alt, tools/cast/lift_legs.py): extra cards on the same top-level leg node,
+## hip pivot shared, each with its own hip→sole rest and natural length ratio. Only one is visible at a time.
+func _setup_leg_vars(i: int, part: Dictionary, base: String, s: float) -> void:
+	var vars: Array = _leg_vars[i]
+	for j in range(1, vars.size()):
+		(vars[j]["card"] as PaperCard).queue_free()
+	vars.clear()
+	var hip: Array = part["hip"]
+	vars.append({"card": _leg_cards[i], "rest": _leg_rest[i], "ratio": 1.0})
+	var alt: Dictionary = part.get("alt", {})
+	for vname in ["half", "lift"]:
+		if not alt.has(vname):
+			continue
+		var lb: Array = alt[vname]["bbox"]
+		var c := PaperCard.new()
+		c.thickness = thickness
+		c.texture = load(base + "_" + vname + ".png")
+		c.height = (lb[3] - lb[1]) * s
+		c.position = Vector3(((float(lb[0]) + float(lb[2])) * 0.5 - hip[0]) * s, -(lb[3] - hip[1]) * s, 0.0)
+		c.visible = false
+		_legs[i].add_child(c)
+		vars.append({"card": c, "rest": c.position, "ratio": float(alt[vname]["ratio"])})
+	_leg_cards[i].visible = true
+	_leg_shown[i] = 0
+
+
+## Swinging arm cards (rig.json parts.arm_l / arm_r with bbox + shoulder pivot, tools/cast/walk_arms.py): children of
+## the body card, in front of it, rotated about the shoulder in _step_arms. Hidden for figures with baked arms.
+func _apply_swing_arms(r: Dictionary, s: float, bb: Array, base: String) -> void:
+	var has: bool = (r["parts"] as Dictionary).has("arm_l")
+	if _arms.is_empty():
+		if not has:
+			return
+		for j in 2:
+			var pv := Node3D.new()
+			pv.name = "Arm%d" % j
+			var c := PaperCard.new()
+			c.thickness = thickness
+			pv.add_child(c)
+			_body.add_child(pv)
+			_arms.append(pv)
+			_arm_cards.append(c)
+	for j in 2:
+		_arms[j].visible = has
+		_arm_a[j] = 0.0
+		_arm_v[j] = 0.0
+		_arms[j].rotation = Vector3.ZERO
+		if not has:
+			continue
+		var part: Dictionary = r["parts"]["arm_l" if j == 0 else "arm_r"]
+		var ab: Array = part["bbox"]
+		var pv: Array = part["pivot"]
+		var c := _arm_cards[j]
+		c.texture = load(base + ("_arm_l.png" if j == 0 else "_arm_r.png"))
+		c.height = (ab[3] - ab[1]) * s
+		_arms[j].position = Vector3((pv[0] - (bb[0] + bb[2]) * 0.5) * s, (bb[3] - pv[1]) * s, thickness * 1.3)
+		c.position = Vector3(((ab[0] + ab[2]) * 0.5 - pv[0]) * s, (pv[1] - ab[3]) * s, 0.0)
+
+
+## Base materials + the cast print shader's rim window (see cast_print.gdshader): no cream rim on the hips piece, on
+## the shoulder cap of a swinging arm, on the hidden leg tops, or (no-coat figures) along the trouser seat where the
+## legs join. Puppet textures are unique to the puppet, so their cached materials are ours to tune.
+func _fix_materials() -> void:
+	super._fix_materials()
+	if not _rigged or not _skin_ok():
+		return
+	var key: String = SKINS[skin]["poses"].get(pose, "")
+	var r: Dictionary = _skin_rig.get(key, {})
+	if r.is_empty():
+		return
+	var parts: Dictionary = r["parts"]
+	var bb: Array = parts["body"]["bbox"]
+	var body_min := 0.0
+	var body_max := 1.0
+	if "_nocoat" in key:
+		var hy := float(parts["leg_l"]["hip"][1])
+		body_max = clampf((hy - 0.04 * (bb[3] - bb[1]) - bb[1]) / float(bb[3] - bb[1]), 0.0, 1.0)
+	_rim_window(_body, body_min, body_max, 0.0028)
+	if body_max < 1.0:
+		_join_edge(_body, 0.0, body_max, body_max, 1.0)
+	_rim_window(_hips, 0.0, -1.0, 0.0)
+	_join_edge(_hips, 2.0, 2.0, 0.0, 1.0)
+	for i in 2:
+		var vars: Array = _leg_vars[i]
+		var p: Dictionary = parts["leg_l" if i == 0 else "leg_r"]
+		for j in vars.size():
+			var c: PaperCard = vars[j]["card"]
+			var lb: Array = p["bbox"] if j == 0 else p["alt"]["half" if j == 1 else "lift"]["bbox"]
+			var vis_y := float(p.get("vis", [lb[1]])[0])
+			var vmin := clampf((vis_y + 6.0 - lb[1]) / float(lb[3] - lb[1]), 0.0, 1.0)
+			_rim_window(c, vmin, 1.0, 0.0016)
+			_join_edge(c, vmin, 1.0, 0.0, vmin)
+			_set_ao(c, 0.018, 0.3, 0.0016)
+	for j in _arm_cards.size():
+		if not _arms[j].visible:
+			continue
+		var part: Dictionary = parts["arm_l" if j == 0 else "arm_r"]
+		var ab: Array = part["bbox"]
+		var py := float(part["pivot"][1]) + 20.0
+		var vmin := clampf((py - ab[1]) / float(ab[3] - ab[1]), 0.0, 1.0)
+		_rim_window(_arm_cards[j], vmin, 1.0, 0.0016)
+		_join_edge(_arm_cards[j], vmin, 1.0, vmin, minf(vmin + 0.15, 1.0))
+		_set_ao(_arm_cards[j], 0.0, 0.0, 0.0016)
+		# no shadow from the arms: swung toward the camera they threw dark blocks over the coat / trousers
+		_arm_cards[j].cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+
+
+## Edge wall (card side, surface 2) of a puppet join: cream cut core only for texture rows v_lo..v_hi (UV.y, 0 = top);
+## outside it the wall takes the card's own average colour of rows s_lo..s_hi, so a join shows no light line.
+## (The no-coat body's bottom edge over the legs read as a cream line at the crotch, 2026-11-18.)
+func _join_edge(c: PaperCard, v_lo: float, v_hi: float, s_lo: float, s_hi: float) -> void:
+	if c.mesh == null or c.texture == null:
+		return
+	var m := c.get_surface_override_material(2) as ShaderMaterial
+	if m == null:
+		return
+	if m.shader != CAST_EDGE:
+		m = m.duplicate() as ShaderMaterial
+		m.shader = CAST_EDGE
+		c.set_surface_override_material(2, m)
+	var h := c.height
+	m.set_shader_parameter("band_lo", (1.0 - v_hi) * h)  # card local y: 0 at the bottom, h at the top
+	m.set_shader_parameter("band_hi", (1.0 - v_lo) * h)
+	m.set_shader_parameter("join_color", _avg_color(c.texture, s_lo, s_hi).darkened(0.1))
+
+
+static func _avg_color(tex: Texture2D, v0: float, v1: float) -> Color:
+	var img := tex.get_image()
+	if img == null:
+		return Color(0.3, 0.15, 0.08)
+	if img.is_compressed():
+		img = img.duplicate()
+		img.decompress()
+	var w := img.get_width()
+	var h := img.get_height()
+	var acc := Vector3.ZERO
+	var n := 0
+	var y0 := clampi(int(v0 * h), 0, h - 1)
+	var y1 := clampi(int(v1 * h), y0 + 1, h)
+	for y in range(y0, y1, maxi(1, (y1 - y0) / 24)):
+		for x in range(w / 6, w - w / 6, maxi(1, w / 24)):
+			var c := img.get_pixel(x, y)
+			if c.a > 0.9:
+				acc += Vector3(c.r, c.g, c.b)
+				n += 1
+	if n == 0:
+		return Color(0.3, 0.15, 0.08)
+	acc /= n
+	return Color(acc.x, acc.y, acc.z)
+
+
+func _rim_window(c: PaperCard, vmin: float, vmax: float, rim: float) -> void:
+	if c.mesh == null:
+		if c.texture != null and _rim_retry < 30:
+			_rim_retry += 1
+			_fix_materials.call_deferred()
+		return
+	var m := c.get_surface_override_material(0) as ShaderMaterial
+	if m == null:
+		return
+	if m.shader != CAST_PRINT:
+		# own copy (PaperCard's static material cache must not end up holding this shader)
+		m = m.duplicate() as ShaderMaterial
+		m.shader = CAST_PRINT
+		c.set_surface_override_material(0, m)
+	m.set_shader_parameter("rim_v_min", vmin)
+	m.set_shader_parameter("rim_v_max", vmax)
+	m.set_shader_parameter("rim_width", rim)

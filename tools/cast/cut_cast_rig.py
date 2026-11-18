@@ -273,4 +273,13 @@ if __name__ == "__main__":
     if os.path.isdir(front_legs.SL):
         front_legs.main()
         rig = json.load(open(rig_p))
+    # 2026-11-18 walk v4: bent-knee swing legs (half / lift) and separate swinging arms for the calm walking figures
+    import lift_legs, walk_arms
+    if os.path.isdir(os.path.join(lift_legs.SLICED, "cast_traveller_legs_lift")):
+        lift_legs.main()
+    if os.path.isdir(walk_arms.ARMLESS):
+        cut_now = [f for f in walk_arms.ARMS if f in figs]
+        if cut_now:
+            walk_arms.main(cut_now)
+    rig = json.load(open(rig_p))
     print(preview(rig, os.path.join(ROOT, "art_src", "cast", "qa", "rig_preview.png")))

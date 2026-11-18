@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_traveller_legs_half",
+ "bg": [
+  0.984,
+  0.027,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_traveller_legs_half_00",
+   "bbox": [
+    226,
+    50,
+    410,
+    679
+   ],
+   "area": 98636,
+   "size": [
+    192,
+    637
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_legs_half_01",
+   "bbox": [
+    748,
+    50,
+    934,
+    678
+   ],
+   "area": 99349,
+   "size": [
+    194,
+    636
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_legs_half_02",
+   "bbox": [
+    1233,
+    50,
+    1419,
+    679
+   ],
+   "area": 100099,
+   "size": [
+    194,
+    637
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_legs_half_03",
+   "bbox": [
+    1752,
+    50,
+    1940,
+    678
+   ],
+   "area": 99868,
+   "size": [
+    196,
+    636
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

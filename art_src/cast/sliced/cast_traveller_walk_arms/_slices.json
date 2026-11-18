@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_traveller_walk_arms",
+ "bg": [
+  0.988,
+  0.016,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_traveller_walk_arms_00",
+   "bbox": [
+    168,
+    100,
+    347,
+    676
+   ],
+   "area": 78239,
+   "size": [
+    187,
+    584
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_walk_arms_01",
+   "bbox": [
+    686,
+    100,
+    865,
+    676
+   ],
+   "area": 78110,
+   "size": [
+    187,
+    584
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_walk_arms_02",
+   "bbox": [
+    1165,
+    102,
+    1343,
+    678
+   ],
+   "area": 70830,
+   "size": [
+    186,
+    584
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_walk_arms_03",
+   "bbox": [
+    1672,
+    101,
+    1850,
+    678
+   ],
+   "area": 70921,
+   "size": [
+    186,
+    585
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

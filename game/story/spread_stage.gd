@@ -77,6 +77,8 @@ var _shiver := 0.0
 var _rings: Array = []  ## [node, age, life, max]
 var _cam_anchor: Node3D
 var _bank := Vector3.ZERO
+const BANK_MARGIN := 0.13  ## stream spot: min distance from the felt cut edge (both feet + ripples on the water)
+var _ground_dy := 0.0  ## off the road: ground height under him minus the walker's road height (steps down into the water)
 var _pull := 0.0  ## friends: the sun and wind slide toward each other (0..1 of the gap)
 var _pull_t := 0.0
 ## Road stretch this spread's walking covers, offsets relative to the template start (route[0] is where he starts).
@@ -482,24 +484,43 @@ func _find_stream() -> void:
 		o += 0.05
 	var here := world.walker.offset
 	stream_offset = clampf(stream_offset + 0.55 * signf(here - stream_offset if absf(here - stream_offset) > 0.01 else -1.0), 0.0, L)
-	# A spot on the bank, off the road, at the water's edge, on the camera side: he sits there with his feet in.
+	# A spot IN the water channel (2026-11-18 user: "he sinks his feet into the ground, not the water"): the old spot
+	# used the smooth centreline distance (-0.09..-0.02 = right at the wobbly cut edge), so he often stood on the felt bank
+	# and sank through it. Now: a point inside the real cut polygon (the felt sheet's hole, see GroundLayers) at least
+	# BANK_MARGIN from its edge, so both feet and the ripples are on the recessed water and the bank lip is behind/beside
+	# him; the stage drops him to the water surface there (_ground_dy) and the opaque water hides his sunk legs.
 	var p0 := world.path.global_transform * c.sample_baked(stream_offset)
 	var to_cam: Vector2 = _ground_dirs()[0]
 	var g := world.ground
+	var poly: PackedVector2Array = g.get("_stream_poly")
 	var bs := INF
 	_bank = p0
-	for ai in 36:
-		var ang := TAU * ai / 36.0
-		for ri in 8:
-			var r := 0.35 + ri * 0.12
+	for ai in 48:
+		var ang := TAU * ai / 48.0
+		for ri in 14:
+			var r := 0.3 + ri * 0.06
 			var q := Vector2(p0.x, p0.z) + Vector2(cos(ang), sin(ang)) * r
-			var sd := g.stream_distance(q)
-			if sd > -0.02 or sd < -0.09 or g.path_distance(q) < 0.32:
+			if poly.size() < 3 or not Geometry2D.is_point_in_polygon(q, poly):
 				continue
-			var score := r - 0.6 * (q - Vector2(p0.x, p0.z)).normalized().dot(to_cam)
+			var e := _poly_edge_dist(poly, q)
+			if e < BANK_MARGIN or g.path_distance(q) < 0.3:
+				continue
+			# near the road, toward the camera, not too deep into the middle of the channel
+			var score := r - 0.6 * (q - Vector2(p0.x, p0.z)).normalized().dot(to_cam) + 0.8 * maxf(0.0, e - BANK_MARGIN - 0.06)
 			if score < bs:
 				bs = score
 				_bank = Vector3(q.x, p0.y, q.y)
+	print("SPREAD stream spot ", _bank, " in_water=", poly.size() >= 3 and Geometry2D.is_point_in_polygon(Vector2(_bank.x, _bank.z), poly),
+		" edge=", _poly_edge_dist(poly, Vector2(_bank.x, _bank.z)) if poly.size() >= 3 else -1.0)
+
+
+static func _poly_edge_dist(poly: PackedVector2Array, q: Vector2) -> float:
+	var best := INF
+	for i in poly.size():
+		var a := poly[i]
+		var b := poly[(i + 1) % poly.size()]
+		best = minf(best, q.distance_to(Geometry2D.get_closest_point_to_segment(q, a, b)))
+	return best
 
 
 # ------------------------------------------------------------------ page
@@ -637,8 +658,14 @@ func _step_stroll(dt: float) -> void:
 	w.target_offset = clampf(w.offset + _stroll_dir * 0.6, lo, hi)
 	if "front_lift" in pp:  # struggling steps in the wind: low shuffling lift, heavier roll; light steps otherwise
 		var struggle := 1.0 if _blowing else (0.5 if _shiver > 0.3 else 0.0)
-		pp.set("front_lift", lerpf(float(pp.get("front_lift")), 1.0 - 0.2 * struggle, 1.0 - exp(-3.0 * dt)))
-		pp.set("front_roll_deg", lerpf(float(pp.get("front_roll_deg")), 4.0 + 2.0 * struggle, 1.0 - exp(-3.0 * dt)))
+		var e := 1.0 - exp(-3.0 * dt)
+		pp.set("front_lift", lerpf(float(pp.get("front_lift")), 1.0 - 0.55 * struggle, e))
+		pp.set("front_roll_deg", lerpf(float(pp.get("front_roll_deg")), 4.0 + 1.5 * struggle, e))
+		pp.set("front_arm_swing", lerpf(float(pp.get("front_arm_swing")), 1.0 - 0.7 * struggle, e))
+		pp.set("front_hunch", lerpf(float(pp.get("front_hunch")), struggle, e))  # hunched, arms tucked to the coat
+		# heat: slow, droopy while he still has the coat on; light again once it is off
+		var cool := pp.pose.begins_with("shirt") or pp.pose.begins_with("relieved")
+		pp.set("front_droop", lerpf(float(pp.get("front_droop")), clampf(_warm, 0.0, 1.0) * (0.25 if cool else 1.0), e))
 	if "push_lean_deg" in pp:
 		pp.set("push_lean_deg", lerpf(float(pp.get("push_lean_deg")), 7.0 if _blowing else (3.0 if _shiver > 0.3 else 0.0), 1.0 - exp(-3.0 * dt)))
 
@@ -659,7 +686,7 @@ func _apply_trav() -> void:
 	world.puppet.visible = _trav_s > 0.05
 	# Only vertical here: the puppet measures its own ground motion for the gait, so a sideways jitter on its
 	# position made it take steps in place. The shiver is CastPuppet.shiver (body rocks, feet planted).
-	world.puppet.position = Vector3(0, _hop - _sink, 0)
+	world.puppet.position = Vector3(0, _hop - _sink + _ground_dy, 0)
 	if "shiver" in world.puppet:
 		world.puppet.set("shiver", _shiver)
 
@@ -854,7 +881,7 @@ func fx(name: String) -> void:
 			sun.puff(1.3)
 			_wiggle["sun"] = 0.8
 		"splash":
-			_sink_target = TRAV_H * 0.2
+			_sink_target = TRAV_H * 0.13  # shallow stream: the water comes up to his shins
 			_splash()
 		"cool":
 			set_pose(_face("relieved", "shirt"))
@@ -942,6 +969,13 @@ func _process(dt: float) -> void:
 	if _hop <= 0.0 and _hop_v < 0.0:
 		_hop_v = 0.0
 	_sink = lerpf(_sink, _sink_target, 1.0 - exp(-3.0 * dt))
+	# Off the road (stream spot): follow the real ground height under him, so he steps DOWN off the felt bank onto the
+	# recessed water (GroundLayers: water card at 0.004, felt top 0.022) instead of floating at road height.
+	var want_dy := 0.0
+	if world.walker.path == null:
+		var tq := Vector2(trav.x, trav.z)
+		want_dy = world.ground.surface_y(tq) - world.walker.global_position.y
+	_ground_dy = lerpf(_ground_dy, want_dy, 1.0 - exp(-10.0 * dt))
 	_step_stroll(dt)
 	_apply_trav()
 	# Wind blowing while held: re-trigger gusts toward the traveller, the meadow leans downwind, cheeks puffed.
@@ -1135,6 +1169,8 @@ func _carry_coat(on: bool) -> void:
 		_carry.position = Vector3(TRAV_H * 0.22, TRAV_H * 0.3, 0.018)
 		tilt.add_child(_carry)
 	_carry.visible = on
+	if "arm_hold" in world.puppet:  # the arm with the coat over it does not swing
+		world.puppet.set("arm_hold", 1 if on else -1)
 
 
 static func _make_disc_texture(fill: Color, rim: Color) -> Texture2D:
@@ -1206,7 +1242,7 @@ static func _make_ring_texture() -> Texture2D:
 
 ## sw_052 "퐁당": a splash of paper drops and rings on the water around his feet.
 func _splash() -> void:
-	var tp := traveller_pos()
+	var tp := _water_pos()
 	for i in 9:
 		var node := Node3D.new()
 		node.top_level = true
@@ -1224,6 +1260,12 @@ func _splash() -> void:
 		_leaves.append([node, 0.0, randf_range(0.7, 1.0), start, to, randf_range(-2.0, 2.0), 0.0, randf_range(0.18, 0.3)])
 	for i in 3:
 		_rings.append([null, -0.35 * i, 1.4, 0.35 + 0.12 * i])
+
+
+## His position on the ground under him (the water surface at the stream spot; the walker itself stays at road height).
+func _water_pos() -> Vector3:
+	var tp := traveller_pos()
+	return Vector3(tp.x, world.ground.surface_y(Vector2(tp.x, tp.z)), tp.z)
 
 
 func _step_rings(dt: float) -> void:
@@ -1247,7 +1289,7 @@ func _step_rings(dt: float) -> void:
 			m.top_level = true
 			m.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 			add_child(m)
-			m.global_position = traveller_pos() + Vector3(0, 0.012, 0)
+			m.global_position = _water_pos() + Vector3(0, 0.003, 0)  # on the water surface around his legs
 			m.rotation.x = -PI * 0.5
 			r[0] = m
 		var u: float = r[1] / r[2]

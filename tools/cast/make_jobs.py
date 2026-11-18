@@ -163,6 +163,70 @@ JOBS += [
      "the pieces." + NO_BOTANY},
 ]
 
+# 2026-11-18 walk v4 (user: "잘린 다리가 코트 위를 삐져나와서 이상해 그리고 군인처럼 걷는 거 같아"). The swing leg used to be the
+# straight front leg slid up + squashed, which exposed its cut top/cuff under the hem. Now a pre-drawn BENT-KNEE leg is swapped
+# in while the foot is up (tools/cast/lift_legs.py), and the calm walking figures get separate swinging arm cards
+# (tools/cast/walk_arms.py). Refs: the straight front legs sheet (colour/texture match) and the calm figures.
+LIFT_REF = ["art_src/cast/raw/cast_traveller_legs_front.png", "art_src/cast/raw/ref_traveller_legs.png"]
+LIFT_COMMON = (
+    "MATCH THE FIRST REFERENCE SHEET EXACTLY: the same four legs (same felt/cardstock texture, same trouser browns, same "
+    "turned-up cuff, same dark plum-brown boots with the cream dashed stitch line along the sole), in the same order, same width. "
+    "Each piece is ONE single leg seen EXACTLY FROM THE FRONT while the boy walks straight toward the viewer, cut off straight "
+    "across at the very top (a flat horizontal top edge; no hips, no body, no coat, no hands). The top part of every piece is a "
+    "TALL plain straight trouser section (it will be hidden under a coat), the same width as the reference thigh. THE FOUR PIECES, "
+    "left to right: (1) LEFT and (2) RIGHT leg in plain dark chocolate-brown trousers (no stitch line); (3) LEFT and (4) RIGHT leg "
+    "in the warm medium brown trousers with a dashed ochre-yellow stitched seam down the OUTER side (piece 3: along its left edge, "
+    "piece 4: along its right edge). The boot toe always points straight AT the viewer (front view, symmetric toe cap, never a "
+    "side-view foot, no toes pointing outward). All four pieces the same height, tops on one common line, a wide magenta gap "
+    "between the pieces, each piece about 80 percent of the image height." + NO_BOTANY)
+JOBS += [
+    {"id": "cast_traveller_legs_lift", "kind": "bg", "refs": LIFT_REF,
+     "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_traveller_legs_lift.png",
+     "prompt": "A SPRITE SHEET for a children's pop-up storybook: FOUR separate die-cut cardstock LIFTED-LEG pieces for the paper "
+     "puppet of the traveller boy, " + BG + STYLE.replace("tiny repeated flower and leaf motifs, ", "") + LIFT_COMMON +
+     " THE POSE OF EVERY LEG: mid-step, the knee BENT and the foot LIFTED, the knee coming forward toward the viewer: below the "
+     "tall trouser top the knee shows as a soft rounded bump with a few small fabric crease lines, the shin below the knee is "
+     "SHORT (foreshortened, tipped toward us), the trouser cuff sits just above the boot, and the boot is seen from the front a "
+     "little LARGER than in the reference (it is closer to us), the toe cap tipped up slightly so a thin sliver of the darker sole "
+     "with the cream dashed stitch shows under it. Seen as a whole each lifted leg is noticeably SHORTER than the straight "
+     "reference legs (about three quarters of their height) but just as wide, hanging vertically, symmetric, not bent sideways."},
+    {"id": "cast_traveller_legs_half", "kind": "bg", "refs": LIFT_REF,
+     "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_traveller_legs_half.png",
+     "prompt": "A SPRITE SHEET for a children's pop-up storybook: FOUR separate die-cut cardstock LEG pieces for the paper "
+     "puppet of the traveller boy, " + BG + STYLE.replace("tiny repeated flower and leaf motifs, ", "") + LIFT_COMMON +
+     " THE POSE OF EVERY LEG: just starting a step, the knee SLIGHTLY bent and coming a little forward toward the viewer, the heel "
+     "just lifting: below the tall trouser top a soft knee bump with one or two small crease lines, the shin a little "
+     "foreshortened, the boot seen from the front, toe cap toward us. Each leg about nine tenths of the height of the straight "
+     "reference legs, just as wide, hanging vertically, symmetric, not bent sideways."},
+]
+WALK_REF = ["art_src/cast/raw/ref_traveller_calm.png", "art_src/cast/raw/cast_traveller.png"]
+JOBS += [
+    {"id": "cast_traveller_walk_armless", "kind": "bg", "refs": WALK_REF,
+     "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_traveller_walk_armless.png",
+     "prompt": "A CHARACTER SHEET for a children's pop-up storybook: THREE separate full-body die-cut cardstock stand-up figures, "
+     "EXACTLY the three figures of the FIRST reference image (same face, same calm expression, same hair, same hat, same red folk-art "
+     "coat with the same ochre toggles, pockets and flower prints, same green shirt, suspenders and trousers, same boots, same size, "
+     "same stance, same order) but WITHOUT ARMS: both arms and sleeves are removed, because they are separate paper puppet pieces. "
+     "Where each arm was, the garment's side continues straight down from the rounded shoulder to the hem (coat) or to the waist "
+     "(shirt), with a stitched side seam, so the torso is complete and nothing is cut away from it; the torso is the same width as in "
+     "the reference. No hands anywhere. " + BG + STYLE + " Feet flat on one common baseline, a clean open magenta gap between the "
+     "legs, each figure about 85 percent of the image height."},
+    {"id": "cast_traveller_walk_arms", "kind": "bg", "refs": WALK_REF,
+     "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_traveller_walk_arms.png",
+     "prompt": "A SPRITE SHEET for a children's pop-up storybook: FOUR separate die-cut cardstock ARM pieces for the paper puppet "
+     "of the traveller boy in the FIRST reference image (same size as his arms there), " + BG + STYLE + "Each piece is ONE whole "
+     "arm hanging straight down, seen from the front, from a rounded shoulder cap at the top to the hand at the bottom (simple "
+     "mitten-like hand, thumb toward the body). THE FOUR PIECES, left to right: (1) his RIGHT arm (on the viewer's left) and (2) his "
+     "LEFT arm (on the viewer's right) in the brick red / terracotta coat sleeve exactly as in the reference coat (stitched dashes, "
+     "small leaf print, ochre dashed cuff band), cream-peach hand below the cuff; (3) his RIGHT arm and (4) his LEFT arm in the "
+     "sage green shirt sleeve rolled up above the elbow exactly as in the reference (small flower print, rolled cuff), bare "
+     "cream-peach forearm and hand. Arms the same length and proportions as in the reference figures."},
+]
+
 if __name__ == "__main__":
     p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cast_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)
