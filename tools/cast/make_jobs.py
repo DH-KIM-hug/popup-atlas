@@ -15,6 +15,17 @@ STYLE = ("STYLE (same for every piece): flat front-on orthographic view, like a 
          "children's storybook style. Matte, no gloss, no photo texture, no 3D render. PALETTE (muted warm storybook): brick red / "
          "terracotta, ochre/mustard yellow, sage green, olive, warm browns, cream, soft sky blue, warm orange. Absolutely no magenta, "
          "purple or hot pink anywhere in any piece (rosy cheeks are a soft coral-orange, not pink). ")
+# Sky characters (sun, wind) must not carry the botanical motifs of STYLE (2026-11-18: user asked why the sun and wind
+# had leaf prints). Same cut-paper look, printed detail only from sun/light or cloud/air vocabulary.
+SKY_STYLE = ("STYLE (same for every piece): flat front-on orthographic view, like a printed die-cut pop-up book piece, no perspective, "
+             "no cast shadows, no drop shadows, no glow, no halo, no outline stroke in magenta or white sticker border. Each piece has ONE "
+             "main base colour per part plus finely PRINTED detail on top, subtle matte cardstock grain, slightly gouache/screen-printed "
+             "look, warm friendly cut-paper children's storybook style. Matte, no gloss, no photo texture, no 3D render. PALETTE (muted "
+             "warm storybook): ochre/mustard yellow, golden yellow, warm orange, brick red / terracotta, warm browns, cream, soft sky blue. "
+             "No green anywhere. Absolutely no magenta, purple or hot pink anywhere in any piece (rosy cheeks are a soft coral-orange, "
+             "not pink). NO flowers, NO leaves, NO petals, NO plants, NO vines, NO sprigs, NO botanical motifs of any kind anywhere. ")
+NO_BOTANY = (" IMPORTANT: no flowers, no leaves, no petals, no plants, no vines, no botanical motifs anywhere on any piece.")
+
 FACE = ("Faces are simple and sweet: two small dark dot or curved-line eyes, a tiny smile, round soft coral cheek dots. ")
 
 TRAV = ("THE CHARACTER: one friendly young traveller (a cheerful boy-like young man, storybook proportions about 4.5 heads tall), round "
@@ -51,27 +62,31 @@ JOBS = [
      "with a sleeve hanging down, flat bottom edge; (3) the same coat dropped on the ground: a low wide crumpled heap seen from the front, "
      "collar and one sleeve visible, flat bottom edge; (4) the hat seen straight from the front, brim level, crown up, flat bottom edge "
      "of the brim; (5) the same hat lying tipped on its side on the ground, flat bottom edge."},
-    {"id": "cast_sun", "kind": "bg", "aspect": "landscape 3:2 at the largest available size (1536x1024)",
-     "out": "art_src/cast/raw/cast_sun.png",
+    {"id": "cast_sun_v2", "kind": "bg", "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_sun_v2.png",
      "prompt": "A CHARACTER SHEET for a children's pop-up storybook: THREE separate die-cut cardstock SUN character cards in one row, "
-     "same size, " + BG + STYLE + "THE SUN: a big round warm golden-ochre face disc with a slightly lighter inner disc, surrounded by a "
-     "ring of layered cut-paper rays (alternating long pointed orange rays and short rounded mustard rays, printed with stamped dots and "
-     "dash lines), all rays attached to the disc so the whole sun is one connected silhouette. Simple sweet face: dark curved-line or dot "
-     "eyes, small smile, round soft coral-orange cheek circles, no nose or a tiny dot nose. THE THREE EXPRESSIONS, left to right: "
-     "(1) SMILE: gentle closed-eye happy smile, calm; (2) PROUD: chin up, one eye winking, a confident pleased grin, rays a little longer; "
-     "(3) BEAMING HOT: a huge open-mouthed delighted grin, eyes shut tight in joy, deeper orange-red flush on the cheeks, rays extra "
-     "long and wavy like heat, a few small cut-paper heat squiggles attached to the rays (connected, not floating)."},
-    {"id": "cast_wind", "kind": "bg", "aspect": "landscape 3:2 at the largest available size (1536x1024)",
-     "out": "art_src/cast/raw/cast_wind.png",
+     "same size, " + BG + SKY_STYLE + "THE SUN: a big round warm golden-ochre face disc with a slightly lighter inner disc, surrounded by a "
+     "ring of layered cut-paper rays (alternating long pointed orange rays and short rounded mustard rays), all rays attached to the disc "
+     "so the whole sun is one connected silhouette. PRINTED DETAIL only from sun and light shapes: stamped dots, dash lines, a dashed "
+     "concentric ring around the face, small radiating ticks along each ray, scalloped edges; the inner face disc is otherwise plain. "
+     "Simple sweet face: dark curved-line or dot eyes, small smile, round soft coral-orange cheek circles, no nose or a tiny dot nose. "
+     "THE THREE EXPRESSIONS, left to right: (1) SMILE: gentle closed-eye happy smile, calm; (2) PROUD: chin up, one eye winking, a "
+     "confident pleased grin, rays a little longer; (3) BEAMING HOT: a huge open-mouthed delighted grin, eyes shut tight in joy, deeper "
+     "orange-red flush on the cheeks, rays extra long and wavy like heat, a few small cut-paper heat squiggles attached to the rays "
+     "(connected, not floating)." + NO_BOTANY},
+    {"id": "cast_wind_v2", "kind": "bg", "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_wind_v2.png",
      "prompt": "A CHARACTER SHEET for a children's pop-up storybook: THREE separate die-cut cardstock WIND character cards in one row, "
-     "same size, " + BG + STYLE + "THE WIND: a puffy cream-white cloud face (scalloped bumpy cloud outline, a second soft sky-blue "
-     "cloud layer peeking behind its bottom edge, printed with tiny stitched lines and dots) with chubby PUFFED-OUT cheeks; on its LEFT "
-     "side, attached to the cloud and part of the same silhouette, a few soft sky-blue curly wind swirl ribbons streaming outward. The "
-     "wind always blows toward the LEFT. Simple face: dark dot or curved-line eyes, round soft coral cheek circles. THE THREE "
-     "EXPRESSIONS, left to right: (1) BOAST: smug confident smirk, eyebrows raised, cheeks a little puffed, small swirls; (2) BLOWING "
-     "HARD: cheeks hugely puffed, eyes squeezed shut with effort, lips pursed in a small round 'O' blowing to the left, long strong blue "
-     "wind streams and swirls attached on the left, cloud slightly stretched; (3) TIRED: deflated flatter droopy cloud, half-closed "
-     "sleepy eyes, small open sighing mouth, one sweat drop attached to the cloud, only one small limp wisp on the left."},
+     "same size, " + BG + SKY_STYLE + "THE WIND: a puffy cream-white cloud face (scalloped bumpy cloud outline, a second soft sky-blue "
+     "cloud layer peeking behind its bottom edge) with chubby PUFFED-OUT cheeks; on its LEFT side, attached to the cloud and part of the "
+     "same silhouette, a few soft sky-blue curly wind swirl ribbons streaming outward to the left. The wind always blows toward the LEFT "
+     "(the swirls are only on the left side, the cloud's right side has no swirls). PRINTED DETAIL only from cloud and air shapes: "
+     "stitched dashed swirl lines, wavy air streaks, small dots, scalloped edges. Simple face: dark dot or curved-line eyes, round soft "
+     "coral cheek circles. THE THREE EXPRESSIONS, left to right: (1) BOAST: smug confident smirk, eyebrows raised, cheeks a little "
+     "puffed, small swirls on the left; (2) BLOWING HARD: cheeks hugely puffed, eyes squeezed shut with effort, lips pursed in a small "
+     "round 'O' blowing to the left, long strong blue wind streams and swirls attached on the left, cloud slightly stretched; (3) TIRED: "
+     "deflated flatter droopy cloud, half-closed sleepy eyes, small open sighing mouth, one sweat drop attached to the cloud, only one "
+     "small limp wisp on the left." + NO_BOTANY},
 ]
 
 if __name__ == "__main__":

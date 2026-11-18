@@ -3,7 +3,7 @@
 game/art/cast/<id>.webp under their cast ids and write game/art/cast/catalog.json (same schema as the atlas catalog,
 category "cast", plus role/variant/expression and parts for rigged figures).
 
-  for s in cast_traveller cast_traveller_props cast_sun cast_wind; do
+  for s in cast_traveller cast_traveller_props cast_sun_v2 cast_wind_v2; do
     python3 tools/atlas/slice_atlas.py art_src/cast/raw/$s.png --out art_src/cast/sliced; done
   python3 tools/cast/build_cast.py && python3 tools/cast/cut_cast_rig.py && python3 tools/cast/contact_cast.py
 """
@@ -29,12 +29,12 @@ CAST = [
     ("cast_traveller_props", 2, "cast_coat_ground", 0.08, "coat", "ground", ["traveller", "coat", "clothing", "prop", "on_ground"], False, "the coat dropped on the ground"),
     ("cast_traveller_props", 3, "cast_hat", 0.07, "hat", "front", ["traveller", "hat", "clothing", "prop"], False, "the hat, front"),
     ("cast_traveller_props", 4, "cast_hat_ground", 0.07, "hat", "ground", ["traveller", "hat", "clothing", "prop", "on_ground"], False, "the hat tipped on the ground"),
-    ("cast_sun", 0, "cast_sun_smile", 0.5, "sun", "smile", ["sun", "sky", "hanging", "weather", "face"], False, "sun, gentle smile"),
-    ("cast_sun", 1, "cast_sun_proud", 0.5, "sun", "proud", ["sun", "sky", "hanging", "weather", "face"], False, "sun, proud wink"),
-    ("cast_sun", 2, "cast_sun_beaming", 0.5, "sun", "beaming_hot", ["sun", "sky", "hanging", "weather", "face", "hot"], False, "sun, beaming hot"),
-    ("cast_wind", 0, "cast_wind_boast", 0.36, "wind", "boast", ["wind", "cloud", "sky", "hanging", "weather", "face"], False, "wind cloud, boasting smirk"),
-    ("cast_wind", 1, "cast_wind_blow", 0.36, "wind", "blowing_hard", ["wind", "cloud", "sky", "hanging", "weather", "face"], False, "wind cloud, blowing hard (to the left)"),
-    ("cast_wind", 2, "cast_wind_tired", 0.32, "wind", "tired", ["wind", "cloud", "sky", "hanging", "weather", "face"], False, "wind cloud, tired"),
+    ("cast_sun_v2", 0, "cast_sun_smile", 0.5, "sun", "smile", ["sun", "sky", "hanging", "weather", "face"], False, "sun, gentle smile"),
+    ("cast_sun_v2", 1, "cast_sun_proud", 0.5, "sun", "proud", ["sun", "sky", "hanging", "weather", "face"], False, "sun, proud wink"),
+    ("cast_sun_v2", 2, "cast_sun_beaming", 0.5, "sun", "beaming_hot", ["sun", "sky", "hanging", "weather", "face", "hot"], False, "sun, beaming hot"),
+    ("cast_wind_v2", 0, "cast_wind_boast", 0.36, "wind", "boast", ["wind", "cloud", "sky", "hanging", "weather", "face"], False, "wind cloud, boasting smirk"),
+    ("cast_wind_v2", 1, "cast_wind_blow", 0.36, "wind", "blowing_hard", ["wind", "cloud", "sky", "hanging", "weather", "face"], False, "wind cloud, blowing hard (to the left)"),
+    ("cast_wind_v2", 2, "cast_wind_tired", 0.32, "wind", "tired", ["wind", "cloud", "sky", "hanging", "weather", "face"], False, "wind cloud, tired"),
 ]
 
 if __name__ == "__main__":

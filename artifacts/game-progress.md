@@ -709,3 +709,15 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     - There is no sit art (he wades standing).
     - The audio sync and the new recordings were not checked by ear.
     - Not yet tested on an iPad.
+
+## 2026-11-18 Sun and wind cast cards regenerated without botanical prints
+- The user asked why the sun and wind had leaf prints. Their prompts reused the shared STYLE block ("tiny repeated flower
+  and leaf motifs"). `tools/cast/make_jobs.py` now has a SKY_STYLE (no green, no flowers/leaves/petals/plants/vines plus an
+  explicit negative) for new jobs `cast_sun_v2` and `cast_wind_v2`. Sun detail is now stamped dots, dash lines, a scalloped
+  dashed ring and radiating ticks. Wind detail is now stitched swirls, wavy air streaks and dots, and it still blows LEFT.
+  The traveller jobs are unchanged.
+- Raws: `art_src/cast/raw/cast_{sun,wind}_v2.png` (originals kept), sliced to `art_src/cast/sliced/cast_{sun,wind}_v2/`,
+  `build_cast.py` sources the v2 sheets into the same ids (`game/art/cast/cast_sun_*`, `cast_wind_*`), catalog rebuilt, halo 0.
+  Codex said FAILED only because the size was not 1536x1024 (it returns 2172x724), so the v2 jobs now accept any wide size.
+- QA: `art_src/cast/qa/cast_contact.png`; the story frame (wind_turn, autoplay, 13 s) is `artifacts/cast/sun_wind_v2_story.png`.
+  Import and check_all are clean.

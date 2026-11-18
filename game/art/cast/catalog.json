@@ -306,7 +306,7 @@
  {
   "id": "cast_sun_smile",
   "path": "art/cast/cast_sun_smile.webp",
-  "sheet": "cast_sun",
+  "sheet": "cast_sun_v2",
   "category": "cast",
   "role": "sun",
   "variant": "smile",
@@ -323,8 +323,8 @@
    "face"
   ],
   "px": [
-   607,
-   584
+   623,
+   596
   ],
   "hanging": true,
   "parts": {}
@@ -332,7 +332,7 @@
  {
   "id": "cast_sun_proud",
   "path": "art/cast/cast_sun_proud.webp",
-  "sheet": "cast_sun",
+  "sheet": "cast_sun_v2",
   "category": "cast",
   "role": "sun",
   "variant": "proud",
@@ -349,8 +349,8 @@
    "face"
   ],
   "px": [
-   697,
-   688
+   675,
+   641
   ],
   "hanging": true,
   "parts": {}
@@ -358,7 +358,7 @@
  {
   "id": "cast_sun_beaming",
   "path": "art/cast/cast_sun_beaming.webp",
-  "sheet": "cast_sun",
+  "sheet": "cast_sun_v2",
   "category": "cast",
   "role": "sun",
   "variant": "beaming_hot",
@@ -376,8 +376,8 @@
    "hot"
   ],
   "px": [
-   689,
-   693
+   712,
+   687
   ],
   "hanging": true,
   "parts": {}
@@ -385,7 +385,7 @@
  {
   "id": "cast_wind_boast",
   "path": "art/cast/cast_wind_boast.webp",
-  "sheet": "cast_wind",
+  "sheet": "cast_wind_v2",
   "category": "cast",
   "role": "wind",
   "variant": "boast",
@@ -403,8 +403,8 @@
    "face"
   ],
   "px": [
-   635,
-   431
+   575,
+   376
   ],
   "hanging": true,
   "parts": {}
@@ -412,7 +412,7 @@
  {
   "id": "cast_wind_blow",
   "path": "art/cast/cast_wind_blow.webp",
-  "sheet": "cast_wind",
+  "sheet": "cast_wind_v2",
   "category": "cast",
   "role": "wind",
   "variant": "blowing_hard",
@@ -430,8 +430,8 @@
    "face"
   ],
   "px": [
-   764,
-   432
+   754,
+   364
   ],
   "hanging": true,
   "parts": {}
@@ -439,7 +439,7 @@
  {
   "id": "cast_wind_tired",
   "path": "art/cast/cast_wind_tired.webp",
-  "sheet": "cast_wind",
+  "sheet": "cast_wind_v2",
   "category": "cast",
   "role": "wind",
   "variant": "tired",
@@ -457,8 +457,8 @@
    "face"
   ],
   "px": [
-   626,
-   375
+   636,
+   309
   ],
   "hanging": true,
   "parts": {}
