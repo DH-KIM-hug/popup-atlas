@@ -89,6 +89,52 @@ JOBS = [
      "small limp wisp on the left." + NO_BOTANY},
 ]
 
+# 2026-11-18 traveller expression sheets (user: "계속 웃고만 있는 건 아닌지"). Same design, size and standing pose basis as
+# cast_traveller (the existing sheet is passed as the reference image) so tools/cast/cut_cast_rig.py cuts them the same way.
+EXPR_REF = ["art_src/cast/raw/cast_traveller.png"]
+EXPR_POSE = ("EVERY figure: full body, facing the viewer straight on (front view, not turned), both feet flat on the same horizontal "
+             "baseline, feet a little apart with the toes pointing slightly outward, the SAME leg stance as the reference figures. The "
+             "two legs are clearly separate: a clean open magenta gap between the legs from the coat hem (or the crotch) all the way "
+             "down to the feet; the legs never touch each other and the hands NEVER overlap or touch the legs. Exactly two arms, two "
+             "legs, two feet, two hands with simple mitten-like fingers. All figures the SAME size, the SAME proportions and the SAME "
+             "character design as the reference image (same face shape, same hair, same red folk-art coat with ochre toggles, same "
+             "brown hat, same boots), standing in one row on a common baseline, each figure about 85 percent of the image height. "
+             "The FACE expression must be big and clearly readable from far away (it is a small card in a pop-up book), drawn in the "
+             "same simple printed style as the reference faces. ")
+EXPR_HEAD = ("A CHARACTER SHEET for a children's pop-up storybook: FIVE separate full-body die-cut cardstock stand-up figures of the "
+             "SAME traveller character as in the reference image (match him exactly: this is the same paper puppet with new face "
+             "expressions and arm poses), in one horizontal row, ")
+JOBS += [
+    {"id": "cast_traveller_expr_a", "kind": "bg", "refs": EXPR_REF,
+     "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_traveller_expr_a.png",
+     "prompt": EXPR_HEAD + BG + STYLE + TRAV.replace(FACE, "") + EXPR_POSE +
+     "THE FIVE FIGURES, left to right, all wearing the thick red coat buttoned closed: (1) SURPRISED, hat on: eyes wide open as big "
+     "round white eyes with dark pupils, eyebrows raised high, mouth a big open round 'O', both hands thrown up beside his head with "
+     "palms open (startled); (2) SURPRISED, NO hat (messy dark brown hair visible, a few hairs sticking up): same wide-eyed open-mouth "
+     "'O' shock, both hands reaching up to the top of his bare head as if his hat just blew away; (3) FREEZING COLD, NO hat: shoulders "
+     "hunched up high, both arms wrapped tightly across his chest hugging himself, knees a little together but feet still apart with "
+     "a gap, eyes squeezed shut as two wavy lines, teeth clenched and chattering shown as a wide grimace with a row of white teeth, "
+     "cheeks and nose tinted pale icy blue instead of coral, a small drip at the nose; (4) CALM WALKING FACE, hat on: arms hanging "
+     "relaxed at his sides, a gentle neutral face: soft open dot eyes looking ahead, small calm closed mouth as a short flat line (NOT "
+     "a grin, not smiling), soft coral cheeks; (5) CALM WALKING FACE, NO hat: same gentle neutral face as (4), arms at his sides."},
+    {"id": "cast_traveller_expr_b", "kind": "bg", "refs": EXPR_REF,
+     "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+     "out": "art_src/cast/raw/cast_traveller_expr_b.png",
+     "prompt": EXPR_HEAD + BG + STYLE + TRAV.replace(FACE, "") + EXPR_POSE +
+     "THE FIVE FIGURES, left to right: (1) WARM AND HOT, coat on but UNBUTTONED and hanging open showing the sage green shirt, hat on: "
+     "flushed deep red-orange cheeks, eyes half closed and droopy, mouth open panting, two or three big cut-paper sweat drops in soft "
+     "sky blue attached to the edge of his face and hat (touching the silhouette, not floating), one hand tugging the open coat "
+     "collar; (2) VERY HOT FANNING, coat on and unbuttoned open, NO hat on his head: he holds his brown hat in one raised hand beside "
+     "his face, fanning himself with it, the other arm at his side; face bright red flushed, eyes squeezed into tired curves, mouth "
+     "wide open panting with the tongue sticking out, several big sky blue sweat drops attached to his face and hair (touching the "
+     "silhouette); (3) RELIEVED AND COOL, NO coat (sage green shirt with rolled sleeves, ochre suspenders, brown trousers), hat on: "
+     "eyes closed as content upward curves, a soft peaceful closed-mouth smile, relaxed shoulders, arms at his sides; (4) RELIEVED AND "
+     "COOL, NO coat and NO hat: same content closed-eye peaceful smile as (3), arms at his sides; (5) CALM WALKING FACE, NO coat "
+     "(shirt, suspenders, trousers), hat on: arms hanging relaxed at his sides, a gentle neutral face: soft open dot eyes looking "
+     "ahead, small calm closed mouth as a short flat line (NOT a grin, not smiling), soft coral cheeks."},
+]
+
 if __name__ == "__main__":
     p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cast_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)

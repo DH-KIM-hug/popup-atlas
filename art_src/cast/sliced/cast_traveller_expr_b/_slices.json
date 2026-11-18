@@ -1,0 +1,96 @@
+{
+ "sheet": "cast_traveller_expr_b",
+ "bg": [
+  0.984,
+  0.039,
+  0.973
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_traveller_expr_b_00",
+   "bbox": [
+    91,
+    21,
+    389,
+    708
+   ],
+   "area": 139108,
+   "size": [
+    306,
+    695
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_expr_b_01",
+   "bbox": [
+    489,
+    45,
+    845,
+    708
+   ],
+   "area": 145649,
+   "size": [
+    364,
+    671
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 3
+  },
+  {
+   "id": "cast_traveller_expr_b_02",
+   "bbox": [
+    945,
+    25,
+    1240,
+    708
+   ],
+   "area": 117053,
+   "size": [
+    303,
+    691
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_expr_b_03",
+   "bbox": [
+    1371,
+    45,
+    1665,
+    708
+   ],
+   "area": 110404,
+   "size": [
+    302,
+    671
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_traveller_expr_b_04",
+   "bbox": [
+    1787,
+    23,
+    2081,
+    708
+   ],
+   "area": 117221,
+   "size": [
+    302,
+    693
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

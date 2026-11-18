@@ -176,6 +176,371 @@
   }
  },
  {
+  "id": "cast_traveller_coat_surprised",
+  "path": "art/cast/cast_traveller_coat_surprised.webp",
+  "sheet": "cast_traveller_expr_a",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_hat_surprised",
+  "label": "startled: wide eyes, open mouth, hands up",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "surprised"
+  ],
+  "px": [
+   354,
+   697
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_surprised_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_surprised_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_surprised_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_surprised_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_nohat_surprised",
+  "path": "art/cast/cast_traveller_coat_nohat_surprised.webp",
+  "sheet": "cast_traveller_expr_a",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_surprised",
+  "label": "hat just blew off: hands to his bare head, mouth open",
+  "height_units": 0.345,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "surprised"
+  ],
+  "px": [
+   327,
+   677
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_nohat_surprised_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_nohat_surprised_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_nohat_surprised_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_nohat_surprised_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_nohat_cold",
+  "path": "art/cast/cast_traveller_coat_nohat_cold.webp",
+  "sheet": "cast_traveller_expr_a",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_cold",
+  "label": "freezing: hugging himself, teeth chattering, icy cheeks",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "cold",
+   "wind",
+   "shiver"
+  ],
+  "px": [
+   297,
+   665
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_nohat_cold_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_nohat_cold_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_nohat_cold_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_nohat_cold_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_calm",
+  "path": "art/cast/cast_traveller_coat_calm.webp",
+  "sheet": "cast_traveller_expr_a",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_hat_calm",
+  "label": "walking face: calm, not grinning",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "calm"
+  ],
+  "px": [
+   319,
+   697
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_calm_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_calm_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_calm_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_calm_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_nohat_calm",
+  "path": "art/cast/cast_traveller_coat_nohat_calm.webp",
+  "sheet": "cast_traveller_expr_a",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_calm",
+  "label": "walking face, no hat",
+  "height_units": 0.345,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "calm"
+  ],
+  "px": [
+   318,
+   678
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_nohat_calm_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_nohat_calm_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_nohat_calm_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_nohat_calm_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_open_hot",
+  "path": "art/cast/cast_traveller_coat_open_hot.webp",
+  "sheet": "cast_traveller_expr_b",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_open_hat_hot",
+  "label": "warm: coat unbuttoned, flushed, sweat drops, panting",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "hot",
+   "sun",
+   "sweat"
+  ],
+  "px": [
+   306,
+   695
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_open_hot_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_open_hot_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_open_hot_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_open_hot_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_coat_open_fan",
+  "path": "art/cast/cast_traveller_coat_open_fan.webp",
+  "sheet": "cast_traveller_expr_b",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "coat_open_fan",
+  "label": "very hot: fanning with his hat, tongue out (hat+hand cut as a 'fan' part)",
+  "height_units": 0.345,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "coat",
+   "hat",
+   "winter",
+   "hot",
+   "sun",
+   "sweat"
+  ],
+  "px": [
+   364,
+   671
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_coat_open_fan_body.png",
+   "hips": "art/cast/rig/cast_traveller_coat_open_fan_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_coat_open_fan_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_coat_open_fan_leg_r.png",
+   "fan": "art/cast/rig/cast_traveller_coat_open_fan_fan.png"
+  }
+ },
+ {
+  "id": "cast_traveller_nocoat_relieved",
+  "path": "art/cast/cast_traveller_nocoat_relieved.webp",
+  "sheet": "cast_traveller_expr_b",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "shirt_hat_relieved",
+  "label": "coat off, eyes closed, content (cool at last)",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "hat",
+   "summer",
+   "warm",
+   "relieved"
+  ],
+  "px": [
+   303,
+   691
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_nocoat_relieved_body.png",
+   "hips": "art/cast/rig/cast_traveller_nocoat_relieved_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_nocoat_relieved_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_nocoat_relieved_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_nocoat_nohat_relieved",
+  "path": "art/cast/cast_traveller_nocoat_nohat_relieved.webp",
+  "sheet": "cast_traveller_expr_b",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "shirt_relieved",
+  "label": "coat and hat off, content",
+  "height_units": 0.345,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "summer",
+   "warm",
+   "relieved"
+  ],
+  "px": [
+   302,
+   671
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_nocoat_nohat_relieved_body.png",
+   "hips": "art/cast/rig/cast_traveller_nocoat_nohat_relieved_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_nocoat_nohat_relieved_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_nocoat_nohat_relieved_leg_r.png"
+  }
+ },
+ {
+  "id": "cast_traveller_nocoat_calm",
+  "path": "art/cast/cast_traveller_nocoat_calm.webp",
+  "sheet": "cast_traveller_expr_b",
+  "category": "cast",
+  "role": "traveller",
+  "variant": "shirt_hat_calm",
+  "label": "shirt and hat, calm walking face",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "traveller",
+   "generic",
+   "person",
+   "walker",
+   "hat",
+   "summer",
+   "calm"
+  ],
+  "px": [
+   302,
+   693
+  ],
+  "hanging": false,
+  "rig": "art/cast/rig/rig.json",
+  "skin": "traveller",
+  "parts": {
+   "body": "art/cast/rig/cast_traveller_nocoat_calm_body.png",
+   "hips": "art/cast/rig/cast_traveller_nocoat_calm_hips.png",
+   "leg_l": "art/cast/rig/cast_traveller_nocoat_calm_leg_l.png",
+   "leg_r": "art/cast/rig/cast_traveller_nocoat_calm_leg_r.png"
+  }
+ },
+ {
   "id": "cast_coat_hung",
   "path": "art/cast/cast_coat_hung.webp",
   "sheet": "cast_traveller_props",

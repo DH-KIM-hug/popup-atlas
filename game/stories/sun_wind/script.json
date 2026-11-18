@@ -68,7 +68,7 @@
    "id": "sky",
    "title": "하늘 높이",
    "enter": {
-    "pose": "walk"
+    "pose": "walk_calm"
    },
    "spread": {
     "seed": 1,
@@ -123,16 +123,24 @@
    "id": "bet",
    "title": "내기",
    "enter": {
-    "pose": "walk"
+    "pose": "walk_calm"
    },
    "spread": {
     "seed": 1,
-    "view": 0
+    "view": 0,
+    "route": [
+     -1.6,
+     3.6
+    ]
    },
    "steps": [
     {
      "do": "cam",
      "shot": "story"
+    },
+    {
+     "do": "stroll",
+     "speed": 0.13
     },
     {
      "do": "fx",
@@ -156,13 +164,25 @@
    "id": "wind_turn",
    "title": "바람 차례",
    "enter": {
-    "pose": "walk"
+    "pose": "walk_calm"
    },
    "spread": {
     "seed": 1,
-    "view": 0
+    "view": 0,
+    "route": [
+     -1.6,
+     3.6
+    ]
    },
    "steps": [
+    {
+     "do": "cam",
+     "shot": "story"
+    },
+    {
+     "do": "stroll",
+     "speed": 0.1
+    },
     {
      "do": "fx",
      "fx": "wind_puff"
@@ -242,6 +262,9 @@
     {
      "do": "say",
      "line": "sw_024"
+    },
+    {
+     "do": "stop"
     }
    ]
   },
@@ -249,16 +272,24 @@
    "id": "sun_turn",
    "title": "해님 차례",
    "enter": {
-    "pose": "walk"
+    "pose": "walk_calm"
    },
    "spread": {
     "seed": 1,
-    "view": 1
+    "view": 1,
+    "route": [
+     -1.4,
+     1.8
+    ]
    },
    "steps": [
     {
      "do": "cam",
      "shot": "story"
+    },
+    {
+     "do": "stroll",
+     "speed": 0.13
     },
     {
      "do": "fx",
@@ -301,11 +332,18 @@
     },
     {
      "do": "fx",
+     "fx": "walk_on"
+    },
+    {
+     "do": "fx",
      "fx": "sun_wins"
     },
     {
      "do": "say",
      "line": "sw_033"
+    },
+    {
+     "do": "stop"
     }
    ]
   },
@@ -317,7 +355,11 @@
    },
    "spread": {
     "seed": 1,
-    "view": 1
+    "view": 1,
+    "route": [
+     -1.4,
+     1.8
+    ]
    },
    "steps": [
     {
@@ -356,7 +398,7 @@
    "id": "stream",
    "title": "개울가",
    "enter": {
-    "pose": "shirt"
+    "pose": "shirt_calm"
    },
    "spread": {
     "seed": 1,
@@ -374,7 +416,7 @@
     },
     {
      "do": "pose",
-     "pose": "sit"
+     "pose": "relieved"
     },
     {
      "do": "fx",

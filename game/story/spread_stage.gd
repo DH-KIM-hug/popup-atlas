@@ -79,6 +79,17 @@ var _cam_anchor: Node3D
 var _bank := Vector3.ZERO
 var _pull := 0.0  ## friends: the sun and wind slide toward each other (0..1 of the gap)
 var _pull_t := 0.0
+## Road stretch this spread's walking covers, offsets relative to the template start (route[0] is where he starts).
+## Set before build(); sightlines are cleared along the whole stretch so the follow camera never looks through a card.
+var route := Vector2.ZERO
+## Stroll: he keeps walking along the road while a beat plays (the fable's traveller on his way). Speed eases to
+## `_stroll_speed` x the weather factor; `_pause` stops him in place for a beat (startle, coat off).
+var _stroll := false
+var _stroll_speed := 0.0
+var _stroll_dir := 1.0
+var _pause := 0.0
+var _push := 0.0  ## gale: pushed back a step
+var _start_off := 0.0
 
 
 func _init() -> void:
@@ -104,6 +115,14 @@ func build(seed_v: int, view_i: int, with_audio: bool) -> void:
 	w.auto_walk = false
 	w.target_offset = w.offset
 	w.speed = 0.36
+	_start_off = w.offset
+	if route != Vector2.ZERO:
+		var L := world.path.curve.get_baked_length()
+		w.offset = clampf(w.offset + route.x, 0.0, L)
+		w.target_offset = w.offset
+		w.global_position = world.path.global_transform * world.path.curve.sample_baked(w.offset)
+		world.focus.snap()
+		_stroll_dir = signf(route.y - route.x) if route.y != route.x else 1.0
 	_origin = w.global_position
 	_swap_puppet()
 	var rig := world.rig
@@ -262,6 +281,33 @@ func _add_backing(h: SkyHanger, is_sun: bool) -> void:
 ## Story dressing on top of the template: hinged meadow cards standing between the story camera and the sun /
 ## wind / traveller are left out of this spread (hidden, never popped), and so are their contact shadows.
 func _clear_sightlines() -> void:
+	var w := world.walker
+	var home := w.offset
+	var stops: Array[float] = [home]
+	if route != Vector2.ZERO:
+		var L := world.path.curve.get_baked_length()
+		var n := maxi(1, ceili(absf(route.y - route.x) / 0.25))
+		for i in n + 1:
+			stops.append(clampf(_start_off + lerpf(route.x, route.y, float(i) / n), 0.0, L))
+	var keep_all: Array[PopHinge] = world.hinges.duplicate()
+	var hidden: Array[Vector3] = []
+	for o in stops:
+		w.global_position = world.path.global_transform * world.path.curve.sample_baked(o)
+		world.focus.snap()
+		_clear_sightlines_here(keep_all, hidden)
+	w.global_position = world.path.global_transform * world.path.curve.sample_baked(home)
+	world.focus.snap()
+	var keep: Array[PopHinge] = []
+	for hinge: PopHinge in world.hinges:
+		if (hinge.get_parent() as Node3D).visible:
+			keep.append(hinge)
+	world.hinges = keep
+	_hide_contact_blobs(hidden)
+	_apply_shot_now("wide")
+	print("SPREAD view=", view, " route=", route, " sightline cards hidden=", hidden.size())
+
+
+func _clear_sightlines_here(all: Array[PopHinge], hidden: Array[Vector3]) -> void:
 	_apply_shot_now("story")
 	var cam := camera()
 	var cp := cam.global_position
@@ -279,10 +325,10 @@ func _clear_sightlines() -> void:
 	var tb := cam.unproject_position(tp + Vector3(0, TRAV_H, 0))
 	var tw := absf(ta.y - tb.y) * 0.45
 	rects.append([Rect2(ta.x - tw, tb.y, tw * 2.0, ta.y - tb.y).abs().grow(12.0), cp.distance_to(tp)])
-	var keep: Array[PopHinge] = []
-	var hidden: Array[Vector3] = []
-	for hinge: PopHinge in world.hinges:
+	for hinge: PopHinge in all:
 		var base := hinge.get_parent() as Node3D
+		if not base.visible:
+			continue
 		var p := base.global_position
 		var hh := float(hinge.get_meta("card_h", 0.0))
 		var hw := float(hinge.get_meta("half_w", 0.0))
@@ -292,7 +338,6 @@ func _clear_sightlines() -> void:
 		var r := Rect2(a.x - hw * ppu, b.y, hw * ppu * 2.0, a.y - b.y).abs()
 		var blocks := false
 		if cam.is_position_behind(p) or cam.is_position_behind(p + Vector3(0, hh, 0)):
-			keep.append(hinge)
 			continue
 		for sr in rects:
 			if cp.distance_to(p) < float(sr[1]) and r.intersects(sr[0]):
@@ -300,12 +345,6 @@ func _clear_sightlines() -> void:
 		if blocks:
 			base.visible = false
 			hidden.append(p)
-		else:
-			keep.append(hinge)
-	world.hinges = keep
-	_hide_contact_blobs(hidden)
-	_apply_shot_now("wide")
-	print("SPREAD view=", view, " sightline cards hidden=", hidden.size())
 
 
 func _hide_contact_blobs(points: Array[Vector3]) -> void:
@@ -445,11 +484,74 @@ func walk_away(dist: float) -> void:
 	walk_by(dist)
 
 
+## Keep walking along the road at `speed` until stroll_stop() (camera and sky cast follow him).
+func stroll(speed: float) -> void:
+	_stroll = true
+	_stroll_speed = speed
+
+
+func stroll_stop() -> void:
+	_stroll = false
+	var w := world.walker
+	w.target_offset = clampf(w.offset + _stroll_dir * 0.05, 0.0, world.path.curve.get_baked_length())
+
+
+func strolling() -> bool:
+	return _stroll
+
+
+func _step_stroll(dt: float) -> void:
+	var w := world.walker
+	var pp := world.puppet
+	if _push > 0.0:
+		_push -= dt
+		if _push <= 0.0:
+			pp.max_turn_deg = 20.0
+		return
+	if not _stroll:
+		return
+	if _pause > 0.0:
+		_pause -= dt
+		w.target_offset = w.offset
+		return
+	var L := world.path.curve.get_baked_length()
+	# Weather: pushing into the wind (slow, short steps, leaning in); heat (slowing as he gets hotter).
+	var k := 1.0
+	if _blowing:
+		k = 0.45
+	elif _shiver > 0.3:
+		k = 0.7
+	k *= 1.0 - 0.45 * clampf(_warm, 0.0, 1.0)
+	w.speed = lerpf(w.speed, _stroll_speed * k, 1.0 - exp(-2.0 * dt))
+	var lo := 0.0
+	var hi := L
+	if route != Vector2.ZERO:  # never past the stretch whose sightlines were cleared
+		lo = clampf(_start_off + minf(route.x, route.y), 0.0, L)
+		hi = clampf(_start_off + maxf(route.x, route.y), 0.0, L)
+	w.target_offset = clampf(w.offset + _stroll_dir * 0.6, lo, hi)
+	if "push_lean_deg" in pp:
+		pp.set("push_lean_deg", lerpf(float(pp.get("push_lean_deg")), 7.0 if _blowing else (3.0 if _shiver > 0.3 else 0.0), 1.0 - exp(-3.0 * dt)))
+
+
+## Gale: the wind shoves him back half a step, he plants and leans in again.
+func _shove() -> void:
+	var w := world.walker
+	var pp := world.puppet
+	pp.max_turn_deg = 0.0  # stepping back, he keeps facing his way (no turn-around flip)
+	w.speed = 0.16
+	w.target_offset = clampf(w.offset - _stroll_dir * 0.07, 0.0, world.path.curve.get_baked_length())
+	_push = 1.0
+
+
 func _apply_trav() -> void:
 	var w := world.walker
 	w.scale = Vector3(1.0, maxf(_trav_s, 0.02), 1.0)
 	world.puppet.visible = _trav_s > 0.05
-	world.puppet.position = Vector3(randf_range(-1, 1) * 0.006 * _shiver, _hop - _sink, 0)
+	# Only vertical here: the puppet measures its own ground motion for the gait, so a sideways jitter on its
+	# position made it take steps in place. The shiver is CastPuppet.shiver (body rocks, feet planted).
+	world.puppet.position = Vector3(0, _hop - _sink, 0)
+	if "shiver" in world.puppet:
+		world.puppet.set("shiver", _shiver)
 
 
 # ------------------------------------------------------------------ taps
@@ -556,44 +658,65 @@ func fx(name: String) -> void:
 			_spawn_leaves(14)
 			shot_to("story")
 		"hat_off":
+			# "앗, 내 모자!": startle hop, wide eyes, hands up to his bare head; he stops a moment.
 			_hat_off()
-			set_pose("walk_nohat")
+			set_pose(_face("surprised_nohat", "walk_nohat"))
+			_hop_v = 1.25
+			_pause = 2.2
 		"flap":
 			_spawn_leaves(8)
-			_shiver = 0.6
+			set_pose(_face("cold", "walk_nohat"))
+			_shiver = 0.7
 		"clutch":
-			set_pose("hold")
-			_shiver = 1.0
+			# "으으, 추워!": hugging himself (no hat: the hat is gone), teeth chattering, a hard shiver.
+			set_pose(_face("cold", "hold"))
+			_shiver = 1.3
+			_hop_v = 0.5
 		"gale":
 			_spawn_leaves(16)
-			_shiver = 1.4
+			_shiver = 1.6
+			_shove()
 		"wind_tired":
 			_blowing = false
 			gusts.tire()
 			wind_state = "tired"
 			_sway_target = 1.0
-			_shiver = 0.0
+			_shiver = 0.25  # still shivering a little; dies away after the hat comes back
+			_wiggle["shiver_off"] = 3.0
 		"wind_calm":
 			gusts.calm()
 			wind_state = "default"
 		"hat_back":
 			_hat_back()
 		"warm1":
+			# "아, 따뜻하다~": coat unbuttoned, flushed, the first sweat drops.
 			_warm_target = 0.4
 			sun_state = "beaming"
 			sun.puff(1.2)
-			set_pose("walk")
+			set_pose(_face("warm", "walk"))
 		"warm2":
+			# "아이, 더워!": hat off in his hand, fanning, tongue out, dripping.
 			_warm_target = 0.75
 			sun.puff(1.25)
-			set_pose("walk_nohat")
-			_fan_hat(true)
+			if _has_pose("hot_fan"):
+				set_pose("hot_fan")  # the hat-in-hand is a hinged arm part; CastPuppet fans it
+			else:
+				set_pose("walk_nohat")
+				_fan_hat(true)
 		"coat_off":
+			# "훌러덩!": he stops, the coat drops, a relieved breath.
 			_warm_target = 1.0
 			sun.puff(1.3)
-			set_pose("shirt")
+			set_pose(_face("relieved", "shirt"))
 			_drop_coat()
+			_pause = 999.0
 			shot_to("close")  # punch-in on the payoff (no tap is asked for while it lasts)
+		"walk_on":
+			# after the coat-off moment: picks the coat up and walks on carrying it.
+			_pick_coat()
+			set_pose(_face("shirt_calm", "shirt"))
+			_pause = 0.6
+			_stroll_speed = 0.2  # coat off, cool again: back to an easy pace (the heat factor still slows it)
 		"sun_wins":
 			sun_state = "proud"
 			sun.puff(1.25)
@@ -608,7 +731,7 @@ func fx(name: String) -> void:
 			_warm_target = 1.0
 			sun.puff(1.2)
 		"quiz_wrong":
-			gusts.blow(traveller_pos() + Vector3(0, TRAV_H * 0.6, 0), 1.2)
+			gusts.blow(traveller_pos() + Vector3(0, TRAV_H * 1.3, 0), 1.2)
 			wind_state = "blow"
 			_blow_t = 1.2
 			_sway_target = 3.0
@@ -623,6 +746,8 @@ func fx(name: String) -> void:
 		"splash":
 			_sink_target = TRAV_H * 0.2
 			_splash()
+		"cool":
+			set_pose(_face("relieved", "shirt"))
 		"friends":
 			sun_state = "beaming"
 			wind_state = "default"
@@ -633,6 +758,20 @@ func fx(name: String) -> void:
 			sun.push(Vector3(0.3, 0.15, 0))
 			wind.push(Vector3(-0.3, 0.15, 0))
 	fx_done.emit(name)
+
+
+func _has_pose(p: String) -> bool:
+	var pp := world.puppet
+	var scr := pp.get_script() as Script
+	if scr == null or not scr.get_script_constant_map().has("SKINS"):
+		return false
+	var sk: Dictionary = (scr.get_script_constant_map()["SKINS"] as Dictionary).get(str(pp.get("skin")), {})
+	return (sk.get("poses", {}) as Dictionary).has(p)
+
+
+## Expression pose when the cast skin has it, else the old pose (legacy puppet).
+func _face(p: String, fallback: String) -> String:
+	return p if _has_pose(p) else fallback
 
 
 func _face_each_other(a: float) -> void:
@@ -685,12 +824,13 @@ func _process(dt: float) -> void:
 	if _hop <= 0.0 and _hop_v < 0.0:
 		_hop_v = 0.0
 	_sink = lerpf(_sink, _sink_target, 1.0 - exp(-3.0 * dt))
+	_step_stroll(dt)
 	_apply_trav()
 	# Wind blowing while held: re-trigger gusts toward the traveller, the meadow leans downwind, cheeks puffed.
 	if _blowing:
 		if not gusts._blow_left > 0.05:
 			gusts.gust_every = 0.28 / clampf(_blow_power, 0.5, 2.0)
-			gusts.blow(trav + Vector3(0, TRAV_H * 0.55, 0), 0.6)
+			gusts.blow(trav + Vector3(0, TRAV_H * 1.3, 0), 0.6)  # over his head: the curls kept covering his face
 		wind_state = "blow"
 		wind.puff(1.12 + 0.05 * sin(_t * 9.0))
 		_sway_target = 1.0 + 3.0 * _blow_power
@@ -808,7 +948,7 @@ func _step_hat(dt: float) -> void:
 	if u >= 1.0:
 		_hat.visible = false
 		if back:
-			set_pose("walk")
+			set_pose(_face("walk_calm", "walk"))
 			_hop_v = 0.7
 		_hat_anim = {}
 

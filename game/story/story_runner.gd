@@ -358,6 +358,15 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			var guard2 := 0.0
 			while (stage.walking() or _line_busy) and guard2 < 30.0:
 				guard2 += await _frame()
+		"stroll":
+			# he walks on along the road while the next steps play (wind, sun); "stop" ends it
+			stage.stroll(float(st.get("speed", 0.12)))
+		"stop":
+			stage.stroll_stop()
+			await _frame()
+			var guard3 := 0.0
+			while stage.walking() and guard3 < 5.0:
+				guard3 += await _frame()
 		"pose":
 			_pose = str(st["pose"])
 			stage.set_pose(_pose)
@@ -552,6 +561,9 @@ func _enter_spread(b: Dictionary) -> void:
 	stage = SpreadStage.new()
 	stage.name = "Spread_" + str(b["id"])
 	add_child(stage)
+	var rt: Array = sp.get("route", [])
+	if rt.size() == 2:
+		stage.route = Vector2(float(rt[0]), float(rt[1]))
 	stage.build(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute)
 	stage.set_pose(_pose, true)
 	_spread_key = key

@@ -13,13 +13,24 @@ the coat hem; the hidden leg top up to the hip is repainted in the leg's own fla
 import json, os, sys
 from collections import deque
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 SRC = os.path.join(ROOT, "game", "art", "cast")
 OUT = os.path.join(SRC, "rig")
 FIGS = ["cast_traveller_coat", "cast_traveller_coat_nohat", "cast_traveller_coat_hold",
-        "cast_traveller_nocoat", "cast_traveller_nocoat_nohat"]
+        "cast_traveller_nocoat", "cast_traveller_nocoat_nohat",
+        # 2026-11-18 expressions
+        "cast_traveller_coat_surprised", "cast_traveller_coat_nohat_surprised", "cast_traveller_coat_nohat_cold",
+        "cast_traveller_coat_calm", "cast_traveller_coat_nohat_calm", "cast_traveller_coat_open_hot",
+        "cast_traveller_coat_open_fan", "cast_traveller_nocoat_relieved", "cast_traveller_nocoat_nohat_relieved",
+        "cast_traveller_nocoat_calm"]
+## Extra hinged arm parts cut out of the body card (card px): poly = what moves (hand + what it holds), pivot = wrist.
+## CastPuppet swings the part about the pivot (fanning).
+ARM_PARTS = {
+    "cast_traveller_coat_open_fan": {"fan": {"poly": [(0, 89), (104, 89), (119, 100), (122, 135), (105, 175), (85, 205),
+                                                     (70, 232), (60, 246), (20, 248), (0, 238)], "pivot": [40, 246]}},
+}
 TARGET_H = None  # None: keep the sliced card resolution (no resampling); an int resamples the figure to that height
 
 
@@ -199,6 +210,14 @@ def cut(fid):
         bx, by = parts[side]["hip"]
         brad(body, bx, by)
         brad(hips, bx, by)
+    for pname, spec in ARM_PARTS.get(fid, {}).items():
+        pm = Image.new("L", (w, h), 0)
+        ImageDraw.Draw(pm).polygon(spec["poly"], fill=255)
+        sel = np.array(pm) > 127
+        arm = np.zeros_like(body)
+        arm[sel] = body[sel]
+        body[sel, 3] = 0
+        parts[pname] = {"bbox": save_cropped(arm, f"{fid}_{pname}.png"), "pivot": list(spec["pivot"])}
     for side in ("leg_l", "leg_r"):
         out = parts[side].pop("_out")
         parts[side]["bbox"] = save_cropped(out, f"{fid}_{side}.png")
@@ -223,7 +242,7 @@ def preview(rig, path):
                 a_ = ang if side == "leg_l" else -ang
                 full = full.rotate(a_, resample=Image.BICUBIC, center=tuple(p["hip"]))
                 im.alpha_composite(full)
-            for part in ("hips", "body"):
+            for part in ("hips", "body") + tuple(k for k in r["parts"] if k not in ("hips", "body", "leg_l", "leg_r")):
                 p = r["parts"][part]
                 im.alpha_composite(Image.open(os.path.join(OUT, f"{fid}_{part}.png")), tuple(p["bbox"][:2]))
             tiles.append(im)

@@ -821,3 +821,40 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   Story verified with the new template (wind_turn beat recorded, artifacts/video/sun_wind_wind_turn_v2.mp4).
   Note: --write-movie runs on this Mac crop the frame edges slightly (page tab / 자막 button cut); capture_scene and
   the r2 sheet show them in place, so it is a capture-window artefact, not a layout bug.
+- 2026-11-18 traveller expressions + walking through the weather (cast/story owner; not committed). User: "걷는 거 제대로
+  구현되는지? 나그네 오들오들 떨고 놀라고 … 계속 웃고만 있는 건 아닌지" + coordinator: he keeps walking on the road
+  while the wind blows and the sun shines.
+  - Art: 2 new Codex sheets (`tools/cast/make_jobs.py` jobs cast_traveller_expr_a/b, the old cast_traveller sheet as
+    reference image, magenta key; raws `art_src/cast/raw/cast_traveller_expr_{a,b}.png`, md5 fca11b48…/805b6c4c…, fresh;
+    old raws kept). Both accepted on the first pass (same face/coat/hat, no extra limbs, halo 0). 10 new rigged cast
+    ids (catalog 16 → 26): cast_traveller_coat_surprised, _coat_nohat_surprised, _coat_nohat_cold (hugging himself,
+    chattering teeth, icy blue cheeks, drip), _coat_calm, _coat_nohat_calm (neutral walking face), _coat_open_hot
+    (unbuttoned, flushed, sweat drops, panting), _coat_open_fan (hat in hand, tongue out), _nocoat_relieved,
+    _nocoat_nohat_relieved (eyes closed, content), _nocoat_calm. build_cast drops free-floating print bits (motion
+    lines). cut_cast_rig gained ARM_PARTS: the fan figure's hat+hand is cut (polygon) into a hinged "fan" part.
+  - CastPuppet (`game/art/cast/rig/cast_puppet.gd`): new pose names (walk_calm, walk_calm_nohat, surprised,
+    surprised_nohat, cold, warm, hot_fan, relieved, relieved_nohat, shirt_calm; set_pose override accepts them);
+    `shiver` (body card rocks ~12 Hz, ±3.4° about the hip brads, shoulder/teeth-chatter bob, hunch; legs stay planted;
+    fast attack, ~1 s decay); `push_lean_deg` (lean into the wind at slow speed, solved through the base gait);
+    hinged arm part animation (fanning flicks outward only, away from the face); `plant_exact` re-aims each leg with the
+    exact shortest rotation to its footprint.
+  - Story: new steps `stroll` / `stop` and per-spread `route` (script.json spread.route, offsets from the template
+    start; sightlines cleared along the whole stretch, stroll clamped to it). bet + wind_turn route [-1.6, 3.6], he walks
+    on through both beats (0.13 → 0.10, ×0.45 while the wind is held, leaning in 7°); sun_turn/moral route [-1.4, 1.8]
+    (slows as he heats up, stops for the coat-off, picks the coat up (`walk_on`) and walks on, stops at the end).
+    Expressions: walk/bet/sky/sun start → walk_calm; hat_off → surprised_nohat + startle hop + 2.2 s stop; flap → cold
+    (shiver 0.7); clutch "으으, 추워!" → cold, shiver 1.3 (was the hold figure, which wrongly put the hat back on);
+    gale → shiver 1.6 + shoved back half a step (no turn-around); wind_tired → shiver decays (0.25 for 3 s, then 0);
+    hat_back → walk_calm; warm1 → warm; warm2 → hot_fan; coat_off → relieved; walk_on → shirt_calm; stream approach
+    shirt_calm, at the bank relieved (keeps the hat: the old "sit" pose swapped to the no-hat figure = the hat flicker);
+    ending keeps the smiling shirt figure ("다시 즐겁게 길을 떠나요"). Gust curls now aim over his head (they covered his
+    face). The old ±6 mm random puppet jitter is gone (it also fed the gait's speed measurement).
+  - Walk check (headless probe, story puppet, views 0/1, speeds 0.05-0.2): planted footprints never drift; sole vs
+    footprint error ≤ 3.8 mm (≈2 px at the story camera) with plant_exact (was up to 32 mm on clamped frames).
+  - Recordings (movie maker 1366x1024, 30 fps): `artifacts/video/trav_wind.mp4`, `trav_sun.mp4`, `trav_stream.mp4`;
+    story-camera expression strip `artifacts/cast/trav_expressions_story.png`; contact `art_src/cast/qa/cast_contact.png`,
+    rig `art_src/cast/qa/rig_preview.png`. Beat lengths unchanged (wind 55 s, sun 45 s; walking runs under the lines).
+  - check_all clean (39 scripts).
+  - Open: the warm grade washes the hot/fan flush toward pink at full warmth; the open-coat figures show a light notch
+    at the crotch under the coat opening; --beat=wind_turn starts him at the route start (in the full flow he arrives
+    from bet).
