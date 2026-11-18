@@ -2,8 +2,18 @@
 TALE_ID = "sun_wind"
 TITLE = "해와 바람"
 PREFIX = "sw"  # line ids sw_000.., sw_x_<extra>, new lines sw_nNN
-CAST = {"traveller": {"skin": "traveller"}, "sun": {"skin": "sun"}, "wind": {"skin": "wind"},
-        "hat": {"skin": "hat"}, "coat": {"skin": "coat"}}
+HANDLER = "res://stories/sun_wind/fx.gd"  # tale effects (TaleHandler): gusts, hat, coat, warm light, stream
+# cast by kind (SpreadStage): walker = the template's road walker with a CastPuppet skin; hanger = SkyHanger in the sky
+# band of the story shot (screen fractions, card height as a fraction of the frame, paper backing disc); prop = prints
+# the handler makes cards of.
+CAST = {"traveller": {"kind": "walker", "skin": "traveller", "height": 0.47,
+                      "gait": {"front_gait": True, "step_period": 0.46, "min_stride": 0.05, "max_stride": 0.13,
+                               "foot_lift": 0.03, "waddle_deg": 4.0}},
+        "sun": {"kind": "hanger", "skin": "sun", "screen": [0.21, 0.26], "frac": 0.27, "sway": 0.025, "bob": 0.012,
+                "seed": 0.2, "backing": ["fbf0cf", "e2b85c"], "backing_scale": 1.12, "backing_drop": 0.06},
+        "wind": {"kind": "hanger", "skin": "wind", "screen": [0.79, 0.26], "frac": 0.2322, "sway": 0.04, "bob": 0.016,
+                 "seed": 0.7, "backing": ["d9e7ef", "7f9fb8"], "backing_scale": 1.05, "backing_drop": 0.1},
+        "hat": {"kind": "prop", "skin": "hat"}, "coat": {"kind": "prop", "skin": "coat"}}
 MORAL = "세게 미는 것보다 다정한 게 더 힘이 세요."
 SEG_KEEP = {}  # source line index -> seg indices kept (reused clips, nothing to record)
 

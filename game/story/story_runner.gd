@@ -8,6 +8,7 @@ extends Node
 ## and end on the moral card with "다시 보기". Narration auto-advances; a tap on the page skips the line.
 ##
 ## Verify mode (command line after `--`, or `--agent-args {json}` from the gd_run toolkit, or the exports):
+##   --tale=<id>     play game/stories/<id>/script.json (default: the scene's script_path)
 ##   --beat=<id>     start at that beat (its spread is built directly, cover skipped)
 ##   --autoplay      plays the whole story unattended, taps/holds simulated (with ripples) so it can be captured
 ##   --fixed         deterministic 1/60 s per frame (PopHinge / PaperSpring fixed_dt)
@@ -54,6 +55,8 @@ var _prebuilt: Dictionary = {}
 var _last_line := ""
 const PREBUILD_BUDGET_MS := 3.0
 var _choosing := false
+var _blow_target := "wind"
+var _walker_role := "traveller"
 
 
 func _ready() -> void:
@@ -98,10 +101,14 @@ func _parse_args() -> void:
 			var d: Variant = JSON.parse_string(ua[i + 1])
 			if d is Dictionary:
 				start_beat = str(d.get("beat", start_beat))
+				if d.has("tale"):
+					script_path = "res://stories/%s/script.json" % str(d["tale"])
 				autoplay = bool(d.get("autoplay", autoplay))
 				fixed_step = bool(d.get("fixed", fixed_step))
 				mute = bool(d.get("mute", mute))
 				subtitles = bool(d.get("subtitles", subtitles))
+		elif a.begins_with("--tale="):  # play another tale from the main scene (res://stories/<id>/script.json)
+			script_path = "res://stories/%s/script.json" % a.get_slice("=", 1)
 		elif a.begins_with("--beat="):
 			start_beat = a.get_slice("=", 1)
 		elif a == "--autoplay":
@@ -123,6 +130,9 @@ func _load_script() -> void:
 		return
 	data = parsed
 	beats = data.get("beats", [])
+	for role in (data.get("cast", {}) as Dictionary):
+		if str((data["cast"][role] as Dictionary).get("kind", "")) == "walker":
+			_walker_role = str(role)
 	for l: Dictionary in data.get("lines", []):
 		lines[str(l["id"])] = l
 		if not l.get("used", true):
@@ -166,7 +176,7 @@ func _process(dt: float) -> void:
 		_auto_cycle += dt
 		var on := fmod(_auto_cycle, 2.2) < 1.6
 		if on and not _press:
-			ui.ripple(stage.target_screen("wind"))
+			ui.ripple(stage.target_screen(_blow_target))
 		_press = on
 	if stage and is_instance_valid(stage):
 		stage.set_blowing(_press and _mode == "blow", 1.0)
@@ -197,7 +207,7 @@ func _pointer_down(p: Vector2) -> void:
 	var hit := ""
 	if stage and is_instance_valid(stage) and stage.world:
 		hit = stage.hit_target(p)
-	if hit != "" and hit != "traveller":
+	if hit != "" and hit != _walker_role:
 		stage.wiggle(hit)
 	if _expect.has(hit):
 		_tapped = hit
@@ -261,6 +271,7 @@ func _say(id: String) -> void:
 	for i in segs.size():
 		var s: Dictionary = segs[i]
 		ui.show_line(l, i)
+		_apply_expr(l, i)
 		var st := _stream(str(s.get("audio", "")))
 		if st and not mute:
 			player.stream = st
@@ -314,7 +325,7 @@ func _pointer_at(target: String) -> Vector3:
 		return Vector3(-1000, -1000, 0)
 	var p := stage.target_screen(target)
 	# the ring goes around the whole card (the wind is wide), clear of the face
-	return Vector3(p.x, p.y, stage.target_radius(target) * (1.0 if target == "traveller" else 1.3))
+	return Vector3(p.x, p.y, stage.target_radius(target) * (1.0 if target == _walker_role else 1.3))
 
 
 # ------------------------------------------------------------------ main loop
@@ -363,6 +374,50 @@ func _play_beat(b: Dictionary) -> void:
 		await _step(st, b)
 
 
+## Cast members a step names (`who`: role or list).
+func _who(st: Dictionary) -> Array:
+	var w: Variant = st.get("who", null)
+	if w == null:
+		return []
+	return w if w is Array else [w]
+
+
+## Line → expression map (script.json lines[].expr, {role: pose | [pose per seg]}): the faces change with the words.
+## Only cast standing on the page; a walking actor keeps its walking figure and shows the face when it stops.
+func _apply_expr(l: Dictionary, seg_i: int) -> void:
+	if stage == null or not is_instance_valid(stage) or not l.get("expr") is Dictionary:
+		return
+	var ex: Dictionary = l["expr"]
+	for role in ex:
+		var a := stage.actor(str(role))
+		if a == null or a.pop_target < 0.5:
+			continue
+		var v: Variant = ex[role]
+		var p := ""
+		if v is Array:
+			if (v as Array).is_empty():
+				continue
+			p = str(v[mini(seg_i, (v as Array).size() - 1)])
+		else:
+			p = str(v)
+		if a.has_pose(p) and a.view_of(p) != "back":
+			a.set_pose(p)
+
+
+func _wait_actors(roles: Array, guard_s := 30.0) -> void:
+	var g := 0.0
+	await _frame()
+	while g < guard_s:
+		var busy := _line_busy
+		for r in roles:
+			var a := stage.actor(str(r))
+			if a and a.moving():
+				busy = true
+		if not busy:
+			return
+		g += await _frame()
+
+
 func _step(st: Dictionary, b: Dictionary) -> void:
 	match str(st["do"]):
 		"cover":
@@ -371,16 +426,17 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			await _say(str(st["line"]))
 		"fx":
 			stage.fx(str(st["fx"]))
-			await _wait(0.4)
+			await _wait(float(st.get("wait", 0.4)))
 		"cam":
-			stage.shot_to(str(st["shot"]))
+			stage.shot_to(str(st["shot"]), st.get("at", null))
 			await _wait(float(st.get("wait", 0.6)))
 		"snap":
 			_snaps[str(st["key"])] = await _snapshot(true)
 		"flash":
 			var tex: Texture2D = _snaps.get(str(st["key"]))
 			if tex:
-				ui.show_flash(tex, str(st.get("side", "left")), "바람이 불 때" if str(st.get("side", "left")) == "left" else "해님이 비출 때")
+				var left := str(st.get("side", "left")) == "left"
+				ui.show_flash(tex, str(st.get("side", "left")), str(st.get("label", "바람이 불 때" if left else "해님이 비출 때")))
 			await _say(str(st.get("line", "")))
 		"walk_away":
 			stage.walk_away(float(st.get("dist", 1.2)))
@@ -400,20 +456,33 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			while stage.walking() and guard3 < 5.0:
 				guard3 += await _frame()
 		"pose":
-			_pose = str(st["pose"])
-			stage.set_pose(_pose)
-			await _wait(0.5)
-		"walk", "walk_to":
-			if str(st["do"]) == "walk_to" and str(st.get("place", "")) == "stream":
-				stage.walk_to_bank()
+			if st.has("who"):
+				for r in _who(st):
+					var a := stage.actor(str(r))
+					if a:
+						a.set_pose(str(st["pose"]), int(st.get("left", -1)))
+						if st.get("hop", false):
+							a.hop_v = 0.7
 			else:
-				stage.walk_by(float(st.get("dist", 0.5)))
-			if st.has("line"):
-				_say.bind(str(st["line"])).call()
-			await _frame()
-			var guard := 0.0
-			while (stage.walking() or _line_busy) and guard < 30.0:
-				guard += await _frame()
+				_pose = str(st["pose"])
+				stage.set_pose(_pose)
+			await _wait(float(st.get("wait", 0.5)))
+		"walk", "walk_to":
+			if st.has("who"):
+				await _step_walk_actors(st)
+			else:
+				if str(st["do"]) == "walk_to":
+					stage.walk_to_place(str(st.get("place", "")))
+				else:
+					stage.walk_by(float(st.get("dist", 0.5)))
+				if st.has("line"):
+					_say.bind(str(st["line"])).call()
+				await _frame()
+				var guard := 0.0
+				while (stage.walking() or _line_busy) and guard < 30.0:
+					guard += await _frame()
+		"climb":
+			await _step_climb(st)
 		"tap":
 			await _say(str(st.get("prompt", "")))
 			var hit := await _wait_tap([str(st["target"])], str(st.get("hint", "")))
@@ -421,6 +490,14 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			if st.has("react"):
 				stage.fx(str(st["react"]))
 			await _say_lines(st.get("lines", []))
+		"tap_each":
+			await _step_tap_each(st)
+		"tap_steps":
+			await _step_tap_steps(st)
+		"build":
+			await _step_build(st)
+		"huff":
+			await _step_huff(st)
 		"blow":
 			await _step_blow(st)
 		"shine":
@@ -434,6 +511,185 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 		_:
 			push_warning("StoryRunner: unknown step " + str(st["do"]))
 	_pose = stage.puppet().pose if stage and is_instance_valid(stage) else _pose
+
+
+## walk {who, dir (toward | away | left | right), dist, to (spot), from (spot), pose, speed, line, wait}:
+## several actors keep their formation; an actor not on the page yet steps in from `from` (or dist back along dir).
+func _step_walk_actors(st: Dictionary) -> void:
+	var roles := _who(st)
+	var d := stage.dir_vec(str(st.get("dir", "right")))
+	var dist := float(st.get("dist", 0.6))
+	var spd := float(st.get("speed", 0.2))
+	var lead := Vector3.ZERO
+	var has_to := st.has("to")
+	if has_to:
+		lead = stage.spot_point(st["to"])
+	for i in roles.size():
+		var a := stage.actor(str(roles[i]))
+		if a == null:
+			continue
+		if a.pop_target < 0.5:
+			var start: Vector3
+			if st.has("from"):
+				start = stage.spot_point(st["from"]) - d * 0.12 * i
+			elif has_to:
+				start = lead - d * dist - d * 0.12 * i
+			else:
+				start = a.global_position - d * dist
+			a.place_at(start)
+			a.pop_delay = 0.0
+			a.pop_target = 1.0
+			a.puppet.set_figure(str(st.get("pose", "calm")) if a.has_pose(str(st.get("pose", ""))) else "calm", d.dot(stage.dir_vec("left")) > 0.5, true)
+		var goal := a.global_position + d * dist
+		if has_to:
+			goal = lead - d * 0.14 * i + stage.dir_vec("away") * 0.05 * (i % 2)
+		a.walk_to(goal, spd, str(st.get("pose", "")))
+		if st.has("end_pose"):
+			a.pose = str(st["end_pose"])
+	if st.has("line"):
+		_say.bind(str(st["line"])).call()
+	if st.get("async", false):
+		return
+	await _wait_actors(roles)
+	if st.get("exit", false):
+		for r in roles:
+			var a2 := stage.actor(str(r))
+			if a2:
+				a2.pop_target = 0.02
+
+
+## climb {who, on (set piece), path [[x, y] in set heights from its base centre], pose, speed, line}.
+func _step_climb(st: Dictionary) -> void:
+	var a := stage.actor(str(st["who"]))
+	var sp := stage.set_piece(str(st.get("on", "house")))
+	if a == null or sp == null:
+		return
+	var pts: Array = []
+	var right := stage.dir_vec("right")
+	var toward := stage.dir_vec("toward")
+	for q: Array in st.get("path", []):
+		var z := float(q[2]) if q.size() > 2 else 0.04
+		pts.append(sp.global_position + right * float(q[0]) * sp.height + Vector3.UP * float(q[1]) * sp.height + toward * z)
+	a.follow(pts, float(st.get("speed", 0.14)), str(st.get("pose", "")))
+	if st.has("pose"):
+		a.pose = str(st["pose"])
+	if st.has("line"):
+		_say.bind(str(st["line"])).call()
+	await _wait_actors([str(st["who"])])
+
+
+## tap_each {targets, prompt, hint, react{role: [pose, fx]}, lines}: every target once, in any order.
+func _step_tap_each(st: Dictionary) -> void:
+	await _say(str(st.get("prompt", "")))
+	var left: Array = (st.get("targets", []) as Array).duplicate()
+	var react: Dictionary = st.get("react", {})
+	while not left.is_empty():
+		var hit := await _wait_tap(left, str(st.get("hint", "")))
+		left.erase(hit)
+		var a := stage.actor(hit)
+		var r: Array = react.get(hit, [])
+		if a:
+			a.hop_v = 0.9
+			if r.size() > 0:
+				a.set_pose(str(r[0]))
+		for k in range(1, r.size()):
+			stage.fx(str(r[k]))
+		await _wait(0.5)
+	await _say_lines(st.get("lines", []))
+
+
+## tap_steps {target, prompt, hint, steps[{target?, fx, lines, next}]}: one tap per step (generalised shine).
+func _step_tap_steps(st: Dictionary) -> void:
+	await _say(str(st.get("prompt", "")))
+	for s: Dictionary in st.get("steps", []):
+		var tg := str(s.get("target", st.get("target", "")))
+		var hit := await _wait_tap([tg], str(st.get("hint", "")))
+		stage.wiggle(hit)
+		stage.fx(str(s.get("fx", "")))
+		await _wait(float(s.get("wait", 0.5)))
+		await _say_lines(s.get("lines", []))
+		if s.has("next"):
+			await _say(str(s["next"]))
+
+
+## build {house, target, taps, hint, walker, fx, counter, steps[{at, fx, lines}]}: tap by tap the house's bands fold up
+## (band k after k·taps/bands taps); the tale fx shows the work (carrying, hammering, a brick flying on).
+func _step_build(st: Dictionary) -> void:
+	var house := str(st.get("house", "house"))
+	var sp := stage.set_piece(house)
+	var taps := int(st.get("taps", 3))
+	var at_steps: Dictionary = {}
+	for s: Dictionary in st.get("steps", []):
+		at_steps[int(s["at"])] = s
+	stage.build_ctx = {"house": house, "walker": str(st.get("walker", "")), "tap": 0, "taps": taps,
+		"target": str(st.get("target", house))}
+	if st.has("prompt"):
+		await _say(str(st["prompt"]))
+	for i in range(1, taps + 1):
+		await _wait_tap([str(st.get("target", house))], str(st.get("hint", "")))
+		stage.build_ctx["tap"] = i
+		if sp:
+			var n := ceili(float(i) * sp.band_count() / taps)
+			sp.bands_up(n, 0.08)
+		stage.fx(str(st.get("fx", "")))
+		if st.get("counter", false):
+			stage.show_counter(i, house)
+		if at_steps.has(i):
+			var s2: Dictionary = at_steps[i]
+			stage.fx(str(s2.get("fx", "")))
+			await _say_lines(s2.get("lines", []))
+		await _wait(float(st.get("gap", 0.45)))
+	if st.get("counter", false):
+		await _wait(0.6)
+		stage.hide_counter()
+
+
+## huff {house, taps, target (wolf), prompt, hint, fx, counter, result: blow_apart | collapse | hold, ruin}:
+## each tap is one 후~ from the wolf; blow_apart peels the bands off from the top, collapse rocks the house harder
+## and harder until it tumbles, hold only shivers it. The ruin card pops up where the house stood.
+func _step_huff(st: Dictionary) -> void:
+	var house := str(st.get("house", "house"))
+	var sp := stage.set_piece(house)
+	var taps := int(st.get("taps", 3))
+	var who := str(st.get("who", "wolf"))
+	var wolf := stage.actor(who)
+	var result := str(st.get("result", "hold"))
+	if wolf and sp:
+		wolf.face_point(sp.global_position)
+	if st.has("prompt"):
+		await _say(str(st["prompt"]))
+	stage.build_ctx = {"house": house, "walker": who, "tap": 0, "taps": taps, "result": result}
+	for i in range(1, taps + 1):
+		await _wait_tap([str(st.get("target", who))], str(st.get("hint", "")))
+		stage.build_ctx["tap"] = i
+		if wolf:
+			wolf.set_pose(str(st.get("huff_pose", "huff")))
+			wolf.hop_v = 0.35
+		stage.fx(str(st.get("fx", "")))
+		if sp:
+			match result:
+				"blow_apart":
+					if i < taps:
+						sp.band_down(sp.shown - 1, 0.1)
+						sp.wobble(0.1)
+					else:
+						sp.collapse(0.05)
+						stage.fx("pop:" + str(st.get("ruin", "")))
+				"collapse":
+					if i < taps:
+						sp.wobble(0.05 + 0.06 * i)
+					else:
+						sp.wobble(0.4)
+						sp.collapse(0.25)
+						stage.fx("pop:" + str(st.get("ruin", "")))
+				_:
+					sp.shiver(0.6)
+		if st.get("counter", false):
+			stage.show_counter(i, house)
+		await _wait(float(st.get("gap", 0.55)))
+	if st.get("counter", false):
+		await _wait(0.6)
+		stage.hide_counter()
 
 
 func _step_cover(st: Dictionary, b: Dictionary) -> void:
@@ -455,6 +711,7 @@ func _step_cover(st: Dictionary, b: Dictionary) -> void:
 
 func _step_blow(st: Dictionary) -> void:
 	await _say(str(st.get("prompt", "")))
+	_blow_target = str(st.get("target", "wind"))
 	_mode = "blow"
 	_auto_cycle = 0.0
 	var steps: Array = st.get("steps", [])
@@ -462,7 +719,7 @@ func _step_blow(st: Dictionary) -> void:
 	var idle := 0.0
 	var k := 0
 	var hints := 0
-	ui.pointer_source = func(): return _pointer_at("wind")
+	ui.pointer_source = func(): return _pointer_at(_blow_target)
 	while k < steps.size():
 		var dt: float = await _frame()
 		if _press:
@@ -491,9 +748,10 @@ func _step_blow(st: Dictionary) -> void:
 
 func _step_shine(st: Dictionary) -> void:
 	await _say(str(st.get("prompt", "")))
+	var tg := str(st.get("target", "sun"))
 	for s: Dictionary in st.get("steps", []):
-		await _wait_tap(["sun"], str(st.get("hint", "")))
-		stage.wiggle("sun")
+		await _wait_tap([tg], str(st.get("hint", "")))
+		stage.wiggle(tg)
 		stage.fx(str(s.get("fx", "")))
 		await _say_lines(s.get("lines", []))
 		if s.has("next"):
@@ -504,7 +762,7 @@ func _step_quiz(st: Dictionary) -> void:
 	var answer := str(st.get("answer", "sun"))
 	var wrong: Dictionary = st.get("wrong", {})
 	ui.hide_flashes()
-	var targets: Array = ["sun", "wind"]
+	var targets: Array = st.get("choices", ["sun", "wind"])
 	ui.show_choices(targets)
 	_choosing = true
 	await _say(str(st.get("prompt", "")))
@@ -531,8 +789,8 @@ func _step_quiz(st: Dictionary) -> void:
 func _step_gentle(st: Dictionary) -> void:
 	await _say(str(st.get("prompt", "")))
 	for i in int(st.get("taps", 3)):
-		await _wait_tap(["wind"], str(st.get("hint", "")))
-		stage.gentle_gust()
+		await _wait_tap([str(st.get("target", "wind"))], str(st.get("hint", "")))
+		stage.fx(str(st.get("fx", "gentle_gust")))
 		await _wait(0.6)
 	await _say_lines(st.get("lines", []))
 
@@ -567,8 +825,10 @@ func _snapshot(without_ui := false) -> Texture2D:
 
 func _enter_spread(b: Dictionary) -> void:
 	var sp: Dictionary = b["spread"]
-	var key := "%d:%d" % [int(sp.get("seed", 1)), int(sp.get("view", 0))]
+	var key := _key_of(sp)
 	if key == _spread_key and stage:
+		await stage.enter_beat(b)  # same page: the next beat's set pieces / light / cast
+		ui.show_page_title(str(b.get("title", "")))
 		return
 	var had := stage != null and is_instance_valid(stage)
 	var pre: Dictionary = _prebuilt.get(key, {})
@@ -609,6 +869,8 @@ func _enter_spread(b: Dictionary) -> void:
 	else:
 		stage = SpreadStage.new()
 		stage.name = "Spread_" + str(b["id"])
+		stage.tale = data
+		stage.beat = b
 		add_child(stage)
 		var rt: Array = sp.get("route", [])
 		if rt.size() == 2:
@@ -633,8 +895,12 @@ func _enter_spread(b: Dictionary) -> void:
 
 # ------------------------------------------------------------------ perf: spread prebuild
 
+## Page key: consecutive beats with the same key share one page (sun_wind: seed:view; tales with places add it).
 static func _key_of(sp: Dictionary) -> String:
-	return "%d:%d" % [int(sp.get("seed", 1)), int(sp.get("view", 0))]
+	var k := "%d:%d" % [int(sp.get("seed", 1)), int(sp.get("view", 0))]
+	if sp.has("place"):
+		k += ":" + str(sp["place"])
+	return k
 
 
 ## Start building the first spread after beat index i that differs from the one on screen (no-op if already going).
@@ -663,6 +929,8 @@ func _prebuild_after(i: int) -> void:
 		vp.process_mode = Node.PROCESS_MODE_DISABLED  # nothing in the waiting spread ticks (the build runs on process_frame)
 		add_child(vp)
 		var st := SpreadStage.new()
+		st.tale = data
+		st.beat = beats[j]
 		var rt: Array = sp.get("route", [])
 		if rt.size() == 2:
 			st.route = Vector2(float(rt[0]), float(rt[1]))
@@ -682,17 +950,37 @@ func _warm_cast() -> void:
 	if not _cast_textures.is_empty():
 		return
 	var sl := BuildSlicer.new(2.0, get_tree())
+	var prefixes: Array = []
+	for role in (data.get("cast", {}) as Dictionary):
+		var cfg: Dictionary = data["cast"][role]
+		if str(cfg.get("kind", "")) in ["walker", "actor"]:
+			prefixes.append("cast_" + str(cfg.get("skin", role)) + "_" if str(cfg.get("kind")) == "actor" else "cast_" + str(cfg.get("skin", role)))
 	for f in ResourceLoader.list_directory(CAST_RIG_DIR):
-		if not (f.begins_with("cast_traveller") and f.ends_with(".png")):
+		var ok := false
+		for pf in prefixes:
+			if f.begins_with(str(pf)) and f.ends_with(".png"):
+				ok = true
+		if not ok:
 			continue
 		var tex := load(CAST_RIG_DIR + f) as Texture2D
 		if tex:
 			_cast_textures.append(tex)
 			PaperCard.warm(tex)
 		await sl.tick()
-	for cast: String in CastSkins.CAST_IDS:
+	for cast: String in (CastSkins.CAST_IDS if data.get("cast", {}).has("sun") else {}):
 		for variant: String in CastSkins.CAST_IDS[cast]:
 			var tex := CastSkins.texture(cast, variant)
+			if tex:
+				_cast_textures.append(tex)
+				PaperCard.warm(tex)
+			await sl.tick()
+	for role in (data.get("cast", {}) as Dictionary):
+		var cfg: Dictionary = data["cast"][role]
+		if str(cfg.get("kind", "")) != "actor":
+			continue
+		var d := CastPuppet.skin_def(str(cfg.get("skin", role)))
+		for id in (d.get("paths", {}) as Dictionary):
+			var tex := load(str(d["paths"][id])) as Texture2D
 			if tex:
 				_cast_textures.append(tex)
 				PaperCard.warm(tex)

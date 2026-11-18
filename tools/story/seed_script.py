@@ -127,6 +127,8 @@ def build() -> dict:
         "clip_map_from": str(TALE / "narration_el.js"),
         "voices": vs["voices"], "models": vs.get("models", {}), "settings": vs.get("settings", {}),
         "voice_notes": vs.get("notes", ""),
+        **({"handler": T.HANDLER} if getattr(T, "HANDLER", "") else {}),
+        **({"shots": T.SHOTS} if getattr(T, "SHOTS", None) else {}),
         "cast": T.CAST,
         "moral": T.MORAL,
         "beats": BEATS,

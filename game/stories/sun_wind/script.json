@@ -34,20 +34,63 @@
   }
  },
  "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Huelyn, sun=Lily, wind=Callum, man=Eric",
+ "handler": "res://stories/sun_wind/fx.gd",
  "cast": {
   "traveller": {
-   "skin": "traveller"
+   "kind": "walker",
+   "skin": "traveller",
+   "height": 0.47,
+   "gait": {
+    "front_gait": true,
+    "step_period": 0.46,
+    "min_stride": 0.05,
+    "max_stride": 0.13,
+    "foot_lift": 0.03,
+    "waddle_deg": 4.0
+   }
   },
   "sun": {
-   "skin": "sun"
+   "kind": "hanger",
+   "skin": "sun",
+   "screen": [
+    0.21,
+    0.26
+   ],
+   "frac": 0.27,
+   "sway": 0.025,
+   "bob": 0.012,
+   "seed": 0.2,
+   "backing": [
+    "fbf0cf",
+    "e2b85c"
+   ],
+   "backing_scale": 1.12,
+   "backing_drop": 0.06
   },
   "wind": {
-   "skin": "wind"
+   "kind": "hanger",
+   "skin": "wind",
+   "screen": [
+    0.79,
+    0.26
+   ],
+   "frac": 0.2322,
+   "sway": 0.04,
+   "bob": 0.016,
+   "seed": 0.7,
+   "backing": [
+    "d9e7ef",
+    "7f9fb8"
+   ],
+   "backing_scale": 1.05,
+   "backing_drop": 0.1
   },
   "hat": {
+   "kind": "prop",
    "skin": "hat"
   },
   "coat": {
+   "kind": "prop",
    "skin": "coat"
   }
  },

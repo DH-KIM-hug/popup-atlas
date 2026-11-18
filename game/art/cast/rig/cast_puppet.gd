@@ -113,10 +113,91 @@ var _rim_retry := 0
 var _occ_d := [0.0, 0.0]  ## covered length of each leg below its hip (hip → hem / seat), world
 var _top_d := [0.0, 0.0]  ## hidden leg top above its hip, world
 var _occ_back := 0.0  ## back face of the hips card (tilt z): every leg pixel that is covered must stay behind it
+var _side_rig := false  ## side-profile figure: both legs on one hip joint, swung fore/aft in the card plane
+var _mirror := false  ## side figure facing left (drawn facing right): the tilt node is mirrored in x
+var _mirror_to := false
+var _th := [0.0, 0.0]  ## side gait: leg angles (rad, + = foot forward), smoothed
+var _hp := 0.0  ## unrigged hop phase
+## Side gait (2026-11-18, three_pigs): classic brad-jointed paper puppet seen in profile. The stance leg sweeps back
+## under the hip exactly as far as the body moves (no slide: x = stride·(½ − s), angle = asin(x / L)), the hips ride
+## it (inverted pendulum), the swing leg comes through ahead with a small lift, the body leans into the walk.
+@export var side_max_deg := 24.0
+@export var side_lean_deg := 3.0
+## Standing figures keep breathing / bobbing a little (no stage play of frozen cards). Story sets more for lively ones.
+@export var idle_amount := 1.0
+## Unrigged figure hop height (fraction of the height) and hop length (fraction of the height per hop).
+@export var hop_frac := 0.07
+@export var hop_len_frac := 0.42
 
 
 func _skin_ok() -> bool:
-	return skin != "" and SKINS.has(skin)
+	return skin != "" and not skin_def(skin).is_empty()
+
+
+## Skins built from the shared cast catalog (game/art/cast/catalog.json, entries with `skin` == the skin id): every
+## variant becomes a pose (cast id), rigged when rig.json has the id, else a single printed card that hops along.
+## `hu` = catalog height_units per id (figures of one character are drawn at different heights: sitting, tiptoe).
+static var _dyn_skins := {}
+
+
+static func skin_def(s: String) -> Dictionary:
+	if SKINS.has(s):
+		return SKINS[s]
+	if _dyn_skins.has(s):
+		return _dyn_skins[s]
+	var d := {"dir": "res://art/cast/rig/", "poses": {}, "paths": {}, "hu": {}, "views": {}}
+	var parsed: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://art/cast/catalog.json"))
+	var arr: Array = []
+	if parsed is Array:
+		arr = parsed
+	elif parsed is Dictionary:
+		arr = (parsed as Dictionary).get("cards", [])
+	for e: Dictionary in arr:
+		if str(e.get("skin", "")) != s:
+			continue
+		var v := str(e.get("variant", e.get("pose", "")))
+		d["poses"][v] = str(e["id"])
+		var pth := str(e["path"])
+		d["paths"][str(e["id"])] = pth if pth.begins_with("res://") else "res://" + pth
+		d["hu"][str(e["id"])] = float(e.get("height_units", 0.0))
+		d["views"][v] = str(e.get("view", "front"))
+	if (d["poses"] as Dictionary).is_empty():
+		d = {}
+	_dyn_skins[s] = d
+	return d
+
+
+func _def() -> Dictionary:
+	return skin_def(skin)
+
+
+## View of a pose ("front" | "back" | "side"); traveller poses are all front.
+func pose_view(p: String) -> String:
+	return str((_def().get("views", {}) as Dictionary).get(p, "front"))
+
+
+func has_pose(p: String) -> bool:
+	return (_def().get("poses", {}) as Dictionary).has(p)
+
+
+func is_side() -> bool:
+	return _side_rig or (not _rigged and pose_view(pose) == "side")
+
+
+## Pose + mirror in one paper turn (the card flips edge-on, swaps, flips back). mirror = side figure facing left.
+func set_figure(p: String, mirror: bool, instant := false) -> void:
+	if not has_pose(p):
+		return
+	if p == pose and mirror == _mirror and _flip_t < 0.0:
+		return
+	if p == pose and mirror == _mirror_to and _flip_t >= 0.0:
+		return
+	_mirror_to = mirror
+	if instant or not is_inside_tree():
+		_apply_pose(p)
+		return
+	_flip_to = p
+	_flip_t = 0.0
 
 
 func _aim_legs_exact() -> void:
@@ -303,7 +384,7 @@ func set_pose(p: String, instant := false) -> void:
 	if not _skin_ok():
 		super.set_pose(p, instant)
 		return
-	if not (SKINS[skin]["poses"] as Dictionary).has(p) or (p == pose and _flip_t < 0.0):
+	if not (_def()["poses"] as Dictionary).has(p) or (p == pose and _flip_t < 0.0):
 		return
 	if instant or not is_inside_tree():
 		_apply_pose(p)
@@ -317,17 +398,26 @@ func _process(dt: float) -> void:
 		_base_lean = lean_deg
 	# The base lean scales with speed/0.3; divide that back out so a slow, struggling walk still leans in.
 	lean_deg = _base_lean + push_lean_deg / clampf(speed / 0.3, 0.12, 1.0)
-	# Billboard: the base turns the card max_turn_deg toward the walk direction; front_gait keeps only a fraction.
+	# Billboard: the base turns the card max_turn_deg toward the walk direction; front_gait keeps only a fraction,
+	# side figures none (the profile is drawn in the card plane, it faces the camera square on).
 	var mt := max_turn_deg
 	if front_gait:
 		max_turn_deg = mt * front_turn_keep
+	if is_side():
+		max_turn_deg = 0.0
 	super._process(dt)
 	max_turn_deg = mt
 	var fdt := PaperSpring.frame_dt(dt)
-	if fdt <= 0.0 or not _rigged:
+	if fdt <= 0.0:
+		return
+	if not _rigged:
+		if _skin_ok() and _def().has("paths"):
+			_hop_step(fdt)
 		return
 	_squash = 1.0
-	if front_gait and _walking and _flip_t < 0.0:
+	if _side_rig:
+		_side_step(fdt)
+	elif front_gait and _walking and _flip_t < 0.0:
 		_front_step(fdt)
 		_front_on = true
 	else:
@@ -340,6 +430,14 @@ func _process(dt: float) -> void:
 		if plant_exact and _walking:
 			_aim_legs_exact()
 		_step_arms(fdt, [0.0, 0.0], 0.0)
+		if not _walking and idle_amount > 0.0 and _def().has("paths"):
+			# standing: a slow breath and a little weight shift (story cast keeps moving between lines)
+			# (body card only, about the hips, so the planted legs stay put)
+			var ip := (_hip_local[0] + _hip_local[1]) * 0.5
+			ip.z = 0.0
+			var ib := Basis(Vector3(0, 0, 1), deg_to_rad(0.7) * idle_amount * sin(_t * 1.3 + 0.7))
+			_body.position = ip + ib * (_body.position - ip) + Vector3(0, height * 0.005 * idle_amount * (0.5 + 0.5 * sin(_t * 2.6)), 0)
+			_body.rotation.z += ib.get_euler().z
 	if _arm and _arm.visible:
 		# fanning: quick flaps (out fast, back a bit slower), body pumps a touch with each stroke
 		# swings only outward (away from his face): 0 .. 0.42 rad, a quick flick out and a softer return
@@ -364,24 +462,111 @@ func _process(dt: float) -> void:
 	_body.scale = Vector3(1.0 + 0.01 * _shv, 1.0 - 0.025 * _shv, 1.0)  # hunched
 
 
+## Unrigged figure (one card): a paper hop per step along the ground, rocking a little forward/back; standing, a
+## slow breathing bob. Mirrored for side figures facing left.
+func _hop_step(dt: float) -> void:
+	var m := -1.0 if _mirror else 1.0
+	var moving := speed > 0.03
+	var y := 0.0
+	var rz := 0.0
+	if moving:
+		_hp += speed * dt / maxf(height * hop_len_frac, 0.01)
+		var amp := height * hop_frac * clampf(speed / 0.25, 0.5, 1.2)
+		y = absf(sin(PI * _hp)) * amp
+		rz = -deg_to_rad(4.0) * cos(TAU * _hp)  # leans into each hop, tips back on landing
+	else:
+		_hp = 0.0
+		y = height * 0.008 * idle_amount * (0.5 + 0.5 * sin(_t * 2.6))
+		rz = deg_to_rad(1.0) * idle_amount * sin(_t * 1.3 + 0.7)
+	var pl := 0.03 * sin(_pose_hop * PI)
+	_tilt.transform = Transform3D(Basis.from_scale(Vector3(m, 1, 1)) * Basis(Vector3(0, 0, 1), rz), Vector3(0, y + pl, 0))
+	_body.position = Vector3.ZERO
+	_body.rotation = Vector3.ZERO
+	_shv = lerpf(_shv, shiver, 1.0 - exp(-(9.0 if shiver > _shv else 0.9) * dt))
+	if _shv > 0.003:
+		_body.rotation.z = deg_to_rad(3.4) * _shv * sin(_t * TAU * 12.0)
+
+
+## See side_max_deg. Turn frame: x = the way the figure faces (mirrored for leftward), y up, z toward the camera.
+func _side_step(dt: float) -> void:
+	var m := -1.0 if _mirror else 1.0
+	var L := maxf(_leg_rest[0].length(), 1e-4)
+	var walking := _walking and speed > 0.01
+	var S := minf(_stride, 2.0 * L * sin(deg_to_rad(side_max_deg))) if walking else 0.0
+	var n := int(floorf(_phase))
+	var sw := n % 2
+	var s: float = _phase - floorf(_phase)
+	var e := s * s * (3.0 - 2.0 * s)
+	var want := [0.0, 0.0]
+	var lift := 0.0
+	if walking:
+		want[1 - sw] = asin(clampf(S * (0.5 - s) / L, -0.9, 0.9))  # stance: sweeps back as the body moves on
+		want[sw] = asin(clampf(S * (e - 0.5) / L, -0.9, 0.9))  # swing: comes through ahead
+		lift = 0.12 * L * sin(PI * s)
+	var k := 1.0 - exp(-(40.0 if walking else 10.0) * dt)
+	for i in 2:
+		_th[i] = lerpf(_th[i], want[i], k)
+	var st := 1 - sw
+	var h := L * cos(_th[st]) - L if walking else 0.0  # hips ride the stance leg
+	var lean := deg_to_rad(side_lean_deg) * clampf(speed / 0.2, 0.0, 1.0)
+	var breathe := 0.0 if walking else height * 0.006 * idle_amount * (0.5 + 0.5 * sin(_t * 2.6))
+	var pl := 0.03 * sin(_pose_hop * PI)
+	var B := Basis(Vector3(0, 0, 1), -lean)
+	var off := Vector3(0, h + breathe + pl, 0)
+	_tilt.transform = Transform3D(Basis.from_scale(Vector3(m, 1, 1)), Vector3.ZERO) * Transform3D(B, off)
+	_body.position = _body_rest
+	_body.rotation = Vector3.ZERO
+	var M := _turn.global_transform * Transform3D(Basis.from_scale(Vector3(m, 1, 1)), Vector3.ZERO)
+	for i in 2:
+		var hip := B * _hip_local[i] + off + (Vector3(0, lift, 0) if (walking and i == sw) else Vector3.ZERO)
+		_legs[i].global_transform = M * Transform3D(Basis(Vector3(0, 0, 1), _th[i]) * B, hip)
+
+
 func _apply_pose(p: String) -> void:
 	if not _skin_ok():
 		super._apply_pose(p)
 		return
-	var sk: Dictionary = SKINS[skin]
+	var sk: Dictionary = _def()
 	var dir: String = sk["dir"]
 	if _skin_rig.is_empty():
 		_skin_rig = JSON.parse_string(FileAccess.get_file_as_string(dir + "rig.json"))
-	var key: String = sk["poses"].get(p, sk["poses"]["walk"])
+	var poses: Dictionary = sk["poses"]
+	var key: String = poses.get(p, poses.get("walk", poses.get("calm", "")))
+	_mirror = _mirror_to
 	var r: Dictionary = _skin_rig.get(key, {})
+	# figure height relative to the skin's reference (calm) figure, from the catalog's height_units
+	var hu: Dictionary = sk.get("hu", {})
+	var href := float(hu.get(poses.get("calm", key), 0.0))
+	var hk := float(hu.get(key, 0.0))
+	var hscale := hk / href if href > 0.0 and hk > 0.0 else 1.0
 	if r.is_empty():
-		push_warning("CastPuppet: no rig for %s, falling back to legacy art" % key)
-		super._apply_pose(p)
+		if not (sk.get("paths", {}) as Dictionary).has(key):
+			push_warning("CastPuppet: no rig for %s, falling back to legacy art" % key)
+			super._apply_pose(p)
+			return
+		# Unrigged figure (legs drawn together): one printed card that hops along like a paper doll.
+		pose = p
+		_rigged = false
+		_side_rig = false
+		_body.texture = load(str(sk["paths"][key]))
+		_body.height = height * hscale
+		_body.position = Vector3.ZERO
+		_body.rotation = Vector3.ZERO
+		_body_rest = Vector3.ZERO
+		for l in _legs:
+			l.visible = false
+		_hips.visible = false
+		for a in _arms:
+			a.visible = false
+		if _arm:
+			_arm.visible = false
+		pose_changed.emit(p)
 		return
 	pose = p
 	_rigged = true
+	_side_rig = bool((r["parts"]["leg_l"] as Dictionary).get("side", false))
 	var fb: Array = r["full_bbox"]
-	_scale_px = height / float(fb[3] - fb[1])
+	_scale_px = height * hscale / float(fb[3] - fb[1])
 	var s := _scale_px
 	var cxf := (float(fb[0]) + float(fb[2])) * 0.5
 	var fy1 := float(fb[3])
@@ -415,7 +600,7 @@ func _apply_pose(p: String) -> void:
 		_sole_x[i] = (lcx - cxf) * s
 		_legs[i].visible = true
 		_setup_leg_vars(i, part, dir + key + "_" + side, s)
-	if front_gait:  # deep enough that a front_pitch_deg pitch keeps the covered part behind the hips card
+	if front_gait and not _side_rig:  # deep enough that a front_pitch_deg pitch keeps the covered part behind the hips card
 		var dmax := 0.0
 		for i in 2:
 			dmax = maxf(dmax, maxf(_occ_d[i] * sin(deg_to_rad(front_pitch_deg)), _top_d[i] * sin(deg_to_rad(front_pitch_back_deg))))
@@ -451,8 +636,8 @@ func _apply_arm(r: Dictionary, s: float, bb: Array) -> void:
 	var part: Dictionary = r["parts"][name_]
 	var ab: Array = part["bbox"]
 	var pv: Array = part["pivot"]
-	var key: String = SKINS[skin]["poses"].get(pose, "")
-	_arm_card.texture = load(SKINS[skin]["dir"] + key + "_" + name_ + ".png")
+	var key: String = _def()["poses"].get(pose, "")
+	_arm_card.texture = load(_def()["dir"] + key + "_" + name_ + ".png")
 	_arm_card.height = (ab[3] - ab[1]) * s
 	# body card origin = bottom-centre of its bbox
 	_arm.position = Vector3((pv[0] - (bb[0] + bb[2]) * 0.5) * s, (bb[3] - pv[1]) * s, thickness * 1.2)
@@ -527,7 +712,7 @@ func _fix_materials() -> void:
 	super._fix_materials()
 	if not _rigged or not _skin_ok():
 		return
-	var key: String = SKINS[skin]["poses"].get(pose, "")
+	var key: String = _def()["poses"].get(pose, "")
 	var r: Dictionary = _skin_rig.get(key, {})
 	if r.is_empty():
 		return
