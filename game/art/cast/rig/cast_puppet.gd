@@ -53,7 +53,7 @@ const SKINS := {
 @export var front_bob := 0.003  ## extra hip rise at the passing position (world units, before height scaling)
 @export var front_bounce := 0.04  ## heel-strike dip impulse (world units / s, before height scaling)
 @export var front_lift := 1.0  ## swing foot lift multiplier (story sets it lower for struggling steps)
-@export var front_lift_frac := 0.25  ## full swing-foot lift as a fraction of the leg length
+@export var front_lift_frac := 0.15  ## full swing-foot lift as a fraction of the leg length
 @export var front_droop := 0.0  ## 0..1 heat: lower lift, smaller arm swing, slower and heavier body lag
 @export var front_arm_swing := 1.0  ## arm swing multiplier (story: less while pushing into the wind)
 @export var arm_roll_deg := 5.0  ## in-plane part of the arm swing (forward hand moves in toward the body)
@@ -71,6 +71,16 @@ const SKINS := {
 ## travel of a diagonal walk is carried by the body (a few mm of sole slip instead of an A).
 @export var front_side_keep := 0.35
 @export var front_max_side := 0.012
+## Leg depth vs the coat (2026-11-18 walk v7, "이번엔 또 다시 발이 코트를 벗어나"). The legs hang behind the body/hips
+## cards and pitch toward the camera about the hip; a leg pitched by φ moves its card forward by d·sin φ at a distance d
+## below the hip, so where it is still covered (down to the hem, rig.json leg vis row; the trouser seat for the no-coat and
+## the opening of an open coat) it would come through the coat plane and draw its top/cuff band OVER the hem. In the front
+## gait each leg sits deep enough behind the hips card that a pitch up to front_pitch_deg never reaches it there, the pitch
+## is clamped to what that depth allows (forward: the covered length below the hip, back: the hidden top above it), and the
+## footprints are pushed back by the same depth so a resting leg hangs straight down. A capped pitch leaves the sole a few
+## mm off its print in DEPTH only (invisible from the front camera).
+@export var front_pitch_deg := 20.0
+@export var front_pitch_back_deg := 24.0
 
 const CAST_PRINT := preload("res://art/cast/rig/cast_print.gdshader")
 const CAST_EDGE := preload("res://art/cast/rig/cast_edge.gdshader")
@@ -100,6 +110,9 @@ var _last_step := -1
 var _squash := 1.0
 var _front_on := false
 var _rim_retry := 0
+var _occ_d := [0.0, 0.0]  ## covered length of each leg below its hip (hip → hem / seat), world
+var _top_d := [0.0, 0.0]  ## hidden leg top above its hip, world
+var _occ_back := 0.0  ## back face of the hips card (tilt z): every leg pixel that is covered must stay behind it
 
 
 func _skin_ok() -> bool:
@@ -138,8 +151,12 @@ func _front_foot(i: int, Ti: Transform3D, hip_x: float) -> Vector3:
 			c = c.normalized()
 			sv = Vector3(c.z, 0, -c.x)
 	var a := (f - Vector3(hip_x, f.y, 0.0)).dot(sv)
-	var ms := front_max_side * (height / 0.36)
-	f -= sv * (a - ms * tanh(a * front_side_keep / ms))
+	# step width follows the weight shift: with the damped roll (v6, 0.6°) the hips no longer travel over the stance
+	# foot, so the feet stay under their hips (legs hang straight down inside the coat) instead of a wide-roll track
+	var rf := clampf(front_roll_deg / 4.0, 0.15, 1.0)
+	var ms := front_max_side * (height / 0.36) * rf
+	f -= sv * (a - ms * tanh(a * front_side_keep * rf / ms))
+	f.z += _hip_local[i].z  # footprint straight under the (deep) hip, see front_pitch_deg
 	return f
 
 
@@ -209,7 +226,7 @@ func _front_step(dt: float) -> void:
 		if i == sw:
 			# quick lift, then it comes down ahead of him (toward the camera)
 			foot.y = lift * L * sin(PI * pow(s, 0.75))
-		var to := foot - hip
+		var to := _clamp_pitch(i, foot - hip, B)
 		var ratio := to.length() / maxf(L, 1e-4)
 		var vi := 0
 		var vars: Array = _leg_vars[i]
@@ -238,6 +255,23 @@ func _front_step(dt: float) -> void:
 	fw[sw] = -cos(PI * s)
 	fw[st] = cos(PI * s)
 	_step_arms(dt, [fw[1], fw[0]], k * (1.0 - 0.5 * dr) * front_arm_swing)
+
+
+## Limit the leg's pitch out of the coat plane (tilt frame B) so no covered part of it comes through the hips/body
+## cards (see front_pitch_deg). Keeps the hip→foot length and the in-plane direction.
+func _clamp_pitch(i: int, to: Vector3, B: Basis) -> Vector3:
+	var l := B.inverse() * to
+	var yz := Vector2(-l.y, l.z)
+	var r := yz.length()
+	if r < 1e-5:
+		return to
+	var room := maxf(_occ_back - (_hip_local[i].z + thickness * 0.5) - thickness * 0.25, 0.0)
+	var cf := minf(deg_to_rad(front_pitch_deg), asin(clampf(room / maxf(_occ_d[i], 1e-4), 0.0, 1.0)))
+	var cb := minf(deg_to_rad(front_pitch_back_deg), asin(clampf(room / maxf(_top_d[i], 1e-4), 0.0, 1.0)))
+	var ph := clampf(atan2(yz.y, yz.x), -cb, cf)
+	l.y = -r * cos(ph)
+	l.z = r * sin(ph)
+	return B * l
 
 
 func _step_arms(dt: float, want: Array, amp: float) -> void:
@@ -369,6 +403,9 @@ func _apply_pose(p: String) -> void:
 		var hip: Array = part["hip"]
 		var lcx := (float(lb[0]) + float(lb[2])) * 0.5
 		var z := -thickness * (2.3 + 1.0 * i)
+		_occ_back = -thickness * 1.15 - thickness * 0.35
+		_occ_d[i] = maxf(float(part.get("vis", [hip[1]])[0]) - float(hip[1]), 0.0) * s
+		_top_d[i] = maxf(float(hip[1]) - float(lb[1]), 0.0) * s
 		_hip_local[i] = Vector3((hip[0] - cxf) * s, (fy1 - hip[1]) * s, z)
 		var c := _leg_cards[i]
 		c.texture = load(dir + key + "_" + side + ".png")
@@ -378,6 +415,12 @@ func _apply_pose(p: String) -> void:
 		_sole_x[i] = (lcx - cxf) * s
 		_legs[i].visible = true
 		_setup_leg_vars(i, part, dir + key + "_" + side, s)
+	if front_gait:  # deep enough that a front_pitch_deg pitch keeps the covered part behind the hips card
+		var dmax := 0.0
+		for i in 2:
+			dmax = maxf(dmax, maxf(_occ_d[i] * sin(deg_to_rad(front_pitch_deg)), _top_d[i] * sin(deg_to_rad(front_pitch_back_deg))))
+		for i in 2:
+			_hip_local[i].z = _occ_back - thickness * (0.75 + 1.0 * i) - dmax
 	_apply_arm(r, s, bb)
 	_apply_swing_arms(r, s, bb, dir + key)
 	_fix_materials.call_deferred()

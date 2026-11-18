@@ -977,3 +977,25 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     the armless-torso fill under the arms is generated art and only shows as a sliver when an arm swings out; the in-wind
     "clutch" is only a tuck of the free arms (the real clutch is the baked cold/hold pose); head/hat lag is subtle because the
     head is on the body card (no separate head card).
+
+## 2026-11-18 — Walk v7: legs stay under the coat with the steady (damped) gait
+  - User (after the v6 damping, "좋은데"): "이번엔 또 다시 발이 코트를 벗어나" + "벗은 코트. 단추를 푼 코트" (same on the
+    coat-off and the unbuttoned-coat figures). Upper body unchanged (roll 0.6°, v6 bob/bounce/lag/twist kept).
+  - Cause (bench close-ups): the legs pitch toward the camera about the hip, but sat only ~1 cm behind the coat card. A leg
+    pitched φ moves forward by d·sin φ at d below the hip, so above the hem it came THROUGH the coat plane and its flat top
+    / cuff band drew over the hem (the "cut piece"); on the no-coat / open-coat figures the same happened through the
+    hips (trouser-top) card, ~2 mm in front of the legs. Back-pitched swing legs (up to 40°) also foreshortened to a lone boot.
+  - cast_puppet.gd (front gait only): legs hang deeper behind the hips card, depth from the rig (rig.json vis row − hip =
+    covered length, hip − card top = hidden top) so a pitch up to `front_pitch_deg` 20° (back `front_pitch_back_deg` 24°)
+    can't reach the coat/hips plane; `_clamp_pitch` limits each leg's pitch to what its depth allows; footprints are pushed
+    back by the same depth (resting legs hang straight down). Open-coat figure (hip high, long coat) gets the deepest legs.
+    A capped pitch leaves the sole a few mm off its print in depth only. Step width now scales with the roll
+    (`front_roll_deg`/4, min 0.15) so at 0.6° the feet stay under their hips, inside the coat. `front_lift_frac`
+    0.25 → 0.15 (lifted leg shows knee/shin + cuff + boot, not a boot hanging under the hem).
+  - Checks: artifacts/cast/walk_hem_v7.png (8 fps, tracked hem/leg crops; rows sun coat walk, wind struggle, stream
+    no-coat, open coat after sw_028, coat off carrying it); videos artifacts/video/walk_v7_{sun,wind,stream}.mp4 (sun
+    = whole sun_turn + moral start, 50 s: coat → open coat → fan → coat off → carrying). check_all clean (40).
+  - Still off: a swing leg pitched toward the camera is a little darker (its card faces down, less sun; was so in v4/v6
+    too); on the no-coat figure the bottom edge of the hips (trouser-top) piece is faintly visible as a horizontal line
+    at the crotch when the legs are lit differently (pre-existing art/rig seam, not a gap); the carrying walk is slow, so
+    its steps are small.
