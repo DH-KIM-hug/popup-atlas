@@ -261,13 +261,17 @@ func _init_patch_mats() -> void:
 		[Color("6c8a64"), Color("5f7d58")],  # sage
 		[Color("7a9970"), Color("6d8c63")],  # leaf
 		[Color("939a6c"), Color("848b5e")],  # olive
-		[Color("62877a"), Color("55786c")],  # blue-green
+		[Color("668564"), Color("587756")],  # blue-green (LOOKF r1: greener, the old one read as puddles)
 		[Color("78905e"), Color("6a8252")],  # moss
 		[Color("566f4c"), Color("4b6343")],  # dark moss (under groves)
 	]
 	_patch_mats.clear()
 	for pc in palette:
-		_patch_mats.append(_ground_mat(pc[0], pc[1], 0.6, 0.0))
+		var pmat := _ground_mat(pc[0], pc[1], 0.6, 0.0)
+		pmat.set_shader_parameter("clump_strength", 0.34)  # LOOKF r1: felt nap on cover patches too
+		pmat.set_shader_parameter("fibre_strength", 0.3)
+		pmat.set_shader_parameter("bump", 1.3)
+		_patch_mats.append(pmat)
 	_patch_edge = _edge_mat(Color("c3caa2"))
 
 

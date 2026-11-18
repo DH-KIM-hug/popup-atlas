@@ -51,6 +51,11 @@ const POST_SHADER := preload("res://core/shaders/post_grade.gdshader")
 @export var tilt_top_bias := 0.9  ## far (top) vs near (bottom) blur; the footage is about even
 @export var vignette := 0.2
 @export var post_saturation := 0.92
+@export var post_contrast := 1.0
+@export var lens_soft := 0.0  ## global mip softness (photo lens, not CG-crisp)
+@export var grain := 0.0
+@export var toe := 0.0
+@export var fill_elevation_deg := 35.0
 
 @export_group("Haze")
 @export var haze_enabled := true  ## warm depth haze beyond the focus: depth reads past the DOF
@@ -137,7 +142,7 @@ func _build() -> void:
 	fill.light_energy = fill_energy
 	fill.shadow_enabled = false
 	fill.light_specular = 0.0
-	fill.rotation_degrees = Vector3(-35, yaw_deg + key_yaw_deg + 160.0, 0)
+	fill.rotation_degrees = Vector3(-fill_elevation_deg, yaw_deg + key_yaw_deg + 160.0, 0)
 	add_child(fill)
 
 	camera = Camera3D.new()
@@ -168,6 +173,10 @@ func _build() -> void:
 		m.set_shader_parameter("band_soft", tilt_band_soft)
 		m.set_shader_parameter("top_bias", tilt_top_bias)
 		m.set_shader_parameter("saturation", post_saturation)
+		m.set_shader_parameter("contrast", post_contrast)
+		m.set_shader_parameter("base_lod", lens_soft)
+		m.set_shader_parameter("grain", grain)
+		m.set_shader_parameter("toe", toe)
 		post.material = m
 		layer.add_child(post)
 
