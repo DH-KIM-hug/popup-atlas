@@ -268,8 +268,9 @@ func _init_patch_mats() -> void:
 	_patch_mats.clear()
 	for pc in palette:
 		var pmat := _ground_mat(pc[0], pc[1], 0.6, 0.0)
-		pmat.set_shader_parameter("clump_strength", 0.34)  # LOOKF r1: felt nap on cover patches too
-		pmat.set_shader_parameter("fibre_strength", 0.3)
+		pmat.set_shader_parameter("clump_strength", 0.45)  # LOOKF r1: felt nap on cover patches too
+		pmat.set_shader_parameter("fibre_strength", 0.14)
+		pmat.set_shader_parameter("grain_strength", 0.3)
 		pmat.set_shader_parameter("bump", 1.3)
 		_patch_mats.append(pmat)
 	_patch_edge = _edge_mat(Color("c3caa2"))

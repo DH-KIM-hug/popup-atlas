@@ -19,7 +19,7 @@ signal built
 @export var view := 0  ## camera preset (VIEWS); also sets where the traveller starts on the road
 @export var fixed_step := false  ## deterministic 1/60 s stepping (captures)
 @export var pop_on_load := true
-@export var pop_radius := 3.85  ## cards within this distance of the traveller are hinged and rise in the wave
+@export var pop_radius := 4.2  ## cards within this distance of the traveller are hinged and rise in the wave
 @export var walk := true
 @export var with_audio := true
 
@@ -27,16 +27,17 @@ signal built
 ## r2: closer lens (distance ~7.3) so the traveller is the focal point, not a 20 px smudge.
 const VIEWS := [
 	## r3: lower lens (21-23°) for more overlap and a longer view into the haze, like the footage.
-	## LOOKF r1: tabletop macro lens: camera near ground level (15-17 deg), long view across the table.
-	[0.36, 16.0, 10.0, 7.4, 20.0],
-	[0.46, 15.0, -24.0, 7.4, 20.0],
-	[0.555, 17.0, 32.0, 7.2, 20.0],
-	[0.62, 16.0, 26.0, 7.6, 20.0],
-	[0.72, 15.0, 16.0, 7.4, 20.0],
-	[0.28, 16.0, -30.0, 7.4, 20.0],
+	## LOOKF r2: 18-19.5° (r1's 15-17° lost the road and filled the bottom with blurred clutter), a little closer
+	## so the traveller is larger.
+	[0.36, 18.5, 10.0, 6.9, 20.0],
+	[0.46, 18.0, -24.0, 6.9, 20.0],
+	[0.555, 19.5, 32.0, 6.8, 20.0],
+	[0.62, 19.0, 26.0, 7.0, 20.0],
+	[0.72, 18.5, 16.0, 6.9, 20.0],
+	[0.28, 18.5, -30.0, 6.9, 20.0],
 ]
 ## r3: small props scaled down so the 0.36 traveller reads above the flowers (critic: "hero is the height of a flower")
-const POOL_SCALE := {"conifer": 1.25, "tree": 1.08, "autumn": 1.05, "blossom": 1.02,  # LOOKF r1: was 1.5/1.25/1.2/1.15 (few giant trees)
+const POOL_SCALE := {"conifer": 1.32, "tree": 1.1, "autumn": 1.08, "blossom": 1.05,  # LOOKF r2: was 1.5/1.25/1.2/1.15 (lower lens cropped the giants to trunks)
 	 "house": 1.0, "rock": 1.5,
 	"flower": 0.72, "grass": 0.8, "mushroom": 0.75, "bush": 0.85, "sapling": 0.85, "hedge": 0.85}
 const HERO_CLEAR := 1.3  ## r2: open clearing around the traveller (hierarchy, negative space)
@@ -86,7 +87,7 @@ func _ready() -> void:
 	_cam_ground = _start + Vector2(sin(yw), cos(yw)) * float(v[3]) * cos(deg_to_rad(float(v[1])))
 	_cam_h = float(v[3]) * sin(deg_to_rad(float(v[1])))
 	contact = ContactShadows.new()
-	contact.strength = 1.25  # LOOKF r1: firmer contact (photographed cards sit in their own shadow)
+	contact.strength = 1.2  # LOOKF: firmer contact (photographed cards sit in their own shadow)
 	contact.tint = Color(0.07, 0.09, 0.04)
 	contact.name = "ContactShadows"
 	statics = StaticCards.new()
@@ -128,11 +129,11 @@ func _build_ground() -> void:
 	ground.seed_value = seed_value
 	ground.page_size = Vector2(28.0, 20.0)
 	ground.cover_patches = 28  # r2: fewer pale lobes (read as spilled paint)
-	ground.felt_color = Color("7d9366")  # LOOKF r1: a touch warmer/deeper felt (was 7f9670 / 5f7652)
-	ground.felt_mottle = Color("556b45")
+	ground.felt_color = Color("7e9567")  # LOOKF: a touch warmer/deeper felt (was 7f9670 / 5f7652)
+	ground.felt_mottle = Color("586e48")
 	ground.felt_mottle_strength = 1.0
-	ground.path_color = Color("c9ae7c")  # LOOKF r1: deeper sand, narrower road (pale road dominated the frame)
-	ground.path_width = 0.38
+	ground.path_color = Color("d2b684")  # LOOKF r2: slightly deeper sand, slightly narrower (pale road dominated)
+	ground.path_width = 0.44
 	ground.stream_width = 0.78
 	var j := func(x: float, z: float) -> Vector2: return Vector2(x + rng.randf_range(-0.25, 0.25), z + rng.randf_range(-0.15, 0.15))
 	ground.path_points = PackedVector2Array([
@@ -229,10 +230,16 @@ func _blocks_view(q: Vector2, h: float) -> bool:
 		return false
 	var d := q.distance_to(a.lerp(b, t))
 	if t >= 0.4 and t < 0.85 and d < 1.4 and h > 0.22:
-		return true
-	# LOOKF r1: low lens - nothing may rise into the sightline to the traveller (feet to hat)
-	if d < 0.45 + h * 0.5 and h > t * _cam_h * 0.8 + 0.04:
 		return true  # r4: no big near-lens cards across the bottom third (critic: huge blurred bush)
+	# LOOKF r2: the near band in front of the traveller stays low cover only (r1 critics: "blurred foreground
+	# clutter takes the lower third"); tall cards may only stand out at the frame sides.
+	if t >= 0.22 and d < 0.8 + t * 1.0 and h > 0.3:
+		return true
+	if t >= 0.12 and h > 0.5 and d < 1.7:
+		return true  # no tall tree in front of the traveller's band (r1/r2: "big tree crowds the right side")
+	# LOOKF: lower lens - nothing may rise into the sightline to the traveller (feet to hat)
+	if d < 0.45 + h * 0.5 and h > t * _cam_h * 0.8 + 0.04:
+		return true
 	return d < 0.35 + h * 0.9 * t * 2.0 and t < 0.55
 
 
@@ -459,8 +466,7 @@ func _forest_edge() -> void:
 
 func _back_hills() -> void:
 	# Three rows of cut hill cards along the far edge: layered silhouettes for the haze to eat.
-	var ids: Array = lib.pools.get("hill", []).filter(func(i): return not (i in ["hills_clouds_03", "hills_clouds_10", "hills_clouds_14", "hills_clouds_19", "hills_clouds_22",
-		"hills_clouds_02", "hills_clouds_05", "hills_clouds_07", "hills_clouds_24", "hills_clouds_00", "hills_clouds_08", "hills_clouds_13", "hills_clouds_09"]))  # LOOKF r1: low lens shows the back rows; ochre/salmon slabs out  # r2/r4: red fields too loud
+	var ids: Array = lib.pools.get("hill", []).filter(func(i): return not (i in ["hills_clouds_03", "hills_clouds_10", "hills_clouds_14", "hills_clouds_19", "hills_clouds_22", "hill_layer_terracotta", "hills_clouds_24", "hills_clouds_26"]))  # r2/r4: red fields too loud
 	for row in 3:
 		var z := -9.0 + row * 0.55
 		var x := -13.0 + rng.randf_range(0.0, 1.0)
@@ -537,23 +543,26 @@ func _meadow_groves() -> void:
 		_try("wild_animal", Vector2(rng.randf_range(-6, 6), rng.randf_range(-6, 7)), 0.6)
 
 
-## LOOKF r1: dense rows of mid-height trees (existing pools only) so a low lens sees stacked silhouettes
-## row behind row, like the reference table, instead of a few giant trees on open lawn.
+## LOOKF: rows of mid-height trees (existing pools only) behind and beside the traveller's band, so the lower
+## lens sees stacked silhouettes row behind row, like the reference table. r2: none on the camera side of the
+## traveller (r1's rows there became blurred foreground clutter), and each row is one family (value grouping).
 func _tree_rows() -> void:
 	var r3 := RandomNumberGenerator.new()
 	r3.seed = seed_value * 577 + 11
-	for k in 40:
+	var to_cam := (_cam_ground - _start).normalized()
+	for k in 44:
 		var c := Vector2(r3.randf_range(-11.5, 11.5), r3.randf_range(-7.5, 8.0))
-		if c.distance_to(_start) < 2.2:
-			continue
 		var ang := r3.randf_range(-0.45, 0.45)
-		var dirv := Vector2(cos(ang), sin(ang))
 		var n := r3.randi_range(5, 9)
-		var conif := r3.randf() < 0.6
+		var fam := r3.randf()
+		var gap := r3.randf_range(0.34, 0.5)
+		if c.distance_to(_start) < 2.4 or (c - _start).dot(to_cam) > 0.6:
+			continue
+		var dirv := Vector2(cos(ang), sin(ang))
 		for i in n:
-			var q := c + dirv * (float(i) - n * 0.5) * r3.randf_range(0.34, 0.5) + Vector2(0, r3.randf_range(-0.22, 0.22))
-			var pool: String = "conifer" if (conif and r3.randf() < 0.8) else (["tree", "autumn", "tree", "blossom"][r3.randi() % 4])
-			_try(pool, q, 0.08, 0.6, 0.95, 0.0, 0.5)
+			var q := c + dirv * (float(i) - n * 0.5) * gap + Vector2(0, r3.randf_range(-0.22, 0.22))
+			var pool: String = "conifer" if fam < 0.5 else ("autumn" if fam < 0.72 else ("tree" if r3.randf() < 0.75 else "blossom"))
+			_try(pool, q, 0.08, 0.55, 0.9, 0.0, 0.5)
 		for i in n:
 			_try("bush" if i % 2 == 0 else "grass", c + dirv * r3.randf_range(-n * 0.2, n * 0.2) + Vector2(0, 0.3), 0.3, 0.8, 1.1)
 
@@ -608,7 +617,7 @@ func _meadow_fill() -> void:
 		for j in rng.randi_range(3, 7):
 			_try(base if j < 2 else pools[rng.randi() % pools.size()], c, 0.22, 0.8, 1.15, 0.0, 0.62)
 	# r4: low ground-cover pass (tiny grass/flower tufts) so open felt reads as meadow, not an empty sheet
-	for k in 1150:  # LOOKF r1: was 1800; the low lens + DOF hide the tiniest tufts, the budget goes to tree rows
+	for k in 1800:
 		var c := Vector2(rng.randf_range(-12.5, 12.5), rng.randf_range(-8.0, 9.0))
 		if c.distance_to(_start) < HERO_CLEAR * 0.7:
 			continue
@@ -627,36 +636,37 @@ func _build_camera_and_traveller(v: Array, off: float) -> void:
 	rig.follow_smooth = 0.0
 	rig.focus_height = 0.18
 	# r3: more lens character (critic: "reads as a game camera"); r1 showed 30-40% smear is too much.
-	# LOOKF r1: macro lens - thin sharp slab around the traveller, strong near and far blur.
-	rig.dof_near_margin = 0.7
-	rig.dof_far_margin = 1.1
-	rig.dof_near_transition = 1.6
-	rig.dof_far_transition = 3.0
-	rig.dof_amount = 0.12
-	rig.tilt_blur = 0.5
-	rig.lens_soft = 0.14
-	rig.grain = 0.035
-	rig.toe = 0.3
-	rig.post_contrast = 1.1
-	rig.tilt_focus_y = 0.55
-	rig.tilt_band_half = 0.16
+	# LOOKF r2: photographed, but crisp where it counts. Wide sharp slab (traveller, his surroundings and the
+	# near ground stay sharp), blur only on the far rows; no global softness or grain (r1: "upscaled video").
+	rig.dof_near_margin = 1.6
+	rig.dof_far_margin = 1.5
+	rig.dof_near_transition = 2.4
+	rig.dof_far_transition = 3.4
+	rig.dof_amount = 0.075
+	rig.tilt_blur = 0.36
+	rig.tilt_top_bias = 1.0
+	rig.toe = 0.2
+	rig.post_contrast = 1.06
+	rig.tilt_focus_y = 0.56
+	rig.tilt_band_half = 0.2
 	rig.tilt_band_soft = 0.36
-	# LOOKF r1: low raking warm key from the side, weak fill: long cast shadows, dark shadow sides.
-	rig.key_elevation_deg = 25.0
-	rig.key_yaw_deg = -70.0
-	rig.key_color = Color("ffdab0")
-	rig.key_energy = 2.7
-	rig.shadow_opacity = 0.93
-	rig.shadow_softness = 1.0
-	rig.fill_energy = 0.34
-	rig.ambient_energy = 0.37
+	# Low warm key from the side with a cool fill: long cast shadows, warm lit faces, cooler shadow sides.
+	rig.key_elevation_deg = 28.0
+	rig.key_yaw_deg = -66.0
+	rig.key_color = Color("ffdcb2")
+	rig.key_energy = 2.5
+	rig.shadow_opacity = 0.9
+	rig.shadow_softness = 1.1
+	rig.fill_color = Color("88a6dc")
+	rig.fill_energy = 0.46
+	rig.ambient_energy = 0.43
 	rig.exposure = 0.86
-	rig.vignette = 0.24
-	rig.post_saturation = 0.84
-	rig.haze_color = Color("b4bd9c")  # LOOKF r1: less orange haze (far rows went salmon under the low key)
-	rig.haze_begin = 1.0
-	rig.haze_length = 6.0
-	rig.haze_amount = 0.72
+	rig.vignette = 0.18
+	rig.post_saturation = 0.85
+	rig.haze_color = Color("e0c69a")  # warm haze, lighter than r1's sage fog (critics: backdrop washed out)
+	rig.haze_begin = 1.6
+	rig.haze_length = 7.0
+	rig.haze_amount = 0.5
 	add_child(rig)
 	walker = Walker.new()
 	walker.name = "Traveller"
@@ -672,8 +682,8 @@ func _build_camera_and_traveller(v: Array, off: float) -> void:
 	puppet.camera = rig.camera
 	walker.add_child(puppet)
 	contact.add(walker.global_position, 0.0, 0.14, 0.07, 1.0)
-	# LOOKF r1: a small warm bounce card for the hero (photographers flag a reflector at the subject):
-	# keeps the traveller readable when a long tree shadow crosses the road.
+	# LOOKF: a small warm bounce for the hero (a photographer's reflector card at the subject): keeps the
+	# traveller readable when a long tree shadow crosses the road.
 	var hero := OmniLight3D.new()
 	hero.name = "HeroBounce"
 	hero.light_color = Color("ffe2b8")
