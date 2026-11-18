@@ -1091,3 +1091,47 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     install and launch OK, but Godot stops with "Apple GPU does not support image cube arrays" (simulator GPU limit,
     Metal and MoltenVK; GLES3 fallback crashes in the canvas renderer) -> artifacts/perf/ios_sim_ipadpro11.png.
     Signed device build stops at "No Accounts" (no Apple ID in Xcode). check_all clean (43).
+
+## 2026-11-18 — 「아기 돼지 삼형제」 (three_pigs) phase 2: data-driven story engine, all 10 beats wired, plays start to end
+  - Engine (commit 97fba7d, then this round): SpreadStage builds the cast from script.json `cast` by kind (walker =
+    template road walker with a CastPuppet skin; hanger = SkyHanger in the story shot's sky band with backing disc;
+    actor = StoryActor; prop), set pieces from `spread.set` (SetPiece: atlas cards on hinges, houses in fold-up bands
+    with wobble / shiver / collapse / band_down / cutaway), named `spots` ([right, toward camera] from the page
+    anchor), `focus`, `light: dusk`, tale `shots`, `ui` (cover / end pictures, speaker chips), and a per-tale
+    `handler` (TaleHandler). sun_wind's effects moved verbatim to game/stories/sun_wind/fx.gd; three_pigs effects in
+    game/stories/three_pigs/fx.gd. Page key = seed:view:place; same-page beats apply only their set / light / enter;
+    a page started mid-way (--beat) merges the earlier beats' set pieces.
+  - Walkers in any direction (StoryActor): camera-relative travel angle → front / back / side view (15° hysteresis
+    each way), side figures mirrored for leftward travel (negative x scale on the tilt node), paper turn on view or
+    facing change (CastPuppet.set_figure). Side gait: stance foot planted (angle = asin(stride·(½−s)/L)), swing leg
+    through with lift, hips ride the stance leg. Unrigged figures hop as one card. Standing figures breathe.
+    Bug found on the way: set_figure called every frame restarted the flip, so faces lagged a whole line.
+  - Verbs: who/dir/to/from/exit on walk, who on pose, tap_each, tap_steps, build (bands per tap, counter), huff
+    (blow_apart / collapse / hold + ruin), climb (waypoints off the ground), cam `at`, line `expr` applied per seg,
+    `--tale=<id>`; guard so autoplay never waits forever on a missing tap target. Documented in
+    .claude/skills/popup-tale/references/script_schema.md.
+  - Art fixes: unriggable figures (pig_a_carry_straw, pig_b_run, wolf_back_walk / tiptoe / run_away / hungry) kept as
+    static cards with a paper hop (no Codex spend). Wolf thigh sliver: tools/cast/trim_leg_tops.py trims front leg
+    tops to the body / hips silhouette with a 46 px calf taper above the hem (artifacts/three_pigs/wolf_leg_tops_fixed.png).
+    House bands: tools/atlas/house_stages.py now cuts rows that cross no window, steps around doors (door rises whole
+    with band 0) and uses hand-picked rows for the brick / wood houses (OPENINGS / CUTS); eave tips go with the roof.
+  - Voice: tp_n01 / tp_n02 status "pending" (not recorded, no ElevenLabs spend): caption-only with the estimated read
+    time; STORY_DONE missing_audio=["tp_n01","tp_n02"], autoplay unaffected.
+  - Verify: check_all clean (48 scripts). sun_wind same-view captures at the noise floor (mean 2.5-2.6, max 12, same
+    hidden-card counts); full autoplay STORY_DONE 240.7 s after the refactor and 238.8 s at the end (cover page now
+    builds the first spread at 10 ms/frame), missing_audio=[]. three_pigs full autoplay STORY_DONE 320.4 s.
+    Videos: artifacts/video/three_pigs_full.mp4 (crf 30, 27.4 MB), three_pigs_build_brick.mp4, three_pigs_huff_wood.mp4,
+    three_pigs_chimney.mp4; play sheet artifacts/three_pigs/play_sheet.jpg; 8 fps walk tiles artifacts/three_pigs/tiles/.
+    Fixed from the tiles / frames: straw lot and wolf stood in the stream (view 2 anchor is on it; spots re-picked with
+    tools/story/probe_spots.gd), stage camera ignored the focus spot, wolf entrances mostly off-frame, counter cut off
+    at the top, roof climb / launch out of frame, steam hid the wolf in the pot, pig hid behind the straw pile, stale
+    imports after recutting bands (reimport before recording).
+  - Runtime 5:20 vs the ~3:15 target. Narration alone plays ~189 s (36 reused clips); 9 page turns ≈ 45 s; 37 taps at
+    the 1 s autoplay pace + walks / fx ≈ 85 s. Proposed cuts (need the user's call; several need re-recording):
+    one village page for all three houses (build and huff on the same spread with camera pans, −4 page turns ≈ −22 s);
+    brick taps 10 → 5 and wolf huffs 8 → 4 (re-record tp_024 / 025 "열 장" and tp_046 "여덟 번", ≈ −12 s); drop tp_047
+    (털썩: shown, −4 s), tp_023 narrator seg (−3.5 s), the tp_026 huff prompt (keep it as the idle hint, −5.5 s), tp_000
+    (the cover title says it, −4.5 s). All together ≈ 4:30; reaching 3:15 also needs shorter narration lines.
+  - Still off: the wolf in the pot is small and half behind the pot rim; the brothers' tease walk arrives late in
+    their line; the first page still waits ~8 s behind the cover in recordings; nobody has listened to the reused
+    clips in context.

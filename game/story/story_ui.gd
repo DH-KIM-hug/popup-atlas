@@ -12,7 +12,38 @@ const FONT_PATH := "res://story/fonts/PretendardVariable.woff2"
 const INK := Color("3b2a1c")
 const PAPER := Color("f4ead3")
 const PAPER_EDGE := Color("b89a6a")
-const SPEAKERS := {"sun": ["해님", Color("e08a2c")], "wind": ["바람", Color("5f8fb8")], "man": ["나그네", Color("a8432f")]}
+const SPEAKERS_SW := {"sun": ["해님", Color("e08a2c")], "wind": ["바람", Color("5f8fb8")], "man": ["나그네", Color("a8432f")]}
+## Speaker chips: name, colour (+ face cast id, script.json ui.speakers {sp: [name, colour, cast id]}). Default sun_wind.
+var SPEAKERS: Dictionary = SPEAKERS_SW.duplicate()
+var _speaker_faces := {}  ## speaker -> cast id (ui.speakers)
+var _cover_pics: HBoxContainer
+var _end_pics: HBoxContainer
+
+
+## Tale-specific chrome from script.json `ui`: cover / end card pictures ([cast id, size] from the cast catalog) and
+## speaker chips. Without `ui` the sun_wind chrome stays as it was.
+func configure(ui_cfg: Dictionary) -> void:
+	if ui_cfg.has("speakers"):
+		SPEAKERS = {}
+		for sp in ui_cfg["speakers"]:
+			var e: Array = ui_cfg["speakers"][sp]
+			SPEAKERS[sp] = [str(e[0]), Color(str(e[1]))]
+			if e.size() > 2:
+				_speaker_faces[sp] = str(e[2])
+	for pair in [[_cover_pics, "cover"], [_end_pics, "end"]]:
+		var box: HBoxContainer = pair[0]
+		if box == null or not ui_cfg.has(pair[1]):
+			continue
+		for c in box.get_children():
+			c.queue_free()
+		for e: Array in ui_cfg[pair[1]]:
+			var tr := TextureRect.new()
+			tr.texture = CastSkins.by_id(str(e[0]))
+			tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+			tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
+			tr.custom_minimum_size = Vector2(float(e[1]), float(e[1]))
+			tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			box.add_child(tr)
 
 var subtitles := true:
 	set(v):
@@ -168,6 +199,7 @@ func _build_cover() -> void:
 	pics.alignment = BoxContainer.ALIGNMENT_CENTER
 	pics.add_theme_constant_override("separation", 60)
 	pics.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_cover_pics = pics
 	for c in [["sun", 230], ["wind", 200]]:
 		var tr := TextureRect.new()
 		tr.texture = CastSkins.texture(c[0])
@@ -382,6 +414,7 @@ func _build_end() -> void:
 	pics.alignment = BoxContainer.ALIGNMENT_CENTER
 	pics.add_theme_constant_override("separation", 10)
 	pics.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	_end_pics = pics
 	for c in [["sun", "beaming", 250], ["wind", "default", 230]]:
 		var tr := TextureRect.new()
 		tr.texture = CastSkins.texture(c[0], c[1])
@@ -519,6 +552,15 @@ func _draw_overlay() -> void:
 # ------------------------------------------------------------------ r2: faces, quiz choice cards, flashbacks, sparkles
 
 func _face(sp: String) -> Texture2D:
+	if _speaker_faces.has(sp):
+		var t2 := CastSkins.by_id(str(_speaker_faces[sp]))
+		if t2 == null:
+			return null
+		var at2 := AtlasTexture.new()  # head only: the top third of the figure
+		at2.atlas = t2
+		var sz2 := t2.get_size()
+		at2.region = Rect2(sz2.x * 0.1, 0, sz2.x * 0.8, sz2.y * 0.4)
+		return at2
 	match sp:
 		"sun":
 			return CastSkins.texture("sun")

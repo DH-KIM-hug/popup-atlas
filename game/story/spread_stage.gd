@@ -501,6 +501,8 @@ func enter_beat(b: Dictionary) -> void:
 				(h.get_parent() as Node3D).visible = true
 				h.pop_up(0.1)
 	_set_light(str(sp.get("light", "")), false)
+	if _cam_anchor and not has_walker and spots.has("focus"):
+		_focus_goal = spots["focus"]
 	_enter_cast(b.get("enter", {}), false)
 	if handler:
 		handler.enter_beat(b)
@@ -649,7 +651,7 @@ func _clear_sightlines() -> void:
 		_cam_anchor.name = "StageFocus"
 		_cam_anchor.top_level = true
 		add_child(_cam_anchor)
-		_focus_goal = spot_point((beat.get("spread", {}) as Dictionary).get("focus", "anchor"))
+		_focus_goal = spot_point((beat.get("spread", {}) as Dictionary).get("focus", "focus" if spots.has("focus") else "anchor"))
 		_cam_anchor.global_position = _focus_goal
 		world.rig.focus_target = _cam_anchor
 		for sh in _shots_used():
@@ -1127,7 +1129,8 @@ func show_counter(n: int, over: String) -> void:
 		add_child(_counter)
 	_counter.text = str(n)
 	var sp := set_piece(over)
-	var p := sp.global_position + Vector3(0, sp.height + 0.12, 0) if sp else _anchor + Vector3(0, 0.9, 0)
+	# beside the house, upper left (above it the roof / chimney run out of the frame)
+	var p := sp.global_position + Vector3(0, sp.height * 0.62, 0) + dir_vec("left") * sp.height * 0.95 if sp else _anchor + Vector3(0, 0.6, 0)
 	_counter.global_position = p
 	_counter_s = 1.0
 	_counter_v = 6.0

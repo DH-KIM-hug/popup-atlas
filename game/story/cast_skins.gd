@@ -96,3 +96,15 @@ static func puppet_kind(cast: String) -> String:
 			and FileAccess.file_exists("res://art/cast/rig/rig.json"):
 		return "cast_puppet"
 	return "paper_puppet"
+
+
+## Print of a cast catalog entry by id ("cast_pig_a_calm"), or null.
+static func by_id(id: String) -> Texture2D:
+	_load()
+	if not _catalog.has(id):
+		return null
+	var p := str(_catalog[id]["path"])
+	p = p if p.begins_with("res://") else "res://" + p
+	if not _tex.has(p):
+		_tex[p] = load(p)
+	return _tex[p]

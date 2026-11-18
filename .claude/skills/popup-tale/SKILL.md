@@ -59,6 +59,31 @@ Run long work through background agents/workflows with narrow ownership (one own
 - 톡톡 scripts run ~4+ min of narration; measure clip durations while planning and cut ~40% to reach ~3 min.
 - Codex image jobs take ~1 min each; 4 in parallel worked without duplicates.
 
+**Learned on the second tale (three_pigs phase 2: engine + wiring)**
+- The engine is data now: `cast` kinds walker / hanger / actor / prop, `spread.spots/set/light/focus`, tale `shots`,
+  `ui` (cover / end pictures, speaker chips) and a per-tale `handler` (TaleHandler) for fx. Verbs and fields:
+  `references/script_schema.md`. Moving sun_wind's fx out verbatim and checking same-view captures (noise floor,
+  identical hidden-card counts) + a full autoplay run kept it safe.
+- Pick spots with `tools/story/probe_spots.gd` (ground map around the anchor): view 2's anchor sits on the stream —
+  the first straw house and the wolf stood in the water.
+- After regenerating art (house bands, leg cards), run `gd_run.import_project("game")` before recording: a run with
+  stale imported textures and a new stages.json drew the bands scrambled.
+- `gd_run.capture_scene` stills do not follow the story camera shots; judge framing / focus from movie-maker
+  recordings (`tools/story/rec_beat.sh TALE BEAT SEC out.mp4`) and 8 fps tiles (`tools/story/tiles.py`).
+- A pose call every frame must not restart a running paper flip (CastPuppet.set_figure compares with `_flip_to`):
+  otherwise expressions lag a whole line behind the words.
+- House fold bands: cut rows that cross no window, step the cut around doors (the door rises whole with the first
+  band) and hand-pick rows when the windows leave no room (`OPENINGS` / `CUTS` in tools/atlas/house_stages.py).
+- A front leg card wider than the thigh printed on the body card shows as a sliver beside the thigh; trim the hidden
+  top to the body/hips silhouette with a short taper above the hem (`tools/cast/trim_leg_tops.py`), not a straight
+  cut (that left a step).
+- Unrigged figures (legs drawn together) work as one card with a paper hop (CastPuppet hop_frac / hop_len_frac):
+  cheaper than regenerating; keep them for runs, tiptoe and hungry poses.
+- The movie maker runs time-sliced builds per frame at 30 fps: the first page behind the cover took 21 s of story
+  time at 3 ms/frame; it now builds at 10 ms/frame (the cover is a still page).
+- Pace: 36 reused lines play ~189 s on their own; 9 page turns (~5 s each) and ~37 taps put the first full run at
+  5:21. Count narration + turns + taps before promising a length.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

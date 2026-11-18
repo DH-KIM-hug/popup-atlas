@@ -73,6 +73,7 @@ func _ready() -> void:
 	ui.name = "UI"
 	add_child(ui)
 	ui.subtitles = subtitles
+	ui.configure(data.get("ui", {}))
 	ui.replay_pressed.connect(func(): _replay = true)
 	ui.pointer_source = Callable()
 	_run.call_deferred()
@@ -306,6 +307,10 @@ func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer 
 	while _tapped == "":
 		var dt: float = await _frame()
 		idle += dt
+		if autoplay and idle > 8.0 and not _choosing and stage and stage.target_screen(str(targets[0])).x < -999.0:
+			push_warning("StoryRunner: tap target not on the page: " + str(targets))
+			_tapped = str(targets[0])
+			break
 		if autoplay and idle > auto_tap_delay:
 			var order: Array = auto_order if not auto_order.is_empty() else targets
 			_auto_tap(str(order[mini(auto_i, order.size() - 1)]))
@@ -339,7 +344,7 @@ func _run() -> void:
 				if str(beats[i]["id"]) == start_beat:
 					i0 = i
 		if start_beat == "":
-			_prebuild_after(i0 - 1)  # first spread builds behind the cover page
+			_prebuild_after(i0 - 1, COVER_BUILD_MS)  # first spread builds behind the cover page
 		_warm_cast()
 		for i in range(i0, beats.size()):
 			await _play_beat(beats[i])
@@ -463,10 +468,11 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 						a.set_pose(str(st["pose"]), int(st.get("left", -1)))
 						if st.get("hop", false):
 							a.hop_v = 0.7
+				await _wait(float(st.get("wait", 0.3)))
 			else:
 				_pose = str(st["pose"])
 				stage.set_pose(_pose)
-			await _wait(float(st.get("wait", 0.5)))
+				await _wait(float(st.get("wait", 0.5)))
 		"walk", "walk_to":
 			if st.has("who"):
 				await _step_walk_actors(st)
@@ -594,7 +600,7 @@ func _step_tap_each(st: Dictionary) -> void:
 				a.set_pose(str(r[0]))
 		for k in range(1, r.size()):
 			stage.fx(str(r[k]))
-		await _wait(0.5)
+		await _wait(0.3)
 	await _say_lines(st.get("lines", []))
 
 
@@ -870,7 +876,7 @@ func _enter_spread(b: Dictionary) -> void:
 		stage = SpreadStage.new()
 		stage.name = "Spread_" + str(b["id"])
 		stage.tale = data
-		stage.beat = b
+		stage.beat = _page_beat(beats.find(b))
 		add_child(stage)
 		var rt: Array = sp.get("route", [])
 		if rt.size() == 2:
@@ -895,6 +901,30 @@ func _enter_spread(b: Dictionary) -> void:
 
 # ------------------------------------------------------------------ perf: spread prebuild
 
+## The beat a page is built for, with the set pieces and spots of the earlier beats on the same page merged in
+## (a story started with --beat in the middle of a shared page still has the house the first beat put there).
+func _page_beat(i: int) -> Dictionary:
+	var b: Dictionary = beats[i]
+	if not b.get("spread") is Dictionary:
+		return b
+	var key := _key_of(b["spread"])
+	var j := i
+	while j > 0 and beats[j - 1].get("spread") is Dictionary and _key_of(beats[j - 1]["spread"]) == key:
+		j -= 1
+	if j == i:
+		return b
+	var m: Dictionary = b.duplicate(true)
+	var sets: Array = []
+	var spots: Dictionary = {}
+	for k in range(j, i + 1):
+		var sp: Dictionary = beats[k]["spread"]
+		sets.append_array(sp.get("set", []))
+		spots.merge(sp.get("spots", {}), true)
+	m["spread"]["set"] = sets
+	m["spread"]["spots"] = spots
+	return m
+
+
 ## Page key: consecutive beats with the same key share one page (sun_wind: seed:view; tales with places add it).
 static func _key_of(sp: Dictionary) -> String:
 	var k := "%d:%d" % [int(sp.get("seed", 1)), int(sp.get("view", 0))]
@@ -908,7 +938,10 @@ static func _key_of(sp: Dictionary) -> String:
 ## page on screen; nothing is rendered there) until _enter_spread moves it into the story.
 ## Not in fixed-step runs (captures, recordings): there each spread is built at its page turn exactly as before, so
 ## the global RNG sequence (hinge jitter, gusts) and every frame stay reproducible.
-func _prebuild_after(i: int) -> void:
+const COVER_BUILD_MS := 10.0
+
+
+func _prebuild_after(i: int, budget_ms := PREBUILD_BUDGET_MS) -> void:
 	if fixed_step:
 		return
 	for j in range(i + 1, beats.size()):
@@ -930,13 +963,13 @@ func _prebuild_after(i: int) -> void:
 		add_child(vp)
 		var st := SpreadStage.new()
 		st.tale = data
-		st.beat = beats[j]
+		st.beat = _page_beat(j)
 		var rt: Array = sp.get("route", [])
 		if rt.size() == 2:
 			st.route = Vector2(float(rt[0]), float(rt[1]))
 		vp.add_child(st)
 		_prebuilt[key] = {"stage": st, "vp": vp}
-		st.build_async(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute, PREBUILD_BUDGET_MS)
+		st.build_async(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute, budget_ms)
 		return
 
 

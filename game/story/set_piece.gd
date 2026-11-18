@@ -81,7 +81,8 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 	for k in (st["bands"] as Array).size():
 		var b: Dictionary = st["bands"][k]
 		var tex: Texture2D = load("res://" + str(b["file"]))
-		var used := Rect2i(0, 0, int(px[0]), int(b["y1"]) - int(b["y0"]))
+		var iy0 := int(b.get("img_y0", b["y0"]))
+		var used := Rect2i(0, 0, int(px[0]), int(b.get("img_y1", b["y1"])) - iy0)
 		var img := tex.get_image()
 		if img:
 			if img.is_compressed():
@@ -90,8 +91,8 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 			used = img.get_used_rect()
 		var root := Node3D.new()
 		root.name = "Band%d" % k
-		# hinge at the band's bottom edge; the card's own origin is the bottom-centre of its opaque rect
-		var band_h_px := float(int(b["y1"]) - int(b["y0"]))
+		# hinge at the band's straight cut row y1; the card's own origin is the bottom-centre of its opaque rect,
+		# which sits at facade row img_y0 + used.end.y (a stepped band's tab around a door reaches above the cut)
 		root.position = Vector3(((used.position.x + used.end.x) * 0.5 - float(px[0]) * 0.5) * s,
 			(base_px - float(b["y1"])) * s, 0.002 * k)
 		if bool(b.get("roof", false)):
@@ -106,7 +107,7 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int) -> void:
 		c.texture = tex
 		c.height = float(used.size.y) * s
 		c.thickness = clampf(height * 0.03, 0.01, 0.026)
-		c.position = Vector3(0, (band_h_px - float(used.end.y)) * s, 0)
+		c.position = Vector3(0, (float(b["y1"]) - float(iy0 + used.end.y)) * s, 0)
 		h.add_child(c)
 		bands.append(h)
 		band_cards.append(c)

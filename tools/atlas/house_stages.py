@@ -11,6 +11,11 @@ facade card, so stacked they reproduce it pixel for pixel (no seams to align).
     (the eave overhang) starts the roof band.
   * wall cuts: N-1 bands of equal height, each cut snapped (±5 % of the wall height) to the row with the strongest
     horizontal edge (a mortar line, a plank seam, a straw-bundle band) so it reads as a die-cut along the material.
+  * openings (2026-11-18, three_pigs phase 2): a straight cut through a window or door read as a die-cut slicing it;
+    each cut now steps around the openings listed in OPENINGS (facade px boxes): in those columns the boundary
+    jumps up to the opening's top, so the whole window / door stays in the band below (that band gets a tab, the
+    bands above a notch). Wall pixels outside the wall's own width (the eave tips) go to the roof band.
+    A band's hinge stays at its straight cut row (y0/y1); img_y0/img_y1 are the rows its image covers.
 Output: game/art/atlas/<sheet>/stages/<id>_b<k>.webp (+ .webp of each cumulative stage for previews) and
 game/art/atlas/<sheet>/stages/stages.json: {id: {"bands": [{"file", "y0", "y1", "hinge_units", "height_units"}],
 "height_units", "px"}} with y in facade px from the top; hinge_units = height of the band's hinge above the page.
@@ -23,6 +28,17 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 ATLAS = os.path.join(ROOT, "game", "art", "atlas")
 # catalog id -> number of bands (taps in three_pigs: straw 3, wood 5, brick 10 = 2 per band)
 HOUSES = {"story_houses_00": 3, "story_houses_03": 5, "story_houses_06": 5, "story_houses_08": 3, "story_houses_09": 3}
+# windows / doors (x0, y0, x1, y1 in facade px, measured on a grid sheet), kept whole in one band
+OPENINGS = {
+    "story_houses_00": [(72, 158, 150, 228), (160, 165, 278, 302)],
+    "story_houses_03": [(42, 130, 158, 210), (162, 130, 265, 282), (272, 130, 388, 210)],
+    "story_houses_06": [(26, 166, 139, 262), (138, 153, 254, 309), (253, 166, 367, 262)],
+    "story_houses_08": [],
+    "story_houses_09": [],
+}
+# hand-picked wall cut rows (bottom → top) where the window rows leave too little room for even bands: a cut through a
+# window row steps up around the windows, so they stand whole on the band below
+CUTS = {"story_houses_06": [293, 275, 214], "story_houses_03": [262, 245, 172]}
 
 
 def cut_house(cid, n, cat):
@@ -42,29 +58,62 @@ def cut_house(cid, n, cat):
     grey = im[..., :3].astype(float).mean(-1)
     edge = np.abs(np.diff(grey, axis=0)).sum(1)  # row y = edge between y and y+1
     wall_h = base - roof_y
+    # cut rows: only rows that cross no window (openings that stand on the base, i.e. doors, are stepped around
+    # below); spread evenly over those rows, then snapped to the strongest material line nearby that is also allowed
+    ops = OPENINGS.get(cid, [])
+    allowed = [y for y in range(base - 4, roof_y + 4, -1)
+               if not any(oy0 - 2 <= y <= oy1 + 2 for (ox0, oy0, ox1, oy1) in ops if oy1 < base - 3)]
     cuts = []
     for k in range(1, n - 1):
-        c = int(round(base - wall_h * k / (n - 1)))
-        win = max(2, int(0.05 * wall_h))
-        lo, hi = max(roof_y + 4, c - win), min(base - 4, c + win)
-        cuts.append(int(lo + np.argmax(edge[lo:hi])) + 1 if hi > lo else c)
+        if cid in CUTS:
+            cuts.append(int(CUTS[cid][k - 1]))
+            continue
+        if not allowed:
+            cuts.append(int(round(base - wall_h * k / (n - 1))))
+            continue
+        c = allowed[min(len(allowed) - 1, int(round(len(allowed) * k / (n - 1))))]
+        win = max(2, int(0.04 * wall_h))
+        prev = cuts[-1] if cuts else base
+        minh = max(4, int(0.6 * len(allowed) / (n - 1)))
+        cand = [y for y in allowed if abs(y - c) <= win and y <= prev - minh]
+        cuts.append(int(max(cand, key=lambda y: edge[y - 1])) if cand else c)
     bounds = [base] + cuts + [roof_y, top]  # bottom → top
     hu = float(e["height_units"])
     scale = hu / (base - top)
     out_dir = os.path.join(ATLAS, e["sheet"], "stages")
     os.makedirs(out_dir, exist_ok=True)
+    # per-column boundaries: bnd[k][x] = first row (from the top) of band k-1 above cut k; band k = rows bnd[k+1]..bnd[k]
+    xs_all = np.arange(w)
+    wall_cols = np.where(op[base - max(4, (base - top) // 8): base - 2].any(0))[0]
+    wx0, wx1 = int(wall_cols[0]), int(wall_cols[-1])
+    bnd = []
+    for k, c in enumerate(bounds):
+        row = np.full(w, c, dtype=int)
+        if 0 < k < len(bounds) - 1:
+            for (ox0, oy0, ox1, oy1) in OPENINGS.get(cid, []):
+                if oy0 < c < oy1:
+                    row[ox0:ox1] = np.minimum(row[ox0:ox1], oy0)  # the opening stays whole in the band below
+            # eave tips (outside the wall's own width) belong to the roof: no wall band there
+            row[(xs_all < wx0) | (xs_all > wx1)] = base
+        bnd.append(row)
+    for k in range(1, len(bnd)):  # keep boundaries ordered (a band never has negative height)
+        bnd[k] = np.minimum(bnd[k], bnd[k - 1])
     bands = []
+    yy = np.arange(h)[:, None]
     for k in range(len(bounds) - 1):
         y1, y0 = bounds[k], bounds[k + 1]
-        band = np.zeros_like(im)
-        band[y0:y1] = im[y0:y1]
+        mask = (yy >= bnd[k + 1][None, :]) & (yy < bnd[k][None, :])
+        band = np.where(mask[..., None], im, 0).astype(np.uint8)
+        rows = np.where(mask.any(1))[0]
+        iy0, iy1 = (int(rows[0]), int(rows[-1]) + 1) if rows.size else (y0, y1)
         name = f"{cid}_b{k}.webp"
-        Image.fromarray(band[y0:y1]).save(os.path.join(out_dir, name), "WEBP", lossless=True, quality=100, method=6)
-        cum = np.zeros_like(im)
-        cum[y0:base] = im[y0:base]
+        Image.fromarray(band[iy0:iy1]).save(os.path.join(out_dir, name), "WEBP", lossless=True, quality=100, method=6)
+        cum = np.where((yy >= bnd[k + 1][None, :])[..., None], im, 0).astype(np.uint8)
+        cum[base:] = 0
         Image.fromarray(cum).save(os.path.join(out_dir, f"{cid}_stage{k}.webp"), "WEBP", lossless=True, quality=100,
                                   method=6)
         bands.append({"file": f"art/atlas/{e['sheet']}/stages/{name}", "y0": int(y0), "y1": int(y1),
+                      "img_y0": iy0, "img_y1": iy1,
                       "hinge_units": round((base - y1) * scale, 4), "height_units": round((y1 - y0) * scale, 4),
                       "roof": k == len(bounds) - 2})
     return {"bands": bands, "height_units": hu, "px": [w, h], "base_y": base, "roof_y": roof_y}

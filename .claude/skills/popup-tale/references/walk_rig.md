@@ -24,3 +24,16 @@ Verification recipe for every motion change: record the beat, then
 `ffmpeg -ss T -t 2 -i out.mp4 -vf "fps=8,crop=…,tile=8x2" -frames:v 1 tile.jpg` on (a) the whole figure and (b) the
 hem/legs. Check: feet toward viewer, no leg tops/seams visible, legs inside the garment silhouette, planted foot
 fixed, torso near-vertical, expression matches the line. Fix → re-record → show the user.
+
+## Side gait and view picking (CastPuppet / StoryActor, 2026-11-18 three_pigs)
+- StoryActor moves itself; every frame the camera-relative travel angle picks the view (|a| < 45° front, > 135° back,
+  else side; 15° hysteresis each way), the figure for it (`walk_pose` if its catalog `view` matches, else
+  calm / back_walk / side_walk), and `facing_left` for side figures. CastPuppet.set_figure(pose, mirror) does the
+  paper turn (edge-on squash, swap, unsquash) for pose and mirror together.
+- Mirroring is a negative x scale on the tilt node (never on the turn node: global_rotation on a negatively scaled
+  node decomposes badly); the side gait writes the legs through the same mirrored frame.
+- Side gait (`_side_step`): stance leg angle = asin(stride·(½ − s) / L) so the foot stays planted while the body
+  moves stride per step; swing leg comes through ahead with a 12 % lift; hips ride the stance leg (L·cos θ − L);
+  lean 3° at speed; stride capped at 2·L·sin(24°).
+- Unrigged figures: one card, hop per hop_len_frac·height of travel, hop_frac·height high, rocking ±4°.
+- Standing figures breathe (body card only, about the hips, so the planted legs don't slide).

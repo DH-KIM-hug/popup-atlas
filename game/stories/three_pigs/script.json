@@ -46,8 +46,93 @@
   }
  },
  "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Annie, mom=Bella, piga=Hopsi, pigb=Peanut, pigc=Mithi, wolf=Brian. 아기·꼬마 역(piga, pigb, pigc)은 아기 말투 태그([baby voice, lisping, very young child, giggly])를 대사 방향에 부여.",
+ "handler": "res://stories/three_pigs/fx.gd",
+ "shots": {
+  "stage": [
+   4.6,
+   13.0,
+   0.3,
+   20.0
+  ],
+  "story": [
+   3.7,
+   13.0,
+   0.28,
+   20.0
+  ],
+  "close": [
+   2.9,
+   12.0,
+   0.32,
+   20.0
+  ],
+  "roof": [
+   5.0,
+   13.0,
+   0.62,
+   20.0
+  ]
+ },
+ "ui": {
+  "cover": [
+   [
+    "cast_pig_a_happy_wave",
+    190
+   ],
+   [
+    "cast_pig_b_happy_wave",
+    190
+   ],
+   [
+    "cast_pig_c_happy_wave",
+    190
+   ]
+  ],
+  "end": [
+   [
+    "cast_pig_a_happy_wave",
+    170
+   ],
+   [
+    "cast_pig_c_cheer",
+    190
+   ],
+   [
+    "cast_pig_b_happy_wave",
+    170
+   ]
+  ],
+  "speakers": {
+   "mom": [
+    "엄마",
+    "b8566b",
+    "cast_mother_pig_calm"
+   ],
+   "piga": [
+    "첫째",
+    "c58a1e",
+    "cast_pig_a_calm"
+   ],
+   "pigb": [
+    "둘째",
+    "4f7fb0",
+    "cast_pig_b_calm"
+   ],
+   "pigc": [
+    "셋째",
+    "b5402f",
+    "cast_pig_c_calm"
+   ],
+   "wolf": [
+    "늑대",
+    "6f6a66",
+    "cast_wolf_calm"
+   ]
+  }
+ },
  "cast": {
   "pig_a": {
+   "kind": "actor",
    "skin": "pig_a",
    "views": [
     "front",
@@ -57,6 +142,7 @@
    "label": "첫째 (straw hat + scarf)"
   },
   "pig_b": {
+   "kind": "actor",
    "skin": "pig_b",
    "views": [
     "front",
@@ -66,6 +152,7 @@
    "label": "둘째 (blue overalls)"
   },
   "pig_c": {
+   "kind": "actor",
    "skin": "pig_c",
    "views": [
     "front",
@@ -75,6 +162,7 @@
    "label": "셋째 (white cap + red overalls)"
   },
   "mom": {
+   "kind": "actor",
    "skin": "mother_pig",
    "views": [
     "front"
@@ -82,6 +170,7 @@
    "label": "엄마 돼지"
   },
   "wolf": {
+   "kind": "actor",
    "skin": "wolf",
    "views": [
     "front",
@@ -111,10 +200,70 @@
     "seed": 1,
     "view": 5,
     "place": "home",
+    "spots": {
+     "home_house": [
+      0.55,
+      -0.6
+     ],
+     "mom": [
+      0.3,
+      -0.12
+     ],
+     "pig_a": [
+      -0.42,
+      0.12
+     ],
+     "pig_b": [
+      -0.18,
+      0.2
+     ],
+     "pig_c": [
+      0.06,
+      0.16
+     ],
+     "focus": [
+      0.05,
+      -0.15
+     ]
+    },
     "set": [
      {
       "card": "village_houses_20",
-      "at": "home_house"
+      "at": "home_house",
+      "name": "home_house"
+     },
+     {
+      "card": "story_build_props_00",
+      "at": "pig_a",
+      "off": [
+       -0.13,
+       -0.05
+      ],
+      "stage": 0,
+      "name": "mat_a",
+      "scale": 0.9
+     },
+     {
+      "card": "story_build_props_07",
+      "at": "pig_b",
+      "off": [
+       -0.1,
+       -0.06
+      ],
+      "stage": 0,
+      "name": "mat_b",
+      "scale": 0.9
+     },
+     {
+      "card": "story_build_props_08",
+      "at": "pig_c",
+      "off": [
+       0.12,
+       -0.05
+      ],
+      "stage": 0,
+      "name": "mat_c",
+      "scale": 0.9
      }
     ]
    },
@@ -160,11 +309,11 @@
       ],
       "pig_b": [
        "happy_wave",
-       "pop:story_build_props_06"
+       "pop:story_build_props_07"
       ],
       "pig_c": [
        "happy_wave",
-       "pop:story_build_props_09"
+       "pop:story_build_props_08"
       ]
      }
     },
@@ -181,7 +330,8 @@
       "pig_c"
      ],
      "dir": "away",
-     "dist": 1.4,
+     "dist": 1.3,
+     "speed": 0.2,
      "line": "tp_003"
     }
    ]
@@ -193,21 +343,53 @@
     "seed": 1,
     "view": 2,
     "place": "straw_lot",
+    "spots": {
+     "lot": [
+      -1.1,
+      -0.05
+     ],
+     "pile": [
+      -0.42,
+      0.3
+     ],
+     "pig_a": [
+      -0.32,
+      0.48
+     ],
+     "wolf": [
+      -1.8,
+      0.28
+     ],
+     "pig_a_door": [
+      -0.42,
+      0.1
+     ],
+     "focus": [
+      -1.2,
+      0.1
+     ]
+    },
     "set": [
      {
       "card": "story_houses_00",
       "at": "lot",
-      "stage": 0
+      "stage": 0,
+      "name": "house"
      },
      {
       "card": "story_build_props_01",
-      "at": "pile"
+      "at": "pile",
+      "name": "pile",
+      "scale": 1.6
      }
     ]
    },
    "enter": {
     "who": {
-     "pig_a": "side_walk"
+     "pig_a": "carry_straw"
+    },
+    "left": {
+     "pig_a": 1
     }
    },
    "steps": [
@@ -221,13 +403,19 @@
     },
     {
      "do": "build",
-     "house": "straw",
+     "house": "house",
      "target": "pile",
      "taps": 3,
      "hint": "tp_018",
      "walker": "pig_a",
-     "carry": "carry_straw",
-     "fx": "straw_pop"
+     "fx": "straw_pop",
+     "gap": 0.6
+    },
+    {
+     "do": "walk",
+     "who": "pig_a",
+     "to": "pig_a_door",
+     "speed": 0.3
     },
     {
      "do": "fx",
@@ -245,6 +433,11 @@
     {
      "do": "say",
      "line": "tp_020"
+    },
+    {
+     "do": "fx",
+     "fx": "music_stop",
+     "wait": 0.8
     }
    ]
   },
@@ -255,15 +448,44 @@
     "seed": 1,
     "view": 3,
     "place": "wood_lot",
+    "spots": {
+     "lot": [
+      0.15,
+      -0.45
+     ],
+     "pile": [
+      -0.62,
+      -0.2
+     ],
+     "pig_b": [
+      0.75,
+      -0.3
+     ],
+     "pig_a": [
+      0.95,
+      -0.2
+     ],
+     "wolf": [
+      -0.72,
+      0.0
+     ],
+     "focus": [
+      0.05,
+      -0.2
+     ]
+    },
     "set": [
      {
       "card": "story_houses_03",
       "at": "lot",
-      "stage": 0
+      "stage": 0,
+      "name": "house"
      },
      {
       "card": "story_build_props_05",
-      "at": "pile"
+      "at": "pile",
+      "name": "pile",
+      "scale": 1.5
      }
     ]
    },
@@ -283,13 +505,13 @@
     },
     {
      "do": "build",
-     "house": "wood",
+     "house": "house",
      "target": "house",
      "taps": 5,
      "hint": "tp_018",
      "walker": "pig_b",
-     "carry": "hammer",
-     "fx": "hammer_bang"
+     "fx": "hammer_bang",
+     "gap": 0.5
     },
     {
      "do": "fx",
@@ -307,6 +529,11 @@
     {
      "do": "say",
      "line": "tp_022"
+    },
+    {
+     "do": "fx",
+     "fx": "music_stop",
+     "wait": 0.8
     }
    ]
   },
@@ -317,15 +544,89 @@
     "seed": 1,
     "view": 4,
     "place": "brick_lot",
+    "spots": {
+     "lot": [
+      0.0,
+      -0.5
+     ],
+     "pile": [
+      -0.62,
+      -0.25
+     ],
+     "pig_c": [
+      0.7,
+      -0.35
+     ],
+     "tease": [
+      -0.45,
+      0.05
+     ],
+     "wolf": [
+      -0.95,
+      0.0
+     ],
+     "pig_a": [
+      0.82,
+      -0.62
+     ],
+     "pig_b": [
+      1.0,
+      -0.6
+     ],
+     "lot_left": [
+      -1.35,
+      -0.75
+     ],
+     "lot_right": [
+      1.35,
+      -0.75
+     ],
+     "in_a": [
+      -0.32,
+      -0.62
+     ],
+     "in_b": [
+      -0.12,
+      -0.6
+     ],
+     "in_c": [
+      0.06,
+      -0.58
+     ],
+     "wolf_land": [
+      -0.85,
+      0.2
+     ],
+     "mom": [
+      -0.45,
+      0.1
+     ],
+     "focus": [
+      0.0,
+      -0.3
+     ]
+    },
     "set": [
      {
       "card": "story_houses_06",
       "at": "lot",
-      "stage": 0
+      "stage": 0,
+      "name": "house"
      },
      {
       "card": "story_build_props_08",
-      "at": "pile"
+      "at": "pile",
+      "name": "pile",
+      "scale": 1.5
+     },
+     {
+      "card": "story_build_props_13",
+      "at": "pile",
+      "off": [
+       0.22,
+       0.05
+      ],
+      "name": "bucket"
      }
     ]
    },
@@ -345,14 +646,14 @@
     },
     {
      "do": "build",
-     "house": "brick",
+     "house": "house",
      "target": "house",
      "taps": 10,
      "hint": "tp_018",
      "walker": "pig_c",
-     "carry": "lay_brick",
      "fx": "brick_thunk",
      "counter": true,
+     "gap": 0.35,
      "steps": [
       {
        "at": 5,
@@ -360,6 +661,10 @@
        "lines": [
         "tp_023"
        ]
+      },
+      {
+       "at": 7,
+       "fx": "brothers_leave"
       }
      ]
     },
@@ -385,30 +690,73 @@
     "seed": 1,
     "view": 2,
     "place": "straw_lot",
+    "spots": {
+     "lot": [
+      -1.1,
+      -0.05
+     ],
+     "pile": [
+      -0.42,
+      0.3
+     ],
+     "pig_a": [
+      -0.32,
+      0.48
+     ],
+     "wolf": [
+      -1.8,
+      0.28
+     ],
+     "pig_a_door": [
+      -0.42,
+      0.1
+     ],
+     "focus": [
+      -1.2,
+      0.1
+     ]
+    },
     "set": [
      {
       "card": "story_houses_00",
       "at": "lot",
-      "stage": "full"
+      "stage": "full",
+      "name": "house"
+     },
+     {
+      "card": "story_houses_02",
+      "at": "lot",
+      "off": [
+       0.0,
+       0.05
+      ],
+      "stage": 0,
+      "name": "ruin",
+      "scale": 1.3
      }
     ]
    },
    "enter": {
     "who": {
      "pig_a": "calm"
+    },
+    "at": {
+     "pig_a": "pig_a_door"
     }
    },
    "steps": [
     {
      "do": "cam",
-     "shot": "wide"
+     "shot": "stage"
     },
     {
      "do": "walk",
      "who": "wolf",
      "dir": "right",
+     "to": "wolf",
+     "dist": 0.75,
      "pose": "sniff",
-     "dist": 1.2,
+     "speed": 0.2,
      "line": "tp_027"
     },
     {
@@ -427,18 +775,20 @@
     },
     {
      "do": "huff",
-     "house": "straw",
+     "house": "house",
      "taps": 3,
      "prompt": "tp_026",
      "hint": "tp_026",
      "result": "blow_apart",
      "ruin": "story_houses_02",
-     "fx": "straw_fly"
+     "fx": "straw_fly",
+     "gap": 0.7
     },
     {
      "do": "pose",
      "who": "pig_a",
-     "pose": "scared"
+     "pose": "scared",
+     "hop": true
     },
     {
      "do": "say",
@@ -447,10 +797,11 @@
     {
      "do": "walk",
      "who": "pig_a",
-     "dir": "right",
-     "pose": "run",
-     "dist": 2.0,
-     "speed": 0.5
+     "dir": "toward",
+     "pose": "scared",
+     "dist": 1.3,
+     "speed": 0.45,
+     "exit": true
     }
    ]
   },
@@ -461,11 +812,49 @@
     "seed": 1,
     "view": 3,
     "place": "wood_lot",
+    "spots": {
+     "lot": [
+      0.15,
+      -0.45
+     ],
+     "pile": [
+      -0.62,
+      -0.2
+     ],
+     "pig_b": [
+      0.75,
+      -0.3
+     ],
+     "pig_a": [
+      0.95,
+      -0.2
+     ],
+     "wolf": [
+      -0.72,
+      0.0
+     ],
+     "focus": [
+      0.05,
+      -0.2
+     ]
+    },
     "set": [
      {
       "card": "story_houses_03",
       "at": "lot",
-      "stage": "full"
+      "stage": "full",
+      "name": "house"
+     },
+     {
+      "card": "story_houses_05",
+      "at": "lot",
+      "off": [
+       0.0,
+       0.05
+      ],
+      "stage": 0,
+      "name": "ruin",
+      "scale": 1.2
      }
     ]
    },
@@ -478,14 +867,16 @@
    "steps": [
     {
      "do": "cam",
-     "shot": "wide"
+     "shot": "stage"
     },
     {
      "do": "walk",
      "who": "wolf",
      "dir": "right",
+     "to": "wolf",
+     "dist": 0.6,
      "pose": "side_prowl",
-     "dist": 1.0,
+     "speed": 0.2,
      "line": "tp_031"
     },
     {
@@ -507,12 +898,23 @@
     },
     {
      "do": "huff",
-     "house": "wood",
+     "house": "house",
      "taps": 5,
      "hint": "tp_026",
      "result": "collapse",
      "ruin": "story_houses_05",
-     "fx": "wood_wobble"
+     "fx": "wood_wobble",
+     "gap": 0.6
+    },
+    {
+     "do": "pose",
+     "who": [
+      "pig_a",
+      "pig_b"
+     ],
+     "pose": "scared",
+     "hop": true,
+     "wait": 0.2
     },
     {
      "do": "say",
@@ -526,9 +928,10 @@
      ],
      "dir": "right",
      "pose": "run",
-     "dist": 2.0,
+     "dist": 1.8,
      "speed": 0.5,
-     "line": "tp_034"
+     "line": "tp_034",
+     "exit": true
     }
    ]
   },
@@ -540,32 +943,175 @@
     "view": 4,
     "place": "brick_lot",
     "light": "dusk",
+    "spots": {
+     "lot": [
+      0.0,
+      -0.5
+     ],
+     "pile": [
+      -0.62,
+      -0.25
+     ],
+     "pig_c": [
+      0.7,
+      -0.35
+     ],
+     "tease": [
+      -0.45,
+      0.05
+     ],
+     "wolf": [
+      -0.95,
+      0.0
+     ],
+     "pig_a": [
+      0.82,
+      -0.62
+     ],
+     "pig_b": [
+      1.0,
+      -0.6
+     ],
+     "lot_left": [
+      -1.35,
+      -0.75
+     ],
+     "lot_right": [
+      1.35,
+      -0.75
+     ],
+     "in_a": [
+      -0.32,
+      -0.62
+     ],
+     "in_b": [
+      -0.12,
+      -0.6
+     ],
+     "in_c": [
+      0.06,
+      -0.58
+     ],
+     "wolf_land": [
+      -0.85,
+      0.2
+     ],
+     "mom": [
+      -0.45,
+      0.1
+     ],
+     "focus": [
+      0.0,
+      -0.3
+     ]
+    },
     "set": [
      {
       "card": "story_houses_06",
       "at": "lot",
-      "stage": "full"
+      "stage": "full",
+      "name": "house"
+     },
+     {
+      "card": "story_hearth_00",
+      "at": "lot",
+      "off": [
+       0.32,
+       -0.26
+      ],
+      "stage": 0,
+      "name": "k_hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_02",
+      "at": "lot",
+      "off": [
+       0.34,
+       -0.17
+      ],
+      "stage": 0,
+      "name": "fire",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_03",
+      "at": "lot",
+      "off": [
+       0.34,
+       -0.165
+      ],
+      "stage": 0,
+      "name": "fire_m",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_04",
+      "at": "lot",
+      "off": [
+       0.34,
+       -0.16
+      ],
+      "stage": 0,
+      "name": "fire_l",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_01",
+      "at": "lot",
+      "off": [
+       0.34,
+       -0.1
+      ],
+      "stage": 0,
+      "name": "k_pot",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_12",
+      "at": "lot",
+      "off": [
+       -0.3,
+       -0.2
+      ],
+      "stage": 0,
+      "name": "k_table",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_14",
+      "at": "lot",
+      "off": [
+       -0.25,
+       -0.3
+      ],
+      "stage": 0,
+      "name": "k_shelf",
+      "clear": 0,
+      "scale": 1.6
      }
     ]
    },
    "enter": {
     "who": {
-     "pig_a": "calm",
-     "pig_b": "calm",
+     "pig_a": "scared",
+     "pig_b": "scared",
      "pig_c": "brave"
     }
    },
    "steps": [
     {
      "do": "cam",
-     "shot": "wide"
+     "shot": "stage"
     },
     {
      "do": "walk",
      "who": "wolf",
      "dir": "right",
+     "to": "wolf",
+     "dist": 0.6,
      "pose": "side_prowl",
-     "dist": 1.0,
+     "speed": 0.2,
      "line": "tp_043"
     },
     {
@@ -579,13 +1125,15 @@
     },
     {
      "do": "huff",
-     "house": "brick",
+     "house": "house",
+     "target": "house",
      "taps": 8,
      "prompt": "tp_045",
      "hint": "tp_045",
      "result": "hold",
-     "fx": "house_shiver",
-     "counter": true
+     "fx": "brick_huff",
+     "counter": true,
+     "gap": 0.4
     },
     {
      "do": "say",
@@ -614,34 +1162,129 @@
     "view": 4,
     "place": "brick_lot",
     "light": "dusk",
-    "set": [
-     {
-      "card": "story_houses_06",
-      "at": "lot",
-      "stage": "full"
-     }
-    ]
+    "spots": {
+     "lot": [
+      0.0,
+      -0.5
+     ],
+     "pile": [
+      -0.62,
+      -0.25
+     ],
+     "pig_c": [
+      0.7,
+      -0.35
+     ],
+     "tease": [
+      -0.45,
+      0.05
+     ],
+     "wolf": [
+      -0.95,
+      0.0
+     ],
+     "pig_a": [
+      0.82,
+      -0.62
+     ],
+     "pig_b": [
+      1.0,
+      -0.6
+     ],
+     "lot_left": [
+      -1.35,
+      -0.75
+     ],
+     "lot_right": [
+      1.35,
+      -0.75
+     ],
+     "in_a": [
+      -0.32,
+      -0.62
+     ],
+     "in_b": [
+      -0.12,
+      -0.6
+     ],
+     "in_c": [
+      0.06,
+      -0.58
+     ],
+     "wolf_land": [
+      -0.85,
+      0.2
+     ],
+     "mom": [
+      -0.45,
+      0.1
+     ],
+     "focus": [
+      0.0,
+      -0.3
+     ]
+    },
+    "set": []
    },
    "enter": {
     "who": {
-     "wolf": "tiptoe"
+     "wolf": "tiptoe",
+     "pig_a": "calm",
+     "pig_b": "calm",
+     "pig_c": "brave"
     }
    },
    "steps": [
     {
+     "do": "cam",
+     "shot": "roof",
+     "at": "lot",
+     "wait": 0.3
+    },
+    {
      "do": "climb",
      "who": "wolf",
-     "to": "chimney",
+     "on": "house",
      "pose": "tiptoe",
-     "line": "tp_048"
+     "speed": 0.16,
+     "line": "tp_048",
+     "path": [
+      [
+       -0.82,
+       0.0,
+       0.06
+      ],
+      [
+       -0.68,
+       0.53,
+       0.06
+      ],
+      [
+       -0.34,
+       0.86,
+       0.06
+      ],
+      [
+       0.16,
+       0.86,
+       0.06
+      ],
+      [
+       0.26,
+       0.9,
+       0.06
+      ]
+     ]
     },
     {
      "do": "fx",
-     "fx": "cutaway_open"
+     "fx": "cutaway_open",
+     "wait": 1.0
     },
     {
      "do": "cam",
-     "shot": "close"
+     "shot": "close",
+     "at": "lot"
     },
     {
      "do": "say",
@@ -657,17 +1300,19 @@
        "fx": "flame_m"
       },
       {
+       "target": "fire_m",
        "fx": "flame_l"
       },
       {
-       "fx": "boil",
-       "lines": []
+       "target": "fire_l",
+       "fx": "boil"
       }
      ]
     },
     {
      "do": "fx",
-     "fx": "wolf_drop"
+     "fx": "wolf_drop",
+     "wait": 0.6
     },
     {
      "do": "say",
@@ -687,25 +1332,30 @@
      "line": "tp_052"
     },
     {
-     "do": "fx",
-     "fx": "wolf_launch"
-    },
-    {
-     "do": "fx",
-     "fx": "cutaway_close"
-    },
-    {
      "do": "cam",
-     "shot": "wide"
+     "shot": "roof",
+     "at": "focus",
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "wolf_launch",
+     "wait": 1.0
+    },
+    {
+     "do": "fx",
+     "fx": "cutaway_close",
+     "wait": 0.7
     },
     {
      "do": "walk",
      "who": "wolf",
      "dir": "left",
      "pose": "run_away",
-     "dist": 3.0,
-     "speed": 0.6,
-     "line": "tp_053"
+     "dist": 1.6,
+     "speed": 0.5,
+     "line": "tp_053",
+     "exit": true
     }
    ]
   },
@@ -716,21 +1366,100 @@
     "seed": 1,
     "view": 4,
     "place": "brick_lot",
+    "spots": {
+     "lot": [
+      0.0,
+      -0.5
+     ],
+     "pile": [
+      -0.62,
+      -0.25
+     ],
+     "pig_c": [
+      0.7,
+      -0.35
+     ],
+     "tease": [
+      -0.45,
+      0.05
+     ],
+     "wolf": [
+      -0.95,
+      0.0
+     ],
+     "pig_a": [
+      0.82,
+      -0.62
+     ],
+     "pig_b": [
+      1.0,
+      -0.6
+     ],
+     "lot_left": [
+      -1.35,
+      -0.75
+     ],
+     "lot_right": [
+      1.35,
+      -0.75
+     ],
+     "in_a": [
+      -0.32,
+      -0.62
+     ],
+     "in_b": [
+      -0.12,
+      -0.6
+     ],
+     "in_c": [
+      0.06,
+      -0.58
+     ],
+     "wolf_land": [
+      -0.85,
+      0.2
+     ],
+     "mom": [
+      -0.45,
+      0.1
+     ],
+     "focus": [
+      0.0,
+      -0.3
+     ]
+    },
     "set": [
-     {
-      "card": "story_houses_06",
-      "at": "lot",
-      "stage": "full"
-     },
      {
       "card": "story_houses_08",
       "at": "lot_left",
-      "stage": 0
+      "stage": 0,
+      "name": "house_l"
      },
      {
       "card": "story_houses_09",
       "at": "lot_right",
-      "stage": 0
+      "stage": 0,
+      "name": "house_r"
+     },
+     {
+      "card": "story_build_props_08",
+      "at": "lot_left",
+      "off": [
+       0.0,
+       0.25
+      ],
+      "name": "plot_l",
+      "scale": 1.3
+     },
+     {
+      "card": "story_build_props_08",
+      "at": "lot_right",
+      "off": [
+       0.0,
+       0.25
+      ],
+      "name": "plot_r",
+      "scale": 1.3
      }
     ]
    },
@@ -738,24 +1467,31 @@
     "who": {
      "pig_a": "happy_wave",
      "pig_b": "happy_wave",
-     "pig_c": "proud"
+     "pig_c": "proud",
+     "mom": "calm"
+    },
+    "at": {
+     "pig_a": "in_a",
+     "pig_b": "in_b",
+     "pig_c": "in_c"
     }
    },
    "steps": [
     {
      "do": "cam",
-     "shot": "wide"
+     "shot": "stage"
     },
     {
      "do": "tap_steps",
-     "target": "plot",
      "prompt": "tp_055",
      "hint": "tp_055",
      "steps": [
       {
+       "target": "plot_l",
        "fx": "pop:story_houses_08"
       },
       {
+       "target": "plot_r",
        "fx": "pop:story_houses_09"
       }
      ]
@@ -2266,7 +3002,7 @@
    "id": "tp_n01",
    "speaker": "nar",
    "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
-   "status": "changed-needs-recording",
+   "status": "pending",
    "beat": "cover",
    "interaction": "cover",
    "used": true,
@@ -2281,13 +3017,14 @@
      "status": "changed-needs-recording"
     }
    ],
-   "new": true
+   "new": true,
+   "pending": "needs recording (user OK for ElevenLabs)"
   },
   {
    "id": "tp_n02",
    "speaker": "nar",
    "text": "또 보고 싶으면 '다시 보기'를 톡!",
-   "status": "changed-needs-recording",
+   "status": "pending",
    "beat": "ending",
    "interaction": "end",
    "used": true,
@@ -2302,7 +3039,8 @@
      "status": "changed-needs-recording"
     }
    ],
-   "new": true
+   "new": true,
+   "pending": "needs recording (user OK for ElevenLabs)"
   }
  ]
 }

@@ -188,10 +188,10 @@ func is_side() -> bool:
 func set_figure(p: String, mirror: bool, instant := false) -> void:
 	if not has_pose(p):
 		return
-	if p == pose and mirror == _mirror and _flip_t < 0.0:
-		return
-	if p == pose and mirror == _mirror_to and _flip_t >= 0.0:
-		return
+	if p == pose and mirror == _mirror and (_flip_t < 0.0 or _flip_to == ""):
+		return  # already showing it (or the flip back is finishing on it)
+	if _flip_t >= 0.0 and p == _flip_to and mirror == _mirror_to:
+		return  # this flip is already under way
 	_mirror_to = mirror
 	if instant or not is_inside_tree():
 		_apply_pose(p)

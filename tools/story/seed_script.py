@@ -129,6 +129,7 @@ def build() -> dict:
         "voice_notes": vs.get("notes", ""),
         **({"handler": T.HANDLER} if getattr(T, "HANDLER", "") else {}),
         **({"shots": T.SHOTS} if getattr(T, "SHOTS", None) else {}),
+        **({"ui": T.UI} if getattr(T, "UI", None) else {}),
         "cast": T.CAST,
         "moral": T.MORAL,
         "beats": BEATS,
