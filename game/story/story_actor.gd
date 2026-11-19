@@ -63,11 +63,35 @@ func setup(role_: String, skin: String, height: float, cam: Camera3D, ground_: M
 	puppet.waddle_deg = 3.0
 	puppet.pose = pose if puppet.has_pose(pose) else "calm"
 	_root.add_child(puppet)
+	puppet.foot_contact.connect(_on_foot)
 	_target = global_position if is_inside_tree() else position
 
 
 func idle_amount_set(v: float) -> void:
 	puppet.idle_amount = v
+
+
+## Footstep on a contact frame of the drawn cycle (catalog footsteps.contact_frames), surface from the ground /
+## the climb (ladder: near-vertical path, roof: any other off-ground segment).
+func _on_foot(cycle: String, frame: int) -> void:
+	var sd := SoundDirector.current
+	if sd == null or pop_target < 0.5:
+		return
+	var surf := ""
+	if _fly:
+		surf = "ladder" if view == "back" and _climb_t > 0.0 and absf((_target - global_position).normalized().y) > 0.9 else "roof"
+	if cycle != "hop":
+		var cf: Dictionary = (sd.cat.get("footsteps", {}) as Dictionary).get("contact_frames", {})
+		var by_skin: Dictionary = cf.get(puppet.skin, {})
+		var n := (puppet._def().get("cycles", {}) as Dictionary).get(cycle, []).size() as int
+		var frames: Array = by_skin.get(cycle, (cf.get("default", {}) as Dictionary).get(str(n), [0]))
+		var hit := false
+		for f in frames:  # JSON numbers are floats
+			if int(f) == frame:
+				hit = true
+		if not hit:
+			return
+	sd.footstep(self, surf)
 
 
 func has_pose(p: String) -> bool:

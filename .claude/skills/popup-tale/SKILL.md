@@ -45,6 +45,18 @@ The user talks in Korean, wants to SEE results (send recordings and contact shee
 - Listen for doubled words in generated clips: two wolf clips began with a faint extra "그럼"; find it on the
   envelope (silencedetect / RMS plot) and trim (`TRIM_SEG` in the tale table), no re-recording.
 
+## Sound (2026-11-19, shared SoundDirector)
+- `game/core/audio/sound_director.gd` + `game/audio/sound_catalog.json` (ids, beds, sprinkle sets, emitters,
+  footstep contact frames, music slots); a tale maps fx / steps to ids in its `sound` block (seed table `SOUND` +
+  per-beat `sound`: music, bed "@light", emitters). Buses Voice / Music / Ambience / SFX are created in code;
+  Music -7 dB and Ambience -3 dB duck while a line plays (deterministic envelope from `_say`); Master limiter -1 dB.
+- Footsteps come from drawn-cycle contact frames (CastPuppet.foot_contact); surfaces from GroundLayers; beds follow
+  the spread's light; birds / frogs / owl sprinkle at tree crowns (MeadowWorld.trees) or the water; one stream
+  emitter slides along the water line nearest the camera focus; leaf rustle swells with gusts and huffs.
+- `--log-sound` prints `SFX <t> <id>` per cue; STORY_DONE reports `missing_sound=[]`.
+- A step that starts while a scripted flight (wolf_launch) still moves the actor is cancelled by the flight's
+  landing (`place_at`): wait the flight out before the next walk.
+
 ## Pipeline (one tale)
 
 1. **Plan** (`references/planning.md`): list beats → spreads (which template, seed/view, route), the cast with every pose/expression each beat needs, props, the taps/holds per beat, and which lines change. Write `game/stories/<tale_id>/script.json` with `tools/story/seed_script.py` and edit it (schema: `references/script_schema.md`).

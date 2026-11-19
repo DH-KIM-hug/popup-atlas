@@ -58,6 +58,7 @@ var focus: FollowFocus
 var path: Path3D
 var audio: PaperAudio
 var hinges: Array[PopHinge] = []
+var trees: Array[Vector3] = []  ## crown points of the bigger trees (sound emitters, bird sprinkles)
 var card_count := 0
 var wave_end := 0.0
 
@@ -304,6 +305,8 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 		contact.add(pos, yaw, w, clampf(h * 0.35, 0.04, 0.16), 1.0)
 	card_count += 2 if cross else 1
 	var pool: String = it["pool"]
+	if pool in ["tree", "conifer", "blossom", "autumn"] and h > 0.5:
+		trees.append(pos + Vector3(0, h * 0.75, 0))  # sound: bird / leaf-rustle points (top of the crown)
 	if force_static or not pop_on_load or q.distance_to(_start) > pop_radius:
 		statics.add(it["path"], float(it["h"]), h, pos, yaw, lean, cross, tilt)
 		return

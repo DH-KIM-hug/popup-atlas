@@ -35,6 +35,22 @@
  },
  "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Huelyn, sun=Lily, wind=Callum, man=Eric",
  "handler": "res://stories/sun_wind/fx.gd",
+ "sound": {
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "day"
+  },
+  "steps": {
+   "cover": {
+    "on_open": "paper.page_turn"
+   },
+   "page_turn": "paper.page_turn",
+   "end": {
+    "close_book": "paper.book_close"
+   }
+  },
+  "footsteps": {}
+ },
  "cast": {
   "traveller": {
    "kind": "walker",
@@ -159,7 +175,14 @@
       "sw_009"
      ]
     }
-   ]
+   ],
+   "sound": {
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "bet",
@@ -200,7 +223,14 @@
      "do": "say",
      "line": "sw_011"
     }
-   ]
+   ],
+   "sound": {
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "wind_turn",
@@ -308,7 +338,14 @@
     {
      "do": "stop"
     }
-   ]
+   ],
+   "sound": {
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "sun_turn",
@@ -384,7 +421,14 @@
     {
      "do": "stop"
     }
-   ]
+   ],
+   "sound": {
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "stream",
@@ -442,7 +486,14 @@
      "do": "say",
      "line": "sw_057"
     }
-   ]
+   ],
+   "sound": {
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "ending",
@@ -480,7 +531,14 @@
      "do": "end",
      "after": "sw_n03"
     }
-   ]
+   ],
+   "sound": {
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   }
  ],
  "lines": [

@@ -241,6 +241,208 @@
   }
  },
  "backdrop": true,
+ "sound": {
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "day",
+   "day": "day",
+   "afternoon": "afternoon",
+   "late": "late",
+   "dusk": "dusk",
+   "night": "night",
+   "evening": "evening"
+  },
+  "fx": {
+   "straw_pop": "build.straw",
+   "hammer_bang": [
+    "build.hammer",
+    {
+     "sound": "build.hammer",
+     "delay": 0.28,
+     "gain_db": -2
+    }
+   ],
+   "brick_thunk": [
+    "build.brick",
+    {
+     "sound": "build.brick",
+     "delay": 0.45,
+     "gain_db": -2
+    }
+   ],
+   "star_burst": "build.done",
+   "flute_notes": "music.flute",
+   "violin_notes": "music.violin",
+   "brothers_tease": [
+    {
+     "sound": "music.flute",
+     "gain_db": -6,
+     "delay": 0.8
+    },
+    {
+     "sound": "music.violin",
+     "gain_db": -7,
+     "delay": 1.2
+    }
+   ],
+   "straw_fly": {
+    "by_tap": [
+     "wolf.huff_1",
+     "wolf.huff_2",
+     "wolf.huff_3"
+    ],
+    "gust": "tap"
+   },
+   "wood_wobble": {
+    "by_tap": [
+     [
+      "wolf.huff_1",
+      {
+       "sound": "house.wood_wobble",
+       "delay": 0.5,
+       "gain_db": -4
+      }
+     ],
+     [
+      "wolf.huff_2",
+      {
+       "sound": "house.wood_wobble",
+       "delay": 0.4
+      }
+     ],
+     "wolf.huff_3"
+    ],
+    "gust": "tap"
+   },
+   "brick_huff": {
+    "by_tap": [
+     [
+      "wolf.huff_1",
+      {
+       "sound": "house.brick_hold",
+       "delay": 0.4
+      }
+     ],
+     [
+      "wolf.huff_2",
+      {
+       "sound": "house.brick_hold",
+       "delay": 0.4
+      }
+     ],
+     [
+      "wolf.huff_3",
+      {
+       "sound": "house.brick_hold",
+       "delay": 0.5,
+       "gain_db": 1
+      }
+     ]
+    ],
+    "gust": "tap_soft"
+   },
+   "pop:story_houses_02": {
+    "sound": "house.straw_blow",
+    "delay": 0.0
+   },
+   "pop:story_houses_05": {
+    "sound": "house.wood_collapse",
+    "delay": 0.0
+   },
+   "pop:story_build_props_00": "ui.pop",
+   "pop:story_build_props_07": "ui.pop",
+   "pop:story_build_props_08": "ui.pop",
+   "thud_dust": "wolf.flop",
+   "ladder_up": "prop.ladder_raise",
+   "inside_view": {
+    "bed": "room",
+    "fade": 1.2
+   },
+   "outside_view": {
+    "bed": "@light",
+    "fade": 1.2,
+    "stop_loops": [
+     "fire",
+     "boil"
+    ]
+   },
+   "flame_m": [
+    {
+     "sound": "fire.ignite"
+    },
+    {
+     "loop": "fire.crackle_m",
+     "key": "fire",
+     "fade": 0.3
+    },
+    {
+     "music": "chimney",
+     "fade": 0.4
+    }
+   ],
+   "flame_l": [
+    {
+     "sound": "fire.ignite",
+     "gain_db": 1
+    },
+    {
+     "loop": "fire.crackle_l",
+     "key": "fire",
+     "fade": 0.4
+    }
+   ],
+   "boil": {
+    "loop": "kitchen.boil",
+    "key": "boil",
+    "fade": 0.6
+   },
+   "wolf_drop": "wolf.chimney_slide",
+   "splash": "kitchen.splash",
+   "wolf_launch": [
+    {
+     "sound": "wolf.launch"
+    },
+    {
+     "sound": "wolf.yelp_far",
+     "delay": 1.8
+    }
+   ],
+   "wolf_land": [
+    "wolf.flop",
+    {
+     "sound": "wolf.yelp_far",
+     "gain_db": 4,
+     "delay": 0.1
+    }
+   ]
+  },
+  "steps": {
+   "cover": {
+    "on_open": "paper.page_turn"
+   },
+   "page_turn": "paper.page_turn",
+   "go_inside": {
+    "door_open": "door.open",
+    "door_shut": "door.shut"
+   },
+   "climb": {
+    "ladder": "foot.ladder_rung",
+    "roof": "foot.roof_tile"
+   },
+   "end": {
+    "close_book": "paper.book_close",
+    "music_fade_on_replay": 2.0
+   },
+   "counter": "ui.count"
+  },
+  "footsteps": {
+   "pig_a": "pig",
+   "pig_b": "pig",
+   "pig_c": "pig",
+   "mom": null,
+   "wolf": "wolf"
+  }
+ },
  "cast": {
   "pig_a": {
    "kind": "actor",
@@ -302,7 +504,11 @@
      "do": "cover",
      "prompt": "tp_n01"
     }
-   ]
+   ],
+   "sound": {
+    "music": "home",
+    "bed": null
+   }
   },
   {
    "id": "home",
@@ -465,7 +671,14 @@
      "speed": 0.2,
      "line": "tp_003"
     }
-   ]
+   ],
+   "sound": {
+    "music": "home",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
   },
   {
    "id": "straw_build",
@@ -646,6 +859,14 @@
      "w_huff": [
       0.659,
       -0.245
+     ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
      ],
      "est": [
       -0.551,
@@ -1189,7 +1410,16 @@
      "fx": "music_stop",
      "wait": 0.8
     }
-   ]
+   ],
+   "sound": {
+    "music": "build",
+    "music_at": "first_cam",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "wood_build",
@@ -1371,6 +1601,14 @@
       0.659,
       -0.245
      ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
+     ],
      "est": [
       -0.551,
       -0.707
@@ -1448,7 +1686,15 @@
      "fx": "music_stop",
      "wait": 0.8
     }
-   ]
+   ],
+   "sound": {
+    "music": "build",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "brick_build",
@@ -1630,6 +1876,14 @@
       0.659,
       -0.245
      ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
+     ],
      "est": [
       -0.551,
       -0.707
@@ -1712,7 +1966,15 @@
      "do": "say",
      "line": "tp_025"
     }
-   ]
+   ],
+   "sound": {
+    "music": "build",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "wolf_straw",
@@ -1894,6 +2156,14 @@
       0.659,
       -0.245
      ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
+     ],
      "est": [
       -0.551,
       -0.707
@@ -2046,7 +2316,15 @@
      ],
      "speed": 0.45
     }
-   ]
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "wolf_wood",
@@ -2228,6 +2506,14 @@
       0.659,
       -0.245
      ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
+     ],
      "est": [
       -0.551,
       -0.707
@@ -2365,7 +2651,15 @@
      ],
      "speed": 0.45
     }
-   ]
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "brick_wolf",
@@ -2547,6 +2841,14 @@
       0.659,
       -0.245
      ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
+     ],
      "est": [
       -0.551,
       -0.707
@@ -2654,7 +2956,15 @@
      "do": "say",
      "line": "tp_047"
     }
-   ]
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "chimney",
@@ -2835,6 +3145,14 @@
      "w_huff": [
       0.659,
       -0.245
+     ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
      ],
      "est": [
       -0.551,
@@ -3021,20 +3339,66 @@
      "shot": "high",
      "follow": "wolf",
      "rate": 2.2,
-     "wait": 1.2
+     "wait": 1.6
+    },
+    {
+     "do": "fx",
+     "fx": "",
+     "wait": 0.45
     },
     {
      "do": "walk",
      "who": "wolf",
-     "dir": "left",
+     "to": "wolf_exit",
+     "path": [
+      [
+       0.3,
+       -2.05
+      ],
+      [
+       1.1,
+       -2.3
+      ],
+      [
+       1.45,
+       -3.05
+      ],
+      [
+       1.48,
+       -3.9
+      ],
+      [
+       1.3,
+       -4.7
+      ],
+      [
+       1.1,
+       -5.6
+      ],
+      [
+       0.9,
+       -6.6
+      ]
+     ],
      "pose": "run_away",
-     "dist": 1.6,
-     "speed": 0.5,
+     "speed": 0.75,
      "line": "tp_053",
      "exit": true,
-     "follow": "wolf"
+     "follow": "wolf",
+     "shot": "high",
+     "follow_for": 3.6,
+     "release_shot": "village",
+     "release_at": "wolf_watch"
     }
-   ]
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ]
+   }
   },
   {
    "id": "ending",
@@ -3216,6 +3580,14 @@
       0.659,
       -0.245
      ],
+     "wolf_exit": [
+      0.9,
+      -6.6
+     ],
+     "wolf_watch": [
+      1.25,
+      -4.6
+     ],
      "est": [
       -0.551,
       -0.707
@@ -3290,7 +3662,22 @@
      "after": "tp_n02",
      "close_book": true
     }
-   ]
+   ],
+   "sound": {
+    "music": "ending",
+    "bed": "@light",
+    "emitters": [
+     "stream",
+     "trees"
+    ],
+    "fx": {
+     "pigs_cheer": {
+      "sound": "build.done",
+      "gain_db": -3,
+      "min_gap": 3.0
+     }
+    }
+   }
   }
  ],
  "lines": [

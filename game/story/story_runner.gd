@@ -55,6 +55,8 @@ var _prebuilt: Dictionary = {}
 var _last_line := ""
 const PREBUILD_BUDGET_MS := 3.0
 var _choosing := false
+var sound: SoundDirector
+var log_sound := false
 var _blow_target := "wind"
 var _walker_role := "traveller"
 
@@ -66,9 +68,21 @@ func _ready() -> void:
 		PopHinge.fixed_dt = 1.0 / 60.0
 		PaperSpring.fixed_dt = 1.0 / 60.0
 	_load_script()
+	if data.has("sound"):
+		sound = SoundDirector.new()
+		sound.name = "Sound"
+		sound.tale = data["sound"]
+		sound.log_sound = log_sound
+		if fixed_step:
+			sound.rng.seed = hash(str(data.get("tale_id", "")))  # reproducible captures
+		else:
+			sound.rng.randomize()
+		add_child(sound)
 	player = AudioStreamPlayer.new()
 	player.name = "Voice"
 	add_child(player)
+	if AudioServer.get_bus_index("Voice") >= 0:
+		player.bus = "Voice"
 	ui = StoryUI.new()
 	ui.name = "UI"
 	add_child(ui)
@@ -120,6 +134,8 @@ func _parse_args() -> void:
 			mute = true
 		elif a == "--nosubs":
 			subtitles = false
+		elif a == "--log-sound":
+			log_sound = true
 		elif a == "--quit-on-done":  # recordings: quit 2 s after the story ends (movie maker writes the file)
 			quit_on_done = true
 
@@ -279,11 +295,15 @@ func _say(id: String, only: Array = []) -> void:
 		if st and not mute:
 			player.stream = st
 			player.play()
+		if sound:
+			sound.duck(true)
 		await _wait(_seg_duration(s) + 0.08, true)
 		if _skip:
 			break
 	if _skip:
 		player.stop()
+	if sound:
+		sound.duck(false)
 	_skip = false
 	await _wait(0.25, true)
 	_skip = false
@@ -353,7 +373,8 @@ func _run() -> void:
 		for i in range(i0, beats.size()):
 			await _play_beat(beats[i])
 		var total := clock - t0
-		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio, " beats=", beat_times)
+		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio,
+			" missing_sound=", sound.missing if sound else [], " beats=", beat_times)
 		story_finished.emit(total)
 		if autoplay:
 			if quit_on_done:
@@ -375,8 +396,13 @@ func _play_beat(b: Dictionary) -> void:
 	var enter: Dictionary = b.get("enter", {})
 	if enter.has("pose"):
 		_pose = str(enter["pose"])
+	var key0 := _spread_key
+	if sound and not b.get("spread") is Dictionary:
+		sound.enter_beat(b, null, false)
 	if b.get("spread") is Dictionary:
 		await _enter_spread(b)
+		if sound:
+			sound.enter_beat(b, stage, _spread_key != key0)
 		if enter.has("pose") and stage.puppet().pose != _pose:
 			stage.set_pose(_pose)
 	for st: Dictionary in b.get("steps", []):
@@ -543,6 +569,11 @@ func _step_walk_actors(st: Dictionary) -> void:
 	var has_to := st.has("to")
 	if st.has("follow"):  # tracking shot on this walker
 		stage.follow_actor(str(st["follow"]), str(st.get("shot", "story")))
+		if st.has("follow_for"):  # follow briefly, then let him go (the camera holds, he runs off into the distance)
+			var rel := func():
+				if stage and is_instance_valid(stage):
+					stage.shot_to(str(st.get("release_shot", "stage")), st.get("release_at", null), {"rate": 1.2})
+			get_tree().create_timer(float(st["follow_for"])).timeout.connect(rel)
 	if has_to:
 		lead = stage.spot_point(st["to"])
 	for i in roles.size():
@@ -564,7 +595,12 @@ func _step_walk_actors(st: Dictionary) -> void:
 		var goal := a.global_position + d * dist
 		if has_to:
 			goal = lead - d * 0.14 * i + stage.dir_vec("away") * 0.05 * (i % 2)
-		if str(st.get("via", "")) == "road":
+		if st.has("path"):  # explicit waypoints (spots), feet on the ground
+			var pts: Array = []
+			for q in st["path"]:
+				pts.append(stage.spot_point(q))
+			a.follow(pts, spd, str(st.get("pose", "")), false)
+		elif str(st.get("via", "")) == "road":
 			# along the road (a village spread): the route bends with it, the figure faces each stretch
 			var rt := stage.road_route(a.global_position, goal)
 			for j in i:  # followers keep a step behind
@@ -581,6 +617,8 @@ func _step_walk_actors(st: Dictionary) -> void:
 	if st.get("async", false):
 		return
 	await _wait_actors(roles)
+	if sound and str(st.get("end_pose", "")) == "sniff" and stage.actor("wolf"):
+		sound.play("wolf.sniff", stage.actor("wolf").centre())
 	if st.get("exit", false):
 		for r in roles:
 			var a2 := stage.actor(str(r))
@@ -627,6 +665,8 @@ func _step_go_inside(st: Dictionary) -> void:
 		while a.moving() and g < 12.0:
 			g += await _frame()
 	sp.open_door(true)
+	if sound:
+		sound.step("go_inside", "door_open", sp.door_point(true, toward))
 	await _wait(0.35)
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
@@ -643,6 +683,8 @@ func _step_go_inside(st: Dictionary) -> void:
 			g3 += await _frame()
 		stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
 	sp.open_door(false)
+	if sound:
+		sound.step("go_inside", "door_shut", sp.door_point(true, toward))
 	await _wait(0.35)
 	while _line_busy:
 		await _frame()
@@ -818,6 +860,8 @@ func _step_cover(st: Dictionary, b: Dictionary) -> void:
 		if autoplay and idle > 2.6:
 			_auto_tap("book")
 	_skip = true
+	if sound:
+		sound.step("cover", "on_open")
 	while _line_busy:
 		await _frame()
 	_mode = "idle"
@@ -912,6 +956,8 @@ func _step_gentle(st: Dictionary) -> void:
 func _step_end(st: Dictionary) -> void:
 	await _say(str(st.get("line", "")))
 	if st.get("close_book", false) and stage and is_instance_valid(stage):
+		if sound:
+			sound.step("end", "close_book")
 		# the book closes: the page folds flat, then the end card
 		var t := stage.fold()
 		await _wait(t + 0.8)
@@ -1003,6 +1049,8 @@ func _enter_spread(b: Dictionary) -> void:
 	# r2: the new page lies flat under the turning sheet and pops up once it lands, so the rise is seen (critic 3).
 	if tex:
 		ui.page_turn.turn(1.1)
+		if sound and not cover_shown:
+			sound.step("page_turn")
 		while ui.page_turn.is_turning():
 			await _frame()
 	wave_t = stage.pop(0.0)

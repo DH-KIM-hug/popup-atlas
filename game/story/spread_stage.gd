@@ -720,6 +720,8 @@ func _set_light(name: String, instant: bool) -> void:
 	_light_to = tgt
 	_light_t = 1.0
 	_light_k = 0.0
+	if SoundDirector.current and is_built:
+		SoundDirector.current.light_changed()
 	if instant:
 		_light_k = 1.0
 		_apply_light()
@@ -1357,6 +1359,8 @@ func set_blowing(on: bool, power := 1.0) -> void:
 func fx(name: String) -> void:
 	if name == "":
 		return
+	if SoundDirector.current:
+		SoundDirector.current.fx(name, null, build_ctx)
 	if handler and handler.fx(name):
 		fx_done.emit(name)
 		return
@@ -1374,6 +1378,9 @@ func fx(name: String) -> void:
 
 ## On-page counter (a big printed number floating over a set piece), pops on each change.
 func show_counter(n: int, over: String) -> void:
+	if SoundDirector.current:  # a rising tick: 0, 2, 4, 5, 7, 9, 11, 12 semitones
+		var steps := [0, 2, 4, 5, 7, 9, 11, 12]
+		SoundDirector.current.play("ui.count", null, 0.0, 0.0, pow(2.0, float(steps[clampi(n - 1, 0, 7)]) / 12.0))
 	if _counter == null:
 		_counter = Label3D.new()
 		_counter.name = "Counter"

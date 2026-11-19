@@ -142,6 +142,14 @@ func surface_y(p: Vector2) -> float:
 	return FELT_T
 
 
+## Stream centre line on the page (sound: the stream emitter slides along it).
+func stream_line_3d() -> PackedVector3Array:
+	var out := PackedVector3Array()
+	for p in _stream_line:
+		out.append(Vector3(p.x, FELT_T, p.y))
+	return out
+
+
 func path_centre_3d() -> PackedVector3Array:
 	var out := PackedVector3Array()
 	for p in _path_line:

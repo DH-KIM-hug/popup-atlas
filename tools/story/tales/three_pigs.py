@@ -218,6 +218,8 @@ VILLAGE["s_win"] = [round(VILLAGE["s_lot"][0] - 0.23, 3), VILLAGE["s_lot"][1]]  
 for _h in ("s", "w"):  # between the wolf's mark and the house: the huff two-shot looks at both
     VILLAGE[_h + "_huff"] = [round(VILLAGE[_h + "_wolf"][0] * 0.55 + VILLAGE[_h + "_lot"][0] * 0.45, 3),
                              round(VILLAGE[_h + "_wolf"][1] * 0.55 + VILLAGE[_h + "_lot"][1] * 0.45 + 0.1, 3)]
+VILLAGE["wolf_exit"] = [0.9, -6.6]   # far along the road beyond the brick house (probed road line)
+VILLAGE["wolf_watch"] = [1.25, -4.6]    # where the camera stays and lets him go
 VILLAGE["est"] = [round((VILLAGE["s_lot"][0] + VILLAGE["b_lot"][0]) * 0.5 + 0.3, 3),
                  round((VILLAGE["s_lot"][1] + VILLAGE["b_lot"][1]) * 0.5, 3)]
 VILLAGE["ladder_find"] = [VILLAGE["b_lot"][0] - 1.12, VILLAGE["b_lot"][1] + 0.3]
@@ -437,9 +439,14 @@ BEATS = [
         {"do": "fx", "fx": "outside_view", "wait": 1.6},
         # he flies out of the chimney: the camera tilts up after him into the sky, far away
         {"do": "fx", "fx": "wolf_launch", "wait": 0.1},
-        {"do": "cam", "shot": "high", "follow": "wolf", "rate": 2.2, "wait": 1.2},
-        {"do": "walk", "who": "wolf", "dir": "left", "pose": "run_away", "dist": 1.6, "speed": 0.5, "line": "tp_053", "exit": True,
-         "follow": "wolf"},
+        {"do": "cam", "shot": "high", "follow": "wolf", "rate": 2.2, "wait": 1.6},
+        {"do": "fx", "fx": "", "wait": 0.45},  # he lands (thud, dust, hop) before he runs
+        # (user: "마지막에 늑대가 도망가서 달려야 되지 않을까?") he lands beside the house (thud, dust, hop) and runs off
+        # along the road away from the village, scalded and smoking; the camera follows him, then lets him go
+        {"do": "walk", "who": "wolf", "to": "wolf_exit", "path": [[0.3, -2.05], [1.1, -2.3], [1.45, -3.05], [1.48, -3.9],
+                                                                    [1.3, -4.7], [1.1, -5.6], [0.9, -6.6]],
+         "pose": "run_away", "speed": 0.75, "line": "tp_053",
+         "exit": True, "follow": "wolf", "shot": "high", "follow_for": 3.6, "release_shot": "village", "release_at": "wolf_watch"},
     ]},
     {"id": "ending", "title": "벽돌 집", "spread": _village(light="evening", built=["straw_ruin", "wood_ruin", "house", "ladder"]),
      # the wolf is gone: the brothers come out in front of the brick house, safe and happy, mom joins them
@@ -457,3 +464,17 @@ BEATS = [
         {"do": "end", "after": "tp_n02", "close_book": True},
     ]},
 ]
+
+
+# ---------------------------------------------------------------- sound (2026-11-19, artifacts/audio_staging/WIRING.md)
+# Tale-level `sound` and per-beat blocks come from tools/audio/three_pigs_sound_blocks.json (the sound pass's
+# proposal, kept as the single source); ids refer to game/audio/sound_catalog.json.
+import json as _json, os as _os
+_SB = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "..", "audio",
+                                    "three_pigs_sound_blocks.json"), encoding="utf-8"))
+SOUND = {k: v for k, v in _SB["tale_sound"].items() if not k.endswith("_note")}
+for _b in BEATS:
+    _blk = _SB["beats"].get(_b["id"])
+    if _blk:
+        _b["sound"] = {k: v for k, v in _blk.items() if k != "note"}
+SOUND["fx"]["wolf_land"] = ["wolf.flop", {"sound": "wolf.yelp_far", "gain_db": 4, "delay": 0.1}]  # landing thud + yelp

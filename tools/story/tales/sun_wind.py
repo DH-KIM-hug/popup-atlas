@@ -153,3 +153,12 @@ BEATS = [{'id': 'cover', 'title': '해와 바람', 'spread': None, 'steps': [{'d
             {'do': 'walk_away', 'dist': 3.2, 'line': 'sw_n02'},
             {'do': 'say', 'line': 'sw_060'},
             {'do': 'end', 'after': 'sw_n03'}]}]
+
+
+# 2026-11-19: sun_wind adopts the shared ambience (birds, stream, leaf rustle) and page sounds; no music.
+SOUND = {"catalog": "res://audio/sound_catalog.json", "light_beds": {"": "day"},
+         "steps": {"cover": {"on_open": "paper.page_turn"}, "page_turn": "paper.page_turn",
+                   "end": {"close_book": "paper.book_close"}}, "footsteps": {}}
+for _b in BEATS:
+    if _b.get("spread"):
+        _b["sound"] = {"bed": "@light", "emitters": ["stream", "trees"]}

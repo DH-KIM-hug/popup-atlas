@@ -1,0 +1,1196 @@
+{
+ "version": 1,
+ "note": "Shared sound catalog for pop-up tales. Ids are tale-agnostic; tales map fx names / steps to ids in their script.json `sound` blocks. Paths are where the Godot agent should copy artifacts/audio_staging/{sfx,music}/.",
+ "buses": {
+  "Master": {
+   "volume_db": 0,
+   "limiter_db": -1.0
+  },
+  "Voice": {
+   "volume_db": 0,
+   "send": "Master"
+  },
+  "Music": {
+   "volume_db": 0,
+   "send": "Master",
+   "duck": {
+    "by": "Voice",
+    "threshold_db": -34,
+    "ratio": 4,
+    "attack_ms": 60,
+    "release_ms": 450,
+    "target_reduction_db": -7
+   }
+  },
+  "Ambience": {
+   "volume_db": 0,
+   "send": "Master",
+   "duck": {
+    "by": "Voice",
+    "threshold_db": -34,
+    "ratio": 2,
+    "attack_ms": 80,
+    "release_ms": 600,
+    "target_reduction_db": -3
+   }
+  },
+  "SFX": {
+   "volume_db": 0,
+   "send": "Master"
+  }
+ },
+ "levels": {
+  "voice_lufs": -16,
+  "music_file_lufs": -22,
+  "ambience_bed_lufs": -28,
+  "sfx_peak_dbfs_max": -9,
+  "note": "files are pre-normalised; gain_db is the per-sound playback offset on its bus"
+ },
+ "sounds": {
+  "amb.breeze": {
+   "files": [
+    "res://audio/sfx/amb_breeze_grass_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": 0,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "amb.birds_day": {
+   "files": [
+    "res://audio/sfx/amb_birds_day_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -2,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "amb.birds_afternoon": {
+   "files": [
+    "res://audio/sfx/amb_birds_afternoon_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -2,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "amb.dusk": {
+   "files": [
+    "res://audio/sfx/amb_dusk_crickets_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -1,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "amb.night": {
+   "files": [
+    "res://audio/sfx/amb_night_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": 0,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "amb.room_fire": {
+   "files": [
+    "res://audio/sfx/amb_fireplace_room_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": 3,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true,
+   "note": "file sits at -32.6 LUFS (sharp pops); +3 dB brings it to the room level"
+  },
+  "amb.stream": {
+   "files": [
+    "res://audio/sfx/amb_stream_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": 0,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": true,
+   "loop": true,
+   "note": "mono; positional emitter along the stream (see WIRING emitters)"
+  },
+  "amb.gust": {
+   "files": [
+    "res://audio/sfx/amb_gust_1.ogg",
+    "res://audio/sfx/amb_gust_2.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -2,
+   "pitch_rand": 0.06,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": false,
+   "loop": false
+  },
+  "spk.bird_robin": {
+   "files": [
+    "res://audio/sfx/spk_bird_robin_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -4,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "spk.bird_finch": {
+   "files": [
+    "res://audio/sfx/spk_bird_finch_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -5,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "spk.bird_blackbird": {
+   "files": [
+    "res://audio/sfx/spk_bird_blackbird_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -5,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "spk.cuckoo": {
+   "files": [
+    "res://audio/sfx/spk_cuckoo_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -6,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "spk.dove": {
+   "files": [
+    "res://audio/sfx/spk_dove_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -6,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "spk.bee": {
+   "files": [
+    "res://audio/sfx/spk_bee_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -6,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "spk.frog": {
+   "files": [
+    "res://audio/sfx/spk_frog_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -6,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "spk.owl": {
+   "files": [
+    "res://audio/sfx/spk_owl_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -8,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 3,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "foot.pig.grass": {
+   "files": [
+    "res://audio/sfx/foot_pig_grass_1.ogg",
+    "res://audio/sfx/foot_pig_grass_2.ogg",
+    "res://audio/sfx/foot_pig_grass_3.ogg",
+    "res://audio/sfx/foot_pig_grass_4.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -16,
+   "pitch_rand": 0.07,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "foot.pig.road": {
+   "files": [
+    "res://audio/sfx/foot_pig_road_1.ogg",
+    "res://audio/sfx/foot_pig_road_2.ogg",
+    "res://audio/sfx/foot_pig_road_3.ogg",
+    "res://audio/sfx/foot_pig_road_4.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -16,
+   "pitch_rand": 0.07,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "foot.pig.bridge": {
+   "files": [
+    "res://audio/sfx/foot_pig_bridge_1.ogg",
+    "res://audio/sfx/foot_pig_bridge_2.ogg",
+    "res://audio/sfx/foot_pig_bridge_3.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -16,
+   "pitch_rand": 0.07,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "foot.wolf.grass": {
+   "files": [
+    "res://audio/sfx/foot_wolf_grass_1.ogg",
+    "res://audio/sfx/foot_wolf_grass_2.ogg",
+    "res://audio/sfx/foot_wolf_grass_3.ogg",
+    "res://audio/sfx/foot_wolf_grass_4.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.07,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "foot.wolf.road": {
+   "files": [
+    "res://audio/sfx/foot_wolf_road_1.ogg",
+    "res://audio/sfx/foot_wolf_road_2.ogg",
+    "res://audio/sfx/foot_wolf_road_3.ogg",
+    "res://audio/sfx/foot_wolf_road_4.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.07,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "foot.wolf.bridge": {
+   "files": [
+    "res://audio/sfx/foot_wolf_bridge_1.ogg",
+    "res://audio/sfx/foot_wolf_bridge_2.ogg",
+    "res://audio/sfx/foot_wolf_bridge_3.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.07,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "foot.roof_tile": {
+   "files": [
+    "res://audio/sfx/foot_roof_tile_1.ogg",
+    "res://audio/sfx/foot_roof_tile_2.ogg",
+    "res://audio/sfx/foot_roof_tile_3.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.06,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "foot.ladder_rung": {
+   "files": [
+    "res://audio/sfx/foot_ladder_rung_1.ogg",
+    "res://audio/sfx/foot_ladder_rung_2.ogg",
+    "res://audio/sfx/foot_ladder_rung_3.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -12,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 2,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "door.open": {
+   "files": [
+    "res://audio/sfx/door_creak_open_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "door.shut": {
+   "files": [
+    "res://audio/sfx/door_shut_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "build.straw": {
+   "files": [
+    "res://audio/sfx/build_straw_rustle_1.ogg",
+    "res://audio/sfx/build_straw_rustle_2.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.06,
+   "vol_rand_db": 1.5,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "build.hammer": {
+   "files": [
+    "res://audio/sfx/build_hammer_knock_1.ogg",
+    "res://audio/sfx/build_hammer_knock_2.ogg",
+    "res://audio/sfx/build_hammer_knock_3.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1.5,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "build.brick": {
+   "files": [
+    "res://audio/sfx/build_brick_thunk_1.ogg",
+    "res://audio/sfx/build_brick_thunk_2.ogg",
+    "res://audio/sfx/build_brick_thunk_3.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1.5,
+   "no_repeat": true,
+   "positional": true,
+   "loop": false
+  },
+  "build.done": {
+   "files": [
+    "res://audio/sfx/music_build_done_chime_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  },
+  "ui.pop": {
+   "files": [
+    "res://audio/sfx/ui_pop_toy_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.08,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  },
+  "ui.count": {
+   "files": [
+    "res://audio/sfx/ui_count_tick_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -12,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "pitch steps up per count: pitch_scale = 2^(k/12) for counter k (major-scale steps 0,2,4,5,7,9,11,12)"
+  },
+  "music.flute": {
+   "files": [
+    "res://audio/sfx/music_flute_phrase_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "duck_music_db": -10
+  },
+  "music.violin": {
+   "files": [
+    "res://audio/sfx/music_violin_phrase_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "duck_music_db": -10
+  },
+  "wolf.sniff": {
+   "files": [
+    "res://audio/sfx/wolf_sniff_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "wolf.huff_1": {
+   "files": [
+    "res://audio/sfx/wolf_huff_small_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "wolf.huff_2": {
+   "files": [
+    "res://audio/sfx/wolf_huff_medium_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -7,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "wolf.huff_3": {
+   "files": [
+    "res://audio/sfx/wolf_huff_large_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -7,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "house.straw_blow": {
+   "files": [
+    "res://audio/sfx/house_straw_blow_apart_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -7,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "house.wood_wobble": {
+   "files": [
+    "res://audio/sfx/house_wood_wobble_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "house.wood_collapse": {
+   "files": [
+    "res://audio/sfx/house_wood_collapse_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "house.brick_hold": {
+   "files": [
+    "res://audio/sfx/house_brick_hold_thud_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.06,
+   "vol_rand_db": 1.5,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "wolf.flop": {
+   "files": [
+    "res://audio/sfx/wolf_flop_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "prop.ladder_raise": {
+   "files": [
+    "res://audio/sfx/prop_ladder_raise_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false
+  },
+  "wolf.chimney_slide": {
+   "files": [
+    "res://audio/sfx/wolf_chimney_slide_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  },
+  "wolf.launch": {
+   "files": [
+    "res://audio/sfx/wolf_launch_whoosh_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  },
+  "wolf.yelp_far": {
+   "files": [
+    "res://audio/sfx/wolf_yelp_far_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -12,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  },
+  "fire.ignite": {
+   "files": [
+    "res://audio/sfx/fire_ignite_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  },
+  "fire.crackle_m": {
+   "files": [
+    "res://audio/sfx/fire_crackle_m_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": 0,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "fire.crackle_l": {
+   "files": [
+    "res://audio/sfx/fire_crackle_l_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": 0,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "kitchen.boil": {
+   "files": [
+    "res://audio/sfx/kitchen_boil_1.ogg"
+   ],
+   "bus": "Ambience",
+   "gain_db": -3,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": true
+  },
+  "kitchen.splash": {
+   "files": [
+    "res://audio/sfx/kitchen_splash_hiss_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -7,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  },
+  "paper.page_turn": {
+   "files": [
+    "res://audio/sfx/paper_page_turn_1.ogg",
+    "res://audio/sfx/paper_page_turn_2.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": true,
+   "positional": false,
+   "loop": false
+  },
+  "paper.book_close": {
+   "files": [
+    "res://audio/sfx/paper_book_close_1.ogg"
+   ],
+   "bus": "SFX",
+   "gain_db": -7,
+   "pitch_rand": 0,
+   "vol_rand_db": 0,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false
+  }
+ },
+ "music": {
+  "home": {
+   "file": "res://audio/music/music_home_1.ogg",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": true,
+   "fade_in": 1.5,
+   "fade_out": 2.0
+  },
+  "build": {
+   "file": "res://audio/music/music_build_1.ogg",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": true,
+   "fade_in": 1.5,
+   "fade_out": 2.0
+  },
+  "wolf": {
+   "file": "res://audio/music/music_wolf_1.ogg",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": true,
+   "fade_in": 1.5,
+   "fade_out": 2.0
+  },
+  "chimney": {
+   "file": "res://audio/music/music_chimney_1.ogg",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": true,
+   "fade_in": 1.5,
+   "fade_out": 2.0
+  },
+  "ending": {
+   "file": "res://audio/music/music_ending_1.ogg",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 1.5,
+   "fade_out": 2.0,
+   "note": "plays once (69.8 s, faded out); stop with fade_out when the end card is dismissed"
+  },
+  "night": {
+   "file": "res://audio/music/music_night_1.ogg",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 1.5,
+   "fade_out": 2.0,
+   "note": "optional quiet night alternative; plays once (61.9 s)"
+  }
+ },
+ "beds": {
+  "day": {
+   "layers": [
+    [
+     "amb.breeze",
+     0
+    ],
+    [
+     "amb.birds_day",
+     0
+    ]
+   ],
+   "sprinkles": "day",
+   "gusts": {
+    "every": [
+     9,
+     20
+    ],
+    "gain_db": [
+     -6,
+     0
+    ]
+   }
+  },
+  "afternoon": {
+   "layers": [
+    [
+     "amb.breeze",
+     0
+    ],
+    [
+     "amb.birds_afternoon",
+     0
+    ]
+   ],
+   "sprinkles": "afternoon",
+   "gusts": {
+    "every": [
+     10,
+     22
+    ],
+    "gain_db": [
+     -6,
+     0
+    ]
+   }
+  },
+  "late": {
+   "layers": [
+    [
+     "amb.breeze",
+     -1
+    ],
+    [
+     "amb.birds_afternoon",
+     -4
+    ]
+   ],
+   "sprinkles": "late",
+   "gusts": {
+    "every": [
+     12,
+     25
+    ],
+    "gain_db": [
+     -8,
+     -2
+    ]
+   }
+  },
+  "dusk": {
+   "layers": [
+    [
+     "amb.breeze",
+     -4
+    ],
+    [
+     "amb.dusk",
+     0
+    ]
+   ],
+   "sprinkles": "dusk",
+   "gusts": {
+    "every": [
+     15,
+     30
+    ],
+    "gain_db": [
+     -9,
+     -3
+    ]
+   }
+  },
+  "night": {
+   "layers": [
+    [
+     "amb.night",
+     0
+    ],
+    [
+     "amb.dusk",
+     -12
+    ]
+   ],
+   "sprinkles": "night",
+   "gusts": {
+    "every": [
+     18,
+     35
+    ],
+    "gain_db": [
+     -12,
+     -6
+    ]
+   }
+  },
+  "evening": {
+   "layers": [
+    [
+     "amb.breeze",
+     -6
+    ],
+    [
+     "amb.dusk",
+     -3
+    ]
+   ],
+   "sprinkles": "evening",
+   "gusts": null
+  },
+  "room": {
+   "layers": [
+    [
+     "amb.room_fire",
+     0
+    ]
+   ],
+   "sprinkles": null,
+   "gusts": null,
+   "emitters_off": true
+  }
+ },
+ "sprinkle_sets": {
+  "day": {
+   "interval": [
+    3.0,
+    8.0
+   ],
+   "items": [
+    [
+     "spk.bird_robin",
+     4
+    ],
+    [
+     "spk.bird_finch",
+     4
+    ],
+    [
+     "spk.bird_blackbird",
+     3
+    ],
+    [
+     "spk.cuckoo",
+     1,
+     45
+    ],
+    [
+     "spk.dove",
+     1,
+     30
+    ],
+    [
+     "spk.bee",
+     1.5,
+     20
+    ]
+   ],
+   "gain_db": [
+    -8,
+    0
+   ],
+   "where": "trees",
+   "pitch_rand": 0.04
+  },
+  "afternoon": {
+   "interval": [
+    6.0,
+    13.0
+   ],
+   "items": [
+    [
+     "spk.bird_robin",
+     2
+    ],
+    [
+     "spk.bird_blackbird",
+     2
+    ],
+    [
+     "spk.bird_finch",
+     1
+    ],
+    [
+     "spk.dove",
+     1.5,
+     30
+    ],
+    [
+     "spk.cuckoo",
+     1,
+     50
+    ],
+    [
+     "spk.bee",
+     2,
+     20
+    ]
+   ],
+   "gain_db": [
+    -10,
+    -2
+   ],
+   "where": "trees",
+   "pitch_rand": 0.04
+  },
+  "late": {
+   "interval": [
+    9.0,
+    18.0
+   ],
+   "items": [
+    [
+     "spk.bird_blackbird",
+     2
+    ],
+    [
+     "spk.dove",
+     1.5,
+     30
+    ],
+    [
+     "spk.cuckoo",
+     0.7,
+     60
+    ]
+   ],
+   "gain_db": [
+    -12,
+    -4
+   ],
+   "where": "trees",
+   "pitch_rand": 0.04
+  },
+  "dusk": {
+   "interval": [
+    6.0,
+    14.0
+   ],
+   "items": [
+    [
+     "spk.frog",
+     3,
+     8
+    ]
+   ],
+   "gain_db": [
+    -10,
+    -3
+   ],
+   "where": "water",
+   "pitch_rand": 0.08
+  },
+  "night": {
+   "interval": [
+    14.0,
+    30.0
+   ],
+   "items": [
+    [
+     "spk.owl",
+     1,
+     25
+    ],
+    [
+     "spk.frog",
+     1,
+     15
+    ]
+   ],
+   "gain_db": [
+    -12,
+    -5
+   ],
+   "where": "trees",
+   "pitch_rand": 0.03
+  },
+  "evening": {
+   "interval": [
+    10.0,
+    20.0
+   ],
+   "items": [
+    [
+     "spk.frog",
+     2,
+     12
+    ],
+    [
+     "spk.bird_blackbird",
+     1,
+     40
+    ]
+   ],
+   "gain_db": [
+    -12,
+    -5
+   ],
+   "where": "any",
+   "pitch_rand": 0.05
+  }
+ },
+ "emitters": {
+  "stream": {
+   "sound": "amb.stream",
+   "shape": "path",
+   "source": "ground.stream_line",
+   "follow": "nearest_point_to_listener",
+   "unit_size": 0.9,
+   "max_distance": 4.0,
+   "max_db": 0,
+   "min_db": -30,
+   "attenuation": "inverse_square",
+   "note": "one AudioStreamPlayer3D slid to the nearest point of the stream centre line each frame"
+  },
+  "trees": {
+   "sound": "amb.breeze",
+   "shape": "points",
+   "source": "set pieces tagged tree/forest/conifer (largest 4 clusters)",
+   "unit_size": 1.2,
+   "max_distance": 5.0,
+   "gain_db": -6,
+   "gust_db": 6,
+   "note": "leaf rustle swells with the gust value"
+  }
+ },
+ "footsteps": {
+  "surface_from": "ground: road if GroundLayers.path_distance(p)<0, bridge if on a bridge set piece / over the stream, else grass; roof while climbing on a house, ladder on the ladder segment",
+  "ids": "foot.<pig|wolf>.<grass|road|bridge>, foot.roof_tile, foot.ladder_rung",
+  "contact_frames": {
+   "default": {
+    "4": [
+     0,
+     2
+    ],
+    "2": [
+     0,
+     1
+    ]
+   },
+   "wolf": {
+    "walk_cycle": [
+     0,
+     2
+    ],
+    "walk_back": [
+     0,
+     1
+    ],
+    "walk_front": [
+     0,
+     1
+    ],
+    "run_cycle": [
+     0,
+     2
+    ],
+    "run_front": [
+     0,
+     1
+    ]
+   },
+   "pig_a": {
+    "run_cycle": [
+     0
+    ],
+    "run_back": [
+     0,
+     1
+    ]
+   },
+   "pig_b": {
+    "run_cycle": [
+     0
+    ],
+    "run_back": [
+     0,
+     1
+    ]
+   },
+   "pig_c": {
+    "run_cycle": [
+     0
+    ],
+    "run_back": [
+     0,
+     1
+    ]
+   },
+   "note": "Checked by eye on 2026-11-19 from artifacts/three_pigs/wolf_cycle_contact.png (wolf walk: wide strides at frames 0 and 2; back walk: one contact per frame) and run_cycle_contact.png (pig run: contact, down, passing, flight = one footfall per cycle at frame 0). Pig walk_cycle, walk_back, walk_front and carry_straw_cycle use the default; check them against their sheets."
+  },
+  "run_gain_db": 2,
+  "distance_falloff": "positional"
+ }
+}

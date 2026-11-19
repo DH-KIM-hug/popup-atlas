@@ -28,6 +28,7 @@ static var _curl_tex: Texture2D
 var _launch: Dictionary = {}  ## wolf flight {from, to, t, dur, arc}
 var _drop: Dictionary = {}
 var _chimney_steam := false
+var _wolf_smoke := false  ## a scalded trail: little smoke puffs from his bottom while he runs off
 
 
 func setup() -> void:
@@ -305,7 +306,7 @@ func fx(name: String) -> bool:
 				if a3:
 					a3.hop_v = 1.0
 		_:
-			if name.begins_with("pop:story_houses_0"):
+			if name.begins_with("pop:story_houses_0") and not name in ["pop:story_houses_02", "pop:story_houses_05"]:
 				# a new brick cottage on its plot: stars and the brothers cheer (generic pop still runs)
 				var sp := stage.set_piece(name.substr(4))
 				if sp:
@@ -545,11 +546,17 @@ func _step_wolf_flight(dt: float) -> void:
 		w.global_position = p
 		w.puppet.rotation.z = (u2 * TAU * 1.5) if u2 < 0.95 else 0.0
 		if u2 >= 1.0:
+			# he lands beside the house with a bump: thud, dust, a hop; then he runs (scalded, smoking)
 			_launch = {}
 			w.puppet.rotation.z = 0.0
-			w.hop_v = 0.8
+			w.hop_v = 1.0
 			w.place_at(p)
 			w.set_pose("run_away", 1)
+			stage.fx("wolf_land")
+			for k in 5:
+				var p0 := p + Vector3(0, 0.02, 0)
+				fly("steam", p0, p0 + stage.dir_vec("right" if k % 2 == 0 else "left") * randf_range(0.1, 0.22) + Vector3(0, randf_range(0.03, 0.09), 0), 0.08, 0.7, 0.05, 1.0, 1.6)
+			_wolf_smoke = true
 
 
 func step(dt: float) -> void:
@@ -567,6 +574,14 @@ func step(dt: float) -> void:
 			var p := a.global_position + Vector3(0, a.puppet.height * 0.85, 0.04)
 			fly("note", p, p + Vector3(randf_range(-0.15, 0.25), randf_range(0.2, 0.35), 0.02), 0.05, 1.3, 0.04, 1.0, 1.0)
 			a.hop_v = maxf(a.hop_v, 0.25)  # bouncing to the tune
+	if _wolf_smoke:
+		var wf := _a("wolf")
+		if wf == null or wf.pop_target < 0.5:
+			_wolf_smoke = false
+		elif wf.moving() and fmod(_t, 0.18) < dt:
+			var back := stage.dir_vec("right") if wf.facing_left else stage.dir_vec("left")
+			var b0 := wf.global_position + Vector3(0, wf.puppet.height * 0.42, 0) + back * wf.puppet.height * 0.18
+			fly("soot", b0, b0 + back * 0.12 + Vector3(0, 0.14, 0), 0.06, 0.6, 0.0, 1.5, 1.8)
 	if _chimney_steam and fmod(_t, 0.7) < dt and _launch.is_empty():
 		var top := _chimney_top() + Vector3(0, 0.03, 0)
 		fly("steam", top, top + Vector3(randf_range(-0.05, 0.08), 0.32, 0), 0.07, 1.6, 0.0, 0.5, 2.0)

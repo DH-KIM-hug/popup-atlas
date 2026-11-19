@@ -58,6 +58,8 @@ func _ready() -> void:
 		p.panning_strength = pan
 		p.max_polyphony = 1
 		p.doppler_tracking = AudioStreamPlayer3D.DOPPLER_TRACKING_DISABLED
+		if AudioServer.get_bus_index("SFX") >= 0:
+			p.bus = "SFX"
 		add_child(p)
 		_pool.append(p)
 

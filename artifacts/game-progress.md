@@ -1370,3 +1370,30 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Still off: a dark brick column stands behind the brick house's chimney in the night exterior (not a kitchen piece;
     likely the band card's cut edge seen at an angle).
   - three_pigs STORY_DONE 280.5 s, sun_wind 203.3 s, missing_audio=[] for both. Video: artifacts/video/three_pigs_full_v16.mp4.
+
+## 2026-11-19 — three_pigs v17: staged sound wired in-engine; the wolf runs away
+  - Sound (artifacts/audio_staging/WIRING.md): 81 sfx + 6 CC0 music tracks copied to game/audio/{sfx,music}
+    (+ music/CREDITS.md), catalog game/audio/sound_catalog.json. New shared game/core/audio/sound_director.gd: one-shot
+    pool (12 3D + 6 2D), music slots with crossfades, beds per spread light ("@light"), sprinkle scheduler (birds,
+    cuckoo, dove, bee, frogs, owl) at tree crowns (MeadowWorld.trees) / the water, a stream emitter sliding along
+    GroundLayers.stream_line_3d() nearest the camera focus, 3 leaf-rustle emitters at trees swelling with gusts,
+    gusts from beds, the meadow sway envelope (≥ 7 s apart) and huffs (by tap), footsteps on drawn-cycle contact
+    frames (CastPuppet.foot_contact → StoryActor → surface grass / road / bridge / roof / ladder), fx / step cues
+    from the tale's `sound` blocks (seed table SOUND from tools/audio/three_pigs_sound_blocks.json + per-beat blocks).
+    Buses Voice / Music / Ambience / SFX created in code, Master hard limiter -1 dB; ducking: Music -7 dB, Ambience
+    -3 dB while a line plays (deterministic envelope from _say — the spec's fallback, chosen over sidechain
+    compressors for predictability). PaperAudio on SFX, the voice player on Voice. Hooks: cover open, page turns,
+    door open / shut, book close, counter tick (pitch scale), wolf sniff at his mark, landing thud. `--log-sound`
+    prints SFX lines; STORY_DONE reports missing_sound. fx.gd: the cheer no longer fires on the straw / wood ruins.
+    sun_wind adopted the ambience (day bed, stream + trees, page / book sounds; no music).
+  - Bug found: contact frames from JSON are floats, Array.has(int) never matched → no drawn-cycle steps; fixed.
+  - Wolf run-away (user: "마지막에 늑대가 도망가서 달려야 되지 않을까?"): he shoots out of the chimney, lands beside the
+    house (thud, dust, hop, yelp), runs off in the scalded side-run cycle with smoke puffs from his bottom along
+    explicit road waypoints past the brick house, turns to the back run and shrinks down the road; the camera follows
+    from a high angle for 3.6 s, then holds down the road. (The first try started the run during the flight and
+    the landing cancelled it.) Tiles: artifacts/three_pigs/tiles/v17_wolf_*.
+  - Verify: check_all clean; three_pigs STORY_DONE 284.4 s missing_audio=[] missing_sound=[]; sun_wind 203.6 s,
+    both []. v17 capture: integrated -16.1 LUFS, LRA 8.7 LU, true peak -0.4 dBFS (above the -1 dB target: the AAC
+    encode overshoots the limiter; lower the ceiling to -2 dB next pass). 455 cues; cue times match the frames
+    (straw blow, wood collapse, landing thud, door creak: artifacts/three_pigs/tiles/v17_cue_alignment.jpg).
+    Video: artifacts/video/three_pigs_full_v17.mp4 (29.0 MB). Nobody has listened to it.

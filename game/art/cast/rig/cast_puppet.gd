@@ -478,6 +478,7 @@ func _process(dt: float) -> void:
 
 ## Unrigged figure (one card): a paper hop per step along the ground, rocking a little forward/back; standing, a
 ## slow breathing bob. Mirrored for side figures facing left.
+signal foot_contact(cycle: String, frame: int)  ## a drawn-cycle frame came up (footsteps) / a paper hop landed
 var _cyc_tex: Dictionary = {}  ## path -> Texture2D
 var _cyc_i := -1
 
@@ -493,6 +494,8 @@ func _cycle_step(frames: Array, dt: float) -> void:
 	var f := int(floorf(fposmod(_hp, 1.0) * n)) % n
 	if f != _cyc_i:
 		_cyc_i = f
+		if speed > 0.03:
+			foot_contact.emit(pose, f)
 		var pth := str(frames[f])
 		if not _cyc_tex.has(pth):
 			_cyc_tex[pth] = load(pth)
@@ -515,7 +518,10 @@ func _hop_step(dt: float) -> void:
 	var y := 0.0
 	var rz := 0.0
 	if moving:
+		var hp0 := floorf(_hp)
 		_hp += speed * dt / maxf(height * hop_len_frac, 0.01)
+		if floorf(_hp) != hp0:
+			foot_contact.emit("hop", 0)  # a paper hop landed
 		var amp := height * hop_frac * clampf(speed / 0.25, 0.5, 1.2)
 		y = absf(sin(PI * _hp)) * amp
 		rz = -deg_to_rad(4.0) * cos(TAU * _hp)  # leans into each hop, tips back on landing
