@@ -30,6 +30,10 @@ var _px_scale := 0.0  ## world per facade px
 var _px_w := 0.0
 var _base_px := 0.0
 var _windows: Array = []
+var _wall_x: Array = []
+var _roof_px := 0.0
+var _full_path := ""
+var box: Node3D  ## the house's volume behind the front (back, sides, floor, ceiling); stands while the house is whole
 var _window_boxes: Array = []  ## [cx, cy] facade px of the die-cut windows
 var _door_box: Dictionary = {}
 
@@ -123,6 +127,9 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int, flat_ := f
 	_px_w = float(px[0])
 	_base_px = base_px
 	_windows = st.get("windows", [])
+	_wall_x = st.get("wall_x", [0, int(px[0])])
+	_roof_px = float(st.get("roof_y", top_px))
+	_full_path = path
 	_window_boxes = st.get("window_boxes", [])
 	_door_box = st.get("door", {})
 	for k in (st["bands"] as Array).size():
@@ -251,6 +258,54 @@ func window_box(i: int) -> Array:
 	return [p, (float(b[2]) - float(b[0])) * _px_scale, (float(b[3]) - float(b[1])) * _px_scale]
 
 
+## A house is a front with a body behind it (user 2026-11-19: "문열때보면 뒷편이 없는곳으로 가다보니 이상한디?"): an
+## interior back wall (its own finish), two side walls in the house's outside material, a plank floor, a ceiling under
+## the roof and a copy of the front facing backwards (a closed volume from the side). cfg {depth, side, inner, floor}:
+## card paths. Hidden while the house is not whole (being built, blown away).
+func add_box(cfg: Dictionary) -> void:
+	if bands.is_empty() or box != null:
+		return
+	var s := _px_scale
+	var d := float(cfg.get("depth", 0.45))
+	var x0 := (float(_wall_x[0]) - _px_w * 0.5) * s
+	var x1 := (float(_wall_x[1]) - _px_w * 0.5) * s
+	var wall_h := (_base_px - _roof_px) * s
+	box = Node3D.new()
+	box.name = "Box"
+	add_child(box)
+	var mk := func(path: String, h: float, w: float, pos: Vector3, yaw: float, back_print := false) -> PaperCard:
+		var c := PaperCard.new()
+		c.texture = load(path)
+		c.height = h
+		c.thickness = 0.008
+		c.back_print = back_print
+		var ts := c.texture.get_size()
+		var nat_w := h * ts.x / maxf(ts.y, 1.0)
+		var n := Node3D.new()
+		n.position = pos
+		n.rotation.y = yaw
+		n.scale = Vector3(w / maxf(nat_w, 0.001), 1, 1)
+		box.add_child(n)
+		n.add_child(c)
+		return c
+	var side := str(cfg.get("side", ""))
+	if side != "":
+		mk.call(side, wall_h, d, Vector3(x0 - 0.006, 0, -d * 0.5), -PI * 0.5)
+		mk.call(side, wall_h, d, Vector3(x1 + 0.006, 0, -d * 0.5), PI * 0.5)
+	var inner := str(cfg.get("inner", ""))
+	if inner != "":
+		mk.call(inner, wall_h * float(cfg.get("inner_h", 1.0)), x1 - x0, Vector3((x0 + x1) * 0.5, 0, -d + 0.012), 0.0)
+	# the back of the house: the front's own print turned round (a closed volume seen from the side / behind)
+	mk.call(_full_path, height, width, Vector3(0, 0, -d - 0.004), PI)
+	var floor := str(cfg.get("floor", ""))
+	if floor != "":
+		for k in 2:  # floor and ceiling: planks lying flat
+			var c: PaperCard = mk.call(floor, d, x1 - x0, Vector3((x0 + x1) * 0.5, 0.004 + k * (wall_h - 0.01), 0), 0.0)
+			c.get_parent().rotation.x = -PI * 0.5
+			c.get_parent().scale = Vector3((x1 - x0) / maxf(d * c.texture.get_size().x / maxf(c.texture.get_size().y, 1.0), 0.001), 1, 1)
+	box.visible = shown >= band_count()
+
+
 func band_count() -> int:
 	return bands.size() if not bands.is_empty() else 1
 
@@ -258,6 +313,8 @@ func band_count() -> int:
 ## Hinges that should rise with the page wave (the parts standing at this stage).
 func wave_hinges() -> Array[PopHinge]:
 	var out: Array[PopHinge] = []
+	if flat:
+		return out
 	if hinge:
 		if shown > 0:
 			out.append(hinge)
@@ -373,6 +430,8 @@ func _process(dt: float) -> void:
 	if dt <= 0.0 or facade == null:
 		return
 	_t += dt
+	if box:
+		box.visible = shown >= bands.size()
 	if flat:
 		var fs := PaperSpring.step(_flat_s, _flat_v, _flat_t, 8.0, 0.6, dt)
 		_flat_s = fs.x

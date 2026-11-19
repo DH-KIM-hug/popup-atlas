@@ -110,6 +110,12 @@ Run long work through background agents/workflows with narrow ownership (one own
   (incl. `["story", "road", a, b]` for tracking shots), glide `cam at`, track runners with `walk follow` +
   `via: "road"`, and give later beats `built` (what stands at that beat, ruins included) so `--beat` starts and
   prebuilds are right. Page turns only where the place really changes.
+- A house is a front with a body: an open door must show an interior, and side views must show walls (user: "문열때보면
+  뒷편이 없는곳으로 가다보니 이상한디?"). Give every enterable house a `box` (set entry: depth, side, inner, floor
+  cards): side walls in the house's material, an inside back wall, plank floor and ceiling, and the front turned round
+  at the back. It stands only while the house is whole. Runners stop in front of the door (not beside the house).
+- Props the story uses later appear when they are used (the wolf finds the ladder in the grass and stands it up),
+  not standing in place from the first shot.
 - People at home show as PEEK figures at the windows (head + hands on the sill, cast `peek_*`): one per window, the
   head about 65 % of the opening, same scale in every house, a darker interior plane behind, a slight warm fill; a
   whole figure scaled into a window looked wrong (user: "바깥보여줄때 창문에 돼지들이 이상해"). When nobody is at a

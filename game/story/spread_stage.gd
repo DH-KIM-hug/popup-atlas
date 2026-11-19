@@ -413,6 +413,14 @@ func _build_set(list: Array) -> void:
 			if not h in sp.wave_hinges():
 				(h.get_parent() as Node3D).visible = false
 		sets[nm] = sp
+		if e.has("box"):
+			var bx: Dictionary = (e["box"] as Dictionary).duplicate()
+			for k in ["side", "inner", "floor"]:
+				if bx.has(k):
+					var be := atlas_entry(str(bx[k]))
+					var bp := str(be.get("path", ""))
+					bx[k] = bp if bp.begins_with("res://") else "res://" + bp
+			sp.add_box(bx)
 		if e.get("inside_only", false):
 			sp.set_meta("inside_only", true)
 			sp.visible = false

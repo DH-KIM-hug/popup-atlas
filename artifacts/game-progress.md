@@ -1265,3 +1265,21 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     artifacts/three_pigs/tiles/v9_*.jpg.
   - Still off: with three pigs and two brick windows 둘째 is out of sight; the wolf stands next to the wood ruin while
     the brothers run past him; the run toward the brick house pans the brick house half out of frame for a moment.
+
+## 2026-11-19 — three_pigs v10: houses have bodies (open doors show interiors), brick lot moved, ladder found
+  - User: "문열때보면 뒷편이 없는곳으로 가다보니 이상한디?". Each house set entry gets a `box` (SetPiece.add_box): side walls
+    in the house's own material (shared story_houses_01 straw / _04 plank / _07 brick side-wall cards), an inside
+    back wall (straw rows / planks / the plaster-and-brick room wall story_room_00), a plank floor and ceiling
+    (story_room_03), and the front's print turned round at the back, so a door opens onto a dim interior and side
+    views show a closed volume. The box stands only while the house is whole. No new art needed. house_stages.py
+    writes wall_x (the wall's own width) for the side walls.
+  - Entries checked at 8 fps (tiles artifacts/three_pigs/tiles/v10_*): wood house — door opens on the plank interior,
+    첫째 walks in (back view) and is hidden by the front, door shuts; brick house — the brothers go in the same way.
+    Runners now stop in front of the door (w_front / b_front) instead of beside the house (첫째 had looped round it).
+  - Camera settles on the house (cam at the house focus) before each door entry (the run had half-framed the brick
+    house). Brick lot shifted [-0.5, -0.2] in the village frame with all its spots (it sat right behind the wood house);
+    SET_CHECK still road=0 water=0 for every piece. The ladder lies in the grass until the wolf finds it and stands
+    it up at the start of the chimney beat (fx ladder_up).
+  - Verify: check_all clean; three_pigs STORY_DONE 275.0 s missing_audio=[]. Videos: artifacts/video/three_pigs_full_v10.mp4,
+    three_pigs_escape_v10.mp4. Still off: inside the doorway the interior is a plain back wall (no furniture in the
+    straw / wood houses); the first entry tile came from a run before the door-front fix (the final run uses it).

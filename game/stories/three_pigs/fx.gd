@@ -229,6 +229,17 @@ func fx(name: String) -> bool:
 				for k in 5:
 					var p0 := w.global_position + Vector3(0, 0.02, 0)
 					fly("steam", p0, p0 + stage.dir_vec("right" if k % 2 == 0 else "left") * randf_range(0.12, 0.25) + Vector3(0, randf_range(0.03, 0.1), 0), 0.08, 0.8, 0.05, 1.0, 1.6)
+		"ladder_up":
+			# the wolf lifts the ladder out of the grass and leans it under the eave
+			var lf := stage.set_piece("ladder_flat")
+			if lf:
+				lf.band_down(0)
+			var ls := stage.set_piece("ladder")
+			if ls:
+				ls.pop_card(0.15)
+			var wl := _a("wolf")
+			if wl:
+				wl.hop_v = 0.6
 		"room_ready":
 			_room_ready()
 			# outside the closed house: no faces at the windows (they're at the pot), firelight behind the glass, steam

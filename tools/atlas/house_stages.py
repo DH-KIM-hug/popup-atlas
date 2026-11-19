@@ -159,6 +159,7 @@ def cut_house(cid, n, cat):
                       "img_y0": iy0, "img_y1": iy1,
                       "hinge_units": round((base - y1) * scale, 4), "height_units": round((y1 - y0) * scale, 4),
                       "roof": k == len(bounds) - 2})
+    extra["wall_x"] = [wx0, wx1 + 1]  # the wall's own width (no eaves): where a box's side walls stand
     return {"bands": bands, "height_units": hu, "px": [w, h], "base_y": base, "roof_y": roof_y, **extra}
 
 
