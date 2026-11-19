@@ -104,6 +104,16 @@ Run long work through background agents/workflows with narrow ownership (one own
   actor's mark and the set piece (`cam at`), not on the set piece alone.
 - Faces behind die-cut windows sit in the wall's shadow: light them with a small shadowless fill between face and
   wall (too strong blows the window out; 0.45 at range 0.22 read well).
+- Same-place story moves use camera moves on one spread, not page turns (user: "책장 안넘기고 한번에 처리하는게
+  좋을거같음 카메라 무빙으로"). Template views of one seed are only camera stations in one world: put every lot of a
+  place on one spread (spots converted into one view's frame), list the camera stations in `spread.sightlines`
+  (incl. `["story", "road", a, b]` for tracking shots), glide `cam at`, track runners with `walk follow` +
+  `via: "road"`, and give later beats `built` (what stands at that beat, ruins included) so `--beat` starts and
+  prebuilds are right. Page turns only where the place really changes.
+- People at home show as PEEK figures at the windows (head + hands on the sill, cast `peek_*`): one per window, the
+  head about 65 % of the opening, same scale in every house, a darker interior plane behind, a slight warm fill; a
+  whole figure scaled into a window looked wrong (user: "바깥보여줄때 창문에 돼지들이 이상해"). When nobody is at a
+  window (they're at the hearth) show firelight behind the glass instead.
 - A refuge's walls stay closed in-story; show interiors by moving the camera inside, not by opening the wall the
   threat could walk through (user: "방이 열려도 앞 벽은 막혀있어야하는거아닌지", "굴뚝으로 들어가면 그제서야 안을 보여주면
   되자너"). Build the room inside the house footprint from the start of the beat (hidden by the facade), glide the camera

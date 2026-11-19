@@ -66,6 +66,10 @@ func setup(role_: String, skin: String, height: float, cam: Camera3D, ground_: M
 	_target = global_position if is_inside_tree() else position
 
 
+func idle_amount_set(v: float) -> void:
+	puppet.idle_amount = v
+
+
 func has_pose(p: String) -> bool:
 	return puppet.has_pose(p)
 
@@ -76,6 +80,10 @@ func view_of(p: String) -> String:
 
 ## Standing figure (expression). Side poses keep the current facing unless `left` is given (0 / 1).
 func set_pose(p: String, left := -1) -> void:
+	if has_meta("peek") and not p.begins_with("peek_"):
+		var pk := "peek_" + ("defiant" if p in ["defiant", "tease", "shout"] else ("brave" if p in ["brave", "proud", "calm"] and puppet.has_pose("peek_brave") else "scared"))
+		if puppet.has_pose(pk):
+			p = pk
 	if not puppet.has_pose(p):
 		return
 	pose = p
@@ -114,12 +122,12 @@ func walk_to(p: Vector3, spd := -1.0, wpose := "") -> void:
 	_moving = true
 
 
-## Waypoints (may leave the ground: roof, chimney).
-func follow(points: Array, spd := -1.0, wpose := "") -> void:
+## Waypoints (may leave the ground: roof, chimney); fly = false keeps the feet on the ground (a road route).
+func follow(points: Array, spd := -1.0, wpose := "", fly := true) -> void:
 	_path.clear()
 	for q: Vector3 in points:
 		_path.append(q)
-	_fly = true
+	_fly = fly
 	if spd > 0.0:
 		speed = spd
 	walk_pose = wpose

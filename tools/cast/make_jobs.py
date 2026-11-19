@@ -463,6 +463,24 @@ JOBS += [
      "magenta gap between the pieces." + NO_BOTANY},
 ]
 
+# 2026-11-19 (user: "바깥보여줄때 창문에 돼지들이 이상해"): window PEEK figures — head + little hands on a windowsill, so a pig
+# at home reads framed by a window (a whole standing figure scaled into a window looked wrong). One sheet, six pieces.
+PEEK = ("PEEK figures: each piece is ONLY the HEAD and the two little HANDS (trotters) of a piglet peeking over a windowsill, "
+        "front view facing the viewer straight on: the round head with both ears, the snout and the eyes, and below the chin the "
+        "two little hands resting side by side on an invisible horizontal line, the bottom edge of the piece is a clean STRAIGHT "
+        "horizontal cut just below the hands (the sill hides the rest); no body, no clothes except what is on the head (a hat or "
+        "a cap) and the top of a scarf or overall straps just under the chin. Each piece about as wide as tall. ")
+JOBS += [
+    {"id": "cast_tp_peek", "kind": "bg", "refs": TP_REF_PIGS, "aspect": WIDE, "out": "art_src/cast/raw/cast_tp_peek.png",
+     "prompt": "A CHARACTER SHEET for a children's pop-up storybook: SIX separate die-cut pieces of the SAME three piglets in the "
+     "reference image, in one horizontal row, " + BG + ANIMAL_STYLE + PIG_A + PIG_B + PIG_C + PEEK +
+     "MATCH THE REFERENCE CHARACTERS EXACTLY (same faces, ears, hat, cap, colours). All six pieces the SAME size, bottoms on "
+     "one common baseline. THE SIX PIECES, left to right: (1) PIGLET A peeking, SCARED (eyes wide and round, eyebrows up, "
+     "small open worried mouth); (2) PIGLET A peeking, DEFIANT (eyebrows down, frowning, mouth open shouting 'no!'); "
+     "(3) PIGLET B peeking, SCARED; (4) PIGLET B peeking, DEFIANT; (5) PIGLET C peeking, BRAVE calm (steady eyes, a small "
+     "determined smile); (6) PIGLET C peeking, DEFIANT. A wide magenta gap between the pieces." + NO_BOTANY},
+]
+
 if __name__ == "__main__":
     p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cast_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)

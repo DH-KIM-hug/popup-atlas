@@ -29,7 +29,8 @@ var _door_t := 0.0
 var _px_scale := 0.0  ## world per facade px
 var _px_w := 0.0
 var _base_px := 0.0
-var _windows: Array = []  ## [cx, cy] facade px of the die-cut windows
+var _windows: Array = []
+var _window_boxes: Array = []  ## [cx, cy] facade px of the die-cut windows
 var _door_box: Dictionary = {}
 
 var _wob := 0.0
@@ -122,6 +123,7 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int, flat_ := f
 	_px_w = float(px[0])
 	_base_px = base_px
 	_windows = st.get("windows", [])
+	_window_boxes = st.get("window_boxes", [])
 	_door_box = st.get("door", {})
 	for k in (st["bands"] as Array).size():
 		var b: Dictionary = st["bands"][k]
@@ -205,6 +207,50 @@ func window_spot(i: int, cam_toward: Vector3) -> Array:
 	return [p, (_base_px - float(w[1])) * _px_scale]
 
 
+var _glow: Array[MeshInstance3D] = []
+var _glow_on := 0.0
+var _glow_t := 0.0
+var _backs: Array[MeshInstance3D] = []
+
+
+## Warm interior behind each die-cut window: a soft orange plane a little behind the wall (firelight, flickers), or a
+## darker warm plane when someone peeks (so a face reads against it). mode: "fire" | "dim" | "off".
+func window_backs(mode: String) -> void:
+	if _windows.is_empty() or (mode != "off" and shown < band_count() and not bands.is_empty() and shown < 2):
+		return
+	if _backs.is_empty():
+		for i in _windows.size():
+			var w: Array = _windows[i]
+			var m := MeshInstance3D.new()
+			var q := QuadMesh.new()
+			q.size = Vector2(70.0, 70.0) * _px_scale
+			m.mesh = q
+			var mat := StandardMaterial3D.new()
+			mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+			m.material_override = mat
+			m.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			# a hand's breadth behind the wall, centred on the window (moves with the house's band 0... the walls node)
+			m.position = Vector3((float(w[0]) - _px_w * 0.5) * _px_scale, (_base_px - float(w[1])) * _px_scale, -0.11)
+			walls.add_child(m)
+			_backs.append(m)
+	_glow_on = 1.0 if mode == "fire" else (0.0 if mode == "dim" else -1.0)
+	for m in _backs:
+		m.visible = mode != "off"
+		(m.material_override as StandardMaterial3D).albedo_color = Color(0.36, 0.2, 0.12) if mode == "dim" else Color(1.0, 0.62, 0.3)
+
+
+## Window i's opening in world terms: [bottom-centre point on the wall plane, width, height] (facade px box).
+func window_box(i: int) -> Array:
+	var boxes: Array = _window_boxes
+	if boxes.is_empty():
+		return []
+	var b: Array = boxes[clampi(i, 0, boxes.size() - 1)]
+	var r := global_transform.basis.x.normalized()
+	var cx := (float(b[0]) + float(b[2])) * 0.5
+	var p := global_position + r * (cx - _px_w * 0.5) * _px_scale + Vector3(0, (_base_px - float(b[3])) * _px_scale, 0)
+	return [p, (float(b[2]) - float(b[0])) * _px_scale, (float(b[3]) - float(b[1])) * _px_scale]
+
+
 func band_count() -> int:
 	return bands.size() if not bands.is_empty() else 1
 
@@ -279,6 +325,7 @@ func _hide_later(h: PopHinge, t: float) -> void:
 
 ## Everything falls: top band first, staggered.
 func collapse(delay := 0.0) -> float:
+	window_backs("off")
 	var t := delay
 	if flat:
 		band_down(0)
@@ -353,6 +400,11 @@ func _process(dt: float) -> void:
 	_cut = cs.x
 	_cut_v = cs.y
 	facade.rotation = Vector3(0.0, ry, rz)
+	if _glow_on > 0.0 and not _backs.is_empty():
+		_glow_t += dt
+		var f := 0.85 + 0.1 * sin(_glow_t * 7.3) + 0.05 * sin(_glow_t * 17.0 + 1.0)
+		for m in _backs:
+			(m.material_override as StandardMaterial3D).albedo_color = Color(1.0, 0.62, 0.3) * f
 	if door_pivot:
 		var ds := PaperSpring.step(_door, _door_v, _door_t, 9.0, 0.55, dt)
 		_door = ds.x

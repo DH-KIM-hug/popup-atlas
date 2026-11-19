@@ -59,11 +59,16 @@ def main():
     if what == "meadow":
         scene = "res://scenes/world/meadow.tscn"
     elif what.startswith("beat:"):
-        scene = "res://stories/sun_wind/story.tscn"
-        args = {"beat": what.split(":", 1)[1], "autoplay": True, "mute": True, "subtitles": False}
+        # beat:<id> (sun_wind) or beat:<tale>/<id>
+        bid = what.split(":", 1)[1]
+        tale = "sun_wind"
+        if "/" in bid:
+            tale, bid = bid.split("/", 1)
+        scene = f"res://stories/{tale}/story.tscn"
+        args = {"beat": bid, "autoplay": True, "mute": True, "subtitles": False}
     else:
         raise SystemExit("what = meadow | beat:<id>")
-    name = what.replace(":", "_")
+    name = what.replace(":", "_").replace("/", "_")
     csvp = f"profile/perf_{tag}_{name}_{drv}.csv"
     xa = ["--disable-vsync"] if "novsync" in drv else None
     d = drv.replace("-novsync", "")

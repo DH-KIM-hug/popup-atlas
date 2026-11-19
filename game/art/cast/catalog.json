@@ -2707,5 +2707,191 @@
   "hanging": false,
   "skin": "wolf",
   "parts": {}
+ },
+ {
+  "id": "cast_pig_a_peek_scared",
+  "path": "art/cast/cast_pig_a_peek_scared.webp",
+  "sheet": "cast_tp_peek",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "peek_scared",
+  "pose": "peek_scared",
+  "view": "front",
+  "facing": "front",
+  "label": "peeking over a windowsill, head and hands, scared",
+  "height_units": 0.121,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "animal",
+   "three_pigs",
+   "peek",
+   "window",
+   "scared"
+  ],
+  "px": [
+   330,
+   330
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {}
+ },
+ {
+  "id": "cast_pig_a_peek_defiant",
+  "path": "art/cast/cast_pig_a_peek_defiant.webp",
+  "sheet": "cast_tp_peek",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "peek_defiant",
+  "pose": "peek_defiant",
+  "view": "front",
+  "facing": "front",
+  "label": "peeking over a windowsill, head and hands, defiant",
+  "height_units": 0.121,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "animal",
+   "three_pigs",
+   "peek",
+   "window",
+   "defiant"
+  ],
+  "px": [
+   330,
+   329
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {}
+ },
+ {
+  "id": "cast_pig_b_peek_scared",
+  "path": "art/cast/cast_pig_b_peek_scared.webp",
+  "sheet": "cast_tp_peek",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "peek_scared",
+  "pose": "peek_scared",
+  "view": "front",
+  "facing": "front",
+  "label": "peeking over a windowsill, head and hands, scared",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "animal",
+   "three_pigs",
+   "peek",
+   "window",
+   "scared"
+  ],
+  "px": [
+   329,
+   302
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {}
+ },
+ {
+  "id": "cast_pig_b_peek_defiant",
+  "path": "art/cast/cast_pig_b_peek_defiant.webp",
+  "sheet": "cast_tp_peek",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "peek_defiant",
+  "pose": "peek_defiant",
+  "view": "front",
+  "facing": "front",
+  "label": "peeking over a windowsill, head and hands, defiant",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "animal",
+   "three_pigs",
+   "peek",
+   "window",
+   "defiant"
+  ],
+  "px": [
+   329,
+   303
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {}
+ },
+ {
+  "id": "cast_pig_c_peek_brave",
+  "path": "art/cast/cast_pig_c_peek_brave.webp",
+  "sheet": "cast_tp_peek",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "peek_brave",
+  "pose": "peek_brave",
+  "view": "front",
+  "facing": "front",
+  "label": "peeking over a windowsill, head and hands, brave",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "animal",
+   "three_pigs",
+   "peek",
+   "window",
+   "brave"
+  ],
+  "px": [
+   330,
+   324
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {}
+ },
+ {
+  "id": "cast_pig_c_peek_defiant",
+  "path": "art/cast/cast_pig_c_peek_defiant.webp",
+  "sheet": "cast_tp_peek",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "peek_defiant",
+  "pose": "peek_defiant",
+  "view": "front",
+  "facing": "front",
+  "label": "peeking over a windowsill, head and hands, defiant",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "animal",
+   "three_pigs",
+   "peek",
+   "window",
+   "defiant"
+  ],
+  "px": [
+   328,
+   324
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {}
  }
 ]

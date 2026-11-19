@@ -196,6 +196,7 @@ func build_async(seed_v: int, view_i: int, with_audio: bool, budget_ms: float) -
 	await _clear_sightlines()
 	_slicer.phase("set")
 	await _build_set((beat.get("spread", {}) as Dictionary).get("set", []))
+	_apply_built((beat.get("spread", {}) as Dictionary).get("built", []), false)
 	if handler:
 		_slicer.phase("tale")
 		await _slicer.tick()
@@ -483,6 +484,20 @@ func set_piece(nm: String) -> SetPiece:
 	return null
 
 
+## spread.built: set pieces already finished at this beat (a story started mid-page with --beat, or a page reached
+## by a jump): all their bands stand. Standing pieces stay as they are (a house the wolf blew away is not rebuilt:
+## list only what stands at this beat).
+func _apply_built(names: Array, snap_now: bool) -> void:
+	for n in names:
+		var sp := set_piece(str(n))
+		if sp == null or sp.shown >= sp.band_count():
+			continue
+		sp.bands_up(sp.band_count(), 0.0, 0.0)
+		if snap_now:
+			for h in sp.wave_hinges():
+				h.snap(true)
+
+
 ## enter {who: {role: pose}, at: {role: spot}}: those actors stand at their spots in those poses (first: snapped,
 ## they pop with the page); others step off the page unless `keep` lists them.
 func _enter_cast(enter: Dictionary, first: bool) -> void:
@@ -526,6 +541,16 @@ func put_inside(role: String, house: String, win: int) -> void:
 	var sp := set_piece(house)
 	if a == null or sp == null:
 		return
+	if win < 0:  # inside but not at a window (two windows, three pigs): out of sight until the house falls / opens
+		a.set_meta("inside", house)
+		a.pop_delay = 0.0
+		a.pop_target = 0.02
+		return
+	var peek := "peek_" + ("defiant" if a.pose in ["defiant", "tease"] else ("brave" if a.pose in ["brave", "proud", "calm"] and a.has_pose("peek_brave") else "scared"))
+	var wb: Array = sp.window_box(win)
+	if a.has_pose(peek) and not wb.is_empty():
+		_peek_in(a, sp, wb, peek, house, win)
+		return
 	var ws: Array = sp.window_spot(win, dir_vec("toward"))
 	a.place_at(ws[0])
 	# a bigger face behind the window so it fills the opening (the wall hides the rest)
@@ -552,6 +577,47 @@ func put_inside(role: String, house: String, win: int) -> void:
 		a.set_pose("calm")
 
 
+## Peek figure (head + hands, cast `peek_*`) behind window `wb` = [sill point, width, height]: the head about 65 % of
+## the opening's height, eyes above the sill, hands on it, the rest hidden by the wall; the same scale in every window
+## and house (set by the opening's height, all openings are about the same size). A darker warm plane behind it.
+## Shares: `share` actors in one window stand side by side (slot = index).
+const PEEK_HEAD := 0.65
+const PEEK_HEAD_FRAC := 0.78  ## head height / peek card height (hands below)
+
+
+func _peek_in(a: StoryActor, sp: SetPiece, wb: Array, peek: String, house: String, win: int) -> void:
+	a.pose = peek
+	a.puppet.set_figure(peek, false, true)
+	a.puppet.scale = Vector3.ONE
+	var card_h := float(wb[2]) * PEEK_HEAD / PEEK_HEAD_FRAC
+	var base_h: float = a.puppet.get("_body").height if a.puppet.get("_body") else a.puppet.height
+	var k := card_h / maxf(base_h, 0.001)
+	a.puppet.scale = Vector3.ONE * k
+	var p: Vector3 = wb[0]
+	p -= dir_vec("toward") * 0.045
+	a.place_at(Vector3(p.x, sp.global_position.y, p.z))
+	# hands on the sill: the card's bottom a little below the sill line (the wall hides it)
+	a.lift = (p.y - sp.global_position.y) - card_h * 0.12
+	a.set_meta("inside", house)
+	a.set_meta("peek", true)
+	a.idle_amount_set(0.0)
+	sp.window_backs("dim")
+	# a slight warm fill on the face (the wall's shadow falls on it), not a glow: the face keeps the scene's light
+	var lt := a.get_node_or_null("InsideFill") as OmniLight3D
+	if lt == null:
+		lt = OmniLight3D.new()
+		lt.name = "InsideFill"
+		lt.light_color = Color(1.0, 0.86, 0.66)
+		lt.shadow_enabled = false
+		lt.light_specular = 0.0
+		lt.top_level = true
+		a.add_child(lt)
+	lt.light_energy = 0.16
+	lt.omni_range = 0.2
+	lt.visible = true
+	lt.global_position = p + Vector3(0, float(wb[2]) * 0.55, 0) + dir_vec("toward") * 0.09
+
+
 const INSIDE_SCALE := 1.45
 
 
@@ -559,6 +625,12 @@ func clear_inside(a: StoryActor) -> void:
 	a.remove_meta("inside")
 	a.lift = 0.0
 	a.puppet.scale = Vector3.ONE
+	if a.has_meta("peek"):
+		a.remove_meta("peek")
+		a.idle_amount_set(1.0)
+		if a.view_of(a.pose) == "front" and a.pose.begins_with("peek_"):
+			a.pose = "scared"
+			a.puppet.set_figure("scared", false, true)
 	var lt := a.get_node_or_null("InsideFill") as Node3D
 	if lt:
 		lt.visible = false
@@ -571,6 +643,7 @@ func reveal_inside(house: String, pose := "scared") -> void:
 		if str(a.get_meta("inside", "")) != house:
 			continue
 		clear_inside(a)
+		a.pop_target = 1.0
 		a.place_at(a.global_position + dir_vec("toward") * 0.1)
 		a.hop_v = 1.1
 		a.set_pose(pose)
@@ -590,6 +663,7 @@ func enter_beat(b: Dictionary) -> void:
 			for h in s.wave_hinges():
 				(h.get_parent() as Node3D).visible = true
 				h.pop_up(0.1)
+	_apply_built(sp.get("built", []), true)
 	_set_light(str(sp.get("light", "")), false)
 	if _cam_anchor and not has_walker and spots.has("focus"):
 		_focus_goal = spots["focus"]
@@ -744,9 +818,30 @@ func _clear_sightlines() -> void:
 		_focus_goal = spot_point((beat.get("spread", {}) as Dictionary).get("focus", "focus" if spots.has("focus") else "anchor"))
 		_cam_anchor.global_position = _focus_goal
 		world.rig.focus_target = _cam_anchor
-		for sh in _shots_used():
-			await _clear_sightlines_here(keep_all, hidden, sh)
-			await _slicer.tick()
+		var lines: Array = (beat.get("spread", {}) as Dictionary).get("sightlines", [])
+		if lines.is_empty():
+			for sh in _shots_used():
+				await _clear_sightlines_here(keep_all, hidden, sh)
+				await _slicer.tick()
+		else:
+			# one spread, many camera stations (a village): [shot, spot] or [shot, "road", spot_a, spot_b] (a tracking
+			# shot along the road: stations every 0.5)
+			var home_focus := _focus_goal
+			for e: Array in lines:
+				var pts: Array = []
+				if e.size() >= 4 and str(e[1]) == "road":
+					var rt := road_route(spot_point(e[2]), spot_point(e[3]))
+					for i in range(0, rt.size(), 2):
+						pts.append(rt[i])
+				else:
+					pts.append(spot_point(e[1]))
+				for q: Vector3 in pts:
+					_cam_anchor.global_position = q
+					_sight_focus = q
+					await _clear_sightlines_here(keep_all, hidden, str(e[0]))
+					await _slicer.tick()
+			_cam_anchor.global_position = home_focus
+			_sight_focus = Vector3(INF, 0, INF)
 	var keep: Array[PopHinge] = []
 	for hinge: PopHinge in world.hinges:
 		if (hinge.get_parent() as Node3D).visible:
@@ -789,6 +884,8 @@ func _sight_rects(cam: Camera3D) -> Array:
 		# every named spot (cast stands / walks there) and the set (houses ~0.9 tall)
 		for k in spots:
 			var p: Vector3 = spots[k]
+			if _sight_focus.x < INF and Vector2(p.x - _sight_focus.x, p.z - _sight_focus.z).length() > 1.6:
+				continue
 			var hh := 0.95
 			var a := cam.unproject_position(p)
 			var b := cam.unproject_position(p + Vector3(0, hh, 0))
@@ -939,6 +1036,7 @@ func fold() -> float:
 func shot_to(name: String, at: Variant = null) -> void:
 	shot = name
 	_cam = _wide.duplicate() if name == "wide" else (_shots[name] as Array).duplicate()
+	_follow = null
 	if at != null and _cam_anchor:
 		_focus_goal = spot_point(at)
 
@@ -1243,6 +1341,8 @@ func _process(dt: float) -> void:
 	rig.elevation_deg = lerpf(rig.elevation_deg, float(_cam[1]), k)
 	rig.focus_height = lerpf(rig.focus_height, float(_cam[2]), k)
 	rig.fov = lerpf(rig.fov, float(_cam[3]), k)
+	if _follow and is_instance_valid(_follow):
+		_focus_goal = _follow.global_position
 	if _cam_anchor and not has_walker:
 		_cam_anchor.global_position = _cam_anchor.global_position.lerp(_focus_goal, k)
 	# Road camera: stands ahead of him on the road looking back along it (see road_cam); frozen once the ending
@@ -1316,6 +1416,30 @@ func _process(dt: float) -> void:
 ## within a hand's breadth in front of it, that facade's wall bands (door included) and whoever stands at its windows
 ## are hidden, so the camera never shows a card edge or the back of a face. The roof is behind the camera then.
 var camera_inside := ""
+var _sight_focus := Vector3(INF, 0, INF)  ## only spots near the station count for sightlines (INF: all)
+var _follow: StoryActor
+var _follow_off := Vector3.ZERO
+
+
+## Road route between two ground points: the nearest road points, the road between them (every 0.25), the goal.
+func road_route(a: Vector3, b: Vector3) -> Array:
+	var c := world.path.curve
+	var xf := world.path.global_transform
+	var oa := c.get_closest_offset(xf.affine_inverse() * a)
+	var ob := c.get_closest_offset(xf.affine_inverse() * b)
+	var out: Array = []
+	var n := maxi(1, ceili(absf(ob - oa) / 0.25))
+	for i in n + 1:
+		var q := xf * c.sample_baked(lerpf(oa, ob, float(i) / n))
+		out.append(Vector3(q.x, world.ground.surface_y(Vector2(q.x, q.z)), q.z))
+	out.append(b)
+	return out
+
+
+## Tracking shot: the stage camera's focus follows an actor (ends with the next shot_to).
+func follow_actor(role: String, shot_name: String) -> void:
+	shot_to(shot_name)
+	_follow = actor(role)
 
 
 func _camera_inside_check() -> void:

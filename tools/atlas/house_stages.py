@@ -77,6 +77,7 @@ def cut_house(cid, n, cat):
         im[gy0:gy1, gx0:gx1][blue] = 0
     if GLASS.get(cid):
         extra["windows"] = [[(g[0] + g[2]) / 2.0, (g[1] + g[3]) / 2.0] for g in GLASS[cid]]
+        extra["window_boxes"] = [list(g) for g in GLASS[cid]]
     if cid in DOORS:
         dx0, dy0, dx1, arch = DOORS[cid]
         yy, xx = np.mgrid[0:h, 0:w]

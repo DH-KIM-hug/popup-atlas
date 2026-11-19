@@ -532,6 +532,8 @@ func _step_walk_actors(st: Dictionary) -> void:
 	var spd := float(st.get("speed", 0.2))
 	var lead := Vector3.ZERO
 	var has_to := st.has("to")
+	if st.has("follow"):  # tracking shot on this walker
+		stage.follow_actor(str(st["follow"]), str(st.get("shot", "story")))
 	if has_to:
 		lead = stage.spot_point(st["to"])
 	for i in roles.size():
@@ -553,7 +555,16 @@ func _step_walk_actors(st: Dictionary) -> void:
 		var goal := a.global_position + d * dist
 		if has_to:
 			goal = lead - d * 0.14 * i + stage.dir_vec("away") * 0.05 * (i % 2)
-		a.walk_to(goal, spd, str(st.get("pose", "")))
+		if str(st.get("via", "")) == "road":
+			# along the road (a village spread): the route bends with it, the figure faces each stretch
+			var rt := stage.road_route(a.global_position, goal)
+			for j in i:  # followers keep a step behind
+				if rt.size() > 2:
+					rt.pop_back()
+			rt.append(goal)
+			a.follow(rt, spd, str(st.get("pose", "")), false)
+		else:
+			a.walk_to(goal, spd, str(st.get("pose", "")))
 		if st.has("end_pose"):
 			a.pose = str(st["end_pose"])
 	if st.has("line"):
@@ -685,7 +696,7 @@ func _step_build(st: Dictionary) -> void:
 	for s: Dictionary in st.get("steps", []):
 		at_steps[int(s["at"])] = s
 	stage.build_ctx = {"house": house, "walker": str(st.get("walker", "")), "tap": 0, "taps": taps,
-		"target": str(st.get("target", house))}
+		"target": str(st.get("target", house)), "pile": str(st.get("pile", "pile"))}
 	if st.has("prompt"):
 		await _say(str(st["prompt"]))
 	var shown0 := sp.shown if sp else 0  # bands already standing (a foundation) are not rebuilt

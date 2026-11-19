@@ -1233,3 +1233,35 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Still off: mid-glide, the widening lens briefly shows the dark sky above the template's back hills.
   - Videos: artifacts/video/three_pigs_chimney_v7.mp4 (tiles three_pigs_chimney_v7_12frames.jpg, _glide_in.jpg),
     three_pigs_full_v7.mp4 (full run STORY_DONE 288.3 s, missing_audio=[]).
+
+## 2026-11-19 — three_pigs v8/v9: window peeks, firelit windows; the whole house story on one village spread
+  - User: "바깥보여줄때 창문에 돼지들이 이상해". New shared cast sheet cast_tp_peek (Codex, ANIMAL_STYLE, refs the pig
+    lineup; first job timed out, retry ok; raw md5 d16ae4e6… unique; looked at before slicing; contact
+    artifacts/three_pigs/peek_contact.png): six peek figures (head + hands on the sill) — 첫째 scared / defiant,
+    둘째 scared / defiant, 셋째 brave / defiant — catalogued as poses peek_* of skins pig_a / pig_b / pig_c. A pig at
+    home now peeks: one per window, head 65 % of the opening (house_stages.py writes window_boxes), the same scale
+    everywhere, a darker warm interior plane behind (SetPiece.window_backs "dim"), a slight warm fill (0.16), the peek
+    expression follows the line (scared / defiant / brave), a bob when speaking. Three pigs and two windows (brick
+    house): 셋째 and 첫째 peek, 둘째 is inside out of sight (two can't share a window at that scale without
+    overlapping the frame). Chimney beat exterior: no faces; flickering firelight behind the glass ("fire") and steam
+    from the chimney top. The window planes hide when a house falls.
+  - User: "책장 안넘기고 한번에 처리하는게 좋을거같음 카메라 무빙으로". Views 2 / 3 / 4 of seed 1 were three camera
+    stations on one road (probe: straw lot 1.8 and brick lot 2.6 from view 3's anchor, inside its pop radius), so
+    straw_build … ending all play on one page (view 3, place "village"): spots converted into view 3's frame
+    (`_to3` in tools/story/tales/three_pigs.py), every set piece of all three lots built with the page (SET_CHECK
+    road=0 water=0 for all 29), camera stations listed in spread.sightlines (incl. tracking stretches along the road),
+    `cam at` glides between lots, `walk via road` + `follow` tracking shots (StoryActor.follow on the ground,
+    SpreadStage.road_route / follow_actor), `built` lists per beat (houses and ruins standing then) for `--beat`
+    starts. The escape is continuous: straw house blown → 첫째 runs along the road to the wood house (camera follows),
+    in through the door, peeks from a window → the wolf follows along the road → the wood house falls → both run to
+    the brick house and in → the wolf follows. Page turns left: cover → home → village.
+  - Verify: check_all clean. three_pigs full STORY_DONE 276.3 s (4:36; v7 288.3 s: 5 page turns gone, the road
+    runs add time — runner speed 0.8, wolf 0.6) missing_audio=[]; sun_wind STORY_DONE 203.3 s missing_audio=[].
+    Village spread perf (beat wolf_wood, Metal, 25 s): frame p50 8.4 / p95 9.8 / max 23.6 ms, 0 frames > 33 ms,
+    draw calls max 463 / mean 429 (sun_wind wind_turn: 466), 4.19 M primitives; direct build 3.4 s (story start with
+    --beat), in the normal flow the village is prebuilt behind the home page (PERF spread_prebuilt 1:3:village).
+    Videos: artifacts/video/three_pigs_full_v9.mp4 (= _full_v8, 24.7 MB), three_pigs_escape_v9.mp4,
+    three_pigs_wolf_straw_v8 / wolf_wood_v8 / brick_wolf_v8 / chimney_v8.mp4 (cut from the full run). Tiles:
+    artifacts/three_pigs/tiles/v9_*.jpg.
+  - Still off: with three pigs and two brick windows 둘째 is out of sight; the wolf stands next to the wood ruin while
+    the brothers run past him; the run toward the brick house pans the brick house half out of frame for a moment.

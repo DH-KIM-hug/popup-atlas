@@ -353,56 +353,524 @@
    "title": "첫째의 짚 집",
    "spread": {
     "seed": 1,
-    "view": 2,
-    "place": "straw_lot",
+    "view": 3,
+    "place": "village",
     "spots": {
-     "lot": [
-      -1.1,
-      -0.05
+     "s_lot": [
+      -1.17,
+      1.372
      ],
-     "pile": [
-      -0.64,
-      0.26
+     "s_pile": [
+      -0.68,
+      1.632
      ],
-     "pig_a": [
-      -0.48,
-      0.42
+     "s_pig_a": [
+      -0.504,
+      1.775
      ],
-     "wolf": [
-      -1.72,
-      0.32
+     "s_wolf": [
+      -1.748,
+      1.805
      ],
-     "pig_a_door": [
-      -1.02,
-      0.1
+     "s_pig_a_door": [
+      -1.075,
+      1.513
      ],
-     "focus": [
-      -1.2,
-      0.1
+     "s_focus": [
+      -1.254,
+      1.532
      ],
-     "wolf_focus": [
-      -1.25,
-      0.12
+     "s_wolf_focus": [
+      -1.301,
+      1.557
+     ],
+     "w_lot": [
+      1.0,
+      -0.62
+     ],
+     "w_pile": [
+      1.85,
+      -0.38
+     ],
+     "w_pig_b": [
+      1.62,
+      -0.3
+     ],
+     "w_pig_a": [
+      1.88,
+      -0.18
+     ],
+     "w_wolf": [
+      0.38,
+      -0.12
+     ],
+     "w_focus": [
+      0.98,
+      -0.38
+     ],
+     "w_wolf_focus": [
+      0.86,
+      -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
+     "out_a": [
+      -0.389,
+      -2.294
+     ],
+     "out_b": [
+      -0.171,
+      -2.205
+     ],
+     "out_c": [
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
      ]
     },
     "set": [
      {
       "card": "story_houses_00",
-      "at": "lot",
+      "at": "s_lot",
+      "stage": 0,
+      "name": "straw_house"
+     },
+     {
+      "card": "story_build_props_01",
+      "at": "s_pile",
+      "name": "straw_pile",
+      "scale": 1.6
+     },
+     {
+      "card": "story_houses_02",
+      "at": "s_lot",
+      "off": [
+       0.0,
+       -0.18
+      ],
+      "stage": 0,
+      "name": "straw_ruin",
+      "scale": 1.3
+     },
+     {
+      "card": "story_houses_03",
+      "at": "w_lot",
+      "stage": 1,
+      "name": "wood_house",
+      "scale": 1.0
+     },
+     {
+      "card": "story_build_props_05",
+      "at": "w_pile",
+      "name": "wood_pile",
+      "scale": 1.5
+     },
+     {
+      "card": "story_houses_05",
+      "at": "w_lot",
+      "off": [
+       0.0,
+       -0.18
+      ],
+      "stage": 0,
+      "name": "wood_ruin",
+      "scale": 1.0
+     },
+     {
+      "card": "story_houses_06",
+      "at": "b_lot",
       "stage": 0,
       "name": "house"
      },
      {
-      "card": "story_build_props_01",
-      "at": "pile",
-      "name": "pile",
-      "scale": 1.6
+      "card": "story_build_props_08",
+      "at": "b_pile",
+      "name": "brick_pile",
+      "scale": 1.5
+     },
+     {
+      "card": "story_build_props_13",
+      "at": "b_pile",
+      "off": [
+       0.22,
+       0.05
+      ],
+      "name": "bucket"
+     },
+     {
+      "card": "village_props_30",
+      "at": "b_lot",
+      "off": [
+       -0.56,
+       0.06
+      ],
+      "name": "ladder",
+      "scale": 1.7,
+      "clear": 0
+     },
+     {
+      "card": "story_room_03",
+      "at": "b_lot",
+      "off": [
+       0.0,
+       -0.04
+      ],
+      "stage": 0,
+      "flat": true,
+      "name": "k_floor",
+      "clear": 0,
+      "scale": 1.3
+     },
+     {
+      "card": "story_room_03",
+      "at": "b_lot",
+      "off": [
+       0.0,
+       -0.4
+      ],
+      "stage": 0,
+      "flat": true,
+      "name": "k_floor2",
+      "clear": 0,
+      "scale": 1.3
+     },
+     {
+      "card": "story_room_00",
+      "at": "b_lot",
+      "off": [
+       0.0,
+       -0.74
+      ],
+      "stage": 0,
+      "name": "k_back",
+      "clear": 0
+     },
+     {
+      "card": "story_room_01",
+      "at": "b_lot",
+      "off": [
+       -0.5,
+       -0.2
+      ],
+      "stage": 0,
+      "name": "k_side_l",
+      "clear": 0,
+      "yaw": 90
+     },
+     {
+      "card": "story_room_01",
+      "at": "b_lot",
+      "off": [
+       -0.5,
+       -0.53
+      ],
+      "stage": 0,
+      "name": "k_side_l2",
+      "clear": 0,
+      "yaw": 90
+     },
+     {
+      "card": "story_room_02",
+      "at": "b_lot",
+      "off": [
+       0.5,
+       -0.2
+      ],
+      "stage": 0,
+      "name": "k_side_r",
+      "clear": 0,
+      "yaw": -90
+     },
+     {
+      "card": "story_room_02",
+      "at": "b_lot",
+      "off": [
+       0.5,
+       -0.53
+      ],
+      "stage": 0,
+      "name": "k_side_r2",
+      "clear": 0,
+      "yaw": -90
+     },
+     {
+      "card": "story_room_03",
+      "at": "b_lot",
+      "off": [
+       0.0,
+       -0.02
+      ],
+      "stage": 0,
+      "flat": true,
+      "name": "k_ceil",
+      "clear": 0,
+      "scale": 1.3,
+      "lift": 0.56,
+      "inside_only": true
+     },
+     {
+      "card": "story_room_03",
+      "at": "b_lot",
+      "off": [
+       0.0,
+       -0.4
+      ],
+      "stage": 0,
+      "flat": true,
+      "name": "k_ceil2",
+      "clear": 0,
+      "scale": 1.3,
+      "lift": 0.56,
+      "inside_only": true
+     },
+     {
+      "card": "story_room_04",
+      "at": "b_lot",
+      "off": [
+       0.33,
+       -0.71
+      ],
+      "stage": 0,
+      "name": "k_flue",
+      "clear": 0,
+      "lift": 0.36
+     },
+     {
+      "card": "story_hearth_00",
+      "at": "b_lot",
+      "off": [
+       0.33,
+       -0.7
+      ],
+      "stage": 0,
+      "name": "k_hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_05",
+      "at": "b_lot",
+      "off": [
+       0.33,
+       -0.685
+      ],
+      "stage": 0,
+      "name": "k_logs",
+      "clear": 0,
+      "scale": 0.8
+     },
+     {
+      "card": "story_hearth_02",
+      "at": "b_lot",
+      "off": [
+       0.33,
+       -0.68
+      ],
+      "stage": 0,
+      "name": "fire",
+      "clear": 0,
+      "scale": 1.8
+     },
+     {
+      "card": "story_hearth_03",
+      "at": "b_lot",
+      "off": [
+       0.33,
+       -0.678
+      ],
+      "stage": 0,
+      "name": "fire_m",
+      "clear": 0,
+      "scale": 1.8
+     },
+     {
+      "card": "story_hearth_04",
+      "at": "b_lot",
+      "off": [
+       0.33,
+       -0.676
+      ],
+      "stage": 0,
+      "name": "fire_l",
+      "clear": 0,
+      "scale": 1.8
+     },
+     {
+      "card": "story_hearth_01",
+      "at": "b_lot",
+      "off": [
+       0.33,
+       -0.6
+      ],
+      "stage": 0,
+      "name": "k_pot",
+      "clear": 0,
+      "lift": 0.06,
+      "scale": 1.2
+     },
+     {
+      "card": "story_hearth_12",
+      "at": "b_lot",
+      "off": [
+       -0.36,
+       -0.71
+      ],
+      "stage": 0,
+      "name": "k_table",
+      "clear": 0
+     },
+     {
+      "card": "story_hearth_14",
+      "at": "b_lot",
+      "off": [
+       -0.22,
+       -0.72
+      ],
+      "stage": 0,
+      "name": "k_shelf",
+      "clear": 0,
+      "scale": 1.6,
+      "lift": 0.3
      }
+    ],
+    "focus": "s_focus",
+    "sightlines": [
+     [
+      "story",
+      "s_focus"
+     ],
+     [
+      "story",
+      "s_wolf_focus"
+     ],
+     [
+      "story",
+      "w_focus"
+     ],
+     [
+      "story",
+      "w_wolf_focus"
+     ],
+     [
+      "story",
+      "b_focus"
+     ],
+     [
+      "story",
+      "b_wolf_focus"
+     ],
+     [
+      "roof",
+      "b_lot"
+     ],
+     [
+      "stage",
+      "b_focus"
+     ],
+     [
+      "story",
+      "road",
+      "s_door",
+      "w_door"
+     ],
+     [
+      "story",
+      "road",
+      "w_door",
+      "b_lot"
+     ]
     ]
    },
    "enter": {
     "who": {
      "pig_a": "carry_straw"
+    },
+    "at": {
+     "pig_a": "s_pig_a"
     },
     "left": {
      "pig_a": 1
@@ -412,6 +880,7 @@
     {
      "do": "cam",
      "shot": "story",
+     "at": "s_focus",
      "wait": 1.2
     },
     {
@@ -420,8 +889,9 @@
     },
     {
      "do": "build",
-     "house": "house",
-     "target": "pile",
+     "house": "straw_house",
+     "pile": "straw_pile",
+     "target": "straw_pile",
      "taps": 3,
      "hint": "tp_018",
      "walker": "pig_a",
@@ -431,7 +901,7 @@
     {
      "do": "walk",
      "who": "pig_a",
-     "to": "pig_a_door",
+     "to": "s_door",
      "speed": 0.3
     },
     {
@@ -464,63 +934,184 @@
    "spread": {
     "seed": 1,
     "view": 3,
-    "place": "wood_lot",
+    "place": "village",
     "spots": {
-     "lot": [
+     "s_lot": [
+      -1.17,
+      1.372
+     ],
+     "s_pile": [
+      -0.68,
+      1.632
+     ],
+     "s_pig_a": [
+      -0.504,
+      1.775
+     ],
+     "s_wolf": [
+      -1.748,
+      1.805
+     ],
+     "s_pig_a_door": [
+      -1.075,
+      1.513
+     ],
+     "s_focus": [
+      -1.254,
+      1.532
+     ],
+     "s_wolf_focus": [
+      -1.301,
+      1.557
+     ],
+     "w_lot": [
       1.0,
       -0.62
      ],
-     "pile": [
+     "w_pile": [
       1.85,
       -0.38
      ],
-     "pig_b": [
+     "w_pig_b": [
       1.62,
       -0.3
      ],
-     "pig_a": [
+     "w_pig_a": [
       1.88,
       -0.18
      ],
-     "wolf": [
+     "w_wolf": [
       0.38,
       -0.12
      ],
-     "focus": [
+     "w_focus": [
       0.98,
       -0.38
      ],
-     "wolf_focus": [
+     "w_wolf_focus": [
       0.86,
       -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
+     "out_a": [
+      -0.389,
+      -2.294
+     ],
+     "out_b": [
+      -0.171,
+      -2.205
+     ],
+     "out_c": [
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
      ]
     },
-    "set": [
-     {
-      "card": "story_houses_03",
-      "at": "lot",
-      "stage": 1,
-      "name": "house",
-      "scale": 1.0
-     },
-     {
-      "card": "story_build_props_05",
-      "at": "pile",
-      "name": "pile",
-      "scale": 1.5
-     }
-    ]
+    "set": []
    },
    "enter": {
     "who": {
      "pig_b": "hammer"
-    }
+    },
+    "at": {
+     "pig_b": "w_pig_b"
+    },
+    "keep": [
+     "pig_a"
+    ]
    },
    "steps": [
     {
      "do": "cam",
      "shot": "story",
-     "wait": 1.2
+     "at": "w_focus",
+     "wait": 1.8
     },
     {
      "do": "say",
@@ -528,8 +1119,9 @@
     },
     {
      "do": "build",
-     "house": "house",
-     "target": "house",
+     "house": "wood_house",
+     "pile": "wood_pile",
+     "target": "wood_house",
      "taps": 3,
      "walker": "pig_b",
      "fx": "hammer_bang",
@@ -564,132 +1156,186 @@
    "title": "셋째의 벽돌 집",
    "spread": {
     "seed": 1,
-    "view": 4,
-    "place": "brick_lot",
+    "view": 3,
+    "place": "village",
     "spots": {
-     "lot": [
-      -0.85,
-      -0.6
+     "s_lot": [
+      -1.17,
+      1.372
      ],
-     "pile": [
-      -1.22,
-      -0.12
+     "s_pile": [
+      -0.68,
+      1.632
      ],
-     "pig_c": [
-      -0.1,
-      -0.45
+     "s_pig_a": [
+      -0.504,
+      1.775
      ],
-     "tease": [
-      -0.85,
-      0.16
+     "s_wolf": [
+      -1.748,
+      1.805
      ],
-     "wolf": [
-      -1.52,
-      0.02
+     "s_pig_a_door": [
+      -1.075,
+      1.513
      ],
-     "pig_a": [
-      -0.12,
-      -0.72
+     "s_focus": [
+      -1.254,
+      1.532
      ],
-     "pig_b": [
-      0.06,
-      -0.74
+     "s_wolf_focus": [
+      -1.301,
+      1.557
      ],
-     "lot_left": [
-      -2.05,
-      -1.3
+     "w_lot": [
+      1.0,
+      -0.62
      ],
-     "lot_right": [
-      1.2,
-      -1.2
+     "w_pile": [
+      1.85,
+      -0.38
      ],
-     "in_a": [
-      -1.18,
-      -1.2
-     ],
-     "in_b": [
-      -1.0,
-      -1.19
-     ],
-     "in_c": [
-      -0.82,
-      -1.18
-     ],
-     "in_focus": [
-      -0.82,
-      -1.24
-     ],
-     "wolf_land": [
-      -1.8,
-      0.1
-     ],
-     "mom": [
-      -0.2,
-      0.02
-     ],
-     "focus": [
-      -0.75,
-      -0.42
-     ],
-     "village": [
-      -0.45,
-      -0.9
-     ],
-     "brothers_in": [
-      0.55,
-      0.2
-     ],
-     "wolf_focus": [
-      -0.95,
+     "w_pig_b": [
+      1.62,
       -0.3
      ],
+     "w_pig_a": [
+      1.88,
+      -0.18
+     ],
+     "w_wolf": [
+      0.38,
+      -0.12
+     ],
+     "w_focus": [
+      0.98,
+      -0.38
+     ],
+     "w_wolf_focus": [
+      0.86,
+      -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
      "out_a": [
-      -1.15,
-      -0.25
+      -0.389,
+      -2.294
      ],
      "out_b": [
-      -0.92,
-      -0.2
+      -0.171,
+      -2.205
      ],
      "out_c": [
-      -0.62,
-      -0.22
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
      ]
     },
-    "set": [
-     {
-      "card": "story_houses_06",
-      "at": "lot",
-      "stage": 0,
-      "name": "house"
-     },
-     {
-      "card": "story_build_props_08",
-      "at": "pile",
-      "name": "pile",
-      "scale": 1.5
-     },
-     {
-      "card": "story_build_props_13",
-      "at": "pile",
-      "off": [
-       0.22,
-       0.05
-      ],
-      "name": "bucket"
-     }
-    ]
+    "set": []
    },
    "enter": {
     "who": {
      "pig_c": "lay_brick"
-    }
+    },
+    "at": {
+     "pig_c": "b_pig_c"
+    },
+    "keep": [
+     "pig_a",
+     "pig_b"
+    ]
    },
    "steps": [
     {
      "do": "cam",
      "shot": "story",
-     "wait": 1.2
+     "at": "b_focus",
+     "wait": 1.8
     },
     {
      "do": "say",
@@ -698,6 +1344,7 @@
     {
      "do": "build",
      "house": "house",
+     "pile": "brick_pile",
      "target": "house",
      "taps": 3,
      "walker": "pig_c",
@@ -737,64 +1384,189 @@
    "title": "후~ 짚 집",
    "spread": {
     "seed": 1,
-    "view": 2,
-    "place": "straw_lot",
+    "view": 3,
+    "place": "village",
     "spots": {
-     "lot": [
-      -1.1,
-      -0.05
+     "s_lot": [
+      -1.17,
+      1.372
      ],
-     "pile": [
-      -0.64,
-      0.26
+     "s_pile": [
+      -0.68,
+      1.632
      ],
-     "pig_a": [
-      -0.48,
-      0.42
+     "s_pig_a": [
+      -0.504,
+      1.775
      ],
-     "wolf": [
-      -1.72,
-      0.32
+     "s_wolf": [
+      -1.748,
+      1.805
      ],
-     "pig_a_door": [
-      -1.02,
-      0.1
+     "s_pig_a_door": [
+      -1.075,
+      1.513
      ],
-     "focus": [
-      -1.2,
-      0.1
+     "s_focus": [
+      -1.254,
+      1.532
      ],
-     "wolf_focus": [
-      -1.25,
-      0.12
+     "s_wolf_focus": [
+      -1.301,
+      1.557
+     ],
+     "w_lot": [
+      1.0,
+      -0.62
+     ],
+     "w_pile": [
+      1.85,
+      -0.38
+     ],
+     "w_pig_b": [
+      1.62,
+      -0.3
+     ],
+     "w_pig_a": [
+      1.88,
+      -0.18
+     ],
+     "w_wolf": [
+      0.38,
+      -0.12
+     ],
+     "w_focus": [
+      0.98,
+      -0.38
+     ],
+     "w_wolf_focus": [
+      0.86,
+      -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
+     "out_a": [
+      -0.389,
+      -2.294
+     ],
+     "out_b": [
+      -0.171,
+      -2.205
+     ],
+     "out_c": [
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
      ]
     },
-    "set": [
-     {
-      "card": "story_houses_00",
-      "at": "lot",
-      "stage": "full",
-      "name": "house"
-     },
-     {
-      "card": "story_houses_02",
-      "at": "lot",
-      "off": [
-       0.0,
-       -0.18
-      ],
-      "stage": 0,
-      "name": "ruin",
-      "scale": 1.3
-     }
+    "set": [],
+    "built": [
+     "straw_house",
+     "wood_house",
+     "house"
     ]
    },
    "enter": {
     "who": {
-     "pig_a": "calm"
+     "pig_a": "calm",
+     "pig_b": "calm",
+     "pig_c": "brave"
     },
     "inside": {
      "pig_a": [
+      "straw_house",
+      0
+     ],
+     "pig_b": [
+      "wood_house",
+      1
+     ],
+     "pig_c": [
       "house",
       0
      ]
@@ -804,14 +1576,15 @@
     {
      "do": "cam",
      "shot": "story",
-     "at": "wolf_focus"
+     "at": "s_wolf_focus",
+     "wait": 1.6
     },
     {
      "do": "walk",
      "who": "wolf",
      "dir": "right",
-     "to": "wolf",
-     "dist": 0.75,
+     "to": "s_wolf",
+     "from": "s_wolf_from",
      "pose": "sniff",
      "speed": 0.2,
      "line": "tp_027"
@@ -832,7 +1605,7 @@
     },
     {
      "do": "huff",
-     "house": "house",
+     "house": "straw_house",
      "taps": 3,
      "prompt": "tp_026",
      "hint": "tp_026",
@@ -848,11 +1621,22 @@
     {
      "do": "walk",
      "who": "pig_a",
-     "dir": "toward",
-     "pose": "scared",
-     "dist": 1.3,
-     "speed": 0.45,
-     "exit": true
+     "to": "w_door",
+     "via": "road",
+     "pose": "run",
+     "speed": 0.8,
+     "follow": "pig_a"
+    },
+    {
+     "do": "go_inside",
+     "who": [
+      "pig_a"
+     ],
+     "house": "wood_house",
+     "windows": [
+      0
+     ],
+     "speed": 0.45
     }
    ]
   },
@@ -862,89 +1646,197 @@
    "spread": {
     "seed": 1,
     "view": 3,
-    "place": "wood_lot",
+    "place": "village",
     "spots": {
-     "lot": [
+     "s_lot": [
+      -1.17,
+      1.372
+     ],
+     "s_pile": [
+      -0.68,
+      1.632
+     ],
+     "s_pig_a": [
+      -0.504,
+      1.775
+     ],
+     "s_wolf": [
+      -1.748,
+      1.805
+     ],
+     "s_pig_a_door": [
+      -1.075,
+      1.513
+     ],
+     "s_focus": [
+      -1.254,
+      1.532
+     ],
+     "s_wolf_focus": [
+      -1.301,
+      1.557
+     ],
+     "w_lot": [
       1.0,
       -0.62
      ],
-     "pile": [
+     "w_pile": [
       1.85,
       -0.38
      ],
-     "pig_b": [
+     "w_pig_b": [
       1.62,
       -0.3
      ],
-     "pig_a": [
+     "w_pig_a": [
       1.88,
       -0.18
      ],
-     "wolf": [
+     "w_wolf": [
       0.38,
       -0.12
      ],
-     "focus": [
+     "w_focus": [
       0.98,
       -0.38
      ],
-     "wolf_focus": [
+     "w_wolf_focus": [
       0.86,
       -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
+     "out_a": [
+      -0.389,
+      -2.294
+     ],
+     "out_b": [
+      -0.171,
+      -2.205
+     ],
+     "out_c": [
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
      ]
     },
-    "set": [
-     {
-      "card": "story_houses_03",
-      "at": "lot",
-      "stage": "full",
-      "name": "house",
-      "scale": 1.0
-     },
-     {
-      "card": "story_houses_05",
-      "at": "lot",
-      "off": [
-       0.0,
-       -0.18
-      ],
-      "stage": 0,
-      "name": "ruin",
-      "scale": 1.0
-     }
+    "set": [],
+    "built": [
+     "straw_ruin",
+     "wood_house",
+     "house"
     ]
    },
    "enter": {
-    "who": {
-     "pig_a": "scared",
-     "pig_b": "calm"
-    },
-    "inside": {
-     "pig_a": [
-      "house",
-      0
-     ],
-     "pig_b": [
-      "house",
-      1
-     ]
-    }
+    "who": {},
+    "keep": [
+     "pig_a",
+     "pig_b",
+     "pig_c",
+     "wolf"
+    ]
    },
    "steps": [
     {
-     "do": "cam",
-     "shot": "story",
-     "at": "wolf_focus"
-    },
-    {
      "do": "walk",
      "who": "wolf",
-     "dir": "right",
-     "to": "wolf",
-     "dist": 0.6,
+     "to": "w_wolf",
+     "via": "road",
      "pose": "side_prowl",
-     "speed": 0.2,
+     "speed": 0.6,
+     "follow": "wolf",
      "line": "tp_031"
+    },
+    {
+     "do": "cam",
+     "shot": "story",
+     "at": "w_wolf_focus",
+     "wait": 0.6
     },
     {
      "do": "pose",
@@ -965,7 +1857,7 @@
     },
     {
      "do": "huff",
-     "house": "house",
+     "house": "wood_house",
      "taps": 3,
      "result": "collapse",
      "ruin": "story_houses_05",
@@ -982,372 +1874,12 @@
       "pig_a",
       "pig_b"
      ],
-     "dir": "right",
+     "to": "brothers_in",
+     "via": "road",
      "pose": "run",
-     "dist": 1.8,
-     "speed": 0.5,
-     "line": "tp_034",
-     "exit": true
-    }
-   ]
-  },
-  {
-   "id": "brick_wolf",
-   "title": "쿵쿵쿵!",
-   "spread": {
-    "seed": 1,
-    "view": 4,
-    "place": "brick_lot",
-    "light": "dusk",
-    "spots": {
-     "lot": [
-      -0.85,
-      -0.6
-     ],
-     "pile": [
-      -1.22,
-      -0.12
-     ],
-     "pig_c": [
-      -0.1,
-      -0.45
-     ],
-     "tease": [
-      -0.85,
-      0.16
-     ],
-     "wolf": [
-      -1.52,
-      0.02
-     ],
-     "pig_a": [
-      -0.12,
-      -0.72
-     ],
-     "pig_b": [
-      0.06,
-      -0.74
-     ],
-     "lot_left": [
-      -2.05,
-      -1.3
-     ],
-     "lot_right": [
-      1.2,
-      -1.2
-     ],
-     "in_a": [
-      -1.18,
-      -1.2
-     ],
-     "in_b": [
-      -1.0,
-      -1.19
-     ],
-     "in_c": [
-      -0.82,
-      -1.18
-     ],
-     "in_focus": [
-      -0.82,
-      -1.24
-     ],
-     "wolf_land": [
-      -1.8,
-      0.1
-     ],
-     "mom": [
-      -0.2,
-      0.02
-     ],
-     "focus": [
-      -0.75,
-      -0.42
-     ],
-     "village": [
-      -0.45,
-      -0.9
-     ],
-     "brothers_in": [
-      0.55,
-      0.2
-     ],
-     "wolf_focus": [
-      -0.95,
-      -0.3
-     ],
-     "out_a": [
-      -1.15,
-      -0.25
-     ],
-     "out_b": [
-      -0.92,
-      -0.2
-     ],
-     "out_c": [
-      -0.62,
-      -0.22
-     ]
-    },
-    "set": [
-     {
-      "card": "story_houses_06",
-      "at": "lot",
-      "stage": "full",
-      "name": "house"
-     },
-     {
-      "card": "village_props_30",
-      "at": "lot",
-      "off": [
-       -0.56,
-       0.06
-      ],
-      "name": "ladder",
-      "scale": 1.7,
-      "clear": 0
-     },
-     {
-      "card": "story_room_03",
-      "at": "lot",
-      "off": [
-       0.0,
-       -0.04
-      ],
-      "stage": 0,
-      "flat": true,
-      "name": "k_floor",
-      "clear": 0,
-      "scale": 1.3
-     },
-     {
-      "card": "story_room_03",
-      "at": "lot",
-      "off": [
-       0.0,
-       -0.4
-      ],
-      "stage": 0,
-      "flat": true,
-      "name": "k_floor2",
-      "clear": 0,
-      "scale": 1.3
-     },
-     {
-      "card": "story_room_00",
-      "at": "lot",
-      "off": [
-       0.0,
-       -0.74
-      ],
-      "stage": 0,
-      "name": "k_back",
-      "clear": 0
-     },
-     {
-      "card": "story_room_01",
-      "at": "lot",
-      "off": [
-       -0.5,
-       -0.2
-      ],
-      "stage": 0,
-      "name": "k_side_l",
-      "clear": 0,
-      "yaw": 90
-     },
-     {
-      "card": "story_room_01",
-      "at": "lot",
-      "off": [
-       -0.5,
-       -0.53
-      ],
-      "stage": 0,
-      "name": "k_side_l2",
-      "clear": 0,
-      "yaw": 90
-     },
-     {
-      "card": "story_room_02",
-      "at": "lot",
-      "off": [
-       0.5,
-       -0.2
-      ],
-      "stage": 0,
-      "name": "k_side_r",
-      "clear": 0,
-      "yaw": -90
-     },
-     {
-      "card": "story_room_02",
-      "at": "lot",
-      "off": [
-       0.5,
-       -0.53
-      ],
-      "stage": 0,
-      "name": "k_side_r2",
-      "clear": 0,
-      "yaw": -90
-     },
-     {
-      "card": "story_room_03",
-      "at": "lot",
-      "off": [
-       0.0,
-       -0.02
-      ],
-      "stage": 0,
-      "flat": true,
-      "name": "k_ceil",
-      "clear": 0,
-      "scale": 1.3,
-      "lift": 0.56,
-      "inside_only": true
-     },
-     {
-      "card": "story_room_03",
-      "at": "lot",
-      "off": [
-       0.0,
-       -0.4
-      ],
-      "stage": 0,
-      "flat": true,
-      "name": "k_ceil2",
-      "clear": 0,
-      "scale": 1.3,
-      "lift": 0.56,
-      "inside_only": true
-     },
-     {
-      "card": "story_room_04",
-      "at": "lot",
-      "off": [
-       0.33,
-       -0.71
-      ],
-      "stage": 0,
-      "name": "k_flue",
-      "clear": 0,
-      "lift": 0.36
-     },
-     {
-      "card": "story_hearth_00",
-      "at": "lot",
-      "off": [
-       0.33,
-       -0.7
-      ],
-      "stage": 0,
-      "name": "k_hearth",
-      "clear": 0
-     },
-     {
-      "card": "story_hearth_05",
-      "at": "lot",
-      "off": [
-       0.33,
-       -0.685
-      ],
-      "stage": 0,
-      "name": "k_logs",
-      "clear": 0,
-      "scale": 0.8
-     },
-     {
-      "card": "story_hearth_02",
-      "at": "lot",
-      "off": [
-       0.33,
-       -0.68
-      ],
-      "stage": 0,
-      "name": "fire",
-      "clear": 0,
-      "scale": 1.8
-     },
-     {
-      "card": "story_hearth_03",
-      "at": "lot",
-      "off": [
-       0.33,
-       -0.678
-      ],
-      "stage": 0,
-      "name": "fire_m",
-      "clear": 0,
-      "scale": 1.8
-     },
-     {
-      "card": "story_hearth_04",
-      "at": "lot",
-      "off": [
-       0.33,
-       -0.676
-      ],
-      "stage": 0,
-      "name": "fire_l",
-      "clear": 0,
-      "scale": 1.8
-     },
-     {
-      "card": "story_hearth_01",
-      "at": "lot",
-      "off": [
-       0.33,
-       -0.6
-      ],
-      "stage": 0,
-      "name": "k_pot",
-      "clear": 0,
-      "lift": 0.06,
-      "scale": 1.2
-     },
-     {
-      "card": "story_hearth_12",
-      "at": "lot",
-      "off": [
-       -0.36,
-       -0.71
-      ],
-      "stage": 0,
-      "name": "k_table",
-      "clear": 0
-     },
-     {
-      "card": "story_hearth_14",
-      "at": "lot",
-      "off": [
-       -0.22,
-       -0.72
-      ],
-      "stage": 0,
-      "name": "k_shelf",
-      "clear": 0,
-      "scale": 1.6,
-      "lift": 0.3
-     }
-    ]
-   },
-   "enter": {
-    "who": {
-     "pig_c": "brave"
-    },
-    "inside": {
-     "pig_c": [
-      "house",
-      0
-     ]
-    }
-   },
-   "steps": [
-    {
-     "do": "cam",
-     "shot": "story",
-     "at": "wolf_focus"
+     "speed": 0.8,
+     "follow": "pig_a",
+     "line": "tp_034"
     },
     {
      "do": "go_inside",
@@ -1356,22 +1888,212 @@
       "pig_b"
      ],
      "house": "house",
-     "from": "brothers_in",
      "windows": [
       1,
-      1
+      -1
      ],
      "speed": 0.45
+    }
+   ]
+  },
+  {
+   "id": "brick_wolf",
+   "title": "쿵쿵쿵!",
+   "spread": {
+    "seed": 1,
+    "view": 3,
+    "place": "village",
+    "spots": {
+     "s_lot": [
+      -1.17,
+      1.372
+     ],
+     "s_pile": [
+      -0.68,
+      1.632
+     ],
+     "s_pig_a": [
+      -0.504,
+      1.775
+     ],
+     "s_wolf": [
+      -1.748,
+      1.805
+     ],
+     "s_pig_a_door": [
+      -1.075,
+      1.513
+     ],
+     "s_focus": [
+      -1.254,
+      1.532
+     ],
+     "s_wolf_focus": [
+      -1.301,
+      1.557
+     ],
+     "w_lot": [
+      1.0,
+      -0.62
+     ],
+     "w_pile": [
+      1.85,
+      -0.38
+     ],
+     "w_pig_b": [
+      1.62,
+      -0.3
+     ],
+     "w_pig_a": [
+      1.88,
+      -0.18
+     ],
+     "w_wolf": [
+      0.38,
+      -0.12
+     ],
+     "w_focus": [
+      0.98,
+      -0.38
+     ],
+     "w_wolf_focus": [
+      0.86,
+      -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
+     "out_a": [
+      -0.389,
+      -2.294
+     ],
+     "out_b": [
+      -0.171,
+      -2.205
+     ],
+     "out_c": [
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
+     ]
     },
+    "set": [],
+    "light": "dusk",
+    "built": [
+     "straw_ruin",
+     "wood_ruin",
+     "house"
+    ]
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "pig_a",
+     "pig_b",
+     "pig_c",
+     "wolf"
+    ]
+   },
+   "steps": [
     {
      "do": "walk",
      "who": "wolf",
-     "dir": "right",
-     "to": "wolf",
-     "dist": 0.6,
+     "to": "b_wolf",
+     "via": "road",
      "pose": "side_prowl",
-     "speed": 0.2,
+     "speed": 0.6,
+     "follow": "wolf",
      "line": "tp_043"
+    },
+    {
+     "do": "cam",
+     "shot": "story",
+     "at": "b_wolf_focus",
+     "wait": 0.6
     },
     {
      "do": "pose",
@@ -1414,125 +2136,186 @@
    "title": "보글보글",
    "spread": {
     "seed": 1,
-    "view": 4,
-    "place": "brick_lot",
-    "light": "dusk",
+    "view": 3,
+    "place": "village",
     "spots": {
-     "lot": [
-      -0.85,
-      -0.6
+     "s_lot": [
+      -1.17,
+      1.372
      ],
-     "pile": [
-      -1.22,
-      -0.12
+     "s_pile": [
+      -0.68,
+      1.632
      ],
-     "pig_c": [
-      -0.1,
-      -0.45
+     "s_pig_a": [
+      -0.504,
+      1.775
      ],
-     "tease": [
-      -0.85,
-      0.16
+     "s_wolf": [
+      -1.748,
+      1.805
      ],
-     "wolf": [
-      -1.52,
-      0.02
+     "s_pig_a_door": [
+      -1.075,
+      1.513
      ],
-     "pig_a": [
-      -0.12,
-      -0.72
+     "s_focus": [
+      -1.254,
+      1.532
      ],
-     "pig_b": [
-      0.06,
-      -0.74
+     "s_wolf_focus": [
+      -1.301,
+      1.557
      ],
-     "lot_left": [
-      -2.05,
-      -1.3
+     "w_lot": [
+      1.0,
+      -0.62
      ],
-     "lot_right": [
-      1.2,
-      -1.2
+     "w_pile": [
+      1.85,
+      -0.38
      ],
-     "in_a": [
-      -1.18,
-      -1.2
-     ],
-     "in_b": [
-      -1.0,
-      -1.19
-     ],
-     "in_c": [
-      -0.82,
-      -1.18
-     ],
-     "in_focus": [
-      -0.82,
-      -1.24
-     ],
-     "wolf_land": [
-      -1.8,
-      0.1
-     ],
-     "mom": [
-      -0.2,
-      0.02
-     ],
-     "focus": [
-      -0.75,
-      -0.42
-     ],
-     "village": [
-      -0.45,
-      -0.9
-     ],
-     "brothers_in": [
-      0.55,
-      0.2
-     ],
-     "wolf_focus": [
-      -0.95,
+     "w_pig_b": [
+      1.62,
       -0.3
      ],
+     "w_pig_a": [
+      1.88,
+      -0.18
+     ],
+     "w_wolf": [
+      0.38,
+      -0.12
+     ],
+     "w_focus": [
+      0.98,
+      -0.38
+     ],
+     "w_wolf_focus": [
+      0.86,
+      -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
      "out_a": [
-      -1.15,
-      -0.25
+      -0.389,
+      -2.294
      ],
      "out_b": [
-      -0.92,
-      -0.2
+      -0.171,
+      -2.205
      ],
      "out_c": [
-      -0.62,
-      -0.22
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
      ]
     },
-    "set": []
+    "set": [],
+    "light": "dusk",
+    "built": [
+     "straw_ruin",
+     "wood_ruin",
+     "house"
+    ]
    },
    "enter": {
     "who": {
-     "wolf": "side_prowl",
-     "pig_a": "scared",
-     "pig_b": "scared",
-     "pig_c": "brave"
-    },
-    "inside": {
-     "pig_c": [
-      "house",
-      0
-     ],
-     "pig_a": [
-      "house",
-      1
-     ],
-     "pig_b": [
-      "house",
-      1
-     ]
+     "wolf": "side_prowl"
     },
     "left": {
      "wolf": 0
-    }
+    },
+    "keep": [
+     "pig_a",
+     "pig_b",
+     "pig_c"
+    ]
    },
    "steps": [
     {
@@ -1543,7 +2326,7 @@
     {
      "do": "cam",
      "shot": "roof",
-     "at": "lot",
+     "at": "b_lot",
      "wait": 0.6
     },
     {
@@ -1669,99 +2452,172 @@
    "title": "벽돌 집",
    "spread": {
     "seed": 1,
-    "view": 4,
-    "place": "brick_lot",
+    "view": 3,
+    "place": "village",
     "spots": {
-     "lot": [
-      -0.85,
-      -0.6
+     "s_lot": [
+      -1.17,
+      1.372
      ],
-     "pile": [
-      -1.22,
-      -0.12
+     "s_pile": [
+      -0.68,
+      1.632
      ],
-     "pig_c": [
-      -0.1,
-      -0.45
+     "s_pig_a": [
+      -0.504,
+      1.775
      ],
-     "tease": [
-      -0.85,
-      0.16
+     "s_wolf": [
+      -1.748,
+      1.805
      ],
-     "wolf": [
-      -1.52,
-      0.02
+     "s_pig_a_door": [
+      -1.075,
+      1.513
      ],
-     "pig_a": [
-      -0.12,
-      -0.72
+     "s_focus": [
+      -1.254,
+      1.532
      ],
-     "pig_b": [
-      0.06,
-      -0.74
+     "s_wolf_focus": [
+      -1.301,
+      1.557
      ],
-     "lot_left": [
-      -2.05,
-      -1.3
+     "w_lot": [
+      1.0,
+      -0.62
      ],
-     "lot_right": [
-      1.2,
-      -1.2
+     "w_pile": [
+      1.85,
+      -0.38
      ],
-     "in_a": [
-      -1.18,
-      -1.2
-     ],
-     "in_b": [
-      -1.0,
-      -1.19
-     ],
-     "in_c": [
-      -0.82,
-      -1.18
-     ],
-     "in_focus": [
-      -0.82,
-      -1.24
-     ],
-     "wolf_land": [
-      -1.8,
-      0.1
-     ],
-     "mom": [
-      -0.2,
-      0.02
-     ],
-     "focus": [
-      -0.75,
-      -0.42
-     ],
-     "village": [
-      -0.45,
-      -0.9
-     ],
-     "brothers_in": [
-      0.55,
-      0.2
-     ],
-     "wolf_focus": [
-      -0.95,
+     "w_pig_b": [
+      1.62,
       -0.3
      ],
+     "w_pig_a": [
+      1.88,
+      -0.18
+     ],
+     "w_wolf": [
+      0.38,
+      -0.12
+     ],
+     "w_focus": [
+      0.98,
+      -0.38
+     ],
+     "w_wolf_focus": [
+      0.86,
+      -0.3
+     ],
+     "b_lot": [
+      -0.033,
+      -2.586
+     ],
+     "b_pile": [
+      -0.481,
+      -2.178
+     ],
+     "b_pig_c": [
+      0.68,
+      -2.308
+     ],
+     "tease": [
+      -0.165,
+      -1.838
+     ],
+     "b_wolf": [
+      -0.8,
+      -2.092
+     ],
+     "b_pig_a": [
+      0.707,
+      -2.578
+     ],
+     "b_pig_b": [
+      0.888,
+      -2.566
+     ],
+     "lot_left": [
+      -1.093,
+      -3.484
+     ],
+     "lot_right": [
+      2.09,
+      -2.821
+     ],
+     "in_a": [
+      -0.254,
+      -3.235
+     ],
+     "in_b": [
+      -0.078,
+      -3.193
+     ],
+     "in_c": [
+      0.097,
+      -3.152
+     ],
+     "in_focus": [
+      0.108,
+      -3.211
+     ],
+     "wolf_land": [
+      -1.09,
+      -2.062
+     ],
+     "mom": [
+      0.499,
+      -1.863
+     ],
+     "b_focus": [
+      0.034,
+      -2.392
+     ],
+     "village": [
+      0.413,
+      -2.812
+     ],
+     "brothers_in": [
+      1.207,
+      -1.555
+     ],
+     "b_wolf_focus": [
+      -0.184,
+      -2.308
+     ],
      "out_a": [
-      -1.15,
-      -0.25
+      -0.389,
+      -2.294
      ],
      "out_b": [
-      -0.92,
-      -0.2
+      -0.171,
+      -2.205
      ],
      "out_c": [
-      -0.62,
-      -0.22
+      0.128,
+      -2.172
+     ],
+     "s_door": [
+      -1.075,
+      1.513
+     ],
+     "w_door": [
+      1.62,
+      -0.3
+     ],
+     "s_wolf_from": [
+      -2.498,
+      1.805
      ]
     },
-    "set": []
+    "set": [],
+    "built": [
+     "straw_ruin",
+     "wood_ruin",
+     "house"
+    ]
    },
    "enter": {
     "who": {
@@ -1781,7 +2637,7 @@
     {
      "do": "cam",
      "shot": "stage",
-     "at": "focus"
+     "at": "b_focus"
     },
     {
      "do": "fx",

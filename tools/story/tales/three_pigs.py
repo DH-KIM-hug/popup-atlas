@@ -113,27 +113,27 @@ KITCHEN = [  # the room INSIDE the brick house footprint (user 2026-11-19: "방�
     # camera, two floor boards, the hearth against the back wall with its flue under the outside chimney, fire inside
     # the hearth, pot over it, table and shelf. Stood up by fx room_ready at the start of the chimney beat (hidden by
     # the closed facade from outside).
-    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.04], "stage": 0, "flat": True, "name": "k_floor", "clear": 0, "scale": 1.3},
-    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.4], "stage": 0, "flat": True, "name": "k_floor2", "clear": 0, "scale": 1.3},
-    {"card": "story_room_00", "at": "lot", "off": [0.0, -0.74], "stage": 0, "name": "k_back", "clear": 0},
-    {"card": "story_room_01", "at": "lot", "off": [-0.5, -0.2], "stage": 0, "name": "k_side_l", "clear": 0, "yaw": 90},
-    {"card": "story_room_01", "at": "lot", "off": [-0.5, -0.53], "stage": 0, "name": "k_side_l2", "clear": 0, "yaw": 90},
-    {"card": "story_room_02", "at": "lot", "off": [0.5, -0.2], "stage": 0, "name": "k_side_r", "clear": 0, "yaw": -90},
-    {"card": "story_room_02", "at": "lot", "off": [0.5, -0.53], "stage": 0, "name": "k_side_r2", "clear": 0, "yaw": -90},
+    {"card": "story_room_03", "at": "b_lot", "off": [0.0, -0.04], "stage": 0, "flat": True, "name": "k_floor", "clear": 0, "scale": 1.3},
+    {"card": "story_room_03", "at": "b_lot", "off": [0.0, -0.4], "stage": 0, "flat": True, "name": "k_floor2", "clear": 0, "scale": 1.3},
+    {"card": "story_room_00", "at": "b_lot", "off": [0.0, -0.74], "stage": 0, "name": "k_back", "clear": 0},
+    {"card": "story_room_01", "at": "b_lot", "off": [-0.5, -0.2], "stage": 0, "name": "k_side_l", "clear": 0, "yaw": 90},
+    {"card": "story_room_01", "at": "b_lot", "off": [-0.5, -0.53], "stage": 0, "name": "k_side_l2", "clear": 0, "yaw": 90},
+    {"card": "story_room_02", "at": "b_lot", "off": [0.5, -0.2], "stage": 0, "name": "k_side_r", "clear": 0, "yaw": -90},
+    {"card": "story_room_02", "at": "b_lot", "off": [0.5, -0.53], "stage": 0, "name": "k_side_r2", "clear": 0, "yaw": -90},
     # plank ceiling over the room, shown only while the camera is inside (from outside it could peek over the roof)
-    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.02], "stage": 0, "flat": True, "name": "k_ceil", "clear": 0,
+    {"card": "story_room_03", "at": "b_lot", "off": [0.0, -0.02], "stage": 0, "flat": True, "name": "k_ceil", "clear": 0,
      "scale": 1.3, "lift": 0.56, "inside_only": True},
-    {"card": "story_room_03", "at": "lot", "off": [0.0, -0.4], "stage": 0, "flat": True, "name": "k_ceil2", "clear": 0,
+    {"card": "story_room_03", "at": "b_lot", "off": [0.0, -0.4], "stage": 0, "flat": True, "name": "k_ceil2", "clear": 0,
      "scale": 1.3, "lift": 0.56, "inside_only": True},
-    {"card": "story_room_04", "at": "lot", "off": [0.33, -0.71], "stage": 0, "name": "k_flue", "clear": 0, "lift": 0.36},
-    {"card": "story_hearth_00", "at": "lot", "off": [0.33, -0.7], "stage": 0, "name": "k_hearth", "clear": 0},
-    {"card": "story_hearth_05", "at": "lot", "off": [0.33, -0.685], "stage": 0, "name": "k_logs", "clear": 0, "scale": 0.8},
-    {"card": "story_hearth_02", "at": "lot", "off": [0.33, -0.68], "stage": 0, "name": "fire", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_03", "at": "lot", "off": [0.33, -0.678], "stage": 0, "name": "fire_m", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_04", "at": "lot", "off": [0.33, -0.676], "stage": 0, "name": "fire_l", "clear": 0, "scale": 1.8},
-    {"card": "story_hearth_01", "at": "lot", "off": [0.33, -0.6], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.06, "scale": 1.2},
-    {"card": "story_hearth_12", "at": "lot", "off": [-0.36, -0.71], "stage": 0, "name": "k_table", "clear": 0},
-    {"card": "story_hearth_14", "at": "lot", "off": [-0.22, -0.72], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6, "lift": 0.3},
+    {"card": "story_room_04", "at": "b_lot", "off": [0.33, -0.71], "stage": 0, "name": "k_flue", "clear": 0, "lift": 0.36},
+    {"card": "story_hearth_00", "at": "b_lot", "off": [0.33, -0.7], "stage": 0, "name": "k_hearth", "clear": 0},
+    {"card": "story_hearth_05", "at": "b_lot", "off": [0.33, -0.685], "stage": 0, "name": "k_logs", "clear": 0, "scale": 0.8},
+    {"card": "story_hearth_02", "at": "b_lot", "off": [0.33, -0.68], "stage": 0, "name": "fire", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_03", "at": "b_lot", "off": [0.33, -0.678], "stage": 0, "name": "fire_m", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_04", "at": "b_lot", "off": [0.33, -0.676], "stage": 0, "name": "fire_l", "clear": 0, "scale": 1.8},
+    {"card": "story_hearth_01", "at": "b_lot", "off": [0.33, -0.6], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.06, "scale": 1.2},
+    {"card": "story_hearth_12", "at": "b_lot", "off": [-0.36, -0.71], "stage": 0, "name": "k_table", "clear": 0},
+    {"card": "story_hearth_14", "at": "b_lot", "off": [-0.22, -0.72], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6, "lift": 0.3},
 ]
 # view 2: the stream runs diagonally just behind the anchor; the straw lot is on the near-left grass
 STRAW_SPOTS = {"lot": [-1.1, -0.05], "pile": [-0.64, 0.26], "pig_a": [-0.48, 0.42], "wolf": [-1.72, 0.32],
@@ -153,6 +153,62 @@ BRICK_SPOTS = {"lot": [-0.85, -0.6], "pile": [-1.22, -0.12], "pig_c": [-0.1, -0.
                "in_focus": [-0.82, -1.24],
                "wolf_land": [-1.8, 0.1], "mom": [-0.2, 0.02], "focus": [-0.75, -0.42], "village": [-0.45, -0.9],
                "brothers_in": [0.55, 0.2], "wolf_focus": [-0.95, -0.3], "out_a": [-1.15, -0.25], "out_b": [-0.92, -0.2], "out_c": [-0.62, -0.22]}
+# 2026-11-19 ONE VILLAGE SPREAD (user: "책장 안넘기고 한번에 처리하는게 좋을거같음 카메라 무빙으로"): the three lots lie on
+# one road in seed 1's world (the old views 2 / 3 / 4 were only camera stations on it), so the whole build and wolf
+# story plays on view 3's page and the camera glides from house to house. The spot tables above (made per view) are
+# converted into view 3's frame: world = anchor_v + right_v * r + toward_v * t (anchors measured with
+# tools/story/probe_spots.gd-style probe, 2026-11-19).
+import math as _m
+_ANCH = {2: (-0.099081, -1.068278, 32.0), 3: (-0.608278, -2.273701, 26.0), 4: (-0.789233, -4.241362, 16.0)}
+
+
+def _to3(v, rt):
+    ax, az, y = _ANCH[v]
+    y = _m.radians(y)
+    wx = ax + _m.cos(y) * rt[0] + _m.sin(y) * rt[1]
+    wz = az - _m.sin(y) * rt[0] + _m.cos(y) * rt[1]
+    bx, bz, y3 = _ANCH[3]
+    y3 = _m.radians(y3)
+    dx, dz = wx - bx, wz - bz
+    return [round(dx * _m.cos(y3) - dz * _m.sin(y3), 3), round(dx * _m.sin(y3) + dz * _m.cos(y3), 3)]
+
+
+VILLAGE = {}
+for _k, _v in STRAW_SPOTS.items():
+    VILLAGE["s_" + _k] = _to3(2, _v)
+for _k, _v in WOOD_SPOTS.items():
+    VILLAGE["w_" + _k] = _to3(3, _v)
+for _k, _v in BRICK_SPOTS.items():
+    VILLAGE[("b_" + _k) if _k in ("lot", "pile", "pig_c", "pig_a", "pig_b", "wolf", "focus", "wolf_focus") else _k] = _to3(4, _v)
+VILLAGE["s_door"] = VILLAGE["s_pig_a_door"]
+VILLAGE["w_door"] = VILLAGE["w_pig_b"]
+VILLAGE["s_wolf_from"] = [VILLAGE["s_wolf"][0] - 0.75, VILLAGE["s_wolf"][1]]
+# every camera station of the page (sightlines): the build / wolf shots at each lot, the roof and the escape tracking
+VILLAGE_SIGHT = [["story", "s_focus"], ["story", "s_wolf_focus"], ["story", "w_focus"], ["story", "w_wolf_focus"],
+                 ["story", "b_focus"], ["story", "b_wolf_focus"], ["roof", "b_lot"], ["stage", "b_focus"],
+                 ["story", "road", "s_door", "w_door"], ["story", "road", "w_door", "b_lot"]]
+VILLAGE_SET = [
+    {"card": "story_houses_00", "at": "s_lot", "stage": 0, "name": "straw_house"},
+    {"card": "story_build_props_01", "at": "s_pile", "name": "straw_pile", "scale": 1.6},
+    {"card": "story_houses_02", "at": "s_lot", "off": [0.0, -0.18], "stage": 0, "name": "straw_ruin", "scale": 1.3},
+    # the wood house's foundation (floor, sill, lower walls, door) stands from the start; the taps raise the rest
+    {"card": "story_houses_03", "at": "w_lot", "stage": 1, "name": "wood_house", "scale": 1.0},
+    {"card": "story_build_props_05", "at": "w_pile", "name": "wood_pile", "scale": 1.5},
+    {"card": "story_houses_05", "at": "w_lot", "off": [0.0, -0.18], "stage": 0, "name": "wood_ruin", "scale": 1.0},
+    {"card": "story_houses_06", "at": "b_lot", "stage": 0, "name": "house"},
+    {"card": "story_build_props_08", "at": "b_pile", "name": "brick_pile", "scale": 1.5},
+    {"card": "story_build_props_13", "at": "b_pile", "off": [0.22, 0.05], "name": "bucket"},
+    # a ladder against the brick house's left wall under the eave (the wolf's way up in the chimney beat)
+    {"card": "village_props_30", "at": "b_lot", "off": [-0.56, 0.06], "name": "ladder", "scale": 1.7, "clear": 0},
+] + KITCHEN
+
+
+def _village(**kw):
+    sp = {"seed": 1, "view": 3, "place": "village", "spots": VILLAGE, "set": []}
+    sp.update(kw)
+    return sp
+
+
 BEATS = [
     {"id": "cover", "title": "아기 돼지 삼형제", "spread": None, "steps": [{"do": "cover", "prompt": "tp_n01"}]},
     {"id": "home", "title": "엄마의 배웅", "spread": {"seed": 1, "view": 5, "place": "home",
@@ -176,111 +232,93 @@ BEATS = [
         # they set off AWAY up the page (back views), mom waves
         {"do": "walk", "who": ["pig_a", "pig_b", "pig_c"], "dir": "away", "dist": 1.3, "speed": 0.2, "line": "tp_003"},
     ]},
-    {"id": "straw_build", "title": "첫째의 짚 집", "spread": {"seed": 1, "view": 2, "place": "straw_lot",
-     "spots": STRAW_SPOTS,
-     "set": [{"card": "story_houses_00", "at": "lot", "stage": 0, "name": "house"},
-             {"card": "story_build_props_01", "at": "pile", "name": "pile", "scale": 1.6}]},
-     "enter": {"who": {"pig_a": "carry_straw"}, "left": {"pig_a": 1}},
+    {"id": "straw_build", "title": "첫째의 짚 집",
+     "spread": _village(set=VILLAGE_SET, focus="s_focus", sightlines=VILLAGE_SIGHT),
+     "enter": {"who": {"pig_a": "carry_straw"}, "at": {"pig_a": "s_pig_a"}, "left": {"pig_a": 1}},
      "steps": [
-        {"do": "cam", "shot": "story", "wait": 1.2},
+        {"do": "cam", "shot": "story", "at": "s_focus", "wait": 1.2},
         {"do": "say", "line": "tp_019"},
         # tap the straw pile x3: 첫째 carries straw to the lot, one band of the straw house folds up per tap
-        {"do": "build", "house": "house", "target": "pile", "taps": 3, "hint": "tp_018", "walker": "pig_a",
-         "fx": "straw_pop", "gap": 0.6},
-        {"do": "walk", "who": "pig_a", "to": "pig_a_door", "speed": 0.3},
+        {"do": "build", "house": "straw_house", "pile": "straw_pile", "target": "straw_pile", "taps": 3, "hint": "tp_018",
+         "walker": "pig_a", "fx": "straw_pop", "gap": 0.6},
+        {"do": "walk", "who": "pig_a", "to": "s_door", "speed": 0.3},
         {"do": "fx", "fx": "star_burst"},
         {"do": "pose", "who": "pig_a", "pose": "flute"},
         {"do": "fx", "fx": "flute_notes"},
         {"do": "say", "line": "tp_020"},
         {"do": "fx", "fx": "music_stop", "wait": 0.8},
     ]},
-    {"id": "wood_build", "title": "둘째의 나무 집", "spread": {"seed": 1, "view": 3, "place": "wood_lot",
-     "spots": WOOD_SPOTS,
-     # the foundation (floor, sill and door frame) stands when the page opens; 5 taps raise the walls and roof
-     "set": [{"card": "story_houses_03", "at": "lot", "stage": 1, "name": "house", "scale": 1.0},
-             {"card": "story_build_props_05", "at": "pile", "name": "pile", "scale": 1.5}]},
-     "enter": {"who": {"pig_b": "hammer"}},
+    {"id": "wood_build", "title": "둘째의 나무 집", "spread": _village(),
+     "enter": {"who": {"pig_b": "hammer"}, "at": {"pig_b": "w_pig_b"}, "keep": ["pig_a"]},
      "steps": [
-        {"do": "cam", "shot": "story", "wait": 1.2},
+        # the camera glides along the road to the wood lot (no page turn)
+        {"do": "cam", "shot": "story", "at": "w_focus", "wait": 1.8},
         {"do": "say", "line": "tp_021"},
-        # tap the house x5: bang! a plank flies from the stack, a plank band folds up per tap
-        {"do": "build", "house": "house", "target": "house", "taps": 3, "walker": "pig_b", "fx": "hammer_bang",
-         "gap": 0.5},
+        {"do": "build", "house": "wood_house", "pile": "wood_pile", "target": "wood_house", "taps": 3, "walker": "pig_b",
+         "fx": "hammer_bang", "gap": 0.5},
         {"do": "fx", "fx": "star_burst"},
         {"do": "pose", "who": "pig_b", "pose": "violin"},
         {"do": "fx", "fx": "violin_notes"},
         {"do": "say", "line": "tp_022"},
         {"do": "fx", "fx": "music_stop", "wait": 0.8},
     ]},
-    {"id": "brick_build", "title": "셋째의 벽돌 집", "spread": {"seed": 1, "view": 4, "place": "brick_lot",
-     "spots": BRICK_SPOTS,
-     "set": [{"card": "story_houses_06", "at": "lot", "stage": 0, "name": "house"},
-             {"card": "story_build_props_08", "at": "pile", "name": "pile", "scale": 1.5},
-             {"card": "story_build_props_13", "at": "pile", "off": [0.22, 0.05], "name": "bucket"}]},
-     "enter": {"who": {"pig_c": "lay_brick"}},
+    {"id": "brick_build", "title": "셋째의 벽돌 집", "spread": _village(),
+     "enter": {"who": {"pig_c": "lay_brick"}, "at": {"pig_c": "b_pig_c"}, "keep": ["pig_a", "pig_b"]},
      "steps": [
-        {"do": "cam", "shot": "story", "wait": 1.2},
+        {"do": "cam", "shot": "story", "at": "b_focus", "wait": 1.8},
         {"do": "say", "line": "tp_024"},
-        # tap x10, counted on the page: a brick flies onto the wall each tap, every 2nd tap a brick band folds up;
-        # at tap 5 the brothers stroll in from the left and tease (tp_023), at 7 they wander off
-        {"do": "build", "house": "house", "target": "house", "taps": 3, "walker": "pig_c", "fx": "brick_thunk",
-         "gap": 0.45, "steps": [{"at": 2, "fx": "brothers_tease", "lines": ["tp_023"]}, {"at": 3, "fx": "brothers_leave"}]},
+        # the brothers stroll along the road from their houses and tease (tp_023), then wander home
+        {"do": "build", "house": "house", "pile": "brick_pile", "target": "house", "taps": 3, "walker": "pig_c",
+         "fx": "brick_thunk", "gap": 0.45,
+         "steps": [{"at": 2, "fx": "brothers_tease", "lines": ["tp_023"]}, {"at": 3, "fx": "brothers_leave"}]},
         {"do": "fx", "fx": "star_burst"},
         {"do": "pose", "who": "pig_c", "pose": "proud"},
         {"do": "say", "line": "tp_025"},
     ]},
-    {"id": "wolf_straw", "title": "후~ 짚 집", "spread": {"seed": 1, "view": 2, "place": "straw_lot",
-     "spots": STRAW_SPOTS,
-     "set": [{"card": "story_houses_00", "at": "lot", "stage": "full", "name": "house"},
-             {"card": "story_houses_02", "at": "lot", "off": [0.0, -0.18], "stage": 0, "name": "ruin", "scale": 1.3}]},
-     # at home: 첫째 peeks out of the round window (he answers from inside); the heap lands behind him
-     "enter": {"who": {"pig_a": "calm"}, "inside": {"pig_a": ["house", 0]}},
+    {"id": "wolf_straw", "title": "후~ 짚 집", "spread": _village(built=["straw_house", "wood_house", "house"]),
+     # at home: 첫째 at his round window, 둘째 at home in the wood house, 셋째 in the brick house
+     "enter": {"who": {"pig_a": "calm", "pig_b": "calm", "pig_c": "brave"},
+               "inside": {"pig_a": ["straw_house", 0], "pig_b": ["wood_house", 1], "pig_c": ["house", 0]}},
      "steps": [
-        {"do": "cam", "shot": "story", "at": "wolf_focus"},
+        {"do": "cam", "shot": "story", "at": "s_wolf_focus", "wait": 1.6},
         # the wolf prowls in from the left, sniffing (side view, facing right)
-        {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.75, "pose": "sniff", "speed": 0.2, "line": "tp_027"},
+        {"do": "walk", "who": "wolf", "dir": "right", "to": "s_wolf", "from": "s_wolf_from", "pose": "sniff", "speed": 0.2,
+         "line": "tp_027"},
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "pose", "who": "pig_a", "pose": "defiant"},
         {"do": "say", "line": "tp_028"},
-        # tap the wolf x3: each tap = one 후~; the straw bands peel off from the top, the 3rd blows it all apart
-        {"do": "huff", "house": "house", "taps": 3, "prompt": "tp_026", "hint": "tp_026", "result": "blow_apart",
+        # tap the wolf x3: the roof goes, the walls rock, the 3rd blows it all apart; 첫째 stands in the heap
+        {"do": "huff", "house": "straw_house", "taps": 3, "prompt": "tp_026", "hint": "tp_026", "result": "blow_apart",
          "ruin": "story_houses_02", "fx": "straw_fly", "gap": 0.7},
         {"do": "say", "line": "tp_029"},
-        # he runs off toward the reader (front view, scared face), out of the page
-        {"do": "walk", "who": "pig_a", "dir": "toward", "pose": "scared", "dist": 1.3, "speed": 0.45, "exit": True},
+        # ESCAPE: he runs along the road to the wood house, the camera follows, in through the door, it shuts
+        {"do": "walk", "who": "pig_a", "to": "w_door", "via": "road", "pose": "run", "speed": 0.8, "follow": "pig_a"},
+        {"do": "go_inside", "who": ["pig_a"], "house": "wood_house", "windows": [0], "speed": 0.45},
     ]},
-    {"id": "wolf_wood", "title": "후~ 나무 집", "spread": {"seed": 1, "view": 3, "place": "wood_lot",
-     "spots": WOOD_SPOTS,
-     "set": [{"card": "story_houses_03", "at": "lot", "stage": "full", "name": "house", "scale": 1.0},
-             {"card": "story_houses_05", "at": "lot", "off": [0.0, -0.18], "stage": 0, "name": "ruin", "scale": 1.0}]},
-     # at home: both brothers peek out of the two windows
-     "enter": {"who": {"pig_a": "scared", "pig_b": "calm"}, "inside": {"pig_a": ["house", 0], "pig_b": ["house", 1]}},
+    {"id": "wolf_wood", "title": "후~ 나무 집", "spread": _village(built=["straw_ruin", "wood_house", "house"]),
+     "enter": {"who": {}, "keep": ["pig_a", "pig_b", "pig_c", "wolf"]},
      "steps": [
-        {"do": "cam", "shot": "story", "at": "wolf_focus"},
-        {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.6, "pose": "side_prowl", "speed": 0.2, "line": "tp_031"},
+        # the wolf follows along the road to the wood house
+        {"do": "walk", "who": "wolf", "to": "w_wolf", "via": "road", "pose": "side_prowl", "speed": 0.6, "follow": "wolf",
+         "line": "tp_031"},
+        {"do": "cam", "shot": "story", "at": "w_wolf_focus", "wait": 0.6},
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "pose", "who": ["pig_a", "pig_b"], "pose": "defiant"},
         {"do": "say", "line": "tp_032"},
-        # tap the wolf x5: the wood house rocks harder each time (흔들흔들), the 5th knocks it down
-        {"do": "huff", "house": "house", "taps": 3, "result": "collapse", "ruin": "story_houses_05",
+        {"do": "huff", "house": "wood_house", "taps": 3, "result": "collapse", "ruin": "story_houses_05",
          "fx": "wood_wobble", "gap": 0.7},
         {"do": "say", "line": "tp_033"},
-        {"do": "walk", "who": ["pig_a", "pig_b"], "dir": "right", "pose": "run", "dist": 1.8, "speed": 0.5,
-         "line": "tp_034", "exit": True},
+        # ESCAPE: both run along the road to the brick house, the camera follows; in through the door
+        {"do": "walk", "who": ["pig_a", "pig_b"], "to": "brothers_in", "via": "road", "pose": "run", "speed": 0.8,
+         "follow": "pig_a", "line": "tp_034"},
+        {"do": "go_inside", "who": ["pig_a", "pig_b"], "house": "house", "windows": [1, -1], "speed": 0.45},
     ]},
-    {"id": "brick_wolf", "title": "쿵쿵쿵!", "spread": {"seed": 1, "view": 4, "place": "brick_lot", "light": "dusk",
-     "spots": BRICK_SPOTS,
-     "set": [{"card": "story_houses_06", "at": "lot", "stage": "full", "name": "house"},
-             # a ladder against the left wall under the eave (the wolf's way up in the chimney beat)
-             {"card": "village_props_30", "at": "lot", "off": [-0.56, 0.06], "name": "ladder", "scale": 1.7, "clear": 0}]
-            + KITCHEN},
-     # 셋째 is at home (left window); his brothers come running up the road and in through the door (right window)
-     "enter": {"who": {"pig_c": "brave"}, "inside": {"pig_c": ["house", 0]}},
+    {"id": "brick_wolf", "title": "쿵쿵쿵!", "spread": _village(light="dusk", built=["straw_ruin", "wood_ruin", "house"]),
+     "enter": {"who": {}, "keep": ["pig_a", "pig_b", "pig_c", "wolf"]},
      "steps": [
-        {"do": "cam", "shot": "story", "at": "wolf_focus"},
-        {"do": "go_inside", "who": ["pig_a", "pig_b"], "house": "house", "from": "brothers_in", "windows": [1, 1],
-         "speed": 0.45},
-        {"do": "walk", "who": "wolf", "dir": "right", "to": "wolf", "dist": 0.6, "pose": "side_prowl", "speed": 0.2, "line": "tp_043"},
+        {"do": "walk", "who": "wolf", "to": "b_wolf", "via": "road", "pose": "side_prowl", "speed": 0.6, "follow": "wolf",
+         "line": "tp_043"},
+        {"do": "cam", "shot": "story", "at": "b_wolf_focus", "wait": 0.6},
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "say", "line": "tp_044"},
         # tap the wolf x3: 후~ every time, the brick house only shivers; the brothers bob in the windows
@@ -290,23 +328,20 @@ BEATS = [
         {"do": "fx", "fx": "thud_dust"},
         {"do": "say", "line": "tp_047"},
     ]},
-    {"id": "chimney", "title": "보글보글", "spread": {"seed": 1, "view": 4, "place": "brick_lot", "light": "dusk",
-     "spots": BRICK_SPOTS, "set": []},
-     # the house stays CLOSED (it protects them): the brothers are at the windows, the room stands behind the wall
-     "enter": {"who": {"wolf": "side_prowl", "pig_a": "scared", "pig_b": "scared", "pig_c": "brave"},
-               "inside": {"pig_c": ["house", 0], "pig_a": ["house", 1], "pig_b": ["house", 1]}, "left": {"wolf": 0}},
+    {"id": "chimney", "title": "보글보글", "spread": _village(light="dusk", built=["straw_ruin", "wood_ruin", "house"]),
+     # the house stays CLOSED (it protects them); the room stands behind the wall
+     "enter": {"who": {"wolf": "side_prowl"}, "left": {"wolf": 0}, "keep": ["pig_a", "pig_b", "pig_c"]},
      "steps": [
         {"do": "fx", "fx": "room_ready", "wait": 0.1},
-        {"do": "cam", "shot": "roof", "at": "lot", "wait": 0.6},
+        {"do": "cam", "shot": "roof", "at": "b_lot", "wait": 0.6},
         # he walks to the ladder, climbs it (back view), walks up the roof slope and along the ridge (side view),
         # steps onto the chimney top and sinks into it
         {"do": "climb", "who": "wolf", "on": "house", "pose": "side_prowl", "speed": 0.16, "line": "tp_048", "sink": True,
          "path": [[-1.05, 0.0, 0.12], [-0.62, 0.0, 0.12], [-0.62, 0.53, 0.12], [-0.52, 0.64, 0.07],
                   [-0.33, 0.86, 0.07], [0.22, 0.86, 0.07], [0.33, 1.0, 0.03]]},
-        # into the house: the camera glides in through the front (nothing folds or pops)
+        # into the house only now: the camera glides in through the front (nothing folds or pops)
         {"do": "fx", "fx": "inside_view", "wait": 2.2},
         {"do": "say", "line": "tp_049"},
-        # tap the fire x3: small -> medium -> large flame, the pot steams and bubbles
         {"do": "tap_steps", "target": "fire", "prompt": "tp_050", "hint": "tp_050", "steps": [
             {"fx": "flame_m"}, {"target": "fire_m", "fx": "flame_l"}, {"target": "fire_l", "fx": "boil"}]},
         {"do": "fx", "fx": "wolf_drop", "wait": 0.6},
@@ -314,18 +349,17 @@ BEATS = [
         {"do": "fx", "fx": "splash"},
         {"do": "pose", "who": "wolf", "pose": "ouch"},
         {"do": "say", "line": "tp_052"},
-        # back out: the camera pulls out to the closed house, he shoots out of the chimney and runs off LEFT
+        # back out to the closed house; he shoots out of the chimney and runs off LEFT
         {"do": "fx", "fx": "outside_view", "wait": 1.6},
         {"do": "fx", "fx": "wolf_launch", "wait": 1.0},
         {"do": "walk", "who": "wolf", "dir": "left", "pose": "run_away", "dist": 1.6, "speed": 0.5, "line": "tp_053", "exit": True},
     ]},
-    {"id": "ending", "title": "벽돌 집", "spread": {"seed": 1, "view": 4, "place": "brick_lot",
-     "spots": BRICK_SPOTS, "set": []},
+    {"id": "ending", "title": "벽돌 집", "spread": _village(built=["straw_ruin", "wood_ruin", "house"]),
      # the wolf is gone: the brothers come out in front of the brick house, safe and happy, mom joins them
      "enter": {"who": {"pig_a": "happy_wave", "pig_b": "happy_wave", "pig_c": "cheer", "mom": "wave"},
                "at": {"pig_a": "out_a", "pig_b": "out_b", "pig_c": "out_c", "mom": "mom"}},
      "steps": [
-        {"do": "cam", "shot": "stage", "at": "focus"},
+        {"do": "cam", "shot": "stage", "at": "b_focus"},
         {"do": "fx", "fx": "pigs_cheer", "wait": 0.6},
         {"do": "say", "line": "tp_057"},
         {"do": "fx", "fx": "pigs_cheer", "wait": 0.8},

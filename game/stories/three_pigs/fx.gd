@@ -27,6 +27,7 @@ static var _note_tex: Texture2D
 static var _curl_tex: Texture2D
 var _launch: Dictionary = {}  ## wolf flight {from, to, t, dur, arc}
 var _drop: Dictionary = {}
+var _chimney_steam := false
 
 
 func setup() -> void:
@@ -143,7 +144,7 @@ func fx(name: String) -> bool:
 			# 첫째 carries a straw bundle from the pile to the house and trots back for the next
 			var pig := _a(str(ctx.get("walker", "pig_a")))
 			var house := _house()
-			var pile := stage.set_piece("pile")
+			var pile := stage.set_piece(str(ctx.get("pile", "pile")))
 			if pig and house and pile:
 				# drop spot: the house's corner on the pile's side, a little in front of the wall
 				var to_pile := pile.global_position - house.global_position
@@ -160,7 +161,7 @@ func fx(name: String) -> bool:
 		"hammer_bang":
 			var pig2 := _a(str(ctx.get("walker", "pig_b")))
 			var house2 := _house()
-			var pile2 := stage.set_piece("pile")
+			var pile2 := stage.set_piece(str(ctx.get("pile", "pile")))
 			if pig2:
 				pig2.hop_v = 0.8
 				pig2.set_pose("hammer")
@@ -172,7 +173,7 @@ func fx(name: String) -> bool:
 		"brick_thunk":
 			var pig3 := _a(str(ctx.get("walker", "pig_c")))
 			var house3 := _house()
-			var pile3 := stage.set_piece("pile")
+			var pile3 := stage.set_piece(str(ctx.get("pile", "pile")))
 			if pig3:
 				pig3.hop_v = 0.6
 			if house3 and pile3:
@@ -194,30 +195,30 @@ func fx(name: String) -> bool:
 		"music_stop":
 			_music.clear()
 		"brothers_tease":
-			# 첫째 and 둘째 stroll in from the left (side view), stop by the house and call to their brother
-			var a1 := _a("pig_a")
-			var a2 := _a("pig_b")
+			# 첫째 and 둘째 stroll along the road from their own houses to the brick lot (side view), stop and tease
 			var at := stage.spot_point("tease")
 			for k in 2:
-				var p := a1 if k == 0 else a2
+				var p := _a("pig_a" if k == 0 else "pig_b")
 				if p == null:
 					continue
-				p.place_at(at + stage.dir_vec("left") * (1.1 + 0.22 * k))
-				p.pop_delay = 0.0
-				p.pop_target = 1.0
-				p.puppet.set_figure("side_walk", false, true)
 				var goal := at + stage.dir_vec("left") * 0.22 * k + stage.dir_vec("away") * 0.04 * k
-				p.walk_to(goal, 0.32, "side_walk")
+				if p.pop_target < 0.5:
+					p.place_at(at + stage.dir_vec("left") * (1.1 + 0.22 * k))
+					p.pop_delay = 0.0
+					p.pop_target = 1.0
+				stage.clear_inside(p)
+				var rt := stage.road_route(p.global_position, goal)
+				p.follow(rt, 0.45, "side_walk", false)
 				p.pose = "tease" if k == 0 else "violin"
 		"brothers_leave":
-			for k in 2:
-				var p2 := _a("pig_a" if k == 0 else "pig_b")
+			# back home along the road (첫째 to the straw house, 둘째 to the wood house)
+			var homes := {"pig_a": "s_door", "pig_b": "w_door"}
+			for r in homes:
+				var p2 := _a(r)
 				if p2 and p2.pop_target > 0.5:
-					errand(p2.role, [[p2.global_position + stage.dir_vec("right") * 2.4, "side_walk", "calm", 0.34]])
-					var gone := func():
-						if is_instance_valid(p2):
-							p2.pop_target = 0.02
-					get_tree().create_timer(4.5).timeout.connect(gone)
+					var goal2 := stage.spot_point(homes[r]) if stage.spots.has(homes[r]) else p2.global_position + stage.dir_vec("right") * 2.4
+					p2.follow(stage.road_route(p2.global_position, goal2), 0.45, "side_walk", false)
+					p2.pose = "calm"
 			_music.clear()
 		"straw_fly", "wood_wobble", "brick_huff":
 			_huff_wind(name)
@@ -230,6 +231,18 @@ func fx(name: String) -> bool:
 					fly("steam", p0, p0 + stage.dir_vec("right" if k % 2 == 0 else "left") * randf_range(0.12, 0.25) + Vector3(0, randf_range(0.03, 0.1), 0), 0.08, 0.8, 0.05, 1.0, 1.6)
 		"room_ready":
 			_room_ready()
+			# outside the closed house: no faces at the windows (they're at the pot), firelight behind the glass, steam
+			# from the chimney
+			for r in ["pig_a", "pig_b", "pig_c"]:
+				var ap := _a(r)
+				if ap:
+					stage.clear_inside(ap)
+					ap.pop_target = 0.02
+					ap.pop_delay = 0.0
+			var hs := stage.set_piece("house")
+			if hs:
+				hs.window_backs("fire")
+			_chimney_steam = true
 		"inside_view":
 			# into the house: the camera glides in through the front (the wall hides only while it passes); the
 			# brothers are at the hearth when it arrives
@@ -412,15 +425,14 @@ func _pigs_to_room() -> void:
 			continue
 		stage.clear_inside(a)
 		a.visible = true
+		a.pop_s = 1.0
+		a.pop_target = 1.0
 		a.place_at(stage.spot_point(spots[r]))
 		a.set_pose("calm" if r != "pig_c" else "brave")
 
 
 func _pigs_to_windows() -> void:
-	var wins := {"pig_c": 0, "pig_a": 1, "pig_b": 1}
-	for r in wins:
-		if _a(r):
-			stage.put_inside(r, "house", wins[r])
+	pass  # back outside the brothers are at the pot: firelight in the windows, no faces
 
 
 func _flame(level: int) -> void:
@@ -535,6 +547,9 @@ func step(dt: float) -> void:
 			var p := a.global_position + Vector3(0, a.puppet.height * 0.85, 0.04)
 			fly("note", p, p + Vector3(randf_range(-0.15, 0.25), randf_range(0.2, 0.35), 0.02), 0.05, 1.3, 0.04, 1.0, 1.0)
 			a.hop_v = maxf(a.hop_v, 0.25)  # bouncing to the tune
+	if _chimney_steam and fmod(_t, 0.7) < dt and _launch.is_empty():
+		var top := _chimney_top() + Vector3(0, 0.03, 0)
+		fly("steam", top, top + Vector3(randf_range(-0.05, 0.08), 0.32, 0), 0.07, 1.6, 0.0, 0.5, 2.0)
 	if _boil > 0.0:
 		var pot := stage.set_piece("k_pot")
 		if pot and fmod(_t, 0.35) < dt:

@@ -45,6 +45,14 @@
     196.5
    ]
   ],
+  "window_boxes": [
+   [
+    85,
+    170,
+    138,
+    223
+   ]
+  ],
   "door": {
    "file": "art/atlas/story_houses/stages/story_houses_00_door.webp",
    "x0": 166,
@@ -123,6 +131,20 @@
     171.0
    ]
   ],
+  "window_boxes": [
+   [
+    78,
+    142,
+    123,
+    200
+   ],
+   [
+    308,
+    142,
+    353,
+    200
+   ]
+  ],
   "door": {
    "file": "art/atlas/story_houses/stages/story_houses_03_door.webp",
    "x0": 168,
@@ -199,6 +221,20 @@
    [
     311.5,
     215.5
+   ]
+  ],
+  "window_boxes": [
+   [
+    62,
+    188,
+    105,
+    243
+   ],
+   [
+    290,
+    188,
+    333,
+    243
    ]
   ],
   "door": {
