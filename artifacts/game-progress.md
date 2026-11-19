@@ -1283,3 +1283,11 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Verify: check_all clean; three_pigs STORY_DONE 275.0 s missing_audio=[]. Videos: artifacts/video/three_pigs_full_v10.mp4,
     three_pigs_escape_v10.mp4. Still off: inside the doorway the interior is a plain back wall (no furniture in the
     straw / wood houses); the first entry tile came from a run before the door-front fix (the final run uses it).
+
+## 2026-11-19 — three_pigs v11: one clean door cycle at the brick house
+  - Coordinator (2 fps crops of escape_v10): 둘째 turned to a front view in the doorway, the door closed over him and
+    reopened. go_inside now queues the runners one behind the other in front of the door, opens it once, sends them
+    in one after the other (back view through the doorway; the second steps sideways to the doorway in side view),
+    and shuts it once after the last is inside. Doorway crops: artifacts/three_pigs/tiles/v11_brick_entry_2fps.jpg.
+  - three_pigs STORY_DONE 275.7 s missing_audio=[]. Videos: artifacts/video/three_pigs_full_v11.mp4,
+    three_pigs_escape_v11.mp4.

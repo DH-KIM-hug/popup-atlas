@@ -595,6 +595,10 @@ func _step_go_inside(st: Dictionary) -> void:
 		return
 	var toward := stage.dir_vec("toward")
 	var spd := float(st.get("speed", 0.4))
+	var front := sp.door_point(true, toward)
+	# one queue in front of the door: the first at the door, the others a step further out toward the camera, so
+	# nobody walks back toward the camera (a front view) while waiting; then the door opens ONCE, everyone goes in
+	# one after the other (back view through the doorway) and it shuts ONCE after the last is inside
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
 		if a == null:
@@ -605,8 +609,7 @@ func _step_go_inside(st: Dictionary) -> void:
 			a.lift = 0.0
 			a.pop_delay = 0.0
 			a.pop_target = 1.0
-		a.walk_to(sp.door_point(true, toward), spd, "")
-	# one after another through the door
+		a.walk_to(front + toward * 0.16 * i, spd, "")
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
 		if a == null:
@@ -614,15 +617,24 @@ func _step_go_inside(st: Dictionary) -> void:
 		var g := 0.0
 		while a.moving() and g < 12.0:
 			g += await _frame()
-		sp.open_door(true)
-		await _wait(0.3)
+	sp.open_door(true)
+	await _wait(0.35)
+	for i in roles.size():
+		var a := stage.actor(str(roles[i]))
+		if a == null:
+			continue
+		if i > 0:  # step up to the doorway (moving away from the camera: back view)
+			a.walk_to(front, spd * 0.8, "")
+			var g2 := 0.0
+			while a.moving() and g2 < 6.0:
+				g2 += await _frame()
 		a.walk_to(sp.door_point(false, toward), spd * 0.8, "")
-		g = 0.0
-		while a.moving() and g < 6.0:
-			g += await _frame()
+		var g3 := 0.0
+		while a.moving() and g3 < 6.0:
+			g3 += await _frame()
 		stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
-		sp.open_door(false)
-		await _wait(0.35)
+	sp.open_door(false)
+	await _wait(0.35)
 	while _line_busy:
 		await _frame()
 
