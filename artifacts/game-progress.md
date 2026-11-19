@@ -1428,3 +1428,16 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     and brick builds).
   - three_pigs STORY_DONE 308.8 s, CHECK_LINES OK (39 segments), missing_audio=[] missing_sound=[].
     Video artifacts/video/three_pigs_full_v19.mp4.
+
+## 2026-11-19 — three_pigs v20: each build framed once, held for every tap
+  - New `frame` step / SpreadStage.frame_build(house, with): one shot that fits the FINISHED house (full width and
+    height), the pile, the builder (and the brothers' tease spot for the brick build), set before the build's intro
+    line and held for all three taps; build taps no longer reframe (`_wait_tap(..., reframe=false)`), the brothers'
+    tease plays in the same shot (no two-shot cut mid-build).
+  - The tap ring around a house mid-build sizes to the walls standing now (it used the finished height: the brick
+    ring ran off the bottom of the frame at the first tap).
+  - Checked every tap of all three builds (artifacts/three_pigs/tiles/v20_build_taps.jpg): houses uncut at all edges,
+    including the finished straw roof, wood roof and brick chimney; every ring fully inside the frame.
+  - Runtime: trimmed the establishing crane wait (2.6 → 1.8 s), the framing waits and two music_stop holds.
+    three_pigs STORY_DONE 295.0 s (v19 308.8), CHECK_LINES OK 39; sun_wind 205.8 s, CHECK_LINES OK 42;
+    missing_audio=[] missing_sound=[]. Video artifacts/video/three_pigs_full_v20.mp4 (26.4 MB).

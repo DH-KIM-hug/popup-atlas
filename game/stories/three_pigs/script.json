@@ -1325,14 +1325,16 @@
      "at": "est",
      "from": "crane_high",
      "rate": 0.9,
-     "wait": 2.6
+     "wait": 1.8
     },
     {
-     "do": "cam",
-     "shot": "medium",
-     "at": "s_focus",
-     "rate": 1.6,
-     "wait": 0.6
+     "do": "frame",
+     "house": "straw_house",
+     "with": [
+      "straw_pile",
+      "pig_a"
+     ],
+     "wait": 0.8
     },
     {
      "do": "fx",
@@ -1352,7 +1354,7 @@
      "hint": "tp_018",
      "walker": "pig_a",
      "fx": "straw_pop",
-     "gap": 0.6
+     "gap": 0.5
     },
     {
      "do": "walk",
@@ -1386,7 +1388,7 @@
     {
      "do": "fx",
      "fx": "music_stop",
-     "wait": 0.8
+     "wait": 0.5
     }
    ],
    "sound": {
@@ -1620,11 +1622,13 @@
    },
    "steps": [
     {
-     "do": "cam",
-     "shot": "story",
-     "at": "w_focus",
-     "rate": 1.4,
-     "wait": 1.4
+     "do": "frame",
+     "house": "wood_house",
+     "with": [
+      "wood_pile",
+      "pig_b"
+     ],
+     "wait": 1.0
     },
     {
      "do": "fx",
@@ -1676,7 +1680,7 @@
     {
      "do": "fx",
      "fx": "music_stop",
-     "wait": 0.8
+     "wait": 0.5
     }
    ],
    "sound": {
@@ -1912,11 +1916,14 @@
    },
    "steps": [
     {
-     "do": "cam",
-     "shot": "medium",
-     "at": "b_focus",
-     "rate": 1.0,
-     "wait": 1.6
+     "do": "frame",
+     "house": "house",
+     "with": [
+      "brick_pile",
+      "pig_c",
+      "tease"
+     ],
+     "wait": 1.0
     },
     {
      "do": "fx",
@@ -1940,7 +1947,7 @@
      "taps": 3,
      "walker": "pig_c",
      "fx": "brick_thunk",
-     "gap": 0.8,
+     "gap": 0.6,
      "steps": [
       {
        "at": 2,

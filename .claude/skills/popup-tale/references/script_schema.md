@@ -70,6 +70,7 @@ the page on a same-page beat change unless kept.
 | tap_each | targets, prompt, hint, react {role: [pose, fx...]}, lines | every target once, any order |
 | tap_steps | target, prompt, hint, steps [{target?, fx, lines, next, wait}] | one tap per step (generalised shine) |
 | build | house (set name), target, taps, hint, walker, fx, counter, gap, steps [{at, fx, lines}] | band k folds up after k·taps/bands taps; fx sees stage.build_ctx {house, walker, tap, taps} |
+| frame | house, with [targets / spots], wait | the build's one framing (finished house + pile + builder + extra spots), set before the build's intro; the next build of that house does not reframe |
 | huff | house, taps, target (default wolf), who, prompt, hint, fx, counter, gap, result (blow_apart / collapse / hold), ruin (card id), huff_pose | each tap one 후~: blow_apart peels bands from the top, collapse rocks harder then tumbles, hold only shivers; the ruin set piece pops |
 | cam | shot, at (spot), from (shot: snap there first → crane / push / pull), rate (glide speed, default 2.4; ~1 slow, ~3 snappy), shake (°), follow (role: tracking shot), wait | camera move on a stage (non-walker) page; every stage shot drifts a little (hand-held) and eases its yaw offset |
 | fx | fx, wait | handler fx; generic `pop:<card id>` / `fold:<card id>` on set pieces |

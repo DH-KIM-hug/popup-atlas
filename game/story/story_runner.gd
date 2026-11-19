@@ -59,6 +59,7 @@ var sound: SoundDirector
 var log_sound := false
 var _blow_target := "wind"
 var _late_pending := false
+var _framed_house := ""  # a "frame" step already set up the coming build's shot
 var _walker_role := "traveller"
 
 
@@ -320,8 +321,8 @@ func _say_lines(ids: Array) -> void:
 
 ## Waits until one of `targets` is tapped (autoplay: simulated after a pause; `auto_order` picks which).
 ## Plays `hint` after a quiet spell. Returns the tapped target.
-func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer := true) -> String:
-	if not _choosing and stage and is_instance_valid(stage) and stage.frame_targets(targets):
+func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer := true, reframe := true) -> String:
+	if reframe and not _choosing and stage and is_instance_valid(stage) and stage.frame_targets(targets):
 		await _wait(1.2)  # the camera settles on every target before the child is asked to tap
 	_expect = targets
 	_tapped = ""
@@ -541,6 +542,11 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			await _step_tap_each(st)
 		"tap_steps":
 			await _step_tap_steps(st)
+		"frame":
+			# the build's one framing (finished house + pile + builder), set before its intro so the build never reframes
+			_framed_house = str(st.get("house", "house"))
+			stage.frame_build(_framed_house, st.get("with", []))
+			await _wait(float(st.get("wait", 1.0)))
 		"build":
 			await _step_build(st)
 		"huff":
@@ -797,12 +803,16 @@ func _step_build(st: Dictionary) -> void:
 		at_steps[int(s["at"])] = s
 	stage.build_ctx = {"house": house, "walker": str(st.get("walker", "")), "tap": 0, "taps": taps,
 		"target": str(st.get("target", house)), "pile": str(st.get("pile", "pile"))}
-	await _frame_first([str(st.get("target", house))] + ([str(st["walker"])] if st.has("walker") else []))
+	# frame once for the whole build (the finished house, pile and builder), held for every tap
+	if _framed_house != house:
+		stage.frame_build(house, [str(st.get("target", house)), str(st.get("pile", "pile"))] + ([str(st["walker"])] if st.has("walker") else []))
+		await _wait(1.2)
+	_framed_house = ""
 	if st.has("prompt"):
 		await _say(str(st["prompt"]))
 	var shown0 := sp.shown if sp else 0  # bands already standing (a foundation) are not rebuilt
 	for i in range(1, taps + 1):
-		await _wait_tap([str(st.get("target", house))], str(st.get("hint", "")))
+		await _wait_tap([str(st.get("target", house))], str(st.get("hint", "")), [], true, false)
 		stage.build_ctx["tap"] = i
 		if sp:
 			var n := shown0 + ceili(float(i) * (sp.band_count() - shown0) / taps)

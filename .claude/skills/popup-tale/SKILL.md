@@ -40,6 +40,10 @@ The user talks in Korean, wants to SEE results (send recordings and contact shee
 - Interactive steps frame their targets first (user: "화면이 거기로 안가서 못누름"): before a prompt, the stage camera
   settles on a shot with every target on screen and ≥ ~80 pt to tap, and holds until the taps are done
   (SpreadStage.frame_targets, runner `_frame_first`).
+- A build is framed ONCE (user: "Frame each build once"): before its intro line, a `frame` step (or the build itself)
+  sets a shot that already fits the FINISHED house (full height and width), the pile, the builder and the tap rings,
+  and holds it for every tap; no reframes between taps, and story beats inside the build (the brothers' tease) play
+  in that same shot. The ring around a house mid-build sizes to the walls standing now, not the finished height.
 - Split a line across steps when its parts belong to different moments (`say`/`walk` take `segs`): narration while
   the wolf walks, his quote only once he stands at the door (user: "도착 전에 문 열라고 하네").
 - Listen for doubled words in generated clips: two wolf clips began with a faint extra "그럼"; find it on the

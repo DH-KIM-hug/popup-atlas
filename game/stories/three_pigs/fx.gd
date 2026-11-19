@@ -199,7 +199,6 @@ func fx(name: String) -> bool:
 		"brothers_tease":
 			# 첫째 and 둘째 stroll along the road from their own houses to the brick lot (side view), stop and tease
 			var at := stage.spot_point("tease")
-			stage.shot_to("two_shot", "tease", {"rate": 1.6}) if stage._shots.has("two_shot") else null
 			for k in 2:
 				var p := _a("pig_a" if k == 0 else "pig_b")
 				if p == null:
@@ -215,8 +214,6 @@ func fx(name: String) -> bool:
 				p.pose = "tease" if k == 0 else "violin"
 		"brothers_leave":
 			# back home along the road (첫째 to the straw house, 둘째 to the wood house)
-			if stage._shots.has("medium"):
-				stage.shot_to("medium", "b_focus", {"rate": 1.4})
 			var homes := {"pig_a": "s_door", "pig_b": "w_door"}
 			for r in homes:
 				var p2 := _a(r)

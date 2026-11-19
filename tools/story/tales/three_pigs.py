@@ -290,26 +290,26 @@ BEATS = [
      "enter": {"who": {"pig_a": "carry_straw"}, "at": {"pig_a": "s_pig_a"}, "left": {"pig_a": 1}},
      "steps": [
         # the village: a wide establishing crane over the three empty lots along the road
-        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 2.6},
-        {"do": "cam", "shot": "medium", "at": "s_focus", "rate": 1.6, "wait": 0.6},
+        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 1.8},
+        {"do": "frame", "house": "straw_house", "with": ["straw_pile", "pig_a"], "wait": 0.8},
         {"do": "fx", "fx": "up:straw_pile", "wait": 0.5},  # his straw arrives at his lot as his build begins
         {"do": "say", "line": "tp_019"},
         # tap the straw pile x3: 첫째 carries straw to the lot, one band of the straw house folds up per tap
         {"do": "build", "house": "straw_house", "pile": "straw_pile", "target": "straw_pile", "taps": 3, "hint": "tp_018",
-         "walker": "pig_a", "fx": "straw_pop", "gap": 0.6},
+         "walker": "pig_a", "fx": "straw_pop", "gap": 0.5},
         {"do": "walk", "who": "pig_a", "to": "s_door", "speed": 0.3},
         {"do": "cam", "shot": "low_up", "at": "s_lot", "rate": 0.8},
         {"do": "fx", "fx": "star_burst"},
         {"do": "pose", "who": "pig_a", "pose": "flute"},
         {"do": "fx", "fx": "flute_notes"},
         {"do": "say", "line": "tp_020"},
-        {"do": "fx", "fx": "music_stop", "wait": 0.8},
+        {"do": "fx", "fx": "music_stop", "wait": 0.5},
     ]},
     {"id": "wood_build", "title": "둘째의 나무 집", "spread": _village(light="afternoon", built=["straw_house", "straw_pile"]),
      "enter": {"who": {"pig_b": "hammer"}, "at": {"pig_b": "w_pig_b"}, "keep": ["pig_a"]},
      "steps": [
         # the camera glides along the road to the wood lot (no page turn)
-        {"do": "cam", "shot": "story", "at": "w_focus", "rate": 1.4, "wait": 1.4},
+        {"do": "frame", "house": "wood_house", "with": ["wood_pile", "pig_b"], "wait": 1.0},
         {"do": "fx", "fx": "up:wood_pile", "wait": 0.3},
         {"do": "fx", "fx": "up:wood_house:1", "wait": 0.6},  # the foundation rises as his build begins
         {"do": "say", "line": "tp_021"},
@@ -320,19 +320,19 @@ BEATS = [
         {"do": "pose", "who": "pig_b", "pose": "violin"},
         {"do": "fx", "fx": "violin_notes"},
         {"do": "say", "line": "tp_022"},
-        {"do": "fx", "fx": "music_stop", "wait": 0.8},
+        {"do": "fx", "fx": "music_stop", "wait": 0.5},
     ]},
     {"id": "brick_build", "title": "셋째의 벽돌 집", "spread": _village(light="late", built=["straw_house", "straw_pile", "wood_house", "wood_pile"]),
      "enter": {"who": {"pig_c": "lay_brick"}, "at": {"pig_c": "b_pig_c"}, "keep": ["pig_a", "pig_b"]},
      "steps": [
         # brick: slower and careful, the light warming toward late afternoon
-        {"do": "cam", "shot": "medium", "at": "b_focus", "rate": 1.0, "wait": 1.6},
+        {"do": "frame", "house": "house", "with": ["brick_pile", "pig_c", "tease"], "wait": 1.0},
         {"do": "fx", "fx": "up:brick_pile", "wait": 0.2},
         {"do": "fx", "fx": "up:bucket", "wait": 0.4},
         {"do": "say", "line": "tp_024"},
         # the brothers stroll along the road from their houses and tease (tp_023), then wander home
         {"do": "build", "house": "house", "pile": "brick_pile", "target": "house", "taps": 3, "walker": "pig_c",
-         "fx": "brick_thunk", "gap": 0.8,
+         "fx": "brick_thunk", "gap": 0.6,
          "steps": [{"at": 2, "fx": "brothers_tease", "lines": ["tp_023"]}, {"at": 3, "fx": "brothers_leave"}]},
         {"do": "cam", "shot": "low_up", "at": "b_lot", "rate": 0.6},
         {"do": "fx", "fx": "star_burst"},

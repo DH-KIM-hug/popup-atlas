@@ -1312,7 +1312,8 @@ func target_radius(target: String) -> float:
 	if sets.has(target):
 		var s: SetPiece = sets[target]
 		var a := cam.unproject_position(s.global_position)
-		var b := cam.unproject_position(s.global_position + Vector3(0, maxf(s.height, 0.12), 0))
+		# the part standing now (a house mid-build gets a ring around its walls so far, not its finished height)
+		var b := cam.unproject_position(s.global_position + Vector3(0, maxf((s.centre().y - s.global_position.y) * 2.0, 0.12), 0))
 		return maxf(70.0, a.distance_to(b) * 0.6)
 	if handler:
 		var r := handler.target_radius(target)
@@ -1557,6 +1558,42 @@ func frame_targets(targets: Array) -> bool:
 	_cam = [clampf(2.4 + spread * 3.2, 2.6, 6.0), 12.0, 0.28, 20.0, 0.0]
 	_cam_rate = 2.6
 	return true
+
+
+## Build framing (once per build): one shot that already fits the FINISHED house (full height and width), the pile
+## and the builder with margins, held for every tap. Fit by the 20° lens: visible width ≈ 0.47·d, height ≈ 0.35·d.
+func frame_build(house: String, others: Array) -> void:
+	if has_walker or _cam_anchor == null:
+		return
+	var pts: Array[Vector3] = []
+	var sp := set_piece(house)
+	var r := dir_vec("right")
+	var top := 0.3
+	if sp:
+		for sx in [-0.5, 0.5]:
+			pts.append(sp.global_position + r * sp.width * sx)
+		top = maxf(top, sp.height)
+	for t in others:
+		var p: Variant = spot_point(str(t)) if spots.has(str(t)) else _target_point(str(t))
+		if p != null:
+			pts.append(p)
+	if pts.is_empty():
+		return
+	var lo := INF
+	var hi := -INF
+	var c := Vector3.ZERO
+	for p in pts:
+		var x: float = (p as Vector3).dot(r)
+		lo = minf(lo, x)
+		hi = maxf(hi, x)
+		c += p
+	c /= pts.size()
+	var span := (hi - lo) + 0.5  # + a tap ring's width on each side
+	var d := clampf(maxf(span * 2.9, top * 4.6), 2.6, 7.5)
+	_follow = null
+	_focus_goal = Vector3(c.x, world.ground.surface_y(Vector2(c.x, c.z)), c.z)
+	_cam = [d, 11.0, top * 0.45, 20.0, 0.0]
+	_cam_rate = 2.4
 
 
 ## Camera shake (degrees of jitter, decays over ~0.4 s): a huff, a hammer bump, "앗, 뜨거워!".
