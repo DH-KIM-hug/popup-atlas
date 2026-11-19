@@ -186,10 +186,10 @@ func _process(dt: float) -> void:
 			else:
 				_moving = false
 		var dn := to / maxf(dist, 1e-5)
-		if _fly and absf(dn.y) > 0.92 and puppet.has_pose("back_walk"):
-			# climbing straight up / down (a ladder): seen from behind, a little rung-to-rung bob
+		if _fly and absf(dn.y) > 0.92 and (puppet.has_pose("walk_back") or puppet.has_pose("back_walk")):
+			# climbing straight up / down (a ladder): seen from behind (drawn back walk cycle), a rung-to-rung bob
 			view = "back"
-			puppet.set_figure("back_walk", false)
+			puppet.set_figure("walk_back" if puppet.has_pose("walk_back") else "back_walk", false)
 			puppet.position.y += absf(sin(_climb_t * 9.0)) * puppet.height * 0.025
 			_climb_t += dt
 		else:
@@ -239,11 +239,19 @@ func _pick_view(dir: Vector3) -> void:
 				left = a < 0.0
 	# figure for the view (fall back to a view this role has)
 	var fig := walk_pose
-	# running: the drawn run cycle for the view (side / back), when the cast has one
-	if walk_pose in ["run", "run_cycle", "scared"] and speed >= 0.4:
-		var rc := "run_cycle" if nv == "side" else ("run_back" if nv == "back" else "")
-		if rc != "" and puppet.has_pose(rc):
-			fig = rc
+	# drawn cycles (side / back) when the cast has them: running (run pose or fast) or walking
+	var running := walk_pose in ["run", "run_cycle", "run_away", "scared"] and speed >= 0.4
+	var rc := ""
+	if nv == "side":
+		rc = "run_cycle" if running else "walk_cycle"
+		if walk_pose != "" and puppet.has_pose(walk_pose + "_cycle"):  # e.g. carry_straw -> carry_straw_cycle
+			rc = walk_pose + "_cycle"
+	elif nv == "back":
+		rc = "run_back" if running and puppet.has_pose("run_back") else "walk_back"
+	else:
+		rc = "run_front" if running and puppet.has_pose("run_front") else "walk_front"
+	if rc != "" and puppet.has_pose(rc):
+		fig = rc
 	if fig == "" or not puppet.has_pose(fig) or view_of(fig) != nv:
 		fig = str(DEFAULT_WALK[nv])
 		if not puppet.has_pose(fig):

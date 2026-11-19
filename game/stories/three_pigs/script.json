@@ -1664,9 +1664,17 @@
      "dir": "right",
      "to": "s_wolf",
      "from": "s_wolf_from",
-     "pose": "sniff",
-     "speed": 0.2,
-     "line": "tp_027"
+     "pose": "side_prowl",
+     "speed": 0.25,
+     "follow": "wolf",
+     "line": "tp_027",
+     "end_pose": "sniff"
+    },
+    {
+     "do": "cam",
+     "shot": "story",
+     "at": "s_wolf_focus",
+     "wait": 0.3
     },
     {
      "do": "pose",
@@ -2462,7 +2470,15 @@
      "to": "ladder_find",
      "dir": "right",
      "pose": "side_prowl",
-     "speed": 0.3
+     "speed": 0.3,
+     "follow": "wolf",
+     "shot": "roof"
+    },
+    {
+     "do": "cam",
+     "shot": "roof",
+     "at": "b_lot",
+     "wait": 0.3
     },
     {
      "do": "fx",
@@ -2583,7 +2599,8 @@
      "dist": 1.6,
      "speed": 0.5,
      "line": "tp_053",
-     "exit": true
+     "exit": true,
+     "follow": "wolf"
     }
    ]
   },

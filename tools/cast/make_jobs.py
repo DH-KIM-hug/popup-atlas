@@ -499,6 +499,60 @@ for _pid, _who in [("a", PIG_A), ("b", PIG_B), ("c", PIG_C)]:
                  "SAME piglet in one horizontal row, " + BG + ANIMAL_STYLE + _who + RUN + "MATCH THE REFERENCE CHARACTER "
                  "EXACTLY (same face, ears, hat or cap, clothes, colours). A wide magenta gap between the figures." + NO_BOTANY})
 
+# 2026-11-19 (user: "늑대도 이상한디요?"): drawn WOLF cycles (the rigged side walk leaned back and slid like a cut-out).
+_WCOMMON = ("All figures the SAME scale as the reference wolf, feet on one common baseline, a wide magenta gap between them. "
+            "MATCH THE REFERENCE WOLF EXACTLY (same face, grey fur, cream muzzle, mustard waistcoat with patches, tail). ")
+JOBS += [
+    {"id": "cast_wolf_walk_cycle", "kind": "bg", "refs": TP_REF_WOLF, "aspect": WIDE, "out": "art_src/cast/raw/cast_wolf_walk_cycle.png",
+     "prompt": "A CHARACTER SHEET for a children's pop-up storybook: SIX separate full-body die-cut figures of the SAME wolf in one "
+     "horizontal row, " + BG + ANIMAL_STYLE + WOLF + "SNEAKY PROWL WALK: (1)-(4) FOUR SIDE-PROFILE frames facing RIGHT (nose to "
+     "the right edge) of one sneaking walk cycle in order: (1) CONTACT: front foot reaching forward heel down, back leg behind; "
+     "(2) DOWN: knees bent lowest, weight on the front foot; (3) PASSING: one leg straight under the body, the other bent and "
+     "swinging forward past it; (4) UP: rising on the standing toes, the other leg reaching forward. In every side frame he "
+     "LEANS FORWARD (the head and shoulders ahead of the hips, never leaning back), knees bent, sly half-lidded eyes looking "
+     "ahead, a sly closed grin, the two hands held up in front of the chest like a sneaky cartoon tiptoe (paws dangling), "
+     "the big tail curving out behind and swinging with the step, the two legs clearly separated with an open magenta gap. "
+     "(5)-(6) TWO BACK-VIEW frames walking AWAY from the viewer: (5) left foot lifted behind, (6) right foot lifted behind; back "
+     "of the head and ears, the back of the waistcoat, the tail, arms swinging. " + _WCOMMON + NO_BOTANY},
+    {"id": "cast_wolf_run_cycle", "kind": "bg", "refs": TP_REF_WOLF, "aspect": WIDE, "out": "art_src/cast/raw/cast_wolf_run_cycle.png",
+     "prompt": "A CHARACTER SHEET for a children's pop-up storybook: FOUR separate full-body die-cut figures of the SAME wolf in "
+     "one horizontal row, " + BG + ANIMAL_STYLE + WOLF + "RUNNING AWAY (comic, scalded): FOUR SIDE-PROFILE frames facing RIGHT "
+     "(nose to the right edge) of one run cycle in order: (1) CONTACT, (2) DOWN, (3) PASSING, (4) FLIGHT (both feet off the "
+     "ground, legs spread). Leaning forward hard, a red scalded bottom with a little wisp of steam, eyes squeezed shut in a "
+     "comic 'ouch' face, mouth open wailing, arms flailing forward, tail streaming behind, the two legs clearly separated with "
+     "an open magenta gap. " + _WCOMMON + NO_BOTANY},
+]
+
+# 2026-11-19 (user: "이전 걸음 이상해요"): every walk in three_pigs is a drawn cycle (no leg-swapping rig).
+PWALK = ("WALK CYCLE: EIGHT full-body figures of the SAME piglet walking happily, left to right: (1)-(4) FOUR SIDE-PROFILE "
+         "frames facing RIGHT of one walk cycle in order: (1) CONTACT, (2) DOWN, (3) PASSING, (4) UP; a calm happy face in "
+         "profile (eye soft, small smile), legs clearly separated with an open magenta gap, arms swinging opposite to the "
+         "legs, a little bounce; (5)-(6) TWO BACK-VIEW frames walking AWAY from the viewer (left foot lifted behind, then the "
+         "right), back of the head, ears, clothes and tail, arms swinging; (7)-(8) TWO FRONT-VIEW frames walking TOWARD the "
+         "viewer (left foot stepping forward, then the right; trotters seen from the front pointing at the viewer), a calm "
+         "happy face. All eight the SAME scale as the reference, feet on one common baseline. ")
+for _pid, _who in [("a", PIG_A), ("b", PIG_B), ("c", PIG_C)]:
+    JOBS.append({"id": f"cast_pig_{_pid}_walk_cycle", "kind": "bg", "refs": TP_REF_PIGS, "aspect": WIDE,
+                 "out": f"art_src/cast/raw/cast_pig_{_pid}_walk_cycle.png",
+                 "prompt": "A CHARACTER SHEET for a children's pop-up storybook: EIGHT separate full-body die-cut figures of "
+                 "the SAME piglet in one horizontal row, " + BG + ANIMAL_STYLE + _who + PWALK + "MATCH THE REFERENCE "
+                 "CHARACTER EXACTLY. A wide magenta gap between the figures." + NO_BOTANY})
+JOBS += [
+    {"id": "cast_pig_a_carry_cycle", "kind": "bg", "refs": TP_REF_PIGS, "aspect": WIDE, "out": "art_src/cast/raw/cast_pig_a_carry_cycle.png",
+     "prompt": "A CHARACTER SHEET for a children's pop-up storybook: FOUR separate full-body die-cut figures of the SAME piglet "
+     "in one horizontal row, " + BG + ANIMAL_STYLE + PIG_A + "CARRY WALK: FOUR SIDE-PROFILE frames facing RIGHT of one walk "
+     "cycle (CONTACT, DOWN, PASSING, UP) while he carries a big tied golden STRAW BUNDLE in both arms in front of his chest, "
+     "a cheerful busy face in profile, legs clearly separated with an open magenta gap. MATCH THE REFERENCE CHARACTER "
+     "EXACTLY. All four the same scale, feet on one baseline, a wide magenta gap between them." + NO_BOTANY},
+    {"id": "cast_wolf_front_cycle", "kind": "bg", "refs": TP_REF_WOLF, "aspect": WIDE, "out": "art_src/cast/raw/cast_wolf_front_cycle.png",
+     "prompt": "A CHARACTER SHEET for a children's pop-up storybook: FOUR separate full-body die-cut figures of the SAME wolf in "
+     "one horizontal row, " + BG + ANIMAL_STYLE + WOLF + "FRONT VIEW (walking TOWARD the viewer, feet seen from the front "
+     "pointing at the viewer): (1)-(2) a sneaky WALK, sly half-lidded eyes and sly grin, hands held up in front of the chest, "
+     "left foot stepping forward, then the right; (3)-(4) RUNNING toward the viewer, comic scalded 'ouch' face (eyes "
+     "squeezed shut, mouth wailing), arms flailing, left leg up, then the right. Legs clearly separated with an open magenta "
+     "gap. " + _WCOMMON + NO_BOTANY},
+]
+
 if __name__ == "__main__":
     p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cast_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)

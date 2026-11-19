@@ -110,6 +110,10 @@ Run long work through background agents/workflows with narrow ownership (one own
   (incl. `["story", "road", a, b]` for tracking shots), glide `cam at`, track runners with `walk follow` +
   `via: "road"`, and give later beats `built` (what stands at that beat, ruins included) so `--beat` starts and
   prebuilds are right. Page turns only where the place really changes.
+- Every walk is a drawn cycle too (user: "늑대도 이상한디요?", "이전 걸음 이상해요"): per character side walk (4) + back (2)
+  + front (2) frames, run cycles, and special walks (carrying: `<walk_pose>_cycle`); `tools/cast/add_cycles.py` slices
+  a sheet into catalogued frames. StoryActor picks the cycle for the travel view; the leg-swapping rig is not used in
+  three_pigs. Villains lean INTO a sneak (never back), and do a sniff pose standing, not walking.
 - Runs need a drawn run cycle; rigid-card hops read as stickers (user: "돼지 옆으로 달려가는 모습 이상해유"). Generate
   per character 4 side frames (contact, down, passing, flight; legs apart, arms pumping, the line's face) + 2 back
   frames, pad each character's frames to one canvas (bottom-aligned), catalogue them with `cycle` / `frame`;

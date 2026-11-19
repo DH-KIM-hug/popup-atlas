@@ -296,8 +296,10 @@ BEATS = [
      "steps": [
         {"do": "cam", "shot": "story", "at": "s_wolf_focus", "wait": 1.6},
         # the wolf prowls in from the left, sniffing (side view, facing right)
-        {"do": "walk", "who": "wolf", "dir": "right", "to": "s_wolf", "from": "s_wolf_from", "pose": "sniff", "speed": 0.2,
-         "line": "tp_027"},
+        # he prowls in (drawn sneak cycle), the camera follows him to his mark; there he stops and sniffs (킁킁)
+        {"do": "walk", "who": "wolf", "dir": "right", "to": "s_wolf", "from": "s_wolf_from", "pose": "side_prowl",
+         "speed": 0.25, "follow": "wolf", "line": "tp_027", "end_pose": "sniff"},
+        {"do": "cam", "shot": "story", "at": "s_wolf_focus", "wait": 0.3},
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "pose", "who": "pig_a", "pose": "defiant"},
         {"do": "say", "line": "tp_028"},
@@ -351,7 +353,9 @@ BEATS = [
         {"do": "fx", "fx": "room_ready", "wait": 0.1},
         {"do": "cam", "shot": "roof", "at": "b_lot", "wait": 0.6},
         # he finds the ladder lying in the grass and stands it up against the wall under the eave
-        {"do": "walk", "who": "wolf", "to": "ladder_find", "dir": "right", "pose": "side_prowl", "speed": 0.3},
+        {"do": "walk", "who": "wolf", "to": "ladder_find", "dir": "right", "pose": "side_prowl", "speed": 0.3, "follow": "wolf",
+         "shot": "roof"},
+        {"do": "cam", "shot": "roof", "at": "b_lot", "wait": 0.3},
         {"do": "fx", "fx": "ladder_up", "wait": 0.7},
         # he walks to the ladder, climbs it (back view), walks up the roof slope and along the ridge (side view),
         # steps onto the chimney top and sinks into it
@@ -371,7 +375,8 @@ BEATS = [
         # back out to the closed house; he shoots out of the chimney and runs off LEFT
         {"do": "fx", "fx": "outside_view", "wait": 1.6},
         {"do": "fx", "fx": "wolf_launch", "wait": 1.0},
-        {"do": "walk", "who": "wolf", "dir": "left", "pose": "run_away", "dist": 1.6, "speed": 0.5, "line": "tp_053", "exit": True},
+        {"do": "walk", "who": "wolf", "dir": "left", "pose": "run_away", "dist": 1.6, "speed": 0.5, "line": "tp_053", "exit": True,
+         "follow": "wolf"},
     ]},
     {"id": "ending", "title": "벽돌 집", "spread": _village(built=["straw_ruin", "wood_ruin", "house", "ladder"]),
      # the wolf is gone: the brothers come out in front of the brick house, safe and happy, mom joins them

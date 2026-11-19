@@ -1302,3 +1302,21 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     StoryActor uses the cycle for its view when a walk runs (pose run, speed ≥ 0.4). Paper turns narrow to 15 %
     (never edge-on). Tiles: artifacts/three_pigs/tiles/v12_*. three_pigs STORY_DONE 275.1 s missing_audio=[];
     videos artifacts/video/three_pigs_full_v12.mp4, three_pigs_escape_v12.mp4.
+
+## 2026-11-19 — three_pigs v13: every walk is a drawn cycle
+  - User: "늑대도 이상한디요?" / "이전 걸음 이상해요". New shared cast sheets (Codex, ANIMAL_STYLE, md5-unique, looked at
+    before slicing; tools/cast/add_cycles.py slices a sheet into catalogued flipbook frames): wolf walk_cycle (4 side
+    sneak frames, leaning forward, knees bent, paws up, tail swinging) + walk_back (2), wolf run_cycle (4, scalded
+    'ouch' run), wolf walk_front (2) + run_front (2; the two run frames lift the same leg — weak alternation);
+    per pig walk_cycle (4 side, calm happy face) + walk_back (2) + walk_front (2); 첫째 carry_straw_cycle (4 side,
+    straw bundle in his arms). Contacts: artifacts/three_pigs/wolf_cycle_contact.png, run_cycle_contact.png.
+  - Which move uses which cycle (StoryActor picks by the camera-relative travel view):
+    pigs leaving mom's home → walk_back; 첫째 carrying straw → carry_straw_cycle; walks to doorways, the brothers'
+    tease walk and walks home → walk_cycle (side) / walk_back / walk_front by direction; escapes → run_cycle /
+    run_back; the second brother stepping to the brick door → walk_cycle. Wolf arrivals, road walks between houses and
+    the ladder approach → walk_cycle / walk_back / walk_front, stopping in a standing sniff at the straw house
+    (end_pose); the ladder climb → walk_back with a rung bob; the run-away → run_cycle. Mom does not walk. The
+    leg-swapping rig is no longer used by any three_pigs walk.
+  - Camera follows the wolf to his mark (straw arrival, ladder approach, run-away). three_pigs STORY_DONE 276.3 s
+    missing_audio=[]. Videos: artifacts/video/three_pigs_full_v13.mp4, three_pigs_escape_v13.mp4; tiles
+    artifacts/three_pigs/tiles/v13_*.
