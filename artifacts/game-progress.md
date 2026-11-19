@@ -1320,3 +1320,25 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Camera follows the wolf to his mark (straw arrival, ladder approach, run-away). three_pigs STORY_DONE 276.3 s
     missing_audio=[]. Videos: artifacts/video/three_pigs_full_v13.mp4, three_pigs_escape_v13.mp4; tiles
     artifacts/three_pigs/tiles/v13_*.
+
+## 2026-11-19 — three_pigs v14: direction and camera pass (user-approved shot plan)
+  - Engine (shared, sun_wind unchanged: walker pages keep the road camera): shots take a yaw offset; `cam` takes from
+    (snap first: crane / push / pull / cut), rate, shake, follow; every stage shot drifts a little (hand-held);
+    SpreadStage.shake(); light presets afternoon / late / dusk / night / evening (eased); tale `backdrop` gives the
+    area behind the hills the haze colour (deep blue at night) so high / tilt-up / glide shots never show black;
+    huff takes cam_result / shake; end takes close_book (the page folds shut into the end card); the cover builds
+    the first spread at 28 ms/frame. Documented in references/script_schema.md; skill "Direction" section.
+  - Shot plan (tools/story/tales/three_pigs.py): crane down into mom's home, close on mom, high-angle departure;
+    village establishing crane over the empty lots; builds with their own rhythm (straw quick, wood camera bump per
+    hammer, brick slow with late light) and a low-angle push-in at each completion; brothers' tease two-shot; the
+    wolf's entrance low and menacing (a cut — a glide across the village flew through the straw roof), OTS toward
+    the house, window close-up for "싫어요", cheeks close-up with a shake per huff and a wide cut for the result,
+    the brick house frontal and steady at dusk; escapes tracked from a high angle; chimney at night, inside warm,
+    "앗, 뜨거워!" with a shake, the camera following him up out of the chimney; ending in warm evening with lit
+    windows, a slow pull-back and the book closing.
+  - Verify: check_all clean. three_pigs STORY_DONE 279.0 s (v13 276.3 s, +2.7 s) missing_audio=[]; sun_wind STORY_DONE
+    203.4 s missing_audio=[]. Videos: artifacts/video/three_pigs_full_v14.mp4 (25.7 MB, crf 32),
+    three_pigs_wolf_entrance_v14.mp4, three_pigs_chimney_v14.mp4; tiles artifacts/three_pigs/tiles/v14_*.
+  - Still off: the establishing shot shows the road and empty meadow more than the three lots; close-ups are tight
+    on flat cards (no edge seen in the review, but faces are large paper cards); the ladder card has the meadow
+    flower print.

@@ -205,6 +205,8 @@ func build_async(seed_v: int, view_i: int, with_audio: bool, budget_ms: float) -
 	_slicer.phase("finish")
 	_save_light()
 	_set_light(str((beat.get("spread", {}) as Dictionary).get("light", "")), true)
+	if tale.has("backdrop"):
+		_apply_light()
 	_enter_cast(beat.get("enter", {}), true)
 	trav_s = 0.02
 	trav_target = 0.02
@@ -693,27 +695,68 @@ func _save_light() -> void:
 
 
 ## "dusk": the key drops low and orange-red, the fill and ambient go cool blue, a touch darker (brick_wolf, chimney).
+## Light presets (spread.light): "" day, "afternoon", "late" (warm late afternoon), "dusk", "night", "evening" (warm
+## night, lit windows). Each = [key energy ×, key colour, fill ×, ambient ×, ambient colour, exposure ×, backdrop].
+const LIGHTS := {
+	"": [1.0, Color(1, 1, 1, 0), 1.0, 1.0, Color(1, 1, 1, 0), 1.0],
+	"afternoon": [1.0, Color(1.0, 0.86, 0.66), 1.0, 0.95, Color(1, 1, 1, 0), 1.0],
+	"late": [0.95, Color(1.0, 0.74, 0.48), 1.1, 0.9, Color(0.85, 0.75, 0.7), 0.97],
+	"dusk": [0.8, Color(1.0, 0.6, 0.38), 1.5, 0.8, Color(0.55, 0.6, 0.85), 0.9],
+	"night": [0.45, Color(0.55, 0.62, 1.0), 1.8, 0.6, Color(0.35, 0.42, 0.75), 0.78],
+	"evening": [0.55, Color(1.0, 0.66, 0.45), 1.6, 0.7, Color(0.45, 0.45, 0.75), 0.85],
+}
+var _light_from: Array = []
+var _light_to: Array = []
+
+
 func _set_light(name: String, instant: bool) -> void:
 	light = name
-	_light_t = 1.0 if name == "dusk" else 0.0
+	var tgt: Array = LIGHTS.get(name, LIGHTS[""])
+	_light_from = _light_cur()
+	_light_to = tgt
+	_light_t = 1.0
+	_light_k = 0.0
 	if instant:
-		_light_k = _light_t
+		_light_k = 1.0
 		_apply_light()
+
+
+func _light_cur() -> Array:
+	if _light_to.is_empty():
+		return LIGHTS[""]
+	var a: Array = _light_from
+	var b: Array = _light_to
+	var k := _light_k
+	var out: Array = []
+	for i in a.size():
+		if a[i] is Color:
+			out.append((a[i] as Color).lerp(b[i], k))
+		else:
+			out.append(lerpf(float(a[i]), float(b[i]), k))
+	return out
 
 
 func _apply_light() -> void:
 	if _rig0.is_empty():
 		return
 	var rig := world.rig
-	var k := _light_k
-	rig.key.light_energy = lerpf(float(_rig0["key_e"]), float(_rig0["key_e"]) * 0.8, k)
-	rig.key.light_color = (_rig0["key_c"] as Color).lerp(Color(1.0, 0.6, 0.38), k)
+	var L := _light_cur()
+	var kc: Color = L[1]
+	var ac: Color = L[4]
+	rig.key.light_energy = float(_rig0["key_e"]) * float(L[0])
+	rig.key.light_color = (_rig0["key_c"] as Color).lerp(Color(kc.r, kc.g, kc.b), kc.a)
 	if rig.fill:
-		rig.fill.light_energy = lerpf(float(_rig0["fill_e"]), float(_rig0["fill_e"]) * 1.5, k)
+		rig.fill.light_energy = float(_rig0["fill_e"]) * float(L[2])
 	if rig.environment:
-		rig.environment.ambient_light_energy = lerpf(float(_rig0["amb_e"]), float(_rig0["amb_e"]) * 0.8, k)
-		rig.environment.ambient_light_color = (_rig0["amb_c"] as Color).lerp(Color(0.55, 0.6, 0.85), k * 0.7)
-		rig.environment.tonemap_exposure = lerpf(float(_rig0["exp"]), float(_rig0["exp"]) * 0.9, k)
+		rig.environment.ambient_light_energy = float(_rig0["amb_e"]) * float(L[3])
+		rig.environment.ambient_light_color = (_rig0["amb_c"] as Color).lerp(Color(ac.r, ac.g, ac.b), ac.a * 0.7)
+		rig.environment.tonemap_exposure = float(_rig0["exp"]) * float(L[5])
+		if tale.has("backdrop"):
+			# the backdrop behind the far hills takes the haze colour (darker at night): an exposed edge never reads
+			# as black sky
+			var hz := rig.environment.fog_light_color
+			var night := clampf((1.0 - float(L[5])) / 0.22, 0.0, 1.0)  # 0 by day .. 1 at night
+			rig.environment.background_color = hz.lerp(Color(0.2, 0.25, 0.42), night * 0.8)
 
 
 # ------------------------------------------------------------------ sky layout
@@ -1040,13 +1083,31 @@ func fold() -> float:
 	return t
 
 
-## Camera shot on the template rig: "wide" (template view) | "story" | "close" | tale shots. `at`: focus spot.
-func shot_to(name: String, at: Variant = null) -> void:
+## Camera shot on the template rig: "wide" (template view) | "story" | "close" | tale shots
+## [distance, elevation°, focus height, fov, (yaw offset° from the template view)]. `at`: focus spot.
+## opts (cam step): from (snap to that shot first: crane / push / pull from it), rate (glide speed, default 2.4),
+## shake (amplitude°, decays), follow (role: tracking shot).
+func shot_to(name: String, at: Variant = null, opts: Dictionary = {}) -> void:
 	shot = name
 	_cam = _wide.duplicate() if name == "wide" else (_shots[name] as Array).duplicate()
+	_cam_rate = float(opts.get("rate", 2.4))
+	if opts.has("from") and _shots.has(str(opts["from"])):
+		var f: Array = _shots[str(opts["from"])]
+		var rig := world.rig
+		rig.distance = float(f[0])
+		rig.elevation_deg = float(f[1])
+		rig.focus_height = float(f[2])
+		rig.fov = float(f[3])
+		_yaw_off = float(f[4]) if f.size() > 4 else 0.0
+	if opts.has("shake"):
+		shake(float(opts["shake"]))
 	_follow = null
+	if opts.has("follow"):
+		_follow = actor(str(opts["follow"]))
 	if at != null and _cam_anchor:
 		_focus_goal = spot_point(at)
+		if opts.has("from"):
+			_cam_anchor.global_position = _focus_goal
 
 
 # ------------------------------------------------------------------ walker
@@ -1344,9 +1405,21 @@ func _process(dt: float) -> void:
 	var trav := traveller_pos()
 	# Camera shot glide (the rig itself snaps to the focus every frame; we ease its shot parameters).
 	var rig := world.rig
-	var k := 1.0 - exp(-2.4 * dt)
+	var k := 1.0 - exp(-_cam_rate * dt)
 	rig.distance = lerpf(rig.distance, float(_cam[0]), k)
-	rig.elevation_deg = lerpf(rig.elevation_deg, float(_cam[1]), k)
+	if not has_walker:
+		# stage camera: yaw offset per shot, a hand-held miniature drift (never locked), shake
+		if is_nan(_yaw_base):
+			_yaw_base = rig.yaw_deg
+		_drift_t += dt
+		_yaw_off = lerpf(_yaw_off, float(_cam[4]) if (_cam as Array).size() > 4 else 0.0, k)
+		_shake = maxf(0.0, _shake - dt * 2.5 * maxf(_shake, 0.3))
+		var drift := 0.35 * sin(_drift_t * 0.31) + 0.2 * sin(_drift_t * 0.53 + 1.0)
+		var sh := _shake * sin(_drift_t * 47.0)
+		rig.yaw_deg = _yaw_base + _yaw_off + drift + sh
+		rig.elevation_deg = lerpf(rig.elevation_deg, float(_cam[1]), k) + (0.15 * sin(_drift_t * 0.41) + 0.6 * _shake * sin(_drift_t * 53.0)) * dt * 6.0
+	else:
+		rig.elevation_deg = lerpf(rig.elevation_deg, float(_cam[1]), k)
 	rig.focus_height = lerpf(rig.focus_height, float(_cam[2]), k)
 	rig.fov = lerpf(rig.fov, float(_cam[3]), k)
 	if _follow and is_instance_valid(_follow):
@@ -1407,8 +1480,8 @@ func _process(dt: float) -> void:
 		ground_dy = lerpf(ground_dy, want_dy, 1.0 - exp(-10.0 * dt))
 		_step_stroll(dt)
 		_apply_trav()
-	if not is_equal_approx(_light_k, _light_t):
-		_light_k = move_toward(_light_k, _light_t, dt * 0.5)
+	if _light_k < 1.0 and not _light_to.is_empty():
+		_light_k = move_toward(_light_k, 1.0, dt * 0.4)
 		_apply_light()
 	if _counter:
 		var cs := PaperSpring.step(_counter.scale.x, _counter_v, _counter_s, 9.0, 0.35, dt)
@@ -1424,7 +1497,17 @@ func _process(dt: float) -> void:
 ## within a hand's breadth in front of it, that facade's wall bands (door included) and whoever stands at its windows
 ## are hidden, so the camera never shows a card edge or the back of a face. The roof is behind the camera then.
 var camera_inside := ""
-var _sight_focus := Vector3(INF, 0, INF)  ## only spots near the station count for sightlines (INF: all)
+var _sight_focus := Vector3(INF, 0, INF)
+var _cam_rate := 2.4
+var _yaw_off := 0.0  ## current yaw offset from the template view (shots' 5th field), eased
+var _yaw_base := NAN
+var _shake := 0.0
+var _drift_t := 0.0
+
+
+## Camera shake (degrees of jitter, decays over ~0.4 s): a huff, a hammer bump, "앗, 뜨거워!".
+func shake(amount: float) -> void:
+	_shake = maxf(_shake, amount)  ## only spots near the station count for sightlines (INF: all)
 var _follow: StoryActor
 var _follow_off := Vector3.ZERO
 

@@ -165,6 +165,7 @@ func fx(name: String) -> bool:
 			if pig2:
 				pig2.hop_v = 0.8
 				pig2.set_pose("hammer")
+			stage.shake(0.5)  # a small camera bump on each hammer blow
 			if house2 and pile2:
 				fly("plank", pile2.global_position + Vector3(0, 0.08, 0), house2.centre() + Vector3(0, 0.05, 0.06), 0.16, 0.55, 0.3, 6.0)
 			_spark(house2)
@@ -197,6 +198,7 @@ func fx(name: String) -> bool:
 		"brothers_tease":
 			# 첫째 and 둘째 stroll along the road from their own houses to the brick lot (side view), stop and tease
 			var at := stage.spot_point("tease")
+			stage.shot_to("two_shot", "tease", {"rate": 1.6}) if stage._shots.has("two_shot") else null
 			for k in 2:
 				var p := _a("pig_a" if k == 0 else "pig_b")
 				if p == null:
@@ -212,6 +214,8 @@ func fx(name: String) -> bool:
 				p.pose = "tease" if k == 0 else "violin"
 		"brothers_leave":
 			# back home along the road (첫째 to the straw house, 둘째 to the wood house)
+			if stage._shots.has("medium"):
+				stage.shot_to("medium", "b_focus", {"rate": 1.4})
 			var homes := {"pig_a": "s_door", "pig_b": "w_door"}
 			for r in homes:
 				var p2 := _a(r)
@@ -254,6 +258,11 @@ func fx(name: String) -> bool:
 			if hs:
 				hs.window_backs("fire")
 			_chimney_steam = true
+		"windows_lit":
+			for k in stage.sets:
+				var sp3: SetPiece = stage.sets[k]
+				if not sp3.bands.is_empty() and sp3.shown >= sp3.band_count():
+					sp3.window_backs("fire")
 		"inside_view":
 			# into the house: the camera glides in through the front (the wall hides only while it passes); the
 			# brothers are at the hearth when it arrives

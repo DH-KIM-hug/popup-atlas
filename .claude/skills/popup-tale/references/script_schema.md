@@ -42,6 +42,12 @@ speakers: {sp: [name, colour, cast id]}}), `cast` by `kind`:
 | actor | StoryActor: free walker, figure picked from travel direction | skin (cast catalog `skin`), height (default: calm figure height_units × 1.3) |
 | prop | (handler makes cards) | skin |
 
+Shots (`shots` top level): [distance, elevation°, focus height, fov, yaw offset° (optional)] — e.g. crane_high,
+establish, high, medium, two_shot, face, low_up, low_wolf, ots (over the shoulder: yaw offset), cheeks, pull_back.
+Walk steps take `follow` + `shot` for tracking; `huff` takes `cam_result` / `cam_result_at` (cut wide on the last tap)
+and `shake` (per tap, default 0.9); `end` takes `close_book` (the page folds shut into the end card). Top-level
+`backdrop: true` gives the area behind the far hills the haze colour (no black sky on high or tilt-up shots).
+`spread.light`: "" | afternoon | late | dusk | night | evening (eased over ~2.5 s).
 Spread fields: `place` (page key = seed:view:place; consecutive beats with the same key share the page and only
 apply their `set` / `light` / `enter`), `spots` {name: [right, toward camera]} from the page anchor (template start,
 template view frame; "anchor" = itself; also used as "focus"), `focus` (spot the stage camera looks at), `set`
@@ -65,7 +71,7 @@ the page on a same-page beat change unless kept.
 | tap_steps | target, prompt, hint, steps [{target?, fx, lines, next, wait}] | one tap per step (generalised shine) |
 | build | house (set name), target, taps, hint, walker, fx, counter, gap, steps [{at, fx, lines}] | band k folds up after k·taps/bands taps; fx sees stage.build_ctx {house, walker, tap, taps} |
 | huff | house, taps, target (default wolf), who, prompt, hint, fx, counter, gap, result (blow_apart / collapse / hold), ruin (card id), huff_pose | each tap one 후~: blow_apart peels bands from the top, collapse rocks harder then tumbles, hold only shivers; the ruin set piece pops |
-| cam | shot, at (spot), wait | shot + focus spot |
+| cam | shot, at (spot), from (shot: snap there first → crane / push / pull), rate (glide speed, default 2.4; ~1 slow, ~3 snappy), shake (°), follow (role: tracking shot), wait | camera move on a stage (non-walker) page; every stage shot drifts a little (hand-held) and eases its yaw offset |
 | fx | fx, wait | handler fx; generic `pop:<card id>` / `fold:<card id>` on set pieces |
 | blow / shine / gentle / quiz | target / choices (default sun_wind's) | as before, targets from data |
 `counter: true` on build / huff shows the tap count as a big printed number beside the house.

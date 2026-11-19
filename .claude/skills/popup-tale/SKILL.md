@@ -25,6 +25,18 @@ The user talks in Korean, wants to SEE results (send recordings and contact shee
   window, answering from inside, running in through the door (house_stages.py GLASS / DOORS, `enter.inside`,
   `go_inside`); when the house falls they are revealed where it stood (user: "아기돼지들 집에 있어야하지 않겠니?").
 
+## Direction (user-approved shot plan, 2026-11-19)
+- A page is a film, not a stage play: mix wide / medium / close, change angle every line or two; never one frontal
+  medium for every beat. Establish a new place with a wide (crane) before the first action there.
+- Each repeated set piece gets its own rhythm (straw quick, wood with a camera bump per hammer, brick slow and warm);
+  completions get a slow low-angle push-in; threats enter low and menacing, then over the shoulder toward the target;
+  dialogue across a wall is shot / reverse shot (OTS on the speaker, window close-up on the answer); effort = close +
+  a small shake per tap, the result cut wide; the strong outcome holds frontal and steady.
+- Escapes: side tracking plus a high wide so the route reads. Keep the 180° rule (threat screen-left, heroes right).
+- The camera always drifts slightly (hand-held miniature); the light progresses with the story (day → afternoon →
+  late → dusk → night → warm evening) and the ending pulls back and closes the book.
+- Never expose the backdrop: clamp shots or use `backdrop`; close-ups must not show card edges (sightline stations).
+
 ## Pipeline (one tale)
 
 1. **Plan** (`references/planning.md`): list beats → spreads (which template, seed/view, route), the cast with every pose/expression each beat needs, props, the taps/holds per beat, and which lines change. Write `game/stories/<tale_id>/script.json` with `tools/story/seed_script.py` and edit it (schema: `references/script_schema.md`).

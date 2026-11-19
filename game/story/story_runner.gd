@@ -435,7 +435,11 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			stage.fx(str(st["fx"]))
 			await _wait(float(st.get("wait", 0.4)))
 		"cam":
-			stage.shot_to(str(st["shot"]), st.get("at", null))
+			var opts: Dictionary = {}
+			for k in ["from", "rate", "shake", "follow"]:
+				if st.has(k):
+					opts[k] = st[k]
+			stage.shot_to(str(st["shot"]), st.get("at", null), opts)
 			await _wait(float(st.get("wait", 0.6)))
 		"snap":
 			_snaps[str(st["key"])] = await _snapshot(true)
@@ -753,6 +757,9 @@ func _step_huff(st: Dictionary) -> void:
 			wolf.set_pose(str(st.get("huff_pose", "huff")))
 			wolf.hop_v = 0.35
 		stage.fx(str(st.get("fx", "")))
+		stage.shake(float(st.get("shake", 0.9)))
+		if i == taps and st.has("cam_result"):
+			stage.shot_to(str(st["cam_result"]), st.get("cam_result_at", null), {"rate": 3.5})
 		if sp:
 			match result:
 				"blow_apart":
@@ -889,6 +896,10 @@ func _step_gentle(st: Dictionary) -> void:
 
 func _step_end(st: Dictionary) -> void:
 	await _say(str(st.get("line", "")))
+	if st.get("close_book", false) and stage and is_instance_valid(stage):
+		# the book closes: the page folds flat, then the end card
+		var t := stage.fold()
+		await _wait(t + 0.8)
 	_mode = "end"
 	ui.show_end("")
 	ui.sparkle(Vector2(683, 300))
@@ -1024,7 +1035,7 @@ static func _key_of(sp: Dictionary) -> String:
 ## page on screen; nothing is rendered there) until _enter_spread moves it into the story.
 ## Not in fixed-step runs (captures, recordings): there each spread is built at its page turn exactly as before, so
 ## the global RNG sequence (hinge jitter, gusts) and every frame stay reproducible.
-const COVER_BUILD_MS := 10.0
+const COVER_BUILD_MS := 28.0  ## the cover is a still page: build the first spread fast behind it
 
 
 func _prebuild_after(i: int, budget_ms := PREBUILD_BUDGET_MS) -> void:
