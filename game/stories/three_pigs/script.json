@@ -162,6 +162,13 @@
    20.0,
    8.0
   ],
+  "huff_two": [
+   2.2,
+   7.0,
+   0.36,
+   22.0,
+   10.0
+  ],
   "pull_back": [
    10.5,
    26.0,
@@ -632,6 +639,14 @@
       -1.4,
       1.372
      ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
+     ],
      "est": [
       -0.551,
       -0.707
@@ -710,6 +725,7 @@
       "at": "b_lot",
       "stage": 0,
       "name": "house",
+      "clear": 1.8,
       "box": {
        "depth": 0.78,
        "side": "story_houses_07",
@@ -881,7 +897,8 @@
       "stage": 0,
       "name": "k_flue",
       "clear": 0,
-      "lift": 0.36
+      "lift": 0.36,
+      "inside_only": true
      },
      {
       "card": "story_hearth_00",
@@ -1027,12 +1044,12 @@
       "w_lot"
      ],
      [
-      "cheeks",
-      "s_wolf"
+      "huff_two",
+      "s_huff"
      ],
      [
-      "cheeks",
-      "w_wolf"
+      "huff_two",
+      "w_huff"
      ],
      [
       "low_wolf",
@@ -1346,6 +1363,14 @@
       -1.4,
       1.372
      ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
+     ],
      "est": [
       -0.551,
       -0.707
@@ -1596,6 +1621,14 @@
      "s_win": [
       -1.4,
       1.372
+     ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
      ],
      "est": [
       -0.551,
@@ -1853,6 +1886,14 @@
       -1.4,
       1.372
      ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
+     ],
      "est": [
       -0.551,
       -0.707
@@ -1914,6 +1955,9 @@
      "follow": "wolf",
      "shot": "low_wolf",
      "line": "tp_027",
+     "segs": [
+      0
+     ],
      "end_pose": "sniff"
     },
     {
@@ -1927,6 +1971,13 @@
      "do": "pose",
      "who": "wolf",
      "pose": "shout"
+    },
+    {
+     "do": "say",
+     "line": "tp_027",
+     "segs": [
+      1
+     ]
     },
     {
      "do": "pose",
@@ -1946,8 +1997,8 @@
     },
     {
      "do": "cam",
-     "shot": "cheeks",
-     "at": "s_wolf",
+     "shot": "huff_two",
+     "at": "s_huff",
      "rate": 3.0,
      "wait": 0.2
     },
@@ -2169,6 +2220,14 @@
       -1.4,
       1.372
      ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
+     ],
      "est": [
       -0.551,
       -0.707
@@ -2208,7 +2267,10 @@
      "pose": "side_prowl",
      "speed": 0.6,
      "follow": "wolf",
-     "line": "tp_031"
+     "line": "tp_031",
+     "segs": [
+      0
+     ]
     },
     {
      "do": "cam",
@@ -2221,6 +2283,13 @@
      "do": "pose",
      "who": "wolf",
      "pose": "shout"
+    },
+    {
+     "do": "say",
+     "line": "tp_031",
+     "segs": [
+      1
+     ]
     },
     {
      "do": "pose",
@@ -2243,8 +2312,8 @@
     },
     {
      "do": "cam",
-     "shot": "cheeks",
-     "at": "w_wolf",
+     "shot": "huff_two",
+     "at": "w_huff",
      "rate": 3.0,
      "wait": 0.2
     },
@@ -2470,6 +2539,14 @@
       -1.4,
       1.372
      ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
+     ],
      "est": [
       -0.551,
       -0.707
@@ -2509,7 +2586,10 @@
      "pose": "side_prowl",
      "speed": 0.6,
      "follow": "wolf",
-     "line": "tp_043"
+     "line": "tp_043",
+     "segs": [
+      0
+     ]
     },
     {
      "do": "cam",
@@ -2522,6 +2602,13 @@
      "do": "pose",
      "who": "wolf",
      "pose": "shout"
+    },
+    {
+     "do": "say",
+     "line": "tp_043",
+     "segs": [
+      1
+     ]
     },
     {
      "do": "say",
@@ -2740,6 +2827,14 @@
      "s_win": [
       -1.4,
       1.372
+     ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
      ],
      "est": [
       -0.551,
@@ -3112,6 +3207,14 @@
      "s_win": [
       -1.4,
       1.372
+     ],
+     "s_huff": [
+      -1.488,
+      1.71
+     ],
+     "w_huff": [
+      0.659,
+      -0.245
      ],
      "est": [
       -0.551,
@@ -3903,9 +4006,10 @@
      "text": "그럼 후~ 불어서 날려 버릴 테야!",
      "emotion": "angry:1.1",
      "tags": "[puffing up, comically huffy]",
-     "audio": "res://audio/voice/three_pigs/wolf_2060345d9c.mp3",
+     "audio": "res://audio/voice/three_pigs/wolf_2060345d9c_t.mp3",
      "source_audio": "audio/el/three_pigs/wolf_2060345d9c.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "trimmed_from": "wolf_2060345d9c.mp3 trimmed from 0.52 s"
     }
    ],
    "source_index": 28,
@@ -4029,9 +4133,10 @@
      "text": "그럼 후~ 후~ 불어 주지!",
      "emotion": "angry:1.1",
      "tags": "[puffing up, comically huffy]",
-     "audio": "res://audio/voice/three_pigs/wolf_61e2f65ffa.mp3",
+     "audio": "res://audio/voice/three_pigs/wolf_61e2f65ffa_t.mp3",
      "source_audio": "audio/el/three_pigs/wolf_61e2f65ffa.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "trimmed_from": "wolf_61e2f65ffa.mp3 trimmed from 0.90 s"
     }
    ],
    "source_index": 32,
@@ -4340,9 +4445,10 @@
      "text": "그럼 후~ 후~ 불어 주지!",
      "emotion": "angry:1.1",
      "tags": "[puffing up, comically huffy]",
-     "audio": "res://audio/voice/three_pigs/wolf_61e2f65ffa.mp3",
+     "audio": "res://audio/voice/three_pigs/wolf_61e2f65ffa_t.mp3",
      "source_audio": "audio/el/three_pigs/wolf_61e2f65ffa.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "trimmed_from": "wolf_61e2f65ffa.mp3 trimmed from 0.90 s"
     }
    ],
    "source_index": 44,

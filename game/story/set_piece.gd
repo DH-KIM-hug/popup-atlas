@@ -295,8 +295,8 @@ func add_box(cfg: Dictionary) -> void:
 	var inner := str(cfg.get("inner", ""))
 	if inner != "":
 		mk.call(inner, wall_h * float(cfg.get("inner_h", 1.0)), x1 - x0, Vector3((x0 + x1) * 0.5, 0, -d + 0.012), 0.0)
-	# the back of the house: the front's own print turned round (a closed volume seen from the side / behind)
-	mk.call(_full_path, height, width, Vector3(0, 0, -d - 0.004), PI)
+	# (no turned-round copy of the front at the back: seen from the raised camera its plain back poked above the
+	# roof; the side walls, inner wall and ceiling close the volume from every angle the story uses)
 	var floor := str(cfg.get("floor", ""))
 	if floor != "":
 		for k in 2:  # floor and ceiling: planks lying flat

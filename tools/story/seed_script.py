@@ -155,6 +155,9 @@ def line_entry(lid, segs, beat, inter, unused, source_index=None, source_text=No
     if source_index is not None and source_index in SEG_KEEP:
         e["trimmed_segs"] = SEG_KEEP[source_index]
     e.update(LINE_META.get(lid, {}))
+    for si, (au, prov) in getattr(T, "TRIM_SEG", {}).get(lid, {}).items():  # one seg's clip trimmed (no recording)
+        if si < len(e["segs"]):
+            e["segs"][si] = {**e["segs"][si], "audio": au, "trimmed_from": prov, "status": "reuse"}
     tr = getattr(T, "TRIM", {}).get(lid)
     if tr:  # an existing clip trimmed at a sentence pause (no new recording): (text, audio, provenance)
         e["segs"] = [{**e["segs"][0], "text": tr[0], "audio": tr[1], "trimmed_from": tr[2], "status": "reuse"}]

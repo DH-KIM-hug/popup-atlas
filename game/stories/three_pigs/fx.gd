@@ -257,7 +257,6 @@ func fx(name: String) -> bool:
 			var hs := stage.set_piece("house")
 			if hs:
 				hs.window_backs("fire")
-			_chimney_steam = true
 		"windows_lit":
 			for k in stage.sets:
 				var sp3: SetPiece = stage.sets[k]
@@ -281,6 +280,7 @@ func fx(name: String) -> bool:
 			_flame(2)
 		"boil":
 			_boil = 1.0
+			_chimney_steam = true  # steam from the chimney only once the pot boils
 			var pot := stage.set_piece("k_pot")
 			if pot:
 				pot.bounce()

@@ -415,6 +415,10 @@ func _build_set(list: Array) -> void:
 			if not h in sp.wave_hinges():
 				(h.get_parent() as Node3D).visible = false
 		sets[nm] = sp
+		if not sp.bands.is_empty():
+			for n in world.get_children():
+				if n is ChimneySmoke and Vector2(n.global_position.x - p.x, n.global_position.z - p.z).length() < maxf(sp.width, 0.8):
+					(n as Node3D).visible = false  # a template house's smoke must not rise from a story house
 		if e.has("box"):
 			var bx: Dictionary = (e["box"] as Dictionary).duplicate()
 			for k in ["side", "inner", "floor"]:
@@ -1503,6 +1507,42 @@ var _yaw_off := 0.0  ## current yaw offset from the template view (shots' 5th fi
 var _yaw_base := NAN
 var _shake := 0.0
 var _drift_t := 0.0
+
+
+## Interactive steps (2026-11-19 user: "처음에 돼지들 누를때 화면이 거기로 안가서 못누름"): before waiting for a tap, every
+## target must be fully on screen and big enough to tap (≥ ~80 pt). If not, frame them all: focus on their centroid
+## at a distance that fits their spread, and hold. Stage pages only (walker pages keep the road camera, whose sky
+## cast / traveller targets are framed by the story shot). Returns true when the camera moved.
+func frame_targets(targets: Array) -> bool:
+	if has_walker or _cam_anchor == null:
+		return false
+	var cam := camera()
+	var vs := get_viewport().get_visible_rect().size
+	var pts: Array[Vector3] = []
+	var ok := true
+	for t in targets:
+		var p: Variant = _target_point(str(t))
+		if p == null:
+			continue
+		pts.append(p)
+		var sp := cam.unproject_position(p)
+		if cam.is_position_behind(p) or sp.x < vs.x * 0.08 or sp.x > vs.x * 0.92 or sp.y < vs.y * 0.12 or sp.y > vs.y * 0.78 \
+				or target_radius(str(t)) < 60.0:
+			ok = false
+	if ok or pts.is_empty():
+		return false
+	var c := Vector3.ZERO
+	for p in pts:
+		c += p
+	c /= pts.size()
+	var spread := 0.0
+	for p in pts:
+		spread = maxf(spread, Vector2(p.x - c.x, p.z - c.z).length())
+	_follow = null
+	_focus_goal = Vector3(c.x, world.ground.surface_y(Vector2(c.x, c.z)), c.z)
+	_cam = [clampf(2.4 + spread * 3.2, 2.6, 6.0), 12.0, 0.28, 20.0, 0.0]
+	_cam_rate = 2.6
+	return true
 
 
 ## Camera shake (degrees of jitter, decays over ~0.4 s): a huff, a hammer bump, "앗, 뜨거워!".

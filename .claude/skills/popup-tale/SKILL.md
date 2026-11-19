@@ -37,6 +37,14 @@ The user talks in Korean, wants to SEE results (send recordings and contact shee
   late → dusk → night → warm evening) and the ending pulls back and closes the book.
 - Never expose the backdrop: clamp shots or use `backdrop`; close-ups must not show card edges (sightline stations).
 
+- Interactive steps frame their targets first (user: "화면이 거기로 안가서 못누름"): before a prompt, the stage camera
+  settles on a shot with every target on screen and ≥ ~80 pt to tap, and holds until the taps are done
+  (SpreadStage.frame_targets, runner `_frame_first`).
+- Split a line across steps when its parts belong to different moments (`say`/`walk` take `segs`): narration while
+  the wolf walks, his quote only once he stands at the door (user: "도착 전에 문 열라고 하네").
+- Listen for doubled words in generated clips: two wolf clips began with a faint extra "그럼"; find it on the
+  envelope (silencedetect / RMS plot) and trim (`TRIM_SEG` in the tale table), no re-recording.
+
 ## Pipeline (one tale)
 
 1. **Plan** (`references/planning.md`): list beats → spreads (which template, seed/view, route), the cast with every pose/expression each beat needs, props, the taps/holds per beat, and which lines change. Write `game/stories/<tale_id>/script.json` with `tools/story/seed_script.py` and edit it (schema: `references/script_schema.md`).

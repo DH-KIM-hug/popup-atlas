@@ -1352,3 +1352,21 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     story_build_props_23 with the flower print painted out (the shared meadow card is unchanged; faint dark stem
     traces remain). Full-res checks: artifacts/three_pigs/tiles/v15_fix_checks.jpg.
   - three_pigs STORY_DONE 281.5 s missing_audio=[]. Video: artifacts/video/three_pigs_full_v15.mp4.
+
+## 2026-11-19 — three_pigs v16: user fixes (double 그럼, huff two-shot, smoke, tap framing, quote timing)
+  - "그럼 두 번": the generated wolf clips wolf_2060345d9c (tp_028) and wolf_61e2f65ffa (tp_032 / tp_044) start with a
+    faint first "그럼" (envelope 0.09-0.35 s / 0.09-0.40 s) before the loud one; nothing was double-played by the
+    engine. Trimmed before the loud onset (0.52 s / 0.90 s, 40 ms fade-in) -> *_t.mp3, via TRIM_SEG in the tale table
+    (seed_script supports per-seg trims). No new recording. The recorded wolf line now opens on the single "그럼".
+  - Huff: a two-shot "huff_two" (wolf face left, house right, spot between them) instead of the cheeks close-up.
+  - Brick chimney smoke: the template's chimney smoke under story houses is hidden; story chimney steam only once the
+    pot boils. The inner flue is shown only while the camera is inside (it poked over the roof), the turned-round
+    back copy of the front is gone (its plain back showed above the roof), wider meadow clear around the brick house.
+  - Tap framing: every interactive step (tap, tap_each, build, huff, tap_steps) frames its targets before the prompt
+    and holds (SpreadStage.frame_targets: all on screen, ≥ ~80 pt). sun_wind's walker pages keep their story shot
+    (their targets are already framed).
+  - Quotes at the mark: tp_027 / tp_031 / tp_043 split — the narrator seg plays during the walk, the wolf's
+    "아기 돼지야, 문 열어라!" only once he stands at his mark (`segs` on say / walk).
+  - Still off: a dark brick column stands behind the brick house's chimney in the night exterior (not a kitchen piece;
+    likely the band card's cut edge seen at an angle).
+  - three_pigs STORY_DONE 280.5 s, sun_wind 203.3 s, missing_audio=[] for both. Video: artifacts/video/three_pigs_full_v16.mp4.

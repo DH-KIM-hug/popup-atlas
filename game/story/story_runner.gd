@@ -258,7 +258,7 @@ func line_duration(id: String) -> float:
 	return t + 0.35
 
 
-func _say(id: String) -> void:
+func _say(id: String, only: Array = []) -> void:
 	if id == "" or not lines.has(id):
 		if id != "":
 			push_warning("StoryRunner: no line " + id)
@@ -270,6 +270,8 @@ func _say(id: String) -> void:
 	_last_line = id
 	var segs: Array = l["segs"]
 	for i in segs.size():
+		if not only.is_empty() and not only.has(i):
+			continue  # a line split across steps (narration during a walk, the quote at the mark)
 		var s: Dictionary = segs[i]
 		ui.show_line(l, i)
 		_apply_expr(l, i)
@@ -297,6 +299,8 @@ func _say_lines(ids: Array) -> void:
 ## Waits until one of `targets` is tapped (autoplay: simulated after a pause; `auto_order` picks which).
 ## Plays `hint` after a quiet spell. Returns the tapped target.
 func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer := true) -> String:
+	if not _choosing and stage and is_instance_valid(stage) and stage.frame_targets(targets):
+		await _wait(1.2)  # the camera settles on every target before the child is asked to tap
 	_expect = targets
 	_tapped = ""
 	var idle := 0.0
@@ -430,7 +434,7 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 		"cover":
 			await _step_cover(st, b)
 		"say":
-			await _say(str(st["line"]))
+			await _say(str(st["line"]), st.get("segs", []))
 		"fx":
 			stage.fx(str(st["fx"]))
 			await _wait(float(st.get("wait", 0.4)))
@@ -498,6 +502,7 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 		"go_inside":
 			await _step_go_inside(st)
 		"tap":
+			await _frame_first([str(st["target"])])
 			await _say(str(st.get("prompt", "")))
 			var hit := await _wait_tap([str(st["target"])], str(st.get("hint", "")))
 			stage.wiggle(hit)
@@ -572,7 +577,7 @@ func _step_walk_actors(st: Dictionary) -> void:
 		if st.has("end_pose"):
 			a.pose = str(st["end_pose"])
 	if st.has("line"):
-		_say.bind(str(st["line"])).call()
+		_say.bind(str(st["line"]), st.get("segs", [])).call()
 	if st.get("async", false):
 		return
 	await _wait_actors(roles)
@@ -669,7 +674,13 @@ func _step_climb(st: Dictionary) -> void:
 
 
 ## tap_each {targets, prompt, hint, react{role: [pose, fx]}, lines}: every target once, in any order.
+func _frame_first(targets: Array) -> void:
+	if stage and is_instance_valid(stage) and stage.frame_targets(targets):
+		await _wait(1.2)
+
+
 func _step_tap_each(st: Dictionary) -> void:
+	await _frame_first(st.get("targets", []))
 	await _say(str(st.get("prompt", "")))
 	var left: Array = (st.get("targets", []) as Array).duplicate()
 	var react: Dictionary = st.get("react", {})
@@ -690,6 +701,8 @@ func _step_tap_each(st: Dictionary) -> void:
 
 ## tap_steps {target, prompt, hint, steps[{target?, fx, lines, next}]}: one tap per step (generalised shine).
 func _step_tap_steps(st: Dictionary) -> void:
+	var first: Array = st.get("steps", [{}])
+	await _frame_first([str((first[0] as Dictionary).get("target", st.get("target", "")))] if not first.is_empty() else [])
 	await _say(str(st.get("prompt", "")))
 	for s: Dictionary in st.get("steps", []):
 		var tg := str(s.get("target", st.get("target", "")))
@@ -713,6 +726,7 @@ func _step_build(st: Dictionary) -> void:
 		at_steps[int(s["at"])] = s
 	stage.build_ctx = {"house": house, "walker": str(st.get("walker", "")), "tap": 0, "taps": taps,
 		"target": str(st.get("target", house)), "pile": str(st.get("pile", "pile"))}
+	await _frame_first([str(st.get("target", house))])
 	if st.has("prompt"):
 		await _say(str(st["prompt"]))
 	var shown0 := sp.shown if sp else 0  # bands already standing (a foundation) are not rebuilt
@@ -747,6 +761,7 @@ func _step_huff(st: Dictionary) -> void:
 	var result := str(st.get("result", "hold"))
 	if wolf and sp:
 		wolf.face_point(sp.global_position)
+	await _frame_first([str(st.get("target", who))])
 	if st.has("prompt"):
 		await _say(str(st["prompt"]))
 	stage.build_ctx = {"house": house, "walker": who, "tap": 0, "taps": taps, "result": result}
