@@ -9,6 +9,20 @@ This is how the first tale, 「해와 바람」 (sun_wind), was built, with ever
 
 The user talks in Korean, wants to SEE results (send recordings and contact sheets with SendUserFile, not just numbers), and gives short, sharp feedback on motion ("뒤로 걷는데?", "팔자걸음", "휘청거려"). Treat each such remark as a bug report: reproduce it with an 8 fps zoomed frame tile first, find the cause, fix, re-record, show.
 
+## Before showing the user anything
+
+Run `references/checklist.md` on the latest full recording. It lists every issue the user caught by eye on the first two tales, with their words, grouped as story logic, lines, motion, camera, sound and delivery. Most rounds on 「아기 돼지 삼형제」 were spent on items in that list that we could have caught ourselves:
+- a house standing before its build;
+- pigs outside while the wolf knocked;
+- a quote before the speaker arrived;
+- tap targets off-screen;
+- hopping-card runs;
+- a sound preview made from an old capture.
+
+Two rules guard against this:
+- Review the newest build, never an earlier capture.
+- When a fix touches timing or staging, re-check the neighbouring beats, because fixes caused regressions: framing added 15 s, and a split line read as missing.
+
 ## What carries over and what is new (user decisions)
 
 - From 톡톡 동화극장 (`~/projects/2026/patjuk-game`, READ-ONLY) only the **script** carries over, and even it is a draft to adapt to pop-up scenes. Characters, backgrounds and props are made new for the pop-up look; 톡톡 art is a design reference at most.
