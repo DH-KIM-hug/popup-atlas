@@ -1,0 +1,355 @@
+[
+ {
+  "id": "amb_breeze_grass",
+  "loop": true,
+  "duration": 30,
+  "influence": 0.6,
+  "prompt": "Gentle steady summer breeze through tall meadow grass and leafy trees, soft leaf rustle, calm and even, no birds, no voices, no music, seamless ambience"
+ },
+ {
+  "id": "amb_birds_day",
+  "loop": true,
+  "duration": 30,
+  "influence": 0.5,
+  "prompt": "Peaceful countryside morning, sparse gentle songbirds singing at a distance, a few varied chirps and warbles with space between them, soft air, no wind gusts, no voices, no music, calm loopable ambience"
+ },
+ {
+  "id": "amb_birds_afternoon",
+  "loop": true,
+  "duration": 30,
+  "influence": 0.5,
+  "prompt": "Warm lazy afternoon in a meadow, only an occasional distant bird call, soft buzzing insects far away, light warm breeze, very calm and quiet, no voices, no music, loopable ambience"
+ },
+ {
+  "id": "amb_dusk",
+  "loop": true,
+  "duration": 30,
+  "influence": 0.6,
+  "prompt": "Calm summer dusk in the countryside, soft chorus of crickets, a few gentle frogs croaking near a pond in the distance, still air, peaceful, no birds, no voices, no music, loopable"
+ },
+ {
+  "id": "amb_night",
+  "loop": true,
+  "duration": 30,
+  "influence": 0.6,
+  "prompt": "Quiet peaceful summer night outdoors, very soft sparse crickets, faint gentle night air, cozy and calm not spooky, no owls, no voices, no music, loopable ambience"
+ },
+ {
+  "id": "amb_fireplace_room",
+  "loop": true,
+  "duration": 30,
+  "influence": 0.6,
+  "prompt": "Cozy small cottage kitchen interior, a small fire gently crackling in a brick fireplace, soft warm room tone, calm and quiet, no voices, no music, loopable"
+ },
+ {
+  "id": "amb_stream",
+  "loop": true,
+  "duration": 30,
+  "influence": 0.6,
+  "prompt": "Small gentle babbling brook close up, soft water trickling and bubbling over pebbles, steady and calm, no birds, no wind, no voices, loopable water ambience"
+ },
+ {
+  "id": "amb_gust_1",
+  "duration": 6,
+  "influence": 0.6,
+  "prompt": "A single soft gust of wind swelling through leafy trees and long grass, leaves rustling louder then settling back down, gentle"
+ },
+ {
+  "id": "amb_gust_2",
+  "duration": 5,
+  "influence": 0.6,
+  "prompt": "Light breeze passing through meadow grass and a bush, soft swishing leaf rustle rising and fading away"
+ },
+ {
+  "id": "spk_bird_robin",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "A single small songbird singing one short cheerful melodic phrase, close, clean, outdoors, no other sounds"
+ },
+ {
+  "id": "spk_bird_finch",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "A tiny finch twittering a quick bright series of chirps, then silence, outdoors, clean"
+ },
+ {
+  "id": "spk_bird_blackbird",
+  "duration": 4,
+  "influence": 0.6,
+  "prompt": "A blackbird singing a soft fluting melodic phrase in a garden, gentle and sweet, isolated"
+ },
+ {
+  "id": "spk_cuckoo",
+  "duration": 4,
+  "influence": 0.6,
+  "prompt": "A distant cuckoo calling twice, cuck-oo cuck-oo, far away across a meadow, soft"
+ },
+ {
+  "id": "spk_dove",
+  "duration": 4,
+  "influence": 0.6,
+  "prompt": "A wood pigeon softly cooing its gentle five note call, a little distant, calm"
+ },
+ {
+  "id": "spk_bee",
+  "duration": 4,
+  "influence": 0.6,
+  "prompt": "A single bumblebee buzzing past from left to right near flowers, soft and gentle, fades in and out"
+ },
+ {
+  "id": "spk_frog",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "Two or three cute soft frog croaks, ribbit, near a pond at dusk, gentle"
+ },
+ {
+  "id": "spk_owl",
+  "duration": 4,
+  "influence": 0.6,
+  "prompt": "A distant tawny owl hooting softly at night, hoo hoo, gentle and calm, far away"
+ },
+ {
+  "id": "foot_pig_grass",
+  "duration": 5,
+  "influence": 0.8,
+  "prompt": "Close-up foley of small footsteps walking on short grass, a little animal, eight distinct soft steps with a crisp grass crunch on each step and short gaps between, clean recording, no background",
+  "retry_note": "take 1 (prompt 'Light small footsteps of a little piglet trotting on soft grass...') came out at -41 dBFS peak with 1 detectable step"
+ },
+ {
+  "id": "foot_pig_road",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Small light footsteps of a little piglet walking on a dry dirt path, ten separate soft crunchy steps, evenly spaced, close"
+ },
+ {
+  "id": "foot_pig_bridge",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Small light footsteps crossing a small wooden plank bridge, eight separate hollow soft wooden taps, evenly spaced, close"
+ },
+ {
+  "id": "foot_wolf_grass",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Soft padded paw footsteps of a sneaking cartoon wolf on grass, eight separate slow soft steps with gaps, quiet and sneaky, close"
+ },
+ {
+  "id": "foot_wolf_road",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Soft padded paw footsteps on a dirt path, eight separate deliberate steps with gaps, sneaky tiptoe, close"
+ },
+ {
+  "id": "foot_wolf_bridge",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Heavier soft footsteps walking across a wooden plank bridge, eight separate hollow wooden creaky steps, evenly spaced"
+ },
+ {
+  "id": "foot_roof_tile",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Careful tiptoe steps on clay roof tiles, six separate light clinking tile taps with gaps, quiet and sneaky"
+ },
+ {
+  "id": "ladder_rungs",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Someone climbing a wooden ladder, six separate rung steps, soft wooden creaks and knocks, evenly spaced"
+ },
+ {
+  "id": "door_open",
+  "duration": 2.5,
+  "influence": 0.6,
+  "prompt": "A small wooden cottage door creaking open slowly, soft gentle creak, cartoonish and cozy"
+ },
+ {
+  "id": "door_shut",
+  "duration": 1.5,
+  "influence": 0.6,
+  "prompt": "A small wooden door closing with a soft gentle thump and latch click"
+ },
+ {
+  "id": "straw_rustle_1",
+  "duration": 2,
+  "influence": 0.6,
+  "prompt": "An armful of dry straw being dropped and patted onto a pile, soft crisp rustle"
+ },
+ {
+  "id": "straw_rustle_2",
+  "duration": 2,
+  "influence": 0.6,
+  "prompt": "Dry hay bundle rustling as it is pushed into place, short soft crunchy rustle"
+ },
+ {
+  "id": "hammer_knocks",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "A small hammer knocking nails into a wooden plank, six separate bright wooden knocks with gaps between them, cheerful workshop, no voices"
+ },
+ {
+  "id": "brick_thunks",
+  "duration": 5,
+  "influence": 0.7,
+  "prompt": "Bricks being set down one at a time on a brick wall with mortar, six separate soft solid clay thunks with gaps, close"
+ },
+ {
+  "id": "build_done_chime",
+  "duration": 2,
+  "influence": 0.6,
+  "prompt": "A bright happy sparkle chime, glockenspiel and soft harp glissando upward, magical success jingle for a children's game"
+ },
+ {
+  "id": "pop_toy",
+  "duration": 1,
+  "influence": 0.6,
+  "prompt": "A cute soft cartoon pop with a tiny wooden xylophone note, playful children's game UI"
+ },
+ {
+  "id": "ui_count_tick",
+  "duration": 0.6,
+  "influence": 0.7,
+  "prompt": "A single soft wooden marimba note tick, gentle children's game counter"
+ },
+ {
+  "id": "flute_phrase",
+  "duration": 4,
+  "influence": 0.7,
+  "prompt": "A short cheerful tune played on a small wooden recorder flute, happy playful melody, solo, about three seconds"
+ },
+ {
+  "id": "violin_phrase",
+  "duration": 4,
+  "influence": 0.7,
+  "prompt": "A short cheerful jaunty folk tune played on a solo violin, happy and playful, about three seconds"
+ },
+ {
+  "id": "wolf_sniff",
+  "duration": 2.5,
+  "influence": 0.7,
+  "prompt": "A cartoon animal sniffing the air curiously, three quick sniffs, sniff sniff sniff, playful not scary"
+ },
+ {
+  "id": "huff_1",
+  "duration": 1.5,
+  "influence": 0.6,
+  "prompt": "A small cartoon puff of breath, a soft short whoosh of air blown out, playful"
+ },
+ {
+  "id": "huff_2",
+  "duration": 2,
+  "influence": 0.6,
+  "prompt": "A medium cartoon blow, a big breath blown out as a whooshing gust of wind, playful children's cartoon"
+ },
+ {
+  "id": "huff_3",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "A huge cartoon blow, a long strong whooshing gust of wind from a big breath, swirling air, playful not scary"
+ },
+ {
+  "id": "straw_blow_apart",
+  "duration": 3.5,
+  "influence": 0.6,
+  "prompt": "A straw hut blown apart by wind, lots of dry straw and hay scattering and swirling away in a rustling whoosh, light and cartoonish"
+ },
+ {
+  "id": "wood_wobble",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "A small wooden shed wobbling and creaking in strong wind, wooden boards groaning and rattling softly"
+ },
+ {
+  "id": "wood_collapse",
+  "duration": 3.5,
+  "influence": 0.6,
+  "prompt": "A small toy wooden house collapsing, wooden planks clattering and tumbling down into a pile, soft cartoon crash, not too loud"
+ },
+ {
+  "id": "brick_hold_thud",
+  "duration": 1.5,
+  "influence": 0.6,
+  "prompt": "A dull soft thud against a solid brick wall, the wall holds firm, muffled deep bump"
+ },
+ {
+  "id": "wolf_flop",
+  "duration": 2,
+  "influence": 0.6,
+  "prompt": "A tired cartoon character flopping down to sit on the ground with a soft thump and a little dust puff, comedic"
+ },
+ {
+  "id": "ladder_raise",
+  "duration": 2.5,
+  "influence": 0.6,
+  "prompt": "A wooden ladder being lifted from the grass and leaned against a brick wall, soft wooden scrape and a gentle clunk"
+ },
+ {
+  "id": "chimney_slide",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "A cartoon character scrambling into a brick chimney and sliding down inside it, scrabbling and a descending slide whistle, comedic"
+ },
+ {
+  "id": "wolf_launch",
+  "duration": 2.5,
+  "influence": 0.6,
+  "prompt": "A cartoon character shooting straight up into the sky, fast rising slide whistle and whoosh, comedic and bouncy"
+ },
+ {
+  "id": "wolf_yelp_far",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "A cartoon dog-like character yelping ow ow ow while running away, fading far into the distance, comedic not scary"
+ },
+ {
+  "id": "fire_ignite",
+  "duration": 1.5,
+  "influence": 0.6,
+  "prompt": "A fireplace fire flaring up bigger with a soft warm whoomph, gentle"
+ },
+ {
+  "id": "fire_crackle_m",
+  "loop": true,
+  "duration": 15,
+  "influence": 0.6,
+  "prompt": "A medium cozy fireplace fire crackling and popping steadily, warm, close, loopable"
+ },
+ {
+  "id": "fire_crackle_l",
+  "loop": true,
+  "duration": 15,
+  "influence": 0.6,
+  "prompt": "A big roaring cozy fireplace fire, strong crackling and popping wood logs, warm, loopable"
+ },
+ {
+  "id": "boil_bubbles",
+  "loop": true,
+  "duration": 15,
+  "influence": 0.6,
+  "prompt": "A big pot of water boiling on a fire, gentle rolling bubbling and blooping, cartoonish, loopable"
+ },
+ {
+  "id": "splash_hiss",
+  "duration": 3,
+  "influence": 0.6,
+  "prompt": "A big comedic splash into a pot of hot water followed by a steamy hiss, cartoon, playful"
+ },
+ {
+  "id": "page_turn_1",
+  "duration": 1.5,
+  "influence": 0.7,
+  "prompt": "Turning a thick page of a large cardboard picture book, soft paper whoosh and gentle flap"
+ },
+ {
+  "id": "page_turn_2",
+  "duration": 1.5,
+  "influence": 0.7,
+  "prompt": "A heavy paper page of a pop-up book turning over, papery swish and soft landing"
+ },
+ {
+  "id": "book_close",
+  "duration": 2,
+  "influence": 0.7,
+  "prompt": "A large hardcover picture book closing gently, soft paper whoosh and a muffled cardboard thump"
+ }
+]

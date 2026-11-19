@@ -1,0 +1,956 @@
+[
+ {
+  "file": "sfx/amb_birds_afternoon_1.ogg",
+  "dur": 30.0,
+  "lufs_i": -31.3,
+  "true_peak": -16.2,
+  "peak_dbfs": -16.73,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.12,
+   "slope": 0.36,
+   "edge_db": 0.39,
+   "edge200_db": -0.34
+  }
+ },
+ {
+  "file": "sfx/amb_birds_day_1.ogg",
+  "dur": 28.5,
+  "lufs_i": -30.3,
+  "true_peak": -15.3,
+  "peak_dbfs": -15.47,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.06,
+   "slope": 0.31,
+   "edge_db": -2.24,
+   "edge200_db": -4.29
+  }
+ },
+ {
+  "file": "sfx/amb_breeze_grass_1.ogg",
+  "dur": 30.0,
+  "lufs_i": -30.5,
+  "true_peak": -11.4,
+  "peak_dbfs": -11.42,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.04,
+   "slope": 0.1,
+   "edge_db": -1.18,
+   "edge200_db": -2.51
+  }
+ },
+ {
+  "file": "sfx/amb_dusk_crickets_1.ogg",
+  "dur": 30.0,
+  "lufs_i": -29.4,
+  "true_peak": -18.0,
+  "peak_dbfs": -18.15,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.42,
+   "slope": 0.02,
+   "edge_db": 0.36,
+   "edge200_db": 0.34
+  }
+ },
+ {
+  "file": "sfx/amb_fireplace_room_1.ogg",
+  "dur": 30.0,
+  "lufs_i": -32.6,
+  "true_peak": -3.6,
+  "peak_dbfs": -5.2,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.13,
+   "slope": 0.32,
+   "edge_db": -0.62,
+   "edge200_db": -0.36
+  }
+ },
+ {
+  "file": "sfx/amb_gust_1.ogg",
+  "dur": 3.83,
+  "lufs_i": -28.4,
+  "true_peak": -15.4,
+  "peak_dbfs": -15.42,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/amb_gust_2.ogg",
+  "dur": 2.345,
+  "lufs_i": -28.4,
+  "true_peak": -14.6,
+  "peak_dbfs": -14.73,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/amb_night_1.ogg",
+  "dur": 28.5,
+  "lufs_i": -30.3,
+  "true_peak": -17.0,
+  "peak_dbfs": -19.29,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.04,
+   "slope": 0.45,
+   "edge_db": -0.05,
+   "edge200_db": -0.68
+  }
+ },
+ {
+  "file": "sfx/amb_stream_1.ogg",
+  "dur": 28.5,
+  "lufs_i": -26.3,
+  "true_peak": -5.8,
+  "peak_dbfs": -8.88,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.01,
+   "slope": 0.19,
+   "edge_db": 1.51,
+   "edge200_db": 1.07
+  }
+ },
+ {
+  "file": "sfx/build_brick_thunk_1.ogg",
+  "dur": 0.545,
+  "lufs_i": -30.8,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.96,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/build_brick_thunk_2.ogg",
+  "dur": 0.52,
+  "lufs_i": -29.1,
+  "true_peak": -4.0,
+  "peak_dbfs": -6.98,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/build_brick_thunk_3.ogg",
+  "dur": 0.525,
+  "lufs_i": -28.7,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.07,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/build_hammer_knock_1.ogg",
+  "dur": 0.322,
+  "lufs_i": null,
+  "true_peak": -3.5,
+  "peak_dbfs": -6.64,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/build_hammer_knock_2.ogg",
+  "dur": 0.312,
+  "lufs_i": null,
+  "true_peak": -3.7,
+  "peak_dbfs": -6.88,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/build_hammer_knock_3.ogg",
+  "dur": 0.156,
+  "lufs_i": null,
+  "true_peak": -3.6,
+  "peak_dbfs": -6.69,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/build_straw_rustle_1.ogg",
+  "dur": 1.545,
+  "lufs_i": -27.8,
+  "true_peak": -2.8,
+  "peak_dbfs": -7.15,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/build_straw_rustle_2.ogg",
+  "dur": 1.66,
+  "lufs_i": -21.6,
+  "true_peak": -3.5,
+  "peak_dbfs": -7.15,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/door_creak_open_1.ogg",
+  "dur": 1.955,
+  "lufs_i": -25.2,
+  "true_peak": -3.9,
+  "peak_dbfs": -7.08,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/door_shut_1.ogg",
+  "dur": 0.695,
+  "lufs_i": -23.2,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.02,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/fire_crackle_l_1.ogg",
+  "dur": 13.5,
+  "lufs_i": -27.0,
+  "true_peak": -5.1,
+  "peak_dbfs": -5.74,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.01,
+   "slope": 0.17,
+   "edge_db": -4.75,
+   "edge200_db": -1.24
+  }
+ },
+ {
+  "file": "sfx/fire_crackle_m_1.ogg",
+  "dur": 13.5,
+  "lufs_i": -28.1,
+  "true_peak": -4.8,
+  "peak_dbfs": -5.62,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.03,
+   "slope": 0.07,
+   "edge_db": 0.64,
+   "edge200_db": -5.93
+  }
+ },
+ {
+  "file": "sfx/fire_ignite_1.ogg",
+  "dur": 1.41,
+  "lufs_i": -20.3,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.91,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_ladder_rung_1.ogg",
+  "dur": 0.545,
+  "lufs_i": -23.8,
+  "true_peak": -4.3,
+  "peak_dbfs": -7.28,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_ladder_rung_2.ogg",
+  "dur": 0.545,
+  "lufs_i": -23.9,
+  "true_peak": -3.8,
+  "peak_dbfs": -6.91,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_ladder_rung_3.ogg",
+  "dur": 0.545,
+  "lufs_i": -24.3,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.04,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_bridge_1.ogg",
+  "dur": 0.46,
+  "lufs_i": -30.3,
+  "true_peak": -4.1,
+  "peak_dbfs": -7.15,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_bridge_2.ogg",
+  "dur": 0.44,
+  "lufs_i": -29.1,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.0,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_bridge_3.ogg",
+  "dur": 0.272,
+  "lufs_i": null,
+  "true_peak": -3.8,
+  "peak_dbfs": -6.85,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_grass_1.ogg",
+  "dur": 0.545,
+  "lufs_i": -22.7,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.28,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_grass_2.ogg",
+  "dur": 0.545,
+  "lufs_i": -22.7,
+  "true_peak": -3.2,
+  "peak_dbfs": -7.67,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_grass_3.ogg",
+  "dur": 0.545,
+  "lufs_i": -22.4,
+  "true_peak": -5.0,
+  "peak_dbfs": -9.51,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_grass_4.ogg",
+  "dur": 0.545,
+  "lufs_i": -25.4,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.35,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_road_1.ogg",
+  "dur": 0.545,
+  "lufs_i": -26.9,
+  "true_peak": -4.2,
+  "peak_dbfs": -7.21,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_road_2.ogg",
+  "dur": 0.5,
+  "lufs_i": -28.3,
+  "true_peak": -4.6,
+  "peak_dbfs": -7.64,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_road_3.ogg",
+  "dur": 0.545,
+  "lufs_i": -26.7,
+  "true_peak": -4.2,
+  "peak_dbfs": -7.26,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_pig_road_4.ogg",
+  "dur": 0.545,
+  "lufs_i": -29.2,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.91,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_roof_tile_1.ogg",
+  "dur": 0.51,
+  "lufs_i": -30.5,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.96,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_roof_tile_2.ogg",
+  "dur": 0.5,
+  "lufs_i": -32.8,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.95,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_roof_tile_3.ogg",
+  "dur": 0.51,
+  "lufs_i": -30.3,
+  "true_peak": -4.2,
+  "peak_dbfs": -7.18,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_bridge_1.ogg",
+  "dur": 0.42,
+  "lufs_i": -24.2,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.94,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_bridge_2.ogg",
+  "dur": 0.505,
+  "lufs_i": -26.2,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.93,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_bridge_3.ogg",
+  "dur": 0.54,
+  "lufs_i": -22.0,
+  "true_peak": -4.6,
+  "peak_dbfs": -7.57,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_grass_1.ogg",
+  "dur": 0.545,
+  "lufs_i": -30.6,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.04,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_grass_2.ogg",
+  "dur": 0.545,
+  "lufs_i": -26.9,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.05,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_grass_3.ogg",
+  "dur": 0.102,
+  "lufs_i": null,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.02,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_grass_4.ogg",
+  "dur": 0.352,
+  "lufs_i": null,
+  "true_peak": -4.1,
+  "peak_dbfs": -7.13,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_road_1.ogg",
+  "dur": 0.465,
+  "lufs_i": -24.7,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.91,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_road_2.ogg",
+  "dur": 0.425,
+  "lufs_i": -23.9,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.04,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_road_3.ogg",
+  "dur": 0.44,
+  "lufs_i": -23.7,
+  "true_peak": -6.1,
+  "peak_dbfs": -9.12,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/foot_wolf_road_4.ogg",
+  "dur": 0.395,
+  "lufs_i": null,
+  "true_peak": -4.6,
+  "peak_dbfs": -7.59,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/house_brick_hold_thud_1.ogg",
+  "dur": 0.585,
+  "lufs_i": -21.9,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.0,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/house_straw_blow_apart_1.ogg",
+  "dur": 3.115,
+  "lufs_i": -18.5,
+  "true_peak": -5.7,
+  "peak_dbfs": -5.96,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/house_wood_collapse_1.ogg",
+  "dur": 2.9,
+  "lufs_i": -18.3,
+  "true_peak": -8.3,
+  "peak_dbfs": -8.27,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/house_wood_wobble_1.ogg",
+  "dur": 2.84,
+  "lufs_i": -27.9,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.03,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/kitchen_boil_1.ogg",
+  "dur": 15.0,
+  "lufs_i": -25.1,
+  "true_peak": -9.4,
+  "peak_dbfs": -12.4,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.01,
+   "slope": 0.27,
+   "edge_db": 3.37,
+   "edge200_db": -0.85
+  }
+ },
+ {
+  "file": "sfx/kitchen_splash_hiss_1.ogg",
+  "dur": 3.0,
+  "lufs_i": -18.4,
+  "true_peak": -7.5,
+  "peak_dbfs": -7.52,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/music_build_done_chime_1.ogg",
+  "dur": 1.49,
+  "lufs_i": -20.0,
+  "true_peak": -8.6,
+  "peak_dbfs": -8.64,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/music_flute_phrase_1.ogg",
+  "dur": 3.81,
+  "lufs_i": -19.9,
+  "true_peak": -10.5,
+  "peak_dbfs": -13.53,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/music_violin_phrase_1.ogg",
+  "dur": 3.025,
+  "lufs_i": -20.0,
+  "true_peak": -8.9,
+  "peak_dbfs": -11.94,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/paper_book_close_1.ogg",
+  "dur": 0.97,
+  "lufs_i": -26.7,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.97,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/paper_page_turn_1.ogg",
+  "dur": 1.37,
+  "lufs_i": -27.6,
+  "true_peak": -4.2,
+  "peak_dbfs": -7.19,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/paper_page_turn_2.ogg",
+  "dur": 1.24,
+  "lufs_i": -27.4,
+  "true_peak": -4.6,
+  "peak_dbfs": -7.79,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/prop_ladder_raise_1.ogg",
+  "dur": 1.875,
+  "lufs_i": -28.8,
+  "true_peak": -4.1,
+  "peak_dbfs": -7.14,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_bee_1.ogg",
+  "dur": 3.17,
+  "lufs_i": -28.0,
+  "true_peak": -9.3,
+  "peak_dbfs": -12.32,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_bird_blackbird_1.ogg",
+  "dur": 3.83,
+  "lufs_i": -26.1,
+  "true_peak": -14.1,
+  "peak_dbfs": -17.19,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_bird_finch_1.ogg",
+  "dur": 2.555,
+  "lufs_i": -26.4,
+  "true_peak": -11.0,
+  "peak_dbfs": -14.18,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_bird_robin_1.ogg",
+  "dur": 2.575,
+  "lufs_i": -26.2,
+  "true_peak": -14.3,
+  "peak_dbfs": -17.36,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_cuckoo_1.ogg",
+  "dur": 2.535,
+  "lufs_i": -27.9,
+  "true_peak": -13.5,
+  "peak_dbfs": -16.48,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_dove_1.ogg",
+  "dur": 3.98,
+  "lufs_i": -28.0,
+  "true_peak": -16.4,
+  "peak_dbfs": -19.45,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_frog_1.ogg",
+  "dur": 2.59,
+  "lufs_i": -27.2,
+  "true_peak": -10.3,
+  "peak_dbfs": -13.34,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/spk_owl_1.ogg",
+  "dur": 1.705,
+  "lufs_i": -27.9,
+  "true_peak": -19.2,
+  "peak_dbfs": -22.19,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/ui_count_tick_1.ogg",
+  "dur": 0.585,
+  "lufs_i": -22.0,
+  "true_peak": -4.4,
+  "peak_dbfs": -7.59,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/ui_pop_toy_1.ogg",
+  "dur": 1.0,
+  "lufs_i": -21.4,
+  "true_peak": -3.9,
+  "peak_dbfs": -6.86,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_chimney_slide_1.ogg",
+  "dur": 2.87,
+  "lufs_i": -18.7,
+  "true_peak": -9.0,
+  "peak_dbfs": -12.44,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_flop_1.ogg",
+  "dur": 1.26,
+  "lufs_i": -27.9,
+  "true_peak": -4.0,
+  "peak_dbfs": -7.01,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_huff_large_1.ogg",
+  "dur": 2.83,
+  "lufs_i": -18.2,
+  "true_peak": -5.4,
+  "peak_dbfs": -8.43,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_huff_medium_1.ogg",
+  "dur": 1.865,
+  "lufs_i": -20.2,
+  "true_peak": -9.4,
+  "peak_dbfs": -12.42,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_huff_small_1.ogg",
+  "dur": 1.48,
+  "lufs_i": -22.3,
+  "true_peak": -3.5,
+  "peak_dbfs": -6.6,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_launch_whoosh_1.ogg",
+  "dur": 2.48,
+  "lufs_i": -18.0,
+  "true_peak": -11.7,
+  "peak_dbfs": -14.75,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_sniff_1.ogg",
+  "dur": 2.275,
+  "lufs_i": -20.2,
+  "true_peak": -4.8,
+  "peak_dbfs": -7.84,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "sfx/wolf_yelp_far_1.ogg",
+  "dur": 2.86,
+  "lufs_i": -22.0,
+  "true_peak": -10.1,
+  "peak_dbfs": -13.06,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "music/music_build_1.ogg",
+  "dur": 34.763,
+  "lufs_i": -22.0,
+  "true_peak": -4.8,
+  "peak_dbfs": -4.79,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.0,
+   "slope": 0.0,
+   "edge_db": -82.21,
+   "edge200_db": -77.77
+  }
+ },
+ {
+  "file": "music/music_chimney_1.ogg",
+  "dur": 38.38,
+  "lufs_i": -22.0,
+  "true_peak": -5.0,
+  "peak_dbfs": -5.03,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.09,
+   "slope": 0.05,
+   "edge_db": -6.65,
+   "edge200_db": -2.05
+  }
+ },
+ {
+  "file": "music/music_ending_1.ogg",
+  "dur": 69.76,
+  "lufs_i": -22.1,
+  "true_peak": -9.2,
+  "peak_dbfs": -9.21,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "music/music_home_1.ogg",
+  "dur": 38.4,
+  "lufs_i": -22.0,
+  "true_peak": -9.6,
+  "peak_dbfs": -9.58,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.07,
+   "slope": 0.01,
+   "edge_db": -17.87,
+   "edge200_db": -15.14
+  }
+ },
+ {
+  "file": "music/music_night_1.ogg",
+  "dur": 61.913,
+  "lufs_i": -21.9,
+  "true_peak": -7.9,
+  "peak_dbfs": -7.91,
+  "clipped": 0,
+  "silent": false,
+  "loop": false
+ },
+ {
+  "file": "music/music_wolf_1.ogg",
+  "dur": 31.36,
+  "lufs_i": -21.9,
+  "true_peak": -8.0,
+  "peak_dbfs": -8.01,
+  "clipped": 0,
+  "silent": false,
+  "loop": true,
+  "seam": {
+   "jump": 0.86,
+   "slope": 0.13,
+   "edge_db": 0.48,
+   "edge200_db": -0.5
+  }
+ }
+]

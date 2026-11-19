@@ -1,0 +1,65 @@
+{
+ "note": "Preview-only cue sheet: times (s) read off artifacts/video/three_pigs_full_v15.mp4 (frames every 0.5-3 s + speech gaps). The game triggers these from steps/fx (WIRING.md), not from times.",
+ "video": "artifacts/video/three_pigs_full_v15.mp4",
+ "seed": 7,
+ "music": [
+  [0.3, 35.5, "home", 2.0, 3.0, 0],
+  [35.0, 104.8, "build", 2.5, 2.5, 0],
+  [104.6, 237.0, "wolf", 1.5, 1.2, -1],
+  [236.6, 262.8, "chimney", 0.4, 2.5, 0],
+  [262.4, 283.5, "ending", 2.0, 2.5, 0]
+ ],
+ "beds": [
+  [3.4, 60.0, "day"], [59.0, 84.5, "afternoon"], [84.0, 105.5, "late"], [105.0, 145.0, "afternoon"],
+  [144.5, 179.0, "late"], [178.5, 207.0, "dusk"], [206.5, 229.0, "night"], [228.6, 252.6, "room"],
+  [252.4, 263.0, "night"], [262.6, 283.5, "evening"]
+ ],
+ "bed_fade": 2.5,
+ "stream_db": [[0,-40],[3.4,-26],[31,-20],[35,-6],[40,-3],[58,-4],[60,-6],[63,-16],[84,-20],[105,-5],[127,-4],[133,-8],[137.5,-2],[140.5,-3],[142,-14],[146.5,-4],[148,-2],[151,-6],[153,-15],[178,-22],[228.6,-40],[252.6,-22],[262.6,-18],[268,-10],[275,-6],[283.5,-6]],
+ "loops": [
+  [238.5, 252.6, "fire.crackle_m", 0.3, 0.8, 0],
+  [240.0, 252.6, "fire.crackle_l", 0.4, 0.8, -2],
+  [241.5, 252.6, "kitchen.boil", 0.6, 0.8, 0]
+ ],
+ "steps": [
+  [24.6, 33.0, "foot.pig.road", 0.36, 3, 0, -14],
+  [44.6, 50.5, "foot.pig.grass", 0.42, 1, 0, 0],
+  [50.5, 52.0, "foot.pig.grass", 0.40, 1, 0, 0],
+  [91.2, 94.6, "foot.pig.grass", 0.38, 2, -2, -2],
+  [97.6, 100.6, "foot.pig.grass", 0.38, 2, -2, -10],
+  [105.6, 110.4, "foot.wolf.grass", 0.52, 1, -2, 0],
+  [133.5, 138.3, "foot.pig.road", 0.22, 1, 2, 2],
+  [138.3, 140.1, "foot.pig.bridge", 0.22, 1, 2, 2],
+  [140.1, 141.6, "foot.pig.road", 0.22, 1, 2, 2],
+  [144.6, 147.3, "foot.wolf.road", 0.46, 1, 0, 0],
+  [147.3, 150.3, "foot.wolf.bridge", 0.46, 1, 0, 0],
+  [150.3, 153.6, "foot.wolf.road", 0.46, 1, 0, -2],
+  [169.8, 175.8, "foot.pig.road", 0.22, 2, 0, 0],
+  [178.6, 186.0, "foot.wolf.road", 0.46, 1, 0, 0],
+  [206.8, 209.3, "foot.wolf.grass", 0.5, 1, 0, 0],
+  [210.6, 213.8, "foot.ladder_rung", 0.55, 1, 0, 0],
+  [214.0, 226.5, "foot.roof_tile", 0.75, 1, 0, -2],
+  [256.0, 262.4, "foot.wolf.grass", 0.28, 1, 2, -16]
+ ],
+ "cues": [
+  [3.3, "paper.page_turn", 0], [20.6, "ui.pop", 0], [22.0, "ui.pop", 0], [23.4, "ui.pop", 0], [31.2, "paper.page_turn", 0],
+  [46.3, "build.straw", 0], [47.8, "build.straw", 0], [49.3, "build.straw", 0], [52.3, "build.done", 0], [52.9, "music.flute", 0],
+  [69.3, "build.hammer", 0], [69.58, "build.hammer", -2], [71.0, "build.hammer", 0], [71.28, "build.hammer", -2], [72.3, "build.hammer", 0], [72.58, "build.hammer", -2],
+  [73.5, "build.done", 0], [73.9, "music.violin", 0],
+  [88.8, "build.brick", 0], [89.25, "build.brick", -2], [90.3, "build.brick", 0], [90.75, "build.brick", -2], [92.0, "music.flute", -6], [92.4, "music.violin", -7],
+  [97.3, "build.brick", 0], [97.75, "build.brick", -2], [98.5, "build.done", 0],
+  [110.6, "wolf.sniff", 0],
+  [128.0, "wolf.huff_1", 0], [129.5, "wolf.huff_2", 0], [130.8, "wolf.huff_3", 0], [131.3, "house.straw_blow", 0],
+  [141.8, "door.open", 0], [143.4, "door.shut", 0],
+  [161.5, "wolf.huff_1", 0], [162.0, "house.wood_wobble", -4], [163.0, "wolf.huff_2", 0], [163.4, "house.wood_wobble", 0], [164.5, "wolf.huff_3", 0], [165.0, "house.wood_collapse", 0],
+  [176.0, "door.open", 0], [178.0, "door.shut", 0],
+  [194.0, "wolf.huff_1", 0], [194.4, "house.brick_hold", 0], [195.5, "wolf.huff_2", 0], [195.9, "house.brick_hold", 0], [197.0, "wolf.huff_3", 0], [197.5, "house.brick_hold", 1],
+  [203.2, "wolf.flop", 0],
+  [209.5, "prop.ladder_raise", 0],
+  [238.5, "fire.ignite", 0], [240.0, "fire.ignite", 1],
+  [242.6, "wolf.chimney_slide", 0], [249.0, "kitchen.splash", 0],
+  [254.2, "wolf.launch", 0], [256.0, "wolf.yelp_far", 0],
+  [263.3, "build.done", -3], [273.1, "paper.book_close", 0]
+ ],
+ "gusts": [[128.1, -8], [129.6, -4], [130.9, 0], [161.6, -8], [163.1, -4], [164.6, 0], [194.1, -10], [195.6, -7], [197.1, -4]]
+}

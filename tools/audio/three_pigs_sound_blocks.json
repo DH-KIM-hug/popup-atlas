@@ -1,0 +1,284 @@
+{
+ "note": "Proposal for script.json (three_pigs). Tale-level `sound` + one `sound` block per beat. Add to the tale's seed tables (tools/story/tales/three_pigs.py) and copy them through tools/story/seed_script.py; don't hand-edit the generated script.json. Ids refer to game/audio/sound_catalog.json.",
+ "tale_sound": {
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "day",
+   "day": "day",
+   "afternoon": "afternoon",
+   "late": "late",
+   "dusk": "dusk",
+   "night": "night",
+   "evening": "evening"
+  },
+  "fx": {
+   "straw_pop": "build.straw",
+   "hammer_bang": [
+    "build.hammer",
+    {
+     "sound": "build.hammer",
+     "delay": 0.28,
+     "gain_db": -2
+    }
+   ],
+   "brick_thunk": [
+    "build.brick",
+    {
+     "sound": "build.brick",
+     "delay": 0.45,
+     "gain_db": -2
+    }
+   ],
+   "star_burst": "build.done",
+   "flute_notes": "music.flute",
+   "violin_notes": "music.violin",
+   "brothers_tease": [
+    {
+     "sound": "music.flute",
+     "gain_db": -6,
+     "delay": 0.8
+    },
+    {
+     "sound": "music.violin",
+     "gain_db": -7,
+     "delay": 1.2
+    }
+   ],
+   "straw_fly": {
+    "by_tap": [
+     "wolf.huff_1",
+     "wolf.huff_2",
+     "wolf.huff_3"
+    ],
+    "gust": "tap"
+   },
+   "wood_wobble": {
+    "by_tap": [
+     [
+      "wolf.huff_1",
+      {
+       "sound": "house.wood_wobble",
+       "delay": 0.5,
+       "gain_db": -4
+      }
+     ],
+     [
+      "wolf.huff_2",
+      {
+       "sound": "house.wood_wobble",
+       "delay": 0.4
+      }
+     ],
+     "wolf.huff_3"
+    ],
+    "gust": "tap"
+   },
+   "brick_huff": {
+    "by_tap": [
+     [
+      "wolf.huff_1",
+      {
+       "sound": "house.brick_hold",
+       "delay": 0.4
+      }
+     ],
+     [
+      "wolf.huff_2",
+      {
+       "sound": "house.brick_hold",
+       "delay": 0.4
+      }
+     ],
+     [
+      "wolf.huff_3",
+      {
+       "sound": "house.brick_hold",
+       "delay": 0.5,
+       "gain_db": 1
+      }
+     ]
+    ],
+    "gust": "tap_soft"
+   },
+   "pop:story_houses_02": {
+    "sound": "house.straw_blow",
+    "delay": 0.0
+   },
+   "pop:story_houses_05": {
+    "sound": "house.wood_collapse",
+    "delay": 0.0
+   },
+   "pop:story_build_props_00": "ui.pop",
+   "pop:story_build_props_07": "ui.pop",
+   "pop:story_build_props_08": "ui.pop",
+   "thud_dust": "wolf.flop",
+   "ladder_up": "prop.ladder_raise",
+   "inside_view": {
+    "bed": "room",
+    "fade": 1.2
+   },
+   "outside_view": {
+    "bed": "@light",
+    "fade": 1.2,
+    "stop_loops": [
+     "fire",
+     "boil"
+    ]
+   },
+   "flame_m": [
+    {
+     "sound": "fire.ignite"
+    },
+    {
+     "loop": "fire.crackle_m",
+     "key": "fire",
+     "fade": 0.3
+    },
+    {
+     "music": "chimney",
+     "fade": 0.4
+    }
+   ],
+   "flame_l": [
+    {
+     "sound": "fire.ignite",
+     "gain_db": 1
+    },
+    {
+     "loop": "fire.crackle_l",
+     "key": "fire",
+     "fade": 0.4
+    }
+   ],
+   "boil": {
+    "loop": "kitchen.boil",
+    "key": "boil",
+    "fade": 0.6
+   },
+   "wolf_drop": "wolf.chimney_slide",
+   "splash": "kitchen.splash",
+   "wolf_launch": [
+    {
+     "sound": "wolf.launch"
+    },
+    {
+     "sound": "wolf.yelp_far",
+     "delay": 1.8
+    }
+   ]
+  },
+  "steps": {
+   "cover": {
+    "on_open": "paper.page_turn"
+   },
+   "page_turn": "paper.page_turn",
+   "go_inside": {
+    "door_open": "door.open",
+    "door_shut": "door.shut"
+   },
+   "climb": {
+    "ladder": "foot.ladder_rung",
+    "roof": "foot.roof_tile"
+   },
+   "end": {
+    "close_book": "paper.book_close",
+    "music_fade_on_replay": 2.0
+   },
+   "counter": "ui.count"
+  },
+  "footsteps": {
+   "pig_a": "pig",
+   "pig_b": "pig",
+   "pig_c": "pig",
+   "mom": null,
+   "wolf": "wolf"
+  },
+  "fx_note": "pigs_cheer has no tale-level sound: fx.gd also fires it from pop:story_houses_02/05 (the straw and wood RUINS match the prefix 'pop:story_houses_0'), so the cheer sound is only mapped in the ending beat."
+ },
+ "beats": {
+  "cover": {
+   "music": "home",
+   "bed": null
+  },
+  "home": {
+   "music": "home",
+   "bed": "@light",
+   "emitters": [
+    "trees"
+   ]
+  },
+  "straw_build": {
+   "music": "build",
+   "music_at": "first_cam",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ]
+  },
+  "wood_build": {
+   "music": "build",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ]
+  },
+  "brick_build": {
+   "music": "build",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ]
+  },
+  "wolf_straw": {
+   "music": "wolf",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ]
+  },
+  "wolf_wood": {
+   "music": "wolf",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ]
+  },
+  "brick_wolf": {
+   "music": "wolf",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ]
+  },
+  "chimney": {
+   "music": "wolf",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ],
+   "note": "music changes to chimney on flame_m (fx map)"
+  },
+  "ending": {
+   "music": "ending",
+   "bed": "@light",
+   "emitters": [
+    "stream",
+    "trees"
+   ],
+   "fx": {
+    "pigs_cheer": {
+     "sound": "build.done",
+     "gain_db": -3,
+     "min_gap": 3.0
+    }
+   }
+  }
+ }
+}
