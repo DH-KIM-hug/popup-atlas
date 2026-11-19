@@ -119,7 +119,7 @@ def build() -> dict:
     for lid, segs_src in NEW_LINES.items():
         segs = [seg(s[0], s[1], s[2], s[3], "", "changed-needs-recording") for s in segs_src]
         beat, inter = where.get(lid, ("", ""))
-        out_lines.append(line_entry(lid, segs, beat, inter, False, new=True))
+        out_lines.append(line_entry(lid, segs, beat, inter, lid not in where, new=True))  # new lines too: used only if a beat plays them
     return {
         "tale_id": T.TALE_ID,
         "title": T.TITLE,

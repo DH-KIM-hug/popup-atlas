@@ -57,6 +57,12 @@ The user talks in Korean, wants to SEE results (send recordings and contact shee
 - A step that starts while a scripted flight (wolf_launch) still moves the actor is cancelled by the flight's
   landing (`place_at`): wait the flight out before the next walk.
 
+- After every full autoplay run `python3 tools/story/check_lines.py <tale> <log>`: every used line and segment
+  exactly once, in order (a "missing line" report from a viewer can then be answered from the log, and a real gap is
+  caught before the user hears it).
+- Set pieces and props appear only when the story reaches them (stage 0 + fx `up:` at their beat; `built` for later
+  beats): a house or material standing before its build reads as a mistake.
+
 ## Pipeline (one tale)
 
 1. **Plan** (`references/planning.md`): list beats → spreads (which template, seed/view, route), the cast with every pose/expression each beat needs, props, the taps/holds per beat, and which lines change. Write `game/stories/<tale_id>/script.json` with `tools/story/seed_script.py` and edit it (schema: `references/script_schema.md`).

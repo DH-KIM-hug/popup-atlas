@@ -1397,3 +1397,21 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     encode overshoots the limiter; lower the ceiling to -2 dB next pass). 455 cues; cue times match the frames
     (straw blow, wood collapse, landing thud, door creak: artifacts/three_pigs/tiles/v17_cue_alignment.jpg).
     Video: artifacts/video/three_pigs_full_v17.mp4 (29.0 MB). Nobody has listened to it.
+
+## 2026-11-19 — three_pigs v18: empty lots until each build, no materials at home, line-order guard
+  - "둘째돼지집 짓기도 전에 있음": the wood house's foundation stood from the village page open (stage 1). Now every
+    house, pile and the bucket starts hidden (stage 0) and rises at its own build (fx `up:<set>[:bands]`: straw pile at
+    straw_build, wood pile + foundation at wood_build, brick pile + bucket at brick_build, ui.pop / hammer sound);
+    `built` lists for later beats name everything standing by then. Frames: home, village arrival, straw / wood / brick
+    starts all show empty lots (artifacts/three_pigs/tiles/v18_lots_before_builds.jpg).
+  - "돼지 세 마리 갈 때 짚이랑 벽돌을 왜 가지고 있지?": the home page no longer has the straw / plank / brick cards that
+    popped beside each piglet on its tap; a tap is a wave + hop. They leave in the plain back-walk cycle, empty-handed.
+    Checked the other early poses: hammer, flute, violin, bricks and the straw-carry walk appear only in their builds.
+  - "늑대 대사 사라진듯": not missing — v17's audio has the wolf's "아기 돼지야, 문 열어라!" at all three doors (envelope
+    correlation with the clip 0.76 / 0.73 / 0.72), narration during the walk, quote at the mark.
+  - Regression guard tools/story/check_lines.py: StoryRunner prints `SEG <line> <i> t=` per spoken segment; the checker
+    walks the script's steps and fails on any missing, doubled or out-of-order segment and on used lines never played.
+    It caught sun_wind's sw_n04 (tap prompt removed but still marked used: the seeder marked every NEW line used —
+    now only when a beat plays it). three_pigs OK 39 segments, sun_wind OK 42.
+  - three_pigs STORY_DONE 293.9 s, sun_wind 203.5 s, missing_audio=[] missing_sound=[]. Video
+    artifacts/video/three_pigs_full_v18.mp4 (29.8 MB).

@@ -414,7 +414,12 @@
      "gain_db": 4,
      "delay": 0.1
     }
-   ]
+   ],
+   "up:straw_pile": "ui.pop",
+   "up:wood_pile": "ui.pop",
+   "up:brick_pile": "ui.pop",
+   "up:bucket": "ui.pop",
+   "up:wood_house:1": "build.hammer"
   },
   "steps": {
    "cover": {
@@ -548,39 +553,6 @@
       "card": "village_houses_20",
       "at": "home_house",
       "name": "home_house"
-     },
-     {
-      "card": "story_build_props_00",
-      "at": "pig_a",
-      "off": [
-       -0.13,
-       -0.05
-      ],
-      "stage": 0,
-      "name": "mat_a",
-      "scale": 0.9
-     },
-     {
-      "card": "story_build_props_07",
-      "at": "pig_b",
-      "off": [
-       -0.1,
-       -0.06
-      ],
-      "stage": 0,
-      "name": "mat_b",
-      "scale": 0.9
-     },
-     {
-      "card": "story_build_props_08",
-      "at": "pig_c",
-      "off": [
-       -0.12,
-       -0.06
-      ],
-      "stage": 0,
-      "name": "mat_c",
-      "scale": 0.9
      }
     ]
    },
@@ -635,16 +607,13 @@
      "hint": "tp_002",
      "react": {
       "pig_a": [
-       "happy_wave",
-       "pop:story_build_props_00"
+       "happy_wave"
       ],
       "pig_b": [
-       "happy_wave",
-       "pop:story_build_props_07"
+       "happy_wave"
       ],
       "pig_c": [
-       "happy_wave",
-       "pop:story_build_props_08"
+       "happy_wave"
       ]
      }
     },
@@ -897,6 +866,7 @@
      {
       "card": "story_build_props_01",
       "at": "s_pile",
+      "stage": 0,
       "name": "straw_pile",
       "scale": 1.6
      },
@@ -914,7 +884,7 @@
      {
       "card": "story_houses_03",
       "at": "w_lot",
-      "stage": 1,
+      "stage": 0,
       "name": "wood_house",
       "scale": 1.0,
       "box": {
@@ -927,6 +897,7 @@
      {
       "card": "story_build_props_05",
       "at": "w_pile",
+      "stage": 0,
       "name": "wood_pile",
       "scale": 1.5
      },
@@ -957,6 +928,7 @@
      {
       "card": "story_build_props_08",
       "at": "b_pile",
+      "stage": 0,
       "name": "brick_pile",
       "scale": 1.5
      },
@@ -967,6 +939,7 @@
        0.22,
        0.05
       ],
+      "stage": 0,
       "name": "bucket"
      },
      {
@@ -1359,7 +1332,12 @@
      "shot": "medium",
      "at": "s_focus",
      "rate": 1.6,
-     "wait": 1.0
+     "wait": 0.6
+    },
+    {
+     "do": "fx",
+     "fx": "up:straw_pile",
+     "wait": 0.5
     },
     {
      "do": "say",
@@ -1623,7 +1601,11 @@
      ]
     },
     "set": [],
-    "light": "afternoon"
+    "light": "afternoon",
+    "built": [
+     "straw_house",
+     "straw_pile"
+    ]
    },
    "enter": {
     "who": {
@@ -1642,7 +1624,17 @@
      "shot": "story",
      "at": "w_focus",
      "rate": 1.4,
-     "wait": 1.8
+     "wait": 1.4
+    },
+    {
+     "do": "fx",
+     "fx": "up:wood_pile",
+     "wait": 0.3
+    },
+    {
+     "do": "fx",
+     "fx": "up:wood_house:1",
+     "wait": 0.6
     },
     {
      "do": "say",
@@ -1898,7 +1890,13 @@
      ]
     },
     "set": [],
-    "light": "late"
+    "light": "late",
+    "built": [
+     "straw_house",
+     "straw_pile",
+     "wood_house",
+     "wood_pile"
+    ]
    },
    "enter": {
     "who": {
@@ -1918,7 +1916,17 @@
      "shot": "medium",
      "at": "b_focus",
      "rate": 1.0,
-     "wait": 2.0
+     "wait": 1.6
+    },
+    {
+     "do": "fx",
+     "fx": "up:brick_pile",
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "up:bucket",
+     "wait": 0.4
     },
     {
      "do": "say",
@@ -2182,7 +2190,11 @@
     "built": [
      "straw_house",
      "wood_house",
-     "house"
+     "house",
+     "straw_pile",
+     "wood_pile",
+     "brick_pile",
+     "bucket"
     ]
    },
    "enter": {
@@ -2532,7 +2544,11 @@
     "built": [
      "straw_ruin",
      "wood_house",
-     "house"
+     "house",
+     "straw_pile",
+     "wood_pile",
+     "brick_pile",
+     "bucket"
     ]
    },
    "enter": {
@@ -2867,7 +2883,11 @@
     "built": [
      "straw_ruin",
      "wood_ruin",
-     "house"
+     "house",
+     "straw_pile",
+     "wood_pile",
+     "brick_pile",
+     "bucket"
     ]
    },
    "enter": {
@@ -3172,7 +3192,11 @@
     "built": [
      "straw_ruin",
      "wood_ruin",
-     "house"
+     "house",
+     "straw_pile",
+     "wood_pile",
+     "brick_pile",
+     "bucket"
     ]
    },
    "enter": {
@@ -3607,7 +3631,11 @@
      "straw_ruin",
      "wood_ruin",
      "house",
-     "ladder"
+     "ladder",
+     "straw_pile",
+     "wood_pile",
+     "brick_pile",
+     "bucket"
     ]
    },
    "enter": {

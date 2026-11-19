@@ -286,8 +286,9 @@ func _say(id: String, only: Array = []) -> void:
 	_last_line = id
 	var segs: Array = l["segs"]
 	for i in segs.size():
-		if not only.is_empty() and not only.has(i):
+		if not only.is_empty() and not only.has(i) and not only.has(float(i)):
 			continue  # a line split across steps (narration during a walk, the quote at the mark)
+		print("SEG ", id, " ", i, " t=", snappedf(clock, 0.01))
 		var s: Dictionary = segs[i]
 		ui.show_line(l, i)
 		_apply_expr(l, i)

@@ -2123,7 +2123,7 @@
    "status": "changed-recorded",
    "beat": "",
    "interaction": "",
-   "used": true,
+   "used": false,
    "segs": [
     {
      "speaker": "nar",

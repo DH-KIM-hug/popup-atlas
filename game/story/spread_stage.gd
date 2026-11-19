@@ -1369,6 +1369,12 @@ func fx(name: String) -> void:
 		if sp:
 			sp.pop_card(0.0)
 			sp.bounce()
+	elif name.begins_with("up:"):  # up:<set name>[:bands] — a set piece rises on its hinges (a lot's pile, a foundation)
+		var parts := name.split(":")
+		var sp3 := set_piece(parts[1])
+		if sp3:
+			sp3.bands_up(int(parts[2]) if parts.size() > 2 else sp3.band_count(), 0.0)
+			sp3.bounce()
 	elif name.begins_with("fold:"):
 		var sp2 := set_piece(name.substr(5))
 		if sp2:
