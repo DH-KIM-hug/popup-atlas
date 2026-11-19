@@ -1415,3 +1415,16 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     now only when a beat plays it). three_pigs OK 39 segments, sun_wind OK 42.
   - three_pigs STORY_DONE 293.9 s, sun_wind 203.5 s, missing_audio=[] missing_sound=[]. Video
     artifacts/video/three_pigs_full_v18.mp4 (29.8 MB).
+
+## 2026-11-19 — three_pigs v19: the wolf's quote follows his arrival; build taps framed with margins
+  - The narrator part of tp_027 / tp_031 / tp_043 now plays late in the wolf's walk (`line_late`: started so it ends
+    as he arrives, from the route length / speed); the walks to the wood and brick houses are faster (0.95); the
+    camera cuts to the OTS 0.15 s after he stops and the quote follows (narration → quote 5.6 / 4.1 / 4.3 s apart, was
+    ~9 s at the wood house; quote ~1.5-1.8 s after the narration ends). The step waits for a late line before going
+    on, so narration and quote never overlap.
+  - Tap framing: the whole tap ring must be inside the frame with a margin (5 % sides, 6 % top, 18 % bottom for the
+    caption); build steps frame the target and the builder. straw_build's pile and 첫째 are fully in frame at the taps
+    (artifacts/three_pigs/tiles/v19_straw_build_framing.jpg). Growing houses reframe between taps (+~5 s on the wood
+    and brick builds).
+  - three_pigs STORY_DONE 308.8 s, CHECK_LINES OK (39 segments), missing_audio=[] missing_sound=[].
+    Video artifacts/video/three_pigs_full_v19.mp4.

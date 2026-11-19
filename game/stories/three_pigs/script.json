@@ -2240,19 +2240,21 @@
      "segs": [
       0
      ],
+     "line_late": true,
      "end_pose": "sniff"
     },
     {
      "do": "cam",
      "shot": "ots",
      "at": "s_wolf_focus",
-     "rate": 2.0,
-     "wait": 0.3
+     "rate": 3.0,
+     "wait": 0.15
     },
     {
      "do": "pose",
      "who": "wolf",
-     "pose": "shout"
+     "pose": "shout",
+     "wait": 0.1
     },
     {
      "do": "say",
@@ -2567,24 +2569,26 @@
      "to": "w_wolf",
      "via": "road",
      "pose": "side_prowl",
-     "speed": 0.6,
+     "speed": 0.95,
      "follow": "wolf",
      "line": "tp_031",
      "segs": [
       0
-     ]
+     ],
+     "line_late": true
     },
     {
      "do": "cam",
      "shot": "ots",
      "at": "w_wolf_focus",
-     "rate": 2.0,
-     "wait": 0.4
+     "rate": 3.0,
+     "wait": 0.15
     },
     {
      "do": "pose",
      "who": "wolf",
-     "pose": "shout"
+     "pose": "shout",
+     "wait": 0.1
     },
     {
      "do": "say",
@@ -2906,24 +2910,26 @@
      "to": "b_wolf",
      "via": "road",
      "pose": "side_prowl",
-     "speed": 0.6,
+     "speed": 0.95,
      "follow": "wolf",
      "line": "tp_043",
      "segs": [
       0
-     ]
+     ],
+     "line_late": true
     },
     {
      "do": "cam",
      "shot": "ots",
      "at": "b_wolf_focus",
-     "rate": 2.0,
-     "wait": 0.4
+     "rate": 3.0,
+     "wait": 0.15
     },
     {
      "do": "pose",
      "who": "wolf",
-     "pose": "shout"
+     "pose": "shout",
+     "wait": 0.1
     },
     {
      "do": "say",

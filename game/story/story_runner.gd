@@ -58,6 +58,7 @@ var _choosing := false
 var sound: SoundDirector
 var log_sound := false
 var _blow_target := "wind"
+var _late_pending := false
 var _walker_role := "traveller"
 
 
@@ -614,10 +615,37 @@ func _step_walk_actors(st: Dictionary) -> void:
 		if st.has("end_pose"):
 			a.pose = str(st["end_pose"])
 	if st.has("line"):
-		_say.bind(str(st["line"]), st.get("segs", [])).call()
+		if st.get("line_late", false):
+			# the narration ends as the walker arrives (the quote that follows comes right after he stops)
+			var a0 := stage.actor(str(roles[0]))
+			var est := 0.0
+			if a0:
+				var prev := a0.global_position
+				for q in a0._path:
+					est += prev.distance_to(q)
+					prev = q
+				est += prev.distance_to(a0._target) if a0._path.is_empty() else 0.0
+				est /= maxf(spd, 0.05)
+			var dur := 0.0
+			var segs_l: Array = st.get("segs", [])
+			var ln: Dictionary = lines.get(str(st["line"]), {})
+			for i in (ln.get("segs", []) as Array).size():
+				if segs_l.is_empty() or segs_l.has(i) or segs_l.has(float(i)):
+					dur += _seg_duration(ln["segs"][i]) + 0.12
+			var late := maxf(0.0, est - dur - 0.2)
+			_late_pending = true
+			var go := func():
+				_late_pending = false
+				_say(str(st["line"]), segs_l)
+			get_tree().create_timer(late).timeout.connect(go)
+		else:
+			_say.bind(str(st["line"]), st.get("segs", [])).call()
 	if st.get("async", false):
 		return
+	await _wait(0.1)
 	await _wait_actors(roles)
+	while _late_pending or _line_busy:  # the late narration has played before the next step (the quote)
+		await _frame()
 	if sound and str(st.get("end_pose", "")) == "sniff" and stage.actor("wolf"):
 		sound.play("wolf.sniff", stage.actor("wolf").centre())
 	if st.get("exit", false):
@@ -769,7 +797,7 @@ func _step_build(st: Dictionary) -> void:
 		at_steps[int(s["at"])] = s
 	stage.build_ctx = {"house": house, "walker": str(st.get("walker", "")), "tap": 0, "taps": taps,
 		"target": str(st.get("target", house)), "pile": str(st.get("pile", "pile"))}
-	await _frame_first([str(st.get("target", house))])
+	await _frame_first([str(st.get("target", house))] + ([str(st["walker"])] if st.has("walker") else []))
 	if st.has("prompt"):
 		await _say(str(st["prompt"]))
 	var shown0 := sp.shown if sp else 0  # bands already standing (a foundation) are not rebuilt

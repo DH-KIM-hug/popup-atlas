@@ -1539,8 +1539,9 @@ func frame_targets(targets: Array) -> bool:
 			continue
 		pts.append(p)
 		var sp := cam.unproject_position(p)
-		if cam.is_position_behind(p) or sp.x < vs.x * 0.08 or sp.x > vs.x * 0.92 or sp.y < vs.y * 0.12 or sp.y > vs.y * 0.78 \
-				or target_radius(str(t)) < 60.0:
+		var rr := target_radius(str(t))  # the whole tap ring inside the frame, with a margin
+		if cam.is_position_behind(p) or sp.x - rr < vs.x * 0.05 or sp.x + rr > vs.x * 0.95 or sp.y - rr < vs.y * 0.06 \
+				or sp.y + rr > vs.y * 0.82 or rr < 60.0:
 			ok = false
 	if ok or pts.is_empty():
 		return false

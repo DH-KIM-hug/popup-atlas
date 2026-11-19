@@ -349,10 +349,11 @@ BEATS = [
         {"do": "cam", "shot": "low_wolf", "at": "s_wolf_from", "from": "low_wolf", "wait": 1.0},
         # he prowls in (drawn sneak cycle), the camera follows him to his mark; there he stops and sniffs (킁킁)
         {"do": "walk", "who": "wolf", "dir": "right", "to": "s_wolf", "from": "s_wolf_from", "pose": "side_prowl",
-         "speed": 0.25, "follow": "wolf", "shot": "low_wolf", "line": "tp_027", "segs": [0], "end_pose": "sniff"},
+         "speed": 0.25, "follow": "wolf", "shot": "low_wolf", "line": "tp_027", "segs": [0], "line_late": True,
+         "end_pose": "sniff"},
         # over his shoulder toward the straw house ("문 열어라")
-        {"do": "cam", "shot": "ots", "at": "s_wolf_focus", "rate": 2.0, "wait": 0.3},
-        {"do": "pose", "who": "wolf", "pose": "shout"},
+        {"do": "cam", "shot": "ots", "at": "s_wolf_focus", "rate": 3.0, "wait": 0.15},
+        {"do": "pose", "who": "wolf", "pose": "shout", "wait": 0.1},
         {"do": "say", "line": "tp_027", "segs": [1]},
         {"do": "pose", "who": "pig_a", "pose": "defiant"},
         # reverse: the face at the window ("싫어요")
@@ -373,10 +374,10 @@ BEATS = [
      "enter": {"who": {}, "keep": ["pig_a", "pig_b", "pig_c", "wolf"]},
      "steps": [
         # the wolf follows along the road to the wood house
-        {"do": "walk", "who": "wolf", "to": "w_wolf", "via": "road", "pose": "side_prowl", "speed": 0.6, "follow": "wolf",
-         "line": "tp_031", "segs": [0]},
-        {"do": "cam", "shot": "ots", "at": "w_wolf_focus", "rate": 2.0, "wait": 0.4},
-        {"do": "pose", "who": "wolf", "pose": "shout"},
+        {"do": "walk", "who": "wolf", "to": "w_wolf", "via": "road", "pose": "side_prowl", "speed": 0.95, "follow": "wolf",
+         "line": "tp_031", "segs": [0], "line_late": True},
+        {"do": "cam", "shot": "ots", "at": "w_wolf_focus", "rate": 3.0, "wait": 0.15},
+        {"do": "pose", "who": "wolf", "pose": "shout", "wait": 0.1},
         {"do": "say", "line": "tp_031", "segs": [1]},
         {"do": "pose", "who": ["pig_a", "pig_b"], "pose": "defiant"},
         {"do": "cam", "shot": "front", "at": "w_lot", "rate": 2.6, "wait": 0.1},
@@ -394,10 +395,10 @@ BEATS = [
     {"id": "brick_wolf", "title": "쿵쿵쿵!", "spread": _village(light="dusk", built=["straw_ruin", "wood_ruin", "house", "straw_pile", "wood_pile", "brick_pile", "bucket"]),
      "enter": {"who": {}, "keep": ["pig_a", "pig_b", "pig_c", "wolf"]},
      "steps": [
-        {"do": "walk", "who": "wolf", "to": "b_wolf", "via": "road", "pose": "side_prowl", "speed": 0.6, "follow": "wolf",
-         "line": "tp_043", "segs": [0]},
-        {"do": "cam", "shot": "ots", "at": "b_wolf_focus", "rate": 2.0, "wait": 0.4},
-        {"do": "pose", "who": "wolf", "pose": "shout"},
+        {"do": "walk", "who": "wolf", "to": "b_wolf", "via": "road", "pose": "side_prowl", "speed": 0.95, "follow": "wolf",
+         "line": "tp_043", "segs": [0], "line_late": True},
+        {"do": "cam", "shot": "ots", "at": "b_wolf_focus", "rate": 3.0, "wait": 0.15},
+        {"do": "pose", "who": "wolf", "pose": "shout", "wait": 0.1},
         {"do": "say", "line": "tp_043", "segs": [1]},
         {"do": "say", "line": "tp_044"},
         # the brick house holds: a frontal, steady shot; the wolf huffs and puffs at the left edge
