@@ -161,6 +161,18 @@ static func skin_def(s: String) -> Dictionary:
 		d["paths"][str(e["id"])] = pth if pth.begins_with("res://") else "res://" + pth
 		d["hu"][str(e["id"])] = float(e.get("height_units", 0.0))
 		d["views"][v] = str(e.get("view", "front"))
+		if e.has("cycle"):  # flipbook frame of a drawn cycle (run): cycles[pose] = [paths in order]
+			if not d.has("cycles"):
+				d["cycles"] = {}
+			var cy := str(e["cycle"])
+			if not (d["cycles"] as Dictionary).has(cy):
+				d["cycles"][cy] = []
+			var fl: Array = d["cycles"][cy]
+			while fl.size() <= int(e.get("frame", 0)):
+				fl.append("")
+			fl[int(e.get("frame", 0))] = d["paths"][str(e["id"])]
+			d["views"][cy] = str(e.get("view", "side"))
+			d["poses"][cy] = str(e["id"]) if not (d["poses"] as Dictionary).has(cy) or int(e.get("frame", 0)) == 0 else d["poses"][cy]
 	if (d["poses"] as Dictionary).is_empty():
 		d = {}
 	_dyn_skins[s] = d
@@ -407,6 +419,8 @@ func _process(dt: float) -> void:
 		max_turn_deg = 0.0
 	super._process(dt)
 	max_turn_deg = mt
+	if _turn.scale.x < 0.15:  # paper turn: narrow to 15 %, swap there; never a card edge-on sliver
+		_turn.scale.x = 0.15
 	var fdt := PaperSpring.frame_dt(dt)
 	if fdt <= 0.0:
 		return
@@ -464,7 +478,38 @@ func _process(dt: float) -> void:
 
 ## Unrigged figure (one card): a paper hop per step along the ground, rocking a little forward/back; standing, a
 ## slow breathing bob. Mirrored for side figures facing left.
+var _cyc_tex: Dictionary = {}  ## path -> Texture2D
+var _cyc_i := -1
+
+
+## Drawn cycle (run): the frame advances with the ground travelled (one cycle per stride length, so the feet don't
+## skate), a small bounce on the flight frame.
+func _cycle_step(frames: Array, dt: float) -> void:
+	var m := -1.0 if _mirror else 1.0
+	var n := frames.size()
+	var stride := height * 0.9  # ground covered per cycle
+	if speed > 0.03:
+		_hp += speed * dt / maxf(stride, 0.01)
+	var f := int(floorf(fposmod(_hp, 1.0) * n)) % n
+	if f != _cyc_i:
+		_cyc_i = f
+		var pth := str(frames[f])
+		if not _cyc_tex.has(pth):
+			_cyc_tex[pth] = load(pth)
+		_body.texture = _cyc_tex[pth]
+	var flight := (n == 4 and f == 3) or (n == 2 and false)
+	var y := height * (0.05 if flight else (0.015 if f == 0 else 0.0))
+	var pl := 0.03 * sin(_pose_hop * PI)
+	_tilt.transform = Transform3D(Basis.from_scale(Vector3(m, 1, 1)) * Basis(Vector3(0, 0, 1), -deg_to_rad(4.0) * m), Vector3(0, y + pl, 0))
+	_body.position = Vector3.ZERO
+	_body.rotation = Vector3.ZERO
+
+
 func _hop_step(dt: float) -> void:
+	var cyc: Dictionary = _def().get("cycles", {})
+	if cyc.has(pose):
+		_cycle_step(cyc[pose], dt)
+		return
 	var m := -1.0 if _mirror else 1.0
 	var moving := speed > 0.03
 	var y := 0.0

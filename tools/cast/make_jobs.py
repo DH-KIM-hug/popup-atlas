@@ -481,6 +481,24 @@ JOBS += [
      "determined smile); (6) PIGLET C peeking, DEFIANT. A wide magenta gap between the pieces." + NO_BOTANY},
 ]
 
+# 2026-11-19 (user: "돼지 옆으로 달려가는 모습 이상해유"): drawn RUN CYCLES (a rigid card hopping read as a dragged sticker).
+RUN = ("RUN CYCLE: SIX full-body figures of the SAME piglet running, left to right: FOUR SIDE-PROFILE frames facing RIGHT "
+       "(nose to the right edge), one run cycle in order: (1) CONTACT: front leg reaching forward heel down, back leg pushing "
+       "off behind, arms swinging opposite; (2) DOWN: body lowest, front leg bent under the body taking the weight, back leg "
+       "lifting behind; (3) PASSING: standing leg straight under the body, the other leg bent and swinging forward past it; "
+       "(4) FLIGHT: both feet off the ground, legs spread forward and back, body highest, arms pumping. In every side frame the "
+       "two legs are clearly separated with an open magenta gap between them, the arms clearly pump opposite to the legs, "
+       "one eye visible, a SCARED face in profile (eye big and round, eyebrow up, mouth open in an 'eek'), ears flying back. "
+       "Then TWO BACK-VIEW frames running AWAY from the viewer: (5) left leg up behind, right foot down; (6) right leg up "
+       "behind, left foot down; back of the head and ears, the back of the clothes, the tail, arms pumping. All six the "
+       "SAME scale as the reference character, feet on one common baseline (the flight frame's feet a little above it). ")
+for _pid, _who in [("a", PIG_A), ("b", PIG_B), ("c", PIG_C)]:
+    JOBS.append({"id": f"cast_pig_{_pid}_run_cycle", "kind": "bg", "refs": TP_REF_PIGS, "aspect": WIDE,
+                 "out": f"art_src/cast/raw/cast_pig_{_pid}_run_cycle.png",
+                 "prompt": "A CHARACTER SHEET for a children's pop-up storybook: SIX separate full-body die-cut figures of the "
+                 "SAME piglet in one horizontal row, " + BG + ANIMAL_STYLE + _who + RUN + "MATCH THE REFERENCE CHARACTER "
+                 "EXACTLY (same face, ears, hat or cap, clothes, colours). A wide magenta gap between the figures." + NO_BOTANY})
+
 if __name__ == "__main__":
     p = os.path.join(os.path.dirname(os.path.abspath(__file__)), "cast_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)

@@ -2893,5 +2893,563 @@
   "hanging": false,
   "skin": "pig_c",
   "parts": {}
+ },
+ {
+  "id": "cast_pig_a_run_cycle_0",
+  "path": "art/cast/cast_pig_a_run_cycle_0.webp",
+  "sheet": "cast_pig_a_run_cycle",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (scared run, drawn cycle)",
+  "height_units": 0.239,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   298,
+   479
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_a_run_cycle_1",
+  "path": "art/cast/cast_pig_a_run_cycle_1.webp",
+  "sheet": "cast_pig_a_run_cycle",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (scared run, drawn cycle)",
+  "height_units": 0.239,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   298,
+   479
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_pig_a_run_cycle_2",
+  "path": "art/cast/cast_pig_a_run_cycle_2.webp",
+  "sheet": "cast_pig_a_run_cycle",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (scared run, drawn cycle)",
+  "height_units": 0.239,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   298,
+   479
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_pig_a_run_cycle_3",
+  "path": "art/cast/cast_pig_a_run_cycle_3.webp",
+  "sheet": "cast_pig_a_run_cycle",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (scared run, drawn cycle)",
+  "height_units": 0.239,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   298,
+   479
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_pig_a_run_back_0",
+  "path": "art/cast/cast_pig_a_run_back_0.webp",
+  "sheet": "cast_pig_a_run_cycle",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (scared run, drawn cycle)",
+  "height_units": 0.239,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   298,
+   479
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_a_run_back_1",
+  "path": "art/cast/cast_pig_a_run_back_1.webp",
+  "sheet": "cast_pig_a_run_cycle",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (scared run, drawn cycle)",
+  "height_units": 0.239,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   298,
+   479
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_pig_b_run_cycle_0",
+  "path": "art/cast/cast_pig_b_run_cycle_0.webp",
+  "sheet": "cast_pig_b_run_cycle",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (scared run, drawn cycle)",
+  "height_units": 0.224,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   294,
+   464
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_b_run_cycle_1",
+  "path": "art/cast/cast_pig_b_run_cycle_1.webp",
+  "sheet": "cast_pig_b_run_cycle",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (scared run, drawn cycle)",
+  "height_units": 0.224,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   294,
+   464
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_pig_b_run_cycle_2",
+  "path": "art/cast/cast_pig_b_run_cycle_2.webp",
+  "sheet": "cast_pig_b_run_cycle",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (scared run, drawn cycle)",
+  "height_units": 0.224,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   294,
+   464
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_pig_b_run_cycle_3",
+  "path": "art/cast/cast_pig_b_run_cycle_3.webp",
+  "sheet": "cast_pig_b_run_cycle",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (scared run, drawn cycle)",
+  "height_units": 0.224,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   294,
+   464
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_pig_b_run_back_0",
+  "path": "art/cast/cast_pig_b_run_back_0.webp",
+  "sheet": "cast_pig_b_run_cycle",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (scared run, drawn cycle)",
+  "height_units": 0.224,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   294,
+   464
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_b_run_back_1",
+  "path": "art/cast/cast_pig_b_run_back_1.webp",
+  "sheet": "cast_pig_b_run_cycle",
+  "category": "cast",
+  "role": "pig_b",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (scared run, drawn cycle)",
+  "height_units": 0.224,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   294,
+   464
+  ],
+  "hanging": false,
+  "skin": "pig_b",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_pig_c_run_cycle_0",
+  "path": "art/cast/cast_pig_c_run_cycle_0.webp",
+  "sheet": "cast_pig_c_run_cycle",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (scared run, drawn cycle)",
+  "height_units": 0.238,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   300,
+   507
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_c_run_cycle_1",
+  "path": "art/cast/cast_pig_c_run_cycle_1.webp",
+  "sheet": "cast_pig_c_run_cycle",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (scared run, drawn cycle)",
+  "height_units": 0.238,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   300,
+   507
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_pig_c_run_cycle_2",
+  "path": "art/cast/cast_pig_c_run_cycle_2.webp",
+  "sheet": "cast_pig_c_run_cycle",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (scared run, drawn cycle)",
+  "height_units": 0.238,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   300,
+   507
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_pig_c_run_cycle_3",
+  "path": "art/cast/cast_pig_c_run_cycle_3.webp",
+  "sheet": "cast_pig_c_run_cycle",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (scared run, drawn cycle)",
+  "height_units": 0.238,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   300,
+   507
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_pig_c_run_back_0",
+  "path": "art/cast/cast_pig_c_run_back_0.webp",
+  "sheet": "cast_pig_c_run_cycle",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (scared run, drawn cycle)",
+  "height_units": 0.238,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   300,
+   507
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_c_run_back_1",
+  "path": "art/cast/cast_pig_c_run_back_1.webp",
+  "sheet": "cast_pig_c_run_cycle",
+  "category": "cast",
+  "role": "pig_c",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (scared run, drawn cycle)",
+  "height_units": 0.238,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig",
+   "three_pigs",
+   "run",
+   "cycle"
+  ],
+  "px": [
+   300,
+   507
+  ],
+  "hanging": false,
+  "skin": "pig_c",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
  }
 ]

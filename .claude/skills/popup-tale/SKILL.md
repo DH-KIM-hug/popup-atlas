@@ -110,6 +110,11 @@ Run long work through background agents/workflows with narrow ownership (one own
   (incl. `["story", "road", a, b]` for tracking shots), glide `cam at`, track runners with `walk follow` +
   `via: "road"`, and give later beats `built` (what stands at that beat, ruins included) so `--beat` starts and
   prebuilds are right. Page turns only where the place really changes.
+- Runs need a drawn run cycle; rigid-card hops read as stickers (user: "돼지 옆으로 달려가는 모습 이상해유"). Generate
+  per character 4 side frames (contact, down, passing, flight; legs apart, arms pumping, the line's face) + 2 back
+  frames, pad each character's frames to one canvas (bottom-aligned), catalogue them with `cycle` / `frame`;
+  CastPuppet plays them advanced by ground distance (one cycle per ~0.9 height, no skating), bounce on flight.
+  Paper turns narrow to 15 %, never edge-on.
 - A house is a front with a body: an open door must show an interior, and side views must show walls (user: "문열때보면
   뒷편이 없는곳으로 가다보니 이상한디?"). Give every enterable house a `box` (set entry: depth, side, inner, floor
   cards): side walls in the house's material, an inside back wall, plank floor and ceiling, and the front turned round

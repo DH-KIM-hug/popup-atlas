@@ -239,6 +239,11 @@ func _pick_view(dir: Vector3) -> void:
 				left = a < 0.0
 	# figure for the view (fall back to a view this role has)
 	var fig := walk_pose
+	# running: the drawn run cycle for the view (side / back), when the cast has one
+	if walk_pose in ["run", "run_cycle", "scared"] and speed >= 0.4:
+		var rc := "run_cycle" if nv == "side" else ("run_back" if nv == "back" else "")
+		if rc != "" and puppet.has_pose(rc):
+			fig = rc
 	if fig == "" or not puppet.has_pose(fig) or view_of(fig) != nv:
 		fig = str(DEFAULT_WALK[nv])
 		if not puppet.has_pose(fig):

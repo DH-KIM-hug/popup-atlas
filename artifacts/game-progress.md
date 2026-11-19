@@ -1291,3 +1291,14 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     and shuts it once after the last is inside. Doorway crops: artifacts/three_pigs/tiles/v11_brick_entry_2fps.jpg.
   - three_pigs STORY_DONE 275.7 s missing_audio=[]. Videos: artifacts/video/three_pigs_full_v11.mp4,
     three_pigs_escape_v11.mp4.
+
+## 2026-11-19 — three_pigs v12: drawn run cycles for the pigs
+  - User: "돼지 옆으로 달려가는 모습 이상해유" (a rigid scared card hopping sideways, an edge-on sliver at the turn). New
+    shared cast sheets cast_pig_{a,b,c}_run_cycle (Codex, ANIMAL_STYLE, refs the lineup, run in parallel; raw md5s
+    716f480e / ec7aa4f4 / d15f8eac, unique; contact artifacts/three_pigs/run_cycle_contact.png): per pig 4 side
+    profile frames (contact, down, passing, flight; legs apart, arms pumping, scared face) and 2 back-view run frames,
+    padded to one canvas per pig, catalogued as cycles run_cycle / run_back. CastPuppet plays a cycle as a flipbook
+    advanced by ground distance (one cycle per 0.9 × height), bounce on the flight frame, mirrored for leftward runs;
+    StoryActor uses the cycle for its view when a walk runs (pose run, speed ≥ 0.4). Paper turns narrow to 15 %
+    (never edge-on). Tiles: artifacts/three_pigs/tiles/v12_*. three_pigs STORY_DONE 275.1 s missing_audio=[];
+    videos artifacts/video/three_pigs_full_v12.mp4, three_pigs_escape_v12.mp4.
