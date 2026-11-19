@@ -1,0 +1,164 @@
+{
+ "sheet": "story_wc_room",
+ "bg": [
+  0.984,
+  0.008,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wc_room_00",
+   "bbox": [
+    71,
+    66,
+    880,
+    409
+   ],
+   "area": 273070,
+   "size": [
+    817,
+    351
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_01",
+   "bbox": [
+    948,
+    67,
+    1163,
+    409
+   ],
+   "area": 73153,
+   "size": [
+    223,
+    350
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_02",
+   "bbox": [
+    1235,
+    67,
+    1453,
+    409
+   ],
+   "area": 74281,
+   "size": [
+    226,
+    350
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_03",
+   "bbox": [
+    52,
+    492,
+    557,
+    730
+   ],
+   "area": 119656,
+   "size": [
+    513,
+    246
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_04",
+   "bbox": [
+    597,
+    519,
+    1099,
+    726
+   ],
+   "area": 100146,
+   "size": [
+    510,
+    215
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_05",
+   "bbox": [
+    1136,
+    440,
+    1477,
+    742
+   ],
+   "area": 91720,
+   "size": [
+    349,
+    310
+   ],
+   "halo": 28,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_06",
+   "bbox": [
+    58,
+    760,
+    532,
+    992
+   ],
+   "area": 70416,
+   "size": [
+    482,
+    240
+   ],
+   "halo": 35,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_07",
+   "bbox": [
+    598,
+    863,
+    877,
+    977
+   ],
+   "area": 28463,
+   "size": [
+    287,
+    122
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_room_08",
+   "bbox": [
+    957,
+    816,
+    1462,
+    988
+   ],
+   "area": 32406,
+   "size": [
+    513,
+    180
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

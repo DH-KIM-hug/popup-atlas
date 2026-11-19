@@ -1,0 +1,6893 @@
+{
+ "tale_id": "witch_candy",
+ "title": "사탕 마녀의 핼러윈",
+ "seeded_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/witch_candy/voice_script_el.json",
+ "clip_map_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/witch_candy/narration_el.js",
+ "voices": {
+  "nar": "pFZP5JQG7iQjIQuC4Bku",
+  "kid": "Lb7qkOn5hF8p7qfCDH8q",
+  "witch": "TC0Zp7WVFzhA8zpTlRqV",
+  "cat": "ygoBNrnmTEdu5NtDTmAY",
+  "rabbit": "piI8Kku0DcvcL6TTSeQt",
+  "bear": "rBkiq5ZQ43ogwd6i4uIQ",
+  "fox": "MIl0Flub6Sc9KSkX2A42"
+ },
+ "models": {
+  "nar": "eleven_v4",
+  "kid": "eleven_v4",
+  "witch": "eleven_v4",
+  "cat": "eleven_v4",
+  "rabbit": "eleven_v4",
+  "bear": "eleven_v4",
+  "fox": "eleven_v4"
+ },
+ "settings": {
+  "nar": {
+   "stability": 0.45,
+   "style": 0.4
+  },
+  "kid": {
+   "stability": 0.4,
+   "style": 0.5
+  },
+  "witch": {
+   "stability": 0.35,
+   "style": 0.55
+  },
+  "cat": {
+   "stability": 0.4,
+   "style": 0.5
+  },
+  "rabbit": {
+   "stability": 0.4,
+   "style": 0.5
+  },
+  "bear": {
+   "stability": 0.4,
+   "style": 0.5
+  },
+  "fox": {
+   "stability": 0.4,
+   "style": 0.5
+  }
+ },
+ "voice_notes": "ElevenLabs 목소리 배정(2026-10-28, PLAN §3 제안을 확정안으로): nar=Lily(여자 내레이터 돌려 쓰기 Lily→Huelyn→Annie — 직전 창작편 유니콘이 Huelyn, 다음 차례 Annie는 이 편에서 다현이 목소리라 건너뛰고 Lily; 따뜻하고 장난기 있는 낭독), kid=Annie(다현이 — 여자아이, 「유니콘을 찾아서」·「구름 공장」의 다현이와 같은 목소리로 동화끼리 같은 아이), witch=Laura(사탕 마녀 — 다정·엉뚱, 밝고 괴짜스러운 목소리. Matilda는 나쁜 마녀 목소리라 쓰지 않음. 대안 Chaemong), cat=Hopsi(호박이 — 꼬마 목소리 돌려 쓰기, \"냐옹\"·코 막기), rabbit=Flicker(2026-11-01 사용자: 토끼 목소리 통일, 옛 Teddy), bear=Peanut(짧은 합창 역은 영어 아이 목소리), fox=Mithi(꼬마 목소리). 한 편 안에서 목소리가 겹치지 않고 내레이터와도 다르다. 모델 eleven_v4, 배역별 settings(마녀는 stability를 낮춰 표정 크게). 세기: extra n1~n5(하나~다섯)는 nar 목소리로 새로 녹음 — 공용 숫자 클립 audio/el/count/ko_*.mp3 는 Annie(사자와 생쥐 내레이터) 목소리라 이 편 내레이터(Lily)와 맞지 않아 재사용하지 않음. 7장 \"하나, 둘, 셋, 넷\"은 n1~n4 를 넣을 때마다 + 줄 하나. 합창: 친구 셋(rabbit·bear·fox) 합창 6줄(ch_wow·ch_bubble·ch_metoo·ch_wantto·ch_black·ch_yuckyum)과 여섯 목소리 합창 2줄(ghost_all \"오~~우~~\"·happy_all \"해피 핼러윈! 오~우~!\")은 extra 에 배역마다 따로 녹음하고 mix_chorus_el.py(red_car 방식)로 겹쳐 chorus 항목의 문장 키로 NARRATION_CLIPS 에 넣는다. 다현이 혼자 \"오~~우~~\"(8장)는 합창과 글자가 같아 lines 가 아니라 extra.ghost_kid(VOICE_LINES)로 둔다(코드가 자막을 따로 띄움). 결과별 대사 8벌: 색 질문 q_*(6) · 정답 ok_*(4) · 한 색 one_*(4) · 사탕 이름 yum_*(7, 1회전 \"어? 맛있다! …○○ 사탕이다!\") · yum2_*(7, 2·3회전 \"냠… ○○ 사탕이다!\", PLAN §5-2) · 변신 tf_nar_*(7) · 변신 대사 tf_kid_*(7) · 동작 tf_act_*(7) + 딸기 \"어디 가!\"·초콜릿 \"녹았다!\". 회전 전환 6줄(r_*). 5장 색 고르기: 마녀 질문 q_*(6) 뒤 T.ask 안내 ask_*(6, \"○○이랑 ○○을 섞으면 무슨 색이 될까요? 톡 눌러요.\" — 장면표·witch_candy.js 템플릿과 같은 글자), 오답 wrong_*(4, \"그건 ○○이에요.\" — 코드가 T.say 로 부르므로 lines). 판단: 5장 \"콧물로 만든 건데… 으웩…\"은 PLAN 글자 그대로지만 콧물을 안 넣은 판에서는 코드가 extra.yuck 로 대신한다. 조작 안내 문장은 조작이 있는 장면(2·4·5·6²끝·7·9)에만. 교훈 없음(뒷표지 글 \"다음엔 다른 색을 섞어 볼까요?\"는 ui 글자만). 제목 「사탕 마녀의 핼러윈」(2026-10-28 사용자 확정).",
+ "handler": "res://stories/witch_candy/fx.gd",
+ "shots": {
+  "story": [
+   3.7,
+   13.0,
+   0.28,
+   20.0
+  ],
+  "close": [
+   2.9,
+   12.0,
+   0.32,
+   20.0
+  ],
+  "crane_high": [
+   8.0,
+   34.0,
+   0.3,
+   22.0,
+   0.0
+  ],
+  "establish": [
+   9.0,
+   18.0,
+   0.3,
+   24.0,
+   -6.0
+  ],
+  "street": [
+   5.2,
+   12.0,
+   0.3,
+   22.0,
+   8.0
+  ],
+  "medium": [
+   3.2,
+   10.0,
+   0.3,
+   20.0,
+   6.0
+  ],
+  "face": [
+   1.5,
+   7.0,
+   0.3,
+   20.0,
+   0.0
+  ],
+  "low_up": [
+   2.7,
+   3.5,
+   0.5,
+   22.0,
+   -10.0
+  ],
+  "sky": [
+   5.5,
+   -4.0,
+   1.4,
+   26.0,
+   0.0
+  ],
+  "high": [
+   6.2,
+   30.0,
+   0.2,
+   22.0,
+   4.0
+  ],
+  "pull_back": [
+   10.5,
+   26.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "room": [
+   1.7,
+   9.0,
+   0.3,
+   46.0,
+   0.0
+  ],
+  "shelf": [
+   1.25,
+   7.0,
+   0.3,
+   40.0,
+   -12.0
+  ],
+  "pot": [
+   0.9,
+   16.0,
+   0.2,
+   38.0,
+   6.0
+  ],
+  "pot_low": [
+   0.8,
+   3.0,
+   0.3,
+   40.0,
+   -6.0
+  ],
+  "two_shot": [
+   1.1,
+   6.0,
+   0.32,
+   40.0,
+   14.0
+  ],
+  "door_out": [
+   1.4,
+   8.0,
+   0.3,
+   44.0,
+   180.0
+  ]
+ },
+ "ui": {
+  "cover": [
+   [
+    "cast_dahyun_calm",
+    190
+   ],
+   [
+    "cast_candy_witch_welcome",
+    250
+   ],
+   [
+    "cast_hobak_cat_sit",
+    120
+   ]
+  ],
+  "end": [
+   [
+    "cast_dahyun_wave",
+    180
+   ],
+   [
+    "cast_candy_witch_two_candies",
+    240
+   ],
+   [
+    "cast_hobak_cat_meow",
+    120
+   ]
+  ],
+  "speakers": {
+   "kid": [
+    "다현이",
+    "4b3a7a",
+    "cast_dahyun_calm"
+   ],
+   "witch": [
+    "사탕 마녀",
+    "3e9d8f",
+    "cast_candy_witch_calm"
+   ],
+   "cat": [
+    "호박이",
+    "e8862a",
+    "cast_hobak_cat_sit"
+   ],
+   "all": [
+    "다 같이",
+    "c58a1e",
+    "cast_candy_witch_ghost"
+   ]
+  }
+ },
+ "backdrop": true,
+ "sound": {
+  "beds": {
+   "evening": "amb.night_village",
+   "night": "amb.night_village",
+   "room": "amb.room_fire"
+  },
+  "music": {
+   "invite": "music.playful_night",
+   "round1": "music.magic_bubbles",
+   "round2": "music.magic_bubbles",
+   "ghost_candy": "music.magic_bubbles",
+   "parade": "music.silly_march",
+   "finale": "music.party"
+  },
+  "fx_note": "NEW ids needed (phase 2): wc.drip wc.siren wc.buzz wc.chime wc.kazoo wc.quack wc.plop wc.splash wc.wave (one per ingredient), wc.bubble_loop, wc.stir_magic, wc.poof, wc.candy_pop, wc.boing (뿅), wc.roll, wc.bonk (통), wc.flap, wc.ribbit, wc.glow_hum, wc.oooh_wind, owl/cricket night sprinkle, fire crackle"
+ },
+ "cast": {
+  "kid": {
+   "kind": "actor",
+   "skin": "dahyun",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "다현이 (little wizard)"
+  },
+  "witch": {
+   "kind": "actor",
+   "skin": "candy_witch",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "사탕 마녀"
+  },
+  "cat": {
+   "kind": "actor",
+   "skin": "hobak_cat",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "호박이 (orange cat)"
+  },
+  "rabbit": {
+   "kind": "actor",
+   "skin": "rabbit_kid",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "토끼 (non-speaking)"
+  },
+  "bear": {
+   "kind": "actor",
+   "skin": "bear_kid",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "곰 (non-speaking)"
+  },
+  "fox": {
+   "kind": "actor",
+   "skin": "fox_kid",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "여우 (non-speaking)"
+  }
+ },
+ "moral": "",
+ "beats": [
+  {
+   "id": "cover",
+   "title": "사탕 마녀의 핼러윈",
+   "spread": null,
+   "steps": [
+    {
+     "do": "cover",
+     "prompt": "wc_n01"
+    }
+   ]
+  },
+  {
+   "id": "invite",
+   "title": "초대장",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "evening",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "kid": "calm",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "kids",
+     "rabbit": "kids",
+     "bear": "kids",
+     "fox": "kids"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 1.4
+    },
+    {
+     "do": "fx",
+     "fx": "invites_flutter",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "wc_000"
+    },
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": "kids",
+     "wait": 0.2
+    },
+    {
+     "do": "tap_each",
+     "targets": [
+      "invite_1",
+      "invite_2",
+      "invite_3"
+     ],
+     "prompt": "wc_n03",
+     "hint": "wc_n03",
+     "react": {
+      "invite_1": [
+       "catch:rabbit"
+      ],
+      "invite_2": [
+       "catch:bear"
+      ],
+      "invite_3": [
+       "catch:fox"
+      ]
+     }
+    },
+    {
+     "do": "fx",
+     "fx": "catch:kid"
+    },
+    {
+     "do": "cam",
+     "shot": "face",
+     "at": "kids",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wc_001"
+    },
+    {
+     "do": "cam",
+     "shot": "street",
+     "at": "shop",
+     "rate": 1.0,
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "shop_lights_on",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wc_002"
+    },
+    {
+     "do": "walk",
+     "who": [
+      "kid",
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "to": "kids_mid",
+     "dir": "away",
+     "speed": 0.35,
+     "follow": "kid",
+     "shot": "street"
+    },
+    {
+     "do": "fx",
+     "fx": "door_open",
+     "wait": 0.2
+    },
+    {
+     "do": "walk",
+     "who": "witch",
+     "from": "door",
+     "to": "witch_door",
+     "dir": "toward",
+     "speed": 0.3
+    },
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": "witch_door",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wc_003"
+    },
+    {
+     "do": "walk",
+     "who": "cat",
+     "from": "door",
+     "to": "witch_door",
+     "dir": "toward",
+     "speed": 0.3,
+     "async": true
+    },
+    {
+     "do": "cam",
+     "shot": "story",
+     "at": "door",
+     "wait": 0.1
+    },
+    {
+     "do": "go_inside",
+     "who": [
+      "kid",
+      "rabbit",
+      "bear",
+      "fox",
+      "witch",
+      "cat"
+     ],
+     "house": "shop",
+     "room": true,
+     "line": "wc_004"
+    }
+   ]
+  },
+  {
+   "id": "fire",
+   "title": "뽀글뽀글 솥",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "evening",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "kid": "calm",
+     "witch": "calm",
+     "cat": "sit",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "in_kid",
+     "witch": "in_witch",
+     "cat": "in_cat",
+     "rabbit": "in_friends",
+     "bear": "in_friends",
+     "fox": "in_friends"
+    }
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "inside_view",
+     "wait": 1.6
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wc_005"
+    },
+    {
+     "do": "cam",
+     "shot": "pot_low",
+     "at": "in_pot",
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "up:logs",
+     "wait": 0.3
+    },
+    {
+     "do": "tap_steps",
+     "target": "logs",
+     "prompt": "wc_006",
+     "hint": "wc_006",
+     "steps": [
+      {
+       "fx": "flame_s"
+      },
+      {
+       "target": "flame_s",
+       "fx": "flame_m"
+      },
+      {
+       "target": "flame_m",
+       "fx": "flame_l"
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "pot_water",
+     "wait": 0.4
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 1.4
+    },
+    {
+     "do": "say",
+     "line": "wc_007"
+    },
+    {
+     "do": "cam",
+     "shot": "face",
+     "at": "in_cat",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wc_008"
+    }
+   ]
+  },
+  {
+   "id": "shelf",
+   "title": "으엑, 재료!",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "evening",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "kid",
+     "witch",
+     "cat",
+     "rabbit",
+     "bear",
+     "fox"
+    ]
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "shelf",
+     "at": "in_shelf",
+     "rate": 1.2,
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "shelf_pop",
+     "wait": 2.4
+    },
+    {
+     "do": "say",
+     "line": "wc_011"
+    },
+    {
+     "do": "say",
+     "line": "wc_038"
+    },
+    {
+     "do": "cam",
+     "shot": "two_shot",
+     "at": "in_pot",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wc_039"
+    },
+    {
+     "do": "say",
+     "line": "wc_040"
+    }
+   ]
+  },
+  {
+   "id": "round1",
+   "title": "마법 사탕",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "evening",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "kid",
+     "witch",
+     "cat",
+     "rabbit",
+     "bear",
+     "fox"
+    ]
+   },
+   "steps": [
+    {
+     "do": "frame",
+     "with": [
+      "shelf",
+      "pot",
+      "kid"
+     ],
+     "wait": 0.6
+    },
+    {
+     "do": "brew",
+     "round": 1,
+     "prompt": "wc_041",
+     "hint": "wc_041",
+     "shelf": "shelf",
+     "pot": "pot",
+     "picks": 2,
+     "ingredients": {
+      "snot": {
+       "color": "r",
+       "card": "story_wc_ingredients_00",
+       "and": "wc_012",
+       "in": "wc_024",
+       "yuck": "wc_036",
+       "sfx": "wc.drip"
+      },
+      "firetruck": {
+       "color": "r",
+       "card": "story_wc_ingredients_01",
+       "and": "wc_013",
+       "in": "wc_025",
+       "sfx": "wc.siren"
+      },
+      "ladybug": {
+       "color": "r",
+       "card": "story_wc_ingredients_02",
+       "and": "wc_014",
+       "in": "wc_026",
+       "sfx": "wc.buzz"
+      },
+      "lantern": {
+       "color": "y",
+       "card": "story_wc_ingredients_03",
+       "and": "wc_015",
+       "in": "wc_027",
+       "sfx": "wc.chime"
+      },
+      "chickfart": {
+       "color": "y",
+       "card": "story_wc_ingredients_04",
+       "and": "wc_016",
+       "in": "wc_028",
+       "sfx": "wc.kazoo"
+      },
+      "duck": {
+       "color": "y",
+       "card": "story_wc_ingredients_05",
+       "and": "wc_017",
+       "in": "wc_029",
+       "sfx": "wc.quack"
+      },
+      "poo": {
+       "color": "b",
+       "card": "story_wc_ingredients_06",
+       "and": "wc_018",
+       "in": "wc_030",
+       "yuck": "wc_037",
+       "sfx": "wc.plop"
+      },
+      "fish": {
+       "color": "b",
+       "card": "story_wc_ingredients_07",
+       "and": "wc_019",
+       "in": "wc_031",
+       "sfx": "wc.splash"
+      },
+      "wave": {
+       "color": "b",
+       "card": "story_wc_ingredients_08",
+       "and": "wc_020",
+       "in": "wc_032",
+       "sfx": "wc.wave"
+      }
+     },
+     "combos": {
+      "r": "strawberry",
+      "y": "duck",
+      "b": "fish",
+      "ry": "pumpkin",
+      "br": "bat",
+      "by": "frog"
+     },
+     "results": {
+      "strawberry": {
+       "candy": "story_wc_candies_00",
+       "pot": "red",
+       "eat": [
+        "wc_082",
+        "wc_089"
+       ],
+       "tf": "wc_096",
+       "kid": "wc_102",
+       "act": "wc_110",
+       "extra": [
+        "wc_117"
+       ],
+       "figure": "tf_strawberry",
+       "move": "tf_strawberry_ball",
+       "action": "roll_street",
+       "note": "she curls into a strawberry ball, rolls out of the door and down the street, bumps a pumpkin lantern (통!), the witch calls from the door (어디 가!), she rolls back"
+      },
+      "duck": {
+       "candy": "story_wc_candies_01",
+       "pot": "yellow",
+       "eat": [
+        "wc_083",
+        "wc_090"
+       ],
+       "tf": "wc_097",
+       "kid": "wc_103",
+       "act": "wc_111",
+       "figure": "tf_duck",
+       "move": "duck_cycle",
+       "action": "waddle_room",
+       "note": "duck feet: she waddles round the pot (drawn duck waddle cycle), 호박이 waddles behind her"
+      },
+      "fish": {
+       "candy": "story_wc_candies_02",
+       "pot": "blue",
+       "eat": [
+        "wc_084",
+        "wc_091"
+       ],
+       "tf": "wc_098",
+       "kid": "wc_104",
+       "act": "wc_112",
+       "figure": "tf_fish",
+       "move": "tf_fish",
+       "action": "swim_moon",
+       "note": "fish tail: she floats out of the door and up over the roofs, swims a loop round the full moon (camera tilts up to the sky), bubbles trail; floats back down to the door"
+      },
+      "frog": {
+       "candy": "story_wc_candies_03",
+       "pot": "green",
+       "eat": [
+        "wc_085",
+        "wc_092"
+       ],
+       "tf": "wc_154",
+       "kid": "wc_105",
+       "act": "wc_113",
+       "figure": "tf_frog_sit",
+       "move": "tf_frog_jump",
+       "action": "hop_roof",
+       "note": "frog legs: three hops out of the door and up onto the shop roof (low angle), waves from the ridge, hops down"
+      },
+      "pumpkin": {
+       "candy": "story_wc_candies_04",
+       "pot": "orange",
+       "eat": [
+        "wc_086",
+        "wc_093"
+       ],
+       "tf": "wc_099",
+       "kid": "wc_106",
+       "act": "wc_114",
+       "figure": "tf_pumpkin",
+       "move": "walk",
+       "action": "glow_street",
+       "note": "her pumpkin tummy glows: the street lanterns dim (light 'dark'), she walks out (drawn walk cycle; the glow rides on her) and lights the street around her (warm omni light)"
+      },
+      "bat": {
+       "candy": "story_wc_candies_05",
+       "pot": "purple",
+       "eat": [
+        "wc_087",
+        "wc_094"
+       ],
+       "tf": "wc_100",
+       "kid": "wc_107",
+       "act": "wc_115",
+       "figure": "tf_bat_up",
+       "move": "tf_bat_flap",
+       "action": "fly_moon",
+       "note": "bat wings (two drawn wing frames flap): out of the door, up past the roofs, a circle in front of the moon with the paper bat silhouettes"
+      }
+     },
+     "and_in": true,
+     "autoplay": "random_new_result",
+     "stir": "wc_046",
+     "pop": "wc_079",
+     "offer": "wc_080",
+     "after": [
+      "wc_109"
+     ],
+     "back": "wc_119"
+    }
+   ]
+  },
+  {
+   "id": "round2",
+   "title": "한 번 더",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "evening",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "kid",
+     "witch",
+     "cat",
+     "rabbit",
+     "bear",
+     "fox"
+    ]
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "two_shot",
+     "at": "in_pot",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wc_120"
+    },
+    {
+     "do": "fx",
+     "fx": "pot_clear",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "wc_125"
+    },
+    {
+     "do": "frame",
+     "with": [
+      "shelf",
+      "pot",
+      "kid"
+     ],
+     "wait": 0.4
+    },
+    {
+     "do": "brew",
+     "round": 2,
+     "shelf": "shelf",
+     "pot": "pot",
+     "picks": 2,
+     "ingredients": {
+      "snot": {
+       "color": "r",
+       "card": "story_wc_ingredients_00",
+       "and": "wc_012",
+       "in": "wc_024",
+       "yuck": "wc_036",
+       "sfx": "wc.drip"
+      },
+      "firetruck": {
+       "color": "r",
+       "card": "story_wc_ingredients_01",
+       "and": "wc_013",
+       "in": "wc_025",
+       "sfx": "wc.siren"
+      },
+      "ladybug": {
+       "color": "r",
+       "card": "story_wc_ingredients_02",
+       "and": "wc_014",
+       "in": "wc_026",
+       "sfx": "wc.buzz"
+      },
+      "lantern": {
+       "color": "y",
+       "card": "story_wc_ingredients_03",
+       "and": "wc_015",
+       "in": "wc_027",
+       "sfx": "wc.chime"
+      },
+      "chickfart": {
+       "color": "y",
+       "card": "story_wc_ingredients_04",
+       "and": "wc_016",
+       "in": "wc_028",
+       "sfx": "wc.kazoo"
+      },
+      "duck": {
+       "color": "y",
+       "card": "story_wc_ingredients_05",
+       "and": "wc_017",
+       "in": "wc_029",
+       "sfx": "wc.quack"
+      },
+      "poo": {
+       "color": "b",
+       "card": "story_wc_ingredients_06",
+       "and": "wc_018",
+       "in": "wc_030",
+       "yuck": "wc_037",
+       "sfx": "wc.plop"
+      },
+      "fish": {
+       "color": "b",
+       "card": "story_wc_ingredients_07",
+       "and": "wc_019",
+       "in": "wc_031",
+       "sfx": "wc.splash"
+      },
+      "wave": {
+       "color": "b",
+       "card": "story_wc_ingredients_08",
+       "and": "wc_020",
+       "in": "wc_032",
+       "sfx": "wc.wave"
+      }
+     },
+     "combos": {
+      "r": "strawberry",
+      "y": "duck",
+      "b": "fish",
+      "ry": "pumpkin",
+      "br": "bat",
+      "by": "frog"
+     },
+     "results": {
+      "strawberry": {
+       "candy": "story_wc_candies_00",
+       "pot": "red",
+       "eat": [
+        "wc_082",
+        "wc_089"
+       ],
+       "tf": "wc_096",
+       "kid": "wc_102",
+       "act": "wc_110",
+       "extra": [
+        "wc_117"
+       ],
+       "figure": "tf_strawberry",
+       "move": "tf_strawberry_ball",
+       "action": "roll_street",
+       "note": "she curls into a strawberry ball, rolls out of the door and down the street, bumps a pumpkin lantern (통!), the witch calls from the door (어디 가!), she rolls back"
+      },
+      "duck": {
+       "candy": "story_wc_candies_01",
+       "pot": "yellow",
+       "eat": [
+        "wc_083",
+        "wc_090"
+       ],
+       "tf": "wc_097",
+       "kid": "wc_103",
+       "act": "wc_111",
+       "figure": "tf_duck",
+       "move": "duck_cycle",
+       "action": "waddle_room",
+       "note": "duck feet: she waddles round the pot (drawn duck waddle cycle), 호박이 waddles behind her"
+      },
+      "fish": {
+       "candy": "story_wc_candies_02",
+       "pot": "blue",
+       "eat": [
+        "wc_084",
+        "wc_091"
+       ],
+       "tf": "wc_098",
+       "kid": "wc_104",
+       "act": "wc_112",
+       "figure": "tf_fish",
+       "move": "tf_fish",
+       "action": "swim_moon",
+       "note": "fish tail: she floats out of the door and up over the roofs, swims a loop round the full moon (camera tilts up to the sky), bubbles trail; floats back down to the door"
+      },
+      "frog": {
+       "candy": "story_wc_candies_03",
+       "pot": "green",
+       "eat": [
+        "wc_085",
+        "wc_092"
+       ],
+       "tf": "wc_154",
+       "kid": "wc_105",
+       "act": "wc_113",
+       "figure": "tf_frog_sit",
+       "move": "tf_frog_jump",
+       "action": "hop_roof",
+       "note": "frog legs: three hops out of the door and up onto the shop roof (low angle), waves from the ridge, hops down"
+      },
+      "pumpkin": {
+       "candy": "story_wc_candies_04",
+       "pot": "orange",
+       "eat": [
+        "wc_086",
+        "wc_093"
+       ],
+       "tf": "wc_099",
+       "kid": "wc_106",
+       "act": "wc_114",
+       "figure": "tf_pumpkin",
+       "move": "walk",
+       "action": "glow_street",
+       "note": "her pumpkin tummy glows: the street lanterns dim (light 'dark'), she walks out (drawn walk cycle; the glow rides on her) and lights the street around her (warm omni light)"
+      },
+      "bat": {
+       "candy": "story_wc_candies_05",
+       "pot": "purple",
+       "eat": [
+        "wc_087",
+        "wc_094"
+       ],
+       "tf": "wc_100",
+       "kid": "wc_107",
+       "act": "wc_115",
+       "figure": "tf_bat_up",
+       "move": "tf_bat_flap",
+       "action": "fly_moon",
+       "note": "bat wings (two drawn wing frames flap): out of the door, up past the roofs, a circle in front of the moon with the paper bat silhouettes"
+      }
+     },
+     "and_in": true,
+     "autoplay": "random_new_result",
+     "stir": "wc_045"
+    }
+   ]
+  },
+  {
+   "id": "ghost_candy",
+   "title": "유령 사탕",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "evening",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "kid",
+     "witch",
+     "cat",
+     "rabbit",
+     "bear",
+     "fox"
+    ]
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "pot_clear",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "two_shot",
+     "at": "in_pot",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wc_126"
+    },
+    {
+     "do": "say",
+     "line": "wc_127"
+    },
+    {
+     "do": "frame",
+     "with": [
+      "shelf",
+      "pot",
+      "kid"
+     ],
+     "wait": 0.3
+    },
+    {
+     "do": "brew",
+     "round": 3,
+     "all_colors": true,
+     "shelf": "shelf",
+     "pot": "pot",
+     "ingredients": {
+      "snot": {
+       "color": "r",
+       "card": "story_wc_ingredients_00",
+       "and": "wc_012",
+       "in": "wc_024",
+       "yuck": "wc_036",
+       "sfx": "wc.drip"
+      },
+      "firetruck": {
+       "color": "r",
+       "card": "story_wc_ingredients_01",
+       "and": "wc_013",
+       "in": "wc_025",
+       "sfx": "wc.siren"
+      },
+      "ladybug": {
+       "color": "r",
+       "card": "story_wc_ingredients_02",
+       "and": "wc_014",
+       "in": "wc_026",
+       "sfx": "wc.buzz"
+      },
+      "lantern": {
+       "color": "y",
+       "card": "story_wc_ingredients_03",
+       "and": "wc_015",
+       "in": "wc_027",
+       "sfx": "wc.chime"
+      },
+      "chickfart": {
+       "color": "y",
+       "card": "story_wc_ingredients_04",
+       "and": "wc_016",
+       "in": "wc_028",
+       "sfx": "wc.kazoo"
+      },
+      "duck": {
+       "color": "y",
+       "card": "story_wc_ingredients_05",
+       "and": "wc_017",
+       "in": "wc_029",
+       "sfx": "wc.quack"
+      },
+      "poo": {
+       "color": "b",
+       "card": "story_wc_ingredients_06",
+       "and": "wc_018",
+       "in": "wc_030",
+       "yuck": "wc_037",
+       "sfx": "wc.plop"
+      },
+      "fish": {
+       "color": "b",
+       "card": "story_wc_ingredients_07",
+       "and": "wc_019",
+       "in": "wc_031",
+       "sfx": "wc.splash"
+      },
+      "wave": {
+       "color": "b",
+       "card": "story_wc_ingredients_08",
+       "and": "wc_020",
+       "in": "wc_032",
+       "sfx": "wc.wave"
+      }
+     },
+     "taps": [
+      "snot",
+      "lantern",
+      "fish"
+     ],
+     "result": "ghost",
+     "candy": "story_wc_candies_06",
+     "pot_color": "black",
+     "stir": "wc_130",
+     "pop": "wc_131",
+     "eat": "wc_132",
+     "ghost": "wc_x_ghost_kid"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "wait": 0.1
+    },
+    {
+     "do": "pose",
+     "who": "witch",
+     "pose": "ghost"
+    },
+    {
+     "do": "say",
+     "line": "wc_133"
+    },
+    {
+     "do": "fx",
+     "fx": "candies_to_all",
+     "wait": 0.6
+    },
+    {
+     "do": "pose",
+     "who": [
+      "cat",
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "pose": "ghost",
+     "hop": true
+    },
+    {
+     "do": "say",
+     "line": "wc_134"
+    }
+   ]
+  },
+  {
+   "id": "parade",
+   "title": "오~우~ 행진",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "night",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "kid",
+     "witch",
+     "cat",
+     "rabbit",
+     "bear",
+     "fox"
+    ]
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "outside_view",
+     "wait": 1.2
+    },
+    {
+     "do": "walk",
+     "who": [
+      "kid",
+      "witch",
+      "cat",
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "pose": "ghost",
+     "to": "parade_a",
+     "path": [
+      "door",
+      "kids_mid",
+      "parade_a"
+     ],
+     "speed": 0.35,
+     "follow": "kid",
+     "shot": "high",
+     "line": "wc_135",
+     "file": true
+    },
+    {
+     "do": "fx",
+     "fx": "ghost_tagalong",
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": [
+      "kid",
+      "witch",
+      "cat",
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "pose": "ghost",
+     "to": "parade_b",
+     "via": "road",
+     "speed": 0.35,
+     "follow": "kid",
+     "shot": "street",
+     "line": "wc_x_ghost_all",
+     "file": true
+    },
+    {
+     "do": "cam",
+     "shot": "sky",
+     "at": "moon_loop",
+     "wait": 0.6
+    },
+    {
+     "do": "fx",
+     "fx": "ghost_vanish",
+     "wait": 0.6
+    },
+    {
+     "do": "go_inside",
+     "who": [
+      "kid",
+      "witch",
+      "cat",
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "house": "shop",
+     "room": true
+    }
+   ]
+  },
+  {
+   "id": "finale",
+   "title": "다 같이 변신",
+   "spread": {
+    "seed": 1,
+    "view": 5,
+    "place": "street",
+    "light": "evening",
+    "night": "halloween",
+    "spots": {
+     "shop": [
+      0.2,
+      -1.6
+     ],
+     "door": [
+      0.2,
+      -1.22
+     ],
+     "lamp_l": [
+      -0.9,
+      -0.3
+     ],
+     "lamp_r": [
+      1.0,
+      -0.5
+     ],
+     "kids": [
+      -1.2,
+      0.5
+     ],
+     "kids_mid": [
+      -0.4,
+      -0.2
+     ],
+     "witch_door": [
+      0.55,
+      -1.15
+     ],
+     "lantern_bump": [
+      -1.6,
+      0.4
+     ],
+     "moon_loop": [
+      0.2,
+      -3.0
+     ],
+     "roof": [
+      0.2,
+      -1.6
+     ],
+     "est": [
+      0.0,
+      -0.8
+     ],
+     "parade_a": [
+      -1.6,
+      0.2
+     ],
+     "parade_b": [
+      1.4,
+      0.1
+     ],
+     "in_shelf": [
+      -0.55,
+      -2.1
+     ],
+     "in_pot": [
+      0.15,
+      -1.95
+     ],
+     "in_counter": [
+      0.75,
+      -2.15
+     ],
+     "in_kid": [
+      -0.15,
+      -1.75
+     ],
+     "in_witch": [
+      0.48,
+      -1.85
+     ],
+     "in_friends": [
+      -0.75,
+      -1.65
+     ],
+     "in_cat": [
+      0.05,
+      -1.62
+     ],
+     "in_focus": [
+      0.0,
+      -1.9
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wc_shop_00",
+      "at": "shop",
+      "stage": "full",
+      "name": "shop",
+      "scale": 1.0,
+      "clear": 2.0,
+      "box": {
+       "depth": 1.0,
+       "side": "story_wc_shop_02",
+       "inner": "story_wc_room_00",
+       "floor": "story_wc_room_03",
+       "room": "interior"
+      }
+     },
+     {
+      "card": "story_wc_room_04",
+      "at": "in_shelf",
+      "stage": "full",
+      "name": "shelf",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_counter",
+      "stage": "full",
+      "name": "counter",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_room_07",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "hearth",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_00",
+      "at": "in_pot",
+      "stage": "full",
+      "name": "pot",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_11",
+      "at": "in_pot",
+      "stage": 0,
+      "name": "logs",
+      "clear": 0
+     },
+     {
+      "card": "story_wc_halloween_04",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "bunting",
+      "clear": 0.5
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_l",
+      "stage": "full",
+      "name": "lamp_l"
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r",
+      "stage": "full",
+      "name": "lamp_r"
+     },
+     {
+      "card": "story_wc_halloween_01",
+      "at": "lantern_bump",
+      "stage": "full",
+      "name": "pumpkin_bump"
+     }
+    ]
+   },
+   "enter": {
+    "who": {
+     "kid": "calm",
+     "witch": "calm",
+     "cat": "sit",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "in_kid",
+     "witch": "in_witch",
+     "cat": "in_cat",
+     "rabbit": "in_friends",
+     "bear": "in_friends",
+     "fox": "in_friends"
+    }
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "inside_view",
+     "wait": 1.2
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "wc_136"
+    },
+    {
+     "do": "cam",
+     "shot": "pot",
+     "at": "in_pot",
+     "wait": 0.1
+    },
+    {
+     "do": "fx",
+     "fx": "candy_fountain",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wc_137"
+    },
+    {
+     "do": "pose",
+     "who": "witch",
+     "pose": "two_candies"
+    },
+    {
+     "do": "say",
+     "line": "wc_138"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "wait": 0.2
+    },
+    {
+     "do": "tap_each",
+     "targets": [
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "prompt": "wc_n04",
+     "hint": "wc_n04",
+     "react": {
+      "rabbit": [
+       "tf_frog",
+       "poof"
+      ],
+      "bear": [
+       "tf_duck",
+       "poof"
+      ],
+      "fox": [
+       "tf_bat",
+       "poof"
+      ]
+     }
+    },
+    {
+     "do": "fx",
+     "fx": "all_transform",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wc_139"
+    },
+    {
+     "do": "fx",
+     "fx": "all_back",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wc_140"
+    },
+    {
+     "do": "say",
+     "line": "wc_x_happy_all"
+    },
+    {
+     "do": "cam",
+     "shot": "two_shot",
+     "at": "in_pot",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wc_141"
+    },
+    {
+     "do": "say",
+     "line": "wc_142"
+    },
+    {
+     "do": "tap_steps",
+     "target": "witch",
+     "prompt": "wc_143",
+     "hint": "wc_143",
+     "steps": [
+      {
+       "fx": "witch_wave"
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "outside_view",
+     "wait": 1.0
+    },
+    {
+     "do": "cam",
+     "shot": "pull_back",
+     "at": "est",
+     "rate": 0.5,
+     "wait": 3.0
+    },
+    {
+     "do": "end",
+     "after": "wc_n02",
+     "close_book": true
+    }
+   ]
+  }
+ ],
+ "lines": [
+  {
+   "id": "wc_000",
+   "speaker": "nar",
+   "text": "핼러윈 밤이에요. 바람을 타고 무언가 팔랑팔랑 날아왔어요.",
+   "status": "reuse",
+   "beat": "invite",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "핼러윈 밤이에요. 바람을 타고 무언가 팔랑팔랑 날아왔어요.",
+     "emotion": null,
+     "tags": "[warm, playful storytelling, slow, clear, cosy Halloween night, never scary]",
+     "audio": "res://audio/voice/witch_candy/nar_528b65b1f3.mp3",
+     "source_audio": "audio/el/witch_candy/nar_528b65b1f3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 0,
+   "source_text": "핼러윈 밤이에요. 바람을 타고 무언가 팔랑팔랑 날아왔어요.",
+   "expr": {
+    "kid": "calm",
+    "rabbit": "calm",
+    "bear": "calm",
+    "fox": "calm"
+   }
+  },
+  {
+   "id": "wc_001",
+   "speaker": "kid",
+   "text": "\"어? 초대장이다!\"",
+   "status": "reuse",
+   "beat": "invite",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 초대장이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised and delighted, bright]",
+     "audio": "res://audio/voice/witch_candy/kid_cd699ad4ed.mp3",
+     "source_audio": "audio/el/witch_candy/kid_cd699ad4ed.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 1,
+   "source_text": "어? 초대장이다!",
+   "expr": {
+    "kid": "excited"
+   }
+  },
+  {
+   "id": "wc_002",
+   "speaker": "nar",
+   "text": "거리 끝 사탕 가게 창이 환하게 켜졌어요.",
+   "status": "reuse",
+   "beat": "invite",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "거리 끝 사탕 가게 창이 환하게 켜졌어요.",
+     "emotion": "toneup",
+     "tags": "[bright, excited storytelling, bouncy, clear]",
+     "audio": "res://audio/voice/witch_candy/nar_9393cb63b9.mp3",
+     "source_audio": "audio/el/witch_candy/nar_9393cb63b9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 2,
+   "source_text": "거리 끝 사탕 가게 창이 환하게 켜졌어요."
+  },
+  {
+   "id": "wc_003",
+   "speaker": "witch",
+   "text": "\"어서 와, 친구들! 나는 사탕 마녀야.\"",
+   "status": "reuse",
+   "beat": "invite",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "어서 와, 친구들! 나는 사탕 마녀야.",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, warm, giggly, a little silly, never scary]",
+     "audio": "res://audio/voice/witch_candy/witch_306c9c7c2f.mp3",
+     "source_audio": "audio/el/witch_candy/witch_306c9c7c2f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 3,
+   "source_text": "어서 와, 친구들! 나는 사탕 마녀야.",
+   "expr": {
+    "witch": "welcome"
+   }
+  },
+  {
+   "id": "wc_004",
+   "speaker": "nar",
+   "text": "다현이랑 친구들은 사탕 가게로 쪼르르 들어갔어요.",
+   "status": "reuse",
+   "beat": "invite",
+   "interaction": "go_inside",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다현이랑 친구들은 사탕 가게로 쪼르르 들어갔어요.",
+     "emotion": null,
+     "tags": "[warm, playful storytelling, slow, clear, cosy Halloween night, never scary]",
+     "audio": "res://audio/voice/witch_candy/nar_f4066af88f.mp3",
+     "source_audio": "audio/el/witch_candy/nar_f4066af88f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 4,
+   "source_text": "다현이랑 친구들은 사탕 가게로 쪼르르 들어갔어요.",
+   "expr": {
+    "kid": "calm"
+   }
+  },
+  {
+   "id": "wc_005",
+   "speaker": "witch",
+   "text": "\"오늘은 핼러윈 특별 사탕을 만들 거야. 먼저 솥을 끓여야지.\"",
+   "status": "reuse",
+   "beat": "fire",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "오늘은 핼러윈 특별 사탕을 만들 거야. 먼저 솥을 끓여야지.",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, warm, giggly, a little silly, never scary]",
+     "audio": "res://audio/voice/witch_candy/witch_f3ce80f834.mp3",
+     "source_audio": "audio/el/witch_candy/witch_f3ce80f834.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 5,
+   "source_text": "오늘은 핼러윈 특별 사탕을 만들 거야. 먼저 솥을 끓여야지.",
+   "expr": {
+    "witch": "calm"
+   }
+  },
+  {
+   "id": "wc_006",
+   "speaker": "nar",
+   "text": "장작을 톡 눌러 불을 지펴요.",
+   "status": "reuse",
+   "beat": "fire",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "장작을 톡 눌러 불을 지펴요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_6211017797.mp3",
+     "source_audio": "audio/el/witch_candy/nar_6211017797.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 6,
+   "source_text": "장작을 톡 눌러 불을 지펴요."
+  },
+  {
+   "id": "wc_007",
+   "speaker": "nar",
+   "text": "화르륵! 불이 활활, 솥이 뽀글뽀글 끓기 시작했어요.",
+   "status": "reuse",
+   "beat": "fire",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "화르륵! 불이 활활, 솥이 뽀글뽀글 끓기 시작했어요.",
+     "emotion": "toneup",
+     "tags": "[bright, excited storytelling, bouncy, clear]",
+     "audio": "res://audio/voice/witch_candy/nar_45e6673dd6.mp3",
+     "source_audio": "audio/el/witch_candy/nar_45e6673dd6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 7,
+   "source_text": "화르륵! 불이 활활, 솥이 뽀글뽀글 끓기 시작했어요.",
+   "expr": {
+    "kid": "wow",
+    "rabbit": "cheer",
+    "bear": "cheer",
+    "fox": "cheer"
+   }
+  },
+  {
+   "id": "wc_008",
+   "speaker": "cat",
+   "text": "\"냐옹!\"",
+   "status": "reuse",
+   "beat": "fire",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "cat",
+     "text": "냐옹!",
+     "emotion": "happy",
+     "tags": "[kitten, small high meow-like voice, cute]",
+     "audio": "res://audio/voice/witch_candy/cat_646e094c61.mp3",
+     "source_audio": "audio/el/witch_candy/cat_646e094c61.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 8,
+   "source_text": "냐옹!",
+   "expr": {
+    "cat": "meow"
+   }
+  },
+  {
+   "id": "wc_009",
+   "speaker": "witch",
+   "text": "\"핼러윈 사탕 재료야! 빨간 건 아기 용 콧물이랑 소방차, 노란 건 호박 등이랑 병아리 방귀!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "핼러윈 사탕 재료야! 빨간 건 아기 용 콧물이랑 소방차, 노란 건 호박 등이랑 병아리 방귀!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, proud, showing off, giggly]",
+     "audio": "res://audio/voice/witch_candy/witch_64f9f42c97.mp3",
+     "source_audio": "audio/el/witch_candy/witch_64f9f42c97.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 9,
+   "source_text": "핼러윈 사탕 재료야! 빨간 건 아기 용 콧물이랑 소방차, 노란 건 호박 등이랑 병아리 방귀!"
+  },
+  {
+   "id": "wc_010",
+   "speaker": "witch",
+   "text": "\"파란 건 괴물 응가랑 파란 생선, 초록은 개구리랑 공룡!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "파란 건 괴물 응가랑 파란 생선, 초록은 개구리랑 공룡!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, proud, showing off, giggly]",
+     "audio": "res://audio/voice/witch_candy/witch_7c64b77bc3.mp3",
+     "source_audio": "audio/el/witch_candy/witch_7c64b77bc3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 10,
+   "source_text": "파란 건 괴물 응가랑 파란 생선, 초록은 개구리랑 공룡!"
+  },
+  {
+   "id": "wc_011",
+   "speaker": "kid",
+   "text": "\"으엑! 콧물이랑 응가요?\"",
+   "status": "reuse",
+   "beat": "shelf",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "으엑! 콧물이랑 응가요?",
+     "emotion": null,
+     "tags": "[young girl, grossed out but giggling, comic]",
+     "audio": "res://audio/voice/witch_candy/kid_4804ecde69.mp3",
+     "source_audio": "audio/el/witch_candy/kid_4804ecde69.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 11,
+   "source_text": "으엑! 콧물이랑 응가요?",
+   "expr": {
+    "kid": "yuck"
+   }
+  },
+  {
+   "id": "wc_012",
+   "speaker": "nar",
+   "text": "아기 용 콧물이랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 용 콧물이랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_e58d47ae95.mp3",
+     "source_audio": "audio/el/witch_candy/nar_e58d47ae95.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 12,
+   "source_text": "아기 용 콧물이랑"
+  },
+  {
+   "id": "wc_013",
+   "speaker": "nar",
+   "text": "빨간 소방차랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨간 소방차랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_4ad372b0ec.mp3",
+     "source_audio": "audio/el/witch_candy/nar_4ad372b0ec.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 13,
+   "source_text": "빨간 소방차랑"
+  },
+  {
+   "id": "wc_014",
+   "speaker": "nar",
+   "text": "무당벌레랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "무당벌레랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_ae2f42d29c.mp3",
+     "source_audio": "audio/el/witch_candy/nar_ae2f42d29c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 14,
+   "source_text": "무당벌레랑"
+  },
+  {
+   "id": "wc_015",
+   "speaker": "nar",
+   "text": "노란 호박 등이랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "노란 호박 등이랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_3d3f3e3915.mp3",
+     "source_audio": "audio/el/witch_candy/nar_3d3f3e3915.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 15,
+   "source_text": "노란 호박 등이랑"
+  },
+  {
+   "id": "wc_016",
+   "speaker": "nar",
+   "text": "병아리 방귀랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "병아리 방귀랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_4258dddff4.mp3",
+     "source_audio": "audio/el/witch_candy/nar_4258dddff4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 16,
+   "source_text": "병아리 방귀랑"
+  },
+  {
+   "id": "wc_017",
+   "speaker": "nar",
+   "text": "고무 오리랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고무 오리랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_775808c4a9.mp3",
+     "source_audio": "audio/el/witch_candy/nar_775808c4a9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 17,
+   "source_text": "고무 오리랑"
+  },
+  {
+   "id": "wc_018",
+   "speaker": "nar",
+   "text": "괴물 응가랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "괴물 응가랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_ae5f9e0a87.mp3",
+     "source_audio": "audio/el/witch_candy/nar_ae5f9e0a87.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 18,
+   "source_text": "괴물 응가랑"
+  },
+  {
+   "id": "wc_019",
+   "speaker": "nar",
+   "text": "파란 생선이랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파란 생선이랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_361864f65f.mp3",
+     "source_audio": "audio/el/witch_candy/nar_361864f65f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 19,
+   "source_text": "파란 생선이랑"
+  },
+  {
+   "id": "wc_020",
+   "speaker": "nar",
+   "text": "파란 파도랑",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파란 파도랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_9833cd45d9.mp3",
+     "source_audio": "audio/el/witch_candy/nar_9833cd45d9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 20,
+   "source_text": "파란 파도랑"
+  },
+  {
+   "id": "wc_021",
+   "speaker": "nar",
+   "text": "초록 개구리랑",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록 개구리랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_b11c7f2fcb.mp3",
+     "source_audio": "audio/el/witch_candy/nar_b11c7f2fcb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 21,
+   "source_text": "초록 개구리랑"
+  },
+  {
+   "id": "wc_022",
+   "speaker": "nar",
+   "text": "초록 공룡이랑",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록 공룡이랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_b79d95f1dc.mp3",
+     "source_audio": "audio/el/witch_candy/nar_b79d95f1dc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 22,
+   "source_text": "초록 공룡이랑"
+  },
+  {
+   "id": "wc_023",
+   "speaker": "nar",
+   "text": "구운 초록 대파랑",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "구운 초록 대파랑",
+     "emotion": null,
+     "tags": "[playful storytelling, clear, the sentence keeps going — light rising end, no full stop]",
+     "audio": "res://audio/voice/witch_candy/nar_f086987c2a.mp3",
+     "source_audio": "audio/el/witch_candy/nar_f086987c2a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 23,
+   "source_text": "구운 초록 대파랑"
+  },
+  {
+   "id": "wc_024",
+   "speaker": "nar",
+   "text": "아기 용 콧물을 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 용 콧물을 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_bf6afbed12.mp3",
+     "source_audio": "audio/el/witch_candy/nar_bf6afbed12.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 24,
+   "source_text": "아기 용 콧물을 넣었어요!"
+  },
+  {
+   "id": "wc_025",
+   "speaker": "nar",
+   "text": "빨간 소방차를 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨간 소방차를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_1fba47c164.mp3",
+     "source_audio": "audio/el/witch_candy/nar_1fba47c164.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 25,
+   "source_text": "빨간 소방차를 넣었어요!"
+  },
+  {
+   "id": "wc_026",
+   "speaker": "nar",
+   "text": "무당벌레를 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "무당벌레를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_8d92f7c944.mp3",
+     "source_audio": "audio/el/witch_candy/nar_8d92f7c944.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 26,
+   "source_text": "무당벌레를 넣었어요!"
+  },
+  {
+   "id": "wc_027",
+   "speaker": "nar",
+   "text": "노란 호박 등을 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "노란 호박 등을 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_b39cfac771.mp3",
+     "source_audio": "audio/el/witch_candy/nar_b39cfac771.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 27,
+   "source_text": "노란 호박 등을 넣었어요!"
+  },
+  {
+   "id": "wc_028",
+   "speaker": "nar",
+   "text": "병아리 방귀를 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "병아리 방귀를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_e67e81a4ba.mp3",
+     "source_audio": "audio/el/witch_candy/nar_e67e81a4ba.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 28,
+   "source_text": "병아리 방귀를 넣었어요!"
+  },
+  {
+   "id": "wc_029",
+   "speaker": "nar",
+   "text": "고무 오리를 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고무 오리를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_d725e3475d.mp3",
+     "source_audio": "audio/el/witch_candy/nar_d725e3475d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 29,
+   "source_text": "고무 오리를 넣었어요!"
+  },
+  {
+   "id": "wc_030",
+   "speaker": "nar",
+   "text": "괴물 응가를 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "괴물 응가를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_ff7dd288c1.mp3",
+     "source_audio": "audio/el/witch_candy/nar_ff7dd288c1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 30,
+   "source_text": "괴물 응가를 넣었어요!"
+  },
+  {
+   "id": "wc_031",
+   "speaker": "nar",
+   "text": "파란 생선을 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파란 생선을 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_8d4235df7d.mp3",
+     "source_audio": "audio/el/witch_candy/nar_8d4235df7d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 31,
+   "source_text": "파란 생선을 넣었어요!"
+  },
+  {
+   "id": "wc_032",
+   "speaker": "nar",
+   "text": "파란 파도를 넣었어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파란 파도를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_cc9cf5cf67.mp3",
+     "source_audio": "audio/el/witch_candy/nar_cc9cf5cf67.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 32,
+   "source_text": "파란 파도를 넣었어요!"
+  },
+  {
+   "id": "wc_033",
+   "speaker": "nar",
+   "text": "초록 개구리를 넣었어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록 개구리를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_5258542984.mp3",
+     "source_audio": "audio/el/witch_candy/nar_5258542984.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 33,
+   "source_text": "초록 개구리를 넣었어요!"
+  },
+  {
+   "id": "wc_034",
+   "speaker": "nar",
+   "text": "초록 공룡을 넣었어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록 공룡을 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_c7bf36f968.mp3",
+     "source_audio": "audio/el/witch_candy/nar_c7bf36f968.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 34,
+   "source_text": "초록 공룡을 넣었어요!"
+  },
+  {
+   "id": "wc_035",
+   "speaker": "nar",
+   "text": "구운 초록 대파를 넣었어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "구운 초록 대파를 넣었어요!",
+     "emotion": "toneup",
+     "tags": "[playful storytelling, clear, finishing the sentence brightly]",
+     "audio": "res://audio/voice/witch_candy/nar_1d11225d45.mp3",
+     "source_audio": "audio/el/witch_candy/nar_1d11225d45.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 35,
+   "source_text": "구운 초록 대파를 넣었어요!"
+  },
+  {
+   "id": "wc_036",
+   "speaker": "kid",
+   "text": "\"으엑! 콧물이요?\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "으엑! 콧물이요?",
+     "emotion": null,
+     "tags": "[young girl, grossed out but giggling, comic]",
+     "audio": "res://audio/voice/witch_candy/kid_7310e30f3a.mp3",
+     "source_audio": "audio/el/witch_candy/kid_7310e30f3a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 36,
+   "source_text": "으엑! 콧물이요?",
+   "expr": {
+    "kid": "yuck"
+   }
+  },
+  {
+   "id": "wc_037",
+   "speaker": "kid",
+   "text": "\"으엑! 응가요?\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "으엑! 응가요?",
+     "emotion": null,
+     "tags": "[young girl, grossed out but giggling, comic]",
+     "audio": "res://audio/voice/witch_candy/kid_0643a1f715.mp3",
+     "source_audio": "audio/el/witch_candy/kid_0643a1f715.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 37,
+   "source_text": "으엑! 응가요?",
+   "expr": {
+    "kid": "yuck",
+    "cat": "nose"
+   }
+  },
+  {
+   "id": "wc_038",
+   "speaker": "cat",
+   "text": "\"냐… 냄새!\"",
+   "status": "reuse",
+   "beat": "shelf",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "cat",
+     "text": "냐… 냄새!",
+     "emotion": null,
+     "tags": "[kitten, pinching its nose, comic, small]",
+     "audio": "res://audio/voice/witch_candy/cat_c88e6a17c0.mp3",
+     "source_audio": "audio/el/witch_candy/cat_c88e6a17c0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 38,
+   "source_text": "냐… 냄새!",
+   "expr": {
+    "cat": "nose"
+   }
+  },
+  {
+   "id": "wc_039",
+   "speaker": "witch",
+   "text": "히히, 먹으면 어떻게 되는지는… 비밀! 같이 만들까?",
+   "status": "reuse",
+   "beat": "shelf",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "히히, 먹으면 어떻게 되는지는… 비밀! 같이 만들까?",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, giggly, a teasing pause before 비밀, inviting]",
+     "audio": "res://audio/voice/witch_candy/witch_df120ff616_t.mp3",
+     "source_audio": "audio/el/witch_candy/witch_df120ff616.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/witch_candy/witch_df120ff616.mp3 (0-0.42 s + 3.62 s-end)"
+    }
+   ],
+   "source_index": 39,
+   "source_text": "히히, 색을 섞으면 다른 색 사탕이 돼. 먹으면 어떻게 되는지는… 비밀! 같이 만들까?",
+   "expr": {
+    "witch": "giggle"
+   },
+   "trimmed_clip": true
+  },
+  {
+   "id": "wc_040",
+   "speaker": "kid",
+   "text": "\"네, 제가 할게요!\"",
+   "status": "reuse",
+   "beat": "shelf",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "네, 제가 할게요!",
+     "emotion": "happy",
+     "tags": "[young girl, eager, bold, bright]",
+     "audio": "res://audio/voice/witch_candy/kid_6641e2d47a.mp3",
+     "source_audio": "audio/el/witch_candy/kid_6641e2d47a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 40,
+   "source_text": "네, 제가 할게요!",
+   "expr": {
+    "kid": "eager"
+   }
+  },
+  {
+   "id": "wc_041",
+   "speaker": "nar",
+   "text": "넣고 싶은 재료를 톡 눌러 솥에 넣어요.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "넣고 싶은 재료를 톡 눌러 솥에 넣어요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_347a477bcb.mp3",
+     "source_audio": "audio/el/witch_candy/nar_347a477bcb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 41,
+   "source_text": "넣고 싶은 재료를 톡 눌러 솥에 넣어요."
+  },
+  {
+   "id": "wc_042",
+   "speaker": "witch",
+   "text": "\"다현이가 넣어 줘. 하나든 여러 개든 좋아.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "다현이가 넣어 줘. 하나든 여러 개든 좋아.",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, warm, giggly, a little silly, never scary]",
+     "audio": "res://audio/voice/witch_candy/witch_67ea3cbc9b.mp3",
+     "source_audio": "audio/el/witch_candy/witch_67ea3cbc9b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 42,
+   "source_text": "다현이가 넣어 줘. 하나든 여러 개든 좋아."
+  },
+  {
+   "id": "wc_043",
+   "speaker": "witch",
+   "text": "\"세 가지는 맨 마지막에!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "세 가지는 맨 마지막에!",
+     "emotion": null,
+     "tags": "[kind quirky witch, playful, gently stopping, no scolding]",
+     "audio": "res://audio/voice/witch_candy/witch_79a79e89df.mp3",
+     "source_audio": "audio/el/witch_candy/witch_79a79e89df.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 43,
+   "source_text": "세 가지는 맨 마지막에!"
+  },
+  {
+   "id": "wc_044",
+   "speaker": "witch",
+   "text": "\"하나는 넣어야지!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "하나는 넣어야지!",
+     "emotion": null,
+     "tags": "[kind quirky witch, playful, encouraging]",
+     "audio": "res://audio/voice/witch_candy/witch_a5f5f4c677.mp3",
+     "source_audio": "audio/el/witch_candy/witch_a5f5f4c677.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 44,
+   "source_text": "하나는 넣어야지!"
+  },
+  {
+   "id": "wc_045",
+   "speaker": "witch",
+   "text": "\"다 넣었지? 그럼 저어 보자!\"",
+   "status": "reuse",
+   "beat": "round2",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "다 넣었지? 그럼 저어 보자!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, warm, giggly, a little silly, never scary]",
+     "audio": "res://audio/voice/witch_candy/witch_88be3d096f.mp3",
+     "source_audio": "audio/el/witch_candy/witch_88be3d096f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 45,
+   "source_text": "다 넣었지? 그럼 저어 보자!",
+   "expr": {
+    "witch": "magic"
+   }
+  },
+  {
+   "id": "wc_046",
+   "speaker": "witch",
+   "text": "\"자, 저어 보자. 뽀글뽀글…\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "자, 저어 보자. 뽀글뽀글…",
+     "emotion": null,
+     "tags": "[kind quirky witch, stirring rhythm, building, playful]",
+     "audio": "res://audio/voice/witch_candy/witch_9de238b62a.mp3",
+     "source_audio": "audio/el/witch_candy/witch_9de238b62a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 46,
+   "source_text": "자, 저어 보자. 뽀글뽀글…",
+   "expr": {
+    "witch": "magic"
+   }
+  },
+  {
+   "id": "wc_047",
+   "speaker": "witch",
+   "text": "\"빨강이랑 노랑을 섞으면 무슨 색일까?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "빨강이랑 노랑을 섞으면 무슨 색일까?",
+     "emotion": null,
+     "tags": "[kind quirky witch, asking a riddle, curious, clear, slow]",
+     "audio": "res://audio/voice/witch_candy/witch_7dcf3cbfa7.mp3",
+     "source_audio": "audio/el/witch_candy/witch_7dcf3cbfa7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 47,
+   "source_text": "빨강이랑 노랑을 섞으면 무슨 색일까?"
+  },
+  {
+   "id": "wc_048",
+   "speaker": "witch",
+   "text": "\"노랑이랑 파랑을 섞으면 무슨 색일까?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "노랑이랑 파랑을 섞으면 무슨 색일까?",
+     "emotion": null,
+     "tags": "[kind quirky witch, asking a riddle, curious, clear, slow]",
+     "audio": "res://audio/voice/witch_candy/witch_a71c1fcaaf.mp3",
+     "source_audio": "audio/el/witch_candy/witch_a71c1fcaaf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 48,
+   "source_text": "노랑이랑 파랑을 섞으면 무슨 색일까?"
+  },
+  {
+   "id": "wc_049",
+   "speaker": "witch",
+   "text": "\"빨강이랑 파랑을 섞으면 무슨 색일까?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "빨강이랑 파랑을 섞으면 무슨 색일까?",
+     "emotion": null,
+     "tags": "[kind quirky witch, asking a riddle, curious, clear, slow]",
+     "audio": "res://audio/voice/witch_candy/witch_721b3c2c06.mp3",
+     "source_audio": "audio/el/witch_candy/witch_721b3c2c06.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 49,
+   "source_text": "빨강이랑 파랑을 섞으면 무슨 색일까?"
+  },
+  {
+   "id": "wc_050",
+   "speaker": "witch",
+   "text": "\"빨강이랑 초록을 섞으면 무슨 색일까?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "빨강이랑 초록을 섞으면 무슨 색일까?",
+     "emotion": null,
+     "tags": "[kind quirky witch, asking a riddle, curious, clear, slow]",
+     "audio": "res://audio/voice/witch_candy/witch_4e19441cb3.mp3",
+     "source_audio": "audio/el/witch_candy/witch_4e19441cb3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 50,
+   "source_text": "빨강이랑 초록을 섞으면 무슨 색일까?"
+  },
+  {
+   "id": "wc_051",
+   "speaker": "witch",
+   "text": "\"초록이랑 노랑을 섞으면 무슨 색일까?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "초록이랑 노랑을 섞으면 무슨 색일까?",
+     "emotion": null,
+     "tags": "[kind quirky witch, asking a riddle, curious, clear, slow]",
+     "audio": "res://audio/voice/witch_candy/witch_414b865a91.mp3",
+     "source_audio": "audio/el/witch_candy/witch_414b865a91.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 51,
+   "source_text": "초록이랑 노랑을 섞으면 무슨 색일까?"
+  },
+  {
+   "id": "wc_052",
+   "speaker": "witch",
+   "text": "\"초록이랑 파랑을 섞으면 무슨 색일까?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "초록이랑 파랑을 섞으면 무슨 색일까?",
+     "emotion": null,
+     "tags": "[kind quirky witch, asking a riddle, curious, clear, slow]",
+     "audio": "res://audio/voice/witch_candy/witch_cf36b57b73.mp3",
+     "source_audio": "audio/el/witch_candy/witch_cf36b57b73.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 52,
+   "source_text": "초록이랑 파랑을 섞으면 무슨 색일까?"
+  },
+  {
+   "id": "wc_053",
+   "speaker": "nar",
+   "text": "빨강이랑 노랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨강이랑 노랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_80911de08d.mp3",
+     "source_audio": "audio/el/witch_candy/nar_80911de08d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 53,
+   "source_text": "빨강이랑 노랑을 섞으면 무슨 색이 될까요? 톡 눌러요."
+  },
+  {
+   "id": "wc_054",
+   "speaker": "nar",
+   "text": "노랑이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "노랑이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_8810d061a4.mp3",
+     "source_audio": "audio/el/witch_candy/nar_8810d061a4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 54,
+   "source_text": "노랑이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요."
+  },
+  {
+   "id": "wc_055",
+   "speaker": "nar",
+   "text": "빨강이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨강이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_94d6d168c7.mp3",
+     "source_audio": "audio/el/witch_candy/nar_94d6d168c7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 55,
+   "source_text": "빨강이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요."
+  },
+  {
+   "id": "wc_056",
+   "speaker": "nar",
+   "text": "빨강이랑 초록을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨강이랑 초록을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_63011ad49a.mp3",
+     "source_audio": "audio/el/witch_candy/nar_63011ad49a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 56,
+   "source_text": "빨강이랑 초록을 섞으면 무슨 색이 될까요? 톡 눌러요."
+  },
+  {
+   "id": "wc_057",
+   "speaker": "nar",
+   "text": "초록이랑 노랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록이랑 노랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_d68489fbe7.mp3",
+     "source_audio": "audio/el/witch_candy/nar_d68489fbe7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 57,
+   "source_text": "초록이랑 노랑을 섞으면 무슨 색이 될까요? 톡 눌러요."
+  },
+  {
+   "id": "wc_058",
+   "speaker": "nar",
+   "text": "초록이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_435763b090.mp3",
+     "source_audio": "audio/el/witch_candy/nar_435763b090.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 58,
+   "source_text": "초록이랑 파랑을 섞으면 무슨 색이 될까요? 톡 눌러요."
+  },
+  {
+   "id": "wc_059",
+   "speaker": "nar",
+   "text": "그건 주황이에요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 주황이에요.",
+     "emotion": null,
+     "tags": "[kind, gentle, encouraging, no scolding]",
+     "audio": "res://audio/voice/witch_candy/nar_cf0a570746.mp3",
+     "source_audio": "audio/el/witch_candy/nar_cf0a570746.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 59,
+   "source_text": "그건 주황이에요."
+  },
+  {
+   "id": "wc_060",
+   "speaker": "nar",
+   "text": "그건 초록이에요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 초록이에요.",
+     "emotion": null,
+     "tags": "[kind, gentle, encouraging, no scolding]",
+     "audio": "res://audio/voice/witch_candy/nar_343f9a7d5a.mp3",
+     "source_audio": "audio/el/witch_candy/nar_343f9a7d5a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 60,
+   "source_text": "그건 초록이에요."
+  },
+  {
+   "id": "wc_061",
+   "speaker": "nar",
+   "text": "그건 보라예요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 보라예요.",
+     "emotion": null,
+     "tags": "[kind, gentle, encouraging, no scolding]",
+     "audio": "res://audio/voice/witch_candy/nar_5b2a9e5f2b.mp3",
+     "source_audio": "audio/el/witch_candy/nar_5b2a9e5f2b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 61,
+   "source_text": "그건 보라예요."
+  },
+  {
+   "id": "wc_062",
+   "speaker": "nar",
+   "text": "그건 갈색이에요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 갈색이에요.",
+     "emotion": null,
+     "tags": "[kind, gentle, encouraging, no scolding]",
+     "audio": "res://audio/voice/witch_candy/nar_e5f8c4d309.mp3",
+     "source_audio": "audio/el/witch_candy/nar_e5f8c4d309.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 62,
+   "source_text": "그건 갈색이에요."
+  },
+  {
+   "id": "wc_063",
+   "speaker": "witch",
+   "text": "\"맞아요, 주황!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "맞아요, 주황!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, praising, delighted]",
+     "audio": "res://audio/voice/witch_candy/witch_6f8eb487ff.mp3",
+     "source_audio": "audio/el/witch_candy/witch_6f8eb487ff.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 63,
+   "source_text": "맞아요, 주황!"
+  },
+  {
+   "id": "wc_064",
+   "speaker": "witch",
+   "text": "\"맞아요, 초록!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "맞아요, 초록!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, praising, delighted]",
+     "audio": "res://audio/voice/witch_candy/witch_7eaa8e916f.mp3",
+     "source_audio": "audio/el/witch_candy/witch_7eaa8e916f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 64,
+   "source_text": "맞아요, 초록!"
+  },
+  {
+   "id": "wc_065",
+   "speaker": "witch",
+   "text": "\"맞아요, 보라!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "맞아요, 보라!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, praising, delighted]",
+     "audio": "res://audio/voice/witch_candy/witch_7474511ebf.mp3",
+     "source_audio": "audio/el/witch_candy/witch_7474511ebf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 65,
+   "source_text": "맞아요, 보라!"
+  },
+  {
+   "id": "wc_066",
+   "speaker": "witch",
+   "text": "\"맞아요, 갈색!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "맞아요, 갈색!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, praising, delighted]",
+     "audio": "res://audio/voice/witch_candy/witch_b01b6a5d4f.mp3",
+     "source_audio": "audio/el/witch_candy/witch_b01b6a5d4f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 66,
+   "source_text": "맞아요, 갈색!"
+  },
+  {
+   "id": "wc_067",
+   "speaker": "witch",
+   "text": "\"빨강만 넣었으니… 빨강 그대로!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "빨강만 넣었으니… 빨강 그대로!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, a thinking pause, then bright reveal]",
+     "audio": "res://audio/voice/witch_candy/witch_a3d97ae9e2.mp3",
+     "source_audio": "audio/el/witch_candy/witch_a3d97ae9e2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 67,
+   "source_text": "빨강만 넣었으니… 빨강 그대로!"
+  },
+  {
+   "id": "wc_068",
+   "speaker": "witch",
+   "text": "\"노랑만 넣었으니… 노랑 그대로!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "노랑만 넣었으니… 노랑 그대로!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, a thinking pause, then bright reveal]",
+     "audio": "res://audio/voice/witch_candy/witch_bf045e8ce0.mp3",
+     "source_audio": "audio/el/witch_candy/witch_bf045e8ce0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 68,
+   "source_text": "노랑만 넣었으니… 노랑 그대로!"
+  },
+  {
+   "id": "wc_069",
+   "speaker": "witch",
+   "text": "\"파랑만 넣었으니… 파랑 그대로!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "파랑만 넣었으니… 파랑 그대로!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, a thinking pause, then bright reveal]",
+     "audio": "res://audio/voice/witch_candy/witch_c9826c7d20.mp3",
+     "source_audio": "audio/el/witch_candy/witch_c9826c7d20.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 69,
+   "source_text": "파랑만 넣었으니… 파랑 그대로!"
+  },
+  {
+   "id": "wc_070",
+   "speaker": "witch",
+   "text": "\"초록만 넣었으니… 초록 그대로!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "초록만 넣었으니… 초록 그대로!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, a thinking pause, then bright reveal]",
+     "audio": "res://audio/voice/witch_candy/witch_ab7eca1f42.mp3",
+     "source_audio": "audio/el/witch_candy/witch_ab7eca1f42.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 70,
+   "source_text": "초록만 넣었으니… 초록 그대로!"
+  },
+  {
+   "id": "wc_071",
+   "speaker": "nar",
+   "text": "빨강이랑 노랑을 섞었더니 주황색이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨강이랑 노랑을 섞었더니 주황색이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_d9b35a495b.mp3",
+     "source_audio": "audio/el/witch_candy/nar_d9b35a495b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 71,
+   "source_text": "빨강이랑 노랑을 섞었더니 주황색이 됐어요!"
+  },
+  {
+   "id": "wc_072",
+   "speaker": "nar",
+   "text": "노랑이랑 파랑을 섞었더니 초록색이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "노랑이랑 파랑을 섞었더니 초록색이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_28d0519aea.mp3",
+     "source_audio": "audio/el/witch_candy/nar_28d0519aea.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 72,
+   "source_text": "노랑이랑 파랑을 섞었더니 초록색이 됐어요!"
+  },
+  {
+   "id": "wc_073",
+   "speaker": "nar",
+   "text": "빨강이랑 파랑을 섞었더니 보라색이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨강이랑 파랑을 섞었더니 보라색이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_94d15238c2.mp3",
+     "source_audio": "audio/el/witch_candy/nar_94d15238c2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 73,
+   "source_text": "빨강이랑 파랑을 섞었더니 보라색이 됐어요!"
+  },
+  {
+   "id": "wc_074",
+   "speaker": "nar",
+   "text": "빨강이랑 초록을 섞었더니 갈색이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨강이랑 초록을 섞었더니 갈색이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_46171a7ae1.mp3",
+     "source_audio": "audio/el/witch_candy/nar_46171a7ae1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 74,
+   "source_text": "빨강이랑 초록을 섞었더니 갈색이 됐어요!"
+  },
+  {
+   "id": "wc_075",
+   "speaker": "nar",
+   "text": "초록이랑 파랑을 섞었더니 청록색이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록이랑 파랑을 섞었더니 청록색이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_b50c39b5d0.mp3",
+     "source_audio": "audio/el/witch_candy/nar_b50c39b5d0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 75,
+   "source_text": "초록이랑 파랑을 섞었더니 청록색이 됐어요!"
+  },
+  {
+   "id": "wc_076",
+   "speaker": "nar",
+   "text": "빨강만 넣었더니 빨간 딸기 사탕이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빨강만 넣었더니 빨간 딸기 사탕이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_5fa700e740.mp3",
+     "source_audio": "audio/el/witch_candy/nar_5fa700e740.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 76,
+   "source_text": "빨강만 넣었더니 빨간 딸기 사탕이 됐어요!"
+  },
+  {
+   "id": "wc_077",
+   "speaker": "nar",
+   "text": "노랑만 넣었더니 노란 오리 사탕이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "노랑만 넣었더니 노란 오리 사탕이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_cc0966697a.mp3",
+     "source_audio": "audio/el/witch_candy/nar_cc0966697a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 77,
+   "source_text": "노랑만 넣었더니 노란 오리 사탕이 됐어요!"
+  },
+  {
+   "id": "wc_078",
+   "speaker": "nar",
+   "text": "파랑만 넣었더니 파란 물고기 사탕이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파랑만 넣었더니 파란 물고기 사탕이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_ab2e8d85e8.mp3",
+     "source_audio": "audio/el/witch_candy/nar_ab2e8d85e8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 78,
+   "source_text": "파랑만 넣었더니 파란 물고기 사탕이 됐어요!"
+  },
+  {
+   "id": "wc_079",
+   "speaker": "nar",
+   "text": "펑! 솥에서 사탕이 퐁퐁 튀어나왔어요.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "펑! 솥에서 사탕이 퐁퐁 튀어나왔어요.",
+     "emotion": "toneup",
+     "tags": "[bright, excited storytelling, bouncy, clear]",
+     "audio": "res://audio/voice/witch_candy/nar_5dd984f25d.mp3",
+     "source_audio": "audio/el/witch_candy/nar_5dd984f25d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 79,
+   "source_text": "펑! 솥에서 사탕이 퐁퐁 튀어나왔어요.",
+   "expr": {
+    "kid": "wow"
+   }
+  },
+  {
+   "id": "wc_080",
+   "speaker": "witch",
+   "text": "\"먼저 먹어 봐.\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "먼저 먹어 봐.",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, gentle, offering, a little mischievous]",
+     "audio": "res://audio/voice/witch_candy/witch_f04cc755f8.mp3",
+     "source_audio": "audio/el/witch_candy/witch_f04cc755f8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 80,
+   "source_text": "먼저 먹어 봐.",
+   "expr": {
+    "witch": "offer"
+   }
+  },
+  {
+   "id": "wc_081",
+   "speaker": "kid",
+   "text": "\"콧물로 만든 건데… 으웩…\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "콧물로 만든 건데… 으웩…",
+     "emotion": null,
+     "tags": "[young girl, hesitant, grossed out, comic, small voice]",
+     "audio": "res://audio/voice/witch_candy/kid_1cf1eabad5.mp3",
+     "source_audio": "audio/el/witch_candy/kid_1cf1eabad5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 81,
+   "source_text": "콧물로 만든 건데… 으웩…"
+  },
+  {
+   "id": "wc_082",
+   "speaker": "kid",
+   "text": "\"어? 맛있다! …딸기 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 맛있다! …딸기 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised then delighted, a pause after 맛있다, bright shout at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_1acd6865e5.mp3",
+     "source_audio": "audio/el/witch_candy/kid_1acd6865e5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 82,
+   "source_text": "어? 맛있다! …딸기 사탕이다!"
+  },
+  {
+   "id": "wc_083",
+   "speaker": "kid",
+   "text": "\"어? 맛있다! …오리 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 맛있다! …오리 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised then delighted, a pause after 맛있다, bright shout at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_8f384ccdca.mp3",
+     "source_audio": "audio/el/witch_candy/kid_8f384ccdca.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 83,
+   "source_text": "어? 맛있다! …오리 사탕이다!"
+  },
+  {
+   "id": "wc_084",
+   "speaker": "kid",
+   "text": "\"어? 맛있다! …물고기 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 맛있다! …물고기 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised then delighted, a pause after 맛있다, bright shout at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_926966e780.mp3",
+     "source_audio": "audio/el/witch_candy/kid_926966e780.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 84,
+   "source_text": "어? 맛있다! …물고기 사탕이다!"
+  },
+  {
+   "id": "wc_085",
+   "speaker": "kid",
+   "text": "\"어? 맛있다! …개구리 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 맛있다! …개구리 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised then delighted, a pause after 맛있다, bright shout at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_ef76245515.mp3",
+     "source_audio": "audio/el/witch_candy/kid_ef76245515.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 85,
+   "source_text": "어? 맛있다! …개구리 사탕이다!"
+  },
+  {
+   "id": "wc_086",
+   "speaker": "kid",
+   "text": "\"어? 맛있다! …호박 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 맛있다! …호박 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised then delighted, a pause after 맛있다, bright shout at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_093b0a7376.mp3",
+     "source_audio": "audio/el/witch_candy/kid_093b0a7376.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 86,
+   "source_text": "어? 맛있다! …호박 사탕이다!"
+  },
+  {
+   "id": "wc_087",
+   "speaker": "kid",
+   "text": "\"어? 맛있다! …박쥐 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 맛있다! …박쥐 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised then delighted, a pause after 맛있다, bright shout at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_98e9ab7e0a.mp3",
+     "source_audio": "audio/el/witch_candy/kid_98e9ab7e0a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 87,
+   "source_text": "어? 맛있다! …박쥐 사탕이다!"
+  },
+  {
+   "id": "wc_088",
+   "speaker": "kid",
+   "text": "\"어? 맛있다! …초콜릿 사탕이다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 맛있다! …초콜릿 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, surprised then delighted, a pause after 맛있다, bright shout at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_9093fb7648.mp3",
+     "source_audio": "audio/el/witch_candy/kid_9093fb7648.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 88,
+   "source_text": "어? 맛있다! …초콜릿 사탕이다!"
+  },
+  {
+   "id": "wc_089",
+   "speaker": "kid",
+   "text": "\"냠… 딸기 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 딸기 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_941ba5a91c.mp3",
+     "source_audio": "audio/el/witch_candy/kid_941ba5a91c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 89,
+   "source_text": "냠… 딸기 사탕이다!"
+  },
+  {
+   "id": "wc_090",
+   "speaker": "kid",
+   "text": "\"냠… 오리 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 오리 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_b1e23fcf0d.mp3",
+     "source_audio": "audio/el/witch_candy/kid_b1e23fcf0d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 90,
+   "source_text": "냠… 오리 사탕이다!"
+  },
+  {
+   "id": "wc_091",
+   "speaker": "kid",
+   "text": "\"냠… 물고기 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 물고기 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_eeb66c9df9.mp3",
+     "source_audio": "audio/el/witch_candy/kid_eeb66c9df9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 91,
+   "source_text": "냠… 물고기 사탕이다!"
+  },
+  {
+   "id": "wc_092",
+   "speaker": "kid",
+   "text": "\"냠… 개구리 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 개구리 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_a9b2fba245.mp3",
+     "source_audio": "audio/el/witch_candy/kid_a9b2fba245.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 92,
+   "source_text": "냠… 개구리 사탕이다!"
+  },
+  {
+   "id": "wc_093",
+   "speaker": "kid",
+   "text": "\"냠… 호박 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 호박 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_448d0e48a6.mp3",
+     "source_audio": "audio/el/witch_candy/kid_448d0e48a6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 93,
+   "source_text": "냠… 호박 사탕이다!"
+  },
+  {
+   "id": "wc_094",
+   "speaker": "kid",
+   "text": "\"냠… 박쥐 사탕이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 박쥐 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_d898e7065d.mp3",
+     "source_audio": "audio/el/witch_candy/kid_d898e7065d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 94,
+   "source_text": "냠… 박쥐 사탕이다!"
+  },
+  {
+   "id": "wc_095",
+   "speaker": "kid",
+   "text": "\"냠… 초콜릿 사탕이다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 초콜릿 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_cf06e05f3d.mp3",
+     "source_audio": "audio/el/witch_candy/kid_cf06e05f3d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 95,
+   "source_text": "냠… 초콜릿 사탕이다!"
+  },
+  {
+   "id": "wc_096",
+   "speaker": "nar",
+   "text": "뿅! 다현이가 빨간 딸기가 됐어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이가 빨간 딸기가 됐어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_ced4433617.mp3",
+     "source_audio": "audio/el/witch_candy/nar_ced4433617.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 96,
+   "source_text": "뿅! 다현이가 빨간 딸기가 됐어요!"
+  },
+  {
+   "id": "wc_097",
+   "speaker": "nar",
+   "text": "뿅! 다현이 발이 오리발이 됐어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이 발이 오리발이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_11b3ff8b5b.mp3",
+     "source_audio": "audio/el/witch_candy/nar_11b3ff8b5b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 97,
+   "source_text": "뿅! 다현이 발이 오리발이 됐어요!"
+  },
+  {
+   "id": "wc_098",
+   "speaker": "nar",
+   "text": "뿅! 다현이한테 물고기 꼬리가 생겼어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이한테 물고기 꼬리가 생겼어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_42be77b05d.mp3",
+     "source_audio": "audio/el/witch_candy/nar_42be77b05d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 98,
+   "source_text": "뿅! 다현이한테 물고기 꼬리가 생겼어요!"
+  },
+  {
+   "id": "wc_099",
+   "speaker": "nar",
+   "text": "뿅! 다현이의 볼이랑 배가 호박처럼 환해졌어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이의 볼이랑 배가 호박처럼 환해졌어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_dff1f028ec.mp3",
+     "source_audio": "audio/el/witch_candy/nar_dff1f028ec.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 99,
+   "source_text": "뿅! 다현이의 볼이랑 배가 호박처럼 환해졌어요!"
+  },
+  {
+   "id": "wc_100",
+   "speaker": "nar",
+   "text": "뿅! 다현이 등에 박쥐 날개가 돋았어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이 등에 박쥐 날개가 돋았어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_bf47ef7763.mp3",
+     "source_audio": "audio/el/witch_candy/nar_bf47ef7763.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 100,
+   "source_text": "뿅! 다현이 등에 박쥐 날개가 돋았어요!"
+  },
+  {
+   "id": "wc_101",
+   "speaker": "nar",
+   "text": "뿅! 다현이 입에 초콜릿 수염이 났어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이 입에 초콜릿 수염이 났어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_6694b9376d.mp3",
+     "source_audio": "audio/el/witch_candy/nar_6694b9376d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 101,
+   "source_text": "뿅! 다현이 입에 초콜릿 수염이 났어요!"
+  },
+  {
+   "id": "wc_102",
+   "speaker": "kid",
+   "text": "\"데굴데굴, 멈춰 줘요~!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "데굴데굴, 멈춰 줘요~!",
+     "emotion": "happy",
+     "tags": "[young girl, dizzy, rolling, laughing, comic]",
+     "audio": "res://audio/voice/witch_candy/kid_91e9a1b2a3.mp3",
+     "source_audio": "audio/el/witch_candy/kid_91e9a1b2a3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 102,
+   "source_text": "데굴데굴, 멈춰 줘요~!"
+  },
+  {
+   "id": "wc_103",
+   "speaker": "kid",
+   "text": "\"꽥꽥… 어? 내 발이!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "꽥꽥… 어? 내 발이!",
+     "emotion": "happy",
+     "tags": "[young girl, quacking playfully, then surprised]",
+     "audio": "res://audio/voice/witch_candy/kid_cc3b722afd.mp3",
+     "source_audio": "audio/el/witch_candy/kid_cc3b722afd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 103,
+   "source_text": "꽥꽥… 어? 내 발이!"
+  },
+  {
+   "id": "wc_104",
+   "speaker": "kid",
+   "text": "\"하늘에서 수영이다!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "하늘에서 수영이다!",
+     "emotion": "happy",
+     "tags": "[young girl, joyful, floating, wonder]",
+     "audio": "res://audio/voice/witch_candy/kid_b2c93445a3.mp3",
+     "source_audio": "audio/el/witch_candy/kid_b2c93445a3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 104,
+   "source_text": "하늘에서 수영이다!"
+  },
+  {
+   "id": "wc_105",
+   "speaker": "kid",
+   "text": "\"개굴! 지붕까지 폴짝!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "개굴! 지붕까지 폴짝!",
+     "emotion": "happy",
+     "tags": "[young girl, bouncy, a frog croak then a hop shout]",
+     "audio": "res://audio/voice/witch_candy/kid_a2b9bea673.mp3",
+     "source_audio": "audio/el/witch_candy/kid_a2b9bea673.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 105,
+   "source_text": "개굴! 지붕까지 폴짝!"
+  },
+  {
+   "id": "wc_106",
+   "speaker": "kid",
+   "text": "\"내 배가 등불이 됐어!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "내 배가 등불이 됐어!",
+     "emotion": "happy",
+     "tags": "[young girl, amazed, giggling, warm]",
+     "audio": "res://audio/voice/witch_candy/kid_ac7766fa9e.mp3",
+     "source_audio": "audio/el/witch_candy/kid_ac7766fa9e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 106,
+   "source_text": "내 배가 등불이 됐어!"
+  },
+  {
+   "id": "wc_107",
+   "speaker": "kid",
+   "text": "\"파닥파닥, 달님 안녕!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "파닥파닥, 달님 안녕!",
+     "emotion": "happy",
+     "tags": "[young girl, flapping, joyful, calling to the moon]",
+     "audio": "res://audio/voice/witch_candy/kid_8604307690.mp3",
+     "source_audio": "audio/el/witch_candy/kid_8604307690.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 107,
+   "source_text": "파닥파닥, 달님 안녕!"
+  },
+  {
+   "id": "wc_108",
+   "speaker": "kid",
+   "text": "\"주르륵… 나 녹아요~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "주르륵… 나 녹아요~",
+     "emotion": "happy",
+     "tags": "[young girl, voice sliding down comically, melting, laughing]",
+     "audio": "res://audio/voice/witch_candy/kid_4654c8b635.mp3",
+     "source_audio": "audio/el/witch_candy/kid_4654c8b635.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 108,
+   "source_text": "주르륵… 나 녹아요~"
+  },
+  {
+   "id": "wc_109",
+   "speaker": "witch",
+   "text": "\"히히, 핼러윈 마법이야!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "히히, 핼러윈 마법이야!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, giggly, proud]",
+     "audio": "res://audio/voice/witch_candy/witch_7f0f6a34e0.mp3",
+     "source_audio": "audio/el/witch_candy/witch_7f0f6a34e0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 109,
+   "source_text": "히히, 핼러윈 마법이야!",
+   "expr": {
+    "witch": "giggle"
+   }
+  },
+  {
+   "id": "wc_110",
+   "speaker": "nar",
+   "text": "길을 데굴데굴 굴러가다 호박 등에 통!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "길을 데굴데굴 굴러가다 호박 등에 통!",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_60e02c7eb9.mp3",
+     "source_audio": "audio/el/witch_candy/nar_60e02c7eb9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 110,
+   "source_text": "길을 데굴데굴 굴러가다 호박 등에 통!"
+  },
+  {
+   "id": "wc_111",
+   "speaker": "nar",
+   "text": "뒤뚱뒤뚱, 호박이도 뒤뚱뒤뚱.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뒤뚱뒤뚱, 호박이도 뒤뚱뒤뚱.",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_6abeeea29e.mp3",
+     "source_audio": "audio/el/witch_candy/nar_6abeeea29e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 111,
+   "source_text": "뒤뚱뒤뚱, 호박이도 뒤뚱뒤뚱."
+  },
+  {
+   "id": "wc_112",
+   "speaker": "nar",
+   "text": "보름달 둘레를 보글보글 헤엄쳤어요.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "보름달 둘레를 보글보글 헤엄쳤어요.",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_9ef7af6f8e.mp3",
+     "source_audio": "audio/el/witch_candy/nar_9ef7af6f8e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 112,
+   "source_text": "보름달 둘레를 보글보글 헤엄쳤어요."
+  },
+  {
+   "id": "wc_113",
+   "speaker": "nar",
+   "text": "폴짝, 폴짝, 폴짝! 지붕 위에서 손을 흔들었어요.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "폴짝, 폴짝, 폴짝! 지붕 위에서 손을 흔들었어요.",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_037911e22b.mp3",
+     "source_audio": "audio/el/witch_candy/nar_037911e22b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 113,
+   "source_text": "폴짝, 폴짝, 폴짝! 지붕 위에서 손을 흔들었어요."
+  },
+  {
+   "id": "wc_114",
+   "speaker": "nar",
+   "text": "깜깜한 길이 다현이 덕분에 환해졌어요.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "깜깜한 길이 다현이 덕분에 환해졌어요.",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_f8b54f0156.mp3",
+     "source_audio": "audio/el/witch_candy/nar_f8b54f0156.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 114,
+   "source_text": "깜깜한 길이 다현이 덕분에 환해졌어요."
+  },
+  {
+   "id": "wc_115",
+   "speaker": "nar",
+   "text": "박쥐 친구들이랑 달 앞을 빙글 돌았어요.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "박쥐 친구들이랑 달 앞을 빙글 돌았어요.",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_84f1b5bef7.mp3",
+     "source_audio": "audio/el/witch_candy/nar_84f1b5bef7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 115,
+   "source_text": "박쥐 친구들이랑 달 앞을 빙글 돌았어요."
+  },
+  {
+   "id": "wc_116",
+   "speaker": "nar",
+   "text": "납작해졌다가… 뿅!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "납작해졌다가… 뿅!",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_8da2c75adf.mp3",
+     "source_audio": "audio/el/witch_candy/nar_8da2c75adf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 116,
+   "source_text": "납작해졌다가… 뿅!"
+  },
+  {
+   "id": "wc_117",
+   "speaker": "witch",
+   "text": "\"어디 가!\"",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "어디 가!",
+     "emotion": "toneup",
+     "tags": "[kind quirky witch, calling after her, comic, not angry]",
+     "audio": "res://audio/voice/witch_candy/witch_ed8be17d8d.mp3",
+     "source_audio": "audio/el/witch_candy/witch_ed8be17d8d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 117,
+   "source_text": "어디 가!",
+   "expr": {
+    "witch": "surprised"
+   }
+  },
+  {
+   "id": "wc_118",
+   "speaker": "witch",
+   "text": "\"녹았다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "녹았다!",
+     "emotion": "toneup",
+     "tags": "[kind quirky witch, surprised, giggling]",
+     "audio": "res://audio/voice/witch_candy/witch_4903c069c6.mp3",
+     "source_audio": "audio/el/witch_candy/witch_4903c069c6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 118,
+   "source_text": "녹았다!"
+  },
+  {
+   "id": "wc_119",
+   "speaker": "nar",
+   "text": "뿅! 다현이는 다시 원래대로 돌아왔어요.",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이는 다시 원래대로 돌아왔어요.",
+     "emotion": null,
+     "tags": "[warm, settling, a pop on 뿅, gentle]",
+     "audio": "res://audio/voice/witch_candy/nar_5454bfedf2.mp3",
+     "source_audio": "audio/el/witch_candy/nar_5454bfedf2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 119,
+   "source_text": "뿅! 다현이는 다시 원래대로 돌아왔어요.",
+   "expr": {
+    "kid": "calm"
+   }
+  },
+  {
+   "id": "wc_120",
+   "speaker": "witch",
+   "text": "\"이번엔 다른 색으로 해 볼까?\"",
+   "status": "reuse",
+   "beat": "round2",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "이번엔 다른 색으로 해 볼까?",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, inviting, curious]",
+     "audio": "res://audio/voice/witch_candy/witch_11f6eb34d1.mp3",
+     "source_audio": "audio/el/witch_candy/witch_11f6eb34d1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 120,
+   "source_text": "이번엔 다른 색으로 해 볼까?",
+   "expr": {
+    "witch": "giggle"
+   }
+  },
+  {
+   "id": "wc_121",
+   "speaker": "nar",
+   "text": "재료를 톡!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "재료를 톡!",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_57be121099.mp3",
+     "source_audio": "audio/el/witch_candy/nar_57be121099.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 121,
+   "source_text": "재료를 톡!"
+  },
+  {
+   "id": "wc_122",
+   "speaker": "witch",
+   "text": "\"아까랑 같네? 다음엔 다른 색도 해 봐!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "아까랑 같네? 다음엔 다른 색도 해 봐!",
+     "emotion": null,
+     "tags": "[kind quirky witch, amused, gently suggesting, no scolding]",
+     "audio": "res://audio/voice/witch_candy/witch_ccd753878e.mp3",
+     "source_audio": "audio/el/witch_candy/witch_ccd753878e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 122,
+   "source_text": "아까랑 같네? 다음엔 다른 색도 해 봐!"
+  },
+  {
+   "id": "wc_123",
+   "speaker": "witch",
+   "text": "\"한 번 더 할래?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "한 번 더 할래?",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, inviting, playful]",
+     "audio": "res://audio/voice/witch_candy/witch_d25a09612f.mp3",
+     "source_audio": "audio/el/witch_candy/witch_d25a09612f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 123,
+   "source_text": "한 번 더 할래?"
+  },
+  {
+   "id": "wc_124",
+   "speaker": "nar",
+   "text": "한 번 더 하려면 솥을 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "한 번 더 하려면 솥을 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_cfa1613016.mp3",
+     "source_audio": "audio/el/witch_candy/nar_cfa1613016.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 124,
+   "source_text": "한 번 더 하려면 솥을 톡 눌러요."
+  },
+  {
+   "id": "wc_125",
+   "speaker": "nar",
+   "text": "솥 물이 쏴아, 다시 맑아졌어요.",
+   "status": "reuse",
+   "beat": "round2",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "솥 물이 쏴아, 다시 맑아졌어요.",
+     "emotion": null,
+     "tags": "[calm, a soft whoosh on 쏴아, gentle]",
+     "audio": "res://audio/voice/witch_candy/nar_5850c26a2b.mp3",
+     "source_audio": "audio/el/witch_candy/nar_5850c26a2b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 125,
+   "source_text": "솥 물이 쏴아, 다시 맑아졌어요."
+  },
+  {
+   "id": "wc_126",
+   "speaker": "witch",
+   "text": "\"마지막은 핼러윈 특별 사탕! 색을 전부 다 넣는 거야.\"",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "마지막은 핼러윈 특별 사탕! 색을 전부 다 넣는 거야.",
+     "emotion": "toneup",
+     "tags": "[kind quirky witch, big announcement, excited, rallying]",
+     "audio": "res://audio/voice/witch_candy/witch_3cba284ccb.mp3",
+     "source_audio": "audio/el/witch_candy/witch_3cba284ccb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 126,
+   "source_text": "마지막은 핼러윈 특별 사탕! 색을 전부 다 넣는 거야.",
+   "expr": {
+    "witch": "welcome"
+   }
+  },
+  {
+   "id": "wc_127",
+   "speaker": "kid",
+   "text": "\"전부 다요?\"",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "전부 다요?",
+     "emotion": null,
+     "tags": "[young girl, wide-eyed, surprised]",
+     "audio": "res://audio/voice/witch_candy/kid_686153fb5f.mp3",
+     "source_audio": "audio/el/witch_candy/kid_686153fb5f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 127,
+   "source_text": "전부 다요?",
+   "expr": {
+    "kid": "wow"
+   }
+  },
+  {
+   "id": "wc_128",
+   "speaker": "nar",
+   "text": "이번엔 빨강, 노랑, 파랑 다 넣어요! 톡 눌러요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이번엔 빨강, 노랑, 파랑 다 넣어요! 톡 눌러요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_bf43b0fecc.mp3",
+     "source_audio": "audio/el/witch_candy/nar_bf43b0fecc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 128,
+   "source_text": "이번엔 빨강, 노랑, 파랑 다 넣어요! 톡 눌러요."
+  },
+  {
+   "id": "wc_129",
+   "speaker": "nar",
+   "text": "하나, 둘, 셋! 색을 전부 섞으면…",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하나, 둘, 셋! 색을 전부 섞으면…",
+     "emotion": "toneup",
+     "tags": "[bright counting, clear beats, then a suspenseful trailing pause]",
+     "audio": "res://audio/voice/witch_candy/nar_686695f38a.mp3",
+     "source_audio": "audio/el/witch_candy/nar_686695f38a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 129,
+   "source_text": "하나, 둘, 셋! 색을 전부 섞으면…"
+  },
+  {
+   "id": "wc_130",
+   "speaker": "witch",
+   "text": "\"뽀글뽀글… 펑!\"",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "뽀글뽀글… 펑!",
+     "emotion": "toneup",
+     "tags": "[kind quirky witch, bubbling rhythm then a big surprised pop]",
+     "audio": "res://audio/voice/witch_candy/witch_2616cb370f.mp3",
+     "source_audio": "audio/el/witch_candy/witch_2616cb370f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 130,
+   "source_text": "뽀글뽀글… 펑!",
+   "expr": {
+    "witch": "magic"
+   }
+  },
+  {
+   "id": "wc_131",
+   "speaker": "nar",
+   "text": "까만 사탕이 나왔어요!",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "까만 사탕이 나왔어요!",
+     "emotion": "toneup",
+     "tags": "[bright, excited storytelling, bouncy, clear]",
+     "audio": "res://audio/voice/witch_candy/nar_d140ff7536.mp3",
+     "source_audio": "audio/el/witch_candy/nar_d140ff7536.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 131,
+   "source_text": "까만 사탕이 나왔어요!",
+   "expr": {
+    "kid": "wow"
+   }
+  },
+  {
+   "id": "wc_132",
+   "speaker": "kid",
+   "text": "\"어? 입이 까매졌다! 유령 사탕이다~\"",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 입이 까매졌다! 유령 사탕이다~",
+     "emotion": "happy",
+     "tags": "[young girl, hesitant then munching, surprised, then gleeful playful ghost voice at the end]",
+     "audio": "res://audio/voice/witch_candy/kid_a7e1e7cf74.mp3",
+     "source_audio": "audio/el/witch_candy/kid_a7e1e7cf74.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 132,
+   "source_text": "어? 입이 까매졌다! 유령 사탕이다~",
+   "expr": {
+    "kid": [
+     "eat",
+     "ghost"
+    ]
+   }
+  },
+  {
+   "id": "wc_133",
+   "speaker": "witch",
+   "text": "\"히히, 나도!\"",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "히히, 나도!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, giggly, eager]",
+     "audio": "res://audio/voice/witch_candy/witch_10b92db19e.mp3",
+     "source_audio": "audio/el/witch_candy/witch_10b92db19e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 133,
+   "source_text": "히히, 나도!",
+   "expr": {
+    "witch": "ghost"
+   }
+  },
+  {
+   "id": "wc_134",
+   "speaker": "nar",
+   "text": "마녀도, 호박이도, 친구들도 까만 입술로…",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀도, 호박이도, 친구들도 까만 입술로…",
+     "emotion": null,
+     "tags": "[playful storytelling, listing, building up to a chorus, trailing]",
+     "audio": "res://audio/voice/witch_candy/nar_7e7d86dddd.mp3",
+     "source_audio": "audio/el/witch_candy/nar_7e7d86dddd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 134,
+   "source_text": "마녀도, 호박이도, 친구들도 까만 입술로…",
+   "expr": {
+    "cat": "ghost",
+    "rabbit": "ghost",
+    "bear": "ghost",
+    "fox": "ghost"
+   }
+  },
+  {
+   "id": "wc_135",
+   "speaker": "nar",
+   "text": "유령 흉내를 내며 마을을 한 바퀴 돌았어요. 하나도 안 무서워요, 다 웃고 있거든요.",
+   "status": "reuse",
+   "beat": "parade",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "유령 흉내를 내며 마을을 한 바퀴 돌았어요. 하나도 안 무서워요, 다 웃고 있거든요.",
+     "emotion": "happy",
+     "tags": "[warm, amused storytelling, marching rhythm, reassuring and smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_4ecdef21e8.mp3",
+     "source_audio": "audio/el/witch_candy/nar_4ecdef21e8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 135,
+   "source_text": "유령 흉내를 내며 마을을 한 바퀴 돌았어요. 하나도 안 무서워요, 다 웃고 있거든요."
+  },
+  {
+   "id": "wc_136",
+   "speaker": "witch",
+   "text": "\"자, 약속! 남은 사탕 다 나와라!\"",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "자, 약속! 남은 사탕 다 나와라!",
+     "emotion": "toneup",
+     "tags": "[kind quirky witch, a playful spell, big and bright]",
+     "audio": "res://audio/voice/witch_candy/witch_5fd88af714.mp3",
+     "source_audio": "audio/el/witch_candy/witch_5fd88af714.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 136,
+   "source_text": "자, 약속! 남은 사탕 다 나와라!",
+   "expr": {
+    "witch": "welcome"
+   }
+  },
+  {
+   "id": "wc_137",
+   "speaker": "nar",
+   "text": "솥에서 사탕이 퐁퐁퐁 쏟아졌어요. 모두 하나씩… 마녀는 두 개!",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "솥에서 사탕이 퐁퐁퐁 쏟아졌어요. 모두 하나씩… 마녀는 두 개!",
+     "emotion": "happy",
+     "tags": "[bright storytelling, bouncy pops, amused on the last words]",
+     "audio": "res://audio/voice/witch_candy/nar_bffb666174.mp3",
+     "source_audio": "audio/el/witch_candy/nar_bffb666174.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 137,
+   "source_text": "솥에서 사탕이 퐁퐁퐁 쏟아졌어요. 모두 하나씩… 마녀는 두 개!"
+  },
+  {
+   "id": "wc_138",
+   "speaker": "witch",
+   "text": "\"히히, 나는 두 개!\"",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "히히, 나는 두 개!",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, cheeky, giggly]",
+     "audio": "res://audio/voice/witch_candy/witch_e2886e4b0f.mp3",
+     "source_audio": "audio/el/witch_candy/witch_e2886e4b0f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 138,
+   "source_text": "히히, 나는 두 개!",
+   "expr": {
+    "witch": "two_candies"
+   }
+  },
+  {
+   "id": "wc_139",
+   "speaker": "nar",
+   "text": "뿅, 뿅, 뿅! 딸기, 개구리, 오리, 박쥐, 물고기, 호박… 다 같이 변신!",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅, 뿅, 뿅! 딸기, 개구리, 오리, 박쥐, 물고기, 호박… 다 같이 변신!",
+     "emotion": "toneup",
+     "tags": "[excited storytelling, three pops, listing with glee, big finish]",
+     "audio": "res://audio/voice/witch_candy/nar_c157fc759c.mp3",
+     "source_audio": "audio/el/witch_candy/nar_c157fc759c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 139,
+   "source_text": "뿅, 뿅, 뿅! 딸기, 개구리, 오리, 박쥐, 물고기, 호박… 다 같이 변신!"
+  },
+  {
+   "id": "wc_140",
+   "speaker": "nar",
+   "text": "뿅! 모두 원래대로.",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 모두 원래대로.",
+     "emotion": null,
+     "tags": "[warm, settling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_b90b699afd.mp3",
+     "source_audio": "audio/el/witch_candy/nar_b90b699afd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 140,
+   "source_text": "뿅! 모두 원래대로.",
+   "expr": {
+    "kid": "calm",
+    "witch": "calm",
+    "cat": "sit",
+    "rabbit": "calm",
+    "bear": "calm",
+    "fox": "calm"
+   }
+  },
+  {
+   "id": "wc_141",
+   "speaker": "witch",
+   "text": "\"다현이 덕분에 사탕이 가득! 내년에도 같이 섞자.\"",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "witch",
+     "text": "다현이 덕분에 사탕이 가득! 내년에도 같이 섞자.",
+     "emotion": "happy",
+     "tags": "[kind quirky witch, grateful, warm, smiling]",
+     "audio": "res://audio/voice/witch_candy/witch_210ab58401.mp3",
+     "source_audio": "audio/el/witch_candy/witch_210ab58401.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 141,
+   "source_text": "다현이 덕분에 사탕이 가득! 내년에도 같이 섞자.",
+   "expr": {
+    "witch": "welcome"
+   }
+  },
+  {
+   "id": "wc_142",
+   "speaker": "kid",
+   "text": "\"네! 다음엔 다른 색으로요!\"",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "네! 다음엔 다른 색으로요!",
+     "emotion": "happy",
+     "tags": "[young girl, happy, promising, bright]",
+     "audio": "res://audio/voice/witch_candy/kid_80ae75c989.mp3",
+     "source_audio": "audio/el/witch_candy/kid_80ae75c989.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 142,
+   "source_text": "네! 다음엔 다른 색으로요!",
+   "expr": {
+    "kid": "wave"
+   }
+  },
+  {
+   "id": "wc_143",
+   "speaker": "nar",
+   "text": "사탕 마녀를 톡 눌러 인사해요.",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "사탕 마녀를 톡 눌러 인사해요.",
+     "emotion": null,
+     "tags": "[friendly, clear, inviting, a tiny pause before 톡]",
+     "audio": "res://audio/voice/witch_candy/nar_9aa08c6f87.mp3",
+     "source_audio": "audio/el/witch_candy/nar_9aa08c6f87.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 143,
+   "source_text": "사탕 마녀를 톡 눌러 인사해요."
+  },
+  {
+   "id": "wc_144",
+   "speaker": "nar",
+   "text": "초록이랑 노랑을 섞었더니 연두색이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록이랑 노랑을 섞었더니 연두색이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_719be0667b.mp3",
+     "source_audio": "audio/el/witch_candy/nar_719be0667b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 144,
+   "source_text": "초록이랑 노랑을 섞었더니 연두색이 됐어요!"
+  },
+  {
+   "id": "wc_145",
+   "speaker": "nar",
+   "text": "초록만 넣었더니 초록 악어 사탕이 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "초록만 넣었더니 초록 악어 사탕이 됐어요!",
+     "emotion": "toneup",
+     "tags": "[warm storyteller, delighted reveal, clear colour words]",
+     "audio": "res://audio/voice/witch_candy/nar_5a068e153b.mp3",
+     "source_audio": "audio/el/witch_candy/nar_5a068e153b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 145,
+   "source_text": "초록만 넣었더니 초록 악어 사탕이 됐어요!"
+  },
+  {
+   "id": "wc_146",
+   "speaker": "kid",
+   "text": "\"냠… 키위 사탕이다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 키위 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_7d6e38ceac.mp3",
+     "source_audio": "audio/el/witch_candy/kid_7d6e38ceac.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 146,
+   "source_text": "냠… 키위 사탕이다!"
+  },
+  {
+   "id": "wc_147",
+   "speaker": "kid",
+   "text": "\"냠… 악어 사탕이다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "냠… 악어 사탕이다!",
+     "emotion": "happy",
+     "tags": "[young girl, munching, then bright shout]",
+     "audio": "res://audio/voice/witch_candy/kid_70e8130e2b.mp3",
+     "source_audio": "audio/el/witch_candy/kid_70e8130e2b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 147,
+   "source_text": "냠… 악어 사탕이다!"
+  },
+  {
+   "id": "wc_148",
+   "speaker": "nar",
+   "text": "뿅! 다현이가 동그란 연두 키위가 됐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이가 동그란 연두 키위가 됐어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_03bebd4ca4.mp3",
+     "source_audio": "audio/el/witch_candy/nar_03bebd4ca4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 148,
+   "source_text": "뿅! 다현이가 동그란 연두 키위가 됐어요!"
+  },
+  {
+   "id": "wc_149",
+   "speaker": "kid",
+   "text": "\"보송보송… 간지러워! 히히!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "보송보송… 간지러워! 히히!",
+     "emotion": "happy",
+     "tags": "[young girl, giggly, ticklish, squirming with laughter]",
+     "audio": "res://audio/voice/witch_candy/kid_d83bd18454.mp3",
+     "source_audio": "audio/el/witch_candy/kid_d83bd18454.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 149,
+   "source_text": "보송보송… 간지러워! 히히!"
+  },
+  {
+   "id": "wc_150",
+   "speaker": "nar",
+   "text": "통, 통, 통! 키위 공처럼 길을 통통 튀어 갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "통, 통, 통! 키위 공처럼 길을 통통 튀어 갔어요.",
+     "emotion": "happy",
+     "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_fd83831143.mp3",
+     "source_audio": "audio/el/witch_candy/nar_fd83831143.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 150,
+   "source_text": "통, 통, 통! 키위 공처럼 길을 통통 튀어 갔어요."
+  },
+  {
+   "id": "wc_151",
+   "speaker": "nar",
+   "text": "뿅! 다현이한테 초록 악어 꼬리가 생겼어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이한테 초록 악어 꼬리가 생겼어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_73ce34feef.mp3",
+     "source_audio": "audio/el/witch_candy/nar_73ce34feef.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 151,
+   "source_text": "뿅! 다현이한테 초록 악어 꼬리가 생겼어요!"
+  },
+  {
+   "id": "wc_152",
+   "speaker": "kid",
+   "text": "\"앙! 앙! 나는 악어다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "앙! 앙! 나는 악어다!",
+     "emotion": "happy",
+     "tags": "[young girl, playful pretend-scary chomp sounds, giggling]",
+     "audio": "res://audio/voice/witch_candy/kid_8aea35a610.mp3",
+     "source_audio": "audio/el/witch_candy/kid_8aea35a610.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 152,
+   "source_text": "앙! 앙! 나는 악어다!"
+  },
+  {
+   "id": "wc_153",
+   "speaker": "nar",
+   "text": "엉금엉금 기어가다 앙! 호박이가 깜짝 놀라 폴짝 뛰었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엉금엉금 기어가다 앙! 호박이가 깜짝 놀라 폴짝 뛰었어요.",
+     "emotion": "happy",
+     "tags": "[playful storytelling, slow creeping then a sudden snap, smiling]",
+     "audio": "res://audio/voice/witch_candy/nar_febaaa9a44.mp3",
+     "source_audio": "audio/el/witch_candy/nar_febaaa9a44.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 153,
+   "source_text": "엉금엉금 기어가다 앙! 호박이가 깜짝 놀라 폴짝 뛰었어요."
+  },
+  {
+   "id": "wc_154",
+   "speaker": "nar",
+   "text": "뿅! 다현이가 청록 개구리가 됐어요!",
+   "status": "reuse",
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뿅! 다현이가 청록 개구리가 됐어요!",
+     "emotion": "toneup",
+     "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
+     "audio": "res://audio/voice/witch_candy/nar_ff4bc5736c.mp3",
+     "source_audio": "audio/el/witch_candy/nar_ff4bc5736c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 154,
+   "source_text": "뿅! 다현이가 청록 개구리가 됐어요!"
+  },
+  {
+   "id": "wc_x_n1",
+   "speaker": "nar",
+   "text": "하나!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하나!",
+     "emotion": "toneup",
+     "tags": "[bright, clear, slow counting, one word, bouncy]",
+     "audio": "res://audio/voice/witch_candy/nar_29c834f95e.mp3",
+     "source_audio": "audio/el/witch_candy/nar_29c834f95e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "n1"
+  },
+  {
+   "id": "wc_x_n2",
+   "speaker": "nar",
+   "text": "둘!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "둘!",
+     "emotion": "toneup",
+     "tags": "[bright, clear, slow counting, one word, bouncy]",
+     "audio": "res://audio/voice/witch_candy/nar_57c5f1489f.mp3",
+     "source_audio": "audio/el/witch_candy/nar_57c5f1489f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "n2"
+  },
+  {
+   "id": "wc_x_n3",
+   "speaker": "nar",
+   "text": "셋!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "셋!",
+     "emotion": "toneup",
+     "tags": "[bright, clear, slow counting, one word, bouncy]",
+     "audio": "res://audio/voice/witch_candy/nar_62f7838260.mp3",
+     "source_audio": "audio/el/witch_candy/nar_62f7838260.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "n3"
+  },
+  {
+   "id": "wc_x_n4",
+   "speaker": "nar",
+   "text": "넷!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "넷!",
+     "emotion": "toneup",
+     "tags": "[bright, clear, slow counting, one word, bouncy]",
+     "audio": "res://audio/voice/witch_candy/nar_cd67122283.mp3",
+     "source_audio": "audio/el/witch_candy/nar_cd67122283.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "n4"
+  },
+  {
+   "id": "wc_x_n5",
+   "speaker": "nar",
+   "text": "다섯!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다섯!",
+     "emotion": "toneup",
+     "tags": "[bright, clear, slow counting, one word, bouncy]",
+     "audio": "res://audio/voice/witch_candy/nar_6a5a129343.mp3",
+     "source_audio": "audio/el/witch_candy/nar_6a5a129343.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "n5"
+  },
+  {
+   "id": "wc_x_yuck",
+   "speaker": "kid",
+   "text": "\"으엑…\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "으엑…",
+     "emotion": null,
+     "tags": "[young girl, grossed out, comic, short]",
+     "audio": "res://audio/voice/witch_candy/kid_8a9af6b746.mp3",
+     "source_audio": "audio/el/witch_candy/kid_8a9af6b746.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "yuck"
+  },
+  {
+   "id": "wc_x_ghost_kid",
+   "speaker": "kid",
+   "text": "\"오~~우~~\"",
+   "status": "reuse",
+   "beat": "ghost_candy",
+   "interaction": "brew",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "오~~우~~",
+     "emotion": "happy",
+     "tags": "[young girl, playful ghost oooh, two arms up, giggling, not scary]",
+     "audio": "res://audio/voice/witch_candy/kid_cfc4affa0e.mp3",
+     "source_audio": "audio/el/witch_candy/kid_cfc4affa0e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "ghost_kid",
+   "expr": {
+    "kid": "ghost"
+   }
+  },
+  {
+   "id": "wc_x_ghost_all",
+   "speaker": "all",
+   "text": "오~~우~~",
+   "status": "reuse",
+   "beat": "parade",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "all",
+     "text": "오~~우~~",
+     "emotion": "happy",
+     "tags": "[young girl, playful ghost oooh, two arms up, giggling, not scary]",
+     "audio": "res://audio/voice/witch_candy/ch_48ac9f3898.mp3",
+     "source_audio": "audio/el/witch_candy/kid_cfc4affa0e.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/witch_candy/chorus/ch_48ac9f3898.mp3 (톡톡 premixed chorus)"
+    }
+   ],
+   "source_extra": "ghost_all",
+   "trimmed_clip": true
+  },
+  {
+   "id": "wc_x_happy_all",
+   "speaker": "all",
+   "text": "해피 핼러윈! 오~우~!",
+   "status": "reuse",
+   "beat": "finale",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "all",
+     "text": "해피 핼러윈! 오~우~!",
+     "emotion": "toneup",
+     "tags": "[young girl, cheering, then a playful ghost oooh]",
+     "audio": "res://audio/voice/witch_candy/ch_672e05d93c.mp3",
+     "source_audio": "audio/el/witch_candy/kid_f6d2ec1928.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/witch_candy/chorus/ch_672e05d93c.mp3 (톡톡 premixed chorus)"
+    }
+   ],
+   "source_extra": "happy_all",
+   "expr": {
+    "kid": "wave",
+    "witch": "welcome",
+    "cat": "meow",
+    "rabbit": "cheer",
+    "bear": "cheer",
+    "fox": "cheer"
+   },
+   "trimmed_clip": true
+  },
+  {
+   "id": "wc_x_ch_wow",
+   "speaker": "rabbit+bear+fox",
+   "text": "\"우와!\" \"우와!\" \"우와!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rabbit",
+     "text": "우와!",
+     "emotion": "toneup",
+     "tags": "[amazed, bright, together]",
+     "audio": "res://audio/voice/witch_candy/rabbit_30985aa319.mp3",
+     "source_audio": "audio/el/witch_candy/rabbit_30985aa319.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bear",
+     "text": "우와!",
+     "emotion": "toneup",
+     "tags": "[amazed, bright, together]",
+     "audio": "res://audio/voice/witch_candy/bear_bfac5b53bf.mp3",
+     "source_audio": "audio/el/witch_candy/bear_bfac5b53bf.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "fox",
+     "text": "우와!",
+     "emotion": "toneup",
+     "tags": "[amazed, bright, together]",
+     "audio": "res://audio/voice/witch_candy/fox_266d892a30.mp3",
+     "source_audio": "audio/el/witch_candy/fox_266d892a30.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "ch_wow"
+  },
+  {
+   "id": "wc_x_ch_bubble",
+   "speaker": "rabbit+bear+fox",
+   "text": "\"뽀글뽀글!\" \"뽀글뽀글!\" \"뽀글뽀글!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rabbit",
+     "text": "뽀글뽀글!",
+     "emotion": "happy",
+     "tags": "[gleeful, bouncy, chanting the bubbling sound]",
+     "audio": "res://audio/voice/witch_candy/rabbit_514962cde4.mp3",
+     "source_audio": "audio/el/witch_candy/rabbit_514962cde4.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bear",
+     "text": "뽀글뽀글!",
+     "emotion": "happy",
+     "tags": "[gleeful, bouncy, chanting the bubbling sound]",
+     "audio": "res://audio/voice/witch_candy/bear_597c22dc10.mp3",
+     "source_audio": "audio/el/witch_candy/bear_597c22dc10.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "fox",
+     "text": "뽀글뽀글!",
+     "emotion": "happy",
+     "tags": "[gleeful, bouncy, chanting the bubbling sound]",
+     "audio": "res://audio/voice/witch_candy/fox_70e531ec06.mp3",
+     "source_audio": "audio/el/witch_candy/fox_70e531ec06.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "ch_bubble"
+  },
+  {
+   "id": "wc_x_ch_metoo",
+   "speaker": "rabbit+bear+fox",
+   "text": "\"나도!\" \"나도!\" \"나도!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rabbit",
+     "text": "나도!",
+     "emotion": "toneup",
+     "tags": "[eager, bright, hand up]",
+     "audio": "res://audio/voice/witch_candy/rabbit_2cd900e6cf.mp3",
+     "source_audio": "audio/el/witch_candy/rabbit_2cd900e6cf.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bear",
+     "text": "나도!",
+     "emotion": "toneup",
+     "tags": "[eager, bright, hand up]",
+     "audio": "res://audio/voice/witch_candy/bear_021c2372ab.mp3",
+     "source_audio": "audio/el/witch_candy/bear_021c2372ab.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "fox",
+     "text": "나도!",
+     "emotion": "toneup",
+     "tags": "[eager, bright, hand up]",
+     "audio": "res://audio/voice/witch_candy/fox_fe14fdd916.mp3",
+     "source_audio": "audio/el/witch_candy/fox_fe14fdd916.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "ch_metoo"
+  },
+  {
+   "id": "wc_x_ch_wantto",
+   "speaker": "rabbit+bear+fox",
+   "text": "\"나도 하고 싶다!\" \"나도 하고 싶다!\" \"나도 하고 싶다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rabbit",
+     "text": "나도 하고 싶다!",
+     "emotion": "happy",
+     "tags": "[eager, envious but happy, bouncy]",
+     "audio": "res://audio/voice/witch_candy/rabbit_a907526821.mp3",
+     "source_audio": "audio/el/witch_candy/rabbit_a907526821.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bear",
+     "text": "나도 하고 싶다!",
+     "emotion": "happy",
+     "tags": "[eager, envious but happy, bouncy]",
+     "audio": "res://audio/voice/witch_candy/bear_ff305910eb.mp3",
+     "source_audio": "audio/el/witch_candy/bear_ff305910eb.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "fox",
+     "text": "나도 하고 싶다!",
+     "emotion": "happy",
+     "tags": "[eager, envious but happy, bouncy]",
+     "audio": "res://audio/voice/witch_candy/fox_6bdeabccee.mp3",
+     "source_audio": "audio/el/witch_candy/fox_6bdeabccee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "ch_wantto"
+  },
+  {
+   "id": "wc_x_ch_black",
+   "speaker": "rabbit+bear+fox",
+   "text": "\"까맣다!\" \"까맣다!\" \"까맣다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rabbit",
+     "text": "까맣다!",
+     "emotion": "toneup",
+     "tags": "[amazed, wide-eyed, together]",
+     "audio": "res://audio/voice/witch_candy/rabbit_a432a6a4f5.mp3",
+     "source_audio": "audio/el/witch_candy/rabbit_a432a6a4f5.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bear",
+     "text": "까맣다!",
+     "emotion": "toneup",
+     "tags": "[amazed, wide-eyed, together]",
+     "audio": "res://audio/voice/witch_candy/bear_452233fe89.mp3",
+     "source_audio": "audio/el/witch_candy/bear_452233fe89.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "fox",
+     "text": "까맣다!",
+     "emotion": "toneup",
+     "tags": "[amazed, wide-eyed, together]",
+     "audio": "res://audio/voice/witch_candy/fox_6cb669d73b.mp3",
+     "source_audio": "audio/el/witch_candy/fox_6cb669d73b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "ch_black"
+  },
+  {
+   "id": "wc_x_ch_yuckyum",
+   "speaker": "rabbit+bear+fox",
+   "text": "\"으웩!… 어? 맛있다!\" \"으웩!… 어? 맛있다!\" \"으웩!… 어? 맛있다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rabbit",
+     "text": "으웩!… 어? 맛있다!",
+     "emotion": "happy",
+     "tags": "[grossed out, a pause, then surprised and delighted]",
+     "audio": "res://audio/voice/witch_candy/rabbit_dd58ff8bc2.mp3",
+     "source_audio": "audio/el/witch_candy/rabbit_dd58ff8bc2.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bear",
+     "text": "으웩!… 어? 맛있다!",
+     "emotion": "happy",
+     "tags": "[grossed out, a pause, then surprised and delighted]",
+     "audio": "res://audio/voice/witch_candy/bear_67c89357a5.mp3",
+     "source_audio": "audio/el/witch_candy/bear_67c89357a5.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "fox",
+     "text": "으웩!… 어? 맛있다!",
+     "emotion": "happy",
+     "tags": "[grossed out, a pause, then surprised and delighted]",
+     "audio": "res://audio/voice/witch_candy/fox_d7db1ddb14.mp3",
+     "source_audio": "audio/el/witch_candy/fox_d7db1ddb14.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "ch_yuckyum"
+  },
+  {
+   "id": "wc_n01",
+   "speaker": "nar",
+   "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+   "status": "changed-needs-recording",
+   "beat": "cover",
+   "interaction": "cover",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, warm, cosy Halloween night]",
+     "audio": "",
+     "source_audio": "",
+     "status": "changed-needs-recording"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "wc_n02",
+   "speaker": "nar",
+   "text": "또 보고 싶으면 '다시 보기'를 톡!",
+   "status": "changed-needs-recording",
+   "beat": "finale",
+   "interaction": "end",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "또 보고 싶으면 '다시 보기'를 톡!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "",
+     "source_audio": "",
+     "status": "changed-needs-recording"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "wc_n03",
+   "speaker": "nar",
+   "text": "날아오는 초대장을 톡 눌러 잡아요.",
+   "status": "changed-needs-recording",
+   "beat": "invite",
+   "interaction": "tap_each",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "날아오는 초대장을 톡 눌러 잡아요.",
+     "emotion": null,
+     "tags": "[warm, playful, inviting]",
+     "audio": "",
+     "source_audio": "",
+     "status": "changed-needs-recording"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "wc_n04",
+   "speaker": "nar",
+   "text": "친구들을 톡 눌러 사탕을 건네요.",
+   "status": "changed-needs-recording",
+   "beat": "finale",
+   "interaction": "tap_each",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "친구들을 톡 눌러 사탕을 건네요.",
+     "emotion": null,
+     "tags": "[warm, playful, inviting]",
+     "audio": "",
+     "source_audio": "",
+     "status": "changed-needs-recording"
+    }
+   ],
+   "new": true
+  }
+ ]
+}

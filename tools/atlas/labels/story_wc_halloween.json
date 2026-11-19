@@ -1,0 +1,232 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "decor"
+ ],
+ "items": {
+  "00": [
+   "pumpkin lantern small",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "lantern",
+     "lit"
+    ]
+   }
+  ],
+  "01": [
+   "pumpkin lantern medium",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "lantern",
+     "lit"
+    ]
+   }
+  ],
+  "02": [
+   "pumpkin lantern big",
+   "story_prop",
+   0.14,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "lantern",
+     "lit"
+    ]
+   }
+  ],
+  "03": [
+   "two stacked pumpkin lanterns",
+   "story_prop",
+   0.16,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "lantern",
+     "lit"
+    ]
+   }
+  ],
+  "04": [
+   "bunting string on two posts",
+   "story_prop",
+   0.4,
+   0,
+   {
+    "tags": [
+     "bunting",
+     "flags"
+    ]
+   }
+  ],
+  "05": [
+   "corner paper cobweb (no spider)",
+   "story_prop",
+   0.15,
+   0,
+   {
+    "tags": [
+     "cobweb"
+    ]
+   }
+  ],
+  "06": [
+   "round hanging paper cobweb",
+   "story_prop",
+   0.18,
+   0,
+   {
+    "tags": [
+     "cobweb",
+     "hanging"
+    ]
+   }
+  ],
+  "07": [
+   "paper bat silhouette A",
+   "story_prop",
+   0.05,
+   0,
+   {
+    "tags": [
+     "bat",
+     "sky"
+    ]
+   }
+  ],
+  "08": [
+   "paper bat silhouette B",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "bat",
+     "sky"
+    ]
+   }
+  ],
+  "09": [
+   "paper bat silhouette C",
+   "story_prop",
+   0.05,
+   0,
+   {
+    "tags": [
+     "bat",
+     "sky"
+    ]
+   }
+  ],
+  "10": [
+   "full moon disc",
+   "story_prop",
+   0.5,
+   0,
+   {
+    "tags": [
+     "moon",
+     "sky",
+     "night"
+    ]
+   }
+  ],
+  "11": [
+   "golden star",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "star",
+     "sky"
+    ]
+   }
+  ],
+  "12": [
+   "small golden star",
+   "story_prop",
+   0.04,
+   0,
+   {
+    "tags": [
+     "star",
+     "sky"
+    ]
+   }
+  ],
+  "13": [
+   "street lantern post, lit",
+   "story_prop",
+   0.45,
+   0,
+   {
+    "tags": [
+     "lamp",
+     "street",
+     "lit"
+    ]
+   }
+  ],
+  "14": [
+   "picket fence section with pumpkin",
+   "story_prop",
+   0.18,
+   0,
+   {
+    "tags": [
+     "fence",
+     "pumpkin"
+    ]
+   }
+  ],
+  "15": [
+   "witch's broom standing",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "broom"
+    ]
+   }
+  ],
+  "16": [
+   "small friendly sheet ghost",
+   "story_prop",
+   0.18,
+   0,
+   {
+    "tags": [
+     "ghost",
+     "friendly"
+    ]
+   }
+  ],
+  "17": [
+   "hay bale with pumpkin",
+   "story_prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "hay",
+     "pumpkin"
+    ]
+   }
+  ]
+ }
+}

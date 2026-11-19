@@ -1,0 +1,96 @@
+{
+ "sheet": "cast_witch_expr_a",
+ "bg": [
+  0.988,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_witch_expr_a_00",
+   "bbox": [
+    57,
+    46,
+    442,
+    673
+   ],
+   "area": 93645,
+   "size": [
+    393,
+    635
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_witch_expr_a_01",
+   "bbox": [
+    480,
+    46,
+    860,
+    673
+   ],
+   "area": 96891,
+   "size": [
+    388,
+    635
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_witch_expr_a_02",
+   "bbox": [
+    949,
+    46,
+    1262,
+    673
+   ],
+   "area": 95916,
+   "size": [
+    321,
+    635
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_witch_expr_a_03",
+   "bbox": [
+    1361,
+    46,
+    1673,
+    673
+   ],
+   "area": 98580,
+   "size": [
+    320,
+    635
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_witch_expr_a_04",
+   "bbox": [
+    1790,
+    46,
+    2120,
+    673
+   ],
+   "area": 97722,
+   "size": [
+    338,
+    635
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

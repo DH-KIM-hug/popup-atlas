@@ -9545,5 +9545,1754 @@
    137,
    208
   ]
+ },
+ {
+  "id": "story_wc_candies_00",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_00.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "strawberry-shaped wrapped candy",
+  "height_units": 0.055,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "halloween",
+   "story",
+   "strawberry",
+   "witch_candy"
+  ],
+  "px": [
+   382,
+   221
+  ]
+ },
+ {
+  "id": "story_wc_candies_01",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_01.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "duck-shaped lollipop",
+  "height_units": 0.085,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "duck",
+   "halloween",
+   "lollipop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   216,
+   320
+  ]
+ },
+ {
+  "id": "story_wc_candies_02",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_02.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "fish-shaped blue jelly candy",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "fish",
+   "halloween",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   345,
+   209
+  ]
+ },
+ {
+  "id": "story_wc_candies_03",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_03.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "frog-face lollipop",
+  "height_units": 0.085,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "frog",
+   "halloween",
+   "lollipop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   217,
+   320
+  ]
+ },
+ {
+  "id": "story_wc_candies_04",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_04.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "round pumpkin wrapped candy",
+  "height_units": 0.055,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "halloween",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   392,
+   215
+  ]
+ },
+ {
+  "id": "story_wc_candies_05",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_05.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "bat-shaped lollipop",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bat",
+   "candy",
+   "halloween",
+   "lollipop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   394,
+   283
+  ]
+ },
+ {
+  "id": "story_wc_candies_06",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_06.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "black ghost candy (wrapped)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "black",
+   "candy",
+   "ghost",
+   "halloween",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   365,
+   184
+  ]
+ },
+ {
+  "id": "story_wc_candies_07",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_07.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "glass jar of mixed candies",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "halloween",
+   "jar",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   261,
+   357
+  ]
+ },
+ {
+  "id": "story_wc_candies_08",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_08.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "heap of mixed candies",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "halloween",
+   "heap",
+   "pile",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   616,
+   289
+  ]
+ },
+ {
+  "id": "story_wc_candies_09",
+  "path": "art/atlas/story_wc_candies/story_wc_candies_09.webp",
+  "sheet": "story_wc_candies",
+  "category": "story_prop",
+  "label": "woven basket of candies",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "basket",
+   "candy",
+   "halloween",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   361,
+   349
+  ]
+ },
+ {
+  "id": "story_wc_pot_00",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_00.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_prop",
+  "label": "black iron cauldron with stars",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "cauldron",
+   "halloween",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   385,
+   280
+  ]
+ },
+ {
+  "id": "story_wc_pot_01",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_01.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_prop",
+  "label": "cauldron rear rim band",
+  "height_units": 0.04,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "pot",
+   "rim",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   313,
+   86
+  ]
+ },
+ {
+  "id": "story_wc_pot_02",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_02.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: clear water",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "liquid",
+   "pot",
+   "story",
+   "water",
+   "witch_candy"
+  ],
+  "px": [
+   314,
+   109
+  ]
+ },
+ {
+  "id": "story_wc_pot_03",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_03.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: red",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "liquid",
+   "pot",
+   "red",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   309,
+   112
+  ]
+ },
+ {
+  "id": "story_wc_pot_04",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_04.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: yellow",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "liquid",
+   "pot",
+   "story",
+   "witch_candy",
+   "yellow"
+  ],
+  "px": [
+   331,
+   114
+  ]
+ },
+ {
+  "id": "story_wc_pot_05",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_05.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: blue",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "blue",
+   "halloween",
+   "liquid",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   330,
+   114
+  ]
+ },
+ {
+  "id": "story_wc_pot_06",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_06.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: orange",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "liquid",
+   "orange",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   331,
+   114
+  ]
+ },
+ {
+  "id": "story_wc_pot_07",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_07.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: green",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "green",
+   "halloween",
+   "liquid",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   329,
+   113
+  ]
+ },
+ {
+  "id": "story_wc_pot_08",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_08.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: purple",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "liquid",
+   "pot",
+   "purple",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   324,
+   112
+  ]
+ },
+ {
+  "id": "story_wc_pot_09",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_09.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "pot liquid disc: black with sparkles",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "black",
+   "halloween",
+   "liquid",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   316,
+   112
+  ]
+ },
+ {
+  "id": "story_wc_pot_10",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_10.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "cream spiral swirl band (seen from above)",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "magic",
+   "pot",
+   "story",
+   "swirl",
+   "witch_candy"
+  ],
+  "px": [
+   344,
+   187
+  ]
+ },
+ {
+  "id": "story_wc_pot_12",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_12.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_prop",
+  "label": "firewood logs in a stone ring",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "fire",
+   "halloween",
+   "logs",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   346,
+   181
+  ]
+ },
+ {
+  "id": "story_wc_pot_13",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_13.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "flame small",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "fire",
+   "flame",
+   "halloween",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   126,
+   140
+  ]
+ },
+ {
+  "id": "story_wc_pot_14",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_14.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "flame medium",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "fire",
+   "flame",
+   "halloween",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   168,
+   197
+  ]
+ },
+ {
+  "id": "story_wc_pot_15",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_15.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "flame large",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "fire",
+   "flame",
+   "halloween",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   218,
+   260
+  ]
+ },
+ {
+  "id": "story_wc_pot_16",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_16.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "big smoke puff (poof)",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "poof",
+   "pot",
+   "smoke",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   338,
+   234
+  ]
+ },
+ {
+  "id": "story_wc_pot_17",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_17.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "bubbles",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bubble",
+   "halloween",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   130,
+   168
+  ]
+ },
+ {
+  "id": "story_wc_pot_18",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_18.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "small bubble",
+  "height_units": 0.025,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bubble",
+   "halloween",
+   "pot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   65,
+   62
+  ]
+ },
+ {
+  "id": "story_wc_pot_19",
+  "path": "art/atlas/story_wc_pot/story_wc_pot_19.webp",
+  "sheet": "story_wc_pot",
+  "category": "story_fx",
+  "label": "golden star sparkle",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "pot",
+   "sparkle",
+   "star",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   194,
+   198
+  ]
+ },
+ {
+  "id": "story_wc_shop_00",
+  "path": "art/atlas/story_wc_shop/story_wc_shop_00.webp",
+  "sheet": "story_wc_shop",
+  "category": "story_building",
+  "label": "candy witch's shop facade (open arched doorway, candy window, swirl sign)",
+  "height_units": 1.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "facade",
+   "halloween",
+   "house",
+   "shop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   582,
+   490
+  ]
+ },
+ {
+  "id": "story_wc_shop_01",
+  "path": "art/atlas/story_wc_shop/story_wc_shop_01.webp",
+  "sheet": "story_wc_shop",
+  "category": "story_building",
+  "label": "shop door (mint planks, star window)",
+  "height_units": 0.52,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "door",
+   "halloween",
+   "shop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   165,
+   277
+  ]
+ },
+ {
+  "id": "story_wc_shop_02",
+  "path": "art/atlas/story_wc_shop/story_wc_shop_02.webp",
+  "sheet": "story_wc_shop",
+  "category": "story_building",
+  "label": "shop side wall panel (plaster + timber, lit window)",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "shop",
+   "side",
+   "story",
+   "wall",
+   "witch_candy"
+  ],
+  "px": [
+   260,
+   288
+  ]
+ },
+ {
+  "id": "story_wc_shop_03",
+  "path": "art/atlas/story_wc_shop/story_wc_shop_03.webp",
+  "sheet": "story_wc_shop",
+  "category": "story_building",
+  "label": "shop roof side panel (teal scalloped shingles)",
+  "height_units": 0.55,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "roof",
+   "shop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   335,
+   273
+  ]
+ },
+ {
+  "id": "story_wc_shop_04",
+  "path": "art/atlas/story_wc_shop/story_wc_shop_04.webp",
+  "sheet": "story_wc_shop",
+  "category": "story_building",
+  "label": "shop facade seen from inside (doorway cut, night window)",
+  "height_units": 1.02,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "inside",
+   "shop",
+   "story",
+   "wall",
+   "witch_candy"
+  ],
+  "px": [
+   593,
+   476
+  ]
+ },
+ {
+  "id": "story_wc_shop_05",
+  "path": "art/atlas/story_wc_shop/story_wc_shop_05.webp",
+  "sheet": "story_wc_shop",
+  "category": "story_building",
+  "label": "tall ochre townhouse facade, lit windows",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "shop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   256,
+   423
+  ]
+ },
+ {
+  "id": "story_wc_shop_06",
+  "path": "art/atlas/story_wc_shop/story_wc_shop_06.webp",
+  "sheet": "story_wc_shop",
+  "category": "story_building",
+  "label": "small cream cottage facade, lit window, pumpkin",
+  "height_units": 0.65,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "shop",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   365,
+   347
+  ]
+ },
+ {
+  "id": "story_wc_room_00",
+  "path": "art/atlas/story_wc_room/story_wc_room_00.webp",
+  "sheet": "story_wc_room",
+  "category": "story_building",
+  "label": "shop back wall from inside, two night windows",
+  "height_units": 0.54,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "wall",
+   "witch_candy"
+  ],
+  "px": [
+   817,
+   351
+  ]
+ },
+ {
+  "id": "story_wc_room_01",
+  "path": "art/atlas/story_wc_room/story_wc_room_01.webp",
+  "sheet": "story_wc_room",
+  "category": "story_building",
+  "label": "shop side wall from inside, post left, cobweb",
+  "height_units": 0.54,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "wall",
+   "witch_candy"
+  ],
+  "px": [
+   223,
+   350
+  ]
+ },
+ {
+  "id": "story_wc_room_02",
+  "path": "art/atlas/story_wc_room/story_wc_room_02.webp",
+  "sheet": "story_wc_room",
+  "category": "story_building",
+  "label": "shop side wall from inside, post right",
+  "height_units": 0.54,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "wall",
+   "witch_candy"
+  ],
+  "px": [
+   226,
+   350
+  ]
+ },
+ {
+  "id": "story_wc_room_03",
+  "path": "art/atlas/story_wc_room/story_wc_room_03.webp",
+  "sheet": "story_wc_room",
+  "category": "story_building",
+  "label": "honey plank floor (from above)",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "floor",
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   513,
+   246
+  ]
+ },
+ {
+  "id": "story_wc_room_04",
+  "path": "art/atlas/story_wc_room/story_wc_room_04.webp",
+  "sheet": "story_wc_room",
+  "category": "story_prop",
+  "label": "ingredient shelf: red / yellow / blue sections, empty",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "interior",
+   "room",
+   "shelf",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   510,
+   215
+  ]
+ },
+ {
+  "id": "story_wc_room_05",
+  "path": "art/atlas/story_wc_room/story_wc_room_05.webp",
+  "sheet": "story_wc_room",
+  "category": "story_prop",
+  "label": "candy jar cabinet",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candy",
+   "halloween",
+   "interior",
+   "room",
+   "shelf",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   349,
+   310
+  ]
+ },
+ {
+  "id": "story_wc_room_06",
+  "path": "art/atlas/story_wc_room/story_wc_room_06.webp",
+  "sheet": "story_wc_room",
+  "category": "story_prop",
+  "label": "striped shop counter with candy bowl",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "counter",
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   482,
+   240
+  ]
+ },
+ {
+  "id": "story_wc_room_07",
+  "path": "art/atlas/story_wc_room/story_wc_room_07.webp",
+  "sheet": "story_wc_room",
+  "category": "story_prop",
+  "label": "stone hearth ring",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "fire",
+   "halloween",
+   "hearth",
+   "interior",
+   "room",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   287,
+   122
+  ]
+ },
+ {
+  "id": "story_wc_room_08",
+  "path": "art/atlas/story_wc_room/story_wc_room_08.webp",
+  "sheet": "story_wc_room",
+  "category": "story_prop",
+  "label": "ceiling beam with paper bat mobile and cobweb",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bats",
+   "beam",
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   513,
+   180
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_00",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_00.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "jar of baby dragon snot (red drops, dragon label)",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "ingredient",
+   "red",
+   "snot",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   283,
+   323
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_01",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_01.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "red toy fire truck with ladder",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "firetruck",
+   "halloween",
+   "ingredient",
+   "red",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   376,
+   322
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_02",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_02.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "big ladybug with eyes",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "creature",
+   "halloween",
+   "ingredient",
+   "ladybug",
+   "red",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   319,
+   264
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_03",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_03.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "carved pumpkin lantern (small, lit)",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "ingredient",
+   "pumpkin_lantern",
+   "story",
+   "witch_candy",
+   "yellow"
+  ],
+  "px": [
+   289,
+   290
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_04",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_04.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "jar of chick fart cloud (chick label)",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "fart",
+   "halloween",
+   "ingredient",
+   "story",
+   "witch_candy",
+   "yellow"
+  ],
+  "px": [
+   288,
+   296
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_05",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_05.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "yellow rubber duck",
+  "height_units": 0.065,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "duck",
+   "halloween",
+   "ingredient",
+   "story",
+   "witch_candy",
+   "yellow"
+  ],
+  "px": [
+   284,
+   265
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_06",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_06.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "blue monster poo swirl on a plate",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "blue",
+   "halloween",
+   "ingredient",
+   "poo",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   223,
+   282
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_07",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_07.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "blue fish standing on its tail, smiling",
+  "height_units": 0.075,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "blue",
+   "creature",
+   "fish",
+   "halloween",
+   "ingredient",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   217,
+   260
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_08",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_08.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "curling blue paper wave",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "blue",
+   "halloween",
+   "ingredient",
+   "story",
+   "wave",
+   "witch_candy"
+  ],
+  "px": [
+   259,
+   199
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_09",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_09.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "wooden ladle",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "ingredient",
+   "ladle",
+   "story",
+   "tool",
+   "witch_candy"
+  ],
+  "px": [
+   133,
+   275
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_10",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_10.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "pumpkin invitation card (pot + candy picture)",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "card",
+   "halloween",
+   "ingredient",
+   "invitation",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   261,
+   250
+  ]
+ },
+ {
+  "id": "story_wc_ingredients_11",
+  "path": "art/atlas/story_wc_ingredients/story_wc_ingredients_11.webp",
+  "sheet": "story_wc_ingredients",
+  "category": "story_prop",
+  "label": "pumpkin invitation card fluttering",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "card",
+   "flutter",
+   "halloween",
+   "ingredient",
+   "invitation",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   271,
+   250
+  ]
+ },
+ {
+  "id": "story_wc_halloween_00",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_00.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "pumpkin lantern small",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   158,
+   169
+  ]
+ },
+ {
+  "id": "story_wc_halloween_01",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_01.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "pumpkin lantern medium",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   214,
+   210
+  ]
+ },
+ {
+  "id": "story_wc_halloween_02",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_02.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "pumpkin lantern big",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   266,
+   274
+  ]
+ },
+ {
+  "id": "story_wc_halloween_03",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_03.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "two stacked pumpkin lanterns",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   207,
+   277
+  ]
+ },
+ {
+  "id": "story_wc_halloween_04",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_04.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "bunting string on two posts",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bunting",
+   "decor",
+   "flags",
+   "halloween",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   496,
+   234
+  ]
+ },
+ {
+  "id": "story_wc_halloween_05",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_05.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "corner paper cobweb (no spider)",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "cobweb",
+   "decor",
+   "halloween",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   197,
+   198
+  ]
+ },
+ {
+  "id": "story_wc_halloween_06",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_06.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "round hanging paper cobweb",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "cobweb",
+   "decor",
+   "halloween",
+   "hanging",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   179,
+   238
+  ]
+ },
+ {
+  "id": "story_wc_halloween_07",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_07.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "paper bat silhouette A",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bat",
+   "decor",
+   "halloween",
+   "sky",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   242,
+   111
+  ]
+ },
+ {
+  "id": "story_wc_halloween_08",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_08.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "paper bat silhouette B",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bat",
+   "decor",
+   "halloween",
+   "sky",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   217,
+   149
+  ]
+ },
+ {
+  "id": "story_wc_halloween_09",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_09.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "paper bat silhouette C",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bat",
+   "decor",
+   "halloween",
+   "sky",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   248,
+   130
+  ]
+ },
+ {
+  "id": "story_wc_halloween_10",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_10.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "full moon disc",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "moon",
+   "night",
+   "sky",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   228,
+   230
+  ]
+ },
+ {
+  "id": "story_wc_halloween_11",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_11.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "golden star",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "sky",
+   "star",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   124,
+   119
+  ]
+ },
+ {
+  "id": "story_wc_halloween_12",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_12.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "small golden star",
+  "height_units": 0.04,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "sky",
+   "star",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   84,
+   80
+  ]
+ },
+ {
+  "id": "story_wc_halloween_13",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_13.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "street lantern post, lit",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lamp",
+   "lit",
+   "story",
+   "street",
+   "witch_candy"
+  ],
+  "px": [
+   115,
+   344
+  ]
+ },
+ {
+  "id": "story_wc_halloween_14",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_14.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "picket fence section with pumpkin",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "fence",
+   "halloween",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   285,
+   264
+  ]
+ },
+ {
+  "id": "story_wc_halloween_15",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_15.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "witch's broom standing",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "broom",
+   "decor",
+   "halloween",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   136,
+   336
+  ]
+ },
+ {
+  "id": "story_wc_halloween_16",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_16.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "small friendly sheet ghost",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "friendly",
+   "ghost",
+   "halloween",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   215,
+   221
+  ]
+ },
+ {
+  "id": "story_wc_halloween_17",
+  "path": "art/atlas/story_wc_halloween/story_wc_halloween_17.webp",
+  "sheet": "story_wc_halloween",
+  "category": "story_prop",
+  "label": "hay bale with pumpkin",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "hay",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   270,
+   271
+  ]
+ },
+ {
+  "id": "story_wc_room_09",
+  "path": "art/atlas/story_wc_room/story_wc_room_09.webp",
+  "sheet": "story_wc_room_extra",
+  "category": "story_building",
+  "label": "shop back wall from inside, full height (room_00 + plaster band and rail on top)",
+  "height_units": 0.71,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "wall",
+   "witch_candy"
+  ],
+  "px": [
+   817,
+   460
+  ]
  }
 ]

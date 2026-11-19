@@ -1,0 +1,317 @@
+{
+ "sheet": "story_wc_halloween",
+ "bg": [
+  0.988,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wc_halloween_00",
+   "bbox": [
+    47,
+    155,
+    197,
+    316
+   ],
+   "area": 16862,
+   "size": [
+    158,
+    169
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_01",
+   "bbox": [
+    232,
+    116,
+    438,
+    318
+   ],
+   "area": 29595,
+   "size": [
+    214,
+    210
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_02",
+   "bbox": [
+    467,
+    56,
+    725,
+    322
+   ],
+   "area": 48431,
+   "size": [
+    266,
+    274
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_03",
+   "bbox": [
+    769,
+    53,
+    968,
+    322
+   ],
+   "area": 38261,
+   "size": [
+    207,
+    277
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_04",
+   "bbox": [
+    1003,
+    95,
+    1491,
+    321
+   ],
+   "area": 27456,
+   "size": [
+    496,
+    234
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_05",
+   "bbox": [
+    51,
+    408,
+    240,
+    598
+   ],
+   "area": 11550,
+   "size": [
+    197,
+    198
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_06",
+   "bbox": [
+    270,
+    367,
+    441,
+    597
+   ],
+   "area": 14460,
+   "size": [
+    179,
+    238
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_07",
+   "bbox": [
+    481,
+    448,
+    715,
+    551
+   ],
+   "area": 11765,
+   "size": [
+    242,
+    111
+   ],
+   "halo": 54,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_08",
+   "bbox": [
+    751,
+    416,
+    960,
+    557
+   ],
+   "area": 11099,
+   "size": [
+    217,
+    149
+   ],
+   "halo": 38,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_09",
+   "bbox": [
+    987,
+    441,
+    1227,
+    563
+   ],
+   "area": 14466,
+   "size": [
+    248,
+    130
+   ],
+   "halo": 35,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_10",
+   "bbox": [
+    1267,
+    378,
+    1487,
+    600
+   ],
+   "area": 38183,
+   "size": [
+    228,
+    230
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_11",
+   "bbox": [
+    40,
+    750,
+    156,
+    861
+   ],
+   "area": 6445,
+   "size": [
+    124,
+    119
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_12",
+   "bbox": [
+    187,
+    783,
+    263,
+    855
+   ],
+   "area": 2807,
+   "size": [
+    84,
+    80
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_13",
+   "bbox": [
+    321,
+    625,
+    428,
+    961
+   ],
+   "area": 14567,
+   "size": [
+    115,
+    344
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_14",
+   "bbox": [
+    476,
+    703,
+    753,
+    959
+   ],
+   "area": 42812,
+   "size": [
+    285,
+    264
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_15",
+   "bbox": [
+    803,
+    634,
+    931,
+    962
+   ],
+   "area": 16556,
+   "size": [
+    136,
+    336
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_16",
+   "bbox": [
+    970,
+    728,
+    1177,
+    941
+   ],
+   "area": 28664,
+   "size": [
+    215,
+    221
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_halloween_17",
+   "bbox": [
+    1229,
+    696,
+    1491,
+    959
+   ],
+   "area": 48145,
+   "size": [
+    270,
+    271
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

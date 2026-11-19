@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_cat_expr",
+ "bg": [
+  0.988,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_cat_expr_00",
+   "bbox": [
+    68,
+    238,
+    305,
+    588
+   ],
+   "area": 61255,
+   "size": [
+    245,
+    358
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_cat_expr_01",
+   "bbox": [
+    377,
+    237,
+    616,
+    588
+   ],
+   "area": 61834,
+   "size": [
+    247,
+    359
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_cat_expr_02",
+   "bbox": [
+    685,
+    238,
+    939,
+    588
+   ],
+   "area": 61134,
+   "size": [
+    262,
+    358
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 2
+  },
+  {
+   "id": "cast_cat_expr_03",
+   "bbox": [
+    979,
+    185,
+    1362,
+    586
+   ],
+   "area": 81661,
+   "size": [
+    391,
+    409
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 4
+  },
+  {
+   "id": "cast_cat_expr_04",
+   "bbox": [
+    1399,
+    207,
+    1635,
+    588
+   ],
+   "area": 64151,
+   "size": [
+    244,
+    389
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_cat_expr_05",
+   "bbox": [
+    1685,
+    227,
+    2138,
+    536
+   ],
+   "area": 69396,
+   "size": [
+    461,
+    317
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 4
+  }
+ ]
+}

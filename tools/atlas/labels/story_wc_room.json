@@ -1,0 +1,127 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "room"
+ ],
+ "items": {
+  "00": [
+   "shop back wall from inside, two night windows",
+   "story_building",
+   0.54,
+   0,
+   {
+    "tags": [
+     "room",
+     "wall",
+     "interior"
+    ]
+   }
+  ],
+  "01": [
+   "shop side wall from inside, post left, cobweb",
+   "story_building",
+   0.54,
+   0,
+   {
+    "tags": [
+     "room",
+     "wall",
+     "interior"
+    ]
+   }
+  ],
+  "02": [
+   "shop side wall from inside, post right",
+   "story_building",
+   0.54,
+   0,
+   {
+    "tags": [
+     "room",
+     "wall",
+     "interior"
+    ]
+   }
+  ],
+  "03": [
+   "honey plank floor (from above)",
+   "story_building",
+   0.5,
+   0,
+   {
+    "tags": [
+     "room",
+     "floor",
+     "interior"
+    ]
+   }
+  ],
+  "04": [
+   "ingredient shelf: red / yellow / blue sections, empty",
+   "story_prop",
+   0.24,
+   0,
+   {
+    "tags": [
+     "shelf",
+     "interior"
+    ]
+   }
+  ],
+  "05": [
+   "candy jar cabinet",
+   "story_prop",
+   0.32,
+   0,
+   {
+    "tags": [
+     "shelf",
+     "candy",
+     "interior"
+    ]
+   }
+  ],
+  "06": [
+   "striped shop counter with candy bowl",
+   "story_prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "counter",
+     "interior"
+    ]
+   }
+  ],
+  "07": [
+   "stone hearth ring",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "hearth",
+     "fire",
+     "interior"
+    ]
+   }
+  ],
+  "08": [
+   "ceiling beam with paper bat mobile and cobweb",
+   "story_prop",
+   0.15,
+   0,
+   {
+    "tags": [
+     "beam",
+     "bats",
+     "interior"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_friends_expr_b",
+ "bg": [
+  0.976,
+  0.024,
+  0.973
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_friends_expr_b_00",
+   "bbox": [
+    83,
+    111,
+    346,
+    671
+   ],
+   "area": 96741,
+   "size": [
+    271,
+    568
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_friends_expr_b_01",
+   "bbox": [
+    419,
+    124,
+    693,
+    671
+   ],
+   "area": 104090,
+   "size": [
+    282,
+    555
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_friends_expr_b_02",
+   "bbox": [
+    775,
+    124,
+    1085,
+    671
+   ],
+   "area": 108115,
+   "size": [
+    318,
+    555
+   ],
+   "halo": 2883,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_friends_expr_b_03",
+   "bbox": [
+    1177,
+    108,
+    1390,
+    671
+   ],
+   "area": 68703,
+   "size": [
+    221,
+    571
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_friends_expr_b_04",
+   "bbox": [
+    1489,
+    131,
+    1727,
+    671
+   ],
+   "area": 84107,
+   "size": [
+    246,
+    548
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_friends_expr_b_05",
+   "bbox": [
+    1811,
+    128,
+    2085,
+    671
+   ],
+   "area": 83938,
+   "size": [
+    282,
+    551
+   ],
+   "halo": 6294,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

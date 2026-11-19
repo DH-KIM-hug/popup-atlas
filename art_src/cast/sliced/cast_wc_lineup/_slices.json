@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_wc_lineup",
+ "bg": [
+  0.988,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_wc_lineup_00",
+   "bbox": [
+    66,
+    127,
+    347,
+    672
+   ],
+   "area": 93223,
+   "size": [
+    289,
+    553
+   ],
+   "halo": 617,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_lineup_01",
+   "bbox": [
+    386,
+    47,
+    724,
+    672
+   ],
+   "area": 139681,
+   "size": [
+    346,
+    633
+   ],
+   "halo": 8790,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_lineup_02",
+   "bbox": [
+    1134,
+    132,
+    1369,
+    672
+   ],
+   "area": 86230,
+   "size": [
+    243,
+    548
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_lineup_03",
+   "bbox": [
+    1451,
+    145,
+    1733,
+    672
+   ],
+   "area": 101238,
+   "size": [
+    290,
+    535
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_lineup_04",
+   "bbox": [
+    1802,
+    147,
+    2106,
+    672
+   ],
+   "area": 97757,
+   "size": [
+    312,
+    533
+   ],
+   "halo": 64,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_lineup_05",
+   "bbox": [
+    803,
+    342,
+    1039,
+    671
+   ],
+   "area": 58384,
+   "size": [
+    244,
+    337
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

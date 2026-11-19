@@ -1,0 +1,137 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "candy"
+ ],
+ "items": {
+  "00": [
+   "strawberry-shaped wrapped candy",
+   "story_prop",
+   0.055,
+   0,
+   {
+    "tags": [
+     "candy",
+     "strawberry"
+    ]
+   }
+  ],
+  "01": [
+   "duck-shaped lollipop",
+   "story_prop",
+   0.085,
+   0,
+   {
+    "tags": [
+     "candy",
+     "duck",
+     "lollipop"
+    ]
+   }
+  ],
+  "02": [
+   "fish-shaped blue jelly candy",
+   "story_prop",
+   0.05,
+   0,
+   {
+    "tags": [
+     "candy",
+     "fish"
+    ]
+   }
+  ],
+  "03": [
+   "frog-face lollipop",
+   "story_prop",
+   0.085,
+   0,
+   {
+    "tags": [
+     "candy",
+     "frog",
+     "lollipop"
+    ]
+   }
+  ],
+  "04": [
+   "round pumpkin wrapped candy",
+   "story_prop",
+   0.055,
+   0,
+   {
+    "tags": [
+     "candy",
+     "pumpkin"
+    ]
+   }
+  ],
+  "05": [
+   "bat-shaped lollipop",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "candy",
+     "bat",
+     "lollipop"
+    ]
+   }
+  ],
+  "06": [
+   "black ghost candy (wrapped)",
+   "story_prop",
+   0.05,
+   0,
+   {
+    "tags": [
+     "candy",
+     "ghost",
+     "black"
+    ]
+   }
+  ],
+  "07": [
+   "glass jar of mixed candies",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "candy",
+     "jar"
+    ]
+   }
+  ],
+  "08": [
+   "heap of mixed candies",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "candy",
+     "heap",
+     "pile"
+    ]
+   }
+  ],
+  "09": [
+   "woven basket of candies",
+   "story_prop",
+   0.11,
+   0,
+   {
+    "tags": [
+     "candy",
+     "basket"
+    ]
+   }
+  ]
+ }
+}

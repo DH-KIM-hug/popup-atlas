@@ -24,6 +24,8 @@ How to look:
 - [ ] **Placement.** Set pieces are off the road and out of the water (SET_CHECK road=0 water=0). Wading characters stand in the water channel, not in the bank.
 
 ## Lines and voice
+- [ ] **Branching tales:** every result branch has been played at least once (autoplay with each forced result), and
+  check_lines accepts exactly one result's lines per round.
 - [ ] Every used line and segment plays exactly once, in order (check_lines.py). If a viewer says a line is missing, check the log before assuming.
 - [ ] **A quote plays when its speaker is in place.** The narrator plays during the walk, and the quote within about 1.5 s of arriving, with the speaker on camera ("도착 전에 문 열라고 하네", "대사가 아예 사라진듯": a 9 s gap read as missing).
 - [ ] **No doubled words in reused clips** ("그럼을 두 번 말하고"). Check the envelope and trim. Don't re-record without approval.

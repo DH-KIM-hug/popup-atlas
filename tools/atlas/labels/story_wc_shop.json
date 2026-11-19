@@ -1,0 +1,97 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "shop"
+ ],
+ "items": {
+  "00": [
+   "candy witch's shop facade (open arched doorway, candy window, swirl sign)",
+   "story_building",
+   1.05,
+   0,
+   {
+    "tags": [
+     "shop",
+     "facade",
+     "house"
+    ]
+   }
+  ],
+  "01": [
+   "shop door (mint planks, star window)",
+   "story_building",
+   0.52,
+   0,
+   {
+    "tags": [
+     "door"
+    ]
+   }
+  ],
+  "02": [
+   "shop side wall panel (plaster + timber, lit window)",
+   "story_building",
+   0.6,
+   0,
+   {
+    "tags": [
+     "wall",
+     "side"
+    ]
+   }
+  ],
+  "03": [
+   "shop roof side panel (teal scalloped shingles)",
+   "story_building",
+   0.55,
+   0,
+   {
+    "tags": [
+     "roof"
+    ]
+   }
+  ],
+  "04": [
+   "shop facade seen from inside (doorway cut, night window)",
+   "story_building",
+   1.02,
+   0,
+   {
+    "tags": [
+     "wall",
+     "inside"
+    ]
+   }
+  ],
+  "05": [
+   "tall ochre townhouse facade, lit windows",
+   "story_building",
+   0.85,
+   0,
+   {
+    "tags": [
+     "house",
+     "night",
+     "lit"
+    ]
+   }
+  ],
+  "06": [
+   "small cream cottage facade, lit window, pumpkin",
+   "story_building",
+   0.65,
+   0,
+   {
+    "tags": [
+     "house",
+     "night",
+     "lit"
+    ]
+   }
+  ]
+ }
+}

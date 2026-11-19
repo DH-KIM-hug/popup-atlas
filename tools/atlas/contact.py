@@ -21,6 +21,8 @@ def contact(sheet, out_dir='art_src/atlas/qa'):
         cx, cy = (k % cols) * CELL, (k // cols) * (CELL + 18)
         bgc = (128, 128, 124) if (k + k // cols) % 2 == 0 else (150, 150, 146)
         dr.rectangle([cx + 2, cy + 2, cx + CELL - 3, cy + CELL - 3], fill=bgc)
+        if not os.path.exists(os.path.join(d, m['id'] + '.webp')):
+            continue  # dropped / merged piece (tools/atlas/add_sheet.py)
         sp = Image.open(os.path.join(d, m['id'] + '.webp'))
         s = min((CELL - 12) / sp.width, (CELL - 12) / sp.height)
         sp = sp.resize((max(1, int(sp.width * s)), max(1, int(sp.height * s))), Image.LANCZOS)

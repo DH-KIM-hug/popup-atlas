@@ -1,0 +1,44 @@
+{
+ "story_wc_shop_00": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_shop/stages/story_wc_shop_00_b0.webp",
+    "y0": 161,
+    "y1": 486,
+    "img_y0": 161,
+    "img_y1": 486,
+    "hinge_units": 0.0,
+    "height_units": 0.708,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_shop/stages/story_wc_shop_00_b1.webp",
+    "y0": 4,
+    "y1": 161,
+    "img_y0": 4,
+    "img_y1": 200,
+    "hinge_units": 0.708,
+    "height_units": 0.342,
+    "roof": true
+   }
+  ],
+  "height_units": 1.05,
+  "px": [
+   582,
+   490
+  ],
+  "base_y": 486,
+  "roof_y": 161,
+  "door": {
+   "file": "art/atlas/story_wc_shop/stages/story_wc_shop_00_door.webp",
+   "x0": 304,
+   "x1": 425,
+   "y0": 242,
+   "y1": 443
+  },
+  "wall_x": [
+   17,
+   564
+  ]
+ }
+}

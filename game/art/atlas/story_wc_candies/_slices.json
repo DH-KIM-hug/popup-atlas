@@ -1,0 +1,181 @@
+{
+ "sheet": "story_wc_candies",
+ "bg": [
+  0.988,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wc_candies_00",
+   "bbox": [
+    93,
+    89,
+    467,
+    302
+   ],
+   "area": 49754,
+   "size": [
+    382,
+    221
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_01",
+   "bbox": [
+    515,
+    30,
+    723,
+    342
+   ],
+   "area": 34868,
+   "size": [
+    216,
+    320
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_02",
+   "bbox": [
+    784,
+    93,
+    1121,
+    294
+   ],
+   "area": 47472,
+   "size": [
+    345,
+    209
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_03",
+   "bbox": [
+    1212,
+    30,
+    1421,
+    342
+   ],
+   "area": 40674,
+   "size": [
+    217,
+    320
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_04",
+   "bbox": [
+    115,
+    380,
+    499,
+    587
+   ],
+   "area": 50406,
+   "size": [
+    392,
+    215
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_05",
+   "bbox": [
+    579,
+    373,
+    965,
+    648
+   ],
+   "area": 46806,
+   "size": [
+    394,
+    283
+   ],
+   "halo": 25,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_06",
+   "bbox": [
+    1044,
+    408,
+    1401,
+    584
+   ],
+   "area": 44231,
+   "size": [
+    365,
+    184
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_07",
+   "bbox": [
+    90,
+    644,
+    343,
+    993
+   ],
+   "area": 78752,
+   "size": [
+    261,
+    357
+   ],
+   "halo": 2,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_08",
+   "bbox": [
+    417,
+    706,
+    1025,
+    987
+   ],
+   "area": 115148,
+   "size": [
+    616,
+    289
+   ],
+   "halo": 20,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_candies_09",
+   "bbox": [
+    1092,
+    652,
+    1445,
+    993
+   ],
+   "area": 82197,
+   "size": [
+    361,
+    349
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

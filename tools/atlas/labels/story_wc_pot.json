@@ -1,0 +1,244 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "pot"
+ ],
+ "items": {
+  "00": [
+   "black iron cauldron with stars",
+   "story_prop",
+   0.17,
+   0,
+   {
+    "tags": [
+     "pot",
+     "cauldron"
+    ]
+   }
+  ],
+  "01": [
+   "cauldron rear rim band",
+   "story_prop",
+   0.04,
+   0,
+   {
+    "tags": [
+     "pot",
+     "rim"
+    ]
+   }
+  ],
+  "02": [
+   "pot liquid disc: clear water",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "water"
+    ]
+   }
+  ],
+  "03": [
+   "pot liquid disc: red",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "red"
+    ]
+   }
+  ],
+  "04": [
+   "pot liquid disc: yellow",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "yellow"
+    ]
+   }
+  ],
+  "05": [
+   "pot liquid disc: blue",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "blue"
+    ]
+   }
+  ],
+  "06": [
+   "pot liquid disc: orange",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "orange"
+    ]
+   }
+  ],
+  "07": [
+   "pot liquid disc: green",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "green"
+    ]
+   }
+  ],
+  "08": [
+   "pot liquid disc: purple",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "purple"
+    ]
+   }
+  ],
+  "09": [
+   "pot liquid disc: black with sparkles",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "liquid",
+     "black"
+    ]
+   }
+  ],
+  "10": [
+   "cream spiral swirl band (seen from above)",
+   "story_fx",
+   0.06,
+   0,
+   {
+    "tags": [
+     "swirl",
+     "magic"
+    ]
+   }
+  ],
+  "12": [
+   "firewood logs in a stone ring",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "fire",
+     "logs"
+    ]
+   }
+  ],
+  "13": [
+   "flame small",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "fire",
+     "flame"
+    ]
+   }
+  ],
+  "14": [
+   "flame medium",
+   "story_fx",
+   0.08,
+   0,
+   {
+    "tags": [
+     "fire",
+     "flame"
+    ]
+   }
+  ],
+  "15": [
+   "flame large",
+   "story_fx",
+   0.11,
+   0,
+   {
+    "tags": [
+     "fire",
+     "flame"
+    ]
+   }
+  ],
+  "16": [
+   "big smoke puff (poof)",
+   "story_fx",
+   0.2,
+   0,
+   {
+    "tags": [
+     "smoke",
+     "poof"
+    ]
+   }
+  ],
+  "17": [
+   "bubbles",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "bubble"
+    ]
+   }
+  ],
+  "18": [
+   "small bubble",
+   "story_fx",
+   0.025,
+   0,
+   {
+    "tags": [
+     "bubble"
+    ]
+   }
+  ],
+  "19": [
+   "golden star sparkle",
+   "story_fx",
+   0.08,
+   0,
+   {
+    "tags": [
+     "sparkle",
+     "star"
+    ]
+   }
+  ]
+ },
+ "merge": [
+  [
+   "10",
+   "11"
+  ]
+ ]
+}

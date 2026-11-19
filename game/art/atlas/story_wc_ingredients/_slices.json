@@ -1,0 +1,215 @@
+{
+ "sheet": "story_wc_ingredients",
+ "bg": [
+  0.984,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wc_ingredients_00",
+   "bbox": [
+    213,
+    29,
+    488,
+    344
+   ],
+   "area": 65961,
+   "size": [
+    283,
+    323
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_01",
+   "bbox": [
+    559,
+    31,
+    927,
+    345
+   ],
+   "area": 78025,
+   "size": [
+    376,
+    322
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_02",
+   "bbox": [
+    999,
+    83,
+    1310,
+    339
+   ],
+   "area": 51805,
+   "size": [
+    319,
+    264
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_03",
+   "bbox": [
+    222,
+    382,
+    503,
+    664
+   ],
+   "area": 55392,
+   "size": [
+    289,
+    290
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_04",
+   "bbox": [
+    609,
+    375,
+    889,
+    663
+   ],
+   "area": 62543,
+   "size": [
+    288,
+    296
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_05",
+   "bbox": [
+    989,
+    406,
+    1265,
+    663
+   ],
+   "area": 51094,
+   "size": [
+    284,
+    265
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_06",
+   "bbox": [
+    43,
+    702,
+    258,
+    976
+   ],
+   "area": 28755,
+   "size": [
+    223,
+    282
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 3
+  },
+  {
+   "id": "story_wc_ingredients_07",
+   "bbox": [
+    277,
+    724,
+    486,
+    976
+   ],
+   "area": 29394,
+   "size": [
+    217,
+    260
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_08",
+   "bbox": [
+    503,
+    785,
+    754,
+    976
+   ],
+   "area": 32887,
+   "size": [
+    259,
+    199
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_09",
+   "bbox": [
+    792,
+    709,
+    917,
+    976
+   ],
+   "area": 16636,
+   "size": [
+    133,
+    275
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_10",
+   "bbox": [
+    955,
+    734,
+    1208,
+    976
+   ],
+   "area": 46102,
+   "size": [
+    261,
+    250
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_ingredients_11",
+   "bbox": [
+    1233,
+    734,
+    1496,
+    976
+   ],
+   "area": 38913,
+   "size": [
+    271,
+    250
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 4
+  }
+ ]
+}

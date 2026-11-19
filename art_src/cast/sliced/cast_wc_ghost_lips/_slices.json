@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_wc_ghost_lips",
+ "bg": [
+  0.988,
+  0.031,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_wc_ghost_lips_00",
+   "bbox": [
+    67,
+    129,
+    347,
+    670
+   ],
+   "area": 93532,
+   "size": [
+    288,
+    549
+   ],
+   "halo": 4003,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_ghost_lips_01",
+   "bbox": [
+    387,
+    48,
+    724,
+    671
+   ],
+   "area": 137805,
+   "size": [
+    345,
+    631
+   ],
+   "halo": 22190,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_ghost_lips_02",
+   "bbox": [
+    1135,
+    133,
+    1369,
+    670
+   ],
+   "area": 87095,
+   "size": [
+    242,
+    545
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_ghost_lips_03",
+   "bbox": [
+    1458,
+    146,
+    1726,
+    670
+   ],
+   "area": 98760,
+   "size": [
+    276,
+    532
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_ghost_lips_04",
+   "bbox": [
+    1805,
+    147,
+    2107,
+    669
+   ],
+   "area": 99286,
+   "size": [
+    310,
+    530
+   ],
+   "halo": 110,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wc_ghost_lips_05",
+   "bbox": [
+    802,
+    338,
+    1039,
+    670
+   ],
+   "area": 58807,
+   "size": [
+    245,
+    340
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

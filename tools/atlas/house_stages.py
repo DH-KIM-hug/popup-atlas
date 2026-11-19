@@ -27,7 +27,8 @@ from PIL import Image
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
 ATLAS = os.path.join(ROOT, "game", "art", "atlas")
 # catalog id -> number of bands (taps in three_pigs: straw 3, wood 5, brick 10 = 2 per band)
-HOUSES = {"story_houses_00": 3, "story_houses_03": 5, "story_houses_06": 5, "story_houses_08": 3, "story_houses_09": 3}
+HOUSES = {"story_houses_00": 3, "story_houses_03": 5, "story_houses_06": 5, "story_houses_08": 3, "story_houses_09": 3,
+          "story_wc_shop_00": 2}
 # windows / doors (x0, y0, x1, y1 in facade px, measured on a grid sheet), kept whole in one band
 OPENINGS = {
     "story_houses_00": [(72, 158, 150, 228), (160, 165, 278, 302)],
@@ -35,6 +36,7 @@ OPENINGS = {
     "story_houses_06": [(26, 166, 139, 262), (138, 153, 254, 309), (253, 166, 367, 262)],
     "story_houses_08": [],
     "story_houses_09": [],
+    "story_wc_shop_00": [(90, 230, 300, 445), (296, 225, 432, 470)],
 }
 # die-cut window glass (x0, y0, x1, y1; the blue panes inside go transparent, mullions stay) so a pig standing just
 # behind the front wall shows its face in the window, framed by it (2026-11-18 user: "아기돼지들 집에 있어야하지 않겠니?")
@@ -48,6 +50,9 @@ DOORS = {
     "story_houses_00": (166, 172, 267, True),
     "story_houses_03": (168, 138, 260, False),
     "story_houses_06": (157, 193, 237, True),
+    # witch_candy shop (2026-11-19): the mint door pasted into the drawn doorway (tools/atlas/wc_shop_door.py); the
+    # optional 5th value is the leaf's bottom row (the stone steps below stay on the wall)
+    "story_wc_shop_00": (304, 242, 425, True, 443),
 }
 # hand-picked wall cut rows (bottom → top) where the window rows leave too little room for even bands: a cut through a
 # window row steps up around the windows, so they stand whole on the band below
@@ -79,21 +84,22 @@ def cut_house(cid, n, cat):
         extra["windows"] = [[(g[0] + g[2]) / 2.0, (g[1] + g[3]) / 2.0] for g in GLASS[cid]]
         extra["window_boxes"] = [list(g) for g in GLASS[cid]]
     if cid in DOORS:
-        dx0, dy0, dx1, arch = DOORS[cid]
+        dx0, dy0, dx1, arch = DOORS[cid][:4]
+        dbot = int(DOORS[cid][4]) if len(DOORS[cid]) > 4 else base
         yy, xx = np.mgrid[0:h, 0:w]
         r = (dx1 - dx0) / 2.0
         cx = (dx0 + dx1) / 2.0
-        leaf = (xx >= dx0) & (xx < dx1) & (yy >= dy0) & (yy < base)
+        leaf = (xx >= dx0) & (xx < dx1) & (yy >= dy0) & (yy < dbot)
         if arch:
             leaf &= (yy >= dy0 + r) | ((xx + 0.5 - cx) ** 2 + (yy + 0.5 - (dy0 + r)) ** 2 <= r * r)
         door = np.where(leaf[..., None], im, 0).astype(np.uint8)
         im[leaf] = 0
         out_dir0 = os.path.join(ATLAS, e["sheet"], "stages")
         os.makedirs(out_dir0, exist_ok=True)
-        Image.fromarray(door[dy0:base, dx0:dx1]).save(os.path.join(out_dir0, f"{cid}_door.webp"), "WEBP", lossless=True,
+        Image.fromarray(door[dy0:dbot, dx0:dx1]).save(os.path.join(out_dir0, f"{cid}_door.webp"), "WEBP", lossless=True,
                                                       quality=100, method=6)
         extra["door"] = {"file": f"art/atlas/{e['sheet']}/stages/{cid}_door.webp", "x0": dx0, "x1": dx1, "y0": dy0,
-                         "y1": int(base)}
+                         "y1": int(dbot)}
     grey = im[..., :3].astype(float).mean(-1)
     edge = np.abs(np.diff(grey, axis=0)).sum(1)  # row y = edge between y and y+1
     wall_h = base - roof_y

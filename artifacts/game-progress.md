@@ -1441,3 +1441,43 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Runtime: trimmed the establishing crane wait (2.6 → 1.8 s), the framing waits and two music_stop holds.
     three_pigs STORY_DONE 295.0 s (v19 308.8), CHECK_LINES OK 39; sun_wind 205.8 s, CHECK_LINES OK 42;
     missing_audio=[] missing_sound=[]. Video artifacts/video/three_pigs_full_v20.mp4 (26.4 MB).
+
+## 2026-11-19 — witch_candy phase 1: plan, script, shared art, world prototype (not wired)
+  - Plan game/stories/witch_candy/PLAN.md. User decisions: magic play, not a lesson; two rounds + the ghost candy
+    finale; 다현이 kept (톡톡 recordings reused); 5-6 min. Branches: the shelf holds 9 ingredients in three colour groups
+    (red / yellow / blue; green dropped), two picks auto-stir, the colour set picks one of 6 results (strawberry, duck,
+    fish, pumpkin, bat, frog): every pick has its own result, all their lines are recorded, and the same six looks serve
+    the finale (rabbit frog, bear duck, fox bat, cat fish, witch pumpkin, Dahyun strawberry). Autoplay: random pair with
+    an unseen result.
+  - Places: ONE spread. The Halloween street (night dress of the village on the meadow template, view 5's straight road)
+    with the candy shop at its end; the shop is a house with a body and the room inside its footprint, so going in /
+    out is a camera glide through the door (no page turn after the cover). The `interior` RoomBox template is designed
+    to work inside a set piece's box or as its own spread (phase 2).
+  - Script: tools/story/tales/witch_candy.py → game/stories/witch_candy/script.json: 96 used lines, 92 reuse (91 clips
+    copied to game/audio/voice/witch_candy/), wc_039 trimmed (the colour-mixing sentence cut at its pauses, 0.42-3.62 s),
+    the ghost / happy choruses from 톡톡's premixed clips, 4 NEW lines (cover, replay, catch-the-invitations, give
+    candies: 75 characters) not recorded. Dropped: colour questions / answers / explanations, counting, chocolate /
+    kiwi / crocodile, the friends' chorus lines. Narration ≈ 206 s per run; estimate 5:20-5:40.
+    Seeder: nested line ids in step tables count as used (branch tables); TRIM takes an optional speaker (chorus).
+    sun_wind / three_pigs reseeds byte-identical.
+  - Art (Codex magenta pipeline, tools/art/witch_candy_jobs.py, 30 sheets incl. 8 regenerations, all raws md5-unique):
+    shared cast dahyun / candy_witch / hobak_cat / rabbit_kid / bear_kid / fox_kid: 53 standing figures (expressions,
+    side / back standing, ghost black lips, 6 Dahyun transformations + strawberry ball + bat wing frames, finale
+    transformations of the friends, cat and witch) and 13 drawn cycle sheets (walk 8 for all six, ghost march 6 for all
+    six, Dahyun's duck waddle 4) = 88 frames. Atlas: story_wc_ingredients / pot / candies / halloween / shop / room
+    (75 cards + a derived full-height back wall), categories story_prop / story_fx / story_building, biome halloween.
+    Contact sheets artifacts/witch_candy/*.png. Fixes on the way: friends' cycles first came out as Dahyun (lineup ref)
+    → single-character ref crops; ghost lips needed "jet-black lipstick" wording; the keyer punched holes in purples
+    and turned the witch's dress green → tools/atlas/fill_holes.py (enclosed holes + interior despill undo), run by
+    add_sheet.py and add_cycles.py. New tools: tools/atlas/add_sheet.py (one sheet into the catalog, no rebuild),
+    tools/cast/witch_candy_cast.py (merging cast builder), tools/atlas/wc_shop_door.py (door pasted into the drawn
+    doorway; house_stages DOORS cuts the leaf above the steps), tools/atlas/wc_room_wall.py.
+  - World prototype on the real engine: game/stories/witch_candy/proto/ (tools/story/wc_proto.py; --tale=witch_candy/proto):
+    street + shop with its box + the room inside, warm omni lights from a proto handler. Stills
+    artifacts/witch_candy/proto_street.jpg, proto_room.jpg. SET_CHECK: shop / houses road=0 water=0.
+  - Still off (prototype): the street sky reads as grey-green haze, not a night sky, and the moon card stands over the
+    stream far behind (needs the sky hanger + a night backdrop); lamp_l / p1 touch the road edge (SET_CHECK road 5 / 2);
+    the room is warm but over-bright; Dahyun hides the shelf in the room still and the friends stand off-frame. The
+    shop's open door / go-inside have not been exercised. Nobody has listened to the trimmed wc_039 clip.
+  - Regression: three_pigs STORY_DONE 295.3 s, CHECK_LINES OK 39; sun_wind 206.0 s, CHECK_LINES OK 42; both
+    missing_audio=[] missing_sound=[]. Skill: lessons for branching tales, refs, purples vs the key, safe catalog tools.

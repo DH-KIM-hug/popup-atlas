@@ -1,0 +1,96 @@
+{
+ "sheet": "cast_dahyun_expr_a",
+ "bg": [
+  0.988,
+  0.02,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_dahyun_expr_a_00",
+   "bbox": [
+    80,
+    48,
+    376,
+    680
+   ],
+   "area": 124707,
+   "size": [
+    304,
+    640
+   ],
+   "halo": 477,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_dahyun_expr_a_01",
+   "bbox": [
+    491,
+    52,
+    790,
+    680
+   ],
+   "area": 124835,
+   "size": [
+    307,
+    636
+   ],
+   "halo": 540,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_dahyun_expr_a_02",
+   "bbox": [
+    923,
+    48,
+    1245,
+    680
+   ],
+   "area": 126039,
+   "size": [
+    330,
+    640
+   ],
+   "halo": 508,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_dahyun_expr_a_03",
+   "bbox": [
+    1352,
+    45,
+    1648,
+    680
+   ],
+   "area": 124667,
+   "size": [
+    304,
+    643
+   ],
+   "halo": 632,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_dahyun_expr_a_04",
+   "bbox": [
+    1773,
+    47,
+    2114,
+    680
+   ],
+   "area": 128457,
+   "size": [
+    349,
+    641
+   ],
+   "halo": 829,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -197,6 +197,33 @@ Run long work through background agents/workflows with narrow ownership (one own
 - Pace: 36 reused lines play ~189 s on their own; 9 page turns (~5 s each) and ~37 taps put the first full run at
   5:21. Count narration + turns + taps before promising a length.
 
+**Learned on the third tale (witch_candy phase 1: plan, branches, art, world prototype)**
+- Branching tales: pick the choice space so every combination has its own result and nothing needs explaining
+  (three colour groups × two picks = 6 colour sets = 6 results), every result's lines already recorded, and each
+  result's look reused elsewhere (the finale's six transformations). Put branch tables (ingredients, combos, results)
+  in the tale table; the seeder now marks any nested line id used (`_ids_in`), and check_lines must become
+  branch-aware before wiring.
+- One spread with a house that has a body + a room inside its footprint lets characters go in and out many times
+  with camera glides only (no page turns). The room back wall must be the wall's full height (derive a taller card)
+  or a gap shows the outside above it.
+- A drawn doorway is not a hole: paste the door art into the doorway, then cut the leaf with DOORS (5th value = the
+  leaf's bottom row so the steps stay on the wall) — `tools/atlas/wc_shop_door.py`, `house_stages.py`.
+- Reference images: a multi-character lineup as the only ref made the model draw its FIRST character on every friend's
+  sheet (rabbit / bear / fox cycles came out as Dahyun). Use single-character crops of the lineup as refs plus "THIS
+  SHEET SHOWS ONLY <X> ... do NOT draw <other>".
+- "Black lips" came out as small dark "O" mouths until the prompt said "thick solid JET-BLACK lips like black
+  lipstick, a big black ring around the 'oooh' mouth, NO sheet costume" (one figure came out in a ghost-sheet costume).
+- Purples vs the magenta key: say "BLUE-violet indigo plum, never reddish purple or pink" in every block, and run
+  `tools/atlas/fill_holes.py` after slicing (add_sheet.py and add_cycles.py do): it restores enclosed holes (purple
+  candies, ribbons, jar contents) and undoes the keyer's half-transparency / green despill inside reddish-purple cloth.
+- Never run `tools/atlas/build_catalog.py` or `tools/cast/build_cast.py` for one new sheet: the first moves every
+  unlabelled piece of every sheet to rejects, the second rewrites the cast catalog and drops the drawn cycles. Use
+  `tools/atlas/add_sheet.py <sheet>` (labels file + optional `merge` of split pieces) and a per-tale cast builder that
+  merges (`tools/cast/witch_candy_cast.py`). Sheets with several characters need a per-role height scale.
+- Shell: zsh does not word-split `$var`, so `run_jobs.py ... $group` passed one bogus id and exited silently; run the
+  runner loop under `bash -c`. Seven parallel Codex runners gave occasional "no accessible image" failures: retry.
+- Cycle sheets slice slowly (~3 min each at 2172 px); slice once and use `add_cycles.py --noslice` after fixes.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Slice a drawn cycle sheet (art_src/cast/raw/<sheet>.png) into catalogued flipbook frames of a cast skin.
 
-  python3 tools/cast/add_cycles.py <sheet> <skin> <cycle>:<n>:<view> [<cycle>:<n>:<view> ...] [--h 0.97]
+  python3 tools/cast/add_cycles.py <sheet> <skin> <cycle>:<n>:<view> [<cycle>:<n>:<view> ...] [--h 0.97] [--tag three_pigs]
 
 Pieces are taken left to right; every frame of one sheet is padded to one canvas (bottom-centre aligned, so the
 flipbook never jumps); each becomes game/art/cast/cast_<skin>_<cycle>_<i>.webp with catalog fields cycle / frame /
@@ -15,8 +15,14 @@ args = [a for a in sys.argv[1:] if not a.startswith("--")]
 hk = float(sys.argv[sys.argv.index("--h") + 1]) if "--h" in sys.argv else 0.97
 if "--h" in sys.argv:
     args.remove(sys.argv[sys.argv.index("--h") + 1])
+tag = sys.argv[sys.argv.index("--tag") + 1] if "--tag" in sys.argv else "three_pigs"  # tale tag on the frames
+if "--tag" in sys.argv:
+    args.remove(tag)
 sheet, skin, plan = args[0], args[1], [p.split(":") for p in args[2:]]
-subprocess.run([sys.executable, "tools/atlas/slice_atlas.py", f"art_src/cast/raw/{sheet}.png", "--out", "art_src/cast/slices"], check=True)
+if "--noslice" not in sys.argv:  # --noslice: reuse art_src/cast/slices/<sheet> (e.g. after a fill_holes pass)
+    subprocess.run([sys.executable, "tools/atlas/slice_atlas.py", f"art_src/cast/raw/{sheet}.png", "--out", "art_src/cast/slices"], check=True)
+# restore pixels the magenta keyer cleared inside a figure (blue-violet capes / hats, 2026-11-19 witch_candy)
+subprocess.run([sys.executable, "tools/atlas/fill_holes.py", f"art_src/cast/raw/{sheet}.png", f"art_src/cast/slices/{sheet}"], check=True)
 sl = sorted(json.load(open(f"art_src/cast/slices/{sheet}/_slices.json"))["sprites"], key=lambda m: m["bbox"][0])
 frames = [(c, i, v) for c, n, v in plan for i in range(int(n))]
 assert len(sl) == len(frames), f"{sheet}: {len(sl)} pieces, plan wants {len(frames)}"
@@ -32,7 +38,7 @@ for im, (cyc, fr, view) in zip(ims, frames):
     e = {"id": cid, "path": f"art/cast/{cid}.webp", "sheet": sheet, "category": "cast", "role": skin,
          "variant": f"{cyc}_{fr}", "pose": f"{cyc}_{fr}", "view": view, "facing": {"side": "right"}.get(view, view),
          "label": f"{cyc} frame {fr} (drawn cycle)", "height_units": round(calm["height_units"] * hk, 3),
-         "cross_slot": False, "biome": "any", "season": "any", "tags": [skin, "three_pigs", "cycle"], "px": [W, H],
+         "cross_slot": False, "biome": "any", "season": "any", "tags": [skin, tag, "cycle"], "px": [W, H],
          "hanging": False, "skin": skin, "parts": {}, "cycle": cyc, "frame": fr}
     cat = [q for q in cat if q["id"] != cid] + [e]
 json.dump(cat, open("game/art/cast/catalog.json", "w"), ensure_ascii=False, indent=1)

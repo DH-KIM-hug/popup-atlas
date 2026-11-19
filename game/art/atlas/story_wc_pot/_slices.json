@@ -1,0 +1,351 @@
+{
+ "sheet": "story_wc_pot",
+ "bg": [
+  0.984,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wc_pot_00",
+   "bbox": [
+    50,
+    43,
+    427,
+    315
+   ],
+   "area": 73856,
+   "size": [
+    385,
+    280
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_01",
+   "bbox": [
+    467,
+    119,
+    772,
+    197
+   ],
+   "area": 13010,
+   "size": [
+    313,
+    86
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_02",
+   "bbox": [
+    827,
+    140,
+    1133,
+    241
+   ],
+   "area": 24287,
+   "size": [
+    314,
+    109
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_03",
+   "bbox": [
+    1176,
+    138,
+    1477,
+    242
+   ],
+   "area": 24633,
+   "size": [
+    309,
+    112
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_04",
+   "bbox": [
+    53,
+    372,
+    376,
+    478
+   ],
+   "area": 26905,
+   "size": [
+    331,
+    114
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_05",
+   "bbox": [
+    427,
+    372,
+    749,
+    478
+   ],
+   "area": 26781,
+   "size": [
+    330,
+    114
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_06",
+   "bbox": [
+    795,
+    372,
+    1118,
+    478
+   ],
+   "area": 26917,
+   "size": [
+    331,
+    114
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_07",
+   "bbox": [
+    1164,
+    373,
+    1485,
+    478
+   ],
+   "area": 26616,
+   "size": [
+    329,
+    113
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_08",
+   "bbox": [
+    52,
+    563,
+    368,
+    667
+   ],
+   "area": 25857,
+   "size": [
+    324,
+    112
+   ],
+   "halo": 7,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_09",
+   "bbox": [
+    412,
+    563,
+    720,
+    667
+   ],
+   "area": 24842,
+   "size": [
+    316,
+    112
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_10",
+   "bbox": [
+    758,
+    525,
+    1094,
+    704
+   ],
+   "area": 13768,
+   "size": [
+    344,
+    187
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_11",
+   "bbox": [
+    797,
+    566,
+    1094,
+    704
+   ],
+   "area": 15318,
+   "size": [
+    305,
+    146
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_12",
+   "bbox": [
+    1134,
+    527,
+    1472,
+    700
+   ],
+   "area": 39178,
+   "size": [
+    346,
+    181
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_13",
+   "bbox": [
+    60,
+    835,
+    178,
+    967
+   ],
+   "area": 10269,
+   "size": [
+    126,
+    140
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_14",
+   "bbox": [
+    218,
+    778,
+    378,
+    967
+   ],
+   "area": 20226,
+   "size": [
+    168,
+    197
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_15",
+   "bbox": [
+    413,
+    715,
+    623,
+    967
+   ],
+   "area": 35116,
+   "size": [
+    218,
+    260
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_16",
+   "bbox": [
+    664,
+    741,
+    994,
+    967
+   ],
+   "area": 58886,
+   "size": [
+    338,
+    234
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_17",
+   "bbox": [
+    1058,
+    789,
+    1180,
+    949
+   ],
+   "area": 11355,
+   "size": [
+    130,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_18",
+   "bbox": [
+    1174,
+    844,
+    1231,
+    898
+   ],
+   "area": 2418,
+   "size": [
+    65,
+    62
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_pot_19",
+   "bbox": [
+    1286,
+    771,
+    1472,
+    961
+   ],
+   "area": 8913,
+   "size": [
+    194,
+    198
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 9
+  }
+ ]
+}

@@ -1,0 +1,168 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "ingredient"
+ ],
+ "items": {
+  "00": [
+   "jar of baby dragon snot (red drops, dragon label)",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "red",
+     "snot"
+    ]
+   }
+  ],
+  "01": [
+   "red toy fire truck with ladder",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "red",
+     "firetruck"
+    ]
+   }
+  ],
+  "02": [
+   "big ladybug with eyes",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "red",
+     "ladybug",
+     "creature"
+    ]
+   }
+  ],
+  "03": [
+   "carved pumpkin lantern (small, lit)",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "yellow",
+     "pumpkin_lantern"
+    ]
+   }
+  ],
+  "04": [
+   "jar of chick fart cloud (chick label)",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "yellow",
+     "fart"
+    ]
+   }
+  ],
+  "05": [
+   "yellow rubber duck",
+   "story_prop",
+   0.065,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "yellow",
+     "duck"
+    ]
+   }
+  ],
+  "06": [
+   "blue monster poo swirl on a plate",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "blue",
+     "poo"
+    ]
+   }
+  ],
+  "07": [
+   "blue fish standing on its tail, smiling",
+   "story_prop",
+   0.075,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "blue",
+     "fish",
+     "creature"
+    ]
+   }
+  ],
+  "08": [
+   "curling blue paper wave",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "ingredient",
+     "blue",
+     "wave"
+    ]
+   }
+  ],
+  "09": [
+   "wooden ladle",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "ladle",
+     "tool"
+    ]
+   }
+  ],
+  "10": [
+   "pumpkin invitation card (pot + candy picture)",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "invitation",
+     "card"
+    ]
+   }
+  ],
+  "11": [
+   "pumpkin invitation card fluttering",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "invitation",
+     "card",
+     "flutter"
+    ]
+   }
+  ]
+ }
+}

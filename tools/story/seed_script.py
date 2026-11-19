@@ -74,6 +74,17 @@ def seg(sp, text, emo, tags, src_clip, status):
             "source_audio": src_clip or "", "status": status}
 
 
+def _ids_in(v) -> list:
+    """Every string in a step (nested dicts / lists) that looks like a line id of this tale (PREFIX_...)."""
+    if isinstance(v, str):
+        return [v] if v.startswith(T.PREFIX + "_") else []
+    if isinstance(v, dict):
+        return [r for x in v.values() for r in _ids_in(x)]
+    if isinstance(v, list):
+        return [r for x in v for r in _ids_in(x)]
+    return []
+
+
 def build() -> dict:
     vs = json.loads((TALE / "voice_script_el.json").read_text(encoding="utf-8"))
     clips, extra_clips = clip_map()
@@ -90,8 +101,12 @@ def build() -> dict:
             for ls in st.get("wrong", {}).values():
                 refs += ls
             for r in refs:
-                if r:
+                if r and isinstance(r, str):
                     where.setdefault(r, (b["id"], kind))
+            # 2026-11-19 (witch_candy): branch verbs keep line ids in nested tables (results {strawberry: {...}}),
+            # so any string value that is a line id of this tale marks it used (the fixed keys above come first)
+            for r in _ids_in(st):
+                where.setdefault(r, (b["id"], kind))
     out_lines = []
     for i, l in enumerate(vs["lines"]):
         lid = f"{T.PREFIX}_{i:03d}"
@@ -162,6 +177,9 @@ def line_entry(lid, segs, beat, inter, unused, source_index=None, source_text=No
     tr = getattr(T, "TRIM", {}).get(lid)
     if tr:  # an existing clip trimmed at a sentence pause (no new recording): (text, audio, provenance)
         e["segs"] = [{**e["segs"][0], "text": tr[0], "audio": tr[1], "trimmed_from": tr[2], "status": "reuse"}]
+        if len(tr) > 3:  # a premixed chorus clip replaces per-voice segs: one seg, its own speaker key (witch_candy)
+            e["segs"][0]["speaker"] = tr[3]
+            e["speaker"] = tr[3]
         e["text"] = tr[0]
         e["trimmed_clip"] = True
     return e
