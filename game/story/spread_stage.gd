@@ -756,7 +756,7 @@ func _apply_light() -> void:
 			# as black sky
 			var hz := rig.environment.fog_light_color
 			var night := clampf((1.0 - float(L[5])) / 0.22, 0.0, 1.0)  # 0 by day .. 1 at night
-			rig.environment.background_color = hz.lerp(Color(0.2, 0.25, 0.42), night * 0.8)
+			rig.environment.background_color = hz.lerp(Color(0.36, 0.44, 0.66), night * 0.75)
 
 
 # ------------------------------------------------------------------ sky layout

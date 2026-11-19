@@ -1342,3 +1342,13 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Still off: the establishing shot shows the road and empty meadow more than the three lots; close-ups are tight
     on flat cards (no edge seen in the review, but faces are large paper cards); the ladder card has the meadow
     flower print.
+
+## 2026-11-19 — three_pigs v15: review fixes on the camera pass
+  - "Two wood fronts side by side" at the window close-up: one house in every full-res frame; the close-up cropped
+    both gable ends so neighbouring 2.5 s tiles joined into a double front. Now a "front" shot (whole front, both
+    windows, grass around it). Straw "싫어요": a "window" shot centred on the round window (spot s_win) — 첫째's peek
+    fills it. Night backdrop lightened to navy (no near-black band on the launch / night village). Ending: the family
+    in front of the lit house for "행복하게 살았어요", then the pull-back and the book closing. Ladder: a story copy
+    story_build_props_23 with the flower print painted out (the shared meadow card is unchanged; faint dark stem
+    traces remain). Full-res checks: artifacts/three_pigs/tiles/v15_fix_checks.jpg.
+  - three_pigs STORY_DONE 281.5 s missing_audio=[]. Video: artifacts/video/three_pigs_full_v15.mp4.

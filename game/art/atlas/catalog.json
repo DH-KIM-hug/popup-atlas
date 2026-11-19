@@ -9525,5 +9525,25 @@
    383,
    168
   ]
+ },
+ {
+  "id": "story_build_props_23",
+  "path": "art/atlas/story_build_props/story_build_props_23.webp",
+  "sheet": "story_build_props",
+  "category": "story_prop",
+  "label": "wooden ladder (plain, no print)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "village",
+  "season": "any",
+  "tags": [
+   "ladder",
+   "story",
+   "three_pigs"
+  ],
+  "px": [
+   137,
+   208
+  ]
  }
 ]

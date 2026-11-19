@@ -100,6 +100,8 @@ SHOTS = {"stage": [4.6, 13.0, 0.3, 20.0], "story": [3.7, 13.0, 0.28, 20.0], "clo
          "medium": [3.4, 11.0, 0.3, 20.0, 6.0],           # medium, slightly turned
          "two_shot": [2.6, 10.0, 0.3, 20.0, -8.0],        # the brothers' tease
          "face": [1.5, 7.0, 0.3, 20.0, 0.0],              # close-up on a character / a window face
+         "window": [0.95, 6.0, 0.27, 20.0, 0.0],          # tight on one window: the peeking face fills the frame
+         "front": [2.3, 7.0, 0.3, 20.0, 0.0],             # a whole house front (both windows), grass around it
          "low_up": [2.7, 3.5, 0.48, 22.0, -10.0],         # completion: low angle looking up at the house
          "low_wolf": [2.3, 4.0, 0.36, 22.0, 12.0],        # menacing low angle on the wolf
          "ots": [2.0, 9.0, 0.34, 22.0, -28.0],            # over the wolf's shoulder toward the house
@@ -201,6 +203,7 @@ VILLAGE["w_front"] = [VILLAGE["w_lot"][0], VILLAGE["w_lot"][1] + 0.3]
 VILLAGE["b_front"] = [VILLAGE["b_lot"][0] + 0.1, VILLAGE["b_lot"][1] + 0.35]
 VILLAGE["s_door"] = VILLAGE["s_pig_a_door"]
 VILLAGE["w_door"] = VILLAGE["w_pig_b"]
+VILLAGE["s_win"] = [round(VILLAGE["s_lot"][0] - 0.23, 3), VILLAGE["s_lot"][1]]  # the straw house's round window
 VILLAGE["est"] = [round((VILLAGE["s_lot"][0] + VILLAGE["b_lot"][0]) * 0.5 + 0.3, 3),
                  round((VILLAGE["s_lot"][1] + VILLAGE["b_lot"][1]) * 0.5, 3)]
 VILLAGE["ladder_find"] = [VILLAGE["b_lot"][0] - 1.12, VILLAGE["b_lot"][1] + 0.3]
@@ -208,7 +211,7 @@ VILLAGE["s_wolf_from"] = [VILLAGE["s_wolf"][0] - 0.75, VILLAGE["s_wolf"][1]]
 # every camera station of the page (sightlines): the build / wolf shots at each lot, the roof and the escape tracking
 VILLAGE_SIGHT = [["establish", "est"], ["medium", "s_focus"], ["medium", "b_focus"], ["low_up", "s_lot"],
                  ["low_up", "w_lot"], ["low_up", "b_lot"], ["ots", "s_wolf_focus"], ["ots", "w_wolf_focus"],
-                 ["ots", "b_wolf_focus"], ["face", "s_lot"], ["face", "w_lot"], ["cheeks", "s_wolf"], ["cheeks", "w_wolf"],
+                 ["ots", "b_wolf_focus"], ["window", "s_win"], ["front", "w_lot"], ["cheeks", "s_wolf"], ["cheeks", "w_wolf"],
                  ["low_wolf", "s_wolf_from"], ["high", "road", "s_door", "w_front"], ["high", "road", "w_front", "b_front"],
                  ["story", "s_focus"], ["story", "s_wolf_focus"], ["story", "w_focus"], ["story", "w_wolf_focus"],
                  ["story", "b_focus"], ["story", "b_wolf_focus"], ["roof", "b_lot"], ["stage", "b_focus"],
@@ -229,9 +232,9 @@ VILLAGE_SET = [
     {"card": "story_build_props_08", "at": "b_pile", "name": "brick_pile", "scale": 1.5},
     {"card": "story_build_props_13", "at": "b_pile", "off": [0.22, 0.05], "name": "bucket"},
     # a ladder against the brick house's left wall under the eave (the wolf's way up in the chimney beat)
-    {"card": "village_props_30", "at": "b_lot", "off": [-0.56, 0.06], "stage": 0, "name": "ladder", "scale": 1.7, "clear": 0},
+    {"card": "story_build_props_23", "at": "b_lot", "off": [-0.56, 0.06], "stage": 0, "name": "ladder", "scale": 1.7, "clear": 0},
     # ...lying in the grass beside the brick pile until the wolf finds it and stands it up (chimney beat)
-    {"card": "village_props_30", "at": "b_lot", "off": [-1.0, 0.18], "flat": True, "name": "ladder_flat",
+    {"card": "story_build_props_23", "at": "b_lot", "off": [-1.0, 0.18], "flat": True, "name": "ladder_flat",
      "scale": 1.7, "clear": 0},
 ] + KITCHEN
 
@@ -334,7 +337,7 @@ BEATS = [
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "pose", "who": "pig_a", "pose": "defiant"},
         # reverse: the face at the window ("싫어요")
-        {"do": "cam", "shot": "face", "at": "s_lot", "rate": 2.6, "wait": 0.1},
+        {"do": "cam", "shot": "window", "at": "s_win", "rate": 2.6, "wait": 0.1},
         {"do": "say", "line": "tp_028"},
         # the huffs: close on his puffed cheeks, a shake on every tap, cut wide for the house blowing away
         {"do": "cam", "shot": "cheeks", "at": "s_wolf", "rate": 3.0, "wait": 0.2},
@@ -356,7 +359,7 @@ BEATS = [
         {"do": "cam", "shot": "ots", "at": "w_wolf_focus", "rate": 2.0, "wait": 0.4},
         {"do": "pose", "who": "wolf", "pose": "shout"},
         {"do": "pose", "who": ["pig_a", "pig_b"], "pose": "defiant"},
-        {"do": "cam", "shot": "face", "at": "w_lot", "rate": 2.6, "wait": 0.1},
+        {"do": "cam", "shot": "front", "at": "w_lot", "rate": 2.6, "wait": 0.1},
         {"do": "say", "line": "tp_032"},
         {"do": "cam", "shot": "cheeks", "at": "w_wolf", "rate": 3.0, "wait": 0.2},
         {"do": "huff", "house": "wood_house", "taps": 3, "result": "collapse", "ruin": "story_houses_05",
@@ -429,10 +432,11 @@ BEATS = [
         {"do": "fx", "fx": "windows_lit", "wait": 0.0},
         {"do": "cam", "shot": "medium", "at": "b_focus", "rate": 1.4},
         {"do": "fx", "fx": "pigs_cheer", "wait": 0.6},
-        # a slow pull-back to the whole village while the last line plays, then the book closes into the end card
-        {"do": "cam", "shot": "pull_back", "at": "est", "rate": 0.45, "wait": 0.1},
+        # the family stays readable in front of the lit house for the last line, then a slow pull-back to the whole
+        # village, and the book closes into the end card
         {"do": "say", "line": "tp_057"},
-        {"do": "fx", "fx": "pigs_cheer", "wait": 0.8},
+        {"do": "fx", "fx": "pigs_cheer", "wait": 0.2},
+        {"do": "cam", "shot": "pull_back", "at": "est", "rate": 0.5, "wait": 3.2},
         {"do": "end", "after": "tp_n02", "close_book": True},
     ]},
 ]
