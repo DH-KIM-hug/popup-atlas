@@ -69,6 +69,10 @@ How to look:
   glimpses nobody reacts to; the reaction comes later, big (sting, snap zoom, surprised faces).
 - [ ] **Effects the lines name are shown** ("유령 사탕먹은 입도 제대로"): a line about the mouth gets a face close-up with
   the black lips and wisps on each "우~".
+- [ ] **No overlay on top of a drawn feature; states persist** ("검은 입술이 기존 입술위에 덮여서 이상한데? 그리고 계속 검은
+  입술로 있는지 검토해봐"): a changed feature replaces the drawn one (the mouth itself drawn dark, nothing of the old
+  mouth showing, no halo; full-res crops), and a state like the ghost-candy mouth is a CastPuppet state that every
+  expression / walk change respects until the story ends it (run log BLACK_LIPS frames-with-wrong-variant=0).
 - [ ] **Big moments are staged** ("집밖으로 나오는것도 좀 더 극적으로"): a door bursting open with light, a low hero shot and
   a beat before the action.
 - [ ] **No set piece in front of a speaker** ("앞의 집때문에 안보여"): check every exterior shot for a house, tree or

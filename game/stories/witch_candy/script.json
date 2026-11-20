@@ -9983,6 +9983,11 @@
      "wait": 0.1
     },
     {
+     "do": "fx",
+     "fx": "black_mouth:witch",
+     "wait": 0.0
+    },
+    {
      "do": "pose",
      "who": "witch",
      "pose": "ghost"
@@ -10000,6 +10005,11 @@
      "do": "fx",
      "fx": "candies_to_all",
      "wait": 0.8
+    },
+    {
+     "do": "fx",
+     "fx": "black_mouth:others",
+     "wait": 0.0
     },
     {
      "do": "pose",

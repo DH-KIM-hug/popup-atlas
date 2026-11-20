@@ -197,9 +197,38 @@ func is_side() -> bool:
 
 
 ## Pose + mirror in one paper turn (the card flips edge-on, swaps, flips back). mirror = side figure facing left.
+## Expression state that every figure change respects (witch_candy v4, user: "계속 검은 입술로 있는지"): while
+## mouth_state is "black" (ghost candy eaten) a figure without the black mouth maps to the black-mouth variant —
+## <pose>_black if the catalog has one, the ghost cycles for walks, the ghost figure for standing poses; back views
+## (no mouth) stay. mouth_wrong counts frames that still showed a normal mouth (BLACK_LIPS check).
+var mouth_state := ""
+var mouth_wrong := 0
+var mouth_seen := false  ## the state was used in this run (the runner prints BLACK_LIPS only then)
+
+
+func mouth_ok(p: String) -> bool:
+	return mouth_state == "" or p.contains("ghost") or p.ends_with("_" + mouth_state) or pose_view(p) == "back"
+
+
+func _mouth_map(p: String) -> String:
+	if mouth_ok(p):
+		return p
+	if has_pose(p + "_" + mouth_state):
+		return p + "_" + mouth_state
+	if pose_view(p) == "side" and has_pose("ghost_cycle") and (p.contains("cycle") or p.contains("walk")):
+		return "ghost_cycle"
+	if pose_view(p) == "front" and has_pose("ghost_front") and (p.contains("walk") or p.contains("front")):
+		return "ghost_front"
+	return "ghost" if has_pose("ghost") else p
+
+
 func set_figure(p: String, mirror: bool, instant := false) -> void:
 	if not has_pose(p):
 		return
+	if mouth_state != "":
+		p = _mouth_map(p)
+		if pose_view(p) != "side":
+			mirror = false
 	if p == pose and mirror == _mirror and (_flip_t < 0.0 or _flip_to == ""):
 		return  # already showing it (or the flip back is finishing on it)
 	if _flip_t >= 0.0 and p == _flip_to and mirror == _mirror_to:
@@ -406,6 +435,10 @@ func set_pose(p: String, instant := false) -> void:
 
 
 func _process(dt: float) -> void:
+	if mouth_state != "":
+		mouth_seen = true
+		if is_visible_in_tree() and not mouth_ok(pose):
+			mouth_wrong += 1
 	if _base_lean < 0.0:
 		_base_lean = lean_deg
 	# The base lean scales with speed/0.3; divide that back out so a slow, struggling walk still leans in.

@@ -378,6 +378,17 @@ func _run() -> void:
 		var total := clock - t0
 		if stage and is_instance_valid(stage) and stage.tale.get("overlap_check", false):
 			print("OVERLAP_COUNT ", stage.overlap_count, " OCCLUDE_COUNT ", stage.occlude_count)
+		if stage and is_instance_valid(stage):
+			var wrong := 0
+			var used := false
+			for r in stage.actors:
+				var pp: Variant = (stage.actors[r] as StoryActor).puppet
+				if pp is CastPuppet:
+					wrong += (pp as CastPuppet).mouth_wrong
+					used = used or (pp as CastPuppet).mouth_seen
+			if used:
+				var miss := int(stage.handler.get("black_missing")) if stage.handler and "black_missing" in stage.handler else 0
+				print("BLACK_LIPS frames-with-wrong-variant=", wrong + miss, " (puppet ", wrong, ", story-expected ", miss, ")")
 		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio,
 			" missing_sound=", sound.missing if sound else [], " beats=", beat_times)
 		story_finished.emit(total)

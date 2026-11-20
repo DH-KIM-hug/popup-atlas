@@ -474,10 +474,12 @@ BEATS = [
          "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "stir": "wc_130", "pop": "wc_131",
          "eat": "wc_132", "ghost": "wc_x_ghost_kid"},
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 0.1},
+        {"do": "fx", "fx": "black_mouth:witch", "wait": 0.0},
         {"do": "pose", "who": "witch", "pose": "ghost"},
         {"do": "fx", "fx": "ghost_glimpse_4", "wait": 0.1},
         {"do": "say", "line": "wc_133"},
         {"do": "fx", "fx": "candies_to_all", "wait": 0.8},
+        {"do": "fx", "fx": "black_mouth:others", "wait": 0.0},
         {"do": "pose", "who": ["cat", "rabbit", "bear", "fox"], "pose": "ghost", "hop": True},
         {"do": "fx", "fx": "float_all", "wait": 0.1},
         {"do": "cam", "shot": "two_shot", "at": "in_rabbit", "rate": 1.4, "wait": 0.1},  # their black lips, close

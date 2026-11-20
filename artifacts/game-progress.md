@@ -1583,3 +1583,24 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     over the rabbit's face in the black-lips shots; the ghost glimpses are small (not checked by a child's eye);
     the duck result stays inside (no doorstep exit); 6:42 is above the relaxed 6–6.5 min; placeholder sounds unheard;
     wc_n01-n04 caption-only.
+
+## 2026-11-20 — witch_candy v4: the ghost-candy mouth drawn properly and kept
+  - User on v3: "검은 입술이 기존 입술위에 덮여서 이상한데? 그리고 계속 검은 입술로 있는지 검토해봐".
+  - Art: the ghost figures drew a black lip ring with skin inside and lip-corner ticks (read as a ring stuck on).
+    tools/cast/wc_black_mouth.py turns the mouth itself into a solid dark open mouth (plum-black with a darker tongue),
+    blackens the lips, removes the ticks with their halos, closes side-view "C" mouths, and repaints the cat's small
+    brown "o"; four frames take hand-placed ovals. 39 figures / cycle frames (all six characters), originals in
+    art_src/cast/black_mouth_orig/. Before / after crops artifacts/witch_candy/black_mouth_crops_v4.png, contact
+    black_mouth_v4.png.
+  - Continuity: CastPuppet.mouth_state ("black") maps every figure change to the black-mouth variant (ghost figure,
+    ghost walk cycles; back views stay) from the moment each one eats until the story ends it (the 뿅 when the
+    little ghost vanishes at the end of the parade). Found on the way: the witch / friends never entered the state
+    (the handler matched only the fx name before ":"), and the first counter only watched puppets already in the
+    state — now BLACK_LIPS also counts story-expected roles. Final: BLACK_LIPS frames-with-wrong-variant=0 (puppet 0,
+    story-expected 0). The pot smoke now stops when the candy is out (it drifted over the rabbit's face).
+  - Runs: witch_candy 402.2 s, CHECK_LINES OK, OVERLAP 3 / OCCLUDE 1 (unchanged); three_pigs 295.6 s, sun_wind
+    206.4 s, both CHECK_LINES OK. Videos artifacts/video/witch_candy_ghost_v4.mp4, witch_candy_full_v4.mp4; span
+    frames artifacts/witch_candy/black_mouth_span_v4.jpg.
+  - Still off: during the surprise the reaction is the ghost-play figure (arms up, "oooh") for everyone, not their
+    surprised faces (no surprised black-mouth art yet); the four hand-placed mouths are ovals painted over the old
+    mouth area (checked by crop, but drawn by script, not by the artist).

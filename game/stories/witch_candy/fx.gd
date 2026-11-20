@@ -277,6 +277,11 @@ func fx(name: String) -> bool:
 			_glimpse(4)
 		"float_all":
 			_floating = true
+		"black_mouth":  # black_mouth:witch / black_mouth:others (match is on the part before the colon)
+			var who := ["witch"] if parts.size() > 1 and parts[1] == "witch" else ["cat", "rabbit", "bear", "fox"]
+			_black_mouth(who, true)
+			for r in who:
+				_black_expected[r] = true
 		"ghost_tagalong":
 			_ghost = _ghost_card()
 			_g = null  # from here on the parade code moves it (it follows the last marcher)
@@ -290,6 +295,13 @@ func fx(name: String) -> bool:
 				_sfx("wc.vanish")
 				_ghost.queue_free()
 				_ghost = null
+			# 뿅: the ghost-candy mouths wear off as the little ghost goes
+			for r in ["kid", "witch", "cat", "rabbit", "bear", "fox"]:
+				var a := _a(r)
+				if a:
+					_poof(a.centre(), 0.7)
+					a.pose = "sit" if r == "cat" else "calm"
+			_black_mouth(["kid", "witch", "cat", "rabbit", "bear", "fox"], false)
 		_:
 			if parts[0] == "poof" and parts.size() > 1:
 				var a := _a(parts[1])
@@ -747,6 +759,7 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 	# eaten: a big POOF, the camera pushes in on the black lips
 	if kid:
 		_poof(kid.centre(), 2.0)
+		_black_mouth(["kid"], true)
 		kid.set_pose("ghost")
 		kid.hop_v = 0.8
 	_sfx("wc.burst", kid.centre() if kid else null)
@@ -778,6 +791,26 @@ func _room(dx: float, dz: float, y: float) -> Vector3:
 	var sp := _sp("shop")
 	var b := sp.global_position
 	return Vector3(b.x, stage.world.ground.surface_y(Vector2(b.x, b.z)), b.z) + _sx() * dx + _out() * dz + Vector3.UP * y
+
+
+## The ghost candy's black mouth as an expression STATE (CastPuppet.mouth_state): every later figure change keeps it
+## until the story turns it off (at the end of the parade, with a 뿅).
+var _black_expected := {}  ## roles the story says have the black mouth now (independent check of the puppet state)
+var black_missing := 0  ## frames a role that should have the black mouth was showing without the state
+
+
+func _black_mouth(roles: Array, on: bool) -> void:
+	for r in roles:
+		if on:
+			_black_expected[str(r)] = true
+		else:
+			_black_expected.erase(str(r))
+	for r in roles:
+		var a := _a(str(r))
+		if a == null:
+			continue
+		a.puppet.mouth_state = "black" if on else ""
+		a.puppet.set_figure(a.pose, a.facing_left and a.view_of(a.pose) == "side", true)
 
 
 func _ghost_card() -> Node3D:
@@ -942,6 +975,10 @@ func _ghost_peekaboo(R: Node) -> void:
 
 
 func _step_ghost(dt: float) -> void:
+	for r in _black_expected:
+		var ba := _a(str(r))
+		if ba and ba.visible and ba.pop_s > 0.5 and (ba.puppet.mouth_state != "black" or not ba.puppet.mouth_ok(ba.puppet.pose)):
+			black_missing += 1
 	var cam := stage.camera()
 	if _g and is_instance_valid(_g):
 		if not _gpath.is_empty():
@@ -977,7 +1014,7 @@ func _step_ghost(dt: float) -> void:
 		elif par == _sp("pot"):
 			o.light_color = Color(1.0, 0.55, 0.23).lerp(Color(0.45, 1.0, 0.55), _eerie)
 			o.light_energy = float(q[1]) * (1.0 + 1.5 * _eerie)
-	if _eerie > 0.3 and fmod(_t, 0.45) < dt:
+	if _eerie > 0.6 and fmod(_t, 0.45) < dt:  # smoke only while the pot is brewing (not over faces later)
 		fly("story_wc_pot_16", _pot_mouth(), _pot_mouth() + Vector3.UP * 0.25 + _sx() * sin(_t) * 0.08, 0.05, 1.4, 0.0, 0.0, 2.0)
 	# ghost-mouth wisps: little white puffs out of the "oooh" mouth
 	if _wisps > 0.0:

@@ -274,6 +274,12 @@ Run long work through background agents/workflows with narrow ownership (one own
   distance (formation kept), snake-follow files (followers on the leader's trail at fixed spacing), two-lane loops,
   `via` waypoints round furniture (and who enters first), queues along the house front.
 
+- (v4) A changed feature must replace the drawn one, not sit on it (the ghost lips were a ring over a mouth): recolour
+  the feature region (tools/cast/wc_black_mouth.py) or draw the variant; and a story state on a character (a black
+  mouth) is a CastPuppet state every figure change maps through, checked by a run-log counter that also counts the
+  roles the story expects in that state (a check that only watches puppets already in the state reported 0 while the
+  state was never set). Handler fx names with ":" match on the part before it.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).
