@@ -1051,6 +1051,71 @@
    "positional": false,
    "loop": false,
    "note": "witch_candy placeholder, synthesised (tools/audio/wc_synth_sfx.py)"
+  },
+  "wc.sting": {
+   "files": [
+    "res://audio/sfx/wc_sting_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "witch_candy placeholder, synthesised (tools/audio/wc_synth_sfx.py)"
+  },
+  "wc.eerie": {
+   "files": [
+    "res://audio/sfx/wc_eerie_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "witch_candy placeholder, synthesised (tools/audio/wc_synth_sfx.py)"
+  },
+  "wc.swoosh": {
+   "files": [
+    "res://audio/sfx/wc_swoosh_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "witch_candy placeholder, synthesised (tools/audio/wc_synth_sfx.py)"
+  },
+  "wc.peekaboo": {
+   "files": [
+    "res://audio/sfx/wc_peekaboo_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "witch_candy placeholder, synthesised (tools/audio/wc_synth_sfx.py)"
+  },
+  "wc.burst": {
+   "files": [
+    "res://audio/sfx/wc_burst_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "witch_candy placeholder, synthesised (tools/audio/wc_synth_sfx.py)"
   }
  },
  "music": {

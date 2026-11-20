@@ -257,6 +257,23 @@ Run long work through background agents/workflows with narrow ownership (one own
   character taller than the doorway pokes its hat over the wall while on the sill: size it to fit.
 - `_check_footprint` samples along the piece's own base line (turned pieces).
 
+**Learned on witch_candy v3 (flying invite, house bodies, ghost set piece, overlaps)**
+- A prop the narration brings must travel on screen: the invitations ride a curving, flipping path from the far
+  street to the kids with the camera tracking (handler `_track` node drives the stage focus), then open toward the
+  camera when caught.
+- Turned houses need bodies: tools/atlas/wc_house_bodies.py splits each front into wall / roof bands, crops a strip of
+  its own wall (side walls, back) and roof print, finds eaves + ridge; SetPiece `box: {body: true}` builds side walls,
+  a back, two roof slopes and the gable repeated at the back.
+- A surprise needs dramatic irony first ("처음엔 나온지 몰라야지 나중에 놀라는거"): glimpses nobody reacts to (out of the
+  pot steam behind the friends, over a shoulder, over the pot rim, mimicking at the back), then the big reaction.
+- Overlaps: measure them. Stage `overlap_check` logs OVERLAP (footprints: actor / actor, actor / set base line; open
+  doorways excluded) and OCCLUDE (a nearer piece covering > 35 % of an actor, only pieces the camera can see: inside a
+  house only its room) with OVERLAP_COUNT at the end; `spacing` eases standing actors apart. The big sources were not
+  marks but movement: a group walking to one goal, followers bunching at the first waypoint of a file, a U-turn
+  through the file, people cutting through furniture to their marks, a queue reaching the next house. Fixes: walk by
+  distance (formation kept), snake-follow files (followers on the leader's trail at fixed spacing), two-lane loops,
+  `via` waypoints round furniture (and who enters first), queues along the house front.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

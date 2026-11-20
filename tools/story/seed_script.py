@@ -148,6 +148,7 @@ def build() -> dict:
         **({"backdrop": True} if getattr(T, "BACKDROP", False) else {}),
         **({"inside_framing": T.INSIDE_FRAMING} if getattr(T, "INSIDE_FRAMING", "") else {}),
         **({"sound": T.SOUND} if getattr(T, "SOUND", None) else {}),
+        **getattr(T, "EXTRA", {}),  # further tale-level fields (witch_candy: spacing, overlap_check, overlap_ok)
         "cast": T.CAST,
         "moral": T.MORAL,
         "beats": BEATS,

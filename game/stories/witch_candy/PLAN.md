@@ -204,3 +204,11 @@ User on the prototype: "마을을 더 많이 각자 할로윈 장식" → a real
 - **Sound**: wc.* placeholder SFX synthesised (tools/audio/wc_synth_sfx.py, WAV), beds / music / footsteps mapped
   in the tale's sound block. Nobody has listened.
 - **Voice**: wc_n01–n04 still unapproved → caption-only placeholders (status pending, read-time estimate).
+
+## v3 (2026-11-20)
+- Runtime target relaxed by the user to about 6–6.5 min ("6분 7초도 상관없어"); entries are not rushed for time.
+- The invitation rides the wind in (curving flutter, camera follows), the houses have bodies (side walls, back,
+  roof slopes from their own art: tools/atlas/wc_house_bodies.py), the ghost candy round is a set piece (build-up,
+  the ghost sneaking in through glimpses nobody notices, the surprise, the roam over the roofs, 까꿍), the black-lips
+  close-up with mouth wisps, dramatic exits (door burst, light spill, hero shot), a stage spacing solver and an
+  OVERLAP / OCCLUDE log.

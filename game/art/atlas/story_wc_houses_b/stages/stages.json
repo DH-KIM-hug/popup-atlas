@@ -1,0 +1,331 @@
+{
+ "story_wc_houses_b_00": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_00_b0.webp",
+    "y0": 184,
+    "y1": 410,
+    "hinge_units": 0.0,
+    "height_units": 0.4809,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_00_b1.webp",
+    "y0": 4,
+    "y1": 184,
+    "hinge_units": 0.4809,
+    "height_units": 0.3831,
+    "roof": true
+   }
+  ],
+  "height_units": 0.864,
+  "px": [
+   351,
+   413
+  ],
+  "base_y": 410,
+  "roof_y": 184,
+  "wall_x": [
+   19,
+   325
+  ],
+  "side_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_00_side.webp",
+  "roof_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_00_roof.webp",
+  "gable": {
+   "eave_l": [
+    3,
+    171
+   ],
+   "eave_r": [
+    346,
+    171
+   ],
+   "ridge": [
+    122.5,
+    21
+   ]
+  }
+ },
+ "story_wc_houses_b_01": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_01_b0.webp",
+    "y0": 199,
+    "y1": 426,
+    "hinge_units": 0.0,
+    "height_units": 0.4824,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_01_b1.webp",
+    "y0": 3,
+    "y1": 199,
+    "hinge_units": 0.4824,
+    "height_units": 0.4166,
+    "roof": true
+   }
+  ],
+  "height_units": 0.899,
+  "px": [
+   316,
+   430
+  ],
+  "base_y": 426,
+  "roof_y": 199,
+  "wall_x": [
+   30,
+   285
+  ],
+  "side_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_01_side.webp",
+  "roof_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_01_roof.webp",
+  "gable": {
+   "eave_l": [
+    5,
+    185
+   ],
+   "eave_r": [
+    311,
+    185
+   ],
+   "ridge": [
+    204.0,
+    15
+   ]
+  }
+ },
+ "story_wc_houses_b_02": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_02_b0.webp",
+    "y0": 130,
+    "y1": 373,
+    "hinge_units": 0.0,
+    "height_units": 0.5176,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_02_b1.webp",
+    "y0": 4,
+    "y1": 130,
+    "hinge_units": 0.5176,
+    "height_units": 0.2684,
+    "roof": true
+   }
+  ],
+  "height_units": 0.786,
+  "px": [
+   349,
+   376
+  ],
+  "base_y": 373,
+  "roof_y": 130,
+  "wall_x": [
+   7,
+   342
+  ],
+  "side_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_02_side.webp",
+  "roof_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_02_roof.webp",
+  "gable": {
+   "eave_l": [
+    43,
+    130
+   ],
+   "eave_r": [
+    308,
+    130
+   ],
+   "ridge": [
+    200.0,
+    17
+   ]
+  }
+ },
+ "story_wc_houses_b_03": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_03_b0.webp",
+    "y0": 183,
+    "y1": 412,
+    "hinge_units": 0.0,
+    "height_units": 0.4871,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_03_b1.webp",
+    "y0": 3,
+    "y1": 183,
+    "hinge_units": 0.4871,
+    "height_units": 0.3829,
+    "roof": true
+   }
+  ],
+  "height_units": 0.87,
+  "px": [
+   391,
+   416
+  ],
+  "base_y": 412,
+  "roof_y": 183,
+  "wall_x": [
+   18,
+   376
+  ],
+  "side_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_03_side.webp",
+  "roof_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_03_roof.webp",
+  "gable": {
+   "eave_l": [
+    3,
+    175
+   ],
+   "eave_r": [
+    387,
+    175
+   ],
+   "ridge": [
+    266.5,
+    33
+   ]
+  }
+ },
+ "story_wc_houses_b_04": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_04_b0.webp",
+    "y0": 211,
+    "y1": 435,
+    "hinge_units": 0.0,
+    "height_units": 0.4761,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_04_b1.webp",
+    "y0": 4,
+    "y1": 211,
+    "hinge_units": 0.4761,
+    "height_units": 0.4399,
+    "roof": true
+   }
+  ],
+  "height_units": 0.916,
+  "px": [
+   300,
+   438
+  ],
+  "base_y": 435,
+  "roof_y": 211,
+  "wall_x": [
+   29,
+   269
+  ],
+  "side_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_04_side.webp",
+  "roof_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_04_roof.webp",
+  "gable": {
+   "eave_l": [
+    5,
+    199
+   ],
+   "eave_r": [
+    295,
+    199
+   ],
+   "ridge": [
+    112.0,
+    34
+   ]
+  }
+ },
+ "story_wc_houses_b_05": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_05_b0.webp",
+    "y0": 245,
+    "y1": 412,
+    "hinge_units": 0.0,
+    "height_units": 0.3553,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_05_b1.webp",
+    "y0": 4,
+    "y1": 245,
+    "hinge_units": 0.3553,
+    "height_units": 0.5127,
+    "roof": true
+   }
+  ],
+  "height_units": 0.868,
+  "px": [
+   480,
+   415
+  ],
+  "base_y": 412,
+  "roof_y": 245,
+  "wall_x": [
+   4,
+   476
+  ],
+  "side_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_05_side.webp",
+  "roof_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_05_roof.webp",
+  "gable": {
+   "eave_l": [
+    11,
+    205
+   ],
+   "eave_r": [
+    471,
+    205
+   ],
+   "ridge": [
+    355.0,
+    34
+   ]
+  }
+ },
+ "story_wc_houses_b_06": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_06_b0.webp",
+    "y0": 123,
+    "y1": 437,
+    "hinge_units": 0.0,
+    "height_units": 0.6672,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_06_b1.webp",
+    "y0": 4,
+    "y1": 123,
+    "hinge_units": 0.6672,
+    "height_units": 0.2528,
+    "roof": true
+   }
+  ],
+  "height_units": 0.92,
+  "px": [
+   308,
+   440
+  ],
+  "base_y": 437,
+  "roof_y": 123,
+  "wall_x": [
+   20,
+   294
+  ],
+  "side_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_06_side.webp",
+  "roof_file": "art/atlas/story_wc_houses_b/stages/story_wc_houses_b_06_roof.webp",
+  "gable": {
+   "eave_l": [
+    51,
+    123
+   ],
+   "eave_r": [
+    271,
+    123
+   ],
+   "ridge": [
+    193.0,
+    21
+   ]
+  }
+ }
+}

@@ -39,6 +39,7 @@ var _ghost: Node3D
 var _ghost_follow := ""
 var _seen_results: Array = []
 var _forced: Array = []
+var _track: Node3D  ## the camera follows this node (an invitation in flight, the ghost roaming)
 var _shop_glow := -1.0  ## animated glow of the shop (lights on)
 var _dim := 1.0  ## street lights factor (pumpkin glow)
 var _dim_t := 1.0
@@ -181,7 +182,7 @@ func target_radius(t: String) -> float:
 	var cam := stage.camera()
 	var a := cam.unproject_position(p)
 	var b := cam.unproject_position((p as Vector3) + Vector3.UP * 0.05)
-	return maxf(56.0, a.distance_to(b) * 1.4)
+	return maxf(90.0 if t.begins_with("invite") else 56.0, a.distance_to(b) * 1.4)
 
 
 func wiggle(t: String) -> bool:
@@ -268,12 +269,21 @@ func fx(name: String) -> bool:
 				w.set_pose("welcome")
 				w.hop_v = 0.8
 			_sfx("wc.giggle_bells")
+		"ghost_glimpse_1":
+			_glimpse(1)
+		"ghost_glimpse_2":
+			_glimpse(2)
+		"ghost_glimpse_4":
+			_glimpse(4)
+		"float_all":
+			_floating = true
 		"ghost_tagalong":
-			_ghost = _card("story_halloween_16" if false else "story_wc_halloween_16", 0.16)
+			_ghost = _ghost_card()
+			_g = null  # from here on the parade code moves it (it follows the last marcher)
 			_ghost_follow = "fox"
 			var f := _a("fox")
-			_ghost.global_position = f.global_position if f else stage.spot_point("door")
-			_ghost.rotation.y = _yaw()
+			_ghost.global_position = (f.global_position if f else stage.spot_point("door")) + Vector3.UP * 0.12
+			_ghost.scale = Vector3.ONE * 0.85
 		"ghost_vanish":
 			if _ghost:
 				_poof(_ghost.global_position + Vector3.UP * 0.1)
@@ -292,18 +302,27 @@ func fx(name: String) -> bool:
 
 # ------------------------------------------------------------------ invitations
 
+## v3 (user: "초대장이 날아왔으면 좋겠고"): four pumpkin invitations ride the wind in from the far end of the street,
+## fluttering along curving paths (paper flips and tumbles), the camera following the first; they settle hovering over
+## Dahyun and the friends, big enough to tap.
 func _invites() -> void:
 	var roles := ["rabbit", "bear", "fox", "kid"]
+	var far := stage.spot_point("road_shop") + Vector3.UP * 1.1 - _right() * 0.4
 	for i in roles.size():
 		var a := _a(roles[i])
 		if a == null:
 			continue
-		var hover := a.global_position + Vector3.UP * (a.puppet.height * 1.25) + _right() * 0.04 * (i - 1.5)
-		var n := _card("story_wc_ingredients_11", 0.07)
+		var hover := a.global_position + Vector3.UP * (a.puppet.height * 1.3)
+		var n := _card("story_wc_ingredients_11", 0.12)
 		n.rotation.y = _yaw()
 		var nm := "invite_%d" % (i + 1) if i < 3 else "invite_kid"
-		n.global_position = hover + Vector3.UP * 0.9 + _right() * (-0.6 + 0.2 * i)
-		_floaters[nm] = {"node": n, "base": hover, "ph": i * 1.3, "amp": 0.02, "arrive": 0.0}
+		var st := far + _right() * (0.25 * i - 0.3) + Vector3.UP * 0.15 * i
+		n.global_position = st
+		var mid := st.lerp(hover, 0.5) + _right() * (0.7 if i % 2 == 0 else -0.7) + Vector3.UP * 0.35
+		_floaters[nm] = {"node": n, "base": hover, "ph": i * 1.3, "amp": 0.02, "from": st, "mid": mid,
+			"t": -0.45 * i, "dur": 4.6, "flutter": 0.0}
+	_track = (_floaters["invite_1"]["node"] as Node3D) if _floaters.has("invite_1") else null
+	stage.shot_to("medium", null, {"rate": 1.6})  # close on the card in flight
 	_sfx("wc.flutter")
 
 
@@ -318,9 +337,15 @@ func _catch(role: String) -> void:
 	if nm == "" or a == null:
 		return
 	var n: Node3D = _floaters[nm]["node"]
+	var from := n.global_position
 	_floaters.erase(nm)
 	n.queue_free()
-	fly("story_wc_ingredients_10", a.centre() + Vector3.UP * 0.1, a.centre() + _toward() * 0.03, 0.06, 0.4, 0.02, 1.4)
+	# caught: the card opens toward the camera so the invitation reads (the pot and the candy on it), then is kept
+	var cam := stage.camera()
+	# beside the shoulder, a little toward the camera (never over a face)
+	var side := cam.global_transform.basis.x * (0.12 if role in ["bear", "kid"] else -0.12)
+	var to := a.centre() + side + (cam.global_position - a.centre()).normalized() * 0.08 + Vector3.UP * 0.02
+	fly("story_wc_ingredients_10", from, to, 0.09, 0.45, 0.04, 1.4)
 	a.set_pose("excited" if role == "kid" else "cheer")
 	a.hop_v = 0.7
 	_sfx("ui.pop", a.centre())
@@ -452,6 +477,20 @@ func run_step(st: Dictionary, R: Node) -> void:
 	match str(st.get("do", "")):
 		"leave_shop":
 			await _leave_shop(st, R)
+		"ghost_surprise":
+			await _ghost_surprise(R)
+		"ghost_roam":
+			await _ghost_roam(R)
+		"ghost_peekaboo":
+			await _ghost_peekaboo(R)
+			_eerie_t = 0.0
+			_floating = false
+			for r in ["kid", "witch", "cat", "rabbit", "bear", "fox"]:
+				var a := _a(r)
+				if a:
+					a.lift = 0.0
+			if SoundDirector.current:
+				SoundDirector.current.set_music("ending", 1.5)
 		"brew":
 			if st.get("all_colors", false):
 				await _brew_ghost(st, R)
@@ -668,37 +707,303 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 		await R._wait(0.7)
 		_set_liquid(cols)
 	_picking = false
+	# v3 build-up: the room lights flicker and dim, the music drops, the pot glows an eerie green, smoke swirls up
 	var w := _a("witch")
 	if w:
 		w.set_pose("magic")
-	stage.shot_to("pot", "in_pot", {"rate": 2.0})
+	_eerie_t = 1.0
+	if SoundDirector.current:
+		SoundDirector.current.set_music("", 1.0)
+	_sfx("wc.eerie", _pot_mouth())
+	stage.shot_to("pot_low", "in_pot", {"rate": 1.2})
 	_swirl_speed = 5.0
 	_sfx("wc.stir", _pot_mouth())
+	_glimpse(3)  # meanwhile the ghost peeks over the pot rim behind it (nobody notices)
 	await R._say(str(st["stir"]))
 	_swirl_speed = 0.6
-	_poof(_pot_mouth(), 1.8)
+	_poof(_pot_mouth(), 2.2)
 	_sfx("wc.poof", _pot_mouth())
 	_set_liquid([str(st.get("pot_color", "black"))])
+	# the reveal: the black candy rises slowly out of the pot, then floats to Dahyun's hands
 	var kid := _a("kid")
-	_candy = fly(str(st["candy"]), _pot_mouth(), kid.centre() + _toward() * 0.05 + _right() * 0.05, 0.06, 0.9, 0.25, 999.0)
-	stage.shot_to("two_shot", "in_pot", {"rate": 2.0})
+	var up := _pot_mouth() + Vector3.UP * 0.22
+	var rise := fly(str(st["candy"]), _pot_mouth(), up, 0.08, 2.2, 0.0, 999.0, 0.0)
+	stage.shot_to("pot", "in_pot", {"rate": 1.0})
+	_sfx("wc.sparkle", _pot_mouth())
 	if kid:
 		kid.set_pose("wow")
 	await R._say(str(st["pop"]))
-	stage.shot_to("face_in", "in_kid", {"rate": 2.4})
+	await R._wait(maxf(0.0, 2.3 - R.line_duration(str(st["pop"]))))
+	_drop_flyer(rise)
+	_candy = fly(str(st["candy"]), up, kid.centre() + _out() * 0.06 + _sx() * 0.05, 0.07, 0.8, 0.1, 999.0)
+	await R._wait(0.6)
+	stage.shot_to("face_in", "in_kid", {"rate": 3.0})
 	if kid:
 		kid.set_pose("eat")
-	await R._wait(0.4)
+	await R._wait(0.5)
 	if _candy:
 		_drop_flyer(_candy)
 		_candy = null
-	await R._say(str(st["eat"]))
+	# eaten: a big POOF, the camera pushes in on the black lips
 	if kid:
+		_poof(kid.centre(), 2.0)
 		kid.set_pose("ghost")
-		kid.hop_v = 0.7
+		kid.hop_v = 0.8
+	_sfx("wc.burst", kid.centre() if kid else null)
+	stage.shake(1.4)
+	_eerie_t = 0.4
+	await R._say(str(st["eat"]))
+	_wisps = 1.0  # white wisps puff out of the black "oooh" mouth while she says it
 	await R._say(str(st["ghost"]))
+	_wisps = 0.0
 	if w:
 		w.set_pose("calm")
+
+
+# ------------------------------------------------------------------ the little ghost (v3: sneaks in, then the surprise)
+## user: "유령이 처음엔 나온지 몰라야지 나중에 놀라는거". Glimpses 1-4 while the scene goes on (nobody notices): rises out
+## of the pot steam and drifts behind the friends, peeks over the witch's shoulder, peeks over the pot rim, mimics the
+## friends' ghost pose at the back; then the surprise (nose to nose with Dahyun), the roam (round the room, past the
+## shelf, between the friends, out of the door, over the roofs in front of the moon, back) and a 까꿍.
+var _g: Node3D  ## the ghost card (its own node, not an actor: it floats)
+var _gpath: Dictionary = {}  ## {pts, t, dur, bob}
+var _eerie := 0.0
+var _eerie_t := 0.0
+var _wisps := 0.0
+var _wisp_cd := 0.0
+var _floating := false
+
+
+func _room(dx: float, dz: float, y: float) -> Vector3:
+	var sp := _sp("shop")
+	var b := sp.global_position
+	return Vector3(b.x, stage.world.ground.surface_y(Vector2(b.x, b.z)), b.z) + _sx() * dx + _out() * dz + Vector3.UP * y
+
+
+func _ghost_card() -> Node3D:
+	if _g == null or not is_instance_valid(_g):
+		_g = _card("story_wc_halloween_16", 0.17)
+		_g.scale = Vector3.ONE * 0.02
+	return _g
+
+
+func _gmove(pts: Array, dur: float, bob := 0.02) -> void:
+	_gpath = {"pts": pts, "t": 0.0, "dur": dur, "bob": bob}
+
+
+func _gwait(R: Node) -> void:
+	var g := 0.0
+	while not _gpath.is_empty() and g < 30.0:
+		g += await R._frame()
+
+
+func _gscale(v: float, sec: float) -> void:
+	var tw := create_tween()
+	tw.tween_property(_ghost_card(), "scale", Vector3.ONE * maxf(v, 0.02), sec).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+
+
+## glimpse k: runs alongside the lines (not awaited by the beat)
+func _glimpse(k: int) -> void:
+	var gh := _ghost_card()
+	match k:
+		1:  # out of the pot steam, drifting slowly behind the friends at the back, ducking behind the shelf
+			gh.global_position = _pot_mouth()
+			_gscale(0.7, 0.8)
+			_sfx("wc.eerie", _pot_mouth())
+			_gmove([_pot_mouth() + Vector3.UP * 0.15, _room(0.45, -0.95, 0.24), _room(0.05, -0.96, 0.27),
+				_room(-0.35, -0.96, 0.2), _room(-0.35, -0.96, 0.02)], 5.0, 0.015)
+			await get_tree().create_timer(5.0).timeout
+			_gscale(0.02, 0.3)
+		2:  # peeks over the witch's shoulder, ducks when she turns
+			var w := _a("witch")
+			var p := w.global_position - _out() * 0.06 + _sx() * 0.06 if w else _room(0.5, -0.6, 0.0)
+			gh.global_position = p + Vector3.UP * 0.25
+			_gscale(0.8, 0.35)
+			_gmove([p + Vector3.UP * 0.38, p + Vector3.UP * 0.38], 1.6, 0.01)
+			await get_tree().create_timer(1.7).timeout
+			if w:
+				w.face_point(w.global_position - _sx())  # she half turns: it ducks down
+			_gmove([p + Vector3.UP * 0.1], 0.35, 0.0)
+			await get_tree().create_timer(0.35).timeout
+			_gscale(0.02, 0.2)
+		3:  # peeks over the pot rim from behind it, then sinks back in
+			var m := _pot_mouth() - _out() * 0.05
+			gh.global_position = m - Vector3.UP * 0.12
+			_gscale(0.55, 0.3)
+			_gmove([m + Vector3.UP * 0.02, m + Vector3.UP * 0.04, m - Vector3.UP * 0.12], 2.4, 0.01)
+			await get_tree().create_timer(2.5).timeout
+			_gscale(0.02, 0.2)
+		4:  # at the back behind the friends, arms-up "oooh" like them (bobbing in time), bolder: almost in the open
+			gh.global_position = _room(0.66, -0.95, 0.05)
+			_gscale(0.85, 0.4)
+			_gmove([_room(0.66, -0.95, 0.3), _room(0.66, -0.95, 0.3)], 3.0, 0.035)
+			await get_tree().create_timer(3.0).timeout
+			_gmove([_room(0.66, -0.95, 0.05)], 0.3, 0.0)
+			await get_tree().create_timer(0.3).timeout
+			_gscale(0.02, 0.2)
+
+
+## The surprise: Dahyun turns round and it is right there, nose to nose: a sting, a snap zoom and shake, everyone
+## jumps with surprised faces.
+func _ghost_surprise(R: Node) -> void:
+	var kid := _a("kid")
+	_floating = false
+	var face := kid.global_position + Vector3.UP * kid.puppet.height * 0.62 + _out() * 0.09 + _sx() * 0.07
+	var gh := _ghost_card()
+	gh.global_position = face + _sx() * 0.08
+	stage.shot_to("face_in", "in_kid", {"rate": 2.0})
+	await R._wait(0.8)
+	_gscale(0.75, 0.25)
+	_gmove([face], 0.25, 0.0)
+	kid.face_point(face)
+	await R._wait(0.3)
+	_sfx("wc.sting", face)
+	stage.shot_to("face_in", "in_kid", {"rate": 6.0, "shake": 2.5})
+	for r in ["kid", "witch", "rabbit", "bear", "fox", "cat"]:
+		var a := _a(r)
+		if a:
+			a.set_pose({"kid": "wow", "witch": "surprised", "cat": "startled"}.get(r, "cheer"))
+			a.hop_v = 1.1
+	await R._wait(1.6)
+
+
+## The roam: loops round the room, a circle round the pot, past the shelf (the jars jump), weaving between the
+## friends (they hop as it passes), out of the open door, a swoop over the roofs in front of the moon and back in.
+func _ghost_roam(R: Node) -> void:
+	var gh := _ghost_card()
+	_track = gh
+	stage.shot_to("room", null, {"rate": 2.4})
+	_sfx("wc.swoosh", gh.global_position)
+	var m := _pot_mouth()
+	var pts: Array = [_room(-0.2, -0.45, 0.45), _room(-0.4, -0.7, 0.3)]
+	for k in 7:  # round the pot
+		var a := TAU * k / 6.0
+		pts.append(m + _sx() * cos(a) * 0.2 + _out() * sin(a) * 0.14 + Vector3.UP * 0.08)
+	pts.append_array([_room(-0.35, -0.82, 0.32), _room(-0.15, -0.8, 0.36), _room(0.2, -0.78, 0.4),
+		_room(0.4, -0.72, 0.42), _room(0.6, -0.7, 0.38), _room(0.16, -0.3, 0.3), stage.spot_point("in_door") + Vector3.UP * 0.22])
+	_gmove(pts, 7.5, 0.02)
+	_shelf_wobble = 1.0
+	for r in ["rabbit", "bear", "fox", "witch", "cat", "kid"]:
+		var a := _a(r)
+		if a:
+			a.set_pose({"kid": "wow", "witch": "surprised", "cat": "sit"}.get(r, "cheer"))
+	var t0 := 0.0
+	while not _gpath.is_empty() and t0 < 10.0:
+		t0 += await R._frame()
+		for r in ["rabbit", "bear", "fox", "kid", "witch"]:  # they duck / hop as it passes close, and watch it
+			var a := _a(r)
+			if a and a.centre().distance_to(gh.global_position) < 0.16 and a.hop_v <= 0.0:
+				a.hop_v = 0.6
+				_sfx("wc.swoosh", gh.global_position)
+	_shelf_wobble = 0.0
+	# out of the door and over the roofs in front of the moon
+	fx("door_open")
+	stage.shot_to("door_wide", "door_view", {"rate": 3.0})
+	var d0 := stage.spot_point("door") + _out() * 0.2 + Vector3.UP * 0.25
+	var loop := stage.spot_point("fly_loop")
+	var out: Array = [d0, d0 + Vector3.UP * 0.4]
+	for k in 7:
+		var a2 := TAU * k / 6.0
+		out.append(loop + _right() * cos(a2) * 0.35 + Vector3.UP * (0.85 + sin(a2) * 0.22))
+	out.append_array([d0 + Vector3.UP * 0.3, d0, stage.spot_point("in_door") + Vector3.UP * 0.22])
+	_gmove(out, 7.0, 0.02)
+	await R._wait(1.2)
+	stage.shot_to("sky", "fly_loop", {"rate": 1.6})
+	_sfx("wc.swoosh", loop)
+	await R._wait(3.6)
+	stage.shot_to("door_wide", "door_view", {"rate": 2.0})
+	await _gwait(R)
+	fx("door_close")
+	_track = null
+
+
+## 까꿍: it pops up right in front of Dahyun, giggling; everyone laughs; it settles beside the friends, friendly now.
+func _ghost_peekaboo(R: Node) -> void:
+	var kid := _a("kid")
+	fx("inside_view")
+	await R._wait(1.0)
+	var face := kid.global_position + Vector3.UP * kid.puppet.height * 0.55 + _out() * 0.1
+	var gh := _ghost_card()
+	gh.global_position = face - Vector3.UP * 0.15
+	_gmove([face], 0.3, 0.0)
+	_sfx("wc.peekaboo", face)
+	stage.shot_to("two_shot", "in_pot", {"rate": 3.0})
+	await R._wait(0.5)
+	for r in ["kid", "witch", "rabbit", "bear", "fox"]:
+		var a := _a(r)
+		if a:
+			a.set_pose({"kid": "wave", "witch": "giggle"}.get(r, "cheer"))
+			a.hop_v = 0.6
+	_sfx("wc.giggle_bells", face)
+	await R._wait(1.0)
+	_gmove([_room(0.62, -0.62, 0.32)], 1.2, 0.02)
+	await _gwait(R)
+	_ghost_follow = ""
+
+
+func _step_ghost(dt: float) -> void:
+	var cam := stage.camera()
+	if _g and is_instance_valid(_g):
+		if not _gpath.is_empty():
+			_gpath["t"] = float(_gpath["t"]) + dt
+			var pts: Array = _gpath["pts"]
+			var u := clampf(float(_gpath["t"]) / float(_gpath["dur"]), 0.0, 1.0)
+			if pts.size() == 1:
+				_g.global_position = _g.global_position.lerp(pts[0], 1.0 - exp(-8.0 * dt))
+			else:
+				var f := u * (pts.size() - 1)
+				var i := mini(int(f), pts.size() - 2)
+				var k := f - i
+				var p0: Vector3 = pts[maxi(i - 1, 0)]
+				var p1: Vector3 = pts[i]
+				var p2: Vector3 = pts[i + 1]
+				var p3: Vector3 = pts[mini(i + 2, pts.size() - 1)]
+				var k2 := k * k
+				var k3 := k2 * k
+				_g.global_position = 0.5 * ((2.0 * p1) + (-p0 + p2) * k + (2.0 * p0 - 5.0 * p1 + 4.0 * p2 - p3) * k2 + (-p0 + 3.0 * p1 - 3.0 * p2 + p3) * k3)
+			_g.global_position.y += sin(_t * 3.0) * float(_gpath["bob"]) * dt * 6.0
+			if u >= 1.0:
+				_gpath = {}
+		_g.rotation = Vector3(0, atan2(cam.global_position.x - _g.global_position.x, cam.global_position.z - _g.global_position.z), sin(_t * 2.3) * 0.12)
+	# eerie room: the warm lights dim and flicker, the pot glows green
+	_eerie = move_toward(_eerie, _eerie_t, dt * 0.7)
+	for q: Array in stage._lights:
+		if not is_instance_valid(q[0]):
+			continue
+		var o := q[0] as OmniLight3D
+		var par := o.get_parent()
+		if par == _sp("beam"):
+			o.light_energy = float(q[1]) * (1.0 - 0.8 * _eerie) * (1.0 - 0.25 * _eerie * absf(sin(_t * 17.0)))
+		elif par == _sp("pot"):
+			o.light_color = Color(1.0, 0.55, 0.23).lerp(Color(0.45, 1.0, 0.55), _eerie)
+			o.light_energy = float(q[1]) * (1.0 + 1.5 * _eerie)
+	if _eerie > 0.3 and fmod(_t, 0.45) < dt:
+		fly("story_wc_pot_16", _pot_mouth(), _pot_mouth() + Vector3.UP * 0.25 + _sx() * sin(_t) * 0.08, 0.05, 1.4, 0.0, 0.0, 2.0)
+	# ghost-mouth wisps: little white puffs out of the "oooh" mouth
+	if _wisps > 0.0:
+		_wisp_cd -= dt
+		var kid := _a("kid")
+		if _wisp_cd <= 0.0 and kid:
+			_wisp_cd = 0.4
+			var mo := kid.global_position + Vector3.UP * kid.puppet.height * 0.6 + _out() * 0.03
+			fly("story_wc_pot_17", mo, mo + Vector3.UP * 0.1 + _sx() * randf_range(-0.05, 0.05) + _out() * 0.04, 0.035, 0.9, 0.02, 0.0, 1.0)
+	# everyone floats a little while they "oooh" (ghost candy)
+	if _floating:
+		for r in ["kid", "witch", "cat", "rabbit", "bear", "fox"]:
+			var a := _a(r)
+			if a:
+				a.lift = 0.02 + sin(_t * 2.4 + r.length()) * 0.015
+	# the shelf jars jump as the ghost whooshes past
+	if _shelf_wobble > 0.0 and _g:
+		for key in _ings:
+			var n: Node3D = _ings[key]
+			if n.global_position.distance_to(_g.global_position) < 0.2:
+				n.rotation.z = sin(_t * 30.0) * 0.25
+			else:
+				n.rotation.z *= 0.9
+
+
+var _shelf_wobble := 0.0
 
 
 # ------------------------------------------------------------------ transformation actions
@@ -717,7 +1022,7 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			kid.follow(pts, 0.16, "duck", false)
 			var cat := _a("cat")
 			if cat:
-				cat.follow([cat.global_position + _out() * 0.05 - _sx() * 0.1] + pts.slice(0, 3), 0.15, "", false)
+				cat.follow([cat.global_position + _out() * 0.05 - _sx() * 0.1] + pts.slice(0, 2), 0.11, "", false)  # behind, slower
 			R._say(act)
 			await _wait_moving(R, ["kid", "cat"])
 			if cat:
@@ -837,11 +1142,13 @@ func _leave_shop(st: Dictionary, R: Node) -> void:
 		if a == null:
 			continue
 		var pts := _door_steps(false)
+		if str(roles[i]) in ["rabbit", "bear", "fox"]:  # from behind the pot: round it first
+			pts.push_front(stage.spot_point("in_via"))
 		var end := to + o * float(st.get("spacing", 0.15)) * float(roles.size() - 1 - i) * 0.0 - (to - stage.spot_point("door")).normalized() * float(st.get("spacing", 0.15)) * i
 		pts.append(Vector3(end.x, stage.world.ground.surface_y(Vector2(end.x, end.z)), end.z))
 		a.follow(pts, 0.55, str(st.get("pose", "")), true)
 		var g2 := 0.0
-		while a.moving() and a._path.size() > 2 and g2 < 8.0:  # the next one starts once this one is past the sill
+		while a.moving() and a._path.size() > 1 and g2 < 8.0:  # the next one starts once this one is down the steps
 			g2 += await R._frame()
 	var g3 := 0.0
 	while g3 < 8.0:  # everyone down the steps and in the file before the parade starts
@@ -872,8 +1179,20 @@ func _door_steps(going_in: bool) -> Array:
 ## Dahyun walks out of the room to the open door (camera outside, door opens), still in her transformed figure.
 func _go_out(R: Node, shot := "story") -> void:
 	var kid := _a("kid")
+	# v3 (user: "다현이 사탕먹고 집밖으로 나오는것도 좀 더 극적으로"): the door bursts open in a spill of warm light,
+	# a low hero shot on the doorstep, a beat of sparkles and a music lift, then she launches into the action
+	stage.shot_to("hero", "door", {"rate": 2.2})
+	await R._wait(0.6)
 	fx("door_open")
-	stage.shot_to(shot, "door", {"rate": 1.6})
+	_sfx("wc.burst", stage.spot_point("door"))
+	var spill := OmniLight3D.new()
+	spill.light_color = Color(1.0, 0.8, 0.45)
+	spill.light_energy = 3.5
+	spill.omni_range = 1.2
+	stage.add_child(spill)
+	spill.global_position = stage.spot_point("in_door") + Vector3.UP * 0.2
+	create_tween().tween_property(spill, "light_energy", 0.0, 2.2)
+	get_tree().create_timer(2.4).timeout.connect(spill.queue_free)
 	if SoundDirector.current:
 		SoundDirector.current.set_bed("@light", 1.5)
 	var fig := kid.pose
@@ -883,6 +1202,14 @@ func _go_out(R: Node, shot := "story") -> void:
 		g += await R._frame()
 	_glide("kid", _door_steps(false), 0.36, "walk", fig)
 	await _wait_glide(R, "kid")
+	kid.hop_v = 0.9  # the hero pose on the doorstep: a hop, sparkles, a lift in the music
+	for k in 6:
+		var a := TAU * k / 6.0
+		fly("story_wc_pot_19", kid.centre(), kid.centre() + _sx() * cos(a) * 0.14 + Vector3.UP * (0.1 + sin(a) * 0.08), 0.035, 0.7, 0.05, 0.0, 5.0)
+	_sfx("wc.sparkle", kid.centre())
+	_sfx("wc.stir", kid.centre())
+	await R._wait(0.9)
+	stage.shot_to(shot, "door", {"rate": 1.4})
 
 
 func _while_line(R: Node) -> void:
@@ -914,6 +1241,8 @@ func _glide(role: String, pts: Array, spd: float, mode: String, pose: String) ->
 	a.puppet.set_figure(pose, false)
 	var gy := stage.world.ground.surface_y(Vector2(a.global_position.x, a.global_position.z))
 	# "y": the path height above the ground (kept apart from the hop / bob offset, which must not feed back)
+	if not stage.no_spacing.has(role):
+		stage.no_spacing.append(role)
 	_glides[role] = {"pts": pts.duplicate(), "spd": spd, "mode": mode, "pose": pose, "dist": 0.0,
 		"y": maxf(0.0, float(_glides.get(role, {}).get("y", a.lift if mode != "hop" else 0.0)))}
 
@@ -939,6 +1268,7 @@ func _step_glides(dt: float) -> void:
 		var pts: Array = gd["pts"]
 		if a == null or pts.is_empty():
 			_glides.erase(role)
+			stage.no_spacing.erase(role)
 			if a:
 				a.puppet.rotation.z = 0.0
 			continue
@@ -1032,17 +1362,41 @@ func step(dt: float) -> void:
 			continue
 		var n: Node3D = fl["node"]
 		var base: Vector3 = fl["base"]
+		if fl.has("dur") and float(fl["t"]) < float(fl["dur"]):
+			# flying in on the wind: a curve from the far street through a wide swing to the hover point, the card
+			# flipping over and tumbling like paper, a flutter sound now and then
+			fl["t"] = float(fl["t"]) + dt
+			var u := clampf(float(fl["t"]) / float(fl["dur"]), 0.0, 1.0)
+			var e := u * u * (3.0 - 2.0 * u)
+			var p0: Vector3 = fl["from"]
+			var p1: Vector3 = fl["mid"]
+			var p2: Vector3 = base
+			var q := p0.lerp(p1, e).lerp(p1.lerp(p2, e), e)
+			q += _right() * sin(float(fl["t"]) * 3.1 + float(fl["ph"])) * 0.06 * (1.0 - u) + Vector3.UP * sin(float(fl["t"]) * 4.3) * 0.04 * (1.0 - u)
+			n.global_position = q
+			n.scale = Vector3(maxf(0.15, absf(cos(float(fl["t"]) * 5.0 * (1.0 - u * 0.7)))), 1, 1)
+			n.rotation.z = sin(float(fl["t"]) * 3.7 + float(fl["ph"])) * 0.6 * (1.0 - u * 0.6)
+			fl["flutter"] = float(fl["flutter"]) - dt
+			if float(fl["flutter"]) <= 0.0 and u < 0.9:
+				fl["flutter"] = 0.9
+				_sfx("wc.flutter", q)
+			if u >= 1.0 and _track == n:
+				_track = null
+			continue
 		if fl.has("orbit"):
 			var a := _t * 1.6 + float(fl["ph"])
 			n.global_position = base + _right() * cos(a) * float(fl["orbit"]) + Vector3.UP * sin(a) * float(fl["orbit"]) * 0.5
 		else:
 			n.global_position = n.global_position.lerp(base + Vector3.UP * sin(_t * 2.2 + float(fl["ph"])) * float(fl["amp"]), 1.0 - exp(-1.6 * dt))
 			n.rotation.z = sin(_t * 1.7 + float(fl["ph"])) * 0.25
+	if is_instance_valid(_track):
+		stage._focus_goal = _track.global_position - Vector3.UP * 0.25
 	# the pot: the swirl bands spin
 	for i in _swirls.size():
 		var sw := _swirls[i] as Node3D
 		sw.rotation.y += _swirl_speed * dt * (1.0 if i % 2 == 0 else 1.15)
 	_step_glides(dt)
+	_step_ghost(dt)
 	# the little ghost floats behind the last marcher
 	if _ghost and _ghost_follow != "":
 		var f2 := _a(_ghost_follow)

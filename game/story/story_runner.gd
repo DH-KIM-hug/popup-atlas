@@ -376,6 +376,8 @@ func _run() -> void:
 		for i in range(i0, beats.size()):
 			await _play_beat(beats[i])
 		var total := clock - t0
+		if stage and is_instance_valid(stage) and stage.tale.get("overlap_check", false):
+			print("OVERLAP_COUNT ", stage.overlap_count, " OCCLUDE_COUNT ", stage.occlude_count)
 		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio,
 			" missing_sound=", sound.missing if sound else [], " beats=", beat_times)
 		story_finished.emit(total)
@@ -611,12 +613,8 @@ func _step_walk_actors(st: Dictionary) -> void:
 			var pts: Array = []
 			for q in st["path"]:
 				pts.append(stage.spot_point(q))
-			if st.get("file", false) and i > 0 and pts.size() >= 2:
-				# single file (a parade): followers walk the leader's route and stop a step behind each other
-				var last: Vector3 = pts[pts.size() - 1]
-				var back := ((pts[pts.size() - 2] as Vector3) - last)
-				back.y = 0.0
-				pts[pts.size() - 1] = last + back.normalized() * float(st.get("spacing", 0.16)) * i
+			if st.get("file", false) and i > 0:
+				continue  # followers trail the leader (_file_follow below)
 			a.follow(pts, spd, str(st.get("pose", "")), false)
 		elif str(st.get("via", "")) == "road":
 			# along the road (a village spread): the route bends with it, the figure faces each stretch
@@ -630,6 +628,12 @@ func _step_walk_actors(st: Dictionary) -> void:
 			a.walk_to(goal, spd, str(st.get("pose", "")))
 		if st.has("end_pose"):
 			a.pose = str(st["end_pose"])
+	if st.get("file", false) and roles.size() > 1:
+		_file_busy = true
+		var ff := func():
+			await _file_follow(roles, float(st.get("spacing", 0.17)), spd, str(st.get("pose", "")))
+			_file_busy = false
+		ff.call()
 	if st.has("line"):
 		if st.get("line_late", false):
 			# the narration ends as the walker arrives (the quote that follows comes right after he stops)
@@ -660,6 +664,8 @@ func _step_walk_actors(st: Dictionary) -> void:
 		return
 	await _wait(0.1)
 	await _wait_actors(roles)
+	while _file_busy:
+		await _frame()
 	while _late_pending or _line_busy:  # the late narration has played before the next step (the quote)
 		await _frame()
 	if sound and str(st.get("end_pose", "")) == "sniff" and stage.actor("wolf"):
@@ -669,6 +675,52 @@ func _step_walk_actors(st: Dictionary) -> void:
 			var a2 := stage.actor(str(r))
 			if a2:
 				a2.pop_target = 0.02
+
+
+var _file_busy := false
+
+
+## Single file (v3, "물체랑 사람들끼리 자꾸 겹치잖아"): followers walk the leader's actual trail, follower i always
+## i·spacing of trail behind the leader, so nobody catches up at a corner or cuts across. Runs until the leader stops
+## and everyone stands at their trail point.
+func _file_follow(roles: Array, spacing: float, spd: float, pose: String) -> void:
+	var lead := stage.actor(str(roles[0]))
+	if lead == null:
+		return
+	var trail: Array = [lead.global_position]
+	var lens: Array = [0.0]
+	# the line as it stands now (behind the leader, toward each follower) seeds the trail
+	for i in range(1, roles.size()):
+		var a := stage.actor(str(roles[i]))
+		if a:
+			trail.push_front(a.global_position)
+	lens = [0.0]
+	for k in range(1, trail.size()):
+		lens.append(float(lens[k - 1]) + (trail[k] as Vector3).distance_to(trail[k - 1]))
+	var g := 0.0
+	while g < 60.0:
+		g += await _frame()
+		var p := lead.global_position
+		if p.distance_to(trail[trail.size() - 1]) > 0.02:
+			lens.append(float(lens[lens.size() - 1]) + p.distance_to(trail[trail.size() - 1]))
+			trail.append(p)
+		var total := float(lens[lens.size() - 1])
+		var busy := lead.moving()
+		for i in range(1, roles.size()):
+			var a := stage.actor(str(roles[i]))
+			if a == null:
+				continue
+			var want := maxf(0.0, total - spacing * i)
+			var k := 1
+			while k < lens.size() - 1 and float(lens[k]) < want:
+				k += 1
+			var u := clampf((want - float(lens[k - 1])) / maxf(float(lens[k]) - float(lens[k - 1]), 1e-4), 0.0, 1.0)
+			var tgt: Vector3 = (trail[k - 1] as Vector3).lerp(trail[k], u)
+			if a.global_position.distance_to(tgt) > 0.03:
+				a.walk_to(tgt, spd * 1.15, pose)
+				busy = true
+		if not busy:
+			return
 
 
 ## go_inside {who, house, from (spot, for actors not on the page yet), windows [index per actor], line, speed}:
@@ -703,7 +755,11 @@ func _step_go_inside(st: Dictionary) -> void:
 			a.lift = 0.0
 			a.pop_delay = 0.0
 			a.pop_target = 1.0
-		var qd := toward if str(st.get("queue", "")) == "front" else stage.dir_vec(str(st.get("queue", "toward")))  # where the queue waits
+		# where the queue waits: "front" out along the path, "along" beside the door along the house front (v3: a long
+		# line out of the path reached the next house)
+		var qd := toward if str(st.get("queue", "")) == "front" else stage.dir_vec(str(st.get("queue", "toward")))
+		if str(st.get("queue", "")) == "along":
+			qd = -sp.global_transform.basis.x.normalized() + toward * 0.35
 		a.walk_to(front + qd * float(st.get("queue_gap", 0.16)) * i + (toward * 0.05 if st.has("queue") else Vector3.ZERO), spd, "")
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
@@ -744,7 +800,16 @@ func _step_go_inside(st: Dictionary) -> void:
 		if st.has("to"):  # room: true (witch_candy): they walk on into the room to their spots (no window faces)
 			var tos: Dictionary = st["to"]
 			if tos.has(str(roles[i])):
-				a.walk_to(stage.spot_point(tos[str(roles[i])]), spd * 0.8, "")
+				var vias: Dictionary = st.get("via", {})
+				if vias.has(str(roles[i])):  # round the furniture (the pot) to the mark: one spot or a list
+					var vv: Variant = vias[str(roles[i])]
+					var vp: Array = []
+					for q in (vv if vv is Array else [vv]):
+						vp.append(stage.spot_point(q))
+					vp.append(stage.spot_point(tos[str(roles[i])]))
+					a.follow(vp, spd * 0.8, "", false)
+				else:
+					a.walk_to(stage.spot_point(tos[str(roles[i])]), spd * 0.8, "")
 			continue
 		stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
 	sp.open_door(false)

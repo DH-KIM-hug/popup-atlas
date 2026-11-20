@@ -24,6 +24,10 @@ How to look:
 - [ ] **Houses face the road** ("집 문이 길쪽으로 나있어야 미국식 집 구조"): every front door looks onto the street,
   houses on both sides face each other across it, none turns its back or side to the road; a short path or steps
   from each door to the road.
+- [ ] **Story props move on screen** ("초대장이 날아왔으면 좋겠고"): what the narration says arrives (an invitation on the
+  wind) visibly travels there, fluttering, with the camera following, then is caught / opened toward the camera.
+- [ ] **Angled houses need bodies** ("사선으로 돼 있으니까 집도 집처럼 보여줘야"): a house turned to the road shows side walls,
+  a roof running back and a back from every camera position (no flat cut-outs, no hollow backs).
 - [ ] **Placement.** Set pieces are off the road and out of the water (SET_CHECK road=0 water=0). Wading characters stand in the water channel, not in the bank.
 
 ## Lines and voice
@@ -56,6 +60,17 @@ How to look:
 - [ ] **Shots are varied** (wide, medium, close; OTS; low entrance; push-in on completion; light progressing). Not one frontal stage shot ("전체적으로 연출 고민해볼래? 카메라 워킹도").
 - [ ] **Interactive steps frame every target first** and hold still. Rings sit fully inside with margin, and each target is at least ~80 pt to tap ("화면이 거기로 안가서 못누름").
   - A build is framed once, for the finished size.
+- [ ] **Nothing overlaps** ("물체랑 사람들끼리 자꾸 겹치잖아"): actors vs actors, actors vs props, props vs props; the run
+  log's OVERLAP lines (stage `overlap_check`) are zero or whitelisted contacts (`overlap_ok`); marks spaced, spacing
+  solver on; zoomed tiles of the room and the finale.
+- [ ] **No house blocks the view** ("다른 집들로 인해 시야가 안가리면 좋겠어"): the OCCLUDE log lines are zero; choose camera
+  angles that clear the houses before moving houses.
+- [ ] **Dramatic irony before a surprise** ("유령이 처음엔 나온지 몰라야지 나중에 놀라는거"): a sneaking character shows in
+  glimpses nobody reacts to; the reaction comes later, big (sting, snap zoom, surprised faces).
+- [ ] **Effects the lines name are shown** ("유령 사탕먹은 입도 제대로"): a line about the mouth gets a face close-up with
+  the black lips and wisps on each "우~".
+- [ ] **Big moments are staged** ("집밖으로 나오는것도 좀 더 극적으로"): a door bursting open with light, a low hero shot and
+  a beat before the action.
 - [ ] **No set piece in front of a speaker** ("앞의 집때문에 안보여"): check every exterior shot for a house, tree or
   prop between the camera and whoever speaks; turn (orbit) the camera to face them rather than leaving them hidden.
 - [ ] **The acting character is in every frame of its beat.** The camera follows walkers to their mark, and no one exits mid-line.

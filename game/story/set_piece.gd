@@ -34,6 +34,7 @@ var _windows: Array = []
 var _wall_x: Array = []
 var _roof_px := 0.0
 var _full_path := ""
+var _st: Dictionary = {}  ## the facade's stages entry (bands, house body files / gable)
 var box: Node3D  ## the house's volume behind the front (back, sides, floor, ceiling); stands while the house is whole
 var _window_boxes: Array = []  ## [cx, cy] facade px of the die-cut windows
 var _door_box: Dictionary = {}
@@ -133,6 +134,7 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int, flat_ := f
 	_full_path = path
 	_window_boxes = st.get("window_boxes", [])
 	_door_box = st.get("door", {})
+	_st = st
 	for k in (st["bands"] as Array).size():
 		var b: Dictionary = st["bands"][k]
 		var tex: Texture2D = load("res://" + str(b["file"]))
@@ -203,6 +205,17 @@ func door_sill() -> float:
 	if _door_box.is_empty():
 		return 0.0
 	return maxf(0.0, (_base_px - float(_door_box.get("y1", _base_px))) * _px_scale)
+
+
+## Sideways offset of point p from the doorway's centre along the wall, and the doorway's half width (world).
+func door_offset(p: Vector3) -> float:
+	var cx := (float(_door_box.get("x0", 0)) + float(_door_box.get("x1", 0))) * 0.5
+	var r := global_transform.basis.x.normalized()
+	return (p - global_position).dot(r) - (cx - _px_w * 0.5) * _px_scale
+
+
+func door_half_width() -> float:
+	return (float(_door_box.get("x1", 0)) - float(_door_box.get("x0", 0))) * 0.5 * _px_scale
 
 
 ## How far open the door stands now (0 shut .. 1 open): entries wait until it is clear.
@@ -301,6 +314,12 @@ func add_box(cfg: Dictionary) -> void:
 		box.add_child(n)
 		n.add_child(c)
 		return c
+	if cfg.get("body", false) and _st.has("side_file"):  # witch_candy v3: the house's own wall / roof as its body
+		cfg = cfg.duplicate()
+		cfg["side"] = "res://" + str(_st["side_file"])
+		cfg["inner"] = "res://" + str(_st["side_file"])
+		cfg["back_out"] = true
+		_add_roof_body(d, s)
 	var side := str(cfg.get("side", ""))
 	if side != "":
 		mk.call(side, wall_h, d, Vector3(x0 - 0.006, 0, -d * 0.5), -PI * 0.5)
@@ -308,6 +327,8 @@ func add_box(cfg: Dictionary) -> void:
 	var inner := str(cfg.get("inner", ""))
 	if inner != "":
 		mk.call(inner, wall_h * float(cfg.get("inner_h", 1.0)), x1 - x0, Vector3((x0 + x1) * 0.5, 0, -d + 0.012), 0.0)
+		if cfg.get("back_out", false):  # the back seen from behind the house
+			mk.call(inner, wall_h, x1 - x0, Vector3((x0 + x1) * 0.5, 0, -d - 0.004), PI)
 	# (no turned-round copy of the front at the back: seen from the raised camera its plain back poked above the
 	# roof; the side walls, inner wall and ceiling close the volume from every angle the story uses)
 	var floor := str(cfg.get("floor", ""))
@@ -317,6 +338,55 @@ func add_box(cfg: Dictionary) -> void:
 			c.get_parent().rotation.x = -PI * 0.5
 			c.get_parent().scale = Vector3((x1 - x0) / maxf(d * c.texture.get_size().x / maxf(c.texture.get_size().y, 1.0), 0.001), 1, 1)
 	box.visible = shown >= band_count()
+
+
+## Two roof slopes from the facade's gable (eaves -> ridge) running back over the box, printed with the house's own
+## roof, and the gable repeated at the back (witch_candy v3: angled houses read as houses, not cut-outs).
+func _add_roof_body(d: float, s: float) -> void:
+	var g: Dictionary = _st.get("gable", {})
+	if g.is_empty():
+		return
+	var tex: Texture2D = load("res://" + str(_st["roof_file"]))
+	var px := func(p: Array) -> Vector3:
+		return Vector3((float(p[0]) - _px_w * 0.5) * s, (_base_px - float(p[1])) * s, 0.0)
+	var el: Vector3 = px.call(g["eave_l"])
+	var er: Vector3 = px.call(g["eave_r"])
+	var rg: Vector3 = px.call(g["ridge"])
+	var m := StandardMaterial3D.new()
+	m.albedo_texture = tex
+	m.cull_mode = BaseMaterial3D.CULL_DISABLED
+	m.roughness = 0.85
+	m.uv1_scale = Vector3(1.0, 3.0, 1.0)
+	m.texture_repeat = true
+	for pair in [[el, rg], [rg, er]]:
+		var a: Vector3 = pair[0]
+		var b: Vector3 = pair[1]
+		var st := SurfaceTool.new()
+		st.begin(Mesh.PRIMITIVE_TRIANGLES)
+		var z0 := -0.004
+		var z1 := -d - 0.01
+		var q := [a + Vector3(0, 0, z0), b + Vector3(0, 0, z0), b + Vector3(0, 0, z1), a + Vector3(0, 0, z1)]
+		var uv := [Vector2(0, 0), Vector2(1, 0), Vector2(1, 1), Vector2(0, 1)]
+		for i in [0, 1, 2, 0, 2, 3]:
+			st.set_uv(uv[i])
+			st.add_vertex(q[i])
+		st.generate_normals()
+		var mi := MeshInstance3D.new()
+		mi.mesh = st.commit()
+		mi.material_override = m
+		box.add_child(mi)
+	# back gable: the roof band's silhouette repeated at the back, turned round
+	var rb: Dictionary = (_st["bands"] as Array)[(_st["bands"] as Array).size() - 1]
+	var c := PaperCard.new()
+	c.texture = load("res://" + str(rb["file"]))
+	c.height = (float(rb["y1"]) - float(rb["y0"])) * s
+	c.thickness = 0.006
+	c.back_print = false
+	var n := Node3D.new()
+	n.position = Vector3(0, (_base_px - float(rb["y1"])) * s, -d - 0.012)
+	n.rotation.y = PI
+	box.add_child(n)
+	n.add_child(c)
 
 
 func band_count() -> int:

@@ -1548,3 +1548,38 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     foreground while the others go in; turned houses seen from the down-street camera show as angled flat fronts (no
     side walls on the village houses; only the shop has a body); the finale friends still stand half behind
     Dahyun and the pot; placeholder SFX unheard; wc_n01-n04 caption-only.
+
+## 2026-11-20 — witch_candy v3: flying invite, houses with bodies, the ghost set piece, an overlap pass
+  - User on v2: "초대장이 날아왔으면 좋겠고, 사선으로 돼 있으니까 집도 집처럼"; then "유령 ... 극적으로", corrected to "유령이
+    처음엔 나온지 몰라야지 나중에 놀라는거"; "물체랑 사람들끼리 자꾸 겹치잖아"; "유령 사탕먹은 입도 제대로 ... 집밖으로 나오는것도
+    좀 더 극적으로 ... 다른 집들로 인해 시야가 안가리면". Runtime target relaxed to ~6–6.5 min ("6분 7초도 상관없어").
+  - Invitation: four cards ride the wind in from the end of the street on curving paths, flipping and tumbling, the
+    camera following one (handler `_track` drives the stage focus); flutter sounds; they hover over the kids with
+    big tap rings; caught, each opens beside its catcher's shoulder toward the camera.
+  - Houses with bodies: tools/atlas/wc_house_bodies.py (wall / roof split, side strip of the house's own wall, roof
+    print, eaves + ridge; contact artifacts/witch_candy/house_bodies.png); SetPiece `box.body` builds side walls, a
+    back, two roof slopes and the gable at the back. The village tour shows roofs running back over windowed sides.
+  - Ghost candy round: the little ghost sneaks in with four glimpses nobody notices (out of the pot steam behind the
+    friends, over the witch's shoulder, over the pot rim, mimicking the ghost pose at the back); build-up (lights dim
+    and flicker, music drops, the pot glows green, smoke curls, the black candy rises slowly), the eat POOF with a
+    shake, a black-lips close-up with white wisps puffing out on "오~우~", the friends' black lips close; then the
+    surprise nose to nose (sting, snap zoom, shake, everyone jumps), the roam (round the room and the pot, past the
+    shelf with the jars jumping, between the friends who hop, out of the door, a loop over the street in front of the
+    moon, back in) and a 까꿍. New placeholder sounds wc.sting / eerie / swoosh / peekaboo / burst.
+  - Dramatic exits: the door bursts open in a spill of warm light, a low hero shot on the doorstep, sparkles and a
+    music lift, then the action with its camera move.
+  - Overlaps: stage `spacing` solver and `overlap_check` (OVERLAP / OCCLUDE log lines, totals at the end). First
+    measured run: OVERLAP 72, OCCLUDE 36 (OCCLUDE mostly false — fixed: only what the camera can see, upper body).
+    Real sources fixed: the group walk converging (now by distance), file followers bunching / a tight U-turn (now
+    snake-follow on the leader's trail and a wide two-lane loop), people cutting through the pot (via waypoints, who
+    enters first), the door queue reaching the next house (queue along the shop front, house moved). Final run:
+    OVERLAP 3, OCCLUDE 1 (listed below).
+  - Runs: witch_candy STORY_DONE 401.8 s (6:42), CHECK_LINES OK (55 segments; pumpkin, fish, ghost), no script errors;
+    three_pigs 295.4–296.9 s (the spread across runs is the cover's time-sliced first build), sun_wind 206.3 s, both
+    CHECK_LINES OK. Videos: artifacts/video/witch_candy_full_v3.mp4 (28.5 MB), witch_candy_village_v3.mp4,
+    witch_candy_invite_v3.mp4, witch_candy_ghost_v3.mp4; beat sheets artifacts/witch_candy/beats_v3/.
+  - Still off: OVERLAP rabbit / fox and bear / house_7 for a moment while the door queue forms, witch / cat as they
+    file out for the parade, OCCLUDE bear behind the pot in the low fire shot; a green smoke puff from the pot drifts
+    over the rabbit's face in the black-lips shots; the ghost glimpses are small (not checked by a child's eye);
+    the duck result stays inside (no doorstep exit); 6:42 is above the relaxed 6–6.5 min; placeholder sounds unheard;
+    wc_n01-n04 caption-only.

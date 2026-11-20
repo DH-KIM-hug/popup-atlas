@@ -147,7 +147,10 @@ RESULTS = {
 # ---------------------------------------------------------------- stage
 HANDLER = "res://stories/witch_candy/fx.gd"   # phase 2
 BACKDROP = True
-INSIDE_FRAMING = "manual"  # the stage does not reframe taps while the camera is inside the shop (rooms are framed here)
+INSIDE_FRAMING = "manual"
+# v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아"): stage spacing solver + OVERLAP / OCCLUDE log; intentional contacts listed
+EXTRA = {"spacing": True, "overlap_check": True,
+         "overlap_ok": [["kid", "logs"], ["witch", "pot"], ["kid", "room_floor"], ["kid", "room_floor2"]]}  # the stage does not reframe taps while the camera is inside the shop (rooms are framed here)
 # Shots [distance, elevation°, focus height, fov, yaw offset°] (three_pigs vocabulary + interior shots)
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "crane_high": [8.0, 34.0, 0.3, 22.0, 0.0], "establish": [8.0, 17.0, 0.3, 24.0, -4.0],
@@ -161,11 +164,12 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          # v2 (user: "처음 마녀가 인사할때 앞의 집때문에 안보여 ... 카메라를 회전해서"): the camera turns round to face the
          # shop door straight on from the road (the shop faces the road at SHOP_YAW), so nothing stands in between
          "door_cam": [1.6, 14.0, 0.3, 28.0, SHOP_YAW],  # straight on from the road: nothing in between
+         "hero": [1.05, 2.0, 0.24, 36.0, SHOP_YAW],      # low on the doorstep: the transformed hero, the light behind
          "door_wide": [2.6, 24.0, 0.3, 26.0, SHOP_YAW],  # raised: the door, its path and a file of people on it
          "roof_cam": [2.6, 14.0, 0.75, 26.0, SHOP_YAW + 12.0],  # the shop roof from the road in front of it
          # inside the shop (camera just behind the front wall, which hides while the camera is inside), in the
          # shop's frame
-         "room": [0.52, 8.0, 0.22, 66.0, SHOP_YAW],      # the whole room from just inside the front wall
+         "room": [0.58, 22.0, 0.2, 62.0, SHOP_YAW],    # raised a little: the back row shows over the front row      # the whole room from just inside the front wall
          "shelf": [0.48, 9.0, 0.12, 64.0, SHOP_YAW],     # shelf + Dahyun: the pick taps (all 9 framed)
          "pot": [0.42, 18.0, 0.16, 46.0, SHOP_YAW],      # looking down into the pot: swirl, POOF, candy
          "pot_low": [0.42, 4.0, 0.1, 50.0, SHOP_YAW],    # low on the fire (tap the logs)
@@ -225,18 +229,19 @@ STREET = {"shop": SHOP, "door": _door, "est": [0.1, -1.2], "street_focus": [0.2,
           "kids": [-0.05, 0.45], "kid_at": [-0.02, 0.42], "rabbit_at": [-0.22, 0.5], "bear_at": [0.17, 0.52],
           "fox_at": [-0.1, 0.66], "kids_mid": [-0.05, -1.7], "witch_door": _rot(SHOP, -0.02, 0.36, SHOP_YAW),
           "lantern_bump": [-0.38, -1.05], "moon_loop": [0.4, -3.6], "fly_loop": [0.45, -1.6], "roof": SHOP,
-          "parade_a": [-0.05, -0.2], "parade_b": [-0.05, -2.2], "tour_a": [-0.05, 0.6], "tour_b": [-0.05, -2.4],
+          "parade_a": [-0.22, -0.35], "parade_b": [-0.05, -2.2], "parade_l": [-0.2, -1.6], "parade_u1": [-0.12, 0.12], "parade_u3": [0.14, 0.02],
+          "parade_u2": [0.1, -0.45], "parade_r": [0.04, -1.6], "tour_a": [-0.05, 0.6], "tour_b": [-0.05, -2.4],
           # the end of the shop's front path on the road, and halfway down the street (outdoor actions go via the road)
           "road_shop": _rot(SHOP, SHOP_DOOR_X, 1.05, SHOP_YAW), "road_mid": [-0.05, -1.25],
           # the greeting / entry camera stands on the road straight in front of the shop door
-          "door_view": _rot(SHOP, SHOP_DOOR_X, 0.45, SHOP_YAW)}
+          "door_view": _rot(SHOP, SHOP_DOOR_X, 0.45, SHOP_YAW), "cat_door": _rot(SHOP, SHOP_DOOR_X + 0.22, 0.3, SHOP_YAW)}
 # inside the shop, in the shop's frame (the facade plane at dz 0, the room 1.0 deep behind it)
-for _k, (_dx, _dz) in {"in_back": (0.0, -0.97), "in_shelf": (-0.35, -0.9), "in_pot": (0.25, -0.62),
+for _k, (_dx, _dz) in {"in_back": (0.0, -0.97), "in_shelf": (-0.35, -0.9), "in_pot": (0.22, -0.62),
                        "in_counter": (0.47, -0.92), "in_focus": (0.05, -0.66), "in_beam": (0.0, -0.5),
-                       "in_kid": (0.04, -0.6), "in_witch": (0.43, -0.72), "in_cat": (0.64, -0.78),
-                       "in_rabbit": (0.15, -0.88), "in_bear": (0.3, -0.92), "in_fox": (0.59, -0.95),
+                       "in_kid": (-0.05, -0.55), "in_witch": (0.5, -0.58), "in_cat": (0.36, -0.4),
+                       "in_rabbit": (0.1, -0.88), "in_bear": (0.42, -0.86), "in_fox": (0.6, -0.84),
                        "in_floor": (0.0, -0.02), "in_floor2": (0.0, -0.52),
-                       "in_door": (SHOP_DOOR_X, -0.18), "in_shelf_front": (-0.22, -0.66)}.items():
+                       "in_door": (SHOP_DOOR_X, -0.18), "in_shelf_front": (-0.22, -0.66), "in_via": (-0.18, -0.76), "in_right": (0.56, -0.42), "in_right2": (0.5, -0.76)}.items():
     STREET[_k] = _rot(SHOP, _dx, _dz, SHOP_YAW)
 
 LIT = [0.55, 0.32, 0.85, "#ffae5a", False]       # a lit house: warm pool in front of its windows
@@ -251,8 +256,8 @@ _HOUSES = [
     ("story_wc_houses_b_04", "L", -1.65, [("story_wc_decor_09", 0.22, 0.08, PUMP)]),
     ("story_wc_houses_a_02", "L", -2.35, [("story_wc_decor_16", -0.3, 0.1, PUMP)]),
     ("story_wc_houses_a_03", "R", 0.0, [("story_wc_decor_13", 0.3, 0.08, None)]),
-    ("story_wc_houses_b_00", "R", -0.75, [("story_wc_decor_12", -0.3, 0.1, None)]),
-    ("story_wc_houses_a_06", "R", -1.55, [("story_wc_decor_14", 0.32, 0.1, None)]),
+    ("story_wc_houses_b_00", "R", -0.75, [("story_wc_decor_12", 0.3, 0.1, None)]),
+    ("story_wc_houses_a_06", "R", -1.4, [("story_wc_decor_14", 0.32, 0.1, None)]),
     # second row (behind the first, still facing the road) and down the road
     ("story_wc_houses_b_05", "L2", -0.6, []),
     ("story_wc_houses_b_03", "R2", -0.35, [("story_wc_decor_10", -0.32, 0.08, PUMP)]),
@@ -285,7 +290,9 @@ for _i, (_card, _side, _z, _dec) in enumerate(_HOUSES):
     _nm = f"house_{_i}"
     STREET[_nm] = [round(_x, 3), _z]
     VILLAGE_SET.append({"card": _card, "at": _nm, "stage": "full", "name": _nm, "scale": HOUSE_SCALE, "clear": 1.0,
-                        "glow": 0.9, "light": LIT, "yaw": _yaw})
+                        "glow": 0.9, "light": LIT, "yaw": _yaw,
+                        # v3 (user: "사선으로 돼 있으니까 집도 집처럼"): side walls, back and roof from the house itself
+                        "box": {"depth": round(min(0.42, _hw * 1.1), 3), "body": True}})
     for _j, (_dc, _dx, _dz, _lt) in enumerate(_dec):
         _dn = f"{_nm}_d{_j}"
         STREET[_dn] = _rot([_x, _z], _dx, _dz, _yaw)
@@ -299,13 +306,13 @@ _path("shop", _rot(SHOP, SHOP_DOOR_X, 0.02, SHOP_YAW), SHOP_YAW, 6)
 # street furniture: lamps on the verges, pumpkins along the road edges, two strings of lights across the street
 for _nm, _card, _pt, _sc, _lt, _extra in [
         ("lamp_l", "story_wc_halloween_13", [-0.5, 0.12], 1.0, LAMP, {}),
-        ("lamp_r", "story_wc_halloween_13", [0.3, -1.15], 1.0, LAMP, {}),
+        ("lamp_r", "story_wc_halloween_13", [0.33, -0.9], 1.0, LAMP, {}),
         ("lamp_r2", "story_wc_halloween_13", _rot(SHOP, -0.78, 0.12, SHOP_YAW), 1.0, LAMP, {"yaw": SHOP_YAW}),
         ("pump_1", "story_wc_halloween_01", [-0.47, -0.6], 1.0, PUMP, {}),
         ("pump_2", "story_wc_halloween_00", [-0.5, 0.75], 1.0, PUMP, {}),
         ("pump_3", "story_wc_halloween_03", [-0.52, -2.0], 1.0, PUMP, {}),
         ("pump_bump", "story_wc_halloween_02", [-0.47, -1.3], 1.0, PUMP, {}),
-        ("shop_p1", "story_wc_halloween_02", _rot(SHOP, SHOP_DOOR_X - 0.2, 0.12, SHOP_YAW), 0.8, PUMP, {"yaw": SHOP_YAW}),
+        ("shop_p1", "story_wc_halloween_02", _rot(SHOP, SHOP_DOOR_X - 0.34, 0.1, SHOP_YAW), 0.8, PUMP, {"yaw": SHOP_YAW}),
         ("broom", "story_wc_halloween_15", _rot(SHOP, 0.58, 0.06, SHOP_YAW), 1.0, None, {"yaw": SHOP_YAW}),
         ("lights_1", "story_wc_decor_00", [-0.08, -0.4], 1.45, None, {"allow_road": True}),
         ("lights_2", "story_wc_decor_01", [-0.1, -1.95], 1.25, None, {"allow_road": True}),
@@ -372,9 +379,11 @@ BEATS = [
      "steps": [
         # the Halloween street: a crane down over the lit houses, the shop glowing dimly at the far end
         {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 1.6},
-        {"do": "fx", "fx": "invites_flutter", "wait": 0.2},       # four pumpkin invitations drift down on the wind
+        # four pumpkin invitations ride the wind in from the end of the street, the camera following one
+        {"do": "fx", "fx": "invites_flutter", "wait": 0.2},
         {"do": "say", "line": "wc_000"},
-        {"do": "cam", "shot": "medium", "at": "kids", "wait": 0.4},
+        {"do": "fx", "fx": "", "wait": 1.2},
+        {"do": "cam", "shot": "medium", "at": "kids", "rate": 1.6, "wait": 0.6},
         # tap the three cards hovering over the friends: each lands in its friend's hands
         {"do": "tap_each", "targets": ["invite_1", "invite_2", "invite_3"], "prompt": "wc_n03", "hint": "wc_n03",
          "react": {"invite_1": ["-", "catch:rabbit"], "invite_2": ["-", "catch:bear"], "invite_3": ["-", "catch:fox"]}},
@@ -386,7 +395,7 @@ BEATS = [
         {"do": "fx", "fx": "shop_lights_on", "wait": 0.8},
         {"do": "say", "line": "wc_002"},
         # up the street (back walk cycles), the camera following them
-        {"do": "walk", "who": ["kid", "rabbit", "bear", "fox"], "to": "kids_mid", "dir": "away", "speed": 0.5,
+        {"do": "walk", "who": ["kid", "rabbit", "bear", "fox"], "dist": 1.9, "dir": "away", "speed": 0.5,
          "follow": "kid", "shot": "street"},
         # the camera turns round on the road to face the shop door straight on: the witch in full view
         {"do": "cam", "shot": "door_cam", "at": "door_view", "rate": 1.4, "wait": 0.6},
@@ -394,12 +403,12 @@ BEATS = [
         {"do": "walk", "who": "witch", "from": "in_door", "to": "witch_door", "dir": "toward", "speed": 0.28},
         {"do": "pose", "who": "witch", "pose": "welcome", "wait": 0.1},
         {"do": "say", "line": "wc_003"},
-        {"do": "walk", "who": "cat", "from": "in_door", "to": "door", "dir": "toward", "speed": 0.28, "async": True},
+        {"do": "walk", "who": "cat", "from": "in_door", "to": "cat_door", "dir": "toward", "speed": 0.28, "async": True},
         {"do": "cam", "shot": "door_cam", "at": "door_view", "rate": 1.4, "wait": 0.1},
         # one door, everyone in (seen from behind), on into the room to their places
         # the witch leads them in; the small cat waits last (nearest the camera), nobody hides the door
-        {"do": "go_inside", "who": ["witch", "kid", "rabbit", "bear", "fox", "cat"], "house": "shop",
-         "to": ROOM_AT, "queue": "front", "queue_gap": 0.11, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.62,
+        {"do": "go_inside", "who": ["rabbit", "bear", "fox", "witch", "kid", "cat"], "house": "shop",
+         "to": ROOM_AT, "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "along", "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.62,
          "line": "wc_004"},
     ]},
     {"id": "fire", "title": "뽀글뽀글 솥", "spread": _street(),
@@ -447,22 +456,35 @@ BEATS = [
         {"do": "brew", "round": 2, **ROUND["pick"], "stir": "wc_045"},
     ]},
     {"id": "ghost_candy", "title": "유령 사탕", "spread": _street(), "enter": KEEP,
+     # v3 (user: "유령을 좀 더 극적으로", then "유령이 처음엔 나온지 몰라야지 나중에 놀라는거"): the little ghost sneaks in
+     # unnoticed (four glimpses a child can spot, each bolder, nobody reacts); the build-up (lights dim, pot glows,
+     # candy rises), the ghost lips close-up with wisps; then the surprise nose to nose, the roam, and a 까꿍
      "steps": [
         {"do": "fx", "fx": "pot_clear", "wait": 0.2},
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.2},
         {"do": "pose", "who": "witch", "pose": "welcome"},
+        {"do": "fx", "fx": "ghost_glimpse_1", "wait": 0.1},
+        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.2, "wait": 0.1},
         {"do": "say", "line": "wc_126"},
         {"do": "pose", "who": "kid", "pose": "wow"},
+        {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.1},
+        {"do": "fx", "fx": "ghost_glimpse_2", "wait": 0.1},
         {"do": "say", "line": "wc_127"},
         {"do": "brew", "round": 3, "all_colors": True, "ingredients": INGREDIENTS, "taps": ["snot", "lantern", "fish"],
          "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "stir": "wc_130", "pop": "wc_131",
          "eat": "wc_132", "ghost": "wc_x_ghost_kid"},
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 0.1},
         {"do": "pose", "who": "witch", "pose": "ghost"},
+        {"do": "fx", "fx": "ghost_glimpse_4", "wait": 0.1},
         {"do": "say", "line": "wc_133"},
         {"do": "fx", "fx": "candies_to_all", "wait": 0.8},
         {"do": "pose", "who": ["cat", "rabbit", "bear", "fox"], "pose": "ghost", "hop": True},
+        {"do": "fx", "fx": "float_all", "wait": 0.1},
+        {"do": "cam", "shot": "two_shot", "at": "in_rabbit", "rate": 1.4, "wait": 0.1},  # their black lips, close
         {"do": "say", "line": "wc_134"},
+        {"do": "ghost_surprise"},
+        {"do": "ghost_roam"},
+        {"do": "ghost_peekaboo"},
     ]},
     {"id": "parade", "title": "오~우~ 행진", "spread": _street(), "enter": KEEP,
      "steps": [
@@ -472,16 +494,16 @@ BEATS = [
         {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.6, "wait": 0.4},
         # out one at a time: the door swings clear, each steps up onto the sill, over it and down the steps
         {"do": "leave_shop", "who": ALL, "pose": "ghost", "to": "road_shop", "spacing": 0.15},
-        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["road_shop", "kids_mid", "parade_a"], "file": True,
+        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["road_shop", "parade_l", "parade_a"], "file": True,
          "spacing": 0.17, "speed": 0.46, "follow": "kid", "shot": "high", "line": "wc_135"},
         {"do": "fx", "fx": "ghost_tagalong", "wait": 0.1},
-        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_a", "kids_mid", "road_shop"], "file": True,
+        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_u1", "parade_u3", "parade_u2", "parade_r", "road_shop"], "file": True,
          "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "street", "line": "wc_x_ghost_all"},
         {"do": "cam", "shot": "sky_wide", "at": "moon_loop", "rate": 1.0, "wait": 1.0},
         {"do": "fx", "fx": "ghost_vanish", "wait": 0.8},
         {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.4, "wait": 0.2},
-        {"do": "go_inside", "who": ["witch", "kid", "rabbit", "bear", "fox", "cat"], "house": "shop", "to": ROOM_AT,
-         "queue": "front", "queue_gap": 0.11,
+        {"do": "go_inside", "who": ["rabbit", "bear", "fox", "witch", "kid", "cat"], "house": "shop", "to": ROOM_AT,
+         "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "along", "queue_gap": 0.16,
          "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.65},
     ]},
     {"id": "finale", "title": "다 같이 변신", "spread": _street(),

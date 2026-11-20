@@ -88,7 +88,13 @@ S["flutter"] = np.concatenate([lp(noise(0.05), 12) * env(len(t(0.05)), 0.005, 0.
 S["giggle_bells"] = sum(at(bell(f, 0.4, 8), dl, 0.9) for f, dl in [(2093, 0), (2637, .12), (3136, .24), (2637, .36)])
 S["vanish"] = sweep(1200, 3000, 0.35) * env(len(t(0.35)), 0.005, 0.25) * 0.6 + 0.4 * at(S["sparkle"], 0, 0.35)
 
-GAIN = {"poof": -8, "wave": -9, "glow": -12, "roll": -10, "splash": -9, "flame": -9, "whoosh": -10}
+S["sting"] = at(sweep(1600, 200, 0.5, "saw"), 0, 1.0) * 0.4 + at(bell(392, 1.0, 3), 0.05, 1.0) + at(bell(370, 1.0, 3), 0.05, 1.0)
+S["eerie"] = np.sin(2 * np.pi * (520 + 40 * np.sin(2 * np.pi * 5 * t(2.0))) * t(2.0)) * np.sin(np.pi * t(2.0) / 2.0) ** 2
+S["swoosh"] = lp(noise(0.7), 6) * np.sin(np.pi * t(0.7) / 0.7) ** 3 * (0.6 + 0.4 * np.sin(2 * np.pi * 3 * t(0.7)))
+S["peekaboo"] = at(sweep(500, 1100, 0.18), 0, 0.6) + at(bell(1568, 0.5, 6), 0.15, 0.6)
+S["burst"] = lp(noise(0.4), 4) * env(len(t(0.4)), 0.002, 0.3) + at(bell(784, 0.4, 5), 0, 0.4)
+
+GAIN = {"eerie": -14, "swoosh": -9, "poof": -8, "wave": -9, "glow": -12, "roll": -10, "splash": -9, "flame": -9, "whoosh": -10}
 
 
 def main():

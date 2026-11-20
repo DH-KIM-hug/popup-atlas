@@ -516,6 +516,199 @@ static func _sky_texture(top: Color, hor: Color) -> Texture2D:
 	return ImageTexture.create_from_image(img)
 
 
+# ------------------------------------------------------------------ spacing + overlap / occlusion checks
+## witch_candy v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아", "다른 집들로 인해 시야가 안가리면 좋겠어"). Opt-in per tale:
+##  - `spacing`: every standing actor has a ground footprint (radius ~ a quarter of its height); actors that stand
+##    (not walking, not lifted, not driven by the tale) are eased apart from each other and out of set-piece bases.
+##  - `overlap_check`: every 0.2 s logs `OVERLAP <t> <a> <b> <kind> <amount>` for footprints that intersect (actor /
+##    actor, actor / set piece base line) and `OCCLUDE <t> <subject> <by> <frac>` when something nearer the camera
+##    covers more than 35 % of a visible actor's screen box (the speaker / subject must stay in view). Each pair is
+##    printed when it starts; `OVERLAP_COUNT` / `OCCLUDE_COUNT` totals print at STORY_DONE time (runner). Pairs in
+##    tale `overlap_ok` ([a, b] or [a, "*"]) are intentional contacts (holding the pot, sitting on the step).
+var _overlap_t := 0.0
+var overlap_live := {}
+var overlap_count := 0
+var occlude_count := 0
+var no_spacing: Array = []  ## roles the tale moves itself (glides): the solver leaves them alone
+
+
+func actor_radius(a: StoryActor) -> float:
+	return a.puppet.height * 0.22
+
+
+func _ok_pair(a: String, b: String) -> bool:
+	for q: Array in tale.get("overlap_ok", []):
+		if (str(q[0]) == a and (str(q[1]) == b or str(q[1]) == "*")) or (str(q[0]) == b and (str(q[1]) == a or str(q[1]) == "*")):
+			return true
+	return false
+
+
+func _piece_dist(sp: SetPiece, p: Vector3) -> float:
+	var r := sp.global_transform.basis.x.normalized()
+	var d := p - sp.global_position
+	d.y = 0.0
+	var along := clampf(d.dot(r), -sp.width * 0.5, sp.width * 0.5)
+	return (d - r * along).length()
+
+
+func _standing(a: StoryActor) -> bool:
+	return a.pop_target > 0.5 and a.visible and not a.moving() and a.lift < 0.01 and not no_spacing.has(a.role) \
+		and not a.has_meta("inside")
+
+
+func _solid_piece(sp: SetPiece) -> bool:
+	return sp.visible and sp.shown > 0 and not sp.flat and not sp.piece_name.begins_with("lights_") \
+		and not sp.has_meta("inside_only") and not str(sp.piece_name).contains("_st") and sp.height > 0.08
+
+
+func _spacing_step(dt: float) -> void:
+	var list: Array = []
+	for r in actors:
+		var a: StoryActor = actors[r]
+		if a.pop_target > 0.5 and a.visible:
+			list.append(a)
+	for i in list.size():
+		var a: StoryActor = list[i]
+		if not _standing(a):
+			continue
+		var push := Vector3.ZERO
+		for j in list.size():
+			if i == j:
+				continue
+			var b: StoryActor = list[j]
+			var d := a.global_position - b.global_position
+			d.y = 0.0
+			var need := actor_radius(a) + actor_radius(b)
+			if d.length() < need and not _ok_pair(a.role, b.role):
+				push += (d.normalized() if d.length() > 1e-4 else dir_vec("right")) * (need - d.length())
+		for k in sets:
+			var sp: SetPiece = sets[k]
+			if not _solid_piece(sp) or _ok_pair(a.role, sp.piece_name):
+				continue
+			var dd := _piece_dist(sp, a.global_position)
+			var need2 := actor_radius(a) + 0.02
+			if dd < need2:
+				var t := sp.global_transform.basis.z.normalized()
+				var side := signf((a.global_position - sp.global_position).dot(t))
+				push += t * (side if side != 0.0 else 1.0) * (need2 - dd)
+		if push.length() > 1e-4:
+			var q := a.global_position + push * minf(1.0, dt * 4.0)
+			q.y = world.ground.surface_y(Vector2(q.x, q.z))
+			a.place_at(q)
+
+
+## The house (set name) whose box holds point p, "" outside every house.
+func house_of(p: Vector3) -> String:
+	for k in sets:
+		var sp: SetPiece = sets[k]
+		if sp.box == null:
+			continue
+		var l := sp.global_transform.affine_inverse() * p
+		if l.z < 0.02 and l.z > -1.2 and absf(l.x) < sp.width * 0.5:
+			return str(k)
+	return ""
+
+
+func _screen_box(pts: Array) -> Rect2:
+	var cam := camera()
+	var r := Rect2()
+	var first := true
+	for p: Vector3 in pts:
+		if cam.is_position_behind(p):
+			return Rect2()
+		var s := cam.unproject_position(p)
+		if first:
+			r = Rect2(s, Vector2.ZERO)
+			first = false
+		else:
+			r = r.expand(s)
+	return r
+
+
+func _actor_box(a: StoryActor) -> Rect2:
+	var cr := camera().global_transform.basis.x
+	var w := a.puppet.height * 0.42
+	# the upper 60 % (head and body): legs behind a pot or a fence are fine, a hidden face is not
+	var b := a.global_position + Vector3.UP * (a.hop + a.lift + a.puppet.height * 0.4)
+	return _screen_box([b - cr * w * 0.5, b + cr * w * 0.5, b + Vector3.UP * a.puppet.height * 0.6 - cr * w * 0.5,
+		b + Vector3.UP * a.puppet.height * 0.6 + cr * w * 0.5])
+
+
+func _piece_box(sp: SetPiece) -> Rect2:
+	var r := sp.global_transform.basis.x.normalized() * sp.width * 0.5
+	var b := sp.global_position
+	var h := Vector3.UP * sp.height * 0.92
+	return _screen_box([b - r, b + r, b - r + h, b + r + h])
+
+
+func _overlap_check() -> void:
+	var cam := camera()
+	var vs := get_viewport().get_visible_rect().size
+	var screen := Rect2(Vector2.ZERO, vs)
+	var now := {}
+	var vis: Array = []
+	var cam_house := house_of(cam.global_position) if camera_inside != "" else ""
+	for r in actors:
+		var a: StoryActor = actors[r]
+		if a.pop_s > 0.5 and a.visible and not a.has_meta("inside"):
+			vis.append(a)
+	for i in vis.size():
+		var a: StoryActor = vis[i]
+		for j in range(i + 1, vis.size()):
+			var b: StoryActor = vis[j]
+			var d := a.global_position - b.global_position
+			d.y = 0.0
+			var need := (actor_radius(a) + actor_radius(b)) * 0.8
+			if d.length() < need and absf(a.lift - b.lift) < 0.1 and not _ok_pair(a.role, b.role):
+				now["OVERLAP %s %s actor" % [a.role, b.role]] = snappedf(1.0 - d.length() / need, 0.01)
+		for k in sets:
+			var sp: SetPiece = sets[k]
+			if not _solid_piece(sp) or _ok_pair(a.role, sp.piece_name) or a.lift > 0.05:
+				continue
+			var dd := _piece_dist(sp, a.global_position)
+			if sp.has_door() and absf(sp.door_offset(a.global_position)) < sp.door_half_width():
+				continue  # walking through an open doorway is not an overlap
+			if dd < actor_radius(a) * 0.7:
+				now["OVERLAP %s %s card" % [a.role, sp.piece_name]] = snappedf(1.0 - dd / (actor_radius(a) * 0.7), 0.01)
+		# occlusion: something nearer the camera covering this actor on screen (only what the camera can see: inside a
+		# house the room, outside everything but the rooms)
+		if house_of(a.global_position) != cam_house:
+			continue
+		var ab := _actor_box(a)
+		if ab.size.x <= 1.0 or not ab.intersects(screen):
+			continue
+		var ad := cam.global_position.distance_to(a.global_position)
+		var area := ab.get_area()
+		for k in sets:
+			var sp: SetPiece = sets[k]
+			if not _solid_piece(sp) or sp.walls and not sp.walls.visible or str(k) == cam_house:
+				continue
+			if house_of(sp.global_position) != cam_house:
+				continue
+			# the piece's nearest base point to the actor decides who is in front (a back wall is behind, not beside)
+			var rr := sp.global_transform.basis.x.normalized()
+			var off := a.global_position - sp.global_position
+			var near := sp.global_position + rr * clampf(off.dot(rr), -sp.width * 0.5, sp.width * 0.5)
+			var sd := cam.global_position.distance_to(near)
+			if sd > ad - 0.08:
+				continue
+			var ov := ab.intersection(_piece_box(sp))
+			if ov.get_area() / maxf(area, 1.0) > 0.35:
+				now["OCCLUDE %s %s" % [a.role, sp.piece_name]] = snappedf(ov.get_area() / area, 0.01)
+	for key in now:
+		if not overlap_live.has(key):
+			print(key, " t=", snappedf(_t, 0.01), " amt=", now[key], " shot=", shot)
+			if OS.get_cmdline_user_args().has("--overlap-debug"):
+				for r2 in actors:
+					var a2: StoryActor = actors[r2]
+					print("   ", r2, " ", a2.global_position.snapped(Vector3.ONE * 0.01), " moving=", a2.moving(), " path=", a2._path.size())
+			if str(key).begins_with("OCCLUDE"):
+				occlude_count += 1
+			else:
+				overlap_count += 1
+	overlap_live = now
+
+
 func _set_glow(sp: SetPiece, g: float) -> void:
 	var cards: Array = sp.band_cards.duplicate()
 	if sp.card:
@@ -1628,6 +1821,13 @@ func _process(dt: float) -> void:
 		_counter.scale = Vector3.ONE * maxf(cs.x, 0.001)
 		_counter.visible = cs.x > 0.02
 	_camera_inside_check()
+	if tale.get("spacing", false):
+		_spacing_step(dt)
+	if tale.get("overlap_check", false):
+		_overlap_t += dt
+		if _overlap_t >= 0.2:
+			_overlap_t = 0.0
+			_overlap_check()
 	if not _glow_pending.is_empty():
 		var left: Array = []
 		for q: Array in _glow_pending:
