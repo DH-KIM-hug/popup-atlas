@@ -73,6 +73,9 @@ How to look:
   입술로 있는지 검토해봐"): a changed feature replaces the drawn one (the mouth itself drawn dark, nothing of the old
   mouth showing, no halo; full-res crops), and a state like the ghost-candy mouth is a CastPuppet state that every
   expression / walk change respects until the story ends it (run log BLACK_LIPS frames-with-wrong-variant=0).
+- [ ] **Replace a feature by removing the original first, never paint over it** ("기존 입술 위에 덧칠하니깐 이상한데"): erase
+  the old feature (inpaint with the surrounding material), then draw / composite the new one; check three-row crops
+  (original / erased / new).
 - [ ] **Big moments are staged** ("집밖으로 나오는것도 좀 더 극적으로"): a door bursting open with light, a low hero shot and
   a beat before the action.
 - [ ] **No set piece in front of a speaker** ("앞의 집때문에 안보여"): check every exterior shot for a house, tree or

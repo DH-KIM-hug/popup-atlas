@@ -894,8 +894,8 @@ func _ghost_surprise(R: Node) -> void:
 	stage.shot_to("face_in", "in_kid", {"rate": 6.0, "shake": 2.5})
 	for r in ["kid", "witch", "rabbit", "bear", "fox", "cat"]:
 		var a := _a(r)
-		if a:
-			a.set_pose({"kid": "wow", "witch": "surprised", "cat": "startled"}.get(r, "cheer"))
+		if a:  # v5: surprised faces WITH the ghost-candy mouth (drawn natively), not the arms-up ghost pose
+			a.set_pose("wow_black" if r == "kid" else "surprised_black")
 			a.hop_v = 1.1
 	await R._wait(1.6)
 
@@ -918,8 +918,8 @@ func _ghost_roam(R: Node) -> void:
 	_shelf_wobble = 1.0
 	for r in ["rabbit", "bear", "fox", "witch", "cat", "kid"]:
 		var a := _a(r)
-		if a:
-			a.set_pose({"kid": "wow", "witch": "surprised", "cat": "sit"}.get(r, "cheer"))
+		if a:  # watching it whoosh round: still surprised (black mouths)
+			a.set_pose("wow_black" if r == "kid" else "surprised_black")
 	var t0 := 0.0
 	while not _gpath.is_empty() and t0 < 10.0:
 		t0 += await R._frame()

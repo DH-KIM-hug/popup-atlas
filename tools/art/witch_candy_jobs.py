@@ -400,6 +400,26 @@ atlas("story_wc_decor", "THIS SHEET: add-on Halloween decorations for a street a
       "top; (15) a paper ghost cut-out waving (friendly, dot eyes); (16) a lit candle lantern on a low post; (17) a "
       "straw bale with three small jack-o'-lanterns; (18) a paper moon-and-stars mobile hanging from a little stand.")
 
+# 2026-11-20 v5 (user: "기존 입술을 빼고 ... 기존 입술위에 덧칠하니깐 이상한데"): the old mouths are erased; a NEW ghost-candy
+# mouth is drawn: decals in the felt style for the erased faces, and whole surprised figures with the mouth native.
+NEW_MOUTH = ("THE GHOST-CANDY MOUTH: a cute SOLID dark mouth shape made of very dark purple-black felt (like #2a1830), "
+             "with a slightly darker interior and ONE tiny pale cream highlight dot; soft rounded edges, a thin stitched "
+             "edge in a slightly lighter plum; it is a filled mouth shape, NOT a ring, NOT outlined lips around a "
+             "skin-coloured hole. ")
+atlas("story_wc_mouths", "THIS SHEET: 8 ghost-candy MOUTH decals for paper puppets, each a small separate felt piece, "
+      "all the same felt style. " + NEW_MOUTH + "(1) a round 'oooh' O mouth seen from the front, a little taller than "
+      "wide; (2) the same O a little smaller; (3) a small open smile (a soft D-shape, wider than tall) seen from the "
+      "front; (4) a big surprised round open mouth from the front; (5) a round 'oooh' O mouth seen from the SIDE (a "
+      "profile pursed O pointing to the right, like a little oval); (6) the side O smaller; (7) a giggling open smile "
+      "from the front; (8) a tiny O for a small animal face. No faces, no skin, only the mouth pieces, each with a "
+      "flat clean edge all round.")
+cast("cast_wc_surprised_black", "SIX", DAHYUN + WITCH + CAT + RABBIT + BEAR + FOX,
+     "SIX FRONT figures, SURPRISED after eating a magic black ghost candy, left to right: (1) DAHYUN; (2) THE CANDY "
+     "WITCH; (3) HOBAKI THE CAT sitting up; (4) THE RABBIT; (5) THE BEAR; (6) THE FOX. Each with eyes wide and round, "
+     "both hands (front paws) raised open beside the face, a little jump of surprise, cute and funny, never scary. " +
+     NEW_MOUTH + "The mouth is drawn as part of the face (no other lips, no other mouth under it). Sizes as in the "
+     "reference (the witch tallest, the cat smallest).", extra=FRONT)
+
 if __name__ == "__main__":
     p = os.path.join(HERE, "witch_candy_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)

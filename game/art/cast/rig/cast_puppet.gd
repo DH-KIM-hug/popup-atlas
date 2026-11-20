@@ -215,6 +215,8 @@ func _mouth_map(p: String) -> String:
 		return p
 	if has_pose(p + "_" + mouth_state):
 		return p + "_" + mouth_state
+	if p in ["wow", "surprised", "startled", "scared"] and has_pose(("wow" if has_pose("wow_black") else "surprised") + "_" + mouth_state):
+		return ("wow" if has_pose("wow_black") else "surprised") + "_" + mouth_state
 	if pose_view(p) == "side" and has_pose("ghost_cycle") and (p.contains("cycle") or p.contains("walk")):
 		return "ghost_cycle"
 	if pose_view(p) == "front" and has_pose("ghost_front") and (p.contains("walk") or p.contains("front")):

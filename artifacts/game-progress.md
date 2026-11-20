@@ -1604,3 +1604,23 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Still off: during the surprise the reaction is the ghost-play figure (arms up, "oooh") for everyone, not their
     surprised faces (no surprised black-mouth art yet); the four hand-placed mouths are ovals painted over the old
     mouth area (checked by crop, but drawn by script, not by the artist).
+
+## 2026-11-21 — witch_candy v5: old mouths erased, a new ghost-candy mouth drawn in
+  - User on v4: "기존 입술을 빼고 하던지...해야되는거 아니냐? 기존 입술위에 덧칠하니깐 이상한데".
+  - New art (Codex, md5-unique): cast_wc_surprised_black — all six characters surprised with the NEW ghost-candy
+    mouth drawn natively (a soft dark plum-black felt O with a darker inside, a stitched rim and a cream highlight).
+    Catalogued as dahyun wow_black and <role> surprised_black; the reveal now uses these surprised faces (the
+    arms-up ghost pose before). (A separate mouth-decal sheet, story_wc_mouths, failed twice in Codex; not needed.)
+  - tools/cast/wc_mouth_v5.py, on all 39 ghost figures / walk frames, from the originals: finds the old mouth (ring,
+    hole, ticks; side "C"; the cat's small brown "o"; hand-measured spots for 4 frames), ERASES it with a patch of the
+    same face copied from nearby plain skin (colour-matched, feathered, patches with blush / hair / eyes rejected; a
+    grain fill made of the border's own pixels when no clean patch exists), then draws the character's own new mouth
+    lifted from its surprised figure (narrowed for profiles) at the old mouth's place. Three-row crops (original /
+    erased / new): artifacts/witch_candy/mouth_v5_contact.png. CastPuppet maps wow / surprised / startled to the
+    *_black surprised figures while the mouth state is on.
+  - Runs: witch_candy STORY_DONE 402.1 s, CHECK_LINES OK, BLACK_LIPS frames-with-wrong-variant=0 (puppet 0,
+    story-expected 0), OVERLAP 3 / OCCLUDE 1; three_pigs 295.6 s CHECK_LINES OK. Videos
+    artifacts/video/witch_candy_ghost_v5.mp4, witch_candy_full_v5.mp4; span artifacts/witch_candy/black_mouth_span_v5.jpg.
+  - Still off: the walk / ghost-play frames carry a mouth lifted from another drawing (same character, same design)
+    rather than drawn natively in each pose; profile mouths are the front mouth narrowed; on the smallest cat frames
+    the new mouth is a few pixels.

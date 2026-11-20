@@ -280,6 +280,12 @@ Run long work through background agents/workflows with narrow ownership (one own
   roles the story expects in that state (a check that only watches puppets already in the state reported 0 while the
   state was never set). Handler fx names with ":" match on the part before it.
 
+- (v5) "Replace" means erase then draw: tools/cast/wc_mouth_v5.py erases a feature with a nearby patch of the same
+  material (reject patches containing blush / hair / eyes, colour-match, feather) and composites the new feature
+  lifted from a figure where the model drew it natively (same character, same design): a whole-figure sheet with the
+  new feature (cast_wc_surprised_black) gave both the reveal figures and the decal source. Show three-row crops.
+  PIL ImageDraw.floodfill does nothing on an image made directly by Image.fromarray(numpy): `.copy()` it first.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

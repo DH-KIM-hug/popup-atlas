@@ -75,6 +75,13 @@ SHEETS = {
     "cast_friends_expr_b": [(3, R, "side_walk", "side", "standing, side (faces right)", 1),
                             (4, B, "side_walk", "side", "standing, side (faces right)", 1),
                             (5, F, "side_walk", "side", "standing, side (faces right)", 1)],
+    # v5: surprised with the NEW ghost-candy mouth drawn in natively (the reveal uses these, not the arms-up pose)
+    "cast_wc_surprised_black": [(0, D, "wow_black", "front", "surprised, ghost-candy mouth", 1),
+                                (1, W, "surprised_black", "front", "surprised, ghost-candy mouth", 1),
+                                (2, C, "surprised_black", "front", "surprised sitting, ghost-candy mouth", 1),
+                                (3, R, "surprised_black", "front", "surprised, ghost-candy mouth", 1),
+                                (4, B, "surprised_black", "front", "surprised, ghost-candy mouth", 1),
+                                (5, F, "surprised_black", "front", "surprised, ghost-candy mouth", 1)],
     "cast_wc_ghost_lips": [(0, D, "ghost", "front", "ghost play, black lips, arms up", 1),
                            (1, W, "ghost", "front", "ghost play, black lips", 1),
                            (2, C, "ghost", "front", "ghost play on hind legs, black mouth", 0),
