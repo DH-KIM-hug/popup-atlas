@@ -1481,3 +1481,41 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     shop's open door / go-inside have not been exercised. Nobody has listened to the trimmed wc_039 clip.
   - Regression: three_pigs STORY_DONE 295.3 s, CHECK_LINES OK 39; sun_wind 206.0 s, CHECK_LINES OK 42; both
     missing_audio=[] missing_sound=[]. Skill: lessons for branching tales, refs, purples vs the key, safe catalog tools.
+
+## 2026-11-20 — witch_candy phase 2 v1: a dressed Halloween village, night sky, the shop room, every beat wired
+  - User on the prototype: "마을을 더 많이 각자 할로윈 장식". New Codex sheets (md5-unique, contact sheets in
+    artifacts/witch_candy/): story_wc_houses_a / _b (14 night facades, each dressed differently: pumpkins on steps,
+    bunting, cobwebs, lit windows with bat / cat / witch-hat silhouettes, wreath, scarecrow, lanterns, fence of
+    jack-o'-lanterns, a pumpkin house) and story_wc_decor (18 add-ons incl. two light strings). 13 houses line view 5's
+    street on both sides and down the road, each with its own add-ons; two light strings across the street; lamps and
+    pumpkins on the verges (SET_CHECK road=0 water=0 for all but the light strings, whose cords cross by design).
+  - Night: spread `sky` (deep-blue backdrop and haze, fog-free sky card with printed stars, the moon card and star cards
+    far behind the street, not over the stream), paper_print `glow` (bright warm printed light emits: lit windows,
+    lanterns), set `light` (warm pools at windows, lamps, flickering pumpkins / candles). Room: full-height back wall,
+    raised plank floor, warmer and dimmer (beam lantern + fire light growing with the flames), Dahyun right of the
+    shelf, the friends behind the pot (in the room shot).
+  - Engine (generic; sun_wind / three_pigs unchanged): handler tale verbs (`run_step`), go_inside `to` + `queue`, walk
+    `file` (single file), `<pose>_front/_back` cycles, set glow / light, spread sky, hit test prefers awaited targets,
+    no outdoor reframing while the camera is inside a house, branch-aware check_lines (`PLAN brew<n>` lines).
+  - Tale (game/stories/witch_candy/fx.gd): invitations to catch, shop lights on, three flames, the shelf of nine, `brew`
+    (picks fly into the pot, colour swirl bands, magic stir, POOF, candy, eat, 뿅), the six actions (strawberry roll
+    down the street to the pumpkin, duck waddle round the pot with 호박이, fish swim / bat flight over the street in
+    front of the moon, frog hops onto the shop roof, pumpkin glow in the dimmed street), the ghost candy, the parade
+    with a little ghost tagging along, the candy fountain and the finale transformations.
+  - Sound: 25 wc.* placeholder SFX synthesised (tools/audio/wc_synth_sfx.py, WAV; nobody has listened), beds / music /
+    footsteps in the tale's sound block. Voice: wc_n01–n04 unapproved → caption-only (pending).
+  - All six results played in forced runs (--wc-results=a,b): duck + pumpkin, strawberry + fish (366.9 s), frog + bat
+    (354.5 s); bugs fixed on the way: a glide fed its own hop back as height (Dahyun flew off into the sky), --beat
+    starts left the cast at the anchor, outdoor actions hidden behind the house in front of the shop (now via the
+    road), a tracking shot clipping through a roof (now above the roofs), the bat a speck in the sky (loop closer).
+  - Official run (random results: fish, pumpkin, then the ghost candy): STORY_DONE 356.2 s (5:56), CHECK_LINES OK
+    (56 segments, branch plans), missing_audio = the 4 pending new lines (caption-only), missing_sound=[], no script
+    errors. Videos: artifacts/video/witch_candy_full_v1.mp4 (26.3 MB, 1024 px), witch_candy_round_v1.mp4 (round 1),
+    witch_candy_village_v1.mp4 (slow street tour); beat sheets artifacts/witch_candy/beats_v1/, contact
+    artifacts/witch_candy/full_v1_contact.jpg, tour artifacts/witch_candy/village_tour_v1.jpg.
+  - Regression: three_pigs STORY_DONE 295.3 s (unchanged; the "no reframing inside" guard is opt-in per tale
+    `inside_framing: manual`), sun_wind 206.1 s, both CHECK_LINES OK, missing_audio=[] missing_sound=[].
+  - Still off: the candy fountain hardly reads; in the finale the friends stand behind Dahyun and the pot (their tap
+    rings and frog / duck / bat looks are half hidden) and 호박이 is mostly hidden; the bat / fish flights are small
+    against the sky; the shelf ingredients are small cards (tap rings OK in autoplay, not tried by hand); the
+    transformation "뿅" is a star / smoke burst only; nobody has listened to the placeholder SFX or the mix.

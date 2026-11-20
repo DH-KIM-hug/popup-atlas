@@ -55,8 +55,8 @@
  "handler": "res://stories/witch_candy/fx.gd",
  "shots": {
   "story": [
-   3.7,
-   13.0,
+   3.4,
+   12.0,
    0.28,
    20.0
   ],
@@ -74,22 +74,22 @@
    0.0
   ],
   "establish": [
-   9.0,
-   18.0,
+   8.0,
+   17.0,
    0.3,
    24.0,
-   -6.0
+   -4.0
   ],
   "street": [
-   5.2,
-   12.0,
-   0.3,
+   5.0,
+   11.0,
+   0.32,
    22.0,
-   8.0
+   6.0
   ],
   "medium": [
-   3.2,
-   10.0,
+   2.6,
+   9.0,
    0.3,
    20.0,
    6.0
@@ -102,74 +102,109 @@
    0.0
   ],
   "low_up": [
-   2.7,
-   3.5,
-   0.5,
-   22.0,
+   3.0,
+   4.0,
+   0.6,
+   24.0,
    -10.0
   ],
   "sky": [
-   5.5,
-   -4.0,
-   1.4,
-   26.0,
+   2.6,
+   3.0,
+   0.8,
+   34.0,
    0.0
   ],
-  "high": [
-   6.2,
+  "sky_wide": [
+   5.5,
+   2.0,
+   1.1,
    30.0,
+   0.0
+  ],
+  "roof_cam": [
+   3.3,
+   15.0,
+   0.8,
+   24.0,
+   16.0
+  ],
+  "high": [
+   6.0,
+   28.0,
    0.2,
    22.0,
    4.0
   ],
   "pull_back": [
    10.5,
-   26.0,
+   24.0,
    0.3,
    24.0,
    0.0
   ],
-  "room": [
-   1.7,
+  "tour": [
+   3.2,
    9.0,
    0.3,
-   46.0,
+   22.0,
+   0.0
+  ],
+  "track": [
+   3.4,
+   27.0,
+   0.25,
+   22.0,
+   0.0
+  ],
+  "door_cam": [
+   2.9,
+   20.0,
+   0.32,
+   22.0,
+   14.0
+  ],
+  "room": [
+   0.52,
+   8.0,
+   0.22,
+   66.0,
    0.0
   ],
   "shelf": [
-   1.25,
-   7.0,
-   0.3,
-   40.0,
-   -12.0
+   0.48,
+   9.0,
+   0.12,
+   64.0,
+   0.0
   ],
   "pot": [
-   0.9,
-   16.0,
-   0.2,
-   38.0,
-   6.0
+   0.42,
+   18.0,
+   0.16,
+   46.0,
+   0.0
   ],
   "pot_low": [
-   0.8,
-   3.0,
-   0.3,
-   40.0,
-   -6.0
+   0.42,
+   4.0,
+   0.1,
+   50.0,
+   0.0
   ],
   "two_shot": [
-   1.1,
+   0.5,
    6.0,
-   0.32,
-   40.0,
-   14.0
+   0.24,
+   58.0,
+   8.0
   ],
-  "door_out": [
-   1.4,
-   8.0,
-   0.3,
-   44.0,
-   180.0
+  "face_in": [
+   0.4,
+   6.0,
+   0.24,
+   42.0,
+   0.0
   ]
  },
  "ui": {
@@ -225,21 +260,60 @@
   }
  },
  "backdrop": true,
+ "inside_framing": "manual",
  "sound": {
-  "beds": {
-   "evening": "amb.night_village",
-   "night": "amb.night_village",
-   "room": "amb.room_fire"
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "night",
+   "night": "night",
+   "evening": "night",
+   "dusk": "dusk"
   },
-  "music": {
-   "invite": "music.playful_night",
-   "round1": "music.magic_bubbles",
-   "round2": "music.magic_bubbles",
-   "ghost_candy": "music.magic_bubbles",
-   "parade": "music.silly_march",
-   "finale": "music.party"
+  "fx": {
+   "invites_flutter": "wc.flutter",
+   "shop_lights_on": "wc.chime",
+   "up:logs": "ui.pop",
+   "pot_water": "wc.bubble",
+   "pot_clear": "wc.wave",
+   "shelf_pop": "wc.sparkle",
+   "candies_to_all": "wc.candy_pop",
+   "candy_fountain": "wc.sparkle",
+   "all_transform": "wc.boing",
+   "all_back": "wc.boing",
+   "witch_wave": "wc.giggle_bells",
+   "ghost_vanish": "wc.vanish",
+   "inside_view": {
+    "bed": "room",
+    "fade": 1.5
+   },
+   "outside_view": {
+    "bed": "@light",
+    "fade": 1.5
+   }
   },
-  "fx_note": "NEW ids needed (phase 2): wc.drip wc.siren wc.buzz wc.chime wc.kazoo wc.quack wc.plop wc.splash wc.wave (one per ingredient), wc.bubble_loop, wc.stir_magic, wc.poof, wc.candy_pop, wc.boing (뿅), wc.roll, wc.bonk (통), wc.flap, wc.ribbit, wc.glow_hum, wc.oooh_wind, owl/cricket night sprinkle, fire crackle"
+  "steps": {
+   "cover": {
+    "on_open": "paper.page_turn"
+   },
+   "page_turn": "paper.page_turn",
+   "go_inside": {
+    "door_open": "door.open",
+    "door_shut": "door.shut"
+   },
+   "end": {
+    "close_book": "paper.book_close",
+    "music_fade_on_replay": 2.0
+   }
+  },
+  "footsteps": {
+   "kid": "pig",
+   "rabbit": "pig",
+   "bear": "pig",
+   "fox": "pig",
+   "witch": "wolf",
+   "cat": null
+  },
+  "fx_note": "wc.* are synthesised placeholders (tools/audio/wc_synth_sfx.py); nobody has listened yet"
  },
  "cast": {
   "kid": {
@@ -314,7 +388,11 @@
      "do": "cover",
      "prompt": "wc_n01"
     }
-   ]
+   ],
+   "sound": {
+    "music": "night",
+    "bed": null
+   }
   },
   {
    "id": "invite",
@@ -323,92 +401,312 @@
     "seed": 1,
     "view": 5,
     "place": "street",
-    "light": "evening",
-    "night": "halloween",
+    "light": "night",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -419,26 +717,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -446,46 +784,566 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
@@ -497,10 +1355,10 @@
      "fox": "calm"
     },
     "at": {
-     "kid": "kids",
-     "rabbit": "kids",
-     "bear": "kids",
-     "fox": "kids"
+     "kid": "kid_at",
+     "rabbit": "rabbit_at",
+     "bear": "bear_at",
+     "fox": "fox_at"
     }
    },
    "steps": [
@@ -510,7 +1368,7 @@
      "at": "est",
      "from": "crane_high",
      "rate": 0.9,
-     "wait": 1.4
+     "wait": 1.6
     },
     {
      "do": "fx",
@@ -525,7 +1383,7 @@
      "do": "cam",
      "shot": "medium",
      "at": "kids",
-     "wait": 0.2
+     "wait": 0.4
     },
     {
      "do": "tap_each",
@@ -538,25 +1396,29 @@
      "hint": "wc_n03",
      "react": {
       "invite_1": [
+       "-",
        "catch:rabbit"
       ],
       "invite_2": [
+       "-",
        "catch:bear"
       ],
       "invite_3": [
+       "-",
        "catch:fox"
       ]
      }
     },
     {
      "do": "fx",
-     "fx": "catch:kid"
+     "fx": "catch:kid",
+     "wait": 0.5
     },
     {
      "do": "cam",
      "shot": "face",
-     "at": "kids",
-     "wait": 0.1
+     "at": "kid_at",
+     "wait": 0.2
     },
     {
      "do": "say",
@@ -565,14 +1427,14 @@
     {
      "do": "cam",
      "shot": "street",
-     "at": "shop",
+     "at": "street_focus",
      "rate": 1.0,
-     "wait": 0.2
+     "wait": 0.6
     },
     {
      "do": "fx",
      "fx": "shop_lights_on",
-     "wait": 0.3
+     "wait": 0.8
     },
     {
      "do": "say",
@@ -588,27 +1450,34 @@
      ],
      "to": "kids_mid",
      "dir": "away",
-     "speed": 0.35,
+     "speed": 0.42,
      "follow": "kid",
      "shot": "street"
-    },
-    {
-     "do": "fx",
-     "fx": "door_open",
-     "wait": 0.2
-    },
-    {
-     "do": "walk",
-     "who": "witch",
-     "from": "door",
-     "to": "witch_door",
-     "dir": "toward",
-     "speed": 0.3
     },
     {
      "do": "cam",
      "shot": "medium",
      "at": "witch_door",
+     "rate": 1.6,
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "door_open",
+     "wait": 0.4
+    },
+    {
+     "do": "walk",
+     "who": "witch",
+     "from": "in_door",
+     "to": "witch_door",
+     "dir": "toward",
+     "speed": 0.28
+    },
+    {
+     "do": "pose",
+     "who": "witch",
+     "pose": "welcome",
      "wait": 0.1
     },
     {
@@ -618,16 +1487,17 @@
     {
      "do": "walk",
      "who": "cat",
-     "from": "door",
-     "to": "witch_door",
+     "from": "in_door",
+     "to": "door",
      "dir": "toward",
-     "speed": 0.3,
+     "speed": 0.28,
      "async": true
     },
     {
      "do": "cam",
-     "shot": "story",
+     "shot": "door_cam",
      "at": "door",
+     "rate": 1.4,
      "wait": 0.1
     },
     {
@@ -637,14 +1507,31 @@
       "rabbit",
       "bear",
       "fox",
-      "witch",
-      "cat"
+      "cat",
+      "witch"
      ],
      "house": "shop",
-     "room": true,
+     "to": {
+      "kid": "in_kid",
+      "witch": "in_witch",
+      "cat": "in_cat",
+      "rabbit": "in_rabbit",
+      "bear": "in_bear",
+      "fox": "in_fox"
+     },
+     "queue": "left",
+     "queue_gap": 0.13,
+     "speed": 0.5,
      "line": "wc_004"
     }
-   ]
+   ],
+   "sound": {
+    "music": "night",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
   },
   {
    "id": "fire",
@@ -653,92 +1540,312 @@
     "seed": 1,
     "view": 5,
     "place": "street",
-    "light": "evening",
-    "night": "halloween",
+    "light": "night",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -749,26 +1856,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -776,46 +1923,566 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
@@ -832,22 +2499,22 @@
      "kid": "in_kid",
      "witch": "in_witch",
      "cat": "in_cat",
-     "rabbit": "in_friends",
-     "bear": "in_friends",
-     "fox": "in_friends"
+     "rabbit": "in_rabbit",
+     "bear": "in_bear",
+     "fox": "in_fox"
     }
    },
    "steps": [
     {
      "do": "fx",
      "fx": "inside_view",
-     "wait": 1.6
+     "wait": 1.8
     },
     {
-     "do": "cam",
-     "shot": "room",
-     "at": "in_focus",
-     "wait": 0.3
+     "do": "pose",
+     "who": "witch",
+     "pose": "welcome",
+     "wait": 0.1
     },
     {
      "do": "say",
@@ -857,12 +2524,13 @@
      "do": "cam",
      "shot": "pot_low",
      "at": "in_pot",
-     "wait": 0.2
+     "rate": 1.8,
+     "wait": 0.6
     },
     {
      "do": "fx",
      "fx": "up:logs",
-     "wait": 0.3
+     "wait": 0.5
     },
     {
      "do": "tap_steps",
@@ -874,11 +2542,9 @@
        "fx": "flame_s"
       },
       {
-       "target": "flame_s",
        "fx": "flame_m"
       },
       {
-       "target": "flame_m",
        "fx": "flame_l"
       }
      ]
@@ -886,29 +2552,33 @@
     {
      "do": "fx",
      "fx": "pot_water",
-     "wait": 0.4
+     "wait": 0.6
     },
     {
      "do": "cam",
      "shot": "room",
      "at": "in_focus",
-     "rate": 1.4
+     "rate": 1.4,
+     "wait": 0.2
     },
     {
      "do": "say",
      "line": "wc_007"
     },
     {
-     "do": "cam",
-     "shot": "face",
-     "at": "in_cat",
-     "wait": 0.1
+     "do": "pose",
+     "who": "cat",
+     "pose": "meow"
     },
     {
      "do": "say",
      "line": "wc_008"
     }
-   ]
+   ],
+   "sound": {
+    "music": "home",
+    "bed": "room"
+   }
   },
   {
    "id": "shelf",
@@ -917,92 +2587,312 @@
     "seed": 1,
     "view": 5,
     "place": "street",
-    "light": "evening",
-    "night": "halloween",
+    "light": "night",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -1013,26 +2903,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -1040,72 +2970,599 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
    "enter": {
-    "who": {},
-    "keep": [
-     "kid",
-     "witch",
-     "cat",
-     "rabbit",
-     "bear",
-     "fox"
-    ]
+    "who": {
+     "kid": "calm",
+     "witch": "calm",
+     "cat": "sit",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "in_kid",
+     "witch": "in_witch",
+     "cat": "in_cat",
+     "rabbit": "in_rabbit",
+     "bear": "in_bear",
+     "fox": "in_fox"
+    }
    },
    "steps": [
     {
      "do": "cam",
      "shot": "shelf",
-     "at": "in_shelf",
-     "rate": 1.2,
-     "wait": 0.2
+     "at": "in_shelf_front",
+     "rate": 1.4,
+     "wait": 0.4
     },
     {
      "do": "fx",
      "fx": "shelf_pop",
-     "wait": 2.4
+     "wait": 2.6
     },
     {
      "do": "say",
@@ -1119,7 +3576,8 @@
      "do": "cam",
      "shot": "two_shot",
      "at": "in_pot",
-     "wait": 0.1
+     "rate": 1.8,
+     "wait": 0.2
     },
     {
      "do": "say",
@@ -1129,7 +3587,11 @@
      "do": "say",
      "line": "wc_040"
     }
-   ]
+   ],
+   "sound": {
+    "music": "home",
+    "bed": "room"
+   }
   },
   {
    "id": "round1",
@@ -1138,92 +3600,312 @@
     "seed": 1,
     "view": 5,
     "place": "street",
-    "light": "evening",
-    "night": "halloween",
+    "light": "night",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -1234,26 +3916,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -1261,70 +3983,588 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
    "enter": {
-    "who": {},
-    "keep": [
-     "kid",
-     "witch",
-     "cat",
-     "rabbit",
-     "bear",
-     "fox"
-    ]
+    "who": {
+     "kid": "calm",
+     "witch": "calm",
+     "cat": "sit",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "in_kid",
+     "witch": "in_witch",
+     "cat": "in_cat",
+     "rabbit": "in_rabbit",
+     "bear": "in_bear",
+     "fox": "in_fox"
+    }
    },
    "steps": [
-    {
-     "do": "frame",
-     "with": [
-      "shelf",
-      "pot",
-      "kid"
-     ],
-     "wait": 0.6
-    },
     {
      "do": "brew",
      "round": 1,
@@ -1513,7 +4753,11 @@
      ],
      "back": "wc_119"
     }
-   ]
+   ],
+   "sound": {
+    "music": "build",
+    "bed": "room"
+   }
   },
   {
    "id": "round2",
@@ -1522,92 +4766,312 @@
     "seed": 1,
     "view": 5,
     "place": "street",
-    "light": "evening",
-    "night": "halloween",
+    "light": "night",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -1618,26 +5082,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -1645,66 +5149,599 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
    "enter": {
-    "who": {},
-    "keep": [
-     "kid",
-     "witch",
-     "cat",
-     "rabbit",
-     "bear",
-     "fox"
-    ]
+    "who": {
+     "kid": "calm",
+     "witch": "calm",
+     "cat": "sit",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "in_kid",
+     "witch": "in_witch",
+     "cat": "in_cat",
+     "rabbit": "in_rabbit",
+     "bear": "in_bear",
+     "fox": "in_fox"
+    }
    },
    "steps": [
     {
      "do": "cam",
      "shot": "two_shot",
      "at": "in_pot",
-     "wait": 0.1
+     "rate": 1.6,
+     "wait": 0.2
+    },
+    {
+     "do": "pose",
+     "who": "witch",
+     "pose": "giggle"
     },
     {
      "do": "say",
@@ -1718,15 +5755,6 @@
     {
      "do": "say",
      "line": "wc_125"
-    },
-    {
-     "do": "frame",
-     "with": [
-      "shelf",
-      "pot",
-      "kid"
-     ],
-     "wait": 0.4
     },
     {
      "do": "brew",
@@ -1908,7 +5936,11 @@
      "autoplay": "random_new_result",
      "stir": "wc_045"
     }
-   ]
+   ],
+   "sound": {
+    "music": "build",
+    "bed": "room"
+   }
   },
   {
    "id": "ghost_candy",
@@ -1917,92 +5949,312 @@
     "seed": 1,
     "view": 5,
     "place": "street",
-    "light": "evening",
-    "night": "halloween",
+    "light": "night",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -2013,26 +6265,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -2040,59 +6332,586 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
    "enter": {
-    "who": {},
-    "keep": [
-     "kid",
-     "witch",
-     "cat",
-     "rabbit",
-     "bear",
-     "fox"
-    ]
+    "who": {
+     "kid": "calm",
+     "witch": "calm",
+     "cat": "sit",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "in_kid",
+     "witch": "in_witch",
+     "cat": "in_cat",
+     "rabbit": "in_rabbit",
+     "bear": "in_bear",
+     "fox": "in_fox"
+    }
    },
    "steps": [
     {
@@ -2104,31 +6923,31 @@
      "do": "cam",
      "shot": "two_shot",
      "at": "in_pot",
-     "wait": 0.1
+     "rate": 1.6,
+     "wait": 0.2
+    },
+    {
+     "do": "pose",
+     "who": "witch",
+     "pose": "welcome"
     },
     {
      "do": "say",
      "line": "wc_126"
     },
     {
-     "do": "say",
-     "line": "wc_127"
+     "do": "pose",
+     "who": "kid",
+     "pose": "wow"
     },
     {
-     "do": "frame",
-     "with": [
-      "shelf",
-      "pot",
-      "kid"
-     ],
-     "wait": 0.3
+     "do": "say",
+     "line": "wc_127"
     },
     {
      "do": "brew",
      "round": 3,
      "all_colors": true,
-     "shelf": "shelf",
-     "pot": "pot",
      "ingredients": {
       "snot": {
        "color": "r",
@@ -2213,6 +7032,7 @@
      "do": "cam",
      "shot": "room",
      "at": "in_focus",
+     "rate": 1.6,
      "wait": 0.1
     },
     {
@@ -2227,7 +7047,7 @@
     {
      "do": "fx",
      "fx": "candies_to_all",
-     "wait": 0.6
+     "wait": 0.8
     },
     {
      "do": "pose",
@@ -2244,7 +7064,11 @@
      "do": "say",
      "line": "wc_134"
     }
-   ]
+   ],
+   "sound": {
+    "music": "build",
+    "bed": "room"
+   }
   },
   {
    "id": "parade",
@@ -2254,91 +7078,311 @@
     "view": 5,
     "place": "street",
     "light": "night",
-    "night": "halloween",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -2349,26 +7393,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -2376,65 +7460,597 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
    "enter": {
-    "who": {},
-    "keep": [
-     "kid",
-     "witch",
-     "cat",
-     "rabbit",
-     "bear",
-     "fox"
-    ]
+    "who": {
+     "kid": "calm",
+     "witch": "calm",
+     "cat": "sit",
+     "rabbit": "calm",
+     "bear": "calm",
+     "fox": "calm"
+    },
+    "at": {
+     "kid": "in_kid",
+     "witch": "in_witch",
+     "cat": "in_cat",
+     "rabbit": "in_rabbit",
+     "bear": "in_bear",
+     "fox": "in_fox"
+    }
    },
    "steps": [
     {
      "do": "fx",
+     "fx": "door_open",
+     "wait": 0.1
+    },
+    {
+     "do": "fx",
      "fx": "outside_view",
-     "wait": 1.2
+     "wait": 1.4
     },
     {
      "do": "walk",
@@ -2447,17 +8063,18 @@
       "fox"
      ],
      "pose": "ghost",
-     "to": "parade_a",
      "path": [
+      "in_door",
       "door",
       "kids_mid",
       "parade_a"
      ],
-     "speed": 0.35,
+     "file": true,
+     "spacing": 0.17,
+     "speed": 0.38,
      "follow": "kid",
      "shot": "high",
-     "line": "wc_135",
-     "file": true
+     "line": "wc_135"
     },
     {
      "do": "fx",
@@ -2475,24 +8092,36 @@
       "fox"
      ],
      "pose": "ghost",
-     "to": "parade_b",
-     "via": "road",
-     "speed": 0.35,
-     "follow": "kid",
+     "path": [
+      "parade_a",
+      "kids_mid",
+      "door"
+     ],
+     "file": true,
+     "spacing": 0.17,
+     "speed": 0.38,
+     "follow": "fox",
      "shot": "street",
-     "line": "wc_x_ghost_all",
-     "file": true
+     "line": "wc_x_ghost_all"
     },
     {
      "do": "cam",
-     "shot": "sky",
+     "shot": "sky_wide",
      "at": "moon_loop",
-     "wait": 0.6
+     "rate": 1.0,
+     "wait": 1.0
     },
     {
      "do": "fx",
      "fx": "ghost_vanish",
-     "wait": 0.6
+     "wait": 0.8
+    },
+    {
+     "do": "cam",
+     "shot": "door_cam",
+     "at": "door",
+     "rate": 1.4,
+     "wait": 0.2
     },
     {
      "do": "go_inside",
@@ -2505,9 +8134,26 @@
       "fox"
      ],
      "house": "shop",
-     "room": true
+     "to": {
+      "kid": "in_kid",
+      "witch": "in_witch",
+      "cat": "in_cat",
+      "rabbit": "in_rabbit",
+      "bear": "in_bear",
+      "fox": "in_fox"
+     },
+     "queue": "left",
+     "queue_gap": 0.13,
+     "speed": 0.55
     }
-   ]
+   ],
+   "sound": {
+    "music": "ending",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
   },
   {
    "id": "finale",
@@ -2516,92 +8162,312 @@
     "seed": 1,
     "view": 5,
     "place": "street",
-    "light": "evening",
-    "night": "halloween",
+    "light": "night",
+    "sky": {
+     "bg": "#0b1230",
+     "fog": "#1b2856",
+     "fog_energy": 0.75,
+     "top": "#0a1130",
+     "horizon": "#2e4387",
+     "stars": "story_wc_halloween_11",
+     "n": 16,
+     "moon": "story_wc_halloween_10",
+     "moon_at": [
+      0.9,
+      12.0,
+      3.1,
+      2.4
+     ],
+     "far": 17.0
+    },
     "spots": {
      "shop": [
-      0.2,
-      -1.6
+      0.98,
+      -2.75
      ],
      "door": [
-      0.2,
-      -1.22
+      1.03,
+      -2.53
      ],
-     "lamp_l": [
-      -0.9,
-      -0.3
+     "est": [
+      0.1,
+      -1.2
      ],
-     "lamp_r": [
-      1.0,
-      -0.5
-     ],
-     "kids": [
-      -1.2,
-      0.5
-     ],
-     "kids_mid": [
-      -0.4,
-      -0.2
-     ],
-     "witch_door": [
-      0.55,
-      -1.15
-     ],
-     "lantern_bump": [
-      -1.6,
-      0.4
-     ],
-     "moon_loop": [
-      0.2,
-      -3.0
-     ],
-     "roof": [
+     "street_focus": [
       0.2,
       -1.6
      ],
-     "est": [
-      0.0,
-      -0.8
+     "kids": [
+      -0.05,
+      0.45
+     ],
+     "kid_at": [
+      -0.02,
+      0.42
+     ],
+     "rabbit_at": [
+      -0.22,
+      0.5
+     ],
+     "bear_at": [
+      0.17,
+      0.52
+     ],
+     "fox_at": [
+      -0.1,
+      0.66
+     ],
+     "kids_mid": [
+      -0.05,
+      -1.7
+     ],
+     "witch_door": [
+      0.86,
+      -2.37
+     ],
+     "lantern_bump": [
+      -0.38,
+      -1.05
+     ],
+     "moon_loop": [
+      0.4,
+      -3.6
+     ],
+     "fly_loop": [
+      0.45,
+      -1.6
+     ],
+     "roof": [
+      0.98,
+      -2.75
      ],
      "parade_a": [
-      -1.6,
-      0.2
+      -0.05,
+      -0.2
      ],
      "parade_b": [
-      1.4,
-      0.1
+      -0.05,
+      -2.2
+     ],
+     "tour_a": [
+      -0.05,
+      0.6
+     ],
+     "tour_b": [
+      -0.05,
+      -2.4
+     ],
+     "road_shop": [
+      0.05,
+      -2.45
+     ],
+     "road_mid": [
+      -0.05,
+      -1.25
+     ],
+     "in_back": [
+      0.98,
+      -3.72
      ],
      "in_shelf": [
-      -0.55,
-      -2.1
+      0.63,
+      -3.65
      ],
      "in_pot": [
-      0.15,
-      -1.95
+      1.23,
+      -3.37
      ],
      "in_counter": [
-      0.75,
-      -2.15
-     ],
-     "in_kid": [
-      -0.15,
-      -1.75
-     ],
-     "in_witch": [
-      0.48,
-      -1.85
-     ],
-     "in_friends": [
-      -0.75,
-      -1.65
-     ],
-     "in_cat": [
-      0.05,
-      -1.62
+      1.45,
+      -3.67
      ],
      "in_focus": [
-      0.0,
-      -1.9
+      1.03,
+      -3.41
+     ],
+     "in_beam": [
+      0.98,
+      -3.25
+     ],
+     "in_kid": [
+      1.02,
+      -3.35
+     ],
+     "in_witch": [
+      1.41,
+      -3.47
+     ],
+     "in_cat": [
+      1.62,
+      -3.53
+     ],
+     "in_rabbit": [
+      1.13,
+      -3.63
+     ],
+     "in_bear": [
+      1.28,
+      -3.67
+     ],
+     "in_fox": [
+      1.57,
+      -3.7
+     ],
+     "in_floor": [
+      0.98,
+      -2.77
+     ],
+     "in_door": [
+      1.03,
+      -2.93
+     ],
+     "in_shelf_front": [
+      0.76,
+      -3.41
+     ],
+     "house_0": [
+      -0.717,
+      0.35
+     ],
+     "house_0_d0": [
+      -0.417,
+      0.47
+     ],
+     "house_1": [
+      -0.81,
+      -0.5
+     ],
+     "house_1_d0": [
+      -0.81,
+      -0.36
+     ],
+     "house_2": [
+      -0.837,
+      -1.3
+     ],
+     "house_2_d0": [
+      -0.477,
+      -1.2
+     ],
+     "house_3": [
+      -0.767,
+      -2.1
+     ],
+     "house_3_d0": [
+      -0.467,
+      -2.0
+     ],
+     "house_4": [
+      -1.0,
+      -2.6
+     ],
+     "house_4_d0": [
+      -0.62,
+      -2.48
+     ],
+     "house_5": [
+      0.78,
+      -0.02
+     ],
+     "house_5_d0": [
+      1.14,
+      0.08
+     ],
+     "house_6": [
+      0.632,
+      -0.7
+     ],
+     "house_6_d0": [
+      0.992,
+      -0.58
+     ],
+     "house_7": [
+      0.678,
+      -1.65
+     ],
+     "house_7_d0": [
+      0.318,
+      -1.53
+     ],
+     "house_8": [
+      -2.177,
+      -0.95
+     ],
+     "house_9": [
+      1.948,
+      -0.1
+     ],
+     "house_9_d0": [
+      1.548,
+      0.0
+     ],
+     "house_10": [
+      1.977,
+      -1.25
+     ],
+     "house_11": [
+      0.15,
+      -4.0
+     ],
+     "house_12": [
+      2.1,
+      -3.0
+     ],
+     "house_12_d0": [
+      1.68,
+      -2.9
+     ],
+     "lamp_l": [
+      -0.55,
+      -0.15
+     ],
+     "lamp_r": [
+      0.32,
+      -1.2
+     ],
+     "lamp_r2": [
+      0.33,
+      -2.3
+     ],
+     "pump_1": [
+      -0.45,
+      0.22
+     ],
+     "pump_2": [
+      -0.48,
+      0.6
+     ],
+     "pump_3": [
+      -0.5,
+      -1.65
+     ],
+     "pump_bump": [
+      -0.47,
+      -1.05
+     ],
+     "shop_p1": [
+      0.36,
+      -2.63
+     ],
+     "broom": [
+      1.68,
+      -2.7
+     ],
+     "lights_1": [
+      -0.08,
+      -0.35
+     ],
+     "lights_2": [
+      -0.08,
+      -1.95
+     ],
+     "web_1": [
+      -0.62,
+      0.42
+     ],
+     "hay_1": [
+      -1.2,
+      0.6
      ]
     },
     "set": [
@@ -2612,26 +8478,66 @@
       "name": "shop",
       "scale": 1.0,
       "clear": 2.0,
+      "glow": 0.9,
+      "light": [
+       0.7,
+       0.4,
+       1.0,
+       "#ffae5a",
+       false
+      ],
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
-       "inner": "story_wc_room_00",
-       "floor": "story_wc_room_03",
-       "room": "interior"
+       "floor": "story_wc_room_03"
       }
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_03",
+      "at": "in_floor",
+      "off": [
+       0,
+       -0.5
+      ],
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.22,
+      "clear": 0,
+      "lift": 0.02
+     },
+     {
+      "card": "story_wc_room_09",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0
      },
      {
       "card": "story_wc_room_04",
       "at": "in_shelf",
       "stage": "full",
       "name": "shelf",
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_wc_room_07",
+      "card": "story_wc_room_06",
       "at": "in_counter",
       "stage": "full",
       "name": "counter",
+      "scale": 1.0,
       "clear": 0
      },
      {
@@ -2639,46 +8545,566 @@
       "at": "in_pot",
       "stage": "full",
       "name": "hearth",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wc_pot_12",
+      "at": "in_pot",
+      "off": [
+       0,
+       0.01
+      ],
+      "stage": 0,
+      "name": "logs",
+      "scale": 1.0,
       "clear": 0
      },
      {
       "card": "story_wc_pot_00",
       "at": "in_pot",
+      "off": [
+       0,
+       0.03
+      ],
       "stage": "full",
       "name": "pot",
-      "clear": 0
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.05,
+      "light": [
+       0.35,
+       0.05,
+       0.7,
+       "#ff8a3a",
+       true
+      ]
      },
      {
-      "card": "story_wc_pot_11",
-      "at": "in_pot",
-      "stage": 0,
-      "name": "logs",
-      "clear": 0
-     },
-     {
-      "card": "story_wc_halloween_04",
-      "at": "lamp_l",
+      "card": "story_wc_room_08",
+      "at": "in_beam",
       "stage": "full",
-      "name": "bunting",
-      "clear": 0.5
+      "name": "beam",
+      "scale": 1.0,
+      "clear": 0,
+      "lift": 0.42,
+      "inside_only": true,
+      "light": [
+       0.35,
+       -0.05,
+       1.0,
+       "#ffb870",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_00",
+      "at": "house_0",
+      "stage": "full",
+      "name": "house_0",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_15",
+      "at": "house_0_d0",
+      "stage": "full",
+      "name": "house_0_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_02",
+      "at": "house_1",
+      "stage": "full",
+      "name": "house_1",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_03",
+      "at": "house_1_d0",
+      "stage": "full",
+      "name": "house_1_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_01",
+      "at": "house_2",
+      "stage": "full",
+      "name": "house_2",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_07",
+      "at": "house_2_d0",
+      "stage": "full",
+      "name": "house_2_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_04",
+      "at": "house_3",
+      "stage": "full",
+      "name": "house_3",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_09",
+      "at": "house_3_d0",
+      "stage": "full",
+      "name": "house_3_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_02",
+      "at": "house_4",
+      "stage": "full",
+      "name": "house_4",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_16",
+      "at": "house_4_d0",
+      "stage": "full",
+      "name": "house_4_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_03",
+      "at": "house_5",
+      "stage": "full",
+      "name": "house_5",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_13",
+      "at": "house_5_d0",
+      "stage": "full",
+      "name": "house_5_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_00",
+      "at": "house_6",
+      "stage": "full",
+      "name": "house_6",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_12",
+      "at": "house_6_d0",
+      "stage": "full",
+      "name": "house_6_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_a_06",
+      "at": "house_7",
+      "stage": "full",
+      "name": "house_7",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_14",
+      "at": "house_7_d0",
+      "stage": "full",
+      "name": "house_7_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_houses_b_05",
+      "at": "house_8",
+      "stage": "full",
+      "name": "house_8",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_03",
+      "at": "house_9",
+      "stage": "full",
+      "name": "house_9",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_10",
+      "at": "house_9_d0",
+      "stage": "full",
+      "name": "house_9_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_05",
+      "at": "house_10",
+      "stage": "full",
+      "name": "house_10",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_b_01",
+      "at": "house_11",
+      "stage": "full",
+      "name": "house_11",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_houses_a_04",
+      "at": "house_12",
+      "stage": "full",
+      "name": "house_12",
+      "scale": 0.85,
+      "clear": 1.0,
+      "glow": 0.9,
+      "light": [
+       0.55,
+       0.32,
+       0.85,
+       "#ffae5a",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_decor_11",
+      "at": "house_12_d0",
+      "stage": "full",
+      "name": "house_12_d0",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_l",
       "stage": "full",
-      "name": "lamp_l"
+      "name": "lamp_l",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_13",
       "at": "lamp_r",
       "stage": "full",
-      "name": "lamp_r"
+      "name": "lamp_r",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
+     },
+     {
+      "card": "story_wc_halloween_13",
+      "at": "lamp_r2",
+      "stage": "full",
+      "name": "lamp_r2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       1.0,
+       0.43,
+       1.1,
+       "#ffc070",
+       false
+      ]
      },
      {
       "card": "story_wc_halloween_01",
-      "at": "lantern_bump",
+      "at": "pump_1",
       "stage": "full",
-      "name": "pumpkin_bump"
+      "name": "pump_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_00",
+      "at": "pump_2",
+      "stage": "full",
+      "name": "pump_2",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_03",
+      "at": "pump_3",
+      "stage": "full",
+      "name": "pump_3",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "pump_bump",
+      "stage": "full",
+      "name": "pump_bump",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_02",
+      "at": "shop_p1",
+      "stage": "full",
+      "name": "shop_p1",
+      "scale": 0.8,
+      "clear": 0.15,
+      "glow": 0.8,
+      "light": [
+       0.32,
+       0.06,
+       0.4,
+       "#ff9a3c",
+       true
+      ]
+     },
+     {
+      "card": "story_wc_halloween_15",
+      "at": "broom",
+      "stage": "full",
+      "name": "broom",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_decor_00",
+      "at": "lights_1",
+      "stage": "full",
+      "name": "lights_1",
+      "scale": 1.45,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true,
+      "lift": 0.0
+     },
+     {
+      "card": "story_wc_decor_01",
+      "at": "lights_2",
+      "stage": "full",
+      "name": "lights_2",
+      "scale": 1.25,
+      "clear": 0.15,
+      "glow": 0.8,
+      "allow_road": true
+     },
+     {
+      "card": "story_wc_halloween_05",
+      "at": "web_1",
+      "stage": "full",
+      "name": "web_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
+     },
+     {
+      "card": "story_wc_halloween_17",
+      "at": "hay_1",
+      "stage": "full",
+      "name": "hay_1",
+      "scale": 1.0,
+      "clear": 0.15,
+      "glow": 0.8
      }
     ]
    },
@@ -2695,22 +9121,21 @@
      "kid": "in_kid",
      "witch": "in_witch",
      "cat": "in_cat",
-     "rabbit": "in_friends",
-     "bear": "in_friends",
-     "fox": "in_friends"
+     "rabbit": "in_rabbit",
+     "bear": "in_bear",
+     "fox": "in_fox"
     }
    },
    "steps": [
     {
      "do": "fx",
      "fx": "inside_view",
-     "wait": 1.2
+     "wait": 1.6
     },
     {
-     "do": "cam",
-     "shot": "room",
-     "at": "in_focus",
-     "wait": 0.2
+     "do": "pose",
+     "who": "witch",
+     "pose": "welcome"
     },
     {
      "do": "say",
@@ -2720,31 +9145,30 @@
      "do": "cam",
      "shot": "pot",
      "at": "in_pot",
+     "rate": 1.8,
      "wait": 0.1
     },
     {
      "do": "fx",
      "fx": "candy_fountain",
-     "wait": 0.3
+     "wait": 0.6
     },
     {
      "do": "say",
      "line": "wc_137"
     },
     {
-     "do": "pose",
-     "who": "witch",
-     "pose": "two_candies"
-    },
-    {
-     "do": "say",
-     "line": "wc_138"
-    },
-    {
      "do": "cam",
      "shot": "room",
      "at": "in_focus",
-     "wait": 0.2
+     "rate": 1.6,
+     "wait": 0.1
+    },
+    {
+     "do": "pose",
+     "who": "witch",
+     "pose": "two_candies",
+     "wait": 0.8
     },
     {
      "do": "tap_each",
@@ -2758,22 +9182,22 @@
      "react": {
       "rabbit": [
        "tf_frog",
-       "poof"
+       "poof:rabbit"
       ],
       "bear": [
        "tf_duck",
-       "poof"
+       "poof:bear"
       ],
       "fox": [
        "tf_bat",
-       "poof"
+       "poof:fox"
       ]
      }
     },
     {
      "do": "fx",
      "fx": "all_transform",
-     "wait": 0.3
+     "wait": 0.6
     },
     {
      "do": "say",
@@ -2782,11 +9206,23 @@
     {
      "do": "fx",
      "fx": "all_back",
-     "wait": 0.3
+     "wait": 0.4
     },
     {
      "do": "say",
      "line": "wc_140"
+    },
+    {
+     "do": "pose",
+     "who": [
+      "kid",
+      "witch",
+      "cat",
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "pose": "cheer"
     },
     {
      "do": "say",
@@ -2796,6 +9232,7 @@
      "do": "cam",
      "shot": "two_shot",
      "at": "in_pot",
+     "rate": 1.6,
      "wait": 0.1
     },
     {
@@ -2820,21 +9257,25 @@
     {
      "do": "fx",
      "fx": "outside_view",
-     "wait": 1.0
+     "wait": 1.2
     },
     {
      "do": "cam",
      "shot": "pull_back",
      "at": "est",
-     "rate": 0.5,
-     "wait": 3.0
+     "rate": 0.6,
+     "wait": 2.4
     },
     {
      "do": "end",
      "after": "wc_n02",
      "close_book": true
     }
-   ]
+   ],
+   "sound": {
+    "music": "ending",
+    "bed": "room"
+   }
   }
  ],
  "lines": [
@@ -5981,9 +12422,9 @@
    "speaker": "witch",
    "text": "\"히히, 나는 두 개!\"",
    "status": "reuse",
-   "beat": "finale",
-   "interaction": "say",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "witch",
@@ -6809,7 +13250,7 @@
    "id": "wc_n01",
    "speaker": "nar",
    "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
-   "status": "changed-needs-recording",
+   "status": "pending",
    "beat": "cover",
    "interaction": "cover",
    "used": true,
@@ -6830,7 +13271,7 @@
    "id": "wc_n02",
    "speaker": "nar",
    "text": "또 보고 싶으면 '다시 보기'를 톡!",
-   "status": "changed-needs-recording",
+   "status": "pending",
    "beat": "finale",
    "interaction": "end",
    "used": true,
@@ -6851,7 +13292,7 @@
    "id": "wc_n03",
    "speaker": "nar",
    "text": "날아오는 초대장을 톡 눌러 잡아요.",
-   "status": "changed-needs-recording",
+   "status": "pending",
    "beat": "invite",
    "interaction": "tap_each",
    "used": true,
@@ -6872,7 +13313,7 @@
    "id": "wc_n04",
    "speaker": "nar",
    "text": "친구들을 톡 눌러 사탕을 건네요.",
-   "status": "changed-needs-recording",
+   "status": "pending",
    "beat": "finale",
    "interaction": "tap_each",
    "used": true,

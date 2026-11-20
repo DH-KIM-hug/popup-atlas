@@ -272,8 +272,12 @@ func _pick_view(dir: Vector3) -> void:
 			rc = walk_pose + "_cycle"
 	elif nv == "back":
 		rc = "run_back" if running and puppet.has_pose("run_back") else "walk_back"
+		if walk_pose != "" and puppet.has_pose(walk_pose + "_back"):  # e.g. ghost -> ghost_back (witch_candy)
+			rc = walk_pose + "_back"
 	else:
 		rc = "run_front" if running and puppet.has_pose("run_front") else "walk_front"
+		if walk_pose != "" and puppet.has_pose(walk_pose + "_front"):  # e.g. ghost -> ghost_front (parade)
+			rc = walk_pose + "_front"
 	if rc != "" and puppet.has_pose(rc):
 		fig = rc
 	if fig == "" or not puppet.has_pose(fig) or view_of(fig) != nv:

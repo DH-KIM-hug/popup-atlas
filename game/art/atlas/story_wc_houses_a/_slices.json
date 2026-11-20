@@ -1,0 +1,130 @@
+{
+ "sheet": "story_wc_houses_a",
+ "bg": [
+  0.984,
+  0.008,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wc_houses_a_00",
+   "bbox": [
+    33,
+    27,
+    297,
+    508
+   ],
+   "area": 96025,
+   "size": [
+    272,
+    489
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_houses_a_01",
+   "bbox": [
+    319,
+    104,
+    732,
+    508
+   ],
+   "area": 130797,
+   "size": [
+    421,
+    412
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_houses_a_02",
+   "bbox": [
+    756,
+    39,
+    1109,
+    508
+   ],
+   "area": 116694,
+   "size": [
+    361,
+    477
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_houses_a_03",
+   "bbox": [
+    1135,
+    107,
+    1520,
+    508
+   ],
+   "area": 117555,
+   "size": [
+    393,
+    409
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_houses_a_04",
+   "bbox": [
+    65,
+    589,
+    474,
+    991
+   ],
+   "area": 132829,
+   "size": [
+    417,
+    410
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_houses_a_05",
+   "bbox": [
+    513,
+    570,
+    977,
+    991
+   ],
+   "area": 145515,
+   "size": [
+    472,
+    429
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_houses_a_06",
+   "bbox": [
+    1025,
+    586,
+    1465,
+    991
+   ],
+   "area": 132705,
+   "size": [
+    448,
+    413
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -224,6 +224,26 @@ Run long work through background agents/workflows with narrow ownership (one own
   runner loop under `bash -c`. Seven parallel Codex runners gave occasional "no accessible image" failures: retry.
 - Cycle sheets slice slowly (~3 min each at 2172 px); slice once and use `add_cycles.py --noslice` after fixes.
 
+**Learned on the third tale (witch_candy phase 2: village, night, interior, branches)**
+- A street needs many houses, each dressed differently (user: "마을을 더 많이 각자 할로윈 장식"): generate night
+  facades with their own decorations drawn in, plus an add-on decoration sheet, and lay them out from the probed road
+  (tools/story/probe_spots_wide.gd) in the tale table (x from the road edge, SET_CHECK zeros).
+- Night is not a light preset alone: the depth haze kept its daytime grey-green. Spread `sky` sets the backdrop / haze
+  colour and adds a fog-free sky card (stars) + moon far behind; `glow` on set entries makes printed light emit (only
+  bright warm texels) and `light` adds warm pools (flicker for candles / pumpkins).
+- Interiors inside a house: every room shot keeps the camera within ~0.5 of its focus (behind the hidden front wall);
+  outdoor shot distances put the camera outside. Disable the stage's automatic tap reframing while the camera is
+  inside (it pulls the camera out through the wall) and frame taps with an explicit room shot. The meadow felt can rise
+  through a box floor: lay raised floor cards.
+- Tale verbs: an unknown step goes to the handler's `run_step(st, runner)`; the handler uses the runner's _say /
+  _wait / _wait_tap so captions, faces and SEG logs stay generic, and prints `PLAN <verb><n> <ids>` for check_lines.
+- Handler-driven moves that keep a fixed figure (roll, float, hop): keep the path height in the move's own state;
+  reading the actor's lift (which includes the hop) back as height made Dahyun climb into the sky.
+- Outdoor actions route via the road (houses in front of the shop hid her walking straight to the camera); tracking
+  shots go above the roofs (a medium follow clipped through a house).
+- `--beat=<id>` starts need `enter.at` on every beat (a `keep`-only beat leaves the cast at the anchor, popped down).
+- Branch coverage: force results with a tale arg (`--wc-results=a,b`) and run every result at least once.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

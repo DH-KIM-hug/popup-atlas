@@ -21,6 +21,10 @@ uniform float foot_ao_strength = 0.42;
 // Ink: a little extra saturation/contrast so prints read like offset printing, not photos.
 uniform float ink_saturation = 1.12;
 uniform float ink_contrast = 1.06;
+// Night glow (witch_candy 2026-11-20): printed light (lit windows, lantern candles, jack-o'-lantern holes) emits.
+// Only bright warm texels (yellow / orange, high value) glow; 0 = off (every other card renders as before).
+uniform float glow = 0.0;
+uniform vec4 glow_color : source_color = vec4(1.0, 0.72, 0.36, 1.0);
 
 float alpha_at(vec2 uv) { return textureLod(albedo_tex, uv, 0.0).a; }
 
@@ -62,4 +66,11 @@ void fragment() {
 	NORMAL_MAP = normalize(vec3(0.5 + fibre * 0.35, 0.5 - fibre * 0.25, 1.0));
 	NORMAL_MAP_DEPTH = 0.6;
 	BACKLIGHT = col * translucency;
+	if (glow > 0.0 && !plain) {
+		float mx = max(col.r, max(col.g, col.b));
+		float mn = min(col.r, min(col.g, col.b));
+		float lum = dot(col, vec3(0.299, 0.587, 0.114));  // window light ~0.85, orange pumpkin skin ~0.6, ochre wall ~0.66
+		float warm = smoothstep(0.05, 0.2, col.r - col.b) * smoothstep(0.68, 0.84, lum) * smoothstep(0.25, 0.5, (mx - mn) / max(mx, 0.001));
+		EMISSION = mix(col, glow_color.rgb, 0.35) * warm * glow;
+	}
 }

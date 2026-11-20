@@ -7,6 +7,10 @@ Reads the `SEG <line id> <seg index> t=` prints of StoryRunner._say and the scri
 from walking the beats' steps (prompts, lines, segs of split lines); hint / more lines are expected only when no
 autoplay tap was late (they are idle fallbacks) and are not required. Exit 1 and a loud FAIL list on any missing,
 doubled or out-of-order segment; prints OK otherwise.
+
+Branching tales (witch_candy `brew`, 2026-11-20): the handler prints `PLAN brew<n> <id,id,...>` with the exact lines
+it will play for the result chosen this run; those replace the brew step in the expected order, and lines that only
+appear in branch tables (other results / ingredients) are not required to play.
 """
 import json, re, sys
 from pathlib import Path
@@ -14,7 +18,17 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 
 
-def expected(script):
+def _ids(v, prefix):
+    if isinstance(v, str):
+        return [v] if v.startswith(prefix) else []
+    if isinstance(v, dict):
+        return [r for x in v.values() for r in _ids(x, prefix)]
+    if isinstance(v, list):
+        return [r for x in v for r in _ids(x, prefix)]
+    return []
+
+
+def expected(script, plans=None):
     lines = {l["id"]: l for l in script["lines"]}
     out = []
 
@@ -31,6 +45,9 @@ def expected(script):
             segs = st.get("segs")
             if do == "cover":
                 add(st.get("prompt"))
+            elif do == "brew":
+                for lid in (plans.pop(0) if plans else []):
+                    add(lid)
             elif do in ("say", "walk", "walk_to", "walk_away", "climb", "go_inside", "flash"):
                 add(st.get("line"), segs)
             elif do in ("tap", "tap_each", "build", "huff", "tap_steps", "blow", "shine", "gentle"):
@@ -59,8 +76,13 @@ def expected(script):
 def main():
     tale, log = sys.argv[1], sys.argv[2]
     script = json.loads((ROOT / "game" / "stories" / tale / "script.json").read_text(encoding="utf-8"))
-    exp, lines = expected(script)
-    got = [(m.group(1), int(m.group(2))) for m in re.finditer(r"^SEG (\S+) (\d+) t=", Path(log).read_text(errors="replace"), re.M)]
+    text = Path(log).read_text(errors="replace")
+    plans = [m.group(1).split(",") for m in re.finditer(r"^PLAN brew\d+ (\S+)", text, re.M)]
+    exp, lines = expected(script, list(plans))
+    got = [(m.group(1), int(m.group(2))) for m in re.finditer(r"^SEG (\S+) (\d+) t=", text, re.M)]
+    prefix = script["lines"][0]["id"].split("_")[0] + "_" if script["lines"] else ""
+    branch = {i for b in script["beats"] for st in b.get("steps", []) if st.get("do") == "brew" for i in _ids(st, prefix)}
+    branch -= {i for p in plans for i in p}
     hints = {st.get(k) for b in script["beats"] for st in b.get("steps", []) for k in ("hint", "more") if st.get(k)}
     fails = []
     # doubles (a hint replaying a prompt is not a double of a different step: count against the expected count)
@@ -82,7 +104,7 @@ def main():
             fails.append(f"OUT OF ORDER at {k[0]} seg {k[1]}")
             break
     used = [l["id"] for l in script["lines"] if l.get("used", True)]
-    never = [u for u in used if u not in {g[0] for g in got} and u not in hints]
+    never = [u for u in used if u not in {g[0] for g in got} and u not in hints and u not in branch]
     for u in never:
         fails.append(f"USED LINE NEVER PLAYED {u}")
     if fails:
@@ -90,7 +112,8 @@ def main():
         for f in fails:
             print("  ", f)
         sys.exit(1)
-    print(f"CHECK_LINES {tale} OK: {len(exp)} segments in order, each exactly once ({len(got)} played)")
+    print(f"CHECK_LINES {tale} OK: {len(exp)} segments in order, each exactly once ({len(got)} played)"
+          + (f"; branches {[p[-1] for p in plans] if plans else []}" if plans else ""))
 
 
 if __name__ == "__main__":

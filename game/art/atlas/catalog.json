@@ -11273,6 +11273,776 @@
   ]
  },
  {
+  "id": "story_wc_houses_a_00",
+  "path": "art/atlas/story_wc_houses_a/story_wc_houses_a_00.webp",
+  "sheet": "story_wc_houses_a",
+  "category": "story_building",
+  "label": "tall narrow townhouse, pumpkins on the steps, cobweb",
+  "height_units": 0.92,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   272,
+   489
+  ]
+ },
+ {
+  "id": "story_wc_houses_a_01",
+  "path": "art/atlas/story_wc_houses_a/story_wc_houses_a_01.webp",
+  "sheet": "story_wc_houses_a",
+  "category": "story_building",
+  "label": "thatched cottage, bunting on the eaves, sill pumpkins",
+  "height_units": 0.775,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   421,
+   412
+  ]
+ },
+ {
+  "id": "story_wc_houses_a_02",
+  "path": "art/atlas/story_wc_houses_a/story_wc_houses_a_02.webp",
+  "sheet": "story_wc_houses_a",
+  "category": "story_building",
+  "label": "crooked tower house, bat in the tower window, witch-hat wreath",
+  "height_units": 0.897,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   361,
+   477
+  ]
+ },
+ {
+  "id": "story_wc_houses_a_03",
+  "path": "art/atlas/story_wc_houses_a/story_wc_houses_a_03.webp",
+  "sheet": "story_wc_houses_a",
+  "category": "story_building",
+  "label": "sky-blue house, two hanging lanterns, cat in a window",
+  "height_units": 0.769,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   393,
+   409
+  ]
+ },
+ {
+  "id": "story_wc_houses_a_04",
+  "path": "art/atlas/story_wc_houses_a/story_wc_houses_a_04.webp",
+  "sheet": "story_wc_houses_a",
+  "category": "story_building",
+  "label": "terracotta house with dormer, paper-bat garland, big pumpkin",
+  "height_units": 0.771,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   417,
+   410
+  ]
+ },
+ {
+  "id": "story_wc_houses_a_05",
+  "path": "art/atlas/story_wc_houses_a/story_wc_houses_a_05.webp",
+  "sheet": "story_wc_houses_a",
+  "category": "story_building",
+  "label": "sage cottage, sill candle lanterns, ghost garland",
+  "height_units": 0.807,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   472,
+   429
+  ]
+ },
+ {
+  "id": "story_wc_houses_a_06",
+  "path": "art/atlas/story_wc_houses_a/story_wc_houses_a_06.webp",
+  "sheet": "story_wc_houses_a",
+  "category": "story_building",
+  "label": "chocolate-timber cottage, pumpkin scarecrow, corn sheaves",
+  "height_units": 0.777,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   448,
+   413
+  ]
+ },
+ {
+  "id": "story_wc_houses_b_00",
+  "path": "art/atlas/story_wc_houses_b/story_wc_houses_b_00.webp",
+  "sheet": "story_wc_houses_b",
+  "category": "story_building",
+  "label": "candy-bakery house with striped awning, pumpkin cookies",
+  "height_units": 0.864,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   351,
+   413
+  ]
+ },
+ {
+  "id": "story_wc_houses_b_01",
+  "path": "art/atlas/story_wc_houses_b/story_wc_houses_b_01.webp",
+  "sheet": "story_wc_houses_b",
+  "category": "story_building",
+  "label": "plum house with string lights, moon-and-stars window",
+  "height_units": 0.899,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   316,
+   430
+  ]
+ },
+ {
+  "id": "story_wc_houses_b_02",
+  "path": "art/atlas/story_wc_houses_b/story_wc_houses_b_02.webp",
+  "sheet": "story_wc_houses_b",
+  "category": "story_building",
+  "label": "pumpkin-shaped round house",
+  "height_units": 0.786,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   349,
+   376
+  ]
+ },
+ {
+  "id": "story_wc_houses_b_03",
+  "path": "art/atlas/story_wc_houses_b/story_wc_houses_b_03.webp",
+  "sheet": "story_wc_houses_b",
+  "category": "story_building",
+  "label": "ochre porch house, rocking chair, porch cobwebs",
+  "height_units": 0.87,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   391,
+   416
+  ]
+ },
+ {
+  "id": "story_wc_houses_b_04",
+  "path": "art/atlas/story_wc_houses_b/story_wc_houses_b_04.webp",
+  "sheet": "story_wc_houses_b",
+  "category": "story_building",
+  "label": "blue-violet slate house, cat-face lantern, bunting",
+  "height_units": 0.916,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   300,
+   438
+  ]
+ },
+ {
+  "id": "story_wc_houses_b_05",
+  "path": "art/atlas/story_wc_houses_b/story_wc_houses_b_05.webp",
+  "sheet": "story_wc_houses_b",
+  "category": "story_building",
+  "label": "cream thatched cottage, picket fence with jack-o'-lanterns",
+  "height_units": 0.868,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   480,
+   415
+  ]
+ },
+ {
+  "id": "story_wc_houses_b_06",
+  "path": "art/atlas/story_wc_houses_b/story_wc_houses_b_06.webp",
+  "sheet": "story_wc_houses_b",
+  "category": "story_building",
+  "label": "stone tower house, broom, witch-hat window",
+  "height_units": 0.92,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decorated",
+   "halloween",
+   "house",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   308,
+   440
+  ]
+ },
+ {
+  "id": "story_wc_decor_00",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_00.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "string of warm golden lights on two poles",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lit",
+   "night",
+   "story",
+   "string_lights",
+   "witch_candy"
+  ],
+  "px": [
+   410,
+   178
+  ]
+ },
+ {
+  "id": "story_wc_decor_01",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_01.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "string of orange and cream lights on two poles",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lit",
+   "night",
+   "story",
+   "string_lights",
+   "witch_candy"
+  ],
+  "px": [
+   497,
+   179
+  ]
+ },
+ {
+  "id": "story_wc_decor_02",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_02.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "orange and plum flag garland on two poles",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "bunting",
+   "decor",
+   "halloween",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   490,
+   180
+  ]
+ },
+ {
+  "id": "story_wc_decor_03",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_03.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "row of five jack-o'-lanterns on a plank",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "night",
+   "pumpkin",
+   "row",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   442,
+   135
+  ]
+ },
+ {
+  "id": "story_wc_decor_04",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_04.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "three candles in jars on a plank",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candle",
+   "decor",
+   "halloween",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   369,
+   158
+  ]
+ },
+ {
+  "id": "story_wc_decor_05",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_05.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "fence with a jack-o'-lantern on every post",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "fence",
+   "halloween",
+   "lit",
+   "night",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   476,
+   180
+  ]
+ },
+ {
+  "id": "story_wc_decor_06",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_06.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "friendly pumpkin-head scarecrow",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "night",
+   "scarecrow",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   250,
+   288
+  ]
+ },
+ {
+  "id": "story_wc_decor_07",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_07.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "black cat cut-out with orange bow",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "cat",
+   "cutout",
+   "decor",
+   "halloween",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   175,
+   225
+  ]
+ },
+ {
+  "id": "story_wc_decor_08",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_08.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "witch-hat wreath with stars and pumpkins",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "night",
+   "story",
+   "witch_candy",
+   "wreath"
+  ],
+  "px": [
+   231,
+   270
+  ]
+ },
+ {
+  "id": "story_wc_decor_09",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_09.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "hanging pumpkin lantern on a hook post",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   167,
+   260
+  ]
+ },
+ {
+  "id": "story_wc_decor_10",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_10.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "hanging cream paper lantern on a hook post",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   168,
+   259
+  ]
+ },
+ {
+  "id": "story_wc_decor_11",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_11.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "pumpkin stack with corn sheaf",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "corn",
+   "decor",
+   "halloween",
+   "night",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   288,
+   266
+  ]
+ },
+ {
+  "id": "story_wc_decor_12",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_12.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "little wagon of pumpkins",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "night",
+   "pumpkin",
+   "story",
+   "wagon",
+   "witch_candy"
+  ],
+  "px": [
+   290,
+   214
+  ]
+ },
+ {
+  "id": "story_wc_decor_13",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_13.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "mailbox with a pumpkin on top",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "mailbox",
+   "night",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   159,
+   235
+  ]
+ },
+ {
+  "id": "story_wc_decor_14",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_14.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "waving friendly paper ghost cut-out",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "cutout",
+   "decor",
+   "ghost",
+   "halloween",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   201,
+   206
+  ]
+ },
+ {
+  "id": "story_wc_decor_15",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_15.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "candle lantern on a low post",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "candle",
+   "decor",
+   "halloween",
+   "lantern",
+   "lit",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   109,
+   241
+  ]
+ },
+ {
+  "id": "story_wc_decor_16",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_16.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "straw bale with three jack-o'-lanterns",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "hay",
+   "lit",
+   "night",
+   "pumpkin",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   276,
+   212
+  ]
+ },
+ {
+  "id": "story_wc_decor_17",
+  "path": "art/atlas/story_wc_decor/story_wc_decor_17.webp",
+  "sheet": "story_wc_decor",
+  "category": "story_prop",
+  "label": "paper moon-and-stars mobile on a stand",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "decor",
+   "halloween",
+   "mobile",
+   "moon",
+   "night",
+   "story",
+   "witch_candy"
+  ],
+  "px": [
+   224,
+   231
+  ]
+ },
+ {
   "id": "story_wc_room_09",
   "path": "art/atlas/story_wc_room/story_wc_room_09.webp",
   "sheet": "story_wc_room_extra",

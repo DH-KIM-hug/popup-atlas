@@ -358,6 +358,48 @@ for _j in JOBS:
     if _j["id"] == "cast_cat_ghost_cycle":
         _j["refs"] = [RAW_C + "ref_wc_cat.png"]
 
+# 2026-11-20 (user on the prototype: "마을을 더 많이 각자 할로윈 장식"): a real little Halloween street, every house
+# dressed differently. Night facades with their own decorations drawn in (lit windows, some with paper silhouettes),
+# plus add-on decorations placed per house by the night-street dress.
+HOUSE_COMMON = ("Every house is a flat FRONT FACADE card (front wall + roof as one connected silhouette, flat bottom edge), "
+                "seen straight on, at NIGHT: its windows glow warm golden-orange from inside (printed light, no glow "
+                "outside the silhouette), and EACH HOUSE IS DECORATED DIFFERENTLY for a cosy, cute Halloween (never "
+                "scary, no skulls, no spiders, no blood). Vary the sizes, wall colours (cream, ochre, terracotta, sage, "
+                "sky blue, chocolate timber) and roof shapes (steep gable, hipped, round tower cap, crooked chimney, "
+                "dormer, thatch, slate). ")
+atlas("story_wc_houses_a", "THIS SHEET: 7 little Halloween HOUSES in two rows. " + HOUSE_COMMON + "(1) a tall narrow "
+      "townhouse, steep gable, a row of carved pumpkins on its front steps, a little paper cobweb in the top corner; (2) a "
+      "wide cottage with a thatched roof, bunting of orange and cream triangle flags along the eaves, a jack-o'-lantern "
+      "on each window sill; (3) a crooked little house with a round tower, a paper bat silhouette in its lit tower window, "
+      "a witch-hat wreath on the door; (4) a sky-blue house with a hipped roof, two hanging paper lanterns by the door, a "
+      "black cat paper silhouette sitting in one lit window; (5) a terracotta house with a dormer, a garland of paper "
+      "bats along the gutter, a big carved pumpkin by the door; (6) a sage green cottage, a row of little candle "
+      "lanterns along its window sills, a paper ghost-shaped garland (friendly round ghosts with dot eyes) over the "
+      "door; (7) a small chocolate-timber cottage, a scarecrow with a pumpkin head standing beside the door, corn "
+      "sheaves, a stack of pumpkins.", style=WC_BUILD)
+atlas("story_wc_houses_b", "THIS SHEET: 7 more little Halloween HOUSES in two rows, different from a usual village. "
+      + HOUSE_COMMON + "(1) a bakery-like house with a striped awning, a tray of pumpkin cookies in its lit shop window, "
+      "a pumpkin on the step; (2) a tall house with two lit windows, one with a paper moon and stars hung inside, a "
+      "string of tiny warm lights along the roof edge; (3) a round-roofed little house like a pumpkin (orange ribbed walls, "
+      "a stem chimney), lit round windows; (4) an ochre house with a porch, a rocking chair with a little pumpkin on it, "
+      "paper cobwebs in both porch corners; (5) a narrow blue-violet slate house, a cat-face paper lantern hanging by "
+      "the door, bunting in mustard and plum; (6) a cream cottage with a picket fence in front holding a row of small "
+      "jack-o'-lanterns; (7) a little stone tower house with a crooked chimney, a broom leaning by the door, a lit window "
+      "with a paper witch-hat silhouette.", style=WC_BUILD)
+atlas("story_wc_decor", "THIS SHEET: add-on Halloween decorations for a street at night, 18 pieces, each standing on a flat "
+      "bottom unless it hangs. (1) a long STRING OF LIGHTS: a gently sagging cord with round warm golden bulbs, its two "
+      "ends on two thin wooden poles (one wide piece, flat bottom on both poles); (2) a second, longer string of lights "
+      "with alternating orange and cream bulbs on two poles; (3) a long garland of orange and plum paper triangle flags "
+      "on two poles; (4) a row of five small jack-o'-lanterns on a short low wooden plank; (5) a row of three fat candles "
+      "in glass jars on a plank; (6) a short fence section with a jack-o'-lantern on every post; (7) a cute scarecrow "
+      "with a pumpkin head and a patched hat (friendly smile); (8) a flat BLACK CAT cut-out sitting, cute round eyes, "
+      "curly tail, a tiny orange bow (cute, never scary); (9) a witch-hat WREATH (a ring of orange and plum paper leaves "
+      "replaced by paper stars and little pumpkins, a tiny plum witch hat on top); (10) a hanging paper LANTERN shaped "
+      "like a pumpkin on a short hook post; (11) a hanging round paper lantern in cream; (12) a stack of three pumpkins "
+      "and a corn sheaf; (13) a small wooden wagon full of pumpkins; (14) a mailbox on a post with a little pumpkin on "
+      "top; (15) a paper ghost cut-out waving (friendly, dot eyes); (16) a lit candle lantern on a low post; (17) a "
+      "straw bale with three small jack-o'-lanterns; (18) a paper moon-and-stars mobile hanging from a little stand.")
+
 if __name__ == "__main__":
     p = os.path.join(HERE, "witch_candy_jobs.json")
     json.dump(JOBS, open(p, "w"), ensure_ascii=False, indent=1)

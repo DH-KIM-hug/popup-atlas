@@ -225,7 +225,7 @@ func _pointer_down(p: Vector2) -> void:
 		return
 	var hit := ""
 	if stage and is_instance_valid(stage) and stage.world:
-		hit = stage.hit_target(p)
+		hit = stage.hit_target(p, _expect)
 	if hit != "" and hit != _walker_role:
 		stage.wiggle(hit)
 	if _expect.has(hit):
@@ -562,7 +562,11 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 		"end":
 			await _step_end(st)
 		_:
-			push_warning("StoryRunner: unknown step " + str(st["do"]))
+			# tale verbs (witch_candy: brew, ...): the tale's handler runs the step with the runner's helpers
+			if stage and stage.handler and stage.handler.has_method("run_step"):
+				await stage.handler.run_step(st, self)
+			else:
+				push_warning("StoryRunner: unknown step " + str(st["do"]))
 	_pose = stage.puppet().pose if stage and is_instance_valid(stage) else _pose
 
 
@@ -607,6 +611,12 @@ func _step_walk_actors(st: Dictionary) -> void:
 			var pts: Array = []
 			for q in st["path"]:
 				pts.append(stage.spot_point(q))
+			if st.get("file", false) and i > 0 and pts.size() >= 2:
+				# single file (a parade): followers walk the leader's route and stop a step behind each other
+				var last: Vector3 = pts[pts.size() - 1]
+				var back := ((pts[pts.size() - 2] as Vector3) - last)
+				back.y = 0.0
+				pts[pts.size() - 1] = last + back.normalized() * float(st.get("spacing", 0.16)) * i
 			a.follow(pts, spd, str(st.get("pose", "")), false)
 		elif str(st.get("via", "")) == "road":
 			# along the road (a village spread): the route bends with it, the figure faces each stretch
@@ -691,7 +701,8 @@ func _step_go_inside(st: Dictionary) -> void:
 			a.lift = 0.0
 			a.pop_delay = 0.0
 			a.pop_target = 1.0
-		a.walk_to(front + toward * 0.16 * i, spd, "")
+		var qd := stage.dir_vec(str(st.get("queue", "toward")))  # where the queue waits (witch_candy: along the shop front)
+		a.walk_to(front + qd * float(st.get("queue_gap", 0.16)) * i + (toward * 0.05 if st.has("queue") else Vector3.ZERO), spd, "")
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
 		if a == null:
@@ -716,6 +727,11 @@ func _step_go_inside(st: Dictionary) -> void:
 		var g3 := 0.0
 		while a.moving() and g3 < 6.0:
 			g3 += await _frame()
+		if st.has("to"):  # room: true (witch_candy): they walk on into the room to their spots (no window faces)
+			var tos: Dictionary = st["to"]
+			if tos.has(str(roles[i])):
+				a.walk_to(stage.spot_point(tos[str(roles[i])]), spd * 0.8, "")
+			continue
 		stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
 	sp.open_door(false)
 	if sound:

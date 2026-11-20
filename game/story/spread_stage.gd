@@ -196,6 +196,7 @@ func build_async(seed_v: int, view_i: int, with_audio: bool, budget_ms: float) -
 	await _clear_sightlines()
 	_slicer.phase("set")
 	await _build_set((beat.get("spread", {}) as Dictionary).get("set", []))
+	_build_sky((beat.get("spread", {}) as Dictionary).get("sky", {}))
 	_apply_built((beat.get("spread", {}) as Dictionary).get("built", []), false)
 	if handler:
 		_slicer.phase("tale")
@@ -430,9 +431,111 @@ func _build_set(list: Array) -> void:
 		if e.get("inside_only", false):
 			sp.set_meta("inside_only", true)
 			sp.visible = false
+		if e.has("glow"):  # night: the printed light on the card (lit windows, candles) emits (paper_print glow)
+			_set_glow(sp, float(e["glow"]))
+		if e.has("light"):  # a warm pool of light: [energy, height (units), range, colour, flicker]
+			_add_light(sp, e["light"])
 		_check_footprint(sp, e)
 		_clear_area(p, sp.height * 0.75 + 0.12, float(e.get("clear", 1.0)))
 		await _slicer.tick()
+
+
+## Night sky (spread.sky, witch_candy 2026-11-20): a huge cardstock sky card far behind the page (deep blue, lighter
+## toward the horizon, printed stars), the moon card and star cards in front of it. Unshaded and fog-free, so the haze
+## that turns the far hills night-blue does not grey them. {bg, fog, fog_energy, moon: card id, moon_at [right, away,
+## up, size], stars: card id, n}
+func _build_sky(sky: Dictionary) -> void:
+	if sky.is_empty():
+		return
+	var root := Node3D.new()
+	root.name = "NightSky"
+	add_child(root)
+	var r := dir_vec("right")
+	var aw := dir_vec("away")
+	var yaw := deg_to_rad(world.rig.yaw_deg)
+	var mk := func(tex: Texture2D, w: float, h: float, pos: Vector3, energy: float) -> MeshInstance3D:
+		var q := QuadMesh.new()
+		q.size = Vector2(w, h)
+		var m := StandardMaterial3D.new()
+		m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+		m.albedo_texture = tex
+		m.albedo_color = Color(energy, energy, energy)
+		m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
+		m.alpha_scissor_threshold = 0.5
+		m.disable_fog = true
+		m.texture_filter = BaseMaterial3D.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		var mi := MeshInstance3D.new()
+		mi.mesh = q
+		mi.material_override = m
+		mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		root.add_child(mi)
+		mi.global_position = pos
+		mi.rotation.y = yaw
+		return mi
+	var far := float(sky.get("far", 16.0))
+	mk.call(_sky_texture(Color(str(sky.get("top", "#0b1230"))), Color(str(sky.get("horizon", "#2b3d7a")))),
+		far * 4.0, far * 1.1, _anchor + aw * far + Vector3.UP * far * 0.42, 1.0)
+	var star := str(sky.get("stars", ""))
+	var ce := atlas_entry(star)
+	if not ce.is_empty():
+		var tex: Texture2D = load("res://" + str(ce["path"]))
+		var rng := RandomNumberGenerator.new()
+		rng.seed = 77
+		for i in int(sky.get("n", 14)):
+			var d := far * rng.randf_range(0.55, 0.85)
+			var sz := rng.randf_range(0.12, 0.28)
+			mk.call(tex, sz, sz, _anchor + aw * d + r * rng.randf_range(-d * 0.8, d * 0.8) + Vector3.UP * rng.randf_range(d * 0.18, d * 0.42), 1.1)
+	var me := atlas_entry(str(sky.get("moon", "")))
+	if not me.is_empty():
+		var ma: Array = sky.get("moon_at", [-2.0, 11.0, 3.4, 2.2])
+		mk.call(load("res://" + str(me["path"])), float(ma[3]), float(ma[3]),
+			_anchor + r * float(ma[0]) + aw * float(ma[1]) + Vector3.UP * float(ma[2]), 1.15)
+
+
+static func _sky_texture(top: Color, hor: Color) -> Texture2D:
+	var w := 512
+	var h := 160
+	var img := Image.create(w, h, false, Image.FORMAT_RGBA8)
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 5
+	for y in h:
+		var c := top.lerp(hor, pow(float(y) / h, 1.6))
+		for x in w:
+			var n := rng.randf_range(-0.012, 0.012)  # cardstock grain
+			img.set_pixel(x, y, Color(c.r + n, c.g + n, c.b + n))
+	for i in 160:  # printed pin-prick stars, fewer near the horizon
+		var x := rng.randi_range(0, w - 2)
+		var y := int(pow(rng.randf(), 1.7) * h * 0.8)
+		var b := rng.randf_range(0.55, 0.95)
+		img.set_pixel(x, y, Color(1.0, 0.95, 0.8).lerp(top, 1.0 - b))
+		if rng.randf() < 0.25:
+			img.set_pixel(x + 1, y, Color(1.0, 0.95, 0.8).lerp(top, 1.2 - b))
+	img.generate_mipmaps()
+	return ImageTexture.create_from_image(img)
+
+
+func _set_glow(sp: SetPiece, g: float) -> void:
+	var cards: Array = sp.band_cards.duplicate()
+	if sp.card:
+		cards.append(sp.card)
+	for c: PaperCard in cards:
+		_glow_pending.append([c, g])  # the card builds its materials deferred: applied in _process once they exist
+
+
+var _glow_pending: Array = []
+var _lights: Array = []  ## [OmniLight3D, base energy, flicker]
+
+
+func _add_light(sp: SetPiece, cfg: Array) -> void:
+	var o := OmniLight3D.new()
+	o.light_energy = float(cfg[0])
+	o.omni_range = float(cfg[2]) if cfg.size() > 2 else 0.8
+	o.light_color = Color(str(cfg[3])) if cfg.size() > 3 else Color(1.0, 0.68, 0.36)
+	o.omni_attenuation = 1.4
+	o.shadow_enabled = false
+	o.position = Vector3(0, float(cfg[1]) if cfg.size() > 1 else 0.2, 0.08)
+	sp.add_child(o)
+	_lights.append([o, o.light_energy, bool(cfg[4]) if cfg.size() > 4 else false])
 
 
 ## Set pieces stand on the meadow: none on the road (path felt) or in the stream. Samples the card's base line (and a
@@ -763,6 +866,11 @@ func _apply_light() -> void:
 			var hz := rig.environment.fog_light_color
 			var night := clampf((1.0 - float(L[5])) / 0.22, 0.0, 1.0)  # 0 by day .. 1 at night
 			rig.environment.background_color = hz.lerp(Color(0.36, 0.44, 0.66), night * 0.75)
+		var sky: Dictionary = (beat.get("spread", {}) as Dictionary).get("sky", {})
+		if not sky.is_empty():  # a night sky (witch_candy): deep-blue backdrop, the depth haze turns night blue
+			rig.environment.background_color = Color(str(sky.get("bg", "#0d1433")))
+			rig.environment.fog_light_color = Color(str(sky.get("fog", "#1a2550")))
+			rig.environment.fog_light_energy = float(sky.get("fog_energy", 0.7))
 
 
 # ------------------------------------------------------------------ sky layout
@@ -1323,9 +1431,20 @@ func target_radius(target: String) -> float:
 
 
 ## Which story target a screen point hits ("" for none). Kids' taps are generous.
-func hit_target(p: Vector2) -> String:
+func hit_target(p: Vector2, prefer: Array = []) -> String:
 	var best := ""
 	var bd := INF
+	# the targets a step waits for win over set pieces behind them (witch_candy: an ingredient on the shelf card)
+	for t in prefer:
+		var sp0 := target_screen(str(t))
+		if sp0.x < -999.0:
+			continue
+		var d0 := p.distance_to(sp0) / target_radius(str(t))
+		if d0 < 1.0 and d0 < bd:
+			bd = d0
+			best = str(t)
+	if best != "":
+		return best
 	for t in targets():
 		var sp := target_screen(str(t))
 		if sp.x < -999.0:
@@ -1507,6 +1626,21 @@ func _process(dt: float) -> void:
 		_counter.scale = Vector3.ONE * maxf(cs.x, 0.001)
 		_counter.visible = cs.x > 0.02
 	_camera_inside_check()
+	if not _glow_pending.is_empty():
+		var left: Array = []
+		for q: Array in _glow_pending:
+			var c: PaperCard = q[0]
+			if not is_instance_valid(c):
+				continue
+			var m := c.get_surface_override_material(0) as ShaderMaterial
+			if m:
+				m.set_shader_parameter("glow", float(q[1]))
+			else:
+				left.append(q)
+		_glow_pending = left
+	for q: Array in _lights:  # candles and jack-o'-lanterns flicker a little
+		if q[2] and is_instance_valid(q[0]):
+			(q[0] as OmniLight3D).light_energy = float(q[1]) * (0.88 + 0.08 * sin(_t * 9.1 + float(q[1]) * 7.0) + 0.05 * sin(_t * 23.7))
 	if handler:
 		handler.step(dt)
 
@@ -1530,6 +1664,8 @@ var _drift_t := 0.0
 func frame_targets(targets: Array) -> bool:
 	if has_walker or _cam_anchor == null:
 		return false
+	if camera_inside != "" and str(tale.get("inside_framing", "")) == "manual":
+		return false  # (witch_candy: inside a big room the outdoor fit would pull the camera out; the tale frames it)
 	var cam := camera()
 	var vs := get_viewport().get_visible_rect().size
 	var pts: Array[Vector3] = []

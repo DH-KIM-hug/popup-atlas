@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oho41fbaygda"
-valid=false
+uid="uid://cegcvh0b6d2ub"
+path="res://.godot/imported/cast_dahyun_duck_cycle_1.webp-33a8d40824377d9ae86650d237b74d8a.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://art/cast/cast_dahyun_duck_cycle_1.webp"
+dest_files=["res://.godot/imported/cast_dahyun_duck_cycle_1.webp-33a8d40824377d9ae86650d237b74d8a.ctex"]
 
 [params]
 

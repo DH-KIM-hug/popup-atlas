@@ -1,0 +1,104 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "night",
+  "house"
+ ],
+ "items": {
+  "00": [
+   "candy-bakery house with striped awning, pumpkin cookies",
+   "story_building",
+   0.864,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "01": [
+   "plum house with string lights, moon-and-stars window",
+   "story_building",
+   0.899,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "02": [
+   "pumpkin-shaped round house",
+   "story_building",
+   0.786,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "03": [
+   "ochre porch house, rocking chair, porch cobwebs",
+   "story_building",
+   0.87,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "04": [
+   "blue-violet slate house, cat-face lantern, bunting",
+   "story_building",
+   0.916,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "05": [
+   "cream thatched cottage, picket fence with jack-o'-lanterns",
+   "story_building",
+   0.868,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "06": [
+   "stone tower house, broom, witch-hat window",
+   "story_building",
+   0.92,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ]
+ }
+}

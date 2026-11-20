@@ -1,0 +1,231 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "night",
+  "decor"
+ ],
+ "items": {
+  "00": [
+   "string of warm golden lights on two poles",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "string_lights",
+     "lit"
+    ]
+   }
+  ],
+  "01": [
+   "string of orange and cream lights on two poles",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "string_lights",
+     "lit"
+    ]
+   }
+  ],
+  "02": [
+   "orange and plum flag garland on two poles",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "bunting"
+    ]
+   }
+  ],
+  "03": [
+   "row of five jack-o'-lanterns on a plank",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "lantern",
+     "row",
+     "lit"
+    ]
+   }
+  ],
+  "04": [
+   "three candles in jars on a plank",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "candle",
+     "lit"
+    ]
+   }
+  ],
+  "05": [
+   "fence with a jack-o'-lantern on every post",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "fence",
+     "pumpkin",
+     "lit"
+    ]
+   }
+  ],
+  "06": [
+   "friendly pumpkin-head scarecrow",
+   "story_prop",
+   0.26,
+   0,
+   {
+    "tags": [
+     "scarecrow"
+    ]
+   }
+  ],
+  "07": [
+   "black cat cut-out with orange bow",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "cat",
+     "cutout"
+    ]
+   }
+  ],
+  "08": [
+   "witch-hat wreath with stars and pumpkins",
+   "story_prop",
+   0.13,
+   0,
+   {
+    "tags": [
+     "wreath"
+    ]
+   }
+  ],
+  "09": [
+   "hanging pumpkin lantern on a hook post",
+   "story_prop",
+   0.22,
+   0,
+   {
+    "tags": [
+     "lantern",
+     "lit"
+    ]
+   }
+  ],
+  "10": [
+   "hanging cream paper lantern on a hook post",
+   "story_prop",
+   0.22,
+   0,
+   {
+    "tags": [
+     "lantern",
+     "lit"
+    ]
+   }
+  ],
+  "11": [
+   "pumpkin stack with corn sheaf",
+   "story_prop",
+   0.15,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "corn"
+    ]
+   }
+  ],
+  "12": [
+   "little wagon of pumpkins",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "wagon"
+    ]
+   }
+  ],
+  "13": [
+   "mailbox with a pumpkin on top",
+   "story_prop",
+   0.14,
+   0,
+   {
+    "tags": [
+     "mailbox",
+     "pumpkin"
+    ]
+   }
+  ],
+  "14": [
+   "waving friendly paper ghost cut-out",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "ghost",
+     "cutout"
+    ]
+   }
+  ],
+  "15": [
+   "candle lantern on a low post",
+   "story_prop",
+   0.15,
+   0,
+   {
+    "tags": [
+     "lantern",
+     "candle",
+     "lit"
+    ]
+   }
+  ],
+  "16": [
+   "straw bale with three jack-o'-lanterns",
+   "story_prop",
+   0.11,
+   0,
+   {
+    "tags": [
+     "hay",
+     "pumpkin",
+     "lit"
+    ]
+   }
+  ],
+  "17": [
+   "paper moon-and-stars mobile on a stand",
+   "story_prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "moon",
+     "mobile"
+    ]
+   }
+  ]
+ }
+}

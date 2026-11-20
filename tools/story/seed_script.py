@@ -146,6 +146,7 @@ def build() -> dict:
         **({"shots": T.SHOTS} if getattr(T, "SHOTS", None) else {}),
         **({"ui": T.UI} if getattr(T, "UI", None) else {}),
         **({"backdrop": True} if getattr(T, "BACKDROP", False) else {}),
+        **({"inside_framing": T.INSIDE_FRAMING} if getattr(T, "INSIDE_FRAMING", "") else {}),
         **({"sound": T.SOUND} if getattr(T, "SOUND", None) else {}),
         "cast": T.CAST,
         "moral": T.MORAL,

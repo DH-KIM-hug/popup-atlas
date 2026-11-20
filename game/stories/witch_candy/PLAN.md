@@ -138,7 +138,7 @@ Narration per run (one round-1 and one round-2 branch, averaged): ≈ 206 s (inv
 door / glides / POOFs / transformation actions (~100 s), no page turns after the cover. **Estimate ≈ 5:20–5:40.**
 If over 6:00: drop 138 ("나는 두 개!"), shorten round 2's action, play 125 under the pot-clear.
 
-## Engine work for phase 2 (NOT implemented)
+## Engine work for phase 2 (as planned in phase 1; see "Phase 2 status" below for what was built)
 1. **`interior` RoomBox template** (`game/core/world/room_box.gd`): back / side walls, floor, ceiling beam from
    catalog ids, spots in room coordinates, warm interior lights (lantern omni, fire light that grows with the fire);
    usable inside a set piece's `box` (`"room": "interior"`) or as a stand-alone spread. Camera `inside_view` /
@@ -179,3 +179,28 @@ the night street with the shop and its body, and the room inside it. Captures an
   reference crops (`art_src/cast/raw/ref_wc_<who>.png`). Old raws kept as `_v1`.
 - The witch is about 1.25× Dahyun on the sheets (source asked 1.6×); her height_units are set to 0.38 (1.45×).
 - The shop facade's doorway is drawn dark, not cut: phase 2 cuts it in the stage band (the inside face has the cut).
+
+## Phase 2 status (2026-11-20)
+User on the prototype: "마을을 더 많이 각자 할로윈 장식" → a real Halloween street first.
+- **Village**: 13 houses line view 5's street on both sides and down the road (story_wc_houses_a/b: 14 new night
+  facades, each with its own drawn decoration) plus 18 add-ons (story_wc_decor: string lights, garlands, jack-o'-lantern
+  rows, candle jars, scarecrow, black-cat cut-out, witch-hat wreath, hanging lanterns, ...) placed per house; two
+  strings of lights across the street; lamps and pumpkins on the verges. SET_CHECK road=0 water=0 for everything
+  except the two light strings (allow_road: their cords cross the street by design).
+- **Night**: spread `sky` (deep-blue backdrop, the depth haze turns night blue, a fog-free sky card with printed stars,
+  the moon card and star cards far behind the street). Lit windows glow (paper_print `glow`: only bright warm texels
+  emit), warm pools of light from set entries' `light` (lamps, windows, jack-o'-lanterns flicker).
+- **Room** inside the shop's footprint: full-height back wall, plank floor raised over the meadow, shelf left, pot and
+  hearth, counter; Dahyun stands right of the shelf, the friends watch behind the pot (in the room shot); warm
+  candle / fire light (beam lantern + pot fire light that grows with the three flames).
+- **Engine (generic)**: tale verbs (`run_step` on the handler), `go_inside` `to` (walk on into a room) + `queue`,
+  `walk` `file` (single file), `<pose>_front` / `<pose>_back` cycles, set `glow` / `light`, spread `sky`, hit test
+  prefers the targets a step waits for, no outdoor reframing while the camera is inside a house, branch-aware
+  check_lines (`PLAN brew<n>` lines).
+- **Tale (fx.gd)**: invitations (tap to catch), shop lights on, fire, shelf of nine, `brew` (two picks fly in, colour
+  swirl bands, magic stir, POOF, candy to Dahyun's hands, eat, 뿅), the six actions (roll down the street via the road,
+  waddle round the pot with 호박이, swim / fly a loop over the roofs in front of the moon, three hops onto the shop roof,
+  pumpkin glow lighting the dimmed street), ghost candy round, parade with the little ghost, candy fountain, finale.
+- **Sound**: wc.* placeholder SFX synthesised (tools/audio/wc_synth_sfx.py, WAV), beds / music / footsteps mapped
+  in the tale's sound block. Nobody has listened.
+- **Voice**: wc_n01–n04 still unapproved → caption-only placeholders (status pending, read-time estimate).

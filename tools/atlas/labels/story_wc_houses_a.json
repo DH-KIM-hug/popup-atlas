@@ -1,0 +1,104 @@
+{
+ "biome": "halloween",
+ "season": "autumn",
+ "tags": [
+  "witch_candy",
+  "halloween",
+  "story",
+  "night",
+  "house"
+ ],
+ "items": {
+  "00": [
+   "tall narrow townhouse, pumpkins on the steps, cobweb",
+   "story_building",
+   0.92,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "01": [
+   "thatched cottage, bunting on the eaves, sill pumpkins",
+   "story_building",
+   0.775,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "02": [
+   "crooked tower house, bat in the tower window, witch-hat wreath",
+   "story_building",
+   0.897,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "03": [
+   "sky-blue house, two hanging lanterns, cat in a window",
+   "story_building",
+   0.769,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "04": [
+   "terracotta house with dormer, paper-bat garland, big pumpkin",
+   "story_building",
+   0.771,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "05": [
+   "sage cottage, sill candle lanterns, ghost garland",
+   "story_building",
+   0.807,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ],
+  "06": [
+   "chocolate-timber cottage, pumpkin scarecrow, corn sheaves",
+   "story_building",
+   0.777,
+   0,
+   {
+    "tags": [
+     "house",
+     "lit",
+     "decorated"
+    ]
+   }
+  ]
+ }
+}

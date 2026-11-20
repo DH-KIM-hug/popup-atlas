@@ -1,0 +1,317 @@
+{
+ "sheet": "story_wc_decor",
+ "bg": [
+  0.988,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wc_decor_00",
+   "bbox": [
+    44,
+    41,
+    446,
+    211
+   ],
+   "area": 13278,
+   "size": [
+    410,
+    178
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_01",
+   "bbox": [
+    484,
+    40,
+    973,
+    211
+   ],
+   "area": 14661,
+   "size": [
+    497,
+    179
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_02",
+   "bbox": [
+    1014,
+    39,
+    1496,
+    211
+   ],
+   "area": 19288,
+   "size": [
+    490,
+    180
+   ],
+   "halo": 39,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_03",
+   "bbox": [
+    48,
+    284,
+    482,
+    411
+   ],
+   "area": 41239,
+   "size": [
+    442,
+    135
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_04",
+   "bbox": [
+    566,
+    260,
+    927,
+    410
+   ],
+   "area": 38473,
+   "size": [
+    369,
+    158
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_05",
+   "bbox": [
+    1022,
+    241,
+    1490,
+    413
+   ],
+   "area": 47509,
+   "size": [
+    476,
+    180
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_06",
+   "bbox": [
+    30,
+    444,
+    272,
+    724
+   ],
+   "area": 28986,
+   "size": [
+    250,
+    288
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_07",
+   "bbox": [
+    287,
+    502,
+    454,
+    719
+   ],
+   "area": 24006,
+   "size": [
+    175,
+    225
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_08",
+   "bbox": [
+    516,
+    451,
+    739,
+    713
+   ],
+   "area": 22243,
+   "size": [
+    231,
+    270
+   ],
+   "halo": 25,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_09",
+   "bbox": [
+    779,
+    467,
+    938,
+    719
+   ],
+   "area": 22177,
+   "size": [
+    167,
+    260
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_10",
+   "bbox": [
+    1006,
+    467,
+    1166,
+    718
+   ],
+   "area": 22061,
+   "size": [
+    168,
+    259
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_11",
+   "bbox": [
+    1225,
+    461,
+    1505,
+    719
+   ],
+   "area": 44212,
+   "size": [
+    288,
+    266
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_12",
+   "bbox": [
+    43,
+    786,
+    325,
+    992
+   ],
+   "area": 34774,
+   "size": [
+    290,
+    214
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_13",
+   "bbox": [
+    372,
+    761,
+    523,
+    988
+   ],
+   "area": 18991,
+   "size": [
+    159,
+    235
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_14",
+   "bbox": [
+    559,
+    788,
+    752,
+    986
+   ],
+   "area": 24777,
+   "size": [
+    201,
+    206
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_15",
+   "bbox": [
+    794,
+    755,
+    895,
+    988
+   ],
+   "area": 12917,
+   "size": [
+    109,
+    241
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_16",
+   "bbox": [
+    946,
+    785,
+    1214,
+    989
+   ],
+   "area": 39307,
+   "size": [
+    276,
+    212
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wc_decor_17",
+   "bbox": [
+    1274,
+    765,
+    1490,
+    988
+   ],
+   "area": 15927,
+   "size": [
+    224,
+    231
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
