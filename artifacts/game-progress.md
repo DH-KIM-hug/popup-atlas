@@ -1610,7 +1610,7 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - New art (Codex, md5-unique): cast_wc_surprised_black — all six characters surprised with the NEW ghost-candy
     mouth drawn natively (a soft dark plum-black felt O with a darker inside, a stitched rim and a cream highlight).
     Catalogued as dahyun wow_black and <role> surprised_black; the reveal now uses these surprised faces (the
-    arms-up ghost pose before). (A separate mouth-decal sheet, story_wc_mouths, failed twice in Codex; not needed.)
+    arms-up ghost pose before). (A separate mouth-decal sheet, story_wc_mouths, came in on a retry after these were done; not used — the native mouths match each character better.)
   - tools/cast/wc_mouth_v5.py, on all 39 ghost figures / walk frames, from the originals: finds the old mouth (ring,
     hole, ticks; side "C"; the cat's small brown "o"; hand-measured spots for 4 frames), ERASES it with a patch of the
     same face copied from nearby plain skin (colour-matched, feathered, patches with blush / hair / eyes rejected; a
