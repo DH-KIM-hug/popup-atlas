@@ -1519,3 +1519,32 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     rings and frog / duck / bat looks are half hidden) and 호박이 is mostly hidden; the bat / fish flights are small
     against the sky; the shelf ingredients are small cards (tap rings OK in autoplay, not tried by hand); the
     transformation "뿅" is a star / smoke burst only; nobody has listened to the placeholder SFX or the mix.
+
+## 2026-11-20 — witch_candy v2: houses face the road, the greeting in full view, clean door entries
+  - User on v1: "처음 마녀가 인사할때 앞의 집때문에 안보여. 집 문이 길쪽으로 나있어야 미국식 집 구조 ... 카메라를 회전해서
+    인사하면 ... 집으로 들어갈때 문에 겹친다던지 문 아래 돌지방을 통과하던지 이런게 없어야".
+  - Houses face the road: every house turns toward the street (left side +50°, right side -50°, the candy shop -45°),
+    facing each other across it, each first-row house with a stepping-stone path from its door to the road's edge (the
+    shop's path runs to the road); decorations placed in each house's own frame; SET_CHECK road=0 water=0 for every
+    piece except the two light strings across the street. The room, its spots and every interior shot turn with the
+    shop (tale table `_rot`, shot yaw = SHOP_YAW).
+  - Greeting: the camera turns round to face the shop door straight on from the road (`door_cam`); the lamp that then
+    stood in the line moved beside the shop; the witch leads everyone in and the small cat waits last, so nobody fills
+    the lens; entries and exits use a raised wide door shot (`door_wide`) with the path and the file in view.
+  - Entries without clipping: the shop door swings INTO the house (`door_in`) and fully open before anyone moves
+    (`door_clear`); characters climb in front of the wall to the drawn sill (`climb_steps`, SetPiece.door_sill), cross
+    at sill height and step down inside, one at a time in a tidy file along the path; exits reverse it (tale verb
+    `leave_shop`, Dahyun's own exits / returns too). The witch is sized to fit the doorway (0.42 tall) — her hat poked
+    over the wall on the sill. Checked with 8 fps zoomed tiles of the entries.
+  - Checklist (references/checklist.md): houses face the road; no set piece in front of a speaker (orbit the camera);
+    entries climb the steps with no overlap of door or threshold stone.
+  - Runs: witch_candy STORY_DONE 367.1 s (6:07; v1 356.2 s — the one-at-a-time door entries / exits and the
+    parade's exit cost ~11 s after trimming walk speeds), CHECK_LINES OK (55 segments; pumpkin, frog, ghost), no
+    script errors, SET_CHECK zero except the two light strings; three_pigs 295.3 s, sun_wind 206.1 s, both
+    CHECK_LINES OK, missing_audio=[] missing_sound=[]. Videos: artifacts/video/witch_candy_full_v2.mp4 (27.0 MB),
+    witch_candy_village_v2.mp4; beat sheets artifacts/witch_candy/beats_v2/, door tiles
+    artifacts/witch_candy/tiles_v2/ (8 fps zoomed: entries and exits), tour artifacts/witch_candy/village_tour_v2.jpg.
+  - Still off: 6:07 is just over 6 min; in the close door shot the queue's last two (fox, cat) stand large in the
+    foreground while the others go in; turned houses seen from the down-street camera show as angled flat fronts (no
+    side walls on the village houses; only the shop has a body); the finale friends still stand half behind
+    Dahyun and the pot; placeholder SFX unheard; wc_n01-n04 caption-only.

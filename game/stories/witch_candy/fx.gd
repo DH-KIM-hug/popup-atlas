@@ -114,6 +114,18 @@ func _toward() -> Vector3:
 	return stage.dir_vec("toward")
 
 
+## Along the shop's front (its own right), for moves inside the room.
+func _sx() -> Vector3:
+	var sp := _sp("shop")
+	return sp.global_transform.basis.x.normalized() if sp else _right()
+
+
+## Out of the shop's front (the shop faces the road, turned from the camera frame).
+func _out() -> Vector3:
+	var sp := _sp("shop")
+	return sp.global_transform.basis.z.normalized() if sp else _toward()
+
+
 ## A card flying from `from` to `to` on an arc, facing the camera; keep > 0 holds it at the end (then it is removed
 ## with _drop_flyer or after keep seconds).
 func fly(id: String, from: Vector3, to: Vector3, h: float, life := 0.8, arc := 0.15, keep := 0.0, spin := 0.0) -> Node3D:
@@ -203,7 +215,7 @@ func fx(name: String) -> bool:
 			if SoundDirector.current:
 				SoundDirector.current.set_bed("room", 1.5)
 		"outside_view":
-			stage.shot_to("street", "door", {"rate": 1.5})
+			stage.shot_to("door_cam", "door_view", {"rate": 1.5})
 			if SoundDirector.current:
 				SoundDirector.current.set_bed("@light", 1.5)
 		"flame_s":
@@ -335,8 +347,8 @@ func _fire_now(n: int) -> void:
 	var ids := ["story_wc_pot_13", "story_wc_pot_14", "story_wc_pot_15"]
 	if n > 0:
 		var f := _card(ids[n - 1], [0.045, 0.06, 0.075][n - 1])
-		f.global_position = hp + _toward() * 0.02 + Vector3.UP * 0.005
-		f.rotation.y = _yaw()
+		f.global_position = hp + _out() * 0.02 + Vector3.UP * 0.005
+		f.rotation.y = _sp("shop").global_rotation.y if _sp("shop") else _yaw()
 		_flames.append(f)
 	var pot := _sp("pot")
 	if pot:
@@ -370,7 +382,7 @@ func _make_liquid() -> void:
 	_liquid.material_override = m
 	_liquid.top_level = true
 	stage.add_child(_liquid)
-	_liquid.global_position = _pot_mouth() + _toward() * 0.012  # in front of the card's drawn (dark) opening
+	_liquid.global_position = _pot_mouth() + _out() * 0.012  # in front of the card's drawn (dark) opening
 	_liquid.visible = false
 
 
@@ -419,8 +431,10 @@ func _shelf_now(animated: bool) -> void:
 		var y := (0.5 if k < 2 else 0.1) * sh.height
 		var id := "story_wc_ingredients_%02d" % i
 		var n := _card(id, 0.062)
-		n.global_position = sh.global_position + _right() * dx + Vector3.UP * y + _toward() * 0.03
-		n.rotation.y = _yaw()
+		var sx := sh.global_transform.basis.x.normalized()
+		var sz := sh.global_transform.basis.z.normalized()
+		n.global_position = sh.global_position + sx * dx + Vector3.UP * y + sz * 0.03
+		n.rotation.y = sh.global_rotation.y
 		_ings[key] = n
 		if animated:
 			n.scale = Vector3.ONE * 0.02
@@ -436,6 +450,8 @@ func _shelf_now(animated: bool) -> void:
 ## brew {round: 3, all_colors, taps, result: ghost, candy, pot_color, stir, pop, eat, ghost} (the ghost candy)
 func run_step(st: Dictionary, R: Node) -> void:
 	match str(st.get("do", "")):
+		"leave_shop":
+			await _leave_shop(st, R)
 		"brew":
 			if st.get("all_colors", false):
 				await _brew_ghost(st, R)
@@ -605,12 +621,13 @@ func _walk_home(R: Node) -> void:
 		return
 	var home := stage.spot_point("in_kid")
 	if kid.global_position.distance_to(home) > 0.25:
+		fx("door_open")
 		var pts: Array = []
 		if kid.global_position.distance_to(stage.spot_point("door")) > 0.15:
-			pts.append(stage.spot_point("door"))
-		pts.append(stage.spot_point("in_door"))
+			pts.append(stage.spot_point("road_shop") if kid.global_position.distance_to(stage.spot_point("road_shop")) < kid.global_position.distance_to(stage.spot_point("door")) else stage.spot_point("door") + _out() * 0.2)
+		pts.append_array(_door_steps(true))
 		pts.append(home)
-		kid.follow(pts, 0.32, "", false)
+		kid.follow(pts, 0.32, "", true)
 		await R._wait(0.3)
 		fx("inside_view")
 		var g := 0.0
@@ -696,11 +713,11 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			# duck feet: round the pot in the drawn waddle cycle, 호박이 waddling behind
 			stage.shot_to("room", "in_focus", {"rate": 1.6})
 			var p0 := stage.spot_point("in_kid")
-			var pts := [p0 + _right() * 0.32 + _toward() * 0.12, p0 + _right() * 0.5 + _toward() * 0.05, p0 - _right() * 0.06 + _toward() * 0.1, p0]
+			var pts := [p0 + _sx() * 0.32 + _out() * 0.12, p0 + _sx() * 0.5 + _out() * 0.05, p0 - _sx() * 0.06 + _out() * 0.1, p0]
 			kid.follow(pts, 0.16, "duck", false)
 			var cat := _a("cat")
 			if cat:
-				cat.follow([cat.global_position + _toward() * 0.05 - _right() * 0.1] + pts.slice(0, 3), 0.15, "", false)
+				cat.follow([cat.global_position + _out() * 0.05 - _sx() * 0.1] + pts.slice(0, 3), 0.15, "", false)
 			R._say(act)
 			await _wait_moving(R, ["kid", "cat"])
 			if cat:
@@ -713,7 +730,7 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			_rolling = "kid"
 			_sfx("wc.roll", kid.centre())
 			var bump := stage.spot_point("pump_bump")
-			_glide("kid", [stage.spot_point("door") + _toward() * 0.15, stage.spot_point("road_shop"),
+			_glide("kid", [stage.spot_point("door") + _out() * 0.15, stage.spot_point("road_shop"),
 				stage.spot_point("road_mid") + _toward() * 0.1, bump + _right() * 0.14], 0.5, "roll", "tf_strawberry_ball")
 			stage.follow_actor("kid", "track")
 			R._say(act)
@@ -724,13 +741,13 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			kid.hop_v = 1.0
 			await _while_line(R)
 			await R._say(str((rs.get("extra", [""]) as Array)[0]))
-			_glide("kid", [stage.spot_point("road_mid"), stage.spot_point("road_shop"), stage.spot_point("door") + _toward() * 0.2], 0.55, "roll", "tf_strawberry_ball")
+			_glide("kid", [stage.spot_point("road_mid"), stage.spot_point("road_shop"), stage.spot_point("door") + _out() * 0.2], 0.55, "roll", "tf_strawberry_ball")
 			await _wait_glide(R, "kid")
 			_rolling = ""
 			kid.set_pose(str(rs["figure"]))
 		"swim_moon", "fly_moon":
 			await _go_out(R, "street")
-			var up := stage.spot_point("door") + _toward() * 0.2
+			var up := stage.spot_point("door") + _out() * 0.2
 			var loop := stage.spot_point("fly_loop")  # over the middle of the street: near the camera, the moon behind
 			var pts: Array = [up + Vector3.UP * 0.25, Vector3(up.x, 0, up.z).lerp(Vector3(loop.x, 0, loop.z), 0.5) + Vector3.UP * 0.7]
 			for k in 7:  # a loop high over the roofs, in front of the moon
@@ -762,9 +779,9 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 		"hop_roof":
 			await _go_out(R, "door_cam")
 			var shop := _sp("shop")
-			var top := shop.global_position + Vector3.UP * shop.height * 0.98 + _toward() * 0.02
-			var d0 := stage.spot_point("door") + _toward() * 0.25
-			stage.shot_to("roof_cam", "shop", {"rate": 1.4})
+			var top := shop.global_position + Vector3.UP * shop.height * 0.98 + _out() * 0.02
+			var d0 := stage.spot_point("door") + _out() * 0.25
+			stage.shot_to("roof_cam", "door_view", {"rate": 1.4})
 			R._say(act)
 			for k in 3:  # three hops: the step, the awning, the ridge
 				var to := d0.lerp(top, float(k + 1) / 3.0)
@@ -790,17 +807,66 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			_kid_light.position = Vector3(0, 0.18, 0.08)
 			kid.add_child(_kid_light)
 			_sfx("wc.glow", kid.centre())
-			_glide("kid", [stage.spot_point("door") + _toward() * 0.25, stage.spot_point("road_shop"), stage.spot_point("road_mid")], 0.34, "hop", "tf_pumpkin")
+			_glide("kid", [stage.spot_point("door") + _out() * 0.25, stage.spot_point("road_shop"), stage.spot_point("road_mid")], 0.34, "hop", "tf_pumpkin")
 			stage.follow_actor("kid", "track")
 			R._say(act)
 			await _wait_glide(R, "kid")
 			await _while_line(R)
 			await R._wait(0.8)
 			_dim_t = 1.0
-			_glide("kid", [stage.spot_point("road_shop"), stage.spot_point("door") + _toward() * 0.2], 0.4, "hop", "tf_pumpkin")
+			_glide("kid", [stage.spot_point("road_shop"), stage.spot_point("door") + _out() * 0.2], 0.4, "hop", "tf_pumpkin")
 			await _wait_glide(R, "kid")
 		_:
 			await R._say(act)
+
+
+## Out of the shop one at a time (v2, user: "문 아래 돌지방을 통과 ... 이런게 없어야"): the door swings fully open
+## (inward), each walks to the doorway, steps up onto the sill, over it and down the steps, then on to a place in a
+## tidy file along the front path. {who, pose, to (spot), spacing}
+func _leave_shop(st: Dictionary, R: Node) -> void:
+	var sp := _sp("shop")
+	fx("door_open")
+	var g := 0.0
+	while sp.door_open_amount() < 0.95 and g < 2.0:
+		g += await R._frame()
+	var roles: Array = st.get("who", [])
+	var to := stage.spot_point(st.get("to", "road_shop"))
+	var o := _out()
+	for i in roles.size():
+		var a := _a(str(roles[i]))
+		if a == null:
+			continue
+		var pts := _door_steps(false)
+		var end := to + o * float(st.get("spacing", 0.15)) * float(roles.size() - 1 - i) * 0.0 - (to - stage.spot_point("door")).normalized() * float(st.get("spacing", 0.15)) * i
+		pts.append(Vector3(end.x, stage.world.ground.surface_y(Vector2(end.x, end.z)), end.z))
+		a.follow(pts, 0.55, str(st.get("pose", "")), true)
+		var g2 := 0.0
+		while a.moving() and a._path.size() > 2 and g2 < 8.0:  # the next one starts once this one is past the sill
+			g2 += await R._frame()
+	var g3 := 0.0
+	while g3 < 8.0:  # everyone down the steps and in the file before the parade starts
+		var busy := false
+		for r in roles:
+			if _a(str(r)) and _a(str(r)).moving():
+				busy = true
+		if not busy:
+			break
+		g3 += await R._frame()
+	fx("door_close")
+
+
+## The way over the shop's sill as world points: out (room → threshold → steps → ground) or in (reversed).
+func _door_steps(going_in: bool) -> Array:
+	var sp := _sp("shop")
+	var o := _out()
+	var sill := sp.door_sill()
+	var fr := sp.door_point(true, o)
+	var bk := sp.door_point(false, o)
+	var pts := [stage.spot_point("in_door") + Vector3.UP * 0.02, bk + Vector3.UP * sill, fr - o * 0.1 + Vector3.UP * sill,
+		fr - o * 0.06 + Vector3.UP * sill * 0.5, fr + o * 0.04]
+	if going_in:
+		pts.reverse()
+	return pts
 
 
 ## Dahyun walks out of the room to the open door (camera outside, door opens), still in her transformed figure.
@@ -811,7 +877,11 @@ func _go_out(R: Node, shot := "story") -> void:
 	if SoundDirector.current:
 		SoundDirector.current.set_bed("@light", 1.5)
 	var fig := kid.pose
-	_glide("kid", [stage.spot_point("in_door"), stage.spot_point("door") + _toward() * 0.12], 0.36, "hop", fig)
+	var sp := _sp("shop")
+	var g := 0.0
+	while sp.door_open_amount() < 0.95 and g < 2.0:  # the door swings fully clear first
+		g += await R._frame()
+	_glide("kid", _door_steps(false), 0.36, "walk", fig)
 	await _wait_glide(R, "kid")
 
 
@@ -915,7 +985,7 @@ func _fountain() -> void:
 		"story_wc_candies_04", "story_wc_candies_05"]
 	for i in 12:
 		var ang := randf() * TAU
-		var to := m + _right() * cos(ang) * randf_range(0.08, 0.26) + _toward() * (0.12 + absf(sin(ang)) * 0.14)
+		var to := m + _sx() * cos(ang) * randf_range(0.1, 0.24) + _out() * (0.02 + absf(sin(ang)) * 0.06)
 		to.y = stage.world.ground.surface_y(Vector2(to.x, to.z)) + 0.02
 		var c := fly(ids[i % ids.size()], m, to, 0.065, 0.9 + randf() * 0.4, 0.3, 999.0, 4.0)
 		_candies.append(c)

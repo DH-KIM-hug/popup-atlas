@@ -686,6 +686,8 @@ func _step_go_inside(st: Dictionary) -> void:
 			stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
 		return
 	var toward := stage.dir_vec("toward")
+	if st.get("house_facing", false):  # a house turned to face the road: in front of its own door (witch_candy)
+		toward = sp.global_transform.basis.z.normalized()
 	var spd := float(st.get("speed", 0.4))
 	var front := sp.door_point(true, toward)
 	# one queue in front of the door: the first at the door, the others a step further out toward the camera, so
@@ -701,7 +703,7 @@ func _step_go_inside(st: Dictionary) -> void:
 			a.lift = 0.0
 			a.pop_delay = 0.0
 			a.pop_target = 1.0
-		var qd := stage.dir_vec(str(st.get("queue", "toward")))  # where the queue waits (witch_candy: along the shop front)
+		var qd := toward if str(st.get("queue", "")) == "front" else stage.dir_vec(str(st.get("queue", "toward")))  # where the queue waits
 		a.walk_to(front + qd * float(st.get("queue_gap", 0.16)) * i + (toward * 0.05 if st.has("queue") else Vector3.ZERO), spd, "")
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
@@ -714,6 +716,10 @@ func _step_go_inside(st: Dictionary) -> void:
 	if sound:
 		sound.step("go_inside", "door_open", sp.door_point(true, toward))
 	await _wait(0.35)
+	if st.get("door_clear", false):  # the door swings fully clear before anyone steps in
+		var gd := 0.0
+		while sp.door_open_amount() < 0.95 and gd < 2.0:
+			gd += await _frame()
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
 		if a == null:
@@ -723,7 +729,15 @@ func _step_go_inside(st: Dictionary) -> void:
 			var g2 := 0.0
 			while a.moving() and g2 < 6.0:
 				g2 += await _frame()
-		a.walk_to(sp.door_point(false, toward), spd * 0.8, "")
+		if st.get("climb_steps", false):
+			# up the steps onto the sill (feet follow the step height), over the threshold, a step down inside
+			var sill := sp.door_sill()
+			var fr: Vector3 = sp.door_point(true, toward)
+			var bk: Vector3 = sp.door_point(false, toward)
+			a.follow([fr - toward * 0.06 + Vector3.UP * sill * 0.5, fr - toward * 0.1 + Vector3.UP * sill,
+				bk + Vector3.UP * sill, bk - toward * 0.08 + Vector3.UP * 0.02], spd * 0.7, "", true)
+		else:
+			a.walk_to(sp.door_point(false, toward), spd * 0.8, "")
 		var g3 := 0.0
 		while a.moving() and g3 < 6.0:
 			g3 += await _frame()

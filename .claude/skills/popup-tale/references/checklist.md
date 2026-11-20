@@ -21,6 +21,9 @@ How to look:
   - Escapes are continuous on one spread with camera moves, not page turns ("책장 안넘기고 카메라 무빙으로").
   - The villain's defeat ends with him visibly running away ("늑대가 도망가서 달려야").
 - [ ] **No stray effects.** No smoke or steam unless the story makes it ("셋째집 연기뭐지?"). Check background village chimneys, which bleed through.
+- [ ] **Houses face the road** ("집 문이 길쪽으로 나있어야 미국식 집 구조"): every front door looks onto the street,
+  houses on both sides face each other across it, none turns its back or side to the road; a short path or steps
+  from each door to the road.
 - [ ] **Placement.** Set pieces are off the road and out of the water (SET_CHECK road=0 water=0). Wading characters stand in the water channel, not in the bank.
 
 ## Lines and voice
@@ -42,6 +45,10 @@ How to look:
   - Climbs use a ladder or other support ("늑대 굴뚝 올라갈때 이상").
   - Landings have a thud and dust.
 - [ ] **Walk details** (sun_wind rig, if used): front boots, so no splay feet ("팔자걸음"). Legs stay behind the garment, roll is about 0.6° so no "휘청", arms swing so no "soldier march".
+- [ ] **Entries climb the steps** ("문에 겹친다던지 문 아래 돌지방을 통과"): the door swings fully clear first (into the
+  house), each character walks up the steps onto the sill (feet follow the step height), through the open doorway and
+  down inside, one at a time or in a tidy file; nobody overlaps the door card or passes through the threshold stone.
+  Check every entry and exit with 8 fps zoomed tiles.
 - [ ] **Doorways.** An open door shows an interior (the house has a body: side walls, back, floor, ceiling) ("뒷편이 없는곳으로").
   - One door cycle per group; everyone enters seen from behind.
 
@@ -49,6 +56,8 @@ How to look:
 - [ ] **Shots are varied** (wide, medium, close; OTS; low entrance; push-in on completion; light progressing). Not one frontal stage shot ("전체적으로 연출 고민해볼래? 카메라 워킹도").
 - [ ] **Interactive steps frame every target first** and hold still. Rings sit fully inside with margin, and each target is at least ~80 pt to tap ("화면이 거기로 안가서 못누름").
   - A build is framed once, for the finished size.
+- [ ] **No set piece in front of a speaker** ("앞의 집때문에 안보여"): check every exterior shot for a house, tree or
+  prop between the camera and whoever speaks; turn (orbit) the camera to face them rather than leaving them hidden.
 - [ ] **The acting character is in every frame of its beat.** The camera follows walkers to their mark, and no one exits mid-line.
 - [ ] **Effort and result share the frame.** A huff close-up includes the house ("후 불때는 클로즈업 집까지").
 - [ ] **Reverse shots show the answerer.** The window close-up must contain the peek face.

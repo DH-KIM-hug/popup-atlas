@@ -15,6 +15,7 @@ one character in the finale (frog->rabbit, duck->bear, bat->fox, fish->cat, pump
 TALE_ID = "witch_candy"
 TITLE = "사탕 마녀의 핼러윈"
 PREFIX = "wc"
+SHOP_YAW = -45.0  # the candy shop turns to face the road (v2, 2026-11-20); shots inside it turn with it
 MORAL = ""  # no moral (user: the book tells the tale)
 
 # ---------------------------------------------------------------- line adaptations
@@ -151,24 +152,30 @@ INSIDE_FRAMING = "manual"  # the stage does not reframe taps while the camera is
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "crane_high": [8.0, 34.0, 0.3, 22.0, 0.0], "establish": [8.0, 17.0, 0.3, 24.0, -4.0],
          "street": [5.0, 11.0, 0.32, 22.0, 6.0], "medium": [2.6, 9.0, 0.3, 20.0, 6.0],
-         "face": [1.5, 7.0, 0.3, 20.0, 0.0], "low_up": [3.0, 4.0, 0.6, 24.0, -10.0],
+         "face": [1.5, 7.0, 0.3, 20.0, 0.0],
          "sky": [2.6, 3.0, 0.8, 34.0, 0.0],              # tilt up on her loop over the street, the moon behind
          "sky_wide": [5.5, 2.0, 1.1, 30.0, 0.0],         # the whole sky over the street (parade end, tour)
-         "roof_cam": [3.3, 15.0, 0.8, 24.0, 16.0],       # the shop roof, from above the house in front of it
          "high": [6.0, 28.0, 0.2, 22.0, 4.0], "pull_back": [10.5, 24.0, 0.3, 24.0, 0.0],
-         "tour": [3.2, 9.0, 0.3, 22.0, 0.0],
-         "track": [3.4, 27.0, 0.25, 22.0, 0.0],
-         "door_cam": [2.9, 20.0, 0.32, 22.0, 14.0],     # the shop door from above the house in front of it          # following an action outside: above the roofs (no clipping)             # the village tour: low along the street
-         # inside the shop (camera just behind the front wall, which hides while the camera is inside)
-         "room": [0.52, 8.0, 0.22, 66.0, 0.0],           # the whole room from just inside the front wall
-         "shelf": [0.48, 9.0, 0.12, 64.0, 0.0],           # shelf + pot + Dahyun: the pick taps (all 9 framed)
-         "pot": [0.42, 18.0, 0.16, 46.0, 0.0],           # looking down into the pot: swirl, POOF, candy
-         "pot_low": [0.42, 4.0, 0.1, 50.0, 0.0],         # low on the fire (tap the logs)
-         "two_shot": [0.5, 6.0, 0.24, 58.0, 8.0],        # witch + Dahyun across the pot
-         "face_in": [0.4, 6.0, 0.24, 42.0, 0.0]}         # close on Dahyun inside
+         "tour": [3.2, 9.0, 0.3, 22.0, 0.0],             # the village tour: low along the street
+         "track": [3.4, 27.0, 0.25, 22.0, 0.0],          # following an action outside: above the roofs (no clipping)
+         # v2 (user: "처음 마녀가 인사할때 앞의 집때문에 안보여 ... 카메라를 회전해서"): the camera turns round to face the
+         # shop door straight on from the road (the shop faces the road at SHOP_YAW), so nothing stands in between
+         "door_cam": [1.6, 14.0, 0.3, 28.0, SHOP_YAW],  # straight on from the road: nothing in between
+         "door_wide": [2.6, 24.0, 0.3, 26.0, SHOP_YAW],  # raised: the door, its path and a file of people on it
+         "roof_cam": [2.6, 14.0, 0.75, 26.0, SHOP_YAW + 12.0],  # the shop roof from the road in front of it
+         # inside the shop (camera just behind the front wall, which hides while the camera is inside), in the
+         # shop's frame
+         "room": [0.52, 8.0, 0.22, 66.0, SHOP_YAW],      # the whole room from just inside the front wall
+         "shelf": [0.48, 9.0, 0.12, 64.0, SHOP_YAW],     # shelf + Dahyun: the pick taps (all 9 framed)
+         "pot": [0.42, 18.0, 0.16, 46.0, SHOP_YAW],      # looking down into the pot: swirl, POOF, candy
+         "pot_low": [0.42, 4.0, 0.1, 50.0, SHOP_YAW],    # low on the fire (tap the logs)
+         "two_shot": [0.5, 6.0, 0.24, 58.0, SHOP_YAW + 8.0],  # witch + Dahyun across the pot
+         "face_in": [0.4, 6.0, 0.24, 42.0, SHOP_YAW]}    # close on Dahyun inside
 CAST = {
     "kid": {"kind": "actor", "skin": "dahyun", "views": ["front", "side", "back"], "label": "다현이 (little wizard)"},
-    "witch": {"kind": "actor", "skin": "candy_witch", "views": ["front", "side", "back"], "label": "사탕 마녀"},
+    # 0.42 tall on the page (v2): she must fit the shop's doorway (0.44 above the sill) with her hat, no clipping on the way in
+    "witch": {"kind": "actor", "skin": "candy_witch", "views": ["front", "side", "back"], "label": "사탕 마녀",
+              "height": 0.325},  # × the stage actor scale 1.3 = 0.42 tall
     "cat": {"kind": "actor", "skin": "hobak_cat", "views": ["front", "side", "back"], "label": "호박이 (orange cat)"},
     "rabbit": {"kind": "actor", "skin": "rabbit_kid", "views": ["front", "side", "back"], "label": "토끼 (non-speaking)"},
     "bear": {"kind": "actor", "skin": "bear_kid", "views": ["front", "side", "back"], "label": "곰 (non-speaking)"},
@@ -199,79 +206,110 @@ def _w(card, scale):
     return e["height_units"] * scale * e["px"][0] / e["px"][1]
 
 
-SHOP = [0.98, -2.75]
-STREET = {"shop": SHOP, "door": [SHOP[0] + 0.05, SHOP[1] + 0.22], "est": [0.1, -1.2], "street_focus": [0.2, -1.6],
+# 2026-11-20 v2 (user: "집 문이 길쪽으로 나있어야 미국식 집 구조"): every house turns to face the road (left side +50°,
+# right side -50°, the shop -45°), with a stepping-stone path from its door to the road. Offsets inside a turned house
+# (its room, its decorations, its door) are given in the house's own frame and turned here.
+import math as _m
+
+
+def _rot(c, dx, dz, yaw):
+    """A point dx right / dz in front of centre c in a piece turned by yaw degrees (stage frame [right, toward])."""
+    t = _m.radians(yaw)
+    return [round(c[0] + dx * _m.cos(t) + dz * _m.sin(t), 3), round(c[1] - dx * _m.sin(t) + dz * _m.cos(t), 3)]
+
+
+SHOP = [0.8, -2.9]
+SHOP_DOOR_X = 0.16  # the doorway's centre right of the facade's centre (facade px 364 of 582 at 1.05 high)
+_door = _rot(SHOP, SHOP_DOOR_X, 0.2, SHOP_YAW)
+STREET = {"shop": SHOP, "door": _door, "est": [0.1, -1.2], "street_focus": [0.2, -1.6],
           "kids": [-0.05, 0.45], "kid_at": [-0.02, 0.42], "rabbit_at": [-0.22, 0.5], "bear_at": [0.17, 0.52],
-          "fox_at": [-0.1, 0.66], "kids_mid": [-0.05, -1.7], "witch_door": [SHOP[0] - 0.12, SHOP[1] + 0.38],
-          "lantern_bump": [-0.38, -1.05], "moon_loop": [0.4, -3.6], "fly_loop": [0.45, -1.6], "roof": SHOP, "parade_a": [-0.05, -0.2],
-          "parade_b": [-0.05, -2.2], "tour_a": [-0.05, 0.6], "tour_b": [-0.05, -2.4],
-          # the road in front of the shop and halfway down the street (outdoor actions go via the road, where the
-          # houses never hide them)
-          "road_shop": [0.05, -2.45], "road_mid": [-0.05, -1.25]}
-# inside the shop: the facade plane at SHOP's z, the room 1.0 deep behind it; shelf left, pot middle, counter right
-# (2026-11-20: Dahyun stands right of the shelf, never in front of it; the friends watch from the counter side so they
-# stay in the room shot)
+          "fox_at": [-0.1, 0.66], "kids_mid": [-0.05, -1.7], "witch_door": _rot(SHOP, -0.02, 0.36, SHOP_YAW),
+          "lantern_bump": [-0.38, -1.05], "moon_loop": [0.4, -3.6], "fly_loop": [0.45, -1.6], "roof": SHOP,
+          "parade_a": [-0.05, -0.2], "parade_b": [-0.05, -2.2], "tour_a": [-0.05, 0.6], "tour_b": [-0.05, -2.4],
+          # the end of the shop's front path on the road, and halfway down the street (outdoor actions go via the road)
+          "road_shop": _rot(SHOP, SHOP_DOOR_X, 1.05, SHOP_YAW), "road_mid": [-0.05, -1.25],
+          # the greeting / entry camera stands on the road straight in front of the shop door
+          "door_view": _rot(SHOP, SHOP_DOOR_X, 0.45, SHOP_YAW)}
+# inside the shop, in the shop's frame (the facade plane at dz 0, the room 1.0 deep behind it)
 for _k, (_dx, _dz) in {"in_back": (0.0, -0.97), "in_shelf": (-0.35, -0.9), "in_pot": (0.25, -0.62),
                        "in_counter": (0.47, -0.92), "in_focus": (0.05, -0.66), "in_beam": (0.0, -0.5),
                        "in_kid": (0.04, -0.6), "in_witch": (0.43, -0.72), "in_cat": (0.64, -0.78),
                        "in_rabbit": (0.15, -0.88), "in_bear": (0.3, -0.92), "in_fox": (0.59, -0.95),
-                       "in_floor": (0.0, -0.02),
-                       "in_door": (0.05, -0.18), "in_shelf_front": (-0.22, -0.66)}.items():
-    STREET[_k] = [round(SHOP[0] + _dx, 3), round(SHOP[1] + _dz, 3)]
+                       "in_floor": (0.0, -0.02), "in_floor2": (0.0, -0.52),
+                       "in_door": (SHOP_DOOR_X, -0.18), "in_shelf_front": (-0.22, -0.66)}.items():
+    STREET[_k] = _rot(SHOP, _dx, _dz, SHOP_YAW)
 
 LIT = [0.55, 0.32, 0.85, "#ffae5a", False]       # a lit house: warm pool in front of its windows
 PUMP = [0.32, 0.06, 0.4, "#ff9a3c", True]        # a jack-o'-lantern / candle: small flickering pool
 LAMP = [1.0, 0.43, 1.1, "#ffc070", False]
-# (card, side L/R, z, decorations [(card, dx, dz, light)]) — x from the road edge so nothing touches the road
+HOUSE_YAW = {"L": 50.0, "R": -50.0}
+# (card, side, z or (x, z), decorations [(card, dx, dz in the house's frame, light)])
 _HOUSES = [
-    ("story_wc_houses_a_00", "L", 0.35, [("story_wc_decor_15", 0.3, 0.12, PUMP)]),
-    ("story_wc_houses_b_02", "L", -0.5, [("story_wc_decor_03", 0.0, 0.14, PUMP)]),
-    ("story_wc_houses_a_01", "L", -1.3, [("story_wc_decor_07", 0.36, 0.1, None)]),
-    ("story_wc_houses_b_04", "L", -2.1, [("story_wc_decor_09", 0.3, 0.1, PUMP)]),
-    ("story_wc_houses_a_02", "F", (-1.0, -2.6), [("story_wc_decor_16", 0.38, 0.12, PUMP)]),
-    ("story_wc_houses_a_03", "F", (0.78, -0.02), [("story_wc_decor_13", 0.36, 0.1, None)]),
-    ("story_wc_houses_b_00", "R", -0.7, [("story_wc_decor_12", 0.36, 0.12, None)]),
-    ("story_wc_houses_a_06", "R", -1.65, [("story_wc_decor_14", -0.36, 0.12, None)]),
-    # second row and down the road
-    ("story_wc_houses_b_05", "L2", -0.95, []),
-    ("story_wc_houses_b_03", "R2", -0.1, [("story_wc_decor_10", -0.4, 0.1, PUMP)]),
-    ("story_wc_houses_a_05", "R2", -1.25, []),
-    ("story_wc_houses_b_01", "F", (0.15, -4.0), []),
-    ("story_wc_houses_a_04", "F", (2.1, -3.0), [("story_wc_decor_11", -0.42, 0.1, None)]),
+    ("story_wc_houses_a_00", "L", 0.45, [("story_wc_decor_15", 0.22, 0.1, PUMP)]),
+    ("story_wc_houses_b_02", "L", -0.25, [("story_wc_decor_03", -0.12, 0.12, PUMP)]),
+    ("story_wc_houses_a_01", "L", -0.95, [("story_wc_decor_07", 0.3, 0.08, None)]),
+    ("story_wc_houses_b_04", "L", -1.65, [("story_wc_decor_09", 0.22, 0.08, PUMP)]),
+    ("story_wc_houses_a_02", "L", -2.35, [("story_wc_decor_16", -0.3, 0.1, PUMP)]),
+    ("story_wc_houses_a_03", "R", 0.0, [("story_wc_decor_13", 0.3, 0.08, None)]),
+    ("story_wc_houses_b_00", "R", -0.75, [("story_wc_decor_12", -0.3, 0.1, None)]),
+    ("story_wc_houses_a_06", "R", -1.55, [("story_wc_decor_14", 0.32, 0.1, None)]),
+    # second row (behind the first, still facing the road) and down the road
+    ("story_wc_houses_b_05", "L2", -0.6, []),
+    ("story_wc_houses_b_03", "R2", -0.35, [("story_wc_decor_10", -0.32, 0.08, PUMP)]),
+    ("story_wc_houses_a_05", "R2", -1.3, []),
+    ("story_wc_houses_b_01", ("R", 0.25, -4.05), None, []),
+    ("story_wc_houses_a_04", ("R", 2.0, -3.2), None, [("story_wc_decor_11", -0.36, 0.08, None)]),
 ]
+STONES = ["stream_water_21", "stream_water_22"]
 VILLAGE_SET = []
+
+
+def _path(prefix, door, yaw, n):
+    """Stepping stones from a door straight out to the road (the house's facing)."""
+    for k in range(n):
+        nm = f"{prefix}_st{k}"
+        STREET[nm] = _rot(door, 0.0, 0.08 + 0.12 * k, yaw)
+        VILLAGE_SET.append({"card": STONES[k % 2], "at": nm, "stage": "full", "name": nm, "scale": 0.55, "clear": 0.08,
+                            "yaw": yaw})
+
+
 for _i, (_card, _side, _z, _dec) in enumerate(_HOUSES):
     _hw = _w(_card, HOUSE_SCALE) * 0.5
-    if _side == "F":
-        _x, _z = _z
+    if isinstance(_side, tuple):
+        _side, _x, _z = _side
+        _yaw = HOUSE_YAW[_side]
     else:
-        _x = {"L": -0.5 - _hw, "R": 0.32 + _hw, "L2": -1.75 - _hw, "R2": 1.6 + _hw}[_side]
+        _yaw = HOUSE_YAW[_side[0]]
+        _ext = _hw * _m.cos(_m.radians(50))  # half the turned card's x extent
+        _x = {"L": -0.52 - _ext, "R": 0.24 + _ext, "L2": -1.55 - _ext, "R2": 1.25 + _ext}[_side]
     _nm = f"house_{_i}"
     STREET[_nm] = [round(_x, 3), _z]
     VILLAGE_SET.append({"card": _card, "at": _nm, "stage": "full", "name": _nm, "scale": HOUSE_SCALE, "clear": 1.0,
-                        "glow": 0.9, "light": LIT})
+                        "glow": 0.9, "light": LIT, "yaw": _yaw})
     for _j, (_dc, _dx, _dz, _lt) in enumerate(_dec):
         _dn = f"{_nm}_d{_j}"
-        STREET[_dn] = [round(_x + _dx, 3), round(_z + _dz, 3)]
-        _e = {"card": _dc, "at": _dn, "stage": "full", "name": _dn, "scale": 1.0, "clear": 0.15, "glow": 0.8}
+        STREET[_dn] = _rot([_x, _z], _dx, _dz, _yaw)
+        _e = {"card": _dc, "at": _dn, "stage": "full", "name": _dn, "scale": 1.0, "clear": 0.15, "glow": 0.8, "yaw": _yaw}
         if _lt:
             _e["light"] = _lt
         VILLAGE_SET.append(_e)
+    if _side in ("L", "R") and _i < 8:  # first-row houses: a path from the door to the road's edge (not onto it)
+        _path(_nm, _rot([_x, _z], 0.0, 0.02, _yaw), _yaw, {5: 1}.get(_i, 3))
+_path("shop", _rot(SHOP, SHOP_DOOR_X, 0.02, SHOP_YAW), SHOP_YAW, 6)
 # street furniture: lamps on the verges, pumpkins along the road edges, two strings of lights across the street
 for _nm, _card, _pt, _sc, _lt, _extra in [
-        ("lamp_l", "story_wc_halloween_13", [-0.55, -0.15], 1.0, LAMP, {}),
-        ("lamp_r", "story_wc_halloween_13", [0.32, -1.2], 1.0, LAMP, {}),
-        ("lamp_r2", "story_wc_halloween_13", [0.33, -2.3], 1.0, LAMP, {}),
-        ("pump_1", "story_wc_halloween_01", [-0.45, 0.22], 1.0, PUMP, {}),
-        ("pump_2", "story_wc_halloween_00", [-0.48, 0.6], 1.0, PUMP, {}),
-        ("pump_3", "story_wc_halloween_03", [-0.5, -1.65], 1.0, PUMP, {}),
-        ("pump_bump", "story_wc_halloween_02", [-0.47, -1.05], 1.0, PUMP, {}),
-        ("shop_p1", "story_wc_halloween_02", [SHOP[0] - 0.62, SHOP[1] + 0.12], 0.8, PUMP, {}),
-        ("broom", "story_wc_halloween_15", [SHOP[0] + 0.7, SHOP[1] + 0.05], 1.0, None, {}),
-        ("lights_1", "story_wc_decor_00", [-0.08, -0.35], 1.45, None, {"allow_road": True, "lift": 0.0}),
-        ("lights_2", "story_wc_decor_01", [-0.08, -1.95], 1.25, None, {"allow_road": True}),
-        ("web_1", "story_wc_halloween_05", [-0.62, 0.42], 1.0, None, {}),
-        ("hay_1", "story_wc_halloween_17", [-1.2, 0.6], 1.0, None, {})]:
+        ("lamp_l", "story_wc_halloween_13", [-0.5, 0.12], 1.0, LAMP, {}),
+        ("lamp_r", "story_wc_halloween_13", [0.3, -1.15], 1.0, LAMP, {}),
+        ("lamp_r2", "story_wc_halloween_13", _rot(SHOP, -0.78, 0.12, SHOP_YAW), 1.0, LAMP, {"yaw": SHOP_YAW}),
+        ("pump_1", "story_wc_halloween_01", [-0.47, -0.6], 1.0, PUMP, {}),
+        ("pump_2", "story_wc_halloween_00", [-0.5, 0.75], 1.0, PUMP, {}),
+        ("pump_3", "story_wc_halloween_03", [-0.52, -2.0], 1.0, PUMP, {}),
+        ("pump_bump", "story_wc_halloween_02", [-0.47, -1.3], 1.0, PUMP, {}),
+        ("shop_p1", "story_wc_halloween_02", _rot(SHOP, SHOP_DOOR_X - 0.2, 0.12, SHOP_YAW), 0.8, PUMP, {"yaw": SHOP_YAW}),
+        ("broom", "story_wc_halloween_15", _rot(SHOP, 0.58, 0.06, SHOP_YAW), 1.0, None, {"yaw": SHOP_YAW}),
+        ("lights_1", "story_wc_decor_00", [-0.08, -0.4], 1.45, None, {"allow_road": True}),
+        ("lights_2", "story_wc_decor_01", [-0.1, -1.95], 1.25, None, {"allow_road": True}),
+        ("hay_1", "story_wc_halloween_17", [-1.3, 0.75], 1.0, None, {})]:
     STREET[_nm] = _pt
     _e = {"card": _card, "at": _nm, "stage": "full", "name": _nm, "scale": _sc, "clear": 0.15, "glow": 0.8}
     if _lt:
@@ -285,21 +323,26 @@ ROOM_SET = [
     # plank floor lying flat over the whole room, a little above the meadow (its felt is higher toward the back)
     {"card": "story_wc_room_03", "at": "in_floor", "stage": "full", "flat": True, "name": "room_floor", "scale": 1.22,
      "clear": 0, "lift": 0.02},
-    {"card": "story_wc_room_03", "at": "in_floor", "off": [0, -0.5], "stage": "full", "flat": True,
-     "name": "room_floor2", "scale": 1.22, "clear": 0, "lift": 0.02},
+    {"card": "story_wc_room_03", "at": "in_floor2", "stage": "full", "flat": True, "name": "room_floor2", "scale": 1.22,
+     "clear": 0, "lift": 0.02},
     {"card": "story_wc_room_09", "at": "in_back", "stage": "full", "name": "room_back", "scale": 1.0, "clear": 0},
     {"card": "story_wc_room_04", "at": "in_shelf", "stage": "full", "name": "shelf", "scale": 1.0, "clear": 0},
     {"card": "story_wc_room_06", "at": "in_counter", "stage": "full", "name": "counter", "scale": 1.0, "clear": 0},
     {"card": "story_wc_room_07", "at": "in_pot", "stage": "full", "name": "hearth", "scale": 1.0, "clear": 0},
-    {"card": "story_wc_pot_12", "at": "in_pot", "off": [0, 0.01], "stage": 0, "name": "logs", "scale": 1.0, "clear": 0},
-    {"card": "story_wc_pot_00", "at": "in_pot", "off": [0, 0.03], "stage": "full", "name": "pot", "scale": 1.0,
-     "clear": 0, "lift": 0.05, "light": [0.35, 0.05, 0.7, "#ff8a3a", True]},
+    {"card": "story_wc_pot_12", "at": "in_pot", "stage": 0, "name": "logs", "scale": 1.0, "clear": 0, "front": 0.01},
+    {"card": "story_wc_pot_00", "at": "in_pot", "stage": "full", "name": "pot", "scale": 1.0,
+     "clear": 0, "lift": 0.05, "front": 0.03, "light": [0.35, 0.05, 0.7, "#ff8a3a", True]},
     {"card": "story_wc_room_08", "at": "in_beam", "stage": "full", "name": "beam", "scale": 1.0, "clear": 0,
      "lift": 0.42, "inside_only": True, "light": [0.35, -0.05, 1.0, "#ffb870", True]},
 ]
+for _e in ROOM_SET:  # the room turns with the shop; "front" = a hair toward the shop front (in the shop's frame)
+    _e["yaw"] = SHOP_YAW
+    if "front" in _e:
+        STREET[_e["name"] + "_at"] = _rot(STREET[_e["at"]], 0.0, _e.pop("front"), SHOP_YAW)
+        _e["at"] = _e["name"] + "_at"
 SHOP_SET = [
     {"card": "story_wc_shop_00", "at": "shop", "stage": "full", "name": "shop", "scale": 1.0, "clear": 2.0,
-     "glow": 0.9, "light": [0.7, 0.4, 1.0, "#ffae5a", False],
+     "glow": 0.9, "light": [0.7, 0.4, 1.0, "#ffae5a", False], "yaw": SHOP_YAW, "door_in": True,
      "box": {"depth": 1.0, "side": "story_wc_shop_02", "floor": "story_wc_room_03"}},
 ] + ROOM_SET + VILLAGE_SET
 
@@ -343,18 +386,21 @@ BEATS = [
         {"do": "fx", "fx": "shop_lights_on", "wait": 0.8},
         {"do": "say", "line": "wc_002"},
         # up the street (back walk cycles), the camera following them
-        {"do": "walk", "who": ["kid", "rabbit", "bear", "fox"], "to": "kids_mid", "dir": "away", "speed": 0.42,
+        {"do": "walk", "who": ["kid", "rabbit", "bear", "fox"], "to": "kids_mid", "dir": "away", "speed": 0.5,
          "follow": "kid", "shot": "street"},
-        {"do": "cam", "shot": "medium", "at": "witch_door", "rate": 1.6, "wait": 0.2},
+        # the camera turns round on the road to face the shop door straight on: the witch in full view
+        {"do": "cam", "shot": "door_cam", "at": "door_view", "rate": 1.4, "wait": 0.6},
         {"do": "fx", "fx": "door_open", "wait": 0.4},
         {"do": "walk", "who": "witch", "from": "in_door", "to": "witch_door", "dir": "toward", "speed": 0.28},
         {"do": "pose", "who": "witch", "pose": "welcome", "wait": 0.1},
         {"do": "say", "line": "wc_003"},
         {"do": "walk", "who": "cat", "from": "in_door", "to": "door", "dir": "toward", "speed": 0.28, "async": True},
-        {"do": "cam", "shot": "door_cam", "at": "door", "rate": 1.4, "wait": 0.1},
+        {"do": "cam", "shot": "door_cam", "at": "door_view", "rate": 1.4, "wait": 0.1},
         # one door, everyone in (seen from behind), on into the room to their places
-        {"do": "go_inside", "who": ["kid", "rabbit", "bear", "fox", "cat", "witch"], "house": "shop",
-         "to": ROOM_AT, "queue": "left", "queue_gap": 0.13, "speed": 0.5, "line": "wc_004"},
+        # the witch leads them in; the small cat waits last (nearest the camera), nobody hides the door
+        {"do": "go_inside", "who": ["witch", "kid", "rabbit", "bear", "fox", "cat"], "house": "shop",
+         "to": ROOM_AT, "queue": "front", "queue_gap": 0.11, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.62,
+         "line": "wc_004"},
     ]},
     {"id": "fire", "title": "뽀글뽀글 솥", "spread": _street(),
      "enter": {"who": ROOM_WHO, "at": ROOM_AT},
@@ -422,18 +468,21 @@ BEATS = [
      "steps": [
         # out of the door in single file (drawn ghost-march cycles, arms up, black lips), down the street toward us,
         # then back up it; a little friendly ghost tags along at the back, looks round and vanishes
-        {"do": "fx", "fx": "door_open", "wait": 0.1},
-        {"do": "fx", "fx": "outside_view", "wait": 1.4},
-        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["in_door", "door", "kids_mid", "parade_a"], "file": True,
-         "spacing": 0.17, "speed": 0.38, "follow": "kid", "shot": "high", "line": "wc_135"},
+        {"do": "fx", "fx": "outside_view", "wait": 0.6},
+        {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.6, "wait": 0.4},
+        # out one at a time: the door swings clear, each steps up onto the sill, over it and down the steps
+        {"do": "leave_shop", "who": ALL, "pose": "ghost", "to": "road_shop", "spacing": 0.15},
+        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["road_shop", "kids_mid", "parade_a"], "file": True,
+         "spacing": 0.17, "speed": 0.46, "follow": "kid", "shot": "high", "line": "wc_135"},
         {"do": "fx", "fx": "ghost_tagalong", "wait": 0.1},
-        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_a", "kids_mid", "door"], "file": True,
-         "spacing": 0.17, "speed": 0.38, "follow": "fox", "shot": "street", "line": "wc_x_ghost_all"},
+        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_a", "kids_mid", "road_shop"], "file": True,
+         "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "street", "line": "wc_x_ghost_all"},
         {"do": "cam", "shot": "sky_wide", "at": "moon_loop", "rate": 1.0, "wait": 1.0},
         {"do": "fx", "fx": "ghost_vanish", "wait": 0.8},
-        {"do": "cam", "shot": "door_cam", "at": "door", "rate": 1.4, "wait": 0.2},
-        {"do": "go_inside", "who": ALL, "house": "shop", "to": ROOM_AT, "queue": "left", "queue_gap": 0.13,
-         "speed": 0.55},
+        {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.4, "wait": 0.2},
+        {"do": "go_inside", "who": ["witch", "kid", "rabbit", "bear", "fox", "cat"], "house": "shop", "to": ROOM_AT,
+         "queue": "front", "queue_gap": 0.11,
+         "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.65},
     ]},
     {"id": "finale", "title": "다 같이 변신", "spread": _street(),
      "enter": {"who": ROOM_WHO, "at": ROOM_AT},

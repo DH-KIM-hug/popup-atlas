@@ -26,6 +26,7 @@ var door_pivot: Node3D  ## door leaf on its side hinge (child of band 0's hinge,
 var _door := 0.0
 var _door_v := 0.0
 var _door_t := 0.0
+var door_inward := false  ## the door swings into the house (witch_candy: nobody walks over the open leaf)
 var _px_scale := 0.0  ## world per facade px
 var _px_w := 0.0
 var _base_px := 0.0
@@ -192,9 +193,21 @@ func has_door() -> bool:
 	return door_pivot != null
 
 
-## Door swings open toward the reader (about its left edge) or shut.
+## Door swings open toward the reader (about its left edge) or shut (into the house when door_inward).
 func open_door(open: bool) -> void:
 	_door_t = 1.0 if open else 0.0
+
+
+## Height of the door's sill above the page (the drawn step under a door leaf): entries climb to it.
+func door_sill() -> float:
+	if _door_box.is_empty():
+		return 0.0
+	return maxf(0.0, (_base_px - float(_door_box.get("y1", _base_px))) * _px_scale)
+
+
+## How far open the door stands now (0 shut .. 1 open): entries wait until it is clear.
+func door_open_amount() -> float:
+	return _door
 
 
 ## Ground point in front of / behind the door (a pig steps through it).
@@ -468,6 +481,6 @@ func _process(dt: float) -> void:
 		var ds := PaperSpring.step(_door, _door_v, _door_t, 9.0, 0.55, dt)
 		_door = ds.x
 		_door_v = ds.y
-		door_pivot.rotation.y = -1.75 * _door
+		door_pivot.rotation.y = (1.75 if door_inward else -1.75) * _door
 	walls.rotation = Vector3(_cut * PI * 0.5 * 0.97, 0.0, 0.0)
 	facade.scale = Vector3(1.0 - 0.02 * _bounce, 1.0 + 0.04 * _bounce, 1.0)

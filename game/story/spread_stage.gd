@@ -431,6 +431,8 @@ func _build_set(list: Array) -> void:
 		if e.get("inside_only", false):
 			sp.set_meta("inside_only", true)
 			sp.visible = false
+		if e.get("door_in", false):
+			sp.door_inward = true
 		if e.has("glow"):  # night: the printed light on the card (lit windows, candles) emits (paper_print glow)
 			_set_glow(sp, float(e["glow"]))
 		if e.has("light"):  # a warm pool of light: [energy, height (units), range, colour, flicker]
@@ -543,8 +545,8 @@ func _add_light(sp: SetPiece, cfg: Array) -> void:
 ## in the set entry for pieces meant to sit on the road (none so far).
 func _check_footprint(sp: SetPiece, e: Dictionary) -> void:
 	var g := world.ground
-	var r: Vector3 = dir_vec("right")
-	var t: Vector3 = dir_vec("toward")
+	var r: Vector3 = sp.global_transform.basis.x.normalized()  # the piece's own base line (turned pieces too)
+	var t: Vector3 = sp.global_transform.basis.z.normalized()
 	var road := 0
 	var water := 0
 	for i in 9:

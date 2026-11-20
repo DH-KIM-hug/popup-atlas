@@ -244,6 +244,19 @@ Run long work through background agents/workflows with narrow ownership (one own
 - `--beat=<id>` starts need `enter.at` on every beat (a `keep`-only beat leaves the cast at the anchor, popped down).
 - Branch coverage: force results with a tale arg (`--wc-results=a,b`) and run every result at least once.
 
+**Learned on witch_candy v2 (user on v1: "집 문이 길쪽으로", "앞의 집때문에 안보여", "문 아래 돌지방을 통과")**
+- Houses face the road from both sides (set `yaw` ±50° in the stage frame), each with a short stepping-stone path
+  to the road's edge; offsets inside a turned house (room spots, decorations, door) are given in the house's own frame
+  and rotated in the tale table; shots inside / at a turned house carry its yaw as their yaw offset.
+- A speaker hidden by a house: turn the camera to face them (a shot with the house's yaw from the road) instead of
+  moving people; then check what stands between camera and speaker in the new direction (a lamp, the next house) and
+  move that, and keep queues short so the last in line does not fill the lens.
+- Entries: the door swings INTO the house (`door_in`) and fully open before anyone moves (`door_clear`); characters
+  climb to the drawn sill (`climb_steps`, SetPiece.door_sill) in front of the wall, cross at sill height (their card is
+  parallel to the wall when the camera faces the door) and step down inside; exits reverse it (tale `leave_shop`). A
+  character taller than the doorway pokes its hat over the wall while on the sill: size it to fit.
+- `_check_footprint` samples along the piece's own base line (turned pieces).
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

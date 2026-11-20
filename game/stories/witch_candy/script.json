@@ -101,13 +101,6 @@
    20.0,
    0.0
   ],
-  "low_up": [
-   3.0,
-   4.0,
-   0.6,
-   24.0,
-   -10.0
-  ],
   "sky": [
    2.6,
    3.0,
@@ -121,13 +114,6 @@
    1.1,
    30.0,
    0.0
-  ],
-  "roof_cam": [
-   3.3,
-   15.0,
-   0.8,
-   24.0,
-   16.0
   ],
   "high": [
    6.0,
@@ -158,53 +144,67 @@
    0.0
   ],
   "door_cam": [
-   2.9,
-   20.0,
-   0.32,
-   22.0,
-   14.0
+   1.6,
+   14.0,
+   0.3,
+   28.0,
+   -45.0
+  ],
+  "door_wide": [
+   2.6,
+   24.0,
+   0.3,
+   26.0,
+   -45.0
+  ],
+  "roof_cam": [
+   2.6,
+   14.0,
+   0.75,
+   26.0,
+   -33.0
   ],
   "room": [
    0.52,
    8.0,
    0.22,
    66.0,
-   0.0
+   -45.0
   ],
   "shelf": [
    0.48,
    9.0,
    0.12,
    64.0,
-   0.0
+   -45.0
   ],
   "pot": [
    0.42,
    18.0,
    0.16,
    46.0,
-   0.0
+   -45.0
   ],
   "pot_low": [
    0.42,
    4.0,
    0.1,
    50.0,
-   0.0
+   -45.0
   ],
   "two_shot": [
    0.5,
    6.0,
    0.24,
    58.0,
-   8.0
+   -37.0
   ],
   "face_in": [
    0.4,
    6.0,
    0.24,
    42.0,
-   0.0
+   -45.0
   ]
  },
  "ui": {
@@ -334,7 +334,8 @@
     "side",
     "back"
    ],
-   "label": "사탕 마녀"
+   "label": "사탕 마녀",
+   "height": 0.325
   },
   "cat": {
    "kind": "actor",
@@ -421,12 +422,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -461,8 +462,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -477,8 +478,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -497,216 +498,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -725,6 +850,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -739,21 +866,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -761,7 +886,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -769,7 +895,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -777,7 +904,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -785,27 +913,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -817,7 +939,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -834,7 +957,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -850,7 +974,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -860,6 +985,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -867,6 +993,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -882,7 +1035,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -892,6 +1046,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -899,6 +1054,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -914,7 +1096,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -923,7 +1106,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -939,7 +1150,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -949,6 +1161,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -956,6 +1169,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -971,7 +1211,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -981,6 +1222,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -988,6 +1230,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -1003,7 +1272,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -1012,7 +1282,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -1028,7 +1308,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -1037,7 +1318,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -1053,7 +1362,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -1062,7 +1372,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -1078,7 +1416,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -1094,7 +1433,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -1104,6 +1444,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -1126,7 +1467,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -1142,7 +1484,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -1158,7 +1501,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -1167,7 +1511,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -1215,7 +1614,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -1295,7 +1695,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -1304,7 +1705,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -1314,8 +1716,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -1326,15 +1727,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
@@ -1450,16 +1842,16 @@
      ],
      "to": "kids_mid",
      "dir": "away",
-     "speed": 0.42,
+     "speed": 0.5,
      "follow": "kid",
      "shot": "street"
     },
     {
      "do": "cam",
-     "shot": "medium",
-     "at": "witch_door",
-     "rate": 1.6,
-     "wait": 0.2
+     "shot": "door_cam",
+     "at": "door_view",
+     "rate": 1.4,
+     "wait": 0.6
     },
     {
      "do": "fx",
@@ -1496,19 +1888,19 @@
     {
      "do": "cam",
      "shot": "door_cam",
-     "at": "door",
+     "at": "door_view",
      "rate": 1.4,
      "wait": 0.1
     },
     {
      "do": "go_inside",
      "who": [
+      "witch",
       "kid",
       "rabbit",
       "bear",
       "fox",
-      "cat",
-      "witch"
+      "cat"
      ],
      "house": "shop",
      "to": {
@@ -1519,9 +1911,12 @@
       "bear": "in_bear",
       "fox": "in_fox"
      },
-     "queue": "left",
-     "queue_gap": 0.13,
-     "speed": 0.5,
+     "queue": "front",
+     "queue_gap": 0.11,
+     "house_facing": true,
+     "door_clear": true,
+     "climb_steps": true,
+     "speed": 0.62,
      "line": "wc_004"
     }
    ],
@@ -1560,12 +1955,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -1600,8 +1995,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -1616,8 +2011,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -1636,216 +2031,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -1864,6 +2383,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -1878,21 +2399,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -1900,7 +2419,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -1908,7 +2428,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -1916,7 +2437,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -1924,27 +2446,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -1956,7 +2472,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -1973,7 +2490,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -1989,7 +2507,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -1999,6 +2518,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -2006,6 +2526,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -2021,7 +2568,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -2031,6 +2579,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -2038,6 +2587,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -2053,7 +2629,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -2062,7 +2639,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -2078,7 +2683,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -2088,6 +2694,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -2095,6 +2702,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -2110,7 +2744,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -2120,6 +2755,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -2127,6 +2763,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -2142,7 +2805,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -2151,7 +2815,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -2167,7 +2841,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -2176,7 +2851,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -2192,7 +2895,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -2201,7 +2905,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -2217,7 +2949,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -2233,7 +2966,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -2243,6 +2977,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -2265,7 +3000,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -2281,7 +3017,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -2297,7 +3034,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -2306,7 +3044,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -2354,7 +3147,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -2434,7 +3228,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -2443,7 +3238,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -2453,8 +3249,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -2465,15 +3260,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
@@ -2607,12 +3393,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -2647,8 +3433,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -2663,8 +3449,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -2683,216 +3469,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -2911,6 +3821,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -2925,21 +3837,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -2947,7 +3857,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -2955,7 +3866,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -2963,7 +3875,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -2971,27 +3884,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -3003,7 +3910,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -3020,7 +3928,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -3036,7 +3945,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -3046,6 +3956,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -3053,6 +3964,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -3068,7 +4006,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -3078,6 +4017,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -3085,6 +4025,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -3100,7 +4067,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -3109,7 +4077,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -3125,7 +4121,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -3135,6 +4132,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -3142,6 +4140,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -3157,7 +4182,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -3167,6 +4193,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -3174,6 +4201,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -3189,7 +4243,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -3198,7 +4253,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -3214,7 +4279,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -3223,7 +4289,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -3239,7 +4333,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -3248,7 +4343,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -3264,7 +4387,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -3280,7 +4404,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -3290,6 +4415,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -3312,7 +4438,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -3328,7 +4455,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -3344,7 +4472,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -3353,7 +4482,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -3401,7 +4585,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -3481,7 +4666,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -3490,7 +4676,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -3500,8 +4687,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -3512,15 +4698,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
@@ -3620,12 +4797,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -3660,8 +4837,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -3676,8 +4853,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -3696,216 +4873,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -3924,6 +5225,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -3938,21 +5241,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -3960,7 +5261,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -3968,7 +5270,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -3976,7 +5279,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -3984,27 +5288,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -4016,7 +5314,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -4033,7 +5332,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -4049,7 +5349,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -4059,6 +5360,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -4066,6 +5368,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -4081,7 +5410,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -4091,6 +5421,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -4098,6 +5429,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -4113,7 +5471,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -4122,7 +5481,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -4138,7 +5525,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -4148,6 +5536,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -4155,6 +5544,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -4170,7 +5586,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -4180,6 +5597,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -4187,6 +5605,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -4202,7 +5647,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -4211,7 +5657,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -4227,7 +5683,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -4236,7 +5693,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -4252,7 +5737,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -4261,7 +5747,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -4277,7 +5791,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -4293,7 +5808,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -4303,6 +5819,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -4325,7 +5842,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -4341,7 +5859,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -4357,7 +5876,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -4366,7 +5886,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -4414,7 +5989,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -4494,7 +6070,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -4503,7 +6080,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -4513,8 +6091,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -4525,15 +6102,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
@@ -4786,12 +6354,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -4826,8 +6394,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -4842,8 +6410,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -4862,216 +6430,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -5090,6 +6782,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -5104,21 +6798,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -5126,7 +6818,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -5134,7 +6827,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -5142,7 +6836,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -5150,27 +6845,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -5182,7 +6871,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -5199,7 +6889,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -5215,7 +6906,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -5225,6 +6917,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -5232,6 +6925,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -5247,7 +6967,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -5257,6 +6978,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -5264,6 +6986,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -5279,7 +7028,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -5288,7 +7038,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -5304,7 +7082,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -5314,6 +7093,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -5321,6 +7101,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -5336,7 +7143,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -5346,6 +7154,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -5353,6 +7162,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -5368,7 +7204,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -5377,7 +7214,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -5393,7 +7240,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -5402,7 +7250,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -5418,7 +7294,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -5427,7 +7304,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -5443,7 +7348,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -5459,7 +7365,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -5469,6 +7376,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -5491,7 +7399,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -5507,7 +7416,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -5523,7 +7433,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -5532,7 +7443,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -5580,7 +7546,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -5660,7 +7627,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -5669,7 +7637,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -5679,8 +7648,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -5691,15 +7659,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
@@ -5969,12 +7928,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -6009,8 +7968,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -6025,8 +7984,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -6045,216 +8004,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -6273,6 +8356,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -6287,21 +8372,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -6309,7 +8392,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -6317,7 +8401,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -6325,7 +8410,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -6333,27 +8419,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -6365,7 +8445,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -6382,7 +8463,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -6398,7 +8480,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -6408,6 +8491,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -6415,6 +8499,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -6430,7 +8541,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -6440,6 +8552,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -6447,6 +8560,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -6462,7 +8602,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -6471,7 +8612,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -6487,7 +8656,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -6497,6 +8667,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -6504,6 +8675,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -6519,7 +8717,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -6529,6 +8728,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -6536,6 +8736,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -6551,7 +8778,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -6560,7 +8788,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -6576,7 +8814,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -6585,7 +8824,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -6601,7 +8868,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -6610,7 +8878,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -6626,7 +8922,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -6642,7 +8939,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -6652,6 +8950,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -6674,7 +8973,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -6690,7 +8990,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -6706,7 +9007,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -6715,7 +9017,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -6763,7 +9120,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -6843,7 +9201,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -6852,7 +9211,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -6862,8 +9222,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -6874,15 +9233,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
@@ -7097,12 +9447,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -7137,8 +9487,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -7153,8 +9503,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -7173,216 +9523,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -7401,6 +9875,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -7415,21 +9891,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -7437,7 +9911,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -7445,7 +9920,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -7453,7 +9929,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -7461,27 +9938,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -7493,7 +9964,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -7510,7 +9982,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -7526,7 +9999,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -7536,6 +10010,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -7543,6 +10018,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -7558,7 +10060,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -7568,6 +10071,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -7575,6 +10079,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -7590,7 +10121,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -7599,7 +10131,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -7615,7 +10175,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -7625,6 +10186,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -7632,6 +10194,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -7647,7 +10236,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -7657,6 +10247,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -7664,6 +10255,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -7679,7 +10297,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -7688,7 +10307,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -7704,7 +10333,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -7713,7 +10343,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -7729,7 +10387,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -7738,7 +10397,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -7754,7 +10441,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -7770,7 +10458,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -7780,6 +10469,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -7802,7 +10492,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -7818,7 +10509,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -7834,7 +10526,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -7843,7 +10536,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -7891,7 +10639,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -7971,7 +10720,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -7980,7 +10730,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -7990,8 +10741,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -8002,15 +10752,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
@@ -8044,13 +10785,29 @@
    "steps": [
     {
      "do": "fx",
-     "fx": "door_open",
-     "wait": 0.1
+     "fx": "outside_view",
+     "wait": 0.6
     },
     {
-     "do": "fx",
-     "fx": "outside_view",
-     "wait": 1.4
+     "do": "cam",
+     "shot": "door_wide",
+     "at": "door_view",
+     "rate": 1.6,
+     "wait": 0.4
+    },
+    {
+     "do": "leave_shop",
+     "who": [
+      "kid",
+      "witch",
+      "cat",
+      "rabbit",
+      "bear",
+      "fox"
+     ],
+     "pose": "ghost",
+     "to": "road_shop",
+     "spacing": 0.15
     },
     {
      "do": "walk",
@@ -8064,14 +10821,13 @@
      ],
      "pose": "ghost",
      "path": [
-      "in_door",
-      "door",
+      "road_shop",
       "kids_mid",
       "parade_a"
      ],
      "file": true,
      "spacing": 0.17,
-     "speed": 0.38,
+     "speed": 0.46,
      "follow": "kid",
      "shot": "high",
      "line": "wc_135"
@@ -8095,11 +10851,11 @@
      "path": [
       "parade_a",
       "kids_mid",
-      "door"
+      "road_shop"
      ],
      "file": true,
      "spacing": 0.17,
-     "speed": 0.38,
+     "speed": 0.46,
      "follow": "fox",
      "shot": "street",
      "line": "wc_x_ghost_all"
@@ -8118,20 +10874,20 @@
     },
     {
      "do": "cam",
-     "shot": "door_cam",
-     "at": "door",
+     "shot": "door_wide",
+     "at": "door_view",
      "rate": 1.4,
      "wait": 0.2
     },
     {
      "do": "go_inside",
      "who": [
-      "kid",
       "witch",
-      "cat",
+      "kid",
       "rabbit",
       "bear",
-      "fox"
+      "fox",
+      "cat"
      ],
      "house": "shop",
      "to": {
@@ -8142,9 +10898,12 @@
       "bear": "in_bear",
       "fox": "in_fox"
      },
-     "queue": "left",
-     "queue_gap": 0.13,
-     "speed": 0.55
+     "queue": "front",
+     "queue_gap": 0.11,
+     "house_facing": true,
+     "door_clear": true,
+     "climb_steps": true,
+     "speed": 0.65
     }
    ],
    "sound": {
@@ -8182,12 +10941,12 @@
     },
     "spots": {
      "shop": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "door": [
-      1.03,
-      -2.53
+      0.772,
+      -2.645
      ],
      "est": [
       0.1,
@@ -8222,8 +10981,8 @@
       -1.7
      ],
      "witch_door": [
-      0.86,
-      -2.37
+      0.531,
+      -2.66
      ],
      "lantern_bump": [
       -0.38,
@@ -8238,8 +10997,8 @@
       -1.6
      ],
      "roof": [
-      0.98,
-      -2.75
+      0.8,
+      -2.9
      ],
      "parade_a": [
       -0.05,
@@ -8258,216 +11017,340 @@
       -2.4
      ],
      "road_shop": [
-      0.05,
-      -2.45
+      0.171,
+      -2.044
      ],
      "road_mid": [
       -0.05,
       -1.25
      ],
+     "door_view": [
+      0.595,
+      -2.469
+     ],
      "in_back": [
-      0.98,
-      -3.72
+      1.486,
+      -3.586
      ],
      "in_shelf": [
-      0.63,
-      -3.65
+      1.189,
+      -3.784
      ],
      "in_pot": [
-      1.23,
-      -3.37
+      1.415,
+      -3.162
      ],
      "in_counter": [
-      1.45,
-      -3.67
+      1.783,
+      -3.218
      ],
      "in_focus": [
-      1.03,
-      -3.41
+      1.302,
+      -3.331
      ],
      "in_beam": [
-      0.98,
-      -3.25
+      1.154,
+      -3.254
      ],
      "in_kid": [
-      1.02,
-      -3.35
+      1.253,
+      -3.296
      ],
      "in_witch": [
-      1.41,
-      -3.47
+      1.613,
+      -3.105
      ],
      "in_cat": [
-      1.62,
-      -3.53
+      1.804,
+      -2.999
      ],
      "in_rabbit": [
-      1.13,
-      -3.63
+      1.528,
+      -3.416
      ],
      "in_bear": [
-      1.28,
-      -3.67
+      1.663,
+      -3.338
      ],
      "in_fox": [
-      1.57,
-      -3.7
+      1.889,
+      -3.155
      ],
      "in_floor": [
-      0.98,
-      -2.77
+      0.814,
+      -2.914
+     ],
+     "in_floor2": [
+      1.168,
+      -3.268
      ],
      "in_door": [
-      1.03,
-      -2.93
+      1.04,
+      -2.914
      ],
      "in_shelf_front": [
-      0.76,
-      -3.41
+      1.111,
+      -3.522
      ],
      "house_0": [
-      -0.717,
-      0.35
+      -0.66,
+      0.45
      ],
      "house_0_d0": [
-      -0.417,
-      0.47
+      -0.442,
+      0.346
+     ],
+     "house_0_st0": [
+      -0.583,
+      0.514
+     ],
+     "house_0_st1": [
+      -0.491,
+      0.592
+     ],
+     "house_0_st2": [
+      -0.399,
+      0.669
      ],
      "house_1": [
-      -0.81,
-      -0.5
+      -0.719,
+      -0.25
      ],
      "house_1_d0": [
-      -0.81,
-      -0.36
+      -0.705,
+      -0.081
+     ],
+     "house_1_st0": [
+      -0.643,
+      -0.186
+     ],
+     "house_1_st1": [
+      -0.551,
+      -0.108
+     ],
+     "house_1_st2": [
+      -0.459,
+      -0.031
      ],
      "house_2": [
-      -0.837,
-      -1.3
-     ],
-     "house_2_d0": [
-      -0.477,
-      -1.2
-     ],
-     "house_3": [
-      -0.767,
-      -2.1
-     ],
-     "house_3_d0": [
-      -0.467,
-      -2.0
-     ],
-     "house_4": [
-      -1.0,
-      -2.6
-     ],
-     "house_4_d0": [
-      -0.62,
-      -2.48
-     ],
-     "house_5": [
-      0.78,
-      -0.02
-     ],
-     "house_5_d0": [
-      1.14,
-      0.08
-     ],
-     "house_6": [
-      0.632,
-      -0.7
-     ],
-     "house_6_d0": [
-      0.992,
-      -0.58
-     ],
-     "house_7": [
-      0.678,
-      -1.65
-     ],
-     "house_7_d0": [
-      0.318,
-      -1.53
-     ],
-     "house_8": [
-      -2.177,
+      -0.736,
       -0.95
      ],
-     "house_9": [
-      1.948,
-      -0.1
+     "house_2_d0": [
+      -0.482,
+      -1.128
      ],
-     "house_9_d0": [
-      1.548,
+     "house_2_st0": [
+      -0.66,
+      -0.886
+     ],
+     "house_2_st1": [
+      -0.568,
+      -0.808
+     ],
+     "house_2_st2": [
+      -0.476,
+      -0.731
+     ],
+     "house_3": [
+      -0.691,
+      -1.65
+     ],
+     "house_3_d0": [
+      -0.489,
+      -1.767
+     ],
+     "house_3_st0": [
+      -0.615,
+      -1.586
+     ],
+     "house_3_st1": [
+      -0.523,
+      -1.508
+     ],
+     "house_3_st2": [
+      -0.431,
+      -1.431
+     ],
+     "house_4": [
+      -0.705,
+      -2.35
+     ],
+     "house_4_d0": [
+      -0.822,
+      -2.056
+     ],
+     "house_4_st0": [
+      -0.629,
+      -2.286
+     ],
+     "house_4_st1": [
+      -0.537,
+      -2.208
+     ],
+     "house_4_st2": [
+      -0.445,
+      -2.131
+     ],
+     "house_5": [
+      0.442,
       0.0
      ],
+     "house_5_d0": [
+      0.573,
+      0.281
+     ],
+     "house_5_st0": [
+      0.366,
+      0.064
+     ],
+     "house_6": [
+      0.441,
+      -0.75
+     ],
+     "house_6_d0": [
+      0.171,
+      -0.916
+     ],
+     "house_6_st0": [
+      0.364,
+      -0.686
+     ],
+     "house_6_st1": [
+      0.272,
+      -0.608
+     ],
+     "house_6_st2": [
+      0.18,
+      -0.531
+     ],
+     "house_7": [
+      0.47,
+      -1.55
+     ],
+     "house_7_d0": [
+      0.599,
+      -1.241
+     ],
+     "house_7_st0": [
+      0.394,
+      -1.486
+     ],
+     "house_7_st1": [
+      0.302,
+      -1.408
+     ],
+     "house_7_st2": [
+      0.21,
+      -1.331
+     ],
+     "house_8": [
+      -1.824,
+      -0.6
+     ],
+     "house_9": [
+      1.473,
+      -0.35
+     ],
+     "house_9_d0": [
+      1.206,
+      -0.544
+     ],
      "house_10": [
-      1.977,
-      -1.25
+      1.493,
+      -1.3
      ],
      "house_11": [
-      0.15,
-      -4.0
+      0.25,
+      -4.05
      ],
      "house_12": [
-      2.1,
-      -3.0
+      2.0,
+      -3.2
      ],
      "house_12_d0": [
-      1.68,
-      -2.9
+      1.707,
+      -3.424
+     ],
+     "shop_st0": [
+      0.842,
+      -2.716
+     ],
+     "shop_st1": [
+      0.758,
+      -2.632
+     ],
+     "shop_st2": [
+      0.673,
+      -2.547
+     ],
+     "shop_st3": [
+      0.588,
+      -2.462
+     ],
+     "shop_st4": [
+      0.503,
+      -2.377
+     ],
+     "shop_st5": [
+      0.418,
+      -2.292
      ],
      "lamp_l": [
-      -0.55,
-      -0.15
+      -0.5,
+      0.12
      ],
      "lamp_r": [
-      0.32,
-      -1.2
+      0.3,
+      -1.15
      ],
      "lamp_r2": [
-      0.33,
-      -2.3
+      0.164,
+      -3.367
      ],
      "pump_1": [
-      -0.45,
-      0.22
+      -0.47,
+      -0.6
      ],
      "pump_2": [
-      -0.48,
-      0.6
+      -0.5,
+      0.75
      ],
      "pump_3": [
-      -0.5,
-      -1.65
+      -0.52,
+      -2.0
      ],
      "pump_bump": [
       -0.47,
-      -1.05
+      -1.3
      ],
      "shop_p1": [
-      0.36,
-      -2.63
+      0.687,
+      -2.843
      ],
      "broom": [
-      1.68,
-      -2.7
+      1.168,
+      -2.447
      ],
      "lights_1": [
       -0.08,
-      -0.35
+      -0.4
      ],
      "lights_2": [
-      -0.08,
+      -0.1,
       -1.95
      ],
-     "web_1": [
-      -0.62,
-      0.42
-     ],
      "hay_1": [
-      -1.2,
-      0.6
+      -1.3,
+      0.75
+     ],
+     "logs_at": [
+      1.408,
+      -3.155
+     ],
+     "pot_at": [
+      1.394,
+      -3.141
      ]
     },
     "set": [
@@ -8486,6 +11369,8 @@
        "#ffae5a",
        false
       ],
+      "yaw": -45.0,
+      "door_in": true,
       "box": {
        "depth": 1.0,
        "side": "story_wc_shop_02",
@@ -8500,21 +11385,19 @@
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_03",
-      "at": "in_floor",
-      "off": [
-       0,
-       -0.5
-      ],
+      "at": "in_floor2",
       "stage": "full",
       "flat": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02
+      "lift": 0.02,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_09",
@@ -8522,7 +11405,8 @@
       "stage": "full",
       "name": "room_back",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_04",
@@ -8530,7 +11414,8 @@
       "stage": "full",
       "name": "shelf",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_06",
@@ -8538,7 +11423,8 @@
       "stage": "full",
       "name": "counter",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_07",
@@ -8546,27 +11432,21 @@
       "stage": "full",
       "name": "hearth",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_12",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.01
-      ],
+      "at": "logs_at",
       "stage": 0,
       "name": "logs",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_pot_00",
-      "at": "in_pot",
-      "off": [
-       0,
-       0.03
-      ],
+      "at": "pot_at",
       "stage": "full",
       "name": "pot",
       "scale": 1.0,
@@ -8578,7 +11458,8 @@
        0.7,
        "#ff8a3a",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_room_08",
@@ -8595,7 +11476,8 @@
        1.0,
        "#ffb870",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_houses_a_00",
@@ -8611,7 +11493,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_15",
@@ -8621,6 +11504,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -8628,6 +11512,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st0",
+      "stage": "full",
+      "name": "house_0_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_0_st1",
+      "stage": "full",
+      "name": "house_0_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_0_st2",
+      "stage": "full",
+      "name": "house_0_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_02",
@@ -8643,7 +11554,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_03",
@@ -8653,6 +11565,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -8660,6 +11573,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st0",
+      "stage": "full",
+      "name": "house_1_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_1_st1",
+      "stage": "full",
+      "name": "house_1_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_1_st2",
+      "stage": "full",
+      "name": "house_1_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_01",
@@ -8675,7 +11615,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_07",
@@ -8684,7 +11625,35 @@
       "name": "house_2_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st0",
+      "stage": "full",
+      "name": "house_2_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_2_st1",
+      "stage": "full",
+      "name": "house_2_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_2_st2",
+      "stage": "full",
+      "name": "house_2_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_04",
@@ -8700,7 +11669,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_09",
@@ -8710,6 +11680,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -8717,6 +11688,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st0",
+      "stage": "full",
+      "name": "house_3_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_3_st1",
+      "stage": "full",
+      "name": "house_3_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_3_st2",
+      "stage": "full",
+      "name": "house_3_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_02",
@@ -8732,7 +11730,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_decor_16",
@@ -8742,6 +11741,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": 50.0,
       "light": [
        0.32,
        0.06,
@@ -8749,6 +11749,33 @@
        "#ff9a3c",
        true
       ]
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st0",
+      "stage": "full",
+      "name": "house_4_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_4_st1",
+      "stage": "full",
+      "name": "house_4_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_4_st2",
+      "stage": "full",
+      "name": "house_4_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_a_03",
@@ -8764,7 +11791,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_13",
@@ -8773,7 +11801,17 @@
       "name": "house_5_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_5_st0",
+      "stage": "full",
+      "name": "house_5_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_00",
@@ -8789,7 +11827,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_12",
@@ -8798,7 +11837,35 @@
       "name": "house_6_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st0",
+      "stage": "full",
+      "name": "house_6_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_6_st1",
+      "stage": "full",
+      "name": "house_6_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_6_st2",
+      "stage": "full",
+      "name": "house_6_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_06",
@@ -8814,7 +11881,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_14",
@@ -8823,7 +11891,35 @@
       "name": "house_7_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st0",
+      "stage": "full",
+      "name": "house_7_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "house_7_st1",
+      "stage": "full",
+      "name": "house_7_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "house_7_st2",
+      "stage": "full",
+      "name": "house_7_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_05",
@@ -8839,7 +11935,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": 50.0
      },
      {
       "card": "story_wc_houses_b_03",
@@ -8855,7 +11952,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_10",
@@ -8865,6 +11963,7 @@
       "scale": 1.0,
       "clear": 0.15,
       "glow": 0.8,
+      "yaw": -50.0,
       "light": [
        0.32,
        0.06,
@@ -8887,7 +11986,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_b_01",
@@ -8903,7 +12003,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_houses_a_04",
@@ -8919,7 +12020,8 @@
        0.85,
        "#ffae5a",
        false
-      ]
+      ],
+      "yaw": -50.0
      },
      {
       "card": "story_wc_decor_11",
@@ -8928,7 +12030,62 @@
       "name": "house_12_d0",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -50.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st0",
+      "stage": "full",
+      "name": "shop_st0",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st1",
+      "stage": "full",
+      "name": "shop_st1",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st2",
+      "stage": "full",
+      "name": "shop_st2",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st3",
+      "stage": "full",
+      "name": "shop_st3",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "shop_st4",
+      "stage": "full",
+      "name": "shop_st4",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "shop_st5",
+      "stage": "full",
+      "name": "shop_st5",
+      "scale": 0.55,
+      "clear": 0.08,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_13",
@@ -8976,7 +12133,8 @@
        1.1,
        "#ffc070",
        false
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_01",
@@ -9056,7 +12214,8 @@
        0.4,
        "#ff9a3c",
        true
-      ]
+      ],
+      "yaw": -45.0
      },
      {
       "card": "story_wc_halloween_15",
@@ -9065,7 +12224,8 @@
       "name": "broom",
       "scale": 1.0,
       "clear": 0.15,
-      "glow": 0.8
+      "glow": 0.8,
+      "yaw": -45.0
      },
      {
       "card": "story_wc_decor_00",
@@ -9075,8 +12235,7 @@
       "scale": 1.45,
       "clear": 0.15,
       "glow": 0.8,
-      "allow_road": true,
-      "lift": 0.0
+      "allow_road": true
      },
      {
       "card": "story_wc_decor_01",
@@ -9087,15 +12246,6 @@
       "clear": 0.15,
       "glow": 0.8,
       "allow_road": true
-     },
-     {
-      "card": "story_wc_halloween_05",
-      "at": "web_1",
-      "stage": "full",
-      "name": "web_1",
-      "scale": 1.0,
-      "clear": 0.15,
-      "glow": 0.8
      },
      {
       "card": "story_wc_halloween_17",
