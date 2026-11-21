@@ -60,9 +60,7 @@ DROPPED = set()  # (unused lines are simply not referenced by a beat)
 
 # Expression per line (wiring as data). Roles: kid (다현이), witch, cat (호박이), rabbit, bear, fox.
 LINE_META = {
-    # NEW lines: not approved for recording yet (2026-11-20) -> caption-only placeholders (read-time estimate)
-    "wc_n01": {"status": "pending"}, "wc_n02": {"status": "pending"}, "wc_n03": {"status": "pending"},
-    "wc_n04": {"status": "pending"},
+    # NEW lines wc_n01-n04: recorded 2026-11-21 after the user's OK (narrator voice, eleven_v4; recorded.json)
     "wc_000": {"expr": {"kid": "calm", "rabbit": "calm", "bear": "calm", "fox": "calm"}},
     "wc_001": {"expr": {"kid": "excited"}},
     "wc_003": {"expr": {"witch": "welcome"}},
@@ -120,27 +118,27 @@ COMBOS = {"r": "strawberry", "y": "duck", "b": "fish", "ry": "pumpkin", "br": "b
 # per result: candy card, Dahyun's figures, the eat line per round, transform / kid / action lines, where the action
 # plays (stays on the shop-and-street spread: camera moves only) and the pot colour after the POOF
 RESULTS = {
-    "strawberry": {"candy": "story_wc_candies_00", "pot": "red", "eat": ["wc_082", "wc_089"], "tf": "wc_096",
+    "strawberry": {"said": "wc_076", "candy": "story_wc_candies_00", "pot": "red", "eat": ["wc_082", "wc_089"], "tf": "wc_096",
                    "kid": "wc_102", "act": "wc_110", "extra": ["wc_117"], "figure": "tf_strawberry",
                    "move": "tf_strawberry_ball", "action": "roll_street",
                    "note": "she curls into a strawberry ball, rolls out of the door and down the street, bumps a pumpkin "
                            "lantern (통!), the witch calls from the door (어디 가!), she rolls back"},
-    "duck": {"candy": "story_wc_candies_01", "pot": "yellow", "eat": ["wc_083", "wc_090"], "tf": "wc_097",
+    "duck": {"said": "wc_077", "candy": "story_wc_candies_01", "pot": "yellow", "eat": ["wc_083", "wc_090"], "tf": "wc_097",
              "kid": "wc_103", "act": "wc_111", "figure": "tf_duck", "move": "duck_cycle", "action": "waddle_room",
              "note": "duck feet: she waddles round the pot (drawn duck waddle cycle), 호박이 waddles behind her"},
-    "fish": {"candy": "story_wc_candies_02", "pot": "blue", "eat": ["wc_084", "wc_091"], "tf": "wc_098",
+    "fish": {"said": "wc_078", "candy": "story_wc_candies_02", "pot": "blue", "eat": ["wc_084", "wc_091"], "tf": "wc_098",
              "kid": "wc_104", "act": "wc_112", "figure": "tf_fish", "move": "tf_fish", "action": "swim_moon",
              "note": "fish tail: she floats out of the door and up over the roofs, swims a loop round the full moon "
                      "(camera tilts up to the sky), bubbles trail; floats back down to the door"},
-    "frog": {"candy": "story_wc_candies_03", "pot": "green", "eat": ["wc_085", "wc_092"], "tf": "wc_154",
+    "frog": {"said": "wc_072", "candy": "story_wc_candies_03", "pot": "green", "eat": ["wc_085", "wc_092"], "tf": "wc_154",
              "kid": "wc_105", "act": "wc_113", "figure": "tf_frog_sit", "move": "tf_frog_jump", "action": "hop_roof",
              "note": "frog legs: three hops out of the door and up onto the shop roof (low angle), waves from the ridge, "
                      "hops down"},
-    "pumpkin": {"candy": "story_wc_candies_04", "pot": "orange", "eat": ["wc_086", "wc_093"], "tf": "wc_099",
+    "pumpkin": {"said": "wc_071", "candy": "story_wc_candies_04", "pot": "orange", "eat": ["wc_086", "wc_093"], "tf": "wc_099",
                 "kid": "wc_106", "act": "wc_114", "figure": "tf_pumpkin", "move": "walk", "action": "glow_street",
                 "note": "her pumpkin tummy glows: the street lanterns dim (light 'dark'), she walks out (drawn walk "
                         "cycle; the glow rides on her) and lights the street around her (warm omni light)"},
-    "bat": {"candy": "story_wc_candies_05", "pot": "purple", "eat": ["wc_087", "wc_094"], "tf": "wc_100",
+    "bat": {"said": "wc_073", "candy": "story_wc_candies_05", "pot": "purple", "eat": ["wc_087", "wc_094"], "tf": "wc_100",
             "kid": "wc_107", "act": "wc_115", "figure": "tf_bat_up", "move": "tf_bat_flap", "action": "fly_moon",
             "note": "bat wings (two drawn wing frames flap): out of the door, up past the roofs, a circle in front of "
                     "the moon with the paper bat silhouettes"},
@@ -153,7 +151,7 @@ HANDLER = "res://stories/witch_candy/fx.gd"   # phase 2
 BACKDROP = True
 INSIDE_FRAMING = "manual"
 # v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아"): stage spacing solver + OVERLAP / OCCLUDE log; intentional contacts listed
-EXTRA = {"spacing": True, "overlap_check": True, "pop_in": False,
+EXTRA = {"spacing": True, "overlap_check": True, "pop_in": False, "no_repeats": True,
          "overlap_ok": [["kid", "logs"], ["witch", "pot"], ["kid", "room_floor"], ["kid", "room_floor2"]]}  # the stage does not reframe taps while the camera is inside the shop (rooms are framed here)
 # Shots [distance, elevation°, focus height, fov, yaw offset°] (three_pigs vocabulary + interior shots)
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
@@ -247,7 +245,7 @@ STREET = {"shop": SHOP, "door": _door, "est": [0.1, -1.2], "street_focus": [0.2,
           # the end of the shop's front path on the road, and halfway down the street (outdoor actions go via the road)
           "road_shop": _rot(SHOP, SHOP_DOOR_X, 1.05, SHOP_YAW), "road_mid": [-0.05, -1.25],
           # the greeting / entry camera stands on the road straight in front of the shop door
-          "door_view": _rot(SHOP, SHOP_DOOR_X, 0.45, SHOP_YAW), "cat_door": _rot(SHOP, SHOP_DOOR_X + 0.22, 0.3, SHOP_YAW)}
+          "door_view": _rot(SHOP, SHOP_DOOR_X, 0.45, SHOP_YAW), "cat_door": _rot(SHOP, SHOP_DOOR_X + 0.22, 0.45, SHOP_YAW)}
 # inside the shop, in the shop's frame (the facade plane at dz 0, the room 1.0 deep behind it)
 for _k, (_dx, _dz) in {"in_back": (0.0, -0.97), "in_shelf": (-0.35, -0.9), "in_pot": (0.22, -0.62),
                        "in_counter": (0.47, -0.92), "in_focus": (0.05, -0.66), "in_beam": (0.0, -0.5),
@@ -326,7 +324,7 @@ for _nm, _card, _pt, _sc, _lt, _extra in [
         ("pump_3", "story_wc_halloween_03", [-0.52, -2.0], 1.0, PUMP, {}),
         ("pump_bump", "story_wc_halloween_02", [-0.47, -1.3], 1.0, PUMP, {}),
         ("shop_p1", "story_wc_halloween_02", _rot(SHOP, SHOP_DOOR_X - 0.34, 0.1, SHOP_YAW), 0.8, PUMP, {"yaw": SHOP_YAW}),
-        ("broom", "story_wc_halloween_15", _rot(SHOP, 0.58, 0.06, SHOP_YAW), 1.0, None, {"yaw": SHOP_YAW}),
+        ("broom", "story_wc_halloween_15", _rot(SHOP, 0.62, -0.02, SHOP_YAW), 1.0, None, {"yaw": SHOP_YAW}),
         ("lights_1", "story_wc_decor_00", [-0.08, -0.4], 1.45, None, {"allow_road": True}),
         ("lights_2", "story_wc_decor_01", [-0.1, -1.95], 1.25, None, {"allow_road": True}),
         ("hay_1", "story_wc_halloween_17", [-1.3, 0.75], 1.0, None, {})]:
@@ -421,7 +419,7 @@ BEATS = [
         # one door, everyone in (seen from behind), on into the room to their places
         # the witch leads them in; the small cat waits last (nearest the camera), nobody hides the door
         {"do": "go_inside", "who": ["rabbit", "bear", "fox", "witch", "kid", "cat"], "house": "shop",
-         "to": ROOM_AT, "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "along", "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.62,
+         "to": ROOM_AT, "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "front", "approach": "road_shop", "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.62,
          "line": "wc_004"},
     ]},
     {"id": "fire", "title": "뽀글뽀글 솥", "spread": _street(),
@@ -472,7 +470,8 @@ BEATS = [
         {"do": "fx", "fx": "pot_clear", "wait": 0.2},
         {"do": "say", "line": "wc_125"},
         # round 2: ring hint only (voiced once in round 1), no offer, "냠…" eat line, back with a 뿅 only
-        {"do": "brew", "round": 2, **ROUND["pick"], "stir": "wc_045"},
+        # v7 (user: "반복해서 말하는 대사는 없애줘"): no second stir line (round 1 said it); the stir plays with sound
+        {"do": "brew", "round": 2, **ROUND["pick"]},
     ]},
     {"id": "ghost_candy", "title": "유령 사탕", "spread": _street(), "enter": KEEP,
      # v3 (user: "유령을 좀 더 극적으로", then "유령이 처음엔 나온지 몰라야지 나중에 놀라는거"): the little ghost sneaks in
@@ -488,7 +487,7 @@ BEATS = [
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.1},
         {"do": "say", "line": "wc_127"},
         {"do": "brew", "round": 3, "all_colors": True, "ingredients": INGREDIENTS, "taps": ["snot", "lantern", "fish"],
-         "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "stir": "wc_130", "pop": "wc_131",
+         "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "pop": "wc_131",
          "eat": "wc_132", "ghost": "wc_x_ghost_kid"},
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 0.1},
         {"do": "fx", "fx": "black_mouth:witch", "wait": 0.0},
@@ -507,18 +506,18 @@ BEATS = [
      "steps": [
         {"do": "fx", "fx": "outside_view", "wait": 0.6},
         {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.6, "wait": 0.4},
-        {"do": "leave_shop", "who": ALL, "pose": "ghost", "to": "road_shop", "spacing": 0.15},
+        {"do": "leave_shop", "who": ALL, "pose": "ghost", "to": "road_shop", "spacing": 0.21},
         {"do": "fx", "fx": "ghost_sneak", "wait": 0.0},
         {"do": "walk", "who": ALL, "pose": "ghost", "path": ["road_shop", "parade_l", "parade_a"], "file": True,
          "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_side", "line": "wc_135"},
         {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_u1", "parade_u3", "parade_u2", "parade_r", "road_shop"],
-         "file": True, "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_back", "line": "wc_x_ghost_all"},
+         "file": True, "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_back"},  # (chorus 오~우~ dropped: a repeat)
         {"do": "parade_surprise"},
         {"do": "ghost_flight"},
         {"do": "fx", "fx": "ghost_vanish", "wait": 1.0},
         {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.4, "wait": 0.2},
-        {"do": "go_inside", "who": ["rabbit", "bear", "fox", "witch", "kid", "cat"], "house": "shop", "to": ROOM_AT,
-         "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "along",
+        {"do": "go_inside", "who": ["kid", "witch", "cat", "rabbit", "bear", "fox"], "house": "shop", "to": ROOM_AT,
+         "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "front", "approach": "road_shop",
          "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.65},
     ]},
     {"id": "finale", "title": "다 같이 변신", "spread": _street(),

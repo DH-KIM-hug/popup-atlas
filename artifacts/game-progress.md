@@ -1652,3 +1652,22 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Still off: the pot's flat liquid colour still reads dark in most shots (the swirl / bubbles show, the base
     colour does not come through — not solved); the OVERLAP count rose to 6 (the door queue brushing the neighbour
     house and the pumpkin, the witch / cat filing out); runtime 6:54.
+
+## 2026-11-21 — witch_candy v7: bright brew, fewer overlaps, new lines recorded, repeats removed, colour lines back
+  - Pot: the brew read near-black because the liquid plane sat at +0.004 while the pot card's printed face is at
+    +thickness/2 (0.005): the liquid was buried inside the card and only the swirls poked out. Now in front of the
+    face (half thickness + 0.003), unshaded, glowing a little in its own colour; the ghost brew deep green, the black
+    candy's brew dark green-black. Crops artifacts/witch_candy/pot_fx_v7.jpg.
+  - Overlaps: door queue along the shop's front path, walkers arriving from the path's end one after another (they
+    no longer cut across the neighbour house / pumpkin or pass each other); the return after the parade keeps the
+    parade's file order. OVERLAP 6 (was 6 in v6, 13 mid-round), all small actor brushes, no house / prop contacts;
+    OCCLUDE 0.
+  - User decisions (2026-11-21: "녹음하고 표현도 유지. 다른데도 색 말해도 돼. 그리고 반복해서 말하는 대사는 없애줘"):
+    recorded wc_n01-n04 (narrator voice, eleven_v4; -16.4/-16.5 LUFS like the reused narrator, no level change), the
+    caption-only placeholders are gone (missing_audio=[]); "청록 개구리" kept; the result colour lines are back
+    after the POOF ("빨강이랑 노랑을 섞었더니 주황색이 됐어요!", "빨강만 넣었더니 빨간 딸기 사탕이 됐어요!", ... wc_071-073,
+    076-078, recorded in 톡톡); repeats removed: round 2's stir line (wc_045), the ghost round's "뽀글뽀글… 펑!"
+    (wc_130), the parade chorus "오~~우~~" (wc_x_ghost_all, a repeat of Dahyun's solo). check_lines flags REPEATED
+    TEXT when a tale sets `no_repeats` (witch_candy; three_pigs' refrain is its story).
+  - Runs: witch_candy 424.8 s, CHECK_LINES OK (56, no repeats), BLACK_LIPS 0, missing_audio=[]; three_pigs 295.7 s,
+    sun_wind 206.1 s, both CHECK_LINES OK. Videos witch_candy_pot_v7.mp4, witch_candy_full_v7.mp4.

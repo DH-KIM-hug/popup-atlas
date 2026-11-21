@@ -374,6 +374,7 @@
  "spacing": true,
  "overlap_check": true,
  "pop_in": false,
+ "no_repeats": true,
  "overlap_ok": [
   [
    "kid",
@@ -607,8 +608,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -923,8 +924,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -2094,7 +2095,8 @@
        "in_right"
       ]
      },
-     "queue": "along",
+     "queue": "front",
+     "approach": "road_shop",
      "queue_gap": 0.16,
      "house_facing": true,
      "door_clear": true,
@@ -2246,8 +2248,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -2562,8 +2564,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -3772,8 +3774,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -4088,8 +4090,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -5313,8 +5315,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -5629,8 +5631,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -6714,6 +6716,7 @@
      },
      "results": {
       "strawberry": {
+       "said": "wc_076",
        "candy": "story_wc_candies_00",
        "pot": "red",
        "eat": [
@@ -6732,6 +6735,7 @@
        "note": "she curls into a strawberry ball, rolls out of the door and down the street, bumps a pumpkin lantern (통!), the witch calls from the door (어디 가!), she rolls back"
       },
       "duck": {
+       "said": "wc_077",
        "candy": "story_wc_candies_01",
        "pot": "yellow",
        "eat": [
@@ -6747,6 +6751,7 @@
        "note": "duck feet: she waddles round the pot (drawn duck waddle cycle), 호박이 waddles behind her"
       },
       "fish": {
+       "said": "wc_078",
        "candy": "story_wc_candies_02",
        "pot": "blue",
        "eat": [
@@ -6762,6 +6767,7 @@
        "note": "fish tail: she floats out of the door and up over the roofs, swims a loop round the full moon (camera tilts up to the sky), bubbles trail; floats back down to the door"
       },
       "frog": {
+       "said": "wc_072",
        "candy": "story_wc_candies_03",
        "pot": "green",
        "eat": [
@@ -6777,6 +6783,7 @@
        "note": "frog legs: three hops out of the door and up onto the shop roof (low angle), waves from the ridge, hops down"
       },
       "pumpkin": {
+       "said": "wc_071",
        "candy": "story_wc_candies_04",
        "pot": "orange",
        "eat": [
@@ -6792,6 +6799,7 @@
        "note": "her pumpkin tummy glows: the street lanterns dim (light 'dark'), she walks out (drawn walk cycle; the glow rides on her) and lights the street around her (warm omni light)"
       },
       "bat": {
+       "said": "wc_073",
        "candy": "story_wc_candies_05",
        "pot": "purple",
        "eat": [
@@ -6958,8 +6966,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -7274,8 +7282,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -8382,6 +8390,7 @@
      },
      "results": {
       "strawberry": {
+       "said": "wc_076",
        "candy": "story_wc_candies_00",
        "pot": "red",
        "eat": [
@@ -8400,6 +8409,7 @@
        "note": "she curls into a strawberry ball, rolls out of the door and down the street, bumps a pumpkin lantern (통!), the witch calls from the door (어디 가!), she rolls back"
       },
       "duck": {
+       "said": "wc_077",
        "candy": "story_wc_candies_01",
        "pot": "yellow",
        "eat": [
@@ -8415,6 +8425,7 @@
        "note": "duck feet: she waddles round the pot (drawn duck waddle cycle), 호박이 waddles behind her"
       },
       "fish": {
+       "said": "wc_078",
        "candy": "story_wc_candies_02",
        "pot": "blue",
        "eat": [
@@ -8430,6 +8441,7 @@
        "note": "fish tail: she floats out of the door and up over the roofs, swims a loop round the full moon (camera tilts up to the sky), bubbles trail; floats back down to the door"
       },
       "frog": {
+       "said": "wc_072",
        "candy": "story_wc_candies_03",
        "pot": "green",
        "eat": [
@@ -8445,6 +8457,7 @@
        "note": "frog legs: three hops out of the door and up onto the shop roof (low angle), waves from the ridge, hops down"
       },
       "pumpkin": {
+       "said": "wc_071",
        "candy": "story_wc_candies_04",
        "pot": "orange",
        "eat": [
@@ -8460,6 +8473,7 @@
        "note": "her pumpkin tummy glows: the street lanterns dim (light 'dark'), she walks out (drawn walk cycle; the glow rides on her) and lights the street around her (warm omni light)"
       },
       "bat": {
+       "said": "wc_073",
        "candy": "story_wc_candies_05",
        "pot": "purple",
        "eat": [
@@ -8476,8 +8490,7 @@
       }
      },
      "and_in": true,
-     "autoplay": "random_new_result",
-     "stir": "wc_045"
+     "autoplay": "random_new_result"
     }
    ],
    "sound": {
@@ -8620,8 +8633,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -8936,8 +8949,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -10059,7 +10072,6 @@
      "result": "ghost",
      "candy": "story_wc_candies_06",
      "pot_color": "black",
-     "stir": "wc_130",
      "pop": "wc_131",
      "eat": "wc_132",
      "ghost": "wc_x_ghost_kid"
@@ -10263,8 +10275,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -10579,8 +10591,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -11603,7 +11615,7 @@
      ],
      "pose": "ghost",
      "to": "road_shop",
-     "spacing": 0.15
+     "spacing": 0.21
     },
     {
      "do": "fx",
@@ -11655,8 +11667,7 @@
      "spacing": 0.17,
      "speed": 0.46,
      "follow": "fox",
-     "shot": "parade_back",
-     "line": "wc_x_ghost_all"
+     "shot": "parade_back"
     },
     {
      "do": "parade_surprise"
@@ -11679,12 +11690,12 @@
     {
      "do": "go_inside",
      "who": [
+      "kid",
+      "witch",
+      "cat",
       "rabbit",
       "bear",
-      "fox",
-      "witch",
-      "kid",
-      "cat"
+      "fox"
      ],
      "house": "shop",
      "to": {
@@ -11707,7 +11718,8 @@
        "in_right"
       ]
      },
-     "queue": "along",
+     "queue": "front",
+     "approach": "road_shop",
      "queue_gap": 0.16,
      "house_facing": true,
      "door_clear": true,
@@ -11858,8 +11870,8 @@
       -2.469
      ],
      "cat_door": [
-      0.857,
-      -2.419
+      0.751,
+      -2.313
      ],
      "in_back": [
       1.486,
@@ -12174,8 +12186,8 @@
       -2.957
      ],
      "broom": [
-      1.168,
-      -2.447
+      1.253,
+      -2.476
      ],
      "lights_1": [
       -0.08,
@@ -14371,9 +14383,9 @@
    "speaker": "witch",
    "text": "\"다 넣었지? 그럼 저어 보자!\"",
    "status": "reuse",
-   "beat": "round2",
-   "interaction": "brew",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "witch",
@@ -14949,9 +14961,9 @@
    "speaker": "nar",
    "text": "빨강이랑 노랑을 섞었더니 주황색이 됐어요!",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "nar",
@@ -14971,9 +14983,9 @@
    "speaker": "nar",
    "text": "노랑이랑 파랑을 섞었더니 초록색이 됐어요!",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "nar",
@@ -14993,9 +15005,9 @@
    "speaker": "nar",
    "text": "빨강이랑 파랑을 섞었더니 보라색이 됐어요!",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "nar",
@@ -15059,9 +15071,9 @@
    "speaker": "nar",
    "text": "빨강만 넣었더니 빨간 딸기 사탕이 됐어요!",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "nar",
@@ -15081,9 +15093,9 @@
    "speaker": "nar",
    "text": "노랑만 넣었더니 노란 오리 사탕이 됐어요!",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "nar",
@@ -15103,9 +15115,9 @@
    "speaker": "nar",
    "text": "파랑만 넣었더니 파란 물고기 사탕이 됐어요!",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "round1",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "nar",
@@ -16271,9 +16283,9 @@
    "speaker": "witch",
    "text": "\"뽀글뽀글… 펑!\"",
    "status": "reuse",
-   "beat": "ghost_candy",
-   "interaction": "brew",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "witch",
@@ -17012,9 +17024,9 @@
    "speaker": "all",
    "text": "오~~우~~",
    "status": "reuse",
-   "beat": "parade",
-   "interaction": "walk",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "all",
@@ -17299,7 +17311,7 @@
    "id": "wc_n01",
    "speaker": "nar",
    "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "cover",
    "interaction": "cover",
    "used": true,
@@ -17309,9 +17321,9 @@
      "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
      "emotion": null,
      "tags": "[cheerful, inviting, warm, cosy Halloween night]",
-     "audio": "",
+     "audio": "res://audio/voice/witch_candy/nar_f6992243bc.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
    "new": true
@@ -17320,7 +17332,7 @@
    "id": "wc_n02",
    "speaker": "nar",
    "text": "또 보고 싶으면 '다시 보기'를 톡!",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "finale",
    "interaction": "end",
    "used": true,
@@ -17330,9 +17342,9 @@
      "text": "또 보고 싶으면 '다시 보기'를 톡!",
      "emotion": null,
      "tags": "[cheerful, inviting]",
-     "audio": "",
+     "audio": "res://audio/voice/witch_candy/nar_5d0ad0a7c3.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
    "new": true
@@ -17341,7 +17353,7 @@
    "id": "wc_n03",
    "speaker": "nar",
    "text": "날아오는 초대장을 톡 눌러 잡아요.",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "invite",
    "interaction": "tap_each",
    "used": true,
@@ -17351,9 +17363,9 @@
      "text": "날아오는 초대장을 톡 눌러 잡아요.",
      "emotion": null,
      "tags": "[warm, playful, inviting]",
-     "audio": "",
+     "audio": "res://audio/voice/witch_candy/nar_2c94f40e04.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
    "new": true
@@ -17362,7 +17374,7 @@
    "id": "wc_n04",
    "speaker": "nar",
    "text": "친구들을 톡 눌러 사탕을 건네요.",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "finale",
    "interaction": "tap_each",
    "used": true,
@@ -17372,9 +17384,9 @@
      "text": "친구들을 톡 눌러 사탕을 건네요.",
      "emotion": null,
      "tags": "[warm, playful, inviting]",
-     "audio": "",
+     "audio": "res://audio/voice/witch_candy/nar_5376b8d81c.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
    "new": true

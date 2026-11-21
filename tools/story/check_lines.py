@@ -107,6 +107,15 @@ def main():
     never = [u for u in used if u not in {g[0] for g in got} and u not in hints and u not in branch]
     for u in never:
         fails.append(f"USED LINE NEVER PLAYED {u}")
+    # repeated speech (user 2026-11-21: "반복해서 말하는 대사는 없애줘"): the same text (letters only) said twice in a run,
+    # by different line ids, unless whitelisted in the script's `repeat_ok` [[id, id]]
+    played_ids = list(dict.fromkeys(g[0] for g in got))
+    norm = {i: re.sub(r"[^가-힣a-zA-Z]", "", lines[i]["text"]) for i in played_ids if i in lines}
+    ok = {tuple(sorted(p)) for p in script.get("repeat_ok", [])}
+    for a_i, a in enumerate(played_ids if script.get("no_repeats", False) else []):  # opt-in (three_pigs' refrain is the tale)
+        for b in played_ids[a_i + 1:]:
+            if a in norm and b in norm and norm[a] and norm[a] == norm[b] and tuple(sorted((a, b))) not in ok:
+                fails.append(f"REPEATED TEXT {a} / {b}: {lines[b]['text']}")
     if fails:
         print(f"CHECK_LINES {tale} FAIL ({len(fails)}):")
         for f in fails:

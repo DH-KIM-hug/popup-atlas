@@ -42,6 +42,8 @@ How to look:
 - [ ] Every used line and segment plays exactly once, in order (check_lines.py). If a viewer says a line is missing, check the log before assuming.
 - [ ] **A quote plays when its speaker is in place.** The narrator plays during the walk, and the quote within about 1.5 s of arriving, with the speaker on camera ("도착 전에 문 열라고 하네", "대사가 아예 사라진듯": a 9 s gap read as missing).
 - [ ] **No doubled words in reused clips** ("그럼을 두 번 말하고"). Check the envelope and trim. Don't re-record without approval.
+- [ ] **No repeated speech** ("반복해서 말하는 대사는 없애줘"): the same line or the same words said again later in a run
+  (stir lines each round, a chorus repeating a solo) is dropped after its first time; check_lines flags REPEATED TEXT.
 - [ ] Expressions match the words; never a grin over "앗!" or "추워!".
 
 ## Motion

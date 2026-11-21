@@ -771,7 +771,24 @@ func _step_go_inside(st: Dictionary) -> void:
 		var qd := toward if str(st.get("queue", "")) == "front" else stage.dir_vec(str(st.get("queue", "toward")))
 		if str(st.get("queue", "")) == "along":
 			qd = -sp.global_transform.basis.x.normalized() + toward * 0.35
-		a.walk_to(front + qd * float(st.get("queue_gap", 0.16)) * i + (toward * 0.05 if st.has("queue") else Vector3.ZERO), spd, "")
+		elif str(st.get("queue", "")) == "along_right":  # v7: the free side of the shop (no pumpkin, no neighbour)
+			qd = sp.global_transform.basis.x.normalized() + toward * 0.35
+		var qspot := front + qd * float(st.get("queue_gap", 0.16)) * i + (toward * 0.05 if st.has("queue") else Vector3.ZERO)
+		if st.has("approach"):
+			# round by the end of the path (v7: walking straight to the queue cut across the neighbour house's front)
+			# from the end of the path straight in along it: each stops behind the one before (nobody passes anyone)
+			var near := a.global_position.distance_to(stage.spot_point(st["approach"])) < 0.25
+			var apts: Array = ([qspot] if near else [stage.spot_point(st["approach"]), qspot]) if str(st.get("queue", "")) == "front" \
+				else [stage.spot_point(st["approach"]) + stage.dir_vec("right") * 0.08 * (i - 2), qspot]
+			if i == 0:
+				a.follow(apts, spd, "", false)
+			else:  # one after another (setting off together they crossed each other's paths)
+				var aa := a
+				get_tree().create_timer(0.8 * i).timeout.connect(func(): aa.follow(apts, spd, "", false))
+		else:
+			a.walk_to(qspot, spd, "")
+	if st.has("approach"):
+		await _wait(0.85 * roles.size())
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
 		if a == null:

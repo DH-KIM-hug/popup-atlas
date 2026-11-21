@@ -422,7 +422,10 @@ func _pot_open() -> Array:  # [centre (world), basis x, basis z, rx, ry]
 	var pot := _sp("pot")
 	var bx := pot.global_transform.basis.x.normalized()
 	var bz := pot.global_transform.basis.z.normalized()
-	var c := pot.global_position + bx * POT_OPEN[0] * pot.width + Vector3.UP * POT_OPEN[1] * pot.height + bz * 0.004
+	# in FRONT of the card's printed face: the card is extruded, its front at +thickness/2 (v7: at 0.004 the liquid was
+	# buried inside the pot card and only the swirls poked out, so the brew read black)
+	var half := (pot.card.thickness if pot.card else 0.01) * 0.5
+	var c := pot.global_position + bx * POT_OPEN[0] * pot.width + Vector3.UP * POT_OPEN[1] * pot.height + bz * (half + 0.003)
 	return [c, bx, bz, POT_OPEN[2] * pot.width, POT_OPEN[3] * pot.height]
 
 
@@ -465,9 +468,13 @@ func _set_liquid(cols: Array) -> void:
 	if _liquid == null:
 		return
 	_liquid.visible = true
-	_liq_mat.albedo_color = COLORS.get(str(cols[0]), COLORS["water"])
-	_liq_mat.emission_enabled = str(cols[0]) == "black" or _eerie_t > 0.5
-	_liq_mat.emission = Color(0.3, 0.9, 0.45) * 0.6
+	var col: Color = COLORS.get(str(cols[0]), COLORS["water"])
+	if str(cols[0]) == "black" or _eerie_t > 0.5:  # the ghost brew: deep green, glowing
+		col = Color(0.25, 0.75, 0.4) if str(cols[0]) != "black" else Color(0.12, 0.3, 0.18)
+	_liq_mat.albedo_color = col.lightened(0.08)  # a bright, saturated brew, glowing a little
+	_liq_mat.emission_enabled = true
+	_liq_mat.emission = col
+	_liq_mat.emission_energy_multiplier = 0.35 if str(cols[0]) != "black" else 0.9
 	for sw in _swirls:
 		(sw as Node3D).queue_free()
 	_swirls.clear()
@@ -648,9 +655,12 @@ func _brew(st: Dictionary, R: Node) -> void:
 			yuck = str(ings[p]["yuck"])
 	if yuck != "":
 		plan.append(yuck)
-	plan.append(str(st["stir"]))
+	if st.has("stir"):
+		plan.append(str(st["stir"]))
 	if st.has("pop"):
 		plan.append(str(st["pop"]))
+	if rs.has("said"):  # what came out, colours and all (v7: colour words are fine)
+		plan.append(str(rs["said"]))
 	if st.has("offer"):
 		plan.append(str(st["offer"]))
 	plan.append(str((rs["eat"] as Array)[mini(rnd - 1, 1)]))
@@ -677,7 +687,10 @@ func _brew(st: Dictionary, R: Node) -> void:
 	_sfx("wc.stir", _pot_mouth())
 	for k in 6:
 		fly("story_wc_pot_19", (w.centre() if w else _pot_mouth()) - _right() * 0.08, _pot_mouth(), 0.03, 0.5, 0.06, 0.0, 5.0)
-	await R._say(str(st["stir"]))
+	if st.has("stir"):
+		await R._say(str(st["stir"]))
+	else:
+		await R._wait(2.2)  # the stir with its sound only (the line was said in round 1)
 	# POOF: smoke, the liquid takes the result colour, the candy pops out and lands at Dahyun's hands
 	_swirl_speed = 0.6
 	_poof(_pot_mouth(), 1.6)
@@ -694,6 +707,8 @@ func _brew(st: Dictionary, R: Node) -> void:
 		await R._say(str(st["pop"]))
 	else:
 		await R._wait(0.9)
+	if rs.has("said"):
+		await R._say(str(rs["said"]))
 	if st.has("offer"):
 		if w:
 			w.set_pose("offer")
@@ -776,7 +791,7 @@ func _drop_in(key: String) -> void:
 func _brew_ghost(st: Dictionary, R: Node) -> void:
 	var taps: Array = st.get("taps", ["snot", "lantern", "fish"])
 	var ings: Dictionary = st["ingredients"]
-	var plan := [str(st["stir"]), str(st["pop"]), str(st["eat"]), str(st["ghost"])]
+	var plan := ([str(st["stir"])] if st.has("stir") else []) + [str(st["pop"]), str(st["eat"]), str(st["ghost"])]
 	print("PLAN brew3 ", ",".join(plan), " result=ghost picks=", ",".join(taps))
 	_picking = true
 	stage.shot_to("pick3", "shelf_mid", {"rate": 2.0})
@@ -806,7 +821,10 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 	stage.shot_to("pot_low", "in_pot", {"rate": 1.2})
 	_swirl_speed = 5.0
 	_sfx("wc.stir", _pot_mouth())
-	await R._say(str(st["stir"]))
+	if st.has("stir"):
+		await R._say(str(st["stir"]))
+	else:
+		await R._wait(2.6)  # the eerie stir, sound only (no repeat of the stir line)
 	_swirl_speed = 0.6
 	_poof(_pot_mouth(), 2.2)
 	_sfx("wc.poof", _pot_mouth())
