@@ -1350,7 +1350,14 @@ func pop(start := 0.0) -> float:
 		for h in (sets[k] as SetPiece).wave_hinges():
 			(h.get_parent() as Node3D).visible = true
 			all.append(h)
-	var end := wave.pop(all, _origin, start)
+	var end := 0.0
+	if tale.get("pop_in", true):
+		end = wave.pop(all, _origin, start)
+	else:
+		# witch_candy v6 (user: "어떤 건 서 있고 어떤 건 안 서 있고 ... 그냥 처음부터 서 있어도"): the scenery is
+		# already standing when the page opens (no staggered wave); a house's body and its front stand together
+		for h in all:
+			h.snap(true)
 	trav_delay = start + 0.12
 	trav_target = 1.0
 	for i in _sky.size():

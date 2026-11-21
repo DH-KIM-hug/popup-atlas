@@ -28,6 +28,12 @@ How to look:
   wind) visibly travels there, fluttering, with the camera following, then is caught / opened toward the camera.
 - [ ] **Angled houses need bodies** ("사선으로 돼 있으니까 집도 집처럼 보여줘야"): a house turned to the road shows side walls,
   a roof running back and a back from every camera position (no flat cut-outs, no hollow backs).
+- [ ] **No half-popped scenery at a spread's start** ("어떤 건 서 있고 어떤 건 안 서 있고"): unless a tale wants the wave,
+  everything stands when the street first shows (tale `pop_in: false`); a house's walls / roof never stand without
+  its front or the reverse. Check the first 10 s at 4 fps.
+- [ ] **Interactive moments get their own framing, not the establishing wide** ("사탕 누를 때 카메라 화면이 너무 그냥
+  똑같이 전경을 비추고 있어서 ... 선반으로 카메라를 옮기는 건 어때?"): before a tap prompt the camera goes to the targets
+  (big, rings inside), follows the result, comes back for the next tap; vary the angle between repeated rounds.
 - [ ] **Placement.** Set pieces are off the road and out of the water (SET_CHECK road=0 water=0). Wading characters stand in the water channel, not in the bank.
 
 ## Lines and voice

@@ -1624,3 +1624,31 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Still off: the walk / ghost-play frames carry a mouth lifted from another drawing (same character, same design)
     rather than drawn natively in each pose; profile mouths are the front mouth narrowed; on the smallest cat frames
     the new mouth is a few pixels.
+
+## 2026-11-21 — witch_candy v6: the ghost joins the parade, the jars are shown, the pot fits, the street stands
+  - User on v5 (voice-typed): the room ghost set piece replaced by "유령 흉내를 내면서 걸을 때 갑자기 뒤에 몰래 유령이 생기는
+    거야 ... 마지막에 알고 봤더니 뒤에 유령이 ... 놀라는 거야. 그 다음부터 유령은 막 히히 웃으면서 ... 마을을 엄청 날아다니고
+    ... 사라지는 거지"; "콧물이랑 응가요 하는 게 좀 뜬금없고"; the pot's boil / steam don't fit the pot; "어떤 건 서 있고 어떤 건
+    안 서 있고"; "사탕 누를 때 ... 선반으로 카메라를 옮기는 건 어때?".
+  - Ghost: the room glimpses / surprise / roam are gone; the ghost candy round is the candy, black mouths, "오~우~".
+    In the parade a little ghost quietly appears behind the last marcher (soft flutter, no sting), trails them,
+    copies their ghost-play bob, peeks out between the last two, ducks when the rabbit half turns; the camera follows
+    the back of the line from above the roofs. At the end of the walk everyone turns: sting, snap zoom, shake,
+    surprised black-mouth faces; a giggle (bell sfx, no new voice), then it flies all over the village (along the
+    street, round both lamp posts, past the lit windows, over the roofs, a loop in front of the moon) with panning
+    whooshes and the camera tracking, and vanishes with a 뿅 and sparkles; the black mouths end there.
+  - Shelf: the witch's two ingredient lines play with the camera pushing in on each jar as it is named (wc_010
+    trimmed at "파란 생선," — its tail named things not on the shelf; no new recording), then a cut straight to
+    Dahyun's yuck close-up: wc_010 ends ~0.3 s before wc_011 starts (log 100.0 -> 103.3, clip 2.95 s).
+  - Picks: the camera goes to the shelf (big jars) for every pick, cuts to the pot as each splashes in, back to the
+    shelf; a different angle per round (straight / over the shoulder / low).
+  - Pot: liquid, colour swirls, bubbles and steam fitted to the pot card's drawn opening (measured ellipse); steam
+    rises from the opening. Crops artifacts/witch_candy/pot_fx_v6.jpg.
+  - Opening: tale `pop_in: false` — the street is standing when the page opens (no staggered wave); 4 fps frames
+    artifacts/witch_candy/opening_4fps_v6.jpg. Other tales keep their wave.
+  - Runs: witch_candy STORY_DONE 414.0 s, CHECK_LINES OK (57 segments), BLACK_LIPS 0, OVERLAP 6 / OCCLUDE 0;
+    three_pigs 295.7 s, sun_wind 206.3 s, both CHECK_LINES OK. Videos witch_candy_parade_ghost_v6.mp4,
+    witch_candy_shelf_pot_v6.mp4, witch_candy_full_v6.mp4.
+  - Still off: the pot's flat liquid colour still reads dark in most shots (the swirl / bubbles show, the base
+    colour does not come through — not solved); the OVERLAP count rose to 6 (the door queue brushing the neighbour
+    house and the pumpkin, the witch / cat filing out); runtime 6:54.

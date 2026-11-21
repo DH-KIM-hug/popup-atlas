@@ -40,6 +40,10 @@ NEW_LINES = {
 TRIM = {
     "wc_039": ("히히, 먹으면 어떻게 되는지는… 비밀! 같이 만들까?", "res://audio/voice/witch_candy/witch_df120ff616_t.mp3",
                "audio/el/witch_candy/witch_df120ff616.mp3 (0-0.42 s + 3.62 s-end)"),
+    # v6: the witch names the ingredients while the camera shows each jar; her second line ends at "파란 생선," (its
+    # tail "초록은 개구리랑 공룡!" names things not on this shelf): witch_7c64b77bc3.mp3 0-2.95 s, 0.15 s fade-out
+    "wc_010": ("파란 건 괴물 응가랑 파란 생선,", "res://audio/voice/witch_candy/witch_7c64b77bc3_t.mp3",
+               "audio/el/witch_candy/witch_7c64b77bc3.mp3 (0-2.95 s)"),
     "wc_x_ghost_all": ("오~~우~~", "res://audio/voice/witch_candy/ch_48ac9f3898.mp3",
                        "audio/el/witch_candy/chorus/ch_48ac9f3898.mp3 (톡톡 premixed chorus)", "all"),
     "wc_x_happy_all": ("해피 핼러윈! 오~우~!", "res://audio/voice/witch_candy/ch_672e05d93c.mp3",
@@ -149,7 +153,7 @@ HANDLER = "res://stories/witch_candy/fx.gd"   # phase 2
 BACKDROP = True
 INSIDE_FRAMING = "manual"
 # v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아"): stage spacing solver + OVERLAP / OCCLUDE log; intentional contacts listed
-EXTRA = {"spacing": True, "overlap_check": True,
+EXTRA = {"spacing": True, "overlap_check": True, "pop_in": False,
          "overlap_ok": [["kid", "logs"], ["witch", "pot"], ["kid", "room_floor"], ["kid", "room_floor2"]]}  # the stage does not reframe taps while the camera is inside the shop (rooms are framed here)
 # Shots [distance, elevation°, focus height, fov, yaw offset°] (three_pigs vocabulary + interior shots)
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
@@ -174,7 +178,16 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "pot": [0.42, 18.0, 0.16, 46.0, SHOP_YAW],      # looking down into the pot: swirl, POOF, candy
          "pot_low": [0.42, 4.0, 0.1, 50.0, SHOP_YAW],    # low on the fire (tap the logs)
          "two_shot": [0.5, 6.0, 0.24, 58.0, SHOP_YAW + 8.0],  # witch + Dahyun across the pot
-         "face_in": [0.4, 6.0, 0.24, 42.0, SHOP_YAW]}    # close on Dahyun inside
+         "face_in": [0.4, 6.0, 0.24, 42.0, SHOP_YAW],
+         "jar": [0.3, 6.0, 0.02, 36.0, SHOP_YAW],
+         # the pick taps: the shelf close, all nine jars big (each round its own angle)
+         "pick1": [0.78, 8.0, 0.02, 34.0, SHOP_YAW],         # straight on
+         "pick2": [0.8, 12.0, 0.02, 34.0, SHOP_YAW + 20.0],  # over Dahyun's shoulder from the right
+         "pick3": [0.76, 2.0, 0.06, 36.0, SHOP_YAW - 12.0],  # low, a little from the left (the ghost candy)       # push-in on one jar on the shelf as it is named
+         # the parade: high enough to clear the roofs (low follow shots put the camera inside house cards)
+         "parade_side": [2.6, 32.0, 0.22, 26.0, -25.0],   # the whole file and the back of the line, from above
+         "parade_back": [2.4, 40.0, 0.22, 28.0, 30.0],    # following the last marcher closely (the ghost in view)
+         "surprise": [1.4, 30.0, 0.25, 30.0, 0.0]}        # everyone turning to the ghost    # close on Dahyun inside
 CAST = {
     "kid": {"kind": "actor", "skin": "dahyun", "views": ["front", "side", "back"], "label": "다현이 (little wizard)"},
     # 0.42 tall on the page (v2): she must fit the shop's doorway (0.44 above the sill) with her hat, no clipping on the way in
@@ -432,6 +445,12 @@ BEATS = [
      "steps": [
         {"do": "cam", "shot": "shelf", "at": "in_shelf_front", "rate": 1.4, "wait": 0.4},
         {"do": "fx", "fx": "shelf_pop", "wait": 2.6},              # the nine ingredients pop onto the shelf
+        # v6 (user: "콧물이랑 응가요 하는 게 좀 뜬금없고"): the witch names them, the camera pushes in on each jar as it is
+        # named (times from the clips' pauses), then straight to Dahyun's yuck
+        {"do": "pose", "who": "witch", "pose": "welcome", "wait": 0.0},
+        {"do": "name_jars", "line": "wc_009", "at": [[2.3, "snot"], [3.85, "firetruck"], [5.15, "lantern"], [6.4, "chickfart"]]},
+        {"do": "name_jars", "line": "wc_010", "at": [[0.3, "poo"], [1.95, "fish"]], "then": "kid_yuck"},
+        {"do": "pose", "who": "kid", "pose": "yuck", "wait": 0.0},
         {"do": "say", "line": "wc_011"},
         {"do": "say", "line": "wc_038"},
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.8, "wait": 0.2},
@@ -463,12 +482,10 @@ BEATS = [
         {"do": "fx", "fx": "pot_clear", "wait": 0.2},
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.2},
         {"do": "pose", "who": "witch", "pose": "welcome"},
-        {"do": "fx", "fx": "ghost_glimpse_1", "wait": 0.1},
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.2, "wait": 0.1},
         {"do": "say", "line": "wc_126"},
         {"do": "pose", "who": "kid", "pose": "wow"},
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.1},
-        {"do": "fx", "fx": "ghost_glimpse_2", "wait": 0.1},
         {"do": "say", "line": "wc_127"},
         {"do": "brew", "round": 3, "all_colors": True, "ingredients": INGREDIENTS, "taps": ["snot", "lantern", "fish"],
          "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "stir": "wc_130", "pop": "wc_131",
@@ -476,7 +493,6 @@ BEATS = [
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 0.1},
         {"do": "fx", "fx": "black_mouth:witch", "wait": 0.0},
         {"do": "pose", "who": "witch", "pose": "ghost"},
-        {"do": "fx", "fx": "ghost_glimpse_4", "wait": 0.1},
         {"do": "say", "line": "wc_133"},
         {"do": "fx", "fx": "candies_to_all", "wait": 0.8},
         {"do": "fx", "fx": "black_mouth:others", "wait": 0.0},
@@ -484,29 +500,26 @@ BEATS = [
         {"do": "fx", "fx": "float_all", "wait": 0.1},
         {"do": "cam", "shot": "two_shot", "at": "in_rabbit", "rate": 1.4, "wait": 0.1},  # their black lips, close
         {"do": "say", "line": "wc_134"},
-        {"do": "ghost_surprise"},
-        {"do": "ghost_roam"},
-        {"do": "ghost_peekaboo"},
     ]},
     {"id": "parade", "title": "오~우~ 행진", "spread": _street(), "enter": KEEP,
+     # v6 (user: "유령 흉내를 내면서 걸을 때 갑자기 뒤에 몰래 유령이 생기는 거야"): the real little ghost quietly joins the
+     # back of the line while they play; nobody knows until the end of the walk; then the surprise and its flight
      "steps": [
-        # out of the door in single file (drawn ghost-march cycles, arms up, black lips), down the street toward us,
-        # then back up it; a little friendly ghost tags along at the back, looks round and vanishes
         {"do": "fx", "fx": "outside_view", "wait": 0.6},
         {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.6, "wait": 0.4},
-        # out one at a time: the door swings clear, each steps up onto the sill, over it and down the steps
         {"do": "leave_shop", "who": ALL, "pose": "ghost", "to": "road_shop", "spacing": 0.15},
+        {"do": "fx", "fx": "ghost_sneak", "wait": 0.0},
         {"do": "walk", "who": ALL, "pose": "ghost", "path": ["road_shop", "parade_l", "parade_a"], "file": True,
-         "spacing": 0.17, "speed": 0.46, "follow": "kid", "shot": "high", "line": "wc_135"},
-        {"do": "fx", "fx": "ghost_tagalong", "wait": 0.1},
-        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_u1", "parade_u3", "parade_u2", "parade_r", "road_shop"], "file": True,
-         "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "street", "line": "wc_x_ghost_all"},
-        {"do": "cam", "shot": "sky_wide", "at": "moon_loop", "rate": 1.0, "wait": 1.0},
-        {"do": "fx", "fx": "ghost_vanish", "wait": 0.8},
+         "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_side", "line": "wc_135"},
+        {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_u1", "parade_u3", "parade_u2", "parade_r", "road_shop"],
+         "file": True, "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_back", "line": "wc_x_ghost_all"},
+        {"do": "parade_surprise"},
+        {"do": "ghost_flight"},
+        {"do": "fx", "fx": "ghost_vanish", "wait": 1.0},
         {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.4, "wait": 0.2},
         {"do": "go_inside", "who": ["rabbit", "bear", "fox", "witch", "kid", "cat"], "house": "shop", "to": ROOM_AT,
-         "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "along", "queue_gap": 0.16,
-         "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.65},
+         "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "along",
+         "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.65},
     ]},
     {"id": "finale", "title": "다 같이 변신", "spread": _street(),
      "enter": {"who": ROOM_WHO, "at": ROOM_AT},

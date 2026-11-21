@@ -282,6 +282,8 @@ func fx(name: String) -> bool:
 			_black_mouth(who, true)
 			for r in who:
 				_black_expected[r] = true
+		"ghost_sneak":
+			_parade_ghost_start()
 		"ghost_tagalong":
 			_ghost = _ghost_card()
 			_g = null  # from here on the parade code moves it (it follows the last marcher)
@@ -290,11 +292,14 @@ func fx(name: String) -> bool:
 			_ghost.global_position = (f.global_position if f else stage.spot_point("door")) + Vector3.UP * 0.12
 			_ghost.scale = Vector3.ONE * 0.85
 		"ghost_vanish":
-			if _ghost:
-				_poof(_ghost.global_position + Vector3.UP * 0.1)
-				_sfx("wc.vanish")
-				_ghost.queue_free()
-				_ghost = null
+			for gv in [_ghost, _g]:
+				if gv and is_instance_valid(gv):
+					_poof(gv.global_position + Vector3.UP * 0.1)
+					_sfx("wc.vanish")
+					gv.queue_free()
+			_ghost = null
+			_g = null
+			_pg_on = false
 			# 뿅: the ghost-candy mouths wear off as the little ghost goes
 			for r in ["kid", "witch", "cat", "rabbit", "bear", "fox"]:
 				var a := _a(r)
@@ -395,47 +400,90 @@ func _fire_now(n: int) -> void:
 		stage.fx("up:logs")
 
 
-func _pot_mouth() -> Vector3:
+func _pot_mouth() -> Vector3:  # the centre of the drawn opening (steam, drops, candies start here)
 	var pot := _sp("pot")
 	if pot == null:
 		return stage.spot_point("in_pot") + Vector3.UP * 0.2
-	return pot.global_position + Vector3.UP * pot.height * 0.93
+	return _pot_open()[0]
+
+
+## v6 (user: "솥에서 물이 끓는 거랑 김 나오는 거랑 ... 솥 모양이랑 안 맞아"): the pot is a flat card with its opening drawn
+## at the top (measured on story_wc_pot_00: an ellipse centred at 89.3 % of the card height, half axes 32.6 % of its
+## width and 7.7 % of its height). The liquid is an elliptical card laid exactly over that drawn opening (a hair in
+## front of the pot card, facing like it, 90 % of the opening so the dark rim shows round it); the colour swirls spin
+## inside the same ellipse; steam and bubbles start from its centre.
+const POT_OPEN := [0.0, 0.893, 0.326, 0.077]  ## centre x (of width), centre y (of height), half width, half height
+var _liq_root: Node3D
+var _liq_mat: StandardMaterial3D
+static var _ell_tex: Texture2D
+
+
+func _pot_open() -> Array:  # [centre (world), basis x, basis z, rx, ry]
+	var pot := _sp("pot")
+	var bx := pot.global_transform.basis.x.normalized()
+	var bz := pot.global_transform.basis.z.normalized()
+	var c := pot.global_position + bx * POT_OPEN[0] * pot.width + Vector3.UP * POT_OPEN[1] * pot.height + bz * 0.004
+	return [c, bx, bz, POT_OPEN[2] * pot.width, POT_OPEN[3] * pot.height]
 
 
 func _make_liquid() -> void:
 	var pot := _sp("pot")
 	if pot == null:
 		return
-	var cyl := CylinderMesh.new()
-	cyl.top_radius = pot.width * 0.33
-	cyl.bottom_radius = pot.width * 0.33
-	cyl.height = 0.004
-	cyl.radial_segments = 40
+	if _ell_tex == null:
+		var n := 128
+		var img := Image.create(n, n, false, Image.FORMAT_RGBA8)
+		for y in n:
+			for x in n:
+				var d := Vector2(x + 0.5 - n * 0.5, y + 0.5 - n * 0.5).length() / (n * 0.5)
+				img.set_pixel(x, y, Color(1, 1, 1, clampf((1.0 - d) * 20.0, 0.0, 1.0)))
+		_ell_tex = ImageTexture.create_from_image(img)
+	var o := _pot_open()
+	_liq_root = Node3D.new()
+	_liq_root.top_level = true
+	stage.add_child(_liq_root)
+	_liq_root.global_position = o[0]
+	_liq_root.global_rotation = Vector3(0, pot.global_rotation.y, 0)
+	var q := QuadMesh.new()
+	q.size = Vector2(o[3] * 2.0 * 0.9, o[4] * 2.0 * 0.9)
 	_liquid = MeshInstance3D.new()
-	_liquid.mesh = cyl
-	var m := StandardMaterial3D.new()
-	m.albedo_color = COLORS["water"]
-	m.roughness = 0.6
-	_liquid.material_override = m
-	_liquid.top_level = true
-	stage.add_child(_liquid)
-	_liquid.global_position = _pot_mouth() + _out() * 0.012  # in front of the card's drawn (dark) opening
+	_liquid.mesh = q
+	_liq_mat = StandardMaterial3D.new()
+	_liq_mat.albedo_texture = _ell_tex
+	_liq_mat.albedo_color = COLORS["water"]
+	_liq_mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
+	_liq_mat.alpha_scissor_threshold = 0.5
+	_liq_mat.roughness = 0.7
+	_liq_mat.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED  # lit from below by the fire it read black
+	_liquid.material_override = _liq_mat
+	_liq_root.add_child(_liquid)
 	_liquid.visible = false
 
 
-## The liquid takes the colours in: one colour fills the pot, more colours add a spinning swirl band each.
+## The liquid takes the colours in: one colour fills the opening, more colours add a spinning swirl band each.
 func _set_liquid(cols: Array) -> void:
 	if _liquid == null:
 		return
 	_liquid.visible = true
-	(_liquid.material_override as StandardMaterial3D).albedo_color = COLORS.get(str(cols[0]), COLORS["water"])
-	for s in _swirls:
-		(s as Node3D).queue_free()
+	_liq_mat.albedo_color = COLORS.get(str(cols[0]), COLORS["water"])
+	_liq_mat.emission_enabled = str(cols[0]) == "black" or _eerie_t > 0.5
+	_liq_mat.emission = Color(0.3, 0.9, 0.45) * 0.6
+	for sw in _swirls:
+		(sw as Node3D).queue_free()
 	_swirls.clear()
 	var tex := _texid("story_wc_pot_10")
+	var o := _pot_open()
 	for i in range(1, cols.size()):
+		# squash node (the opening's ellipse) > spinning node (rotates in its own plane) > the spiral card
+		var squash := Node3D.new()
+		squash.position = Vector3(0, 0, 0.001 * i)
+		squash.scale = Vector3(1.0, float(o[4]) / float(o[3]), 1.0)
+		_liq_root.add_child(squash)
+		var spin := Node3D.new()
+		spin.rotation.z = TAU * float(i) / maxf(cols.size() - 1, 1)
+		squash.add_child(spin)
 		var q := QuadMesh.new()
-		q.size = Vector2(1, 1) * (_liquid.mesh as CylinderMesh).top_radius * 1.9
+		q.size = Vector2(1, 1) * float(o[3]) * 1.6
 		var mi := MeshInstance3D.new()
 		mi.mesh = q
 		var m := StandardMaterial3D.new()
@@ -443,14 +491,19 @@ func _set_liquid(cols: Array) -> void:
 		m.albedo_color = COLORS.get(str(cols[i]), Color.WHITE)
 		m.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA_SCISSOR
 		m.alpha_scissor_threshold = 0.5
-		m.cull_mode = BaseMaterial3D.CULL_DISABLED
+		m.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
 		mi.material_override = m
-		mi.top_level = true
-		stage.add_child(mi)
-		mi.global_position = _liquid.global_position + Vector3.UP * (0.003 + 0.001 * i)
-		mi.rotation = Vector3(-PI * 0.5, TAU * float(i) / maxf(cols.size() - 1, 1), 0)
-		mi.scale = Vector3(1.0, 1.84, 1.0)  # the printed spiral is an ellipse (seen from above): make it round
-		_swirls.append(mi)
+		spin.add_child(mi)
+		_swirls.append(spin)
+
+
+func _bubble() -> void:  # a bubble pops up from somewhere inside the opening
+	if _liquid == null or not _liquid.visible:
+		return
+	var o := _pot_open()
+	var ang := randf() * TAU
+	var p: Vector3 = o[0] + (o[1] as Vector3) * cos(ang) * float(o[3]) * 0.6 * randf() + Vector3.UP * sin(ang) * float(o[4]) * 0.5 + (o[2] as Vector3) * 0.003
+	fly("story_wc_pot_18", p, p + Vector3.UP * 0.03, 0.018, 0.5, 0.0, 0.0, 0.0)
 
 
 # ------------------------------------------------------------------ shelf
@@ -473,6 +526,8 @@ func _shelf_now(animated: bool) -> void:
 		n.global_position = sh.global_position + sx * dx + Vector3.UP * y + sz * 0.03
 		n.rotation.y = sh.global_rotation.y
 		_ings[key] = n
+		stage.spots["ing_" + key] = n.global_position  # camera stations for the naming push-ins
+		stage.spots["shelf_mid"] = sh.global_position + Vector3.UP * sh.height * 0.3
 		if animated:
 			n.scale = Vector3.ONE * 0.02
 			var tw := create_tween()
@@ -489,6 +544,12 @@ func run_step(st: Dictionary, R: Node) -> void:
 	match str(st.get("do", "")):
 		"leave_shop":
 			await _leave_shop(st, R)
+		"name_jars":
+			await _name_jars(st, R)
+		"parade_surprise":
+			await _parade_surprise(R)
+		"ghost_flight":
+			await _ghost_flight(R)
 		"ghost_surprise":
 			await _ghost_surprise(R)
 		"ghost_roam":
@@ -547,7 +608,10 @@ func _brew(st: Dictionary, R: Node) -> void:
 	var ings: Dictionary = st["ingredients"]
 	var auto_pair: Array = _choose_auto(st)
 	_picking = true
-	stage.shot_to("shelf", "in_shelf_front", {"rate": 2.0})  # every ingredient framed for the taps (held)
+	# v6 (user: "사탕 누를 때 ... 선반으로 카메라를 옮기는 건 어때?"): the taps get their own framing, the shelf close
+	# with every jar big; each round from another angle (straight on / over Dahyun's shoulder / low)
+	var pick_shot := "pick%d" % clampi(rnd, 1, 3)
+	stage.shot_to(pick_shot, "shelf_mid", {"rate": 2.0})
 	await R._wait(1.2)
 	if st.has("prompt"):
 		await R._say(str(st["prompt"]))
@@ -561,8 +625,14 @@ func _brew(st: Dictionary, R: Node) -> void:
 			var c := str(ings[p]["color"])
 			if not cols.has(c):
 				cols.append(c)
-		await R._wait(0.75)
+		await R._wait(0.35)
+		stage.shot_to("pot", "in_pot", {"rate": 4.0})  # cut to the pot as it splashes in
+		await R._wait(0.45)
 		_set_liquid(cols)
+		await R._wait(0.6)
+		if n == 0:
+			stage.shot_to(pick_shot, "shelf_mid", {"rate": 4.0})  # back to the shelf for the next pick
+			await R._wait(0.5)
 	_picking = false
 	var res := _result_of(st, picks)
 	_seen_results.append(res)
@@ -709,15 +779,21 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 	var plan := [str(st["stir"]), str(st["pop"]), str(st["eat"]), str(st["ghost"])]
 	print("PLAN brew3 ", ",".join(plan), " result=ghost picks=", ",".join(taps))
 	_picking = true
-	stage.shot_to("shelf", "in_shelf_front", {"rate": 2.0})
+	stage.shot_to("pick3", "shelf_mid", {"rate": 2.0})
 	await R._wait(1.2)
 	var cols: Array = []
 	for key in taps:  # one tap per colour group (rings on those three; same kind of tap as before: no voice)
 		var hit: String = await R._wait_tap([key], "", [key], true, false)
 		_drop_in(hit)
 		cols.append(str(ings[hit]["color"]))
-		await R._wait(0.7)
+		await R._wait(0.35)
+		stage.shot_to("pot", "in_pot", {"rate": 4.0})
+		await R._wait(0.45)
 		_set_liquid(cols)
+		await R._wait(0.5)
+		if cols.size() < taps.size():
+			stage.shot_to("pick3", "shelf_mid", {"rate": 4.0})
+			await R._wait(0.5)
 	_picking = false
 	# v3 build-up: the room lights flicker and dim, the music drops, the pot glows an eerie green, smoke swirls up
 	var w := _a("witch")
@@ -730,7 +806,6 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 	stage.shot_to("pot_low", "in_pot", {"rate": 1.2})
 	_swirl_speed = 5.0
 	_sfx("wc.stir", _pot_mouth())
-	_glimpse(3)  # meanwhile the ghost peeks over the pot rim behind it (nobody notices)
 	await R._say(str(st["stir"]))
 	_swirl_speed = 0.6
 	_poof(_pot_mouth(), 2.2)
@@ -1015,7 +1090,9 @@ func _step_ghost(dt: float) -> void:
 			o.light_color = Color(1.0, 0.55, 0.23).lerp(Color(0.45, 1.0, 0.55), _eerie)
 			o.light_energy = float(q[1]) * (1.0 + 1.5 * _eerie)
 	if _eerie > 0.6 and fmod(_t, 0.45) < dt:  # smoke only while the pot is brewing (not over faces later)
-		fly("story_wc_pot_16", _pot_mouth(), _pot_mouth() + Vector3.UP * 0.25 + _sx() * sin(_t) * 0.08, 0.05, 1.4, 0.0, 0.0, 2.0)
+		var po := _pot_open()
+		var st0: Vector3 = po[0] + (po[1] as Vector3) * randf_range(-0.5, 0.5) * float(po[3]) + Vector3.UP * float(po[4]) * 0.5
+		fly("story_wc_pot_16", st0, st0 + Vector3.UP * 0.18 + _sx() * sin(_t) * 0.03, 0.045, 1.3, 0.0, 0.0, 1.0)
 	# ghost-mouth wisps: little white puffs out of the "oooh" mouth
 	if _wisps > 0.0:
 		_wisp_cd -= dt
@@ -1041,6 +1118,141 @@ func _step_ghost(dt: float) -> void:
 
 
 var _shelf_wobble := 0.0
+
+
+# ------------------------------------------------------------------ v6 parade ghost (user: "유령 흉내를 내면서 걸을 때
+# 갑자기 뒤에 몰래 유령이 생기는 거야 ... 애들은 유령이 있는지 모르고 막 즐겁게 놀다가 마지막에 ... 놀라는 거야. 그 다음부터
+# 유령은 막 히히 웃으면서 ... 마을을 엄청 날아다니고 ... 사라지는 거지")
+var _pg_on := false
+var _pg_t := 0.0
+var _pg_last_pos := Vector3.ZERO
+var _pg_dir := Vector3.FORWARD
+var _pg_ducked := false
+
+
+func _parade_ghost_start() -> void:
+	_pg_on = true
+	_pg_t = -3.0  # it appears a few seconds into the walk
+	var gh := _ghost_card()
+	gh.scale = Vector3.ONE * 0.02
+	_gpath = {}
+
+
+func _step_parade_ghost(dt: float) -> void:
+	if not _pg_on:
+		return
+	_pg_t += dt
+	var last := _a("fox")
+	if last == null or _pg_t < 0.0:
+		return
+	var gh := _ghost_card()
+	if _pg_t - dt < 0.0:  # quietly there, behind the last in line (no sting: a soft flutter only)
+		gh.global_position = last.global_position + Vector3.UP * 0.5
+		_gscale(0.8, 0.6)
+		_sfx("wc.flutter", gh.global_position)
+	var mv := last.global_position - _pg_last_pos
+	mv.y = 0.0
+	if mv.length() > 0.002:
+		_pg_dir = _pg_dir.lerp(mv.normalized(), 0.1).normalized()
+	_pg_last_pos = last.global_position
+	var phase := fmod(_pg_t, 14.0)
+	var tgt := last.global_position - _pg_dir * 0.22 + Vector3.UP * 0.13
+	var amp := 0.015
+	if phase > 3.0 and phase < 7.0:  # copying them: the ghost-play bob and sway
+		amp = 0.04
+		gh.rotation.z = sin(_t * 5.0) * 0.25
+	elif phase >= 7.0 and phase < 10.0:  # peeking out between the last two
+		var b := _a("bear")
+		if b:
+			tgt = last.global_position.lerp(b.global_position, 0.5) + _pg_dir.cross(Vector3.UP).normalized() * 0.09 + Vector3.UP * 0.16
+	elif phase >= 10.0 and phase < 11.2:  # the rabbit almost turns round: it ducks down out of sight
+		tgt = last.global_position - _pg_dir * 0.2 + Vector3.UP * 0.0
+		if not _pg_ducked:
+			_pg_ducked = true
+			var r := _a("rabbit")
+			if r:
+				r.puppet.set_figure(r.puppet.pose, not r.facing_left)
+				get_tree().create_timer(0.5).timeout.connect(func(): r.puppet.set_figure(r.puppet.pose, r.facing_left))
+	else:
+		_pg_ducked = false
+	tgt.y += sin(_t * 3.0) * amp
+	gh.global_position = gh.global_position.lerp(tgt, 1.0 - exp(-4.0 * dt))
+
+
+## The end of the walk: someone turns round, they all see it right behind them: sting, snap zoom, everyone jumps.
+func _parade_surprise(R: Node) -> void:
+	_pg_on = false
+	var gh := _ghost_card()
+	var fox := _a("fox")
+	gh.global_position = fox.global_position - _pg_dir * 0.16 + Vector3.UP * 0.14 if fox else gh.global_position
+	stage.shot_to("surprise", null, {"rate": 2.0})
+	stage._focus_goal = gh.global_position - Vector3.UP * 0.12
+	await R._wait(0.7)
+	for r in ["kid", "witch", "cat", "rabbit", "bear", "fox"]:
+		var a := _a(r)
+		if a:
+			a.face_point(gh.global_position)
+	await R._wait(0.35)
+	_sfx("wc.sting", gh.global_position)
+	stage.shot_to("surprise", null, {"rate": 7.0, "shake": 2.6})
+	for r in ["kid", "witch", "cat", "rabbit", "bear", "fox"]:
+		var a := _a(r)
+		if a:
+			a.set_pose("wow_black" if r == "kid" else "surprised_black")
+			a.hop_v = 1.2
+	await R._wait(1.3)
+	_sfx("wc.giggle_bells", gh.global_position)  # 히히 (a giggle sound; no new voice recorded)
+	_sfx("wc.peekaboo", gh.global_position)
+	gh.rotation.z = 0.3
+	await R._wait(0.9)
+
+
+## Then, while they stand startled, it flies all over the village: down the street, round the lamp posts and along the
+## strings of lights, over the roofs, past lit windows, a loop in front of the moon, back over the kids.
+func _ghost_flight(R: Node) -> void:
+	var gh := _ghost_card()
+	var up := Vector3.UP
+	var P := func(n: String, h: float) -> Vector3: return stage.spot_point(n) + up * h
+	var pts: Array = [gh.global_position + up * 0.2, P.call("road_mid", 0.35), P.call("lights_1", 0.4)]
+	for k in 5:  # round the lamp post on the left
+		var a := TAU * k / 4.0
+		pts.append(P.call("lamp_l", 0.38) + _right() * cos(a) * 0.14 + _toward() * sin(a) * 0.14)
+	for hn in ["house_0", "house_1", "house_2"]:  # past their lit windows, then up over the roofs
+		pts.append(P.call(hn, 0.3) + _right() * 0.3)
+	pts.append_array([P.call("house_3", 0.85), P.call("house_6", 0.85), P.call("lights_2", 0.42)])
+	for k in 5:  # round the lamp post on the right
+		var a2 := TAU * k / 4.0
+		pts.append(P.call("lamp_r", 0.38) + _right() * cos(a2) * 0.14 + _toward() * sin(a2) * 0.14)
+	var loop := stage.spot_point("fly_loop")
+	for k in 7:  # a loop in front of the moon
+		var a3 := TAU * k / 6.0
+		pts.append(loop + _right() * cos(a3) * 0.32 + up * (0.85 + sin(a3) * 0.22))
+	var kid := _a("kid")
+	pts.append((kid.global_position if kid else loop) + up * 0.45)
+	_gmove(pts, 13.0, 0.03)
+	_track = gh
+	stage.shot_to("track", null, {"rate": 2.2})
+	var t := 0.0
+	var next_whoosh := 0.0
+	var switched := false
+	while not _gpath.is_empty() and t < 16.0:
+		t += await R._frame()
+		if t >= next_whoosh:
+			next_whoosh = t + 1.3
+			_sfx("wc.swoosh", gh.global_position)
+		if not switched and float(_gpath.get("t", 0.0)) > 13.0 * 0.62:
+			switched = true
+			stage.shot_to("sky", null, {"rate": 1.6})
+		for r in ["kid", "witch", "rabbit", "bear", "fox"]:  # they watch it go
+			var a := _a(r)
+			if a and fmod(t, 0.6) < 0.04:
+				a.face_point(gh.global_position)
+	stage.shot_to("track", null, {"rate": 2.0})
+	await R._wait(0.6)
+	_track = null
+	for k in 8:  # sparkles as it vanishes (ghost_vanish: 뿅)
+		var a4 := TAU * k / 8.0
+		fly("story_wc_pot_19", gh.global_position, gh.global_position + _right() * cos(a4) * 0.15 + up * (0.1 + sin(a4) * 0.12), 0.035, 0.7, 0.05, 0.0, 6.0)
 
 
 # ------------------------------------------------------------------ transformation actions
@@ -1160,6 +1372,32 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			await _wait_glide(R, "kid")
 		_:
 			await R._say(act)
+
+
+## The witch names the ingredients; as each is named the camera pushes in on its jar on the shelf ({line, at:
+## [[sec, key]...], then: "kid_yuck" = cut straight to Dahyun's face at the end).
+func _name_jars(st: Dictionary, R: Node) -> void:
+	var line := str(st["line"])
+	var at: Array = st.get("at", [])
+	R._say(line)
+	var t0 := 0.0
+	var i := 0
+	var dur: float = R.line_duration(line)
+	while t0 < dur - 0.3:
+		if i < at.size() and t0 >= float(at[i][0]):
+			var key := str(at[i][1])
+			stage.shot_to("jar", "ing_" + key, {"rate": 5.0})
+			var n: Node3D = _ings.get(key)
+			if n:
+				var tw := create_tween()
+				tw.tween_property(n, "scale", Vector3.ONE * 1.18, 0.12)
+				tw.tween_property(n, "scale", Vector3.ONE, 0.25)
+			i += 1
+		t0 += await R._frame()
+	if str(st.get("then", "")) == "kid_yuck":
+		stage.shot_to("face_in", "in_kid", {"rate": 9.0})
+	while R._line_busy:
+		await R._frame()
 
 
 ## Out of the shop one at a time (v2, user: "문 아래 돌지방을 통과 ... 이런게 없어야"): the door swings fully open
@@ -1431,9 +1669,16 @@ func step(dt: float) -> void:
 	# the pot: the swirl bands spin
 	for i in _swirls.size():
 		var sw := _swirls[i] as Node3D
-		sw.rotation.y += _swirl_speed * dt * (1.0 if i % 2 == 0 else 1.15)
+		sw.rotation.z += _swirl_speed * dt * (1.0 if i % 2 == 0 else 1.15)
+	if _liquid and _liquid.visible and randf() < dt * (2.0 + _swirl_speed * 1.5):
+		_bubble()
+	if _liquid and _liquid.visible and _eerie <= 0.6 and fmod(_t, 0.8) < dt:  # gentle steam off the boiling top
+		var po := _pot_open()
+		var s0: Vector3 = po[0] + (po[1] as Vector3) * randf_range(-0.4, 0.4) * float(po[3]) + Vector3.UP * float(po[4]) * 0.6
+		fly("story_wc_pot_16", s0, s0 + Vector3.UP * 0.12, 0.03, 1.2, 0.0, 0.0, 0.6)
 	_step_glides(dt)
 	_step_ghost(dt)
+	_step_parade_ghost(dt)
 	# the little ghost floats behind the last marcher
 	if _ghost and _ghost_follow != "":
 		var f2 := _a(_ghost_follow)

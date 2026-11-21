@@ -212,6 +212,55 @@
    0.24,
    42.0,
    -45.0
+  ],
+  "jar": [
+   0.3,
+   6.0,
+   0.02,
+   36.0,
+   -45.0
+  ],
+  "pick1": [
+   0.78,
+   8.0,
+   0.02,
+   34.0,
+   -45.0
+  ],
+  "pick2": [
+   0.8,
+   12.0,
+   0.02,
+   34.0,
+   -25.0
+  ],
+  "pick3": [
+   0.76,
+   2.0,
+   0.06,
+   36.0,
+   -57.0
+  ],
+  "parade_side": [
+   2.6,
+   32.0,
+   0.22,
+   26.0,
+   -25.0
+  ],
+  "parade_back": [
+   2.4,
+   40.0,
+   0.22,
+   28.0,
+   30.0
+  ],
+  "surprise": [
+   1.4,
+   30.0,
+   0.25,
+   30.0,
+   0.0
   ]
  },
  "ui": {
@@ -324,6 +373,7 @@
  },
  "spacing": true,
  "overlap_check": true,
+ "pop_in": false,
  "overlap_ok": [
   [
    "kid",
@@ -5049,6 +5099,55 @@
      "do": "fx",
      "fx": "shelf_pop",
      "wait": 2.6
+    },
+    {
+     "do": "pose",
+     "who": "witch",
+     "pose": "welcome",
+     "wait": 0.0
+    },
+    {
+     "do": "name_jars",
+     "line": "wc_009",
+     "at": [
+      [
+       2.3,
+       "snot"
+      ],
+      [
+       3.85,
+       "firetruck"
+      ],
+      [
+       5.15,
+       "lantern"
+      ],
+      [
+       6.4,
+       "chickfart"
+      ]
+     ]
+    },
+    {
+     "do": "name_jars",
+     "line": "wc_010",
+     "at": [
+      [
+       0.3,
+       "poo"
+      ],
+      [
+       1.95,
+       "fish"
+      ]
+     ],
+     "then": "kid_yuck"
+    },
+    {
+     "do": "pose",
+     "who": "kid",
+     "pose": "yuck",
+     "wait": 0.0
     },
     {
      "do": "say",
@@ -9855,11 +9954,6 @@
      "pose": "welcome"
     },
     {
-     "do": "fx",
-     "fx": "ghost_glimpse_1",
-     "wait": 0.1
-    },
-    {
      "do": "cam",
      "shot": "room",
      "at": "in_focus",
@@ -9880,11 +9974,6 @@
      "shot": "two_shot",
      "at": "in_pot",
      "rate": 1.6,
-     "wait": 0.1
-    },
-    {
-     "do": "fx",
-     "fx": "ghost_glimpse_2",
      "wait": 0.1
     },
     {
@@ -9993,11 +10082,6 @@
      "pose": "ghost"
     },
     {
-     "do": "fx",
-     "fx": "ghost_glimpse_4",
-     "wait": 0.1
-    },
-    {
      "do": "say",
      "line": "wc_133"
     },
@@ -10037,15 +10121,6 @@
     {
      "do": "say",
      "line": "wc_134"
-    },
-    {
-     "do": "ghost_surprise"
-    },
-    {
-     "do": "ghost_roam"
-    },
-    {
-     "do": "ghost_peekaboo"
     }
    ],
    "sound": {
@@ -11531,6 +11606,11 @@
      "spacing": 0.15
     },
     {
+     "do": "fx",
+     "fx": "ghost_sneak",
+     "wait": 0.0
+    },
+    {
      "do": "walk",
      "who": [
       "kid",
@@ -11549,14 +11629,9 @@
      "file": true,
      "spacing": 0.17,
      "speed": 0.46,
-     "follow": "kid",
-     "shot": "high",
+     "follow": "fox",
+     "shot": "parade_side",
      "line": "wc_135"
-    },
-    {
-     "do": "fx",
-     "fx": "ghost_tagalong",
-     "wait": 0.1
     },
     {
      "do": "walk",
@@ -11580,20 +11655,19 @@
      "spacing": 0.17,
      "speed": 0.46,
      "follow": "fox",
-     "shot": "street",
+     "shot": "parade_back",
      "line": "wc_x_ghost_all"
     },
     {
-     "do": "cam",
-     "shot": "sky_wide",
-     "at": "moon_loop",
-     "rate": 1.0,
-     "wait": 1.0
+     "do": "parade_surprise"
+    },
+    {
+     "do": "ghost_flight"
     },
     {
      "do": "fx",
      "fx": "ghost_vanish",
-     "wait": 0.8
+     "wait": 1.0
     },
     {
      "do": "cam",
@@ -13482,9 +13556,9 @@
    "speaker": "witch",
    "text": "\"핼러윈 사탕 재료야! 빨간 건 아기 용 콧물이랑 소방차, 노란 건 호박 등이랑 병아리 방귀!\"",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "shelf",
+   "interaction": "name_jars",
+   "used": true,
    "segs": [
     {
      "speaker": "witch",
@@ -13502,24 +13576,26 @@
   {
    "id": "wc_010",
    "speaker": "witch",
-   "text": "\"파란 건 괴물 응가랑 파란 생선, 초록은 개구리랑 공룡!\"",
+   "text": "파란 건 괴물 응가랑 파란 생선,",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "shelf",
+   "interaction": "name_jars",
+   "used": true,
    "segs": [
     {
      "speaker": "witch",
-     "text": "파란 건 괴물 응가랑 파란 생선, 초록은 개구리랑 공룡!",
+     "text": "파란 건 괴물 응가랑 파란 생선,",
      "emotion": "happy",
      "tags": "[kind quirky witch, proud, showing off, giggly]",
-     "audio": "res://audio/voice/witch_candy/witch_7c64b77bc3.mp3",
+     "audio": "res://audio/voice/witch_candy/witch_7c64b77bc3_t.mp3",
      "source_audio": "audio/el/witch_candy/witch_7c64b77bc3.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "trimmed_from": "audio/el/witch_candy/witch_7c64b77bc3.mp3 (0-2.95 s)"
     }
    ],
    "source_index": 10,
-   "source_text": "파란 건 괴물 응가랑 파란 생선, 초록은 개구리랑 공룡!"
+   "source_text": "파란 건 괴물 응가랑 파란 생선, 초록은 개구리랑 공룡!",
+   "trimmed_clip": true
   },
   {
    "id": "wc_011",

@@ -48,7 +48,7 @@ def expected(script, plans=None):
             elif do == "brew":
                 for lid in (plans.pop(0) if plans else []):
                     add(lid)
-            elif do in ("say", "walk", "walk_to", "walk_away", "climb", "go_inside", "flash"):
+            elif do in ("say", "walk", "walk_to", "walk_away", "climb", "go_inside", "flash", "name_jars"):
                 add(st.get("line"), segs)
             elif do in ("tap", "tap_each", "build", "huff", "tap_steps", "blow", "shine", "gentle"):
                 add(st.get("prompt"))
