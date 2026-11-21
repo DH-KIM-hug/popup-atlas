@@ -28,6 +28,13 @@ Two rules guard against this:
 - From 톡톡 동화극장 (`~/projects/2026/patjuk-game`, READ-ONLY) only the **script** carries over, and even it is a draft to adapt to pop-up scenes. Characters, backgrounds and props are made new for the pop-up look; 톡톡 art is a design reference at most.
 - **Reuse first**: shared card library `game/art/atlas/catalog.json` (419 cards, tags category/biome/season), shared cast `game/art/cast/catalog.json`, world template `scenes/world/meadow.tscn`. New generic art (a wolf, a pig, a straw house) goes into the shared libraries with tags so later tales reuse it; only truly tale-unique art goes in `game/stories/<tale_id>/art/`.
 - The look is fixed (user chose the photographed-miniature look: low lens, shallow DOF, raking warm light, felt ground). Don't re-tune the template look per tale; dress it.
+- Before building a new set, read `references/papercraft_notes.md`. It is adapted from xikhar/papercraft and covers:
+  - a paper spec per set and one test card first;
+  - card rise and fold timings;
+  - rigid pieces never sway;
+  - open walkable steps and a walk field;
+  - house bodies that read from the side;
+  - no stamped repeats and a contact shadow under every piece.
 
 ## The book tells the tale (user, 2026-11-18: "팝업북은 어떤 교육적인 요소보다는 그냥 동화의 전달에 좀 의미를 뒀으면")
 - No quizzes, no counting drills, no spoken or printed morals. Cut source lines that count ("열 장", "여덟 번",
