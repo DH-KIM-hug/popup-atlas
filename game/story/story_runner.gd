@@ -276,6 +276,12 @@ func line_duration(id: String) -> float:
 	return t + 0.35
 
 
+var _voiced := {}
+var _last_voice := ""
+var voice_dup := 0
+var _hint_ids := {}  ## lines that are idle hints (they may legitimately replay)
+
+
 func _say(id: String, only: Array = []) -> void:
 	if id == "" or not lines.has(id):
 		if id != "":
@@ -296,6 +302,17 @@ func _say(id: String, only: Array = []) -> void:
 		_apply_expr(l, i)
 		var st := _stream(str(s.get("audio", "")))
 		if st and not mute:
+			# one caption, one voice (witch_candy v8): count a segment voiced twice in the run and a voice that starts
+			# while another is still sounding (it would be cut or doubled)
+			var key := "%s:%d" % [id, i]
+			if _voiced.has(key) and not _hint_ids.has(id):
+				voice_dup += 1
+				print("VOICE_DUP ", key, " t=", snappedf(clock, 0.01))
+			_voiced[key] = true
+			if player.playing and player.get_playback_position() < player.stream.get_length() - 0.15:
+				voice_dup += 1
+				print("VOICE_OVERLAP ", key, " over ", _last_voice, " t=", snappedf(clock, 0.01))
+			_last_voice = key
 			player.stream = st
 			player.play()
 		if sound:
@@ -344,6 +361,7 @@ func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer 
 			auto_i += 1
 		elif idle > hint_after and hint != "":
 			idle = 0.0
+			_hint_ids[hint] = true  # an idle replay of the prompt: allowed (a reminder, not a doubled clip)
 			await _say(hint)
 	var hit := _tapped
 	_tapped = ""
@@ -389,6 +407,7 @@ func _run() -> void:
 			if used:
 				var miss := int(stage.handler.get("black_missing")) if stage.handler and "black_missing" in stage.handler else 0
 				print("BLACK_LIPS frames-with-wrong-variant=", wrong + miss, " (puppet ", wrong, ", story-expected ", miss, ")")
+		print("VOICE_DUP=", voice_dup)
 		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio,
 			" missing_sound=", sound.missing if sound else [], " beats=", beat_times)
 		story_finished.emit(total)

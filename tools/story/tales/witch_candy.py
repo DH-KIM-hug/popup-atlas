@@ -44,6 +44,10 @@ TRIM = {
     # tail "초록은 개구리랑 공룡!" names things not on this shelf): witch_7c64b77bc3.mp3 0-2.95 s, 0.15 s fade-out
     "wc_010": ("파란 건 괴물 응가랑 파란 생선,", "res://audio/voice/witch_candy/witch_7c64b77bc3_t.mp3",
                "audio/el/witch_candy/witch_7c64b77bc3.mp3 (0-2.95 s)"),
+    # v8 (user: "말풍선에는 하나만 써있는데 두번 말하는 경우가 있어"): the witch's "어디 가!" clip says it, then again (two speech
+    # blocks: 3 syllable nuclei, then 2 more): kept the first take, witch_ed8be17d8d.mp3 0-1.28 s, 0.12 s fade-out
+    "wc_117": ("어디 가!", "res://audio/voice/witch_candy/witch_ed8be17d8d_t.mp3",
+               "audio/el/witch_candy/witch_ed8be17d8d.mp3 (0-1.28 s: first take only)"),
     "wc_x_ghost_all": ("오~~우~~", "res://audio/voice/witch_candy/ch_48ac9f3898.mp3",
                        "audio/el/witch_candy/chorus/ch_48ac9f3898.mp3 (톡톡 premixed chorus)", "all"),
     "wc_x_happy_all": ("해피 핼러윈! 오~우~!", "res://audio/voice/witch_candy/ch_672e05d93c.mp3",
@@ -151,7 +155,7 @@ HANDLER = "res://stories/witch_candy/fx.gd"   # phase 2
 BACKDROP = True
 INSIDE_FRAMING = "manual"
 # v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아"): stage spacing solver + OVERLAP / OCCLUDE log; intentional contacts listed
-EXTRA = {"spacing": True, "overlap_check": True, "pop_in": False, "no_repeats": True,
+EXTRA = {"spacing": True, "overlap_check": True, "pop_in": False,
          "overlap_ok": [["kid", "logs"], ["witch", "pot"], ["kid", "room_floor"], ["kid", "room_floor2"]]}  # the stage does not reframe taps while the camera is inside the shop (rooms are framed here)
 # Shots [distance, elevation°, focus height, fov, yaw offset°] (three_pigs vocabulary + interior shots)
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
@@ -470,8 +474,7 @@ BEATS = [
         {"do": "fx", "fx": "pot_clear", "wait": 0.2},
         {"do": "say", "line": "wc_125"},
         # round 2: ring hint only (voiced once in round 1), no offer, "냠…" eat line, back with a 뿅 only
-        # v7 (user: "반복해서 말하는 대사는 없애줘"): no second stir line (round 1 said it); the stir plays with sound
-        {"do": "brew", "round": 2, **ROUND["pick"]},
+        {"do": "brew", "round": 2, **ROUND["pick"], "stir": "wc_045"},
     ]},
     {"id": "ghost_candy", "title": "유령 사탕", "spread": _street(), "enter": KEEP,
      # v3 (user: "유령을 좀 더 극적으로", then "유령이 처음엔 나온지 몰라야지 나중에 놀라는거"): the little ghost sneaks in
@@ -487,7 +490,7 @@ BEATS = [
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.1},
         {"do": "say", "line": "wc_127"},
         {"do": "brew", "round": 3, "all_colors": True, "ingredients": INGREDIENTS, "taps": ["snot", "lantern", "fish"],
-         "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "pop": "wc_131",
+         "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "stir": "wc_130", "pop": "wc_131",
          "eat": "wc_132", "ghost": "wc_x_ghost_kid"},
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 0.1},
         {"do": "fx", "fx": "black_mouth:witch", "wait": 0.0},
@@ -511,7 +514,7 @@ BEATS = [
         {"do": "walk", "who": ALL, "pose": "ghost", "path": ["road_shop", "parade_l", "parade_a"], "file": True,
          "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_side", "line": "wc_135"},
         {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_u1", "parade_u3", "parade_u2", "parade_r", "road_shop"],
-         "file": True, "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_back"},  # (chorus 오~우~ dropped: a repeat)
+         "file": True, "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_back", "line": "wc_x_ghost_all"},
         {"do": "parade_surprise"},
         {"do": "ghost_flight"},
         {"do": "fx", "fx": "ghost_vanish", "wait": 1.0},

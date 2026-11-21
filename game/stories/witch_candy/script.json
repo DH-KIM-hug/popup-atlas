@@ -374,7 +374,6 @@
  "spacing": true,
  "overlap_check": true,
  "pop_in": false,
- "no_repeats": true,
  "overlap_ok": [
   [
    "kid",
@@ -8490,7 +8489,8 @@
       }
      },
      "and_in": true,
-     "autoplay": "random_new_result"
+     "autoplay": "random_new_result",
+     "stir": "wc_045"
     }
    ],
    "sound": {
@@ -10072,6 +10072,7 @@
      "result": "ghost",
      "candy": "story_wc_candies_06",
      "pot_color": "black",
+     "stir": "wc_130",
      "pop": "wc_131",
      "eat": "wc_132",
      "ghost": "wc_x_ghost_kid"
@@ -11667,7 +11668,8 @@
      "spacing": 0.17,
      "speed": 0.46,
      "follow": "fox",
-     "shot": "parade_back"
+     "shot": "parade_back",
+     "line": "wc_x_ghost_all"
     },
     {
      "do": "parade_surprise"
@@ -14383,9 +14385,9 @@
    "speaker": "witch",
    "text": "\"다 넣었지? 그럼 저어 보자!\"",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "round2",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "witch",
@@ -15980,7 +15982,7 @@
   {
    "id": "wc_117",
    "speaker": "witch",
-   "text": "\"어디 가!\"",
+   "text": "어디 가!",
    "status": "reuse",
    "beat": "round1",
    "interaction": "brew",
@@ -15991,16 +15993,18 @@
      "text": "어디 가!",
      "emotion": "toneup",
      "tags": "[kind quirky witch, calling after her, comic, not angry]",
-     "audio": "res://audio/voice/witch_candy/witch_ed8be17d8d.mp3",
+     "audio": "res://audio/voice/witch_candy/witch_ed8be17d8d_t.mp3",
      "source_audio": "audio/el/witch_candy/witch_ed8be17d8d.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "trimmed_from": "audio/el/witch_candy/witch_ed8be17d8d.mp3 (0-1.28 s: first take only)"
     }
    ],
    "source_index": 117,
    "source_text": "어디 가!",
    "expr": {
     "witch": "surprised"
-   }
+   },
+   "trimmed_clip": true
   },
   {
    "id": "wc_118",
@@ -16283,9 +16287,9 @@
    "speaker": "witch",
    "text": "\"뽀글뽀글… 펑!\"",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "ghost_candy",
+   "interaction": "brew",
+   "used": true,
    "segs": [
     {
      "speaker": "witch",
@@ -17024,9 +17028,9 @@
    "speaker": "all",
    "text": "오~~우~~",
    "status": "reuse",
-   "beat": "",
-   "interaction": "",
-   "used": false,
+   "beat": "parade",
+   "interaction": "walk",
+   "used": true,
    "segs": [
     {
      "speaker": "all",

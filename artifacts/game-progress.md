@@ -1671,3 +1671,25 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     TEXT when a tale sets `no_repeats` (witch_candy; three_pigs' refrain is its story).
   - Runs: witch_candy 424.8 s, CHECK_LINES OK (56, no repeats), BLACK_LIPS 0, missing_audio=[]; three_pigs 295.7 s,
     sun_wind 206.1 s, both CHECK_LINES OK. Videos witch_candy_pot_v7.mp4, witch_candy_full_v7.mp4.
+
+## 2026-11-21 — witch_candy v8: one caption, one voice (doubled clip trimmed), v7 line cuts restored
+  - User: "반복대사 그런게 아니라... 말풍선에는 하나만 써있는데 두번 말하는 경우가 있어". The v7 removals are undone (round-2
+    "다 넣었지? 그럼 저어 보자!", the ghost round's "뽀글뽀글… 펑!", the parade chorus "오~~우~~"); the repeat-text check is
+    off for witch_candy (opt-in only), and the checklist item now describes the real issue.
+  - Audit (no local STT works here: whisper not installed, the macOS on-device recogniser aborts without an app
+    permission): tools/story/audit_clips.py on every used clip of all three tales — speech rate vs the caption's
+    syllables, self-similarity at a lag, similarity between speech blocks, syllable nuclei per block. Table
+    artifacts/witch_candy/clip_audit_v8.txt.
+    * wc_117 "어디 가!" (witch_ed8be17d8d.mp3): said, then again — two speech blocks (3 syllable nuclei, then 2 more).
+      Trimmed to the first take (0-1.28 s, fade), TRIM in the tale table. No recording.
+    * Looked doubled but are not: wc_x_ghost_kid "오~~우~~" (two long blocks = 오~ / 우~, nuclei match the caption),
+      "냐옹!" (냐 / 옹), wc_105 / wc_097 (phrases), the premixed chorus (three voices offset).
+    * sun_wind sw_028 "아, 따뜻하다~" (man_1826f5e666.mp3): five speech blocks where three are expected — possibly a sigh
+      or a second take; NOT trimmed (a delivered tale), listed for listening. sw_019 "으으, 추워!" many nuclei = the
+      chattering "으으". three_pigs: nothing found beyond the already trimmed wolf "그럼".
+    * wc_n01-n04 (new recordings): rate and blocks normal.
+  - Engine: StoryRunner logs VOICE_DUP (a segment voiced twice in a run, idle-hint replays excepted) and VOICE_OVERLAP
+    (a voice starting while another still sounds), total VOICE_DUP=<n> before STORY_DONE. The v6 / v7 logs had no
+    doubled segment; v8 VOICE_DUP=0 in all three tales.
+  - Runs: witch_candy 427.3 s, CHECK_LINES OK (59), BLACK_LIPS 0, OVERLAP 6; three_pigs 296.4 s, sun_wind 206.1 s,
+    CHECK_LINES OK. Video artifacts/video/witch_candy_full_v8.mp4.
