@@ -212,3 +212,10 @@ User on the prototype: "마을을 더 많이 각자 할로윈 장식" → a real
   the ghost sneaking in through glimpses nobody notices, the surprise, the roam over the roofs, 까꿍), the black-lips
   close-up with mouth wisps, dramatic exits (door burst, light spill, hero shot), a stage spacing solver and an
   OVERLAP / OCCLUDE log.
+
+## v6 (2026-11-21)
+- The little ghost lives in the parade now (user): it joins the back of the line unnoticed while they play ghost,
+  the surprise comes at the end of the walk, then it giggles, flies all over the village and vanishes; the ghost
+  candy round in the room is only the candy, the black mouths and "오~우~".
+- The witch names the ingredients while the camera shows each jar; Dahyun's yuck follows at once. Picks are framed
+  on the shelf (a different angle per round). The street stands when the page opens (`pop_in: false`).
