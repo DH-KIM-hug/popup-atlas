@@ -72,7 +72,23 @@ def build_warped(sheet):
     os.makedirs(f"{tmp}/f"); os.makedirs(f"{tmp}/p")
     shutil.copy2(felt, f"{tmp}/f/{sheet}.png")
     shutil.copy2(paper, f"{tmp}/p/{sheet}.png")
-    fp = slice_pieces(f"{tmp}/f/{sheet}.png", f"{tmp}/f")
+    cache = f"artifacts/paper/warp_cache/{RAW.split('/')[1]}_{sheet}.webp"  # git-ignored
+    if os.path.exists(cache) and os.path.getmtime(cache) > os.path.getmtime(paper):
+        shutil.rmtree(tmp, ignore_errors=True)
+        return (np.asarray(Image.open(felt).convert("RGB")), np.asarray(Image.open(cache).convert("RGBA")),
+                ["  (cached warp)"])
+    fp = None
+    for d in ("art_src/cast/slices", "art_src/cast/sliced"):  # the felt slicing the cast tools already made
+        mp = f"{d}/{sheet}/_slices.json"
+        if RAW.endswith("cast/raw") and os.path.exists(mp):
+            fp = []
+            for m in json.load(open(mp))["sprites"]:
+                q = f"{d}/{sheet}/{m['id']}.webp"
+                if os.path.exists(q):
+                    fp.append((Image.open(q).convert("RGBA"), (m["bbox"][0] - 4, m["bbox"][1] - 4)))
+            break
+    if not fp:
+        fp = slice_pieces(f"{tmp}/f/{sheet}.png", f"{tmp}/f")
     pp = slice_pieces(f"{tmp}/p/{sheet}.png", f"{tmp}/p")
     FW, FH = Image.open(felt).size
     PW, PH = Image.open(paper).size
@@ -114,6 +130,8 @@ def build_warped(sheet):
     for j in lost:
         report.append(f"  {sheet}: paper piece {j} unused")
     shutil.rmtree(tmp, ignore_errors=True)
+    os.makedirs(os.path.dirname(cache), exist_ok=True)
+    canvas.save(cache, "WEBP", lossless=True, quality=100, method=4)
     return np.asarray(Image.open(felt).convert("RGB")), np.asarray(canvas), report
 
 
@@ -183,17 +201,34 @@ def reskin_image(path, sheets_data, order):
     Fc = frgb[y:y + h, x:x + w].astype(int)
     Wc = warped[y:y + h, x:x + w].astype(np.float32)
     da = Dd[..., 3]
-    diff = np.abs(Fc - Dd[..., :3].astype(int)).max(-1)
     inner = np.asarray(Image.fromarray(((da > 250) * 255).astype(np.uint8)).filter(ImageFilter.MinFilter(5))) > 0
+    # a tool may have recoloured the crop (front_legs.py colour-matches leg cards to the body): fit D = a * felt + b per
+    # channel on the interior and give the paper the same recolour
+    gain = np.ones(3, np.float32)
+    off = np.zeros(3, np.float32)
+    if err > 3 and inner.sum() > 200:
+        d0 = np.abs(Fc - Dd[..., :3].astype(int)).max(-1)
+        ok = inner & (d0 < 90)
+        for c in range(3):
+            fx = Fc[..., c][ok].astype(np.float32)
+            dy = Dd[..., c][ok].astype(np.float32)
+            if fx.std() > 4:
+                a_ = float(np.clip(np.cov(fx, dy)[0, 1] / fx.var(), 0.6, 1.6))
+                gain[c], off[c] = a_, float(dy.mean() - a_ * fx.mean())
+            else:
+                off[c] = float(dy.mean() - fx.mean())
+    Fcc = Fc * gain + off
+    diff = np.abs(Fcc - Dd[..., :3].astype(np.float32)).max(-1)
     edited = inner & (diff > 70)
     # whole figure (its felt piece fills the canvas) or a part?
     fa = bg_alpha(frgb[y:y + h, x:x + w])
     part = (da > 128).sum() < 0.85 * fa.sum() and "--whole" not in sys.argv
     if part:
         region = np.asarray(Image.fromarray(((da > 8) * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(9))) / 255.0
-    else:
-        region = np.ones(da.shape, np.float32)
+    else:  # a whole figure takes the paper silhouette near it (not a neighbour's sliver in a padded cycle canvas)
+        region = np.asarray(Image.fromarray(((da > 8) * 255).astype(np.uint8)).filter(ImageFilter.MaxFilter(31))) / 255.0
     out = Wc.copy()
+    out[..., :3] = Wc[..., :3] * gain + off
     out[..., 3] = Wc[..., 3] * region
     out[edited] = Dd[edited].astype(np.float32)
     out = np.clip(out, 0, 255).astype(np.uint8)
@@ -280,6 +315,20 @@ def main():
                         strip_rim(Image.open(path).convert("RGBA"))[0].save(dst, "WEBP", lossless=True)
                 json.dump({"source": "paper (tools/cast/paper_reskin.py atlas)"},
                           open(f"art_src/atlas/qa/{sheet}_paper_reskin.json", "w"))
+        return
+    if sys.argv[1] == "files":
+        # paper_reskin.py files <tale> <src dir> <out dir>: re-skin loose felt crops (e.g. the ghost figures' mouth
+        # originals in art_src/cast/black_mouth_orig) into <out dir> under the same names
+        tale, src_dir, out_dir = sys.argv[2], sys.argv[3], sys.argv[4]
+        sheets = [s for s in paper_jobs.CAST_SHEETS[tale] if os.path.exists(f"{RAW}/{s}_paper.png")]
+        os.makedirs(out_dir, exist_ok=True)
+        files = []
+        for f in sorted(os.listdir(src_dir)):
+            if f.endswith((".webp", ".png")):
+                dst = os.path.join(out_dir, f)
+                shutil.copy2(os.path.join(src_dir, f), dst)
+                files.append((dst, sheets[0]))
+        run(tale + "_files", sheets, files, dry, BACK, f"art_src/cast/qa/{tale}_files_paper_reskin.png")
         return
     tale = sys.argv[1]
     sheets = [s for s in paper_jobs.CAST_SHEETS[tale] if os.path.exists(f"{RAW}/{s}_paper.png")]

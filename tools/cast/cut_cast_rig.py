@@ -137,7 +137,10 @@ def cut(fid):
     for side, (xa, xb) in (("leg_l", (0, split)), ("leg_r", (split, w))):
         m = np.zeros_like(op)
         m[:, xa:xb] = below[:, xa:xb]
+        m0 = m.copy()
         m = comp_touching_bottom(m)
+        if not m.any():  # paper redraw (2026-11-22): one foot may stand a few px above the card's bottom row
+            m = comp_touching_bottom(m0, rows=max(6, int(0.05 * h)))
         if fid in COLUMN_TRIM:
             # 2026-11-18 (wolf: his tail hangs beside his leg and joined the leg component): keep, per row, only the
             # pixels inside the leg's own column, measured on the shin/foot rows (front and back views stand straight)

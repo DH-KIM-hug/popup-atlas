@@ -17,12 +17,14 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".."))
-ORIG = os.path.join(ROOT, "art_src", "cast", "black_mouth_orig")
+ORIG = os.environ.get("WC_MOUTH_ORIG") or os.path.join(ROOT, "art_src", "cast", "black_mouth_orig")  # paper: _paper dir
 OUT = os.path.join(ROOT, "game", "art", "cast")
 SKINS = ["dahyun", "candy_witch", "hobak_cat", "rabbit_kid", "bear_kid", "fox_kid"]
 # frames the detector misses: (cx, cy, rx, ry) as card fractions, the old mouth's oval
 MANUAL = {"cast_candy_witch_ghost_cycle_0.webp": (0.683, 0.353, 0.06, 0.035),
           "cast_bear_kid_ghost_cycle_1.webp": (0.755, 0.37, 0.06, 0.04),
+          # paper redraw (2026-11-22): the detector took the nose of this frame
+          "cast_bear_kid_ghost_cycle_3.webp": (0.718, 0.354, 0.055, 0.036),
           # the cat's small brown "o" (measured: dark components of the originals)
           "cast_hobak_cat_ghost_front_0.webp": (0.499, 0.327, 0.042, 0.032),
           "cast_hobak_cat_ghost_front_1.webp": (0.499, 0.327, 0.042, 0.032),

@@ -1,8 +1,8 @@
 {
  "sheet": "cast_traveller_walk_armless",
  "bg": [
-  0.988,
-  0.012,
+  0.976,
+  0.027,
   0.98
  ],
  "dropped": 0,
@@ -10,15 +10,15 @@
   {
    "id": "cast_traveller_walk_armless_00",
    "bbox": [
-    133,
-    84,
+    132,
+    82,
     461,
-    926
+    925
    ],
-   "area": 180606,
+   "area": 180710,
    "size": [
-    336,
-    850
+    337,
+    851
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_traveller_walk_armless_01",
    "bbox": [
-    623,
-    108,
+    624,
+    107,
     952,
     925
    ],
-   "area": 173121,
+   "area": 173265,
    "size": [
-    337,
-    825
+    336,
+    826
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "cast_traveller_walk_armless_02",
    "bbox": [
-    1108,
-    88,
-    1434,
+    1109,
+    86,
+    1435,
     925
    ],
-   "area": 161768,
+   "area": 162728,
    "size": [
     334,
-    845
+    847
    ],
    "halo": 0,
    "touches_border": false,

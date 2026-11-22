@@ -1,8 +1,8 @@
 {
  "sheet": "cast_traveller_legs_front",
  "bg": [
-  0.98,
-  0.02,
+  0.976,
+  0.031,
   0.98
  ],
  "dropped": 0,
@@ -10,15 +10,15 @@
   {
    "id": "cast_traveller_legs_front_00",
    "bbox": [
-    241,
-    50,
-    412,
-    678
+    239,
+    48,
+    411,
+    679
    ],
-   "area": 99286,
+   "area": 100542,
    "size": [
-    179,
-    636
+    180,
+    639
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_traveller_legs_front_01",
    "bbox": [
-    749,
-    50,
+    747,
+    48,
     924,
-    677
+    679
    ],
-   "area": 100830,
+   "area": 102031,
    "size": [
-    183,
-    635
+    185,
+    639
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "cast_traveller_legs_front_02",
    "bbox": [
-    1247,
-    50,
-    1424,
-    678
+    1246,
+    48,
+    1425,
+    679
    ],
-   "area": 101573,
+   "area": 102568,
    "size": [
-    185,
-    636
+    187,
+    639
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "cast_traveller_legs_front_03",
    "bbox": [
-    1754,
-    50,
-    1934,
+    1755,
+    48,
+    1935,
     678
    ],
-   "area": 100755,
+   "area": 101808,
    "size": [
     188,
-    636
+    638
    ],
    "halo": 0,
    "touches_border": false,

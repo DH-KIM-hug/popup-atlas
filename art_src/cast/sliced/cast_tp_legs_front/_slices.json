@@ -1,8 +1,8 @@
 {
  "sheet": "cast_tp_legs_front",
  "bg": [
-  0.976,
-  0.016,
+  0.973,
+  0.043,
   0.976
  ],
  "dropped": 0,
@@ -11,14 +11,14 @@
    "id": "cast_tp_legs_front_00",
    "bbox": [
     74,
-    196,
+    195,
     246,
-    624
+    622
    ],
-   "area": 57984,
+   "area": 57820,
    "size": [
     180,
-    436
+    435
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_tp_legs_front_01",
    "bbox": [
-    316,
-    196,
-    487,
-    624
+    315,
+    195,
+    488,
+    622
    ],
-   "area": 58165,
+   "area": 57982,
    "size": [
-    179,
-    436
+    181,
+    435
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,12 +44,12 @@
   {
    "id": "cast_tp_legs_front_02",
    "bbox": [
-    586,
-    196,
-    784,
-    624
+    585,
+    195,
+    783,
+    623
    ],
-   "area": 64106,
+   "area": 63828,
    "size": [
     206,
     436
@@ -61,46 +61,12 @@
   {
    "id": "cast_tp_legs_front_03",
    "bbox": [
-    836,
-    196,
+    835,
+    195,
     1033,
-    624
+    623
    ],
-   "area": 64212,
-   "size": [
-    205,
-    436
-   ],
-   "halo": 0,
-   "touches_border": false,
-   "parts": 1
-  },
-  {
-   "id": "cast_tp_legs_front_04",
-   "bbox": [
-    1123,
-    196,
-    1320,
-    624
-   ],
-   "area": 64120,
-   "size": [
-    205,
-    436
-   ],
-   "halo": 0,
-   "touches_border": false,
-   "parts": 1
-  },
-  {
-   "id": "cast_tp_legs_front_05",
-   "bbox": [
-    1370,
-    196,
-    1568,
-    624
-   ],
-   "area": 64185,
+   "area": 63874,
    "size": [
     206,
     436
@@ -110,17 +76,51 @@
    "parts": 1
   },
   {
+   "id": "cast_tp_legs_front_04",
+   "bbox": [
+    1122,
+    196,
+    1320,
+    623
+   ],
+   "area": 63950,
+   "size": [
+    206,
+    435
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tp_legs_front_05",
+   "bbox": [
+    1369,
+    196,
+    1567,
+    623
+   ],
+   "area": 64175,
+   "size": [
+    206,
+    435
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
    "id": "cast_tp_legs_front_06",
    "bbox": [
-    1656,
-    73,
+    1655,
+    72,
     1828,
-    630
+    628
    ],
-   "area": 75384,
+   "area": 75567,
    "size": [
-    180,
-    565
+    181,
+    564
    ],
    "halo": 0,
    "touches_border": false,
@@ -129,14 +129,14 @@
   {
    "id": "cast_tp_legs_front_07",
    "bbox": [
-    1913,
-    73,
+    1912,
+    72,
     2087,
-    630
+    629
    ],
-   "area": 75545,
+   "area": 75695,
    "size": [
-    182,
+    183,
     565
    ],
    "halo": 0,
