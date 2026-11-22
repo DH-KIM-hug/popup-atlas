@@ -1942,3 +1942,11 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Videos: artifacts/video/three_pigs_full_v21.mp4, sun_wind_full_v4.mp4, witch_candy_full_v10.mp4 (<30 MB);
     sheets artifacts/three_pigs/full_v21_sheet.jpg, artifacts/sun_wind/full_v4_sheet.jpg,
     artifacts/witch_candy/full_v10_sheet.jpg; part A test card artifacts/paper/paper_test_card_A.jpg.
+
+## 2026-11-22 — sunmoon v9: fresh full run on the current main (smooth camera, pop-up tied to the page)
+  - artifacts/sunmoon/sunmoon_full_v9.mp4 (26.0 MB), full_v9_sheet.jpg, run_full_v9.log: STORY_DONE 401.9 s (6:42),
+    CHECK_LINES OK (67, sm_n02 at the end), VOICE_DUP=0, CAM_JUMP=0 CAM_JERK=0, missing_audio=[], missing_sound=[],
+    no script errors. Seen in it: the straw rope, the paper cloud finale with big sun / moon, the eye in the hole, the
+    girl's own back-door mark (the 0.69 corner contact is gone). OVERLAP 1 / OCCLUDE 12 (pass 2 / 3 ridge 0.73 on a
+    side track at 77 s page time; the rest jars / clouds / sorghum contacts). Runtime +15 s vs v6 from the new
+    camera glides and the page-opening rise: 12 s over the 6:30 target. SPEAKER_OFF=9 (camera agent's metric).
