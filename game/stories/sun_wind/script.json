@@ -42,7 +42,10 @@
   },
   "steps": {
    "cover": {
-    "on_open": "paper.page_turn"
+    "on_open": {
+     "music": "intro_cozy",
+     "fade": 0.2
+    }
    },
    "page_turn": "paper.page_turn",
    "end": {

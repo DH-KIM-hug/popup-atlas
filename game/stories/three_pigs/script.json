@@ -423,7 +423,10 @@
   },
   "steps": {
    "cover": {
-    "on_open": "paper.page_turn"
+    "on_open": {
+     "music": "intro_playful",
+     "fade": 0.2
+    }
    },
    "page_turn": "paper.page_turn",
    "go_inside": {
@@ -511,7 +514,7 @@
     }
    ],
    "sound": {
-    "music": "home",
+    "music": null,
     "bed": null
    }
   },

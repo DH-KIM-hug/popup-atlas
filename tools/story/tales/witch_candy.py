@@ -577,14 +577,14 @@ SOUND = {
            "candies_to_all": "wc.candy_pop", "candy_fountain": "wc.sparkle", "all_transform": "wc.boing",
            "all_back": "wc.boing", "witch_wave": "wc.giggle_bells", "ghost_vanish": "wc.vanish",
            "inside_view": {"bed": "room", "fade": 1.5}, "outside_view": {"bed": "@light", "fade": 1.5}},
-    "steps": {"cover": {"on_open": "paper.page_turn"}, "page_turn": "paper.page_turn",
+    "steps": {"cover": {"on_open": {"music": "intro_magic", "fade": 0.2}}, "page_turn": "paper.page_turn",
               "go_inside": {"door_open": "door.open", "door_shut": "door.shut"},
               "end": {"close_book": "paper.book_close", "music_fade_on_replay": 2.0}},
     # footsteps on drawn-cycle contact frames: light child steps (the pig set), the witch heavier (the wolf set)
     "footsteps": {"kid": "pig", "rabbit": "pig", "bear": "pig", "fox": "pig", "witch": "wolf", "cat": None},
     "fx_note": "wc.* are synthesised placeholders (tools/audio/wc_synth_sfx.py); nobody has listened yet",
 }
-_BEAT_SOUND = {"cover": {"music": "night", "bed": None},
+_BEAT_SOUND = {"cover": {"music": None, "bed": None},
                "invite": {"music": "night", "bed": "@light", "emitters": ["trees"]},
                "fire": {"music": "home", "bed": "room"}, "shelf": {"music": "home", "bed": "room"},
                "round1": {"music": "build", "bed": "room"}, "round2": {"music": "build", "bed": "room"},

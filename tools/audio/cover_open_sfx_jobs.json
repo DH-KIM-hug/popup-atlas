@@ -1,0 +1,44 @@
+[
+ {
+  "id": "story_open_a",
+  "duration": 3.0,
+  "influence": 0.6,
+  "prompt": "A storybook opening: a soft hardcover creak as a big picture book opens, then a gentle twinkling music box glissando and warm magical sparkle, cozy bedtime fairy tale beginning"
+ },
+ {
+  "id": "story_open_b",
+  "duration": 3.0,
+  "influence": 0.6,
+  "prompt": "Opening a large pop-up picture book: the cover lifts with a soft papery whoosh, paper pieces pop up one after another with light crisp flaps, ending in a delicate chime, whimsical and warm"
+ },
+ {
+  "id": "story_open_c",
+  "duration": 2.5,
+  "influence": 0.6,
+  "prompt": "Once upon a time magic shimmer: soft celesta and harp rising arpeggio with tiny bell sparkles, gentle and dreamy, children's fairy tale intro sting"
+ },
+ {
+  "id": "story_open_d",
+  "duration": 3.0,
+  "influence": 0.6,
+  "prompt": "A thick storybook cover gently opening with a warm muffled thump, followed by a soft airy rustle of paper and a light glockenspiel twinkle, cute and calm, children's picture book"
+ },
+ {
+  "id": "story_open_a_k1",
+  "duration": 3.0,
+  "influence": 0.65,
+  "prompt": "A storybook opening: a soft hardcover creak as a big picture book opens, then a gentle rising kalimba melody of plucked thumb piano notes with a warm magical sparkle, cozy bedtime fairy tale beginning"
+ },
+ {
+  "id": "story_open_a_k2",
+  "duration": 3.0,
+  "influence": 0.65,
+  "prompt": "A big picture book cover creaking softly open, followed by a bright cheerful kalimba arpeggio, plucked thumb piano, light and cute, children's fairy tale intro"
+ },
+ {
+  "id": "story_open_a_k3",
+  "duration": 3.0,
+  "influence": 0.65,
+  "prompt": "Gentle creak of an old storybook opening, then a dreamy kalimba and music box glissando rising with soft twinkling sparkles, warm and calm, once upon a time"
+ }
+]

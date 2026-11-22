@@ -604,14 +604,14 @@ SOUND = {
            "tiger_slip": "sm.slide", "axe_climb": "sm.chop", "rope_down": "wc.chime", "rope_climb": "sm.rope_creak",
            "tiger_rope_climb": "sm.rope_creak", "rope_snap": "sm.rope_snap", "swap_sun_moon": "wc.sparkle",
            "day": "wc.chime", "night": "wc.glow"},
-    "steps": {"cover": {"on_open": "paper.page_turn"}, "page_turn": "paper.page_turn",
+    "steps": {"cover": {"on_open": {"music": "intro_night", "fade": 0.2}}, "page_turn": "paper.page_turn",
               "go_inside": {"door_open": "door.open", "door_shut": "door.shut"},
               "end": {"close_book": "paper.book_close", "music_fade_on_replay": 2.0}},
     "footsteps": {"boy": "pig", "girl": "pig", "mom": "pig", "tiger": "wolf", "rich": None},
     "fx_note": "sm.* are to be made (phase 2): a soft cute growl (never a real roar), rope creak / snap, paper poke, "
                "chop, slide, gulp; night bed: crickets + owl sprinkles at the tree crowns + mountain wind",
 }
-_BEAT_SOUND = {"cover": {"music": "home", "bed": None},
+_BEAT_SOUND = {"cover": {"music": None, "bed": None},
                "morning": {"music": "home", "bed": "@light", "emitters": ["trees"]},
                "rich_house": {"music": "home", "bed": "@light"},
                "pass1": {"music": "wolf", "bed": "@light", "emitters": ["trees"]},

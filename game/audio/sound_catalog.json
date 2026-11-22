@@ -1350,6 +1350,46 @@
    "fade_in": 1.5,
    "fade_out": 2.0,
    "note": "optional quiet night alternative; plays once (61.9 s)"
+  },
+  "intro_cozy": {
+   "file": "res://audio/music/intro_cozy_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 0.2,
+   "fade_out": 2.0,
+   "hold": true,
+   "note": "story-start music from 톡톡 동화극장 (sfx/intro_cozy.mp3, Pixabay 'Tender Lullaby', Pixabay Content License); plays once when the book opens, beat music waits for it"
+  },
+  "intro_playful": {
+   "file": "res://audio/music/intro_playful_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 0.2,
+   "fade_out": 2.0,
+   "hold": true,
+   "note": "story-start music from 톡톡 동화극장 (sfx/intro_playful.mp3, Pixabay 'Funny Ukulele', Pixabay Content License); plays once when the book opens, beat music waits for it"
+  },
+  "intro_night": {
+   "file": "res://audio/music/intro_night_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 0.2,
+   "fade_out": 2.0,
+   "hold": true,
+   "note": "story-start music from 톡톡 동화극장 (sfx/intro_night.mp3, Pixabay 'Music Box Sleep Lullaby', Pixabay Content License); plays once when the book opens, beat music waits for it"
+  },
+  "intro_magic": {
+   "file": "res://audio/music/intro_magic_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 0.2,
+   "fade_out": 2.0,
+   "hold": true,
+   "note": "story-start music from 톡톡 동화극장 (sfx/intro_magic.mp3, Pixabay 'Magical Storytime', Pixabay Content License); plays once when the book opens, beat music waits for it"
   }
  },
  "beds": {

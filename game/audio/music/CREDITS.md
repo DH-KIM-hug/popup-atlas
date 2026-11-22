@@ -48,3 +48,15 @@ Notes:
 The files in `../sfx/` were generated with the ElevenLabs Sound Effects API (`eleven_text_to_sound_v2`) under the
 user's ElevenLabs account. Each prompt is listed in `../sfx/manifest.json`. Check the account plan's commercial-use
 terms before release. None are third-party recordings.
+
+## Story-start music (2026-11-22, user: reuse 톡톡 동화극장's 시작 음악)
+
+Copied from 톡톡 동화극장 (`sounds/sfx/intro_*.mp3`, credits in that project's `sounds/CREDITS.md`), renormalised to
+-22 LUFS. All Pixabay Content License (no attribution required). Played once when the cover opens.
+
+| file | source in 톡톡 | Pixabay title | author | tale |
+|---|---|---|---|---|
+| `intro_cozy_1.mp3` | `sfx/intro_cozy.mp3` (orig. 3–15 s) | Tender Lullaby (Acoustic Guitar Solo) | Musinova | sun_wind (as in 톡톡) |
+| `intro_playful_1.mp3` | `sfx/intro_playful.mp3` (0–12 s) | Funny Ukulele | AtlasAudio | three_pigs (as in 톡톡) |
+| `intro_night_1.mp3` | `sfx/intro_night.mp3` (3–15 s) | Music Box Sleep Lullaby | Tunetank | sunmoon (as in 톡톡) |
+| `intro_magic_1.mp3` | `sfx/intro_magic.mp3` (0–12 s) | Magical Storytime | geoffharvey | witch_candy (톡톡 had none; chosen here) |

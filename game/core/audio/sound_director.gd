@@ -32,6 +32,10 @@ var _p2 := 0
 var _music: Array[AudioStreamPlayer] = []
 var _music_slot := ""
 var _music_cur := 0
+## A "hold" track (the story-start music, catalog `hold: true`) plays out once; music asked for meanwhile waits for it.
+var _hold_slot := ""
+var _hold_pending: Variant = null
+var _hold_has_pending := false
 var _loops := {}  ## key -> player
 var _bed := ""
 var _bed_layers := {}  ## sound id -> player
@@ -221,6 +225,10 @@ func _fade(p: Node, to_db: float, sec: float, free_after: bool) -> void:
 
 func set_music(slot: Variant, fade_in := 1.5, fade_out := 2.0) -> void:
 	var name := "" if slot == null else str(slot)
+	if _hold_slot != "" and name != _hold_slot:
+		_hold_pending = slot  # the beat's music starts when the story-start music has played out
+		_hold_has_pending = true
+		return
 	if name == _music_slot:
 		return
 	_music_slot = name
@@ -242,6 +250,9 @@ func set_music(slot: Variant, fade_in := 1.5, fade_out := 2.0) -> void:
 	nxt.volume_db = -60.0
 	nxt.play()
 	_fade(nxt, float(m.get("gain_db", 0.0)), fade_in, false)
+	if bool(m.get("hold", false)):
+		_hold_slot = name
+		_hold_has_pending = false
 	if log_sound:
 		print("SFX ", snappedf(_t, 0.01), " music ", name)
 
@@ -384,6 +395,12 @@ func _sprinkle_point(where: String) -> Variant:
 
 func _process(dt: float) -> void:
 	_t += dt
+	if _hold_slot != "" and not _music[_music_cur].playing:
+		_hold_slot = ""
+		_music_slot = ""
+		if _hold_has_pending:
+			_hold_has_pending = false
+			set_music(_hold_pending, 2.5)
 	# ducking under the voice (deterministic envelope: attack 60 ms, release 450 ms)
 	_duck = move_toward(_duck, 1.0 if speaking else 0.0, dt / (0.06 if speaking else 0.45))
 	_music_extra_t = maxf(0.0, _music_extra_t - dt)
