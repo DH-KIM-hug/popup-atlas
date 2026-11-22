@@ -325,7 +325,11 @@ Run long work through background agents/workflows with narrow ownership (one own
 G=/Applications/Godot.app/Contents/MacOS/Godot
 $G --path game --resolution 1366x1024                                   # play
 $G --path game --resolution 1366x1024 --fixed-fps 30 --write-movie /tmp/x.avi --quit-after 600 -- --beat=<id> --autoplay
-$G --path game --resolution 1366x1024 --fixed-fps 30 --write-movie /tmp/full.avi -- --autoplay --quit-on-done
+$G --path game --resolution 1200x900 --fixed-fps 30 --write-movie /ABS/full.avi -- --autoplay --quit-on-done
+# Full recordings to show the user: 1200x900, not 1366x1024. On this Mac (1920x1080, usable 960) a 1024-tall window is
+# clamped to 928, stretch "expand" widens the view to 1507x1024, and the top-left page tab and top-right subtitle
+# button land outside the video (user, 2026-11-22: "왼쪽 오른쪽 상단 글자 잘리는데"). 1200x900 keeps the 1366x1024
+# canvas whole. --write-movie needs an ABSOLUTE path. Run every Godot command through tools/story/with_godot.sh.
 ffmpeg -i /tmp/x.avi -c:v libx264 -crf 26 -pix_fmt yuv420p -c:a aac out.mp4
 ffmpeg -ss 6 -t 2 -i out.mp4 -vf "fps=8,crop=W:H:X:Y,tile=8x2" -frames:v 1 tile.jpg   # motion check
 python3 -c 'import sys; sys.path.insert(0,"/Users/house_of_4k2b/.claude/skills/scenario-godot-expert/scripts"); import gd_run; print(gd_run.check_all("game"))'
