@@ -58,6 +58,18 @@ var _choosing := false
 var sound: SoundDirector
 var log_sound := false
 var _blow_target := "wind"
+
+## Camera continuity check (user 2026-11-22: "시점이 뚝뚝 끊기는거 별로에요"): every frame the stage camera's view
+## motion (view-direction turn + position shift seen from the focus distance + half the fov change, deg) is compared
+## with the frame before. A frame moving more than CAM_JUMP_DEG is a cut (CAM_JUMP), a one-frame velocity change above
+## CAM_JERK_DPS a jerk (CAM_JERK: a move starting / stopping / turning at full speed). Not counted: page turns (hidden
+## under the sheet), the cover, other cameras (the ending book) and shakes (an intended jolt).
+const CAM_JUMP_DEG := 3.0
+const CAM_JERK_DPS := 20.0
+var cam_jumps := 0
+var cam_jerks := 0
+var _cam_last: Dictionary = {}
+var _beat_id := ""
 var _late_pending := false
 var _framed_house := ""  # a "frame" step already set up the coming build's shot
 var _walker_role := "traveller"
@@ -190,6 +202,7 @@ func _process(dt: float) -> void:
 	dt = PaperSpring.frame_dt(dt)
 	clock += dt
 	ui.step(dt)
+	_cam_monitor(dt)
 	# Autoplay holds the wind in bursts while a blow step runs (lines keep playing over the gusts).
 	if autoplay and _mode == "blow" and stage:
 		_auto_cycle += dt
@@ -408,6 +421,7 @@ func _run() -> void:
 				var miss := int(stage.handler.get("black_missing")) if stage.handler and "black_missing" in stage.handler else 0
 				print("BLACK_LIPS frames-with-wrong-variant=", wrong + miss, " (puppet ", wrong, ", story-expected ", miss, ")")
 		print("VOICE_DUP=", voice_dup)
+		print("CAM_JUMP=", cam_jumps, " CAM_JERK=", cam_jerks)
 		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio,
 			" missing_sound=", sound.missing if sound else [], " beats=", beat_times)
 		story_finished.emit(total)
@@ -428,6 +442,7 @@ func _run() -> void:
 func _play_beat(b: Dictionary) -> void:
 	beat_times[str(b["id"])] = snappedf(clock, 0.1)
 	print("BEAT ", b["id"], " t=", snappedf(clock, 0.01))
+	_beat_id = str(b["id"])
 	var enter: Dictionary = b.get("enter", {})
 	if enter.has("pose"):
 		_pose = str(enter["pose"])
@@ -440,8 +455,58 @@ func _play_beat(b: Dictionary) -> void:
 			sound.enter_beat(b, stage, _spread_key != key0)
 		if enter.has("pose") and stage.puppet().pose != _pose:
 			stage.set_pose(_pose)
+	var prev: Dictionary = {}
 	for st: Dictionary in b.get("steps", []):
+		# a quick cam move right before a line: the line starts once the glide is past halfway (the eased moves land
+		# later than the old exponential chase did, and a quote must not start before its speakers are in frame)
+		if str(st.get("do", "")) == "say" and str(prev.get("do", "")) == "cam" and float(prev.get("rate", 2.4)) >= 2.0 \
+				and stage and is_instance_valid(stage):
+			await _wait(stage.cam_settle_left(0.55))
 		await _step(st, b)
+		prev = st
+
+
+func _cam_monitor(dt: float) -> void:
+	var cam: Camera3D = null
+	if stage and is_instance_valid(stage) and stage.is_built and stage.world and not ui.page_turn.visible \
+			and not ui.cover_visible():  # page_turn.visible: the old page covers the screen or is turning
+		cam = stage.camera()
+	if cam == null or get_viewport().get_camera_3d() != cam or dt <= 0.0:
+		_cam_last = {}
+		return
+	var f := -cam.global_transform.basis.z
+	var p := cam.global_position
+	var d := maxf(stage.world.rig.distance, 0.3)
+	var now := {"cam": cam, "f": f, "p": p, "fov": cam.fov, "v": PackedFloat32Array(), "flag": false}
+	if _cam_last.is_empty() or _cam_last["cam"] != cam or stage.shaking():
+		_cam_last = now
+		return
+	var tv: Vector3 = (f - (_cam_last["f"] as Vector3)) * (180.0 / PI)
+	var sv: Vector3 = (p - (_cam_last["p"] as Vector3)) / d * (180.0 / PI)
+	var z := (cam.fov - float(_cam_last["fov"])) * 0.5
+	var v := PackedFloat32Array([tv.x / dt, tv.y / dt, tv.z / dt, sv.x / dt, sv.y / dt, sv.z / dt, z / dt])
+	var mag := 0.0
+	for x in v:
+		mag += x * x
+	mag = sqrt(mag) * dt
+	var dv := 0.0
+	var pv: PackedFloat32Array = _cam_last["v"]
+	if pv.size() == v.size():
+		for i in v.size():
+			dv += (v[i] - pv[i]) * (v[i] - pv[i])
+		dv = sqrt(dv)
+	var jump := mag > CAM_JUMP_DEG
+	var jerk := not jump and dv > CAM_JERK_DPS
+	if (jump or jerk) and not bool(_cam_last["flag"]):
+		if jump:
+			cam_jumps += 1
+		else:
+			cam_jerks += 1
+		print("CAM_JUMP " if jump else "CAM_JERK ", "t=", snappedf(clock, 0.01), " beat=", _beat_id, " shot=", stage.shot,
+			" deg=", snappedf(mag, 0.01), " dv=", snappedf(dv, 0.1))
+	now["v"] = v
+	now["flag"] = jump or jerk
+	_cam_last = now
 
 
 ## Cast members a step names (`who`: role or list).
@@ -901,7 +966,7 @@ func _step_climb(st: Dictionary) -> void:
 ## tap_each {targets, prompt, hint, react{role: [pose, fx]}, lines}: every target once, in any order.
 func _frame_first(targets: Array) -> void:
 	if stage and is_instance_valid(stage) and stage.frame_targets(targets):
-		await _wait(1.2)
+		await _wait(maxf(1.2, stage.cam_settle_left()))  # the camera lands on the targets before the prompt
 
 
 func _step_tap_each(st: Dictionary) -> void:
@@ -1249,6 +1314,8 @@ func _enter_spread(b: Dictionary) -> void:
 		stage.build(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute)
 		print("PERF spread_build ", key, " ms=", snappedf((Time.get_ticks_usec() - t_build) / 1000.0, 0.1))
 	stage.set_pose(_pose, true)
+	if stage.is_built:
+		stage.preset_open(b)  # the opening crane's first framing, set while the page is still hidden (no cut later)
 	_spread_key = key
 	await _frame()
 	await _frame()

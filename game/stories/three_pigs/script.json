@@ -2228,10 +2228,24 @@
    "steps": [
     {
      "do": "cam",
+     "shot": "high",
+     "at": "b_lot",
+     "rate": 2.0,
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "high",
+     "at": "s_wolf_from",
+     "rate": 1.6,
+     "wait": 1.1
+    },
+    {
+     "do": "cam",
      "shot": "low_wolf",
      "at": "s_wolf_from",
-     "from": "low_wolf",
-     "wait": 1.0
+     "rate": 1.6,
+     "wait": 1.2
     },
     {
      "do": "walk",

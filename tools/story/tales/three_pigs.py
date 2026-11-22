@@ -345,8 +345,11 @@ BEATS = [
                "inside": {"pig_a": ["straw_house", 0], "pig_b": ["wood_house", 1], "pig_c": ["house", 0]}},
      "steps": [
         # the wolf's first entrance: low and menacing, he comes out of the trees
-        # a cut (not a glide across the village, which flew through the straw roof)
-        {"do": "cam", "shot": "low_wolf", "at": "s_wolf_from", "from": "low_wolf", "wait": 1.0},
+        # (2026-11-22, "시점이 뚝뚝 끊기는거 별로에요": no cut) a crane up over the roofs at the brick lot, across the
+        # village high, and down low on the wolf (a low glide across the village flew through the straw roof)
+        {"do": "cam", "shot": "high", "at": "b_lot", "rate": 2.0, "wait": 0.6},
+        {"do": "cam", "shot": "high", "at": "s_wolf_from", "rate": 1.6, "wait": 1.1},
+        {"do": "cam", "shot": "low_wolf", "at": "s_wolf_from", "rate": 1.6, "wait": 1.2},
         # he prowls in (drawn sneak cycle), the camera follows him to his mark; there he stops and sniffs (킁킁)
         {"do": "walk", "who": "wolf", "dir": "right", "to": "s_wolf", "from": "s_wolf_from", "pose": "side_prowl",
          "speed": 0.25, "follow": "wolf", "shot": "low_wolf", "line": "tp_027", "segs": [0], "line_late": True,

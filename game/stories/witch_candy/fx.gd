@@ -1413,7 +1413,13 @@ func _name_jars(st: Dictionary, R: Node) -> void:
 			i += 1
 		t0 += await R._frame()
 	if str(st.get("then", "")) == "kid_yuck":
-		stage.shot_to("face_in", "in_kid", {"rate": 9.0})
+		# (2026-11-22, "시점이 뚝뚝 끊기는거 별로에요") no cut: back out to the shelf and Dahyun, then in on her face (a
+		# straight glide from the jar passed through her card)
+		stage.shot_to("shelf", "shelf_mid", {"rate": 3.0})
+		var tt := 0.0
+		while tt < 0.55:
+			tt += await R._frame()
+		stage.shot_to("face_in", "in_kid", {"rate": 3.0})
 	while R._line_busy:
 		await R._frame()
 

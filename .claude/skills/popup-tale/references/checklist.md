@@ -74,6 +74,13 @@ How to look:
 
 ## Camera and framing
 - [ ] **Shots are varied** (wide, medium, close; OTS; low entrance; push-in on completion; light progressing). Not one frontal stage shot ("전체적으로 연출 고민해볼래? 카메라 워킹도").
+- [ ] **No jerky viewpoint jumps** ("모든 동화 마찬가진데 시점이 뚝뚝 끊기는거 별로에요. 사탕마녀도 그렇고 썬문도 그러네"):
+  the camera moves continuously; every move eases in and out, a new shot mid-move bends the path (velocity carried
+  over), yaw goes the short way, and a cut happens only under a page turn. The run log's camera check prints
+  `CAM_JUMP` (a frame turning > 3°) / `CAM_JERK` (a one-frame velocity change > 20°/s) with t, beat, shot, and the
+  summary `CAM_JUMP=<n> CAM_JERK=<n>` next to VOICE_DUP: require 0 / 0 (shakes and page turns are not counted).
+  No `from` cuts in cam steps (a spread's opening `from` is applied under the page turn); `"cut": true` only where a
+  turn hides it. Look at 8 fps full-frame tiles of any flagged moment.
 - [ ] **Interactive steps frame every target first** and hold still. Rings sit fully inside with margin, and each target is at least ~80 pt to tap ("화면이 거기로 안가서 못누름").
   - A build is framed once, for the finished size.
 - [ ] **Nothing overlaps** ("물체랑 사람들끼리 자꾸 겹치잖아"): actors vs actors, actors vs props, props vs props; the run

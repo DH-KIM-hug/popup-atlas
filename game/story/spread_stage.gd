@@ -1408,20 +1408,17 @@ func fold() -> float:
 
 ## Camera shot on the template rig: "wide" (template view) | "story" | "close" | tale shots
 ## [distance, elevation°, focus height, fov, (yaw offset° from the template view)]. `at`: focus spot.
-## opts (cam step): from (snap to that shot first: crane / push / pull from it), rate (glide speed, default 2.4),
-## shake (amplitude°, decays), follow (role: tracking shot).
+## opts (cam step): rate (glide speed, default 2.4: lower = a slower move, higher = a quicker one; the move's length
+## comes from how far the view travels, see _begin_move), shake (amplitude°, decays), follow (role: tracking shot),
+## cut (true: a hard cut, to `from` when given, else to the shot itself; only where a page turn hides it).
+## `from` without `cut` no longer snaps (2026-11-22, user: "시점이 뚝뚝 끊기는거 별로에요"): the glide starts where
+## the camera is (a spread's opening `from` is applied under the page turn, see preset_open).
 func shot_to(name: String, at: Variant = null, opts: Dictionary = {}) -> void:
 	shot = name
 	_cam = _wide.duplicate() if name == "wide" else (_shots[name] as Array).duplicate()
+	if _cam.size() < 5:
+		_cam.append(0.0)
 	_cam_rate = float(opts.get("rate", 2.4))
-	if opts.has("from") and _shots.has(str(opts["from"])):
-		var f: Array = _shots[str(opts["from"])]
-		var rig := world.rig
-		rig.distance = float(f[0])
-		rig.elevation_deg = float(f[1])
-		rig.focus_height = float(f[2])
-		rig.fov = float(f[3])
-		_yaw_off = float(f[4]) if f.size() > 4 else 0.0
 	if opts.has("shake"):
 		shake(float(opts["shake"]))
 	_follow = null
@@ -1429,8 +1426,112 @@ func shot_to(name: String, at: Variant = null, opts: Dictionary = {}) -> void:
 		_follow = actor(str(opts["follow"]))
 	if at != null and _cam_anchor:
 		_focus_goal = spot_point(at)
-		if opts.has("from"):
-			_cam_anchor.global_position = _focus_goal
+	if bool(opts.get("cut", false)):
+		var f: Array = _cam
+		if opts.has("from") and _shots.has(str(opts["from"])):
+			f = _shots[str(opts["from"])]
+		_cut_to(f, _focus_goal if at != null else Vector3(INF, 0, 0))
+	_begin_move(_cam_rate)
+
+
+## Hard cut: the rig takes shot array `f` now (and the focus `at` unless INF), the glides restart from rest there.
+func _cut_to(f: Array, at: Vector3) -> void:
+	var rig := world.rig
+	rig.distance = float(f[0])
+	rig.elevation_deg = float(f[1])
+	rig.focus_height = float(f[2])
+	rig.fov = float(f[3])
+	_yaw_off = float(f[4]) if f.size() > 4 else 0.0
+	if at.x < INF and _cam_anchor:
+		_cam_anchor.global_position = at
+	_cs.clear()
+	_cam_wrote.clear()
+	_cs["yaw"] = [_yaw_off, 0.0, _yaw_off, 0.0]
+
+
+## A spread opens: the beat's first camera step that asks for a `from` framing (a crane down from high) gets it now,
+## while the page is still under the turning sheet, so the glide starts there with no visible cut.
+func preset_open(b: Dictionary) -> void:
+	for st: Dictionary in b.get("steps", []):
+		if str(st.get("do", "")) != "cam":
+			continue
+		if st.has("from") and _shots.has(str(st["from"])) and _cam_anchor and not has_walker:
+			var at := spot_point(st["at"]) if st.has("at") else _focus_goal
+			_cam = (_shots[str(st["from"])] as Array).duplicate()
+			if _cam.size() < 5:
+				_cam.append(0.0)
+			_focus_goal = at
+			_cut_to(_cam, at)
+		return
+
+
+## Camera motion (2026-11-22, user: "시점이 뚝뚝 끊기는거 별로에요"): each shot parameter and the stage focus follow
+## their goal through two critically damped springs in series, so a move eases in and out and a new goal mid-move
+## bends the path with its velocity carried over (no frame starts, stops or turns at full speed). The length of a move
+## comes from how far the view travels (CAM_MIN_S..CAM_MAX_S; a slow `rate` stretches it to CAM_SLOW_MAX_S, a quick
+## one shortens it); once a move has had its time the focus tightens to a CAM_FOLLOW_S follow (tracked actors, props
+## in flight). Yaw takes the short way round. The run log's CAM_JUMP / CAM_JERK check (story_runner) measures it.
+const CAM_MIN_S := 0.8
+const CAM_MAX_S := 2.5
+const CAM_LONG_S := 3.5  ## the longest move a far traverse gets (peak speed kept under ~60°/s)
+const CAM_SLOW_MAX_S := 6.0  ## a slow push-in a tale asks for (rate < 1)
+const CAM_FOLLOW_S := 0.35
+var _cs := {}  ## glide state per parameter: [value, velocity, pre-smoothed goal, its velocity]
+var _cam_wrote := {}  ## what the glide last wrote (a value someone else set is taken over, at rest)
+var _cam_w := 6.0  ## per-stage spring rate (1/s) of the current move
+var _move_t := 0.0
+var _move_d := 1.2
+
+
+## Length of the move from the camera's state now to the shot goal: the view's travel in degrees (turn, tilt, zoom,
+## lens, the focus shift seen from the camera) → 0.8–2.5 s (up to 3.5 s for a far traverse), scaled by the step's rate.
+func _begin_move(rate: float) -> void:
+	var rig := world.rig
+	var d0 := maxf(rig.distance, 0.3)
+	var dr := maxf(minf(d0, float(_cam[0])), 0.3)  # shifts seen from the nearer end of the move
+	var yaw_g := float(_cam[4]) if _cam.size() > 4 else 0.0
+	var dy := wrapf(yaw_g - _yaw_off, -180.0, 180.0) if not has_walker else 0.0
+	var de := float(_cam[1]) - rig.elevation_deg
+	var dz := 40.0 * absf(log(maxf(float(_cam[0]), 0.3) / d0))
+	var df := float(_cam[3]) - rig.fov
+	var dh := rad_to_deg((float(_cam[2]) - rig.focus_height) / dr)
+	var dp := 0.0
+	if _cam_anchor and not has_walker:
+		dp = rad_to_deg(_cam_anchor.global_position.distance_to(_focus_goal) / dr)
+	var mag := sqrt(dy * dy + de * de + dz * dz + df * df + dh * dh + dp * dp)
+	var d := clampf(0.7 + mag / 30.0, CAM_MIN_S, CAM_MAX_S)  # peak speed ≈ 1.74·mag/d: under ~55°/s
+	if rate > 2.4:
+		d *= clampf(2.4 / rate, 0.85, 1.0)  # a quick move, never a whip
+	elif rate > 0.0:
+		d = maxf(d, minf(3.0 / rate, CAM_SLOW_MAX_S))
+	d = maxf(d, minf(1.74 * mag / 60.0, CAM_LONG_S))  # a long way (out of a room to the street): longer, never a whip
+	_move_d = maxf(d, CAM_MIN_S)
+	_move_t = 0.0
+	_cam_w = 7.75 / _move_d  # two stages in series: ~95 % of the way at _move_d
+
+
+## Seconds until the current move has gone `frac` of its time (0.85: nearly landed; the runner holds tap prompts
+## that long, and a line after a quick move until halfway).
+func cam_settle_left(frac := 0.85) -> float:
+	return maxf(0.0, _move_d * frac - _move_t)
+
+
+## One glide step of parameter `key` (current value `cur`, as found on the rig) toward `goal`.
+func _glide(key: String, cur: float, goal: float, w: float, dt: float) -> float:
+	var st: Array = _cs.get(key, [])
+	if st.is_empty() or absf(cur - float(_cam_wrote.get(key, cur))) > 1e-4:
+		st = [cur, 0.0, cur, 0.0]
+		_cs[key] = st
+	var e := exp(-w * dt)
+	var x := float(st[2]) - goal
+	var tmp := (float(st[3]) + w * x) * dt
+	st[3] = (float(st[3]) - w * tmp) * e
+	st[2] = goal + (x + tmp) * e
+	x = float(st[0]) - float(st[2])
+	tmp = (float(st[1]) + w * x) * dt
+	st[1] = (float(st[1]) - w * tmp) * e
+	st[0] = float(st[2]) + (x + tmp) * e
+	return float(st[0])
 
 
 # ------------------------------------------------------------------ walker
@@ -1749,29 +1850,57 @@ func _process(dt: float) -> void:
 		return
 	_t += dt
 	var trav := traveller_pos()
-	# Camera shot glide (the rig itself snaps to the focus every frame; we ease its shot parameters).
+	# Camera shot glide (the rig itself snaps to the focus every frame; we glide its shot parameters, see _glide).
 	var rig := world.rig
-	var k := 1.0 - exp(-_cam_rate * dt)
-	rig.distance = lerpf(rig.distance, float(_cam[0]), k)
+	_move_t += dt
+	var cw := _cam_w
+	var wf := cw
+	if _move_t > _move_d:  # the move has landed: the focus tightens to a follow
+		wf = lerpf(cw, maxf(cw, 4.0 / CAM_FOLLOW_S), clampf((_move_t - _move_d) / 0.8, 0.0, 1.0))
+	rig.distance = _glide("dist", rig.distance, float(_cam[0]), cw, dt)
+	_cam_wrote["dist"] = rig.distance
+	var el_off := 0.0
 	if not has_walker:
 		# stage camera: yaw offset per shot, a hand-held miniature drift (never locked), shake
 		if is_nan(_yaw_base):
 			_yaw_base = rig.yaw_deg
 		_drift_t += dt
-		_yaw_off = lerpf(_yaw_off, float(_cam[4]) if (_cam as Array).size() > 4 else 0.0, k)
+		var yst: Array = _cs.get("yaw", [])
+		if yst.is_empty():
+			_cs["yaw"] = [_yaw_off, 0.0, _yaw_off, 0.0]
+			yst = _cs["yaw"]
+		var yg := float(_cam[4]) if (_cam as Array).size() > 4 else 0.0
+		yg = float(yst[2]) + wrapf(yg - float(yst[2]), -180.0, 180.0)  # the short way round
+		_yaw_off = _glide("yaw", _yaw_off, yg, cw, dt)
+		_cam_wrote["yaw"] = _yaw_off
 		_shake = maxf(0.0, _shake - dt * 2.5 * maxf(_shake, 0.3))
 		var drift := 0.35 * sin(_drift_t * 0.31) + 0.2 * sin(_drift_t * 0.53 + 1.0)
 		var sh := _shake * sin(_drift_t * 47.0)
 		rig.yaw_deg = _yaw_base + _yaw_off + drift + sh
-		rig.elevation_deg = lerpf(rig.elevation_deg, float(_cam[1]), k) + (0.15 * sin(_drift_t * 0.41) + 0.6 * _shake * sin(_drift_t * 53.0)) * dt * 6.0
-	else:
-		rig.elevation_deg = lerpf(rig.elevation_deg, float(_cam[1]), k)
-	rig.focus_height = lerpf(rig.focus_height, float(_cam[2]), k)
-	rig.fov = lerpf(rig.fov, float(_cam[3]), k)
+		el_off = 0.25 * sin(_drift_t * 0.41 + 0.5) + 0.6 * _shake * sin(_drift_t * 53.0) * 0.2
+	# elevation: the glide state is kept without the drift; a value someone else set on the rig is taken over
+	var el_cur := float(_cam_wrote.get("el_v", rig.elevation_deg))
+	if absf(rig.elevation_deg - float(_cam_wrote.get("el", INF))) > 1e-4:
+		el_cur = rig.elevation_deg
+		_cs.erase("el_v")
+	var el := _glide("el_v", el_cur, float(_cam[1]), cw, dt)
+	rig.elevation_deg = el + el_off
+	_cam_wrote["el"] = rig.elevation_deg
+	_cam_wrote["el_v"] = el
+	rig.focus_height = _glide("fh", rig.focus_height, float(_cam[2]), cw, dt)
+	_cam_wrote["fh"] = rig.focus_height
+	rig.fov = _glide("fov", rig.fov, float(_cam[3]), cw, dt)
+	_cam_wrote["fov"] = rig.fov
 	if _follow and is_instance_valid(_follow):
 		_focus_goal = _follow.global_position
 	if _cam_anchor and not has_walker:
-		_cam_anchor.global_position = _cam_anchor.global_position.lerp(_focus_goal, k)
+		var ap := _cam_anchor.global_position
+		var np := Vector3(_glide("fx", ap.x, _focus_goal.x, wf, dt), _glide("fy", ap.y, _focus_goal.y, wf, dt),
+			_glide("fz", ap.z, _focus_goal.z, wf, dt))
+		_cam_anchor.global_position = np
+		_cam_wrote["fx"] = np.x
+		_cam_wrote["fy"] = np.y
+		_cam_wrote["fz"] = np.z
 	# Road camera: stands ahead of him on the road looking back along it (see road_cam); frozen once the ending
 	# camera stops following or he leaves the road.
 	if road_cam and _cam_anchor == null and world.walker.path != null:
@@ -1909,6 +2038,7 @@ func frame_targets(targets: Array) -> bool:
 	_focus_goal = Vector3(c.x, world.ground.surface_y(Vector2(c.x, c.z)), c.z)
 	_cam = [clampf(2.4 + spread * 3.2, 2.6, 6.0), 12.0, 0.28, 20.0, 0.0]
 	_cam_rate = 2.6
+	_begin_move(_cam_rate)
 	return true
 
 
@@ -1946,11 +2076,17 @@ func frame_build(house: String, others: Array) -> void:
 	_focus_goal = Vector3(c.x, world.ground.surface_y(Vector2(c.x, c.z)), c.z)
 	_cam = [d, 11.0, top * 0.45, 20.0, 0.0]
 	_cam_rate = 2.4
+	_begin_move(_cam_rate)
 
 
 ## Camera shake (degrees of jitter, decays over ~0.4 s): a huff, a hammer bump, "앗, 뜨거워!".
 func shake(amount: float) -> void:
 	_shake = maxf(_shake, amount)  ## only spots near the station count for sightlines (INF: all)
+
+
+## A shake is running (the camera check does not count its jitter as jumps).
+func shaking() -> bool:
+	return _shake > 0.05 and not has_walker
 var _follow: StoryActor
 var _follow_off := Vector3.ZERO
 
