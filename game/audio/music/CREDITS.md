@@ -60,3 +60,27 @@ Copied from 톡톡 동화극장 (`sounds/sfx/intro_*.mp3`, credits in that proje
 | `intro_playful_1.mp3` | `sfx/intro_playful.mp3` (0–12 s) | Funny Ukulele | AtlasAudio | three_pigs (as in 톡톡) |
 | `intro_night_1.mp3` | `sfx/intro_night.mp3` (3–15 s) | Music Box Sleep Lullaby | Tunetank | sunmoon (as in 톡톡) |
 | `intro_magic_1.mp3` | `sfx/intro_magic.mp3` (0–12 s) | Magical Storytime | geoffharvey | witch_candy (톡톡 had none; chosen here) |
+
+## turnip (커다란 순무, 2026-11-23, copied from 톡톡 동화극장 `sounds/`, credits in that project's `sounds/CREDITS.md`)
+
+Music loudness-matched to -22 LUFS; sound effects copied unchanged into `../sfx/tn_*.mp3` (catalog ids `tn.*`, merged by
+`tools/audio/turnip_sounds.py`). Pixabay Content License (no attribution required) unless noted; the `el_*` sounds and
+the turnip music were generated for 톡톡 with the user's ElevenLabs account.
+
+| file | source in 톡톡 | origin |
+|---|---|---|
+| `intro_cozy2_1.mp3` | `sfx/intro_cozy2.mp3` (톡톡's turnip intro, already 3–15 s of the original) | Pixabay "Light from the Hallway (Mbira Lullaby)", KonstantinPazuzuStudio |
+| `music_turnip_1.mp3` | `music/el_turnip_bgm.mp3` | Eleven Music (톡톡): Russian village folk, balalaika / accordion / domra / tambourine |
+| `finale_happy_1.mp3` | `sfx/finale_happy.mp3` | Pixabay "Happy Kids", HitsLab |
+| `../sfx/tn_pop.mp3` | `sfx/el_turnip_pop.mp3` | ElevenLabs SFX (톡톡) |
+| `../sfx/tn_strain.mp3` | `sfx/el_pull_strain.mp3` | ElevenLabs SFX (톡톡) |
+| `../sfx/tn_sun.mp3` | `sfx/el_sun_warm.mp3` | ElevenLabs SFX (톡톡) |
+| `../sfx/tn_squeak.mp3` | `sfx/mouse_squeak_1.mp3` | Pixabay "Mouse Squeak", TanwerAman |
+| `../sfx/tn_bark.mp3` | `animals/dog_3.mp3` | Pixabay "Friendly Small dog bark (1)", Yodguard |
+| `../sfx/tn_meow.mp3` | `animals/cat_2.mp3` | Pixabay "Cat Meow", SOUND_GARAGE |
+| `../sfx/tn_water.mp3` | `sfx/water_pour_1.mp3` | Pixabay "Pouring Water", Universfield |
+| `../sfx/tn_dig.mp3` | `sfx/dig_soil_1.mp3` | Pixabay "Digging with shovel", freesound_community |
+| `../sfx/tn_rustle.mp3` | `sfx/rustle_1.mp3` | Pixabay "Bush Rustle", freesound_community |
+| `../sfx/tn_grow.mp3` | `sfx/chime_up.mp3` | Pixabay "Fairy Dust Shimmer 1", floraphonic |
+| `../sfx/tn_slurp.mp3` | `sfx/slurp_1.mp3` | Pixabay "Cartoon Slurp", freesound_community |
+| `../sfx/tn_cheer.mp3` | `sfx/cheer.mp3` | Pixabay "Applause, small audience", freesound_community |

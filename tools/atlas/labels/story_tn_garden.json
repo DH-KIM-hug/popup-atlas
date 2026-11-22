@@ -1,0 +1,193 @@
+{
+ "biome": "meadow",
+ "season": "summer",
+ "tags": [
+  "turnip",
+  "story",
+  "garden",
+  "farm"
+ ],
+ "items": {
+  "00": [
+   "the giant turnip, whole (cream bulb, blue-violet shoulder, leaf crown, root tail)",
+   "story_prop",
+   0.62,
+   0,
+   {
+    "tags": [
+     "turnip",
+     "vegetable",
+     "giant"
+    ]
+   }
+  ],
+  "01": [
+   "turnip leaf crown with the violet shoulder showing above the soil",
+   "story_nature",
+   0.24,
+   0,
+   {
+    "tags": [
+     "turnip",
+     "vegetable",
+     "leaves"
+    ]
+   }
+  ],
+  "02": [
+   "tiny sprout, two seed leaves",
+   "story_nature",
+   0.05,
+   0,
+   {
+    "tags": [
+     "sprout",
+     "seedling"
+    ]
+   }
+  ],
+  "03": [
+   "young turnip plant, rosette of five leaves",
+   "story_nature",
+   0.12,
+   0,
+   {
+    "tags": [
+     "turnip",
+     "seedling",
+     "leaves"
+    ]
+   }
+  ],
+  "04": [
+   "one round brown seed",
+   "story_prop",
+   0.02,
+   0,
+   {
+    "tags": [
+     "seed"
+    ]
+   }
+  ],
+  "05": [
+   "heap of tilled soil with a planting hole",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "soil",
+     "hole"
+    ]
+   }
+  ],
+  "06": [
+   "green tin watering can",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "watering_can",
+     "tool"
+    ]
+   }
+  ],
+  "07": [
+   "spray of pale-blue water drops",
+   "story_fx",
+   0.08,
+   0,
+   {
+    "tags": [
+     "water",
+     "drops"
+    ]
+   }
+  ],
+  "08": [
+   "two flying soil clods",
+   "story_fx",
+   0.05,
+   0,
+   {
+    "tags": [
+     "soil",
+     "clods",
+     "particle"
+    ]
+   }
+  ],
+  "10": [
+   "row of three cabbages in soil",
+   "story_nature",
+   0.1,
+   0,
+   {
+    "tags": [
+     "cabbage",
+     "vegetable",
+     "row"
+    ]
+   }
+  ],
+  "11": [
+   "row of carrot tops with orange shoulders",
+   "story_nature",
+   0.11,
+   0,
+   {
+    "tags": [
+     "carrot",
+     "vegetable",
+     "row"
+    ]
+   }
+  ],
+  "12": [
+   "bean poles tied at the top with vines and pods",
+   "story_nature",
+   0.3,
+   0,
+   {
+    "tags": [
+     "beans",
+     "poles",
+     "vine"
+    ]
+   }
+  ],
+  "13": [
+   "grassy earth mound with a mouse hole",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "mouse_hole",
+     "mound"
+    ]
+   }
+  ],
+  "14": [
+   "tilled garden bed with a wattle edging",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "garden_bed",
+     "soil",
+     "wattle"
+    ]
+   }
+  ]
+ },
+ "merge": [
+  [
+   "08",
+   "09"
+  ]
+ ]
+}

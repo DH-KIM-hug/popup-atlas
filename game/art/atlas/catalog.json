@@ -13709,5 +13709,561 @@
    224,
    323
   ]
+ },
+ {
+  "id": "story_tn_garden_00",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_00.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "the giant turnip, whole (cream bulb, blue-violet shoulder, leaf crown, root tail)",
+  "height_units": 0.62,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "giant",
+   "story",
+   "turnip",
+   "vegetable"
+  ],
+  "px": [
+   429,
+   473
+  ]
+ },
+ {
+  "id": "story_tn_garden_01",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_01.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_nature",
+  "label": "turnip leaf crown with the violet shoulder showing above the soil",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "leaves",
+   "story",
+   "turnip",
+   "vegetable"
+  ],
+  "px": [
+   428,
+   283
+  ]
+ },
+ {
+  "id": "story_tn_garden_02",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_02.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_nature",
+  "label": "tiny sprout, two seed leaves",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "seedling",
+   "sprout",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   122,
+   92
+  ]
+ },
+ {
+  "id": "story_tn_garden_03",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_03.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_nature",
+  "label": "young turnip plant, rosette of five leaves",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "leaves",
+   "seedling",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   249,
+   194
+  ]
+ },
+ {
+  "id": "story_tn_garden_04",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_04.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "one round brown seed",
+  "height_units": 0.02,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "seed",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   60,
+   59
+  ]
+ },
+ {
+  "id": "story_tn_garden_05",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_05.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "heap of tilled soil with a planting hole",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "hole",
+   "soil",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   274,
+   124
+  ]
+ },
+ {
+  "id": "story_tn_garden_06",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_06.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "green tin watering can",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "story",
+   "tool",
+   "turnip",
+   "watering_can"
+  ],
+  "px": [
+   356,
+   194
+  ]
+ },
+ {
+  "id": "story_tn_garden_07",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_07.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_fx",
+  "label": "spray of pale-blue water drops",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "drops",
+   "farm",
+   "garden",
+   "story",
+   "turnip",
+   "water"
+  ],
+  "px": [
+   186,
+   176
+  ]
+ },
+ {
+  "id": "story_tn_garden_08",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_08.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_fx",
+  "label": "two flying soil clods",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "clods",
+   "farm",
+   "garden",
+   "particle",
+   "soil",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   182,
+   127
+  ]
+ },
+ {
+  "id": "story_tn_garden_10",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_10.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_nature",
+  "label": "row of three cabbages in soil",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "cabbage",
+   "farm",
+   "garden",
+   "row",
+   "story",
+   "turnip",
+   "vegetable"
+  ],
+  "px": [
+   520,
+   180
+  ]
+ },
+ {
+  "id": "story_tn_garden_11",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_11.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_nature",
+  "label": "row of carrot tops with orange shoulders",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "carrot",
+   "farm",
+   "garden",
+   "row",
+   "story",
+   "turnip",
+   "vegetable"
+  ],
+  "px": [
+   351,
+   232
+  ]
+ },
+ {
+  "id": "story_tn_garden_12",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_12.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_nature",
+  "label": "bean poles tied at the top with vines and pods",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "beans",
+   "farm",
+   "garden",
+   "poles",
+   "story",
+   "turnip",
+   "vine"
+  ],
+  "px": [
+   248,
+   289
+  ]
+ },
+ {
+  "id": "story_tn_garden_13",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_13.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "grassy earth mound with a mouse hole",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mound",
+   "mouse_hole",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   332,
+   199
+  ]
+ },
+ {
+  "id": "story_tn_garden_14",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_14.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "tilled garden bed with a wattle edging",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "garden_bed",
+   "soil",
+   "story",
+   "turnip",
+   "wattle"
+  ],
+  "px": [
+   489,
+   167
+  ]
+ },
+ {
+  "id": "story_tn_feast_00",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_00.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "long wooden table with a red-and-cream checked cloth",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "checked",
+   "feast",
+   "kitchen",
+   "story",
+   "table",
+   "turnip"
+  ],
+  "px": [
+   517,
+   299
+  ]
+ },
+ {
+  "id": "story_tn_feast_01",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_01.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "big black-iron soup pot, lid tilted, golden soup",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "cooking",
+   "feast",
+   "kitchen",
+   "pot",
+   "soup",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   328,
+   321
+  ]
+ },
+ {
+  "id": "story_tn_feast_02",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_02.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "wooden bowl of golden turnip soup",
+  "height_units": 0.045,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bowl",
+   "feast",
+   "kitchen",
+   "soup",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   207,
+   168
+  ]
+ },
+ {
+  "id": "story_tn_feast_03",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_03.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "chopping board with turnip slices and a knife",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "board",
+   "feast",
+   "kitchen",
+   "knife",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   259,
+   316
+  ]
+ },
+ {
+  "id": "story_tn_feast_04",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_04.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "long wooden bench",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bench",
+   "feast",
+   "kitchen",
+   "seat",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   398,
+   194
+  ]
+ },
+ {
+  "id": "story_tn_feast_05",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_05.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_fx",
+  "label": "cream paper steam curls",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "feast",
+   "kitchen",
+   "steam",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   197,
+   295
+  ]
+ },
+ {
+  "id": "story_tn_feast_06",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_06.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "round brown loaf in a wicker basket",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "basket",
+   "bread",
+   "feast",
+   "kitchen",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   331,
+   251
+  ]
+ },
+ {
+  "id": "story_tn_feast_07",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_07.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "clay milk jug",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "feast",
+   "jug",
+   "kitchen",
+   "milk",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   255,
+   299
+  ]
+ },
+ {
+  "id": "story_tn_feast_08",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_08.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "string of warm-yellow paper lanterns between two poles",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "feast",
+   "festive",
+   "kitchen",
+   "lanterns",
+   "night_glow",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   447,
+   283
+  ]
+ },
+ {
+  "id": "story_tn_feast_09",
+  "path": "art/atlas/story_tn_feast/story_tn_feast_09.webp",
+  "sheet": "story_tn_feast",
+  "category": "story_prop",
+  "label": "wooden ladle",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "feast",
+   "kitchen",
+   "ladle",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   188,
+   300
+  ]
  }
 ]

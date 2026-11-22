@@ -313,6 +313,27 @@ Run long work through background agents/workflows with narrow ownership (one own
 - Never run the cast builder's standing pass while Godot imports: it rewrites every figure file and the import reads
   half-written webps (ERR_FILE_CORRUPT); import after the art jobs finish.
 
+**Learned on turnip (「커다란 순무」, 2026-11-23)**
+- A growing thing is ONE card sunk into the paper ground (the ground hides what is below it at any camera elevation
+  we use): the giant turnip stands at its spot sunk to its violet shoulder and each heave raises it a little; measure
+  the drawn bulb's height on the card first (the root tail is long: the first sink showed the whole bulb by the
+  fourth pull). Growth stages before it are card swaps with a paper pop (sprout -> rosette -> crown -> sunk turnip).
+- A pulling line: side `pull` figures mirrored toward the target, marks a hand's width apart, the contacts listed in
+  `overlap_ok` and the roles added to `stage.no_spacing` by the handler; each heave is a spring on the actor's pop
+  node (`a._root.quaternion` about the view axis, pivot at the feet), so the whole line leans back and settles. Put
+  the pulled object a step BEHIND the line (z) and the first puller clear of its widest part, or it hides him.
+- An animal with no drawn run cycle must walk with no `pose` ("run" falls back to its standing side card = a hopping
+  card); give it speed instead.
+- A character on a roof: `lift` (not a raised position) keeps the overlap check off the building's base line; the hop
+  down is a handler arc on lift. The shot of the roof must keep the camera in front of the cast (a long lens from
+  further away): a close low shot of a building behind the line glides the camera through the line.
+- Cover jobs can live in the tale's own jobs file (`import cover_jobs as _cj; _cj.art/title/back/spot`), so the shared
+  tools/art/cover_jobs.py stays untouched while other tales edit it.
+- characters.sliced_path(..., "x") drops pieces under 30 % of the tallest: a lineup with a mouse beside a grandpa
+  needs an area filter (tools/cast/turnip_cast.py).
+- 톡톡 extra clips can hold repeated takes (the puppy's growl ran 10.5 s, grandpa's "영~차!" twice): check every clip's
+  envelope, not only the narration, and trim with TRIM_SEG.
+
 **Rules for every tale from now on (user, 2026-11-22/23, after sunmoon and the four-tale pass)**
 - Nothing overlaps (user: "최대한 겹치게 하지마라는 규칙은 없었나"): no character, set piece or fx prop (ropes, jars,
   baskets, flying props) may sit inside another or hide a speaker. OVERLAP_COUNT and OCCLUDE_COUNT must be 0 in the

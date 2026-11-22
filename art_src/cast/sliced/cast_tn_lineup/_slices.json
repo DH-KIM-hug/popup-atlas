@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_tn_lineup",
+ "bg": [
+  0.984,
+  0.02,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tn_lineup_00",
+   "bbox": [
+    56,
+    59,
+    378,
+    665
+   ],
+   "area": 128277,
+   "size": [
+    330,
+    614
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_lineup_01",
+   "bbox": [
+    432,
+    107,
+    696,
+    665
+   ],
+   "area": 105629,
+   "size": [
+    272,
+    566
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_lineup_02",
+   "bbox": [
+    772,
+    174,
+    1026,
+    665
+   ],
+   "area": 63329,
+   "size": [
+    262,
+    499
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_lineup_03",
+   "bbox": [
+    1101,
+    396,
+    1417,
+    662
+   ],
+   "area": 45316,
+   "size": [
+    324,
+    274
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_lineup_04",
+   "bbox": [
+    1486,
+    398,
+    1815,
+    661
+   ],
+   "area": 39064,
+   "size": [
+    337,
+    271
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_lineup_05",
+   "bbox": [
+    1884,
+    486,
+    2116,
+    661
+   ],
+   "area": 18072,
+   "size": [
+    240,
+    183
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

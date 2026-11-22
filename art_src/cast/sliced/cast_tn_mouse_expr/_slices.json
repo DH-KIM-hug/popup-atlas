@@ -1,0 +1,147 @@
+{
+ "sheet": "cast_tn_mouse_expr",
+ "bg": [
+  0.98,
+  0.02,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tn_mouse_expr_00",
+   "bbox": [
+    33,
+    253,
+    346,
+    501
+   ],
+   "area": 36730,
+   "size": [
+    321,
+    256
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_mouse_expr_01",
+   "bbox": [
+    351,
+    227,
+    597,
+    505
+   ],
+   "area": 31078,
+   "size": [
+    254,
+    286
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_mouse_expr_02",
+   "bbox": [
+    623,
+    326,
+    889,
+    505
+   ],
+   "area": 28625,
+   "size": [
+    274,
+    187
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_mouse_expr_03",
+   "bbox": [
+    914,
+    244,
+    1139,
+    505
+   ],
+   "area": 37592,
+   "size": [
+    233,
+    269
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_mouse_expr_04",
+   "bbox": [
+    1172,
+    202,
+    1393,
+    502
+   ],
+   "area": 39420,
+   "size": [
+    229,
+    308
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_mouse_expr_05",
+   "bbox": [
+    1410,
+    266,
+    1641,
+    505
+   ],
+   "area": 34220,
+   "size": [
+    239,
+    247
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_mouse_expr_06",
+   "bbox": [
+    1663,
+    242,
+    1884,
+    505
+   ],
+   "area": 37379,
+   "size": [
+    229,
+    271
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_mouse_expr_07",
+   "bbox": [
+    1907,
+    205,
+    2141,
+    505
+   ],
+   "area": 36925,
+   "size": [
+    242,
+    308
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

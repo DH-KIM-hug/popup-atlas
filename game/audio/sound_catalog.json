@@ -1298,6 +1298,162 @@
    "positional": false,
    "loop": false,
    "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "tn.pop": {
+   "files": [
+    "res://audio/sfx/tn_pop.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.0,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/el_turnip_pop.mp3 (ElevenLabs SFX made for 톡톡): the turnip comes out"
+  },
+  "tn.strain": {
+   "files": [
+    "res://audio/sfx/tn_strain.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/el_pull_strain.mp3 (ElevenLabs SFX made for 톡톡): a heave"
+  },
+  "tn.squeak": {
+   "files": [
+    "res://audio/sfx/tn_squeak.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/mouse_squeak_1.mp3 (Pixabay 'Mouse Squeak', TanwerAman)"
+  },
+  "tn.bark": {
+   "files": [
+    "res://audio/sfx/tn_bark.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false,
+   "note": "turnip: 톡톡 animals/dog_3.mp3 (Pixabay 'Friendly Small dog bark (1)', Yodguard)"
+  },
+  "tn.meow": {
+   "files": [
+    "res://audio/sfx/tn_meow.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false,
+   "note": "turnip: 톡톡 animals/cat_2.mp3 (Pixabay 'Cat Meow', SOUND_GARAGE)"
+  },
+  "tn.water": {
+   "files": [
+    "res://audio/sfx/tn_water.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/water_pour_1.mp3 (Pixabay 'Pouring Water', Universfield)"
+  },
+  "tn.dig": {
+   "files": [
+    "res://audio/sfx/tn_dig.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/dig_soil_1.mp3 (Pixabay 'Digging with shovel', freesound_community)"
+  },
+  "tn.rustle": {
+   "files": [
+    "res://audio/sfx/tn_rustle.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/rustle_1.mp3 (Pixabay 'Bush Rustle', freesound_community)"
+  },
+  "tn.sun": {
+   "files": [
+    "res://audio/sfx/tn_sun.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.0,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/el_sun_warm.mp3 (ElevenLabs SFX made for 톡톡)"
+  },
+  "tn.grow": {
+   "files": [
+    "res://audio/sfx/tn_grow.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/chime_up.mp3 (Pixabay 'Fairy Dust Shimmer 1', floraphonic)"
+  },
+  "tn.slurp": {
+   "files": [
+    "res://audio/sfx/tn_slurp.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/slurp_1.mp3 (Pixabay 'Cartoon Slurp', freesound_community)"
+  },
+  "tn.cheer": {
+   "files": [
+    "res://audio/sfx/tn_cheer.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -12,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "turnip: 톡톡 sfx/cheer.mp3 (Pixabay 'Applause, small audience', freesound_community)"
   }
  },
  "music": {
@@ -1390,6 +1546,34 @@
    "fade_out": 2.0,
    "hold": true,
    "note": "story-start music from 톡톡 동화극장 (sfx/intro_magic.mp3, Pixabay 'Magical Storytime', Pixabay Content License); plays once when the book opens, beat music waits for it"
+  },
+  "intro_cozy2": {
+   "file": "res://audio/music/intro_cozy2_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 0.2,
+   "fade_out": 2.0,
+   "hold": true,
+   "note": "story-start music from 톡톡 동화극장 (sfx/intro_cozy2.mp3, Pixabay 'Light from the Hallway (Mbira Lullaby)', KonstantinPazuzuStudio, Pixabay Content License); turnip's intro in 톡톡; plays once when the book opens, beat music waits for it"
+  },
+  "turnip": {
+   "file": "res://audio/music/music_turnip_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": true,
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "note": "톡톡's turnip music (music/el_turnip_bgm.mp3, Eleven Music made for 톡톡: Russian village folk, balalaika / button accordion / domra / tambourine, 96 BPM), -22 LUFS"
+  },
+  "finale_happy": {
+   "file": "res://audio/music/finale_happy_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 0.2,
+   "fade_out": 2.0,
+   "note": "톡톡's finale music (sfx/finale_happy.mp3, Pixabay 'Happy Kids', HitsLab), the feast"
   }
  },
  "beds": {

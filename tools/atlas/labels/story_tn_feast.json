@@ -1,0 +1,134 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "turnip",
+  "story",
+  "feast",
+  "kitchen"
+ ],
+ "items": {
+  "00": [
+   "long wooden table with a red-and-cream checked cloth",
+   "story_prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "table",
+     "checked"
+    ]
+   }
+  ],
+  "01": [
+   "big black-iron soup pot, lid tilted, golden soup",
+   "story_prop",
+   0.13,
+   0,
+   {
+    "tags": [
+     "pot",
+     "soup",
+     "cooking"
+    ]
+   }
+  ],
+  "02": [
+   "wooden bowl of golden turnip soup",
+   "story_prop",
+   0.045,
+   0,
+   {
+    "tags": [
+     "bowl",
+     "soup"
+    ]
+   }
+  ],
+  "03": [
+   "chopping board with turnip slices and a knife",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "board",
+     "knife",
+     "turnip"
+    ]
+   }
+  ],
+  "04": [
+   "long wooden bench",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "bench",
+     "seat"
+    ]
+   }
+  ],
+  "05": [
+   "cream paper steam curls",
+   "story_fx",
+   0.1,
+   0,
+   {
+    "tags": [
+     "steam"
+    ]
+   }
+  ],
+  "06": [
+   "round brown loaf in a wicker basket",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "bread",
+     "basket"
+    ]
+   }
+  ],
+  "07": [
+   "clay milk jug",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "jug",
+     "milk"
+    ]
+   }
+  ],
+  "08": [
+   "string of warm-yellow paper lanterns between two poles",
+   "story_prop",
+   0.32,
+   0,
+   {
+    "tags": [
+     "lanterns",
+     "night_glow",
+     "festive"
+    ]
+   }
+  ],
+  "09": [
+   "wooden ladle",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "ladle",
+     "kitchen"
+    ]
+   }
+  ]
+ }
+}

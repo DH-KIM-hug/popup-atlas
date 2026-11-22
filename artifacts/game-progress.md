@@ -1997,3 +1997,43 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     missing_audio=[].
   - Screens: artifacts/app_ui/v1/app_ui_sheet.jpg (13 screens x landscape 1200x900 + portrait 675x900; a 900x1200 window
     does not fit this Mac's screen, 675 pt is the strict case). tools/app/shots.sh, tools/app/regress.sh.
+
+## 2026-11-23 — turnip (「커다란 순무」) v1: plan, shared farm cast, garden / feast art, one-spread playable tale, 4:37
+Plan (read script, one place, camera moves only; seed 3 view 4: the long thatched farmhouse + red barn behind the garden):
+| beat | shots | taps | what happens |
+|---|---|---|---|
+| seed 봄 | crane -> establish -> seed close | seed ×1 (tn_002) | grandpa kneels, the hole heap pops, a seed above his palm rolls into the hole |
+| grow 무럭무럭 | sprout -> grown low | sprout ×3 (tn_005) | sprout -> water (rosette) -> sun (leaf crown) -> summer: the giant turnip sunk to its violet shoulder, summer flowers pop |
+| grandpa 영차! | medium -> line -> house | turnip ×2 (tn_014, voiced once) | clap, he grips the leaves, two heaves, 꿈쩍도 안 해요, 엉덩방아, "할머니~!", grandma runs out of the house (run front / side cycles) |
+| grandma | line | turnip ×2 | 같이 해 봐요!, holds his waist, a hand's width up, she calls the girl |
+| girl | yard -> line low | turnip ×2 | the girl runs in (run cycle), holds grandma |
+| dog 멍멍! | bush -> line | bush ×1, turnip ×2 | the bush rustles + bark, the puppy jumps out, trots to the line, "나도 도울게요!" |
+| cat 야옹! | barn (long lens) -> follow -> glare -> line wide | turnip ×2 | the cat on the barn ridge hops down (arc), trots in, glare + growl, "흥, 알았어!", five pull, everyone sits down tired |
+| mouse | hole -> two-shot -> line wide | hole ×1 (tn_034) | 찍찍 from the hole, the mouse scurries out, "너무 작아서…", "나도 할래요!", everyone up again |
+| pop 다 함께 영차! | pop wide -> medium | turnip ×3 | "영~차!", 흔들흔들, 쑥! the turnip flies out and lands on its side, all six tumble back, cheer, grandpa's thanks |
+| feast 순무 잔치 | garden -> feast -> pot | pot ×2 (tn_060) | table + lanterns pop, all walk to the table, pot / bread / board, steam, bowls fly to each, they eat, the book closes |
+- Lines: read script (READ_SCRIPT), 54 segments; cut the scene recaps the continuous camera shows, the counting match
+  (r1005), the moral (r1007, r0904), r0101 / r0203 / r0302 / r0306 / r0605 / r0705 / r1003 / r1004 / r0504 / r0603 for pace;
+  r0502 trimmed to its narration seg. Extras voiced once: call_grandma, cut_glare (trimmed: the clip held 10.5 s of
+  repeated growls), squeak_mouse, cut_heave (trimmed: said twice). Nothing new to record (the cover / replay lines reuse
+  the same-voice clips of witch_candy); ElevenLabs not used.
+- Art (Codex, paper style blocks, md5-checked, single-character refs): NEW shared cast skins farm_grandpa / farm_grandma /
+  farm_girl (13 figures each: calm, pull, tumble, surprised, cheer, sit_tired, eat, side, back, call + 3; walk side 4 /
+  back 2 / front 2; grandma + girl run side 4 / front 2), puppy / tabby_cat / mouse (9 figures each: side calm, pull,
+  tumble, surprised, happy, sit_tired, eat + growl / glare / brave; walk side 4 / back 2 / front 2) via
+  tools/cast/turnip_cast.py (merging). NEW shared atlas sheets story_tn_garden (turnip stages + whole turnip, seed, hole
+  heap, watering can, drops, clods, cabbages, carrots, bean poles, mouse mound, garden bed) and story_tn_feast (table,
+  pot, bowl, board, bench, steam, bread, jug, lanterns, ladle). Book: cover / title / back / spot (jobs in
+  tools/art/turnip_jobs.py, the shared cover_jobs.py untouched). Reused: village_houses_15 farmhouse, village_houses_04
+  barn, bushes_hedges_26, meadow_field_18 fence, village_props_21 bucket, flowers, story_wg_fx_15 sparkles, the meadow
+  template (paper ground).
+- Sound: 톡톡's turnip intro (intro_cozy2, hold), its turnip music and finale music (-22 LUFS), 12 tn.* sfx copied
+  (tools/audio/turnip_sounds.py merges the catalog; CREDITS.md section).
+- Full movie run v1 (1200x900, artifacts/video/turnip_full_v1.mp4 25.2 MB, artifacts/turnip/full_v1_sheet.jpg,
+  run_full_v1.log): STORY_DONE 277.4 s (4:37), CHECK_LINES OK (54), VOICE_DUP=0, CAM_JUMP=0 CAM_JERK=0, SPEAKER_OFF=0,
+  OVERLAP_COUNT 0 OCCLUDE_COUNT 0 (the pulling line's holds are listed in overlap_ok), missing_audio=[] missing_sound=[],
+  SET_CHECK all zero, no script errors.
+- Still off: 4:37 is over the 3–4 min aim (narration ~150 s + 19 taps + the shared ending); the mouse is tiny in wide
+  line shots; the glide to the barn passes close in front of the line (grandma big at the frame edge for ~0.5 s); the
+  paper turn into the tumble pose shows six edge-on slivers for one frame; grandpa only claps during "썰고" (no chopping
+  figure); the pulled turnip stays in the garden at the feast.

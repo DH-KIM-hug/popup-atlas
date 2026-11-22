@@ -1,0 +1,7509 @@
+{
+ "tale_id": "turnip",
+ "title": "커다란 순무",
+ "seeded_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/turnip/voice_script_el.json",
+ "clip_map_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/turnip/narration_el.js + read_narration_el.js",
+ "voices": {
+  "nar": "pFZP5JQG7iQjIQuC4Bku",
+  "grandpa": "qAZH0aMXY8tw1QufPN0D",
+  "grandma": "gnWujHp24oqX3I03lRbU",
+  "girl": "UiDW9qKjB9LaJDdoINsZ",
+  "dog": "n7Wi4g1bhpw4Bs8HK5ph",
+  "cat": "ygoBNrnmTEdu5NtDTmAY",
+  "mouse": "XjGYkUkzth8BPs29fmcV"
+ },
+ "models": {
+  "nar": "eleven_v4",
+  "grandpa": "eleven_v4",
+  "grandma": "eleven_v4",
+  "girl": "eleven_v4",
+  "dog": "eleven_v4",
+  "cat": "eleven_v4",
+  "mouse": "eleven_v4"
+ },
+ "settings": {
+  "grandpa": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "nar": {
+   "stability": 0.45,
+   "style": 0.35
+  },
+  "dog": {
+   "stability": 0.3,
+   "style": 0.5
+  },
+  "grandma": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "mouse": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "girl": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "cat": {
+   "stability": 0.3,
+   "style": 0.5
+  }
+ },
+ "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Lily, grandpa=Namchun, grandma=Huelyn, girl=Annie, dog=Munni, cat=Hopsi, mouse=Teddy. 아기·꼬마 역(dog, cat, mouse)은 아기 말투 태그([baby voice, lisping, very young child, giggly])를 대사 방향에 부여. | 2026-11-22 사용자 결정: girl=Kurumin Cute(UiDW9qKjB9LaJDdoINsZ), 여자아이 배역 목소리 통일(Annie 에서 바꿈)",
+ "handler": "res://stories/turnip/fx.gd",
+ "shots": {
+  "story": [
+   3.0,
+   12.0,
+   0.26,
+   22.0
+  ],
+  "close": [
+   2.4,
+   12.0,
+   0.28,
+   20.0
+  ],
+  "crane_high": [
+   8.5,
+   34.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "establish": [
+   5.4,
+   17.0,
+   0.35,
+   24.0,
+   -6.0
+  ],
+  "garden": [
+   3.4,
+   13.0,
+   0.25,
+   24.0,
+   4.0
+  ],
+  "medium": [
+   2.2,
+   9.0,
+   0.22,
+   22.0,
+   6.0
+  ],
+  "seed": [
+   1.15,
+   16.0,
+   0.1,
+   24.0,
+   -6.0
+  ],
+  "sprout": [
+   1.6,
+   10.0,
+   0.12,
+   24.0,
+   8.0
+  ],
+  "grown": [
+   2.4,
+   6.0,
+   0.3,
+   24.0,
+   -4.0
+  ],
+  "line": [
+   2.5,
+   8.0,
+   0.22,
+   24.0,
+   10.0
+  ],
+  "line_low": [
+   2.1,
+   3.0,
+   0.24,
+   28.0,
+   -12.0
+  ],
+  "line_wide": [
+   3.6,
+   11.0,
+   0.22,
+   24.0,
+   4.0
+  ],
+  "house": [
+   3.2,
+   10.0,
+   0.4,
+   24.0,
+   -10.0
+  ],
+  "yard": [
+   3.0,
+   10.0,
+   0.3,
+   24.0,
+   18.0
+  ],
+  "bush": [
+   1.7,
+   7.0,
+   0.16,
+   26.0,
+   14.0
+  ],
+  "barn": [
+   2.7,
+   4.0,
+   0.7,
+   18.0,
+   6.0
+  ],
+  "glare": [
+   1.5,
+   6.0,
+   0.1,
+   26.0,
+   14.0
+  ],
+  "hole": [
+   1.05,
+   7.0,
+   0.05,
+   26.0,
+   16.0
+  ],
+  "pop": [
+   3.6,
+   10.0,
+   0.3,
+   26.0,
+   0.0
+  ],
+  "feast": [
+   2.6,
+   13.0,
+   0.22,
+   24.0,
+   0.0
+  ],
+  "pot": [
+   1.4,
+   16.0,
+   0.18,
+   26.0,
+   6.0
+  ],
+  "pull_back": [
+   9.5,
+   26.0,
+   0.3,
+   24.0,
+   0.0
+  ]
+ },
+ "ui": {
+  "cover": [
+   [
+    "cast_farm_grandpa_calm",
+    230
+   ],
+   [
+    "cast_farm_girl_calm",
+    160
+   ],
+   [
+    "cast_puppy_happy",
+    110
+   ]
+  ],
+  "end": [
+   [
+    "cast_farm_grandpa_cheer",
+    230
+   ],
+   [
+    "cast_farm_grandma_clap",
+    220
+   ],
+   [
+    "cast_tabby_cat_happy",
+    100
+   ]
+  ],
+  "speakers": {
+   "grandpa": [
+    "할아버지",
+    "3f7a4f",
+    "cast_farm_grandpa_calm"
+   ],
+   "grandma": [
+    "할머니",
+    "d8642a",
+    "cast_farm_grandma_calm"
+   ],
+   "girl": [
+    "손녀",
+    "c8322b",
+    "cast_farm_girl_calm"
+   ],
+   "dog": [
+    "강아지",
+    "c9954a",
+    "cast_puppy_happy"
+   ],
+   "cat": [
+    "고양이",
+    "e0a030",
+    "cast_tabby_cat_happy"
+   ],
+   "mouse": [
+    "생쥐",
+    "8a8580",
+    "cast_mouse_happy"
+   ]
+  }
+ },
+ "backdrop": true,
+ "sound": {
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "day",
+   "afternoon": "afternoon",
+   "late": "late",
+   "evening": "evening"
+  },
+  "fx": {
+   "dig": "tn.dig",
+   "plant_seed": "tn.dig",
+   "sprout": "tn.grow",
+   "water": "tn.water",
+   "sun": "tn.sun",
+   "summer": "tn.grow",
+   "heave": "tn.strain",
+   "fall": "wolf.flop",
+   "rustle": "tn.rustle",
+   "dog_out": "tn.bark",
+   "cat_roof": "tn.meow",
+   "mouse_out": "tn.squeak",
+   "turnip_out": "tn.pop",
+   "cheer_all": "tn.cheer",
+   "boil": "kitchen.boil",
+   "bowls": "tn.slurp",
+   "sit_all": "wolf.flop"
+  },
+  "steps": {
+   "cover": {
+    "on_open": {
+     "music": "intro_cozy2",
+     "fade": 0.2
+    }
+   },
+   "page_turn": "paper.page_turn",
+   "end": {
+    "close_book": "paper.book_close",
+    "music_fade_on_replay": 2.0
+   }
+  },
+  "footsteps": {
+   "grandpa": "pig",
+   "grandma": "pig",
+   "girl": "pig",
+   "dog": null,
+   "cat": null,
+   "mouse": null
+  }
+ },
+ "ground_style": "paper",
+ "spacing": true,
+ "overlap_check": true,
+ "pop_in": false,
+ "overlap_ok": [
+  [
+   "grandpa",
+   "turnip"
+  ],
+  [
+   "grandma",
+   "grandpa"
+  ],
+  [
+   "girl",
+   "grandma"
+  ],
+  [
+   "dog",
+   "girl"
+  ],
+  [
+   "cat",
+   "dog"
+  ],
+  [
+   "mouse",
+   "cat"
+  ]
+ ],
+ "no_spacing": [
+  "grandpa",
+  "grandma",
+  "girl",
+  "dog",
+  "cat",
+  "mouse"
+ ],
+ "cast": {
+  "grandpa": {
+   "kind": "actor",
+   "skin": "farm_grandpa",
+   "height": 0.28,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "할아버지"
+  },
+  "grandma": {
+   "kind": "actor",
+   "skin": "farm_grandma",
+   "height": 0.26,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "할머니"
+  },
+  "girl": {
+   "kind": "actor",
+   "skin": "farm_girl",
+   "height": 0.2,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "손녀"
+  },
+  "dog": {
+   "kind": "actor",
+   "skin": "puppy",
+   "height": 0.115,
+   "views": [
+    "side",
+    "front",
+    "back"
+   ],
+   "label": "강아지"
+  },
+  "cat": {
+   "kind": "actor",
+   "skin": "tabby_cat",
+   "height": 0.105,
+   "views": [
+    "side",
+    "front",
+    "back"
+   ],
+   "label": "고양이"
+  },
+  "mouse": {
+   "kind": "actor",
+   "skin": "mouse",
+   "height": 0.05,
+   "views": [
+    "side",
+    "front",
+    "back"
+   ],
+   "label": "생쥐"
+  }
+ },
+ "moral": "",
+ "beats": [
+  {
+   "id": "cover",
+   "title": "커다란 순무",
+   "spread": null,
+   "steps": [
+    {
+     "do": "cover",
+     "prompt": "tn_n01"
+    }
+   ],
+   "sound": {
+    "music": null,
+    "bed": null
+   }
+  },
+  {
+   "id": "seed",
+   "title": "봄",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": ""
+   },
+   "enter": {
+    "who": {
+     "grandpa": "plant"
+    },
+    "at": {
+     "grandpa": "gp_side"
+    },
+    "left": {
+     "grandpa": 1
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 0.8
+    },
+    {
+     "do": "fx",
+     "fx": "dig",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "tn_r0100"
+    },
+    {
+     "do": "cam",
+     "shot": "seed",
+     "at": "seed_focus",
+     "rate": 1.3,
+     "wait": 0.3,
+     "settle": 0.6
+    },
+    {
+     "do": "fx",
+     "fx": "seed_palm",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "tn_r0102"
+    },
+    {
+     "do": "tap_steps",
+     "target": "seed",
+     "prompt": "tn_002",
+     "hint": "tn_002",
+     "steps": [
+      {
+       "fx": "plant_seed",
+       "wait": 0.6
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "tn_r0103"
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "grow",
+   "title": "무럭무럭",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "hole"
+   },
+   "enter": {
+    "who": {
+     "grandpa": "side_walk"
+    },
+    "at": {
+     "grandpa": "gp_side"
+    },
+    "left": {
+     "grandpa": 1
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "sprout",
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "sprout",
+     "at": "seed_focus",
+     "rate": 1.2,
+     "wait": 0.3,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0201"
+    },
+    {
+     "do": "tap_steps",
+     "target": "sprout",
+     "prompt": "tn_005",
+     "hint": "tn_005",
+     "steps": [
+      {
+       "fx": "water",
+       "wait": 1.4
+      },
+      {
+       "fx": "sun",
+       "wait": 1.2
+      },
+      {
+       "fx": "summer",
+       "wait": 1.0
+      }
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "grown",
+     "at": "seed_focus",
+     "rate": 1.2,
+     "wait": 0.3,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0204"
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "grandpa",
+   "title": "영차!",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "afternoon",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "big"
+   },
+   "enter": {
+    "who": {
+     "grandpa": "side_walk"
+    },
+    "at": {
+     "grandpa": "gp_side"
+    },
+    "left": {
+     "grandpa": 1
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": "line_focus",
+     "rate": 1.2,
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "tn_r0301"
+    },
+    {
+     "do": "walk",
+     "who": "grandpa",
+     "to": "line_grandpa",
+     "speed": 0.15
+    },
+    {
+     "do": "pose",
+     "who": "grandpa",
+     "pose": "pull",
+     "left": 1,
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "line",
+     "at": [
+      "turnip",
+      "line_grandpa"
+     ],
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "tap_steps",
+     "target": "turnip",
+     "steps": [
+      {
+       "fx": "heave:1:0.0",
+       "wait": 0.45,
+       "lines": [
+        "tn_r0303"
+       ]
+      },
+      {
+       "fx": "heave:1:0.0",
+       "wait": 0.45
+      }
+     ],
+     "prompt": "tn_014",
+     "hint": "tn_014"
+    },
+    {
+     "do": "say",
+     "line": "tn_r0304"
+    },
+    {
+     "do": "fx",
+     "fx": "fall:grandpa",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "tn_r0305"
+    },
+    {
+     "do": "pose",
+     "who": "grandpa",
+     "pose": "call",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "tn_x_call_grandma"
+    },
+    {
+     "do": "cam",
+     "shot": "house",
+     "at": [
+      "house_door",
+      "line_grandpa"
+     ],
+     "rate": 1.3,
+     "wait": 0.2
+    },
+    {
+     "do": "walk",
+     "who": "grandma",
+     "from": "house_door",
+     "to": "line_grandma",
+     "speed": 0.42,
+     "pose": "run",
+     "follow": "grandma",
+     "shot": "garden",
+     "line": "tn_r0307"
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "grandma",
+   "title": "할머니~!",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "afternoon",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "big"
+   },
+   "enter": {
+    "who": {
+     "grandpa": "pull",
+     "grandma": "calm"
+    },
+    "at": {
+     "grandpa": "line_grandpa",
+     "grandma": "line_grandma"
+    },
+    "left": {
+     "grandpa": 1,
+     "grandma": 1
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "get_up:grandpa",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "line",
+     "at": [
+      "turnip",
+      "line_grandma"
+     ],
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0401"
+    },
+    {
+     "do": "pose",
+     "who": "grandma",
+     "pose": "pull",
+     "left": 1,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "tn_r0402"
+    },
+    {
+     "do": "tap_steps",
+     "target": "turnip",
+     "steps": [
+      {
+       "fx": "heave:2:0.012",
+       "wait": 0.45
+      },
+      {
+       "fx": "heave:2:0.03",
+       "wait": 0.45
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "tn_r0403"
+    },
+    {
+     "do": "pose",
+     "who": "grandma",
+     "pose": "call",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "tn_r0404"
+    },
+    {
+     "do": "pose",
+     "who": "grandma",
+     "pose": "pull",
+     "left": 1,
+     "wait": 0.1
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "girl",
+   "title": "손녀",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "afternoon",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "big",
+    "rise": 0.042
+   },
+   "enter": {
+    "who": {
+     "grandpa": "pull",
+     "grandma": "pull"
+    },
+    "at": {
+     "grandpa": "line_grandpa",
+     "grandma": "line_grandma"
+    },
+    "left": {
+     "grandpa": 1,
+     "grandma": 1
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "yard",
+     "at": [
+      "yard_in",
+      "line_grandma"
+     ],
+     "rate": 1.2,
+     "wait": 0.2
+    },
+    {
+     "do": "walk",
+     "who": "girl",
+     "from": "yard",
+     "to": "line_girl",
+     "speed": 0.42,
+     "pose": "run",
+     "follow": "girl",
+     "shot": "garden",
+     "line": "tn_r0501"
+    },
+    {
+     "do": "pose",
+     "who": "girl",
+     "pose": "pull",
+     "left": 1,
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "line_low",
+     "at": [
+      "turnip",
+      "line_girl"
+     ],
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0502"
+    },
+    {
+     "do": "tap_steps",
+     "target": "turnip",
+     "steps": [
+      {
+       "fx": "heave:3:0.008",
+       "wait": 0.45
+      },
+      {
+       "fx": "heave:3:0.02",
+       "wait": 0.45
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "tn_r0503"
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "dog",
+   "title": "멍멍!",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "late",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "big",
+    "rise": 0.07
+   },
+   "enter": {
+    "who": {
+     "grandpa": "pull",
+     "grandma": "pull",
+     "girl": "pull"
+    },
+    "at": {
+     "grandpa": "line_grandpa",
+     "grandma": "line_grandma",
+     "girl": "line_girl"
+    },
+    "left": {
+     "grandpa": 1,
+     "grandma": 1,
+     "girl": 1
+    },
+    "hidden": {
+     "dog": "bush"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "bush",
+     "at": "bush",
+     "rate": 1.2,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "rustle:bush",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "tn_r0601"
+    },
+    {
+     "do": "tap_steps",
+     "target": "bush",
+     "steps": [
+      {
+       "fx": "dog_out",
+       "wait": 0.3
+      }
+     ]
+    },
+    {
+     "do": "walk",
+     "who": "dog",
+     "to": "line_dog",
+     "speed": 0.4,
+     "follow": "dog",
+     "shot": "garden",
+     "line": "tn_r0602",
+     "segs": [
+      0
+     ]
+    },
+    {
+     "do": "pose",
+     "who": "dog",
+     "pose": "happy",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "tn_r0602",
+     "segs": [
+      1
+     ]
+    },
+    {
+     "do": "pose",
+     "who": "dog",
+     "pose": "pull",
+     "left": 1,
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "line",
+     "at": [
+      "turnip",
+      "line_dog"
+     ],
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0604"
+    },
+    {
+     "do": "tap_steps",
+     "target": "turnip",
+     "steps": [
+      {
+       "fx": "heave:4:0.008",
+       "wait": 0.45
+      },
+      {
+       "fx": "heave:4:0.02",
+       "wait": 0.45
+      }
+     ]
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "cat",
+   "title": "야옹!",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "late",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "big",
+    "rise": 0.098
+   },
+   "enter": {
+    "who": {
+     "grandpa": "pull",
+     "grandma": "pull",
+     "girl": "pull",
+     "dog": "pull"
+    },
+    "at": {
+     "grandpa": "line_grandpa",
+     "grandma": "line_grandma",
+     "girl": "line_girl",
+     "dog": "line_dog"
+    },
+    "left": {
+     "grandpa": 1,
+     "grandma": 1,
+     "girl": 1,
+     "dog": 1
+    },
+    "hidden": {
+     "cat": "barn_roof"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "barn",
+     "at": "barn",
+     "rate": 1.1,
+     "wait": 0.2,
+     "settle": 0.4
+    },
+    {
+     "do": "fx",
+     "fx": "cat_roof",
+     "wait": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0701"
+    },
+    {
+     "do": "fx",
+     "fx": "cat_down",
+     "wait": 0.15
+    },
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": "barn_foot",
+     "rate": 1.6,
+     "wait": 0.85
+    },
+    {
+     "do": "walk",
+     "who": "cat",
+     "from": "barn_foot",
+     "to": "line_cat",
+     "speed": 0.5,
+     "follow": "cat",
+     "shot": "garden",
+     "line": "tn_r0702"
+    },
+    {
+     "do": "fx",
+     "fx": "glare",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "glare",
+     "at": [
+      "line_dog",
+      "line_cat"
+     ],
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0703"
+    },
+    {
+     "do": "say",
+     "line": "tn_x_cut_glare"
+    },
+    {
+     "do": "say",
+     "line": "tn_r0704",
+     "segs": [
+      0
+     ]
+    },
+    {
+     "do": "pose",
+     "who": "dog",
+     "pose": "pull",
+     "left": 1,
+     "wait": 0.0
+    },
+    {
+     "do": "pose",
+     "who": "cat",
+     "pose": "pull",
+     "left": 1,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "tn_r0704",
+     "segs": [
+      1
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "line_wide",
+     "at": [
+      "turnip",
+      "line_cat"
+     ],
+     "rate": 1.3,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "tap_steps",
+     "target": "turnip",
+     "steps": [
+      {
+       "fx": "heave:5:0.0",
+       "wait": 0.45
+      },
+      {
+       "fx": "heave:5:0.0",
+       "wait": 0.45
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "sit_all:5",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "tn_r0706"
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "mouse",
+   "title": "아주 작은 생쥐",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "late",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "big",
+    "rise": 0.098
+   },
+   "enter": {
+    "who": {
+     "grandpa": "sit_tired",
+     "grandma": "sit_tired",
+     "girl": "sit_tired",
+     "dog": "sit_tired",
+     "cat": "sit_tired"
+    },
+    "at": {
+     "grandpa": "line_grandpa",
+     "grandma": "line_grandma",
+     "girl": "line_girl",
+     "dog": "line_dog",
+     "cat": "line_cat"
+    },
+    "left": {
+     "grandpa": 1,
+     "grandma": 1,
+     "girl": 1,
+     "dog": 1,
+     "cat": 1
+    },
+    "hidden": {
+     "mouse": "mouse_hole"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "hole",
+     "at": "mouse_hole",
+     "rate": 1.2,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0801"
+    },
+    {
+     "do": "say",
+     "line": "tn_x_squeak_mouse"
+    },
+    {
+     "do": "tap_steps",
+     "target": "mouse_hole",
+     "prompt": "tn_034",
+     "hint": "tn_034",
+     "steps": [
+      {
+       "fx": "mouse_out",
+       "wait": 0.3
+      }
+     ]
+    },
+    {
+     "do": "walk",
+     "who": "mouse",
+     "to": "line_mouse",
+     "speed": 0.22,
+     "follow": "mouse",
+     "shot": "glare",
+     "line": "tn_r0802"
+    },
+    {
+     "do": "cam",
+     "shot": "glare",
+     "at": [
+      "line_cat",
+      "line_mouse"
+     ],
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0803"
+    },
+    {
+     "do": "say",
+     "line": "tn_r0804"
+    },
+    {
+     "do": "fx",
+     "fx": "stand_all:6",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "line_wide",
+     "at": [
+      "turnip",
+      "line_cat"
+     ],
+     "rate": 1.3,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0805"
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "pop",
+   "title": "다 함께 영차!",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "late",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "big",
+    "rise": 0.098
+   },
+   "enter": {
+    "who": {
+     "grandpa": "pull",
+     "grandma": "pull",
+     "girl": "pull",
+     "dog": "pull",
+     "cat": "pull",
+     "mouse": "pull"
+    },
+    "at": {
+     "grandpa": "line_grandpa",
+     "grandma": "line_grandma",
+     "girl": "line_girl",
+     "dog": "line_dog",
+     "cat": "line_cat",
+     "mouse": "line_mouse"
+    },
+    "left": {
+     "grandpa": 1,
+     "grandma": 1,
+     "girl": 1,
+     "dog": 1,
+     "cat": 1,
+     "mouse": 1
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "pop",
+     "at": [
+      "turnip_land",
+      "line_mouse"
+     ],
+     "rate": 1.2,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0901"
+    },
+    {
+     "do": "tap_steps",
+     "target": "turnip",
+     "steps": [
+      {
+       "fx": "heave:6:0.020000000000000004",
+       "wait": 0.45,
+       "lines": [
+        "tn_x_cut_heave"
+       ]
+      },
+      {
+       "fx": "heave:6:0.020000000000000004",
+       "wait": 0.45,
+       "lines": [
+        "tn_r0902"
+       ]
+      },
+      {
+       "fx": "turnip_out",
+       "wait": 0.1,
+       "lines": [
+        "tn_r0903"
+       ]
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "cheer_all",
+     "wait": 0.3
+    },
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": [
+      "turnip_land",
+      "line_grandpa"
+     ],
+     "rate": 1.3,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r0905"
+    }
+   ],
+   "sound": {
+    "music": "turnip",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "feast",
+   "title": "순무 잔치",
+   "spread": {
+    "seed": 3,
+    "view": 4,
+    "place": "farm",
+    "light": "evening",
+    "spots": {
+     "turnip": [
+      -1.6,
+      -0.95
+     ],
+     "est": [
+      -1.1,
+      -1.4
+     ],
+     "garden_focus": [
+      -1.25,
+      -1.0
+     ],
+     "line_focus": [
+      -1.2,
+      -0.85
+     ],
+     "seed_focus": [
+      -1.52,
+      -0.8
+     ],
+     "house": [
+      -2.05,
+      -2.75
+     ],
+     "house_door": [
+      -2.05,
+      -2.5
+     ],
+     "barn": [
+      -0.55,
+      -2.95
+     ],
+     "barn_foot": [
+      -0.35,
+      -2.55
+     ],
+     "barn_roof": [
+      -0.55,
+      -2.92
+     ],
+     "bush": [
+      0.02,
+      -1.25
+     ],
+     "bush_out": [
+      -0.15,
+      -1.08
+     ],
+     "yard": [
+      -0.15,
+      -2.25
+     ],
+     "yard_in": [
+      -0.5,
+      -1.6
+     ],
+     "mouse_hole": [
+      -0.55,
+      -0.42
+     ],
+     "hole_out": [
+      -0.62,
+      -0.3
+     ],
+     "cabbages": [
+      -2.6,
+      -0.3
+     ],
+     "carrots": [
+      -2.3,
+      -1.3
+     ],
+     "beans": [
+      -2.65,
+      -1.9
+     ],
+     "bed": [
+      -1.95,
+      -1.6
+     ],
+     "pot_spot": [
+      -1.25,
+      -1.98
+     ],
+     "table": [
+      -1.25,
+      -2.0
+     ],
+     "lanterns": [
+      -1.25,
+      -2.3
+     ],
+     "bread": [
+      -1.08,
+      -1.98
+     ],
+     "bench": [
+      -1.25,
+      -1.62
+     ],
+     "turnip_land": [
+      -2.15,
+      -0.8
+     ],
+     "feast_focus": [
+      -1.25,
+      -1.75
+     ],
+     "eat_grandpa": [
+      -1.75,
+      -1.95
+     ],
+     "eat_grandma": [
+      -1.58,
+      -1.55
+     ],
+     "eat_girl": [
+      -1.38,
+      -1.45
+     ],
+     "eat_dog": [
+      -1.16,
+      -1.42
+     ],
+     "eat_cat": [
+      -0.98,
+      -1.45
+     ],
+     "eat_mouse": [
+      -0.83,
+      -1.5
+     ],
+     "gp_side": [
+      -1.3,
+      -0.85
+     ],
+     "line_grandpa": [
+      -1.34,
+      -0.85
+     ],
+     "line_grandma": [
+      -1.2,
+      -0.85
+     ],
+     "line_girl": [
+      -1.07,
+      -0.85
+     ],
+     "line_dog": [
+      -0.95,
+      -0.85
+     ],
+     "line_cat": [
+      -0.85,
+      -0.85
+     ],
+     "line_mouse": [
+      -0.775,
+      -0.85
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_15",
+      "at": "house",
+      "stage": "full",
+      "name": "house",
+      "scale": 1.15,
+      "clear": 1.4
+     },
+     {
+      "card": "village_houses_04",
+      "at": "barn",
+      "stage": "full",
+      "name": "barn",
+      "scale": 0.95,
+      "clear": 1.0
+     },
+     {
+      "card": "story_tn_garden_10",
+      "at": "cabbages",
+      "stage": "full",
+      "name": "cabbages",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_11",
+      "at": "carrots",
+      "stage": "full",
+      "name": "carrots",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_12",
+      "at": "beans",
+      "stage": "full",
+      "name": "beans",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_tn_garden_14",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "bushes_hedges_26",
+      "at": "bush",
+      "stage": "full",
+      "name": "bush",
+      "scale": 1.0,
+      "clear": 0.35
+     },
+     {
+      "card": "story_tn_garden_13",
+      "at": "mouse_hole",
+      "stage": "full",
+      "name": "mouse_hole",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "meadow_field_18",
+      "at": [
+       -2.9,
+       -0.9
+      ],
+      "stage": "full",
+      "name": "fence_l",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": 80.0
+     },
+     {
+      "card": "village_props_21",
+      "at": [
+       -1.75,
+       -2.35
+      ],
+      "stage": "full",
+      "name": "bucket",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "story_tn_feast_00",
+      "at": "table",
+      "stage": 0,
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_feast_08",
+      "at": "lanterns",
+      "stage": 0,
+      "name": "lanterns",
+      "scale": 1.0,
+      "clear": 0,
+      "glow": 0.8,
+      "light": [
+       0.5,
+       0.3,
+       1.2,
+       "#ffc060",
+       true
+      ]
+     }
+    ],
+    "focus": "garden_focus"
+   },
+   "tn": {
+    "turnip": "out"
+   },
+   "enter": {
+    "who": {
+     "grandpa": "cheer",
+     "grandma": "cheer",
+     "girl": "cheer",
+     "dog": "happy",
+     "cat": "happy",
+     "mouse": "happy"
+    },
+    "at": {
+     "grandpa": "line_grandpa",
+     "grandma": "line_grandma",
+     "girl": "line_girl",
+     "dog": "line_dog",
+     "cat": "line_cat",
+     "mouse": "line_mouse"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "pop:table",
+     "wait": 0.15
+    },
+    {
+     "do": "fx",
+     "fx": "pop:lanterns",
+     "wait": 0.15
+    },
+    {
+     "do": "cam",
+     "shot": "garden",
+     "at": "feast_focus",
+     "rate": 1.0,
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "to_table",
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": [
+      "grandpa",
+      "grandma",
+      "girl",
+      "dog",
+      "cat",
+      "mouse"
+     ],
+     "to": {
+      "grandpa": "eat_grandpa",
+      "grandma": "eat_grandma",
+      "girl": "eat_girl",
+      "dog": "eat_dog",
+      "cat": "eat_cat",
+      "mouse": "eat_mouse"
+     },
+     "speed": 0.3,
+     "line": "tn_r1000"
+    },
+    {
+     "do": "cam",
+     "shot": "feast",
+     "at": "feast_focus",
+     "rate": 1.2,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "cook",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "tn_r1001"
+    },
+    {
+     "do": "fx",
+     "fx": "boil",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "tn_r1002"
+    },
+    {
+     "do": "tap_steps",
+     "target": "pot",
+     "prompt": "tn_060",
+     "hint": "tn_060",
+     "shot": "pot",
+     "steps": [
+      {
+       "fx": "bowls:0",
+       "wait": 0.6
+      },
+      {
+       "fx": "bowls:1",
+       "wait": 0.8
+      }
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "feast",
+     "at": "feast_focus",
+     "rate": 1.2,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tn_r1006"
+    },
+    {
+     "do": "end",
+     "after": "tn_n02",
+     "close_book": true
+    }
+   ],
+   "sound": {
+    "music": "finale_happy",
+    "bed": "@light"
+   }
+  }
+ ],
+ "lines": [
+  {
+   "id": "tn_000",
+   "speaker": "nar",
+   "text": "봄이 왔어요. 할아버지가 텃밭에 구멍을 팠어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "봄이 왔어요. 할아버지가 텃밭에 구멍을 팠어요.",
+     "emotion": "happy:1.0",
+     "tags": "[calm, warm, storytelling, springtime]",
+     "audio": "res://audio/voice/turnip/nar_b8838b91a9.mp3",
+     "source_audio": "audio/el/turnip/nar_b8838b91a9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 0,
+   "source_text": "봄이 왔어요. 할아버지가 텃밭에 구멍을 팠어요."
+  },
+  {
+   "id": "tn_001",
+   "speaker": "grandpa+nar",
+   "text": "\"순무야, 크게 자라라.\" 씨앗을 톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "순무야, 크게 자라라.",
+     "emotion": "happy:1.0",
+     "tags": "[gentle, kind, old man, hopeful, whispers to the seed]",
+     "audio": "res://audio/voice/turnip/grandpa_15b923d90a.mp3",
+     "source_audio": "audio/el/turnip/grandpa_15b923d90a.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "씨앗을 톡 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/turnip/nar_35ba4d1114.mp3",
+     "source_audio": "audio/el/turnip/nar_35ba4d1114.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 1,
+   "source_text": "\"순무야, 크게 자라라.\" 씨앗을 톡 눌러 봐요!"
+  },
+  {
+   "id": "tn_002",
+   "speaker": "nar",
+   "text": "씨앗을 톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "seed",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "씨앗을 톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/turnip/nar_35ba4d1114.mp3",
+     "source_audio": "audio/el/turnip/nar_35ba4d1114.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 2,
+   "source_text": "씨앗을 톡 눌러 봐요!"
+  },
+  {
+   "id": "tn_003",
+   "speaker": "nar",
+   "text": "씨앗이 흙 속으로 쏙 들어갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "씨앗이 흙 속으로 쏙 들어갔어요.",
+     "emotion": null,
+     "tags": "[soft, tender, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_a574f05455.mp3",
+     "source_audio": "audio/el/turnip/nar_a574f05455.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 3,
+   "source_text": "씨앗이 흙 속으로 쏙 들어갔어요."
+  },
+  {
+   "id": "tn_004",
+   "speaker": "nar",
+   "text": "파란 싹이 났어요! 물도 주고 햇볕도 줘요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파란 싹이 났어요! 물도 주고 햇볕도 줘요.",
+     "emotion": "happy:1.2",
+     "tags": "[bright, delighted, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_f43ccefd11.mp3",
+     "source_audio": "audio/el/turnip/nar_f43ccefd11.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 4,
+   "source_text": "파란 싹이 났어요! 물도 주고 햇볕도 줘요."
+  },
+  {
+   "id": "tn_005",
+   "speaker": "nar",
+   "text": "순무 싹을 톡톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "grow",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무 싹을 톡톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_ee6408d2c7.mp3",
+     "source_audio": "audio/el/turnip/nar_ee6408d2c7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 5,
+   "source_text": "순무 싹을 톡톡 눌러 봐요!"
+  },
+  {
+   "id": "tn_006",
+   "speaker": "nar",
+   "text": "여름이 되었어요. 순무 잎이 할아버지 키만큼 자랐어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "여름이 되었어요. 순무 잎이 할아버지 키만큼 자랐어요!",
+     "emotion": "toneup:1.2",
+     "tags": "[amazed, bright, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_55919334e8.mp3",
+     "source_audio": "audio/el/turnip/nar_55919334e8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 6,
+   "source_text": "여름이 되었어요. 순무 잎이 할아버지 키만큼 자랐어요!"
+  },
+  {
+   "id": "tn_007",
+   "speaker": "nar",
+   "text": "할아버지가 순무 잎을 꽉 잡았어요. 톡 눌러서 영차!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지가 순무 잎을 꽉 잡았어요. 톡 눌러서 영차!",
+     "emotion": null,
+     "tags": "[encouraging, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_1ada5264f4.mp3",
+     "source_audio": "audio/el/turnip/nar_1ada5264f4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 7,
+   "source_text": "할아버지가 순무 잎을 꽉 잡았어요. 톡 눌러서 영차!"
+  },
+  {
+   "id": "tn_008",
+   "speaker": "nar",
+   "text": "할아버지를 톡 눌러서 영차!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지를 톡 눌러서 영차!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging, lively]",
+     "audio": "res://audio/voice/turnip/nar_22a0ae245a.mp3",
+     "source_audio": "audio/el/turnip/nar_22a0ae245a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 8,
+   "source_text": "할아버지를 톡 눌러서 영차!"
+  },
+  {
+   "id": "tn_009",
+   "speaker": "nar",
+   "text": "순무는 꿈쩍도 안 해요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무는 꿈쩍도 안 해요.",
+     "emotion": "tonedown:1.1",
+     "tags": "[amused, gentle, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_ad6379c47e.mp3",
+     "source_audio": "audio/el/turnip/nar_ad6379c47e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 9,
+   "source_text": "순무는 꿈쩍도 안 해요."
+  },
+  {
+   "id": "tn_010",
+   "speaker": "nar",
+   "text": "혼자서는 안 되겠어요. 할아버지가 할머니를 불러요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "혼자서는 안 되겠어요. 할아버지가 할머니를 불러요!",
+     "emotion": null,
+     "tags": "[gentle, thoughtful, inviting]",
+     "audio": "res://audio/voice/turnip/nar_8992ec1f04.mp3",
+     "source_audio": "audio/el/turnip/nar_8992ec1f04.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 10,
+   "source_text": "혼자서는 안 되겠어요. 할아버지가 할머니를 불러요!"
+  },
+  {
+   "id": "tn_011",
+   "speaker": "grandpa+nar",
+   "text": "\"아이코!\" 할아버지가 엉덩방아를 찧었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "아이코!",
+     "emotion": "toneup:1.5",
+     "tags": "[startled, comical, old man grunts, flops]",
+     "audio": "res://audio/voice/turnip/grandpa_19ce1315cb.mp3",
+     "source_audio": "audio/el/turnip/grandpa_19ce1315cb.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "할아버지가 엉덩방아를 찧었어요.",
+     "emotion": null,
+     "tags": "[amused, playful, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_91554e1ea4.mp3",
+     "source_audio": "audio/el/turnip/nar_91554e1ea4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 11,
+   "source_text": "아이코! 할아버지가 엉덩방아를 찧었어요."
+  },
+  {
+   "id": "tn_012",
+   "speaker": "nar+grandma",
+   "text": "할머니가 달려왔어요. \"같이 해 봐요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니가 달려왔어요.",
+     "emotion": null,
+     "tags": "[warm, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_62247242d1.mp3",
+     "source_audio": "audio/el/turnip/nar_62247242d1.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "grandma",
+     "text": "같이 해 봐요!",
+     "emotion": "happy:1.2",
+     "tags": "[warm, cheerful, encouraging, kind]",
+     "audio": "res://audio/voice/turnip/grandma_2ef20b4dbc.mp3",
+     "source_audio": "audio/el/turnip/grandma_2ef20b4dbc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 12,
+   "source_text": "할머니가 달려왔어요. \"같이 해 봐요!\""
+  },
+  {
+   "id": "tn_013",
+   "speaker": "nar",
+   "text": "할머니가 할아버지 허리를 잡고, 톡! 영차!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니가 할아버지 허리를 잡고, 톡! 영차!",
+     "emotion": null,
+     "tags": "[lively, rhythmic, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_77370e9036.mp3",
+     "source_audio": "audio/el/turnip/nar_77370e9036.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 13,
+   "source_text": "할머니가 할아버지 허리를 잡고, 톡! 영차!"
+  },
+  {
+   "id": "tn_014",
+   "speaker": "nar",
+   "text": "순무를 톡 눌러서 영차!",
+   "status": "reuse",
+   "beat": "grandpa",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무를 톡 눌러서 영차!",
+     "emotion": null,
+     "tags": "[encouraging, lively, playful]",
+     "audio": "res://audio/voice/turnip/nar_fef5ccef27.mp3",
+     "source_audio": "audio/el/turnip/nar_fef5ccef27.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 14,
+   "source_text": "순무를 톡 눌러서 영차!"
+  },
+  {
+   "id": "tn_015",
+   "speaker": "nar",
+   "text": "순무가 한 뼘 올라왔어요! 그래도 안 뽑혀요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무가 한 뼘 올라왔어요! 그래도 안 뽑혀요.",
+     "emotion": "toneup:1.1",
+     "tags": "[excited, then gently disappointed, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_1393390fe1.mp3",
+     "source_audio": "audio/el/turnip/nar_1393390fe1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 15,
+   "source_text": "순무가 한 뼘 올라왔어요! 그래도 안 뽑혀요."
+  },
+  {
+   "id": "tn_016",
+   "speaker": "nar",
+   "text": "할머니가 누구를 부를까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니가 누구를 부를까요?",
+     "emotion": null,
+     "tags": "[curious, thoughtful, inviting]",
+     "audio": "res://audio/voice/turnip/nar_aac85c5588.mp3",
+     "source_audio": "audio/el/turnip/nar_aac85c5588.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 16,
+   "source_text": "할머니가 누구를 부를까요?"
+  },
+  {
+   "id": "tn_017",
+   "speaker": "nar",
+   "text": "음매~ 소는 풀을 먹고 있대요. 사람 친구를 먼저 불러요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "음매~ 소는 풀을 먹고 있대요. 사람 친구를 먼저 불러요!",
+     "emotion": null,
+     "tags": "[playful, amused, light humor]",
+     "audio": "res://audio/voice/turnip/nar_7e479ae626.mp3",
+     "source_audio": "audio/el/turnip/nar_7e479ae626.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 17,
+   "source_text": "음매~ 소는 풀을 먹고 있대요. 사람 친구를 먼저 불러요!"
+  },
+  {
+   "id": "tn_018",
+   "speaker": "nar",
+   "text": "손녀예요! 반짝이는 친구를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "손녀예요! 반짝이는 친구를 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_c5eb15d71c.mp3",
+     "source_audio": "audio/el/turnip/nar_c5eb15d71c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 18,
+   "source_text": "손녀예요! 반짝이는 친구를 눌러 봐요!"
+  },
+  {
+   "id": "tn_019",
+   "speaker": "grandma+nar",
+   "text": "\"손녀야~!\" 손녀가 할머니 허리를 잡았어요. 영차!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "grandma",
+     "text": "손녀야~!",
+     "emotion": "toneup:1.3",
+     "tags": "[calling out, warm, loud and cheerful]",
+     "audio": "res://audio/voice/turnip/grandma_e294f371a7.mp3",
+     "source_audio": "audio/el/turnip/grandma_e294f371a7.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "손녀가 할머니 허리를 잡았어요. 영차!",
+     "emotion": null,
+     "tags": "[lively, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_7151c2afee.mp3",
+     "source_audio": "audio/el/turnip/nar_7151c2afee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 19,
+   "source_text": "\"손녀야~!\" 손녀가 할머니 허리를 잡았어요. 영차!"
+  },
+  {
+   "id": "tn_020",
+   "speaker": "nar",
+   "text": "조금 더 올라왔어요! 누가 더 도와줄까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "조금 더 올라왔어요! 누가 더 도와줄까요?",
+     "emotion": null,
+     "tags": "[bright, curious, hopeful]",
+     "audio": "res://audio/voice/turnip/nar_02dc7e6ee0.mp3",
+     "source_audio": "audio/el/turnip/nar_02dc7e6ee0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 20,
+   "source_text": "조금 더 올라왔어요! 누가 더 도와줄까요?"
+  },
+  {
+   "id": "tn_021",
+   "speaker": "nar",
+   "text": "덤불 뒤에서 멍멍! 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "덤불 뒤에서 멍멍! 누구일까요?",
+     "emotion": null,
+     "tags": "[mysterious, playful, curious whisper]",
+     "audio": "res://audio/voice/turnip/nar_bb421a05ff.mp3",
+     "source_audio": "audio/el/turnip/nar_bb421a05ff.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 21,
+   "source_text": "덤불 뒤에서 멍멍! 누구일까요?"
+  },
+  {
+   "id": "tn_022",
+   "speaker": "nar",
+   "text": "멍멍 하고 우는 친구는 누굴까? 다시 들어 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "멍멍 하고 우는 친구는 누굴까? 다시 들어 봐요.",
+     "emotion": null,
+     "tags": "[playful, curious, inviting]",
+     "audio": "res://audio/voice/turnip/nar_1917ce10da.mp3",
+     "source_audio": "audio/el/turnip/nar_1917ce10da.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 22,
+   "source_text": "멍멍 하고 우는 친구는 누굴까? 다시 들어 봐요."
+  },
+  {
+   "id": "tn_023",
+   "speaker": "nar",
+   "text": "강아지예요! 반짝이는 친구를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "강아지예요! 반짝이는 친구를 눌러 봐요!",
+     "emotion": null,
+     "tags": "[delighted, cheerful, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_c54967089c.mp3",
+     "source_audio": "audio/el/turnip/nar_c54967089c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 23,
+   "source_text": "강아지예요! 반짝이는 친구를 눌러 봐요!"
+  },
+  {
+   "id": "tn_024",
+   "speaker": "nar+dog",
+   "text": "강아지가 뛰어나왔어요. \"나도 도울게요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "강아지가 뛰어나왔어요.",
+     "emotion": null,
+     "tags": "[lively, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_923b617162.mp3",
+     "source_audio": "audio/el/turnip/nar_923b617162.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "dog",
+     "text": "나도 도울게요!",
+     "emotion": "happy:1.4",
+     "tags": "[eager, excited, panting, cheerful, playful bark, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/dog_3541de2275.mp3",
+     "source_audio": "audio/el/turnip/dog_3541de2275.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 24,
+   "source_text": "강아지가 뛰어나왔어요. \"나도 도울게요!\""
+  },
+  {
+   "id": "tn_025",
+   "speaker": "nar",
+   "text": "강아지가 손녀 치마를 꼭 붙잡았어요. 영차!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "강아지가 손녀 치마를 꼭 붙잡았어요. 영차!",
+     "emotion": null,
+     "tags": "[lively, encouraging, rhythmic]",
+     "audio": "res://audio/voice/turnip/nar_8acbb11652.mp3",
+     "source_audio": "audio/el/turnip/nar_8acbb11652.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 25,
+   "source_text": "강아지가 손녀 치마를 꼭 붙잡았어요. 영차!"
+  },
+  {
+   "id": "tn_026",
+   "speaker": "nar",
+   "text": "헛간 지붕에서 야옹! 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "헛간 지붕에서 야옹! 누구일까요?",
+     "emotion": null,
+     "tags": "[mysterious, playful, curious whisper]",
+     "audio": "res://audio/voice/turnip/nar_0220fcfa46.mp3",
+     "source_audio": "audio/el/turnip/nar_0220fcfa46.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 26,
+   "source_text": "헛간 지붕에서 야옹! 누구일까요?"
+  },
+  {
+   "id": "tn_027",
+   "speaker": "nar",
+   "text": "야옹 하고 우는 친구는 누굴까? 다시 들어 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "야옹 하고 우는 친구는 누굴까? 다시 들어 봐요.",
+     "emotion": null,
+     "tags": "[playful, curious, inviting]",
+     "audio": "res://audio/voice/turnip/nar_af54b5ee2a.mp3",
+     "source_audio": "audio/el/turnip/nar_af54b5ee2a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 27,
+   "source_text": "야옹 하고 우는 친구는 누굴까? 다시 들어 봐요."
+  },
+  {
+   "id": "tn_028",
+   "speaker": "nar",
+   "text": "고양이예요! 반짝이는 친구를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고양이예요! 반짝이는 친구를 눌러 봐요!",
+     "emotion": null,
+     "tags": "[delighted, cheerful, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_3f0380c2bd.mp3",
+     "source_audio": "audio/el/turnip/nar_3f0380c2bd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 28,
+   "source_text": "고양이예요! 반짝이는 친구를 눌러 봐요!"
+  },
+  {
+   "id": "tn_029",
+   "speaker": "nar",
+   "text": "고양이가 지붕에서 폴짝 내려왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고양이가 지붕에서 폴짝 내려왔어요.",
+     "emotion": null,
+     "tags": "[smooth, light, playful, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_780bdf6fcc.mp3",
+     "source_audio": "audio/el/turnip/nar_780bdf6fcc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 29,
+   "source_text": "고양이가 지붕에서 폴짝 내려왔어요."
+  },
+  {
+   "id": "tn_030",
+   "speaker": "nar",
+   "text": "어? 강아지랑 고양이가 서로 째려봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어? 강아지랑 고양이가 서로 째려봐요.",
+     "emotion": "tonedown:1.2",
+     "tags": "[amused, comical, playful, sly whisper]",
+     "audio": "res://audio/voice/turnip/nar_719af83d16.mp3",
+     "source_audio": "audio/el/turnip/nar_719af83d16.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 30,
+   "source_text": "어? 강아지랑 고양이가 서로 째려봐요."
+  },
+  {
+   "id": "tn_031",
+   "speaker": "cat+nar",
+   "text": "\"흥, 알았어!\" 그래도 고양이가 강아지 꼬리를 꼭 잡았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "cat",
+     "text": "흥, 알았어!",
+     "emotion": "angry:1.2",
+     "tags": "[sulky, snooty, young girl, short and clear]",
+     "audio": "res://audio/voice/turnip/cat_71163fcc2f.mp3",
+     "source_audio": "audio/el/turnip/cat_71163fcc2f.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "그래도 고양이가 강아지 꼬리를 꼭 잡았어요.",
+     "emotion": null,
+     "tags": "[amused, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_3fd9b6c780.mp3",
+     "source_audio": "audio/el/turnip/nar_3fd9b6c780.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 31,
+   "source_text": "\"흥, 알았어!\" 그래도 고양이가 강아지 꼬리를 꼭 잡았어요."
+  },
+  {
+   "id": "tn_032",
+   "speaker": "nar",
+   "text": "휴우, 모두 지쳐서 털썩 주저앉았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "휴우, 모두 지쳐서 털썩 주저앉았어요.",
+     "emotion": "sad:1.0",
+     "tags": "[tired, soft, comical, sighs]",
+     "audio": "res://audio/voice/turnip/nar_fa06987608.mp3",
+     "source_audio": "audio/el/turnip/nar_fa06987608.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 32,
+   "source_text": "휴우, 모두 지쳐서 털썩 주저앉았어요."
+  },
+  {
+   "id": "tn_033",
+   "speaker": "nar",
+   "text": "흙구멍에서 찍찍 소리가 나요. 톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "흙구멍에서 찍찍 소리가 나요. 톡 눌러 봐요!",
+     "emotion": "whisper",
+     "tags": "[curious, hushed, playful]",
+     "audio": "res://audio/voice/turnip/nar_e05e506c0d.mp3",
+     "source_audio": "audio/el/turnip/nar_e05e506c0d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 33,
+   "source_text": "흙구멍에서 찍찍 소리가 나요. 톡 눌러 봐요!"
+  },
+  {
+   "id": "tn_034",
+   "speaker": "nar",
+   "text": "흙구멍의 생쥐를 톡!",
+   "status": "reuse",
+   "beat": "mouse",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "흙구멍의 생쥐를 톡!",
+     "emotion": null,
+     "tags": "[curious, gentle, playful]",
+     "audio": "res://audio/voice/turnip/nar_1057923dfb.mp3",
+     "source_audio": "audio/el/turnip/nar_1057923dfb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 34,
+   "source_text": "흙구멍의 생쥐를 톡!"
+  },
+  {
+   "id": "tn_035",
+   "speaker": "nar",
+   "text": "아주 작은 생쥐가 쪼르르 나왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아주 작은 생쥐가 쪼르르 나왔어요.",
+     "emotion": null,
+     "tags": "[soft, tender, amused, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_aa55b57cf4.mp3",
+     "source_audio": "audio/el/turnip/nar_aa55b57cf4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 35,
+   "source_text": "아주 작은 생쥐가 쪼르르 나왔어요."
+  },
+  {
+   "id": "tn_036",
+   "speaker": "cat",
+   "text": "\"너무 작아서 안 될 거야~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "cat",
+     "text": "너무 작아서 안 될 거야~",
+     "emotion": "tonedown:1.2",
+     "tags": "[teasing, smug, drawling, doubtful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/cat_a3f0d3e578.mp3",
+     "source_audio": "audio/el/turnip/cat_a3f0d3e578.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 36,
+   "source_text": "\"너무 작아서 안 될 거야~\""
+  },
+  {
+   "id": "tn_037",
+   "speaker": "mouse+nar",
+   "text": "\"나도 할래요!\" 생쥐가 고양이 꼬리를 꼭 잡았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mouse",
+     "text": "나도 할래요!",
+     "emotion": "toneup:1.5",
+     "tags": "[determined, brave, small voice, squeaky, cheerful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/mouse_78407df3c6.mp3",
+     "source_audio": "audio/el/turnip/mouse_78407df3c6.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "생쥐가 고양이 꼬리를 꼭 잡았어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_db1a63a8de.mp3",
+     "source_audio": "audio/el/turnip/nar_db1a63a8de.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 37,
+   "source_text": "\"나도 할래요!\" 생쥐가 고양이 꼬리를 꼭 잡았어요."
+  },
+  {
+   "id": "tn_038",
+   "speaker": "nar",
+   "text": "이번엔 여섯이 다 함께! 순무를 톡톡 눌러요. 영~차!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이번엔 여섯이 다 함께! 순무를 톡톡 눌러요. 영~차!",
+     "emotion": "toneup:1.3",
+     "tags": "[excited, big build-up, lively, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_524af62974.mp3",
+     "source_audio": "audio/el/turnip/nar_524af62974.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 38,
+   "source_text": "이번엔 여섯이 다 함께! 순무를 톡톡 눌러요. 영~차!"
+  },
+  {
+   "id": "tn_039",
+   "speaker": "nar",
+   "text": "순무를 톡톡 눌러요. 영~차!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무를 톡톡 눌러요. 영~차!",
+     "emotion": null,
+     "tags": "[excited, strained, lively, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_adcf6e7f06.mp3",
+     "source_audio": "audio/el/turnip/nar_adcf6e7f06.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 39,
+   "source_text": "순무를 톡톡 눌러요. 영~차!"
+  },
+  {
+   "id": "tn_040",
+   "speaker": "nar",
+   "text": "쑥! 커다란 순무가 뽑혔어요! 모두 벌렁 넘어졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쑥! 커다란 순무가 뽑혔어요! 모두 벌렁 넘어졌어요.",
+     "emotion": "happy:1.5",
+     "tags": "[exclaims, joyful, comical, lively storytelling]",
+     "audio": "res://audio/voice/turnip/nar_08637dc7c9.mp3",
+     "source_audio": "audio/el/turnip/nar_08637dc7c9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 40,
+   "source_text": "쑥! 커다란 순무가 뽑혔어요! 모두 벌렁 넘어졌어요."
+  },
+  {
+   "id": "tn_041",
+   "speaker": "nar",
+   "text": "작은 생쥐까지 모두 힘을 모았더니 뽑혔어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "작은 생쥐까지 모두 힘을 모았더니 뽑혔어요!",
+     "emotion": "happy:1.3",
+     "tags": "[warm, proud, delighted, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_088330846e.mp3",
+     "source_audio": "audio/el/turnip/nar_088330846e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 41,
+   "source_text": "작은 생쥐까지 모두 힘을 모았더니 뽑혔어요!"
+  },
+  {
+   "id": "tn_042",
+   "speaker": "nar",
+   "text": "맛있는 순무국을 끓였어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맛있는 순무국을 끓였어요.",
+     "emotion": null,
+     "tags": "[cozy, warm, delighted, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_4aaf80c65f.mp3",
+     "source_audio": "audio/el/turnip/nar_4aaf80c65f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 42,
+   "source_text": "맛있는 순무국을 끓였어요."
+  },
+  {
+   "id": "tn_043",
+   "speaker": "nar",
+   "text": "누가 먼저 순무를 잡았지? 차례대로 톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "누가 먼저 순무를 잡았지? 차례대로 톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging, playful]",
+     "audio": "res://audio/voice/turnip/nar_719b622378.mp3",
+     "source_audio": "audio/el/turnip/nar_719b622378.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 43,
+   "source_text": "누가 먼저 순무를 잡았지? 차례대로 톡 눌러 봐요!"
+  },
+  {
+   "id": "tn_044",
+   "speaker": "nar",
+   "text": "맨 처음은 누구였지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맨 처음은 누구였지?",
+     "emotion": null,
+     "tags": "[curious, clear, inviting]",
+     "audio": "res://audio/voice/turnip/nar_c671337888.mp3",
+     "source_audio": "audio/el/turnip/nar_c671337888.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 44,
+   "source_text": "맨 처음은 누구였지?"
+  },
+  {
+   "id": "tn_045",
+   "speaker": "nar",
+   "text": "할아버지가 잡은 다음은 누구?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지가 잡은 다음은 누구?",
+     "emotion": null,
+     "tags": "[curious, clear, inviting]",
+     "audio": "res://audio/voice/turnip/nar_bfda013563.mp3",
+     "source_audio": "audio/el/turnip/nar_bfda013563.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 45,
+   "source_text": "할아버지가 잡은 다음은 누구?"
+  },
+  {
+   "id": "tn_046",
+   "speaker": "nar",
+   "text": "할머니가 잡은 다음은 누구?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니가 잡은 다음은 누구?",
+     "emotion": null,
+     "tags": "[curious, clear, inviting]",
+     "audio": "res://audio/voice/turnip/nar_fd990e2d99.mp3",
+     "source_audio": "audio/el/turnip/nar_fd990e2d99.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 46,
+   "source_text": "할머니가 잡은 다음은 누구?"
+  },
+  {
+   "id": "tn_047",
+   "speaker": "nar",
+   "text": "손녀가 잡은 다음은 누구?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "손녀가 잡은 다음은 누구?",
+     "emotion": null,
+     "tags": "[curious, clear, inviting]",
+     "audio": "res://audio/voice/turnip/nar_499539d9d6.mp3",
+     "source_audio": "audio/el/turnip/nar_499539d9d6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 47,
+   "source_text": "손녀가 잡은 다음은 누구?"
+  },
+  {
+   "id": "tn_048",
+   "speaker": "nar",
+   "text": "강아지가 잡은 다음은 누구?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "강아지가 잡은 다음은 누구?",
+     "emotion": null,
+     "tags": "[curious, clear, inviting]",
+     "audio": "res://audio/voice/turnip/nar_7a29b7ae05.mp3",
+     "source_audio": "audio/el/turnip/nar_7a29b7ae05.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 48,
+   "source_text": "강아지가 잡은 다음은 누구?"
+  },
+  {
+   "id": "tn_049",
+   "speaker": "nar",
+   "text": "고양이가 잡은 다음은 누구?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고양이가 잡은 다음은 누구?",
+     "emotion": null,
+     "tags": "[curious, clear, inviting]",
+     "audio": "res://audio/voice/turnip/nar_7eb150a109.mp3",
+     "source_audio": "audio/el/turnip/nar_7eb150a109.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 49,
+   "source_text": "고양이가 잡은 다음은 누구?"
+  },
+  {
+   "id": "tn_050",
+   "speaker": "nar",
+   "text": "할아버지예요! 반짝이는 친구를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지예요! 반짝이는 친구를 눌러 봐요!",
+     "emotion": null,
+     "tags": "[delighted, bright, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_a0ef710f9f.mp3",
+     "source_audio": "audio/el/turnip/nar_a0ef710f9f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 50,
+   "source_text": "할아버지예요! 반짝이는 친구를 눌러 봐요!"
+  },
+  {
+   "id": "tn_051",
+   "speaker": "nar",
+   "text": "할머니예요! 반짝이는 친구를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니예요! 반짝이는 친구를 눌러 봐요!",
+     "emotion": null,
+     "tags": "[delighted, bright, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_5c8fb5d334.mp3",
+     "source_audio": "audio/el/turnip/nar_5c8fb5d334.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 51,
+   "source_text": "할머니예요! 반짝이는 친구를 눌러 봐요!"
+  },
+  {
+   "id": "tn_052",
+   "speaker": "nar",
+   "text": "생쥐예요! 반짝이는 친구를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "생쥐예요! 반짝이는 친구를 눌러 봐요!",
+     "emotion": null,
+     "tags": "[delighted, bright, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_3603028224.mp3",
+     "source_audio": "audio/el/turnip/nar_3603028224.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 52,
+   "source_text": "생쥐예요! 반짝이는 친구를 눌러 봐요!"
+  },
+  {
+   "id": "tn_053",
+   "speaker": "grandpa",
+   "text": "\"나는 다음이야~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "나는 다음이야~",
+     "emotion": null,
+     "tags": "[cheerful, old man, warm, pleased]",
+     "audio": "res://audio/voice/turnip/grandpa_476675cbc8.mp3",
+     "source_audio": "audio/el/turnip/grandpa_476675cbc8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 53,
+   "source_text": "할아버지: \"나는 다음이야~\""
+  },
+  {
+   "id": "tn_054",
+   "speaker": "grandma",
+   "text": "\"나는 다음이야~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "grandma",
+     "text": "나는 다음이야~",
+     "emotion": null,
+     "tags": "[cheerful, warm, kind, pleased]",
+     "audio": "res://audio/voice/turnip/grandma_f05025bc88.mp3",
+     "source_audio": "audio/el/turnip/grandma_f05025bc88.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 54,
+   "source_text": "할머니: \"나는 다음이야~\""
+  },
+  {
+   "id": "tn_055",
+   "speaker": "girl",
+   "text": "\"나는 다음이야~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "girl",
+     "text": "나는 다음이야~",
+     "emotion": null,
+     "tags": "[cheerful, childlike, bright]",
+     "audio": "res://audio/voice/turnip/girl_45db66d6a0.mp3",
+     "source_audio": "audio/el/turnip/girl_45db66d6a0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 55,
+   "source_text": "손녀: \"나는 다음이야~\""
+  },
+  {
+   "id": "tn_056",
+   "speaker": "dog",
+   "text": "\"나는 다음이야~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "dog",
+     "text": "나는 다음이야~",
+     "emotion": null,
+     "tags": "[cheerful, eager, excited, playful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/dog_ed804f0990.mp3",
+     "source_audio": "audio/el/turnip/dog_ed804f0990.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 56,
+   "source_text": "강아지: \"나는 다음이야~\""
+  },
+  {
+   "id": "tn_057",
+   "speaker": "cat",
+   "text": "\"나는 다음이야~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "cat",
+     "text": "나는 다음이야~",
+     "emotion": null,
+     "tags": "[cheerful, smug, drawling, playful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/cat_281e4b7bec.mp3",
+     "source_audio": "audio/el/turnip/cat_281e4b7bec.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 57,
+   "source_text": "고양이: \"나는 다음이야~\""
+  },
+  {
+   "id": "tn_058",
+   "speaker": "mouse",
+   "text": "\"나는 다음이야~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mouse",
+     "text": "나는 다음이야~",
+     "emotion": null,
+     "tags": "[cheerful, small voice, squeaky, proud, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/mouse_d1cfe41dc4.mp3",
+     "source_audio": "audio/el/turnip/mouse_d1cfe41dc4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 58,
+   "source_text": "생쥐: \"나는 다음이야~\""
+  },
+  {
+   "id": "tn_059",
+   "speaker": "nar",
+   "text": "와! 할아버지, 할머니, 손녀, 강아지, 고양이, 생쥐! 차례를 다 기억했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "와! 할아버지, 할머니, 손녀, 강아지, 고양이, 생쥐! 차례를 다 기억했어요.",
+     "emotion": "happy:1.3",
+     "tags": "[delighted, proud, warm, praising]",
+     "audio": "res://audio/voice/turnip/nar_b24918ef17.mp3",
+     "source_audio": "audio/el/turnip/nar_b24918ef17.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 59,
+   "source_text": "와! 할아버지, 할머니, 손녀, 강아지, 고양이, 생쥐! 차례를 다 기억했어요."
+  },
+  {
+   "id": "tn_060",
+   "speaker": "nar",
+   "text": "순무국을 한 그릇씩 나눠 줘요. 냄비를 톡 눌러요!",
+   "status": "reuse",
+   "beat": "feast",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무국을 한 그릇씩 나눠 줘요. 냄비를 톡 눌러요!",
+     "emotion": null,
+     "tags": "[warm, cozy, inviting]",
+     "audio": "res://audio/voice/turnip/nar_58587d1b07.mp3",
+     "source_audio": "audio/el/turnip/nar_58587d1b07.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 60,
+   "source_text": "순무국을 한 그릇씩 나눠 줘요. 냄비를 톡 눌러요!"
+  },
+  {
+   "id": "tn_061",
+   "speaker": "nar",
+   "text": "냄비를 톡 눌러서 한 그릇씩!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "냄비를 톡 눌러서 한 그릇씩!",
+     "emotion": null,
+     "tags": "[warm, cozy, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_aa984f79b8.mp3",
+     "source_audio": "audio/el/turnip/nar_aa984f79b8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 61,
+   "source_text": "냄비를 톡 눌러서 한 그릇씩!"
+  },
+  {
+   "id": "tn_062",
+   "speaker": "nar",
+   "text": "여섯 그릇, 여섯 명! 딱 맞아요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "여섯 그릇, 여섯 명! 딱 맞아요.",
+     "emotion": "happy:1.2",
+     "tags": "[satisfied, warm, delighted]",
+     "audio": "res://audio/voice/turnip/nar_dfad54ff8d.mp3",
+     "source_audio": "audio/el/turnip/nar_dfad54ff8d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 62,
+   "source_text": "여섯 그릇, 여섯 명! 딱 맞아요."
+  },
+  {
+   "id": "tn_063",
+   "speaker": "nar",
+   "text": "모두 함께 맛있게 먹었답니다.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "모두 함께 맛있게 먹었답니다.",
+     "emotion": "happy:1.3",
+     "tags": "[gentle, warm, content, storytelling, slow, closing]",
+     "audio": "res://audio/voice/turnip/nar_dd0d34e4d1.mp3",
+     "source_audio": "audio/el/turnip/nar_dd0d34e4d1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 63,
+   "source_text": "모두 함께 맛있게 먹었답니다."
+  },
+  {
+   "id": "tn_x_call_grandma",
+   "speaker": "grandpa",
+   "text": "\"할머니~!\"",
+   "status": "reuse",
+   "beat": "grandpa",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "할머니~!",
+     "emotion": "toneup:1.3",
+     "tags": "[calling out, loud, old man, warm, strained]",
+     "audio": "res://audio/voice/turnip/grandpa_841c24e4ff.mp3",
+     "source_audio": "audio/el/turnip/grandpa_841c24e4ff.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "call_grandma",
+   "expr": {
+    "grandpa": "call"
+   }
+  },
+  {
+   "id": "tn_x_cut_glare",
+   "speaker": "dog",
+   "text": "\"으르렁!\"",
+   "status": "reuse",
+   "beat": "cat",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "dog",
+     "text": "으르렁!",
+     "emotion": "angry",
+     "tags": "[growls, low, grumpy, playful warning, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/dog_61fd5bc6f6_t.mp3",
+     "source_audio": "audio/el/turnip/dog_61fd5bc6f6.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/turnip/dog_61fd5bc6f6.mp3 (0-1.05 s: the first growl only)"
+    }
+   ],
+   "source_extra": "cut_glare",
+   "expr": {
+    "dog": "growl"
+   }
+  },
+  {
+   "id": "tn_x_squeak_mouse",
+   "speaker": "mouse",
+   "text": "\"찍찍!\"",
+   "status": "reuse",
+   "beat": "mouse",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mouse",
+     "text": "찍찍!",
+     "emotion": "happy:1.3",
+     "tags": "[squeaks, tiny, cheerful, high-pitched, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/mouse_399f7873bd.mp3",
+     "source_audio": "audio/el/turnip/mouse_399f7873bd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "squeak_mouse"
+  },
+  {
+   "id": "tn_x_cut_heave",
+   "speaker": "grandpa",
+   "text": "\"영~차!\"",
+   "status": "reuse",
+   "beat": "pop",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "영~차!",
+     "emotion": "toneup:1.4",
+     "tags": "[grunts with effort, strained, shouting, determined]",
+     "audio": "res://audio/voice/turnip/grandpa_cc99ce5356_t.mp3",
+     "source_audio": "audio/el/turnip/grandpa_cc99ce5356.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/turnip/grandpa_cc99ce5356.mp3 (0-1.6 s: the first take only)"
+    }
+   ],
+   "source_extra": "cut_heave"
+  },
+  {
+   "id": "tn_x_flop",
+   "speaker": "mouse+grandpa",
+   "text": "\"으앗!\" \"아이쿠!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mouse",
+     "text": "으앗!",
+     "emotion": "toneup:1.5",
+     "tags": "[startled, squeaks, high-pitched, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/mouse_ca1f9735c1.mp3",
+     "source_audio": "audio/el/turnip/mouse_ca1f9735c1.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "grandpa",
+     "text": "아이쿠!",
+     "emotion": "toneup:1.4",
+     "tags": "[groans, comical, old man, flopping, surprised]",
+     "audio": "res://audio/voice/turnip/grandpa_2af7282e4a.mp3",
+     "source_audio": "audio/el/turnip/grandpa_2af7282e4a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "flop"
+  },
+  {
+   "id": "tn_r0100",
+   "speaker": "nar",
+   "text": "봄이 왔어요. 할아버지가 텃밭에 구멍을 팠어요.",
+   "status": "reuse",
+   "beat": "seed",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "봄이 왔어요. 할아버지가 텃밭에 구멍을 팠어요.",
+     "emotion": "happy:1.0",
+     "tags": "[calm, warm, storytelling, springtime]",
+     "audio": "res://audio/voice/turnip/nar_b8838b91a9.mp3",
+     "source_audio": "audio/el/turnip/nar_b8838b91a9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "plant"
+   },
+   "source_read": "R01_seed#0",
+   "source_text": "봄이 왔어요. 할아버지가 텃밭에 구멍을 팠어요."
+  },
+  {
+   "id": "tn_r0101",
+   "speaker": "nar",
+   "text": "할아버지 손바닥 위에 작은 씨앗 하나가 또르르 굴렀어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지 손바닥 위에 작은 씨앗 하나가 또르르 굴렀어요.",
+     "emotion": null,
+     "tags": "[calm, warm, storytelling, springtime]",
+     "audio": "res://audio/voice/turnip/nar_aaa897bdc9.mp3",
+     "source_audio": "audio/el/turnip/nar_aaa897bdc9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "plant"
+   },
+   "source_read": "R01_seed#1",
+   "source_text": "할아버지 손바닥 위에 작은 씨앗 하나가 또르르 굴렀어요."
+  },
+  {
+   "id": "tn_r0102",
+   "speaker": "grandpa",
+   "text": "\"순무야, 크게 자라라.\"",
+   "status": "reuse",
+   "beat": "seed",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "순무야, 크게 자라라.",
+     "emotion": "happy:1.0",
+     "tags": "[gentle, kind, old man, hopeful, whispers to the seed]",
+     "audio": "res://audio/voice/turnip/grandpa_15b923d90a.mp3",
+     "source_audio": "audio/el/turnip/grandpa_15b923d90a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "plant"
+   },
+   "source_read": "R01_seed#2",
+   "source_text": "\"순무야, 크게 자라라.\""
+  },
+  {
+   "id": "tn_r0103",
+   "speaker": "nar",
+   "text": "씨앗이 흙 속으로 쏙 들어갔어요.",
+   "status": "reuse",
+   "beat": "seed",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "씨앗이 흙 속으로 쏙 들어갔어요.",
+     "emotion": null,
+     "tags": "[soft, tender, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_a574f05455.mp3",
+     "source_audio": "audio/el/turnip/nar_a574f05455.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_seed#3",
+   "source_text": "씨앗이 흙 속으로 쏙 들어갔어요."
+  },
+  {
+   "id": "tn_r0104",
+   "speaker": "nar",
+   "text": "할아버지는 흙을 토닥토닥 덮어 주고 집으로 돌아갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지는 흙을 토닥토닥 덮어 주고 집으로 돌아갔어요.",
+     "emotion": null,
+     "tags": "[soft, tender, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_f1e73e829b.mp3",
+     "source_audio": "audio/el/turnip/nar_f1e73e829b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_seed#4",
+   "source_text": "할아버지는 흙을 토닥토닥 덮어 주고 집으로 돌아갔어요."
+  },
+  {
+   "id": "tn_r0200",
+   "speaker": "nar",
+   "text": "며칠 뒤, 할아버지가 씨앗을 심은 텃밭에 나왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "며칠 뒤, 할아버지가 씨앗을 심은 텃밭에 나왔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_9393251763.mp3",
+     "source_audio": "audio/el/turnip/nar_9393251763.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_grow#0",
+   "source_text": "며칠 뒤, 할아버지가 씨앗을 심은 텃밭에 나왔어요."
+  },
+  {
+   "id": "tn_r0201",
+   "speaker": "nar",
+   "text": "파란 싹이 났어요! 물도 주고 햇볕도 줘요.",
+   "status": "reuse",
+   "beat": "grow",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "파란 싹이 났어요! 물도 주고 햇볕도 줘요.",
+     "emotion": "happy:1.2",
+     "tags": "[bright, delighted, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_f43ccefd11.mp3",
+     "source_audio": "audio/el/turnip/nar_f43ccefd11.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "surprised"
+   },
+   "source_read": "R02_grow#1",
+   "source_text": "파란 싹이 났어요! 물도 주고 햇볕도 줘요."
+  },
+  {
+   "id": "tn_r0202",
+   "speaker": "nar",
+   "text": "할아버지는 날마다 텃밭에 나와 싹을 요리조리 들여다보았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지는 날마다 텃밭에 나와 싹을 요리조리 들여다보았어요.",
+     "emotion": null,
+     "tags": "[gentle, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_25b60ee4b6.mp3",
+     "source_audio": "audio/el/turnip/nar_25b60ee4b6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_grow#2",
+   "source_text": "할아버지는 날마다 텃밭에 나와 싹을 요리조리 들여다보았어요."
+  },
+  {
+   "id": "tn_r0203",
+   "speaker": "nar",
+   "text": "싹은 쑥쑥, 잎은 넓적넓적 자라났지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "싹은 쑥쑥, 잎은 넓적넓적 자라났지요.",
+     "emotion": "happy:1.2",
+     "tags": "[bright, delighted, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_1ce4e90fcb.mp3",
+     "source_audio": "audio/el/turnip/nar_1ce4e90fcb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_grow#3",
+   "source_text": "싹은 쑥쑥, 잎은 넓적넓적 자라났지요."
+  },
+  {
+   "id": "tn_r0204",
+   "speaker": "nar",
+   "text": "여름이 되었어요. 순무 잎이 할아버지 키만큼 자랐어요!",
+   "status": "reuse",
+   "beat": "grow",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "여름이 되었어요. 순무 잎이 할아버지 키만큼 자랐어요!",
+     "emotion": "toneup:1.2",
+     "tags": "[amazed, bright, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_55919334e8.mp3",
+     "source_audio": "audio/el/turnip/nar_55919334e8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "surprised"
+   },
+   "source_read": "R02_grow#4",
+   "source_text": "여름이 되었어요. 순무 잎이 할아버지 키만큼 자랐어요!"
+  },
+  {
+   "id": "tn_r0205",
+   "speaker": "nar",
+   "text": "땅속 뿌리도 무럭무럭, 커다랗게 자랐지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "땅속 뿌리도 무럭무럭, 커다랗게 자랐지요.",
+     "emotion": "toneup:1.1",
+     "tags": "[amazed, bright, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_31a71bdab0.mp3",
+     "source_audio": "audio/el/turnip/nar_31a71bdab0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_grow#5",
+   "source_text": "땅속 뿌리도 무럭무럭, 커다랗게 자랐지요."
+  },
+  {
+   "id": "tn_r0300",
+   "speaker": "nar",
+   "text": "여름날, 할아버지가 커다란 순무 앞에 섰어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "여름날, 할아버지가 커다란 순무 앞에 섰어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_a7d304835e.mp3",
+     "source_audio": "audio/el/turnip/nar_a7d304835e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_grandpa#0",
+   "source_text": "여름날, 할아버지가 커다란 순무 앞에 섰어요."
+  },
+  {
+   "id": "tn_r0301",
+   "speaker": "nar",
+   "text": "\"이제 뽑을 때가 되었구나.\" 할아버지가 손바닥을 탁탁 쳤어요.",
+   "status": "reuse",
+   "beat": "grandpa",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "\"이제 뽑을 때가 되었구나.\" 할아버지가 손바닥을 탁탁 쳤어요.",
+     "emotion": null,
+     "tags": "[warm, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_d9e9ab2f23.mp3",
+     "source_audio": "audio/el/turnip/nar_d9e9ab2f23.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "clap"
+   },
+   "source_read": "R03_grandpa#1",
+   "source_text": "\"이제 뽑을 때가 되었구나.\" 할아버지가 손바닥을 탁탁 쳤어요."
+  },
+  {
+   "id": "tn_r0302",
+   "speaker": "nar",
+   "text": "할아버지가 순무 잎을 꽉 잡았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지가 순무 잎을 꽉 잡았어요.",
+     "emotion": null,
+     "tags": "[encouraging, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_f370ea5e4f.mp3",
+     "source_audio": "audio/el/turnip/nar_f370ea5e4f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_grandpa#2",
+   "source_text": "할아버지가 순무 잎을 꽉 잡았어요."
+  },
+  {
+   "id": "tn_r0303",
+   "speaker": "nar",
+   "text": "영차! 할아버지가 잎을 힘껏 당겼어요.",
+   "status": "reuse",
+   "beat": "grandpa",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "영차! 할아버지가 잎을 힘껏 당겼어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_46d6fe0772.mp3",
+     "source_audio": "audio/el/turnip/nar_46d6fe0772.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_grandpa#3",
+   "source_text": "영차! 할아버지가 잎을 힘껏 당겼어요."
+  },
+  {
+   "id": "tn_r0304",
+   "speaker": "nar",
+   "text": "순무는 꿈쩍도 안 해요.",
+   "status": "reuse",
+   "beat": "grandpa",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무는 꿈쩍도 안 해요.",
+     "emotion": "tonedown:1.1",
+     "tags": "[amused, gentle, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_ad6379c47e.mp3",
+     "source_audio": "audio/el/turnip/nar_ad6379c47e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_grandpa#4",
+   "source_text": "순무는 꿈쩍도 안 해요."
+  },
+  {
+   "id": "tn_r0305",
+   "speaker": "grandpa+nar",
+   "text": "\"아이코!\" 할아버지가 엉덩방아를 찧었어요.",
+   "status": "reuse",
+   "beat": "grandpa",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "아이코!",
+     "emotion": "toneup:1.5",
+     "tags": "[startled, comical, old man grunts, flops]",
+     "audio": "res://audio/voice/turnip/grandpa_19ce1315cb.mp3",
+     "source_audio": "audio/el/turnip/grandpa_19ce1315cb.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "할아버지가 엉덩방아를 찧었어요.",
+     "emotion": null,
+     "tags": "[amused, playful, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_91554e1ea4.mp3",
+     "source_audio": "audio/el/turnip/nar_91554e1ea4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "tumble"
+   },
+   "source_read": "R03_grandpa#5",
+   "source_text": "아이코! 할아버지가 엉덩방아를 찧었어요."
+  },
+  {
+   "id": "tn_r0306",
+   "speaker": "nar",
+   "text": "혼자서는 안 되겠어요. 할아버지가 할머니를 불러요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "혼자서는 안 되겠어요. 할아버지가 할머니를 불러요!",
+     "emotion": null,
+     "tags": "[gentle, thoughtful, inviting]",
+     "audio": "res://audio/voice/turnip/nar_8992ec1f04.mp3",
+     "source_audio": "audio/el/turnip/nar_8992ec1f04.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "call"
+   },
+   "source_read": "R03_grandpa#6",
+   "source_text": "혼자서는 안 되겠어요. 할아버지가 할머니를 불러요!"
+  },
+  {
+   "id": "tn_r0307",
+   "speaker": "nar",
+   "text": "할머니는 앞치마를 두른 채 부엌에서 후다닥 뛰어나왔어요.",
+   "status": "reuse",
+   "beat": "grandpa",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니는 앞치마를 두른 채 부엌에서 후다닥 뛰어나왔어요.",
+     "emotion": null,
+     "tags": "[warm, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_b70b40b29e.mp3",
+     "source_audio": "audio/el/turnip/nar_b70b40b29e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_grandpa#7",
+   "source_text": "할머니는 앞치마를 두른 채 부엌에서 후다닥 뛰어나왔어요."
+  },
+  {
+   "id": "tn_r0400",
+   "speaker": "nar",
+   "text": "텃밭에서 할아버지가 순무 곁에 기다리고 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "텃밭에서 할아버지가 순무 곁에 기다리고 있었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_dff5c4feeb.mp3",
+     "source_audio": "audio/el/turnip/nar_dff5c4feeb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_grandma#0",
+   "source_text": "텃밭에서 할아버지가 순무 곁에 기다리고 있었어요."
+  },
+  {
+   "id": "tn_r0401",
+   "speaker": "nar+grandma",
+   "text": "할머니가 달려왔어요. \"같이 해 봐요!\"",
+   "status": "reuse",
+   "beat": "grandma",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니가 달려왔어요.",
+     "emotion": null,
+     "tags": "[warm, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_62247242d1.mp3",
+     "source_audio": "audio/el/turnip/nar_62247242d1.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "grandma",
+     "text": "같이 해 봐요!",
+     "emotion": "happy:1.2",
+     "tags": "[warm, cheerful, encouraging, kind]",
+     "audio": "res://audio/voice/turnip/grandma_2ef20b4dbc.mp3",
+     "source_audio": "audio/el/turnip/grandma_2ef20b4dbc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandma": [
+     "calm",
+     "encourage"
+    ]
+   },
+   "source_read": "R04_grandma#1",
+   "source_text": "할머니가 달려왔어요. \"같이 해 봐요!\""
+  },
+  {
+   "id": "tn_r0402",
+   "speaker": "nar",
+   "text": "할머니가 할아버지 허리를 꽉 잡았어요. 영차!",
+   "status": "reuse",
+   "beat": "grandma",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할머니가 할아버지 허리를 꽉 잡았어요. 영차!",
+     "emotion": null,
+     "tags": "[lively, rhythmic, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_0107bfde1a.mp3",
+     "source_audio": "audio/el/turnip/nar_0107bfde1a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_grandma#2",
+   "source_text": "할머니가 할아버지 허리를 꽉 잡았어요. 영차!"
+  },
+  {
+   "id": "tn_r0403",
+   "speaker": "nar",
+   "text": "순무가 한 뼘 올라왔어요! 그래도 안 뽑혀요.",
+   "status": "reuse",
+   "beat": "grandma",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무가 한 뼘 올라왔어요! 그래도 안 뽑혀요.",
+     "emotion": "toneup:1.1",
+     "tags": "[excited, then gently disappointed, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_1393390fe1.mp3",
+     "source_audio": "audio/el/turnip/nar_1393390fe1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_grandma#3",
+   "source_text": "순무가 한 뼘 올라왔어요! 그래도 안 뽑혀요."
+  },
+  {
+   "id": "tn_r0404",
+   "speaker": "grandma",
+   "text": "\"손녀야, 이리 와서 좀 도와주렴!\"",
+   "status": "reuse",
+   "beat": "grandma",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "grandma",
+     "text": "손녀야, 이리 와서 좀 도와주렴!",
+     "emotion": "toneup:1.3",
+     "tags": "[calling out, warm, loud and cheerful]",
+     "audio": "res://audio/voice/turnip/grandma_39f80bbe44.mp3",
+     "source_audio": "audio/el/turnip/grandma_39f80bbe44.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandma": "call"
+   },
+   "source_read": "R04_grandma#4",
+   "source_text": "\"손녀야, 이리 와서 좀 도와주렴!\""
+  },
+  {
+   "id": "tn_r0500",
+   "speaker": "nar",
+   "text": "텃밭의 할아버지와 할머니는 손녀를 기다렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "텃밭의 할아버지와 할머니는 손녀를 기다렸어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_065c301eb9.mp3",
+     "source_audio": "audio/el/turnip/nar_065c301eb9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_girl#0",
+   "source_text": "텃밭의 할아버지와 할머니는 손녀를 기다렸어요."
+  },
+  {
+   "id": "tn_r0501",
+   "speaker": "nar",
+   "text": "마당에서 놀던 손녀가 깡충깡충 달려왔어요.",
+   "status": "reuse",
+   "beat": "girl",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마당에서 놀던 손녀가 깡충깡충 달려왔어요.",
+     "emotion": null,
+     "tags": "[bright, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_d6997bc7ad.mp3",
+     "source_audio": "audio/el/turnip/nar_d6997bc7ad.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_girl#1",
+   "source_text": "마당에서 놀던 손녀가 깡충깡충 달려왔어요."
+  },
+  {
+   "id": "tn_r0502",
+   "speaker": "nar",
+   "text": "손녀가 할머니 허리를 잡았어요. 영차!",
+   "status": "reuse",
+   "beat": "girl",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "손녀가 할머니 허리를 잡았어요. 영차!",
+     "emotion": null,
+     "tags": "[lively, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_7151c2afee.mp3",
+     "source_audio": "audio/el/turnip/nar_7151c2afee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_girl#2",
+   "source_text": "\"손녀야~!\" 손녀가 할머니 허리를 잡았어요. 영차!",
+   "trimmed_segs": [
+    1
+   ]
+  },
+  {
+   "id": "tn_r0503",
+   "speaker": "nar",
+   "text": "조금 더 올라왔어요!",
+   "status": "reuse",
+   "beat": "girl",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "조금 더 올라왔어요!",
+     "emotion": null,
+     "tags": "[bright, curious, hopeful]",
+     "audio": "res://audio/voice/turnip/nar_d3deba1187.mp3",
+     "source_audio": "audio/el/turnip/nar_d3deba1187.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_girl#3",
+   "source_text": "조금 더 올라왔어요!"
+  },
+  {
+   "id": "tn_r0504",
+   "speaker": "nar",
+   "text": "세 사람이 영차영차 당겨도 순무는 땅속에 꼭 박혀 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "세 사람이 영차영차 당겨도 순무는 땅속에 꼭 박혀 있었어요.",
+     "emotion": "tonedown:1.1",
+     "tags": "[amused, gentle, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_39e3b261f8.mp3",
+     "source_audio": "audio/el/turnip/nar_39e3b261f8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_girl#4",
+   "source_text": "세 사람이 영차영차 당겨도 순무는 땅속에 꼭 박혀 있었어요."
+  },
+  {
+   "id": "tn_r0600",
+   "speaker": "nar",
+   "text": "세 사람이 당기는 텃밭 옆에서 소리가 났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "세 사람이 당기는 텃밭 옆에서 소리가 났어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_e449a7b927.mp3",
+     "source_audio": "audio/el/turnip/nar_e449a7b927.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_dog#0",
+   "source_text": "세 사람이 당기는 텃밭 옆에서 소리가 났어요."
+  },
+  {
+   "id": "tn_r0601",
+   "speaker": "nar",
+   "text": "덤불 뒤에서 멍멍!",
+   "status": "reuse",
+   "beat": "dog",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "덤불 뒤에서 멍멍!",
+     "emotion": null,
+     "tags": "[mysterious, playful, curious whisper]",
+     "audio": "res://audio/voice/turnip/nar_d7495ca7b7.mp3",
+     "source_audio": "audio/el/turnip/nar_d7495ca7b7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_dog#1",
+   "source_text": "덤불 뒤에서 멍멍!"
+  },
+  {
+   "id": "tn_r0602",
+   "speaker": "nar+dog",
+   "text": "강아지가 뛰어나왔어요. \"나도 도울게요!\"",
+   "status": "reuse",
+   "beat": "dog",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "강아지가 뛰어나왔어요.",
+     "emotion": null,
+     "tags": "[lively, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_923b617162.mp3",
+     "source_audio": "audio/el/turnip/nar_923b617162.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "dog",
+     "text": "나도 도울게요!",
+     "emotion": "happy:1.4",
+     "tags": "[eager, excited, panting, cheerful, playful bark, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/dog_3541de2275.mp3",
+     "source_audio": "audio/el/turnip/dog_3541de2275.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "dog": [
+     "happy",
+     "happy"
+    ]
+   },
+   "source_read": "R06_dog#2",
+   "source_text": "강아지가 뛰어나왔어요. \"나도 도울게요!\""
+  },
+  {
+   "id": "tn_r0603",
+   "speaker": "dog",
+   "text": "\"멍멍! 저도 힘이 아주 세요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "dog",
+     "text": "멍멍! 저도 힘이 아주 세요!",
+     "emotion": "happy:1.4",
+     "tags": "[eager, excited, cheerful, playful bark, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/dog_3e5abf3127.mp3",
+     "source_audio": "audio/el/turnip/dog_3e5abf3127.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_dog#3",
+   "source_text": "\"멍멍! 저도 힘이 아주 세요!\""
+  },
+  {
+   "id": "tn_r0604",
+   "speaker": "nar",
+   "text": "강아지가 손녀 치마를 꼭 붙잡았어요. 영차!",
+   "status": "reuse",
+   "beat": "dog",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "강아지가 손녀 치마를 꼭 붙잡았어요. 영차!",
+     "emotion": null,
+     "tags": "[lively, encouraging, rhythmic]",
+     "audio": "res://audio/voice/turnip/nar_8acbb11652.mp3",
+     "source_audio": "audio/el/turnip/nar_8acbb11652.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_dog#4",
+   "source_text": "강아지가 손녀 치마를 꼭 붙잡았어요. 영차!"
+  },
+  {
+   "id": "tn_r0605",
+   "speaker": "nar",
+   "text": "순무가 꿈틀, 조금 더 올라왔지만 아직도 뽑히지 않았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무가 꿈틀, 조금 더 올라왔지만 아직도 뽑히지 않았어요.",
+     "emotion": null,
+     "tags": "[bright, then gently disappointed, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_b5712cfad8.mp3",
+     "source_audio": "audio/el/turnip/nar_b5712cfad8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_dog#5",
+   "source_text": "순무가 꿈틀, 조금 더 올라왔지만 아직도 뽑히지 않았어요."
+  },
+  {
+   "id": "tn_r0700",
+   "speaker": "nar",
+   "text": "텃밭에서는 강아지까지 넷이 힘을 쓰고 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "텃밭에서는 강아지까지 넷이 힘을 쓰고 있었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_cdc960456d.mp3",
+     "source_audio": "audio/el/turnip/nar_cdc960456d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_cat#0",
+   "source_text": "텃밭에서는 강아지까지 넷이 힘을 쓰고 있었어요."
+  },
+  {
+   "id": "tn_r0701",
+   "speaker": "nar",
+   "text": "헛간 지붕에서 야옹!",
+   "status": "reuse",
+   "beat": "cat",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "헛간 지붕에서 야옹!",
+     "emotion": null,
+     "tags": "[mysterious, playful, curious whisper]",
+     "audio": "res://audio/voice/turnip/nar_5261dae3bc.mp3",
+     "source_audio": "audio/el/turnip/nar_5261dae3bc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_cat#1",
+   "source_text": "헛간 지붕에서 야옹!"
+  },
+  {
+   "id": "tn_r0702",
+   "speaker": "nar",
+   "text": "고양이가 지붕에서 폴짝 내려왔어요.",
+   "status": "reuse",
+   "beat": "cat",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고양이가 지붕에서 폴짝 내려왔어요.",
+     "emotion": null,
+     "tags": "[smooth, light, playful, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_780bdf6fcc.mp3",
+     "source_audio": "audio/el/turnip/nar_780bdf6fcc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_cat#2",
+   "source_text": "고양이가 지붕에서 폴짝 내려왔어요."
+  },
+  {
+   "id": "tn_r0703",
+   "speaker": "nar",
+   "text": "어? 강아지랑 고양이가 서로 째려봐요.",
+   "status": "reuse",
+   "beat": "cat",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어? 강아지랑 고양이가 서로 째려봐요.",
+     "emotion": "tonedown:1.2",
+     "tags": "[amused, comical, playful, sly whisper]",
+     "audio": "res://audio/voice/turnip/nar_719af83d16.mp3",
+     "source_audio": "audio/el/turnip/nar_719af83d16.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "dog": "growl",
+    "cat": "glare"
+   },
+   "source_read": "R07_cat#3",
+   "source_text": "어? 강아지랑 고양이가 서로 째려봐요."
+  },
+  {
+   "id": "tn_r0704",
+   "speaker": "cat+nar",
+   "text": "\"흥, 알았어!\" 그래도 고양이가 강아지 꼬리를 꼭 잡았어요.",
+   "status": "reuse",
+   "beat": "cat",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "cat",
+     "text": "흥, 알았어!",
+     "emotion": "angry:1.2",
+     "tags": "[sulky, snooty, young girl, short and clear]",
+     "audio": "res://audio/voice/turnip/cat_71163fcc2f.mp3",
+     "source_audio": "audio/el/turnip/cat_71163fcc2f.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "그래도 고양이가 강아지 꼬리를 꼭 잡았어요.",
+     "emotion": null,
+     "tags": "[amused, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_3fd9b6c780.mp3",
+     "source_audio": "audio/el/turnip/nar_3fd9b6c780.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "cat": [
+     "glare",
+     "pull"
+    ]
+   },
+   "source_read": "R07_cat#4",
+   "source_text": "\"흥, 알았어!\" 그래도 고양이가 강아지 꼬리를 꼭 잡았어요."
+  },
+  {
+   "id": "tn_r0705",
+   "speaker": "nar",
+   "text": "다섯이 영차영차 당겨도 순무는 꼼짝하지 않았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다섯이 영차영차 당겨도 순무는 꼼짝하지 않았어요.",
+     "emotion": null,
+     "tags": "[amused, gentle, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_d0ae96d97a.mp3",
+     "source_audio": "audio/el/turnip/nar_d0ae96d97a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_cat#5",
+   "source_text": "다섯이 영차영차 당겨도 순무는 꼼짝하지 않았어요."
+  },
+  {
+   "id": "tn_r0706",
+   "speaker": "nar",
+   "text": "휴우, 모두 지쳐서 털썩 주저앉았어요.",
+   "status": "reuse",
+   "beat": "cat",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "휴우, 모두 지쳐서 털썩 주저앉았어요.",
+     "emotion": "sad:1.0",
+     "tags": "[tired, soft, comical, sighs]",
+     "audio": "res://audio/voice/turnip/nar_fa06987608.mp3",
+     "source_audio": "audio/el/turnip/nar_fa06987608.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "sit_tired",
+    "grandma": "sit_tired",
+    "girl": "sit_tired",
+    "dog": "sit_tired",
+    "cat": "sit_tired"
+   },
+   "source_read": "R07_cat#6",
+   "source_text": "휴우, 모두 지쳐서 털썩 주저앉았어요."
+  },
+  {
+   "id": "tn_r0800",
+   "speaker": "nar",
+   "text": "다섯이 텃밭에 앉아 쉬는데 작은 소리가 났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다섯이 텃밭에 앉아 쉬는데 작은 소리가 났어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_dfb142b62c.mp3",
+     "source_audio": "audio/el/turnip/nar_dfb142b62c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_mouse#0",
+   "source_text": "다섯이 텃밭에 앉아 쉬는데 작은 소리가 났어요."
+  },
+  {
+   "id": "tn_r0801",
+   "speaker": "nar",
+   "text": "흙구멍에서 찍찍 소리가 나요.",
+   "status": "reuse",
+   "beat": "mouse",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "흙구멍에서 찍찍 소리가 나요.",
+     "emotion": "whisper",
+     "tags": "[curious, hushed, playful]",
+     "audio": "res://audio/voice/turnip/nar_66ee52dc6b.mp3",
+     "source_audio": "audio/el/turnip/nar_66ee52dc6b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_mouse#1",
+   "source_text": "흙구멍에서 찍찍 소리가 나요."
+  },
+  {
+   "id": "tn_r0802",
+   "speaker": "nar",
+   "text": "아주 작은 생쥐가 쪼르르 나왔어요.",
+   "status": "reuse",
+   "beat": "mouse",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아주 작은 생쥐가 쪼르르 나왔어요.",
+     "emotion": null,
+     "tags": "[soft, tender, amused, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_aa55b57cf4.mp3",
+     "source_audio": "audio/el/turnip/nar_aa55b57cf4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_mouse#2",
+   "source_text": "아주 작은 생쥐가 쪼르르 나왔어요."
+  },
+  {
+   "id": "tn_r0803",
+   "speaker": "cat",
+   "text": "\"너무 작아서 안 될 거야~\"",
+   "status": "reuse",
+   "beat": "mouse",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "cat",
+     "text": "너무 작아서 안 될 거야~",
+     "emotion": "tonedown:1.2",
+     "tags": "[teasing, smug, drawling, doubtful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/cat_a3f0d3e578.mp3",
+     "source_audio": "audio/el/turnip/cat_a3f0d3e578.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "cat": "glare"
+   },
+   "source_read": "R08_mouse#3",
+   "source_text": "\"너무 작아서 안 될 거야~\""
+  },
+  {
+   "id": "tn_r0804",
+   "speaker": "mouse+nar",
+   "text": "\"나도 할래요!\" 생쥐가 고양이 꼬리를 꼭 잡았어요.",
+   "status": "reuse",
+   "beat": "mouse",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mouse",
+     "text": "나도 할래요!",
+     "emotion": "toneup:1.5",
+     "tags": "[determined, brave, small voice, squeaky, cheerful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/turnip/mouse_78407df3c6.mp3",
+     "source_audio": "audio/el/turnip/mouse_78407df3c6.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "생쥐가 고양이 꼬리를 꼭 잡았어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_db1a63a8de.mp3",
+     "source_audio": "audio/el/turnip/nar_db1a63a8de.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mouse": [
+     "brave",
+     "brave"
+    ]
+   },
+   "source_read": "R08_mouse#4",
+   "source_text": "\"나도 할래요!\" 생쥐가 고양이 꼬리를 꼭 잡았어요."
+  },
+  {
+   "id": "tn_r0805",
+   "speaker": "nar",
+   "text": "모두 벌떡 일어나 앞사람을 꼭 붙잡았어요.",
+   "status": "reuse",
+   "beat": "mouse",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "모두 벌떡 일어나 앞사람을 꼭 붙잡았어요.",
+     "emotion": null,
+     "tags": "[warm, lively, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_80eef66fb2.mp3",
+     "source_audio": "audio/el/turnip/nar_80eef66fb2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_mouse#5",
+   "source_text": "모두 벌떡 일어나 앞사람을 꼭 붙잡았어요."
+  },
+  {
+   "id": "tn_r0900",
+   "speaker": "nar",
+   "text": "텃밭에 선 여섯은 순무를 다시 당겼어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "텃밭에 선 여섯은 순무를 다시 당겼어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_d3611fbecf.mp3",
+     "source_audio": "audio/el/turnip/nar_d3611fbecf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_pop#0",
+   "source_text": "텃밭에 선 여섯은 순무를 다시 당겼어요."
+  },
+  {
+   "id": "tn_r0901",
+   "speaker": "nar",
+   "text": "이번엔 여섯이 다 함께!",
+   "status": "reuse",
+   "beat": "pop",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이번엔 여섯이 다 함께!",
+     "emotion": "toneup:1.3",
+     "tags": "[excited, big build-up, lively, encouraging]",
+     "audio": "res://audio/voice/turnip/nar_f8e20ae530.mp3",
+     "source_audio": "audio/el/turnip/nar_f8e20ae530.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_pop#1",
+   "source_text": "이번엔 여섯이 다 함께!"
+  },
+  {
+   "id": "tn_r0902",
+   "speaker": "nar",
+   "text": "영차, 영차! 순무가 흔들흔들 움직이기 시작했어요.",
+   "status": "reuse",
+   "beat": "pop",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "영차, 영차! 순무가 흔들흔들 움직이기 시작했어요.",
+     "emotion": "toneup:1.3",
+     "tags": "[excited, big build-up, lively]",
+     "audio": "res://audio/voice/turnip/nar_b9ff76f98d.mp3",
+     "source_audio": "audio/el/turnip/nar_b9ff76f98d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_pop#2",
+   "source_text": "영차, 영차! 순무가 흔들흔들 움직이기 시작했어요."
+  },
+  {
+   "id": "tn_r0903",
+   "speaker": "nar",
+   "text": "쑥! 커다란 순무가 뽑혔어요! 모두 벌렁 넘어졌어요.",
+   "status": "reuse",
+   "beat": "pop",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쑥! 커다란 순무가 뽑혔어요! 모두 벌렁 넘어졌어요.",
+     "emotion": "happy:1.5",
+     "tags": "[exclaims, joyful, comical, lively storytelling]",
+     "audio": "res://audio/voice/turnip/nar_08637dc7c9.mp3",
+     "source_audio": "audio/el/turnip/nar_08637dc7c9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_pop#3",
+   "source_text": "쑥! 커다란 순무가 뽑혔어요! 모두 벌렁 넘어졌어요."
+  },
+  {
+   "id": "tn_r0904",
+   "speaker": "nar",
+   "text": "작은 생쥐까지 모두 힘을 모았더니 뽑혔어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "작은 생쥐까지 모두 힘을 모았더니 뽑혔어요!",
+     "emotion": "happy:1.3",
+     "tags": "[warm, proud, delighted, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_088330846e.mp3",
+     "source_audio": "audio/el/turnip/nar_088330846e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "cheer",
+    "grandma": "cheer",
+    "girl": "cheer",
+    "dog": "happy",
+    "cat": "happy",
+    "mouse": "happy"
+   },
+   "source_read": "R09_pop#4",
+   "source_text": "작은 생쥐까지 모두 힘을 모았더니 뽑혔어요!"
+  },
+  {
+   "id": "tn_r0905",
+   "speaker": "grandpa",
+   "text": "\"고맙다, 얘들아! 생쥐야, 너도 정말 고맙구나.\"",
+   "status": "reuse",
+   "beat": "pop",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "grandpa",
+     "text": "고맙다, 얘들아! 생쥐야, 너도 정말 고맙구나.",
+     "emotion": "happy:1.2",
+     "tags": "[cheerful, old man, warm, grateful]",
+     "audio": "res://audio/voice/turnip/grandpa_7fb2595866.mp3",
+     "source_audio": "audio/el/turnip/grandpa_7fb2595866.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "cheer"
+   },
+   "source_read": "R09_pop#5",
+   "source_text": "\"고맙다, 얘들아! 생쥐야, 너도 정말 고맙구나.\""
+  },
+  {
+   "id": "tn_r1000",
+   "speaker": "nar",
+   "text": "순무를 뽑은 여섯은 집에 모였어요.",
+   "status": "reuse",
+   "beat": "feast",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무를 뽑은 여섯은 집에 모였어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/turnip/nar_4cc15e4362.mp3",
+     "source_audio": "audio/el/turnip/nar_4cc15e4362.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#0",
+   "source_text": "순무를 뽑은 여섯은 집에 모였어요."
+  },
+  {
+   "id": "tn_r1001",
+   "speaker": "nar",
+   "text": "할아버지는 순무를 숭덩숭덩 썰고, 할머니는 커다란 냄비를 꺼냈어요.",
+   "status": "reuse",
+   "beat": "feast",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할아버지는 순무를 숭덩숭덩 썰고, 할머니는 커다란 냄비를 꺼냈어요.",
+     "emotion": null,
+     "tags": "[cozy, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_54e7f71abc.mp3",
+     "source_audio": "audio/el/turnip/nar_54e7f71abc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "clap",
+    "grandma": "ladle"
+   },
+   "source_read": "R10_feast#1",
+   "source_text": "할아버지는 순무를 숭덩숭덩 썰고, 할머니는 커다란 냄비를 꺼냈어요."
+  },
+  {
+   "id": "tn_r1002",
+   "speaker": "nar",
+   "text": "맛있는 순무국을 끓였어요.",
+   "status": "reuse",
+   "beat": "feast",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맛있는 순무국을 끓였어요.",
+     "emotion": null,
+     "tags": "[cozy, warm, delighted, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_4aaf80c65f.mp3",
+     "source_audio": "audio/el/turnip/nar_4aaf80c65f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#2",
+   "source_text": "맛있는 순무국을 끓였어요."
+  },
+  {
+   "id": "tn_r1003",
+   "speaker": "nar",
+   "text": "보글보글, 구수한 냄새가 온 집 안에 퍼졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "보글보글, 구수한 냄새가 온 집 안에 퍼졌어요.",
+     "emotion": null,
+     "tags": "[cozy, warm, storytelling]",
+     "audio": "res://audio/voice/turnip/nar_137ba36727.mp3",
+     "source_audio": "audio/el/turnip/nar_137ba36727.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#3",
+   "source_text": "보글보글, 구수한 냄새가 온 집 안에 퍼졌어요."
+  },
+  {
+   "id": "tn_r1004",
+   "speaker": "nar",
+   "text": "순무국을 한 그릇씩 나눠 줘요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "순무국을 한 그릇씩 나눠 줘요.",
+     "emotion": null,
+     "tags": "[warm, cozy, inviting]",
+     "audio": "res://audio/voice/turnip/nar_9f7135452b.mp3",
+     "source_audio": "audio/el/turnip/nar_9f7135452b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#4",
+   "source_text": "순무국을 한 그릇씩 나눠 줘요."
+  },
+  {
+   "id": "tn_r1005",
+   "speaker": "nar",
+   "text": "여섯 그릇, 여섯 명! 딱 맞아요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "여섯 그릇, 여섯 명! 딱 맞아요.",
+     "emotion": "happy:1.2",
+     "tags": "[satisfied, warm, delighted]",
+     "audio": "res://audio/voice/turnip/nar_dfad54ff8d.mp3",
+     "source_audio": "audio/el/turnip/nar_dfad54ff8d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#5",
+   "source_text": "여섯 그릇, 여섯 명! 딱 맞아요."
+  },
+  {
+   "id": "tn_r1006",
+   "speaker": "nar",
+   "text": "모두 함께 맛있게 먹었답니다.",
+   "status": "reuse",
+   "beat": "feast",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "모두 함께 맛있게 먹었답니다.",
+     "emotion": "happy:1.3",
+     "tags": "[gentle, warm, content, storytelling, slow, closing]",
+     "audio": "res://audio/voice/turnip/nar_dd0d34e4d1.mp3",
+     "source_audio": "audio/el/turnip/nar_dd0d34e4d1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "grandpa": "eat",
+    "grandma": "eat",
+    "girl": "eat",
+    "dog": "eat",
+    "cat": "eat",
+    "mouse": "eat"
+   },
+   "source_read": "R10_feast#6",
+   "source_text": "모두 함께 맛있게 먹었답니다."
+  },
+  {
+   "id": "tn_r1007",
+   "speaker": "nar",
+   "text": "작은 힘도 모이면 커다란 힘이 된답니다.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "작은 힘도 모이면 커다란 힘이 된답니다.",
+     "emotion": "happy:1.2",
+     "tags": "[gentle, warm, wise, slow, closing]",
+     "audio": "res://audio/voice/turnip/nar_1e702d6e7e.mp3",
+     "source_audio": "audio/el/turnip/nar_1e702d6e7e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#7",
+   "source_text": "작은 힘도 모이면 커다란 힘이 된답니다."
+  },
+  {
+   "id": "tn_n01",
+   "speaker": "nar",
+   "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+   "status": "changed-recorded",
+   "beat": "cover",
+   "interaction": "cover",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, warm, cosy Halloween night]",
+     "audio": "res://audio/voice/turnip/nar_f6992243bc.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "tn_n02",
+   "speaker": "nar",
+   "text": "또 보고 싶으면 '다시 보기'를 톡!",
+   "status": "changed-recorded",
+   "beat": "feast",
+   "interaction": "end",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "또 보고 싶으면 '다시 보기'를 톡!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/turnip/nar_5d0ad0a7c3.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  }
+ ]
+}

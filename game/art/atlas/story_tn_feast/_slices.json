@@ -1,0 +1,181 @@
+{
+ "sheet": "story_tn_feast",
+ "bg": [
+  0.976,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_tn_feast_00",
+   "bbox": [
+    13,
+    122,
+    522,
+    413
+   ],
+   "area": 103447,
+   "size": [
+    517,
+    299
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_01",
+   "bbox": [
+    533,
+    99,
+    853,
+    412
+   ],
+   "area": 67936,
+   "size": [
+    328,
+    321
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_02",
+   "bbox": [
+    871,
+    251,
+    1070,
+    411
+   ],
+   "area": 25098,
+   "size": [
+    207,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_03",
+   "bbox": [
+    1092,
+    103,
+    1343,
+    411
+   ],
+   "area": 55294,
+   "size": [
+    259,
+    316
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_04",
+   "bbox": [
+    1367,
+    225,
+    1757,
+    411
+   ],
+   "area": 42792,
+   "size": [
+    398,
+    194
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_05",
+   "bbox": [
+    82,
+    514,
+    271,
+    801
+   ],
+   "area": 22185,
+   "size": [
+    197,
+    295
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_06",
+   "bbox": [
+    346,
+    559,
+    669,
+    802
+   ],
+   "area": 61251,
+   "size": [
+    331,
+    251
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_07",
+   "bbox": [
+    720,
+    510,
+    967,
+    801
+   ],
+   "area": 51517,
+   "size": [
+    255,
+    299
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_08",
+   "bbox": [
+    1025,
+    526,
+    1464,
+    801
+   ],
+   "area": 34724,
+   "size": [
+    447,
+    283
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_feast_09",
+   "bbox": [
+    1521,
+    509,
+    1701,
+    801
+   ],
+   "area": 19497,
+   "size": [
+    188,
+    300
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

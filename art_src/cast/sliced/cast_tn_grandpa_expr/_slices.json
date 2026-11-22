@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_tn_grandpa_expr",
+ "bg": [
+  0.984,
+  0.02,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tn_grandpa_expr_00",
+   "bbox": [
+    32,
+    137,
+    372,
+    625
+   ],
+   "area": 82430,
+   "size": [
+    348,
+    496
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_grandpa_expr_01",
+   "bbox": [
+    799,
+    93,
+    1065,
+    626
+   ],
+   "area": 97109,
+   "size": [
+    274,
+    541
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_grandpa_expr_02",
+   "bbox": [
+    1102,
+    92,
+    1456,
+    626
+   ],
+   "area": 103190,
+   "size": [
+    362,
+    542
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_grandpa_expr_03",
+   "bbox": [
+    1845,
+    95,
+    2126,
+    627
+   ],
+   "area": 97022,
+   "size": [
+    289,
+    540
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_grandpa_expr_04",
+   "bbox": [
+    370,
+    321,
+    795,
+    623
+   ],
+   "area": 78497,
+   "size": [
+    433,
+    310
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_grandpa_expr_05",
+   "bbox": [
+    1453,
+    241,
+    1797,
+    636
+   ],
+   "area": 76397,
+   "size": [
+    352,
+    403
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

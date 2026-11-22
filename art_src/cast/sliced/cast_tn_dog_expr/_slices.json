@@ -1,0 +1,147 @@
+{
+ "sheet": "cast_tn_dog_expr",
+ "bg": [
+  0.98,
+  0.02,
+  0.973
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tn_dog_expr_00",
+   "bbox": [
+    29,
+    269,
+    341,
+    522
+   ],
+   "area": 42834,
+   "size": [
+    320,
+    261
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_dog_expr_01",
+   "bbox": [
+    347,
+    166,
+    602,
+    519
+   ],
+   "area": 43081,
+   "size": [
+    263,
+    361
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_dog_expr_02",
+   "bbox": [
+    605,
+    310,
+    912,
+    518
+   ],
+   "area": 37560,
+   "size": [
+    315,
+    216
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_dog_expr_03",
+   "bbox": [
+    929,
+    217,
+    1133,
+    513
+   ],
+   "area": 39033,
+   "size": [
+    212,
+    304
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_dog_expr_04",
+   "bbox": [
+    1156,
+    172,
+    1353,
+    511
+   ],
+   "area": 37316,
+   "size": [
+    205,
+    347
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_dog_expr_05",
+   "bbox": [
+    1378,
+    263,
+    1578,
+    513
+   ],
+   "area": 34138,
+   "size": [
+    208,
+    258
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_dog_expr_06",
+   "bbox": [
+    1608,
+    220,
+    1809,
+    513
+   ],
+   "area": 39278,
+   "size": [
+    209,
+    301
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_dog_expr_07",
+   "bbox": [
+    1838,
+    294,
+    2150,
+    514
+   ],
+   "area": 37284,
+   "size": [
+    320,
+    228
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

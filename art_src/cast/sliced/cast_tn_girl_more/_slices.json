@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_tn_girl_more",
+ "bg": [
+  0.976,
+  0.031,
+  0.973
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_tn_girl_more_00",
+   "bbox": [
+    63,
+    79,
+    296,
+    664
+   ],
+   "area": 75409,
+   "size": [
+    241,
+    593
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_girl_more_01",
+   "bbox": [
+    390,
+    78,
+    680,
+    664
+   ],
+   "area": 87160,
+   "size": [
+    298,
+    594
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_girl_more_02",
+   "bbox": [
+    771,
+    79,
+    1006,
+    664
+   ],
+   "area": 93054,
+   "size": [
+    243,
+    593
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_girl_more_03",
+   "bbox": [
+    1081,
+    78,
+    1420,
+    663
+   ],
+   "area": 93560,
+   "size": [
+    347,
+    593
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_girl_more_04",
+   "bbox": [
+    1478,
+    94,
+    1790,
+    614
+   ],
+   "area": 84133,
+   "size": [
+    320,
+    528
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_tn_girl_more_05",
+   "bbox": [
+    1854,
+    79,
+    2116,
+    663
+   ],
+   "area": 86284,
+   "size": [
+    270,
+    592
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 7
+  }
+ ]
+}

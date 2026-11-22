@@ -1,0 +1,266 @@
+{
+ "sheet": "story_tn_garden",
+ "bg": [
+  0.98,
+  0.012,
+  0.98
+ ],
+ "dropped": 1,
+ "sprites": [
+  {
+   "id": "story_tn_garden_00",
+   "bbox": [
+    16,
+    23,
+    437,
+    488
+   ],
+   "area": 107176,
+   "size": [
+    429,
+    473
+   ],
+   "halo": 107,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_01",
+   "bbox": [
+    386,
+    154,
+    806,
+    429
+   ],
+   "area": 73283,
+   "size": [
+    428,
+    283
+   ],
+   "halo": 18,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_02",
+   "bbox": [
+    797,
+    346,
+    911,
+    430
+   ],
+   "area": 4309,
+   "size": [
+    122,
+    92
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_03",
+   "bbox": [
+    918,
+    244,
+    1159,
+    430
+   ],
+   "area": 23910,
+   "size": [
+    249,
+    194
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_04",
+   "bbox": [
+    1171,
+    379,
+    1223,
+    430
+   ],
+   "area": 2055,
+   "size": [
+    60,
+    59
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_05",
+   "bbox": [
+    1250,
+    319,
+    1516,
+    435
+   ],
+   "area": 19522,
+   "size": [
+    274,
+    124
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_06",
+   "bbox": [
+    58,
+    509,
+    406,
+    695
+   ],
+   "area": 36845,
+   "size": [
+    356,
+    194
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_07",
+   "bbox": [
+    453,
+    512,
+    631,
+    680
+   ],
+   "area": 8726,
+   "size": [
+    186,
+    176
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_08",
+   "bbox": [
+    713,
+    544,
+    887,
+    663
+   ],
+   "area": 6797,
+   "size": [
+    182,
+    127
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 3
+  },
+  {
+   "id": "story_tn_garden_09",
+   "bbox": [
+    811,
+    604,
+    887,
+    663
+   ],
+   "area": 3022,
+   "size": [
+    84,
+    67
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_10",
+   "bbox": [
+    971,
+    515,
+    1483,
+    687
+   ],
+   "area": 73869,
+   "size": [
+    520,
+    180
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_11",
+   "bbox": [
+    22,
+    763,
+    365,
+    987
+   ],
+   "area": 42557,
+   "size": [
+    351,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_12",
+   "bbox": [
+    394,
+    707,
+    634,
+    988
+   ],
+   "area": 34556,
+   "size": [
+    248,
+    289
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_13",
+   "bbox": [
+    665,
+    793,
+    989,
+    984
+   ],
+   "area": 38405,
+   "size": [
+    332,
+    199
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_tn_garden_14",
+   "bbox": [
+    1021,
+    827,
+    1502,
+    986
+   ],
+   "area": 64371,
+   "size": [
+    489,
+    167
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
