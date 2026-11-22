@@ -18,8 +18,16 @@ var rng: RandomNumberGenerator
 static var _parsed := {}  ## catalog path -> parsed JSON (perf: every spread build reused the same files)
 
 
-func _init(rng_: RandomNumberGenerator, exclude_seasons := ["winter"]) -> void:
+## Dressing themes (sunmoon 2026-11-22): "" = the template's own (western village; korean sheets excluded).
+## "korean": a Joseon countryside: nature cards from every sheet, man-made things (houses, props, signs, lanterns,
+## fences, walls, crops, farm animals) only from the korean_* sheets.
+const THEME_MANMADE := ["building", "house", "prop", "sign", "lantern", "fence", "wall", "crop", "field", "village", "bridge"]
+var theme := ""
+
+
+func _init(rng_: RandomNumberGenerator, exclude_seasons := ["winter"], theme_ := "") -> void:
 	rng = rng_
+	theme = theme_
 	for cpath in CATALOGS:
 		var parsed: Variant = _parsed.get(cpath)
 		if parsed == null:
@@ -32,7 +40,14 @@ func _init(rng_: RandomNumberGenerator, exclude_seasons := ["winter"]) -> void:
 		for it in parsed:
 			var d: Dictionary = it
 			var sheet := str(d.get("sheet", d.get("src", "")))
-			if str(d.get("season", "")) in exclude_seasons or sheet in EXCLUDE_SHEETS:
+			if str(d.get("season", "")) in exclude_seasons:
+				continue
+			if theme == "korean":
+				if sheet in ["winter_snow", "fairytale_west", "farm_animals"]:
+					continue
+				if str(d["category"]) in THEME_MANMADE and not sheet.begins_with("korean_"):
+					continue
+			elif sheet in EXCLUDE_SHEETS:
 				continue
 			var p := str(d["path"])
 			if not p.begins_with("res://"):

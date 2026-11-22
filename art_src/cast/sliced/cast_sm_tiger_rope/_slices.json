@@ -1,0 +1,96 @@
+{
+ "sheet": "cast_sm_tiger_rope",
+ "bg": [
+  0.984,
+  0.031,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_tiger_rope_00",
+   "bbox": [
+    57,
+    85,
+    424,
+    657
+   ],
+   "area": 141680,
+   "size": [
+    375,
+    580
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_tiger_rope_01",
+   "bbox": [
+    488,
+    40,
+    800,
+    682
+   ],
+   "area": 99903,
+   "size": [
+    320,
+    650
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_tiger_rope_02",
+   "bbox": [
+    865,
+    40,
+    1171,
+    682
+   ],
+   "area": 100073,
+   "size": [
+    314,
+    650
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_tiger_rope_03",
+   "bbox": [
+    1217,
+    69,
+    1666,
+    620
+   ],
+   "area": 124083,
+   "size": [
+    457,
+    559
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_tiger_rope_04",
+   "bbox": [
+    1701,
+    68,
+    2132,
+    621
+   ],
+   "area": 112799,
+   "size": [
+    439,
+    561
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 4
+  }
+ ]
+}

@@ -1,0 +1,128 @@
+{
+ "biome": "korean_village",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "yard"
+ ],
+ "items": {
+  "00": [
+   "open stone well with wooden frame, rope and bucket (durebak)",
+   "story_prop",
+   0.44,
+   0,
+   {
+    "tags": [
+     "well",
+     "water"
+    ]
+   }
+  ],
+  "01": [
+   "wooden well bucket (durebak) with rope handle",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "bucket"
+    ]
+   }
+  ],
+  "02": [
+   "jar terrace (jangdokdae): three onggi jars on a stone platform",
+   "story_prop",
+   0.34,
+   0,
+   {
+    "tags": [
+     "jar",
+     "onggi"
+    ]
+   }
+  ],
+  "03": [
+   "big brown onggi jar with lid (hide-behind size)",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "jar",
+     "onggi"
+    ]
+   }
+  ],
+  "04": [
+   "sesame-oil bottle with straw stopper",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "bottle",
+     "oil"
+    ]
+   }
+  ],
+  "05": [
+   "small wood axe",
+   "story_prop",
+   0.045,
+   0,
+   {
+    "tags": [
+     "axe",
+     "tool"
+    ]
+   }
+  ],
+  "06": [
+   "brushwood fence section (woven twigs)",
+   "story_prop",
+   0.17,
+   0,
+   {
+    "tags": [
+     "fence"
+    ]
+   }
+  ],
+  "07": [
+   "bundled firewood stack",
+   "story_prop",
+   0.15,
+   0,
+   {
+    "tags": [
+     "firewood"
+    ]
+   }
+  ],
+  "08": [
+   "rolled straw mat",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "mat"
+    ]
+   }
+  ],
+  "09": [
+   "wooden A-frame carrier (jige)",
+   "story_prop",
+   0.26,
+   0,
+   {
+    "tags": [
+     "jige",
+     "tool"
+    ]
+   }
+  ]
+ }
+}

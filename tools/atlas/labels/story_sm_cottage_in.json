@@ -1,0 +1,51 @@
+{
+ "biome": "korean_village",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "cottage",
+  "interior"
+ ],
+ "items": {
+  "00": [
+   "cottage front wall seen from inside: lattice paper door and window lit by moonlight (mirrored)",
+   "story_building",
+   0.6,
+   0,
+   {
+    "tags": [
+     "wall",
+     "room",
+     "door",
+     "window"
+    ]
+   }
+  ],
+  "01": [
+   "oiled-paper ondol floor (jangpanji), flat",
+   "story_building",
+   0.5,
+   0,
+   {
+    "tags": [
+     "floor",
+     "room"
+    ]
+   }
+  ],
+  "02": [
+   "low wooden table (soban) with a lidded bowl",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "table",
+     "room"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_sm_mom_views",
+ "bg": [
+  0.988,
+  0.02,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_mom_views_00",
+   "bbox": [
+    60,
+    54,
+    360,
+    802
+   ],
+   "area": 146643,
+   "size": [
+    308,
+    756
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_mom_views_01",
+   "bbox": [
+    468,
+    55,
+    822,
+    802
+   ],
+   "area": 172252,
+   "size": [
+    362,
+    755
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_mom_views_02",
+   "bbox": [
+    902,
+    54,
+    1289,
+    802
+   ],
+   "area": 189185,
+   "size": [
+    395,
+    756
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_mom_views_03",
+   "bbox": [
+    1340,
+    66,
+    1779,
+    802
+   ],
+   "area": 174848,
+   "size": [
+    447,
+    744
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

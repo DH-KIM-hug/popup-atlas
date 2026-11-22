@@ -27,7 +27,7 @@ Two rules guard against this:
 
 - From 톡톡 동화극장 (`~/projects/2026/patjuk-game`, READ-ONLY) only the **script** carries over, and even it is a draft to adapt to pop-up scenes. Characters, backgrounds and props are made new for the pop-up look; 톡톡 art is a design reference at most.
 - **Reuse first**: shared card library `game/art/atlas/catalog.json` (419 cards, tags category/biome/season), shared cast `game/art/cast/catalog.json`, world template `scenes/world/meadow.tscn`. New generic art (a wolf, a pig, a straw house) goes into the shared libraries with tags so later tales reuse it; only truly tale-unique art goes in `game/stories/<tale_id>/art/`.
-- The look is fixed (user chose the photographed-miniature look: low lens, shallow DOF, raking warm light, felt ground). Don't re-tune the template look per tale; dress it.
+- The look is fixed (user chose the photographed-miniature look: low lens, shallow DOF, raking warm light). The ground is PAPER, not felt: the user dislikes the felt texture (2026-11-22). Don't re-tune the template look per tale; dress it.
 - Before building a new set, read `references/papercraft_notes.md`. It is adapted from xikhar/papercraft and covers:
   - a paper spec per set and one test card first;
   - card rise and fold timings;
@@ -292,6 +292,26 @@ Run long work through background agents/workflows with narrow ownership (one own
   lifted from a figure where the model drew it natively (same character, same design): a whole-figure sheet with the
   new feature (cast_wc_surprised_black) gave both the reveal figures and the decal source. Show three-row crops.
   PIL ImageDraw.floodfill does nothing on an image made directly by Image.fromarray(numpy): `.copy()` it first.
+
+**Learned on the fourth tale (sunmoon phase 1: plan, art, Korean sets)**
+- Check 톡톡 for a READ-MODE script (`read_script_el.json` + `read_narration_el.js`): sunmoon's is the tale told
+  straight, already free of quizzes and counting, and every line is recorded. `READ_SCRIPT = True` in the tale table
+  seeds those lines (`<prefix>_r<scene><line>`, `READ_SEG_KEEP` for seg trims); borrow only the play script's tap
+  instructions, voiced once. Measure: the read script ran 423 s of narration, trimmed to 263 s by dropping lead-ins the
+  picture tells.
+- A non-western tale dresses the template with `theme` (tale top level → MeadowWorld / CardLibrary): "korean" keeps
+  nature cards from every sheet and takes man-made cards only from `korean_*`. Other tales are untouched (default "").
+- A sub-variant of a character (the tiger in the mother's clothes) needs its OWN figure as the reference for its cycle
+  sheet: with only the base character as ref, the sneak cycle invented rainbow sleeves and a blue ribbon.
+- `house_stages.py` misreads fronts whose stone base is wider than the walls: give `ROOF_Y` / `WALL_X` per house, and
+  `tools/atlas/sm_cottage.py` shows how to merge fold bands + door leaf with a `wc_house_bodies` body in one entry.
+- Ground style is a tale choice (user 2026-11-22: "펠트 질감 싫은뎅"): tale top-level `ground_style: "paper"` renders the
+  template's ground sheets as matte cut paper (ground shader `paper` uniform, dark cut-line edges); default "" = felt.
+  Prove a look change with one test card (same shot, same light and lens, side by side) before dressing a tale.
+- Shots for a set built from card "gates" (ridges either side of a road) must stay inside the gaps; mid-page sky / light
+  changes must not read the rig's current yaw (it carries the shot's offset).
+- Never run the cast builder's standing pass while Godot imports: it rewrites every figure file and the import reads
+  half-written webps (ERR_FILE_CORRUPT); import after the art jobs finish.
 
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.

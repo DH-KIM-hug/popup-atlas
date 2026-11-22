@@ -1,0 +1,181 @@
+{
+ "sheet": "story_sm_sky",
+ "bg": [
+  0.988,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_sm_sky_00",
+   "bbox": [
+    361,
+    77,
+    1086,
+    266
+   ],
+   "area": 87838,
+   "size": [
+    733,
+    197
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_01",
+   "bbox": [
+    1134,
+    46,
+    1482,
+    391
+   ],
+   "area": 58774,
+   "size": [
+    356,
+    353
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_02",
+   "bbox": [
+    362,
+    313,
+    1084,
+    473
+   ],
+   "area": 77158,
+   "size": [
+    730,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_03",
+   "bbox": [
+    68,
+    48,
+    171,
+    976
+   ],
+   "area": 85022,
+   "size": [
+    111,
+    936
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_04",
+   "bbox": [
+    225,
+    46,
+    323,
+    976
+   ],
+   "area": 29902,
+   "size": [
+    106,
+    938
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_05",
+   "bbox": [
+    1172,
+    421,
+    1432,
+    682
+   ],
+   "area": 53410,
+   "size": [
+    268,
+    269
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_06",
+   "bbox": [
+    369,
+    515,
+    1079,
+    670
+   ],
+   "area": 75680,
+   "size": [
+    718,
+    163
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_07",
+   "bbox": [
+    387,
+    712,
+    834,
+    973
+   ],
+   "area": 83696,
+   "size": [
+    455,
+    269
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_08",
+   "bbox": [
+    906,
+    737,
+    1041,
+    975
+   ],
+   "area": 11059,
+   "size": [
+    143,
+    246
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_sky_09",
+   "bbox": [
+    1174,
+    723,
+    1426,
+    960
+   ],
+   "area": 27634,
+   "size": [
+    260,
+    245
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

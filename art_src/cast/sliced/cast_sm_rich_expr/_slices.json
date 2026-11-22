@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_sm_rich_expr",
+ "bg": [
+  0.984,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_rich_expr_00",
+   "bbox": [
+    109,
+    47,
+    486,
+    685
+   ],
+   "area": 155994,
+   "size": [
+    385,
+    646
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_rich_expr_01",
+   "bbox": [
+    605,
+    46,
+    1030,
+    685
+   ],
+   "area": 166714,
+   "size": [
+    433,
+    647
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_rich_expr_02",
+   "bbox": [
+    1158,
+    46,
+    1571,
+    685
+   ],
+   "area": 165078,
+   "size": [
+    421,
+    647
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_rich_expr_03",
+   "bbox": [
+    1737,
+    55,
+    2050,
+    691
+   ],
+   "area": 126091,
+   "size": [
+    321,
+    644
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

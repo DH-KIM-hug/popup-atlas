@@ -28,7 +28,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 ATLAS = os.path.join(ROOT, "game", "art", "atlas")
 # catalog id -> number of bands (taps in three_pigs: straw 3, wood 5, brick 10 = 2 per band)
 HOUSES = {"story_houses_00": 3, "story_houses_03": 5, "story_houses_06": 5, "story_houses_08": 3, "story_houses_09": 3,
-          "story_wc_shop_00": 2}
+          "story_wc_shop_00": 2, "story_sm_cottage_00": 2}
 # windows / doors (x0, y0, x1, y1 in facade px, measured on a grid sheet), kept whole in one band
 OPENINGS = {
     "story_houses_00": [(72, 158, 150, 228), (160, 165, 278, 302)],
@@ -37,6 +37,8 @@ OPENINGS = {
     "story_houses_08": [],
     "story_houses_09": [],
     "story_wc_shop_00": [(90, 230, 300, 445), (296, 225, 432, 470)],
+    # sunmoon cottage (2026-11-22): lattice paper door and the paper-screen window
+    "story_sm_cottage_00": [(214, 207, 362, 422), (422, 207, 588, 343)],
 }
 # die-cut window glass (x0, y0, x1, y1; the blue panes inside go transparent, mullions stay) so a pig standing just
 # behind the front wall shows its face in the window, framed by it (2026-11-18 user: "아기돼지들 집에 있어야하지 않겠니?")
@@ -53,11 +55,17 @@ DOORS = {
     # witch_candy shop (2026-11-19): the mint door pasted into the drawn doorway (tools/atlas/wc_shop_door.py); the
     # optional 5th value is the leaf's bottom row (the stone steps below stay on the wall)
     "story_wc_shop_00": (304, 242, 425, True, 443),
+    # sunmoon cottage: the lattice paper door leaf; the veranda boards and the stepping stone stay on the wall
+    "story_sm_cottage_00": (214, 207, 362, False, 422),
 }
 # hand-picked wall cut rows (bottom → top) where the window rows leave too little room for even bands: a cut through a
 # window row steps up around the windows, so they stand whole on the band below
 # wood (v2, user: "the first stage is a lone door"): band 0 = floor, sill and the plank walls up to the windows + door
 # starts as a foundation, not a floating door
+# (sunmoon 2026-11-22) wall / roof split row and the wall's own x extent where the automatic reads miss (a stone base
+# wider than the walls, a veranda)
+ROOF_Y = {"story_sm_cottage_00": 205}
+WALL_X = {"story_sm_cottage_00": (60, 668)}
 CUTS = {"story_houses_06": [293, 275, 214], "story_houses_03": [211, 172, 140]}
 
 
@@ -74,7 +82,7 @@ def cut_house(cid, n, cat):
     y = base - 3
     while y > top and abs(widths[y] - wall_w) < 0.06 * wall_w:
         y -= 1
-    roof_y = y + 1  # first row of the wall band below the eave
+    roof_y = ROOF_Y.get(cid, y + 1)  # first row of the wall band below the eave
     extra = {}
     for (gx0, gy0, gx1, gy1) in GLASS.get(cid, []):
         sub = im[gy0:gy1, gx0:gx1].astype(int)
@@ -131,6 +139,8 @@ def cut_house(cid, n, cat):
     xs_all = np.arange(w)
     wall_cols = np.where(op[base - max(4, (base - top) // 8): base - 2].any(0))[0]
     wx0, wx1 = int(wall_cols[0]), int(wall_cols[-1])
+    if cid in WALL_X:
+        wx0, wx1 = WALL_X[cid]
     bnd = []
     for k, c in enumerate(bounds):
         row = np.full(w, c, dtype=int)

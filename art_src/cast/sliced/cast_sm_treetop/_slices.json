@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_sm_treetop",
+ "bg": [
+  0.984,
+  0.02,
+  0.973
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_treetop_00",
+   "bbox": [
+    64,
+    51,
+    527,
+    695
+   ],
+   "area": 146196,
+   "size": [
+    471,
+    652
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_treetop_01",
+   "bbox": [
+    606,
+    52,
+    1013,
+    694
+   ],
+   "area": 155999,
+   "size": [
+    415,
+    650
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_treetop_02",
+   "bbox": [
+    1151,
+    51,
+    1486,
+    695
+   ],
+   "area": 137494,
+   "size": [
+    343,
+    652
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_treetop_03",
+   "bbox": [
+    1691,
+    52,
+    2099,
+    695
+   ],
+   "area": 157557,
+   "size": [
+    416,
+    651
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

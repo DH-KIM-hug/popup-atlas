@@ -1,0 +1,91 @@
+{
+ "biome": "korean_village",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "tree",
+  "climb"
+ ],
+ "items": {
+  "00": [
+   "big zelkova crown alone (fork branches + leaf clumps)",
+   "story_nature",
+   0.62,
+   0,
+   {
+    "tags": [
+     "crown"
+    ]
+   }
+  ],
+  "01": [
+   "big old zelkova tree by the well: thick climbable trunk, fork near the top, wide crown",
+   "story_nature",
+   1.7,
+   0,
+   {
+    "tags": [
+     "tree",
+     "zelkova",
+     "big"
+    ]
+   }
+  ],
+  "02": [
+   "big zelkova trunk alone (roots to fork)",
+   "story_nature",
+   1.12,
+   0,
+   {
+    "tags": [
+     "trunk"
+    ]
+   }
+  ],
+  "03": [
+   "sesame-oil streak (glossy golden drip) for a trunk",
+   "story_fx",
+   0.18,
+   0,
+   {
+    "tags": [
+     "oil"
+    ]
+   }
+  ],
+  "04": [
+   "three axe notches (pale wood chips) in a column",
+   "story_fx",
+   0.12,
+   0,
+   {
+    "tags": [
+     "axe",
+     "notch"
+    ]
+   }
+  ],
+  "05": [
+   "stout side branch with leaves",
+   "story_nature",
+   0.25,
+   0,
+   {
+    "tags": [
+     "branch"
+    ]
+   }
+  ],
+  "06": "drop",
+  "07": "drop"
+ },
+ "merge": [
+  [
+   "04",
+   "06",
+   "07"
+  ]
+ ]
+}

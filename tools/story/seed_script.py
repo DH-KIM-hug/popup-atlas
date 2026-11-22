@@ -48,9 +48,9 @@ LINE_META = getattr(T, "LINE_META", {})
 RECORDED = AUDIO_DIR / "recorded.json"
 
 
-def clip_map() -> tuple[dict, dict]:
-    """narration_el.js -> {full text: [clip, ...]}, {extra key: clip}."""
-    js = (TALE / "narration_el.js").read_text(encoding="utf-8")
+def clip_map(fname: str = "narration_el.js") -> tuple[dict, dict]:
+    """narration_el.js (or read_narration_el.js) -> {full text: [clip, ...]}, {extra key: clip}."""
+    js = (TALE / fname).read_text(encoding="utf-8")
     blocks = re.findall(r"Object\.assign\((NARRATION_CLIPS|VOICE_LINES),\s*(\{.*?\})\);", js, re.S)
     lines, extra = {}, {}
     for name, body in blocks:
@@ -131,6 +131,32 @@ def build() -> dict:
                 for j, s in enumerate(segs_src)]
         beat, inter = where.get(lid, ("", ""))
         out_lines.append(line_entry(lid, segs, beat, inter, lid not in where, source_extra=k))
+    # 2026-11-22 (sunmoon): 톡톡's READ-MODE script (read_script_el.json, the quiz-free storytelling version) is recorded
+    # too (read_narration_el.js, same voices). A tale with READ_SCRIPT = True also seeds every read line as
+    # <PREFIX>_r<scene 1-based:02d><line:02d> (clips from the read map, else the play map); READ_SEG_KEEP {lid: [seg
+    # indices]} trims one to some of its segs (clips reused). Tales without READ_SCRIPT are unchanged.
+    if getattr(T, "READ_SCRIPT", False):
+        rs = json.loads((TALE / "read_script_el.json").read_text(encoding="utf-8"))
+        rclips, _ = clip_map("read_narration_el.js")
+        rkeep = getattr(T, "READ_SEG_KEEP", {})
+        for si, sc in enumerate(rs["scenes"]):
+            for li, l in enumerate(sc["lines"]):
+                lid = f"{T.PREFIX}_r{si + 1:02d}{li:02d}"
+                cl = rclips.get(l["text"]) or clips.get(l["text"], [])
+                segs = []
+                for j, sg in enumerate(l["segs"]):
+                    if lid in rkeep and j not in rkeep[lid]:
+                        continue
+                    sp, text, emo, tags = (list(sg) + [None, None])[:4]
+                    segs.append(seg(sp, text, emo, tags, cl[j] if j < len(cl) else "",
+                                    "reuse" if j < len(cl) else "changed-needs-recording"))
+                beat, inter = where.get(lid, ("", ""))
+                e = line_entry(lid, segs, beat, inter, lid not in where, source_text=l["text"])
+                e["source_read"] = f"{sc['key']}#{li}"
+                e["source_text"] = l["text"]
+                if lid in rkeep:
+                    e["trimmed_segs"] = rkeep[lid]
+                out_lines.append(e)
     for lid, segs_src in NEW_LINES.items():
         segs = [seg(s[0], s[1], s[2], s[3], "", "changed-needs-recording") for s in segs_src]
         beat, inter = where.get(lid, ("", ""))
@@ -139,7 +165,7 @@ def build() -> dict:
         "tale_id": T.TALE_ID,
         "title": T.TITLE,
         "seeded_from": str(TALE / "voice_script_el.json"),
-        "clip_map_from": str(TALE / "narration_el.js"),
+        "clip_map_from": str(TALE / "narration_el.js") + (" + read_narration_el.js" if getattr(T, "READ_SCRIPT", False) else ""),
         "voices": vs["voices"], "models": vs.get("models", {}), "settings": vs.get("settings", {}),
         "voice_notes": vs.get("notes", ""),
         **({"handler": T.HANDLER} if getattr(T, "HANDLER", "") else {}),

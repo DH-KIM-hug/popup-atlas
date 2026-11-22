@@ -1,0 +1,181 @@
+{
+ "sheet": "story_sm_yard",
+ "bg": [
+  0.988,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_sm_yard_00",
+   "bbox": [
+    48,
+    36,
+    428,
+    419
+   ],
+   "area": 100890,
+   "size": [
+    388,
+    391
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_01",
+   "bbox": [
+    483,
+    163,
+    649,
+    421
+   ],
+   "area": 27289,
+   "size": [
+    174,
+    266
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_02",
+   "bbox": [
+    685,
+    53,
+    1190,
+    421
+   ],
+   "area": 136484,
+   "size": [
+    513,
+    376
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_03",
+   "bbox": [
+    1228,
+    89,
+    1497,
+    421
+   ],
+   "area": 73485,
+   "size": [
+    277,
+    340
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_04",
+   "bbox": [
+    142,
+    458,
+    291,
+    680
+   ],
+   "area": 21211,
+   "size": [
+    157,
+    230
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_05",
+   "bbox": [
+    428,
+    507,
+    809,
+    665
+   ],
+   "area": 23829,
+   "size": [
+    389,
+    166
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_06",
+   "bbox": [
+    900,
+    471,
+    1416,
+    664
+   ],
+   "area": 83936,
+   "size": [
+    524,
+    201
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_07",
+   "bbox": [
+    45,
+    741,
+    469,
+    959
+   ],
+   "area": 78169,
+   "size": [
+    432,
+    226
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_08",
+   "bbox": [
+    545,
+    788,
+    983,
+    961
+   ],
+   "area": 69861,
+   "size": [
+    446,
+    181
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_yard_09",
+   "bbox": [
+    1097,
+    685,
+    1424,
+    976
+   ],
+   "area": 38431,
+   "size": [
+    335,
+    299
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

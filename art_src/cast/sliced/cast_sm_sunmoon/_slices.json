@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_sm_sunmoon",
+ "bg": [
+  0.988,
+  0.02,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_sunmoon_00",
+   "bbox": [
+    25,
+    91,
+    558,
+    615
+   ],
+   "area": 175812,
+   "size": [
+    541,
+    532
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_sunmoon_01",
+   "bbox": [
+    582,
+    110,
+    1066,
+    599
+   ],
+   "area": 184219,
+   "size": [
+    492,
+    497
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_sunmoon_02",
+   "bbox": [
+    1090,
+    88,
+    1624,
+    616
+   ],
+   "area": 177444,
+   "size": [
+    542,
+    536
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_sunmoon_03",
+   "bbox": [
+    1644,
+    107,
+    2132,
+    601
+   ],
+   "area": 188181,
+   "size": [
+    496,
+    502
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

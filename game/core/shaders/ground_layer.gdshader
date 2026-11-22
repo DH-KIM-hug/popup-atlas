@@ -18,6 +18,9 @@ uniform float clump_scale = 0.31;
 // Printed speckle (tiny ink flecks) for path / page cards.
 uniform float speckle = 0.0;
 uniform vec4 speckle_color : source_color = vec4(0.55, 0.42, 0.28, 1.0);
+// sunmoon 2026-11-22 (user: "펠트 질감 싫은뎅"): 1 = matte cut / torn PAPER sheets instead of felt: no wool nap or
+// clumps, a faint mottle, a fine paper-fibre tooth and almost no bump. 0 (default) = the felt every other tale uses.
+uniform float paper = 0.0;
 // Darken toward the polygon edge (UV.y = distance to edge in world units, 0 when unused).
 uniform float edge_shade = 0.0;
 varying vec3 wpos;
@@ -36,16 +39,20 @@ void fragment() {
 	float fib = (texture(felt_tex, pa * fibre_scale).g + texture(felt_tex, pb * fibre_scale * 0.73 + 0.21).g) * 0.5 - 0.5;
 	fib *= 1.25;
 	float fine = texture(felt_tex, pb * fibre_scale * 3.1 + 0.11).b - 0.5;
-	float m = clamp(0.5 + (mott * 1.6 + mott2 * 0.8) * mottle_strength, 0.0, 1.0);
+	float ms = mix(mottle_strength, mottle_strength * 0.22, paper);
+	float m = clamp(0.5 + (mott * 1.6 + mott2 * 0.8) * ms, 0.0, 1.0);
 	vec3 col = mix(base_color.rgb, mottle_color.rgb, m);
 	float clump = 0.0;
-	if (clump_strength > 0.0) {
+	float cs = clump_strength * (1.0 - paper);
+	if (cs > 0.0) {
 		vec3 ct = texture(felt_tex, pa * clump_scale + 0.63).rgb;
 		clump = ct.g + ct.b - 1.0;
-		col *= 1.0 + clump * clump_strength;
-		col = mix(col, col * vec3(1.06, 1.03, 0.9), clamp(clump * 2.0, 0.0, 1.0) * clump_strength);
+		col *= 1.0 + clump * cs;
+		col = mix(col, col * vec3(1.06, 1.03, 0.9), clamp(clump * 2.0, 0.0, 1.0) * cs);
 	}
-	col *= 1.0 + fib * fibre_strength * 2.0 + fine * grain_strength * 2.0;
+	float fs = mix(fibre_strength, 0.035, paper);
+	float gs = mix(grain_strength, 0.06, paper);
+	col *= 1.0 + fib * fs * 2.0 + fine * gs * 2.0;
 	if (speckle > 0.0) {
 		float s = texture(felt_tex, p * 5.3).b;
 		float s2 = texture(felt_tex, p * 2.1 + 0.5).g;
@@ -55,6 +62,6 @@ void fragment() {
 	ALBEDO = col;
 	ROUGHNESS = 0.98;
 	SPECULAR = 0.04;
-	NORMAL_MAP = normalize(vec3(0.5 + (fib + fine) * 0.4 + clump * clump_strength * 0.5, 0.5 + (fib - fine) * 0.3 - clump * clump_strength * 0.4, 1.0));
-	NORMAL_MAP_DEPTH = bump;
+	NORMAL_MAP = normalize(vec3(0.5 + (fib + fine) * 0.4 + clump * cs * 0.5, 0.5 + (fib - fine) * 0.3 - clump * cs * 0.4, 1.0));
+	NORMAL_MAP_DEPTH = mix(bump, 0.25, paper);
 }

@@ -1,0 +1,121 @@
+{
+ "biome": "korean_village",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "rich_house",
+  "kitchen"
+ ],
+ "items": {
+  "00": "drop",
+  "01": [
+   "tile-roofed hanok gate house (big double wooden gate)",
+   "story_building",
+   0.85,
+   0,
+   {
+    "tags": [
+     "hanok",
+     "gate",
+     "house",
+     "facade"
+    ]
+   }
+  ],
+  "02": [
+   "outdoor clay stove (agungi) with iron cauldron (gamasot) and fire",
+   "story_prop",
+   0.32,
+   0,
+   {
+    "tags": [
+     "stove",
+     "kitchen",
+     "fire"
+    ]
+   }
+  ],
+  "03": [
+   "rice-cake steamer (siru) on a stand, steaming",
+   "story_prop",
+   0.34,
+   0,
+   {
+    "tags": [
+     "siru",
+     "kitchen",
+     "steam"
+    ]
+   }
+  ],
+  "04": [
+   "round wooden tray heaped with rice cakes (tteok)",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "tteok",
+     "tray",
+     "food"
+    ]
+   }
+  ],
+  "05": [
+   "straw basket full of rice cakes under a cloth",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "basket",
+     "tteok",
+     "food"
+    ]
+   }
+  ],
+  "06": [
+   "round straw basket, empty",
+   "story_prop",
+   0.11,
+   0,
+   {
+    "tags": [
+     "basket"
+    ]
+   }
+  ],
+  "07": [
+   "one round white rice cake (tteok)",
+   "story_prop",
+   0.032,
+   0,
+   {
+    "tags": [
+     "tteok",
+     "food"
+    ]
+   }
+  ],
+  "08": [
+   "wooden basin of white rice",
+   "story_prop",
+   0.1,
+   0,
+   {
+    "tags": [
+     "rice",
+     "kitchen"
+    ]
+   }
+  ]
+ },
+ "merge": [
+  [
+   "03",
+   "00"
+  ]
+ ]
+}

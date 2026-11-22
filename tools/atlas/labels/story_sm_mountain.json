@@ -1,0 +1,139 @@
+{
+ "biome": "korean_countryside",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "mountain",
+  "pass"
+ ],
+ "items": {
+  "00": [
+   "layered mountain ridge (green peaks, blue peak right, pines)",
+   "story_nature",
+   1.3,
+   0,
+   {
+    "tags": [
+     "mountain",
+     "ridge",
+     "backdrop"
+    ]
+   }
+  ],
+  "01": [
+   "layered mountain ridge (green left, blue right, pines)",
+   "story_nature",
+   1.15,
+   0,
+   {
+    "tags": [
+     "mountain",
+     "ridge",
+     "backdrop"
+    ]
+   }
+  ],
+  "02": [
+   "mountain ridge with a saddle notch in the middle (a pass)",
+   "story_nature",
+   1.15,
+   0,
+   {
+    "tags": [
+     "mountain",
+     "ridge",
+     "pass",
+     "backdrop"
+    ]
+   }
+  ],
+  "03": [
+   "layered mountain ridge (blue back peaks, green front)",
+   "story_nature",
+   1.2,
+   0,
+   {
+    "tags": [
+     "mountain",
+     "ridge",
+     "backdrop"
+    ]
+   }
+  ],
+  "04": [
+   "big round mossy boulder (hide-behind size)",
+   "story_nature",
+   0.5,
+   0,
+   {
+    "tags": [
+     "rock",
+     "boulder"
+    ]
+   }
+  ],
+  "05": [
+   "seonangdang: stone cairn with a cloth-strip tree at a pass",
+   "story_nature",
+   0.55,
+   0,
+   {
+    "tags": [
+     "cairn",
+     "shrine",
+     "pass"
+    ]
+   }
+  ],
+  "06": [
+   "silver pampas grass (eoksae) clump",
+   "story_nature",
+   0.28,
+   0,
+   {
+    "tags": [
+     "grass",
+     "pampas"
+    ]
+   }
+  ],
+  "07": [
+   "red-orange autumn maple bush",
+   "story_nature",
+   0.26,
+   0,
+   {
+    "tags": [
+     "bush",
+     "maple",
+     "autumn"
+    ]
+   }
+  ],
+  "08": [
+   "gnarled pine on a rock ledge",
+   "story_nature",
+   0.48,
+   0,
+   {
+    "tags": [
+     "pine",
+     "rock"
+    ]
+   }
+  ],
+  "09": [
+   "three small mossy rocks",
+   "story_nature",
+   0.2,
+   0,
+   {
+    "tags": [
+     "rock"
+    ]
+   }
+  ]
+ }
+}

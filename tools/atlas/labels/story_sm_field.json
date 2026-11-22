@@ -1,0 +1,107 @@
+{
+ "biome": "korean_countryside",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "field"
+ ],
+ "items": {
+  "00": [
+   "sorghum stalk clump (rust-red heads)",
+   "story_nature",
+   0.55,
+   0,
+   {
+    "tags": [
+     "sorghum",
+     "crop"
+    ]
+   }
+  ],
+  "01": [
+   "sorghum stalk clump, two heads",
+   "story_nature",
+   0.57,
+   0,
+   {
+    "tags": [
+     "sorghum",
+     "crop"
+    ]
+   }
+  ],
+  "02": [
+   "sorghum stalk, slim",
+   "story_nature",
+   0.55,
+   0,
+   {
+    "tags": [
+     "sorghum",
+     "crop"
+    ]
+   }
+  ],
+  "03": [
+   "sorghum field band (row of stalks)",
+   "story_nature",
+   0.34,
+   0,
+   {
+    "tags": [
+     "sorghum",
+     "crop",
+     "band"
+    ]
+   }
+  ],
+  "04": [
+   "autumn wild grass with cream daisies",
+   "story_nature",
+   0.22,
+   0,
+   {
+    "tags": [
+     "grass"
+    ]
+   }
+  ],
+  "05": [
+   "small persimmon sapling",
+   "story_nature",
+   0.32,
+   0,
+   {
+    "tags": [
+     "persimmon",
+     "tree"
+    ]
+   }
+  ],
+  "06": [
+   "autumn reed clump",
+   "story_nature",
+   0.26,
+   0,
+   {
+    "tags": [
+     "reeds",
+     "grass"
+    ]
+   }
+  ],
+  "07": [
+   "dark low berry bush",
+   "story_nature",
+   0.2,
+   0,
+   {
+    "tags": [
+     "bush"
+    ]
+   }
+  ]
+ }
+}

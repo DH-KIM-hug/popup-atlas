@@ -1,0 +1,62 @@
+{
+ "sheet": "story_sm_cottage_in",
+ "bg": [
+  0.984,
+  0.024,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_sm_cottage_in_00",
+   "bbox": [
+    321,
+    57,
+    1224,
+    538
+   ],
+   "area": 422869,
+   "size": [
+    911,
+    489
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_cottage_in_01",
+   "bbox": [
+    124,
+    633,
+    892,
+    961
+   ],
+   "area": 251778,
+   "size": [
+    776,
+    336
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_cottage_in_02",
+   "bbox": [
+    1080,
+    679,
+    1402,
+    903
+   ],
+   "area": 37357,
+   "size": [
+    330,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "sheet": "cast_sm_kids_views",
+ "bg": [
+  0.976,
+  0.02,
+  0.969
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_kids_views_00",
+   "bbox": [
+    63,
+    59,
+    291,
+    680
+   ],
+   "area": 90700,
+   "size": [
+    236,
+    629
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_kids_views_01",
+   "bbox": [
+    378,
+    59,
+    675,
+    680
+   ],
+   "area": 115900,
+   "size": [
+    305,
+    629
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_kids_views_02",
+   "bbox": [
+    710,
+    67,
+    996,
+    679
+   ],
+   "area": 101409,
+   "size": [
+    294,
+    620
+   ],
+   "halo": 9,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_kids_views_03",
+   "bbox": [
+    1032,
+    75,
+    1367,
+    680
+   ],
+   "area": 130727,
+   "size": [
+    343,
+    613
+   ],
+   "halo": 9,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_kids_views_04",
+   "bbox": [
+    1399,
+    50,
+    2108,
+    680
+   ],
+   "area": 254611,
+   "size": [
+    717,
+    638
+   ],
+   "halo": 9,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

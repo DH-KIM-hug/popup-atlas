@@ -1,0 +1,3047 @@
+{
+ "tale_id": "sunmoon_proto",
+ "title": "해님 달님 (prototype)",
+ "backdrop": true,
+ "theme": "korean",
+ "ground_style": "",
+ "pop_in": false,
+ "inside_framing": "manual",
+ "spacing": true,
+ "overlap_check": true,
+ "overlap_ok": [
+  [
+   "boy",
+   "tree"
+  ],
+  [
+   "girl",
+   "tree"
+  ],
+  [
+   "tiger",
+   "tree"
+  ],
+  [
+   "tiger",
+   "well"
+  ],
+  [
+   "boy",
+   "jars"
+  ],
+  [
+   "girl",
+   "jars"
+  ],
+  [
+   "tiger",
+   "boulder_1"
+  ],
+  [
+   "tiger",
+   "cairn_2"
+  ],
+  [
+   "tiger",
+   "ledge_3"
+  ]
+ ],
+ "shots": {
+  "story": [
+   3.4,
+   12.0,
+   0.28,
+   20.0
+  ],
+  "close": [
+   2.9,
+   12.0,
+   0.32,
+   20.0
+  ],
+  "crane_high": [
+   9.0,
+   36.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "establish": [
+   6.5,
+   18.0,
+   0.35,
+   24.0,
+   -6.0
+  ],
+  "medium": [
+   2.4,
+   9.0,
+   0.3,
+   22.0,
+   6.0
+  ],
+  "two_shot": [
+   2.0,
+   8.0,
+   0.3,
+   24.0,
+   -10.0
+  ],
+  "face": [
+   1.3,
+   6.0,
+   0.3,
+   22.0,
+   0.0
+  ],
+  "track_side": [
+   1.6,
+   16.0,
+   0.3,
+   30.0,
+   70.0
+  ],
+  "pass_track": [
+   1.7,
+   22.0,
+   0.3,
+   28.0,
+   0.0
+  ],
+  "track_back": [
+   2.6,
+   16.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "pass_low": [
+   1.8,
+   3.0,
+   0.32,
+   30.0,
+   18.0
+  ],
+  "pass_two": [
+   1.5,
+   14.0,
+   0.32,
+   30.0,
+   35.0
+  ],
+  "pass3_track": [
+   1.7,
+   22.0,
+   0.3,
+   28.0,
+   22.0
+  ],
+  "basket": [
+   0.9,
+   30.0,
+   0.12,
+   30.0,
+   0.0
+  ],
+  "moon_cut": [
+   1.4,
+   -4.0,
+   1.1,
+   44.0,
+   0.0
+  ],
+  "door_ots": [
+   1.3,
+   9.0,
+   0.32,
+   30.0,
+   25.0
+  ],
+  "room": [
+   0.4,
+   14.0,
+   0.18,
+   62.0,
+   -40.0
+  ],
+  "window_in": [
+   0.34,
+   4.0,
+   0.3,
+   40.0,
+   140.0
+  ],
+  "yard_high": [
+   4.5,
+   30.0,
+   0.3,
+   26.0,
+   -30.0
+  ],
+  "jars_low": [
+   1.4,
+   4.0,
+   0.15,
+   30.0,
+   10.0
+  ],
+  "tree_low": [
+   2.6,
+   2.0,
+   0.6,
+   34.0,
+   0.0
+  ],
+  "tree_top": [
+   1.6,
+   12.0,
+   1.25,
+   30.0,
+   -12.0
+  ],
+  "well_down": [
+   0.9,
+   55.0,
+   0.1,
+   30.0,
+   0.0
+  ],
+  "rope_up": [
+   3.2,
+   -6.0,
+   2.0,
+   40.0,
+   0.0
+  ],
+  "sky_wide": [
+   6.0,
+   2.0,
+   2.6,
+   34.0,
+   0.0
+  ],
+  "pull_back": [
+   10.5,
+   26.0,
+   0.3,
+   24.0,
+   0.0
+  ]
+ },
+ "cast": {
+  "boy": {
+   "kind": "actor",
+   "skin": "hanbok_boy"
+  },
+  "girl": {
+   "kind": "actor",
+   "skin": "hanbok_girl"
+  },
+  "mom": {
+   "kind": "actor",
+   "skin": "hanbok_mom"
+  },
+  "tiger": {
+   "kind": "actor",
+   "skin": "tiger"
+  },
+  "rich": {
+   "kind": "actor",
+   "skin": "rich_lady"
+  }
+ },
+ "ui": {
+  "speakers": {}
+ },
+ "voices": {},
+ "beats": [
+  {
+   "id": "road",
+   "title": "고갯길 (늦은 오후)",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "road",
+    "light": "late",
+    "spots": {
+     "rich_road": [
+      -0.197,
+      5.291
+     ],
+     "rich_house": [
+      1.125,
+      5.462
+     ],
+     "rich_yard": [
+      0.393,
+      5.512
+     ],
+     "stove": [
+      0.632,
+      5.996
+     ],
+     "siru": [
+      0.287,
+      6.002
+     ],
+     "basin": [
+      0.906,
+      6.127
+     ],
+     "mom_work": [
+      0.438,
+      5.837
+     ],
+     "rich_at": [
+      0.758,
+      5.617
+     ],
+     "tray_at": [
+      0.58,
+      5.617
+     ],
+     "pass_1": [
+      -0.331,
+      0.883
+     ],
+     "pass_1_in": [
+      -0.382,
+      1.805
+     ],
+     "pass_1_out": [
+      -0.012,
+      0.038
+     ],
+     "ridge_1_l": [
+      -2.228,
+      -0.025
+     ],
+     "ridge_1_r": [
+      1.753,
+      1.013
+     ],
+     "hide_1": [
+      0.344,
+      0.869
+     ],
+     "tiger_1": [
+      -0.082,
+      0.434
+     ],
+     "mom_1": [
+      -0.479,
+      1.101
+     ],
+     "grass_1": [
+      -1.104,
+      1.181
+     ],
+     "pass_2": [
+      0.527,
+      -1.316
+     ],
+     "pass_2_in": [
+      0.317,
+      -0.44
+     ],
+     "pass_2_out": [
+      0.36,
+      -2.3
+     ],
+     "ridge_2_l": [
+      -1.451,
+      -2.247
+     ],
+     "ridge_2_r": [
+      2.47,
+      -1.227
+     ],
+     "hide_2": [
+      -0.112,
+      -1.707
+     ],
+     "tiger_2": [
+      0.372,
+      -1.88
+     ],
+     "mom_2": [
+      0.627,
+      -1.027
+     ],
+     "grass_2": [
+      1.238,
+      -0.592
+     ],
+     "pass_3": [
+      -0.267,
+      -3.832
+     ],
+     "pass_3_in": [
+      0.139,
+      -2.779
+     ],
+     "pass_3_out": [
+      -0.68,
+      -4.887
+     ],
+     "ridge_3_l": [
+      -3.106,
+      -5.426
+     ],
+     "ridge_3_r": [
+      2.166,
+      -3.29
+     ],
+     "hide_3": [
+      0.279,
+      -3.884
+     ],
+     "tiger_3": [
+      -0.374,
+      -4.383
+     ],
+     "mom_3": [
+      -0.275,
+      -3.574
+     ],
+     "grass_3": [
+      -0.775,
+      -3.458
+     ],
+     "saddle": [
+      -3.462,
+      -6.465
+     ],
+     "far_ridge": [
+      3.335,
+      -4.412
+     ],
+     "est": [
+      -0.368,
+      1.184
+     ],
+     "mid": [
+      0.525,
+      -1.264
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_village_01",
+      "at": "rich_house",
+      "stage": "full",
+      "name": "rich_house",
+      "scale": 1.0,
+      "clear": 1.2,
+      "yaw": -55.0
+     },
+     {
+      "card": "story_sm_village_02",
+      "at": "stove",
+      "stage": 0,
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_village_03",
+      "at": "siru",
+      "stage": 0,
+      "name": "siru",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_village_08",
+      "at": "basin",
+      "stage": 0,
+      "name": "basin",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_1_l",
+      "stage": "full",
+      "name": "ridge_1_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_1_r",
+      "stage": "full",
+      "name": "ridge_1_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_04",
+      "at": "hide_1",
+      "stage": "full",
+      "name": "boulder_1",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_1",
+      "stage": "full",
+      "name": "grass_1",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_2_l",
+      "stage": "full",
+      "name": "ridge_2_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_2_r",
+      "stage": "full",
+      "name": "ridge_2_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_05",
+      "at": "hide_2",
+      "stage": "full",
+      "name": "cairn_2",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_07",
+      "at": "grass_2",
+      "stage": "full",
+      "name": "grass_2",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_3_l",
+      "stage": "full",
+      "name": "ridge_3_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_3_r",
+      "stage": "full",
+      "name": "ridge_3_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_08",
+      "at": "hide_3",
+      "stage": "full",
+      "name": "ledge_3",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_3",
+      "stage": "full",
+      "name": "grass_3",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_02",
+      "at": "saddle",
+      "stage": "full",
+      "name": "saddle",
+      "scale": 1.3,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "far_ridge",
+      "stage": "full",
+      "name": "far_ridge",
+      "scale": 1.2,
+      "clear": 0.4
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "mom": "tired_full",
+     "tiger": "roar",
+     "rich": "give_tray"
+    },
+    "at": {
+     "mom": "mom_1",
+     "tiger": "tiger_1",
+     "rich": "rich_at"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "at": "mid",
+     "rate": 2.4,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "rich_yard",
+     "rate": 1.0,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass_track",
+     "at": "pass_1",
+     "rate": 1.0,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass_low",
+     "at": "tiger_1",
+     "rate": 1.0,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass_two",
+     "at": "tiger_1",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "road_night",
+   "title": "셋째 고개 (밤)",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "road",
+    "light": "night",
+    "spots": {
+     "rich_road": [
+      -0.197,
+      5.291
+     ],
+     "rich_house": [
+      1.125,
+      5.462
+     ],
+     "rich_yard": [
+      0.393,
+      5.512
+     ],
+     "stove": [
+      0.632,
+      5.996
+     ],
+     "siru": [
+      0.287,
+      6.002
+     ],
+     "basin": [
+      0.906,
+      6.127
+     ],
+     "mom_work": [
+      0.438,
+      5.837
+     ],
+     "rich_at": [
+      0.758,
+      5.617
+     ],
+     "tray_at": [
+      0.58,
+      5.617
+     ],
+     "pass_1": [
+      -0.331,
+      0.883
+     ],
+     "pass_1_in": [
+      -0.382,
+      1.805
+     ],
+     "pass_1_out": [
+      -0.012,
+      0.038
+     ],
+     "ridge_1_l": [
+      -2.228,
+      -0.025
+     ],
+     "ridge_1_r": [
+      1.753,
+      1.013
+     ],
+     "hide_1": [
+      0.344,
+      0.869
+     ],
+     "tiger_1": [
+      -0.082,
+      0.434
+     ],
+     "mom_1": [
+      -0.479,
+      1.101
+     ],
+     "grass_1": [
+      -1.104,
+      1.181
+     ],
+     "pass_2": [
+      0.527,
+      -1.316
+     ],
+     "pass_2_in": [
+      0.317,
+      -0.44
+     ],
+     "pass_2_out": [
+      0.36,
+      -2.3
+     ],
+     "ridge_2_l": [
+      -1.451,
+      -2.247
+     ],
+     "ridge_2_r": [
+      2.47,
+      -1.227
+     ],
+     "hide_2": [
+      -0.112,
+      -1.707
+     ],
+     "tiger_2": [
+      0.372,
+      -1.88
+     ],
+     "mom_2": [
+      0.627,
+      -1.027
+     ],
+     "grass_2": [
+      1.238,
+      -0.592
+     ],
+     "pass_3": [
+      -0.267,
+      -3.832
+     ],
+     "pass_3_in": [
+      0.139,
+      -2.779
+     ],
+     "pass_3_out": [
+      -0.68,
+      -4.887
+     ],
+     "ridge_3_l": [
+      -3.106,
+      -5.426
+     ],
+     "ridge_3_r": [
+      2.166,
+      -3.29
+     ],
+     "hide_3": [
+      0.279,
+      -3.884
+     ],
+     "tiger_3": [
+      -0.374,
+      -4.383
+     ],
+     "mom_3": [
+      -0.275,
+      -3.574
+     ],
+     "grass_3": [
+      -0.775,
+      -3.458
+     ],
+     "saddle": [
+      -3.462,
+      -6.465
+     ],
+     "far_ridge": [
+      3.335,
+      -4.412
+     ],
+     "est": [
+      -0.368,
+      1.184
+     ],
+     "mid": [
+      0.525,
+      -1.264
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_village_01",
+      "at": "rich_house",
+      "stage": "full",
+      "name": "rich_house",
+      "scale": 1.0,
+      "clear": 1.2,
+      "yaw": -55.0
+     },
+     {
+      "card": "story_sm_village_02",
+      "at": "stove",
+      "stage": 0,
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_village_03",
+      "at": "siru",
+      "stage": 0,
+      "name": "siru",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_village_08",
+      "at": "basin",
+      "stage": 0,
+      "name": "basin",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_1_l",
+      "stage": "full",
+      "name": "ridge_1_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_1_r",
+      "stage": "full",
+      "name": "ridge_1_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_04",
+      "at": "hide_1",
+      "stage": "full",
+      "name": "boulder_1",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_1",
+      "stage": "full",
+      "name": "grass_1",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_2_l",
+      "stage": "full",
+      "name": "ridge_2_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_2_r",
+      "stage": "full",
+      "name": "ridge_2_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_05",
+      "at": "hide_2",
+      "stage": "full",
+      "name": "cairn_2",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_07",
+      "at": "grass_2",
+      "stage": "full",
+      "name": "grass_2",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_3_l",
+      "stage": "full",
+      "name": "ridge_3_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_3_r",
+      "stage": "full",
+      "name": "ridge_3_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_08",
+      "at": "hide_3",
+      "stage": "full",
+      "name": "ledge_3",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_3",
+      "stage": "full",
+      "name": "grass_3",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_02",
+      "at": "saddle",
+      "stage": "full",
+      "name": "saddle",
+      "scale": 1.3,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "far_ridge",
+      "stage": "full",
+      "name": "far_ridge",
+      "scale": 1.2,
+      "clear": 0.4
+     }
+    ],
+    "focus": "est",
+    "sky": {
+     "bg": "#101a3a",
+     "fog": "#24305e",
+     "fog_energy": 0.7,
+     "top": "#0d1636",
+     "horizon": "#34477f",
+     "stars": "story_sm_sky_09",
+     "n": 14,
+     "moon": "story_sm_sky_05",
+     "moon_at": [
+      -0.6,
+      10.5,
+      2.6,
+      1.6
+     ],
+     "far": 17.0
+    }
+   },
+   "enter": {
+    "who": {
+     "mom": "scared_full",
+     "tiger": "demand"
+    },
+    "at": {
+     "mom": "mom_3",
+     "tiger": "tiger_3"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "pass3_track",
+     "at": "pass_3",
+     "rate": 2.4,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass_low",
+     "at": "tiger_3",
+     "rate": 1.0,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "moon_cut",
+     "at": "pass_3",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "home",
+   "title": "오막살이 (아침)",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "",
+    "spots": {
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.704,
+      2.223
+     ],
+     "door_in": [
+      1.038,
+      1.824
+     ],
+     "path_end": [
+      0.235,
+      2.782
+     ],
+     "step": [
+      0.832,
+      2.07
+     ],
+     "room_back": [
+      1.399,
+      1.736
+     ],
+     "room_floor": [
+      1.091,
+      2.104
+     ],
+     "room_floor2": [
+      1.271,
+      1.889
+     ],
+     "lamp": [
+      1.598,
+      2.059
+     ],
+     "in_boy": [
+      1.252,
+      1.834
+     ],
+     "in_girl": [
+      1.417,
+      1.933
+     ],
+     "in_focus": [
+      1.374,
+      1.767
+     ],
+     "window_out": [
+      1.006,
+      2.516
+     ],
+     "window_inside": [
+      1.244,
+      2.232
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "soban": [
+      1.449,
+      2.143
+     ],
+     "back_door": [
+      1.215,
+      1.255
+     ],
+     "mom_door": [
+      0.62,
+      2.322
+     ],
+     "boy_at": [
+      0.435,
+      2.232
+     ],
+     "girl_at": [
+      0.728,
+      2.504
+     ],
+     "tiger_door": [
+      0.67,
+      2.325
+     ],
+     "tiger_window": [
+      0.989,
+      2.567
+     ],
+     "jars": [
+      1.178,
+      0.833
+     ],
+     "jars_hide": [
+      1.339,
+      0.641
+     ],
+     "well": [
+      2.342,
+      1.157
+     ],
+     "tree": [
+      2.954,
+      1.408
+     ],
+     "tree_foot": [
+      2.661,
+      1.555
+     ],
+     "tiger_well": [
+      2.038,
+      1.162
+     ],
+     "sorghum_1": [
+      3.768,
+      1.635
+     ],
+     "sorghum_2": [
+      3.812,
+      2.128
+     ],
+     "sorghum_3": [
+      3.872,
+      1.2
+     ],
+     "sorghum_band": [
+      4.205,
+      1.349
+     ],
+     "sorghum_fall": [
+      3.775,
+      1.706
+     ],
+     "fence_1": [
+      1.149,
+      0.09
+     ],
+     "firewood": [
+      0.64,
+      1.164
+     ],
+     "yard_focus": [
+      2.208,
+      1.239
+     ],
+     "corner": [
+      0.581,
+      1.311
+     ],
+     "kids_run": [
+      2.303,
+      1.515
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cot_st0": [
+      0.639,
+      2.299
+     ],
+     "cot_st1": [
+      0.543,
+      2.414
+     ],
+     "cot_st2": [
+      0.447,
+      2.529
+     ],
+     "cot_st3": [
+      0.35,
+      2.644
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.0,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.62,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_06",
+      "at": "room_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_cottage_in_01",
+      "at": "room_floor",
+      "stage": "full",
+      "name": "room_floor",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.02
+     },
+     {
+      "card": "story_sm_cottage_in_02",
+      "at": "soban",
+      "stage": "full",
+      "name": "soban",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_cottage_07",
+      "at": "lamp",
+      "stage": "full",
+      "name": "lamp",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0,
+      "inside_only": true,
+      "light": [
+       0.32,
+       0.3,
+       0.8,
+       "#ffb060",
+       true
+      ]
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well",
+      "stage": "full",
+      "name": "well",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": -20.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "story_sm_field_00",
+      "at": "sorghum_1",
+      "stage": "full",
+      "name": "sorghum_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_field_01",
+      "at": "sorghum_2",
+      "stage": "full",
+      "name": "sorghum_2",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_field_02",
+      "at": "sorghum_3",
+      "stage": "full",
+      "name": "sorghum_3",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -48.0
+     },
+     {
+      "card": "story_sm_field_03",
+      "at": "sorghum_band",
+      "stage": "full",
+      "name": "sorghum_band",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus"
+   },
+   "enter": {
+    "who": {
+     "mom": "talk",
+     "boy": "wave",
+     "girl": "wave"
+    },
+    "at": {
+     "mom": "mom_door",
+     "boy": "boy_at",
+     "girl": "girl_at"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "rate": 2.4,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": "front_focus",
+     "rate": 1.0,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "yard_high",
+     "at": "yard_focus",
+     "rate": 1.0,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "tree_low",
+     "at": "tree",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "home_night",
+   "title": "오막살이 (밤)",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "night",
+    "spots": {
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.704,
+      2.223
+     ],
+     "door_in": [
+      1.038,
+      1.824
+     ],
+     "path_end": [
+      0.235,
+      2.782
+     ],
+     "step": [
+      0.832,
+      2.07
+     ],
+     "room_back": [
+      1.399,
+      1.736
+     ],
+     "room_floor": [
+      1.091,
+      2.104
+     ],
+     "room_floor2": [
+      1.271,
+      1.889
+     ],
+     "lamp": [
+      1.598,
+      2.059
+     ],
+     "in_boy": [
+      1.252,
+      1.834
+     ],
+     "in_girl": [
+      1.417,
+      1.933
+     ],
+     "in_focus": [
+      1.374,
+      1.767
+     ],
+     "window_out": [
+      1.006,
+      2.516
+     ],
+     "window_inside": [
+      1.244,
+      2.232
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "soban": [
+      1.449,
+      2.143
+     ],
+     "back_door": [
+      1.215,
+      1.255
+     ],
+     "mom_door": [
+      0.62,
+      2.322
+     ],
+     "boy_at": [
+      0.435,
+      2.232
+     ],
+     "girl_at": [
+      0.728,
+      2.504
+     ],
+     "tiger_door": [
+      0.67,
+      2.325
+     ],
+     "tiger_window": [
+      0.989,
+      2.567
+     ],
+     "jars": [
+      1.178,
+      0.833
+     ],
+     "jars_hide": [
+      1.339,
+      0.641
+     ],
+     "well": [
+      2.342,
+      1.157
+     ],
+     "tree": [
+      2.954,
+      1.408
+     ],
+     "tree_foot": [
+      2.661,
+      1.555
+     ],
+     "tiger_well": [
+      2.038,
+      1.162
+     ],
+     "sorghum_1": [
+      3.768,
+      1.635
+     ],
+     "sorghum_2": [
+      3.812,
+      2.128
+     ],
+     "sorghum_3": [
+      3.872,
+      1.2
+     ],
+     "sorghum_band": [
+      4.205,
+      1.349
+     ],
+     "sorghum_fall": [
+      3.775,
+      1.706
+     ],
+     "fence_1": [
+      1.149,
+      0.09
+     ],
+     "firewood": [
+      0.64,
+      1.164
+     ],
+     "yard_focus": [
+      2.208,
+      1.239
+     ],
+     "corner": [
+      0.581,
+      1.311
+     ],
+     "kids_run": [
+      2.303,
+      1.515
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cot_st0": [
+      0.639,
+      2.299
+     ],
+     "cot_st1": [
+      0.543,
+      2.414
+     ],
+     "cot_st2": [
+      0.447,
+      2.529
+     ],
+     "cot_st3": [
+      0.35,
+      2.644
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.0,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.62,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_06",
+      "at": "room_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_cottage_in_01",
+      "at": "room_floor",
+      "stage": "full",
+      "name": "room_floor",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.02
+     },
+     {
+      "card": "story_sm_cottage_in_02",
+      "at": "soban",
+      "stage": "full",
+      "name": "soban",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_cottage_07",
+      "at": "lamp",
+      "stage": "full",
+      "name": "lamp",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0,
+      "inside_only": true,
+      "light": [
+       0.32,
+       0.3,
+       0.8,
+       "#ffb060",
+       true
+      ]
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well",
+      "stage": "full",
+      "name": "well",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": -20.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "story_sm_field_00",
+      "at": "sorghum_1",
+      "stage": "full",
+      "name": "sorghum_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_field_01",
+      "at": "sorghum_2",
+      "stage": "full",
+      "name": "sorghum_2",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_field_02",
+      "at": "sorghum_3",
+      "stage": "full",
+      "name": "sorghum_3",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -48.0
+     },
+     {
+      "card": "story_sm_field_03",
+      "at": "sorghum_band",
+      "stage": "full",
+      "name": "sorghum_band",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus",
+    "sky": {
+     "bg": "#101a3a",
+     "fog": "#24305e",
+     "fog_energy": 0.7,
+     "top": "#0d1636",
+     "horizon": "#34477f",
+     "stars": "story_sm_sky_09",
+     "n": 14,
+     "moon": "story_sm_sky_05",
+     "moon_at": [
+      -0.6,
+      10.5,
+      2.6,
+      1.6
+     ],
+     "far": 17.0
+    }
+   },
+   "enter": {
+    "who": {
+     "tiger": "dg_knock",
+     "boy": "scared",
+     "girl": "scared"
+    },
+    "at": {
+     "tiger": "tiger_door",
+     "boy": "in_boy",
+     "girl": "in_girl"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "rate": 2.4,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "door_ots",
+     "at": "door",
+     "rate": 1.0,
+     "wait": 3.0
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 1.0,
+     "wait": 3.5
+    },
+    {
+     "do": "cam",
+     "shot": "window_in",
+     "at": "window_inside",
+     "rate": 1.0,
+     "wait": 2.5
+    },
+    {
+     "do": "cam",
+     "shot": "yard_high",
+     "at": "yard_focus",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "tour_road",
+   "title": "고갯길",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "road",
+    "light": "late",
+    "spots": {
+     "rich_road": [
+      -0.197,
+      5.291
+     ],
+     "rich_house": [
+      1.125,
+      5.462
+     ],
+     "rich_yard": [
+      0.393,
+      5.512
+     ],
+     "stove": [
+      0.632,
+      5.996
+     ],
+     "siru": [
+      0.287,
+      6.002
+     ],
+     "basin": [
+      0.906,
+      6.127
+     ],
+     "mom_work": [
+      0.438,
+      5.837
+     ],
+     "rich_at": [
+      0.758,
+      5.617
+     ],
+     "tray_at": [
+      0.58,
+      5.617
+     ],
+     "pass_1": [
+      -0.331,
+      0.883
+     ],
+     "pass_1_in": [
+      -0.382,
+      1.805
+     ],
+     "pass_1_out": [
+      -0.012,
+      0.038
+     ],
+     "ridge_1_l": [
+      -2.228,
+      -0.025
+     ],
+     "ridge_1_r": [
+      1.753,
+      1.013
+     ],
+     "hide_1": [
+      0.344,
+      0.869
+     ],
+     "tiger_1": [
+      -0.082,
+      0.434
+     ],
+     "mom_1": [
+      -0.479,
+      1.101
+     ],
+     "grass_1": [
+      -1.104,
+      1.181
+     ],
+     "pass_2": [
+      0.527,
+      -1.316
+     ],
+     "pass_2_in": [
+      0.317,
+      -0.44
+     ],
+     "pass_2_out": [
+      0.36,
+      -2.3
+     ],
+     "ridge_2_l": [
+      -1.451,
+      -2.247
+     ],
+     "ridge_2_r": [
+      2.47,
+      -1.227
+     ],
+     "hide_2": [
+      -0.112,
+      -1.707
+     ],
+     "tiger_2": [
+      0.372,
+      -1.88
+     ],
+     "mom_2": [
+      0.627,
+      -1.027
+     ],
+     "grass_2": [
+      1.238,
+      -0.592
+     ],
+     "pass_3": [
+      -0.267,
+      -3.832
+     ],
+     "pass_3_in": [
+      0.139,
+      -2.779
+     ],
+     "pass_3_out": [
+      -0.68,
+      -4.887
+     ],
+     "ridge_3_l": [
+      -3.106,
+      -5.426
+     ],
+     "ridge_3_r": [
+      2.166,
+      -3.29
+     ],
+     "hide_3": [
+      0.279,
+      -3.884
+     ],
+     "tiger_3": [
+      -0.374,
+      -4.383
+     ],
+     "mom_3": [
+      -0.275,
+      -3.574
+     ],
+     "grass_3": [
+      -0.775,
+      -3.458
+     ],
+     "saddle": [
+      -3.462,
+      -6.465
+     ],
+     "far_ridge": [
+      3.335,
+      -4.412
+     ],
+     "est": [
+      -0.368,
+      1.184
+     ],
+     "mid": [
+      0.525,
+      -1.264
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_village_01",
+      "at": "rich_house",
+      "stage": "full",
+      "name": "rich_house",
+      "scale": 1.0,
+      "clear": 1.2,
+      "yaw": -55.0
+     },
+     {
+      "card": "story_sm_village_02",
+      "at": "stove",
+      "stage": 0,
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_village_03",
+      "at": "siru",
+      "stage": 0,
+      "name": "siru",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_village_08",
+      "at": "basin",
+      "stage": 0,
+      "name": "basin",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_1_l",
+      "stage": "full",
+      "name": "ridge_1_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_1_r",
+      "stage": "full",
+      "name": "ridge_1_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_04",
+      "at": "hide_1",
+      "stage": "full",
+      "name": "boulder_1",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_1",
+      "stage": "full",
+      "name": "grass_1",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_2_l",
+      "stage": "full",
+      "name": "ridge_2_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_2_r",
+      "stage": "full",
+      "name": "ridge_2_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_05",
+      "at": "hide_2",
+      "stage": "full",
+      "name": "cairn_2",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_07",
+      "at": "grass_2",
+      "stage": "full",
+      "name": "grass_2",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_3_l",
+      "stage": "full",
+      "name": "ridge_3_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_3_r",
+      "stage": "full",
+      "name": "ridge_3_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_08",
+      "at": "hide_3",
+      "stage": "full",
+      "name": "ledge_3",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_3",
+      "stage": "full",
+      "name": "grass_3",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_02",
+      "at": "saddle",
+      "stage": "full",
+      "name": "saddle",
+      "scale": 1.3,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "far_ridge",
+      "stage": "full",
+      "name": "far_ridge",
+      "scale": 1.2,
+      "clear": 0.4
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "at": "mid",
+     "wait": 0.5
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "rich_yard",
+     "rate": 0.5,
+     "wait": 4.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass_track",
+     "at": "pass_1",
+     "rate": 0.4,
+     "wait": 5.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass_low",
+     "at": "tiger_1",
+     "rate": 0.5,
+     "wait": 4.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass_track",
+     "at": "pass_2",
+     "rate": 0.4,
+     "wait": 5.0
+    },
+    {
+     "do": "cam",
+     "shot": "pass3_track",
+     "at": "pass_3",
+     "rate": 0.4,
+     "wait": 5.0
+    },
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "at": "mid",
+     "rate": 0.4,
+     "wait": 4.0
+    }
+   ]
+  },
+  {
+   "id": "tour_home",
+   "title": "오막살이",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "late",
+    "spots": {
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.704,
+      2.223
+     ],
+     "door_in": [
+      1.038,
+      1.824
+     ],
+     "path_end": [
+      0.235,
+      2.782
+     ],
+     "step": [
+      0.832,
+      2.07
+     ],
+     "room_back": [
+      1.399,
+      1.736
+     ],
+     "room_floor": [
+      1.091,
+      2.104
+     ],
+     "room_floor2": [
+      1.271,
+      1.889
+     ],
+     "lamp": [
+      1.598,
+      2.059
+     ],
+     "in_boy": [
+      1.252,
+      1.834
+     ],
+     "in_girl": [
+      1.417,
+      1.933
+     ],
+     "in_focus": [
+      1.374,
+      1.767
+     ],
+     "window_out": [
+      1.006,
+      2.516
+     ],
+     "window_inside": [
+      1.244,
+      2.232
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "soban": [
+      1.449,
+      2.143
+     ],
+     "back_door": [
+      1.215,
+      1.255
+     ],
+     "mom_door": [
+      0.62,
+      2.322
+     ],
+     "boy_at": [
+      0.435,
+      2.232
+     ],
+     "girl_at": [
+      0.728,
+      2.504
+     ],
+     "tiger_door": [
+      0.67,
+      2.325
+     ],
+     "tiger_window": [
+      0.989,
+      2.567
+     ],
+     "jars": [
+      1.178,
+      0.833
+     ],
+     "jars_hide": [
+      1.339,
+      0.641
+     ],
+     "well": [
+      2.342,
+      1.157
+     ],
+     "tree": [
+      2.954,
+      1.408
+     ],
+     "tree_foot": [
+      2.661,
+      1.555
+     ],
+     "tiger_well": [
+      2.038,
+      1.162
+     ],
+     "sorghum_1": [
+      3.768,
+      1.635
+     ],
+     "sorghum_2": [
+      3.812,
+      2.128
+     ],
+     "sorghum_3": [
+      3.872,
+      1.2
+     ],
+     "sorghum_band": [
+      4.205,
+      1.349
+     ],
+     "sorghum_fall": [
+      3.775,
+      1.706
+     ],
+     "fence_1": [
+      1.149,
+      0.09
+     ],
+     "firewood": [
+      0.64,
+      1.164
+     ],
+     "yard_focus": [
+      2.208,
+      1.239
+     ],
+     "corner": [
+      0.581,
+      1.311
+     ],
+     "kids_run": [
+      2.303,
+      1.515
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cot_st0": [
+      0.639,
+      2.299
+     ],
+     "cot_st1": [
+      0.543,
+      2.414
+     ],
+     "cot_st2": [
+      0.447,
+      2.529
+     ],
+     "cot_st3": [
+      0.35,
+      2.644
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.0,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.62,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_06",
+      "at": "room_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_cottage_in_01",
+      "at": "room_floor",
+      "stage": "full",
+      "name": "room_floor",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.02
+     },
+     {
+      "card": "story_sm_cottage_in_02",
+      "at": "soban",
+      "stage": "full",
+      "name": "soban",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_cottage_07",
+      "at": "lamp",
+      "stage": "full",
+      "name": "lamp",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -40.0,
+      "inside_only": true,
+      "light": [
+       0.32,
+       0.3,
+       0.8,
+       "#ffb060",
+       true
+      ]
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well",
+      "stage": "full",
+      "name": "well",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": -20.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "story_sm_field_00",
+      "at": "sorghum_1",
+      "stage": "full",
+      "name": "sorghum_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_field_01",
+      "at": "sorghum_2",
+      "stage": "full",
+      "name": "sorghum_2",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_field_02",
+      "at": "sorghum_3",
+      "stage": "full",
+      "name": "sorghum_3",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -48.0
+     },
+     {
+      "card": "story_sm_field_03",
+      "at": "sorghum_band",
+      "stage": "full",
+      "name": "sorghum_band",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus"
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "wait": 0.5
+    },
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": "front_focus",
+     "rate": 0.45,
+     "wait": 4.5
+    },
+    {
+     "do": "cam",
+     "shot": "yard_high",
+     "at": "yard_focus",
+     "rate": 0.4,
+     "wait": 5.0
+    },
+    {
+     "do": "cam",
+     "shot": "tree_low",
+     "at": "tree",
+     "rate": 0.4,
+     "wait": 4.5
+    },
+    {
+     "do": "cam",
+     "shot": "tree_top",
+     "at": "tree",
+     "rate": 0.4,
+     "wait": 4.0
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "rate": 0.4,
+     "wait": 4.0
+    }
+   ]
+  },
+  {
+   "id": "groundtest",
+   "title": "고갯길 (땅 시험)",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "road",
+    "light": "late",
+    "spots": {
+     "rich_road": [
+      -0.197,
+      5.291
+     ],
+     "rich_house": [
+      1.125,
+      5.462
+     ],
+     "rich_yard": [
+      0.393,
+      5.512
+     ],
+     "stove": [
+      0.632,
+      5.996
+     ],
+     "siru": [
+      0.287,
+      6.002
+     ],
+     "basin": [
+      0.906,
+      6.127
+     ],
+     "mom_work": [
+      0.438,
+      5.837
+     ],
+     "rich_at": [
+      0.758,
+      5.617
+     ],
+     "tray_at": [
+      0.58,
+      5.617
+     ],
+     "pass_1": [
+      -0.331,
+      0.883
+     ],
+     "pass_1_in": [
+      -0.382,
+      1.805
+     ],
+     "pass_1_out": [
+      -0.012,
+      0.038
+     ],
+     "ridge_1_l": [
+      -2.228,
+      -0.025
+     ],
+     "ridge_1_r": [
+      1.753,
+      1.013
+     ],
+     "hide_1": [
+      0.344,
+      0.869
+     ],
+     "tiger_1": [
+      -0.082,
+      0.434
+     ],
+     "mom_1": [
+      -0.479,
+      1.101
+     ],
+     "grass_1": [
+      -1.104,
+      1.181
+     ],
+     "pass_2": [
+      0.527,
+      -1.316
+     ],
+     "pass_2_in": [
+      0.317,
+      -0.44
+     ],
+     "pass_2_out": [
+      0.36,
+      -2.3
+     ],
+     "ridge_2_l": [
+      -1.451,
+      -2.247
+     ],
+     "ridge_2_r": [
+      2.47,
+      -1.227
+     ],
+     "hide_2": [
+      -0.112,
+      -1.707
+     ],
+     "tiger_2": [
+      0.372,
+      -1.88
+     ],
+     "mom_2": [
+      0.627,
+      -1.027
+     ],
+     "grass_2": [
+      1.238,
+      -0.592
+     ],
+     "pass_3": [
+      -0.267,
+      -3.832
+     ],
+     "pass_3_in": [
+      0.139,
+      -2.779
+     ],
+     "pass_3_out": [
+      -0.68,
+      -4.887
+     ],
+     "ridge_3_l": [
+      -3.106,
+      -5.426
+     ],
+     "ridge_3_r": [
+      2.166,
+      -3.29
+     ],
+     "hide_3": [
+      0.279,
+      -3.884
+     ],
+     "tiger_3": [
+      -0.374,
+      -4.383
+     ],
+     "mom_3": [
+      -0.275,
+      -3.574
+     ],
+     "grass_3": [
+      -0.775,
+      -3.458
+     ],
+     "saddle": [
+      -3.462,
+      -6.465
+     ],
+     "far_ridge": [
+      3.335,
+      -4.412
+     ],
+     "est": [
+      -0.368,
+      1.184
+     ],
+     "mid": [
+      0.525,
+      -1.264
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_village_01",
+      "at": "rich_house",
+      "stage": "full",
+      "name": "rich_house",
+      "scale": 1.0,
+      "clear": 1.2,
+      "yaw": -55.0
+     },
+     {
+      "card": "story_sm_village_02",
+      "at": "stove",
+      "stage": 0,
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_village_03",
+      "at": "siru",
+      "stage": 0,
+      "name": "siru",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_village_08",
+      "at": "basin",
+      "stage": 0,
+      "name": "basin",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_1_l",
+      "stage": "full",
+      "name": "ridge_1_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_1_r",
+      "stage": "full",
+      "name": "ridge_1_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_04",
+      "at": "hide_1",
+      "stage": "full",
+      "name": "boulder_1",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_1",
+      "stage": "full",
+      "name": "grass_1",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_2_l",
+      "stage": "full",
+      "name": "ridge_2_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_2_r",
+      "stage": "full",
+      "name": "ridge_2_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_05",
+      "at": "hide_2",
+      "stage": "full",
+      "name": "cairn_2",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_07",
+      "at": "grass_2",
+      "stage": "full",
+      "name": "grass_2",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_3_l",
+      "stage": "full",
+      "name": "ridge_3_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_3_r",
+      "stage": "full",
+      "name": "ridge_3_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_08",
+      "at": "hide_3",
+      "stage": "full",
+      "name": "ledge_3",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_3",
+      "stage": "full",
+      "name": "grass_3",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_02",
+      "at": "saddle",
+      "stage": "full",
+      "name": "saddle",
+      "scale": 1.3,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "far_ridge",
+      "stage": "full",
+      "name": "far_ridge",
+      "scale": 1.2,
+      "clear": 0.4
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "mom": "scared_full",
+     "tiger": "demand"
+    },
+    "at": {
+     "mom": "mom_1",
+     "tiger": "tiger_1"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "pass_track",
+     "at": "pass_1",
+     "rate": 9.0,
+     "wait": 5.0
+    }
+   ]
+  }
+ ],
+ "lines": []
+}

@@ -85,6 +85,10 @@ Line `expr` {role: pose | [pose per seg]} is applied by the runner as each seg s
            "audio": "res://audio/voice/sun_wind/nar_5782294768.mp3", "source_audio": "audio/el/…", "status": "reuse"}],
  "source_index": 12, "source_text": "…"}
 ```
+Tale top level `theme` (sunmoon 2026-11-22): template dressing, "" (western meadow village) or "korean" (Joseon
+countryside: man-made cards only from the korean_* sheets). `ground_style`: "" (felt) or "paper" (matte cut-paper
+ground sheets; sunmoon). Read-mode lines (`READ_SCRIPT` in the seed table) carry
+`source_read` "<scene key>#<line>" instead of `source_index`.
 `status`: `reuse` (unchanged text, 톡톡 clip copied) | `changed-needs-recording` | `changed-recorded` | `pending`
 (new line, recording not approved yet: plays caption-only for an estimated read time, listed in STORY_DONE
 missing_audio; set via LINE_META in tools/story/tales/<tale>.py).

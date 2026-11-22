@@ -1,0 +1,110 @@
+{
+ "biome": "korean_village",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "cottage"
+ ],
+ "items": {
+  "00": [
+   "thatched cottage front (choga-jip): lattice paper door, paper window, veranda, stone base",
+   "story_building",
+   0.95,
+   0,
+   {
+    "tags": [
+     "house",
+     "facade",
+     "thatched"
+    ]
+   }
+  ],
+  "01": [
+   "cottage lattice paper door leaf",
+   "story_building",
+   0.42,
+   0,
+   {
+    "tags": [
+     "door"
+    ]
+   }
+  ],
+  "02": [
+   "paper-screen lattice window (changhoji)",
+   "story_building",
+   0.25,
+   0,
+   {
+    "tags": [
+     "window"
+    ]
+   }
+  ],
+  "03": [
+   "paper-screen window with a poked hole",
+   "story_building",
+   0.25,
+   0,
+   {
+    "tags": [
+     "window",
+     "hole"
+    ]
+   }
+  ],
+  "04": [
+   "cottage gable end (side wall under the thatch)",
+   "story_building",
+   0.75,
+   0,
+   {
+    "tags": [
+     "side",
+     "wall"
+    ]
+   }
+  ],
+  "05": [
+   "cottage back with a small back door",
+   "story_building",
+   0.75,
+   0,
+   {
+    "tags": [
+     "back",
+     "door",
+     "facade"
+    ]
+   }
+  ],
+  "06": [
+   "cottage room inside wall: papered wall, shelf, folded quilt",
+   "story_building",
+   0.6,
+   0,
+   {
+    "tags": [
+     "interior",
+     "room",
+     "wall"
+    ]
+   }
+  ],
+  "07": [
+   "brass oil lamp (deungjan) on a tall stand, lit",
+   "story_prop",
+   0.32,
+   0,
+   {
+    "tags": [
+     "lamp",
+     "interior",
+     "light"
+    ]
+   }
+  ]
+ }
+}

@@ -22,6 +22,8 @@ signal built
 @export var pop_radius := 3.85  ## cards within this distance of the traveller are hinged and rise in the wave
 @export var walk := true
 @export var with_audio := true
+@export var theme := ""  ## dressing theme (CardLibrary): "" western meadow village, "korean" Joseon countryside (sunmoon)
+@export var ground_style := ""  ## "" felt (default), "paper": matte cut-paper ground sheets (GroundLayers.ground_style)
 
 ## road fraction, cam elevation, yaw, distance, fov
 ## r2: closer lens (distance ~7.3) so the traveller is the focal point, not a 20 px smudge.
@@ -85,7 +87,7 @@ func _ready() -> void:
 		PopHinge.fixed_dt = 1.0 / 60.0
 		PaperSpring.fixed_dt = 1.0 / 60.0
 	slicer.phase("ground_lib")
-	lib = CardLibrary.new(rng)
+	lib = CardLibrary.new(rng, ["winter"], theme)
 	await slicer.tick()
 	slicer.phase("ground")
 	await _build_ground()
@@ -156,6 +158,7 @@ func _build_ground() -> void:
 	ground = MeadowGround.new()
 	ground.name = "Ground"
 	ground.seed_value = seed_value
+	ground.ground_style = ground_style
 	ground.page_size = Vector2(28.0, 20.0)
 	ground.cover_patches = 28  # r2: fewer pale lobes (read as spilled paint)
 	ground.felt_color = Color("7d9366")  # LOOKF r1: a touch warmer/deeper felt (was 7f9670 / 5f7652)

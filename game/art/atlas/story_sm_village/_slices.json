@@ -1,0 +1,164 @@
+{
+ "sheet": "story_sm_village",
+ "bg": [
+  0.988,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_sm_village_00",
+   "bbox": [
+    1330,
+    28,
+    1369,
+    109
+   ],
+   "area": 1828,
+   "size": [
+    47,
+    89
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_01",
+   "bbox": [
+    41,
+    35,
+    809,
+    438
+   ],
+   "area": 250567,
+   "size": [
+    776,
+    411
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_02",
+   "bbox": [
+    822,
+    125,
+    1180,
+    438
+   ],
+   "area": 83670,
+   "size": [
+    366,
+    321
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_03",
+   "bbox": [
+    1222,
+    28,
+    1473,
+    437
+   ],
+   "area": 56730,
+   "size": [
+    259,
+    417
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 3
+  },
+  {
+   "id": "story_sm_village_04",
+   "bbox": [
+    48,
+    503,
+    482,
+    731
+   ],
+   "area": 76194,
+   "size": [
+    442,
+    236
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_05",
+   "bbox": [
+    555,
+    473,
+    970,
+    734
+   ],
+   "area": 86812,
+   "size": [
+    423,
+    269
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_06",
+   "bbox": [
+    1066,
+    490,
+    1463,
+    734
+   ],
+   "area": 83866,
+   "size": [
+    405,
+    252
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_07",
+   "bbox": [
+    327,
+    803,
+    575,
+    980
+   ],
+   "area": 36436,
+   "size": [
+    256,
+    185
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_08",
+   "bbox": [
+    751,
+    769,
+    1184,
+    1000
+   ],
+   "area": 84867,
+   "size": [
+    441,
+    239
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

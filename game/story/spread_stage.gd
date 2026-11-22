@@ -134,6 +134,8 @@ func build_async(seed_v: int, view_i: int, with_audio: bool, budget_ms: float) -
 	world = MEADOW.instantiate() as MeadowWorld
 	world.seed_value = seed_v
 	world.view = view_i
+	world.theme = str(tale.get("theme", ""))  # sunmoon: "korean" dressing of the template (2026-11-22)
+	world.ground_style = str(tale.get("ground_style", ""))  # sunmoon: "paper" ground sheets instead of felt
 	world.fixed_step = false  # the runner owns the global fixed step
 	world.pop_on_load = true
 	world.walk = false
@@ -454,7 +456,8 @@ func _build_sky(sky: Dictionary) -> void:
 	add_child(root)
 	var r := dir_vec("right")
 	var aw := dir_vec("away")
-	var yaw := deg_to_rad(world.rig.yaw_deg)
+	# the template view's yaw (not the rig's: mid-page the rig carries a shot's yaw offset and the quads turned away)
+	var yaw := atan2((_cam_basis[1] as Vector2).x, (_cam_basis[1] as Vector2).y)
 	var mk := func(tex: Texture2D, w: float, h: float, pos: Vector3, energy: float) -> MeshInstance3D:
 		var q := QuadMesh.new()
 		q.size = Vector2(w, h)
@@ -976,6 +979,10 @@ func enter_beat(b: Dictionary) -> void:
 				(h.get_parent() as Node3D).visible = true
 				h.pop_up(0.1)
 	_apply_built(sp.get("built", []), true)
+	# sunmoon (2026-11-22): night falls on a page that opened by day (the third pass shares the road page with the
+	# first two): build its night sky now, or the sky behind the hills stays the black backdrop
+	if not (sp.get("sky", {}) as Dictionary).is_empty() and get_node_or_null("NightSky") == null:
+		_build_sky(sp["sky"])
 	_set_light(str(sp.get("light", "")), false)
 	if _cam_anchor and not has_walker and spots.has("focus"):
 		_focus_goal = spots["focus"]

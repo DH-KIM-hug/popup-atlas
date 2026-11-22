@@ -1693,3 +1693,44 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     doubled segment; v8 VOICE_DUP=0 in all three tales.
   - Runs: witch_candy 427.3 s, CHECK_LINES OK (59), BLACK_LIPS 0, OVERLAP 6; three_pigs 296.4 s, sun_wind 206.1 s,
     CHECK_LINES OK. Video artifacts/video/witch_candy_full_v8.mp4.
+
+## 2026-11-22 — sunmoon (해님 달님) phase 1: plan, script, shared Korean cast and sets, road + cottage prototypes
+  - Source: 톡톡's READ-MODE script (read_script_el.json, the tale told straight, every line recorded in
+    read_narration_el.js) instead of the play script (plates, counting 1–10, voice / hand quizzes). seed_script.py
+    seeds read lines when a tale sets READ_SCRIPT (sm_r<scene><line>, READ_SEG_KEEP); the other three tales seed
+    byte-identically. Play-script tap instructions are borrowed, each voiced once (002, 006, 069, 074, 079, 091, 104,
+    115, 130).
+  - Plan (game/stories/sunmoon/PLAN.md): 11 beats + cover on 3 spreads (A the mountain road: the rich house and three
+    passes, late → dusk → night; B the cottage with its yard, well, zelkova and sorghum: morning, door, back yard, tree,
+    rope, old rope; C the sky), paper spec per set, ~21 taps, the cast with every pose, props per beat, lines kept /
+    trimmed / cut. The mother's fate is the source's one soft line over a cutaway of the moon behind a cloud.
+  - Script: 65 used lines (63 reuse, 2 new pending: sm_n01 18 chars, sm_n02 20 chars — not recorded, ask first).
+    Narration 423 s in the read script → 263 s; estimate ≈ 6:15–6:40. audit_clips: r0815's "쉿!" was said twice →
+    TRIM_SEG to the first take (no recording); r0602 "똑똑똑." flagged for listening (knock rhythm).
+  - Art (Codex, magenta, md5-unique, contact sheets before slicing): shared cast hanbok_boy, hanbok_girl, hanbok_mom,
+    tiger (+ disguise, tree, rope frames), rich_lady, sunmoon_sky — 81 figures + 50 drawn cycle frames
+    (tools/cast/sunmoon_cast.py, merge-only); atlas story_sm_cottage / yard / tree / mountain / village / sky / field
+    (60 cards). The disguise sneak cycle first invented rainbow sleeves and a blue ribbon: regenerated with the
+    disguise figure as reference (v1 kept).
+  - Engine: `theme: "korean"` on MeadowWorld / CardLibrary (man-made cards only from korean_* sheets; default
+    unchanged); a night `sky` on a same-page beat is now built at that beat (pass 3 shares the page with passes 1–2)
+    and its quads take the template yaw (they took the rig's shot yaw and faced away: black sky).
+    house_stages.py ROOF_Y / WALL_X; tools/atlas/sm_cottage.py (fold bands + door leaf + body in one entry).
+  - Paper ground (user 2026-11-22: "펠트 질감 싫은뎅"): tale top-level `ground_style: "paper"` → MeadowWorld /
+    GroundLayers → the ground shader's `paper` uniform (no felt nap or clumps, a faint mottle, fine fibre tooth, almost
+    no bump) and dark cut-line edges instead of cream felt lips; default "" keeps felt for the other tales. Test card
+    (same pass-1 shot, light and lens): artifacts/sunmoon/ground_felt_vs_paper.png. sunmoon uses paper.
+  - Prototypes (game/stories/sunmoon/proto, paper; proto_felt for the card): road late / night, cottage day / night with
+    the cast, the room (inside wall face + ondol floor, new art story_sm_cottage_in), two camera tours. Fixed on
+    screen: pass shots inside the ridge gaps (pass 3 its own yaw), the pass OTS → angled two-shot, room shots in the
+    cottage's yaw with the camera inside the front wall, pass-3 ridges / saddle off the road (SET_CHECK all 0).
+    Videos artifacts/sunmoon/sunmoon_set_tour_p2.mp4 (10.7 MB), artifacts/sunmoon/proto/{road,home,home_night}_p2.mp4;
+    sheets artifacts/sunmoon/proto/*_p2_sheet.jpg, cast_contact.png, props_contact.png.
+  - Regression: before the paper change sun_wind 210.9 s, three_pigs 298.8 s, witch_candy 431.2 s, all CHECK_LINES
+    OK, VOICE_DUP=0, missing_audio=[], missing_sound=[] (+2–5 s vs v8 = the time-sliced first build under load);
+    after it sun_wind 207.0 s OK (three_pigs / witch_candy not re-run: the Godot slot went to the main session's
+    witch_candy voice swap; the shader is unchanged at paper = 0).
+  - Still off: glides between passes cut through ridge cards; the ridge / rock cards carry a felt print of their own;
+    a faint pink key fringe on one ridge edge; the thatch body's back gable shows a blank card back; the cottage back
+    uses a wall strip, not the back-door card; stepping stones too small; the door step rises are 23–30 % of a child's
+    height (needs open treads); sky page not prototyped; nothing is wired (handler fx, enter.hidden, hanger poses).

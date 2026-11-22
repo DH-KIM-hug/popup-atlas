@@ -1,0 +1,124 @@
+{
+ "biome": "any",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "sky"
+ ],
+ "items": {
+  "00": [
+   "wide cream cloud band (stitched)",
+   "story_fx",
+   0.32,
+   0,
+   {
+    "tags": [
+     "cloud"
+    ]
+   }
+  ],
+  "01": [
+   "plain golden sun disc with rays",
+   "story_fx",
+   0.7,
+   0,
+   {
+    "tags": [
+     "sun"
+    ]
+   }
+  ],
+  "02": [
+   "wide pale-lemon cloud band",
+   "story_fx",
+   0.28,
+   0,
+   {
+    "tags": [
+     "cloud"
+    ]
+   }
+  ],
+  "03": [
+   "the good rope: thick golden shining dongajul (vertical)",
+   "story_prop",
+   2.0,
+   0,
+   {
+    "tags": [
+     "rope",
+     "good"
+    ]
+   }
+  ],
+  "04": [
+   "the old rope: thin frayed grey-brown rope (vertical)",
+   "story_prop",
+   2.0,
+   0,
+   {
+    "tags": [
+     "rope",
+     "old"
+    ]
+   }
+  ],
+  "05": [
+   "plain cream full moon disc",
+   "story_fx",
+   0.6,
+   0,
+   {
+    "tags": [
+     "moon"
+    ]
+   }
+  ],
+  "06": [
+   "wide pale blue-grey cloud band",
+   "story_fx",
+   0.28,
+   0,
+   {
+    "tags": [
+     "cloud"
+    ]
+   }
+  ],
+  "07": [
+   "puffy round cream cloud",
+   "story_fx",
+   0.45,
+   0,
+   {
+    "tags": [
+     "cloud"
+    ]
+   }
+  ],
+  "08": [
+   "snapped frayed rope end",
+   "story_prop",
+   0.22,
+   0,
+   {
+    "tags": [
+     "rope",
+     "snapped"
+    ]
+   }
+  ],
+  "09": [
+   "gold five-point star",
+   "story_fx",
+   0.12,
+   0,
+   {
+    "tags": [
+     "star"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,147 @@
+{
+ "sheet": "cast_sm_climb",
+ "bg": [
+  0.984,
+  0.02,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_climb_00",
+   "bbox": [
+    32,
+    110,
+    275,
+    642
+   ],
+   "area": 76478,
+   "size": [
+    251,
+    540
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_climb_01",
+   "bbox": [
+    287,
+    110,
+    520,
+    642
+   ],
+   "area": 73514,
+   "size": [
+    241,
+    540
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_climb_02",
+   "bbox": [
+    566,
+    138,
+    809,
+    642
+   ],
+   "area": 79729,
+   "size": [
+    251,
+    512
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_climb_03",
+   "bbox": [
+    849,
+    139,
+    1096,
+    642
+   ],
+   "area": 79365,
+   "size": [
+    255,
+    511
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_climb_04",
+   "bbox": [
+    1137,
+    106,
+    1346,
+    642
+   ],
+   "area": 71699,
+   "size": [
+    217,
+    544
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_climb_05",
+   "bbox": [
+    1389,
+    98,
+    1615,
+    523
+   ],
+   "area": 62199,
+   "size": [
+    234,
+    433
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_climb_06",
+   "bbox": [
+    1624,
+    125,
+    1891,
+    641
+   ],
+   "area": 75660,
+   "size": [
+    275,
+    524
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_climb_07",
+   "bbox": [
+    1910,
+    127,
+    2162,
+    546
+   ],
+   "area": 63998,
+   "size": [
+    260,
+    427
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
