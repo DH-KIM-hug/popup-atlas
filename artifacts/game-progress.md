@@ -1950,3 +1950,11 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     girl's own back-door mark (the 0.69 corner contact is gone). OVERLAP 1 / OCCLUDE 12 (pass 2 / 3 ridge 0.73 on a
     side track at 77 s page time; the rest jars / clouds / sorghum contacts). Runtime +15 s vs v6 from the new
     camera glides and the page-opening rise: 12 s over the 6:30 target. SPEAKER_OFF=9 (camera agent's metric).
+
+## 2026-11-22 — sunmoon v11: 6:28, run-away framed wide, checks on the basket and walks
+  - Pace: cut sm_r0400 (pass 2 lead-in), sm_r0813 (the slips are shown), sm_r0808 (their giggle shows; the tiger
+    hears it); shorter fx waits. Run-away: a held wide over the yard (track_side lost him at the frame edge).
+  - Checks on v9: the morning basket is empty at full resolution; the morning walk (8 fps) is the empty-basket side
+    cycle, feet on the ground; the drawn bump run reads in the wide (runaway_v10.jpg).
+  - Full run v11 (sunmoon_full_v11.mp4 25.4 MB, full_v11_sheet.jpg): STORY_DONE 388.0 s (6:28), CHECK_LINES OK (64),
+    VOICE_DUP=0, CAM_JUMP=0 CAM_JERK=0 SPEAKER_OFF=1, no missing audio / sound, no script errors.

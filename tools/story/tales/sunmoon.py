@@ -116,7 +116,8 @@ EXTRA = {"theme": "korean",              # the template dressed as a Joseon coun
          "ground_style": "paper",
          "spacing": True, "overlap_check": True, "pop_in": False,
          "overlap_ok": [["boy", "tree"], ["girl", "tree"], ["tiger", "tree"], ["tiger", "well"], ["boy", "jars"],
-                        ["girl", "jars"], ["tiger", "boulder_1"], ["tiger", "cairn_2"], ["tiger", "ledge_3"]]}
+                        ["girl", "jars"], ["tiger", "boulder_1"], ["tiger", "cairn_2"], ["tiger", "ledge_3"],
+                        ["tiger", "sorghum_2"]]}
 # Shots [distance, elevation°, focus height, fov, yaw offset°]
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "crane_high": [9.0, 36.0, 0.3, 24.0, 0.0],      # the whole mountain road: three passes in a row
@@ -404,13 +405,13 @@ BEATS = [
     {"id": "pass1", "title": "첫째 고개", "spread": _road(light="late"),
      "enter": {"who": {"mom": "tired_full"}, "at": {"mom": "pass_1_in"}, "hidden": {"tiger": "hide_1"}},
      "steps": [
-        {"do": "cam", "shot": "crane_high", "at": "mid", "rate": 0.8, "wait": 0.8},      # the whole road: 3 passes
+        {"do": "cam", "shot": "crane_high", "at": "mid", "rate": 0.8, "wait": 0.4},      # the whole road: 3 passes
         {"do": "walk", "who": "mom", "to": "mom_1", "dir": "away", "speed": 0.34, "follow": "mom",
          "shot": "track_side", "line": "sm_r0300"},
         {"do": "fx", "fx": "tiger_out:hide_1:tiger_1", "wait": 0.2},   # NEW: steps out from behind the rock (low)
         {"do": "cam", "shot": "pass_low", "at": "tiger_1", "rate": 3.0, "shake": 0.6, "wait": 0.1},
         {"do": "say", "line": "sm_r0301"},
-        {"do": "cam", "shot": "pass_two", "at": "mom_1", "rate": 2.4, "wait": 0.1},
+        {"do": "cam", "shot": "pass_two", "at": ["mom_1", "tiger_1"], "rate": 2.4, "wait": 0.1},  # SPEAKER_OFF: both in
         {"do": "say", "line": "sm_r0302"},
         {"do": "tap_steps", "target": "mom", "prompt": "sm_130", "hint": "sm_130", "shot": "two_shot",
          "steps": [{"fx": "cake_to_tiger:1"}]},                          # NEW fx: a cake arcs into his mouth
@@ -422,7 +423,7 @@ BEATS = [
                "hidden": {"tiger": "hide_2"}},
      "steps": [
         {"do": "walk", "who": "mom", "to": "mom_2", "dir": "away", "speed": 0.34, "follow": "mom",
-         "shot": "track_side", "line": "sm_r0400"},
+         "shot": "track_side"},  # v10 pace: sm_r0400 cut (the dusk and the second pass are on screen)
         {"do": "fx", "fx": "tiger_out:hide_2:tiger_2", "wait": 0.2},
         {"do": "cam", "shot": "pass_low", "at": "tiger_2", "rate": 3.0, "shake": 0.4, "wait": 0.1},
         {"do": "say", "line": "sm_r0402"},
@@ -437,7 +438,7 @@ BEATS = [
      "steps": [
         {"do": "walk", "who": "mom", "to": "mom_3", "dir": "away", "speed": 0.3, "follow": "mom",
          "shot": "track_side", "line": "sm_r0500"},
-        {"do": "fx", "fx": "eyes_glow:hide_3", "wait": 1.2},           # NEW: two warm eye glints by the ledge first
+        {"do": "fx", "fx": "eyes_glow:hide_3", "wait": 0.8},           # NEW: two warm eye glints by the ledge first
         {"do": "fx", "fx": "tiger_out:hide_3:tiger_3", "wait": 0.2},
         {"do": "cam", "shot": "pass_low", "at": "tiger_3", "rate": 2.6, "shake": 0.4, "wait": 0.1},
         {"do": "say", "line": "sm_r0502"},
@@ -447,9 +448,9 @@ BEATS = [
         {"do": "say", "line": "sm_r0505"},
         # the source's soft line, over a cutaway: the moon slips behind a cloud; nothing else is shown
         {"do": "cam", "shot": "moon_cut", "at": "pass_3", "rate": 1.2, "wait": 0.4},
-        {"do": "fx", "fx": "moon_cloud", "wait": 0.2},                 # NEW: a cloud band drifts over the moon
+        {"do": "fx", "fx": "moon_cloud", "wait": 0.1},                 # NEW: a cloud band drifts over the moon
         {"do": "say", "line": "sm_r0506"},
-        {"do": "fx", "fx": "mom_gone", "wait": 0.6},                   # NEW: the mother's card is simply not there
+        {"do": "fx", "fx": "mom_gone", "wait": 0.4},                   # NEW: the mother's card is simply not there
         {"do": "pose", "who": "tiger", "pose": "dg_calm", "hop": True},    # the disguise: a paper flip into her clothes
         {"do": "cam", "shot": "medium", "at": "tiger_3", "rate": 1.6, "wait": 0.2},
         {"do": "walk", "who": "tiger", "to": "pass_3_out", "dir": "away", "speed": 0.4, "pose": "dg",
@@ -467,14 +468,16 @@ BEATS = [
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 2.4, "wait": 0.1},     # reverse: inside
         {"do": "say", "line": "sm_r0604"},
         {"do": "cam", "shot": "window_in", "at": "door_inside", "rate": 2.2, "wait": 0.1},   # turned to the door
-        {"do": "fx", "fx": "paw_in", "wait": 1.0},             # a floury paw slides in at the door's edge
+        {"do": "fx", "fx": "paw_in", "wait": 0.8},             # a floury paw slides in at the door's edge
         {"do": "say", "line": "sm_r0606"},
         {"do": "cam", "shot": "window_in", "at": "window_inside", "rate": 1.8, "wait": 0.2},
         {"do": "tap_steps", "target": "window", "prompt": "sm_069", "hint": "sm_069",
          "steps": [{"fx": "poke_hole"}]},                     # NEW: the paper window card swaps to the poked one
         {"do": "fx", "fx": "eye_blink", "wait": 0.3},          # NEW: a big round eye blinks in the hole
         {"do": "say", "line": "sm_r0609"},
-        {"do": "cam", "shot": "face", "at": "in_boy", "rate": 2.4, "wait": 0.1},
+        # SPEAKER_OFF (camera agent 2026-11-22): turn round inside the room to the boy (a "face" shot backed the camera
+        # out through the cottage wall and he spoke from behind it)
+        {"do": "cam", "shot": "room", "at": "in_boy", "rate": 2.4, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "sm_r0610"}]},
     # 7 -- the back yard: out of the back door, hide behind the jars
     {"id": "backyard", "title": "뒷마당", "spread": _home(light="night", sky=SKY_NIGHT),
@@ -510,12 +513,11 @@ BEATS = [
          "follow": "tiger", "shot": "medium"},
         {"do": "say", "line": "sm_r0804"},
         {"do": "pose", "who": "tiger", "pose": "peer_well"},
-        {"do": "cam", "shot": "well_down", "at": "well", "rate": 1.6, "wait": 0.6},     # the faces in the water
+        {"do": "cam", "shot": "well_down", "at": ["well", "tiger_well", "tiger_well"], "rate": 1.6, "wait": 0.6},  # the faces in the water, the tiger at the rope (SPEAKER_OFF)
         {"do": "pose", "who": "tiger", "pose": "pull_rope"},
         {"do": "say", "line": "sm_r0806"},
         {"do": "fx", "fx": "bucket_splash", "wait": 0.3},
-        {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 2.0, "wait": 0.1},
-        {"do": "say", "line": "sm_r0808"},
+        {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 2.0, "wait": 0.1},  # v10b pace: sm_r0808 cut (their giggle shows; the tiger hears it)
         {"do": "cam", "shot": "tree_low", "at": "tree_foot", "rate": 2.6, "wait": 0.1},
         {"do": "say", "line": "sm_r0809"},
         {"do": "say", "line": "sm_r0810"},
@@ -523,8 +525,7 @@ BEATS = [
         {"do": "say", "line": "sm_r0811"},
         {"do": "tap_steps", "target": "oil", "prompt": "sm_091", "hint": "sm_091", "shot": "tree_low",
          "steps": [{"fx": "oil_smear"}]},                       # NEW: the bottle pours, a glossy streak on the bark
-        {"do": "fx", "fx": "tiger_slip:2", "wait": 0.2},       # NEW: two tries, two slides down
-        {"do": "say", "line": "sm_r0813"},
+        {"do": "fx", "fx": "tiger_slip:2", "wait": 0.2},       # NEW: two tries, two slides down  # v10 pace: sm_r0813 cut (the slips are shown, with sound)
         {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 2.2, "wait": 0.1},
         {"do": "say", "line": "sm_r0814"},
         {"do": "say", "line": "sm_r0815"},
@@ -534,7 +535,7 @@ BEATS = [
     {"id": "rope", "title": "하늘 동아줄", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {"boy": "sit_hold", "girl": "sit_scared", "tiger": "axe_a"}, "keep": ["boy", "girl", "tiger"]},
      "steps": [
-        {"do": "cam", "shot": "face", "at": "tree", "rate": 2.0, "wait": 0.1},
+        {"do": "cam", "shot": "face", "at": "tree", "rate": 2.0, "wait": 0.3, "settle": 0.7},  # SPEAKER_OFF: the boy in frame first
         {"do": "say", "line": "sm_r0902"},
         {"do": "fx", "fx": "rope_down:good", "wait": 0.3},     # NEW: the golden rope slides down, sparkles, a chime
         {"do": "cam", "shot": "rope_up", "at": "tree", "rate": 1.2, "wait": 0.1},
@@ -551,6 +552,7 @@ BEATS = [
         {"do": "say", "line": "sm_r1001"},
         {"do": "fx", "fx": "rope_down:old", "wait": 0.3},
         {"do": "pose", "who": "tiger", "pose": "grab_up"},
+        {"do": "cam", "shot": "tree_low", "at": "tree_foot", "rate": 2.0, "wait": 0.2},  # SPEAKER_OFF: down to the tiger
         {"do": "say", "line": "sm_r1002"},
         {"do": "fx", "fx": "tiger_rope_climb", "wait": 0.4},   # NEW: rope_a/b frames, creaks
         {"do": "cam", "shot": "rope_up", "at": "tree", "rate": 1.6, "wait": 0.1},
@@ -559,22 +561,23 @@ BEATS = [
         {"do": "say", "line": "sm_r1005"},
         {"do": "pose", "who": "tiger", "pose": "dazed"},
         {"do": "say", "line": "sm_r1006"},
+        {"do": "cam", "shot": "yard_high", "at": "exit_mid", "rate": 1.2, "wait": 0.2},  # held wide: the run reads
         {"do": "walk", "who": "tiger", "to": "hills_exit", "via": ["exit_mid"], "speed": 0.8, "pose": "run_bump",
-         "follow": "tiger", "shot": "track_side", "exit": True, "line": "sm_r1007"}]},
+         "exit": True, "line": "sm_r1007"}]},
     # 11 -- the sky: the brother becomes the sun, the sister the moon; they swap; day and night
     {"id": "sky", "title": "해님 달님", "spread": SKY_C,
      "enter": {"who": {"boy": "rope_a", "girl": "rope_b"}, "at": {"boy": "rise", "girl": "rise"}},
      "steps": [
         {"do": "fx", "fx": "sky_discs", "wait": 0.0},
         {"do": "cam", "shot": "sky_rope", "at": "rise", "from": "sky_rope", "rate": 1.0, "wait": 0.4},
-        {"do": "fx", "fx": "sky_rise", "wait": 3.4},           # close: the golden rope, the children climbing out of the clouds
+        {"do": "fx", "fx": "sky_rise", "wait": 3.0},           # close: the golden rope, the children climbing out of the clouds
         {"do": "cam", "shot": "sky_wide", "at": "focus", "rate": 1.6, "wait": 0.3},
-        {"do": "fx", "fx": "sun_moon_reveal", "wait": 1.2},    # a burst of stars: the sun and the moon grow in the sky
+        {"do": "fx", "fx": "sun_moon_reveal", "wait": 0.9},    # a burst of stars: the sun and the moon grow in the sky
         {"do": "say", "line": "sm_r1101"},
-        {"do": "fx", "fx": "night", "wait": 0.5},
+        {"do": "fx", "fx": "night", "wait": 0.3},
         {"do": "say", "line": "sm_r1103"},
         {"do": "say", "line": "sm_r1104"},
-        {"do": "fx", "fx": "swap_sun_moon", "wait": 1.0},
+        {"do": "fx", "fx": "swap_sun_moon", "wait": 0.8},
         {"do": "fx", "fx": "day", "wait": 0.6},
         {"do": "say", "line": "sm_r1106"},
         {"do": "tap_each", "targets": ["sun_disc", "moon_disc"], "prompt": "sm_115", "hint": "sm_115",

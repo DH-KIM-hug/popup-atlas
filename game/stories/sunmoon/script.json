@@ -398,6 +398,10 @@
   [
    "tiger",
    "ledge_3"
+  ],
+  [
+   "tiger",
+   "sorghum_2"
   ]
  ],
  "cast": {
@@ -1769,7 +1773,7 @@
      "shot": "crane_high",
      "at": "mid",
      "rate": 0.8,
-     "wait": 0.8
+     "wait": 0.4
     },
     {
      "do": "walk",
@@ -1801,7 +1805,10 @@
     {
      "do": "cam",
      "shot": "pass_two",
-     "at": "mom_1",
+     "at": [
+      "mom_1",
+      "tiger_1"
+     ],
      "rate": 2.4,
      "wait": 0.1
     },
@@ -2186,8 +2193,7 @@
      "dir": "away",
      "speed": 0.34,
      "follow": "mom",
-     "shot": "track_side",
-     "line": "sm_r0400"
+     "shot": "track_side"
     },
     {
      "do": "fx",
@@ -2604,7 +2610,7 @@
     {
      "do": "fx",
      "fx": "eyes_glow:hide_3",
-     "wait": 1.2
+     "wait": 0.8
     },
     {
      "do": "fx",
@@ -2658,7 +2664,7 @@
     {
      "do": "fx",
      "fx": "moon_cloud",
-     "wait": 0.2
+     "wait": 0.1
     },
     {
      "do": "say",
@@ -2667,7 +2673,7 @@
     {
      "do": "fx",
      "fx": "mom_gone",
-     "wait": 0.6
+     "wait": 0.4
     },
     {
      "do": "pose",
@@ -3213,7 +3219,7 @@
     {
      "do": "fx",
      "fx": "paw_in",
-     "wait": 1.0
+     "wait": 0.8
     },
     {
      "do": "say",
@@ -3248,10 +3254,11 @@
     },
     {
      "do": "cam",
-     "shot": "face",
+     "shot": "room",
      "at": "in_boy",
      "rate": 2.4,
-     "wait": 0.1
+     "wait": 0.1,
+     "settle": 0.5
     },
     {
      "do": "say",
@@ -4328,7 +4335,11 @@
     {
      "do": "cam",
      "shot": "well_down",
-     "at": "well",
+     "at": [
+      "well",
+      "tiger_well",
+      "tiger_well"
+     ],
      "rate": 1.6,
      "wait": 0.6
     },
@@ -4352,10 +4363,6 @@
      "at": "tree",
      "rate": 2.0,
      "wait": 0.1
-    },
-    {
-     "do": "say",
-     "line": "sm_r0808"
     },
     {
      "do": "cam",
@@ -4399,10 +4406,6 @@
      "do": "fx",
      "fx": "tiger_slip:2",
      "wait": 0.2
-    },
-    {
-     "do": "say",
-     "line": "sm_r0813"
     },
     {
      "do": "cam",
@@ -4901,7 +4904,8 @@
      "shot": "face",
      "at": "tree",
      "rate": 2.0,
-     "wait": 0.1
+     "wait": 0.3,
+     "settle": 0.7
     },
     {
      "do": "say",
@@ -5428,6 +5432,13 @@
      "pose": "grab_up"
     },
     {
+     "do": "cam",
+     "shot": "tree_low",
+     "at": "tree_foot",
+     "rate": 2.0,
+     "wait": 0.2
+    },
+    {
      "do": "say",
      "line": "sm_r1002"
     },
@@ -5470,6 +5481,13 @@
      "line": "sm_r1006"
     },
     {
+     "do": "cam",
+     "shot": "yard_high",
+     "at": "exit_mid",
+     "rate": 1.2,
+     "wait": 0.2
+    },
+    {
      "do": "walk",
      "who": "tiger",
      "to": "hills_exit",
@@ -5478,8 +5496,6 @@
      ],
      "speed": 0.8,
      "pose": "run_bump",
-     "follow": "tiger",
-     "shot": "track_side",
      "exit": true,
      "line": "sm_r1007"
     }
@@ -6025,7 +6041,7 @@
     {
      "do": "fx",
      "fx": "sky_rise",
-     "wait": 3.4
+     "wait": 3.0
     },
     {
      "do": "cam",
@@ -6037,7 +6053,7 @@
     {
      "do": "fx",
      "fx": "sun_moon_reveal",
-     "wait": 1.2
+     "wait": 0.9
     },
     {
      "do": "say",
@@ -6046,7 +6062,7 @@
     {
      "do": "fx",
      "fx": "night",
-     "wait": 0.5
+     "wait": 0.3
     },
     {
      "do": "say",
@@ -6059,7 +6075,7 @@
     {
      "do": "fx",
      "fx": "swap_sun_moon",
-     "wait": 1.0
+     "wait": 0.8
     },
     {
      "do": "fx",
@@ -10043,9 +10059,9 @@
    "speaker": "nar",
    "text": "하늘이 붉어졌어요. 엄마가 둘째 고개를 넘어요.",
    "status": "reuse",
-   "beat": "pass2",
-   "interaction": "walk",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -11013,9 +11029,9 @@
    "speaker": "nar",
    "text": "나무 위에서 오누이가 그만 킥킥 웃고 말았어요.",
    "status": "reuse",
-   "beat": "tree",
-   "interaction": "say",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -11150,9 +11166,9 @@
    "speaker": "nar",
    "text": "미끌 쭈르륵! 호랑이는 자꾸자꾸 미끄러졌어요.",
    "status": "reuse",
-   "beat": "tree",
-   "interaction": "say",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
