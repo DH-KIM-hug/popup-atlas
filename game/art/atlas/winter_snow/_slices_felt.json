@@ -1,0 +1,419 @@
+{
+ "sheet": "winter_snow",
+ "bg": [
+  0.984,
+  0.012,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "winter_snow_00",
+   "bbox": [
+    32,
+    28,
+    274,
+    305
+   ],
+   "area": 36689,
+   "size": [
+    250,
+    285
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_01",
+   "bbox": [
+    334,
+    22,
+    537,
+    303
+   ],
+   "area": 28335,
+   "size": [
+    211,
+    289
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_02",
+   "bbox": [
+    603,
+    42,
+    789,
+    303
+   ],
+   "area": 29933,
+   "size": [
+    194,
+    269
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_03",
+   "bbox": [
+    844,
+    45,
+    1026,
+    295
+   ],
+   "area": 23337,
+   "size": [
+    190,
+    258
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_04",
+   "bbox": [
+    1071,
+    45,
+    1288,
+    299
+   ],
+   "area": 31759,
+   "size": [
+    225,
+    262
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_05",
+   "bbox": [
+    1302,
+    25,
+    1520,
+    298
+   ],
+   "area": 21738,
+   "size": [
+    226,
+    281
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_06",
+   "bbox": [
+    22,
+    376,
+    234,
+    562
+   ],
+   "area": 29879,
+   "size": [
+    220,
+    194
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_07",
+   "bbox": [
+    264,
+    377,
+    430,
+    560
+   ],
+   "area": 22377,
+   "size": [
+    174,
+    191
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_08",
+   "bbox": [
+    462,
+    398,
+    640,
+    560
+   ],
+   "area": 22550,
+   "size": [
+    186,
+    170
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_09",
+   "bbox": [
+    666,
+    324,
+    968,
+    565
+   ],
+   "area": 53725,
+   "size": [
+    310,
+    249
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_10",
+   "bbox": [
+    1005,
+    345,
+    1277,
+    564
+   ],
+   "area": 45538,
+   "size": [
+    280,
+    227
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_11",
+   "bbox": [
+    1321,
+    343,
+    1492,
+    567
+   ],
+   "area": 27518,
+   "size": [
+    179,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_12",
+   "bbox": [
+    19,
+    650,
+    262,
+    758
+   ],
+   "area": 17466,
+   "size": [
+    251,
+    116
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_13",
+   "bbox": [
+    303,
+    623,
+    527,
+    759
+   ],
+   "area": 20927,
+   "size": [
+    232,
+    144
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_14",
+   "bbox": [
+    552,
+    643,
+    748,
+    759
+   ],
+   "area": 16088,
+   "size": [
+    204,
+    124
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_15",
+   "bbox": [
+    779,
+    588,
+    905,
+    765
+   ],
+   "area": 11218,
+   "size": [
+    134,
+    185
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_16",
+   "bbox": [
+    938,
+    632,
+    1207,
+    759
+   ],
+   "area": 26831,
+   "size": [
+    277,
+    135
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_17",
+   "bbox": [
+    1222,
+    648,
+    1518,
+    755
+   ],
+   "area": 21604,
+   "size": [
+    304,
+    115
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_18",
+   "bbox": [
+    22,
+    802,
+    236,
+    1001
+   ],
+   "area": 32795,
+   "size": [
+    222,
+    207
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_19",
+   "bbox": [
+    274,
+    806,
+    427,
+    1004
+   ],
+   "area": 14397,
+   "size": [
+    161,
+    206
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_20",
+   "bbox": [
+    422,
+    843,
+    645,
+    1001
+   ],
+   "area": 25348,
+   "size": [
+    231,
+    166
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_21",
+   "bbox": [
+    661,
+    800,
+    849,
+    1003
+   ],
+   "area": 16358,
+   "size": [
+    196,
+    211
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_22",
+   "bbox": [
+    909,
+    790,
+    1106,
+    1002
+   ],
+   "area": 29168,
+   "size": [
+    205,
+    220
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "winter_snow_23",
+   "bbox": [
+    1134,
+    840,
+    1509,
+    1000
+   ],
+   "area": 48079,
+   "size": [
+    383,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

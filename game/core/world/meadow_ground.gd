@@ -107,6 +107,7 @@ func build() -> void:
 			dm.shader = preload("res://core/shaders/plank_deck.gdshader")
 			dm.set_shader_parameter("wood", deck_color)
 			dm.set_shader_parameter("felt_tex", FELT_TEX)
+			dm.set_shader_parameter("fibre_tex", FIBRE)
 			var ci := _path_line.size() / 2
 			var bd := INF
 			for i in _path_line.size():

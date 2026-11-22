@@ -28,6 +28,9 @@ sys.path.insert(0, os.path.join(ROOT, "tools", "art"))
 LOCK = [os.path.join(ROOT, "tools/story/with_godot.sh")]
 
 
+JOIN = {"village_props": "4"}  # slice_atlas --join per sheet (village_props: the woodpile sits 10 px above the arch)
+
+
 def norm(b, W, H):
     return (b[0] / W, b[1] / H, b[2] / W, b[3] / H)
 
@@ -65,6 +68,98 @@ def assign(old, new):
                 continue
         out[best].append(j)
     return out, lost
+
+
+def clean_fringe(im, band=6, it=12):
+    """Paper redraws carry a magenta halo on their thin lit rims (needles, grass, plumes): the keyer leaves pink edge
+    pixels. Every pixel within `band` px of the cut that is magenta-tinted (min(R,B) - G > 14) takes the colour of the
+    nearest clean pixels inside the piece (iterative fill), alpha untouched."""
+    from PIL import ImageFilter
+    a = np.asarray(im.convert("RGBA")).astype(np.float32)
+    al = a[..., 3]
+    rgb = a[..., :3]
+    m = np.minimum(rgb[..., 0], rgb[..., 2]) - rgb[..., 1]
+    solid = Image.fromarray((al > 250).astype(np.uint8) * 255)
+    inner = np.asarray(solid.filter(ImageFilter.MinFilter(2 * band + 1))) > 0
+    rb = np.abs(rgb[..., 0] - rgb[..., 2])
+    bad = (al > 0) & (((~inner) & (m > 8)) | ((m > 20) & (rb < 0.6 * m)))
+    good = (al > 200) & ~bad
+    if not bad.any():
+        return im
+    col = rgb * good[..., None]
+    w = good.astype(np.float32)
+    for _ in range(it):
+        cs = np.zeros_like(col); ws = np.zeros_like(w)
+        for dy in (-1, 0, 1):
+            for dx in (-1, 0, 1):
+                cs += np.roll(np.roll(col, dy, 0), dx, 1)
+                ws += np.roll(np.roll(w, dy, 0), dx, 1)
+        fill = (w == 0) & (ws > 0)
+        col[fill] = cs[fill] / ws[fill][:, None]
+        w = np.where(fill, 1.0, w)
+    out = rgb.copy()
+    ok = bad & (w > 0)
+    out[ok] = col[ok]
+    left = bad & ~ok  # no clean neighbour reached: just drop the magenta component
+    if left.any():
+        mm = np.clip(m[left], 0, None)[:, None]
+        out[left] = out[left] - mm * np.array([1.0, 0.0, 1.0])
+    return Image.fromarray(np.dstack([np.clip(out, 0, 255), al]).astype(np.uint8), "RGBA")
+
+
+def thumb(im, n=12):
+    """appearance signature: alpha-premultiplied colour on an n x n grid of the trimmed piece + its aspect"""
+    a = np.asarray(im.convert("RGBA")).astype(np.float32) / 255.0
+    al = a[..., 3]
+    ys, xs = np.nonzero(al > 0.5)
+    if len(ys) == 0:
+        return np.zeros(n * n * 4 + 1)
+    a = a[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
+    t = np.asarray(Image.fromarray((a * 255).astype(np.uint8), "RGBA").resize((n, n), Image.BOX)).astype(np.float32) / 255
+    t[..., :3] *= t[..., 3:4]
+    asp = np.log((xs.max() - xs.min() + 1) / (ys.max() - ys.min() + 1))
+    return np.concatenate([t.ravel(), [asp * 3.0]])
+
+
+def assign2(old_imgs, oldb, new_imgs, newb):
+    """content + position assignment (a redraw that re-flows its pieces broke the position-only match):
+    one paper piece per felt piece by the lowest cost (appearance distance + position), then leftover paper
+    fragments join the felt piece they overlap most. -> ({old: [new]}, lost, {old: cost})"""
+    to = [thumb(i) if i is not None else None for i in old_imgs]
+    tn = [thumb(i) for i in new_imgs]
+    pairs = []
+    for i, ob in enumerate(oldb):
+        if to[i] is None:
+            continue
+        for j, nb in enumerate(newb):
+            app = np.sqrt(((to[i] - tn[j]) ** 2).mean()) * 4
+            cx = ((ob[0] + ob[2]) - (nb[0] + nb[2])) / 2
+            cy = ((ob[1] + ob[3]) - (nb[1] + nb[3])) / 2
+            pos = (cx * cx + cy * cy) ** 0.5
+            pairs.append((app + 0.8 * pos, i, j))
+    pairs.sort()
+    out = {i: [] for i in range(len(oldb))}
+    cost, used = {}, set()
+    for c, i, j in pairs:
+        if out[i] or j in used:
+            continue
+        out[i].append(j); used.add(j); cost[i] = c
+    lost = []
+    for j, nb in enumerate(newb):
+        if j in used:
+            continue
+        best, bs = None, 0.0
+        for i, ob in enumerate(oldb):
+            if not out[i]:
+                continue
+            sc = inter(nb, ob) / area(nb)
+            if sc > bs:
+                best, bs = i, sc
+        if best is not None and bs > 0.5 and area(nb) < 0.3 * area(oldb[best]):
+            out[best].append(j)
+        else:
+            lost.append(j)
+    return out, lost, cost
 
 
 def composite(pieces):
@@ -115,15 +210,25 @@ def swap_atlas(sheet, dry):
     felt = keep_felt_raw(raw_dir, sheet)
     sdir = f"game/art/atlas/{sheet}"
     meta = json.load(open(f"{sdir}/_slices.json"))
+    fm = f"{sdir}/_slices_felt.json"  # the felt slicing (bboxes in the felt raw), kept so a swap can be redone
+    if not os.path.exists(fm):
+        if str(meta.get("source", "")).endswith("_paper.png"):
+            raise SystemExit(f"{sheet}: already swapped and no {fm}; restore it from git first")
+        json.dump(meta, open(fm, "w"), indent=1)
+    fmeta = json.load(open(fm))
     cat = json.load(open("game/art/atlas/catalog.json"))
     ids = {e["id"] for e in cat if e.get("sheet") == sheet}
     FW, FH = Image.open(felt).size
     PW, PH = Image.open(paper).size
-    old = [m for m in meta["sprites"]]
+    old = [m for m in fmeta["sprites"]]
     oldb = [norm(m["bbox"], FW, FH) for m in old]
     tmp = tempfile.mkdtemp(prefix="paper_")
+    ftmp = tempfile.mkdtemp(prefix="felt_")  # felt pieces for the QA sheet (the shipped ones may be paper already)
+    shutil.copy2(felt, f"{ftmp}/{sheet}.png")
+    join = JOIN.get(sheet, "5")
+    subprocess.run([sys.executable, "tools/atlas/slice_atlas.py", f"{ftmp}/{sheet}.png", "--out", ftmp, "--join", join],
+                   check=True, stdout=subprocess.DEVNULL)
     shutil.copy2(paper, f"{tmp}/{sheet}.png")
-    join = "5"
     lab = f"tools/atlas/labels/{sheet}.json"
     subprocess.run([sys.executable, "tools/atlas/slice_atlas.py", f"{tmp}/{sheet}.png", "--out", tmp, "--join", join],
                    check=True, stdout=subprocess.DEVNULL)
@@ -131,13 +236,19 @@ def swap_atlas(sheet, dry):
                    stdout=subprocess.DEVNULL)
     nm = json.load(open(f"{tmp}/{sheet}/_slices.json"))["sprites"]
     newb = [norm(m["bbox"], PW, PH) for m in nm]
-    amap, lost = assign(oldb, newb)
+    fimgs = []
+    for m in old:
+        fp = f"{ftmp}/{sheet}/{m['id']}.webp"
+        fimgs.append(Image.open(fp).convert("RGBA") if os.path.exists(fp) else None)
+    nimgs = [Image.open(f"{tmp}/{sheet}/{m['id']}.webp").convert("RGBA") for m in nm]
+    amap, lost, acost = assign2(fimgs, oldb, nimgs, newb)
     pairs, report, upd = [], [], {}
     for i, m in enumerate(old):
         if m["id"] not in ids:
             continue
         js = amap[i]
-        fim = Image.open(f"{sdir}/{m['id']}.webp").convert("RGBA") if os.path.exists(f"{sdir}/{m['id']}.webp") else None
+        fp = f"{ftmp}/{sheet}/{m['id']}.webp"
+        fim = Image.open(fp).convert("RGBA") if os.path.exists(fp) else None
         if not js:
             report.append(f"MISSING {m['id']} (no paper piece)")
             pairs.append((m["id"] + " MISSING", fim, None))
@@ -147,11 +258,14 @@ def swap_atlas(sheet, dry):
             im = Image.open(f"{tmp}/{sheet}/{nm[j]['id']}.webp").convert("RGBA")
             pcs.append((im, (nm[j]["bbox"][0] - 4, nm[j]["bbox"][1] - 4)))
         im, box = composite(pcs)
+        im = clean_fringe(im)
         ar_o = (fim.width / fim.height) if fim else 1
         ar_n = im.width / im.height
         flag = " ASPECT" if abs(np.log(ar_n / ar_o)) > 0.25 else ""
         if len(js) > 1:
             flag += f" JOINED{len(js)}"
+        if acost.get(i, 0) > 0.75:
+            flag += f" COST{acost[i]:.2f}"
         report.append(f"{m['id']}: <- {[nm[j]['id'][-2:] for j in js]} aspect {ar_o:.2f}->{ar_n:.2f}{flag}")
         pairs.append((m["id"] + flag, fim, im))
         upd[m["id"]] = (im, [box[0] + 4, box[1] + 4, box[2] - 4, box[3] - 4])
@@ -178,6 +292,7 @@ def swap_atlas(sheet, dry):
     # catalog.json is NOT touched: the layout keeps the felt card's px / aspect (a 1 % aspect change cascaded through
     # the template's placement and re-dressed whole spreads); the paper image is drawn into the same footprint.
     shutil.rmtree(tmp, ignore_errors=True)
+    shutil.rmtree(ftmp, ignore_errors=True)
 
 
 def catalog_px(pf):
@@ -191,6 +306,19 @@ def catalog_px(pf):
             n += 1
     json.dump(cat, open("game/art/atlas/catalog.json", "w"), indent=1, ensure_ascii=False)
     print("catalog px updated", n)
+
+
+FELT_REV = "d03c0f7"  # the last commit before the felt -> paper work
+
+
+def git_felt(path):
+    """a file as it was before the paper work (None when it did not exist)"""
+    import io
+    try:
+        blob = subprocess.check_output(["git", "show", f"{FELT_REV}:{path}"], stderr=subprocess.DEVNULL)
+    except subprocess.CalledProcessError:
+        return None
+    return Image.open(io.BytesIO(blob)).convert("RGBA")
 
 
 # ------------------------------------------------------------------ cards kit
@@ -210,27 +338,46 @@ def swap_cards(sheet, dry):
         p = f"{kdir}/{sheet}_{i:02d}.png"
         if os.path.exists(p) and Image.open(p).size != c.size:
             print(f"WARN felt re-split differs at {sheet}_{i:02d}: {Image.open(p).size} vs {c.size}")
-    amap, lost = assign([norm(b, FW, FH) for b in ob], [norm(b, PW, PH) for b in nb])
     from publish_cards import MAP
     m = dict(MAP)
     ex = "tools/art/card_map_extra.json"
     if os.path.exists(ex):
         m.update({k: tuple(v) for k, v in json.load(open(ex)).items()})
     shipped = sorted(k for k in m if k.startswith(sheet + "_") and k[len(sheet) + 1:len(sheet) + 3].isdigit())
+    # felt items to match: each felt card, but a card split by split_manual.py counts as its two halves (the paper
+    # redraw often draws the two objects apart)
+    items, iboxes, keys = [], [], []
+    for i, c in enumerate(fcards):
+        ha, hb = (git_felt(f"{kdir}/{sheet}_{i:02d}{h}.png") for h in "ab")
+        if ha is not None and hb is not None:
+            fr = ha.width / (ha.width + hb.width)
+            x0, y0, x1, y1 = ob[i]
+            xm = x0 + (x1 - x0) * fr
+            for h, im_, bx in (("a", ha, (x0, y0, xm, y1)), ("b", hb, (xm, y0, x1, y1))):
+                items.append(im_); iboxes.append(bx); keys.append(f"{i:02d}{h}")
+        else:
+            items.append(c); iboxes.append(ob[i]); keys.append(f"{i:02d}")
+    amap_i, lost, acost_i = assign2(items, [norm(b, FW, FH) for b in iboxes], ncards, [norm(b, PW, PH) for b in nb])
+    amap = {keys[k]: v for k, v in amap_i.items()}
+    acost = {keys[k]: v for k, v in acost_i.items()}
     pairs, report, writes = [], [], {}
     for src in shipped:
         idx = int(src[len(sheet) + 1:len(sheet) + 3])
         suf = src[len(sheet) + 3:]
-        js = amap.get(idx, [])
-        fim = Image.open(f"{kdir}/{src}.png").convert("RGBA") if os.path.exists(f"{kdir}/{src}.png") else None
+        key = f"{idx:02d}{suf}"
+        js = amap.get(key, [])
+        fim = items[keys.index(key)] if key in keys else (fcards[idx] if idx < len(fcards) else None)
+        if suf and key in keys:
+            suf = ""  # matched as its own half: no cut needed
         if not js:
             report.append(f"MISSING {src}")
             pairs.append((src + " MISSING", fim, None))
             continue
         im, _ = composite([(ncards[j], (nb[j][0], nb[j][1])) for j in js])
+        im = clean_fringe(im)
         if suf:  # a card split by split_manual.py: cut the paper piece at the emptiest column near the old cut
-            fa = Image.open(f"{kdir}/{sheet}_{idx:02d}a.png")
-            fb = Image.open(f"{kdir}/{sheet}_{idx:02d}b.png")
+            fa = git_felt(f"{kdir}/{sheet}_{idx:02d}a.png")
+            fb = git_felt(f"{kdir}/{sheet}_{idx:02d}b.png")
             frac = fa.width / (fa.width + fb.width)
             a = np.asarray(im)
             col = (a[..., 3] > 40).sum(0)
@@ -245,6 +392,8 @@ def swap_cards(sheet, dry):
             flag = " ASPECT"
         if len(js) > 1:
             flag += f" JOINED{len(js)}"
+        if acost.get(key, 0) > 0.75:
+            flag += f" COST{acost[key]:.2f}"
         report.append(f"{src} ({m[src][0]}): <- {js}{flag}")
         pairs.append((f"{m[src][0]}{flag}", fim, im))
         writes[src] = im

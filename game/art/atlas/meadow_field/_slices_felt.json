@@ -1,0 +1,504 @@
+{
+ "sheet": "meadow_field",
+ "bg": [
+  0.984,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "meadow_field_00",
+   "bbox": [
+    19,
+    38,
+    236,
+    260
+   ],
+   "area": 33829,
+   "size": [
+    225,
+    230
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_01",
+   "bbox": [
+    275,
+    79,
+    407,
+    260
+   ],
+   "area": 13355,
+   "size": [
+    140,
+    189
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_02",
+   "bbox": [
+    438,
+    126,
+    516,
+    260
+   ],
+   "area": 4701,
+   "size": [
+    86,
+    142
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_03",
+   "bbox": [
+    541,
+    58,
+    697,
+    260
+   ],
+   "area": 18018,
+   "size": [
+    164,
+    210
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_04",
+   "bbox": [
+    723,
+    109,
+    835,
+    260
+   ],
+   "area": 9601,
+   "size": [
+    120,
+    159
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_05",
+   "bbox": [
+    861,
+    23,
+    1074,
+    260
+   ],
+   "area": 31732,
+   "size": [
+    221,
+    245
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_06",
+   "bbox": [
+    1095,
+    119,
+    1264,
+    261
+   ],
+   "area": 20270,
+   "size": [
+    177,
+    150
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_07",
+   "bbox": [
+    1290,
+    99,
+    1515,
+    261
+   ],
+   "area": 29843,
+   "size": [
+    233,
+    170
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_08",
+   "bbox": [
+    25,
+    293,
+    236,
+    488
+   ],
+   "area": 17999,
+   "size": [
+    219,
+    203
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_09",
+   "bbox": [
+    256,
+    343,
+    344,
+    488
+   ],
+   "area": 5577,
+   "size": [
+    96,
+    153
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_10",
+   "bbox": [
+    376,
+    387,
+    447,
+    488
+   ],
+   "area": 3086,
+   "size": [
+    79,
+    109
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_11",
+   "bbox": [
+    498,
+    314,
+    657,
+    488
+   ],
+   "area": 10880,
+   "size": [
+    167,
+    182
+   ],
+   "halo": 3,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_12",
+   "bbox": [
+    690,
+    312,
+    862,
+    488
+   ],
+   "area": 14966,
+   "size": [
+    180,
+    184
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_13",
+   "bbox": [
+    912,
+    326,
+    1075,
+    488
+   ],
+   "area": 13354,
+   "size": [
+    171,
+    170
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_14",
+   "bbox": [
+    1124,
+    328,
+    1285,
+    489
+   ],
+   "area": 10799,
+   "size": [
+    169,
+    169
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_15",
+   "bbox": [
+    1322,
+    353,
+    1508,
+    488
+   ],
+   "area": 15009,
+   "size": [
+    194,
+    143
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_16",
+   "bbox": [
+    22,
+    511,
+    221,
+    738
+   ],
+   "area": 21218,
+   "size": [
+    207,
+    235
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_17",
+   "bbox": [
+    252,
+    597,
+    458,
+    737
+   ],
+   "area": 15062,
+   "size": [
+    214,
+    148
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_18",
+   "bbox": [
+    495,
+    598,
+    698,
+    737
+   ],
+   "area": 22611,
+   "size": [
+    211,
+    147
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_19",
+   "bbox": [
+    726,
+    607,
+    994,
+    736
+   ],
+   "area": 31553,
+   "size": [
+    276,
+    137
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_20",
+   "bbox": [
+    1021,
+    589,
+    1259,
+    737
+   ],
+   "area": 24120,
+   "size": [
+    246,
+    156
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_21",
+   "bbox": [
+    1294,
+    539,
+    1517,
+    737
+   ],
+   "area": 34996,
+   "size": [
+    231,
+    206
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_22",
+   "bbox": [
+    31,
+    777,
+    172,
+    994
+   ],
+   "area": 6590,
+   "size": [
+    149,
+    225
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_23",
+   "bbox": [
+    222,
+    824,
+    506,
+    995
+   ],
+   "area": 22216,
+   "size": [
+    292,
+    179
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_24",
+   "bbox": [
+    516,
+    876,
+    716,
+    993
+   ],
+   "area": 17401,
+   "size": [
+    208,
+    125
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_25",
+   "bbox": [
+    768,
+    844,
+    870,
+    993
+   ],
+   "area": 12457,
+   "size": [
+    110,
+    157
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_26",
+   "bbox": [
+    929,
+    790,
+    1013,
+    995
+   ],
+   "area": 8134,
+   "size": [
+    92,
+    213
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_27",
+   "bbox": [
+    1074,
+    777,
+    1268,
+    994
+   ],
+   "area": 23975,
+   "size": [
+    202,
+    225
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "meadow_field_28",
+   "bbox": [
+    1312,
+    778,
+    1496,
+    994
+   ],
+   "area": 15512,
+   "size": [
+    192,
+    224
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

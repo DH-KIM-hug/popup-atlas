@@ -10,14 +10,14 @@
   {
    "id": "farm_animals_00",
    "bbox": [
-    24,
-    67,
+    23,
+    66,
     251,
-    250
+    249
    ],
    "area": 22615,
    "size": [
-    235,
+    236,
     191
    ],
    "halo": 0,
@@ -27,15 +27,15 @@
   {
    "id": "farm_animals_01",
    "bbox": [
-    266,
+    265,
     70,
-    480,
-    250
+    481,
+    249
    ],
    "area": 21135,
    "size": [
-    222,
-    188
+    224,
+    187
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,14 +44,14 @@
   {
    "id": "farm_animals_02",
    "bbox": [
-    500,
-    93,
-    678,
-    250
+    499,
+    92,
+    679,
+    249
    ],
    "area": 16629,
    "size": [
-    186,
+    188,
     165
    ],
    "halo": 0,
@@ -61,14 +61,14 @@
   {
    "id": "farm_animals_03",
    "bbox": [
-    698,
-    93,
+    697,
+    92,
     870,
-    250
+    249
    ],
    "area": 16262,
    "size": [
-    180,
+    181,
     165
    ],
    "halo": 0,
@@ -78,15 +78,15 @@
   {
    "id": "farm_animals_04",
    "bbox": [
-    893,
-    100,
-    1064,
+    892,
+    99,
+    1065,
     250
    ],
    "area": 15896,
    "size": [
-    179,
-    158
+    181,
+    159
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "farm_animals_05",
    "bbox": [
-    1083,
-    37,
+    1080,
+    36,
     1321,
     250
    ],
    "area": 22380,
    "size": [
-    246,
-    221
+    249,
+    222
    ],
    "halo": 0,
    "touches_border": false,
@@ -113,14 +113,14 @@
    "id": "farm_animals_06",
    "bbox": [
     1309,
-    96,
+    95,
     1510,
     250
    ],
    "area": 17074,
    "size": [
     209,
-    162
+    163
    ],
    "halo": 0,
    "touches_border": false,
@@ -129,15 +129,15 @@
   {
    "id": "farm_animals_07",
    "bbox": [
-    20,
-    358,
+    19,
+    357,
     224,
     493
    ],
    "area": 18692,
    "size": [
-    212,
-    143
+    213,
+    144
    ],
    "halo": 0,
    "touches_border": false,
@@ -147,14 +147,14 @@
    "id": "farm_animals_08",
    "bbox": [
     260,
-    300,
+    299,
     434,
     493
    ],
    "area": 15086,
    "size": [
     182,
-    201
+    202
    ],
    "halo": 0,
    "touches_border": false,
@@ -164,14 +164,14 @@
    "id": "farm_animals_09",
    "bbox": [
     466,
-    328,
-    594,
+    327,
+    595,
     494
    ],
    "area": 11115,
    "size": [
-    136,
-    174
+    137,
+    175
    ],
    "halo": 0,
    "touches_border": false,
@@ -180,15 +180,15 @@
   {
    "id": "farm_animals_10",
    "bbox": [
-    635,
-    303,
-    793,
-    493
+    633,
+    302,
+    795,
+    494
    ],
    "area": 17003,
    "size": [
-    166,
-    198
+    170,
+    200
    ],
    "halo": 0,
    "touches_border": false,
@@ -197,15 +197,15 @@
   {
    "id": "farm_animals_11",
    "bbox": [
-    840,
-    344,
-    1103,
-    494
+    841,
+    343,
+    1104,
+    495
    ],
    "area": 16160,
    "size": [
     271,
-    158
+    160
    ],
    "halo": 0,
    "touches_border": false,
@@ -215,14 +215,14 @@
    "id": "farm_animals_12",
    "bbox": [
     1157,
-    343,
+    342,
     1311,
     496
    ],
    "area": 10396,
    "size": [
     162,
-    161
+    162
    ],
    "halo": 0,
    "touches_border": false,
@@ -231,15 +231,15 @@
   {
    "id": "farm_animals_13",
    "bbox": [
-    1336,
-    309,
+    1335,
+    307,
     1517,
     497
    ],
    "area": 12807,
    "size": [
-    189,
-    196
+    190,
+    198
    ],
    "halo": 0,
    "touches_border": false,
@@ -248,15 +248,15 @@
   {
    "id": "farm_animals_14",
    "bbox": [
-    19,
-    565,
+    18,
+    563,
     268,
-    743
+    742
    ],
    "area": 20460,
    "size": [
-    257,
-    186
+    258,
+    187
    ],
    "halo": 0,
    "touches_border": false,
@@ -265,15 +265,15 @@
   {
    "id": "farm_animals_15",
    "bbox": [
-    305,
-    567,
+    304,
+    566,
     436,
     742
    ],
    "area": 14025,
    "size": [
-    139,
-    183
+    140,
+    184
    ],
    "halo": 0,
    "touches_border": false,
@@ -282,15 +282,15 @@
   {
    "id": "farm_animals_16",
    "bbox": [
-    472,
-    574,
+    473,
+    572,
     609,
     742
    ],
    "area": 11916,
    "size": [
-    145,
-    176
+    144,
+    178
    ],
    "halo": 0,
    "touches_border": false,
@@ -299,15 +299,15 @@
   {
    "id": "farm_animals_17",
    "bbox": [
-    638,
-    576,
+    637,
+    575,
     865,
     742
    ],
    "area": 16104,
    "size": [
-    235,
-    174
+    236,
+    175
    ],
    "halo": 0,
    "touches_border": false,
@@ -319,12 +319,12 @@
     899,
     512,
     1094,
-    742
+    741
    ],
    "area": 15694,
    "size": [
     203,
-    238
+    237
    ],
    "halo": 0,
    "touches_border": false,
@@ -334,14 +334,14 @@
    "id": "farm_animals_19",
    "bbox": [
     1121,
-    635,
-    1285,
+    634,
+    1284,
     742
    ],
    "area": 12076,
    "size": [
-    172,
-    115
+    171,
+    116
    ],
    "halo": 0,
    "touches_border": false,
@@ -350,15 +350,15 @@
   {
    "id": "farm_animals_20",
    "bbox": [
-    1348,
-    552,
-    1448,
+    1347,
+    549,
+    1449,
     742
    ],
    "area": 12016,
    "size": [
-    108,
-    198
+    110,
+    201
    ],
    "halo": 0,
    "touches_border": false,
@@ -367,15 +367,15 @@
   {
    "id": "farm_animals_21",
    "bbox": [
-    93,
-    796,
+    92,
+    794,
     258,
     983
    ],
    "area": 19402,
    "size": [
-    173,
-    195
+    174,
+    197
    ],
    "halo": 0,
    "touches_border": false,
@@ -385,9 +385,9 @@
    "id": "farm_animals_22",
    "bbox": [
     316,
-    877,
+    876,
     544,
-    983
+    982
    ],
    "area": 17331,
    "size": [
@@ -401,15 +401,15 @@
   {
    "id": "farm_animals_23",
    "bbox": [
-    597,
-    808,
-    811,
+    595,
+    806,
+    812,
     983
    ],
    "area": 29838,
    "size": [
-    222,
-    183
+    225,
+    185
    ],
    "halo": 0,
    "touches_border": false,
@@ -418,15 +418,15 @@
   {
    "id": "farm_animals_24",
    "bbox": [
-    876,
-    796,
-    1118,
-    984
+    875,
+    793,
+    1119,
+    983
    ],
    "area": 33180,
    "size": [
-    250,
-    196
+    252,
+    198
    ],
    "halo": 0,
    "touches_border": false,
@@ -436,18 +436,19 @@
    "id": "farm_animals_25",
    "bbox": [
     1178,
-    771,
+    770,
     1435,
     983
    ],
    "area": 24029,
    "size": [
     265,
-    220
+    221
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   }
- ]
+ ],
+ "source": "art_src/atlas/raw/farm_animals_paper.png"
 }

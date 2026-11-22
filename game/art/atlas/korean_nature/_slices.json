@@ -10,15 +10,15 @@
   {
    "id": "korean_nature_00",
    "bbox": [
-    24,
+    23,
     40,
     297,
-    244
+    245
    ],
    "area": 21347,
    "size": [
-    281,
-    212
+    282,
+    213
    ],
    "halo": 0,
    "touches_border": false,
@@ -28,14 +28,14 @@
    "id": "korean_nature_01",
    "bbox": [
     293,
-    85,
-    571,
-    243
+    84,
+    570,
+    245
    ],
    "area": 21416,
    "size": [
-    286,
-    166
+    285,
+    169
    ],
    "halo": 0,
    "touches_border": false,
@@ -45,14 +45,14 @@
    "id": "korean_nature_02",
    "bbox": [
     581,
-    54,
+    53,
     805,
-    243
+    244
    ],
    "area": 17867,
    "size": [
     232,
-    197
+    199
    ],
    "halo": 0,
    "touches_border": false,
@@ -62,14 +62,14 @@
    "id": "korean_nature_03",
    "bbox": [
     823,
-    36,
+    35,
     1045,
-    244
+    245
    ],
    "area": 15414,
    "size": [
     230,
-    216
+    218
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "korean_nature_04",
    "bbox": [
-    1061,
-    54,
-    1275,
-    243
+    1060,
+    52,
+    1276,
+    245
    ],
    "area": 18243,
    "size": [
-    222,
-    197
+    224,
+    201
    ],
    "halo": 3,
    "touches_border": false,
@@ -96,14 +96,14 @@
    "id": "korean_nature_05",
    "bbox": [
     1295,
-    54,
+    55,
     1518,
-    243
+    245
    ],
    "area": 10209,
    "size": [
     231,
-    197
+    198
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,10 +112,10 @@
   {
    "id": "korean_nature_06",
    "bbox": [
-    20,
-    275,
-    428,
-    528
+    19,
+    276,
+    427,
+    529
    ],
    "area": 68769,
    "size": [
@@ -129,15 +129,15 @@
   {
    "id": "korean_nature_07",
    "bbox": [
-    459,
-    279,
+    458,
+    278,
     676,
     528
    ],
    "area": 23416,
    "size": [
-    225,
-    257
+    226,
+    258
    ],
    "halo": 0,
    "touches_border": false,
@@ -146,15 +146,15 @@
   {
    "id": "korean_nature_08",
    "bbox": [
-    703,
-    308,
-    878,
+    702,
+    307,
+    879,
     528
    ],
    "area": 15234,
    "size": [
-    183,
-    228
+    185,
+    229
    ],
    "halo": 0,
    "touches_border": false,
@@ -164,14 +164,14 @@
    "id": "korean_nature_09",
    "bbox": [
     903,
-    300,
-    1197,
-    527
+    297,
+    1198,
+    528
    ],
    "area": 16337,
    "size": [
-    302,
-    235
+    303,
+    239
    ],
    "halo": 0,
    "touches_border": false,
@@ -180,15 +180,15 @@
   {
    "id": "korean_nature_10",
    "bbox": [
-    1238,
+    1237,
     310,
-    1508,
-    526
+    1509,
+    528
    ],
    "area": 29925,
    "size": [
-    278,
-    224
+    280,
+    226
    ],
    "halo": 0,
    "touches_border": false,
@@ -197,15 +197,15 @@
   {
    "id": "korean_nature_11",
    "bbox": [
-    21,
-    587,
-    261,
-    750
+    20,
+    586,
+    262,
+    752
    ],
    "area": 27752,
    "size": [
-    248,
-    171
+    250,
+    174
    ],
    "halo": 0,
    "touches_border": false,
@@ -214,15 +214,15 @@
   {
    "id": "korean_nature_12",
    "bbox": [
-    285,
-    614,
+    284,
+    612,
     448,
-    749
+    750
    ],
    "area": 14572,
    "size": [
-    171,
-    143
+    172,
+    146
    ],
    "halo": 0,
    "touches_border": false,
@@ -231,15 +231,15 @@
   {
    "id": "korean_nature_13",
    "bbox": [
-    476,
-    611,
-    816,
-    749
+    475,
+    610,
+    818,
+    750
    ],
    "area": 39806,
    "size": [
-    348,
-    146
+    351,
+    148
    ],
    "halo": 0,
    "touches_border": false,
@@ -248,15 +248,15 @@
   {
    "id": "korean_nature_14",
    "bbox": [
-    848,
-    575,
-    996,
-    750
+    845,
+    574,
+    997,
+    751
    ],
    "area": 15886,
    "size": [
-    156,
-    183
+    160,
+    185
    ],
    "halo": 0,
    "touches_border": false,
@@ -265,15 +265,15 @@
   {
    "id": "korean_nature_15",
    "bbox": [
-    1011,
-    612,
-    1120,
-    750
+    1009,
+    611,
+    1122,
+    751
    ],
    "area": 9771,
    "size": [
-    117,
-    146
+    121,
+    148
    ],
    "halo": 0,
    "touches_border": false,
@@ -282,15 +282,15 @@
   {
    "id": "korean_nature_16",
    "bbox": [
-    1179,
+    1178,
     558,
     1302,
-    750
+    751
    ],
    "area": 13324,
    "size": [
-    131,
-    200
+    132,
+    201
    ],
    "halo": 0,
    "touches_border": false,
@@ -299,15 +299,15 @@
   {
    "id": "korean_nature_17",
    "bbox": [
-    1369,
-    562,
-    1484,
-    750
+    1367,
+    561,
+    1486,
+    751
    ],
    "area": 11211,
    "size": [
-    123,
-    196
+    127,
+    198
    ],
    "halo": 0,
    "touches_border": false,
@@ -319,12 +319,12 @@
     21,
     841,
     286,
-    989
+    990
    ],
    "area": 23268,
    "size": [
     273,
-    156
+    157
    ],
    "halo": 0,
    "touches_border": false,
@@ -333,15 +333,15 @@
   {
    "id": "korean_nature_19",
    "bbox": [
-    308,
-    814,
+    307,
+    812,
     557,
     988
    ],
    "area": 25072,
    "size": [
-    257,
-    182
+    258,
+    184
    ],
    "halo": 0,
    "touches_border": false,
@@ -350,15 +350,15 @@
   {
    "id": "korean_nature_20",
    "bbox": [
-    582,
-    824,
-    794,
-    987
+    581,
+    823,
+    795,
+    988
    ],
    "area": 9526,
    "size": [
-    220,
-    171
+    222,
+    173
    ],
    "halo": 0,
    "touches_border": false,
@@ -367,14 +367,14 @@
   {
    "id": "korean_nature_21",
    "bbox": [
-    815,
+    816,
     823,
     1232,
     980
    ],
    "area": 51977,
    "size": [
-    425,
+    424,
     165
    ],
    "halo": 1,
@@ -384,19 +384,20 @@
   {
    "id": "korean_nature_22",
    "bbox": [
-    1259,
-    807,
+    1258,
+    808,
     1517,
     980
    ],
    "area": 27868,
    "size": [
-    266,
-    181
+    267,
+    180
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   }
- ]
+ ],
+ "source": "art_src/atlas/raw/korean_nature_paper.png"
 }

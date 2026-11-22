@@ -10,15 +10,15 @@
   {
    "id": "fairytale_west_00",
    "bbox": [
-    41,
-    136,
+    40,
+    135,
     352,
-    290
+    291
    ],
    "area": 43957,
    "size": [
-    319,
-    162
+    320,
+    164
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "fairytale_west_01",
    "bbox": [
-    398,
-    13,
-    519,
-    290
+    397,
+    12,
+    520,
+    291
    ],
    "area": 21510,
    "size": [
-    129,
-    285
+    131,
+    287
    ],
    "halo": 0,
    "touches_border": false,
@@ -47,12 +47,12 @@
     558,
     101,
     833,
-    291
+    292
    ],
    "area": 39022,
    "size": [
     283,
-    198
+    199
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "fairytale_west_03",
    "bbox": [
-    879,
-    169,
+    878,
+    168,
     1174,
-    292
+    293
    ],
    "area": 27280,
    "size": [
-    303,
-    131
+    304,
+    133
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "fairytale_west_04",
    "bbox": [
-    1224,
-    94,
-    1493,
-    292
+    1223,
+    93,
+    1494,
+    293
    ],
    "area": 39911,
    "size": [
-    277,
-    206
+    279,
+    208
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "fairytale_west_05",
    "bbox": [
-    23,
-    337,
-    265,
-    575
+    19,
+    336,
+    268,
+    577
    ],
    "area": 41468,
    "size": [
-    250,
-    246
+    257,
+    249
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,14 +112,14 @@
   {
    "id": "fairytale_west_06",
    "bbox": [
-    306,
+    305,
     326,
-    535,
+    536,
     575
    ],
    "area": 35284,
    "size": [
-    237,
+    239,
     257
    ],
    "halo": 0,
@@ -129,14 +129,14 @@
   {
    "id": "fairytale_west_07",
    "bbox": [
-    590,
+    589,
     302,
     712,
     574
    ],
    "area": 19368,
    "size": [
-    130,
+    131,
     280
    ],
    "halo": 0,
@@ -146,15 +146,15 @@
   {
    "id": "fairytale_west_08",
    "bbox": [
-    765,
-    376,
+    764,
+    375,
     944,
-    579
+    580
    ],
    "area": 22961,
    "size": [
-    187,
-    211
+    188,
+    213
    ],
    "halo": 0,
    "touches_border": false,
@@ -166,12 +166,12 @@
     995,
     323,
     1195,
-    576
+    577
    ],
    "area": 30760,
    "size": [
     208,
-    261
+    262
    ],
    "halo": 0,
    "touches_border": false,
@@ -180,15 +180,15 @@
   {
    "id": "fairytale_west_10",
    "bbox": [
-    1234,
-    369,
+    1235,
+    368,
     1489,
-    576
+    577
    ],
    "area": 40703,
    "size": [
-    263,
-    215
+    262,
+    217
    ],
    "halo": 0,
    "touches_border": false,
@@ -197,14 +197,14 @@
   {
    "id": "fairytale_west_11",
    "bbox": [
-    40,
+    38,
     634,
-    371,
+    372,
     768
    ],
    "area": 40131,
    "size": [
-    339,
+    342,
     142
    ],
    "halo": 0,
@@ -217,12 +217,12 @@
     430,
     593,
     716,
-    770
+    771
    ],
    "area": 23269,
    "size": [
     294,
-    185
+    186
    ],
    "halo": 0,
    "touches_border": false,
@@ -248,15 +248,15 @@
   {
    "id": "fairytale_west_14",
    "bbox": [
-    1209,
-    624,
-    1497,
+    1208,
+    623,
+    1498,
     774
    ],
    "area": 22335,
    "size": [
-    296,
-    158
+    298,
+    159
    ],
    "halo": 0,
    "touches_border": false,
@@ -268,12 +268,12 @@
     59,
     790,
     298,
-    997
+    998
    ],
    "area": 23620,
    "size": [
     247,
-    215
+    216
    ],
    "halo": 7,
    "touches_border": false,
@@ -316,15 +316,15 @@
   {
    "id": "fairytale_west_18",
    "bbox": [
-    878,
-    853,
-    1203,
-    997
+    877,
+    852,
+    1204,
+    998
    ],
    "area": 34080,
    "size": [
-    333,
-    152
+    335,
+    154
    ],
    "halo": 0,
    "touches_border": false,
@@ -333,19 +333,20 @@
   {
    "id": "fairytale_west_19",
    "bbox": [
-    1257,
+    1256,
     795,
     1494,
     997
    ],
    "area": 26493,
    "size": [
-    245,
+    246,
     210
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   }
- ]
+ ],
+ "source": "art_src/atlas/raw/fairytale_west_paper.png"
 }

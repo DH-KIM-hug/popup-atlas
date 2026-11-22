@@ -1,0 +1,555 @@
+{
+ "sheet": "village_props",
+ "bg": [
+  0.98,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "village_props_00",
+   "bbox": [
+    57,
+    20,
+    175,
+    250
+   ],
+   "area": 7822,
+   "size": [
+    126,
+    238
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_01",
+   "bbox": [
+    251,
+    11,
+    312,
+    251
+   ],
+   "area": 6156,
+   "size": [
+    69,
+    248
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_02",
+   "bbox": [
+    390,
+    11,
+    525,
+    250
+   ],
+   "area": 8545,
+   "size": [
+    143,
+    247
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_03",
+   "bbox": [
+    600,
+    10,
+    673,
+    249
+   ],
+   "area": 6813,
+   "size": [
+    81,
+    247
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_04",
+   "bbox": [
+    753,
+    22,
+    915,
+    250
+   ],
+   "area": 15888,
+   "size": [
+    170,
+    236
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_05",
+   "bbox": [
+    1014,
+    34,
+    1134,
+    251
+   ],
+   "area": 12631,
+   "size": [
+    128,
+    225
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_06",
+   "bbox": [
+    1203,
+    85,
+    1493,
+    251
+   ],
+   "area": 27475,
+   "size": [
+    298,
+    174
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_07",
+   "bbox": [
+    30,
+    318,
+    321,
+    468
+   ],
+   "area": 22698,
+   "size": [
+    299,
+    158
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_08",
+   "bbox": [
+    342,
+    270,
+    602,
+    467
+   ],
+   "area": 35858,
+   "size": [
+    268,
+    205
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_09",
+   "bbox": [
+    654,
+    299,
+    773,
+    457
+   ],
+   "area": 16554,
+   "size": [
+    127,
+    166
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_10",
+   "bbox": [
+    809,
+    331,
+    910,
+    458
+   ],
+   "area": 11351,
+   "size": [
+    109,
+    135
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_11",
+   "bbox": [
+    957,
+    286,
+    1162,
+    453
+   ],
+   "area": 27131,
+   "size": [
+    213,
+    175
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_12",
+   "bbox": [
+    1217,
+    268,
+    1494,
+    463
+   ],
+   "area": 37576,
+   "size": [
+    285,
+    203
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_13",
+   "bbox": [
+    30,
+    485,
+    315,
+    626
+   ],
+   "area": 19699,
+   "size": [
+    293,
+    149
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_14",
+   "bbox": [
+    357,
+    491,
+    469,
+    632
+   ],
+   "area": 10185,
+   "size": [
+    120,
+    149
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_15",
+   "bbox": [
+    481,
+    507,
+    565,
+    631
+   ],
+   "area": 6819,
+   "size": [
+    92,
+    132
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_16",
+   "bbox": [
+    580,
+    497,
+    657,
+    631
+   ],
+   "area": 5379,
+   "size": [
+    85,
+    142
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_17",
+   "bbox": [
+    691,
+    499,
+    880,
+    630
+   ],
+   "area": 16861,
+   "size": [
+    197,
+    139
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_18",
+   "bbox": [
+    914,
+    512,
+    1189,
+    629
+   ],
+   "area": 16027,
+   "size": [
+    283,
+    125
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_19",
+   "bbox": [
+    1224,
+    486,
+    1504,
+    626
+   ],
+   "area": 9744,
+   "size": [
+    288,
+    148
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_20",
+   "bbox": [
+    40,
+    642,
+    178,
+    810
+   ],
+   "area": 8229,
+   "size": [
+    146,
+    176
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_21",
+   "bbox": [
+    215,
+    672,
+    318,
+    809
+   ],
+   "area": 8930,
+   "size": [
+    111,
+    145
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_22",
+   "bbox": [
+    373,
+    677,
+    593,
+    798
+   ],
+   "area": 22528,
+   "size": [
+    228,
+    129
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_23",
+   "bbox": [
+    640,
+    639,
+    814,
+    808
+   ],
+   "area": 13041,
+   "size": [
+    182,
+    177
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_24",
+   "bbox": [
+    849,
+    698,
+    1092,
+    799
+   ],
+   "area": 22634,
+   "size": [
+    251,
+    109
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_25",
+   "bbox": [
+    1129,
+    666,
+    1274,
+    801
+   ],
+   "area": 14168,
+   "size": [
+    153,
+    143
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_26",
+   "bbox": [
+    1313,
+    630,
+    1503,
+    802
+   ],
+   "area": 19731,
+   "size": [
+    198,
+    180
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_27",
+   "bbox": [
+    57,
+    854,
+    298,
+    1015
+   ],
+   "area": 25025,
+   "size": [
+    249,
+    169
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_28",
+   "bbox": [
+    381,
+    820,
+    589,
+    1019
+   ],
+   "area": 27766,
+   "size": [
+    216,
+    207
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_29",
+   "bbox": [
+    684,
+    849,
+    842,
+    1015
+   ],
+   "area": 12513,
+   "size": [
+    166,
+    174
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_30",
+   "bbox": [
+    936,
+    816,
+    1065,
+    1016
+   ],
+   "area": 12439,
+   "size": [
+    137,
+    208
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "village_props_31",
+   "bbox": [
+    1170,
+    843,
+    1453,
+    1014
+   ],
+   "area": 36390,
+   "size": [
+    291,
+    179
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

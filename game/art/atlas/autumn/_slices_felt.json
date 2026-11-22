@@ -1,0 +1,487 @@
+{
+ "sheet": "autumn",
+ "bg": [
+  0.988,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "autumn_00",
+   "bbox": [
+    29,
+    53,
+    237,
+    273
+   ],
+   "area": 31145,
+   "size": [
+    216,
+    228
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_01",
+   "bbox": [
+    264,
+    50,
+    448,
+    274
+   ],
+   "area": 26220,
+   "size": [
+    192,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_02",
+   "bbox": [
+    473,
+    49,
+    661,
+    273
+   ],
+   "area": 28740,
+   "size": [
+    196,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_03",
+   "bbox": [
+    690,
+    47,
+    877,
+    274
+   ],
+   "area": 27681,
+   "size": [
+    195,
+    235
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_04",
+   "bbox": [
+    909,
+    48,
+    1097,
+    274
+   ],
+   "area": 20545,
+   "size": [
+    196,
+    234
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_05",
+   "bbox": [
+    1136,
+    36,
+    1275,
+    274
+   ],
+   "area": 22629,
+   "size": [
+    147,
+    246
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_06",
+   "bbox": [
+    1322,
+    51,
+    1504,
+    273
+   ],
+   "area": 8675,
+   "size": [
+    190,
+    230
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_07",
+   "bbox": [
+    26,
+    313,
+    231,
+    508
+   ],
+   "area": 9748,
+   "size": [
+    213,
+    203
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_08",
+   "bbox": [
+    255,
+    377,
+    438,
+    502
+   ],
+   "area": 17643,
+   "size": [
+    191,
+    133
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_09",
+   "bbox": [
+    467,
+    354,
+    661,
+    502
+   ],
+   "area": 20387,
+   "size": [
+    202,
+    156
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_10",
+   "bbox": [
+    689,
+    366,
+    877,
+    502
+   ],
+   "area": 18369,
+   "size": [
+    196,
+    144
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_11",
+   "bbox": [
+    907,
+    312,
+    1091,
+    509
+   ],
+   "area": 17679,
+   "size": [
+    192,
+    205
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_12",
+   "bbox": [
+    1131,
+    346,
+    1295,
+    502
+   ],
+   "area": 11965,
+   "size": [
+    172,
+    164
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_13",
+   "bbox": [
+    1331,
+    377,
+    1510,
+    502
+   ],
+   "area": 9015,
+   "size": [
+    187,
+    133
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_14",
+   "bbox": [
+    31,
+    594,
+    173,
+    729
+   ],
+   "area": 13664,
+   "size": [
+    150,
+    143
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_15",
+   "bbox": [
+    208,
+    554,
+    346,
+    731
+   ],
+   "area": 16707,
+   "size": [
+    146,
+    185
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_16",
+   "bbox": [
+    378,
+    558,
+    601,
+    737
+   ],
+   "area": 26895,
+   "size": [
+    231,
+    187
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_17",
+   "bbox": [
+    647,
+    542,
+    828,
+    730
+   ],
+   "area": 22780,
+   "size": [
+    189,
+    196
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_18",
+   "bbox": [
+    865,
+    570,
+    1019,
+    730
+   ],
+   "area": 17008,
+   "size": [
+    162,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_19",
+   "bbox": [
+    1050,
+    597,
+    1276,
+    729
+   ],
+   "area": 19528,
+   "size": [
+    234,
+    140
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_20",
+   "bbox": [
+    1307,
+    558,
+    1506,
+    731
+   ],
+   "area": 24444,
+   "size": [
+    207,
+    181
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_21",
+   "bbox": [
+    26,
+    767,
+    218,
+    991
+   ],
+   "area": 19055,
+   "size": [
+    200,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_22",
+   "bbox": [
+    236,
+    824,
+    427,
+    987
+   ],
+   "area": 19693,
+   "size": [
+    199,
+    171
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_23",
+   "bbox": [
+    454,
+    863,
+    666,
+    987
+   ],
+   "area": 16841,
+   "size": [
+    220,
+    132
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_24",
+   "bbox": [
+    697,
+    777,
+    847,
+    987
+   ],
+   "area": 15327,
+   "size": [
+    158,
+    218
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_25",
+   "bbox": [
+    898,
+    818,
+    1086,
+    987
+   ],
+   "area": 21793,
+   "size": [
+    196,
+    177
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_26",
+   "bbox": [
+    1128,
+    818,
+    1294,
+    987
+   ],
+   "area": 12563,
+   "size": [
+    174,
+    177
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "autumn_27",
+   "bbox": [
+    1328,
+    818,
+    1504,
+    987
+   ],
+   "area": 15947,
+   "size": [
+    184,
+    177
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

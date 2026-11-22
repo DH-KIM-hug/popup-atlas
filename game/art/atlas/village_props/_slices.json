@@ -10,15 +10,15 @@
   {
    "id": "village_props_00",
    "bbox": [
-    57,
-    20,
+    58,
+    19,
     175,
     250
    ],
    "area": 7822,
    "size": [
-    126,
-    238
+    125,
+    239
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "village_props_01",
    "bbox": [
-    251,
-    11,
-    312,
+    250,
+    10,
+    313,
     251
    ],
    "area": 6156,
    "size": [
-    69,
-    248
+    71,
+    249
    ],
    "halo": 0,
    "touches_border": false,
@@ -45,14 +45,14 @@
    "id": "village_props_02",
    "bbox": [
     390,
-    11,
-    525,
+    10,
+    524,
     250
    ],
    "area": 8545,
    "size": [
-    143,
-    247
+    142,
+    248
    ],
    "halo": 0,
    "touches_border": false,
@@ -64,12 +64,12 @@
     600,
     10,
     673,
-    249
+    250
    ],
    "area": 6813,
    "size": [
     81,
-    247
+    248
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,14 +78,14 @@
   {
    "id": "village_props_04",
    "bbox": [
-    753,
+    755,
     22,
-    915,
+    914,
     250
    ],
    "area": 15888,
    "size": [
-    170,
+    167,
     236
    ],
    "halo": 0,
@@ -95,15 +95,15 @@
   {
    "id": "village_props_05",
    "bbox": [
-    1014,
-    34,
-    1134,
-    251
+    1012,
+    31,
+    1136,
+    252
    ],
    "area": 12631,
    "size": [
-    128,
-    225
+    132,
+    229
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,14 +112,14 @@
   {
    "id": "village_props_06",
    "bbox": [
-    1203,
+    1202,
     85,
     1493,
     251
    ],
    "area": 27475,
    "size": [
-    298,
+    299,
     174
    ],
    "halo": 0,
@@ -129,15 +129,15 @@
   {
    "id": "village_props_07",
    "bbox": [
-    30,
-    318,
+    28,
+    317,
     321,
     468
    ],
    "area": 22698,
    "size": [
-    299,
-    158
+    301,
+    159
    ],
    "halo": 0,
    "touches_border": false,
@@ -146,14 +146,14 @@
   {
    "id": "village_props_08",
    "bbox": [
-    342,
+    337,
     270,
-    602,
+    603,
     467
    ],
    "area": 35858,
    "size": [
-    268,
+    274,
     205
    ],
    "halo": 0,
@@ -164,14 +164,14 @@
    "id": "village_props_09",
    "bbox": [
     654,
-    299,
-    773,
-    457
+    296,
+    774,
+    458
    ],
    "area": 16554,
    "size": [
-    127,
-    166
+    128,
+    170
    ],
    "halo": 0,
    "touches_border": false,
@@ -181,14 +181,14 @@
    "id": "village_props_10",
    "bbox": [
     809,
-    331,
-    910,
-    458
+    329,
+    911,
+    459
    ],
    "area": 11351,
    "size": [
-    109,
-    135
+    110,
+    138
    ],
    "halo": 0,
    "touches_border": false,
@@ -197,15 +197,15 @@
   {
    "id": "village_props_11",
    "bbox": [
-    957,
-    286,
+    956,
+    285,
     1162,
-    453
+    455
    ],
    "area": 27131,
    "size": [
-    213,
-    175
+    214,
+    178
    ],
    "halo": 0,
    "touches_border": false,
@@ -215,14 +215,14 @@
    "id": "village_props_12",
    "bbox": [
     1217,
-    268,
+    267,
     1494,
     463
    ],
    "area": 37576,
    "size": [
     285,
-    203
+    204
    ],
    "halo": 0,
    "touches_border": false,
@@ -232,14 +232,14 @@
    "id": "village_props_13",
    "bbox": [
     30,
-    485,
+    484,
     315,
     626
    ],
    "area": 19699,
    "size": [
     293,
-    149
+    150
    ],
    "halo": 0,
    "touches_border": false,
@@ -248,15 +248,15 @@
   {
    "id": "village_props_14",
    "bbox": [
-    357,
-    491,
-    469,
+    355,
+    490,
+    470,
     632
    ],
    "area": 10185,
    "size": [
-    120,
-    149
+    123,
+    150
    ],
    "halo": 0,
    "touches_border": false,
@@ -265,15 +265,15 @@
   {
    "id": "village_props_15",
    "bbox": [
-    481,
-    507,
-    565,
-    631
+    478,
+    506,
+    567,
+    632
    ],
    "area": 6819,
    "size": [
-    92,
-    132
+    97,
+    134
    ],
    "halo": 0,
    "touches_border": false,
@@ -282,15 +282,15 @@
   {
    "id": "village_props_16",
    "bbox": [
-    580,
-    497,
+    579,
+    495,
     657,
-    631
+    632
    ],
    "area": 5379,
    "size": [
-    85,
-    142
+    86,
+    145
    ],
    "halo": 0,
    "touches_border": false,
@@ -300,14 +300,14 @@
    "id": "village_props_17",
    "bbox": [
     691,
-    499,
+    498,
     880,
-    630
+    632
    ],
    "area": 16861,
    "size": [
     197,
-    139
+    142
    ],
    "halo": 0,
    "touches_border": false,
@@ -317,14 +317,14 @@
    "id": "village_props_18",
    "bbox": [
     914,
-    512,
+    511,
     1189,
-    629
+    630
    ],
    "area": 16027,
    "size": [
     283,
-    125
+    127
    ],
    "halo": 0,
    "touches_border": false,
@@ -334,14 +334,14 @@
    "id": "village_props_19",
    "bbox": [
     1224,
-    486,
+    484,
     1504,
-    626
+    627
    ],
    "area": 9744,
    "size": [
     288,
-    148
+    151
    ],
    "halo": 0,
    "touches_border": false,
@@ -351,14 +351,14 @@
    "id": "village_props_20",
    "bbox": [
     40,
-    642,
+    641,
     178,
     810
    ],
    "area": 8229,
    "size": [
     146,
-    176
+    177
    ],
    "halo": 0,
    "touches_border": false,
@@ -368,14 +368,14 @@
    "id": "village_props_21",
    "bbox": [
     215,
-    672,
+    671,
     318,
     809
    ],
    "area": 8930,
    "size": [
     111,
-    145
+    146
    ],
    "halo": 0,
    "touches_border": false,
@@ -384,15 +384,15 @@
   {
    "id": "village_props_22",
    "bbox": [
-    373,
-    677,
+    372,
+    675,
     593,
-    798
+    799
    ],
    "area": 22528,
    "size": [
-    228,
-    129
+    229,
+    132
    ],
    "halo": 0,
    "touches_border": false,
@@ -401,15 +401,15 @@
   {
    "id": "village_props_23",
    "bbox": [
-    640,
-    639,
-    814,
+    638,
+    638,
+    816,
     808
    ],
    "area": 13041,
    "size": [
-    182,
-    177
+    186,
+    178
    ],
    "halo": 0,
    "touches_border": false,
@@ -418,15 +418,15 @@
   {
    "id": "village_props_24",
    "bbox": [
-    849,
-    698,
+    847,
+    697,
     1092,
     799
    ],
    "area": 22634,
    "size": [
-    251,
-    109
+    253,
+    110
    ],
    "halo": 0,
    "touches_border": false,
@@ -435,15 +435,15 @@
   {
    "id": "village_props_25",
    "bbox": [
-    1129,
-    666,
+    1128,
+    664,
     1274,
-    801
+    802
    ],
    "area": 14168,
    "size": [
-    153,
-    143
+    154,
+    146
    ],
    "halo": 0,
    "touches_border": false,
@@ -452,15 +452,15 @@
   {
    "id": "village_props_26",
    "bbox": [
-    1313,
-    630,
+    1312,
+    628,
     1503,
     802
    ],
    "area": 19731,
    "size": [
-    198,
-    180
+    199,
+    182
    ],
    "halo": 0,
    "touches_border": false,
@@ -469,15 +469,15 @@
   {
    "id": "village_props_27",
    "bbox": [
-    57,
-    854,
-    298,
-    1015
+    55,
+    855,
+    300,
+    1017
    ],
    "area": 25025,
    "size": [
-    249,
-    169
+    253,
+    170
    ],
    "halo": 0,
    "touches_border": false,
@@ -486,15 +486,15 @@
   {
    "id": "village_props_28",
    "bbox": [
-    381,
+    378,
     820,
-    589,
-    1019
+    591,
+    1020
    ],
    "area": 27766,
    "size": [
-    216,
-    207
+    221,
+    208
    ],
    "halo": 0,
    "touches_border": false,
@@ -503,15 +503,15 @@
   {
    "id": "village_props_29",
    "bbox": [
-    684,
-    849,
+    683,
+    846,
     842,
-    1015
+    1018
    ],
    "area": 12513,
    "size": [
-    166,
-    174
+    167,
+    180
    ],
    "halo": 0,
    "touches_border": false,
@@ -520,15 +520,15 @@
   {
    "id": "village_props_30",
    "bbox": [
-    936,
+    934,
     816,
-    1065,
-    1016
+    1066,
+    1017
    ],
    "area": 12439,
    "size": [
-    137,
-    208
+    140,
+    209
    ],
    "halo": 0,
    "touches_border": false,
@@ -537,19 +537,20 @@
   {
    "id": "village_props_31",
    "bbox": [
-    1170,
-    843,
-    1453,
-    1014
+    1169,
+    841,
+    1454,
+    1015
    ],
    "area": 36390,
    "size": [
-    291,
-    179
+    293,
+    182
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   }
- ]
+ ],
+ "source": "art_src/atlas/raw/village_props_paper.png"
 }

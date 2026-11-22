@@ -10,15 +10,15 @@
   {
    "id": "village_houses_00",
    "bbox": [
-    46,
+    45,
     53,
-    269,
-    286
+    271,
+    287
    ],
    "area": 41404,
    "size": [
-    231,
-    241
+    234,
+    242
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "village_houses_01",
    "bbox": [
-    297,
-    46,
-    505,
-    285
+    295,
+    43,
+    506,
+    286
    ],
    "area": 34902,
    "size": [
-    216,
-    247
+    219,
+    251
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "village_houses_02",
    "bbox": [
-    531,
-    57,
-    792,
-    286
+    524,
+    56,
+    799,
+    287
    ],
    "area": 47336,
    "size": [
-    269,
-    237
+    283,
+    239
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "village_houses_03",
    "bbox": [
-    834,
-    22,
-    989,
-    286
+    831,
+    21,
+    990,
+    288
    ],
    "area": 35350,
    "size": [
-    163,
-    272
+    167,
+    275
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "village_houses_04",
    "bbox": [
-    1037,
-    71,
-    1267,
-    286
+    1034,
+    70,
+    1268,
+    287
    ],
    "area": 37949,
    "size": [
-    238,
-    223
+    242,
+    225
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "village_houses_05",
    "bbox": [
-    1301,
-    29,
-    1489,
-    286
+    1298,
+    28,
+    1490,
+    287
    ],
    "area": 30769,
    "size": [
-    196,
-    265
+    200,
+    267
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,15 +112,15 @@
   {
    "id": "village_houses_06",
    "bbox": [
-    46,
-    307,
-    254,
-    570
+    45,
+    306,
+    253,
+    571
    ],
    "area": 32132,
    "size": [
     216,
-    271
+    273
    ],
    "halo": 0,
    "touches_border": false,
@@ -129,15 +129,15 @@
   {
    "id": "village_houses_07",
    "bbox": [
-    314,
-    343,
+    313,
+    342,
     548,
     572
    ],
    "area": 45011,
    "size": [
-    242,
-    237
+    243,
+    238
    ],
    "halo": 0,
    "touches_border": false,
@@ -146,15 +146,15 @@
   {
    "id": "village_houses_08",
    "bbox": [
-    618,
-    307,
-    758,
+    615,
+    306,
+    759,
     572
    ],
    "area": 27752,
    "size": [
-    148,
-    273
+    152,
+    274
    ],
    "halo": 0,
    "touches_border": false,
@@ -164,14 +164,14 @@
    "id": "village_houses_09",
    "bbox": [
     819,
-    390,
-    1054,
+    389,
+    1056,
     570
    ],
    "area": 30293,
    "size": [
-    243,
-    188
+    245,
+    189
    ],
    "halo": 0,
    "touches_border": false,
@@ -180,15 +180,15 @@
   {
    "id": "village_houses_10",
    "bbox": [
-    1108,
-    368,
-    1287,
-    572
+    1106,
+    366,
+    1289,
+    574
    ],
    "area": 22675,
    "size": [
-    187,
-    212
+    191,
+    216
    ],
    "halo": 0,
    "touches_border": false,
@@ -197,15 +197,15 @@
   {
    "id": "village_houses_11",
    "bbox": [
-    1345,
-    321,
-    1478,
-    572
+    1344,
+    320,
+    1480,
+    573
    ],
    "area": 18446,
    "size": [
-    141,
-    259
+    144,
+    261
    ],
    "halo": 0,
    "touches_border": false,
@@ -215,14 +215,14 @@
    "id": "village_houses_12",
    "bbox": [
     65,
-    606,
-    293,
-    787
+    605,
+    292,
+    788
    ],
    "area": 32209,
    "size": [
-    236,
-    189
+    235,
+    191
    ],
    "halo": 0,
    "touches_border": false,
@@ -231,15 +231,15 @@
   {
    "id": "village_houses_13",
    "bbox": [
-    362,
+    360,
     600,
-    653,
-    787
+    654,
+    788
    ],
    "area": 44707,
    "size": [
-    299,
-    195
+    302,
+    196
    ],
    "halo": 0,
    "touches_border": false,
@@ -248,15 +248,15 @@
   {
    "id": "village_houses_14",
    "bbox": [
-    716,
-    592,
-    992,
-    786
+    715,
+    591,
+    991,
+    787
    ],
    "area": 43447,
    "size": [
     284,
-    202
+    204
    ],
    "halo": 0,
    "touches_border": false,
@@ -265,15 +265,15 @@
   {
    "id": "village_houses_15",
    "bbox": [
-    1049,
+    1046,
     602,
-    1479,
-    786
+    1482,
+    787
    ],
    "area": 68674,
    "size": [
-    438,
-    192
+    444,
+    193
    ],
    "halo": 0,
    "touches_border": false,
@@ -282,15 +282,15 @@
   {
    "id": "village_houses_16",
    "bbox": [
-    44,
-    813,
-    302,
-    1003
+    43,
+    812,
+    303,
+    1005
    ],
    "area": 28376,
    "size": [
-    266,
-    198
+    268,
+    201
    ],
    "halo": 0,
    "touches_border": false,
@@ -299,15 +299,15 @@
   {
    "id": "village_houses_17",
    "bbox": [
-    339,
-    828,
+    338,
+    826,
     642,
-    1004
+    1005
    ],
    "area": 32981,
    "size": [
-    311,
-    184
+    312,
+    187
    ],
    "halo": 0,
    "touches_border": false,
@@ -316,15 +316,15 @@
   {
    "id": "village_houses_18",
    "bbox": [
-    687,
-    819,
-    925,
-    1004
+    684,
+    818,
+    926,
+    1005
    ],
    "area": 35691,
    "size": [
-    246,
-    193
+    250,
+    195
    ],
    "halo": 0,
    "touches_border": false,
@@ -333,15 +333,15 @@
   {
    "id": "village_houses_19",
    "bbox": [
-    974,
-    812,
+    973,
+    811,
     1217,
-    1004
+    1005
    ],
    "area": 37204,
    "size": [
-    251,
-    200
+    252,
+    202
    ],
    "halo": 0,
    "touches_border": false,
@@ -350,19 +350,20 @@
   {
    "id": "village_houses_20",
    "bbox": [
-    1258,
-    818,
-    1496,
-    1004
+    1256,
+    817,
+    1497,
+    1005
    ],
    "area": 34376,
    "size": [
-    246,
-    194
+    249,
+    196
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   }
- ]
+ ],
+ "source": "art_src/atlas/raw/village_houses_paper.png"
 }

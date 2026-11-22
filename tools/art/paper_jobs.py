@@ -81,6 +81,38 @@ for tale, sheets in TALE_SHEETS.items():
     for s in sheets:
         job(s, RAW_A, s)
 
+# ---------------------------------------------------------------- casts of the finished tales (part B)
+RAW_C = "art_src/cast/raw/"
+CAST_REDRAW = ("REDRAW the reference CHARACTER SHEET for a children's pop-up storybook PIECE FOR PIECE: the SAME number of "
+               "figures in the SAME positions and order, each figure the SAME character in EXACTLY the same pose (every "
+               "arm, hand, leg, foot, head tilt and prop in the same place), the same facial expression, the same size, "
+               "outline and proportions, the same clothes and colours, the same gaps between the legs; ONLY the material "
+               "changes from felt to cut paper. Every dashed or dotted stitch line in the reference is REMOVED (a hem or "
+               "seam becomes a paper layer edge or a thin printed line). ")
+CAST_SHEETS = {
+    "three_pigs": ["cast_pigs", "cast_mom_expr", "cast_tp_peek"] +
+                  [f"cast_pig_{r}_{k}" for r in "abc" for k in ("views", "expr", "walk_cycle", "run_cycle")] +
+                  ["cast_pig_a_carry_cycle", "cast_wolf", "cast_wolf_side", "cast_wolf_front", "cast_wolf_walk_cycle",
+                   "cast_wolf_run_cycle", "cast_wolf_front_cycle",
+                   "cast_tp_legs_front", "cast_tp_legs_half", "cast_tp_legs_lift", "cast_tp_legs_side", "cast_tp_walk_armless"],
+    "sun_wind": ["cast_traveller", "cast_traveller_expr_a", "cast_traveller_expr_b", "cast_traveller_props", "cast_sun_v2",
+                 "cast_wind_v2", "cast_traveller_legs_front", "cast_traveller_legs_half", "cast_traveller_legs_lift",
+                 "cast_traveller_walk_armless", "cast_traveller_walk_arms"],
+    "witch_candy": ["cast_wc_lineup", "cast_dahyun_expr_a", "cast_dahyun_expr_b", "cast_dahyun_tf_a", "cast_dahyun_tf_b",
+                    "cast_dahyun_walk_cycle", "cast_dahyun_ghost_cycle", "cast_dahyun_duck_cycle", "cast_witch_expr_a",
+                    "cast_witch_expr_b", "cast_witch_walk_cycle", "cast_witch_ghost_cycle", "cast_friends_expr_a",
+                    "cast_friends_expr_b", "cast_cat_expr", "cast_cat_walk_cycle", "cast_cat_ghost_cycle",
+                    "cast_rabbit_walk_cycle", "cast_rabbit_ghost_cycle", "cast_bear_walk_cycle", "cast_bear_ghost_cycle",
+                    "cast_fox_walk_cycle", "cast_fox_ghost_cycle", "cast_wc_surprised_black", "cast_wc_ghost_lips"],
+}
+for tale, sheets in CAST_SHEETS.items():
+    for s in sheets:
+        JOBS.append({"id": "castp_" + s, "kind": "bg", "refs": [felt_src(RAW_C, s)],
+                     "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, "
+                               "save it as-is)",
+                     "out": RAW_C + s + "_paper.png",
+                     "prompt": CAST_REDRAW + BG + PAPER + CHAR + MATERIALS})
+
 if __name__ == "__main__":
     out = os.path.join(HERE, "paper_jobs.json")
     json.dump(JOBS, open(out, "w"), ensure_ascii=False, indent=1)

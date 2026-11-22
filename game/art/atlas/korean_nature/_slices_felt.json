@@ -1,0 +1,402 @@
+{
+ "sheet": "korean_nature",
+ "bg": [
+  0.984,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "korean_nature_00",
+   "bbox": [
+    24,
+    40,
+    297,
+    244
+   ],
+   "area": 21347,
+   "size": [
+    281,
+    212
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_01",
+   "bbox": [
+    293,
+    85,
+    571,
+    243
+   ],
+   "area": 21416,
+   "size": [
+    286,
+    166
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_02",
+   "bbox": [
+    581,
+    54,
+    805,
+    243
+   ],
+   "area": 17867,
+   "size": [
+    232,
+    197
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_03",
+   "bbox": [
+    823,
+    36,
+    1045,
+    244
+   ],
+   "area": 15414,
+   "size": [
+    230,
+    216
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_04",
+   "bbox": [
+    1061,
+    54,
+    1275,
+    243
+   ],
+   "area": 18243,
+   "size": [
+    222,
+    197
+   ],
+   "halo": 3,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_05",
+   "bbox": [
+    1295,
+    54,
+    1518,
+    243
+   ],
+   "area": 10209,
+   "size": [
+    231,
+    197
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_06",
+   "bbox": [
+    20,
+    275,
+    428,
+    528
+   ],
+   "area": 68769,
+   "size": [
+    416,
+    261
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_07",
+   "bbox": [
+    459,
+    279,
+    676,
+    528
+   ],
+   "area": 23416,
+   "size": [
+    225,
+    257
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_08",
+   "bbox": [
+    703,
+    308,
+    878,
+    528
+   ],
+   "area": 15234,
+   "size": [
+    183,
+    228
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_09",
+   "bbox": [
+    903,
+    300,
+    1197,
+    527
+   ],
+   "area": 16337,
+   "size": [
+    302,
+    235
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_10",
+   "bbox": [
+    1238,
+    310,
+    1508,
+    526
+   ],
+   "area": 29925,
+   "size": [
+    278,
+    224
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_11",
+   "bbox": [
+    21,
+    587,
+    261,
+    750
+   ],
+   "area": 27752,
+   "size": [
+    248,
+    171
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_12",
+   "bbox": [
+    285,
+    614,
+    448,
+    749
+   ],
+   "area": 14572,
+   "size": [
+    171,
+    143
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_13",
+   "bbox": [
+    476,
+    611,
+    816,
+    749
+   ],
+   "area": 39806,
+   "size": [
+    348,
+    146
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_14",
+   "bbox": [
+    848,
+    575,
+    996,
+    750
+   ],
+   "area": 15886,
+   "size": [
+    156,
+    183
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_15",
+   "bbox": [
+    1011,
+    612,
+    1120,
+    750
+   ],
+   "area": 9771,
+   "size": [
+    117,
+    146
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_16",
+   "bbox": [
+    1179,
+    558,
+    1302,
+    750
+   ],
+   "area": 13324,
+   "size": [
+    131,
+    200
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_17",
+   "bbox": [
+    1369,
+    562,
+    1484,
+    750
+   ],
+   "area": 11211,
+   "size": [
+    123,
+    196
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_18",
+   "bbox": [
+    21,
+    841,
+    286,
+    989
+   ],
+   "area": 23268,
+   "size": [
+    273,
+    156
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_19",
+   "bbox": [
+    308,
+    814,
+    557,
+    988
+   ],
+   "area": 25072,
+   "size": [
+    257,
+    182
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_20",
+   "bbox": [
+    582,
+    824,
+    794,
+    987
+   ],
+   "area": 9526,
+   "size": [
+    220,
+    171
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_21",
+   "bbox": [
+    815,
+    823,
+    1232,
+    980
+   ],
+   "area": 51977,
+   "size": [
+    425,
+    165
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "korean_nature_22",
+   "bbox": [
+    1259,
+    807,
+    1517,
+    980
+   ],
+   "area": 27868,
+   "size": [
+    266,
+    181
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

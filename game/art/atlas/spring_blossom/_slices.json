@@ -10,15 +10,15 @@
   {
    "id": "spring_blossom_00",
    "bbox": [
-    24,
-    41,
-    271,
+    23,
+    39,
+    272,
     276
    ],
    "area": 36648,
    "size": [
-    255,
-    243
+    257,
+    245
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,14 +27,14 @@
   {
    "id": "spring_blossom_01",
    "bbox": [
-    297,
+    295,
     48,
     524,
     276
    ],
    "area": 30223,
    "size": [
-    235,
+    237,
     236
    ],
    "halo": 0,
@@ -44,15 +44,15 @@
   {
    "id": "spring_blossom_02",
    "bbox": [
-    547,
-    38,
-    769,
+    545,
+    36,
+    770,
     276
    ],
    "area": 29594,
    "size": [
-    230,
-    246
+    233,
+    248
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "spring_blossom_03",
    "bbox": [
-    796,
-    47,
-    1012,
+    794,
+    44,
+    1013,
     276
    ],
    "area": 26212,
    "size": [
-    224,
-    237
+    227,
+    240
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "spring_blossom_04",
    "bbox": [
-    1038,
-    42,
-    1266,
+    1036,
+    40,
+    1265,
     276
    ],
    "area": 21213,
    "size": [
-    236,
-    242
+    237,
+    244
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "spring_blossom_05",
    "bbox": [
-    1270,
-    89,
-    1511,
-    268
+    1269,
+    88,
+    1512,
+    269
    ],
    "area": 32022,
    "size": [
-    249,
-    187
+    251,
+    189
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,15 +112,15 @@
   {
    "id": "spring_blossom_06",
    "bbox": [
-    28,
-    355,
-    261,
-    518
+    27,
+    354,
+    262,
+    519
    ],
    "area": 27615,
    "size": [
-    241,
-    171
+    243,
+    173
    ],
    "halo": 0,
    "touches_border": false,
@@ -129,15 +129,15 @@
   {
    "id": "spring_blossom_07",
    "bbox": [
-    298,
-    385,
-    561,
-    520
+    295,
+    384,
+    562,
+    521
    ],
    "area": 25970,
    "size": [
-    271,
-    143
+    275,
+    145
    ],
    "halo": 0,
    "touches_border": false,
@@ -146,15 +146,15 @@
   {
    "id": "spring_blossom_08",
    "bbox": [
-    590,
-    351,
-    758,
+    589,
+    350,
+    759,
     519
    ],
    "area": 14850,
    "size": [
-    176,
-    176
+    178,
+    177
    ],
    "halo": 0,
    "touches_border": false,
@@ -163,15 +163,15 @@
   {
    "id": "spring_blossom_09",
    "bbox": [
-    786,
+    783,
     358,
-    988,
-    520
+    989,
+    521
    ],
    "area": 23479,
    "size": [
-    210,
-    170
+    214,
+    171
    ],
    "halo": 0,
    "touches_border": false,
@@ -180,15 +180,15 @@
   {
    "id": "spring_blossom_10",
    "bbox": [
-    1012,
-    301,
-    1311,
-    538
+    1010,
+    300,
+    1312,
+    539
    ],
    "area": 37316,
    "size": [
-    307,
-    245
+    310,
+    247
    ],
    "halo": 0,
    "touches_border": false,
@@ -197,15 +197,15 @@
   {
    "id": "spring_blossom_11",
    "bbox": [
-    1348,
-    306,
-    1460,
+    1347,
+    305,
+    1461,
     532
    ],
    "area": 10903,
    "size": [
-    120,
-    234
+    122,
+    235
    ],
    "halo": 0,
    "touches_border": false,
@@ -214,14 +214,14 @@
   {
    "id": "spring_blossom_12",
    "bbox": [
-    19,
+    18,
     542,
-    177,
+    178,
     755
    ],
    "area": 7637,
    "size": [
-    166,
+    168,
     221
    ],
    "halo": 0,
@@ -231,14 +231,14 @@
   {
    "id": "spring_blossom_13",
    "bbox": [
-    202,
+    200,
     557,
     449,
     754
    ],
    "area": 31039,
    "size": [
-    255,
+    257,
     205
    ],
    "halo": 0,
@@ -248,15 +248,15 @@
   {
    "id": "spring_blossom_14",
    "bbox": [
-    482,
-    570,
-    706,
+    480,
+    568,
+    707,
     754
    ],
    "area": 26048,
    "size": [
-    232,
-    192
+    235,
+    194
    ],
    "halo": 10,
    "touches_border": false,
@@ -265,15 +265,15 @@
   {
    "id": "spring_blossom_15",
    "bbox": [
-    735,
-    573,
-    992,
-    767
+    734,
+    571,
+    991,
+    766
    ],
    "area": 27681,
    "size": [
     265,
-    202
+    203
    ],
    "halo": 0,
    "touches_border": false,
@@ -282,15 +282,15 @@
   {
    "id": "spring_blossom_16",
    "bbox": [
-    1020,
-    623,
-    1208,
-    756
+    1017,
+    622,
+    1209,
+    757
    ],
    "area": 18269,
    "size": [
-    196,
-    141
+    200,
+    143
    ],
    "halo": 0,
    "touches_border": false,
@@ -299,15 +299,15 @@
   {
    "id": "spring_blossom_17",
    "bbox": [
-    1251,
-    591,
-    1502,
-    755
+    1250,
+    590,
+    1504,
+    756
    ],
    "area": 24340,
    "size": [
-    259,
-    172
+    262,
+    174
    ],
    "halo": 0,
    "touches_border": false,
@@ -316,15 +316,15 @@
   {
    "id": "spring_blossom_18",
    "bbox": [
-    46,
-    784,
-    175,
+    44,
+    782,
+    176,
     983
    ],
    "area": 11511,
    "size": [
-    137,
-    207
+    140,
+    209
    ],
    "halo": 0,
    "touches_border": false,
@@ -333,15 +333,15 @@
   {
    "id": "spring_blossom_19",
    "bbox": [
-    199,
-    824,
+    197,
+    823,
     353,
-    977
+    978
    ],
    "area": 8812,
    "size": [
-    162,
-    161
+    164,
+    163
    ],
    "halo": 0,
    "touches_border": false,
@@ -350,15 +350,15 @@
   {
    "id": "spring_blossom_20",
    "bbox": [
-    389,
-    822,
-    550,
-    977
+    387,
+    821,
+    551,
+    978
    ],
    "area": 11126,
    "size": [
-    169,
-    163
+    172,
+    165
    ],
    "halo": 0,
    "touches_border": false,
@@ -367,15 +367,15 @@
   {
    "id": "spring_blossom_21",
    "bbox": [
-    590,
-    824,
-    738,
-    977
+    589,
+    823,
+    737,
+    978
    ],
    "area": 11178,
    "size": [
     156,
-    161
+    163
    ],
    "halo": 0,
    "touches_border": false,
@@ -384,15 +384,15 @@
   {
    "id": "spring_blossom_22",
    "bbox": [
-    781,
-    824,
+    779,
+    823,
     956,
-    977
+    978
    ],
    "area": 11202,
    "size": [
-    183,
-    161
+    185,
+    163
    ],
    "halo": 0,
    "touches_border": false,
@@ -401,15 +401,15 @@
   {
    "id": "spring_blossom_23",
    "bbox": [
-    986,
-    833,
-    1149,
-    975
+    985,
+    832,
+    1150,
+    977
    ],
    "area": 12446,
    "size": [
-    171,
-    150
+    173,
+    153
    ],
    "halo": 0,
    "touches_border": false,
@@ -418,15 +418,15 @@
   {
    "id": "spring_blossom_24",
    "bbox": [
-    1187,
-    824,
-    1312,
-    976
+    1184,
+    823,
+    1313,
+    977
    ],
    "area": 7751,
    "size": [
-    133,
-    160
+    137,
+    162
    ],
    "halo": 6,
    "touches_border": false,
@@ -435,19 +435,20 @@
   {
    "id": "spring_blossom_25",
    "bbox": [
-    1350,
+    1348,
     827,
-    1499,
-    976
+    1500,
+    978
    ],
    "area": 10874,
    "size": [
-    157,
-    157
+    160,
+    159
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   }
- ]
+ ],
+ "source": "art_src/atlas/raw/spring_blossom_paper.png"
 }

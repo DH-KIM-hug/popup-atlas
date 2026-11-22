@@ -10,15 +10,15 @@
   {
    "id": "forest_conifer_00",
    "bbox": [
+    16,
     18,
-    20,
-    236,
-    341
+    237,
+    342
    ],
    "area": 36088,
    "size": [
-    226,
-    329
+    229,
+    332
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "forest_conifer_01",
    "bbox": [
-    252,
+    248,
     36,
-    437,
-    341
+    438,
+    342
    ],
    "area": 29061,
    "size": [
-    193,
-    313
+    198,
+    314
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "forest_conifer_02",
    "bbox": [
-    453,
-    46,
+    452,
+    44,
     630,
-    341
+    342
    ],
    "area": 27763,
    "size": [
-    185,
-    303
+    186,
+    306
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "forest_conifer_03",
    "bbox": [
-    647,
-    46,
+    645,
+    44,
     794,
-    341
+    343
    ],
    "area": 20910,
    "size": [
-    155,
-    303
+    157,
+    307
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "forest_conifer_04",
    "bbox": [
-    817,
-    28,
-    916,
-    342
+    815,
+    26,
+    917,
+    343
    ],
    "area": 20829,
    "size": [
-    107,
-    322
+    110,
+    325
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "forest_conifer_05",
    "bbox": [
-    940,
-    55,
-    1023,
-    342
+    938,
+    53,
+    1024,
+    343
    ],
    "area": 16277,
    "size": [
-    91,
-    295
+    94,
+    298
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,15 +112,15 @@
   {
    "id": "forest_conifer_06",
    "bbox": [
-    1048,
-    78,
-    1288,
-    343
+    1045,
+    76,
+    1287,
+    344
    ],
    "area": 32429,
    "size": [
-    248,
-    273
+    250,
+    276
    ],
    "halo": 0,
    "touches_border": false,
@@ -129,15 +129,15 @@
   {
    "id": "forest_conifer_07",
    "bbox": [
-    1294,
-    20,
-    1516,
-    344
+    1295,
+    19,
+    1515,
+    345
    ],
    "area": 28057,
    "size": [
-    230,
-    332
+    228,
+    334
    ],
    "halo": 0,
    "touches_border": false,
@@ -146,15 +146,15 @@
   {
    "id": "forest_conifer_08",
    "bbox": [
-    19,
-    361,
-    290,
-    560
+    18,
+    360,
+    289,
+    561
    ],
    "area": 22772,
    "size": [
     279,
-    207
+    209
    ],
    "halo": 0,
    "touches_border": false,
@@ -163,15 +163,15 @@
   {
    "id": "forest_conifer_09",
    "bbox": [
-    312,
-    435,
+    310,
+    434,
     405,
     560
    ],
    "area": 4103,
    "size": [
-    101,
-    133
+    103,
+    134
    ],
    "halo": 0,
    "touches_border": false,
@@ -180,15 +180,15 @@
   {
    "id": "forest_conifer_10",
    "bbox": [
-    433,
-    392,
+    431,
+    389,
     557,
     560
    ],
    "area": 7402,
    "size": [
-    132,
-    176
+    134,
+    179
    ],
    "halo": 0,
    "touches_border": false,
@@ -197,15 +197,15 @@
   {
    "id": "forest_conifer_11",
    "bbox": [
-    585,
-    402,
-    734,
+    584,
+    400,
+    735,
     560
    ],
    "area": 10980,
    "size": [
-    157,
-    166
+    159,
+    168
    ],
    "halo": 0,
    "touches_border": false,
@@ -214,15 +214,15 @@
   {
    "id": "forest_conifer_12",
    "bbox": [
-    769,
-    461,
-    845,
-    560
+    767,
+    457,
+    846,
+    561
    ],
    "area": 3000,
    "size": [
-    84,
-    107
+    87,
+    112
    ],
    "halo": 0,
    "touches_border": false,
@@ -231,15 +231,15 @@
   {
    "id": "forest_conifer_13",
    "bbox": [
-    883,
-    430,
-    1110,
-    560
+    882,
+    426,
+    1112,
+    561
    ],
    "area": 20985,
    "size": [
-    235,
-    138
+    238,
+    143
    ],
    "halo": 0,
    "touches_border": false,
@@ -248,15 +248,15 @@
   {
    "id": "forest_conifer_14",
    "bbox": [
-    1152,
-    410,
-    1507,
-    560
+    1149,
+    409,
+    1510,
+    562
    ],
    "area": 33857,
    "size": [
-    363,
-    158
+    369,
+    161
    ],
    "halo": 0,
    "touches_border": false,
@@ -265,15 +265,15 @@
   {
    "id": "forest_conifer_15",
    "bbox": [
-    18,
-    584,
-    297,
-    742
+    17,
+    582,
+    298,
+    743
    ],
    "area": 24532,
    "size": [
-    287,
-    166
+    289,
+    169
    ],
    "halo": 0,
    "touches_border": false,
@@ -282,15 +282,15 @@
   {
    "id": "forest_conifer_16",
    "bbox": [
-    316,
-    595,
+    314,
+    594,
     529,
     742
    ],
    "area": 16123,
    "size": [
-    221,
-    155
+    223,
+    156
    ],
    "halo": 0,
    "touches_border": false,
@@ -299,15 +299,15 @@
   {
    "id": "forest_conifer_17",
    "bbox": [
-    551,
-    618,
+    549,
+    617,
     707,
     742
    ],
    "area": 9090,
    "size": [
-    164,
-    132
+    166,
+    133
    ],
    "halo": 0,
    "touches_border": false,
@@ -316,15 +316,15 @@
   {
    "id": "forest_conifer_18",
    "bbox": [
-    738,
-    596,
-    920,
+    736,
+    595,
+    921,
     743
    ],
    "area": 16751,
    "size": [
-    190,
-    155
+    193,
+    156
    ],
    "halo": 0,
    "touches_border": false,
@@ -333,15 +333,15 @@
   {
    "id": "forest_conifer_19",
    "bbox": [
-    974,
+    972,
     610,
     1151,
-    743
+    744
    ],
    "area": 15465,
    "size": [
-    185,
-    141
+    187,
+    142
    ],
    "halo": 0,
    "touches_border": false,
@@ -350,15 +350,15 @@
   {
    "id": "forest_conifer_20",
    "bbox": [
-    1211,
-    604,
-    1501,
-    743
+    1208,
+    602,
+    1503,
+    744
    ],
    "area": 30417,
    "size": [
-    298,
-    147
+    303,
+    150
    ],
    "halo": 0,
    "touches_border": false,
@@ -367,15 +367,15 @@
   {
    "id": "forest_conifer_21",
    "bbox": [
-    32,
-    794,
+    30,
+    792,
     215,
-    998
+    999
    ],
    "area": 20329,
    "size": [
-    191,
-    212
+    193,
+    215
    ],
    "halo": 0,
    "touches_border": false,
@@ -384,15 +384,15 @@
   {
    "id": "forest_conifer_22",
    "bbox": [
-    266,
-    794,
+    265,
+    793,
     428,
-    998
+    999
    ],
    "area": 15477,
    "size": [
-    170,
-    212
+    171,
+    214
    ],
    "halo": 0,
    "touches_border": false,
@@ -401,15 +401,15 @@
   {
    "id": "forest_conifer_23",
    "bbox": [
-    457,
-    758,
+    456,
+    757,
     660,
-    998
+    999
    ],
    "area": 21942,
    "size": [
-    211,
-    248
+    212,
+    250
    ],
    "halo": 0,
    "touches_border": false,
@@ -418,15 +418,15 @@
   {
    "id": "forest_conifer_24",
    "bbox": [
-    697,
-    812,
-    964,
-    998
+    693,
+    810,
+    966,
+    999
    ],
    "area": 23763,
    "size": [
-    275,
-    194
+    281,
+    197
    ],
    "halo": 0,
    "touches_border": false,
@@ -435,15 +435,15 @@
   {
    "id": "forest_conifer_25",
    "bbox": [
-    1003,
-    799,
-    1280,
-    998
+    1002,
+    798,
+    1281,
+    1000
    ],
    "area": 32258,
    "size": [
-    285,
-    207
+    287,
+    210
    ],
    "halo": 0,
    "touches_border": false,
@@ -452,19 +452,20 @@
   {
    "id": "forest_conifer_26",
    "bbox": [
-    1324,
-    880,
+    1323,
+    878,
     1499,
-    998
+    999
    ],
    "area": 12712,
    "size": [
-    183,
-    126
+    184,
+    129
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   }
- ]
+ ],
+ "source": "art_src/atlas/raw/forest_conifer_paper.png"
 }

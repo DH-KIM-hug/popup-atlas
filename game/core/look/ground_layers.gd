@@ -226,6 +226,7 @@ func add_folded_rock(p: Vector2, size: float, yaw: float, tint := Color("8f9886"
 	m.shader = ROCK_SHADER
 	m.set_shader_parameter("base_color", tint)
 	m.set_shader_parameter("felt_tex", FELT_TEX)
+	m.set_shader_parameter("fibre_tex", FIBRE)
 	m.set_shader_parameter("seed", _rng.randf() * 10.0)
 	m.set_shader_parameter("ridge_h", size)
 	mi.material_override = m

@@ -15,6 +15,13 @@ def wait_until(text):
     now = datetime.datetime.now()
     m = re.search(r'resets_at\\?"?:\s*(\d{10})', text)
     if m: return datetime.datetime.fromtimestamp(int(m.group(1))) + datetime.timedelta(minutes=2)
+    m = re.search(r'try again at (\d{1,2}):(\d{2})\s*([AP]M)', text, re.I)  # "try again at 3:38 PM" (local time)
+    if m:
+        h = int(m.group(1)) % 12 + (12 if m.group(3).upper() == 'PM' else 0)
+        t = now.replace(hour=h, minute=int(m.group(2)), second=0, microsecond=0)
+        if t < now - datetime.timedelta(minutes=5):
+            t += datetime.timedelta(days=1)
+        return t + datetime.timedelta(minutes=2)
     m = re.search(r'try again in\s+(?:(\d+)\s*h\w*)?\s*(?:(\d+)\s*m\w*)?', text, re.I)
     if m and any(m.groups()):
         return now + datetime.timedelta(hours=int(m.group(1) or 0), minutes=int(m.group(2) or 0) + 2)

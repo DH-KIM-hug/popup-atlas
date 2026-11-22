@@ -1,0 +1,538 @@
+{
+ "sheet": "small_decor",
+ "bg": [
+  0.988,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "small_decor_00",
+   "bbox": [
+    58,
+    60,
+    198,
+    240
+   ],
+   "area": 13675,
+   "size": [
+    148,
+    188
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_01",
+   "bbox": [
+    245,
+    61,
+    385,
+    240
+   ],
+   "area": 13003,
+   "size": [
+    148,
+    187
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_02",
+   "bbox": [
+    437,
+    66,
+    570,
+    240
+   ],
+   "area": 11626,
+   "size": [
+    141,
+    182
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_03",
+   "bbox": [
+    616,
+    63,
+    755,
+    240
+   ],
+   "area": 13376,
+   "size": [
+    147,
+    185
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_04",
+   "bbox": [
+    805,
+    62,
+    927,
+    240
+   ],
+   "area": 10872,
+   "size": [
+    130,
+    186
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_05",
+   "bbox": [
+    979,
+    63,
+    1116,
+    240
+   ],
+   "area": 12979,
+   "size": [
+    145,
+    185
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_06",
+   "bbox": [
+    1167,
+    65,
+    1309,
+    240
+   ],
+   "area": 9733,
+   "size": [
+    150,
+    183
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_07",
+   "bbox": [
+    1348,
+    75,
+    1486,
+    240
+   ],
+   "area": 10885,
+   "size": [
+    146,
+    173
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_08",
+   "bbox": [
+    46,
+    318,
+    197,
+    470
+   ],
+   "area": 14332,
+   "size": [
+    159,
+    160
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_09",
+   "bbox": [
+    249,
+    324,
+    382,
+    470
+   ],
+   "area": 12074,
+   "size": [
+    141,
+    154
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_10",
+   "bbox": [
+    426,
+    321,
+    561,
+    469
+   ],
+   "area": 9834,
+   "size": [
+    143,
+    156
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_11",
+   "bbox": [
+    595,
+    347,
+    730,
+    469
+   ],
+   "area": 8460,
+   "size": [
+    143,
+    130
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_12",
+   "bbox": [
+    775,
+    303,
+    905,
+    469
+   ],
+   "area": 8440,
+   "size": [
+    138,
+    174
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_13",
+   "bbox": [
+    941,
+    294,
+    1107,
+    469
+   ],
+   "area": 14343,
+   "size": [
+    174,
+    183
+   ],
+   "halo": 2,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_14",
+   "bbox": [
+    1150,
+    384,
+    1283,
+    469
+   ],
+   "area": 8913,
+   "size": [
+    141,
+    93
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_15",
+   "bbox": [
+    1322,
+    348,
+    1505,
+    469
+   ],
+   "area": 17985,
+   "size": [
+    191,
+    129
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_16",
+   "bbox": [
+    28,
+    598,
+    180,
+    686
+   ],
+   "area": 9665,
+   "size": [
+    160,
+    96
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_17",
+   "bbox": [
+    212,
+    608,
+    352,
+    685
+   ],
+   "area": 7077,
+   "size": [
+    148,
+    85
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_18",
+   "bbox": [
+    379,
+    543,
+    519,
+    687
+   ],
+   "area": 9635,
+   "size": [
+    148,
+    152
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_19",
+   "bbox": [
+    556,
+    527,
+    733,
+    687
+   ],
+   "area": 16704,
+   "size": [
+    185,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_20",
+   "bbox": [
+    772,
+    522,
+    933,
+    687
+   ],
+   "area": 13434,
+   "size": [
+    169,
+    173
+   ],
+   "halo": 39,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_21",
+   "bbox": [
+    966,
+    570,
+    1136,
+    692
+   ],
+   "area": 12639,
+   "size": [
+    178,
+    130
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_22",
+   "bbox": [
+    1170,
+    516,
+    1295,
+    689
+   ],
+   "area": 10251,
+   "size": [
+    133,
+    181
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_23",
+   "bbox": [
+    1336,
+    576,
+    1507,
+    692
+   ],
+   "area": 12361,
+   "size": [
+    179,
+    124
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_24",
+   "bbox": [
+    47,
+    763,
+    220,
+    960
+   ],
+   "area": 17238,
+   "size": [
+    181,
+    205
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_25",
+   "bbox": [
+    262,
+    763,
+    396,
+    960
+   ],
+   "area": 11360,
+   "size": [
+    142,
+    205
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_26",
+   "bbox": [
+    452,
+    811,
+    677,
+    960
+   ],
+   "area": 19183,
+   "size": [
+    233,
+    157
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_27",
+   "bbox": [
+    726,
+    826,
+    853,
+    960
+   ],
+   "area": 8781,
+   "size": [
+    135,
+    142
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_28",
+   "bbox": [
+    901,
+    773,
+    1092,
+    960
+   ],
+   "area": 14008,
+   "size": [
+    199,
+    195
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_29",
+   "bbox": [
+    1136,
+    758,
+    1288,
+    960
+   ],
+   "area": 14449,
+   "size": [
+    160,
+    210
+   ],
+   "halo": 50,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "small_decor_30",
+   "bbox": [
+    1328,
+    773,
+    1492,
+    960
+   ],
+   "area": 18845,
+   "size": [
+    172,
+    195
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -3,15 +3,11 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bt20eyrgljov1"
-path="res://.godot/imported/village_props_08.webp-77b4fb9a60f734eda23639706aba759c.ctex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
 source_file="res://art/atlas/village_props/village_props_08.webp"
-dest_files=["res://.godot/imported/village_props_08.webp-77b4fb9a60f734eda23639706aba759c.ctex"]
 
 [params]
 

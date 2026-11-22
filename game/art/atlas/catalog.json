@@ -12043,29 +12043,6 @@
   ]
  },
  {
-  "id": "story_wc_room_09",
-  "path": "art/atlas/story_wc_room/story_wc_room_09.webp",
-  "sheet": "story_wc_room_extra",
-  "category": "story_building",
-  "label": "shop back wall from inside, full height (room_00 + plaster band and rail on top)",
-  "height_units": 0.71,
-  "cross_slot": false,
-  "biome": "halloween",
-  "season": "autumn",
-  "tags": [
-   "halloween",
-   "interior",
-   "room",
-   "story",
-   "wall",
-   "witch_candy"
-  ],
-  "px": [
-   817,
-   460
-  ]
- },
- {
   "id": "story_sm_paper_test_00",
   "path": "art/atlas/story_sm_paper_test/story_sm_paper_test_00.webp",
   "sheet": "story_sm_paper_test",
@@ -13664,6 +13641,29 @@
   "px": [
    411,
    425
+  ]
+ },
+ {
+  "id": "story_wc_room_09",
+  "path": "art/atlas/story_wc_room/story_wc_room_09.webp",
+  "sheet": "story_wc_room_extra",
+  "category": "story_building",
+  "label": "shop back wall from inside, full height (room_00 + plaster band and rail on top)",
+  "height_units": 0.71,
+  "cross_slot": false,
+  "biome": "halloween",
+  "season": "autumn",
+  "tags": [
+   "halloween",
+   "interior",
+   "room",
+   "story",
+   "wall",
+   "witch_candy"
+  ],
+  "px": [
+   818,
+   461
   ]
  }
 ]
