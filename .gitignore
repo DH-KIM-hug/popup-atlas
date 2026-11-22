@@ -9,3 +9,4 @@ artifacts/*
 game/.agent_out/
 game/.godot/
 build/
+.godot_slot.lock/
