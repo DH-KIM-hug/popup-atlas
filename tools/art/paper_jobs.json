@@ -13,7 +13,7 @@
   "id": "atlas_meadow_field",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/meadow_field.png"
+   "art_src/atlas/raw/meadow_field_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/meadow_field_paper.png",
@@ -23,7 +23,7 @@
   "id": "atlas_stream_water",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/stream_water.png"
+   "art_src/atlas/raw/stream_water_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/stream_water_paper.png",
@@ -33,7 +33,7 @@
   "id": "atlas_forest_broadleaf",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/forest_broadleaf.png"
+   "art_src/atlas/raw/forest_broadleaf_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/forest_broadleaf_paper.png",
@@ -43,7 +43,7 @@
   "id": "atlas_forest_conifer",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/forest_conifer.png"
+   "art_src/atlas/raw/forest_conifer_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/forest_conifer_paper.png",
@@ -53,7 +53,7 @@
   "id": "atlas_bushes_hedges",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/bushes_hedges.png"
+   "art_src/atlas/raw/bushes_hedges_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/bushes_hedges_paper.png",
@@ -63,7 +63,7 @@
   "id": "atlas_spring_blossom",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/spring_blossom.png"
+   "art_src/atlas/raw/spring_blossom_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/spring_blossom_paper.png",
@@ -73,7 +73,7 @@
   "id": "atlas_autumn",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/autumn.png"
+   "art_src/atlas/raw/autumn_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/autumn_paper.png",
@@ -83,7 +83,7 @@
   "id": "atlas_small_decor",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/small_decor.png"
+   "art_src/atlas/raw/small_decor_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/small_decor_paper.png",
@@ -93,7 +93,7 @@
   "id": "atlas_village_houses",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/village_houses.png"
+   "art_src/atlas/raw/village_houses_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/village_houses_paper.png",
@@ -103,7 +103,7 @@
   "id": "atlas_village_props",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/village_props.png"
+   "art_src/atlas/raw/village_props_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/village_props_paper.png",
@@ -113,7 +113,7 @@
   "id": "atlas_farm_animals",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/farm_animals.png"
+   "art_src/atlas/raw/farm_animals_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/farm_animals_paper.png",
@@ -123,7 +123,7 @@
   "id": "atlas_fairytale_west",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/fairytale_west.png"
+   "art_src/atlas/raw/fairytale_west_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/fairytale_west_paper.png",
@@ -133,7 +133,7 @@
   "id": "atlas_korean_nature",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/korean_nature.png"
+   "art_src/atlas/raw/korean_nature_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/korean_nature_paper.png",
@@ -143,7 +143,7 @@
   "id": "atlas_korean_village",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/korean_village.png"
+   "art_src/atlas/raw/korean_village_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/korean_village_paper.png",
@@ -153,7 +153,7 @@
   "id": "atlas_winter_snow",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/winter_snow.png"
+   "art_src/atlas/raw/winter_snow_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/winter_snow_paper.png",
@@ -163,7 +163,7 @@
   "id": "cards_sh2_animals_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_animals_b.png"
+   "art_src/cards/raw/sh2_animals_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_animals_b_paper.png",
@@ -183,7 +183,7 @@
   "id": "cards_sh2_conifers_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_conifers_b.png"
+   "art_src/cards/raw/sh2_conifers_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_conifers_b_paper.png",
@@ -193,7 +193,7 @@
   "id": "cards_sh2_foreground",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_foreground.png"
+   "art_src/cards/raw/sh2_foreground_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_foreground_paper.png",
@@ -203,7 +203,7 @@
   "id": "cards_sh2_hay_farm",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_hay_farm.png"
+   "art_src/cards/raw/sh2_hay_farm_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_hay_farm_paper.png",
@@ -223,7 +223,7 @@
   "id": "cards_sh2_hills_layer_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_hills_layer_b.png"
+   "art_src/cards/raw/sh2_hills_layer_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_hills_layer_b_paper.png",
@@ -233,7 +233,7 @@
   "id": "cards_sh2_hills_wooded",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_hills_wooded.png"
+   "art_src/cards/raw/sh2_hills_wooded_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_hills_wooded_paper.png",
@@ -243,7 +243,7 @@
   "id": "cards_sh2_trees_green_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_trees_green_b.png"
+   "art_src/cards/raw/sh2_trees_green_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_trees_green_b_paper.png",
@@ -253,7 +253,7 @@
   "id": "cards_sh2_trees_warm_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_trees_warm_b.png"
+   "art_src/cards/raw/sh2_trees_warm_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_trees_warm_b_paper.png",
@@ -263,7 +263,7 @@
   "id": "cards_sh2_village_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_village_b.png"
+   "art_src/cards/raw/sh2_village_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_village_b_paper.png",
@@ -273,7 +273,7 @@
   "id": "cards_sh2_village_props_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_village_props_b.png"
+   "art_src/cards/raw/sh2_village_props_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_village_props_b_paper.png",
@@ -283,7 +283,7 @@
   "id": "cards_sh2_water",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_water.png"
+   "art_src/cards/raw/sh2_water_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_water_paper.png",
@@ -293,7 +293,7 @@
   "id": "cards_sh2_wheat_patch",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh2_wheat_patch.png"
+   "art_src/cards/raw/sh2_wheat_patch_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh2_wheat_patch_paper.png",
@@ -313,7 +313,7 @@
   "id": "cards_sh3_fillers_a",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh3_fillers_a.png"
+   "art_src/cards/raw/sh3_fillers_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh3_fillers_a_paper.png",
@@ -323,7 +323,7 @@
   "id": "cards_sh3_fillers_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh3_fillers_b.png"
+   "art_src/cards/raw/sh3_fillers_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh3_fillers_b_paper.png",
@@ -333,7 +333,7 @@
   "id": "cards_sh3_hero_trees",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh3_hero_trees.png"
+   "art_src/cards/raw/sh3_hero_trees_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh3_hero_trees_paper.png",
@@ -343,7 +343,7 @@
   "id": "cards_sh3_logs_stones",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh3_logs_stones.png"
+   "art_src/cards/raw/sh3_logs_stones_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh3_logs_stones_paper.png",
@@ -353,7 +353,7 @@
   "id": "cards_sh3_trees_mixed_c",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh3_trees_mixed_c.png"
+   "art_src/cards/raw/sh3_trees_mixed_c_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh3_trees_mixed_c_paper.png",
@@ -363,7 +363,7 @@
   "id": "cards_sh_animals",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_animals.png"
+   "art_src/cards/raw/sh_animals_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_animals_paper.png",
@@ -383,7 +383,7 @@
   "id": "cards_sh_conifers",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_conifers.png"
+   "art_src/cards/raw/sh_conifers_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_conifers_paper.png",
@@ -393,7 +393,7 @@
   "id": "cards_sh_cottage_a",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_cottage_a.png"
+   "art_src/cards/raw/sh_cottage_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_cottage_a_paper.png",
@@ -403,7 +403,7 @@
   "id": "cards_sh_cottage_b",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_cottage_b.png"
+   "art_src/cards/raw/sh_cottage_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_cottage_b_paper.png",
@@ -413,7 +413,7 @@
   "id": "cards_sh_fences_bridge",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_fences_bridge.png"
+   "art_src/cards/raw/sh_fences_bridge_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_fences_bridge_paper.png",
@@ -423,7 +423,7 @@
   "id": "cards_sh_flowers",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_flowers.png"
+   "art_src/cards/raw/sh_flowers_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_flowers_paper.png",
@@ -433,7 +433,7 @@
   "id": "cards_sh_grass_reeds",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_grass_reeds.png"
+   "art_src/cards/raw/sh_grass_reeds_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_grass_reeds_paper.png",
@@ -453,7 +453,7 @@
   "id": "cards_sh_hills_gold",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_hills_gold.png"
+   "art_src/cards/raw/sh_hills_gold_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_hills_gold_paper.png",
@@ -463,7 +463,7 @@
   "id": "cards_sh_hills_green",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_hills_green.png"
+   "art_src/cards/raw/sh_hills_green_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_hills_green_paper.png",
@@ -473,7 +473,7 @@
   "id": "cards_sh_rocks_mush",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_rocks_mush.png"
+   "art_src/cards/raw/sh_rocks_mush_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_rocks_mush_paper.png",
@@ -483,7 +483,7 @@
   "id": "cards_sh_stream_bank",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_stream_bank.png"
+   "art_src/cards/raw/sh_stream_bank_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_stream_bank_paper.png",
@@ -493,7 +493,7 @@
   "id": "cards_sh_trees_green",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_trees_green.png"
+   "art_src/cards/raw/sh_trees_green_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_trees_green_paper.png",
@@ -513,7 +513,7 @@
   "id": "cards_sh_trees_warm",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_trees_warm.png"
+   "art_src/cards/raw/sh_trees_warm_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_trees_warm_paper.png",
@@ -523,7 +523,7 @@
   "id": "cards_sh_village_props",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_village_props.png"
+   "art_src/cards/raw/sh_village_props_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_village_props_paper.png",
@@ -533,7 +533,7 @@
   "id": "cards_sh_wheat_hay",
   "kind": "bg",
   "refs": [
-   "art_src/cards/raw/sh_wheat_hay.png"
+   "art_src/cards/raw/sh_wheat_hay_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cards/raw/sh_wheat_hay_paper.png",
@@ -543,7 +543,7 @@
   "id": "story_houses",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_houses.png"
+   "art_src/atlas/raw/story_houses_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_houses_paper.png",
@@ -553,7 +553,7 @@
   "id": "story_build_props",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_build_props.png"
+   "art_src/atlas/raw/story_build_props_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_build_props_paper.png",
@@ -563,7 +563,7 @@
   "id": "story_hearth",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_hearth.png"
+   "art_src/atlas/raw/story_hearth_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_hearth_paper.png",
@@ -573,7 +573,7 @@
   "id": "story_room",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_room.png"
+   "art_src/atlas/raw/story_room_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_room_paper.png",
@@ -583,7 +583,7 @@
   "id": "story_wc_shop",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_shop.png"
+   "art_src/atlas/raw/story_wc_shop_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_shop_paper.png",
@@ -593,7 +593,7 @@
   "id": "story_wc_room",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_room.png"
+   "art_src/atlas/raw/story_wc_room_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_room_paper.png",
@@ -603,7 +603,7 @@
   "id": "story_wc_pot",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_pot.png"
+   "art_src/atlas/raw/story_wc_pot_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_pot_paper.png",
@@ -613,7 +613,7 @@
   "id": "story_wc_candies",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_candies.png"
+   "art_src/atlas/raw/story_wc_candies_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_candies_paper.png",
@@ -623,7 +623,7 @@
   "id": "story_wc_ingredients",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_ingredients.png"
+   "art_src/atlas/raw/story_wc_ingredients_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_ingredients_paper.png",
@@ -633,7 +633,7 @@
   "id": "story_wc_halloween",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_halloween.png"
+   "art_src/atlas/raw/story_wc_halloween_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_halloween_paper.png",
@@ -643,7 +643,7 @@
   "id": "story_wc_decor",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_decor.png"
+   "art_src/atlas/raw/story_wc_decor_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_decor_paper.png",
@@ -653,7 +653,7 @@
   "id": "story_wc_houses_a",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_houses_a.png"
+   "art_src/atlas/raw/story_wc_houses_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_houses_a_paper.png",
@@ -663,7 +663,7 @@
   "id": "story_wc_houses_b",
   "kind": "bg",
   "refs": [
-   "art_src/atlas/raw/story_wc_houses_b.png"
+   "art_src/atlas/raw/story_wc_houses_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/atlas/raw/story_wc_houses_b_paper.png",
@@ -673,7 +673,7 @@
   "id": "castp_cast_pigs",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pigs.png"
+   "art_src/cast/raw/cast_pigs_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pigs_paper.png",
@@ -683,7 +683,7 @@
   "id": "castp_cast_mom_expr",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_mom_expr.png"
+   "art_src/cast/raw/cast_mom_expr_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_mom_expr_paper.png",
@@ -693,7 +693,7 @@
   "id": "castp_cast_tp_peek",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_tp_peek.png"
+   "art_src/cast/raw/cast_tp_peek_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_tp_peek_paper.png",
@@ -703,7 +703,7 @@
   "id": "castp_cast_pig_a_views",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_a_views.png"
+   "art_src/cast/raw/cast_pig_a_views_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_a_views_paper.png",
@@ -713,7 +713,7 @@
   "id": "castp_cast_pig_a_expr",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_a_expr.png"
+   "art_src/cast/raw/cast_pig_a_expr_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_a_expr_paper.png",
@@ -723,7 +723,7 @@
   "id": "castp_cast_pig_a_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_a_walk_cycle.png"
+   "art_src/cast/raw/cast_pig_a_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_a_walk_cycle_paper.png",
@@ -733,7 +733,7 @@
   "id": "castp_cast_pig_a_run_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_a_run_cycle.png"
+   "art_src/cast/raw/cast_pig_a_run_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_a_run_cycle_paper.png",
@@ -743,7 +743,7 @@
   "id": "castp_cast_pig_b_views",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_b_views.png"
+   "art_src/cast/raw/cast_pig_b_views_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_b_views_paper.png",
@@ -753,7 +753,7 @@
   "id": "castp_cast_pig_b_expr",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_b_expr.png"
+   "art_src/cast/raw/cast_pig_b_expr_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_b_expr_paper.png",
@@ -763,7 +763,7 @@
   "id": "castp_cast_pig_b_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_b_walk_cycle.png"
+   "art_src/cast/raw/cast_pig_b_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_b_walk_cycle_paper.png",
@@ -773,7 +773,7 @@
   "id": "castp_cast_pig_b_run_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_b_run_cycle.png"
+   "art_src/cast/raw/cast_pig_b_run_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_b_run_cycle_paper.png",
@@ -783,7 +783,7 @@
   "id": "castp_cast_pig_c_views",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_c_views.png"
+   "art_src/cast/raw/cast_pig_c_views_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_c_views_paper.png",
@@ -793,7 +793,7 @@
   "id": "castp_cast_pig_c_expr",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_c_expr.png"
+   "art_src/cast/raw/cast_pig_c_expr_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_c_expr_paper.png",
@@ -803,7 +803,7 @@
   "id": "castp_cast_pig_c_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_c_walk_cycle.png"
+   "art_src/cast/raw/cast_pig_c_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_c_walk_cycle_paper.png",
@@ -813,7 +813,7 @@
   "id": "castp_cast_pig_c_run_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_c_run_cycle.png"
+   "art_src/cast/raw/cast_pig_c_run_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_c_run_cycle_paper.png",
@@ -823,7 +823,7 @@
   "id": "castp_cast_pig_a_carry_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_pig_a_carry_cycle.png"
+   "art_src/cast/raw/cast_pig_a_carry_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_pig_a_carry_cycle_paper.png",
@@ -833,7 +833,7 @@
   "id": "castp_cast_wolf",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wolf.png"
+   "art_src/cast/raw/cast_wolf_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wolf_paper.png",
@@ -843,7 +843,7 @@
   "id": "castp_cast_wolf_side",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wolf_side.png"
+   "art_src/cast/raw/cast_wolf_side_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wolf_side_paper.png",
@@ -853,7 +853,7 @@
   "id": "castp_cast_wolf_front",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wolf_front.png"
+   "art_src/cast/raw/cast_wolf_front_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wolf_front_paper.png",
@@ -863,7 +863,7 @@
   "id": "castp_cast_wolf_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wolf_walk_cycle.png"
+   "art_src/cast/raw/cast_wolf_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wolf_walk_cycle_paper.png",
@@ -873,7 +873,7 @@
   "id": "castp_cast_wolf_run_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wolf_run_cycle.png"
+   "art_src/cast/raw/cast_wolf_run_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wolf_run_cycle_paper.png",
@@ -883,7 +883,7 @@
   "id": "castp_cast_wolf_front_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wolf_front_cycle.png"
+   "art_src/cast/raw/cast_wolf_front_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wolf_front_cycle_paper.png",
@@ -893,7 +893,7 @@
   "id": "castp_cast_tp_legs_front",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_tp_legs_front.png"
+   "art_src/cast/raw/cast_tp_legs_front_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_tp_legs_front_paper.png",
@@ -903,7 +903,7 @@
   "id": "castp_cast_tp_legs_half",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_tp_legs_half.png"
+   "art_src/cast/raw/cast_tp_legs_half_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_tp_legs_half_paper.png",
@@ -913,7 +913,7 @@
   "id": "castp_cast_tp_legs_lift",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_tp_legs_lift.png"
+   "art_src/cast/raw/cast_tp_legs_lift_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_tp_legs_lift_paper.png",
@@ -923,7 +923,7 @@
   "id": "castp_cast_tp_legs_side",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_tp_legs_side.png"
+   "art_src/cast/raw/cast_tp_legs_side_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_tp_legs_side_paper.png",
@@ -933,7 +933,7 @@
   "id": "castp_cast_tp_walk_armless",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_tp_walk_armless.png"
+   "art_src/cast/raw/cast_tp_walk_armless_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_tp_walk_armless_paper.png",
@@ -943,7 +943,7 @@
   "id": "castp_cast_traveller",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller.png"
+   "art_src/cast/raw/cast_traveller_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_paper.png",
@@ -953,7 +953,7 @@
   "id": "castp_cast_traveller_expr_a",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_expr_a.png"
+   "art_src/cast/raw/cast_traveller_expr_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_expr_a_paper.png",
@@ -963,7 +963,7 @@
   "id": "castp_cast_traveller_expr_b",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_expr_b.png"
+   "art_src/cast/raw/cast_traveller_expr_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_expr_b_paper.png",
@@ -973,7 +973,7 @@
   "id": "castp_cast_traveller_props",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_props.png"
+   "art_src/cast/raw/cast_traveller_props_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_props_paper.png",
@@ -983,7 +983,7 @@
   "id": "castp_cast_sun_v2",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_sun_v2.png"
+   "art_src/cast/raw/cast_sun_v2_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_sun_v2_paper.png",
@@ -993,7 +993,7 @@
   "id": "castp_cast_wind_v2",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wind_v2.png"
+   "art_src/cast/raw/cast_wind_v2_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wind_v2_paper.png",
@@ -1003,7 +1003,7 @@
   "id": "castp_cast_traveller_legs_front",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_legs_front.png"
+   "art_src/cast/raw/cast_traveller_legs_front_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_legs_front_paper.png",
@@ -1013,7 +1013,7 @@
   "id": "castp_cast_traveller_legs_half",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_legs_half.png"
+   "art_src/cast/raw/cast_traveller_legs_half_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_legs_half_paper.png",
@@ -1023,7 +1023,7 @@
   "id": "castp_cast_traveller_legs_lift",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_legs_lift.png"
+   "art_src/cast/raw/cast_traveller_legs_lift_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_legs_lift_paper.png",
@@ -1033,7 +1033,7 @@
   "id": "castp_cast_traveller_walk_armless",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_walk_armless.png"
+   "art_src/cast/raw/cast_traveller_walk_armless_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_walk_armless_paper.png",
@@ -1043,7 +1043,7 @@
   "id": "castp_cast_traveller_walk_arms",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_traveller_walk_arms.png"
+   "art_src/cast/raw/cast_traveller_walk_arms_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_traveller_walk_arms_paper.png",
@@ -1053,7 +1053,7 @@
   "id": "castp_cast_wc_lineup",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wc_lineup.png"
+   "art_src/cast/raw/cast_wc_lineup_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wc_lineup_paper.png",
@@ -1063,7 +1063,7 @@
   "id": "castp_cast_dahyun_expr_a",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_dahyun_expr_a.png"
+   "art_src/cast/raw/cast_dahyun_expr_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_dahyun_expr_a_paper.png",
@@ -1073,7 +1073,7 @@
   "id": "castp_cast_dahyun_expr_b",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_dahyun_expr_b.png"
+   "art_src/cast/raw/cast_dahyun_expr_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_dahyun_expr_b_paper.png",
@@ -1083,7 +1083,7 @@
   "id": "castp_cast_dahyun_tf_a",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_dahyun_tf_a.png"
+   "art_src/cast/raw/cast_dahyun_tf_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_dahyun_tf_a_paper.png",
@@ -1093,7 +1093,7 @@
   "id": "castp_cast_dahyun_tf_b",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_dahyun_tf_b.png"
+   "art_src/cast/raw/cast_dahyun_tf_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_dahyun_tf_b_paper.png",
@@ -1103,7 +1103,7 @@
   "id": "castp_cast_dahyun_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_dahyun_walk_cycle.png"
+   "art_src/cast/raw/cast_dahyun_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_dahyun_walk_cycle_paper.png",
@@ -1113,7 +1113,7 @@
   "id": "castp_cast_dahyun_ghost_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_dahyun_ghost_cycle.png"
+   "art_src/cast/raw/cast_dahyun_ghost_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_dahyun_ghost_cycle_paper.png",
@@ -1123,7 +1123,7 @@
   "id": "castp_cast_dahyun_duck_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_dahyun_duck_cycle.png"
+   "art_src/cast/raw/cast_dahyun_duck_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_dahyun_duck_cycle_paper.png",
@@ -1133,7 +1133,7 @@
   "id": "castp_cast_witch_expr_a",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_witch_expr_a.png"
+   "art_src/cast/raw/cast_witch_expr_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_witch_expr_a_paper.png",
@@ -1143,7 +1143,7 @@
   "id": "castp_cast_witch_expr_b",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_witch_expr_b.png"
+   "art_src/cast/raw/cast_witch_expr_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_witch_expr_b_paper.png",
@@ -1153,7 +1153,7 @@
   "id": "castp_cast_witch_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_witch_walk_cycle.png"
+   "art_src/cast/raw/cast_witch_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_witch_walk_cycle_paper.png",
@@ -1163,7 +1163,7 @@
   "id": "castp_cast_witch_ghost_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_witch_ghost_cycle.png"
+   "art_src/cast/raw/cast_witch_ghost_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_witch_ghost_cycle_paper.png",
@@ -1173,7 +1173,7 @@
   "id": "castp_cast_friends_expr_a",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_friends_expr_a.png"
+   "art_src/cast/raw/cast_friends_expr_a_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_friends_expr_a_paper.png",
@@ -1183,7 +1183,7 @@
   "id": "castp_cast_friends_expr_b",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_friends_expr_b.png"
+   "art_src/cast/raw/cast_friends_expr_b_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_friends_expr_b_paper.png",
@@ -1193,7 +1193,7 @@
   "id": "castp_cast_cat_expr",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_cat_expr.png"
+   "art_src/cast/raw/cast_cat_expr_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_cat_expr_paper.png",
@@ -1203,7 +1203,7 @@
   "id": "castp_cast_cat_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_cat_walk_cycle.png"
+   "art_src/cast/raw/cast_cat_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_cat_walk_cycle_paper.png",
@@ -1213,7 +1213,7 @@
   "id": "castp_cast_cat_ghost_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_cat_ghost_cycle.png"
+   "art_src/cast/raw/cast_cat_ghost_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_cat_ghost_cycle_paper.png",
@@ -1223,7 +1223,7 @@
   "id": "castp_cast_rabbit_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_rabbit_walk_cycle.png"
+   "art_src/cast/raw/cast_rabbit_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_rabbit_walk_cycle_paper.png",
@@ -1233,7 +1233,7 @@
   "id": "castp_cast_rabbit_ghost_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_rabbit_ghost_cycle.png"
+   "art_src/cast/raw/cast_rabbit_ghost_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_rabbit_ghost_cycle_paper.png",
@@ -1243,7 +1243,7 @@
   "id": "castp_cast_bear_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_bear_walk_cycle.png"
+   "art_src/cast/raw/cast_bear_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_bear_walk_cycle_paper.png",
@@ -1253,7 +1253,7 @@
   "id": "castp_cast_bear_ghost_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_bear_ghost_cycle.png"
+   "art_src/cast/raw/cast_bear_ghost_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_bear_ghost_cycle_paper.png",
@@ -1263,7 +1263,7 @@
   "id": "castp_cast_fox_walk_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_fox_walk_cycle.png"
+   "art_src/cast/raw/cast_fox_walk_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_fox_walk_cycle_paper.png",
@@ -1273,7 +1273,7 @@
   "id": "castp_cast_fox_ghost_cycle",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_fox_ghost_cycle.png"
+   "art_src/cast/raw/cast_fox_ghost_cycle_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_fox_ghost_cycle_paper.png",
@@ -1283,7 +1283,7 @@
   "id": "castp_cast_wc_surprised_black",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wc_surprised_black.png"
+   "art_src/cast/raw/cast_wc_surprised_black_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wc_surprised_black_paper.png",
@@ -1293,10 +1293,21 @@
   "id": "castp_cast_wc_ghost_lips",
   "kind": "bg",
   "refs": [
-   "art_src/cast/raw/cast_wc_ghost_lips.png"
+   "art_src/cast/raw/cast_wc_ghost_lips_felt.png"
   ],
   "aspect": "the SAME size and orientation as the reference image (any size the tool returns is fine, save it as-is)",
   "out": "art_src/cast/raw/cast_wc_ghost_lips_paper.png",
   "prompt": "REDRAW the reference CHARACTER SHEET for a children's pop-up storybook PIECE FOR PIECE: the SAME number of figures in the SAME positions and order, each figure the SAME character in EXACTLY the same pose (every arm, hand, leg, foot, head tilt and prop in the same place), the same facial expression, the same size, outline and proportions, the same clothes and colours, the same gaps between the legs; ONLY the material changes from felt to cut paper. Every dashed or dotted stitch line in the reference is REMOVED (a hem or seam becomes a paper layer edge or a thin printed line). on a perfectly flat, uniform, solid pure MAGENTA background (#FF00FF, RGB 255,0,255) with no texture, no gradient, no vignette, no shadows on the background. Every piece is fully separate and isolated, with a clear empty magenta gap between pieces; pieces never touch or overlap each other and never touch the image border. No grid lines, no labels, no text, no letters, no numbers. STYLE (same for every piece): flat orthographic view, a die-cut pop-up book piece made of MATTE CUT PAPER and thin cardstock: every colour area is a separate cut or torn sheet of coloured paper glued in layers (a lighter or darker paper layer on top for shading and detail), crisp cut edges or softly torn deckled edges, each layer edge with a thin darker cut line and a faint lighter rim on its upper-left (lit) side, fine paper-fibre grain like handmade mulberry paper, matte, no gloss. ABSOLUTELY NO felt, NO wool, NO fuzz, NO fabric or knitted texture, NO stitches, NO dashed stitch lines, NO dotted seam lines, NO sewing seams, NO embroidery. Details are small cut paper shapes or a thin printed line, never stitching. Warm picture book for ages 3-7, no cast shadows, no drop shadows, no glow, no white sticker border around the pieces. COLOUR RULE: keep the reference colours, but NO magenta-ish colour anywhere: every pink is a warm CORAL-PEACH or SALMON-ROSE (orange-leaning), any purple a deep BLUE-violet. Characters and animals keep EXACTLY the reference design (face, eyes, mouth, expression, hair, clothes, colours, proportions, pose); only the material changes from felt to cut paper: clothes as cut paper panels, trims and ribbons as thin paper strips, fur and stripes as cut paper shapes. Objects keep their own material read in paper form: thatch and straw as layered cut straw-paper strips, plaster as cream paper, wood grain as cut brown paper strips, brick as small cut red-brown paper rectangles, stone as grey paper pieces, roof tiles as overlapping cut paper scales, water as layered teal / blue paper with cut cream ripple slivers, clouds as layered cut cream paper with NO dashed lines, plants and trees as layered cut paper leaves, fur and feathers as layered cut paper, faces simple. "
+ },
+ {
+  "id": "castnew_cast_pig_a_carry_views",
+  "kind": "bg",
+  "refs": [
+   "art_src/cast/raw/cast_pig_a_carry_cycle_paper.png",
+   "art_src/cast/raw/cast_pig_a_walk_cycle_paper.png"
+  ],
+  "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+  "out": "art_src/cast/raw/cast_pig_a_carry_views.png",
+  "prompt": "A CHARACTER SHEET for a children's pop-up storybook: FOUR separate full-body die-cut stand-up figures of the SAME little pig in one horizontal row, feet on one common baseline near the bottom, on a perfectly flat, uniform, solid pure MAGENTA background (#FF00FF, RGB 255,0,255) with no texture, no gradient, no vignette, no shadows on the background. Every piece is fully separate and isolated, with a clear empty magenta gap between pieces; pieces never touch or overlap each other and never touch the image border. No grid lines, no labels, no text, no letters, no numbers. STYLE (same for every piece): flat orthographic view, a die-cut pop-up book piece made of MATTE CUT PAPER and thin cardstock: every colour area is a separate cut or torn sheet of coloured paper glued in layers (a lighter or darker paper layer on top for shading and detail), crisp cut edges or softly torn deckled edges, each layer edge with a thin darker cut line and a faint lighter rim on its upper-left (lit) side, fine paper-fibre grain like handmade mulberry paper, matte, no gloss. ABSOLUTELY NO felt, NO wool, NO fuzz, NO fabric or knitted texture, NO stitches, NO dashed stitch lines, NO dotted seam lines, NO sewing seams, NO embroidery. Details are small cut paper shapes or a thin printed line, never stitching. Warm picture book for ages 3-7, no cast shadows, no drop shadows, no glow, no white sticker border around the pieces. COLOUR RULE: keep the reference colours, but NO magenta-ish colour anywhere: every pink is a warm CORAL-PEACH or SALMON-ROSE (orange-leaning), any purple a deep BLUE-violet. Characters and animals keep EXACTLY the reference design (face, eyes, mouth, expression, hair, clothes, colours, proportions, pose); only the material changes from felt to cut paper: clothes as cut paper panels, trims and ribbons as thin paper strips, fur and stripes as cut paper shapes. THE PIG: exactly the first reference's piglet (straw hat with a brown band, mustard knitted-look scarf drawn as cut paper strips, peach skin, curly tail) carrying the SAME golden straw bundle tied with a cord. Same size as the walking pig in the second reference. (1) BACK view walking AWAY from the viewer, LEFT foot forward: we see his hat from behind, the scarf ends, his back and curly tail, the straw bundle hugged in front of him so its golden ends stick out above both shoulders; (2) the same BACK view with the RIGHT foot forward; (3) FRONT view walking TOWARD the viewer, LEFT foot forward, hugging the straw bundle in both arms in front of his belly, a cheerful busy face; (4) the same FRONT view with the RIGHT foot forward. Every figure has a clearly VISIBLE open magenta GAP between the two legs; exactly two arms and two legs; no other character."
  }
 ]

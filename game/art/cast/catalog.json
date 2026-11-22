@@ -14118,5 +14118,125 @@
   "parts": {},
   "cycle": "run_bump_cycle",
   "frame": 3
+ },
+ {
+  "id": "cast_pig_a_carry_straw_back_0",
+  "path": "art/cast/cast_pig_a_carry_straw_back_0.webp",
+  "sheet": "cast_pig_a_carry_views",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "carry_straw_back_0",
+  "pose": "carry_straw_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "carry_straw_back frame 0 (drawn cycle)",
+  "height_units": 0.236,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig_a",
+   "three_pigs",
+   "cycle"
+  ],
+  "px": [
+   362,
+   604
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "carry_straw_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_a_carry_straw_back_1",
+  "path": "art/cast/cast_pig_a_carry_straw_back_1.webp",
+  "sheet": "cast_pig_a_carry_views",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "carry_straw_back_1",
+  "pose": "carry_straw_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "carry_straw_back frame 1 (drawn cycle)",
+  "height_units": 0.236,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig_a",
+   "three_pigs",
+   "cycle"
+  ],
+  "px": [
+   362,
+   604
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "carry_straw_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_pig_a_carry_straw_front_0",
+  "path": "art/cast/cast_pig_a_carry_straw_front_0.webp",
+  "sheet": "cast_pig_a_carry_views",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "carry_straw_front_0",
+  "pose": "carry_straw_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "carry_straw_front frame 0 (drawn cycle)",
+  "height_units": 0.236,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig_a",
+   "three_pigs",
+   "cycle"
+  ],
+  "px": [
+   362,
+   604
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "carry_straw_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_pig_a_carry_straw_front_1",
+  "path": "art/cast/cast_pig_a_carry_straw_front_1.webp",
+  "sheet": "cast_pig_a_carry_views",
+  "category": "cast",
+  "role": "pig_a",
+  "variant": "carry_straw_front_1",
+  "pose": "carry_straw_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "carry_straw_front frame 1 (drawn cycle)",
+  "height_units": 0.236,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "pig_a",
+   "three_pigs",
+   "cycle"
+  ],
+  "px": [
+   362,
+   604
+  ],
+  "hanging": false,
+  "skin": "pig_a",
+  "parts": {},
+  "cycle": "carry_straw_front",
+  "frame": 1
  }
 ]

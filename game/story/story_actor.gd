@@ -159,6 +159,10 @@ func follow(points: Array, spd := -1.0, wpose := "", fly := true) -> void:
 	_moving = true
 
 
+static var _log_figs: bool = "--log-figs" in OS.get_cmdline_user_args()
+var _last_fig_logged := ""
+
+
 func moving() -> bool:
 	return _moving
 
@@ -292,3 +296,6 @@ func _pick_view(dir: Vector3) -> void:
 	view = nv
 	facing_left = left
 	puppet.set_figure(fig, facing_left and view_of(fig) == "side")
+	if _log_figs and fig != _last_fig_logged:  # --log-figs: which figure each travel uses (hopping-card check)
+		_last_fig_logged = fig
+		print("TRAVEL_FIG ", role, " ", fig, " view=", nv, " puppet_fig=", puppet.get("pose"))

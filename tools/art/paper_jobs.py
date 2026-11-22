@@ -113,6 +113,23 @@ for tale, sheets in CAST_SHEETS.items():
                      "out": RAW_C + s + "_paper.png",
                      "prompt": CAST_REDRAW + BG + PAPER + CHAR + MATERIALS})
 
+# ---------------------------------------------------------------- new paper walk frames (2026-11-22, coordinator: no
+# hopping card or straw that vanishes when 첫째 walks away from / toward the camera carrying straw)
+JOBS.append({"id": "castnew_cast_pig_a_carry_views", "kind": "bg",
+             "refs": [RAW_C + "cast_pig_a_carry_cycle_paper.png", RAW_C + "cast_pig_a_walk_cycle_paper.png"],
+             "aspect": "wide landscape (any wide size the tool returns is fine, e.g. 2172x724; save it as-is)",
+             "out": RAW_C + "cast_pig_a_carry_views.png",
+             "prompt": "A CHARACTER SHEET for a children's pop-up storybook: FOUR separate full-body die-cut stand-up figures "
+             "of the SAME little pig in one horizontal row, feet on one common baseline near the bottom, " + BG + PAPER + CHAR +
+             "THE PIG: exactly the first reference's piglet (straw hat with a brown band, mustard knitted-look scarf drawn "
+             "as cut paper strips, peach skin, curly tail) carrying the SAME golden straw bundle tied with a cord. Same size "
+             "as the walking pig in the second reference. (1) BACK view walking AWAY from the viewer, LEFT foot forward: we "
+             "see his hat from behind, the scarf ends, his back and curly tail, the straw bundle hugged in front of him so "
+             "its golden ends stick out above both shoulders; (2) the same BACK view with the RIGHT foot forward; (3) FRONT "
+             "view walking TOWARD the viewer, LEFT foot forward, hugging the straw bundle in both arms in front of his belly, "
+             "a cheerful busy face; (4) the same FRONT view with the RIGHT foot forward. Every figure has a clearly VISIBLE "
+             "open magenta GAP between the two legs; exactly two arms and two legs; no other character."})
+
 if __name__ == "__main__":
     out = os.path.join(HERE, "paper_jobs.json")
     json.dump(JOBS, open(out, "w"), ensure_ascii=False, indent=1)
