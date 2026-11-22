@@ -1,0 +1,12 @@
+{
+ "note": "Bookshelf order + business-model data (docs/APP_UI_PLAN.md). A tale appears only when res://stories/<id>/story.tscn and script.json exist (so wolf_goats / patjuk show up by themselves when their agents land them); a story dir not listed here is appended at the end. Fields: free (open without '모든 동화 열기'), kind classic|original (original = creative tale with the child's name; name_slots = the name slots its lines use), hidden (true = keep it off the shelf while it is being built). Tale agents may add or edit their own entry.",
+ "tales": [
+  {"id": "sun_wind", "kind": "classic", "free": true},
+  {"id": "three_pigs", "kind": "classic", "free": false},
+  {"id": "witch_candy", "kind": "original", "free": true, "name_slots": ["A"], "default_names": {"A": "다현"}},
+  {"id": "sunmoon", "kind": "classic", "free": false},
+  {"id": "wolf_goats", "kind": "classic", "free": false},
+  {"id": "patjuk", "kind": "classic", "free": true},
+  {"id": "turnip", "kind": "classic", "free": false}
+ ]
+}

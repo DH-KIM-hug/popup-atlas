@@ -1,0 +1,416 @@
+{
+ "note": "Name lines as name piece (N) + fixed pieces (S), joined on the device by game/app/name_voice.gd (톡톡 동화극장 method, 2026-11-22). tpl: {A:<after a final consonant>/<after a vowel>} = the child's name + particle. Made by tools/app/name_pieces.py from 톡톡's bundle (parts/) and its chosen default-name takes.",
+ "tale": "witch_candy",
+ "slot": "A",
+ "default_name": "다현",
+ "sample_rate": 24000,
+ "target_lufs": -16.0,
+ "lines": {
+  "wc_004": {
+   "seg": 0,
+   "ttk_n": 1,
+   "text_old": "다현이랑 친구들은 사탕 가게로 쪼르르 들어갔어요.",
+   "text": "다현이랑 친구들은 사탕 가게로 쪼르르 들어갔어요.",
+   "gain_db": 2.8,
+   "ttk_full_default": "audio/el/witch_candy/name/29e7ea0ab6.mp3",
+   "pieces": [
+    {
+     "k": "N",
+     "tpl": "{A:이랑/랑}",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_30aa3eb3846b.wav",
+     "src": "~/.paper-tale/name_split/raw/30aa3eb3846b_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "친구들은 사탕 가게로 쪼르르 들어갔어요.",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_2b998feb0cc5.wav",
+     "src": "audio/el/witch_candy/parts/ko_2b998feb0cc5.mp3"
+    }
+   ]
+  },
+  "wc_042": {
+   "seg": 0,
+   "ttk_n": 2,
+   "text_old": "다현이가 넣어 줘. 하나든 여러 개든 좋아.",
+   "text": "다현아, 네가 넣어 줘. 하나든 여러 개든 좋아.",
+   "gain_db": 2.9,
+   "ttk_full_default": "audio/el/witch_candy/name/7ca67ace62.mp3",
+   "pieces": [
+    {
+     "k": "N",
+     "tpl": "{A:아/야},",
+     "gap": 0.16,
+     "audio": "res://audio/voice/witch_candy/name/ko_99eb5b70b570.wav",
+     "src": "~/.paper-tale/name_split/raw/99eb5b70b570_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "네가 넣어 줘. 하나든 여러 개든 좋아.",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_e730a9298a1f.wav",
+     "src": "audio/el/witch_candy/parts/ko_e730a9298a1f.mp3"
+    }
+   ]
+  },
+  "wc_096": {
+   "seg": 0,
+   "ttk_n": 3,
+   "text_old": "뿅! 다현이가 빨간 딸기가 됐어요!",
+   "text": "뿅! 다현이가 빨간 딸기가 됐어요!",
+   "gain_db": 0.6,
+   "ttk_full_default": "audio/el/witch_candy/name/0fdb609bad.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이가/가}",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_c6b6ec46a61e.wav",
+     "src": "~/.paper-tale/name_split/raw/c6b6ec46a61e_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "빨간 딸기가 됐어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_a4c93bd830b7.wav",
+     "src": "audio/el/witch_candy/parts/ko_a4c93bd830b7.mp3"
+    }
+   ]
+  },
+  "wc_097": {
+   "seg": 0,
+   "ttk_n": 4,
+   "text_old": "뿅! 다현이 발이 오리발이 됐어요!",
+   "text": "뿅! 다현이 발이 오리발이 됐어요!",
+   "gain_db": 0.0,
+   "ttk_full_default": "audio/el/witch_candy/name/e62097ddf1.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이/} 발이",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_90652525dfe4.wav",
+     "src": "~/.paper-tale/name_split/raw/90652525dfe4_1.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "오리발이 됐어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_71483db6f465.wav",
+     "src": "audio/el/witch_candy/parts/ko_71483db6f465.mp3"
+    }
+   ]
+  },
+  "wc_098": {
+   "seg": 0,
+   "ttk_n": 5,
+   "text_old": "뿅! 다현이한테 물고기 꼬리가 생겼어요!",
+   "text": "뿅! 다현이한테 물고기 꼬리가 생겼어요!",
+   "gain_db": 1.3,
+   "ttk_full_default": "audio/el/witch_candy/name/eff9418f91.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이한테/한테}",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_9001d24aa48b.wav",
+     "src": "~/.paper-tale/name_split/raw/9001d24aa48b_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "물고기 꼬리가 생겼어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_2d1d30dbea0e.wav",
+     "src": "audio/el/witch_candy/parts/ko_2d1d30dbea0e.mp3"
+    }
+   ]
+  },
+  "wc_099": {
+   "seg": 0,
+   "ttk_n": 6,
+   "text_old": "뿅! 다현이의 볼이랑 배가 호박처럼 환해졌어요!",
+   "text": "뿅! 다현이의 볼이랑 배가 호박처럼 환해졌어요!",
+   "gain_db": 2.0,
+   "ttk_full_default": "audio/el/witch_candy/name/52669c6e59.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이의/의} 볼이랑",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_083a243ac0d9.wav",
+     "src": "~/.paper-tale/name_split/raw/083a243ac0d9_1.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "배가 호박처럼 환해졌어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_3f351dbe4c85.wav",
+     "src": "audio/el/witch_candy/parts/ko_3f351dbe4c85.mp3"
+    }
+   ]
+  },
+  "wc_100": {
+   "seg": 0,
+   "ttk_n": 7,
+   "text_old": "뿅! 다현이 등에 박쥐 날개가 돋았어요!",
+   "text": "뿅! 다현이 등에 박쥐 날개가 돋았어요!",
+   "gain_db": 1.3,
+   "ttk_full_default": "audio/el/witch_candy/name/892ccf0ce4.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이/} 등에",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_0ba382d60cd3.wav",
+     "src": "~/.paper-tale/name_split/raw/0ba382d60cd3_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "박쥐 날개가 돋았어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_b9829012f3b9.wav",
+     "src": "audio/el/witch_candy/parts/ko_b9829012f3b9.mp3"
+    }
+   ]
+  },
+  "wc_101": {
+   "seg": 0,
+   "ttk_n": 8,
+   "text_old": "뿅! 다현이 입에 초콜릿 수염이 났어요!",
+   "text": "뿅! 다현이 입에 초콜릿 수염이 났어요!",
+   "gain_db": 1.2,
+   "ttk_full_default": "audio/el/witch_candy/name/af6caa47d4.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이/} 입에",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_49a9c45a62aa.wav",
+     "src": "~/.paper-tale/name_split/raw/49a9c45a62aa_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "초콜릿 수염이 났어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_ea1ba64fcd44.wav",
+     "src": "audio/el/witch_candy/parts/ko_ea1ba64fcd44.mp3"
+    }
+   ]
+  },
+  "wc_114": {
+   "seg": 0,
+   "ttk_n": 12,
+   "text_old": "깜깜한 길이 다현이 덕분에 환해졌어요.",
+   "text": "다현이 덕분에 깜깜한 길이 환해졌어요.",
+   "gain_db": 2.2,
+   "ttk_full_default": "audio/el/witch_candy/name/f3fc1a047e.mp3",
+   "pieces": [
+    {
+     "k": "N",
+     "tpl": "{A:이/} 덕분에",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_e312a8e2c813.wav",
+     "src": "~/.paper-tale/name_split/raw/e312a8e2c813_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "깜깜한 길이 환해졌어요.",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_4ddd6047ef16.wav",
+     "src": "audio/el/witch_candy/parts/ko_4ddd6047ef16.mp3"
+    }
+   ]
+  },
+  "wc_119": {
+   "seg": 0,
+   "ttk_n": 16,
+   "text_old": "뿅! 다현이는 다시 원래대로 돌아왔어요.",
+   "text": "뿅! 다현이는 다시 원래대로 돌아왔어요.",
+   "gain_db": 2.2,
+   "ttk_full_default": "audio/el/witch_candy/name/950e07d81c.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_b97c0a407c32.wav",
+     "src": "audio/el/witch_candy/parts/ko_b97c0a407c32.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이는/는}",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_74a5a1515968.wav",
+     "src": "~/.paper-tale/name_split/raw/74a5a1515968_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "다시 원래대로 돌아왔어요.",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_2a56aadf1aab.wav",
+     "src": "audio/el/witch_candy/parts/ko_2a56aadf1aab.mp3"
+    }
+   ]
+  },
+  "wc_141": {
+   "seg": 0,
+   "ttk_n": 17,
+   "text_old": "다현이 덕분에 사탕이 가득! 내년에도 같이 섞자.",
+   "text": "다현이 덕분에 사탕이 가득! 내년에도 같이 섞자.",
+   "gain_db": 2.0,
+   "ttk_full_default": "audio/el/witch_candy/name/fbbcf922fd.mp3",
+   "pieces": [
+    {
+     "k": "N",
+     "tpl": "{A:이/} 덕분에",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_bcaa1c9cc391.wav",
+     "src": "~/.paper-tale/name_split/raw/bcaa1c9cc391_1.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "사탕이 가득! 내년에도 같이 섞자.",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_539f7377825b.wav",
+     "src": "audio/el/witch_candy/parts/ko_539f7377825b.mp3"
+    }
+   ]
+  },
+  "wc_148": {
+   "seg": 0,
+   "ttk_n": 18,
+   "text_old": "뿅! 다현이가 동그란 연두 키위가 됐어요!",
+   "text": "뿅! 다현이가 동그란 연두 키위가 됐어요!",
+   "gain_db": 1.3,
+   "ttk_full_default": "audio/el/witch_candy/name/5dbe3f0299.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이가/가}",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_632b0487ad10.wav",
+     "src": "~/.paper-tale/name_split/raw/632b0487ad10_1.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "동그란 연두 키위가 됐어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_b6c48d5bccbf.wav",
+     "src": "audio/el/witch_candy/parts/ko_b6c48d5bccbf.mp3"
+    }
+   ]
+  },
+  "wc_151": {
+   "seg": 0,
+   "ttk_n": 20,
+   "text_old": "뿅! 다현이한테 초록 악어 꼬리가 생겼어요!",
+   "text": "뿅! 다현이한테 초록 악어 꼬리가 생겼어요!",
+   "gain_db": 1.1,
+   "ttk_full_default": "audio/el/witch_candy/name/8aa02c7a1c.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이한테/한테}",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_04a0f9d6c621.wav",
+     "src": "~/.paper-tale/name_split/raw/04a0f9d6c621_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "초록 악어 꼬리가 생겼어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_4248244fcd39.wav",
+     "src": "audio/el/witch_candy/parts/ko_4248244fcd39.mp3"
+    }
+   ]
+  },
+  "wc_154": {
+   "seg": 0,
+   "ttk_n": 22,
+   "text_old": "뿅! 다현이가 청록 개구리가 됐어요!",
+   "text": "뿅! 다현이가 청록 개구리가 됐어요!",
+   "gain_db": 0.9,
+   "ttk_full_default": "audio/el/witch_candy/name/cd65f52cff.mp3",
+   "pieces": [
+    {
+     "k": "S",
+     "tpl": "뿅!",
+     "gap": 0.4,
+     "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav",
+     "src": "audio/el/witch_candy/parts/ko_29b43d27b14e.mp3"
+    },
+    {
+     "k": "N",
+     "tpl": "{A:이가/가}",
+     "gap": 0.05,
+     "audio": "res://audio/voice/witch_candy/name/ko_1191037ee086.wav",
+     "src": "~/.paper-tale/name_split/raw/1191037ee086_0.mp3"
+    },
+    {
+     "k": "S",
+     "tpl": "청록 개구리가 됐어요!",
+     "gap": 0,
+     "audio": "res://audio/voice/witch_candy/name/ko_e6bf27f5b650.wav",
+     "src": "audio/el/witch_candy/parts/ko_e6bf27f5b650.mp3"
+    }
+   ]
+  }
+ }
+}

@@ -178,12 +178,17 @@ func _load_script() -> void:
 	for role in (data.get("cast", {}) as Dictionary):
 		if str((data["cast"][role] as Dictionary).get("kind", "")) == "walker":
 			_walker_role = str(role)
+	_names_setup()
 	for l: Dictionary in data.get("lines", []):
 		lines[str(l["id"])] = l
 		if not l.get("used", true):
 			continue
 		for s: Dictionary in l["segs"]:
 			var p := str(s.get("audio", ""))
+			if s.has("pieces"):  # creative-tale name line: name piece + fixed pieces (NameVoice)
+				if not NameVoice.pieces_exist(s) and not missing_audio.has(str(l["id"])):
+					missing_audio.append(str(l["id"]))
+				continue
 			if p == "" or not ResourceLoader.exists(p):
 				if not missing_audio.has(str(l["id"])):
 					missing_audio.append(str(l["id"]))
@@ -279,6 +284,43 @@ func _auto_tap(target: String) -> void:
 
 # ------------------------------------------------------------------ lines
 
+## Creative-tale name lines (app shell 2026-11-23, docs/APP_UI_PLAN.md): segs with `pieces` play as the name piece +
+## fixed pieces joined into one clip (NameVoice, 톡톡's method). A parent's name (AppState, never in command-line
+## runs) replaces the name in the captions and the name piece once all its recordings are on the device.
+var _custom_names := false
+
+
+func _names_setup() -> void:
+	var tale := str(data.get("tale_id", ""))
+	var defaults := TaleList.default_names(tale)
+	if defaults.is_empty():
+		return
+	var names := NameVoice.active_names(tale, defaults)
+	_custom_names = names != defaults
+	for l: Dictionary in data.get("lines", []):
+		var segs: Array = l.get("segs", [])
+		for i in segs.size():
+			var s: Dictionary = segs[i]
+			if not s.has("pieces"):
+				continue
+			s["_nv"] = [str(l["id"]), i]
+			if _custom_names:
+				var quoted := str(s["text"]).strip_edges().begins_with("\"")
+				var t := NameVoice.seg_text(s, names)
+				s["text"] = ("\"%s\"" % t) if quoted else t
+				if segs.size() == 1:
+					l["text"] = ("\"%s\"" % t) if str(l["text"]).strip_edges().begins_with("\"") else t
+
+
+func _seg_stream(s: Dictionary) -> AudioStream:
+	if s.has("_nv"):
+		var nv: Array = s["_nv"]
+		var st := NameVoice.stream_for(str(data.get("tale_id", "")), nv[0], nv[1], s, _custom_names)
+		if st:
+			return st
+	return _stream(str(s.get("audio", "")))
+
+
 func _stream(path: String) -> AudioStream:
 	if path == "" or not ResourceLoader.exists(path):
 		return null
@@ -288,7 +330,7 @@ func _stream(path: String) -> AudioStream:
 
 
 func _seg_duration(s: Dictionary) -> float:
-	var st := _stream(str(s.get("audio", "")))
+	var st := _seg_stream(s)
 	if st:
 		return st.get_length()
 	# No recording yet (changed line): read-aloud estimate, ~7 syllables a second.
@@ -329,7 +371,7 @@ func _say(id: String, only: Array = []) -> void:
 		_speaker_begin(id, i, s)
 		ui.show_line(l, i)
 		_apply_expr(l, i)
-		var st := _stream(str(s.get("audio", "")))
+		var st := _seg_stream(s)
 		if st and not mute:
 			# one caption, one voice (witch_candy v8): count a segment voiced twice in the run and a voice that starts
 			# while another is still sounding (it would be cut or doubled)

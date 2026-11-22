@@ -1,0 +1,55 @@
+{
+  "identifier" : "C4E2A9B1",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : true,
+      "internalID" : "6750000001",
+      "localizations" : [
+        {
+          "description" : "앱의 모든 동화(향후 추가되는 동화 포함)를 볼 수 있고 창작동화 아이이름 변경권 1회 제공됩니다",
+          "displayName" : "모든 동화 열기(아이이름 변경권 1회 포함)",
+          "locale" : "ko"
+        },
+        {
+          "description" : "All tales (incl. future ones) + one child-name change",
+          "displayName" : "All tales + 1 name change",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.house4k2b.popupstorybook.unlockall",
+      "referenceName" : "Unlock all",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "6750000002",
+      "localizations" : [
+        {
+          "description" : "창작 동화의 아이 이름을 한 번에 정하거나 바꿔요",
+          "displayName" : "아이 이름 변경권",
+          "locale" : "ko"
+        },
+        {
+          "description" : "Set or change the child's name in the original tales",
+          "displayName" : "Child Name Change Pass",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.house4k2b.popupstorybook.rename",
+      "referenceName" : "Child Name Change Pass",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_failTransactionsEnabled" : false,
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}

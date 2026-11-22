@@ -152,6 +152,8 @@ RESULTS = {
 
 # ---------------------------------------------------------------- stage
 HANDLER = "res://stories/witch_candy/fx.gd"   # phase 2
+# 2026-11-23: name lines = name piece + fixed pieces (톡톡 method); table made by tools/app/name_pieces.py
+NAME_PIECES = "game/audio/voice/witch_candy/name/pieces.json"
 BACKDROP = True
 INSIDE_FRAMING = "manual"
 # v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아"): stage spacing solver + OVERLAP / OCCLUDE log; intentional contacts listed

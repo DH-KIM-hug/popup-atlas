@@ -245,6 +245,12 @@ if __name__ == "__main__":
         script = json.loads(OUT.read_text(encoding="utf-8"))
     else:
         script = build()
+        # 2026-11-23 (app shell): creative-tale name lines as name piece + fixed pieces (tools/app/name_pieces.py writes
+        # the table; the tale table names it as NAME_PIECES); a reseed keeps the pieces and the split-line wording
+        if getattr(T, "NAME_PIECES", ""):
+            sys.path.insert(0, str(REPO / "tools" / "app"))
+            from name_pieces_apply import apply_to_script
+            apply_to_script(script, json.loads((REPO / T.NAME_PIECES).read_text(encoding="utf-8")))
         OUT.parent.mkdir(parents=True, exist_ok=True)
         OUT.write_text(json.dumps(script, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         print("wrote", OUT)

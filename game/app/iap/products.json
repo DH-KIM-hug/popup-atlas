@@ -1,0 +1,22 @@
+{
+ "note": "In-app products (same products, prices and wording as 톡톡 동화극장 store/iap.md, user-confirmed 2026-11-22; product IDs under this app's bundle id). Mirrors iap/Products.storekit (Xcode StoreKit testing). The rename description drops '4편' and '모습' (this app has one creative tale and no hero-look option yet) - see docs/APP_UI_PLAN.md [결정 필요].",
+ "unlockall": {
+  "id": "com.house4k2b.popupstorybook.unlockall",
+  "type": "non_consumable",
+  "price_usd": "4.99",
+  "display_price": "$4.99",
+  "family_shareable": true,
+  "ko": {"name": "모든 동화 열기(아이이름 변경권 1회 포함)", "desc": "앱의 모든 동화(향후 추가되는 동화 포함)를 볼 수 있고 창작동화 아이이름 변경권 1회 제공됩니다", "button": "모든 동화 열기"},
+  "en": {"name": "All tales + 1 name change", "desc": "All tales (incl. future ones) + one child-name change", "button": "Unlock all"}
+ },
+ "rename": {
+  "id": "com.house4k2b.popupstorybook.rename",
+  "type": "consumable",
+  "price_usd": "1.99",
+  "display_price": "$1.99",
+  "family_shareable": false,
+  "run_hours": 48,
+  "ko": {"name": "아이 이름 변경권", "desc": "창작 동화의 아이 이름을 한 번에 정하거나 바꿔요", "button": "변경권"},
+  "en": {"name": "Child Name Change Pass", "desc": "Set or change the child's name in the original tales", "button": "Name pass"}
+ }
+}

@@ -13486,7 +13486,23 @@
      "tags": "[warm, playful storytelling, slow, clear, cosy Halloween night, never scary]",
      "audio": "res://audio/voice/witch_candy/nar_f4066af88f.mp3",
      "source_audio": "audio/el/witch_candy/nar_f4066af88f.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "N",
+       "tpl": "{A:이랑/랑}",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_30aa3eb3846b.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "친구들은 사탕 가게로 쪼르르 들어갔어요.",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_2b998feb0cc5.wav"
+      }
+     ],
+     "name_gain_db": 2.8,
+     "name_slot": "A"
     }
    ],
    "source_index": 4,
@@ -14347,7 +14363,7 @@
   {
    "id": "wc_042",
    "speaker": "witch",
-   "text": "\"다현이가 넣어 줘. 하나든 여러 개든 좋아.\"",
+   "text": "\"다현아, 네가 넣어 줘. 하나든 여러 개든 좋아.\"",
    "status": "reuse",
    "beat": "",
    "interaction": "",
@@ -14355,12 +14371,28 @@
    "segs": [
     {
      "speaker": "witch",
-     "text": "다현이가 넣어 줘. 하나든 여러 개든 좋아.",
+     "text": "다현아, 네가 넣어 줘. 하나든 여러 개든 좋아.",
      "emotion": "happy",
      "tags": "[kind quirky witch, warm, giggly, a little silly, never scary]",
      "audio": "res://audio/voice/witch_candy/witch_67ea3cbc9b.mp3",
      "source_audio": "audio/el/witch_candy/witch_67ea3cbc9b.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "N",
+       "tpl": "{A:아/야},",
+       "gap": 0.16,
+       "audio": "res://audio/voice/witch_candy/name/ko_99eb5b70b570.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "네가 넣어 줘. 하나든 여러 개든 좋아.",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_e730a9298a1f.wav"
+      }
+     ],
+     "name_gain_db": 2.9,
+     "name_slot": "A"
     }
    ],
    "source_index": 42,
@@ -15560,7 +15592,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_ced4433617.mp3",
      "source_audio": "audio/el/witch_candy/nar_ced4433617.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이가/가}",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_c6b6ec46a61e.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "빨간 딸기가 됐어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_a4c93bd830b7.wav"
+      }
+     ],
+     "name_gain_db": 0.6,
+     "name_slot": "A"
     }
    ],
    "source_index": 96,
@@ -15582,7 +15636,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_11b3ff8b5b.mp3",
      "source_audio": "audio/el/witch_candy/nar_11b3ff8b5b.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이/} 발이",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_90652525dfe4.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "오리발이 됐어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_71483db6f465.wav"
+      }
+     ],
+     "name_gain_db": 0.0,
+     "name_slot": "A"
     }
    ],
    "source_index": 97,
@@ -15604,7 +15680,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_42be77b05d.mp3",
      "source_audio": "audio/el/witch_candy/nar_42be77b05d.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이한테/한테}",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_9001d24aa48b.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "물고기 꼬리가 생겼어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_2d1d30dbea0e.wav"
+      }
+     ],
+     "name_gain_db": 1.3,
+     "name_slot": "A"
     }
    ],
    "source_index": 98,
@@ -15626,7 +15724,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_dff1f028ec.mp3",
      "source_audio": "audio/el/witch_candy/nar_dff1f028ec.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이의/의} 볼이랑",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_083a243ac0d9.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "배가 호박처럼 환해졌어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_3f351dbe4c85.wav"
+      }
+     ],
+     "name_gain_db": 2.0,
+     "name_slot": "A"
     }
    ],
    "source_index": 99,
@@ -15648,7 +15768,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_bf47ef7763.mp3",
      "source_audio": "audio/el/witch_candy/nar_bf47ef7763.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이/} 등에",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_0ba382d60cd3.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "박쥐 날개가 돋았어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_b9829012f3b9.wav"
+      }
+     ],
+     "name_gain_db": 1.3,
+     "name_slot": "A"
     }
    ],
    "source_index": 100,
@@ -15670,7 +15812,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_6694b9376d.mp3",
      "source_audio": "audio/el/witch_candy/nar_6694b9376d.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이/} 입에",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_49a9c45a62aa.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "초콜릿 수염이 났어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_ea1ba64fcd44.wav"
+      }
+     ],
+     "name_gain_db": 1.2,
+     "name_slot": "A"
     }
    ],
    "source_index": 101,
@@ -15946,7 +16110,7 @@
   {
    "id": "wc_114",
    "speaker": "nar",
-   "text": "깜깜한 길이 다현이 덕분에 환해졌어요.",
+   "text": "다현이 덕분에 깜깜한 길이 환해졌어요.",
    "status": "reuse",
    "beat": "round1",
    "interaction": "brew",
@@ -15954,12 +16118,28 @@
    "segs": [
     {
      "speaker": "nar",
-     "text": "깜깜한 길이 다현이 덕분에 환해졌어요.",
+     "text": "다현이 덕분에 깜깜한 길이 환해졌어요.",
      "emotion": "happy",
      "tags": "[playful storytelling, rhythmic on the sound words, smiling]",
      "audio": "res://audio/voice/witch_candy/nar_f8b54f0156.mp3",
      "source_audio": "audio/el/witch_candy/nar_f8b54f0156.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "N",
+       "tpl": "{A:이/} 덕분에",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_e312a8e2c813.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "깜깜한 길이 환해졌어요.",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_4ddd6047ef16.wav"
+      }
+     ],
+     "name_gain_db": 2.2,
+     "name_slot": "A"
     }
    ],
    "source_index": 114,
@@ -16074,7 +16254,29 @@
      "tags": "[warm, settling, a pop on 뿅, gentle]",
      "audio": "res://audio/voice/witch_candy/nar_5454bfedf2.mp3",
      "source_audio": "audio/el/witch_candy/nar_5454bfedf2.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_b97c0a407c32.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이는/는}",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_74a5a1515968.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "다시 원래대로 돌아왔어요.",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_2a56aadf1aab.wav"
+      }
+     ],
+     "name_gain_db": 2.2,
+     "name_slot": "A"
     }
    ],
    "source_index": 119,
@@ -16605,7 +16807,23 @@
      "tags": "[kind quirky witch, grateful, warm, smiling]",
      "audio": "res://audio/voice/witch_candy/witch_210ab58401.mp3",
      "source_audio": "audio/el/witch_candy/witch_210ab58401.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "N",
+       "tpl": "{A:이/} 덕분에",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_bcaa1c9cc391.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "사탕이 가득! 내년에도 같이 섞자.",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_539f7377825b.wav"
+      }
+     ],
+     "name_gain_db": 2.0,
+     "name_slot": "A"
     }
    ],
    "source_index": 141,
@@ -16765,7 +16983,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_03bebd4ca4.mp3",
      "source_audio": "audio/el/witch_candy/nar_03bebd4ca4.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이가/가}",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_632b0487ad10.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "동그란 연두 키위가 됐어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_b6c48d5bccbf.wav"
+      }
+     ],
+     "name_gain_db": 1.3,
+     "name_slot": "A"
     }
    ],
    "source_index": 148,
@@ -16831,7 +17071,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_73ce34feef.mp3",
      "source_audio": "audio/el/witch_candy/nar_73ce34feef.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이한테/한테}",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_04a0f9d6c621.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "초록 악어 꼬리가 생겼어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_4248244fcd39.wav"
+      }
+     ],
+     "name_gain_db": 1.1,
+     "name_slot": "A"
     }
    ],
    "source_index": 151,
@@ -16897,7 +17159,29 @@
      "tags": "[bright, magical, excited storytelling, a pop on 뿅]",
      "audio": "res://audio/voice/witch_candy/nar_ff4bc5736c.mp3",
      "source_audio": "audio/el/witch_candy/nar_ff4bc5736c.mp3",
-     "status": "reuse"
+     "status": "reuse",
+     "pieces": [
+      {
+       "k": "S",
+       "tpl": "뿅!",
+       "gap": 0.4,
+       "audio": "res://audio/voice/witch_candy/name/ko_29b43d27b14e.wav"
+      },
+      {
+       "k": "N",
+       "tpl": "{A:이가/가}",
+       "gap": 0.05,
+       "audio": "res://audio/voice/witch_candy/name/ko_1191037ee086.wav"
+      },
+      {
+       "k": "S",
+       "tpl": "청록 개구리가 됐어요!",
+       "gap": 0,
+       "audio": "res://audio/voice/witch_candy/name/ko_e6bf27f5b650.wav"
+      }
+     ],
+     "name_gain_db": 0.9,
+     "name_slot": "A"
     }
    ],
    "source_index": 154,

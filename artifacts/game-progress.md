@@ -1970,3 +1970,30 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     cycle, feet on the ground; the drawn bump run reads in the wide (runaway_v10.jpg).
   - Full run v11 (sunmoon_full_v11.mp4 25.4 MB, full_v11_sheet.jpg): STORY_DONE 388.0 s (6:28), CHECK_LINES OK (64),
     VOICE_DUP=0, CAM_JUMP=0 CAM_JERK=0 SPEAKER_OFF=1, no missing audio / sound, no script errors.
+
+## 2026-11-23 — app shell: bookshelf, parent gate / menu, 이용권 (톡톡 BM), child-name setup, name pieces
+  - User: "앱 기본 UI 설계 … BM은 톡톡 그림동화랑 마찬가지로 이름바꾸기권 — 최근 창작동화 녹음방식 바꿈. 이거 적용 + 모든
+    동화 열기로 세팅". Spec docs/APP_UI_PLAN.md (screens, flow, BM table, name-piece audio, [결정 필요]).
+  - Shell (game/app/*, game/story/shelf.gd, autoload App): tales from game/app/tales.json + every story folder with
+    story.tscn + script.json (wolf_goats, patjuk, turnip appeared by themselves: 7 books); grid landscape 2x2 (approved
+    table kept) / 3 columns for 5+, portrait 2 columns; paper lock tags; gear (hold 1 s) -> parent gate (multiplication,
+    hold the answer 1.5 s) -> 보호자 메뉴 -> 이용권 / 우리 아이 이름 / 설정 / 앱 정보; locked book -> child card
+    "어른에게 보여 주세요"; in a tale opened from the shelf a paper "책장" button beside 자막 (command-line runs untouched).
+    UI laid out in points (root scaled by px_per_pt): every tap target >= 80 pt in landscape and portrait.
+  - BM = 톡톡 (store/iap.md, user-confirmed names / prices): 모든 동화 열기(아이이름 변경권 1회 포함) $4.99 non-consumable,
+    family sharing, + one free first name setup per creative tale; 아이 이름 변경권 $1.99 consumable, anyone, one pass =
+    48 h to set / redo every creative tale. Entitlements.DEV_UNLOCK_ALL = true ("모든 동화 열기로 세팅": the dev build
+    plays every tale; `--app-locked` shows the store build). StoreBridge = StoreKit stub (test sheet, local ledger for
+    restore, no money / network); game/app/iap/Products.storekit + products.json.
+  - Name audio (톡톡 373ad128): witch_candy's 14 name lines (10 used) now play as name piece + fixed pieces joined on the
+    device (NameVoice: trim -45 dB, name piece matched to the fixed pieces' RMS, 6/12 ms fades, 톡톡 gaps, -16 LUFS gain,
+    soft limiter) -> one AudioStreamWAV, ~13 ms per line. Pieces: 톡톡's bundle parts/ + its chosen default-name takes,
+    copied by tools/app/name_pieces.py (mapping game/audio/voice/witch_candy/name/pieces.json; reseed keeps them via
+    NAME_PIECES). Joined default vs 톡톡's own assembled default: same length within 0.02-0.24 s, -16.0 vs -16.5 LUFS.
+    wc_114 takes 톡톡's new word order "다현이 덕분에 깜깜한 길이 환해졌어요.". A parent's name replaces the captions
+    and the name piece only once its pieces are on the device (server path documented, not called).
+  - Regression (no movie, after the runner edit): witch_candy STORY_DONE 454.5 s (443.7 before; the joined lines),
+    CHECK_LINES OK (61 segs), VOICE_DUP=0, missing_audio=[]; sun_wind 212.2 s, CHECK_LINES OK, VOICE_DUP=0,
+    missing_audio=[].
+  - Screens: artifacts/app_ui/v1/app_ui_sheet.jpg (13 screens x landscape 1200x900 + portrait 675x900; a 900x1200 window
+    does not fit this Mac's screen, 675 pt is the strict case). tools/app/shots.sh, tools/app/regress.sh.
