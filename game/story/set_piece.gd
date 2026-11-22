@@ -514,7 +514,13 @@ func _process(dt: float) -> void:
 		return
 	_t += dt
 	if box:
-		box.visible = shown >= bands.size()
+		# 2026-11-22 (user: "마지막에 집 접힐때 왜 안접히는게 있는지"): the body is not on a hinge, so when the page folds it
+		# collapses with the front (its height follows the lowest band's openness), never left standing as an empty box
+		var o := 1.0
+		if not bands.is_empty():
+			o = clampf((bands[0] as PopHinge).openness(), 0.0, 1.0)
+		box.scale.y = maxf(o, 0.001)
+		box.visible = shown >= bands.size() and o > 0.02
 	if flat:
 		var fs := PaperSpring.step(_flat_s, _flat_v, _flat_t, 8.0, 0.6, dt)
 		_flat_s = fs.x
