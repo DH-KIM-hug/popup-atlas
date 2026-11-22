@@ -1749,3 +1749,29 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Characters: three paper test figures only (cast_<role>_paper_calm); the full cast redraw (81 + 50) waits for the
     user's OK on the character look.
   - Regression after the paper ground + scenery: three_pigs 296.3 s CHECK_LINES OK, VOICE_DUP=0 (sun_wind 207.0 s OK earlier; witch_candy not re-run: its voice files are mid-swap in the main session).
+
+## 2026-11-22 — book covers, phase 1 (user: "책 표지 디자인 제대로 하자"): test cover on witch_candy, CHECKPOINT
+  - The flat rust-red UI card is gone. game/story/cover_book.gd (CoverBook): a 3D hardcover in its own SubViewport /
+    World3D under a LookRig (warm raking key, cool fill, DOF, tilt-shift grade, grain): back board, rounded cloth spine,
+    page block with page lines, front board on a hinge with cloth corners and a spine strip, the key art printed on it,
+    the cut-paper title as a raised alpha-scissor layer (casts a small shadow), "팝업 동화" small at the foot, a printed
+    endpaper, a cream title page; a procedural walnut table (cover_book.gdshader, one shader / mode switch).
+  - Idle: the fore-edge lifts ~7° every 3.2 s (the "open me" hint; the printed "톡 눌러서 책을 펼쳐요" is gone, the voiced
+    prompt stays and its caption sits below the book). Tap: the board swings over the spine (1.25 s + a 4° slap) while
+    the camera rises and pushes onto the title page (2.35 s), then the existing PageTurn turns it onto the first
+    spread, which pops. End (close_book): the last spread folds, the page turns onto the title page, the camera pulls
+    back and the board swings shut (close_book cue on landing); "끝" + "다시 보기" on a slim tag at the right; replay
+    glides back to the cover framing. Tales without `ui.cover` get a plain cloth book with the title (interim).
+  - Data: script.json `ui.cover` {art, title, title_rect, light, cloth, cloth_dark, endpaper, endpaper_motif, page,
+    mark, pose}; witch_candy set in tools/story/tales/witch_candy.py. Spec: game/story/COVER_PLAN.md.
+  - Art: tools/art/cover_jobs.py → Codex. Key art with single-character refs came out FELT (the refs are felt) even with
+    a paper material ref; a second "paper pass" (redraw the chosen picture as smooth cardstock, composition kept) fixed
+    it. Title lettering generated as cut paper on magenta, Korean spelled right on the first try; keyed by
+    tools/art/cover_build.py (outline flood + interior restore, so purple letters survive the key).
+  - Alternative (look test only, --cover-pose=stand): the book upright on a small easel, low lens, the tale's own
+    sky + shop far behind out of focus.
+  - Regression (no movie, --fixed-fps 30): sun_wind 207.9 s, three_pigs 297.0 s, witch_candy 439.2 s, all STORY_DONE
+    missing_audio=[] missing_sound=[], CHECK_LINES OK. VOICE_DUP read 39 / 36 / 54 in these faster-than-realtime runs
+    (v8 movie runs read 0); not re-checked under the movie maker.
+  - Files: artifacts/cover/wc_cover_sheet.jpg, wc_cover_book_still.png, wc_cover_stand_still.png,
+    wc_cover_open_book.mp4, wc_cover_open_stand_alt.mp4, wc_end_close.mp4.

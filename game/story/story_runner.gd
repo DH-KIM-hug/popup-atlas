@@ -1043,7 +1043,9 @@ func _step_cover(st: Dictionary, b: Dictionary) -> void:
 	_skip = true
 	if sound:
 		sound.step("cover", "on_open")
-	while _line_busy:
+	_mode = "opening"
+	ui.open_cover()  # the board swings over the spine, the camera pushes into the title page
+	while _line_busy or ui.cover_opening():
 		await _frame()
 	_mode = "idle"
 
@@ -1137,11 +1139,29 @@ func _step_gentle(st: Dictionary) -> void:
 func _step_end(st: Dictionary) -> void:
 	await _say(str(st.get("line", "")))
 	if st.get("close_book", false) and stage and is_instance_valid(stage):
-		if sound:
+		var book := ui.has_book()
+		if sound and not book:
 			sound.step("end", "close_book")
 		# the book closes: the page folds flat, then the end card
 		var t := stage.fold()
 		await _wait(t + 0.8)
+		if book:
+			# the last page turns onto the title page of the same book, then the front board swings shut
+			var tex := await _snapshot()
+			ui.page_turn.cover(tex)
+			ui.show_end_book(str(data.get("title", "")))
+			await _frame()
+			ui.page_turn.turn(1.1)
+			if sound:
+				sound.step("page_turn")
+			while ui.page_turn.is_turning():
+				await _frame()
+			await _wait(0.3)
+			ui.close_book(0.4)
+			await _wait(1.7)  # the board lands at 0.5 + 1.25 s
+			if sound:
+				sound.step("end", "close_book")
+			await _wait(0.4)
 	_mode = "end"
 	ui.show_end("")
 	ui.sparkle(Vector2(683, 300))

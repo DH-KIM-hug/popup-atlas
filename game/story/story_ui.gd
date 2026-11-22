@@ -16,7 +16,7 @@ const SPEAKERS_SW := {"sun": ["해님", Color("e08a2c")], "wind": ["바람", Col
 ## Speaker chips: name, colour (+ face cast id, script.json ui.speakers {sp: [name, colour, cast id]}). Default sun_wind.
 var SPEAKERS: Dictionary = SPEAKERS_SW.duplicate()
 var _speaker_faces := {}  ## speaker -> cast id (ui.speakers)
-var _cover_pics: HBoxContainer
+var _cover_cfg: Dictionary = {}  ## ui.cover: the 3D book (CoverBook config)
 var _end_pics: HBoxContainer
 
 
@@ -30,9 +30,11 @@ func configure(ui_cfg: Dictionary) -> void:
 			SPEAKERS[sp] = [str(e[0]), Color(str(e[1]))]
 			if e.size() > 2:
 				_speaker_faces[sp] = str(e[2])
-	for pair in [[_cover_pics, "cover"], [_end_pics, "end"]]:
+	if ui_cfg.get("cover") is Dictionary:
+		_cover_cfg = ui_cfg["cover"]
+	for pair in [[_end_pics, "end"]]:
 		var box: HBoxContainer = pair[0]
-		if box == null or not ui_cfg.has(pair[1]):
+		if box == null or not ui_cfg.has(pair[1]) or not ui_cfg[pair[1]] is Array:
 			continue
 		for c in box.get_children():
 			c.queue_free()
@@ -61,7 +63,7 @@ var _root: Control
 var _font: Font
 var _font_bold: Font
 var _cover: Control
-var _cover_hint: Label
+var _book: CoverBook
 var _caption: PanelContainer
 var _caption_on := false
 var _cap_text: RichTextLabel
@@ -166,71 +168,68 @@ func _build_cover() -> void:
 	_cover.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_cover.visible = false
 	_root.add_child(_cover)
-	var table := ColorRect.new()
-	table.color = Color("3a2618")
-	table.set_anchors_preset(Control.PRESET_FULL_RECT)
-	table.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_cover.add_child(table)
-	var board := PanelContainer.new()
-	var sb := _paper_box(Color("b4553c"), Color("7a3424"), 16, 22)
-	sb.set_border_width_all(6)
-	sb.shadow_offset = Vector2(8, 12)
-	board.add_theme_stylebox_override("panel", sb)
-	board.anchor_left = 0.17
-	board.anchor_right = 0.83
-	board.anchor_top = 0.1
-	board.anchor_bottom = 0.9
-	board.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_cover.add_child(board)
-	var inner := PanelContainer.new()
-	var ib := _paper_box(Color("b4553c"), Color("e9d3a6"), 10, 0)
-	ib.set_border_width_all(3)
-	ib.draw_center = false
-	inner.add_theme_stylebox_override("panel", ib)
-	inner.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	board.add_child(inner)
-	var v := VBoxContainer.new()
-	v.alignment = BoxContainer.ALIGNMENT_CENTER
-	v.add_theme_constant_override("separation", 18)
-	v.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	inner.add_child(v)
-	v.add_child(_label("팝업 동화", 34, Color("f3e2bd")))
-	var pics := HBoxContainer.new()
-	pics.alignment = BoxContainer.ALIGNMENT_CENTER
-	pics.add_theme_constant_override("separation", 60)
-	pics.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	_cover_pics = pics
-	for c in [["sun", 230], ["wind", 200]]:
-		var tr := TextureRect.new()
-		tr.texture = CastSkins.texture(c[0])
-		tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-		tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-		tr.custom_minimum_size = Vector2(c[1], c[1])
-		tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
-		pics.add_child(tr)
-	v.add_child(pics)
-	var title := _label("해와 바람", 112, Color("fff3d6"), true)
-	title.add_theme_constant_override("outline_size", 10)
-	title.add_theme_color_override("font_outline_color", Color("7a3424"))
-	v.add_child(title)
-	_cover_hint = _label("톡 눌러서 책을 펼쳐요", 32, Color("f3e2bd"))
-	v.add_child(_cover_hint)
 
 
+## The tale's book lying closed on the table (CoverBook, built on first show from ui.cover).
 func show_cover(title: String) -> void:
-	_cover.visible = true
 	_set_tab("")
-	for l in _cover.find_children("*", "Label", true, false):
-		if (l as Label).text == "해와 바람":
-			(l as Label).text = title
+	if _book and not _book.is_closed():  # an end book still open: start fresh (a closed one carries over on replay)
+		_book.queue_free()
+		_book = null
+	if _book == null:
+		_book = CoverBook.new()
+		_book.name = "Book"
+		_cover.add_child(_book)
+		_book.build(_cover_cfg, title)
+	elif _book.is_closed():
+		_book.idle()
+	_cover.visible = true
+
+
+## Tap: the board swings open and the camera pushes into the title page (await cover_opening() == false).
+func open_cover() -> void:
+	if _book:
+		_book.open()
+
+
+func cover_opening() -> bool:
+	return _book != null and _book.is_animating()
 
 
 func hide_cover() -> void:
 	_cover.visible = false
+	if _book:
+		_book.queue_free()
+		_book = null
 
 
 func cover_visible() -> bool:
 	return _cover.visible
+
+
+func has_book() -> bool:
+	return not _cover_cfg.is_empty()
+
+
+## The end: the same book lies open on its title page (under a page turn from the folded last spread), then closes.
+## Returns false when the tale has no book config (the old end card only).
+func show_end_book(title: String) -> bool:
+	if _cover_cfg.is_empty():
+		return false
+	if _book:
+		_book.queue_free()
+	_book = CoverBook.new()
+	_book.name = "Book"
+	_cover.add_child(_book)
+	_book.build(_cover_cfg, title)
+	_book.set_open()
+	_cover.visible = true
+	return true
+
+
+func close_book(shift := 0.0) -> void:
+	if _book:
+		_book.close(shift)
 
 
 # ------------------------------------------------------------------ caption
@@ -451,11 +450,27 @@ func show_end(moral: String) -> void:
 	_end.visible = true
 	_end_t = 0.0
 	_end_card.modulate.a = 0.0
+	var book := _book != null and _cover.visible
+	# with the closed book on the table the card is a slim paper tag at the right (the book shows the characters)
+	_end_pics.visible = not book
+	_end_card.anchor_left = 0.7 if book else 0.24
+	_end_card.anchor_right = 0.965 if book else 0.76
+	var sb := _end_card.get_theme_stylebox("panel") as StyleBoxFlat
+	if sb:
+		sb.content_margin_left = 26 if book else 60
+		sb.content_margin_right = 26 if book else 60
+	_end_card.anchor_top = 0.24 if book else 0.1
+	_end_card.anchor_bottom = _end_card.anchor_top
+	_end_card.offset_left = 0
+	_end_card.offset_right = 0
+	_end_card.set_meta("y_anchor", _end_card.anchor_top)
 
 
 func hide_end() -> void:
 	_end.visible = false
 	_end_t = -1.0
+	if _book and not _book.is_closed():
+		hide_cover()
 
 
 func end_button_pos() -> Vector2:
@@ -475,8 +490,8 @@ func step(dt: float) -> void:
 	for r in _ripples:
 		r[1] += dt
 	_ripples = _ripples.filter(func(r): return r[1] < 0.6)
-	if _cover.visible:
-		_cover_hint.modulate.a = 0.55 + 0.45 * sin(_t * 3.0)
+	if _cover.visible and _book:
+		_book.step(dt)
 	if _tab_t >= 0.0:
 		_tab_t += dt
 		var u := clampf(_tab_t / 0.35, 0.0, 1.0)
@@ -489,7 +504,8 @@ func step(dt: float) -> void:
 		_end_t += dt
 		var u2 := clampf(_end_t / 0.5, 0.0, 1.0)
 		_end_card.modulate.a = u2
-		_end_card.position.y = lerpf(_end.size.y * 0.1 + 60.0, _end.size.y * 0.1, 1.0 - pow(1.0 - u2, 3.0))
+		var ya: float = _end_card.get_meta("y_anchor", 0.1)
+		_end_card.position.y = lerpf(_end.size.y * ya + 60.0, _end.size.y * ya, 1.0 - pow(1.0 - u2, 3.0))
 	if _choice_t >= 0.0:
 		_choice_t += dt
 		for k in _choice_cards:
