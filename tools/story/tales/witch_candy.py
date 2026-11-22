@@ -201,10 +201,7 @@ CAST = {
     "fox": {"kind": "actor", "skin": "fox_kid", "views": ["front", "side", "back"], "label": "여우 (non-speaking)"},
 }
 UI = {
-    # the book cover (game/story/cover_book.gd; art from tools/art/cover_jobs.py -> tools/art/cover_build.py)
-    "cover": {"art": "res://stories/witch_candy/art/cover_art.webp", "title": "res://stories/witch_candy/art/cover_title.webp",
-              "title_rect": [0.5, 0.2, 0.74], "light": "night", "cloth": "3d3566", "cloth_dark": "2a2348",
-              "endpaper": "4b3a7a", "endpaper_motif": "f2c14e", "page": "f3e8d0", "mark": [0.5, 0.968]},
+    "cover": [["cast_dahyun_calm", 190], ["cast_candy_witch_welcome", 250], ["cast_hobak_cat_sit", 120]],
     "end": [["cast_dahyun_wave", 180], ["cast_candy_witch_two_candies", 240], ["cast_hobak_cat_meow", 120]],
     "speakers": {"kid": ["다현이", "4b3a7a", "cast_dahyun_calm"], "witch": ["사탕 마녀", "3e9d8f", "cast_candy_witch_calm"],
                  "cat": ["호박이", "e8862a", "cast_hobak_cat_sit"], "all": ["다 같이", "c58a1e", "cast_candy_witch_ghost"]},

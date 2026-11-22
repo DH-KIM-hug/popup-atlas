@@ -94,6 +94,134 @@ for _src in ("cover_wc_art", "cover_wc_art_c"):
                  "out": RAW + _src + "_paper.png", "refs": [RAW + _src + ".png", MAT_REF], "prompt": REPAPER})
 
 
+# ---------------------------------------------------------------- rollout (2026-11-22, user chose the book on the table)
+RF = "art_src/cover/refs/"
+NO_MAT_CHAR = "Do NOT draw the girl shown in the material reference; it only shows the paper material. "
+REPAPER2 = REPAPER.replace("Keep the top 40 percent calm empty night sky.", "Keep the calm empty top area as it is.")
+
+
+def art(id_, refs, subject, extra_refs_mat=True):
+    return {"id": id_, "kind": "bg", "aspect": PORT, "out": RAW + id_ + ".png",
+            "refs": refs + ([MAT_REF] if extra_refs_mat else []),
+            "prompt": COVER + REF_CHAR + (NO_MAT_CHAR if extra_refs_mat else "") + subject}
+
+
+def title(id_, text, colours):
+    return {"id": id_, "kind": "bg", "aspect": "wide landscape (any wide size, e.g. 1536x1024 or 2172x724); save it as-is",
+            "out": RAW + id_ + ".png", "prompt": LETTER + text + " " + colours +
+            " The cream backing layer is one connected shape behind all the letters."}
+
+
+SPOT = ("A SMALL SPOT ILLUSTRATION (vignette) for the title page of a children's picture book, on a perfectly flat, "
+        "uniform, solid pure MAGENTA background (#FF00FF, RGB 255,0,255), no texture, no gradient, no shadow on the "
+        "background, the vignette centred with a wide magenta margin, one connected group of objects sitting on a small "
+        "cut-paper ground patch. " + PAPER + "The LAST reference image shows the paper material only (do not draw it). "
+        "No characters' faces needed, no text, no letters. Colours warm and soft; no pink or magenta inside the vignette "
+        "(every pink is a coral-peach). ")
+
+
+def spot(id_, subject, refs=()):
+    return {"id": id_, "kind": "bg", "aspect": "square if possible, but ANY size the tool returns is fine; save it as-is", "out": RAW + id_ + ".png",
+            "refs": list(refs) + [MAT_REF], "prompt": SPOT + "SUBJECT: " + subject}
+
+
+BACK = ("The BACK COVER ILLUSTRATION of the same children's picture book, full-bleed to all four edges (no border, no "
+        "frame, no book shown, just the flat artwork): an EPILOGUE picture of what happened after the story, quiet and "
+        "warm, the same world and characters as the FIRST reference image (the front cover), drawn in exactly the same "
+        "smooth cut-paper cardstock style, colours and character designs. FORMAT: the same near-square portrait aspect as "
+        "the first reference. COMPOSITION: the TOP 25 PERCENT is calm empty sky (a small title word will be added later); "
+        "the scene sits in the lower 75 percent, characters smaller than on the front cover, seen a little further away. "
+        "ABSOLUTELY NO TEXT anywhere. No felt, no fuzz, no stitches. ")
+
+
+def back(id_, front, subject, refs=()):
+    return {"id": id_, "kind": "bg", "aspect": "the SAME size and aspect as the first reference; save it as-is",
+            "out": RAW + id_ + ".png", "refs": [RAW + front] + list(refs), "prompt": BACK + "SUBJECT: " + subject}
+
+
+ROLL = [
+    # ---- round 1
+    art("cover_sw_art", [RF + "ref_sw_sun.png", RF + "ref_sw_wind.png", RF + "ref_sw_traveller.png"],
+        "SUBJECT: 해와 바람 (The Sun and the Wind). A country road winding over soft green paper hills with a few round trees "
+        "and a little stream. On the road, big in the lower middle, THE TRAVELLER (reference 3: a boy in a brown straw "
+        "hat and a long rust-red coat with cream flower trims and toggle buttons, brown boots) walking toward us, holding "
+        "his coat closed with one hand, a little puzzled smile. In the sky just above the hills (NOT in the top 40 "
+        "percent): THE SUN (reference 1: golden-yellow round face with orange paper rays, a sly confident smile) on the "
+        "right and THE WIND (reference 2: a cream cloud face with puffed cheeks blowing curly blue paper wind swirls) on "
+        "the left, both looking down at the traveller, playful rivals. A few leaves fly in the wind. SKY (top 40 percent): "
+        "pale warm blue paper with thin cloud strips at the edges only. LIGHT: warm late-morning sun from the right. "
+        "PALETTE: meadow greens, warm road ochre, rust red, golden yellow, sky blue, cream."),
+    art("cover_tp_art", [RF + "ref_tp_pig_a.png", RF + "ref_tp_pig_b.png", RF + "ref_tp_pig_c.png", RF + "ref_tp_wolf.png",
+                         RA + "story_houses.png"], extra_refs_mat=False, subject="Reference 5 is already PAPER: copy its "
+        "material for everything (smooth cut cardstock, no felt). " +
+        "SUBJECT: 아기 돼지 삼형제 (The Three Little Pigs). A sunny green meadow with a path; behind, left to right, the "
+        "THREE HOUSES from reference 5: a straw house, a wooden house and a red brick house with a chimney, small and "
+        "standing apart. In front, big in the lower half, THE THREE PIGS side by side, happy and proud (reference 1: the "
+        "eldest in a straw hat and a mustard knitted-look scarf drawn as cut paper; reference 2: the middle one in blue "
+        "overalls; reference 3: the youngest in a cream cap and red overalls). THE WOLF (reference 4: grey wolf in a "
+        "brown vest) peeks sneakily from behind a round tree at the right edge, only his head and one paw showing, "
+        "funny not scary. SKY (top 40 percent): soft blue paper with thin cloud strips at the edges only. LIGHT: warm "
+        "morning. PALETTE: grass greens, straw gold, wood brown, brick red, pig coral-peach (never pink), sky blue."),
+    art("cover_sm_art", [RF + "ref_sm_boy.png", RF + "ref_sm_girl.png", RF + "ref_sm_tiger.png", RF + "ref_sm_climb_boy.png",
+                         RA + "story_sm_cottage_paper.png"], extra_refs_mat=False, subject=
+        "All references are already PAPER: copy their material. SUBJECT: 해님 달님 (the Korean folk tale of the sun and the "
+        "moon). A deep blue night over a Korean mountain village: a twisted golden straw ROPE hangs down from the sky in a "
+        "gentle curve. On the rope, the BROTHER (reference 1, climbing pose like reference 4: indigo jeogori, cream baji) "
+        "climbs above his little SISTER (reference 2, climbing the same way: coral jeogori with rainbow sleeve "
+        "bands, salmon chima), both looking up hopefully. Below them, at the foot of a big zelkova tree beside the "
+        "thatched cottage from reference 5, THE TIGER (reference 3: chubby orange paper tiger, silly not scary) looks "
+        "up with his paws on the trunk, grumpy and outwitted. In the sky on either side of the rope (below the top 40 "
+        "percent): a warm golden paper SUN low on the left with cut-paper rays and a pale cream paper full MOON on the "
+        "right, both plain discs WITHOUT faces. SKY (top 40 percent): calm deep-indigo paper with a few small stars only. "
+        "PALETTE: indigo night #26305e, gold #f2c14e, cream moon #f4ead3, coral, jade green, thatch straw, tiger orange."),
+    title("cover_sw_title", "The Korean title on ONE line, centred: '해와 바람'.",
+          "Letter colours: '해' golden sun-yellow #f2b632 with tiny cut-paper rays, '와' cream-ochre, '바람' sky blue #6fa8d6 "
+          "with a small curly cut-paper wind swirl, a thin dark-brown cut line around each letter."),
+    title("cover_tp_title", "The Korean title on two lines, centred: line 1 '아기 돼지' (smaller), line 2 '삼형제' (big).",
+          "Letter colours: straw gold #e2b54a, wood brown #9a6a3c and brick red #b5523b letters (one material colour per "
+          "letter group, like the three houses), a thin dark-brown cut line around each letter, a tiny cut-paper "
+          "chimney with a puff of smoke beside the words (not touching the letters)."),
+    title("cover_sm_title", "The Korean title on ONE line, centred: '해님 달님'.",
+          "Letter colours: '해님' warm sun gold #f2b632 with tiny cut-paper rays, '달님' pale moon cream #f4ead3 on a deep "
+          "indigo #26305e inner layer, a thin dark-indigo cut line around each letter, a tiny twisted straw rope and a "
+          "small star as decoration beside the words (not touching the letters)."),
+    title("back_end_title", "The single Korean word '끝' (The End), big and centred.",
+          "Letter colour: warm brick-red #b5523b cut paper on the cream backing, a thin dark-brown cut line, two tiny "
+          "cut-paper stars beside it (not touching the letter)."),
+    spot("spot_wc", "a small orange jack-o'-lantern candy bucket overflowing with wrapped candies and a swirl lollipop, a "
+         "tiny purple witch hat with a yellow star leaning on it, two small candies on the ground."),
+    spot("spot_sw", "a brown straw hat and a rust-red coat with cream trims folded on a round grey rock in the grass, a "
+         "small golden sun peeking over the rock, a curly blue paper wind swirl beside it."),
+    spot("spot_tp", "three tiny houses in a row on a grass patch: a straw house, a wooden house and a red brick house "
+         "with a chimney and a little curl of smoke."),
+    spot("spot_sm", "a coil of twisted golden straw rope on a grass patch under a small crescent moon and a small sun, "
+         "a few stars, one sorghum stalk."),
+    # ---- round 2 (needs round 1): felt-nap fix for the two tales whose refs are felt; back covers of the paper tales
+    {"id": "cover_sw_art_paper", "kind": "bg", "aspect": "the SAME size and aspect as the first reference; save it as-is",
+     "out": RAW + "cover_sw_art_paper.png", "refs": [RAW + "cover_sw_art.png", MAT_REF], "prompt": REPAPER2},
+    {"id": "cover_tp_art_paper", "kind": "bg", "aspect": "the SAME size and aspect as the first reference; save it as-is",
+     "out": RAW + "cover_tp_art_paper.png", "refs": [RAW + "cover_tp_art.png", MAT_REF], "prompt": REPAPER2},
+    back("back_wc_art", "cover_wc_art_paper.png", "Late Halloween night in front of the same candy shop, warm windows glowing: "
+         "the candy witch, Dahyun and her three friends in costumes (a white rabbit in a yellow cape, a brown bear in a "
+         "pumpkin costume, an orange fox in a purple cape) sit on the shop steps happily eating candies, Hobak the cat "
+         "curled up asleep beside them; a small friendly white paper GHOST peeks out from behind the shop corner with a "
+         "candy. Moon and stars.", [RC + "ref_wc_lineup.png"]),
+    back("back_sm_art", "cover_sm_art.png", "Dawn-quiet: a golden paper SUN on the left and a pale cream paper MOON on the "
+         "right shine side by side over the little thatched cottage, now peaceful and empty, smoke-less; below the "
+         "cottage a field of tall red-brown SORGHUM stalks (the tiger's fall: one stalk bent, no tiger shown, no blood); "
+         "soft blue-indigo sky with a few stars fading."),
+    # ---- round 3 (needs the paper covers)
+    back("back_sw_art", "cover_sw_art_paper.png", "The traveller sits resting under a round tree beside the road WITHOUT his "
+         "coat (the coat and hat lie folded beside him), smiling in the warm sunshine; the SUN smiles gently above, the "
+         "WIND as a small friendly cloud rests beside the sun, both content. Calm, warm afternoon light."),
+    back("back_tp_art", "cover_tp_art_paper.png", "Evening: inside-view feeling through the round window of the red brick "
+         "house, or just outside its open door: the THREE PIGS sit together by a warm fireplace glow, cosy and safe, "
+         "one holding a mug; far off on a hill path the small grey WOLF runs away with his tail singed, a tiny puff of "
+         "smoke behind him. Warm sunset light."),
+]
+JOBS += ROLL
+
+
 if __name__ == "__main__":
     out = os.path.join(HERE, "cover_jobs.json")
     json.dump(JOBS, open(out, "w"), ensure_ascii=False, indent=1)

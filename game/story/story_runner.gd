@@ -101,8 +101,17 @@ func _ready() -> void:
 	ui.name = "UI"
 	add_child(ui)
 	ui.subtitles = subtitles
-	ui.configure(data.get("ui", {}))
+	var ui_cfg: Dictionary = (data.get("ui", {}) as Dictionary).duplicate()
+	var book_cfg := CoverBook.tale_data(str(data.get("tale_id", "")))  # stories/<tale>/cover.json: the book + ending
+	for k in book_cfg:
+		ui_cfg[k] = book_cfg[k]
+	data["ui"] = ui_cfg
+	ui.configure(ui_cfg)
 	ui.replay_pressed.connect(func(): _replay = true)
+	ui.other_pressed.connect(func():
+		if sound:
+			sound.loop_stop("table", 0.3)
+		get_tree().change_scene_to_file(SHELF_SCENE))
 	ui.pointer_source = Callable()
 	_run.call_deferred()
 
@@ -434,6 +443,8 @@ func _run() -> void:
 			await _frame()
 		_replay = false
 		start_beat = ""
+		if sound:
+			sound.loop_stop("table", 0.6)
 		ui.hide_end()
 		_spread_key = ""
 		_pose = "walk"
@@ -1103,13 +1114,18 @@ func _step_huff(st: Dictionary) -> void:
 func _step_cover(st: Dictionary, b: Dictionary) -> void:
 	_mode = "cover"
 	ui.show_cover(str(data.get("title", b.get("title", ""))))
+	# picked on the bookshelf table: the reader already chose this book, it opens at once (no prompt)
+	var picked := Engine.has_meta("popup_open_now")
+	if picked:
+		Engine.remove_meta("popup_open_now")
 	await _wait(0.6)
-	_say.bind(str(st.get("prompt", ""))).call()
+	if not picked:
+		_say.bind(str(st.get("prompt", ""))).call()
 	_tapped = ""
 	var idle := 0.0
 	while _tapped != "book":
 		idle += await _frame()
-		if autoplay and idle > 2.6:
+		if (autoplay and idle > 2.6) or (picked and idle > 0.15):
 			_auto_tap("book")
 	_skip = true
 	if sound:
@@ -1209,33 +1225,18 @@ func _step_gentle(st: Dictionary) -> void:
 
 func _step_end(st: Dictionary) -> void:
 	await _say(str(st.get("line", "")))
-	if st.get("close_book", false) and stage and is_instance_valid(stage):
-		var book := ui.has_book()
-		if sound and not book:
+	var book := ui.has_book() and stage != null and is_instance_valid(stage)
+	if book:
+		await _ending_book()
+	elif st.get("close_book", false) and stage and is_instance_valid(stage):
+		if sound:
 			sound.step("end", "close_book")
-		# the book closes: the page folds flat, then the end card
 		var t := stage.fold()
 		await _wait(t + 0.8)
-		if book:
-			# the last page turns onto the title page of the same book, then the front board swings shut
-			var tex := await _snapshot()
-			ui.page_turn.cover(tex)
-			ui.show_end_book(str(data.get("title", "")))
-			await _frame()
-			ui.page_turn.turn(1.1)
-			if sound:
-				sound.step("page_turn")
-			while ui.page_turn.is_turning():
-				await _frame()
-			await _wait(0.3)
-			ui.close_book(0.4)
-			await _wait(1.7)  # the board lands at 0.5 + 1.25 s
-			if sound:
-				sound.step("end", "close_book")
-			await _wait(0.4)
 	_mode = "end"
 	ui.show_end("")
-	ui.sparkle(Vector2(683, 300))
+	if not book:
+		ui.sparkle(Vector2(683, 300))
 	await _wait(0.6)
 	await _say(str(st.get("after", "")))
 	if autoplay:
@@ -1243,6 +1244,147 @@ func _step_end(st: Dictionary) -> void:
 		ui.ripple(ui.end_button_pos())
 		await _wait(0.4)
 	_mode = "idle"
+
+
+## The ending (game/story/COVER_PLAN.md "ENDING"): hold the last tableau, a curtain call of the cast, the pop-up folds
+## down, the page turns back onto the title page, the book closes and turns over onto its back cover (the epilogue
+## picture with a cut-paper "끝"); then the end tabs ("다시 보기", "다른 동화") lie beside it.
+func _ending_book() -> void:
+	ui.hide_line()
+	ui.pointer_source = Callable()
+	# 1. hold: the last tableau stays a moment, no prompt
+	if sound:
+		sound.set_music("ending")  # the settle / closing music (plays once, fades on replay)
+	await _wait(1.5)
+	# 2. curtain call
+	await _curtain_call()
+	# 3. fold: the pop-up folds down in a wave, the camera rises (stage.fold goes wide)
+	ui.show_page_title("")
+	var t := stage.fold()
+	_squash_unhinged(t * 0.55)
+	await _wait(t * 0.8)
+	var guard := 0.0
+	while not _all_flat() and guard < 6.0:  # everything lies flat before the page turns (3 fps tiles per tale)
+		guard += await _frame()
+	await _wait(0.5)
+	var tex := await _snapshot()
+	ui.page_turn.cover(tex)
+	ui.show_end_book(str(data.get("title", "")))
+	await _frame()
+	ui.page_turn.turn(1.1)
+	if sound:
+		sound.step("page_turn")
+		sound.set_bed(null)  # out of the world: only a quiet room tone at the table
+		sound.loop_start("amb.room_fire", "table", 1.5, -16.0)
+	while ui.page_turn.is_turning():
+		await _frame()
+	await _wait(0.3)
+	ui.close_book(0.42)
+	await _wait(1.75)  # the board lands shut at 0.5 + 1.25 s
+	if sound:
+		sound.step("end", "close_book")
+	await _wait(0.5)
+	# 4. back cover: the book turns over onto the epilogue picture
+	ui.turn_over_book()
+	if sound:
+		sound.step("page_turn")
+	await _wait(1.3)
+	if sound:
+		sound.step("end", "close_book")
+	await _wait(0.6)
+
+
+## Set-piece parts that hang on no hinge (house bodies / boxes, rooms, roofs added by tale fx) squash flat with the
+## fold wave instead of being left standing on the closed page (user: "마지막에 집 접힐때 왜 안접히는게 있는지").
+func _squash_unhinged(delay: float) -> void:
+	var nodes: Array = []
+	for k in stage.sets:
+		_collect_unhinged(stage.sets[k], nodes)
+	for n: Node3D in nodes:
+		if not n.is_visible_in_tree():
+			continue
+		var tw := create_tween()
+		tw.tween_interval(delay + randf() * 0.3)
+		tw.tween_property(n, "scale:y", 0.01, 0.45).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
+		tw.tween_callback(n.hide)
+
+
+func _collect_unhinged(n: Node, out: Array) -> void:
+	for c in n.get_children():
+		if c is PopHinge:
+			continue
+		if c is VisualInstance3D:
+			out.append(c)
+		elif c is Node3D:
+			_collect_unhinged(c, out)
+
+
+## True when every hinge on the page (world, extra, set pieces) has folded down and stopped.
+func _all_flat() -> bool:
+	var all: Array = []
+	all.append_array(stage.world.hinges)
+	all.append_array(stage.extra_hinges)
+	for k in stage.sets:
+		all.append_array((stage.sets[k] as SetPiece).all_hinges())
+	for h in all:
+		if not is_instance_valid(h):
+			continue
+		var ph := h as PopHinge
+		if ph and ph.is_visible_in_tree() and (ph.is_moving() or ph.openness() > 0.03):
+			return false
+	return true
+
+
+## Curtain call (ui.curtain {shot, at, who: [[role, pose or cast figure id], ...]}): a wide of the last spread, each
+## of the cast does its signature gesture in turn (actors: pose + paper hop; sky hangers: their figure + a bob); a tap
+## on one repeats its gesture. ≤ 6 s in autoplay.
+func _curtain_call() -> void:
+	var cc: Dictionary = data.get("ui", {}).get("curtain", {})
+	if cc.is_empty():
+		return
+	if cc.has("shot"):
+		stage.shot_to(str(cc["shot"]), cc.get("at", null), {"rate": 1.4})
+		await _wait(0.9)
+	var who: Array = cc.get("who", [])
+	var roles: Array = []
+	for e: Array in who:
+		roles.append(str(e[0]))
+		_curtain_gesture(e)
+		await _wait(0.5)
+	_mode = "curtain"
+	_expect = roles
+	_tapped = ""
+	var left := 1.3 if autoplay else float(cc.get("hold", 3.5))
+	while left > 0.0:
+		left -= await _frame()
+		if _tapped != "":
+			for e: Array in who:
+				if str(e[0]) == _tapped:
+					_curtain_gesture(e)
+			_tapped = ""
+	_expect = []
+	_mode = "idle"
+
+
+func _curtain_gesture(e: Array) -> void:
+	var r := str(e[0])
+	var p := str(e[1]) if e.size() > 1 else ""
+	var a := stage.actor(r)
+	if a:
+		if p != "" and a.has_pose(p):
+			a.set_pose(p)
+		a.hop_v = 0.7
+		return
+	var h := stage.hanger(r)
+	if h:
+		if p.begins_with("cast_"):
+			var tx := CastSkins.by_id(p)
+			if tx:
+				h.set_texture(tx)
+		h.push(Vector3(0, 0, 0.35))
+		return
+	if r == "walker" and p != "":
+		stage.set_pose(p)
 
 
 # ------------------------------------------------------------------ spreads + page turn
@@ -1372,6 +1514,7 @@ static func _key_of(sp: Dictionary) -> String:
 ## page on screen; nothing is rendered there) until _enter_spread moves it into the story.
 ## Not in fixed-step runs (captures, recordings): there each spread is built at its page turn exactly as before, so
 ## the global RNG sequence (hinge jitter, gusts) and every frame stay reproducible.
+const SHELF_SCENE := "res://story/shelf.tscn"
 const COVER_BUILD_MS := 28.0  ## the cover is a still page: build the first spread fast behind it
 
 

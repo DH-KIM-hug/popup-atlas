@@ -1,0 +1,50 @@
+{
+ "note": "The tale's picture book: cover / title page / back cover (game/story/book_model.gd) and the ending's curtain call (story_runner._curtain_call). Art: tools/art/cover_jobs.py -> tools/art/cover_build.py.",
+ "cover": {
+  "art": "res://stories/three_pigs/art/cover_art.webp",
+  "back": "res://stories/three_pigs/art/cover_back.webp",
+  "title": "res://stories/three_pigs/art/cover_title.webp",
+  "spot": "res://stories/three_pigs/art/cover_spot.webp",
+  "end_title": "res://story/art/end_title.webp",
+  "end_rect": [
+   0.5,
+   0.13,
+   0.3
+  ],
+  "mark": [
+   0.5,
+   0.968
+  ],
+  "title_rect": [
+   0.5,
+   0.185,
+   0.6
+  ],
+  "light": "day",
+  "cloth": "8a3b2a",
+  "cloth_dark": "5e2a1e",
+  "endpaper": "6f9a4e",
+  "endpaper_motif": "e2b54a",
+  "page": "f4ead3"
+ },
+ "curtain": {
+  "who": [
+   [
+    "pig_a",
+    "happy_wave"
+   ],
+   [
+    "pig_b",
+    "happy_wave"
+   ],
+   [
+    "pig_c",
+    "cheer"
+   ],
+   [
+    "mom",
+    "wave"
+   ]
+  ]
+ }
+}

@@ -264,25 +264,20 @@
   ]
  },
  "ui": {
-  "cover": {
-   "art": "res://stories/witch_candy/art/cover_art.webp",
-   "title": "res://stories/witch_candy/art/cover_title.webp",
-   "title_rect": [
-    0.5,
-    0.2,
-    0.74
+  "cover": [
+   [
+    "cast_dahyun_calm",
+    190
    ],
-   "light": "night",
-   "cloth": "3d3566",
-   "cloth_dark": "2a2348",
-   "endpaper": "4b3a7a",
-   "endpaper_motif": "f2c14e",
-   "page": "f3e8d0",
-   "mark": [
-    0.5,
-    0.968
+   [
+    "cast_candy_witch_welcome",
+    250
+   ],
+   [
+    "cast_hobak_cat_sit",
+    120
    ]
-  },
+  ],
   "end": [
    [
     "cast_dahyun_wave",

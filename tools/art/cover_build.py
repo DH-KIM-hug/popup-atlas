@@ -42,20 +42,46 @@ def key_title(path):
     return Image.fromarray((np.clip(rgba, 0, 1) * 255).astype(np.uint8), "RGBA")
 
 
-def main():
-    tale, art = sys.argv[1], sys.argv[2]
-    title = sys.argv[3] if len(sys.argv) > 3 else ""
-    od = os.path.join(ROOT, "game", "stories", tale, "art")
-    os.makedirs(od, exist_ok=True)
-    im = Image.open(art).convert("RGB")
+def ship_art(src, dst):
+    im = Image.open(src).convert("RGB")
     if im.height > 1600:
         im = im.resize((round(im.width * 1600 / im.height), 1600), Image.LANCZOS)
-    im.save(os.path.join(od, "cover_art.webp"), quality=90, method=6)
-    print("art", im.size, "aspect h/w", round(im.height / im.width, 4))
-    if title:
-        t = key_title(title)
-        t.save(os.path.join(od, "cover_title.webp"), lossless=True)
-        print("title", t.size, "aspect h/w", round(t.height / t.width, 4))
+    im.save(dst, quality=90, method=6)
+    print(os.path.basename(dst), im.size, "aspect h/w", round(im.height / im.width, 4))
+
+
+def ship_key(src, dst, max_w=1500):
+    t = key_title(src)
+    if t.width > max_w:
+        t = t.resize((max_w, round(t.height * max_w / t.width)), Image.LANCZOS)
+    t.save(dst, lossless=True)
+    print(os.path.basename(dst), t.size, "aspect h/w", round(t.height / t.width, 4))
+
+
+def main():
+    """cover_build.py <tale> [art=..] [title=..] [back=..] [spot=..] | cover_build.py --end-title <png>"""
+    if sys.argv[1] == "--end-title":
+        od = os.path.join(ROOT, "game", "story", "art")
+        os.makedirs(od, exist_ok=True)
+        ship_key(sys.argv[2], os.path.join(od, "end_title.webp"), 700)
+        return
+    tale = sys.argv[1]
+    od = os.path.join(ROOT, "game", "stories", tale, "art")
+    os.makedirs(od, exist_ok=True)
+    kv = dict(a.split("=", 1) for a in sys.argv[2:] if "=" in a)
+    pos = [a for a in sys.argv[2:] if "=" not in a]  # legacy: <art> [<title>]
+    if pos:
+        kv.setdefault("art", pos[0])
+        if len(pos) > 1:
+            kv.setdefault("title", pos[1])
+    if "art" in kv:
+        ship_art(kv["art"], os.path.join(od, "cover_art.webp"))
+    if "back" in kv:
+        ship_art(kv["back"], os.path.join(od, "cover_back.webp"))
+    if "title" in kv:
+        ship_key(kv["title"], os.path.join(od, "cover_title.webp"))
+    if "spot" in kv:
+        ship_key(kv["spot"], os.path.join(od, "cover_spot.webp"), 900)
 
 
 if __name__ == "__main__":

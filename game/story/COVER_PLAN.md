@@ -40,12 +40,75 @@ Test card: 「사탕 마녀의 핼러윈」 (witch_candy). Rollout to sun_wind, 
   art (paper, not felt); frames at the board's mid-swing, landing and title page; the page turn into the first
   spread; the end close; full autoplay of every finished tale to STORY_DONE with missing_audio=[] missing_sound=[].
 
+## Title page
+Cream paper; the tale's cut-paper title (upper third), a paper-cut spot vignette from the tale under it (witch_candy:
+the jack-o'-lantern candy bucket and the witch's hat; sun_wind: the hat and coat on a rock with a sun and a wind
+swirl; three_pigs: the three little houses; sunmoon: the straw rope under a crescent moon and a sun, a sorghum stalk),
+"팝업 동화" small at the foot — all inside the middle ~64 % of the page that the open-book shot shows.
+
+## Data
+Each tale's book lives in game/stories/<tale>/cover.json ({cover: {art, back, title, spot, end_title, title_rect,
+end_rect, light, cloth, cloth_dark, endpaper, endpaper_motif, page, mark}, curtain: {shot?, who}}), merged into
+`ui` by StoryRunner and read by the bookshelf; the cover work never edits a tale's script.json.
+
 ## Art pipeline
 tools/art/cover_jobs.py (Codex jobs: key art with single-character refs + a paper material ref, then a "paper pass"
 that redraws the chosen picture as smooth cardstock — felt-made character refs leak their nap otherwise; the title
 lettering on magenta) → tools/art/cover_build.py <tale> <art.png> [<title.png>] → game/stories/<tale>/art/cover_art.webp,
 cover_title.webp. Config in tools/story/tales/<tale>.py `UI["cover"]` (copied into script.json `ui.cover`).
 
-## Alternative (look test, `--cover-pose=stand`)
-The same book standing on a little wooden easel, seen low (12°) like a shelf display, with the tale's own picture far
-behind it out of focus; opening pushes the camera straight onto the upright title page.
+## Decisions
+- 2026-11-22: the user chose the book lying on the table (the standing-on-an-easel alternative was dropped).
+- Coordinator notes: frame the closed book bigger (55–65 % of the frame height, table + shadow still visible, caption
+  clear); a paper-cut spot vignette under the title on the title page; the closing-book ending for all four tales.
+
+# ENDING — paper spec (user: "그리고 끝났을때도 제대로 기획해줘")
+
+- SUBJECT: the tale's last tableau, then its cast taking a bow, then the book itself: closed, turned over onto a back
+  cover that shows what happened after.
+- PALETTE: the tale's own (spread light, then the cover's cloth / endpaper / page colours); "끝" in brick red on cream.
+- LIGHT: the last spread keeps its light (warm evening / night); the table under the warm raking key; the back cover lit
+  like the front.
+- LENS: the stage's wide for the curtain call (tale shots), the stage rig's fold-wide, then the table lens of the cover
+  (60°, fov 22) with the book shifted left of centre for the tabs.
+- LAYOUT: back cover = epilogue picture, calm top quarter with a cut-paper "끝" (raised layer); two paper tabs on the
+  table at the right ("다시 보기", "다른 동화"), ≥ 300×96 pt each; the narrator's caption below the book.
+- MOTION: hold 1.5 s → each cast member gestures in turn (pose + paper hop, 0.5 s apart; hangers swing) → the pop-up
+  folds down in a wave (stage.fold: PopWave outside-in) → page turn back onto the title page → camera pulls back as
+  the board swings shut (soft slap) → the book lifts and turns over (1.3 s, a lift arc) and lands back-up → tabs fade in.
+- SOUND: ending music at the hold (catalog `music.ending`, plays once); page_turn cue on the turn back and on the
+  turn-over; book_close thump when the board shuts and when the book lands; the outdoor bed fades out at the table and
+  a quiet room tone (amb.room_fire, -16 dB) plays; stopped on replay / shelf. Nobody has listened to the mix yet.
+- BANNED: a moral, a quiz, a count; text printed into the art; a flat UI end card over the scene; the "끝" tag covering
+  the book; waiting on a choice in --autoplay.
+- QA: frames of the hold, the curtain call (every listed member in frame), the fold, the title page, the close, the
+  turn-over, the back cover with tabs; full autoplay of all four tales to STORY_DONE with missing_audio=[]
+  missing_sound=[].
+
+| # | Beat | Time (autoplay) | What happens | Tap |
+|---|------|-----------------|--------------|-----|
+| 1 | Hold | 1.5 s | the last line ends; the tableau stays; ending music starts | — |
+| 2 | Curtain call | 0.9 + 0.5·n + 1.3 s (≤ 6 s) | camera to `ui.curtain.shot` (or stays); each `who` entry gestures in turn | a cast member: repeats its gesture (hold 3.5 s when interactive) |
+| 3 | Fold | ~2.5 s | the pop-up folds down in a wave, camera rises to the wide | — |
+| 4 | Back to the title page | 1.1 s | page turn from the folded spread onto the book's title page (title + spot vignette) | — |
+| 5 | Close | 2.25 s | camera pulls back, the front board swings shut, soft slap + thump | — |
+| 6 | Back cover | 1.9 s | the book lifts and turns over onto the epilogue picture with "끝" | — |
+| 7 | Choices | — | tabs "다시 보기" / "다른 동화" beside the book; narrator "또 보고 싶으면 '다시 보기'를 톡!" | 다시 보기: replay from the cover (the book turns face up, glides back); 다른 동화: the bookshelf table |
+
+Per tale (`ui.curtain.who`, back cover subject):
+- 해와 바람: sun "beaming", wind "boast" swing in the sky; back cover — the traveller resting coatless in the sunshine
+  under a tree, sun and wind content above.
+- 아기 돼지 삼형제: pig_a / pig_b happy_wave, pig_c cheer, mom wave; back cover — the three pigs by the fire in the
+  brick house, the wolf running off far away with a singed tail.
+- 사탕 마녀의 핼러윈: 다현이 wave, the witch two_candies, 호박이 meow, rabbit / bear / fox cheer; back cover — the shop
+  at night, everyone in costume eating candy on the steps, the ghost peeking.
+- 해님 달님: the sun and the moon swing in the sky (the children became them); back cover — sun and moon over the
+  quiet cottage, the sorghum field below.
+Not done: the cast does not walk to new marks for the bow (they gesture where the story left them); no recorded word
+on a curtain-call tap (no fitting short clips checked).
+
+# BOOKSHELF TABLE (entry screen, "다른 동화")
+game/story/shelf.tscn (now the project's main scene): the four closed books (BookModel) on the same table, each corner
+lifting in turn; tap a book → it slides to the middle, the others slide aside, the camera glides to the cover framing,
+the tale's scene loads and its cover opens at once (no prompt). Any command-line user args (--tale, --beat,
+--autoplay, --agent-args) pass straight to the story scene, so recordings and probes are unchanged.

@@ -1,0 +1,42 @@
+{
+ "note": "The tale's picture book: cover / title page / back cover (game/story/book_model.gd) and the ending's curtain call (story_runner._curtain_call). Art: tools/art/cover_jobs.py -> tools/art/cover_build.py.",
+ "cover": {
+  "art": "res://stories/sun_wind/art/cover_art.webp",
+  "back": "res://stories/sun_wind/art/cover_back.webp",
+  "title": "res://stories/sun_wind/art/cover_title.webp",
+  "spot": "res://stories/sun_wind/art/cover_spot.webp",
+  "end_title": "res://story/art/end_title.webp",
+  "end_rect": [
+   0.5,
+   0.13,
+   0.3
+  ],
+  "mark": [
+   0.5,
+   0.968
+  ],
+  "title_rect": [
+   0.5,
+   0.14,
+   0.8
+  ],
+  "light": "day",
+  "cloth": "2f5d7c",
+  "cloth_dark": "22445c",
+  "endpaper": "e9b949",
+  "endpaper_motif": "f7e3a6",
+  "page": "f4ead3"
+ },
+ "curtain": {
+  "who": [
+   [
+    "sun",
+    "cast_sun_beaming"
+   ],
+   [
+    "wind",
+    "cast_wind_boast"
+   ]
+  ]
+ }
+}

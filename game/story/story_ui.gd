@@ -6,6 +6,7 @@ extends CanvasLayer
 
 signal cover_tapped
 signal replay_pressed
+signal other_pressed  ## "다른 동화": back to the bookshelf table
 signal subtitles_toggled(on: bool)
 
 const FONT_PATH := "res://story/fonts/PretendardVariable.woff2"
@@ -232,6 +233,15 @@ func close_book(shift := 0.0) -> void:
 		_book.close(shift)
 
 
+func turn_over_book() -> void:
+	if _book:
+		_book.turn_over()
+
+
+func book_animating() -> bool:
+	return _book != null and _book.is_animating()
+
+
 # ------------------------------------------------------------------ caption
 
 func _build_caption() -> void:
@@ -423,7 +433,9 @@ func _build_end() -> void:
 		tr.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		pics.add_child(tr)
 	v.add_child(pics)
-	v.add_child(_label("끝", 92, Color("a8432f"), true))
+	var fin := _label("끝", 92, Color("a8432f"), true)
+	fin.name = "Fin"
+	v.add_child(fin)
 	var moral := _label("", 38, INK, true)
 	moral.name = "Moral"
 	moral.visible = false
@@ -443,6 +455,14 @@ func _build_end() -> void:
 		b.add_theme_color_override(st, Color("fff3d6"))
 	b.pressed.connect(func(): replay_pressed.emit())
 	v.add_child(b)
+	var o := b.duplicate() as Button
+	o.name = "Other"
+	o.text = "다른 동화"
+	for st in ["normal", "hover", "pressed", "focus"]:
+		var bs := _paper_box(Color("5f7f6a") if st != "pressed" else Color("4d6a57"), Color("3b5444"), 14, 6)
+		o.add_theme_stylebox_override(st, bs)
+	o.pressed.connect(func(): other_pressed.emit())
+	v.add_child(o)
 
 
 func show_end(moral: String) -> void:
@@ -453,13 +473,18 @@ func show_end(moral: String) -> void:
 	var book := _book != null and _cover.visible
 	# with the closed book on the table the card is a slim paper tag at the right (the book shows the characters)
 	_end_pics.visible = not book
+	(_end_card.find_child("Fin", true, false) as Control).visible = not book  # "끝" is on the back cover
 	_end_card.anchor_left = 0.7 if book else 0.24
 	_end_card.anchor_right = 0.965 if book else 0.76
 	var sb := _end_card.get_theme_stylebox("panel") as StyleBoxFlat
 	if sb:
+		# beside the book the card itself vanishes: the two buttons are paper tabs lying on the table
 		sb.content_margin_left = 26 if book else 60
 		sb.content_margin_right = 26 if book else 60
-	_end_card.anchor_top = 0.24 if book else 0.1
+		sb.draw_center = not book
+		sb.set_border_width_all(0 if book else 2)
+		sb.shadow_size = 0 if book else 16
+	_end_card.anchor_top = 0.3 if book else 0.1
 	_end_card.anchor_bottom = _end_card.anchor_top
 	_end_card.offset_left = 0
 	_end_card.offset_right = 0
@@ -471,6 +496,10 @@ func hide_end() -> void:
 	_end_t = -1.0
 	if _book and not _book.is_closed():
 		hide_cover()
+
+
+func other_button_pos() -> Vector2:
+	return (_end_card.find_child("Other", true, false) as Control).get_global_rect().get_center()
 
 
 func end_button_pos() -> Vector2:

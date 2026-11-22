@@ -1842,3 +1842,24 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Full run v6 (sunmoon_full_v6.mp4 24.5 MB, full_v6_sheet.jpg): STORY_DONE 386.2 s (6:26), CHECK_LINES OK
     (67), VOICE_DUP=0, missing_audio=[], missing_sound=[], no script errors. The run-away fix came after it
     (verified on old_rope_v7.mp4 / runaway_v7.jpg).
+
+## 2026-11-22 — book covers phase 2 (user chose the book on the table) + the ending + the bookshelf table
+  - All four tales have a book: key art (paper-cut, Codex; sun_wind / three_pigs / witch_candy refs are felt, so their
+    pictures got the smooth-cardstock paper pass; sunmoon refs are paper already), cut-paper Korean titles (all four
+    spelled right first try), a spot vignette on the title page, a back-cover epilogue picture, a shared cut-paper
+    "끝" (game/story/art/end_title.webp). Data per tale in game/stories/<tale>/cover.json (no script.json edits;
+    witch_candy's phase-1 ui.cover dict moved there).
+  - Code: game/story/book_model.gd (the book: boards, spine, page block, title page, back cover, set_open / set_flip),
+    cover_book.gd (table, look rig, cover / open / close / turn-over / recenter), shelf.gd + shelf.tscn (the four books
+    on the table; tap → slide + glide → the tale opens at once; now the project's main scene, any user args go straight
+    to the story scene so recordings / probes are unchanged).
+  - Framing: the closed book fills ~65 % of the frame height (el 62°, dist 6.0), table + shadow visible, caption clear.
+  - Ending (COVER_PLAN.md ENDING): hold 1.5 s with the ending music → curtain call (cover.json curtain: gestures in
+    turn, tap repeats) → fold wave (wait until every hinge is flat; set-piece parts on no hinge squash flat with the
+    wave) → page turn back onto the title page → the board swings shut (thump) → the book turns over onto the back
+    cover → tabs "다시 보기" / "다른 동화" beside it; narrator "또 보고 싶으면 '다시 보기'를 톡!". Room tone at the table.
+  - Fixed on the way: cloth corners were wound face-down (invisible) and one stuck out past the board; the title page
+    title was cropped by the open-book shot; codex jobs need ≤ 5 reference images.
+  - Regression (no movie, --fixed-fps 30): sun_wind 219.7 s, three_pigs 310.4 s, witch_candy 447.6 s, sunmoon 396.8 s —
+    STORY_DONE missing_audio=[] missing_sound=[], CHECK_LINES OK for all four (VOICE_DUP high only in these
+    faster-than-realtime runs, as in phase 1).
