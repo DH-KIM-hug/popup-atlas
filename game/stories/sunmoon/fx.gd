@@ -25,7 +25,7 @@ var _tex := {}
 var _flyers: Array = []
 var _cards: Dictionary = {}  ## name -> Node3D (rope, oil bottle, streak, window hole, eyes)
 var _hidden: Dictionary = {}  ## role -> spot
-const ROPE_FRONT := 0.34  ## how far in front of the tree the sky ropes hang
+const ROPE_FRONT := 0.3  ## how far in front of the tree the sky ropes hang
 var _rope_drop := {}  ## name -> {node, y0, y1, t}
 var _t := 0.0
 var _climbing := false
@@ -129,12 +129,26 @@ func fly(id: String, from: Vector3, to: Vector3, h: float, life := 0.7, arc := 0
 	return n
 
 
+## Where a sky rope hangs: off the tree card's own face (the card is yawed 20 degrees off the view, so an offset
+## along the view direction put the rope behind the canopy from the tree_top side), level with the fork.
+func _rope_spot(side: float) -> Vector3:
+	var sp := stage.set_piece("tree")
+	if not sp:
+		return _trunk(1.0, side) + _toward() * ROPE_FRONT
+	var b := sp.global_transform.basis.orthonormalized()
+	var n := b.z if b.z.dot(_toward()) >= 0.0 else -b.z
+	n.y = 0.0
+	var rt := n.cross(Vector3.UP).normalized() * -1.0
+	if rt.dot(_right()) < 0.0:
+		rt = -rt
+	return sp.global_position + Vector3.UP * FORK_H + n.normalized() * ROPE_FRONT + rt * side
+
+
 func _tree_base() -> Vector3:
 	var sp := stage.set_piece("tree")
 	return sp.global_position if sp else stage.spot_point("tree")
 
 
-## A point on the trunk's face toward the camera, k = 0 (roots) .. 1 (fork).
 func _rope_gone() -> void:
 	if _cards.has("rope") and is_instance_valid(_cards["rope"]):
 		var old_r: Node3D = _cards["rope"]
@@ -143,6 +157,7 @@ func _rope_gone() -> void:
 	_cards.erase("rope")
 
 
+## A point on the trunk's face toward the camera, k = 0 (roots) .. 1 (fork).
 func _trunk(k: float, side := 0.0) -> Vector3:
 	return _tree_base() + Vector3.UP * FORK_H * k + _toward() * 0.06 + _right() * side
 
@@ -329,7 +344,7 @@ func fx(name: String) -> bool:
 			_rope_gone()
 			var r := _card(id, 2.0)
 			# hung well in front of the canopy card (0.06 left it cutting through the leaves)
-			var x := _trunk(1.0, 0.18 if p[1] == "good" else -0.2) + _toward() * ROPE_FRONT
+			var x := _rope_spot(0.18)  # both ropes on the side the shots frame
 			r.global_position = x + Vector3.UP * 2.6
 			_rope_drop[p[1]] = {"node": r, "y0": x.y + 2.6, "y1": x.y - 0.35, "t": 0.0}
 			_cards["rope"] = r

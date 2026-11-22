@@ -5419,8 +5419,13 @@
      "wait": 0.1
     },
     {
+     "do": "fx",
+     "fx": "rope_down:old",
+     "wait": 0.3
+    },
+    {
      "do": "cam",
-     "shot": "tree_top",
+     "shot": "rope_up",
      "at": "tree",
      "rate": 1.2,
      "wait": 0.2
@@ -5428,11 +5433,6 @@
     {
      "do": "say",
      "line": "sm_r1001"
-    },
-    {
-     "do": "fx",
-     "fx": "rope_down:old",
-     "wait": 0.3
     },
     {
      "do": "pose",
