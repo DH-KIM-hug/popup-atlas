@@ -1,0 +1,147 @@
+{
+ "sheet": "story_pj_field",
+ "bg": [
+  0.98,
+  0.016,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_pj_field_00",
+   "bbox": [
+    29,
+    120,
+    451,
+    406
+   ],
+   "area": 87558,
+   "size": [
+    430,
+    294
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_field_01",
+   "bbox": [
+    515,
+    39,
+    962,
+    405
+   ],
+   "area": 123545,
+   "size": [
+    455,
+    374
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_field_02",
+   "bbox": [
+    1022,
+    85,
+    1507,
+    405
+   ],
+   "area": 87233,
+   "size": [
+    493,
+    328
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_field_03",
+   "bbox": [
+    43,
+    488,
+    1496,
+    698
+   ],
+   "area": 260748,
+   "size": [
+    1461,
+    218
+   ],
+   "halo": 2,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_field_04",
+   "bbox": [
+    28,
+    841,
+    368,
+    964
+   ],
+   "area": 19563,
+   "size": [
+    348,
+    131
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_field_05",
+   "bbox": [
+    407,
+    763,
+    688,
+    979
+   ],
+   "area": 48895,
+   "size": [
+    289,
+    224
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_field_06",
+   "bbox": [
+    722,
+    789,
+    1135,
+    969
+   ],
+   "area": 65915,
+   "size": [
+    421,
+    188
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_field_07",
+   "bbox": [
+    1173,
+    789,
+    1499,
+    969
+   ],
+   "area": 33463,
+   "size": [
+    334,
+    188
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

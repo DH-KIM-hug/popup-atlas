@@ -1,0 +1,181 @@
+{
+ "sheet": "story_pj_kitchen",
+ "bg": [
+  0.98,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_pj_kitchen_00",
+   "bbox": [
+    54,
+    36,
+    745,
+    316
+   ],
+   "area": 187789,
+   "size": [
+    699,
+    288
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_01",
+   "bbox": [
+    808,
+    35,
+    1480,
+    316
+   ],
+   "area": 183601,
+   "size": [
+    680,
+    289
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_02",
+   "bbox": [
+    74,
+    346,
+    674,
+    596
+   ],
+   "area": 114342,
+   "size": [
+    608,
+    258
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_03",
+   "bbox": [
+    751,
+    426,
+    989,
+    569
+   ],
+   "area": 27155,
+   "size": [
+    246,
+    151
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_04",
+   "bbox": [
+    1112,
+    354,
+    1397,
+    607
+   ],
+   "area": 58997,
+   "size": [
+    293,
+    261
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_05",
+   "bbox": [
+    36,
+    647,
+    540,
+    794
+   ],
+   "area": 70478,
+   "size": [
+    512,
+    155
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_06",
+   "bbox": [
+    591,
+    686,
+    861,
+    746
+   ],
+   "area": 15363,
+   "size": [
+    278,
+    68
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_07",
+   "bbox": [
+    913,
+    599,
+    1099,
+    798
+   ],
+   "area": 21599,
+   "size": [
+    194,
+    207
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_08",
+   "bbox": [
+    1157,
+    677,
+    1492,
+    774
+   ],
+   "area": 13547,
+   "size": [
+    343,
+    105
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_pj_kitchen_09",
+   "bbox": [
+    544,
+    787,
+    952,
+    1003
+   ],
+   "area": 57960,
+   "size": [
+    416,
+    224
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

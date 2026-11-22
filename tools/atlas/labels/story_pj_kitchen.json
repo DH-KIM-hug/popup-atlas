@@ -1,0 +1,138 @@
+{
+ "biome": "korean_village",
+ "season": "any",
+ "tags": [
+  "patjuk",
+  "story",
+  "korean_traditional",
+  "kitchen",
+  "interior"
+ ],
+ "items": {
+  "00": [
+   "kitchen back wall: mud plaster, shelf of bowls, garlic and peppers, small lattice window",
+   "story_building",
+   0.5,
+   0,
+   {
+    "tags": [
+     "wall",
+     "room"
+    ]
+   }
+  ],
+  "01": [
+   "kitchen front wall from inside: plank door with a lintel beam",
+   "story_building",
+   0.5,
+   0,
+   {
+    "tags": [
+     "wall",
+     "door",
+     "room"
+    ]
+   }
+  ],
+  "02": [
+   "buttumak clay hearth with iron cauldron (gamasot) and lit fire mouth",
+   "story_prop",
+   0.22,
+   0,
+   {
+    "tags": [
+     "hearth",
+     "fire",
+     "cauldron",
+     "stove"
+    ]
+   }
+  ],
+  "03": [
+   "fire mouth glow (agungi flames)",
+   "story_fx",
+   0.1,
+   0,
+   {
+    "tags": [
+     "fire",
+     "flame"
+    ]
+   }
+  ],
+  "04": [
+   "big open earthenware water jar (muldok), water inside",
+   "story_prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "jar",
+     "onggi",
+     "water"
+    ]
+   }
+  ],
+  "05": [
+   "packed earthen kitchen floor (flat)",
+   "story_building",
+   0.36,
+   0,
+   {
+    "tags": [
+     "floor"
+    ]
+   }
+  ],
+  "06": [
+   "floor board with a crack (flat)",
+   "story_prop",
+   0.05,
+   0,
+   {
+    "tags": [
+     "floor",
+     "crack"
+    ]
+   }
+  ],
+  "07": [
+   "bowl of red-bean porridge (patjuk) with rice balls, steaming",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "food",
+     "bowl",
+     "porridge"
+    ]
+   }
+  ],
+  "08": [
+   "long wooden ladle",
+   "story_prop",
+   0.05,
+   0,
+   {
+    "tags": [
+     "ladle",
+     "cooking"
+    ]
+   }
+  ],
+  "09": [
+   "low table (soban) with a pot of porridge and bowls",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "table",
+     "food",
+     "porridge"
+    ]
+   }
+  ]
+ }
+}

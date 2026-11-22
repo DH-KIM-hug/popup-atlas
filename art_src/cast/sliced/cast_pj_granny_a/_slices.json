@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_pj_granny_a",
+ "bg": [
+  0.961,
+  0.02,
+  0.969
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_pj_granny_a_00",
+   "bbox": [
+    54,
+    75,
+    352,
+    657
+   ],
+   "area": 113189,
+   "size": [
+    306,
+    590
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_granny_a_01",
+   "bbox": [
+    362,
+    79,
+    742,
+    656
+   ],
+   "area": 119213,
+   "size": [
+    388,
+    585
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_granny_a_02",
+   "bbox": [
+    776,
+    100,
+    1101,
+    656
+   ],
+   "area": 114835,
+   "size": [
+    333,
+    564
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_granny_a_03",
+   "bbox": [
+    1123,
+    78,
+    1428,
+    657
+   ],
+   "area": 116734,
+   "size": [
+    313,
+    587
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_granny_a_04",
+   "bbox": [
+    1477,
+    78,
+    1772,
+    657
+   ],
+   "area": 112383,
+   "size": [
+    303,
+    587
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_granny_a_05",
+   "bbox": [
+    1822,
+    82,
+    2118,
+    657
+   ],
+   "area": 116184,
+   "size": [
+    304,
+    583
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

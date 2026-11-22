@@ -366,6 +366,25 @@ Run long work through background agents/workflows with narrow ownership (one own
 - 톡톡 extra clips can hold repeated takes (the puppy's growl ran 10.5 s, grandpa's "영~차!" twice): check every clip's
   envelope, not only the narration, and trim with TRIM_SEG.
 
+**Learned on patjuk (「팥죽할멈과 호랑이」, 2026-11-23)**
+- Check the voices table before planning new lines: speakers marked `"tc"` (patjuk's granny and all seven helpers)
+  are Typecast clips with no ElevenLabs voice id, so no new line can be recorded for them; every new line went to the
+  narrator. Name the actor role after the voice script's speaker key ("halmi", "bam"…): the stage finds a speaker's
+  actor by that name (SPEAKER_OFF, speaker chips, line `expr`).
+- Reusing another tale's house for a room people act in: size the house to the cast first. sunmoon's cottage room
+  (0.62 deep) could not frame the 0.57-tall tiger (giant paws, cut-off heads); the cottage stands 1.3× with a 0.95
+  body, its front line where it was (only door x and the inside scale). Inside shots aim at DEEP spots (z ≈ -0.85 of
+  the house frame) so the camera stays behind the front wall; a shot aimed at a mid-room spot put the camera outside
+  the house and the facade filled the frame.
+- A glide into a deep room passes the facade close enough to fill the frame with the door; tale `inside_margin`
+  (spread_stage, default 0.16) folds the facade away earlier (patjuk 0.8; the inside-face card waits until the camera is behind the wall).
+- A refrain of seven arrivals is the tale (a line + quote + tap each) but costs ~13 s each: keep the taps for the
+  ones the child needs (the kitchen helpers) and let the granny hand the bowls herself in the yard.
+- `.import` with `valid=false` (a webp rewritten while another agent's Godot imported): "Failed loading resource" in
+  the run log; move the .import away and import again. Grep run logs for "Failed loading" after art changes.
+- The shared slot: with four agents chaining Godot jobs, `with_godot.sh`'s 3 s poll lost the race for 30+ minutes;
+  a waiter that polls the lock dir every 0.2 s and then takes it the same way (mkdir + pid + trap) gets a turn.
+
 **Rules for every tale from now on (user, 2026-11-22/23, after sunmoon and the four-tale pass)**
 - Nothing overlaps (user: "최대한 겹치게 하지마라는 규칙은 없었나"): no character, set piece or fx prop (ropes, jars,
   baskets, flying props) may sit inside another or hide a speaker. OVERLAP_COUNT and OCCLUDE_COUNT must be 0 in the

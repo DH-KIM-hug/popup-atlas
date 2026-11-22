@@ -1,0 +1,9346 @@
+{
+ "tale_id": "patjuk",
+ "title": "팥죽할멈과 호랑이",
+ "seeded_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/patjuk/voice_script_el.json",
+ "clip_map_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/patjuk/narration_el.js + read_narration_el.js",
+ "voices": {
+  "nar": "pFZP5JQG7iQjIQuC4Bku",
+  "halmi": "tc",
+  "tiger": "EkK5I93UQWFDigLMpZcX",
+  "bam": "tc",
+  "jara": "tc",
+  "ddong": "tc",
+  "songgot": "tc",
+  "jeolgu": "tc",
+  "myeongseok": "tc",
+  "jige": "tc"
+ },
+ "models": {
+  "nar": "eleven_v4",
+  "halmi": "eleven_v4",
+  "tiger": "eleven_v4",
+  "bam": "eleven_v4",
+  "jara": "eleven_v4",
+  "ddong": "eleven_v4",
+  "songgot": "eleven_v4",
+  "jeolgu": "eleven_v4",
+  "myeongseok": "eleven_v4",
+  "jige": "eleven_v4"
+ },
+ "settings": {
+  "tiger": {
+   "stability": 0.3,
+   "style": 0.5
+  },
+  "nar": {
+   "stability": 0.45,
+   "style": 0.35
+  },
+  "halmi": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "bam": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "jara": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "ddong": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "songgot": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "jeolgu": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "myeongseok": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "jige": {
+   "stability": 0.35,
+   "style": 0.45
+  }
+ },
+ "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Lily, halmi=tc(순이 Sooni, 2026-10-30), tiger=Brian, bam=tc, jara=tc, ddong=tc, songgot=tc, jeolgu=tc, myeongseok=tc, jige=tc. tc 배역은 Typecast 클립 그대로 할멈 클립은 audio/tc/patjuk/(en/)halmi_*.mp3 (Typecast ssfm-v30, -19.5 LUFS), 맵은 narration_el*.js 에서 직접 바꿨다(gen_tale.py 를 다시 돌리면 halmi 가 옛 audio/tc/halmi_* 로 되돌아가니 주의)",
+ "handler": "res://stories/patjuk/fx.gd",
+ "shots": {
+  "story": [
+   3.4,
+   12.0,
+   0.28,
+   20.0
+  ],
+  "close": [
+   2.9,
+   12.0,
+   0.32,
+   20.0
+  ],
+  "crane_high": [
+   9.0,
+   36.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "establish": [
+   6.5,
+   18.0,
+   0.35,
+   24.0,
+   -6.0
+  ],
+  "medium": [
+   2.4,
+   9.0,
+   0.3,
+   22.0,
+   6.0
+  ],
+  "two_shot": [
+   2.0,
+   8.0,
+   0.3,
+   24.0,
+   -10.0
+  ],
+  "face": [
+   1.3,
+   6.0,
+   0.3,
+   22.0,
+   0.0
+  ],
+  "track_side": [
+   1.6,
+   16.0,
+   0.3,
+   30.0,
+   70.0
+  ],
+  "pass_track": [
+   1.7,
+   22.0,
+   0.3,
+   28.0,
+   0.0
+  ],
+  "track_back": [
+   2.6,
+   16.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "pass_low": [
+   1.8,
+   3.0,
+   0.32,
+   30.0,
+   18.0
+  ],
+  "pass_two": [
+   1.5,
+   14.0,
+   0.32,
+   30.0,
+   35.0
+  ],
+  "pass3_track": [
+   1.7,
+   22.0,
+   0.3,
+   28.0,
+   22.0
+  ],
+  "basket": [
+   0.9,
+   30.0,
+   0.12,
+   30.0,
+   0.0
+  ],
+  "moon_cut": [
+   1.4,
+   -4.0,
+   1.1,
+   44.0,
+   0.0
+  ],
+  "door_ots": [
+   1.3,
+   9.0,
+   0.32,
+   30.0,
+   25.0
+  ],
+  "room": [
+   0.4,
+   14.0,
+   0.18,
+   62.0,
+   -40.0
+  ],
+  "window_in": [
+   0.34,
+   4.0,
+   0.4,
+   40.0,
+   140.0
+  ],
+  "yard_high": [
+   4.5,
+   30.0,
+   0.3,
+   26.0,
+   -30.0
+  ],
+  "jars_low": [
+   1.4,
+   4.0,
+   0.15,
+   30.0,
+   10.0
+  ],
+  "tree_low": [
+   2.6,
+   2.0,
+   0.6,
+   34.0,
+   0.0
+  ],
+  "tree_top": [
+   1.6,
+   12.0,
+   1.25,
+   30.0,
+   -12.0
+  ],
+  "well_down": [
+   0.9,
+   55.0,
+   0.1,
+   30.0,
+   0.0
+  ],
+  "rope_up": [
+   3.2,
+   -6.0,
+   2.0,
+   40.0,
+   0.0
+  ],
+  "sky_wide": [
+   5.6,
+   -9.0,
+   1.9,
+   44.0,
+   0.0
+  ],
+  "sky_high": [
+   7.0,
+   18.0,
+   1.6,
+   40.0,
+   0.0
+  ],
+  "sky_rope": [
+   1.9,
+   -3.0,
+   0.95,
+   40.0,
+   0.0
+  ],
+  "pull_back": [
+   10.5,
+   26.0,
+   0.3,
+   24.0,
+   -30.0
+  ],
+  "field_est": [
+   5.2,
+   20.0,
+   0.3,
+   24.0,
+   14.0
+  ],
+  "field_med": [
+   2.2,
+   9.0,
+   0.22,
+   24.0,
+   18.0
+  ],
+  "field_low": [
+   1.5,
+   4.0,
+   0.28,
+   30.0,
+   -20.0
+  ],
+  "field_two": [
+   1.9,
+   10.0,
+   0.26,
+   26.0,
+   30.0
+  ],
+  "hoe": [
+   1.2,
+   16.0,
+   0.16,
+   26.0,
+   10.0
+  ],
+  "road_up": [
+   3.0,
+   14.0,
+   0.3,
+   26.0,
+   0.0
+  ],
+  "snow_est": [
+   5.5,
+   22.0,
+   0.35,
+   26.0,
+   -18.0
+  ],
+  "kitchen": [
+   0.8,
+   14.0,
+   0.2,
+   64.0,
+   -40.0
+  ],
+  "kitchen_low": [
+   0.7,
+   4.0,
+   0.24,
+   62.0,
+   -40.0
+  ],
+  "kitchen_door": [
+   0.72,
+   8.0,
+   0.26,
+   56.0,
+   140.0
+  ],
+  "kitchen_side": [
+   0.85,
+   10.0,
+   0.24,
+   60.0,
+   50.0
+  ],
+  "yard": [
+   2.2,
+   14.0,
+   0.25,
+   30.0,
+   -40.0
+  ],
+  "yard_wide": [
+   3.6,
+   20.0,
+   0.3,
+   28.0,
+   -30.0
+  ],
+  "yard_low": [
+   1.5,
+   5.0,
+   0.22,
+   32.0,
+   -55.0
+  ],
+  "sea": [
+   2.1,
+   12.0,
+   0.22,
+   36.0,
+   -130.0
+  ]
+ },
+ "ui": {
+  "cover": [
+   [
+    "cast_hanbok_granny_calm",
+    170
+   ],
+   [
+    "cast_tiger_sly",
+    260
+   ]
+  ],
+  "end": [
+   [
+    "cast_hanbok_granny_cheer",
+    200
+   ],
+   [
+    "cast_pj_bam_calm",
+    80
+   ],
+   [
+    "cast_pj_jara_calm",
+    90
+   ]
+  ],
+  "speakers": {
+   "halmi": [
+    "할멈",
+    "3a4f9a",
+    "cast_hanbok_granny_calm"
+   ],
+   "tiger": [
+    "호랑이",
+    "e08a1e",
+    "cast_tiger_calm"
+   ],
+   "bam": [
+    "알밤",
+    "8a5a2e",
+    "cast_pj_bam_calm"
+   ],
+   "jara": [
+    "자라",
+    "8a5a2e",
+    "cast_pj_jara_calm"
+   ],
+   "ddong": [
+    "쇠똥",
+    "8a5a2e",
+    "cast_pj_ddong_calm"
+   ],
+   "songgot": [
+    "송곳",
+    "8a5a2e",
+    "cast_pj_songgot_calm"
+   ],
+   "jeolgu": [
+    "절구",
+    "8a5a2e",
+    "cast_pj_jeolgu_calm"
+   ],
+   "myeongseok": [
+    "멍석",
+    "8a5a2e",
+    "cast_pj_myeongseok_calm"
+   ],
+   "jige": [
+    "지게",
+    "8a5a2e",
+    "cast_pj_jige_calm"
+   ]
+  }
+ },
+ "backdrop": true,
+ "inside_framing": "manual",
+ "sound": {
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "day",
+   "morning": "day",
+   "afternoon": "afternoon",
+   "late": "late",
+   "dusk": "dusk",
+   "night": "night",
+   "evening": "evening"
+  },
+  "fx": {
+   "tiger_out": "sm.growl_cute",
+   "hoe": "build.straw",
+   "hoe_drop": "wg.stone",
+   "knock": "wg.knock",
+   "give": "sm.gulp",
+   "hide": "wc.plop",
+   "tiger_crouch": "fire.crackle_m",
+   "trap:bam": "wc.boing",
+   "trap:jara": "wc.bonk",
+   "trap:ddong": "sm.slide",
+   "trap:songgot": "sm.paper_poke",
+   "trap:jeolgu": "wc.bonk",
+   "tiger_dip": "kitchen.splash",
+   "backstep": "wc.swoosh",
+   "tiger_flat": "wolf.flop",
+   "roll": "wc.roll",
+   "jige_lift": "prop.ladder_raise",
+   "splash": "wg.splash",
+   "swim": "wc.wave",
+   "feast": "wc.chime",
+   "hop_all": "wc.sparkle"
+  },
+  "steps": {
+   "cover": {
+    "on_open": {
+     "music": "intro_cozy",
+     "fade": 0.2
+    }
+   },
+   "page_turn": "paper.page_turn",
+   "go_inside": {
+    "door_open": "door.open",
+    "door_shut": "door.shut"
+   },
+   "end": {
+    "close_book": "paper.book_close",
+    "music_fade_on_replay": 2.0
+   }
+  },
+  "footsteps": {
+   "halmi": "pig",
+   "tiger": "wolf"
+  }
+ },
+ "theme": "korean",
+ "ground_style": "paper",
+ "inside_margin": 0.8,
+ "spacing": true,
+ "overlap_check": true,
+ "pop_in": false,
+ "overlap_ok": [
+  [
+   "tiger",
+   "boulder"
+  ],
+  [
+   "tiger",
+   "bam"
+  ],
+  [
+   "tiger",
+   "jara"
+  ],
+  [
+   "tiger",
+   "ddong"
+  ],
+  [
+   "tiger",
+   "songgot"
+  ],
+  [
+   "tiger",
+   "jeolgu"
+  ],
+  [
+   "tiger",
+   "myeongseok"
+  ],
+  [
+   "tiger",
+   "jige"
+  ],
+  [
+   "jige",
+   "wall_r"
+  ],
+  [
+   "tiger",
+   "hearth"
+  ],
+  [
+   "tiger",
+   "muldok"
+  ],
+  [
+   "halmi",
+   "hearth"
+  ],
+  [
+   "bam",
+   "hearth"
+  ],
+  [
+   "jara",
+   "muldok"
+  ],
+  [
+   "songgot",
+   "crack"
+  ],
+  [
+   "ddong",
+   "kfloor"
+  ]
+ ],
+ "cast": {
+  "halmi": {
+   "kind": "actor",
+   "skin": "hanbok_granny",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "할멈 (granny)"
+  },
+  "tiger": {
+   "kind": "actor",
+   "skin": "tiger",
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "호랑이 (tiger)"
+  },
+  "bam": {
+   "kind": "actor",
+   "skin": "pj_bam",
+   "views": [
+    "front"
+   ],
+   "label": "알밤"
+  },
+  "jara": {
+   "kind": "actor",
+   "skin": "pj_jara",
+   "views": [
+    "front"
+   ],
+   "label": "자라"
+  },
+  "ddong": {
+   "kind": "actor",
+   "skin": "pj_ddong",
+   "views": [
+    "front"
+   ],
+   "label": "쇠똥"
+  },
+  "songgot": {
+   "kind": "actor",
+   "skin": "pj_songgot",
+   "views": [
+    "front"
+   ],
+   "label": "송곳"
+  },
+  "jeolgu": {
+   "kind": "actor",
+   "skin": "pj_jeolgu",
+   "views": [
+    "front"
+   ],
+   "label": "절구"
+  },
+  "myeongseok": {
+   "kind": "actor",
+   "skin": "pj_myeongseok",
+   "views": [
+    "front"
+   ],
+   "label": "멍석"
+  },
+  "jige": {
+   "kind": "actor",
+   "skin": "pj_jige",
+   "views": [
+    "front"
+   ],
+   "label": "지게"
+  }
+ },
+ "moral": "",
+ "beats": [
+  {
+   "id": "cover",
+   "title": "팥죽할멈과 호랑이",
+   "spread": null,
+   "steps": [
+    {
+     "do": "cover",
+     "prompt": "pj_n01"
+    }
+   ],
+   "sound": {
+    "music": null,
+    "bed": null
+   }
+  },
+  {
+   "id": "field",
+   "title": "팥밭",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "field",
+    "light": "afternoon",
+    "spots": {
+     "field": [
+      0.62,
+      5.525
+     ],
+     "granny_at": [
+      0.393,
+      5.512
+     ],
+     "hoe_at": [
+      0.27,
+      5.549
+     ],
+     "boulder": [
+      -0.837,
+      4.743
+     ],
+     "tiger_at": [
+      -0.289,
+      5.056
+     ],
+     "tiger_out": [
+      -0.184,
+      4.514
+     ],
+     "road_away": [
+      -0.351,
+      2.022
+     ],
+     "est": [
+      0.074,
+      4.952
+     ],
+     "two": [
+      0.049,
+      5.309
+     ],
+     "bean_0": [
+      0.659,
+      5.9
+     ],
+     "bean_1": [
+      0.824,
+      5.479
+     ],
+     "bean_2": [
+      0.123,
+      5.955
+     ],
+     "bean_3": [
+      0.367,
+      5.14
+     ],
+     "bean_4": [
+      1.083,
+      5.814
+     ],
+     "bean_5": [
+      1.033,
+      5.175
+     ],
+     "bean_band": [
+      0.777,
+      4.79
+     ],
+     "basket": [
+      0.356,
+      5.761
+     ],
+     "ridge_1_l": [
+      -2.228,
+      -0.025
+     ],
+     "ridge_1_r": [
+      1.753,
+      1.013
+     ],
+     "ridge_2_l": [
+      -1.451,
+      -2.247
+     ],
+     "ridge_2_r": [
+      2.47,
+      -1.227
+     ],
+     "saddle": [
+      -3.462,
+      -6.465
+     ],
+     "far_ridge": [
+      3.335,
+      -4.412
+     ],
+     "grass_1": [
+      -1.104,
+      1.181
+     ]
+    },
+    "set": [
+     {
+      "card": "story_pj_field_00",
+      "at": "bean_0",
+      "stage": "full",
+      "name": "bean_0",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_pj_field_01",
+      "at": "bean_1",
+      "stage": "full",
+      "name": "bean_1",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_pj_field_02",
+      "at": "bean_2",
+      "stage": "full",
+      "name": "bean_2",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_pj_field_00",
+      "at": "bean_3",
+      "stage": "full",
+      "name": "bean_3",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_pj_field_02",
+      "at": "bean_4",
+      "stage": "full",
+      "name": "bean_4",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_pj_field_01",
+      "at": "bean_5",
+      "stage": "full",
+      "name": "bean_5",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_pj_field_03",
+      "at": "bean_band",
+      "stage": "full",
+      "name": "bean_band",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "basket",
+      "stage": "full",
+      "name": "basket",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "story_sm_mountain_04",
+      "at": "boulder",
+      "stage": "full",
+      "name": "boulder",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_1_l",
+      "stage": "full",
+      "name": "ridge_1_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_1_r",
+      "stage": "full",
+      "name": "ridge_1_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_2_l",
+      "stage": "full",
+      "name": "ridge_2_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_2_r",
+      "stage": "full",
+      "name": "ridge_2_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_02",
+      "at": "saddle",
+      "stage": "full",
+      "name": "saddle",
+      "scale": 1.3,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "far_ridge",
+      "stage": "full",
+      "name": "far_ridge",
+      "scale": 1.2,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_1",
+      "stage": "full",
+      "name": "grass_1",
+      "scale": 1.0,
+      "clear": 0.2
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "halmi": "hoe_up"
+    },
+    "at": {
+     "halmi": "granny_at"
+    },
+    "hidden": {
+     "tiger": "boulder"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "field_est",
+     "at": "est",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 0.9
+    },
+    {
+     "do": "say",
+     "line": "pj_r0100"
+    },
+    {
+     "do": "cam",
+     "shot": "field_med",
+     "at": "field",
+     "rate": 1.4,
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "hoe",
+     "at": "granny_at",
+     "rate": 1.6,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "tap_steps",
+     "target": "halmi",
+     "prompt": "pj_n03",
+     "hint": "pj_n03",
+     "steps": [
+      {
+       "fx": "hoe:1",
+       "wait": 0.4
+      },
+      {
+       "fx": "hoe:2",
+       "wait": 0.4
+      },
+      {
+       "fx": "hoe:3",
+       "wait": 0.4
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "tiger_out:boulder:tiger_at",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "field_low",
+     "at": "tiger_at",
+     "rate": 3.0,
+     "shake": 0.6,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "pj_r0201"
+    },
+    {
+     "do": "fx",
+     "fx": "hoe_drop",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "field_two",
+     "at": [
+      "granny_at",
+      "tiger_at"
+     ],
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "shiver:3.0",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0202"
+    },
+    {
+     "do": "say",
+     "line": "pj_r0204",
+     "segs": [
+      0
+     ]
+    },
+    {
+     "do": "walk",
+     "who": "tiger",
+     "to": "road_away",
+     "dir": "away",
+     "speed": 0.45,
+     "follow": "tiger",
+     "shot": "road_up",
+     "line": "pj_r0204",
+     "segs": [
+      1
+     ],
+     "exit": true
+    },
+    {
+     "do": "pose",
+     "who": "halmi",
+     "pose": "look_far",
+     "wait": 1.2
+    }
+   ],
+   "sound": {
+    "music": "home",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "winter",
+   "title": "동짓날",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "dusk",
+    "spots": {
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.653,
+      2.18
+     ],
+     "door_in": [
+      0.987,
+      1.782
+     ],
+     "step": [
+      0.782,
+      2.027
+     ],
+     "path_end": [
+      0.184,
+      2.74
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "door_out": [
+      0.46,
+      2.41
+     ],
+     "jars": [
+      0.629,
+      0.632
+     ],
+     "firewood": [
+      2.222,
+      2.622
+     ],
+     "fence_1": [
+      1.034,
+      -0.007
+     ],
+     "k_back": [
+      1.657,
+      1.43
+     ],
+     "k_floor": [
+      1.239,
+      1.927
+     ],
+     "k_floor2": [
+      1.528,
+      1.583
+     ],
+     "hearth": [
+      1.248,
+      1.217
+     ],
+     "fire": [
+      1.158,
+      1.324
+     ],
+     "jara_rim": [
+      1.847,
+      1.903
+     ],
+     "cauldron": [
+      1.215,
+      1.255
+     ],
+     "muldok": [
+      1.962,
+      1.843
+     ],
+     "crack": [
+      1.168,
+      1.607
+     ],
+     "k_focus": [
+      1.624,
+      1.468
+     ],
+     "k_low_l": [
+      1.414,
+      1.252
+     ],
+     "k_low_r": [
+      1.873,
+      1.638
+     ],
+     "k_wood": [
+      0.851,
+      1.145
+     ],
+     "k_basket": [
+      0.658,
+      1.375
+     ],
+     "k_left": [
+      1.093,
+      1.479
+     ],
+     "door_view": [
+      1.002,
+      1.899
+     ],
+     "k_mid_r": [
+      1.567,
+      2.034
+     ],
+     "granny_k": [
+      1.707,
+      1.603
+     ],
+     "jeolgu_land": [
+      0.837,
+      1.551
+     ],
+     "granny_door": [
+      1.243,
+      1.892
+     ],
+     "corner": [
+      1.807,
+      2.339
+     ],
+     "tiger_fire": [
+      1.418,
+      1.465
+     ],
+     "tiger_jar": [
+      1.725,
+      1.722
+     ],
+     "dung": [
+      1.416,
+      1.685
+     ],
+     "tiger_door": [
+      0.949,
+      1.828
+     ],
+     "bam_k": [
+      0.888,
+      1.412
+     ],
+     "granny_wait": [
+      1.677,
+      1.903
+     ],
+     "jara_k": [
+      1.586,
+      1.918
+     ],
+     "help_in": [
+      1.438,
+      1.612
+     ],
+     "lintel": [
+      0.878,
+      1.912
+     ],
+     "yard_c": [
+      0.711,
+      2.79
+     ],
+     "y_granny": [
+      0.341,
+      2.219
+     ],
+     "y_mat": [
+      0.899,
+      2.83
+     ],
+     "y_jige": [
+      1.02,
+      3.402
+     ],
+     "wall_l": [
+      -0.175,
+      2.399
+     ],
+     "wall_r": [
+      0.766,
+      3.424
+     ],
+     "y_tiger": [
+      0.564,
+      2.732
+     ],
+     "y_help_in": [
+      -0.009,
+      2.969
+     ],
+     "gate": [
+      0.055,
+      2.893
+     ],
+     "y_focus": [
+      0.628,
+      2.655
+     ],
+     "y_feast": [
+      0.733,
+      2.717
+     ],
+     "y_out": [
+      1.698,
+      4.336
+     ],
+     "shore": [
+      2.952,
+      4.475
+     ],
+     "sea": [
+      3.94,
+      3.998
+     ],
+     "sea_splash": [
+      3.754,
+      3.908
+     ],
+     "snow_1": [
+      -0.233,
+      1.737
+     ],
+     "snow_2": [
+      1.67,
+      3.203
+     ],
+     "snow_3": [
+      2.922,
+      2.1
+     ],
+     "snow_4": [
+      0.848,
+      3.949
+     ],
+     "snow_5": [
+      0.224,
+      0.881
+     ],
+     "stack": [
+      2.08,
+      3.025
+     ],
+     "cot_st0": [
+      0.589,
+      2.257
+     ],
+     "cot_st1": [
+      0.493,
+      2.372
+     ],
+     "cot_st2": [
+      0.396,
+      2.487
+     ],
+     "cot_st3": [
+      0.3,
+      2.602
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.3,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.95,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_00",
+      "at": "k_back",
+      "stage": "full",
+      "name": "k_back",
+      "scale": 1.35,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor",
+      "stage": "full",
+      "name": "kfloor",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.021
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor2",
+      "stage": "full",
+      "name": "kfloor2",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.022
+     },
+     {
+      "card": "story_pj_kitchen_02",
+      "at": "hearth",
+      "stage": "full",
+      "name": "hearth",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "light": [
+       0.3,
+       0.3,
+       1.0,
+       "#ff9a40",
+       true
+      ]
+     },
+     {
+      "card": "story_pj_kitchen_04",
+      "at": "muldok",
+      "stage": "full",
+      "name": "muldok",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_06",
+      "at": "crack",
+      "stage": "full",
+      "name": "crack",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.024
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "k_wood",
+      "stage": "full",
+      "name": "k_wood",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "k_basket",
+      "stage": "full",
+      "name": "k_basket",
+      "scale": 1.2,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_yard_00",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 0.8,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_01",
+      "at": "wall_r",
+      "stage": "full",
+      "name": "wall_r",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_02",
+      "at": "sea",
+      "stage": "full",
+      "name": "sea",
+      "scale": 3.2,
+      "clear": 1.6,
+      "yaw": -130.0,
+      "allow_road": true
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_1",
+      "stage": "full",
+      "name": "snow_1",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_2",
+      "stage": "full",
+      "name": "snow_2",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_3",
+      "stage": "full",
+      "name": "snow_3",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_4",
+      "stage": "full",
+      "name": "snow_4",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_5",
+      "stage": "full",
+      "name": "snow_5",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_08",
+      "at": "stack",
+      "stage": "full",
+      "name": "stack",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus"
+   },
+   "enter": {
+    "who": {
+     "halmi": "cry_stir"
+    },
+    "at": {
+     "halmi": "granny_k"
+    }
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "snow:on",
+     "wait": 0.0
+    },
+    {
+     "do": "cam",
+     "shot": "snow_est",
+     "at": "est",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 0.6
+    },
+    {
+     "do": "say",
+     "line": "pj_r0300"
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen",
+     "at": "k_focus",
+     "rate": 1.1,
+     "wait": 0.3,
+     "settle": 0.7
+    },
+    {
+     "do": "fx",
+     "fx": "steam:on",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0301"
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen_low",
+     "at": "k_low_l",
+     "rate": 1.8,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "pj_r0304"
+    }
+   ],
+   "sound": {
+    "music": "night",
+    "bed": "room"
+   }
+  },
+  {
+   "id": "helpers",
+   "title": "작은 친구들",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "dusk",
+    "spots": {
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.653,
+      2.18
+     ],
+     "door_in": [
+      0.987,
+      1.782
+     ],
+     "step": [
+      0.782,
+      2.027
+     ],
+     "path_end": [
+      0.184,
+      2.74
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "door_out": [
+      0.46,
+      2.41
+     ],
+     "jars": [
+      0.629,
+      0.632
+     ],
+     "firewood": [
+      2.222,
+      2.622
+     ],
+     "fence_1": [
+      1.034,
+      -0.007
+     ],
+     "k_back": [
+      1.657,
+      1.43
+     ],
+     "k_floor": [
+      1.239,
+      1.927
+     ],
+     "k_floor2": [
+      1.528,
+      1.583
+     ],
+     "hearth": [
+      1.248,
+      1.217
+     ],
+     "fire": [
+      1.158,
+      1.324
+     ],
+     "jara_rim": [
+      1.847,
+      1.903
+     ],
+     "cauldron": [
+      1.215,
+      1.255
+     ],
+     "muldok": [
+      1.962,
+      1.843
+     ],
+     "crack": [
+      1.168,
+      1.607
+     ],
+     "k_focus": [
+      1.624,
+      1.468
+     ],
+     "k_low_l": [
+      1.414,
+      1.252
+     ],
+     "k_low_r": [
+      1.873,
+      1.638
+     ],
+     "k_wood": [
+      0.851,
+      1.145
+     ],
+     "k_basket": [
+      0.658,
+      1.375
+     ],
+     "k_left": [
+      1.093,
+      1.479
+     ],
+     "door_view": [
+      1.002,
+      1.899
+     ],
+     "k_mid_r": [
+      1.567,
+      2.034
+     ],
+     "granny_k": [
+      1.707,
+      1.603
+     ],
+     "jeolgu_land": [
+      0.837,
+      1.551
+     ],
+     "granny_door": [
+      1.243,
+      1.892
+     ],
+     "corner": [
+      1.807,
+      2.339
+     ],
+     "tiger_fire": [
+      1.418,
+      1.465
+     ],
+     "tiger_jar": [
+      1.725,
+      1.722
+     ],
+     "dung": [
+      1.416,
+      1.685
+     ],
+     "tiger_door": [
+      0.949,
+      1.828
+     ],
+     "bam_k": [
+      0.888,
+      1.412
+     ],
+     "granny_wait": [
+      1.677,
+      1.903
+     ],
+     "jara_k": [
+      1.586,
+      1.918
+     ],
+     "help_in": [
+      1.438,
+      1.612
+     ],
+     "lintel": [
+      0.878,
+      1.912
+     ],
+     "yard_c": [
+      0.711,
+      2.79
+     ],
+     "y_granny": [
+      0.341,
+      2.219
+     ],
+     "y_mat": [
+      0.899,
+      2.83
+     ],
+     "y_jige": [
+      1.02,
+      3.402
+     ],
+     "wall_l": [
+      -0.175,
+      2.399
+     ],
+     "wall_r": [
+      0.766,
+      3.424
+     ],
+     "y_tiger": [
+      0.564,
+      2.732
+     ],
+     "y_help_in": [
+      -0.009,
+      2.969
+     ],
+     "gate": [
+      0.055,
+      2.893
+     ],
+     "y_focus": [
+      0.628,
+      2.655
+     ],
+     "y_feast": [
+      0.733,
+      2.717
+     ],
+     "y_out": [
+      1.698,
+      4.336
+     ],
+     "shore": [
+      2.952,
+      4.475
+     ],
+     "sea": [
+      3.94,
+      3.998
+     ],
+     "sea_splash": [
+      3.754,
+      3.908
+     ],
+     "snow_1": [
+      -0.233,
+      1.737
+     ],
+     "snow_2": [
+      1.67,
+      3.203
+     ],
+     "snow_3": [
+      2.922,
+      2.1
+     ],
+     "snow_4": [
+      0.848,
+      3.949
+     ],
+     "snow_5": [
+      0.224,
+      0.881
+     ],
+     "stack": [
+      2.08,
+      3.025
+     ],
+     "cot_st0": [
+      0.589,
+      2.257
+     ],
+     "cot_st1": [
+      0.493,
+      2.372
+     ],
+     "cot_st2": [
+      0.396,
+      2.487
+     ],
+     "cot_st3": [
+      0.3,
+      2.602
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.3,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.95,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_00",
+      "at": "k_back",
+      "stage": "full",
+      "name": "k_back",
+      "scale": 1.35,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor",
+      "stage": "full",
+      "name": "kfloor",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.021
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor2",
+      "stage": "full",
+      "name": "kfloor2",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.022
+     },
+     {
+      "card": "story_pj_kitchen_02",
+      "at": "hearth",
+      "stage": "full",
+      "name": "hearth",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "light": [
+       0.3,
+       0.3,
+       1.0,
+       "#ff9a40",
+       true
+      ]
+     },
+     {
+      "card": "story_pj_kitchen_04",
+      "at": "muldok",
+      "stage": "full",
+      "name": "muldok",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_06",
+      "at": "crack",
+      "stage": "full",
+      "name": "crack",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.024
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "k_wood",
+      "stage": "full",
+      "name": "k_wood",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "k_basket",
+      "stage": "full",
+      "name": "k_basket",
+      "scale": 1.2,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_yard_00",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 0.8,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_01",
+      "at": "wall_r",
+      "stage": "full",
+      "name": "wall_r",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_02",
+      "at": "sea",
+      "stage": "full",
+      "name": "sea",
+      "scale": 3.2,
+      "clear": 1.6,
+      "yaw": -130.0,
+      "allow_road": true
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_1",
+      "stage": "full",
+      "name": "snow_1",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_2",
+      "stage": "full",
+      "name": "snow_2",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_3",
+      "stage": "full",
+      "name": "snow_3",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_4",
+      "stage": "full",
+      "name": "snow_4",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_5",
+      "stage": "full",
+      "name": "snow_5",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_08",
+      "at": "stack",
+      "stage": "full",
+      "name": "stack",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus"
+   },
+   "enter": {
+    "who": {
+     "halmi": "calm"
+    },
+    "at": {
+     "halmi": "granny_k"
+    },
+    "keep": [
+     "halmi"
+    ]
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "knock",
+     "wait": 0.6
+    },
+    {
+     "do": "pose",
+     "who": "halmi",
+     "pose": "calm",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen",
+     "at": "k_focus",
+     "rate": 1.2,
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "door:open",
+     "wait": 0.4
+    },
+    {
+     "do": "fx",
+     "fx": "arrive:bam",
+     "wait": 0.9
+    },
+    {
+     "do": "say",
+     "line": "pj_r0401",
+     "segs": [
+      0,
+      1
+     ]
+    },
+    {
+     "do": "tap_steps",
+     "target": "cauldron",
+     "steps": [
+      {
+       "fx": "give:bam",
+       "wait": 0.9
+      }
+     ],
+     "prompt": "pj_n04",
+     "hint": "pj_n04"
+    },
+    {
+     "do": "fx",
+     "fx": "hide:bam",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0401",
+     "segs": [
+      2
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "arrive:jara",
+     "wait": 0.9
+    },
+    {
+     "do": "say",
+     "line": "pj_r0402",
+     "segs": [
+      0,
+      1
+     ]
+    },
+    {
+     "do": "tap_steps",
+     "target": "cauldron",
+     "steps": [
+      {
+       "fx": "give:jara",
+       "wait": 0.9
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "hide:jara",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0402",
+     "segs": [
+      2
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "arrive:ddong",
+     "wait": 0.9
+    },
+    {
+     "do": "say",
+     "line": "pj_r0501",
+     "segs": [
+      0,
+      1
+     ]
+    },
+    {
+     "do": "tap_steps",
+     "target": "cauldron",
+     "steps": [
+      {
+       "fx": "give:ddong",
+       "wait": 0.9
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "hide:ddong",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0501",
+     "segs": [
+      2
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "arrive:songgot",
+     "wait": 0.9
+    },
+    {
+     "do": "say",
+     "line": "pj_r0502",
+     "segs": [
+      0,
+      1
+     ]
+    },
+    {
+     "do": "tap_steps",
+     "target": "cauldron",
+     "steps": [
+      {
+       "fx": "give:songgot",
+       "wait": 0.9
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "hide:songgot",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0502",
+     "segs": [
+      2
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "arrive:jeolgu",
+     "wait": 0.9
+    },
+    {
+     "do": "say",
+     "line": "pj_r0503",
+     "segs": [
+      0,
+      1
+     ]
+    },
+    {
+     "do": "tap_steps",
+     "target": "cauldron",
+     "steps": [
+      {
+       "fx": "give:jeolgu",
+       "wait": 0.9
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "hide:jeolgu",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0503",
+     "segs": [
+      2
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "door:close",
+     "wait": 0.3
+    }
+   ],
+   "sound": {
+    "music": "home",
+    "bed": "room"
+   }
+  },
+  {
+   "id": "yard",
+   "title": "마당",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "dusk",
+    "spots": {
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.653,
+      2.18
+     ],
+     "door_in": [
+      0.987,
+      1.782
+     ],
+     "step": [
+      0.782,
+      2.027
+     ],
+     "path_end": [
+      0.184,
+      2.74
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "door_out": [
+      0.46,
+      2.41
+     ],
+     "jars": [
+      0.629,
+      0.632
+     ],
+     "firewood": [
+      2.222,
+      2.622
+     ],
+     "fence_1": [
+      1.034,
+      -0.007
+     ],
+     "k_back": [
+      1.657,
+      1.43
+     ],
+     "k_floor": [
+      1.239,
+      1.927
+     ],
+     "k_floor2": [
+      1.528,
+      1.583
+     ],
+     "hearth": [
+      1.248,
+      1.217
+     ],
+     "fire": [
+      1.158,
+      1.324
+     ],
+     "jara_rim": [
+      1.847,
+      1.903
+     ],
+     "cauldron": [
+      1.215,
+      1.255
+     ],
+     "muldok": [
+      1.962,
+      1.843
+     ],
+     "crack": [
+      1.168,
+      1.607
+     ],
+     "k_focus": [
+      1.624,
+      1.468
+     ],
+     "k_low_l": [
+      1.414,
+      1.252
+     ],
+     "k_low_r": [
+      1.873,
+      1.638
+     ],
+     "k_wood": [
+      0.851,
+      1.145
+     ],
+     "k_basket": [
+      0.658,
+      1.375
+     ],
+     "k_left": [
+      1.093,
+      1.479
+     ],
+     "door_view": [
+      1.002,
+      1.899
+     ],
+     "k_mid_r": [
+      1.567,
+      2.034
+     ],
+     "granny_k": [
+      1.707,
+      1.603
+     ],
+     "jeolgu_land": [
+      0.837,
+      1.551
+     ],
+     "granny_door": [
+      1.243,
+      1.892
+     ],
+     "corner": [
+      1.807,
+      2.339
+     ],
+     "tiger_fire": [
+      1.418,
+      1.465
+     ],
+     "tiger_jar": [
+      1.725,
+      1.722
+     ],
+     "dung": [
+      1.416,
+      1.685
+     ],
+     "tiger_door": [
+      0.949,
+      1.828
+     ],
+     "bam_k": [
+      0.888,
+      1.412
+     ],
+     "granny_wait": [
+      1.677,
+      1.903
+     ],
+     "jara_k": [
+      1.586,
+      1.918
+     ],
+     "help_in": [
+      1.438,
+      1.612
+     ],
+     "lintel": [
+      0.878,
+      1.912
+     ],
+     "yard_c": [
+      0.711,
+      2.79
+     ],
+     "y_granny": [
+      0.341,
+      2.219
+     ],
+     "y_mat": [
+      0.899,
+      2.83
+     ],
+     "y_jige": [
+      1.02,
+      3.402
+     ],
+     "wall_l": [
+      -0.175,
+      2.399
+     ],
+     "wall_r": [
+      0.766,
+      3.424
+     ],
+     "y_tiger": [
+      0.564,
+      2.732
+     ],
+     "y_help_in": [
+      -0.009,
+      2.969
+     ],
+     "gate": [
+      0.055,
+      2.893
+     ],
+     "y_focus": [
+      0.628,
+      2.655
+     ],
+     "y_feast": [
+      0.733,
+      2.717
+     ],
+     "y_out": [
+      1.698,
+      4.336
+     ],
+     "shore": [
+      2.952,
+      4.475
+     ],
+     "sea": [
+      3.94,
+      3.998
+     ],
+     "sea_splash": [
+      3.754,
+      3.908
+     ],
+     "snow_1": [
+      -0.233,
+      1.737
+     ],
+     "snow_2": [
+      1.67,
+      3.203
+     ],
+     "snow_3": [
+      2.922,
+      2.1
+     ],
+     "snow_4": [
+      0.848,
+      3.949
+     ],
+     "snow_5": [
+      0.224,
+      0.881
+     ],
+     "stack": [
+      2.08,
+      3.025
+     ],
+     "cot_st0": [
+      0.589,
+      2.257
+     ],
+     "cot_st1": [
+      0.493,
+      2.372
+     ],
+     "cot_st2": [
+      0.396,
+      2.487
+     ],
+     "cot_st3": [
+      0.3,
+      2.602
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.3,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.95,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_00",
+      "at": "k_back",
+      "stage": "full",
+      "name": "k_back",
+      "scale": 1.35,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor",
+      "stage": "full",
+      "name": "kfloor",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.021
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor2",
+      "stage": "full",
+      "name": "kfloor2",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.022
+     },
+     {
+      "card": "story_pj_kitchen_02",
+      "at": "hearth",
+      "stage": "full",
+      "name": "hearth",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "light": [
+       0.3,
+       0.3,
+       1.0,
+       "#ff9a40",
+       true
+      ]
+     },
+     {
+      "card": "story_pj_kitchen_04",
+      "at": "muldok",
+      "stage": "full",
+      "name": "muldok",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_06",
+      "at": "crack",
+      "stage": "full",
+      "name": "crack",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.024
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "k_wood",
+      "stage": "full",
+      "name": "k_wood",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "k_basket",
+      "stage": "full",
+      "name": "k_basket",
+      "scale": 1.2,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_yard_00",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 0.8,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_01",
+      "at": "wall_r",
+      "stage": "full",
+      "name": "wall_r",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_02",
+      "at": "sea",
+      "stage": "full",
+      "name": "sea",
+      "scale": 3.2,
+      "clear": 1.6,
+      "yaw": -130.0,
+      "allow_road": true
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_1",
+      "stage": "full",
+      "name": "snow_1",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_2",
+      "stage": "full",
+      "name": "snow_2",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_3",
+      "stage": "full",
+      "name": "snow_3",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_4",
+      "stage": "full",
+      "name": "snow_4",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_5",
+      "stage": "full",
+      "name": "snow_5",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_08",
+      "at": "stack",
+      "stage": "full",
+      "name": "stack",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus"
+   },
+   "enter": {
+    "who": {
+     "halmi": "calm"
+    },
+    "at": {
+     "halmi": "granny_k"
+    },
+    "keep": [
+     "halmi",
+     "bam",
+     "jara",
+     "ddong",
+     "songgot",
+     "jeolgu"
+    ]
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "yard",
+     "at": "y_focus",
+     "rate": 1.0,
+     "wait": 0.2,
+     "settle": 0.8
+    },
+    {
+     "do": "fx",
+     "fx": "door:open",
+     "wait": 0.3
+    },
+    {
+     "do": "walk",
+     "who": "halmi",
+     "via": [
+      "k_mid_r",
+      "tiger_door",
+      "door"
+     ],
+     "to": "y_granny",
+     "speed": 0.34
+    },
+    {
+     "do": "fx",
+     "fx": "door:close",
+     "wait": 0.1
+    },
+    {
+     "do": "fx",
+     "fx": "arrive:myeongseok",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0602",
+     "segs": [
+      0,
+      1
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "give:myeongseok",
+     "wait": 1.0
+    },
+    {
+     "do": "fx",
+     "fx": "hide:myeongseok",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0602",
+     "segs": [
+      2
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "arrive:jige",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0603",
+     "segs": [
+      0,
+      1
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "give:jige",
+     "wait": 1.0
+    },
+    {
+     "do": "fx",
+     "fx": "hide:jige",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "pj_r0603",
+     "segs": [
+      2
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "yard_low",
+     "at": "y_granny",
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "pj_r0605"
+    },
+    {
+     "do": "say",
+     "line": "pj_r0606"
+    }
+   ],
+   "sound": {
+    "music": "home",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "night",
+   "title": "깜깜한 밤",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "night",
+    "spots": {
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.653,
+      2.18
+     ],
+     "door_in": [
+      0.987,
+      1.782
+     ],
+     "step": [
+      0.782,
+      2.027
+     ],
+     "path_end": [
+      0.184,
+      2.74
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "door_out": [
+      0.46,
+      2.41
+     ],
+     "jars": [
+      0.629,
+      0.632
+     ],
+     "firewood": [
+      2.222,
+      2.622
+     ],
+     "fence_1": [
+      1.034,
+      -0.007
+     ],
+     "k_back": [
+      1.657,
+      1.43
+     ],
+     "k_floor": [
+      1.239,
+      1.927
+     ],
+     "k_floor2": [
+      1.528,
+      1.583
+     ],
+     "hearth": [
+      1.248,
+      1.217
+     ],
+     "fire": [
+      1.158,
+      1.324
+     ],
+     "jara_rim": [
+      1.847,
+      1.903
+     ],
+     "cauldron": [
+      1.215,
+      1.255
+     ],
+     "muldok": [
+      1.962,
+      1.843
+     ],
+     "crack": [
+      1.168,
+      1.607
+     ],
+     "k_focus": [
+      1.624,
+      1.468
+     ],
+     "k_low_l": [
+      1.414,
+      1.252
+     ],
+     "k_low_r": [
+      1.873,
+      1.638
+     ],
+     "k_wood": [
+      0.851,
+      1.145
+     ],
+     "k_basket": [
+      0.658,
+      1.375
+     ],
+     "k_left": [
+      1.093,
+      1.479
+     ],
+     "door_view": [
+      1.002,
+      1.899
+     ],
+     "k_mid_r": [
+      1.567,
+      2.034
+     ],
+     "granny_k": [
+      1.707,
+      1.603
+     ],
+     "jeolgu_land": [
+      0.837,
+      1.551
+     ],
+     "granny_door": [
+      1.243,
+      1.892
+     ],
+     "corner": [
+      1.807,
+      2.339
+     ],
+     "tiger_fire": [
+      1.418,
+      1.465
+     ],
+     "tiger_jar": [
+      1.725,
+      1.722
+     ],
+     "dung": [
+      1.416,
+      1.685
+     ],
+     "tiger_door": [
+      0.949,
+      1.828
+     ],
+     "bam_k": [
+      0.888,
+      1.412
+     ],
+     "granny_wait": [
+      1.677,
+      1.903
+     ],
+     "jara_k": [
+      1.586,
+      1.918
+     ],
+     "help_in": [
+      1.438,
+      1.612
+     ],
+     "lintel": [
+      0.878,
+      1.912
+     ],
+     "yard_c": [
+      0.711,
+      2.79
+     ],
+     "y_granny": [
+      0.341,
+      2.219
+     ],
+     "y_mat": [
+      0.899,
+      2.83
+     ],
+     "y_jige": [
+      1.02,
+      3.402
+     ],
+     "wall_l": [
+      -0.175,
+      2.399
+     ],
+     "wall_r": [
+      0.766,
+      3.424
+     ],
+     "y_tiger": [
+      0.564,
+      2.732
+     ],
+     "y_help_in": [
+      -0.009,
+      2.969
+     ],
+     "gate": [
+      0.055,
+      2.893
+     ],
+     "y_focus": [
+      0.628,
+      2.655
+     ],
+     "y_feast": [
+      0.733,
+      2.717
+     ],
+     "y_out": [
+      1.698,
+      4.336
+     ],
+     "shore": [
+      2.952,
+      4.475
+     ],
+     "sea": [
+      3.94,
+      3.998
+     ],
+     "sea_splash": [
+      3.754,
+      3.908
+     ],
+     "snow_1": [
+      -0.233,
+      1.737
+     ],
+     "snow_2": [
+      1.67,
+      3.203
+     ],
+     "snow_3": [
+      2.922,
+      2.1
+     ],
+     "snow_4": [
+      0.848,
+      3.949
+     ],
+     "snow_5": [
+      0.224,
+      0.881
+     ],
+     "stack": [
+      2.08,
+      3.025
+     ],
+     "cot_st0": [
+      0.589,
+      2.257
+     ],
+     "cot_st1": [
+      0.493,
+      2.372
+     ],
+     "cot_st2": [
+      0.396,
+      2.487
+     ],
+     "cot_st3": [
+      0.3,
+      2.602
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.3,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.95,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_00",
+      "at": "k_back",
+      "stage": "full",
+      "name": "k_back",
+      "scale": 1.35,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor",
+      "stage": "full",
+      "name": "kfloor",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.021
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor2",
+      "stage": "full",
+      "name": "kfloor2",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.022
+     },
+     {
+      "card": "story_pj_kitchen_02",
+      "at": "hearth",
+      "stage": "full",
+      "name": "hearth",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "light": [
+       0.3,
+       0.3,
+       1.0,
+       "#ff9a40",
+       true
+      ]
+     },
+     {
+      "card": "story_pj_kitchen_04",
+      "at": "muldok",
+      "stage": "full",
+      "name": "muldok",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_06",
+      "at": "crack",
+      "stage": "full",
+      "name": "crack",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.024
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "k_wood",
+      "stage": "full",
+      "name": "k_wood",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "k_basket",
+      "stage": "full",
+      "name": "k_basket",
+      "scale": 1.2,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_yard_00",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 0.8,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_01",
+      "at": "wall_r",
+      "stage": "full",
+      "name": "wall_r",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_02",
+      "at": "sea",
+      "stage": "full",
+      "name": "sea",
+      "scale": 3.2,
+      "clear": 1.6,
+      "yaw": -130.0,
+      "allow_road": true
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_1",
+      "stage": "full",
+      "name": "snow_1",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_2",
+      "stage": "full",
+      "name": "snow_2",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_3",
+      "stage": "full",
+      "name": "snow_3",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_4",
+      "stage": "full",
+      "name": "snow_4",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_5",
+      "stage": "full",
+      "name": "snow_5",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_08",
+      "at": "stack",
+      "stage": "full",
+      "name": "stack",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus",
+    "sky": {
+     "bg": "#101a3a",
+     "fog": "#24305e",
+     "fog_energy": 0.7,
+     "top": "#0d1636",
+     "horizon": "#34477f",
+     "stars": "story_sm_sky_09",
+     "n": 14,
+     "moon": "story_sm_sky_05",
+     "moon_at": [
+      -0.6,
+      10.5,
+      2.6,
+      1.6
+     ],
+     "far": 17.0
+    }
+   },
+   "enter": {
+    "who": {
+     "halmi": "calm"
+    },
+    "at": {
+     "halmi": "y_granny"
+    },
+    "keep": [
+     "halmi",
+     "bam",
+     "jara",
+     "ddong",
+     "songgot",
+     "jeolgu",
+     "myeongseok",
+     "jige"
+    ]
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "steam:off",
+     "wait": 0.0
+    },
+    {
+     "do": "fx",
+     "fx": "door:open",
+     "wait": 0.2
+    },
+    {
+     "do": "walk",
+     "who": "halmi",
+     "via": [
+      "door",
+      "tiger_door"
+     ],
+     "to": "granny_wait",
+     "speed": 0.3
+    },
+    {
+     "do": "fx",
+     "fx": "door:close",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "snow_est",
+     "at": "front_focus",
+     "rate": 1.0,
+     "wait": 0.3
+    },
+    {
+     "do": "walk",
+     "who": "tiger",
+     "from": "road_by",
+     "to": "door_out",
+     "speed": 0.5,
+     "follow": "tiger",
+     "shot": "yard_wide",
+     "line": "pj_r0701"
+    },
+    {
+     "do": "cam",
+     "shot": "yard_low",
+     "at": "door_out",
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "pj_r0702"
+    },
+    {
+     "do": "go_inside",
+     "who": "tiger",
+     "house": "cottage",
+     "to": {
+      "tiger": "tiger_fire"
+     },
+     "speed": 0.6,
+     "door_clear": true
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen",
+     "at": "k_focus",
+     "rate": 1.3,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "pj_r0703"
+    },
+    {
+     "do": "fx",
+     "fx": "tiger_crouch",
+     "wait": 0.3
+    },
+    {
+     "do": "walk",
+     "who": "halmi",
+     "to": "corner",
+     "speed": 0.22,
+     "end_pose": "hide"
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen_low",
+     "at": "k_low_l",
+     "rate": 1.8,
+     "wait": 0.1,
+     "settle": 0.6
+    },
+    {
+     "do": "tap_steps",
+     "target": "hearth",
+     "prompt": "pj_037",
+     "hint": "pj_037",
+     "steps": [
+      {
+       "fx": "trap:bam",
+       "wait": 1.0
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "pj_r0705"
+    },
+    {
+     "do": "say",
+     "line": "pj_r0706",
+     "segs": [
+      0
+     ]
+    },
+    {
+     "do": "walk",
+     "who": "tiger",
+     "to": "tiger_jar",
+     "speed": 0.35,
+     "line": "pj_r0706",
+     "segs": [
+      1
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "tiger_dip",
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen_low",
+     "at": "k_low_r",
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "tap_steps",
+     "target": "muldok",
+     "steps": [
+      {
+       "fx": "trap:jara",
+       "wait": 0.8
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "pj_r0707"
+    }
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "room"
+   }
+  },
+  {
+   "id": "uproar",
+   "title": "부엌 소동",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "night",
+    "spots": {
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.653,
+      2.18
+     ],
+     "door_in": [
+      0.987,
+      1.782
+     ],
+     "step": [
+      0.782,
+      2.027
+     ],
+     "path_end": [
+      0.184,
+      2.74
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "door_out": [
+      0.46,
+      2.41
+     ],
+     "jars": [
+      0.629,
+      0.632
+     ],
+     "firewood": [
+      2.222,
+      2.622
+     ],
+     "fence_1": [
+      1.034,
+      -0.007
+     ],
+     "k_back": [
+      1.657,
+      1.43
+     ],
+     "k_floor": [
+      1.239,
+      1.927
+     ],
+     "k_floor2": [
+      1.528,
+      1.583
+     ],
+     "hearth": [
+      1.248,
+      1.217
+     ],
+     "fire": [
+      1.158,
+      1.324
+     ],
+     "jara_rim": [
+      1.847,
+      1.903
+     ],
+     "cauldron": [
+      1.215,
+      1.255
+     ],
+     "muldok": [
+      1.962,
+      1.843
+     ],
+     "crack": [
+      1.168,
+      1.607
+     ],
+     "k_focus": [
+      1.624,
+      1.468
+     ],
+     "k_low_l": [
+      1.414,
+      1.252
+     ],
+     "k_low_r": [
+      1.873,
+      1.638
+     ],
+     "k_wood": [
+      0.851,
+      1.145
+     ],
+     "k_basket": [
+      0.658,
+      1.375
+     ],
+     "k_left": [
+      1.093,
+      1.479
+     ],
+     "door_view": [
+      1.002,
+      1.899
+     ],
+     "k_mid_r": [
+      1.567,
+      2.034
+     ],
+     "granny_k": [
+      1.707,
+      1.603
+     ],
+     "jeolgu_land": [
+      0.837,
+      1.551
+     ],
+     "granny_door": [
+      1.243,
+      1.892
+     ],
+     "corner": [
+      1.807,
+      2.339
+     ],
+     "tiger_fire": [
+      1.418,
+      1.465
+     ],
+     "tiger_jar": [
+      1.725,
+      1.722
+     ],
+     "dung": [
+      1.416,
+      1.685
+     ],
+     "tiger_door": [
+      0.949,
+      1.828
+     ],
+     "bam_k": [
+      0.888,
+      1.412
+     ],
+     "granny_wait": [
+      1.677,
+      1.903
+     ],
+     "jara_k": [
+      1.586,
+      1.918
+     ],
+     "help_in": [
+      1.438,
+      1.612
+     ],
+     "lintel": [
+      0.878,
+      1.912
+     ],
+     "yard_c": [
+      0.711,
+      2.79
+     ],
+     "y_granny": [
+      0.341,
+      2.219
+     ],
+     "y_mat": [
+      0.899,
+      2.83
+     ],
+     "y_jige": [
+      1.02,
+      3.402
+     ],
+     "wall_l": [
+      -0.175,
+      2.399
+     ],
+     "wall_r": [
+      0.766,
+      3.424
+     ],
+     "y_tiger": [
+      0.564,
+      2.732
+     ],
+     "y_help_in": [
+      -0.009,
+      2.969
+     ],
+     "gate": [
+      0.055,
+      2.893
+     ],
+     "y_focus": [
+      0.628,
+      2.655
+     ],
+     "y_feast": [
+      0.733,
+      2.717
+     ],
+     "y_out": [
+      1.698,
+      4.336
+     ],
+     "shore": [
+      2.952,
+      4.475
+     ],
+     "sea": [
+      3.94,
+      3.998
+     ],
+     "sea_splash": [
+      3.754,
+      3.908
+     ],
+     "snow_1": [
+      -0.233,
+      1.737
+     ],
+     "snow_2": [
+      1.67,
+      3.203
+     ],
+     "snow_3": [
+      2.922,
+      2.1
+     ],
+     "snow_4": [
+      0.848,
+      3.949
+     ],
+     "snow_5": [
+      0.224,
+      0.881
+     ],
+     "stack": [
+      2.08,
+      3.025
+     ],
+     "cot_st0": [
+      0.589,
+      2.257
+     ],
+     "cot_st1": [
+      0.493,
+      2.372
+     ],
+     "cot_st2": [
+      0.396,
+      2.487
+     ],
+     "cot_st3": [
+      0.3,
+      2.602
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.3,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.95,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_00",
+      "at": "k_back",
+      "stage": "full",
+      "name": "k_back",
+      "scale": 1.35,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor",
+      "stage": "full",
+      "name": "kfloor",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.021
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor2",
+      "stage": "full",
+      "name": "kfloor2",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.022
+     },
+     {
+      "card": "story_pj_kitchen_02",
+      "at": "hearth",
+      "stage": "full",
+      "name": "hearth",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "light": [
+       0.3,
+       0.3,
+       1.0,
+       "#ff9a40",
+       true
+      ]
+     },
+     {
+      "card": "story_pj_kitchen_04",
+      "at": "muldok",
+      "stage": "full",
+      "name": "muldok",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_06",
+      "at": "crack",
+      "stage": "full",
+      "name": "crack",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.024
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "k_wood",
+      "stage": "full",
+      "name": "k_wood",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "k_basket",
+      "stage": "full",
+      "name": "k_basket",
+      "scale": 1.2,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_yard_00",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 0.8,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_01",
+      "at": "wall_r",
+      "stage": "full",
+      "name": "wall_r",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_02",
+      "at": "sea",
+      "stage": "full",
+      "name": "sea",
+      "scale": 3.2,
+      "clear": 1.6,
+      "yaw": -130.0,
+      "allow_road": true
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_1",
+      "stage": "full",
+      "name": "snow_1",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_2",
+      "stage": "full",
+      "name": "snow_2",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_3",
+      "stage": "full",
+      "name": "snow_3",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_4",
+      "stage": "full",
+      "name": "snow_4",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_5",
+      "stage": "full",
+      "name": "snow_5",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_08",
+      "at": "stack",
+      "stage": "full",
+      "name": "stack",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus",
+    "sky": {
+     "bg": "#101a3a",
+     "fog": "#24305e",
+     "fog_energy": 0.7,
+     "top": "#0d1636",
+     "horizon": "#34477f",
+     "stars": "story_sm_sky_09",
+     "n": 14,
+     "moon": "story_sm_sky_05",
+     "moon_at": [
+      -0.6,
+      10.5,
+      2.6,
+      1.6
+     ],
+     "far": 17.0
+    }
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "halmi",
+     "tiger",
+     "ddong",
+     "songgot",
+     "jeolgu",
+     "myeongseok",
+     "jige",
+     "bam",
+     "jara"
+    ]
+   },
+   "steps": [
+    {
+     "do": "say",
+     "line": "pj_r0801"
+    },
+    {
+     "do": "fx",
+     "fx": "backstep",
+     "wait": 1.2
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen",
+     "at": "k_focus",
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "tap_steps",
+     "target": "ddong",
+     "steps": [
+      {
+       "fx": "trap:ddong",
+       "wait": 1.2
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "pj_r0802"
+    },
+    {
+     "do": "tap_steps",
+     "target": "crack",
+     "steps": [
+      {
+       "fx": "trap:songgot",
+       "wait": 0.9
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "pj_r0804"
+    },
+    {
+     "do": "say",
+     "line": "pj_r0805"
+    },
+    {
+     "do": "fx",
+     "fx": "door:open",
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": "tiger",
+     "to": "tiger_door",
+     "speed": 0.55,
+     "pose": "run_cry"
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen_door",
+     "at": "door_view",
+     "rate": 0.65,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "tap_steps",
+     "target": "jeolgu",
+     "steps": [
+      {
+       "fx": "trap:jeolgu",
+       "wait": 1.0
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "pj_r0806"
+    },
+    {
+     "do": "pose",
+     "who": "tiger",
+     "pose": "dazed",
+     "wait": 0.8
+    }
+   ],
+   "sound": {
+    "music": "chimney",
+    "bed": "room"
+   }
+  },
+  {
+   "id": "sea",
+   "title": "마당과 바다",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "night",
+    "spots": {
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.653,
+      2.18
+     ],
+     "door_in": [
+      0.987,
+      1.782
+     ],
+     "step": [
+      0.782,
+      2.027
+     ],
+     "path_end": [
+      0.184,
+      2.74
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "door_out": [
+      0.46,
+      2.41
+     ],
+     "jars": [
+      0.629,
+      0.632
+     ],
+     "firewood": [
+      2.222,
+      2.622
+     ],
+     "fence_1": [
+      1.034,
+      -0.007
+     ],
+     "k_back": [
+      1.657,
+      1.43
+     ],
+     "k_floor": [
+      1.239,
+      1.927
+     ],
+     "k_floor2": [
+      1.528,
+      1.583
+     ],
+     "hearth": [
+      1.248,
+      1.217
+     ],
+     "fire": [
+      1.158,
+      1.324
+     ],
+     "jara_rim": [
+      1.847,
+      1.903
+     ],
+     "cauldron": [
+      1.215,
+      1.255
+     ],
+     "muldok": [
+      1.962,
+      1.843
+     ],
+     "crack": [
+      1.168,
+      1.607
+     ],
+     "k_focus": [
+      1.624,
+      1.468
+     ],
+     "k_low_l": [
+      1.414,
+      1.252
+     ],
+     "k_low_r": [
+      1.873,
+      1.638
+     ],
+     "k_wood": [
+      0.851,
+      1.145
+     ],
+     "k_basket": [
+      0.658,
+      1.375
+     ],
+     "k_left": [
+      1.093,
+      1.479
+     ],
+     "door_view": [
+      1.002,
+      1.899
+     ],
+     "k_mid_r": [
+      1.567,
+      2.034
+     ],
+     "granny_k": [
+      1.707,
+      1.603
+     ],
+     "jeolgu_land": [
+      0.837,
+      1.551
+     ],
+     "granny_door": [
+      1.243,
+      1.892
+     ],
+     "corner": [
+      1.807,
+      2.339
+     ],
+     "tiger_fire": [
+      1.418,
+      1.465
+     ],
+     "tiger_jar": [
+      1.725,
+      1.722
+     ],
+     "dung": [
+      1.416,
+      1.685
+     ],
+     "tiger_door": [
+      0.949,
+      1.828
+     ],
+     "bam_k": [
+      0.888,
+      1.412
+     ],
+     "granny_wait": [
+      1.677,
+      1.903
+     ],
+     "jara_k": [
+      1.586,
+      1.918
+     ],
+     "help_in": [
+      1.438,
+      1.612
+     ],
+     "lintel": [
+      0.878,
+      1.912
+     ],
+     "yard_c": [
+      0.711,
+      2.79
+     ],
+     "y_granny": [
+      0.341,
+      2.219
+     ],
+     "y_mat": [
+      0.899,
+      2.83
+     ],
+     "y_jige": [
+      1.02,
+      3.402
+     ],
+     "wall_l": [
+      -0.175,
+      2.399
+     ],
+     "wall_r": [
+      0.766,
+      3.424
+     ],
+     "y_tiger": [
+      0.564,
+      2.732
+     ],
+     "y_help_in": [
+      -0.009,
+      2.969
+     ],
+     "gate": [
+      0.055,
+      2.893
+     ],
+     "y_focus": [
+      0.628,
+      2.655
+     ],
+     "y_feast": [
+      0.733,
+      2.717
+     ],
+     "y_out": [
+      1.698,
+      4.336
+     ],
+     "shore": [
+      2.952,
+      4.475
+     ],
+     "sea": [
+      3.94,
+      3.998
+     ],
+     "sea_splash": [
+      3.754,
+      3.908
+     ],
+     "snow_1": [
+      -0.233,
+      1.737
+     ],
+     "snow_2": [
+      1.67,
+      3.203
+     ],
+     "snow_3": [
+      2.922,
+      2.1
+     ],
+     "snow_4": [
+      0.848,
+      3.949
+     ],
+     "snow_5": [
+      0.224,
+      0.881
+     ],
+     "stack": [
+      2.08,
+      3.025
+     ],
+     "cot_st0": [
+      0.589,
+      2.257
+     ],
+     "cot_st1": [
+      0.493,
+      2.372
+     ],
+     "cot_st2": [
+      0.396,
+      2.487
+     ],
+     "cot_st3": [
+      0.3,
+      2.602
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.3,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.95,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_00",
+      "at": "k_back",
+      "stage": "full",
+      "name": "k_back",
+      "scale": 1.35,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor",
+      "stage": "full",
+      "name": "kfloor",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.021
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor2",
+      "stage": "full",
+      "name": "kfloor2",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.022
+     },
+     {
+      "card": "story_pj_kitchen_02",
+      "at": "hearth",
+      "stage": "full",
+      "name": "hearth",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "light": [
+       0.3,
+       0.3,
+       1.0,
+       "#ff9a40",
+       true
+      ]
+     },
+     {
+      "card": "story_pj_kitchen_04",
+      "at": "muldok",
+      "stage": "full",
+      "name": "muldok",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_06",
+      "at": "crack",
+      "stage": "full",
+      "name": "crack",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.024
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "k_wood",
+      "stage": "full",
+      "name": "k_wood",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "k_basket",
+      "stage": "full",
+      "name": "k_basket",
+      "scale": 1.2,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_yard_00",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 0.8,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_01",
+      "at": "wall_r",
+      "stage": "full",
+      "name": "wall_r",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_02",
+      "at": "sea",
+      "stage": "full",
+      "name": "sea",
+      "scale": 3.2,
+      "clear": 1.6,
+      "yaw": -130.0,
+      "allow_road": true
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_1",
+      "stage": "full",
+      "name": "snow_1",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_2",
+      "stage": "full",
+      "name": "snow_2",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_3",
+      "stage": "full",
+      "name": "snow_3",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_4",
+      "stage": "full",
+      "name": "snow_4",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_5",
+      "stage": "full",
+      "name": "snow_5",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_08",
+      "at": "stack",
+      "stage": "full",
+      "name": "stack",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus",
+    "sky": {
+     "bg": "#101a3a",
+     "fog": "#24305e",
+     "fog_energy": 0.7,
+     "top": "#0d1636",
+     "horizon": "#34477f",
+     "stars": "story_sm_sky_09",
+     "n": 14,
+     "moon": "story_sm_sky_05",
+     "moon_at": [
+      -0.6,
+      10.5,
+      2.6,
+      1.6
+     ],
+     "far": 17.0
+    }
+   },
+   "enter": {
+    "who": {},
+    "keep": [
+     "halmi",
+     "tiger",
+     "myeongseok",
+     "jige",
+     "bam",
+     "jara",
+     "ddong",
+     "songgot",
+     "jeolgu"
+    ]
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "yard",
+     "at": "y_focus",
+     "rate": 0.4,
+     "wait": 0.6
+    },
+    {
+     "do": "walk",
+     "who": "tiger",
+     "via": [
+      "door"
+     ],
+     "to": "y_tiger",
+     "speed": 0.3,
+     "pose": "run_bump",
+     "line": "pj_r0900"
+    },
+    {
+     "do": "fx",
+     "fx": "door:close",
+     "wait": 0.1
+    },
+    {
+     "do": "fx",
+     "fx": "tiger_flat",
+     "wait": 0.5
+    },
+    {
+     "do": "cam",
+     "shot": "yard_low",
+     "at": [
+      "y_tiger",
+      "y_mat"
+     ],
+     "rate": 1.8,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "tap_steps",
+     "target": "myeongseok",
+     "steps": [
+      {
+       "fx": "roll:1",
+       "wait": 0.5
+      },
+      {
+       "fx": "roll:2",
+       "wait": 0.5
+      },
+      {
+       "fx": "roll:3",
+       "wait": 0.8
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "pj_r0901"
+    },
+    {
+     "do": "say",
+     "line": "pj_r0903"
+    },
+    {
+     "do": "tap_steps",
+     "target": "jige",
+     "steps": [
+      {
+       "fx": "jige_lift",
+       "wait": 0.8
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "jige_carry",
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "sea",
+     "at": "sea",
+     "rate": 1.0,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "pj_r0904"
+    },
+    {
+     "do": "fx",
+     "fx": "splash",
+     "wait": 1.0
+    },
+    {
+     "do": "fx",
+     "fx": "swim",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "pj_r0905"
+    }
+   ],
+   "sound": {
+    "music": "chimney",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "feast",
+   "title": "팥죽 잔치",
+   "spread": {
+    "seed": 1,
+    "view": 0,
+    "place": "home",
+    "light": "evening",
+    "spots": {
+     "road_by": [
+      -1.015,
+      1.75
+     ],
+     "cottage": [
+      1.078,
+      2.119
+     ],
+     "door": [
+      0.653,
+      2.18
+     ],
+     "door_in": [
+      0.987,
+      1.782
+     ],
+     "step": [
+      0.782,
+      2.027
+     ],
+     "path_end": [
+      0.184,
+      2.74
+     ],
+     "wall_in": [
+      1.087,
+      2.108
+     ],
+     "front_focus": [
+      0.616,
+      2.514
+     ],
+     "est": [
+      1.283,
+      2.03
+     ],
+     "door_out": [
+      0.46,
+      2.41
+     ],
+     "jars": [
+      0.629,
+      0.632
+     ],
+     "firewood": [
+      2.222,
+      2.622
+     ],
+     "fence_1": [
+      1.034,
+      -0.007
+     ],
+     "k_back": [
+      1.657,
+      1.43
+     ],
+     "k_floor": [
+      1.239,
+      1.927
+     ],
+     "k_floor2": [
+      1.528,
+      1.583
+     ],
+     "hearth": [
+      1.248,
+      1.217
+     ],
+     "fire": [
+      1.158,
+      1.324
+     ],
+     "jara_rim": [
+      1.847,
+      1.903
+     ],
+     "cauldron": [
+      1.215,
+      1.255
+     ],
+     "muldok": [
+      1.962,
+      1.843
+     ],
+     "crack": [
+      1.168,
+      1.607
+     ],
+     "k_focus": [
+      1.624,
+      1.468
+     ],
+     "k_low_l": [
+      1.414,
+      1.252
+     ],
+     "k_low_r": [
+      1.873,
+      1.638
+     ],
+     "k_wood": [
+      0.851,
+      1.145
+     ],
+     "k_basket": [
+      0.658,
+      1.375
+     ],
+     "k_left": [
+      1.093,
+      1.479
+     ],
+     "door_view": [
+      1.002,
+      1.899
+     ],
+     "k_mid_r": [
+      1.567,
+      2.034
+     ],
+     "granny_k": [
+      1.707,
+      1.603
+     ],
+     "jeolgu_land": [
+      0.837,
+      1.551
+     ],
+     "granny_door": [
+      1.243,
+      1.892
+     ],
+     "corner": [
+      1.807,
+      2.339
+     ],
+     "tiger_fire": [
+      1.418,
+      1.465
+     ],
+     "tiger_jar": [
+      1.725,
+      1.722
+     ],
+     "dung": [
+      1.416,
+      1.685
+     ],
+     "tiger_door": [
+      0.949,
+      1.828
+     ],
+     "bam_k": [
+      0.888,
+      1.412
+     ],
+     "granny_wait": [
+      1.677,
+      1.903
+     ],
+     "jara_k": [
+      1.586,
+      1.918
+     ],
+     "help_in": [
+      1.438,
+      1.612
+     ],
+     "lintel": [
+      0.878,
+      1.912
+     ],
+     "yard_c": [
+      0.711,
+      2.79
+     ],
+     "y_granny": [
+      0.341,
+      2.219
+     ],
+     "y_mat": [
+      0.899,
+      2.83
+     ],
+     "y_jige": [
+      1.02,
+      3.402
+     ],
+     "wall_l": [
+      -0.175,
+      2.399
+     ],
+     "wall_r": [
+      0.766,
+      3.424
+     ],
+     "y_tiger": [
+      0.564,
+      2.732
+     ],
+     "y_help_in": [
+      -0.009,
+      2.969
+     ],
+     "gate": [
+      0.055,
+      2.893
+     ],
+     "y_focus": [
+      0.628,
+      2.655
+     ],
+     "y_feast": [
+      0.733,
+      2.717
+     ],
+     "y_out": [
+      1.698,
+      4.336
+     ],
+     "shore": [
+      2.952,
+      4.475
+     ],
+     "sea": [
+      3.94,
+      3.998
+     ],
+     "sea_splash": [
+      3.754,
+      3.908
+     ],
+     "snow_1": [
+      -0.233,
+      1.737
+     ],
+     "snow_2": [
+      1.67,
+      3.203
+     ],
+     "snow_3": [
+      2.922,
+      2.1
+     ],
+     "snow_4": [
+      0.848,
+      3.949
+     ],
+     "snow_5": [
+      0.224,
+      0.881
+     ],
+     "stack": [
+      2.08,
+      3.025
+     ],
+     "cot_st0": [
+      0.589,
+      2.257
+     ],
+     "cot_st1": [
+      0.493,
+      2.372
+     ],
+     "cot_st2": [
+      0.396,
+      2.487
+     ],
+     "cot_st3": [
+      0.3,
+      2.602
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.3,
+      "clear": 1.5,
+      "yaw": -40.0,
+      "door_in": true,
+      "glow": 0.6,
+      "light": [
+       0.6,
+       0.3,
+       0.9,
+       "#ffb460",
+       true
+      ],
+      "box": {
+       "depth": 0.95,
+       "body": true
+      }
+     },
+     {
+      "card": "story_sm_cottage_in_00",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": 140.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_sm_yard_02",
+      "at": "jars",
+      "stage": "full",
+      "name": "jars",
+      "scale": 1.0,
+      "clear": 0.5,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "firewood",
+      "stage": "full",
+      "name": "firewood",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_yard_06",
+      "at": "fence_1",
+      "stage": "full",
+      "name": "fence_1",
+      "scale": 1.0,
+      "clear": 0.3,
+      "yaw": 30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_00",
+      "at": "k_back",
+      "stage": "full",
+      "name": "k_back",
+      "scale": 1.35,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor",
+      "stage": "full",
+      "name": "kfloor",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.021
+     },
+     {
+      "card": "story_pj_kitchen_05",
+      "at": "k_floor2",
+      "stage": "full",
+      "name": "kfloor2",
+      "scale": 1.4,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.022
+     },
+     {
+      "card": "story_pj_kitchen_02",
+      "at": "hearth",
+      "stage": "full",
+      "name": "hearth",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "light": [
+       0.3,
+       0.3,
+       1.0,
+       "#ff9a40",
+       true
+      ]
+     },
+     {
+      "card": "story_pj_kitchen_04",
+      "at": "muldok",
+      "stage": "full",
+      "name": "muldok",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_kitchen_06",
+      "at": "crack",
+      "stage": "full",
+      "name": "crack",
+      "scale": 1.3,
+      "clear": 0,
+      "yaw": -40.0,
+      "flat": true,
+      "lift": 0.024
+     },
+     {
+      "card": "story_sm_yard_07",
+      "at": "k_wood",
+      "stage": "full",
+      "name": "k_wood",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_field_05",
+      "at": "k_basket",
+      "stage": "full",
+      "name": "k_basket",
+      "scale": 1.2,
+      "clear": 0,
+      "yaw": 50.0
+     },
+     {
+      "card": "story_pj_yard_00",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 0.8,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_01",
+      "at": "wall_r",
+      "stage": "full",
+      "name": "wall_r",
+      "scale": 1.0,
+      "clear": 0.4,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_02",
+      "at": "sea",
+      "stage": "full",
+      "name": "sea",
+      "scale": 3.2,
+      "clear": 1.6,
+      "yaw": -130.0,
+      "allow_road": true
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_1",
+      "stage": "full",
+      "name": "snow_1",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_2",
+      "stage": "full",
+      "name": "snow_2",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_07",
+      "at": "snow_3",
+      "stage": "full",
+      "name": "snow_3",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_4",
+      "stage": "full",
+      "name": "snow_4",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_06",
+      "at": "snow_5",
+      "stage": "full",
+      "name": "snow_5",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_pj_yard_08",
+      "at": "stack",
+      "stage": "full",
+      "name": "stack",
+      "scale": 1.0,
+      "clear": 0.2,
+      "yaw": -40.0
+     }
+    ],
+    "focus": "front_focus",
+    "sky": {
+     "bg": "#101a3a",
+     "fog": "#24305e",
+     "fog_energy": 0.7,
+     "top": "#0d1636",
+     "horizon": "#34477f",
+     "stars": "story_sm_sky_09",
+     "n": 14,
+     "moon": "story_sm_sky_05",
+     "moon_at": [
+      -0.6,
+      10.5,
+      2.6,
+      1.6
+     ],
+     "far": 17.0
+    }
+   },
+   "enter": {
+    "who": {
+     "halmi": "cheer"
+    },
+    "at": {
+     "halmi": "y_granny"
+    },
+    "keep": [
+     "bam",
+     "jara",
+     "ddong",
+     "songgot",
+     "jeolgu",
+     "myeongseok",
+     "jige"
+    ]
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "feast",
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "yard",
+     "at": "y_feast",
+     "rate": 1.2,
+     "wait": 0.3,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "pj_r1001"
+    },
+    {
+     "do": "fx",
+     "fx": "hop_all",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "yard_low",
+     "at": [
+      "y_granny",
+      "y_feast"
+     ],
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "pj_r1003"
+    },
+    {
+     "do": "end",
+     "after": "pj_n02",
+     "close_book": true
+    }
+   ],
+   "sound": {
+    "music": "ending",
+    "bed": "@light"
+   }
+  }
+ ],
+ "lines": [
+  {
+   "id": "pj_000",
+   "speaker": "nar",
+   "text": "옛날 옛날, 깊은 산골에 팥죽을 아주 잘 쑤는 할멈이 살았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "옛날 옛날, 깊은 산골에 팥죽을 아주 잘 쑤는 할멈이 살았어요.",
+     "emotion": "smart",
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_11129128e8.mp3",
+     "source_audio": "audio/el/patjuk/nar_11129128e8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 0,
+   "source_text": "옛날 옛날, 깊은 산골에 팥죽을 아주 잘 쑤는 할멈이 살았어요."
+  },
+  {
+   "id": "pj_001",
+   "speaker": "nar+tiger",
+   "text": "어흥! 어느 날 커다란 호랑이가 나타났어요. \"할멈, 잡아먹어야겠다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어흥! 어느 날 커다란 호랑이가 나타났어요.",
+     "emotion": "tonedown:1.3",
+     "tags": "[low voice, ominous]",
+     "audio": "res://audio/voice/patjuk/nar_1a943cfef6.mp3",
+     "source_audio": "audio/el/patjuk/nar_1a943cfef6.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "할멈, 잡아먹어야겠다!",
+     "emotion": "angry:1.2",
+     "tags": "[growls, menacing, hungry]",
+     "audio": "res://audio/voice/patjuk/tiger_932b7a47f6.mp3",
+     "source_audio": "audio/el/patjuk/tiger_932b7a47f6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 1,
+   "source_text": "어흥! 어느 날 커다란 호랑이가 나타났어요. \"할멈, 잡아먹어야겠다!\""
+  },
+  {
+   "id": "pj_002",
+   "speaker": "halmi+nar",
+   "text": "\"호랑이야, 동짓날에 맛있는 팥죽을 쑤어 줄게. 그때까지 기다려 다오.\" 호랑이는 어슬렁어슬렁 돌아갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "호랑이야, 동짓날에 맛있는 팥죽을 쑤어 줄게. 그때까지 기다려 다오.",
+     "emotion": "sad:1.4",
+     "tags": "[sad, trembling, pleading]",
+     "audio": "res://audio/voice/patjuk/halmi_1aae8ab53e.mp3",
+     "source_audio": "audio/tc/halmi_1aae8ab53e.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "호랑이는 어슬렁어슬렁 돌아갔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_a2bfddd4e4.mp3",
+     "source_audio": "audio/el/patjuk/nar_a2bfddd4e4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 2,
+   "source_text": "\"호랑이야, 동짓날에 맛있는 팥죽을 쑤어 줄게. 그때까지 기다려 다오.\" 호랑이는 어슬렁어슬렁 돌아갔어요."
+  },
+  {
+   "id": "pj_003",
+   "speaker": "nar",
+   "text": "드디어 동짓날이 되었어요. 할멈은 팥죽을 쑤면서 훌쩍훌쩍 울었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "드디어 동짓날이 되었어요. 할멈은 팥죽을 쑤면서 훌쩍훌쩍 울었어요.",
+     "emotion": "sad:1.1",
+     "tags": "[sad, softly]",
+     "audio": "res://audio/voice/patjuk/nar_3d01d2df4f.mp3",
+     "source_audio": "audio/el/patjuk/nar_3d01d2df4f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 3,
+   "source_text": "드디어 동짓날이 되었어요. 할멈은 팥죽을 쑤면서 훌쩍훌쩍 울었어요."
+  },
+  {
+   "id": "pj_004",
+   "speaker": "nar",
+   "text": "깜깜한 밤이 되었어요. 어흥! 호랑이가 어슬렁어슬렁 찾아왔어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "깜깜한 밤이 되었어요. 어흥! 호랑이가 어슬렁어슬렁 찾아왔어요!",
+     "emotion": "tonedown:1.4",
+     "tags": "[whispers, ominous]",
+     "audio": "res://audio/voice/patjuk/nar_eb528785a4.mp3",
+     "source_audio": "audio/el/patjuk/nar_eb528785a4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 4,
+   "source_text": "깜깜한 밤이 되었어요. 어흥! 호랑이가 어슬렁어슬렁 찾아왔어요!"
+  },
+  {
+   "id": "pj_005",
+   "speaker": "halmi+nar",
+   "text": "\"얘들아, 도와줘!\" 친구들을 순서대로 눌러서 호랑이를 혼내 주세요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "얘들아, 도와줘!",
+     "emotion": "sad:1.5",
+     "tags": "[sad, trembling, pleading]",
+     "audio": "res://audio/voice/patjuk/halmi_d6ca8d7a04.mp3",
+     "source_audio": "audio/tc/halmi_d6ca8d7a04.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "친구들을 순서대로 눌러서 호랑이를 혼내 주세요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_134478b429.mp3",
+     "source_audio": "audio/el/patjuk/nar_134478b429.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 5,
+   "source_text": "\"얘들아, 도와줘!\" 친구들을 순서대로 눌러서 호랑이를 혼내 주세요!"
+  },
+  {
+   "id": "pj_006",
+   "speaker": "nar+bam+nar",
+   "text": "데굴데굴~ 알밤이 굴러왔어요. \"할멈, 팥죽 한 그릇 주면 도와줄게!\" 알밤은 팥죽을 얻어먹고 뜨거운 아궁이 속에 쏙 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "데굴데굴~ 알밤이 굴러왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_84e0a6a590.mp3",
+     "source_audio": "audio/el/patjuk/nar_84e0a6a590.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bam",
+     "text": "할멈, 팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/bam_20bdfada81.mp3",
+     "source_audio": "audio/tc/bam_20bdfada81.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "알밤은 팥죽을 얻어먹고 뜨거운 아궁이 속에 쏙 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_7925a2716d.mp3",
+     "source_audio": "audio/el/patjuk/nar_7925a2716d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 6,
+   "source_text": "데굴데굴~ 알밤이 굴러왔어요. \"할멈, 팥죽 한 그릇 주면 도와줄게!\" 알밤은 팥죽을 얻어먹고 뜨거운 아궁이 속에 쏙 숨었어요."
+  },
+  {
+   "id": "pj_007",
+   "speaker": "nar",
+   "text": "알밤이 아궁이에서 톡! 튀어나와 호랑이 눈을 딱 때렸어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "알밤이 아궁이에서 톡! 튀어나와 호랑이 눈을 딱 때렸어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_bd46e77507.mp3",
+     "source_audio": "audio/el/patjuk/nar_bd46e77507.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 7,
+   "source_text": "알밤이 아궁이에서 톡! 튀어나와 호랑이 눈을 딱 때렸어요!"
+  },
+  {
+   "id": "pj_008",
+   "speaker": "nar",
+   "text": "알밤이 톡 튀어나왔지만, 호랑이는 아궁이 앞에 없었어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "알밤이 톡 튀어나왔지만, 호랑이는 아궁이 앞에 없었어요!",
+     "emotion": "sad:1.0",
+     "tags": "[sad, gentle]",
+     "audio": "res://audio/voice/patjuk/nar_ca5ea401eb.mp3",
+     "source_audio": "audio/el/patjuk/nar_ca5ea401eb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 8,
+   "source_text": "알밤이 톡 튀어나왔지만, 호랑이는 아궁이 앞에 없었어요!"
+  },
+  {
+   "id": "pj_009",
+   "speaker": "nar+jara+nar",
+   "text": "엉금엉금~ 자라가 기어왔어요. \"나도 팥죽 한 그릇 주면 도와줄게!\" 자라는 팥죽을 얻어먹고 물독 속에 퐁당 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엉금엉금~ 자라가 기어왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_498b7e0f89.mp3",
+     "source_audio": "audio/el/patjuk/nar_498b7e0f89.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "jara",
+     "text": "나도 팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jara_09a425076e.mp3",
+     "source_audio": "audio/tc/jara_09a425076e.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "자라는 팥죽을 얻어먹고 물독 속에 퐁당 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_db35a90620.mp3",
+     "source_audio": "audio/el/patjuk/nar_db35a90620.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 9,
+   "source_text": "엉금엉금~ 자라가 기어왔어요. \"나도 팥죽 한 그릇 주면 도와줄게!\" 자라는 팥죽을 얻어먹고 물독 속에 퐁당 숨었어요."
+  },
+  {
+   "id": "pj_010",
+   "speaker": "nar",
+   "text": "물독 속 자라가 호랑이 입을 앙! 물었어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "물독 속 자라가 호랑이 입을 앙! 물었어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_47f141b75e.mp3",
+     "source_audio": "audio/el/patjuk/nar_47f141b75e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 10,
+   "source_text": "물독 속 자라가 호랑이 입을 앙! 물었어요!"
+  },
+  {
+   "id": "pj_011",
+   "speaker": "nar",
+   "text": "자라가 물독에서 두리번두리번… 호랑이 얼굴이 없네요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "자라가 물독에서 두리번두리번… 호랑이 얼굴이 없네요!",
+     "emotion": "sad:1.0",
+     "tags": "[sad, gentle]",
+     "audio": "res://audio/voice/patjuk/nar_cdb5871600.mp3",
+     "source_audio": "audio/el/patjuk/nar_cdb5871600.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 11,
+   "source_text": "자라가 물독에서 두리번두리번… 호랑이 얼굴이 없네요!"
+  },
+  {
+   "id": "pj_012",
+   "speaker": "nar+ddong+nar",
+   "text": "철퍼덕! 쇠똥이 왔어요. \"팥죽 한 그릇 주면 나도 도울게!\" 쇠똥은 팥죽을 얻어먹고 부엌 바닥에 납작 엎드려 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "철퍼덕! 쇠똥이 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9d5d1ecfc1.mp3",
+     "source_audio": "audio/el/patjuk/nar_9d5d1ecfc1.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "ddong",
+     "text": "팥죽 한 그릇 주면 나도 도울게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/ddong_5e1ebbe7ac.mp3",
+     "source_audio": "audio/tc/ddong_5e1ebbe7ac.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "쇠똥은 팥죽을 얻어먹고 부엌 바닥에 납작 엎드려 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_27226cfa33.mp3",
+     "source_audio": "audio/el/patjuk/nar_27226cfa33.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 12,
+   "source_text": "철퍼덕! 쇠똥이 왔어요. \"팥죽 한 그릇 주면 나도 도울게!\" 쇠똥은 팥죽을 얻어먹고 부엌 바닥에 납작 엎드려 숨었어요."
+  },
+  {
+   "id": "pj_013",
+   "speaker": "nar",
+   "text": "호랑이가 쇠똥을 밟고 쭈르륵~ 미끄러졌어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 쇠똥을 밟고 쭈르륵~ 미끄러졌어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_99cec42239.mp3",
+     "source_audio": "audio/el/patjuk/nar_99cec42239.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 13,
+   "source_text": "호랑이가 쇠똥을 밟고 쭈르륵~ 미끄러졌어요!"
+  },
+  {
+   "id": "pj_014",
+   "speaker": "nar",
+   "text": "호랑이가 쇠똥을 폴짝 뛰어넘어 버렸어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 쇠똥을 폴짝 뛰어넘어 버렸어요!",
+     "emotion": "sad:1.0",
+     "tags": "[sad, disappointed]",
+     "audio": "res://audio/voice/patjuk/nar_252d50b5ac.mp3",
+     "source_audio": "audio/el/patjuk/nar_252d50b5ac.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 14,
+   "source_text": "호랑이가 쇠똥을 폴짝 뛰어넘어 버렸어요!"
+  },
+  {
+   "id": "pj_015",
+   "speaker": "nar+songgot+nar",
+   "text": "콕콕! 송곳이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 송곳은 팥죽을 얻어먹고 바닥 틈에 뾰족 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "콕콕! 송곳이 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_8220033b91.mp3",
+     "source_audio": "audio/el/patjuk/nar_8220033b91.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "songgot",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/songgot_0d5172029c.mp3",
+     "source_audio": "audio/tc/songgot_0d5172029c.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "송곳은 팥죽을 얻어먹고 바닥 틈에 뾰족 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_606663f9be.mp3",
+     "source_audio": "audio/el/patjuk/nar_606663f9be.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 15,
+   "source_text": "콕콕! 송곳이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 송곳은 팥죽을 얻어먹고 바닥 틈에 뾰족 숨었어요."
+  },
+  {
+   "id": "pj_016",
+   "speaker": "nar",
+   "text": "송곳이 호랑이 엉덩이를 콕! 찔렀어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "송곳이 호랑이 엉덩이를 콕! 찔렀어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_035133c47d.mp3",
+     "source_audio": "audio/el/patjuk/nar_035133c47d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 16,
+   "source_text": "송곳이 호랑이 엉덩이를 콕! 찔렀어요!"
+  },
+  {
+   "id": "pj_017",
+   "speaker": "nar",
+   "text": "송곳이 콕! 찔렀지만, 호랑이는 저쪽에 있네요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "송곳이 콕! 찔렀지만, 호랑이는 저쪽에 있네요.",
+     "emotion": "sad:1.0",
+     "tags": "[sad, gentle]",
+     "audio": "res://audio/voice/patjuk/nar_15a3a83b15.mp3",
+     "source_audio": "audio/el/patjuk/nar_15a3a83b15.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 17,
+   "source_text": "송곳이 콕! 찔렀지만, 호랑이는 저쪽에 있네요."
+  },
+  {
+   "id": "pj_018",
+   "speaker": "nar+jeolgu+nar",
+   "text": "쿵더쿵! 절구가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 절구는 팥죽을 얻어먹고 문 위로 올라가 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쿵더쿵! 절구가 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9cd3dc5291.mp3",
+     "source_audio": "audio/el/patjuk/nar_9cd3dc5291.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "jeolgu",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jeolgu_9da6e85c73.mp3",
+     "source_audio": "audio/tc/jeolgu_9da6e85c73.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "절구는 팥죽을 얻어먹고 문 위로 올라가 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_5f597bfdf2.mp3",
+     "source_audio": "audio/el/patjuk/nar_5f597bfdf2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 18,
+   "source_text": "쿵더쿵! 절구가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 절구는 팥죽을 얻어먹고 문 위로 올라가 숨었어요."
+  },
+  {
+   "id": "pj_019",
+   "speaker": "nar",
+   "text": "절구가 문 위에서 쿵! 호랑이 머리 위로 떨어졌어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "절구가 문 위에서 쿵! 호랑이 머리 위로 떨어졌어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_b0e79f489d.mp3",
+     "source_audio": "audio/el/patjuk/nar_b0e79f489d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 19,
+   "source_text": "절구가 문 위에서 쿵! 호랑이 머리 위로 떨어졌어요!"
+  },
+  {
+   "id": "pj_020",
+   "speaker": "nar",
+   "text": "절구가 쿵! 떨어졌지만 호랑이를 못 맞혔어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "절구가 쿵! 떨어졌지만 호랑이를 못 맞혔어요!",
+     "emotion": "sad:1.0",
+     "tags": "[sad, gentle]",
+     "audio": "res://audio/voice/patjuk/nar_391437e075.mp3",
+     "source_audio": "audio/el/patjuk/nar_391437e075.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 20,
+   "source_text": "절구가 쿵! 떨어졌지만 호랑이를 못 맞혔어요!"
+  },
+  {
+   "id": "pj_021",
+   "speaker": "nar+myeongseok+nar",
+   "text": "펄럭펄럭~ 멍석이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 멍석은 팥죽을 얻어먹고 마당에 돌돌 말려 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "펄럭펄럭~ 멍석이 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_2be57cbde9.mp3",
+     "source_audio": "audio/el/patjuk/nar_2be57cbde9.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "myeongseok",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/myeongseok_f35e66aa6d.mp3",
+     "source_audio": "audio/tc/myeongseok_f35e66aa6d.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "멍석은 팥죽을 얻어먹고 마당에 돌돌 말려 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_d289a6fc94.mp3",
+     "source_audio": "audio/el/patjuk/nar_d289a6fc94.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 21,
+   "source_text": "펄럭펄럭~ 멍석이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 멍석은 팥죽을 얻어먹고 마당에 돌돌 말려 숨었어요."
+  },
+  {
+   "id": "pj_022",
+   "speaker": "nar",
+   "text": "멍석이 호랑이를 돌돌돌 말아 버렸어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "멍석이 호랑이를 돌돌돌 말아 버렸어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_185825cf07.mp3",
+     "source_audio": "audio/el/patjuk/nar_185825cf07.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 22,
+   "source_text": "멍석이 호랑이를 돌돌돌 말아 버렸어요!"
+  },
+  {
+   "id": "pj_023",
+   "speaker": "nar",
+   "text": "멍석이 펄럭펄럭… 아무것도 못 말았어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "멍석이 펄럭펄럭… 아무것도 못 말았어요!",
+     "emotion": "sad:1.0",
+     "tags": "[sad, gentle]",
+     "audio": "res://audio/voice/patjuk/nar_3288532e08.mp3",
+     "source_audio": "audio/el/patjuk/nar_3288532e08.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 23,
+   "source_text": "멍석이 펄럭펄럭… 아무것도 못 말았어요!"
+  },
+  {
+   "id": "pj_024",
+   "speaker": "nar+jige+nar",
+   "text": "성큼성큼! 지게가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 지게는 팥죽을 얻어먹고 담벼락에 기대어 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "성큼성큼! 지게가 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_d6c4616e26.mp3",
+     "source_audio": "audio/el/patjuk/nar_d6c4616e26.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "jige",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jige_d90b72b7cd.mp3",
+     "source_audio": "audio/tc/jige_d90b72b7cd.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "지게는 팥죽을 얻어먹고 담벼락에 기대어 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9b39ac0e3f.mp3",
+     "source_audio": "audio/el/patjuk/nar_9b39ac0e3f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 24,
+   "source_text": "성큼성큼! 지게가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 지게는 팥죽을 얻어먹고 담벼락에 기대어 숨었어요."
+  },
+  {
+   "id": "pj_025",
+   "speaker": "nar",
+   "text": "지게가 호랑이를 번쩍 지고 가서 바다에 풍덩! 던져 버렸어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "지게가 호랑이를 번쩍 지고 가서 바다에 풍덩! 던져 버렸어요!",
+     "emotion": "toneup:1.4",
+     "tags": "[excited, dramatic]",
+     "audio": "res://audio/voice/patjuk/nar_5a4b3efd5c.mp3",
+     "source_audio": "audio/el/patjuk/nar_5a4b3efd5c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 25,
+   "source_text": "지게가 호랑이를 번쩍 지고 가서 바다에 풍덩! 던져 버렸어요!"
+  },
+  {
+   "id": "pj_026",
+   "speaker": "nar",
+   "text": "지게가 낑낑… 힘센 호랑이를 들 수가 없어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "지게가 낑낑… 힘센 호랑이를 들 수가 없어요!",
+     "emotion": "sad:1.0",
+     "tags": "[sad, gentle]",
+     "audio": "res://audio/voice/patjuk/nar_0a9b89a0fd.mp3",
+     "source_audio": "audio/el/patjuk/nar_0a9b89a0fd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 26,
+   "source_text": "지게가 낑낑… 힘센 호랑이를 들 수가 없어요!"
+  },
+  {
+   "id": "pj_027",
+   "speaker": "halmi+nar",
+   "text": "\"호랑아, 팥죽 먹기 전에 아궁이 불 좀 봐주렴.\" 할멈의 말에 호랑이가 아궁이 앞에 쪼그려 앉았어요. 누가 먼저 혼내 줄까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "호랑아, 팥죽 먹기 전에 아궁이 불 좀 봐주렴.",
+     "emotion": "happy:0.9",
+     "tags": "[sweet, pretending to be kind]",
+     "audio": "res://audio/voice/patjuk/halmi_18f89d0569.mp3",
+     "source_audio": "audio/tc/halmi_18f89d0569.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "할멈의 말에 호랑이가 아궁이 앞에 쪼그려 앉았어요. 누가 먼저 혼내 줄까요?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_8b75195af4.mp3",
+     "source_audio": "audio/el/patjuk/nar_8b75195af4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 27,
+   "source_text": "\"호랑아, 팥죽 먹기 전에 아궁이 불 좀 봐주렴.\" 할멈의 말에 호랑이가 아궁이 앞에 쪼그려 앉았어요. 누가 먼저 혼내 줄까요?"
+  },
+  {
+   "id": "pj_028",
+   "speaker": "tiger+nar",
+   "text": "\"앗, 뜨거워! 눈이야!\" 호랑이가 눈을 씻으려고 물독에 얼굴을 쏙 넣었어요. 다음은 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "앗, 뜨거워! 눈이야!",
+     "emotion": "toneup:1.2",
+     "tags": "=[sharp yelp of pain] 앗, 뜨거워! ... [panicked, high-pitched cry] 눈이야!",
+     "audio": "res://audio/voice/patjuk/tiger_9e6547f8d5.mp3",
+     "source_audio": "audio/el/patjuk/tiger_9e6547f8d5.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "호랑이가 눈을 씻으려고 물독에 얼굴을 쏙 넣었어요. 다음은 누구일까요?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_01cb3e4b50.mp3",
+     "source_audio": "audio/el/patjuk/nar_01cb3e4b50.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 28,
+   "source_text": "\"앗, 뜨거워! 눈이야!\" 호랑이가 눈을 씻으려고 물독에 얼굴을 쏙 넣었어요. 다음은 누구일까요?"
+  },
+  {
+   "id": "pj_029",
+   "speaker": "tiger+nar",
+   "text": "\"아야야!\" 호랑이가 깜짝 놀라 뒷걸음질을 쳤어요. 다음은 누구죠?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "아야야!",
+     "emotion": "sad:1.2",
+     "tags": "[pained, yelping]",
+     "audio": "res://audio/voice/patjuk/tiger_4f5b1a7d1f.mp3",
+     "source_audio": "audio/el/patjuk/tiger_4f5b1a7d1f.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "호랑이가 깜짝 놀라 뒷걸음질을 쳤어요. 다음은 누구죠?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_db8705e88a.mp3",
+     "source_audio": "audio/el/patjuk/nar_db8705e88a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 29,
+   "source_text": "\"아야야!\" 호랑이가 깜짝 놀라 뒷걸음질을 쳤어요. 다음은 누구죠?"
+  },
+  {
+   "id": "pj_030",
+   "speaker": "nar",
+   "text": "미끌! 호랑이가 꽈당 넘어졌어요. 이번엔 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "미끌! 호랑이가 꽈당 넘어졌어요. 이번엔 누구일까요?",
+     "emotion": "happy:1.2",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_5e5ce1d3f5.mp3",
+     "source_audio": "audio/el/patjuk/nar_5e5ce1d3f5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 30,
+   "source_text": "미끌! 호랑이가 꽈당 넘어졌어요. 이번엔 누구일까요?"
+  },
+  {
+   "id": "pj_031",
+   "speaker": "tiger+nar",
+   "text": "\"엉엉, 아파!\" 호랑이가 문 쪽으로 도망가요. 다음은 누구?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "엉엉, 아파!",
+     "emotion": "sad:1.2",
+     "tags": "[crying, sobbing, whimpering]",
+     "audio": "res://audio/voice/patjuk/tiger_84d9d66be7.mp3",
+     "source_audio": "audio/el/patjuk/tiger_84d9d66be7.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "호랑이가 문 쪽으로 도망가요. 다음은 누구?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_7ac40dd3e9.mp3",
+     "source_audio": "audio/el/patjuk/nar_7ac40dd3e9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 31,
+   "source_text": "\"엉엉, 아파!\" 호랑이가 문 쪽으로 도망가요. 다음은 누구?"
+  },
+  {
+   "id": "pj_032",
+   "speaker": "nar",
+   "text": "쿵! 절구에 맞은 호랑이가 마당으로 도망쳐 쭉 뻗어 버렸어요. 이제 누구 차례죠?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쿵! 절구에 맞은 호랑이가 마당으로 도망쳐 쭉 뻗어 버렸어요. 이제 누구 차례죠?",
+     "emotion": "happy:1.2",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_fe31b45b72.mp3",
+     "source_audio": "audio/el/patjuk/nar_fe31b45b72.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 32,
+   "source_text": "쿵! 절구에 맞은 호랑이가 마당으로 도망쳐 쭉 뻗어 버렸어요. 이제 누구 차례죠?"
+  },
+  {
+   "id": "pj_033",
+   "speaker": "nar",
+   "text": "돌돌돌! 호랑이가 멍석에 꽁꽁 말렸어요. 마지막은 누구일까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "돌돌돌! 호랑이가 멍석에 꽁꽁 말렸어요. 마지막은 누구일까요?",
+     "emotion": "happy:1.2",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_7c6c9d40e3.mp3",
+     "source_audio": "audio/el/patjuk/nar_7c6c9d40e3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 33,
+   "source_text": "돌돌돌! 호랑이가 멍석에 꽁꽁 말렸어요. 마지막은 누구일까요?"
+  },
+  {
+   "id": "pj_034",
+   "speaker": "nar",
+   "text": "만세! 호랑이를 물리쳤어요! 할멈은 친구들과 맛있는 팥죽을 나누어 먹었답니다.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "만세! 호랑이를 물리쳤어요! 할멈은 친구들과 맛있는 팥죽을 나누어 먹었답니다.",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_39e47fe668.mp3",
+     "source_audio": "audio/el/patjuk/nar_39e47fe668.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 34,
+   "source_text": "만세! 호랑이를 물리쳤어요! 할멈은 친구들과 맛있는 팥죽을 나누어 먹었답니다."
+  },
+  {
+   "id": "pj_035",
+   "speaker": "nar",
+   "text": "친구들을 톡! 눌러서 인사해 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "친구들을 톡! 눌러서 인사해 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_9f8788dd6c.mp3",
+     "source_audio": "audio/el/patjuk/nar_9f8788dd6c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 35,
+   "source_text": "친구들을 톡! 눌러서 인사해 봐요!"
+  },
+  {
+   "id": "pj_036",
+   "speaker": "nar",
+   "text": "호랑이는 아궁이 앞에 있어요. 아궁이 속에 누가 숨었지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이는 아궁이 앞에 있어요. 아궁이 속에 누가 숨었지?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9def72b532.mp3",
+     "source_audio": "audio/el/patjuk/nar_9def72b532.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 36,
+   "source_text": "호랑이는 아궁이 앞에 있어요. 아궁이 속에 누가 숨었지?"
+  },
+  {
+   "id": "pj_037",
+   "speaker": "nar",
+   "text": "알밤을 눌러 봐요!",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "알밤을 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_ac0127635c.mp3",
+     "source_audio": "audio/el/patjuk/nar_ac0127635c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 37,
+   "source_text": "알밤을 눌러 봐요!"
+  },
+  {
+   "id": "pj_038",
+   "speaker": "nar",
+   "text": "호랑이가 물독에 얼굴을 넣었어요. 물독 속에 누가 숨었지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 물독에 얼굴을 넣었어요. 물독 속에 누가 숨었지?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_20275248f6.mp3",
+     "source_audio": "audio/el/patjuk/nar_20275248f6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 38,
+   "source_text": "호랑이가 물독에 얼굴을 넣었어요. 물독 속에 누가 숨었지?"
+  },
+  {
+   "id": "pj_039",
+   "speaker": "nar",
+   "text": "자라를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "자라를 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_42f0454908.mp3",
+     "source_audio": "audio/el/patjuk/nar_42f0454908.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 39,
+   "source_text": "자라를 눌러 봐요!"
+  },
+  {
+   "id": "pj_040",
+   "speaker": "nar",
+   "text": "호랑이가 부엌 바닥으로 뒷걸음질! 바닥에 납작 숨은 친구는 누구지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 부엌 바닥으로 뒷걸음질! 바닥에 납작 숨은 친구는 누구지?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_a68fe8b021.mp3",
+     "source_audio": "audio/el/patjuk/nar_a68fe8b021.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 40,
+   "source_text": "호랑이가 부엌 바닥으로 뒷걸음질! 바닥에 납작 숨은 친구는 누구지?"
+  },
+  {
+   "id": "pj_041",
+   "speaker": "nar",
+   "text": "쇠똥을 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쇠똥을 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_2ddf0155e9.mp3",
+     "source_audio": "audio/el/patjuk/nar_2ddf0155e9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 41,
+   "source_text": "쇠똥을 눌러 봐요!"
+  },
+  {
+   "id": "pj_042",
+   "speaker": "nar",
+   "text": "호랑이가 바닥에 꽈당 넘어졌어요. 바닥 틈에 뾰족 숨은 친구는 누구지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 바닥에 꽈당 넘어졌어요. 바닥 틈에 뾰족 숨은 친구는 누구지?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_8831aebe58.mp3",
+     "source_audio": "audio/el/patjuk/nar_8831aebe58.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 42,
+   "source_text": "호랑이가 바닥에 꽈당 넘어졌어요. 바닥 틈에 뾰족 숨은 친구는 누구지?"
+  },
+  {
+   "id": "pj_043",
+   "speaker": "nar",
+   "text": "송곳을 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "송곳을 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_dda3128233.mp3",
+     "source_audio": "audio/el/patjuk/nar_dda3128233.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 43,
+   "source_text": "송곳을 눌러 봐요!"
+  },
+  {
+   "id": "pj_044",
+   "speaker": "nar",
+   "text": "호랑이는 문 앞에 있어요. 문 위에 누가 숨었지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이는 문 앞에 있어요. 문 위에 누가 숨었지?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_699000777d.mp3",
+     "source_audio": "audio/el/patjuk/nar_699000777d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 44,
+   "source_text": "호랑이는 문 앞에 있어요. 문 위에 누가 숨었지?"
+  },
+  {
+   "id": "pj_045",
+   "speaker": "nar",
+   "text": "절구를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "절구를 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_caf108664c.mp3",
+     "source_audio": "audio/el/patjuk/nar_caf108664c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 45,
+   "source_text": "절구를 눌러 봐요!"
+  },
+  {
+   "id": "pj_046",
+   "speaker": "nar",
+   "text": "호랑이가 마당에 쭉 뻗었어요. 마당에 돌돌 말려 숨은 친구는 누구지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 마당에 쭉 뻗었어요. 마당에 돌돌 말려 숨은 친구는 누구지?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_fe009c800f.mp3",
+     "source_audio": "audio/el/patjuk/nar_fe009c800f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 46,
+   "source_text": "호랑이가 마당에 쭉 뻗었어요. 마당에 돌돌 말려 숨은 친구는 누구지?"
+  },
+  {
+   "id": "pj_047",
+   "speaker": "nar",
+   "text": "멍석을 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "멍석을 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_7e8eb58c02.mp3",
+     "source_audio": "audio/el/patjuk/nar_7e8eb58c02.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 47,
+   "source_text": "멍석을 눌러 봐요!"
+  },
+  {
+   "id": "pj_048",
+   "speaker": "nar",
+   "text": "호랑이가 멍석에 꽁꽁 말렸어요. 담벼락에 기대 숨은 친구는 누구지?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 멍석에 꽁꽁 말렸어요. 담벼락에 기대 숨은 친구는 누구지?",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_7599d6c72c.mp3",
+     "source_audio": "audio/el/patjuk/nar_7599d6c72c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 48,
+   "source_text": "호랑이가 멍석에 꽁꽁 말렸어요. 담벼락에 기대 숨은 친구는 누구지?"
+  },
+  {
+   "id": "pj_049",
+   "speaker": "nar",
+   "text": "지게를 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "지게를 눌러 봐요!",
+     "emotion": "happy:1.1",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_a838abd2fc.mp3",
+     "source_audio": "audio/el/patjuk/nar_a838abd2fc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 49,
+   "source_text": "지게를 눌러 봐요!"
+  },
+  {
+   "id": "pj_x_cut_bam",
+   "speaker": "bam+tiger",
+   "text": "\"탁! 내가 튀었지!\" \"에구구, 내 눈이야!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "bam",
+     "text": "탁! 내가 튀었지!",
+     "emotion": "toneup:1.5",
+     "tags": "[cheerful, childlike, shouting]",
+     "audio": "res://audio/voice/patjuk/bam_148b540605.mp3",
+     "source_audio": "audio/tc/bam_148b540605.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "에구구, 내 눈이야!",
+     "emotion": "sad:1.2",
+     "tags": "[groaning, pained]",
+     "audio": "res://audio/voice/patjuk/tiger_d38674289c.mp3",
+     "source_audio": "audio/el/patjuk/tiger_d38674289c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_bam"
+  },
+  {
+   "id": "pj_x_cut_jara",
+   "speaker": "jara+tiger",
+   "text": "\"앙! 내가 물었다!\" \"아야야! 내 입! 놔라, 놔!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jara",
+     "text": "앙! 내가 물었다!",
+     "emotion": "toneup:1.5",
+     "tags": "[excited, childlike, shouting]",
+     "audio": "res://audio/voice/patjuk/jara_5dbfb8bfae.mp3",
+     "source_audio": "audio/tc/jara_5dbfb8bfae.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "아야야! 내 입! 놔라, 놔!",
+     "emotion": "sad:1.2",
+     "tags": "[pained, muffled, struggling]",
+     "audio": "res://audio/voice/patjuk/tiger_b0aa8b8dfc.mp3",
+     "source_audio": "audio/el/patjuk/tiger_b0aa8b8dfc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_jara"
+  },
+  {
+   "id": "pj_x_cut_ddong",
+   "speaker": "ddong+tiger",
+   "text": "\"쭈르륵! 미끄럼 타라!\" \"으악! 미끄러워!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "ddong",
+     "text": "쭈르륵! 미끄럼 타라!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/ddong_7b15139659.mp3",
+     "source_audio": "audio/tc/ddong_7b15139659.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "으악! 미끄러워!",
+     "emotion": "toneup:1.2",
+     "tags": "[startled, panicked, shouting]",
+     "audio": "res://audio/voice/patjuk/tiger_6451c72411.mp3",
+     "source_audio": "audio/el/patjuk/tiger_6451c72411.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_ddong"
+  },
+  {
+   "id": "pj_x_cut_songgot",
+   "speaker": "songgot+tiger",
+   "text": "\"콕! 따끔하지?\" \"아얏! 내 엉덩이!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "songgot",
+     "text": "콕! 따끔하지?",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/songgot_a06818e4dd.mp3",
+     "source_audio": "audio/tc/songgot_a06818e4dd.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "아얏! 내 엉덩이!",
+     "emotion": "toneup:1.2",
+     "tags": "[yelps, pained, indignant]",
+     "audio": "res://audio/voice/patjuk/tiger_aa80491907.mp3",
+     "source_audio": "audio/el/patjuk/tiger_aa80491907.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_songgot"
+  },
+  {
+   "id": "pj_x_cut_jeolgu",
+   "speaker": "jeolgu+tiger",
+   "text": "\"한 대 맞아라~ 쿵!\" \"아이고, 내 머리야!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jeolgu",
+     "text": "한 대 맞아라~ 쿵!",
+     "emotion": "toneup:1.5",
+     "tags": "[excited, childlike]",
+     "audio": "res://audio/voice/patjuk/jeolgu_c406d218c5.mp3",
+     "source_audio": "audio/tc/jeolgu_c406d218c5.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "아이고, 내 머리야!",
+     "emotion": "sad:1.2",
+     "tags": "[groaning, dazed, pained]",
+     "audio": "res://audio/voice/patjuk/tiger_df7882c1d9.mp3",
+     "source_audio": "audio/el/patjuk/tiger_df7882c1d9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_jeolgu"
+  },
+  {
+   "id": "pj_x_cut_myeongseok",
+   "speaker": "myeongseok+tiger",
+   "text": "\"돌돌돌~ 꽁꽁 감아라!\" \"으으, 못 움직이겠다! 풀어 줘!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "myeongseok",
+     "text": "돌돌돌~ 꽁꽁 감아라!",
+     "emotion": "toneup:1.5",
+     "tags": "[excited, childlike]",
+     "audio": "res://audio/voice/patjuk/myeongseok_29dd3ec671.mp3",
+     "source_audio": "audio/tc/myeongseok_29dd3ec671.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "으으, 못 움직이겠다! 풀어 줘!",
+     "emotion": "sad:1.2",
+     "tags": "[struggling, whining, pleading]",
+     "audio": "res://audio/voice/patjuk/tiger_b1b657b564.mp3",
+     "source_audio": "audio/el/patjuk/tiger_b1b657b564.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_myeongseok"
+  },
+  {
+   "id": "pj_x_cut_jige",
+   "speaker": "jige+tiger",
+   "text": "\"영차! 바다로 가자!\" \"으아아악!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jige",
+     "text": "영차! 바다로 가자!",
+     "emotion": "toneup:1.5",
+     "tags": "[excited, childlike]",
+     "audio": "res://audio/voice/patjuk/jige_5a04a5c1e2.mp3",
+     "source_audio": "audio/tc/jige_5a04a5c1e2.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "으아아악!",
+     "emotion": "toneup:1.2",
+     "tags": "[terrified, screaming]",
+     "audio": "res://audio/voice/patjuk/tiger_3bc8d1e44b.mp3",
+     "source_audio": "audio/el/patjuk/tiger_3bc8d1e44b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_jige"
+  },
+  {
+   "id": "pj_x_cut_jige_b",
+   "speaker": "tiger",
+   "text": "\"호랑이 살려! 다시는 안 그럴게요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "호랑이 살려! 다시는 안 그럴게요!",
+     "emotion": "sad:1.2",
+     "tags": "[terrified, crying, begging]",
+     "audio": "res://audio/voice/patjuk/tiger_1cb4e0c31c.mp3",
+     "source_audio": "audio/el/patjuk/tiger_1cb4e0c31c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_jige_b"
+  },
+  {
+   "id": "pj_x_cut_wrong_1",
+   "speaker": "tiger",
+   "text": "\"크하하! 어림없지!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "크하하! 어림없지!",
+     "emotion": "happy:1.2",
+     "tags": "[laughs, mocking, arrogant]",
+     "audio": "res://audio/voice/patjuk/tiger_5e2b630b82.mp3",
+     "source_audio": "audio/el/patjuk/tiger_5e2b630b82.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_wrong_1"
+  },
+  {
+   "id": "pj_x_cut_wrong_2",
+   "speaker": "tiger",
+   "text": "\"헤헤, 하나도 안 아프다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "헤헤, 하나도 안 아프다!",
+     "emotion": "happy:1.2",
+     "tags": "[laughs, teasing, smug]",
+     "audio": "res://audio/voice/patjuk/tiger_1a16f4215b.mp3",
+     "source_audio": "audio/el/patjuk/tiger_1a16f4215b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "cut_wrong_2"
+  },
+  {
+   "id": "pj_x_oops_bam",
+   "speaker": "bam",
+   "text": "\"어? 아무도 없네!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "bam",
+     "text": "어? 아무도 없네!",
+     "emotion": "toneup:1.2",
+     "tags": "[excited, childlike]",
+     "audio": "res://audio/voice/patjuk/bam_63bd6a4850.mp3",
+     "source_audio": "audio/tc/bam_63bd6a4850.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "oops_bam"
+  },
+  {
+   "id": "pj_x_oops_jara",
+   "speaker": "jara",
+   "text": "\"어? 여기 없네?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jara",
+     "text": "어? 여기 없네?",
+     "emotion": "toneup:1.2",
+     "tags": "[excited, childlike]",
+     "audio": "res://audio/voice/patjuk/jara_19f1c765ec.mp3",
+     "source_audio": "audio/tc/jara_19f1c765ec.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "oops_jara"
+  },
+  {
+   "id": "pj_x_oops_ddong",
+   "speaker": "ddong",
+   "text": "\"에잉, 안 밟았네!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "ddong",
+     "text": "에잉, 안 밟았네!",
+     "emotion": "sad:1.2",
+     "tags": "[disappointed, childlike]",
+     "audio": "res://audio/voice/patjuk/ddong_98a6a6bc92.mp3",
+     "source_audio": "audio/tc/ddong_98a6a6bc92.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "oops_ddong"
+  },
+  {
+   "id": "pj_x_oops_songgot",
+   "speaker": "songgot",
+   "text": "\"어라, 헛찔렀다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "songgot",
+     "text": "어라, 헛찔렀다!",
+     "emotion": "toneup:1.2",
+     "tags": "[excited, childlike]",
+     "audio": "res://audio/voice/patjuk/songgot_65678ee926.mp3",
+     "source_audio": "audio/tc/songgot_65678ee926.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "oops_songgot"
+  },
+  {
+   "id": "pj_x_oops_jeolgu",
+   "speaker": "jeolgu",
+   "text": "\"앗, 빗나갔다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jeolgu",
+     "text": "앗, 빗나갔다!",
+     "emotion": "sad:1.2",
+     "tags": "[disappointed, childlike]",
+     "audio": "res://audio/voice/patjuk/jeolgu_8ae1b3eb10.mp3",
+     "source_audio": "audio/tc/jeolgu_8ae1b3eb10.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "oops_jeolgu"
+  },
+  {
+   "id": "pj_x_oops_myeongseok",
+   "speaker": "myeongseok",
+   "text": "\"어? 텅 비었네!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "myeongseok",
+     "text": "어? 텅 비었네!",
+     "emotion": "toneup:1.2",
+     "tags": "[excited, childlike]",
+     "audio": "res://audio/voice/patjuk/myeongseok_c8818e1a76.mp3",
+     "source_audio": "audio/tc/myeongseok_c8818e1a76.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "oops_myeongseok"
+  },
+  {
+   "id": "pj_x_oops_jige",
+   "speaker": "jige",
+   "text": "\"끙차… 아무것도 없네!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jige",
+     "text": "끙차… 아무것도 없네!",
+     "emotion": "sad:1.2",
+     "tags": "[disappointed, childlike]",
+     "audio": "res://audio/voice/patjuk/jige_df47961410.mp3",
+     "source_audio": "audio/tc/jige_df47961410.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "oops_jige"
+  },
+  {
+   "id": "pj_x_hi_bam",
+   "speaker": "bam",
+   "text": "\"팥죽 고마워요, 할머니!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "bam",
+     "text": "팥죽 고마워요, 할머니!",
+     "emotion": "happy:1.4",
+     "tags": "[delighted, childlike]",
+     "audio": "res://audio/voice/patjuk/bam_148bd4d8f9.mp3",
+     "source_audio": "audio/tc/bam_148bd4d8f9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_bam"
+  },
+  {
+   "id": "pj_x_hi_jara",
+   "speaker": "jara",
+   "text": "\"할머니, 팥죽 맛있었어요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jara",
+     "text": "할머니, 팥죽 맛있었어요!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jara_e7af67dea1.mp3",
+     "source_audio": "audio/tc/jara_e7af67dea1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_jara"
+  },
+  {
+   "id": "pj_x_hi_ddong",
+   "speaker": "ddong",
+   "text": "\"헤헤, 우리가 이겼다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "ddong",
+     "text": "헤헤, 우리가 이겼다!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/ddong_10fdd1ccbe.mp3",
+     "source_audio": "audio/tc/ddong_10fdd1ccbe.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_ddong"
+  },
+  {
+   "id": "pj_x_hi_songgot",
+   "speaker": "songgot",
+   "text": "\"콕콕! 신난다!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "songgot",
+     "text": "콕콕! 신난다!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/songgot_e2443b65e5.mp3",
+     "source_audio": "audio/tc/songgot_e2443b65e5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_songgot"
+  },
+  {
+   "id": "pj_x_hi_jeolgu",
+   "speaker": "jeolgu",
+   "text": "\"쿵더쿵! 만세!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jeolgu",
+     "text": "쿵더쿵! 만세!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jeolgu_6842ec2a53.mp3",
+     "source_audio": "audio/tc/jeolgu_6842ec2a53.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_jeolgu"
+  },
+  {
+   "id": "pj_x_hi_myeongseok",
+   "speaker": "myeongseok",
+   "text": "\"돌돌돌! 고마워요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "myeongseok",
+     "text": "돌돌돌! 고마워요!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/myeongseok_7778850fee.mp3",
+     "source_audio": "audio/tc/myeongseok_7778850fee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_myeongseok"
+  },
+  {
+   "id": "pj_x_hi_jige",
+   "speaker": "jige",
+   "text": "\"영차! 또 놀러 올게요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "jige",
+     "text": "영차! 또 놀러 올게요!",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jige_070bd2ce3a.mp3",
+     "source_audio": "audio/tc/jige_070bd2ce3a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_jige"
+  },
+  {
+   "id": "pj_x_hi_halmi",
+   "speaker": "halmi",
+   "text": "\"고맙다, 얘들아! 다 같이 팥죽 먹자!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "고맙다, 얘들아! 다 같이 팥죽 먹자!",
+     "emotion": "happy:1.3",
+     "tags": "[warm, delighted]",
+     "audio": "res://audio/voice/patjuk/halmi_a27207e008.mp3",
+     "source_audio": "audio/tc/halmi_a27207e008.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hi_halmi"
+  },
+  {
+   "id": "pj_r0100",
+   "speaker": "nar",
+   "text": "옛날 옛날, 깊은 산골에 팥죽을 아주 잘 쑤는 할멈이 살았어요.",
+   "status": "reuse",
+   "beat": "field",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "옛날 옛날, 깊은 산골에 팥죽을 아주 잘 쑤는 할멈이 살았어요.",
+     "emotion": "smart",
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_11129128e8.mp3",
+     "source_audio": "audio/el/patjuk/nar_11129128e8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "hoe_up"
+   },
+   "source_read": "R01_field#0",
+   "source_text": "옛날 옛날, 깊은 산골에 팥죽을 아주 잘 쑤는 할멈이 살았어요."
+  },
+  {
+   "id": "pj_r0101",
+   "speaker": "nar",
+   "text": "팥밭에는 빨간 팥이 주렁주렁 열렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "팥밭에는 빨간 팥이 주렁주렁 열렸어요.",
+     "emotion": "smart",
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_e9f1ddaec1.mp3",
+     "source_audio": "audio/el/patjuk/nar_e9f1ddaec1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm"
+   },
+   "source_read": "R01_field#1",
+   "source_text": "팥밭에는 빨간 팥이 주렁주렁 열렸어요."
+  },
+  {
+   "id": "pj_r0102",
+   "speaker": "nar",
+   "text": "할멈은 호미로 콕콕 김을 매며 콧노래를 흥얼흥얼 불렀지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 호미로 콕콕 김을 매며 콧노래를 흥얼흥얼 불렀지요.",
+     "emotion": "smart",
+     "tags": "[gentle, slow, bedtime storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_62b0837cbc.mp3",
+     "source_audio": "audio/el/patjuk/nar_62b0837cbc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "hoe_up"
+   },
+   "source_read": "R01_field#2",
+   "source_text": "할멈은 호미로 콕콕 김을 매며 콧노래를 흥얼흥얼 불렀지요."
+  },
+  {
+   "id": "pj_r0200",
+   "speaker": "nar",
+   "text": "그날도 할멈은 팥밭에서 일을 하고 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그날도 할멈은 팥밭에서 일을 하고 있었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_c4627a4a51.mp3",
+     "source_audio": "audio/el/patjuk/nar_c4627a4a51.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_tiger#0",
+   "source_text": "그날도 할멈은 팥밭에서 일을 하고 있었어요."
+  },
+  {
+   "id": "pj_r0201",
+   "speaker": "nar+tiger",
+   "text": "어흥! 어느 날 커다란 호랑이가 나타났어요. \"할멈, 잡아먹어야겠다!\"",
+   "status": "reuse",
+   "beat": "field",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어흥! 어느 날 커다란 호랑이가 나타났어요.",
+     "emotion": "tonedown:1.3",
+     "tags": "[low voice, ominous]",
+     "audio": "res://audio/voice/patjuk/nar_1a943cfef6.mp3",
+     "source_audio": "audio/el/patjuk/nar_1a943cfef6.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "tiger",
+     "text": "할멈, 잡아먹어야겠다!",
+     "emotion": "angry:1.2",
+     "tags": "[growls, menacing, hungry]",
+     "audio": "res://audio/voice/patjuk/tiger_932b7a47f6.mp3",
+     "source_audio": "audio/el/patjuk/tiger_932b7a47f6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "scared",
+    "tiger": [
+     "roar",
+     "demand"
+    ]
+   },
+   "source_read": "R02_tiger#1",
+   "source_text": "어흥! 어느 날 커다란 호랑이가 나타났어요. \"할멈, 잡아먹어야겠다!\""
+  },
+  {
+   "id": "pj_r0202",
+   "speaker": "nar",
+   "text": "할멈은 깜짝 놀라 호미를 떨어뜨렸어요. 다리가 후들후들 떨렸지요.",
+   "status": "reuse",
+   "beat": "field",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 깜짝 놀라 호미를 떨어뜨렸어요. 다리가 후들후들 떨렸지요.",
+     "emotion": "smart",
+     "tags": "[low voice, a little tense]",
+     "audio": "res://audio/voice/patjuk/nar_99f60a39b9.mp3",
+     "source_audio": "audio/el/patjuk/nar_99f60a39b9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "scared"
+   },
+   "source_read": "R02_tiger#2",
+   "source_text": "할멈은 깜짝 놀라 호미를 떨어뜨렸어요. 다리가 후들후들 떨렸지요."
+  },
+  {
+   "id": "pj_r0203",
+   "speaker": "nar",
+   "text": "할멈은 떨리는 목소리로 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 떨리는 목소리로 말했어요.",
+     "emotion": "smart",
+     "tags": "[low voice, a little tense]",
+     "audio": "res://audio/voice/patjuk/nar_c7ad2f98f7.mp3",
+     "source_audio": "audio/el/patjuk/nar_c7ad2f98f7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_tiger#3",
+   "source_text": "할멈은 떨리는 목소리로 말했어요."
+  },
+  {
+   "id": "pj_r0204",
+   "speaker": "halmi+nar",
+   "text": "\"호랑이야, 동짓날에 맛있는 팥죽을 쑤어 줄게. 그때까지 기다려 다오.\" 호랑이는 어슬렁어슬렁 돌아갔어요.",
+   "status": "reuse",
+   "beat": "field",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "호랑이야, 동짓날에 맛있는 팥죽을 쑤어 줄게. 그때까지 기다려 다오.",
+     "emotion": "sad:1.4",
+     "tags": "[sad, trembling, pleading]",
+     "audio": "res://audio/voice/patjuk/halmi_4e86a149c3.mp3",
+     "source_audio": "audio/tc/patjuk/halmi_4e86a149c3.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "호랑이는 어슬렁어슬렁 돌아갔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_a2bfddd4e4.mp3",
+     "source_audio": "audio/el/patjuk/nar_a2bfddd4e4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": [
+     "plead",
+     "sad"
+    ],
+    "tiger": [
+     "sly",
+     "sly"
+    ]
+   },
+   "source_read": "R02_tiger#4",
+   "source_text": "\"호랑이야, 동짓날에 맛있는 팥죽을 쑤어 줄게. 그때까지 기다려 다오.\" 호랑이는 어슬렁어슬렁 돌아갔어요."
+  },
+  {
+   "id": "pj_r0205",
+   "speaker": "nar",
+   "text": "할멈은 호랑이가 사라진 산길을 한참 바라보았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 호랑이가 사라진 산길을 한참 바라보았어요.",
+     "emotion": "smart",
+     "tags": "[gentle, slow, bedtime storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_f1bd8441d5.mp3",
+     "source_audio": "audio/el/patjuk/nar_f1bd8441d5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "look_far"
+   },
+   "source_read": "R02_tiger#5",
+   "source_text": "할멈은 호랑이가 사라진 산길을 한참 바라보았어요."
+  },
+  {
+   "id": "pj_r0300",
+   "speaker": "nar",
+   "text": "어느덧 찬바람 부는 겨울이 왔어요.",
+   "status": "reuse",
+   "beat": "winter",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어느덧 찬바람 부는 겨울이 왔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_e3d6b3b3ff.mp3",
+     "source_audio": "audio/el/patjuk/nar_e3d6b3b3ff.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_solstice#0",
+   "source_text": "어느덧 찬바람 부는 겨울이 왔어요."
+  },
+  {
+   "id": "pj_r0301",
+   "speaker": "nar",
+   "text": "드디어 동짓날이 되었어요. 할멈은 팥죽을 쑤면서 훌쩍훌쩍 울었어요.",
+   "status": "reuse",
+   "beat": "winter",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "드디어 동짓날이 되었어요. 할멈은 팥죽을 쑤면서 훌쩍훌쩍 울었어요.",
+     "emotion": "sad:1.1",
+     "tags": "[sad, softly]",
+     "audio": "res://audio/voice/patjuk/nar_3d01d2df4f.mp3",
+     "source_audio": "audio/el/patjuk/nar_3d01d2df4f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "cry_stir"
+   },
+   "source_read": "R03_solstice#1",
+   "source_text": "드디어 동짓날이 되었어요. 할멈은 팥죽을 쑤면서 훌쩍훌쩍 울었어요."
+  },
+  {
+   "id": "pj_r0302",
+   "speaker": "nar",
+   "text": "동짓날 저녁, 할멈은 집 안 부엌에 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "동짓날 저녁, 할멈은 집 안 부엌에 있었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_4fe6c73a5d.mp3",
+     "source_audio": "audio/el/patjuk/nar_4fe6c73a5d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_solstice#2",
+   "source_text": "동짓날 저녁, 할멈은 집 안 부엌에 있었어요."
+  },
+  {
+   "id": "pj_r0303",
+   "speaker": "nar",
+   "text": "보글보글, 구수한 팥죽 냄새가 부엌에 가득했지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "보글보글, 구수한 팥죽 냄새가 부엌에 가득했지요.",
+     "emotion": "smart",
+     "tags": "[gentle, slow, bedtime storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_bc352e11f1.mp3",
+     "source_audio": "audio/el/patjuk/nar_bc352e11f1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_solstice#3",
+   "source_text": "보글보글, 구수한 팥죽 냄새가 부엌에 가득했지요."
+  },
+  {
+   "id": "pj_r0304",
+   "speaker": "halmi",
+   "text": "\"오늘 밤 호랑이가 오면 나는 어떡하지.\"",
+   "status": "reuse",
+   "beat": "winter",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "오늘 밤 호랑이가 오면 나는 어떡하지.",
+     "emotion": "sad:1.4",
+     "tags": "[crying softly, worried]",
+     "audio": "res://audio/voice/patjuk/halmi_229198d50a.mp3",
+     "source_audio": "audio/tc/patjuk/halmi_229198d50a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "sad"
+   },
+   "source_read": "R03_solstice#4",
+   "source_text": "\"오늘 밤 호랑이가 오면 나는 어떡하지.\""
+  },
+  {
+   "id": "pj_r0400",
+   "speaker": "nar",
+   "text": "그때 부엌문 밖에서 작은 소리가 들렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그때 부엌문 밖에서 작은 소리가 들렸어요.",
+     "emotion": "smart",
+     "tags": "[playful, lively storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_3b72e746dc.mp3",
+     "source_audio": "audio/el/patjuk/nar_3b72e746dc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm"
+   },
+   "source_read": "R04_bam_jara#0",
+   "source_text": "그때 부엌문 밖에서 작은 소리가 들렸어요."
+  },
+  {
+   "id": "pj_r0401",
+   "speaker": "nar+bam+nar",
+   "text": "데굴데굴~ 알밤이 굴러왔어요. \"할멈, 팥죽 한 그릇 주면 도와줄게!\" 알밤은 팥죽을 얻어먹고 뜨거운 아궁이 속에 쏙 숨었어요.",
+   "status": "reuse",
+   "beat": "helpers",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "데굴데굴~ 알밤이 굴러왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_84e0a6a590.mp3",
+     "source_audio": "audio/el/patjuk/nar_84e0a6a590.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "bam",
+     "text": "할멈, 팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/bam_20bdfada81.mp3",
+     "source_audio": "audio/tc/bam_20bdfada81.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "알밤은 팥죽을 얻어먹고 뜨거운 아궁이 속에 쏙 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_7925a2716d.mp3",
+     "source_audio": "audio/el/patjuk/nar_7925a2716d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm",
+    "bam": [
+     "calm",
+     "act",
+     "calm"
+    ]
+   },
+   "source_read": "R04_bam_jara#1",
+   "source_text": "데굴데굴~ 알밤이 굴러왔어요. \"할멈, 팥죽 한 그릇 주면 도와줄게!\" 알밤은 팥죽을 얻어먹고 뜨거운 아궁이 속에 쏙 숨었어요."
+  },
+  {
+   "id": "pj_r0402",
+   "speaker": "nar+jara+nar",
+   "text": "엉금엉금~ 자라가 기어왔어요. \"나도 팥죽 한 그릇 주면 도와줄게!\" 자라는 팥죽을 얻어먹고 물독 속에 퐁당 숨었어요.",
+   "status": "reuse",
+   "beat": "helpers",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엉금엉금~ 자라가 기어왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_498b7e0f89.mp3",
+     "source_audio": "audio/el/patjuk/nar_498b7e0f89.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "jara",
+     "text": "나도 팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jara_09a425076e.mp3",
+     "source_audio": "audio/tc/jara_09a425076e.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "자라는 팥죽을 얻어먹고 물독 속에 퐁당 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_db35a90620.mp3",
+     "source_audio": "audio/el/patjuk/nar_db35a90620.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm"
+   },
+   "source_read": "R04_bam_jara#2",
+   "source_text": "엉금엉금~ 자라가 기어왔어요. \"나도 팥죽 한 그릇 주면 도와줄게!\" 자라는 팥죽을 얻어먹고 물독 속에 퐁당 숨었어요."
+  },
+  {
+   "id": "pj_r0500",
+   "speaker": "nar",
+   "text": "알밤과 자라가 숨은 부엌으로 또 친구들이 왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "알밤과 자라가 숨은 부엌으로 또 친구들이 왔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_485dadd465.mp3",
+     "source_audio": "audio/el/patjuk/nar_485dadd465.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_three#0",
+   "source_text": "알밤과 자라가 숨은 부엌으로 또 친구들이 왔어요."
+  },
+  {
+   "id": "pj_r0501",
+   "speaker": "nar+ddong+nar",
+   "text": "철퍼덕! 쇠똥이 왔어요. \"팥죽 한 그릇 주면 나도 도울게!\" 쇠똥은 팥죽을 얻어먹고 부엌 바닥에 납작 엎드려 숨었어요.",
+   "status": "reuse",
+   "beat": "helpers",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "철퍼덕! 쇠똥이 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9d5d1ecfc1.mp3",
+     "source_audio": "audio/el/patjuk/nar_9d5d1ecfc1.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "ddong",
+     "text": "팥죽 한 그릇 주면 나도 도울게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/ddong_5e1ebbe7ac.mp3",
+     "source_audio": "audio/tc/ddong_5e1ebbe7ac.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "쇠똥은 팥죽을 얻어먹고 부엌 바닥에 납작 엎드려 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_27226cfa33.mp3",
+     "source_audio": "audio/el/patjuk/nar_27226cfa33.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm"
+   },
+   "source_read": "R05_three#1",
+   "source_text": "철퍼덕! 쇠똥이 왔어요. \"팥죽 한 그릇 주면 나도 도울게!\" 쇠똥은 팥죽을 얻어먹고 부엌 바닥에 납작 엎드려 숨었어요."
+  },
+  {
+   "id": "pj_r0502",
+   "speaker": "nar+songgot+nar",
+   "text": "콕콕! 송곳이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 송곳은 팥죽을 얻어먹고 바닥 틈에 뾰족 숨었어요.",
+   "status": "reuse",
+   "beat": "helpers",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "콕콕! 송곳이 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_8220033b91.mp3",
+     "source_audio": "audio/el/patjuk/nar_8220033b91.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "songgot",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/songgot_0d5172029c.mp3",
+     "source_audio": "audio/tc/songgot_0d5172029c.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "송곳은 팥죽을 얻어먹고 바닥 틈에 뾰족 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_606663f9be.mp3",
+     "source_audio": "audio/el/patjuk/nar_606663f9be.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm"
+   },
+   "source_read": "R05_three#2",
+   "source_text": "콕콕! 송곳이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 송곳은 팥죽을 얻어먹고 바닥 틈에 뾰족 숨었어요."
+  },
+  {
+   "id": "pj_r0503",
+   "speaker": "nar+jeolgu+nar",
+   "text": "쿵더쿵! 절구가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 절구는 팥죽을 얻어먹고 문 위로 올라가 숨었어요.",
+   "status": "reuse",
+   "beat": "helpers",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쿵더쿵! 절구가 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9cd3dc5291.mp3",
+     "source_audio": "audio/el/patjuk/nar_9cd3dc5291.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "jeolgu",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jeolgu_9da6e85c73.mp3",
+     "source_audio": "audio/tc/jeolgu_9da6e85c73.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "절구는 팥죽을 얻어먹고 문 위로 올라가 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_5f597bfdf2.mp3",
+     "source_audio": "audio/el/patjuk/nar_5f597bfdf2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm"
+   },
+   "source_read": "R05_three#3",
+   "source_text": "쿵더쿵! 절구가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 절구는 팥죽을 얻어먹고 문 위로 올라가 숨었어요."
+  },
+  {
+   "id": "pj_r0504",
+   "speaker": "nar",
+   "text": "할멈은 친구들에게 팥죽을 듬뿍듬뿍 떠 주며 조금씩 힘이 났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 친구들에게 팥죽을 듬뿍듬뿍 떠 주며 조금씩 힘이 났어요.",
+     "emotion": "smart",
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_800d523632.mp3",
+     "source_audio": "audio/el/patjuk/nar_800d523632.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_three#4",
+   "source_text": "할멈은 친구들에게 팥죽을 듬뿍듬뿍 떠 주며 조금씩 힘이 났어요."
+  },
+  {
+   "id": "pj_r0600",
+   "speaker": "nar",
+   "text": "할멈은 부엌에서 마당 쪽 문가로 나갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 부엌에서 마당 쪽 문가로 나갔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_8d53ea7182.mp3",
+     "source_audio": "audio/el/patjuk/nar_8d53ea7182.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_yard#0",
+   "source_text": "할멈은 부엌에서 마당 쪽 문가로 나갔어요."
+  },
+  {
+   "id": "pj_r0601",
+   "speaker": "nar",
+   "text": "똑똑똑! 마당에도 친구들이 찾아왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "똑똑똑! 마당에도 친구들이 찾아왔어요.",
+     "emotion": "smart",
+     "tags": "[playful, lively storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_13baca04c9.mp3",
+     "source_audio": "audio/el/patjuk/nar_13baca04c9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "calm"
+   },
+   "source_read": "R06_yard#1",
+   "source_text": "똑똑똑! 마당에도 친구들이 찾아왔어요."
+  },
+  {
+   "id": "pj_r0602",
+   "speaker": "nar+myeongseok+nar",
+   "text": "펄럭펄럭~ 멍석이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 멍석은 팥죽을 얻어먹고 마당에 돌돌 말려 숨었어요.",
+   "status": "reuse",
+   "beat": "yard",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "펄럭펄럭~ 멍석이 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_2be57cbde9.mp3",
+     "source_audio": "audio/el/patjuk/nar_2be57cbde9.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "myeongseok",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/myeongseok_f35e66aa6d.mp3",
+     "source_audio": "audio/tc/myeongseok_f35e66aa6d.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "멍석은 팥죽을 얻어먹고 마당에 돌돌 말려 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_d289a6fc94.mp3",
+     "source_audio": "audio/el/patjuk/nar_d289a6fc94.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_yard#2",
+   "source_text": "펄럭펄럭~ 멍석이 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 멍석은 팥죽을 얻어먹고 마당에 돌돌 말려 숨었어요."
+  },
+  {
+   "id": "pj_r0603",
+   "speaker": "nar+jige+nar",
+   "text": "성큼성큼! 지게가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 지게는 팥죽을 얻어먹고 담벼락에 기대어 숨었어요.",
+   "status": "reuse",
+   "beat": "yard",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "성큼성큼! 지게가 왔어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_d6c4616e26.mp3",
+     "source_audio": "audio/el/patjuk/nar_d6c4616e26.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "jige",
+     "text": "팥죽 한 그릇 주면 도와줄게!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful, childlike]",
+     "audio": "res://audio/voice/patjuk/jige_d90b72b7cd.mp3",
+     "source_audio": "audio/tc/jige_d90b72b7cd.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "지게는 팥죽을 얻어먹고 담벼락에 기대어 숨었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9b39ac0e3f.mp3",
+     "source_audio": "audio/el/patjuk/nar_9b39ac0e3f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_yard#3",
+   "source_text": "성큼성큼! 지게가 왔어요. \"팥죽 한 그릇 주면 도와줄게!\" 지게는 팥죽을 얻어먹고 담벼락에 기대어 숨었어요."
+  },
+  {
+   "id": "pj_r0604",
+   "speaker": "nar",
+   "text": "할멈은 눈물을 닦고 친구들에게 소곤소곤 속삭였어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 눈물을 닦고 친구들에게 소곤소곤 속삭였어요.",
+     "emotion": "smart",
+     "tags": "[gentle, slow, bedtime storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_ff3009e625.mp3",
+     "source_audio": "audio/el/patjuk/nar_ff3009e625.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "whisper"
+   },
+   "source_read": "R06_yard#4",
+   "source_text": "할멈은 눈물을 닦고 친구들에게 소곤소곤 속삭였어요."
+  },
+  {
+   "id": "pj_r0605",
+   "speaker": "halmi",
+   "text": "\"얘들아, 도와줘!\"",
+   "status": "reuse",
+   "beat": "yard",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "얘들아, 도와줘!",
+     "emotion": "sad:1.5",
+     "tags": "[sad, trembling, pleading]",
+     "audio": "res://audio/voice/patjuk/halmi_9c541854d8.mp3",
+     "source_audio": "audio/tc/patjuk/halmi_9c541854d8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "whisper"
+   },
+   "source_read": "R06_yard#5",
+   "source_text": "\"얘들아, 도와줘!\""
+  },
+  {
+   "id": "pj_r0606",
+   "speaker": "halmi",
+   "text": "\"호랑이가 오면 모두 힘을 모아 주렴.\"",
+   "status": "reuse",
+   "beat": "yard",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "호랑이가 오면 모두 힘을 모아 주렴.",
+     "emotion": "whisper",
+     "tags": "[whispering, grateful, hopeful]",
+     "audio": "res://audio/voice/patjuk/halmi_5d75845372.mp3",
+     "source_audio": "audio/tc/patjuk/halmi_5d75845372.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "whisper"
+   },
+   "source_read": "R06_yard#6",
+   "source_text": "\"호랑이가 오면 모두 힘을 모아 주렴.\""
+  },
+  {
+   "id": "pj_r0700",
+   "speaker": "nar",
+   "text": "할멈은 다시 부엌으로 들어가 친구들과 호랑이를 기다렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 다시 부엌으로 들어가 친구들과 호랑이를 기다렸어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_8f3bffb479.mp3",
+     "source_audio": "audio/el/patjuk/nar_8f3bffb479.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_night#0",
+   "source_text": "할멈은 다시 부엌으로 들어가 친구들과 호랑이를 기다렸어요."
+  },
+  {
+   "id": "pj_r0701",
+   "speaker": "nar",
+   "text": "깜깜한 밤이 되었어요. 어흥! 호랑이가 어슬렁어슬렁 찾아왔어요!",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "깜깜한 밤이 되었어요. 어흥! 호랑이가 어슬렁어슬렁 찾아왔어요!",
+     "emotion": "tonedown:1.4",
+     "tags": "[whispers, ominous]",
+     "audio": "res://audio/voice/patjuk/nar_eb528785a4.mp3",
+     "source_audio": "audio/el/patjuk/nar_eb528785a4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": "roar"
+   },
+   "source_read": "R07_night#1",
+   "source_text": "깜깜한 밤이 되었어요. 어흥! 호랑이가 어슬렁어슬렁 찾아왔어요!"
+  },
+  {
+   "id": "pj_r0702",
+   "speaker": "tiger",
+   "text": "\"할멈, 약속대로 왔다. 팥죽을 먹고 나서 너를 잡아먹겠다!\"",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "할멈, 약속대로 왔다. 팥죽을 먹고 나서 너를 잡아먹겠다!",
+     "emotion": "angry:1.2",
+     "tags": "[growls, menacing, hungry]",
+     "audio": "res://audio/voice/patjuk/tiger_80cdea8fdc.mp3",
+     "source_audio": "audio/el/patjuk/tiger_80cdea8fdc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": "demand"
+   },
+   "source_read": "R07_night#2",
+   "source_text": "\"할멈, 약속대로 왔다. 팥죽을 먹고 나서 너를 잡아먹겠다!\""
+  },
+  {
+   "id": "pj_r0703",
+   "speaker": "halmi",
+   "text": "\"호랑아, 팥죽 먹기 전에 아궁이 불 좀 봐주렴.\"",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "호랑아, 팥죽 먹기 전에 아궁이 불 좀 봐주렴.",
+     "emotion": "happy:0.9",
+     "tags": "[sweet, pretending to be kind]",
+     "audio": "res://audio/voice/patjuk/halmi_1f85964d2c.mp3",
+     "source_audio": "audio/tc/patjuk/halmi_1f85964d2c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "call",
+    "tiger": "sly"
+   },
+   "source_read": "R07_night#3",
+   "source_text": "\"호랑아, 팥죽 먹기 전에 아궁이 불 좀 봐주렴.\" 할멈의 말에 호랑이가 아궁이 앞에 쪼그려 앉았어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "pj_r0704",
+   "speaker": "nar",
+   "text": "할멈은 부엌 구석으로 살금살금 물러났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 부엌 구석으로 살금살금 물러났어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_2dd9436806.mp3",
+     "source_audio": "audio/el/patjuk/nar_2dd9436806.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_night#4",
+   "source_text": "할멈은 부엌 구석으로 살금살금 물러났어요."
+  },
+  {
+   "id": "pj_r0705",
+   "speaker": "nar",
+   "text": "알밤이 아궁이에서 톡! 튀어나와 호랑이 눈을 딱 때렸어요!",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "알밤이 아궁이에서 톡! 튀어나와 호랑이 눈을 딱 때렸어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_bd46e77507.mp3",
+     "source_audio": "audio/el/patjuk/nar_bd46e77507.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_night#5",
+   "source_text": "알밤이 아궁이에서 톡! 튀어나와 호랑이 눈을 딱 때렸어요!"
+  },
+  {
+   "id": "pj_r0706",
+   "speaker": "tiger+nar",
+   "text": "\"앗, 뜨거워! 눈이야!\" 호랑이가 눈을 씻으려고 물독에 얼굴을 쏙 넣었어요.",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "앗, 뜨거워! 눈이야!",
+     "emotion": "toneup:1.2",
+     "tags": "=[sharp yelp of pain] 앗, 뜨거워! ... [panicked, high-pitched cry] 눈이야!",
+     "audio": "res://audio/voice/patjuk/tiger_9e6547f8d5.mp3",
+     "source_audio": "audio/el/patjuk/tiger_9e6547f8d5.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "호랑이가 눈을 씻으려고 물독에 얼굴을 쏙 넣었어요.",
+     "emotion": "smart",
+     "tags": "[warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_241f915035.mp3",
+     "source_audio": "audio/el/patjuk/nar_241f915035.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": [
+     "eye_hurt",
+     "eye_hurt"
+    ]
+   },
+   "source_read": "R07_night#6",
+   "source_text": "\"앗, 뜨거워! 눈이야!\" 호랑이가 눈을 씻으려고 물독에 얼굴을 쏙 넣었어요."
+  },
+  {
+   "id": "pj_r0707",
+   "speaker": "nar",
+   "text": "물독 속 자라가 호랑이 입을 앙! 물었어요!",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "물독 속 자라가 호랑이 입을 앙! 물었어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_47f141b75e.mp3",
+     "source_audio": "audio/el/patjuk/nar_47f141b75e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "hide"
+   },
+   "source_read": "R07_night#7",
+   "source_text": "물독 속 자라가 호랑이 입을 앙! 물었어요!"
+  },
+  {
+   "id": "pj_r0800",
+   "speaker": "nar",
+   "text": "물독에 입을 넣었던 호랑이가 부엌에서 몸을 부르르 떨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "물독에 입을 넣었던 호랑이가 부엌에서 몸을 부르르 떨었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_d1fb3e83a5.mp3",
+     "source_audio": "audio/el/patjuk/nar_d1fb3e83a5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_kitchen#0",
+   "source_text": "물독에 입을 넣었던 호랑이가 부엌에서 몸을 부르르 떨었어요."
+  },
+  {
+   "id": "pj_r0801",
+   "speaker": "tiger",
+   "text": "\"아야야!\"",
+   "status": "reuse",
+   "beat": "uproar",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "아야야!",
+     "emotion": "sad:1.2",
+     "tags": "[pained, yelping]",
+     "audio": "res://audio/voice/patjuk/tiger_4f5b1a7d1f.mp3",
+     "source_audio": "audio/el/patjuk/tiger_4f5b1a7d1f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": "mouth_ouch"
+   },
+   "source_read": "R08_kitchen#1",
+   "source_text": "\"아야야!\" 호랑이가 깜짝 놀라 뒷걸음질을 쳤어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "pj_r0802",
+   "speaker": "nar",
+   "text": "호랑이가 쇠똥을 밟고 쭈르륵~ 미끄러졌어요!",
+   "status": "reuse",
+   "beat": "uproar",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 쇠똥을 밟고 쭈르륵~ 미끄러졌어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_99cec42239.mp3",
+     "source_audio": "audio/el/patjuk/nar_99cec42239.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_kitchen#2",
+   "source_text": "호랑이가 쇠똥을 밟고 쭈르륵~ 미끄러졌어요!"
+  },
+  {
+   "id": "pj_r0803",
+   "speaker": "nar",
+   "text": "미끌! 호랑이가 꽈당 넘어졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "미끌! 호랑이가 꽈당 넘어졌어요.",
+     "emotion": "happy:1.2",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_381c75849c.mp3",
+     "source_audio": "audio/el/patjuk/nar_381c75849c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_kitchen#3",
+   "source_text": "미끌! 호랑이가 꽈당 넘어졌어요."
+  },
+  {
+   "id": "pj_r0804",
+   "speaker": "nar",
+   "text": "송곳이 호랑이 엉덩이를 콕! 찔렀어요!",
+   "status": "reuse",
+   "beat": "uproar",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "송곳이 호랑이 엉덩이를 콕! 찔렀어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_035133c47d.mp3",
+     "source_audio": "audio/el/patjuk/nar_035133c47d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_kitchen#4",
+   "source_text": "송곳이 호랑이 엉덩이를 콕! 찔렀어요!"
+  },
+  {
+   "id": "pj_r0805",
+   "speaker": "tiger",
+   "text": "\"엉엉, 아파!\"",
+   "status": "reuse",
+   "beat": "uproar",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "엉엉, 아파!",
+     "emotion": "sad:1.2",
+     "tags": "[crying, sobbing, whimpering]",
+     "audio": "res://audio/voice/patjuk/tiger_84d9d66be7.mp3",
+     "source_audio": "audio/el/patjuk/tiger_84d9d66be7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": "poked"
+   },
+   "source_read": "R08_kitchen#5",
+   "source_text": "\"엉엉, 아파!\" 호랑이가 문 쪽으로 도망가요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "pj_r0806",
+   "speaker": "nar",
+   "text": "절구가 문 위에서 쿵! 호랑이 머리 위로 떨어졌어요!",
+   "status": "reuse",
+   "beat": "uproar",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "절구가 문 위에서 쿵! 호랑이 머리 위로 떨어졌어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_b0e79f489d.mp3",
+     "source_audio": "audio/el/patjuk/nar_b0e79f489d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "hide"
+   },
+   "source_read": "R08_kitchen#6",
+   "source_text": "절구가 문 위에서 쿵! 호랑이 머리 위로 떨어졌어요!"
+  },
+  {
+   "id": "pj_r0807",
+   "speaker": "nar",
+   "text": "호랑이는 눈앞이 빙글빙글 돌아 비틀비틀 걸었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이는 눈앞이 빙글빙글 돌아 비틀비틀 걸었어요.",
+     "emotion": "smart",
+     "tags": "[playful, lively storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_aeb41f1483.mp3",
+     "source_audio": "audio/el/patjuk/nar_aeb41f1483.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": "dazed"
+   },
+   "source_read": "R08_kitchen#7",
+   "source_text": "호랑이는 눈앞이 빙글빙글 돌아 비틀비틀 걸었어요."
+  },
+  {
+   "id": "pj_r0900",
+   "speaker": "nar",
+   "text": "쿵! 절구에 맞은 호랑이가 마당으로 도망쳐 쭉 뻗어 버렸어요.",
+   "status": "reuse",
+   "beat": "sea",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "쿵! 절구에 맞은 호랑이가 마당으로 도망쳐 쭉 뻗어 버렸어요.",
+     "emotion": "happy:1.2",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_5ab8685da0.mp3",
+     "source_audio": "audio/el/patjuk/nar_5ab8685da0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": "flat_bump"
+   },
+   "source_read": "R09_sea#0",
+   "source_text": "쿵! 절구에 맞은 호랑이가 마당으로 도망쳐 쭉 뻗어 버렸어요."
+  },
+  {
+   "id": "pj_r0901",
+   "speaker": "nar",
+   "text": "멍석이 호랑이를 돌돌돌 말아 버렸어요!",
+   "status": "reuse",
+   "beat": "sea",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "멍석이 호랑이를 돌돌돌 말아 버렸어요!",
+     "emotion": "happy:1.3",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_185825cf07.mp3",
+     "source_audio": "audio/el/patjuk/nar_185825cf07.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_sea#1",
+   "source_text": "멍석이 호랑이를 돌돌돌 말아 버렸어요!"
+  },
+  {
+   "id": "pj_r0902",
+   "speaker": "nar",
+   "text": "돌돌돌! 호랑이가 멍석에 꽁꽁 말렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "돌돌돌! 호랑이가 멍석에 꽁꽁 말렸어요.",
+     "emotion": "happy:1.2",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_e9fa11a313.mp3",
+     "source_audio": "audio/el/patjuk/nar_e9fa11a313.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_sea#2",
+   "source_text": "돌돌돌! 호랑이가 멍석에 꽁꽁 말렸어요."
+  },
+  {
+   "id": "pj_r0903",
+   "speaker": "tiger",
+   "text": "\"으악, 답답해! 꺼내 줘!\"",
+   "status": "reuse",
+   "beat": "sea",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "tiger",
+     "text": "으악, 답답해! 꺼내 줘!",
+     "emotion": "sad:1.2",
+     "tags": "[muffled, panicked]",
+     "audio": "res://audio/voice/patjuk/tiger_3ac70b995f.mp3",
+     "source_audio": "audio/el/patjuk/tiger_3ac70b995f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "tiger": "rolled_cry"
+   },
+   "source_read": "R09_sea#3",
+   "source_text": "\"으악, 답답해! 꺼내 줘!\""
+  },
+  {
+   "id": "pj_r0904",
+   "speaker": "nar",
+   "text": "지게가 호랑이를 번쩍 지고 가서 바다에 풍덩! 던져 버렸어요!",
+   "status": "reuse",
+   "beat": "sea",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "지게가 호랑이를 번쩍 지고 가서 바다에 풍덩! 던져 버렸어요!",
+     "emotion": "toneup:1.4",
+     "tags": "[excited, dramatic]",
+     "audio": "res://audio/voice/patjuk/nar_5a4b3efd5c.mp3",
+     "source_audio": "audio/el/patjuk/nar_5a4b3efd5c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_sea#4",
+   "source_text": "지게가 호랑이를 번쩍 지고 가서 바다에 풍덩! 던져 버렸어요!"
+  },
+  {
+   "id": "pj_r0905",
+   "speaker": "nar",
+   "text": "호랑이는 허우적허우적 헤엄쳐 멀리멀리 달아났어요. 다시는 할멈 집에 오지 않았답니다.",
+   "status": "reuse",
+   "beat": "sea",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이는 허우적허우적 헤엄쳐 멀리멀리 달아났어요. 다시는 할멈 집에 오지 않았답니다.",
+     "emotion": "smart",
+     "tags": "[gentle, slow, bedtime storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_9300401ed5.mp3",
+     "source_audio": "audio/el/patjuk/nar_9300401ed5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_sea#5",
+   "source_text": "호랑이는 허우적허우적 헤엄쳐 멀리멀리 달아났어요. 다시는 할멈 집에 오지 않았답니다."
+  },
+  {
+   "id": "pj_r1000",
+   "speaker": "nar",
+   "text": "호랑이가 떠나자 친구들이 마당으로 모였어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "호랑이가 떠나자 친구들이 마당으로 모였어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_003f172ae3.mp3",
+     "source_audio": "audio/el/patjuk/nar_003f172ae3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#0",
+   "source_text": "호랑이가 떠나자 친구들이 마당으로 모였어요."
+  },
+  {
+   "id": "pj_r1001",
+   "speaker": "nar",
+   "text": "만세! 호랑이를 물리쳤어요! 할멈은 친구들과 맛있는 팥죽을 나누어 먹었답니다.",
+   "status": "reuse",
+   "beat": "feast",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "만세! 호랑이를 물리쳤어요! 할멈은 친구들과 맛있는 팥죽을 나누어 먹었답니다.",
+     "emotion": "happy:1.4",
+     "tags": "[cheerful]",
+     "audio": "res://audio/voice/patjuk/nar_39e47fe668.mp3",
+     "source_audio": "audio/el/patjuk/nar_39e47fe668.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "cheer"
+   },
+   "source_read": "R10_feast#1",
+   "source_text": "만세! 호랑이를 물리쳤어요! 할멈은 친구들과 맛있는 팥죽을 나누어 먹었답니다."
+  },
+  {
+   "id": "pj_r1002",
+   "speaker": "nar",
+   "text": "할멈은 마당으로 총총 나와 친구들을 꼬옥 안아 주었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈은 마당으로 총총 나와 친구들을 꼬옥 안아 주었어요.",
+     "emotion": "happy",
+     "tags": "[warm, happy, relieved]",
+     "audio": "res://audio/voice/patjuk/nar_d042f7f408.mp3",
+     "source_audio": "audio/el/patjuk/nar_d042f7f408.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "hug"
+   },
+   "source_read": "R10_feast#2",
+   "source_text": "할멈은 마당으로 총총 나와 친구들을 꼬옥 안아 주었어요."
+  },
+  {
+   "id": "pj_r1003",
+   "speaker": "halmi",
+   "text": "\"고맙다, 얘들아. 너희 덕분에 살았구나.\"",
+   "status": "reuse",
+   "beat": "feast",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "halmi",
+     "text": "고맙다, 얘들아. 너희 덕분에 살았구나.",
+     "emotion": "happy:1.3",
+     "tags": "[joyful, tearful, grateful]",
+     "audio": "res://audio/voice/patjuk/halmi_a2104e85a4.mp3",
+     "source_audio": "audio/tc/patjuk/halmi_a2104e85a4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "halmi": "hug"
+   },
+   "source_read": "R10_feast#3",
+   "source_text": "\"고맙다, 얘들아. 너희 덕분에 살았구나.\""
+  },
+  {
+   "id": "pj_r1004",
+   "speaker": "nar",
+   "text": "알밤도, 자라도, 쇠똥도, 송곳도, 절구도, 멍석도, 지게도 모두 후루룩 배불리 먹었지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "알밤도, 자라도, 쇠똥도, 송곳도, 절구도, 멍석도, 지게도 모두 후루룩 배불리 먹었지요.",
+     "emotion": "happy",
+     "tags": "[warm, happy, relieved]",
+     "audio": "res://audio/voice/patjuk/nar_9b1a94fddf.mp3",
+     "source_audio": "audio/el/patjuk/nar_9b1a94fddf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#4",
+   "source_text": "알밤도, 자라도, 쇠똥도, 송곳도, 절구도, 멍석도, 지게도 모두 후루룩 배불리 먹었지요."
+  },
+  {
+   "id": "pj_r1005",
+   "speaker": "nar",
+   "text": "작은 친구들이 힘을 모으면 커다란 호랑이도 물리칠 수 있답니다.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "작은 친구들이 힘을 모으면 커다란 호랑이도 물리칠 수 있답니다.",
+     "emotion": "smart",
+     "tags": "[gentle, slow, bedtime storytelling]",
+     "audio": "res://audio/voice/patjuk/nar_e2e7a1d863.mp3",
+     "source_audio": "audio/el/patjuk/nar_e2e7a1d863.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_feast#5",
+   "source_text": "작은 친구들이 힘을 모으면 커다란 호랑이도 물리칠 수 있답니다."
+  },
+  {
+   "id": "pj_n01",
+   "speaker": "nar",
+   "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+   "status": "changed-recorded",
+   "beat": "cover",
+   "interaction": "cover",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, warm, cosy Halloween night]",
+     "audio": "res://audio/voice/patjuk/nar_f6992243bc.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "pj_n02",
+   "speaker": "nar",
+   "text": "또 보고 싶으면 '다시 보기'를 톡!",
+   "status": "changed-recorded",
+   "beat": "feast",
+   "interaction": "end",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "또 보고 싶으면 '다시 보기'를 톡!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/patjuk/nar_5d0ad0a7c3.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "pj_n03",
+   "speaker": "nar",
+   "text": "할멈을 톡톡 눌러서 콕콕 김을 매 봐요!",
+   "status": "changed-recorded",
+   "beat": "field",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "할멈을 톡톡 눌러서 콕콕 김을 매 봐요!",
+     "emotion": null,
+     "tags": "[warm, playful, inviting]",
+     "audio": "res://audio/voice/patjuk/nar_1d0442fee9.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "pj_n04",
+   "speaker": "nar",
+   "text": "가마솥을 톡 눌러서 팥죽을 한 그릇 건네요.",
+   "status": "changed-recorded",
+   "beat": "helpers",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "가마솥을 톡 눌러서 팥죽을 한 그릇 건네요.",
+     "emotion": null,
+     "tags": "[warm, playful, inviting]",
+     "audio": "res://audio/voice/patjuk/nar_cf05d0d082.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  }
+ ]
+}

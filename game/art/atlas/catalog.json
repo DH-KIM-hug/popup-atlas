@@ -15298,5 +15298,692 @@
    687,
    286
   ]
+ },
+ {
+  "id": "story_pj_kitchen_00",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_00.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_building",
+  "label": "kitchen back wall: mud plaster, shelf of bowls, garlic and peppers, small lattice window",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "room",
+   "story",
+   "wall"
+  ],
+  "px": [
+   699,
+   288
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_01",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_01.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_building",
+  "label": "kitchen front wall from inside: plank door with a lintel beam",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "door",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "room",
+   "story",
+   "wall"
+  ],
+  "px": [
+   680,
+   289
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_02",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_02.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_prop",
+  "label": "buttumak clay hearth with iron cauldron (gamasot) and lit fire mouth",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "cauldron",
+   "fire",
+   "hearth",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "story",
+   "stove"
+  ],
+  "px": [
+   608,
+   258
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_03",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_03.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_fx",
+  "label": "fire mouth glow (agungi flames)",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "fire",
+   "flame",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   246,
+   151
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_04",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_04.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_prop",
+  "label": "big open earthenware water jar (muldok), water inside",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "interior",
+   "jar",
+   "kitchen",
+   "korean_traditional",
+   "onggi",
+   "patjuk",
+   "story",
+   "water"
+  ],
+  "px": [
+   293,
+   261
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_05",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_05.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_building",
+  "label": "packed earthen kitchen floor (flat)",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "floor",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   512,
+   155
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_06",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_06.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_prop",
+  "label": "floor board with a crack (flat)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "crack",
+   "floor",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   278,
+   68
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_07",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_07.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_prop",
+  "label": "bowl of red-bean porridge (patjuk) with rice balls, steaming",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "bowl",
+   "food",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "porridge",
+   "story"
+  ],
+  "px": [
+   194,
+   207
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_08",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_08.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_prop",
+  "label": "long wooden ladle",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "cooking",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "ladle",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   343,
+   105
+  ]
+ },
+ {
+  "id": "story_pj_kitchen_09",
+  "path": "art/atlas/story_pj_kitchen/story_pj_kitchen_09.webp",
+  "sheet": "story_pj_kitchen",
+  "category": "story_prop",
+  "label": "low table (soban) with a pot of porridge and bowls",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "any",
+  "tags": [
+   "food",
+   "interior",
+   "kitchen",
+   "korean_traditional",
+   "patjuk",
+   "porridge",
+   "story",
+   "table"
+  ],
+  "px": [
+   416,
+   224
+  ]
+ },
+ {
+  "id": "story_pj_field_00",
+  "path": "art/atlas/story_pj_field/story_pj_field_00.webp",
+  "sheet": "story_pj_field",
+  "category": "story_nature",
+  "label": "red-bean bush with ripe pods",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "bean",
+   "crop",
+   "farm",
+   "field",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   430,
+   294
+  ]
+ },
+ {
+  "id": "story_pj_field_01",
+  "path": "art/atlas/story_pj_field/story_pj_field_01.webp",
+  "sheet": "story_pj_field",
+  "category": "story_nature",
+  "label": "red-bean bush, big",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "bean",
+   "crop",
+   "farm",
+   "field",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   455,
+   374
+  ]
+ },
+ {
+  "id": "story_pj_field_02",
+  "path": "art/atlas/story_pj_field/story_pj_field_02.webp",
+  "sheet": "story_pj_field",
+  "category": "story_nature",
+  "label": "red-bean bush, open",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "bean",
+   "crop",
+   "farm",
+   "field",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   493,
+   328
+  ]
+ },
+ {
+  "id": "story_pj_field_03",
+  "path": "art/atlas/story_pj_field/story_pj_field_03.webp",
+  "sheet": "story_pj_field",
+  "category": "story_nature",
+  "label": "band of red-bean rows",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "band",
+   "bean",
+   "crop",
+   "farm",
+   "field",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   1461,
+   218
+  ]
+ },
+ {
+  "id": "story_pj_field_04",
+  "path": "art/atlas/story_pj_field/story_pj_field_04.webp",
+  "sheet": "story_pj_field",
+  "category": "story_prop",
+  "label": "hand hoe (homi) lying on the ground",
+  "height_units": 0.04,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "farm",
+   "field",
+   "hoe",
+   "korean_traditional",
+   "patjuk",
+   "story",
+   "tool"
+  ],
+  "px": [
+   348,
+   131
+  ]
+ },
+ {
+  "id": "story_pj_field_05",
+  "path": "art/atlas/story_pj_field/story_pj_field_05.webp",
+  "sheet": "story_pj_field",
+  "category": "story_prop",
+  "label": "straw basket heaped with red beans",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "basket",
+   "bean",
+   "farm",
+   "field",
+   "korean_traditional",
+   "patjuk",
+   "story"
+  ],
+  "px": [
+   289,
+   224
+  ]
+ },
+ {
+  "id": "story_pj_field_06",
+  "path": "art/atlas/story_pj_field/story_pj_field_06.webp",
+  "sheet": "story_pj_field",
+  "category": "story_prop",
+  "label": "low fieldstone wall section",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "farm",
+   "field",
+   "korean_traditional",
+   "patjuk",
+   "stone",
+   "story",
+   "wall"
+  ],
+  "px": [
+   421,
+   188
+  ]
+ },
+ {
+  "id": "story_pj_field_07",
+  "path": "art/atlas/story_pj_field/story_pj_field_07.webp",
+  "sheet": "story_pj_field",
+  "category": "story_nature",
+  "label": "heap of pulled weeds",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "farm",
+   "field",
+   "grass",
+   "korean_traditional",
+   "patjuk",
+   "story",
+   "weeds"
+  ],
+  "px": [
+   334,
+   188
+  ]
+ },
+ {
+  "id": "story_pj_yard_00",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_00.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_prop",
+  "label": "doldam wall with straw cap and snow, long",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "korean_traditional",
+   "patjuk",
+   "snow",
+   "stone",
+   "story",
+   "wall",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   882,
+   178
+  ]
+ },
+ {
+  "id": "story_pj_yard_01",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_01.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_prop",
+  "label": "doldam wall end with snow",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "korean_traditional",
+   "patjuk",
+   "snow",
+   "stone",
+   "story",
+   "wall",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   392,
+   222
+  ]
+ },
+ {
+  "id": "story_pj_yard_02",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_02.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_nature",
+  "label": "far sea band (layered waves, horizon strip)",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "backdrop",
+   "korean_traditional",
+   "patjuk",
+   "sea",
+   "snow",
+   "story",
+   "water",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   1433,
+   96
+  ]
+ },
+ {
+  "id": "story_pj_yard_03",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_03.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_nature",
+  "label": "sea shore band: waves on sand",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "korean_traditional",
+   "patjuk",
+   "sea",
+   "shore",
+   "snow",
+   "story",
+   "water",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   710,
+   163
+  ]
+ },
+ {
+  "id": "story_pj_yard_04",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_04.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_fx",
+  "label": "big water splash column",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "korean_traditional",
+   "patjuk",
+   "snow",
+   "splash",
+   "story",
+   "water",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   272,
+   285
+  ]
+ },
+ {
+  "id": "story_pj_yard_05",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_05.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_nature",
+  "label": "bare winter persimmon tree with snow",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "korean_traditional",
+   "patjuk",
+   "persimmon",
+   "snow",
+   "story",
+   "tree",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   377,
+   338
+  ]
+ },
+ {
+  "id": "story_pj_yard_06",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_06.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_nature",
+  "label": "snow drift, wide",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "drift",
+   "korean_traditional",
+   "patjuk",
+   "snow",
+   "story",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   460,
+   114
+  ]
+ },
+ {
+  "id": "story_pj_yard_07",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_07.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_nature",
+  "label": "snow drift, small",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "drift",
+   "korean_traditional",
+   "patjuk",
+   "snow",
+   "story",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   250,
+   92
+  ]
+ },
+ {
+  "id": "story_pj_yard_08",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_08.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_prop",
+  "label": "snow-capped straw stack",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "korean_traditional",
+   "patjuk",
+   "snow",
+   "stack",
+   "story",
+   "straw",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   279,
+   243
+  ]
+ },
+ {
+  "id": "story_pj_yard_09",
+  "path": "art/atlas/story_pj_yard/story_pj_yard_09.webp",
+  "sheet": "story_pj_yard",
+  "category": "story_nature",
+  "label": "flat round snow patch",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "winter",
+  "tags": [
+   "korean_traditional",
+   "patch",
+   "patjuk",
+   "snow",
+   "story",
+   "winter",
+   "yard"
+  ],
+  "px": [
+   343,
+   144
+  ]
  }
 ]

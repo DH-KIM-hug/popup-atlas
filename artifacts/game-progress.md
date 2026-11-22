@@ -1971,6 +1971,26 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Full run v11 (sunmoon_full_v11.mp4 25.4 MB, full_v11_sheet.jpg): STORY_DONE 388.0 s (6:28), CHECK_LINES OK (64),
     VOICE_DUP=0, CAM_JUMP=0 CAM_JERK=0 SPEAKER_OFF=1, no missing audio / sound, no script errors.
 
+## 2026-11-23 — patjuk (팥죽할멈과 호랑이) phase 1: plan, script, art, first wiring
+Plan (READ script seeded, READ_SCRIPT = True; 톡톡 intro for patjuk = intro_cozy; voices: nar Lily + tiger Brian are
+ElevenLabs, the granny "halmi" and the seven helpers are Typecast clips, so every new line is the narrator's):
+| beat | page / place | lines | taps | camera |
+|---|---|---|---|---|
+| cover | book | pj_n01 | open | — |
+| field | field (sunmoon road, view 4): bean bushes, boulder | r0100 r0101 r0102 r0201 r0202 r0204 r0205 | hoe ×3 (pj_n03, voiced once) | crane → est, medium, hoe close, low on the tiger, two-shot, track him up the road |
+| winter | home (cottage, view 0) dusk, snow | r0300 r0301 r0304 | — | snowy establish, glide into the kitchen, low on the granny |
+| helpers | kitchen | r0400 r0401 r0402 r0501 r0502 r0503 | cauldron ×5 (bowl to each helper; pj_n04 voiced once) | turned to the door inside |
+| yard | yard | r0601 r0602 r0603 r0605 r0606 | granny ×2 (bowl) | yard, low on the granny |
+| night | yard → kitchen, night | r0701 r0702 r0703 r0705 r0706 r0707 | hearth (pj_037 "알밤을 눌러 봐요!" voiced once), jar | wide yard, low at the door, kitchen, low on hearth / jar |
+| uproar | kitchen | r0801 r0802 r0804 r0805 r0806 r0807 | dung, crack, mortar | kitchen, door |
+| sea | yard → sea | r0900 r0901 r0903 r0904 r0905 | mat ×3, carrier | yard low, wide, over the roof to the sea |
+| feast | yard, evening | r1001 r1002 r1003 + pj_n02 | — | yard, low; book closes |
+Cuts (picture tells): r0200 r0203 r0302 r0303 r0500 r0504 r0600 r0604 r0700 r0704 r0800 r0803 r0902 r1000 r1004;
+moral r1005 dropped; seg trims r0703 [0], r0801 [0], r0805 [0]. Narration ~222 s.
+Cast: granny (new shared skin hanbok_granny: 16 figures + walk side 4 / back 2 / front 2), the tiger (sunmoon's shared
+skin + 11 new figures + crying run cycle side 4 / front 2), seven helpers (skins pj_bam … pj_jige, calm + act hop-cards).
+Sets: reuse sunmoon's road (ridges, boulder) and cottage (body, door, room) + new story_pj_field / kitchen / yard sheets.
+
 ## 2026-11-23 — app shell: bookshelf, parent gate / menu, 이용권 (톡톡 BM), child-name setup, name pieces
   - User: "앱 기본 UI 설계 … BM은 톡톡 그림동화랑 마찬가지로 이름바꾸기권 — 최근 창작동화 녹음방식 바꿈. 이거 적용 + 모든
     동화 열기로 세팅". Spec docs/APP_UI_PLAN.md (screens, flow, BM table, name-piece audio, [결정 필요]).
@@ -2080,3 +2100,24 @@ Plan (read script, one place, camera moves only; seed 3 view 4: the long thatche
     under the quilt / table) are small in the room shot; the mother's return shows the door shut a moment before she
     opens it; a template butterfly card crosses close to the lens once on the oak page; the wolf's wet run-away is small
     in the wide; nobody has listened to the mix yet.
+
+## 2026-11-23 — patjuk v1 full run (playable, unattended autoplay green)
+  - Art (Codex, paper look, md5-unique raws, contact sheets art_src/atlas/qa/story_pj_*_contact.png,
+    artifacts/patjuk/cast_contact.png): granny (new shared skin hanbok_granny, 16 figures + walk side 4 / back 2 /
+    front 2), seven helpers (skins pj_bam … pj_jige, calm + act), 11 new figures + a crying run cycle (side 4 / front 2)
+    for sunmoon's shared tiger, story_pj_field / kitchen / yard sheets (30 cards), cover / title / spot / back
+    (game/stories/patjuk/art). Reused: sunmoon's tiger (walk, run_bump, peer_well, dazed …), cottage (scaled 1.3 with a
+    0.95 body so the kitchen fits the tiger), inside front wall, jars, firewood, fence, mountain ridges, boulder.
+  - Voice: 2 new narrator lines recorded (pj_n03 hoe prompt, pj_n04 bowl prompt; 98 characters, eleven_v4, Lily);
+    pj_n01 / pj_n02 reused from witch_candy (same voice, same text); everything else 톡톡's read-script clips (the
+    granny and helpers are Typecast). Nobody has listened to the new clips yet.
+  - Engine: spread_stage `inside_margin` (tale-level, default unchanged) + inside-only cards wait until the camera is
+    behind the front wall; other tales untouched (wolf_goats v7–v9 full runs after the edit: STORY_DONE, 0 errors).
+  - Run (artifacts/patjuk/run_full_v1.log): STORY_DONE 365.1 s (6:05), CHECK_LINES OK (56 segments), VOICE_DUP=0,
+    CAM_JUMP=0 CAM_JERK=0, SPEAKER_OFF=0, OVERLAP 0 / OCCLUDE 0, missing_audio=[] missing_sound=[]. Intended contacts in
+    overlap_ok (tiger with each trap helper, carrier at the wall, the tiger stepping out from the boulder).
+  - Video artifacts/video/patjuk_full_v1.mp4 (26 MB), sheet artifacts/patjuk/full_v1_sheet.jpg.
+  - Still off: 6:05 vs the 4–5 min aim (seven arrivals × ~13 s are the tale's refrain); a glide out of the kitchen at
+    the start of the sea beat passes a wall card (one blurry second); the carry to the shore happens off frame (we see
+    the splash and the swimming head); the granny's stirring figure carries its own pot beside the hearth's cauldron;
+    the yard is a winter of snow patches on a green paper ground (no snow ground option); hoe weeds read small.

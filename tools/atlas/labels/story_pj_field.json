@@ -1,0 +1,110 @@
+{
+ "biome": "korean_village",
+ "season": "autumn",
+ "tags": [
+  "patjuk",
+  "story",
+  "korean_traditional",
+  "field",
+  "farm"
+ ],
+ "items": {
+  "00": [
+   "red-bean bush with ripe pods",
+   "story_nature",
+   0.22,
+   0,
+   {
+    "tags": [
+     "crop",
+     "bean"
+    ]
+   }
+  ],
+  "01": [
+   "red-bean bush, big",
+   "story_nature",
+   0.24,
+   0,
+   {
+    "tags": [
+     "crop",
+     "bean"
+    ]
+   }
+  ],
+  "02": [
+   "red-bean bush, open",
+   "story_nature",
+   0.22,
+   0,
+   {
+    "tags": [
+     "crop",
+     "bean"
+    ]
+   }
+  ],
+  "03": [
+   "band of red-bean rows",
+   "story_nature",
+   0.2,
+   0,
+   {
+    "tags": [
+     "crop",
+     "bean",
+     "band"
+    ]
+   }
+  ],
+  "04": [
+   "hand hoe (homi) lying on the ground",
+   "story_prop",
+   0.04,
+   0,
+   {
+    "tags": [
+     "tool",
+     "hoe"
+    ]
+   }
+  ],
+  "05": [
+   "straw basket heaped with red beans",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "basket",
+     "bean"
+    ]
+   }
+  ],
+  "06": [
+   "low fieldstone wall section",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "wall",
+     "stone"
+    ]
+   }
+  ],
+  "07": [
+   "heap of pulled weeds",
+   "story_nature",
+   0.08,
+   0,
+   {
+    "tags": [
+     "weeds",
+     "grass"
+    ]
+   }
+  ]
+ }
+}

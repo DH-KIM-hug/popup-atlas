@@ -1,0 +1,130 @@
+{
+ "sheet": "cast_pj_helpers_b",
+ "bg": [
+  0.969,
+  0.027,
+  0.973
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_pj_helpers_b_00",
+   "bbox": [
+    45,
+    247,
+    260,
+    486
+   ],
+   "area": 31466,
+   "size": [
+    223,
+    247
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_helpers_b_01",
+   "bbox": [
+    1003,
+    159,
+    1119,
+    498
+   ],
+   "area": 16297,
+   "size": [
+    124,
+    347
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_helpers_b_02",
+   "bbox": [
+    1158,
+    248,
+    1391,
+    529
+   ],
+   "area": 40919,
+   "size": [
+    241,
+    289
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_helpers_b_03",
+   "bbox": [
+    1897,
+    161,
+    2137,
+    530
+   ],
+   "area": 40988,
+   "size": [
+    248,
+    377
+   ],
+   "halo": 2,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_helpers_b_04",
+   "bbox": [
+    271,
+    349,
+    683,
+    531
+   ],
+   "area": 46739,
+   "size": [
+    420,
+    190
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_helpers_b_05",
+   "bbox": [
+    656,
+    404,
+    985,
+    530
+   ],
+   "area": 24643,
+   "size": [
+    337,
+    134
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_helpers_b_06",
+   "bbox": [
+    1417,
+    396,
+    1860,
+    531
+   ],
+   "area": 41103,
+   "size": [
+    451,
+    143
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

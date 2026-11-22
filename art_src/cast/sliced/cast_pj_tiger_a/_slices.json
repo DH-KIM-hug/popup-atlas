@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_pj_tiger_a",
+ "bg": [
+  0.969,
+  0.024,
+  0.969
+ ],
+ "dropped": 2,
+ "sprites": [
+  {
+   "id": "cast_pj_tiger_a_00",
+   "bbox": [
+    24,
+    188,
+    368,
+    588
+   ],
+   "area": 76156,
+   "size": [
+    352,
+    408
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_tiger_a_01",
+   "bbox": [
+    357,
+    125,
+    683,
+    588
+   ],
+   "area": 90536,
+   "size": [
+    334,
+    471
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_tiger_a_02",
+   "bbox": [
+    733,
+    124,
+    1016,
+    588
+   ],
+   "area": 95522,
+   "size": [
+    291,
+    472
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_tiger_a_03",
+   "bbox": [
+    1041,
+    145,
+    1362,
+    588
+   ],
+   "area": 80142,
+   "size": [
+    329,
+    451
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 3
+  },
+  {
+   "id": "cast_pj_tiger_a_04",
+   "bbox": [
+    1364,
+    150,
+    1698,
+    503
+   ],
+   "area": 69588,
+   "size": [
+    342,
+    361
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_pj_tiger_a_05",
+   "bbox": [
+    1708,
+    371,
+    2152,
+    587
+   ],
+   "area": 64637,
+   "size": [
+    452,
+    224
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
