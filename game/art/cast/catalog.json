@@ -13760,33 +13760,268 @@
   "frame": 1
  },
  {
+  "id": "cast_hanbok_mom_walk_empty_cycle_0",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_cycle_0.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_cycle_0",
+  "pose": "walk_empty_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_empty_cycle frame 0 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_mom_walk_empty_cycle_1",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_cycle_1.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_cycle_1",
+  "pose": "walk_empty_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_empty_cycle frame 1 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_mom_walk_empty_cycle_2",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_cycle_2.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_cycle_2",
+  "pose": "walk_empty_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_empty_cycle frame 2 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_hanbok_mom_walk_empty_cycle_3",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_cycle_3.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_cycle_3",
+  "pose": "walk_empty_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_empty_cycle frame 3 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_hanbok_mom_walk_empty_back_0",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_back_0.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_back_0",
+  "pose": "walk_empty_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_empty_back frame 0 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_mom_walk_empty_back_1",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_back_1.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_back_1",
+  "pose": "walk_empty_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_empty_back frame 1 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_mom_walk_empty_front_0",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_front_0.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_front_0",
+  "pose": "walk_empty_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_empty_front frame 0 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_mom_walk_empty_front_1",
+  "path": "art/cast/cast_hanbok_mom_walk_empty_front_1.webp",
+  "sheet": "cast_sm_mom_walk_empty",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_empty_front_1",
+  "pose": "walk_empty_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_empty_front frame 1 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   524
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_empty_front",
+  "frame": 1
+ },
+ {
   "id": "cast_tiger_run_bump_cycle_0",
   "path": "art/cast/cast_tiger_run_bump_cycle_0.webp",
-  "sheet": "cast_sm_tiger_rope",
+  "sheet": "cast_sm_tiger_bump_run",
   "category": "cast",
   "role": "tiger",
   "variant": "run_bump_cycle_0",
   "pose": "run_bump_cycle_0",
   "view": "side",
   "facing": "right",
-  "label": "STAND-IN run cycle with the bump (one drawing, hopped; drawn cycle to make)",
-  "height_units": 0.385,
+  "label": "run_bump_cycle frame 0 (drawn cycle)",
+  "height_units": 0.396,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
   "tags": [
    "tiger",
-   "animal",
-   "korean_traditional",
-   "villain",
-   "walker",
    "sunmoon",
-   "run_bump",
-   "side"
+   "cycle"
   ],
   "px": [
-   439,
-   559
+   438,
+   614
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13797,31 +14032,26 @@
  {
   "id": "cast_tiger_run_bump_cycle_1",
   "path": "art/cast/cast_tiger_run_bump_cycle_1.webp",
-  "sheet": "cast_sm_tiger_rope",
+  "sheet": "cast_sm_tiger_bump_run",
   "category": "cast",
   "role": "tiger",
   "variant": "run_bump_cycle_1",
   "pose": "run_bump_cycle_1",
   "view": "side",
   "facing": "right",
-  "label": "STAND-IN run cycle with the bump (one drawing, hopped; drawn cycle to make)",
-  "height_units": 0.385,
+  "label": "run_bump_cycle frame 1 (drawn cycle)",
+  "height_units": 0.396,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
   "tags": [
    "tiger",
-   "animal",
-   "korean_traditional",
-   "villain",
-   "walker",
    "sunmoon",
-   "run_bump",
-   "side"
+   "cycle"
   ],
   "px": [
-   439,
-   559
+   438,
+   614
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13832,31 +14062,26 @@
  {
   "id": "cast_tiger_run_bump_cycle_2",
   "path": "art/cast/cast_tiger_run_bump_cycle_2.webp",
-  "sheet": "cast_sm_tiger_rope",
+  "sheet": "cast_sm_tiger_bump_run",
   "category": "cast",
   "role": "tiger",
   "variant": "run_bump_cycle_2",
   "pose": "run_bump_cycle_2",
   "view": "side",
   "facing": "right",
-  "label": "STAND-IN run cycle with the bump (one drawing, hopped; drawn cycle to make)",
-  "height_units": 0.385,
+  "label": "run_bump_cycle frame 2 (drawn cycle)",
+  "height_units": 0.396,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
   "tags": [
    "tiger",
-   "animal",
-   "korean_traditional",
-   "villain",
-   "walker",
    "sunmoon",
-   "run_bump",
-   "side"
+   "cycle"
   ],
   "px": [
-   439,
-   559
+   438,
+   614
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13867,31 +14092,26 @@
  {
   "id": "cast_tiger_run_bump_cycle_3",
   "path": "art/cast/cast_tiger_run_bump_cycle_3.webp",
-  "sheet": "cast_sm_tiger_rope",
+  "sheet": "cast_sm_tiger_bump_run",
   "category": "cast",
   "role": "tiger",
   "variant": "run_bump_cycle_3",
   "pose": "run_bump_cycle_3",
   "view": "side",
   "facing": "right",
-  "label": "STAND-IN run cycle with the bump (one drawing, hopped; drawn cycle to make)",
-  "height_units": 0.385,
+  "label": "run_bump_cycle frame 3 (drawn cycle)",
+  "height_units": 0.396,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
   "tags": [
    "tiger",
-   "animal",
-   "korean_traditional",
-   "villain",
-   "walker",
    "sunmoon",
-   "run_bump",
-   "side"
+   "cycle"
   ],
   "px": [
-   439,
-   559
+   438,
+   614
   ],
   "hanging": false,
   "skin": "tiger",

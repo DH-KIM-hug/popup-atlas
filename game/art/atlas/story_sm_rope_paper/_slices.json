@@ -1,0 +1,45 @@
+{
+ "sheet": "story_sm_rope_paper",
+ "bg": [
+  0.984,
+  0.024,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_sm_rope_paper_00",
+   "bbox": [
+    385,
+    28,
+    529,
+    995
+   ],
+   "area": 127689,
+   "size": [
+    152,
+    975
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_rope_paper_01",
+   "bbox": [
+    886,
+    345,
+    1102,
+    660
+   ],
+   "area": 24432,
+   "size": [
+    224,
+    323
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

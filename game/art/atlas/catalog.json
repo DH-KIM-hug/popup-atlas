@@ -13665,5 +13665,49 @@
    818,
    461
   ]
+ },
+ {
+  "id": "story_sm_rope_paper_00",
+  "path": "art/atlas/story_sm_rope_paper/story_sm_rope_paper_00.webp",
+  "sheet": "story_sm_rope_paper",
+  "category": "story_prop",
+  "label": "the good rope from the sky: thick new golden straw rope (vertical, paper)",
+  "height_units": 2.0,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "good",
+   "rope",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   152,
+   975
+  ]
+ },
+ {
+  "id": "story_sm_rope_paper_01",
+  "path": "art/atlas/story_sm_rope_paper/story_sm_rope_paper_01.webp",
+  "sheet": "story_sm_rope_paper",
+  "category": "story_prop",
+  "label": "frayed end of the golden straw rope",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "end",
+   "rope",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   224,
+   323
+  ]
  }
 ]

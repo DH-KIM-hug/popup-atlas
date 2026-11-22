@@ -448,6 +448,26 @@ JOBS.append({"id": "cast_sm_tiger_bump_run", "kind": "bg",
              "BUMP on top of his head, comic teary eyes, mouth open 'ouch', arms pumping, legs wide apart with an open "
              "magenta gap, the same size in every frame, the lowest foot on one baseline."})
 
+# v7 (2026-11-22): the morning walk needs an EMPTY basket (the paper walk cycle carries rice cakes); the golden rope
+# of the finale should be a straw rope like the old rope card (the first read as a candy-striped twist)
+JOBS.append({"id": "cast_sm_mom_walk_empty", "kind": "bg",
+             "refs": [RAW_C + "cast_sm_mom_walk.png", RAW_C + "cast_sm_mom_empty_paper.png"], "aspect": WIDE,
+             "out": RAW_C + "cast_sm_mom_walk_empty.png",
+             "prompt": "REDRAW the FIRST reference image (the mother's walk cycle for a children's pop-up storybook) "
+             "PIECE FOR PIECE: the SAME EIGHT figures in the SAME order (four side frames facing right, two back "
+             "frames, two front frames), the same poses, sizes and leg gaps, the same cut-paper look; the ONLY change: "
+             "her round straw basket is EMPTY in every frame (no rice cakes, no cloth; the empty woven inside shows), "
+             "like the SECOND reference. " + BG + PAPER_CHAR + "Do not add or remove any figure."})
+JOBS.append({"id": "story_sm_rope_paper", "kind": "bg", "refs": [RAW_A + "story_sm_sky.png"],
+             "aspect": "landscape, any size the tool returns is fine (save it as-is)",
+             "out": RAW_A + "story_sm_rope_paper.png",
+             "prompt": "A PROP SHEET for a children's pop-up storybook: TWO separate die-cut pieces, " + BG + PAPER +
+             "(1) THE GOOD ROPE FROM THE SKY: a long VERTICAL thick NEW straw rope (dongajul) of tightly twisted "
+             "golden-straw strands, drawn in the same cut-paper style as the thin old grey-brown rope in the reference "
+             "(the second rope from the left) but thick, strong, fresh and warm golden, no stripes, no candy twist, a "
+             "few tiny gold paper sparkle flecks, filling most of the image height; (2) a short frayed straw end of the "
+             "same golden rope."})
+
 
 if __name__ == "__main__":
     out = os.path.join(HERE, "sunmoon_jobs.json")

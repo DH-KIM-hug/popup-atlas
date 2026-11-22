@@ -287,7 +287,7 @@ for nm, (dx, dz) in {"door": (-0.22, 0.32), "door_in": (-0.22, -0.2), "path_end"
                      "in_girl": (0.14, -0.36), "in_focus": (0.0, -0.46), "window_out": (0.2, 0.35),
                      "window_inside": (0.2, -0.02), "wall_in": (0.0, -0.014), "soban": (0.3, -0.22),
                      "door_inside": (-0.22, -0.02),
-                     "back_door": (-0.45, -0.75), "mom_door": (-0.22, 0.45), "boy_at": (-0.42, 0.5),
+                     "back_door": (-0.45, -0.75), "back_door_g": (-0.22, -0.82), "mom_door": (-0.22, 0.45), "boy_at": (-0.42, 0.5),
                      "girl_at": (-0.02, 0.52), "tiger_door": (-0.18, 0.42), "tiger_window": (0.22, 0.4),
                      "jars": (-0.75, -1.05), "corner_g": (-0.78, 0.02), "jars_hide_g": (-0.92, -1.25), "jars_hide": (-0.75, -1.3), "well": (0.35, -1.55),
                      "tree": (0.98, -1.75), "tree_foot": (0.85, -1.45), "tiger_well": (0.12, -1.35),
@@ -377,7 +377,7 @@ BEATS = [
         {"do": "cam", "shot": "two_shot", "at": "mom_door", "rate": 1.6, "wait": 0.3},
         {"do": "say", "line": "sm_r0104"},
         # she walks down the stepping stones to the path and away up it (back walk cycle), basket on her arm
-        {"do": "walk", "who": "mom", "to": "road_by", "dir": "away", "speed": 0.32, "follow": "mom", "shot": "story",
+        {"do": "walk", "who": "mom", "to": "road_by", "dir": "away", "speed": 0.32, "pose": "walk_empty", "follow": "mom", "shot": "story",
          "async": True},
         # the children go in through the door (one door cycle, seen from behind), the door shuts and is bolted
         {"do": "go_inside", "who": ["boy", "girl"], "house": "cottage", "speed": 0.3},
@@ -479,7 +479,7 @@ BEATS = [
     # 7 -- the back yard: out of the back door, hide behind the jars
     {"id": "backyard", "title": "뒷마당", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {"boy": "calm", "girl": "calm", "tiger": "dg_calm"},
-               "at": {"boy": "back_door", "girl": "back_door", "tiger": "tiger_door"}},
+               "at": {"boy": "back_door", "girl": "back_door_g", "tiger": "tiger_door"}},
      "steps": [
         {"do": "cam", "shot": "yard_high", "at": "yard_focus", "rate": 1.0, "wait": 0.4},
         {"do": "walk", "who": "girl", "to": "corner_g", "dir": "left", "speed": 0.25, "async": True},

@@ -1,0 +1,36 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "sunmoon",
+  "story",
+  "sky",
+  "rope"
+ ],
+ "items": {
+  "00": [
+   "the good rope from the sky: thick new golden straw rope (vertical, paper)",
+   "story_prop",
+   2.0,
+   0,
+   {
+    "tags": [
+     "rope",
+     "good"
+    ]
+   }
+  ],
+  "01": [
+   "frayed end of the golden straw rope",
+   "story_prop",
+   0.22,
+   0,
+   {
+    "tags": [
+     "rope",
+     "end"
+    ]
+   }
+  ]
+ }
+}

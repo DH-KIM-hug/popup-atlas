@@ -10,7 +10,7 @@ extends TaleHandler
 ## Lines play through the runner, so captions, faces (line expr) and SEG logs stay generic.
 
 const CAKE := "story_sm_village_08"
-const ROPE_GOOD := "story_sm_sky_03"
+const ROPE_GOOD := "story_sm_rope_paper_00"  # v7: a straw rope (story_sm_sky_03 read as a candy twist)
 const ROPE_OLD := "story_sm_sky_04"
 const ROPE_END := "story_sm_sky_08"
 const CLOUD := "story_sm_sky_00"
@@ -57,6 +57,12 @@ func enter_beat(b: Dictionary) -> void:
 
 func build_async() -> void:
 	enter_beat(stage.beat)
+	if str(stage.beat.get("id", "")) == "sky":
+		# the finale: the paper cloud floor stays crisp (v7: the lens blur made the cut paper read woolly)
+		var rig := stage.world.rig
+		rig.dof_amount = 0.012
+		rig.dof_near_margin = 3.0
+		rig.dof_far_margin = 8.0
 	_sky_shown()
 
 
@@ -345,7 +351,7 @@ func fx(name: String) -> bool:
 		"sky_discs":  # the sun and the moon of the finale: cards high in the finale frame (not story-shot hangers)
 			_sky_shown(false)
 			for pair in [["sun_disc", "cast_sunmoon_sky_sun_boy", -0.75], ["moon_disc", "cast_sunmoon_sky_moon_girl", 0.75]]:
-				var d9 := _card(str(pair[1]), 0.95)
+				var d9 := _card(str(pair[1]), 1.15)
 				d9.global_position = stage.spot_point("rise") + Vector3.UP * 1.75 + _right() * float(pair[2]) * 1.35 + _toward() * 0.6
 				d9.scale = Vector3.ONE * 0.01
 				_cards[pair[0]] = d9

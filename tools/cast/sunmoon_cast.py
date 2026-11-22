@@ -129,6 +129,9 @@ CYCLES = {
     "cast_sm_boy_run": (BOY, ["run_cycle:4:side", "run_back:2:back"]),
     "cast_sm_girl_run": (GIRL, ["run_cycle:4:side", "run_back:2:back"]),
     "cast_sm_tiger_sneak": (TIG, ["dg_cycle:4:side", "dg_front:2:front"]),
+    # v7: before the rich house her basket is empty (walk pose "walk_empty"); the drawn bump run-away
+    "cast_sm_mom_walk_empty": (MOM, ["walk_empty_cycle:4:side", "walk_empty_back:2:back", "walk_empty_front:2:front"]),
+    "cast_sm_tiger_bump_run": (TIG, ["run_bump_cycle:4:side"]),
 }
 CYCLE_H = {}
 # sheets without a standing reference: the median figure of a role on the sheet is this fraction of its standing height
