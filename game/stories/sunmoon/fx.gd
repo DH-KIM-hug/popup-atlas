@@ -25,6 +25,7 @@ var _tex := {}
 var _flyers: Array = []
 var _cards: Dictionary = {}  ## name -> Node3D (rope, oil bottle, streak, window hole, eyes)
 var _hidden: Dictionary = {}  ## role -> spot
+const ROPE_FRONT := 0.34  ## how far in front of the tree the sky ropes hang
 var _rope_drop := {}  ## name -> {node, y0, y1, t}
 var _t := 0.0
 var _climbing := false
@@ -134,6 +135,14 @@ func _tree_base() -> Vector3:
 
 
 ## A point on the trunk's face toward the camera, k = 0 (roots) .. 1 (fork).
+func _rope_gone() -> void:
+	if _cards.has("rope") and is_instance_valid(_cards["rope"]):
+		var old_r: Node3D = _cards["rope"]
+		_rope_drop["gone_" + str(old_r.get_instance_id())] = {"node": old_r, "y0": old_r.global_position.y,
+				"y1": old_r.global_position.y + 3.6, "t": 0.0, "free": true}
+	_cards.erase("rope")
+
+
 func _trunk(k: float, side := 0.0) -> Vector3:
 	return _tree_base() + Vector3.UP * FORK_H * k + _toward() * 0.06 + _right() * side
 
@@ -315,12 +324,19 @@ func fx(name: String) -> bool:
 			return true
 		"rope_down":  # rope_down:good|old — the rope slides down from the sky to the fork
 			var id := ROPE_GOOD if p[1] == "good" else ROPE_OLD
+			# 2026-11-22 (user: "동아줄이 나무에 걸려서 뭔가 이상하네융"): the golden rope went up with the children, so it
+			# rises out of the picture before the rotten one comes down (never two ropes at once)
+			_rope_gone()
 			var r := _card(id, 2.0)
-			var x := _trunk(1.0, 0.18 if p[1] == "good" else -0.2)
+			# hung well in front of the canopy card (0.06 left it cutting through the leaves)
+			var x := _trunk(1.0, 0.18 if p[1] == "good" else -0.2) + _toward() * ROPE_FRONT
 			r.global_position = x + Vector3.UP * 2.6
 			_rope_drop[p[1]] = {"node": r, "y0": x.y + 2.6, "y1": x.y - 0.35, "t": 0.0}
 			_cards["rope"] = r
 			_sfx("wc.chime", x)
+			return true
+		"rope_gone":  # the golden rope rises out of the picture with the children (start of the rotten-rope page)
+			_rope_gone()
 			return true
 		"rope_climb":  # rope_climb:<1..3>
 			var k2 := int(p[1])
@@ -511,6 +527,8 @@ func step(dt: float) -> void:
 			rn.global_position.y = lerpf(float(d["y0"]), float(d["y1"]), e)
 		if float(d["t"]) >= 1.0:
 			_rope_drop.erase(key)
+			if d.get("free", false) and is_instance_valid(rn):
+				rn.queue_free()
 	# the oil bottle appears at the trunk's foot when the tiger asks how they got up (the tap after the boy's trick)
 	if not _cards.has("oil") and not _cards.has("streak") and str(stage.beat.get("id", "")) == "tree" \
 			and stage.spots.has("tree_foot") and _oil_due():

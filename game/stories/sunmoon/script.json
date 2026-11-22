@@ -5414,6 +5414,11 @@
    },
    "steps": [
     {
+     "do": "fx",
+     "fx": "rope_gone",
+     "wait": 0.1
+    },
+    {
      "do": "cam",
      "shot": "tree_top",
      "at": "tree",

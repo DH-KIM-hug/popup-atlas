@@ -549,9 +549,10 @@ BEATS = [
     {"id": "old_rope", "title": "썩은 동아줄", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {"tiger": "axe_a"}, "keep": ["tiger"]},
      "steps": [
+        {"do": "fx", "fx": "rope_gone", "wait": 0.1},          # the golden rope went up with the children
         {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 1.2, "wait": 0.2},
+        {"do": "fx", "fx": "rope_down:old", "wait": 0.3},      # comes down while the line says it does
         {"do": "say", "line": "sm_r1001"},
-        {"do": "fx", "fx": "rope_down:old", "wait": 0.3},
         {"do": "pose", "who": "tiger", "pose": "grab_up"},
         {"do": "cam", "shot": "pass_two", "at": "tree_foot", "rate": 2.0, "wait": 0.2, "settle": 0.5},  # SPEAKER_OFF: round the trunk to the tiger
         {"do": "say", "line": "sm_r1002"},
