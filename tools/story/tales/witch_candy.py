@@ -48,10 +48,10 @@ TRIM = {
     # blocks: 3 syllable nuclei, then 2 more): kept the first take, witch_ed8be17d8d.mp3 0-1.28 s, 0.12 s fade-out
     "wc_117": ("어디 가!", "res://audio/voice/witch_candy/witch_ed8be17d8d_t.mp3",
                "audio/el/witch_candy/witch_ed8be17d8d.mp3 (0-1.28 s: first take only)"),
-    "wc_x_ghost_all": ("오~~우~~", "res://audio/voice/witch_candy/ch_48ac9f3898.mp3",
-                       "audio/el/witch_candy/chorus/ch_48ac9f3898.mp3 (톡톡 premixed chorus)", "all"),
-    "wc_x_happy_all": ("해피 핼러윈! 오~우~!", "res://audio/voice/witch_candy/ch_672e05d93c.mp3",
-                       "audio/el/witch_candy/chorus/ch_672e05d93c.mp3 (톡톡 premixed chorus)", "all"),
+    "wc_x_ghost_all": ("오~~우~~", "res://audio/voice/witch_candy/ch_f683d76198.mp3",
+                       "kid + witch + cat remixed by tools/story/remix_wc_chorus.py (2026-11-22, new girl voice)", "all"),
+    "wc_x_happy_all": ("해피 핼러윈! 오~우~!", "res://audio/voice/witch_candy/ch_3691f7acd4.mp3",
+                       "kid + witch + cat remixed by tools/story/remix_wc_chorus.py (2026-11-22, new girl voice)", "all"),
 }
 # Dropped (teaching, counting, colour talk, green / brown branches, friends' chorus lines, repeats):
 #  9, 10 (ingredients introduced by colour), 21-23 / 33-35 (green + leek ingredients), 42-44 (rules: "하나든 여러 개든",
