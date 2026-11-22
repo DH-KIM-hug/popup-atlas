@@ -28,7 +28,11 @@ func _ready() -> void:
 	for a in args:
 		if a.begins_with("--shelf-pick="):
 			_auto = a.get_slice("=", 1)
-	if _auto == "" and args.size() > 0:
+	var from_story := Engine.has_meta("popup_from_story")
+	if from_story:
+		Engine.remove_meta("popup_from_story")
+	var story_args := Array(args).filter(func(a): return not str(a).begins_with("--shelf-pick="))
+	if story_args.size() > 0 and not from_story:
 		# a command-line story run (recordings, probes, autoplay): hand over to the story scene untouched
 		get_tree().change_scene_to_file.call_deferred(STORY_SCENE % "sun_wind")
 		return

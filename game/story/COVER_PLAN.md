@@ -104,6 +104,12 @@ Per tale (`ui.curtain.who`, back cover subject):
   at night, everyone in costume eating candy on the steps, the ghost peeking.
 - 해님 달님: the sun and the moon swing in the sky (the children became them); back cover — sun and moon over the
   quiet cottage, the sorghum field below.
+Round 3 (coordinator): the fold is re-timed in the ending (story_runner._quick_fold: every visible hinge starts within
+1.7 s, outside-in; the page turns as soon as everything is flat, ~2-3 s in all; spread_stage's camera code untouched);
+the curtain shot (cover.json curtain.shot/at) is set at the start of the hold, so a tale that pulled back to a wide
+comes back to its cast; a walker who left the page (sun_wind's traveller, curtain entry ["walker", pose, walk_away
+dist]) re-enters from up the road onto a mark before the bow. `--end-choice=replay|other` presses an end tab after
+STORY_DONE in autoplay (recordings of the replay and shelf paths).
 Not done: the cast does not walk to new marks for the bow (they gesture where the story left them); no recorded word
 on a curtain-call tap (no fitting short clips checked).
 

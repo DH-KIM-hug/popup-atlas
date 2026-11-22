@@ -53,6 +53,8 @@
     "fox",
     "cheer"
    ]
-  ]
+  ],
+  "shot": "room",
+  "at": "in_focus"
  }
 }

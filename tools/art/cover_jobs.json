@@ -241,5 +241,28 @@
    "art_src/cover/raw/cover_tp_art_paper.png"
   ],
   "prompt": "The BACK COVER ILLUSTRATION of the same children's picture book, full-bleed to all four edges (no border, no frame, no book shown, just the flat artwork): an EPILOGUE picture of what happened after the story, quiet and warm, the same world and characters as the FIRST reference image (the front cover), drawn in exactly the same smooth cut-paper cardstock style, colours and character designs. FORMAT: the same near-square portrait aspect as the first reference. COMPOSITION: the TOP 25 PERCENT is calm empty sky (a small title word will be added later); the scene sits in the lower 75 percent, characters smaller than on the front cover, seen a little further away. ABSOLUTELY NO TEXT anywhere. No felt, no fuzz, no stitches. SUBJECT: Evening: inside-view feeling through the round window of the red brick house, or just outside its open door: the THREE PIGS sit together by a warm fireplace glow, cosy and safe, one holding a mug; far off on a hill path the small grey WOLF runs away with his tail singed, a tiny puff of smoke behind him. Warm sunset light."
+ },
+ {
+  "id": "back_sm_art_v2",
+  "kind": "bg",
+  "aspect": "the SAME size and aspect as the first reference; save it as-is",
+  "out": "art_src/cover/raw/back_sm_art_v2.png",
+  "refs": [
+   "art_src/cover/raw/cover_sm_art.png",
+   "art_src/cover/refs/ref_sm_sun_girl.png",
+   "art_src/cover/refs/ref_sm_moon_boy.png"
+  ],
+  "prompt": "The BACK COVER ILLUSTRATION of the same children's picture book, full-bleed to all four edges (no border, no frame, no book shown, just the flat artwork): an EPILOGUE picture of what happened after the story, quiet and warm, the same world and characters as the FIRST reference image (the front cover), drawn in exactly the same smooth cut-paper cardstock style, colours and character designs. FORMAT: the same near-square portrait aspect as the first reference. COMPOSITION: the TOP 25 PERCENT is calm empty sky (a small title word will be added later); the scene sits in the lower 75 percent, characters smaller than on the front cover, seen a little further away. ABSOLUTELY NO TEXT anywhere. No felt, no fuzz, no stitches. SUBJECT: Quiet dusk after the story: high in the sky on the left a golden paper SUN whose face is the little SISTER's face (reference 2: her face and pigtail buns inside the sun's rays) and on the right a pale cream paper MOON whose face is the BROTHER's face (reference 3: his bowl-cut face inside the moon), both smiling gently down. Below them the little thatched cottage from the front cover, peaceful, no smoke, no people; in front of it a field of tall red-brown SORGHUM stalks (one stalk bent). NO children, NO people, NO tiger anywhere on the ground. Soft blue-indigo dusk sky with a few first stars."
+ },
+ {
+  "id": "spot_sw_v2",
+  "kind": "bg",
+  "aspect": "square if possible, but ANY size the tool returns is fine; save it as-is",
+  "out": "art_src/cover/raw/spot_sw_v2.png",
+  "refs": [
+   "art_src/cover/raw/cover_sw_art_paper.png",
+   "art_src/cast/raw/cast_sm_paper_girl.png"
+  ],
+  "prompt": "A SMALL SPOT ILLUSTRATION (vignette) for the title page of a children's picture book, on a perfectly flat, uniform, solid pure MAGENTA background (#FF00FF, RGB 255,0,255), no texture, no gradient, no shadow on the background, the vignette centred with a wide magenta margin, one connected group of objects sitting on a small cut-paper ground patch. MATERIAL: a photographed PAPER-CUT diorama illustration: every shape is a separate sheet of matte coloured paper or thin cardstock, cut with crisp edges or softly torn deckled edges, glued in overlapping LAYERS at slightly different depths so each layer casts a small soft shadow on the one behind; fine paper-fibre grain like Japanese washi / Korean hanji; each layer edge has a thin darker cut line and a faint lighter rim on the lit side. Matte, no gloss, no 3D-render plastic look. ABSOLUTELY NO felt, NO wool, NO fuzz, NO fabric or knitted texture, NO stitches, NO dashed stitch lines, NO sewing seams, NO embroidery: where the reference shows dashed stitching, draw a clean cut-paper edge instead. The LAST reference image shows the paper material only (do not draw it). No characters' faces needed, no text, no letters. Colours warm and soft; no pink or magenta inside the vignette (every pink is a coral-peach). SUBJECT: the TRAVELLER's own long RUST-RED COAT from the first reference (deep rust-red with cream flower trims, mustard toggle buttons, a cream hem band) folded over a round grey rock in the grass, his BROWN STRAW HAT with a mustard band and a little leaf motif lying on top (exactly as in the first reference), a small golden paper sun peeking over the rock and a curly pale-blue paper wind swirl beside it. The coat is a European-style long coat, NOT a Korean hanbok jacket, NOT pink. Do not draw the boy."
  }
 ]

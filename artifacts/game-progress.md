@@ -1863,3 +1863,37 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Regression (no movie, --fixed-fps 30): sun_wind 219.7 s, three_pigs 310.4 s, witch_candy 447.6 s, sunmoon 396.8 s —
     STORY_DONE missing_audio=[] missing_sound=[], CHECK_LINES OK for all four (VOICE_DUP high only in these
     faster-than-realtime runs, as in phase 1).
+
+## 2026-11-22 — camera: no jerky viewpoint jumps (user: "모든 동화 마찬가진데 시점이 뚝뚝 끊기는거 별로에요. 사탕마녀도 그렇고 썬문도 그러네")
+  - Measured first: StoryRunner camera check — per frame, the stage camera's view motion (turn + shift seen from the
+    focus distance + half the fov change); `CAM_JUMP` = a frame moving > 3°, `CAM_JERK` = a one-frame velocity change
+    > 20°/s; page turns / cover / other cameras / shakes not counted; summary `CAM_JUMP=<n> CAM_JERK=<n>`.
+  - Before (movie runs, artifacts/camera/before/*.log): sun_wind 5/6, three_pigs 19/23, witch_candy 40/30, sunmoon 32/19.
+  - Causes: every shot parameter and the focus chased its goal exponentially (full speed on the first frame, a new
+    shot changed the speed at once); cam `from` snapped the rig mid-page (the opening cranes cut after the page had
+    opened — sunmoon's sky a 160° cut, witch_candy / sunmoon establishing 28–42°); witch_candy handler rates 4–9
+    (jar / pot / face whips 6–19° per frame); the fold's pull to wide at every page change; three_pigs' deliberate
+    wolf cut; inside → outside pulls.
+  - Fix (SpreadStage): two critically damped springs in series per parameter + focus (ease in / out, velocity carried
+    into the next move, yaw the short way); move length from how far the view travels (0.8–2.5 s, far traverses to
+    4.2 s, slow rates to 6 s, a quick rate shortens at most 15 %, a mid-move shot never hurries the glide under way);
+    the focus tightens to a 0.35 s follow once a move lands. `from` is applied under the page turn (preset_open) and
+    otherwise ignored; `cut: true` for an explicit hard cut. Runner: tap framing waits for the camera to land; a
+    line right after a quick cam waits until 40 % of the move.
+  - Tales: three_pigs wolf entrance = crane up at the brick lot, across high, down low on the wolf (no cut);
+    witch_candy jar → Dahyun's face goes via the shelf (the straight glide passed through her card) and her "으엑!"
+    waits for her face.
+
+## 2026-11-22 — covers round 3 (coordinator review)
+  - sunmoon back cover redrawn: the sun with the sister's face and the moon with the brother's face over the quiet
+    cottage at dusk, sorghum below, nobody on the ground. sun_wind title-page spot redrawn with the traveller's own
+    rust-red coat and brown straw hat (it read as a pink hanbok jacket).
+  - Ending fold re-timed in the runner (wave <= 1.7 s + ~0.6 s per piece, page turn as soon as all is flat); the curtain
+    shot moves in during the hold (witch_candy room at in_focus, three_pigs medium at b_focus); sun_wind's traveller
+    walks back up the road to a mark for his bow.
+  - Recorded the end tabs with --end-choice=: "다시 보기" (three_pigs: the book turns face up, cover prompt, opens, the
+    tale restarts) and "다른 동화" (sun_wind -> the bookshelf -> three_pigs picked).
+  - Regression (no movie): sun_wind 225.7 s, three_pigs 314.2 s, witch_candy 468.7 s, sunmoon 410.4 s - STORY_DONE
+    missing_audio=[] missing_sound=[], CHECK_LINES OK x4.
+  - Slip: shelf.gd briefly used PackedStringArray.filter (a parse error in the main scene, so runs without a scene
+    failed for a few minutes); fixed with Array(args).filter.

@@ -221,6 +221,25 @@ ROLL = [
 ]
 JOBS += ROLL
 
+# ---- round 4 (coordinator review): the sun and moon WITH the children's faces over the cottage (the kids became
+# them; nobody sits in the field), and the sun_wind vignette's coat matching the traveller's real coat
+JOBS += [
+    back("back_sm_art_v2", "cover_sm_art.png", "Quiet dusk after the story: high in the sky on the left a golden paper "
+         "SUN whose face is the little SISTER's face (reference 2: her face and pigtail buns inside the sun's rays) and "
+         "on the right a pale cream paper MOON whose face is the BROTHER's face (reference 3: his bowl-cut face inside "
+         "the moon), both smiling gently down. Below them the little thatched cottage from the front cover, peaceful, "
+         "no smoke, no people; in front of it a field of tall red-brown SORGHUM stalks (one stalk bent). NO children, "
+         "NO people, NO tiger anywhere on the ground. Soft blue-indigo dusk sky with a few first stars.",
+         [RF + "ref_sm_sun_girl.png", RF + "ref_sm_moon_boy.png"]),
+    {"id": "spot_sw_v2", "kind": "bg", "aspect": "square if possible, but ANY size the tool returns is fine; save it as-is",
+     "out": RAW + "spot_sw_v2.png", "refs": [RAW + "cover_sw_art_paper.png", MAT_REF],
+     "prompt": SPOT + "SUBJECT: the TRAVELLER's own long RUST-RED COAT from the first reference (deep rust-red with "
+     "cream flower trims, mustard toggle buttons, a cream hem band) folded over a round grey rock in the grass, his "
+     "BROWN STRAW HAT with a mustard band and a little leaf motif lying on top (exactly as in the first reference), a "
+     "small golden paper sun peeking over the rock and a curly pale-blue paper wind swirl beside it. The coat is a "
+     "European-style long coat, NOT a Korean hanbok jacket, NOT pink. Do not draw the boy."},
+]
+
 
 if __name__ == "__main__":
     out = os.path.join(HERE, "cover_jobs.json")

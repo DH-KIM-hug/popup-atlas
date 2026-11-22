@@ -30,6 +30,11 @@
  "curtain": {
   "who": [
    [
+    "walker",
+    "relieved",
+    3.2
+   ],
+   [
     "sun",
     "cast_sun_beaming"
    ],

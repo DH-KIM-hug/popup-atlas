@@ -108,10 +108,7 @@ func _ready() -> void:
 	data["ui"] = ui_cfg
 	ui.configure(ui_cfg)
 	ui.replay_pressed.connect(func(): _replay = true)
-	ui.other_pressed.connect(func():
-		if sound:
-			sound.loop_stop("table", 0.3)
-		get_tree().change_scene_to_file(SHELF_SCENE))
+	ui.other_pressed.connect(_go_shelf)
 	ui.pointer_source = Callable()
 	_run.call_deferred()
 
@@ -161,6 +158,8 @@ func _parse_args() -> void:
 			log_sound = true
 		elif a == "--quit-on-done":  # recordings: quit 2 s after the story ends (movie maker writes the file)
 			quit_on_done = true
+		elif a.begins_with("--end-choice="):  # recordings: after STORY_DONE press "replay" or "other" (the shelf)
+			end_choice = a.get_slice("=", 1)
 
 
 func _load_script() -> void:
@@ -434,7 +433,18 @@ func _run() -> void:
 		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio,
 			" missing_sound=", sound.missing if sound else [], " beats=", beat_times)
 		story_finished.emit(total)
-		if autoplay:
+		if autoplay and end_choice != "":
+			await _wait(1.0)
+			if end_choice == "other":
+				ui.ripple(ui.other_button_pos())
+				await _wait(0.3)
+				_go_shelf()
+				return
+			ui.ripple(ui.end_button_pos())
+			await _wait(0.3)
+			_replay = true
+			end_choice = ""
+		elif autoplay:
 			if quit_on_done:
 				await _wait(2.0)
 				get_tree().quit()
@@ -1255,18 +1265,22 @@ func _ending_book() -> void:
 	# 1. hold: the last tableau stays a moment, no prompt
 	if sound:
 		sound.set_music("ending")  # the settle / closing music (plays once, fades on replay)
+	var cc: Dictionary = data.get("ui", {}).get("curtain", {})
+	if cc.has("shot"):  # the camera eases onto the cast during the hold (the tale may have pulled back to a wide)
+		stage.shot_to(str(cc["shot"]), cc.get("at", null), {"rate": 1.4})
 	await _wait(1.5)
 	# 2. curtain call
 	await _curtain_call()
 	# 3. fold: the pop-up folds down in a wave, the camera rises (stage.fold goes wide)
 	ui.show_page_title("")
-	var t := stage.fold()
-	_squash_unhinged(t * 0.55)
-	await _wait(t * 0.8)
+	stage.fold()
+	var t := _quick_fold(FOLD_WAVE_S)  # the stage's own wave is paced for a page turn mid-story: ~8-12 s here
+	_squash_unhinged(t * 0.5)
+	await _wait(t * 0.7)
 	var guard := 0.0
-	while not _all_flat() and guard < 6.0:  # everything lies flat before the page turns (3 fps tiles per tale)
+	while not _all_flat() and guard < 4.0:  # everything lies flat before the page turns (3 fps tiles per tale)
 		guard += await _frame()
-	await _wait(0.5)
+	await _wait(0.3)
 	var tex := await _snapshot()
 	ui.page_turn.cover(tex)
 	ui.show_end_book(str(data.get("title", "")))
@@ -1292,6 +1306,43 @@ func _ending_book() -> void:
 	if sound:
 		sound.step("end", "close_book")
 	await _wait(0.6)
+
+
+const FOLD_WAVE_S := 1.7  ## ending: the outside-in fold wave starts over this long (each piece folds ~0.6 s)
+
+
+## Re-time the fold stage.fold() just started: every visible hinge folds outside-in within `span` seconds (the
+## pieces nearest the page centre last), the cast lies down with the last of them. Returns the last start delay.
+func _quick_fold(span: float) -> float:
+	var hs: Array = []
+	for h in _page_hinges():
+		if (h as PopHinge).is_visible_in_tree():
+			hs.append(h)
+	if hs.is_empty():
+		return 0.5
+	var c := Vector3.ZERO
+	for h: PopHinge in hs:
+		c += h.global_position
+	c /= hs.size()
+	var maxd := 0.001
+	for h: PopHinge in hs:
+		maxd = maxf(maxd, Vector2(h.global_position.x - c.x, h.global_position.z - c.z).length())
+	for h: PopHinge in hs:
+		var d := Vector2(h.global_position.x - c.x, h.global_position.z - c.z).length()
+		h.fold_down((1.0 - d / maxd) * span + randf() * 0.12)
+	for role in stage.actors:
+		(stage.actors[role] as StoryActor).pop_delay = span * 0.8
+	stage.trav_delay = span * 0.8
+	return span
+
+
+func _page_hinges() -> Array:
+	var all: Array = []
+	all.append_array(stage.world.hinges)
+	all.append_array(stage.extra_hinges)
+	for k in stage.sets:
+		all.append_array((stage.sets[k] as SetPiece).all_hinges())
+	return all.filter(func(h): return is_instance_valid(h))
 
 
 ## Set-piece parts that hang on no hinge (house bodies / boxes, rooms, roofs added by tale fx) squash flat with the
@@ -1321,14 +1372,7 @@ func _collect_unhinged(n: Node, out: Array) -> void:
 
 ## True when every hinge on the page (world, extra, set pieces) has folded down and stopped.
 func _all_flat() -> bool:
-	var all: Array = []
-	all.append_array(stage.world.hinges)
-	all.append_array(stage.extra_hinges)
-	for k in stage.sets:
-		all.append_array((stage.sets[k] as SetPiece).all_hinges())
-	for h in all:
-		if not is_instance_valid(h):
-			continue
+	for h in _page_hinges():
 		var ph := h as PopHinge
 		if ph and ph.is_visible_in_tree() and (ph.is_moving() or ph.openness() > 0.03):
 			return false
@@ -1342,10 +1386,10 @@ func _curtain_call() -> void:
 	var cc: Dictionary = data.get("ui", {}).get("curtain", {})
 	if cc.is_empty():
 		return
-	if cc.has("shot"):
-		stage.shot_to(str(cc["shot"]), cc.get("at", null), {"rate": 1.4})
-		await _wait(0.9)
 	var who: Array = cc.get("who", [])
+	for e: Array in who:  # someone who has left the page (the traveller down the road) comes back for the bow
+		if str(e[0]) == "walker" and e.size() > 2:
+			await _walker_return(float(e[2]))
 	var roles: Array = []
 	for e: Array in who:
 		roles.append(str(e[0]))
@@ -1364,6 +1408,25 @@ func _curtain_call() -> void:
 			_tapped = ""
 	_expect = []
 	_mode = "idle"
+
+
+## The walker walked `back` along the road out of the shot (walk_away): he re-enters from up the road and stops on a
+## mark just in front of where the camera waits.
+func _walker_return(back: float) -> void:
+	var w: Walker = stage.world.walker
+	if w == null or w.path == null:
+		return
+	var L := w.path.curve.get_baked_length()
+	var anchor := w.offset - stage.stroll_dir * back
+	var mark := clampf(anchor + stage.stroll_dir * 0.22, 0.0, L)
+	w.offset = clampf(anchor - stage.stroll_dir * 0.75, 0.0, L)
+	w.target_offset = w.offset
+	await _frame()
+	stage.walk_to_offset(mark)
+	var g := 0.0
+	await _frame()
+	while stage.walking() and g < 5.0:
+		g += await _frame()
 
 
 func _curtain_gesture(e: Array) -> void:
@@ -1515,6 +1578,14 @@ static func _key_of(sp: Dictionary) -> String:
 ## Not in fixed-step runs (captures, recordings): there each spread is built at its page turn exactly as before, so
 ## the global RNG sequence (hinge jitter, gusts) and every frame stay reproducible.
 const SHELF_SCENE := "res://story/shelf.tscn"
+var end_choice := ""  ## --end-choice=replay|other (recordings of the end tabs)
+
+
+func _go_shelf() -> void:
+	if sound:
+		sound.loop_stop("table", 0.3)
+	Engine.set_meta("popup_from_story", true)  # the shelf stays (command-line args would send it back to a story)
+	get_tree().change_scene_to_file(SHELF_SCENE)
 const COVER_BUILD_MS := 28.0  ## the cover is a still page: build the first spread fast behind it
 
 
