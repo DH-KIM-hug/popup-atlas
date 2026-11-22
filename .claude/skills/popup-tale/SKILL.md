@@ -313,6 +313,23 @@ Run long work through background agents/workflows with narrow ownership (one own
 - Never run the cast builder's standing pass while Godot imports: it rewrites every figure file and the import reads
   half-written webps (ERR_FILE_CORRUPT); import after the art jobs finish.
 
+**Rules for every tale from now on (user, 2026-11-22/23, after sunmoon and the four-tale pass)**
+- Nothing overlaps (user: "최대한 겹치게 하지마라는 규칙은 없었나"): no character, set piece or fx prop (ropes, jars,
+  baskets, flying props) may sit inside another or hide a speaker. OVERLAP_COUNT and OCCLUDE_COUNT must be 0 in the
+  final run, or each remaining line listed as an intended contact (`overlap_ok`) with a reason. Check fx props too,
+  not only actors: the sunmoon rope hung through the tree canopy ("동아줄이 나무에 걸려서 뭔가 이상하네융") until it
+  was offset along the tree card's own normal in front of the trunk.
+- A prop that leaves the story leaves the screen: the golden rope rises away (fx `rope_gone`) before the rotten one
+  comes down, and the drop happens during its line, in shot.
+- Story start music: the cover opens with 톡톡's intro track for the tale (`sound.steps.cover.on_open =
+  {"music": "intro_<mood>", "fade": 0.2}`; catalog music entries with `"hold": true` play once and make the next
+  `set_music` wait until they end). The cover beat's own music is null. Moods so far: cozy (sun_wind), playful
+  (three_pigs), night (sunmoon), magic (witch_candy); look up which intro 톡톡 used for the tale first (the user
+  rejected every generated opening sound: "다 별루").
+- Record what the user will see at 1200x900 with an absolute `--write-movie` path, `--import` first after new assets.
+- After regenerating script.json with seed_script.py, diff it before copying: upstream 톡톡 text and clips change
+  (witch_candy lost 10 clips once), and a hand reorder in the tale .py only reaches the game after a reseed.
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).
