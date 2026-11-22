@@ -138,9 +138,11 @@ def cut(fid):
         m = np.zeros_like(op)
         m[:, xa:xb] = below[:, xa:xb]
         m0 = m.copy()
+        brow = 6
         m = comp_touching_bottom(m)
         if not m.any():  # paper redraw (2026-11-22): one foot may stand a few px above the card's bottom row
-            m = comp_touching_bottom(m0, rows=max(6, int(0.05 * h)))
+            brow = max(6, int(0.05 * h))
+            m = comp_touching_bottom(m0, rows=brow)
         if fid in COLUMN_TRIM:
             # 2026-11-18 (wolf: his tail hangs beside his leg and joined the leg component): keep, per row, only the
             # pixels inside the leg's own column, measured on the shin/foot rows (front and back views stand straight)
@@ -151,7 +153,7 @@ def cut(fid):
             wl = float(np.median([sp[-1] - sp[0] for sp in spans]))
             xs_ = np.arange(w)
             m &= (np.abs(xs_ - cxl) <= (0.7 if fid.startswith("cast_wolf") else 1.2) * wl + 2)[None, :]
-            m = comp_touching_bottom(m)
+            m = comp_touching_bottom(m, rows=brow)
         ext = {yy: (int(np.where(m[yy])[0][0]), int(np.where(m[yy])[0][-1])) for yy in range(h) if m[yy].any()}
         yl = sorted(ext)
         span = yl[-1] - yl[0]
