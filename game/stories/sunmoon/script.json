@@ -215,10 +215,17 @@
    0.0
   ],
   "sky_wide": [
-   6.0,
-   2.0,
-   2.6,
-   34.0,
+   5.6,
+   -9.0,
+   1.9,
+   44.0,
+   0.0
+  ],
+  "sky_high": [
+   7.0,
+   18.0,
+   1.6,
+   40.0,
    0.0
   ],
   "pull_back": [
@@ -442,7 +449,7 @@
    "pose": "sun_boy",
    "screen": [
     0.3,
-    0.3
+    0.18
    ],
    "frac": 0.3
   },
@@ -452,7 +459,7 @@
    "pose": "moon_girl",
    "screen": [
     0.7,
-    0.3
+    0.18
    ],
    "frac": 0.3
   }
@@ -547,6 +554,10 @@
       1.449,
       2.143
      ],
+     "door_inside": [
+      0.922,
+      1.962
+     ],
      "back_door": [
       1.215,
       1.255
@@ -620,8 +631,32 @@
       0.09
      ],
      "firewood": [
-      0.64,
-      1.164
+      1.823,
+      2.196
+     ],
+     "side_front_l": [
+      0.125,
+      1.776
+     ],
+     "side_back_l": [
+      0.923,
+      0.748
+     ],
+     "tree_foot_g": [
+      2.486,
+      1.499
+     ],
+     "hills_exit": [
+      3.653,
+      3.562
+     ],
+     "exit_mid": [
+      3.024,
+      2.055
+     ],
+     "side_back_r": [
+      2.423,
+      2.072
      ],
      "yard_focus": [
       2.208,
@@ -1362,11 +1397,12 @@
     {
      "do": "walk",
      "who": "mom",
-     "to": "pass_1_in",
-     "via": "road",
-     "speed": 0.4,
+     "dir": "away",
+     "dist": 0.9,
+     "speed": 0.45,
      "follow": "mom",
-     "shot": "track_back"
+     "shot": "track_back",
+     "exit": true
     }
    ],
    "sound": {
@@ -1772,12 +1808,12 @@
     {
      "do": "walk",
      "who": "mom",
-     "to": "pass_2_in",
-     "via": "road",
+     "dir": "away",
+     "dist": 0.9,
      "speed": 0.45,
-     "pose": "hurry",
      "follow": "mom",
-     "shot": "track_back"
+     "shot": "track_back",
+     "exit": true
     }
    ],
    "sound": {
@@ -2156,9 +2192,6 @@
      "shot": "two_shot",
      "steps": [
       {
-       "fx": "cake_to_tiger:1"
-      },
-      {
        "fx": "cake_to_tiger:2"
       }
      ]
@@ -2170,12 +2203,12 @@
     {
      "do": "walk",
      "who": "mom",
-     "to": "pass_3_in",
-     "via": "road",
+     "dir": "away",
+     "dist": 0.9,
      "speed": 0.45,
-     "pose": "hurry",
      "follow": "mom",
-     "shot": "track_back"
+     "shot": "track_back",
+     "exit": true
     }
    ],
    "sound": {
@@ -2721,6 +2754,10 @@
       1.449,
       2.143
      ],
+     "door_inside": [
+      0.922,
+      1.962
+     ],
      "back_door": [
       1.215,
       1.255
@@ -2794,8 +2831,32 @@
       0.09
      ],
      "firewood": [
-      0.64,
-      1.164
+      1.823,
+      2.196
+     ],
+     "side_front_l": [
+      0.125,
+      1.776
+     ],
+     "side_back_l": [
+      0.923,
+      0.748
+     ],
+     "tree_foot_g": [
+      2.486,
+      1.499
+     ],
+     "hills_exit": [
+      3.653,
+      3.562
+     ],
+     "exit_mid": [
+      3.024,
+      2.055
+     ],
+     "side_back_r": [
+      2.423,
+      2.072
      ],
      "yard_focus": [
       2.208,
@@ -3085,7 +3146,7 @@
      "from": "road_by",
      "to": "tiger_door",
      "dir": "toward",
-     "speed": 0.35,
+     "speed": 0.6,
      "pose": "dg_cycle"
     },
     {
@@ -3111,9 +3172,16 @@
      "line": "sm_r0604"
     },
     {
+     "do": "cam",
+     "shot": "window_in",
+     "at": "door_inside",
+     "rate": 2.2,
+     "wait": 0.1
+    },
+    {
      "do": "fx",
      "fx": "paw_in",
-     "wait": 0.6
+     "wait": 1.0
     },
     {
      "do": "say",
@@ -3236,6 +3304,10 @@
       1.449,
       2.143
      ],
+     "door_inside": [
+      0.922,
+      1.962
+     ],
      "back_door": [
       1.215,
       1.255
@@ -3309,8 +3381,32 @@
       0.09
      ],
      "firewood": [
-      0.64,
-      1.164
+      1.823,
+      2.196
+     ],
+     "side_front_l": [
+      0.125,
+      1.776
+     ],
+     "side_back_l": [
+      0.923,
+      0.748
+     ],
+     "tree_foot_g": [
+      2.486,
+      1.499
+     ],
+     "hills_exit": [
+      3.653,
+      3.562
+     ],
+     "exit_mid": [
+      3.024,
+      2.055
+     ],
+     "side_back_r": [
+      2.423,
+      2.072
      ],
      "yard_focus": [
       2.208,
@@ -3622,8 +3718,10 @@
      "do": "walk",
      "who": "tiger",
      "to": "corner",
-     "dir": "right",
-     "speed": 0.3,
+     "via": [
+      "side_front_l"
+     ],
+     "speed": 0.55,
      "pose": "dg_cycle",
      "follow": "tiger",
      "shot": "yard_high"
@@ -3641,8 +3739,10 @@
      "do": "walk",
      "who": "tiger",
      "to": "tiger_door",
-     "dir": "left",
-     "speed": 0.35,
+     "via": [
+      "side_front_l"
+     ],
+     "speed": 0.5,
      "pose": "dg_cycle",
      "exit": true
     },
@@ -3729,6 +3829,10 @@
       1.449,
       2.143
      ],
+     "door_inside": [
+      0.922,
+      1.962
+     ],
      "back_door": [
       1.215,
       1.255
@@ -3802,8 +3906,32 @@
       0.09
      ],
      "firewood": [
-      0.64,
-      1.164
+      1.823,
+      2.196
+     ],
+     "side_front_l": [
+      0.125,
+      1.776
+     ],
+     "side_back_l": [
+      0.923,
+      0.748
+     ],
+     "tree_foot_g": [
+      2.486,
+      1.499
+     ],
+     "hills_exit": [
+      3.653,
+      3.562
+     ],
+     "exit_mid": [
+      3.024,
+      2.055
+     ],
+     "side_back_r": [
+      2.423,
+      2.072
      ],
      "yard_focus": [
       2.208,
@@ -4075,12 +4203,17 @@
    "steps": [
     {
      "do": "walk",
-     "who": [
-      "boy",
-      "girl"
-     ],
+     "who": "girl",
+     "to": "tree_foot_g",
+     "speed": 0.7,
+     "pose": "run_cycle",
+     "async": true
+    },
+    {
+     "do": "walk",
+     "who": "boy",
      "to": "tree_foot",
-     "speed": 0.5,
+     "speed": 0.7,
      "pose": "run_cycle",
      "follow": "boy",
      "shot": "yard_high"
@@ -4117,15 +4250,11 @@
      "wait": 0.1
     },
     {
-     "do": "say",
-     "line": "sm_r0803"
-    },
-    {
      "do": "walk",
      "who": "tiger",
-     "from": "corner",
+     "from": "side_back_l",
      "to": "tiger_well",
-     "speed": 0.4,
+     "speed": 0.7,
      "pose": "walk_cycle",
      "follow": "tiger",
      "shot": "medium"
@@ -4324,6 +4453,10 @@
       1.449,
       2.143
      ],
+     "door_inside": [
+      0.922,
+      1.962
+     ],
      "back_door": [
       1.215,
       1.255
@@ -4397,8 +4530,32 @@
       0.09
      ],
      "firewood": [
-      0.64,
-      1.164
+      1.823,
+      2.196
+     ],
+     "side_front_l": [
+      0.125,
+      1.776
+     ],
+     "side_back_l": [
+      0.923,
+      0.748
+     ],
+     "tree_foot_g": [
+      2.486,
+      1.499
+     ],
+     "hills_exit": [
+      3.653,
+      3.562
+     ],
+     "exit_mid": [
+      3.024,
+      2.055
+     ],
+     "side_back_r": [
+      2.423,
+      2.072
      ],
      "yard_focus": [
       2.208,
@@ -4671,10 +4828,6 @@
    },
    "steps": [
     {
-     "do": "say",
-     "line": "sm_r0901"
-    },
-    {
      "do": "cam",
      "shot": "face",
      "at": "tree",
@@ -4712,10 +4865,7 @@
        "fx": "rope_climb:1"
       },
       {
-       "fx": "rope_climb:2",
-       "lines": [
-        "sm_r0907"
-       ]
+       "fx": "rope_climb:2"
       },
       {
        "fx": "rope_climb:3"
@@ -4805,6 +4955,10 @@
       1.449,
       2.143
      ],
+     "door_inside": [
+      0.922,
+      1.962
+     ],
      "back_door": [
       1.215,
       1.255
@@ -4878,8 +5032,32 @@
       0.09
      ],
      "firewood": [
-      0.64,
-      1.164
+      1.823,
+      2.196
+     ],
+     "side_front_l": [
+      0.125,
+      1.776
+     ],
+     "side_back_l": [
+      0.923,
+      0.748
+     ],
+     "tree_foot_g": [
+      2.486,
+      1.499
+     ],
+     "hills_exit": [
+      3.653,
+      3.562
+     ],
+     "exit_mid": [
+      3.024,
+      2.055
+     ],
+     "side_back_r": [
+      2.423,
+      2.072
      ],
      "yard_focus": [
       2.208,
@@ -5185,10 +5363,6 @@
      "wait": 0.1
     },
     {
-     "do": "say",
-     "line": "sm_r1004"
-    },
-    {
      "do": "fx",
      "fx": "rope_snap",
      "wait": 0.1
@@ -5217,9 +5391,11 @@
     {
      "do": "walk",
      "who": "tiger",
-     "to": "road_by",
-     "dir": "left",
-     "speed": 0.7,
+     "to": "hills_exit",
+     "via": [
+      "exit_mid"
+     ],
+     "speed": 0.8,
      "pose": "run_bump",
      "follow": "tiger",
      "shot": "track_side",
@@ -5241,30 +5417,455 @@
     "place": "sky",
     "light": "",
     "spots": {
+     "rise": [
+      0.0,
+      -0.35
+     ],
      "sun": [
-      -0.6,
-      -0.5
+      -0.9,
+      -0.6
      ],
      "moon": [
+      0.9,
+      -0.6
+     ],
+     "focus": [
+      0.0,
+      -0.3
+     ],
+     "cloud_00": [
+      -3.0,
+      1.1
+     ],
+     "cloud_01": [
+      -1.8,
+      1.1
+     ],
+     "cloud_02": [
+      -0.6,
+      1.1
+     ],
+     "cloud_03": [
       0.6,
-      -0.5
+      1.1
+     ],
+     "cloud_04": [
+      1.8,
+      1.1
+     ],
+     "cloud_05": [
+      3.0,
+      1.1
+     ],
+     "cloud_10": [
+      -2.4,
+      0.55
+     ],
+     "cloud_11": [
+      -1.2,
+      0.55
+     ],
+     "cloud_12": [
+      -0.0,
+      0.55
+     ],
+     "cloud_13": [
+      1.2,
+      0.55
+     ],
+     "cloud_14": [
+      2.4,
+      0.55
+     ],
+     "cloud_15": [
+      3.6,
+      0.55
+     ],
+     "cloud_20": [
+      -3.0,
+      0.0
+     ],
+     "cloud_21": [
+      -1.8,
+      0.0
+     ],
+     "cloud_22": [
+      -0.6,
+      0.0
+     ],
+     "cloud_23": [
+      0.6,
+      0.0
+     ],
+     "cloud_24": [
+      1.8,
+      0.0
+     ],
+     "cloud_25": [
+      3.0,
+      0.0
+     ],
+     "cloud_30": [
+      -2.4,
+      -0.7
+     ],
+     "cloud_31": [
+      -1.2,
+      -0.7
+     ],
+     "cloud_32": [
+      -0.0,
+      -0.7
+     ],
+     "cloud_33": [
+      1.2,
+      -0.7
+     ],
+     "cloud_34": [
+      2.4,
+      -0.7
+     ],
+     "cloud_35": [
+      3.6,
+      -0.7
+     ],
+     "cloud_40": [
+      -3.0,
+      -2.2
+     ],
+     "cloud_41": [
+      -1.8,
+      -2.2
+     ],
+     "cloud_42": [
+      -0.6,
+      -2.2
+     ],
+     "cloud_43": [
+      0.6,
+      -2.2
+     ],
+     "cloud_44": [
+      1.8,
+      -2.2
+     ],
+     "cloud_45": [
+      3.0,
+      -2.2
      ]
     },
-    "set": [],
-    "sky_page": true
+    "set": [
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_00",
+      "stage": "full",
+      "name": "cloud_00",
+      "scale": 1.1,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_01",
+      "stage": "full",
+      "name": "cloud_01",
+      "scale": 1.1,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_02",
+      "stage": "full",
+      "name": "cloud_02",
+      "scale": 1.1,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_03",
+      "stage": "full",
+      "name": "cloud_03",
+      "scale": 1.1,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_04",
+      "stage": "full",
+      "name": "cloud_04",
+      "scale": 1.1,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_05",
+      "stage": "full",
+      "name": "cloud_05",
+      "scale": 1.1,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_10",
+      "stage": "full",
+      "name": "cloud_10",
+      "scale": 1.3,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_11",
+      "stage": "full",
+      "name": "cloud_11",
+      "scale": 1.3,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_12",
+      "stage": "full",
+      "name": "cloud_12",
+      "scale": 1.3,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_13",
+      "stage": "full",
+      "name": "cloud_13",
+      "scale": 1.3,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_14",
+      "stage": "full",
+      "name": "cloud_14",
+      "scale": 1.3,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_15",
+      "stage": "full",
+      "name": "cloud_15",
+      "scale": 1.3,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_20",
+      "stage": "full",
+      "name": "cloud_20",
+      "scale": 1.5,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_21",
+      "stage": "full",
+      "name": "cloud_21",
+      "scale": 1.5,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_22",
+      "stage": "full",
+      "name": "cloud_22",
+      "scale": 1.5,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_23",
+      "stage": "full",
+      "name": "cloud_23",
+      "scale": 1.5,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_24",
+      "stage": "full",
+      "name": "cloud_24",
+      "scale": 1.5,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_25",
+      "stage": "full",
+      "name": "cloud_25",
+      "scale": 1.5,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_30",
+      "stage": "full",
+      "name": "cloud_30",
+      "scale": 1.8,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_31",
+      "stage": "full",
+      "name": "cloud_31",
+      "scale": 1.8,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_32",
+      "stage": "full",
+      "name": "cloud_32",
+      "scale": 1.8,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_33",
+      "stage": "full",
+      "name": "cloud_33",
+      "scale": 1.8,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_34",
+      "stage": "full",
+      "name": "cloud_34",
+      "scale": 1.8,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_35",
+      "stage": "full",
+      "name": "cloud_35",
+      "scale": 1.8,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_40",
+      "stage": "full",
+      "name": "cloud_40",
+      "scale": 3.4,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_41",
+      "stage": "full",
+      "name": "cloud_41",
+      "scale": 3.4,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_42",
+      "stage": "full",
+      "name": "cloud_42",
+      "scale": 3.4,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_43",
+      "stage": "full",
+      "name": "cloud_43",
+      "scale": 3.4,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_44",
+      "stage": "full",
+      "name": "cloud_44",
+      "scale": 3.4,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_45",
+      "stage": "full",
+      "name": "cloud_45",
+      "scale": 3.4,
+      "clear": 2.5,
+      "allow_road": true
+     }
+    ],
+    "sky": {
+     "bg": "#cfe9f7",
+     "fog": "#e3f1f8",
+     "fog_energy": 0.45,
+     "top": "#7ec4ec",
+     "horizon": "#fff0c4",
+     "stars": "story_sm_sky_09",
+     "n": 0,
+     "moon": "",
+     "far": 17.0
+    },
+    "focus": "focus"
    },
    "enter": {
     "who": {
-     "sun": "sun_boy",
-     "moon": "moon_girl"
+     "boy": "rope_a",
+     "girl": "rope_b"
+    },
+    "at": {
+     "boy": "rise",
+     "girl": "rise"
     }
    },
    "steps": [
     {
      "do": "cam",
      "shot": "sky_wide",
-     "at": "sun",
-     "rate": 0.9,
+     "at": "focus",
+     "from": "sky_high",
+     "rate": 0.8,
+     "wait": 0.6
+    },
+    {
+     "do": "fx",
+     "fx": "sky_rise",
+     "wait": 2.2
+    },
+    {
+     "do": "fx",
+     "fx": "sun_moon_reveal",
      "wait": 0.8
     },
     {
@@ -5274,7 +5875,7 @@
     {
      "do": "fx",
      "fx": "night",
-     "wait": 0.4
+     "wait": 0.5
     },
     {
      "do": "say",
@@ -5287,6 +5888,11 @@
     {
      "do": "fx",
      "fx": "swap_sun_moon",
+     "wait": 1.0
+    },
+    {
+     "do": "fx",
+     "fx": "day",
      "wait": 0.6
     },
     {
@@ -5315,7 +5921,7 @@
     {
      "do": "fx",
      "fx": "day",
-     "wait": 0.3
+     "wait": 0.4
     },
     {
      "do": "say",
@@ -9987,8 +10593,8 @@
   },
   {
    "id": "sm_r0705",
-   "speaker": "tiger+nar",
-   "text": "\"얘들아~ 어디 갔니?\" 호랑이는 두리번두리번하다가 집 쪽으로 돌아갔어요.",
+   "speaker": "tiger",
+   "text": "\"얘들아~ 어디 갔니?\"",
    "status": "reuse",
    "beat": "backyard",
    "interaction": "say",
@@ -10002,15 +10608,6 @@
      "audio": "res://audio/voice/sunmoon/tiger_3dcb9e51e9.mp3",
      "source_audio": "audio/el/sunmoon/tiger_3dcb9e51e9.mp3",
      "status": "reuse"
-    },
-    {
-     "speaker": "nar",
-     "text": "호랑이는 두리번두리번하다가 집 쪽으로 돌아갔어요.",
-     "emotion": null,
-     "tags": "[amused, light, storytelling]",
-     "audio": "res://audio/voice/sunmoon/nar_3562027e8a.mp3",
-     "source_audio": "audio/el/sunmoon/nar_3562027e8a.mp3",
-     "status": "reuse"
     }
    ],
    "expr": {
@@ -10020,7 +10617,10 @@
     ]
    },
    "source_read": "R07_backyard#5",
-   "source_text": "\"얘들아~ 어디 갔니?\" 호랑이는 두리번두리번하다가 집 쪽으로 돌아갔어요."
+   "source_text": "\"얘들아~ 어디 갔니?\" 호랑이는 두리번두리번하다가 집 쪽으로 돌아갔어요.",
+   "trimmed_segs": [
+    0
+   ]
   },
   {
    "id": "sm_r0706",
@@ -10119,9 +10719,9 @@
    "speaker": "nar",
    "text": "오누이는 나무 꼭대기까지 올라갔어요!",
    "status": "reuse",
-   "beat": "tree",
-   "interaction": "say",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -10526,9 +11126,9 @@
    "speaker": "nar",
    "text": "호랑이가 점점 가까이 올라와요. 오누이는 두 손을 모았어요.",
    "status": "reuse",
-   "beat": "rope",
-   "interaction": "say",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -10668,9 +11268,9 @@
    "speaker": "nar",
    "text": "구름을 뚫고 쑥쑥!",
    "status": "reuse",
-   "beat": "rope",
-   "interaction": "tap_steps",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",
@@ -10806,9 +11406,9 @@
    "speaker": "nar",
    "text": "삐걱삐걱… 뚝! 줄이 그만 끊어지고 말았어요.",
    "status": "reuse",
-   "beat": "old_rope",
-   "interaction": "say",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",

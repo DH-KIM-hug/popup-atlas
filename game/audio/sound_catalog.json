@@ -1116,6 +1116,188 @@
    "positional": false,
    "loop": false,
    "note": "witch_candy placeholder, synthesised (tools/audio/wc_synth_sfx.py)"
+  },
+  "sm.growl_cute": {
+   "files": [
+    "res://audio/sfx/sm_growl_cute_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -12,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.gulp": {
+   "files": [
+    "res://audio/sfx/sm_gulp_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.gulp_big": {
+   "files": [
+    "res://audio/sfx/sm_gulp_big_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.twinkle": {
+   "files": [
+    "res://audio/sfx/sm_twinkle_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.bolt": {
+   "files": [
+    "res://audio/sfx/sm_bolt_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.paper_rustle": {
+   "files": [
+    "res://audio/sfx/sm_paper_rustle_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -12,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.paper_poke": {
+   "files": [
+    "res://audio/sfx/sm_paper_poke_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.blink": {
+   "files": [
+    "res://audio/sfx/sm_blink_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.scurry": {
+   "files": [
+    "res://audio/sfx/sm_scurry_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.oil_glug": {
+   "files": [
+    "res://audio/sfx/sm_oil_glug_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.slide": {
+   "files": [
+    "res://audio/sfx/sm_slide_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -11,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.chop": {
+   "files": [
+    "res://audio/sfx/sm_chop_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.rope_creak": {
+   "files": [
+    "res://audio/sfx/sm_rope_creak_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
+  },
+  "sm.rope_snap": {
+   "files": [
+    "res://audio/sfx/sm_rope_snap_1.wav"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.05,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "sunmoon placeholder, synthesised (tools/audio/sm_synth_sfx.py)"
   }
  },
  "music": {

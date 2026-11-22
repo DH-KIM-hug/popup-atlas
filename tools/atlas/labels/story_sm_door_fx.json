@@ -1,0 +1,51 @@
+{
+ "biome": "korean_village",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "tiger",
+  "door"
+ ],
+ "items": {
+  "00": [
+   "tiger's eye close-up seen through a poked paper hole (open)",
+   "story_fx",
+   0.12,
+   0,
+   {
+    "tags": [
+     "eye",
+     "window"
+    ]
+   }
+  ],
+  "01": [
+   "tiger's paw dusted with flour, claws peeking (reaches in from the right)",
+   "story_fx",
+   0.1,
+   0,
+   {
+    "tags": [
+     "paw",
+     "door",
+     "flour"
+    ]
+   }
+  ],
+  "02": [
+   "tiger's eye close-up, blinking (closed)",
+   "story_fx",
+   0.12,
+   0,
+   {
+    "tags": [
+     "eye",
+     "window",
+     "blink"
+    ]
+   }
+  ]
+ }
+}

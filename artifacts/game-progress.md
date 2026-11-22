@@ -1809,3 +1809,21 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     sh2_bush_flower_b, sh3_bushes_c, sh_bushes (25 cards). Test card: artifacts/paper/paper_test_card_A.jpg.
   - Note: the back hills are mostly hidden by haze and tree rows in the three finished tales; the visible felt is the
     trees / bushes / flowers / props and the cast.
+
+## 2026-11-22 — sunmoon v2: empty basket, paper girl walk, ridges out of the camera's way, paw / eye, sounds, pace
+  - The mother's before-work figures (calm / wave / talk) redrawn with an EMPTY basket (the paper redraw had filled it);
+    the full-basket ones kept as *_full. The girl's walk cycle in paper (8 frames; Codex had refused near-size outputs).
+  - Ridge gates: the handler folds away any ridge / rock card the camera stands behind, or that stands between a low
+    camera and anyone on the page (OCCLUDE at the passes gone except one end-of-beat wide frame); the long road walks
+    between passes became short exits (the next beat starts her at the next pass).
+  - Door: a floury paw slides in at the door's edge (seen turned round from inside), the eye blinks behind the poked
+    hole (new art story_sm_door_fx). Sounds: 14 sm.* placeholders (tools/audio/sm_synth_sfx.py, cute growl);
+    missing_sound=[]. Runner: walk `via` takes a list of spots (round the house); the tiger's routes go round it.
+  - Sky finale: paper cloud floor, day sky, the golden rope, the children climbing out of the clouds, sparkles, the
+    sun / moon; night tints the sky card. Still weak: the discs hang low on the cloud line (laid out for the story
+    shot), the template's far hills show above the clouds at the start, the climb barely reads.
+  - Pace: cuts r0901, r0803, r0907, r1004, r0705 narration, pass 2 one tap; quicker walks.
+  - Full run v4 (artifacts/sunmoon/sunmoon_full_v4.mp4 24.5 MB, full_v4_sheet.jpg): STORY_DONE 391.9 s (6:32),
+    CHECK_LINES OK (68 segments, sm_n02 at the end), VOICE_DUP=0, missing_audio=[], missing_sound=[], no script
+    errors. Regression after the runner change: sun_wind 207.8 s, three_pigs 297.0 s, witch_candy 439.2 s, all
+    CHECK_LINES OK, VOICE_DUP=0.

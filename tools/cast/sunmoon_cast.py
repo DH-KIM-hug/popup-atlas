@@ -33,7 +33,7 @@ TAGS = {BOY: ["boy", "person", "child", "hanbok", "korean_traditional", "walker"
 # sheet -> [(x index, role, pose, view, label, is_reference)]
 SHEETS = {
     "cast_sm_lineup": [(0, BOY, "calm", "front", "calm, front", 1), (1, GIRL, "calm", "front", "calm, front", 1),
-                       (2, MOM, "calm", "front", "calm, empty basket in both hands", 1),
+                       (2, MOM, "calm_full", "front", "calm, full basket (paper redraw filled it)", 1),
                        (3, TIG, "calm", "front", "standing upright, paws on belly, sly grin", 1),
                        (4, RICH, "calm", "front", "calm, hands folded", 1)],
     "cast_sm_boy_expr": [(0, BOY, "wave", "front", "waving goodbye (다녀오세요!)", 1),
@@ -65,8 +65,8 @@ SHEETS = {
                         (1, GIRL, "sit_scared", "front", "sitting on a branch, scared", 0),
                         (2, BOY, "sit_giggle", "front", "sitting on a branch, giggling", 0),
                         (3, GIRL, "sit_giggle", "front", "sitting on a branch, giggling", 0)],
-    "cast_sm_mom_expr": [(0, MOM, "wave", "front", "waving goodbye, empty basket on arm", 1),
-                         (1, MOM, "talk", "front", "finger up, reminding (문 꼭 잠그고)", 1),
+    "cast_sm_mom_expr": [(0, MOM, "wave_full", "front", "waving, full basket (paper redraw filled it)", 1),
+                         (1, MOM, "talk_full", "front", "finger up, full basket (paper redraw filled it)", 1),
                          (2, MOM, "work", "front", "working: stirring a pot, sleeves rolled", 0),
                          (3, MOM, "happy_full", "front", "hugging the full basket of rice cakes", 1),
                          (4, MOM, "scared_full", "front", "frightened, clutching the basket", 1),
@@ -112,6 +112,10 @@ SHEETS = {
                         (1, SKY, "moon_girl", "front", "the moon with the sister's face", 1),
                         (2, SKY, "sun_girl", "front", "the sun with the sister's face, beaming", 1),
                         (3, SKY, "moon_boy", "front", "the moon with the brother's face, gentle", 1)],
+    # v2: before work her basket is EMPTY (the paper redraw had filled it on calm / wave / talk)
+    "cast_sm_mom_empty_paper": [(0, MOM, "calm", "front", "calm, EMPTY basket in both hands", 1),
+                                (1, MOM, "wave", "front", "waving goodbye, EMPTY basket on arm", 1),
+                                (2, MOM, "talk", "front", "finger up, reminding (문 꼭 잠그고), EMPTY basket", 1)],
     # 2026-11-22 paper look test (user: "펠트 질감 싫은뎅"): the same designs as cut paper, no stitching
     "cast_sm_paper_mom": [(0, MOM, "paper_calm", "front", "PAPER look test: calm, full basket", 1)],
     "cast_sm_paper_tiger": [(0, TIG, "paper_calm", "front", "PAPER look test: standing upright, sly grin", 1)],

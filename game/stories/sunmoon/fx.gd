@@ -27,6 +27,8 @@ var _cards: Dictionary = {}  ## name -> Node3D (rope, oil bottle, streak, window
 var _hidden: Dictionary = {}  ## role -> spot
 var _rope_drop := {}  ## name -> {node, y0, y1, t}
 var _t := 0.0
+var _climbing := false
+var _eye_t := -1.0  ## blink clock for the eye behind the poked hole  ## sky finale: the children's rope frames alternate while they climb
 
 
 func setup() -> void:
@@ -34,9 +36,9 @@ func setup() -> void:
 	_sky_shown()
 
 
-## The sun and the moon hang only in the sky ending (v1: they hung over the cottage from the first page).
-func _sky_shown() -> void:
-	var on := str(stage.beat.get("id", "")) == "sky"
+## The sun and the moon hang only in the sky ending (v1: they hung over the cottage from the first page), and there
+## only from the reveal on (v2 finale).
+func _sky_shown(on := false) -> void:
 	for r in ["sun", "moon"]:
 		var h := stage.hanger(r)
 		if h and h.get_parent():
@@ -174,7 +176,7 @@ func fx(name: String) -> bool:
 			return true
 		"cake_to_tiger", "cakes_all_to_tiger":
 			if mom and tig:
-				var n := 1 if p[0] == "cake_to_tiger" else 5
+				var n := (int(p[1]) if p.size() > 1 and p[1].is_valid_int() and p[1] != "1" else 1) if p[0] == "cake_to_tiger" else 5
 				for k in n:
 					fly(CAKE, mom.centre() + Vector3.UP * 0.02 * k, tig.centre() + Vector3.UP * 0.12, 0.03, 0.6 + 0.08 * k)
 				mom.set_pose("give")
@@ -209,8 +211,31 @@ func fx(name: String) -> bool:
 			if mom:
 				mom.pop_target = 0.02
 			return true
-		"paw_in", "eye_blink":
-			return true  # phase 2b: paw / eye cards (art to make)
+		"paw_in":  # the floury paw slides in through the gap at the door's edge (seen from inside)
+			var d := stage.spot_point("door_inside")
+			var paw := _card("story_sm_door_fx_01", 0.1)
+			paw.rotation.y += PI + deg_to_rad(-40.0)
+			var side := stage.dir_vec("right").rotated(Vector3.UP, deg_to_rad(-40.0))
+			paw.global_position = d + Vector3.UP * 0.22 + side * 0.2
+			_flyers.append({"node": paw, "age": 0.0, "life": 1.2, "from": paw.global_position,
+				"to": d + Vector3.UP * 0.22 + side * 0.06, "arc": 0.0, "keep": true})
+			_cards["paw"] = paw
+			_sfx("sm.paper_rustle", d)
+			return true
+		"eye_blink":  # the big round eye behind the poked hole, blinking
+			if _cards.has("window_hole"):
+				var w: Node3D = _cards["window_hole"]
+				for k8 in 2:
+					var e8 := _card("story_sm_door_fx_0%d" % (0 if k8 == 0 else 2), 0.12)
+					e8.reparent(w, false)
+					e8.top_level = false
+					e8.position = Vector3(0.055, 0.05, -0.012)
+					e8.rotation = Vector3.ZERO
+					e8.visible = k8 == 0
+					_cards["eye%d" % k8] = e8
+				_eye_t = 0.0
+			_sfx("sm.blink")
+			return true
 		"poke_hole":
 			var w := _card(WINDOW_HOLE, 0.25)
 			w.global_position = stage.spot_point("window_inside") + Vector3.UP * 0.2 - _toward() * 0.001
@@ -294,9 +319,52 @@ func fx(name: String) -> bool:
 			return true
 		"swap_sun_moon":
 			_sky_faces("sun_girl", "moon_boy")
+			for r3 in ["sun", "moon"]:
+				var h3 := stage.hanger(r3)
+				if h3:
+					for k3 in 5:
+						fly(STAR, h3.global_position, h3.global_position + Vector3(randf_range(-0.4, 0.4), randf_range(-0.3, 0.3), 0.05), 0.08, 0.7, 0.1)
+			_sfx("wc.sparkle")
+			return true
+		"sky_rise":  # the golden rope drops through the cloud floor; the children climb up out of the clouds
+			var base := stage.spot_point("rise")
+			var r4 := _card(ROPE_GOOD, 2.6)
+			r4.global_position = base + Vector3.UP * 3.0
+			_rope_drop["sky"] = {"node": r4, "y0": base.y + 3.0, "y1": base.y - 0.6, "t": 0.0}
+			_cards["rope"] = r4
+			for r5 in ["boy", "girl"]:
+				var a5 := stage.actor(r5)
+				if a5:
+					var off := 0.04 if r5 == "boy" else -0.04
+					a5.place_at(base + Vector3.UP * (-0.35 if r5 == "boy" else -0.65) + _toward() * 0.05 + _right() * off)
+					a5.follow([base + Vector3.UP * (1.4 if r5 == "boy" else 1.1) + _toward() * 0.05 + _right() * off], 0.32, "", true)
+			_climbing = true
+			_sfx("wc.chime", base)
+			return true
+		"sun_moon_reveal":
+			_climbing = false
+			for r6 in ["boy", "girl"]:
+				var a6 := stage.actor(r6)
+				if a6:
+					for k6 in 6:
+						fly(STAR, a6.centre(), a6.centre() + Vector3(randf_range(-0.35, 0.35), randf_range(0.1, 0.5), 0.05), 0.07, 0.8, 0.15)
+					a6.pop_target = 0.02
+			if _cards.has("rope"):
+				(_cards["rope"] as Node3D).queue_free()
+				_cards.erase("rope")
+			_sky_shown(true)
+			_sfx("wc.sparkle")
 			return true
 		"day", "night":
 			stage._set_light("" if p[0] == "day" else "night", false)
+			# the sky card is unshaded (it ignores the light): tint it toward a deep night blue and back
+			var sky := stage.get_node_or_null("NightSky")
+			if sky:
+				var tint := Color(1, 1, 1) if p[0] == "day" else Color(0.18, 0.24, 0.5)
+				for c9 in sky.get_children():
+					if c9 is MeshInstance3D and (c9 as MeshInstance3D).material_override:
+						var tw := create_tween()
+						tw.tween_property((c9 as MeshInstance3D).material_override, "albedo_color", tint, 1.2)
 			return true
 	return false
 
@@ -305,8 +373,61 @@ func run_step(_st: Dictionary, _R: Node) -> void:
 	pass
 
 
+## v2 (checklist: "no camera passing through cards"): the ridge gates stand across the road, so a camera following
+## the mother can end up behind or inside one. Every frame, a ridge / rock card the camera stands behind (or within
+## a hair of its face) is folded away; it stands again as soon as the camera is in front of it.
+const GATE_PREFIX := ["ridge_", "saddle", "far_ridge", "boulder_", "cairn_", "ledge_"]
+var gate_hidden := 0  ## frames with a gate card hidden (log)
+
+
+func _gates(cam: Camera3D) -> void:
+	for nm in stage.sets:
+		var ok := false
+		for pre in GATE_PREFIX:
+			if str(nm).begins_with(pre):
+				ok = true
+				break
+		if not ok:
+			continue
+		var sp: SetPiece = stage.sets[nm]
+		var local := sp.to_local(cam.global_position)
+		var half := sp.width * 0.5 + 0.25
+		var behind := local.z < 0.25 and absf(local.x) < half and local.y < sp.height + 0.6
+		# v2b: also fold away a gate that stands between the camera and anyone on the page (OCCLUDE 1.0 at the passes)
+		if not behind and local.z > 0.0 and local.y < sp.height + 0.6:
+			for r in stage.actors:
+				var a: StoryActor = stage.actors[r]
+				if a.pop_target < 0.5 or not a.visible:
+					continue
+				var q := sp.to_local(a.centre())
+				if q.z < 0.0:
+					var k := local.z / (local.z - q.z)
+					var hit := local.lerp(q, k)
+					if absf(hit.x) < sp.width * 0.5 and hit.y > 0.0 and hit.y < sp.height:
+						behind = true
+						break
+		if sp.visible == behind:
+			sp.visible = not behind
+		if behind:
+			gate_hidden += 1
+
+
 func step(dt: float) -> void:
 	_t += dt
+	var cam := stage.camera()
+	if cam:
+		_gates(cam)
+	if _eye_t >= 0.0 and _cards.has("eye0"):
+		_eye_t += dt
+		var closed := fmod(_eye_t, 1.4) > 1.15
+		(_cards["eye0"] as Node3D).visible = not closed
+		(_cards["eye1"] as Node3D).visible = closed
+	if _climbing:
+		var f := "rope_a" if int(_t * 3.0) % 2 == 0 else "rope_b"
+		for r7 in ["boy", "girl"]:
+			var a7 := stage.actor(r7)
+			if a7 and a7.moving():
+				a7.set_pose(f)
 	for f: Dictionary in _flyers.duplicate():
 		var n: Node3D = f["node"]
 		if not is_instance_valid(n):

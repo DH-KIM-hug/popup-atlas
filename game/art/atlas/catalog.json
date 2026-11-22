@@ -13592,5 +13592,78 @@
    331,
    232
   ]
+ },
+ {
+  "id": "story_sm_door_fx_00",
+  "path": "art/atlas/story_sm_door_fx/story_sm_door_fx_00.webp",
+  "sheet": "story_sm_door_fx",
+  "category": "story_fx",
+  "label": "tiger's eye close-up seen through a poked paper hole (open)",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "door",
+   "eye",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tiger",
+   "window"
+  ],
+  "px": [
+   409,
+   415
+  ]
+ },
+ {
+  "id": "story_sm_door_fx_01",
+  "path": "art/atlas/story_sm_door_fx/story_sm_door_fx_01.webp",
+  "sheet": "story_sm_door_fx",
+  "category": "story_fx",
+  "label": "tiger's paw dusted with flour, claws peeking (reaches in from the right)",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "door",
+   "flour",
+   "korean_traditional",
+   "paw",
+   "story",
+   "sunmoon",
+   "tiger"
+  ],
+  "px": [
+   905,
+   462
+  ]
+ },
+ {
+  "id": "story_sm_door_fx_02",
+  "path": "art/atlas/story_sm_door_fx/story_sm_door_fx_02.webp",
+  "sheet": "story_sm_door_fx",
+  "category": "story_fx",
+  "label": "tiger's eye close-up, blinking (closed)",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "blink",
+   "door",
+   "eye",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tiger",
+   "window"
+  ],
+  "px": [
+   411,
+   425
+  ]
  }
 ]

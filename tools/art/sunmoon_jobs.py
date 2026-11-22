@@ -401,7 +401,7 @@ _CAST_SHEETS = {"cast_sm_lineup": "mom", "cast_sm_boy_expr": "boy", "cast_sm_gir
 for _sh, _who in _CAST_SHEETS.items():
     JOBS.append({"id": _sh + "_paper", "kind": "bg",
                  "refs": [RAW_C + _sh + "_felt.png", RAW_C + _PAPER_REF[_who] + ".png"],
-                 "aspect": "the SAME size and orientation as the first reference image (save it as-is)",
+                 "aspect": WIDE,
                  "out": RAW_C + _sh + "_paper.png",
                  "prompt": "REDRAW the FIRST reference image (a character sheet for a children's pop-up storybook) "
                  "PIECE FOR PIECE: the SAME number of separate figures in the SAME order left to right, the same poses, "
@@ -409,6 +409,32 @@ for _sh, _who in _CAST_SHEETS.items():
                  "open gap between the legs, every figure still fully separate. ONLY the MATERIAL changes, to match "
                  "the SECOND reference image (the same characters' approved paper look): " + BG + PAPER_CHAR +
                  "Do not add or remove any figure; do not add any background element."})
+
+# v2 (2026-11-22): the paper redraw filled the mother's basket on her before-work figures (calm, wave, talk): she
+# leaves for work with an EMPTY basket and gets the rice cakes only at the rich house
+JOBS.append({"id": "cast_sm_mom_empty_paper", "kind": "bg",
+             "refs": [RAW_C + "cast_sm_paper_mom.png", RAW_C + "cast_sm_mom_expr_felt.png"],
+             "aspect": "wide landscape, any size the tool returns is fine (save it as-is)",
+             "out": RAW_C + "cast_sm_mom_empty_paper.png",
+             "prompt": "A CHARACTER SHEET for a children's pop-up storybook: THREE separate full-body die-cut stand-up "
+             "figures in one horizontal row, " + BG + PAPER_CHAR + MOM + FACE + LEGS + REF_LINE + FRONT + ROW +
+             "The FIRST reference is her approved paper look (copy it exactly, but her basket must be EMPTY). Left to "
+             "right: (1) CALM: holding the round woven straw basket in both hands in front of her apron, the basket "
+             "COMPLETELY EMPTY (no rice cakes, no cloth, you can see the empty woven inside), a calm gentle smile; (2) "
+             "WAVE GOODBYE: one hand waving high, the EMPTY basket hooked on the other arm, a warm smile; (3) TALKING "
+             "KINDLY: one index finger raised as she reminds the children, the EMPTY basket on her arm, a loving face. "
+             "NO rice cakes anywhere on this sheet."})
+JOBS.append({"id": "story_sm_door_fx", "kind": "bg", "refs": [RAW_C + "cast_sm_paper_tiger.png"],
+             "aspect": "landscape, any size the tool returns is fine (save it as-is)",
+             "out": RAW_A + "story_sm_door_fx.png",
+             "prompt": "A PROP SHEET for a children's pop-up storybook: THREE separate die-cut pieces, " + BG + PAPER +
+             "They belong to the cute children's-book tiger in the reference (same orange paper, same brown stripes). "
+             "(1) THE TIGER'S PAW reaching in sideways from the RIGHT (a forearm and a big round paw, horizontal), the "
+             "paw dusted with patchy WHITE FLOUR (white paper flecks) but still orange underneath, three small curved "
+             "cream CLAWS just peeking out (cute, not scary); (2) THE TIGER'S EYE close up as seen through a round hole: "
+             "a round patch of orange fur with one big round friendly eye (dark brown iris, a white shine dot), a "
+             "brown stripe above it, a soft circular edge; (3) the same eye patch with the eye CLOSED in a blink (a "
+             "curved line with lashes)."})
 
 
 if __name__ == "__main__":

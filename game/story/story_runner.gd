@@ -654,6 +654,12 @@ func _step_walk_actors(st: Dictionary) -> void:
 					rt.pop_back()
 			rt.append(goal)
 			a.follow(rt, spd, str(st.get("pose", "")), false)
+		elif st.get("via") is Array:  # sunmoon 2026-11-22: waypoints by spot name (round a house, not through it)
+			var pts: Array = []
+			for v in (st["via"] as Array):
+				pts.append(stage.spot_point(v))
+			pts.append(goal)
+			a.follow(pts, spd, str(st.get("pose", "")), false)
 		else:
 			a.walk_to(goal, spd, str(st.get("pose", "")))
 		if st.has("end_pose"):

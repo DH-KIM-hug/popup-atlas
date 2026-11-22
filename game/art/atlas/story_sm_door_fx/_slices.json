@@ -1,0 +1,62 @@
+{
+ "sheet": "story_sm_door_fx",
+ "bg": [
+  0.988,
+  0.02,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_sm_door_fx_00",
+   "bbox": [
+    76,
+    70,
+    477,
+    477
+   ],
+   "area": 127256,
+   "size": [
+    409,
+    415
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_door_fx_01",
+   "bbox": [
+    564,
+    262,
+    1461,
+    716
+   ],
+   "area": 285284,
+   "size": [
+    905,
+    462
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_door_fx_02",
+   "bbox": [
+    76,
+    534,
+    479,
+    951
+   ],
+   "area": 131422,
+   "size": [
+    411,
+    425
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

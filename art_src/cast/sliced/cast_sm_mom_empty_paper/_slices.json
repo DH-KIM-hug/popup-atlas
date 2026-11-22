@@ -1,0 +1,62 @@
+{
+ "sheet": "cast_sm_mom_empty_paper",
+ "bg": [
+  0.984,
+  0.051,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_mom_empty_paper_00",
+   "bbox": [
+    253,
+    31,
+    599,
+    701
+   ],
+   "area": 146808,
+   "size": [
+    354,
+    678
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_mom_empty_paper_01",
+   "bbox": [
+    924,
+    31,
+    1254,
+    701
+   ],
+   "area": 144221,
+   "size": [
+    338,
+    678
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_sm_mom_empty_paper_02",
+   "bbox": [
+    1575,
+    31,
+    1909,
+    701
+   ],
+   "area": 143793,
+   "size": [
+    342,
+    678
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

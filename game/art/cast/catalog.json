@@ -9331,6 +9331,1266 @@
   "parts": {}
  },
  {
+  "id": "cast_hanbok_boy_walk_cycle_0",
+  "path": "art/cast/cast_hanbok_boy_walk_cycle_0.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_cycle_0",
+  "pose": "walk_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 0 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_boy_walk_cycle_1",
+  "path": "art/cast/cast_hanbok_boy_walk_cycle_1.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_cycle_1",
+  "pose": "walk_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 1 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_boy_walk_cycle_2",
+  "path": "art/cast/cast_hanbok_boy_walk_cycle_2.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_cycle_2",
+  "pose": "walk_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 2 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_hanbok_boy_walk_cycle_3",
+  "path": "art/cast/cast_hanbok_boy_walk_cycle_3.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_cycle_3",
+  "pose": "walk_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 3 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_hanbok_boy_walk_back_0",
+  "path": "art/cast/cast_hanbok_boy_walk_back_0.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_back_0",
+  "pose": "walk_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 0 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_boy_walk_back_1",
+  "path": "art/cast/cast_hanbok_boy_walk_back_1.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_back_1",
+  "pose": "walk_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 1 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_boy_walk_front_0",
+  "path": "art/cast/cast_hanbok_boy_walk_front_0.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_front_0",
+  "pose": "walk_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 0 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_boy_walk_front_1",
+  "path": "art/cast/cast_hanbok_boy_walk_front_1.webp",
+  "sheet": "cast_sm_boy_walk",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "walk_front_1",
+  "pose": "walk_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 1 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   241,
+   474
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_mom_walk_cycle_0",
+  "path": "art/cast/cast_hanbok_mom_walk_cycle_0.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_cycle_0",
+  "pose": "walk_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 0 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_mom_walk_cycle_1",
+  "path": "art/cast/cast_hanbok_mom_walk_cycle_1.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_cycle_1",
+  "pose": "walk_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 1 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_mom_walk_cycle_2",
+  "path": "art/cast/cast_hanbok_mom_walk_cycle_2.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_cycle_2",
+  "pose": "walk_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 2 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_hanbok_mom_walk_cycle_3",
+  "path": "art/cast/cast_hanbok_mom_walk_cycle_3.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_cycle_3",
+  "pose": "walk_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 3 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_hanbok_mom_walk_back_0",
+  "path": "art/cast/cast_hanbok_mom_walk_back_0.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_back_0",
+  "pose": "walk_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 0 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_mom_walk_back_1",
+  "path": "art/cast/cast_hanbok_mom_walk_back_1.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_back_1",
+  "pose": "walk_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 1 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_mom_walk_front_0",
+  "path": "art/cast/cast_hanbok_mom_walk_front_0.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_front_0",
+  "pose": "walk_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 0 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_mom_walk_front_1",
+  "path": "art/cast/cast_hanbok_mom_walk_front_1.webp",
+  "sheet": "cast_sm_mom_walk",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "walk_front_1",
+  "pose": "walk_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 1 (drawn cycle)",
+  "height_units": 0.349,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_mom",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   525
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_walk_cycle_0",
+  "path": "art/cast/cast_tiger_walk_cycle_0.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_cycle_0",
+  "pose": "walk_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_walk_cycle_1",
+  "path": "art/cast/cast_tiger_walk_cycle_1.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_cycle_1",
+  "pose": "walk_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_walk_cycle_2",
+  "path": "art/cast/cast_tiger_walk_cycle_2.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_cycle_2",
+  "pose": "walk_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 2 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_tiger_walk_cycle_3",
+  "path": "art/cast/cast_tiger_walk_cycle_3.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_cycle_3",
+  "pose": "walk_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 3 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_tiger_walk_back_0",
+  "path": "art/cast/cast_tiger_walk_back_0.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_back_0",
+  "pose": "walk_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_walk_back_1",
+  "path": "art/cast/cast_tiger_walk_back_1.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_back_1",
+  "pose": "walk_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_walk_front_0",
+  "path": "art/cast/cast_tiger_walk_front_0.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_front_0",
+  "pose": "walk_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_walk_front_1",
+  "path": "art/cast/cast_tiger_walk_front_1.webp",
+  "sheet": "cast_sm_tiger_walk",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "walk_front_1",
+  "pose": "walk_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   261,
+   377
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_boy_run_cycle_0",
+  "path": "art/cast/cast_hanbok_boy_run_cycle_0.webp",
+  "sheet": "cast_sm_boy_run",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   361,
+   526
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_boy_run_cycle_1",
+  "path": "art/cast/cast_hanbok_boy_run_cycle_1.webp",
+  "sheet": "cast_sm_boy_run",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   361,
+   526
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_boy_run_cycle_2",
+  "path": "art/cast/cast_hanbok_boy_run_cycle_2.webp",
+  "sheet": "cast_sm_boy_run",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   361,
+   526
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_hanbok_boy_run_cycle_3",
+  "path": "art/cast/cast_hanbok_boy_run_cycle_3.webp",
+  "sheet": "cast_sm_boy_run",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   361,
+   526
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_hanbok_boy_run_back_0",
+  "path": "art/cast/cast_hanbok_boy_run_back_0.webp",
+  "sheet": "cast_sm_boy_run",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   361,
+   526
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_boy_run_back_1",
+  "path": "art/cast/cast_hanbok_boy_run_back_1.webp",
+  "sheet": "cast_sm_boy_run",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (drawn cycle)",
+  "height_units": 0.242,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   361,
+   526
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_girl_run_cycle_0",
+  "path": "art/cast/cast_hanbok_girl_run_cycle_0.webp",
+  "sheet": "cast_sm_girl_run",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (drawn cycle)",
+  "height_units": 0.228,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   332,
+   512
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_girl_run_cycle_1",
+  "path": "art/cast/cast_hanbok_girl_run_cycle_1.webp",
+  "sheet": "cast_sm_girl_run",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (drawn cycle)",
+  "height_units": 0.228,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   332,
+   512
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_hanbok_girl_run_cycle_2",
+  "path": "art/cast/cast_hanbok_girl_run_cycle_2.webp",
+  "sheet": "cast_sm_girl_run",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (drawn cycle)",
+  "height_units": 0.228,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   332,
+   512
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_hanbok_girl_run_cycle_3",
+  "path": "art/cast/cast_hanbok_girl_run_cycle_3.webp",
+  "sheet": "cast_sm_girl_run",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (drawn cycle)",
+  "height_units": 0.228,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   332,
+   512
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_hanbok_girl_run_back_0",
+  "path": "art/cast/cast_hanbok_girl_run_back_0.webp",
+  "sheet": "cast_sm_girl_run",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (drawn cycle)",
+  "height_units": 0.228,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   332,
+   512
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_hanbok_girl_run_back_1",
+  "path": "art/cast/cast_hanbok_girl_run_back_1.webp",
+  "sheet": "cast_sm_girl_run",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (drawn cycle)",
+  "height_units": 0.228,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   332,
+   512
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_dg_cycle_0",
+  "path": "art/cast/cast_tiger_dg_cycle_0.webp",
+  "sheet": "cast_sm_tiger_sneak",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_cycle_0",
+  "pose": "dg_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "dg_cycle frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   318,
+   515
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_dg_cycle_1",
+  "path": "art/cast/cast_tiger_dg_cycle_1.webp",
+  "sheet": "cast_sm_tiger_sneak",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_cycle_1",
+  "pose": "dg_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "dg_cycle frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   318,
+   515
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_dg_cycle_2",
+  "path": "art/cast/cast_tiger_dg_cycle_2.webp",
+  "sheet": "cast_sm_tiger_sneak",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_cycle_2",
+  "pose": "dg_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "dg_cycle frame 2 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   318,
+   515
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_tiger_dg_cycle_3",
+  "path": "art/cast/cast_tiger_dg_cycle_3.webp",
+  "sheet": "cast_sm_tiger_sneak",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_cycle_3",
+  "pose": "dg_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "dg_cycle frame 3 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   318,
+   515
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_tiger_dg_front_0",
+  "path": "art/cast/cast_tiger_dg_front_0.webp",
+  "sheet": "cast_sm_tiger_sneak",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_front_0",
+  "pose": "dg_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "dg_front frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   318,
+   515
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_dg_front_1",
+  "path": "art/cast/cast_tiger_dg_front_1.webp",
+  "sheet": "cast_sm_tiger_sneak",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_front_1",
+  "pose": "dg_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "dg_front frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "sunmoon",
+   "cycle"
+  ],
+  "px": [
+   318,
+   515
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_front",
+  "frame": 1
+ },
+ {
   "id": "cast_hanbok_boy_calm",
   "path": "art/cast/cast_hanbok_boy_calm.webp",
   "sheet": "cast_sm_lineup",
@@ -9399,16 +10659,16 @@
   "parts": {}
  },
  {
-  "id": "cast_hanbok_mom_calm",
-  "path": "art/cast/cast_hanbok_mom_calm.webp",
+  "id": "cast_hanbok_mom_calm_full",
+  "path": "art/cast/cast_hanbok_mom_calm_full.webp",
   "sheet": "cast_sm_lineup",
   "category": "cast",
   "role": "hanbok_mom",
-  "variant": "calm",
-  "pose": "calm",
+  "variant": "calm_full",
+  "pose": "calm_full",
   "view": "front",
   "facing": "front",
-  "label": "calm, empty basket in both hands",
+  "label": "calm, full basket (paper redraw filled it)",
   "height_units": 0.36,
   "cross_slot": false,
   "biome": "any",
@@ -9422,7 +10682,7 @@
    "korean_traditional",
    "walker",
    "sunmoon",
-   "calm",
+   "calm_full",
    "front"
   ],
   "px": [
@@ -10486,16 +11746,16 @@
   "parts": {}
  },
  {
-  "id": "cast_hanbok_mom_wave",
-  "path": "art/cast/cast_hanbok_mom_wave.webp",
+  "id": "cast_hanbok_mom_wave_full",
+  "path": "art/cast/cast_hanbok_mom_wave_full.webp",
   "sheet": "cast_sm_mom_expr",
   "category": "cast",
   "role": "hanbok_mom",
-  "variant": "wave",
-  "pose": "wave",
+  "variant": "wave_full",
+  "pose": "wave_full",
   "view": "front",
   "facing": "front",
-  "label": "waving goodbye, empty basket on arm",
+  "label": "waving, full basket (paper redraw filled it)",
   "height_units": 0.36,
   "cross_slot": false,
   "biome": "any",
@@ -10509,7 +11769,7 @@
    "korean_traditional",
    "walker",
    "sunmoon",
-   "wave",
+   "wave_full",
    "front"
   ],
   "px": [
@@ -10521,16 +11781,16 @@
   "parts": {}
  },
  {
-  "id": "cast_hanbok_mom_talk",
-  "path": "art/cast/cast_hanbok_mom_talk.webp",
+  "id": "cast_hanbok_mom_talk_full",
+  "path": "art/cast/cast_hanbok_mom_talk_full.webp",
   "sheet": "cast_sm_mom_expr",
   "category": "cast",
   "role": "hanbok_mom",
-  "variant": "talk",
-  "pose": "talk",
+  "variant": "talk_full",
+  "pose": "talk_full",
   "view": "front",
   "facing": "front",
-  "label": "finger up, reminding (문 꼭 잠그고)",
+  "label": "finger up, full basket (paper redraw filled it)",
   "height_units": 0.36,
   "cross_slot": false,
   "biome": "any",
@@ -10544,7 +11804,7 @@
    "korean_traditional",
    "walker",
    "sunmoon",
-   "talk",
+   "talk_full",
    "front"
   ],
   "px": [
@@ -12053,6 +13313,111 @@
   "parts": {}
  },
  {
+  "id": "cast_hanbok_mom_calm",
+  "path": "art/cast/cast_hanbok_mom_calm.webp",
+  "sheet": "cast_sm_mom_empty_paper",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "calm",
+  "pose": "calm",
+  "view": "front",
+  "facing": "front",
+  "label": "calm, EMPTY basket in both hands",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "woman",
+   "person",
+   "adult",
+   "mother",
+   "hanbok",
+   "korean_traditional",
+   "walker",
+   "sunmoon",
+   "calm",
+   "front"
+  ],
+  "px": [
+   354,
+   678
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {}
+ },
+ {
+  "id": "cast_hanbok_mom_wave",
+  "path": "art/cast/cast_hanbok_mom_wave.webp",
+  "sheet": "cast_sm_mom_empty_paper",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "wave",
+  "pose": "wave",
+  "view": "front",
+  "facing": "front",
+  "label": "waving goodbye, EMPTY basket on arm",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "woman",
+   "person",
+   "adult",
+   "mother",
+   "hanbok",
+   "korean_traditional",
+   "walker",
+   "sunmoon",
+   "wave",
+   "front"
+  ],
+  "px": [
+   338,
+   678
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {}
+ },
+ {
+  "id": "cast_hanbok_mom_talk",
+  "path": "art/cast/cast_hanbok_mom_talk.webp",
+  "sheet": "cast_sm_mom_empty_paper",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "talk",
+  "pose": "talk",
+  "view": "front",
+  "facing": "front",
+  "label": "finger up, reminding (문 꼭 잠그고), EMPTY basket",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "woman",
+   "person",
+   "adult",
+   "mother",
+   "hanbok",
+   "korean_traditional",
+   "walker",
+   "sunmoon",
+   "talk",
+   "front"
+  ],
+  "px": [
+   342,
+   678
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {}
+ },
+ {
   "id": "cast_hanbok_mom_paper_calm",
   "path": "art/cast/cast_hanbok_mom_paper_calm.webp",
   "sheet": "cast_sm_paper_mom",
@@ -12155,246 +13520,6 @@
   "parts": {}
  },
  {
-  "id": "cast_hanbok_boy_walk_cycle_0",
-  "path": "art/cast/cast_hanbok_boy_walk_cycle_0.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_cycle_0",
-  "pose": "walk_cycle_0",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 0 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_boy_walk_cycle_1",
-  "path": "art/cast/cast_hanbok_boy_walk_cycle_1.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_cycle_1",
-  "pose": "walk_cycle_1",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 1 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_boy_walk_cycle_2",
-  "path": "art/cast/cast_hanbok_boy_walk_cycle_2.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_cycle_2",
-  "pose": "walk_cycle_2",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 2 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 2
- },
- {
-  "id": "cast_hanbok_boy_walk_cycle_3",
-  "path": "art/cast/cast_hanbok_boy_walk_cycle_3.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_cycle_3",
-  "pose": "walk_cycle_3",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 3 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 3
- },
- {
-  "id": "cast_hanbok_boy_walk_back_0",
-  "path": "art/cast/cast_hanbok_boy_walk_back_0.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_back_0",
-  "pose": "walk_back_0",
-  "view": "back",
-  "facing": "back",
-  "label": "walk_back frame 0 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_back",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_boy_walk_back_1",
-  "path": "art/cast/cast_hanbok_boy_walk_back_1.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_back_1",
-  "pose": "walk_back_1",
-  "view": "back",
-  "facing": "back",
-  "label": "walk_back frame 1 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_back",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_boy_walk_front_0",
-  "path": "art/cast/cast_hanbok_boy_walk_front_0.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_front_0",
-  "pose": "walk_front_0",
-  "view": "front",
-  "facing": "front",
-  "label": "walk_front frame 0 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_front",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_boy_walk_front_1",
-  "path": "art/cast/cast_hanbok_boy_walk_front_1.webp",
-  "sheet": "cast_sm_boy_walk",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "walk_front_1",
-  "pose": "walk_front_1",
-  "view": "front",
-  "facing": "front",
-  "label": "walk_front frame 1 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   241,
-   474
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "walk_front",
-  "frame": 1
- },
- {
   "id": "cast_hanbok_girl_walk_cycle_0",
   "path": "art/cast/cast_hanbok_girl_walk_cycle_0.webp",
   "sheet": "cast_sm_girl_walk",
@@ -12415,8 +13540,8 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -12445,8 +13570,8 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -12475,8 +13600,8 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -12505,8 +13630,8 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -12535,8 +13660,8 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -12565,8 +13690,8 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -12595,8 +13720,8 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -12625,1033 +13750,13 @@
    "cycle"
   ],
   "px": [
-   247,
-   453
+   244,
+   436
   ],
   "hanging": false,
   "skin": "hanbok_girl",
   "parts": {},
   "cycle": "walk_front",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_mom_walk_cycle_0",
-  "path": "art/cast/cast_hanbok_mom_walk_cycle_0.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_cycle_0",
-  "pose": "walk_cycle_0",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 0 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_mom_walk_cycle_1",
-  "path": "art/cast/cast_hanbok_mom_walk_cycle_1.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_cycle_1",
-  "pose": "walk_cycle_1",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 1 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_mom_walk_cycle_2",
-  "path": "art/cast/cast_hanbok_mom_walk_cycle_2.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_cycle_2",
-  "pose": "walk_cycle_2",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 2 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 2
- },
- {
-  "id": "cast_hanbok_mom_walk_cycle_3",
-  "path": "art/cast/cast_hanbok_mom_walk_cycle_3.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_cycle_3",
-  "pose": "walk_cycle_3",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 3 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 3
- },
- {
-  "id": "cast_hanbok_mom_walk_back_0",
-  "path": "art/cast/cast_hanbok_mom_walk_back_0.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_back_0",
-  "pose": "walk_back_0",
-  "view": "back",
-  "facing": "back",
-  "label": "walk_back frame 0 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_back",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_mom_walk_back_1",
-  "path": "art/cast/cast_hanbok_mom_walk_back_1.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_back_1",
-  "pose": "walk_back_1",
-  "view": "back",
-  "facing": "back",
-  "label": "walk_back frame 1 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_back",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_mom_walk_front_0",
-  "path": "art/cast/cast_hanbok_mom_walk_front_0.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_front_0",
-  "pose": "walk_front_0",
-  "view": "front",
-  "facing": "front",
-  "label": "walk_front frame 0 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_front",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_mom_walk_front_1",
-  "path": "art/cast/cast_hanbok_mom_walk_front_1.webp",
-  "sheet": "cast_sm_mom_walk",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "walk_front_1",
-  "pose": "walk_front_1",
-  "view": "front",
-  "facing": "front",
-  "label": "walk_front frame 1 (drawn cycle)",
-  "height_units": 0.349,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_mom",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   525
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {},
-  "cycle": "walk_front",
-  "frame": 1
- },
- {
-  "id": "cast_tiger_walk_cycle_0",
-  "path": "art/cast/cast_tiger_walk_cycle_0.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_cycle_0",
-  "pose": "walk_cycle_0",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 0 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 0
- },
- {
-  "id": "cast_tiger_walk_cycle_1",
-  "path": "art/cast/cast_tiger_walk_cycle_1.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_cycle_1",
-  "pose": "walk_cycle_1",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 1 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 1
- },
- {
-  "id": "cast_tiger_walk_cycle_2",
-  "path": "art/cast/cast_tiger_walk_cycle_2.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_cycle_2",
-  "pose": "walk_cycle_2",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 2 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 2
- },
- {
-  "id": "cast_tiger_walk_cycle_3",
-  "path": "art/cast/cast_tiger_walk_cycle_3.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_cycle_3",
-  "pose": "walk_cycle_3",
-  "view": "side",
-  "facing": "right",
-  "label": "walk_cycle frame 3 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_cycle",
-  "frame": 3
- },
- {
-  "id": "cast_tiger_walk_back_0",
-  "path": "art/cast/cast_tiger_walk_back_0.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_back_0",
-  "pose": "walk_back_0",
-  "view": "back",
-  "facing": "back",
-  "label": "walk_back frame 0 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_back",
-  "frame": 0
- },
- {
-  "id": "cast_tiger_walk_back_1",
-  "path": "art/cast/cast_tiger_walk_back_1.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_back_1",
-  "pose": "walk_back_1",
-  "view": "back",
-  "facing": "back",
-  "label": "walk_back frame 1 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_back",
-  "frame": 1
- },
- {
-  "id": "cast_tiger_walk_front_0",
-  "path": "art/cast/cast_tiger_walk_front_0.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_front_0",
-  "pose": "walk_front_0",
-  "view": "front",
-  "facing": "front",
-  "label": "walk_front frame 0 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_front",
-  "frame": 0
- },
- {
-  "id": "cast_tiger_walk_front_1",
-  "path": "art/cast/cast_tiger_walk_front_1.webp",
-  "sheet": "cast_sm_tiger_walk",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "walk_front_1",
-  "pose": "walk_front_1",
-  "view": "front",
-  "facing": "front",
-  "label": "walk_front frame 1 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   261,
-   377
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "walk_front",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_boy_run_cycle_0",
-  "path": "art/cast/cast_hanbok_boy_run_cycle_0.webp",
-  "sheet": "cast_sm_boy_run",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "run_cycle_0",
-  "pose": "run_cycle_0",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 0 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   361,
-   526
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_boy_run_cycle_1",
-  "path": "art/cast/cast_hanbok_boy_run_cycle_1.webp",
-  "sheet": "cast_sm_boy_run",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "run_cycle_1",
-  "pose": "run_cycle_1",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 1 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   361,
-   526
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_boy_run_cycle_2",
-  "path": "art/cast/cast_hanbok_boy_run_cycle_2.webp",
-  "sheet": "cast_sm_boy_run",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "run_cycle_2",
-  "pose": "run_cycle_2",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 2 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   361,
-   526
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 2
- },
- {
-  "id": "cast_hanbok_boy_run_cycle_3",
-  "path": "art/cast/cast_hanbok_boy_run_cycle_3.webp",
-  "sheet": "cast_sm_boy_run",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "run_cycle_3",
-  "pose": "run_cycle_3",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 3 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   361,
-   526
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 3
- },
- {
-  "id": "cast_hanbok_boy_run_back_0",
-  "path": "art/cast/cast_hanbok_boy_run_back_0.webp",
-  "sheet": "cast_sm_boy_run",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "run_back_0",
-  "pose": "run_back_0",
-  "view": "back",
-  "facing": "back",
-  "label": "run_back frame 0 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   361,
-   526
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "run_back",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_boy_run_back_1",
-  "path": "art/cast/cast_hanbok_boy_run_back_1.webp",
-  "sheet": "cast_sm_boy_run",
-  "category": "cast",
-  "role": "hanbok_boy",
-  "variant": "run_back_1",
-  "pose": "run_back_1",
-  "view": "back",
-  "facing": "back",
-  "label": "run_back frame 1 (drawn cycle)",
-  "height_units": 0.242,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_boy",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   361,
-   526
-  ],
-  "hanging": false,
-  "skin": "hanbok_boy",
-  "parts": {},
-  "cycle": "run_back",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_girl_run_cycle_0",
-  "path": "art/cast/cast_hanbok_girl_run_cycle_0.webp",
-  "sheet": "cast_sm_girl_run",
-  "category": "cast",
-  "role": "hanbok_girl",
-  "variant": "run_cycle_0",
-  "pose": "run_cycle_0",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 0 (drawn cycle)",
-  "height_units": 0.228,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_girl",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   332,
-   512
-  ],
-  "hanging": false,
-  "skin": "hanbok_girl",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_girl_run_cycle_1",
-  "path": "art/cast/cast_hanbok_girl_run_cycle_1.webp",
-  "sheet": "cast_sm_girl_run",
-  "category": "cast",
-  "role": "hanbok_girl",
-  "variant": "run_cycle_1",
-  "pose": "run_cycle_1",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 1 (drawn cycle)",
-  "height_units": 0.228,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_girl",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   332,
-   512
-  ],
-  "hanging": false,
-  "skin": "hanbok_girl",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 1
- },
- {
-  "id": "cast_hanbok_girl_run_cycle_2",
-  "path": "art/cast/cast_hanbok_girl_run_cycle_2.webp",
-  "sheet": "cast_sm_girl_run",
-  "category": "cast",
-  "role": "hanbok_girl",
-  "variant": "run_cycle_2",
-  "pose": "run_cycle_2",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 2 (drawn cycle)",
-  "height_units": 0.228,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_girl",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   332,
-   512
-  ],
-  "hanging": false,
-  "skin": "hanbok_girl",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 2
- },
- {
-  "id": "cast_hanbok_girl_run_cycle_3",
-  "path": "art/cast/cast_hanbok_girl_run_cycle_3.webp",
-  "sheet": "cast_sm_girl_run",
-  "category": "cast",
-  "role": "hanbok_girl",
-  "variant": "run_cycle_3",
-  "pose": "run_cycle_3",
-  "view": "side",
-  "facing": "right",
-  "label": "run_cycle frame 3 (drawn cycle)",
-  "height_units": 0.228,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_girl",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   332,
-   512
-  ],
-  "hanging": false,
-  "skin": "hanbok_girl",
-  "parts": {},
-  "cycle": "run_cycle",
-  "frame": 3
- },
- {
-  "id": "cast_hanbok_girl_run_back_0",
-  "path": "art/cast/cast_hanbok_girl_run_back_0.webp",
-  "sheet": "cast_sm_girl_run",
-  "category": "cast",
-  "role": "hanbok_girl",
-  "variant": "run_back_0",
-  "pose": "run_back_0",
-  "view": "back",
-  "facing": "back",
-  "label": "run_back frame 0 (drawn cycle)",
-  "height_units": 0.228,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_girl",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   332,
-   512
-  ],
-  "hanging": false,
-  "skin": "hanbok_girl",
-  "parts": {},
-  "cycle": "run_back",
-  "frame": 0
- },
- {
-  "id": "cast_hanbok_girl_run_back_1",
-  "path": "art/cast/cast_hanbok_girl_run_back_1.webp",
-  "sheet": "cast_sm_girl_run",
-  "category": "cast",
-  "role": "hanbok_girl",
-  "variant": "run_back_1",
-  "pose": "run_back_1",
-  "view": "back",
-  "facing": "back",
-  "label": "run_back frame 1 (drawn cycle)",
-  "height_units": 0.228,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "hanbok_girl",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   332,
-   512
-  ],
-  "hanging": false,
-  "skin": "hanbok_girl",
-  "parts": {},
-  "cycle": "run_back",
-  "frame": 1
- },
- {
-  "id": "cast_tiger_dg_cycle_0",
-  "path": "art/cast/cast_tiger_dg_cycle_0.webp",
-  "sheet": "cast_sm_tiger_sneak",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "dg_cycle_0",
-  "pose": "dg_cycle_0",
-  "view": "side",
-  "facing": "right",
-  "label": "dg_cycle frame 0 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   318,
-   515
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "dg_cycle",
-  "frame": 0
- },
- {
-  "id": "cast_tiger_dg_cycle_1",
-  "path": "art/cast/cast_tiger_dg_cycle_1.webp",
-  "sheet": "cast_sm_tiger_sneak",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "dg_cycle_1",
-  "pose": "dg_cycle_1",
-  "view": "side",
-  "facing": "right",
-  "label": "dg_cycle frame 1 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   318,
-   515
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "dg_cycle",
-  "frame": 1
- },
- {
-  "id": "cast_tiger_dg_cycle_2",
-  "path": "art/cast/cast_tiger_dg_cycle_2.webp",
-  "sheet": "cast_sm_tiger_sneak",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "dg_cycle_2",
-  "pose": "dg_cycle_2",
-  "view": "side",
-  "facing": "right",
-  "label": "dg_cycle frame 2 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   318,
-   515
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "dg_cycle",
-  "frame": 2
- },
- {
-  "id": "cast_tiger_dg_cycle_3",
-  "path": "art/cast/cast_tiger_dg_cycle_3.webp",
-  "sheet": "cast_sm_tiger_sneak",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "dg_cycle_3",
-  "pose": "dg_cycle_3",
-  "view": "side",
-  "facing": "right",
-  "label": "dg_cycle frame 3 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   318,
-   515
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "dg_cycle",
-  "frame": 3
- },
- {
-  "id": "cast_tiger_dg_front_0",
-  "path": "art/cast/cast_tiger_dg_front_0.webp",
-  "sheet": "cast_sm_tiger_sneak",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "dg_front_0",
-  "pose": "dg_front_0",
-  "view": "front",
-  "facing": "front",
-  "label": "dg_front frame 0 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   318,
-   515
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "dg_front",
-  "frame": 0
- },
- {
-  "id": "cast_tiger_dg_front_1",
-  "path": "art/cast/cast_tiger_dg_front_1.webp",
-  "sheet": "cast_sm_tiger_sneak",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "dg_front_1",
-  "pose": "dg_front_1",
-  "view": "front",
-  "facing": "front",
-  "label": "dg_front frame 1 (drawn cycle)",
-  "height_units": 0.427,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "sunmoon",
-   "cycle"
-  ],
-  "px": [
-   318,
-   515
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {},
-  "cycle": "dg_front",
   "frame": 1
  }
 ]
