@@ -1794,3 +1794,18 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     and 3 put the camera inside ridge cards for several seconds; the sky ending is the bare template with the discs
     (needs its cloud floor); 7:12 is over the 6.5 min target; the paw and the eye at the door have no art yet; sm.*
     sounds to make.
+
+## 2026-11-22 — felt → paper, part A test (user: "펠트 질감 싫은뎅", "다 종이로 변경 기존 동화도요")
+  - Engine: paper is the default for every tale: `ground_style` defaults to "paper" (GroundLayers / MeadowWorld /
+    SpreadStage; "felt" opt-in only). The stream shader is layered cut paper now (three torn sheet steps with a lit
+    rim and a contact shade, cut cream ripple slivers with their own shadow, fibre grain, a soft varnish sheen).
+  - Library redraw tooling: tools/art/paper_jobs.py (67 jobs: 16 shared atlas sheets, 38 card-kit sheets, 13 tale
+    story sheets; felt raw = reference, PIECE FOR PIECE, stitches banned) and tools/art/paper_swap.py (maps each new
+    piece onto the old card id by box overlap, keeps <sheet>_felt.png, rebuilds atlas_clean, QA sheet felt | paper).
+    Layout lock: catalogs keep the felt px / aspect (tools/art/card_aspect_lock.json for the card kit) — the first
+    swap changed hill aspects by ~1 % and the template re-dressed the whole sun_wind page; with the lock every spread
+    lays out exactly as before (checked on sun_wind sky and three_pigs straw_build).
+  - Test sheets swapped: atlas hills_clouds (27), card kit sh_hills_far, sh2_hills_layer_a, sh_trees_mixed,
+    sh2_bush_flower_b, sh3_bushes_c, sh_bushes (25 cards). Test card: artifacts/paper/paper_test_card_A.jpg.
+  - Note: the back hills are mostly hidden by haze and tree rows in the three finished tales; the visible felt is the
+    trees / bushes / flowers / props and the cast.

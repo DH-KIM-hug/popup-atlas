@@ -23,7 +23,7 @@ signal built
 @export var walk := true
 @export var with_audio := true
 @export var theme := ""  ## dressing theme (CardLibrary): "" western meadow village, "korean" Joseon countryside (sunmoon)
-@export var ground_style := ""  ## "" felt (default), "paper": matte cut-paper ground sheets (GroundLayers.ground_style)
+@export var ground_style := "paper"  ## "paper" (default, 2026-11-22) matte cut-paper ground sheets; "felt" the old felt (GroundLayers.ground_style)
 
 ## road fraction, cam elevation, yaw, distance, fov
 ## r2: closer lens (distance ~7.3) so the traveller is the focal point, not a 20 px smudge.

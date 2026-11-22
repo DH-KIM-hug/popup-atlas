@@ -55,6 +55,10 @@ MAX_H, MAX_W = 640, 1024
 MAX_W_HILL = 2048
 
 
+_LOCK = os.path.join(os.path.dirname(os.path.abspath(__file__)), "card_aspect_lock.json")
+ASPECT_LOCK = json.load(open(_LOCK)) if os.path.exists(_LOCK) else {}
+
+
 def main():
     m = dict(MAP)
     if os.path.exists(EXTRA):
@@ -80,8 +84,11 @@ def main():
         # Only rewrite changed files: rewriting triggers a Godot reimport that can race other runs.
         if not os.path.exists(out) or open(out, "rb").read() != buf.getvalue():
             open(out, "wb").write(buf.getvalue())
+        # felt -> paper (2026-11-22): the layout aspect stays the felt card's (tools/art/card_aspect_lock.json), so the
+        # template places every card exactly where it stood (a 1 % aspect change cascaded through the placement)
+        asp = ASPECT_LOCK.get(src, round(im.width / im.height, 3))
         cat.append({"id": cid, "path": f"res://art/cards/{category}/{cid}.webp", "category": category,
-                    "height_units": h, "cross_slot": cross, "aspect": round(im.width / im.height, 3), "src": src})
+                    "height_units": h, "cross_slot": cross, "aspect": asp, "src": src})
     json.dump(cat, open(f"{DST}/catalog.json", "w"), indent=1)
     # contact sheet of the whole kit
     cols, cw, th = 8, 200, 170

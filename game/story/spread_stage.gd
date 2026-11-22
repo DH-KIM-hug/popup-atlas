@@ -135,7 +135,7 @@ func build_async(seed_v: int, view_i: int, with_audio: bool, budget_ms: float) -
 	world.seed_value = seed_v
 	world.view = view_i
 	world.theme = str(tale.get("theme", ""))  # sunmoon: "korean" dressing of the template (2026-11-22)
-	world.ground_style = str(tale.get("ground_style", ""))  # sunmoon: "paper" ground sheets instead of felt
+	world.ground_style = str(tale.get("ground_style", "paper"))  # paper ground for every tale (2026-11-22); "felt" opt-in
 	world.fixed_step = false  # the runner owns the global fixed step
 	world.pop_on_load = true
 	world.walk = false

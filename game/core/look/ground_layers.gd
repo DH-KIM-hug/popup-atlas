@@ -41,9 +41,10 @@ const HILL_T := 0.06
 @export var hill_colors: PackedColorArray = PackedColorArray([Color("6e8a66"), Color("8aa276"), Color("a3b384"), Color("b8bf8e")])
 ## Large low-frequency value mottling of the felt (±value), the "not one flat fill" fix.
 @export var felt_mottle_strength := 0.95
-## "" = felt (default, every tale so far); "paper" = matte cut-paper sheets (sunmoon 2026-11-22, user: "펠트 질감
-## 싫은뎅"): the ground shader's `paper` mode and dark cut-line edges instead of cream felt lips.
-@export var ground_style := ""
+## "paper" (default since 2026-11-22, user: "펠트 질감 싫은뎅", "다 종이로 변경 기존 동화도요") = matte cut-paper sheets:
+## the ground shader's `paper` mode and dark cut-line edges instead of cream felt lips. "felt" = the old felt look
+## (opt-in only, for before/after cards). "" counts as paper.
+@export var ground_style := "paper"
 
 var _path_line := PackedVector2Array()
 var _stream_line := PackedVector2Array()
@@ -369,6 +370,8 @@ func _add_stream_strip(line: PackedVector2Array, hw: float, y: float) -> void:
 	var m := ShaderMaterial.new()
 	m.shader = STREAM_SHADER
 	m.set_shader_parameter("felt_tex", FELT_TEX)
+	m.set_shader_parameter("fibre_tex", FIBRE)
+	m.set_shader_parameter("width_world", hw * 2.0)
 	mi.material_override = m
 	mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 	add_child(mi)
@@ -685,7 +688,7 @@ func _ground_mat(base: Color, mottle: Color, mottle_strength: float, speckle: fl
 	m.set_shader_parameter("mottle_strength", mottle_strength)
 	m.set_shader_parameter("felt_tex", FELT_TEX)
 	m.set_shader_parameter("speckle", speckle)
-	if ground_style == "paper":
+	if ground_style != "felt":
 		m.set_shader_parameter("paper", 1.0)
 	return m
 
@@ -695,7 +698,7 @@ func _edge_mat(c: Color) -> ShaderMaterial:
 	m.shader = EDGE_SHADER
 	m.set_shader_parameter("edge_color", c)
 	m.set_shader_parameter("fibre_tex", FIBRE)
-	if ground_style == "paper":  # a cut paper edge: a dark line (the lit side catches the key on its own), no cream lip
+	if ground_style != "felt":  # a cut paper edge: a dark line (the lit side catches the key on its own), no cream lip
 		m.set_shader_parameter("edge_color", c.darkened(0.42).lerp(Color("5a4630"), 0.25))
 		m.set_shader_parameter("brightness", 1.0)
 	return m

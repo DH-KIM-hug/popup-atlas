@@ -69,7 +69,8 @@ def label(mask):
     return lab, n
 
 
-def split(rgba, sheet):
+def split(rgba, sheet, boxes=None):
+    """boxes: optional list; gets each card's (x0, y0, x1, y1) crop box in the raw sheet (tools/art/paper_swap.py)"""
     H, W = rgba.shape[:2]
     S = 4
     small = Image.fromarray(rgba[..., 3]).resize((W // S, H // S), Image.BOX)
@@ -96,6 +97,8 @@ def split(rgba, sheet):
         yA, yB, xA, xB = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
         pad = 6
         crop = c[max(0, yA - pad):yB, max(0, xA - pad):min(W, xB + pad)]   # no pad under the hinge edge
+        if boxes is not None:
+            boxes.append((int(max(0, xA - pad)), int(max(0, yA - pad)), int(min(W, xB + pad)), int(yB)))
         outs.append(Image.fromarray(crop, "RGBA"))
     return outs
 

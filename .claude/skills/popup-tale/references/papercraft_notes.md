@@ -38,6 +38,13 @@ Source: github.com/xikhar/papercraft (MIT), an agent skill for pop-up papercraft
   fine paper-fibre grain, a dark cut line plus a lighter rim on the lit side, matte. Prompts name the material as cut
   paper and ban felt, wool, fuzz, stitches and dashed seams explicitly; prove the look on one test card (scenery + a
   character, final light and lens, next to the old look) before redrawing a cast.
+- Paper is the engine default (2026-11-22): `ground_style` defaults to "paper" (ground, verges, road, stream banks);
+  "felt" is opt-in for before/after cards only. The stream shader is layered cut paper (torn sheet steps, cut cream
+  ripple slivers, fibre grain, a soft varnish sheen).
+- Library redraw: `tools/art/paper_jobs.py` (felt raw = reference, PIECE FOR PIECE) → `tools/art/paper_swap.py
+  atlas|cards <sheet>` maps each new piece onto the old card id by position (the slicer numbers by rows, so never by
+  index), keeps `<sheet>_felt.png`, rebuilds atlas_clean, and writes a felt-vs-paper QA sheet
+  (`art_src/<atlas|cards>/qa/<sheet>_felt_vs_paper.png`) to look at before committing.
 
 ## Building a world
 - **Houses read from front, side and back.** Any piece the camera sees at an angle needs a body: side walls, roof slopes and a back. Build each part as a T of cards (a front card with a profile card behind) so it holds up at a diagonal.
