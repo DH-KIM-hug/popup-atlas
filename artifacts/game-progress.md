@@ -1897,3 +1897,15 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     missing_audio=[] missing_sound=[], CHECK_LINES OK x4.
   - Slip: shelf.gd briefly used PackedStringArray.filter (a parse error in the main scene, so runs without a scene
     failed for a few minutes); fixed with Array(args).filter.
+
+## 2026-11-22 — the pop-up rides the page (user: "근데 뒤집혀있다 일어서는 이유가 뭐지?" -> option 1)
+  - Opening and every in-book page turn: pieces rise while the sheet turns, each timed to the moment the fold line
+    uncovers it on screen (start 0.38 s before; the first ones under the full cover), so the new page is seen standing;
+    nothing rises after the page lands. pop_in:false pages stand at once.
+  - In-book turns are live on both sides (story_runner._turn_live): the old page folds piece by piece as the sheet's
+    back reaches it, the next page (its prebuild SubViewport, drawn by PageTurn right of the fold) pops as it is
+    uncovered; the swap happens in one frame (PageTurn.finish_now). Ending: the same live turn onto the book's title
+    page (the CoverBook rendered hidden). The old flat-lying fold hold and the after-the-turn wave are gone.
+  - 8 fps tiles: artifacts/cover/v4/*.jpg (openings ×4, endings ×4, in-book turns sun_wind / three_pigs / sunmoon).
+  - Regression (no movie): sun_wind 214.2 s, three_pigs 310.6 s, witch_candy 443.7 s, sunmoon 401.9 s — STORY_DONE
+    missing_audio=[] missing_sound=[], CHECK_LINES OK ×4.

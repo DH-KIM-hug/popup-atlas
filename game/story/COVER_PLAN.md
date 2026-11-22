@@ -118,3 +118,14 @@ game/story/shelf.tscn (now the project's main scene): the four closed books (Boo
 lifting in turn; tap a book → it slides to the middle, the others slide aside, the camera glides to the cover framing,
 the tale's scene loads and its cover opens at once (no prompt). Any command-line user args (--tale, --beat,
 --autoplay, --agent-args) pass straight to the story scene, so recordings and probes are unchanged.
+
+# POP-UP TIED TO THE PAGE (user 2026-11-22: "근데 뒤집혀있다 일어서는 이유가 뭐지?" -> option 1, a real pop-up)
+- Opening (cover -> first page, and every page turn inside a tale): the pieces rise WHILE the sheet turns. A piece at
+  screen x is uncovered when the fold line (right -> left) passes it; it starts rising RISE_LEAD (0.38 s) before that
+  (the first pieces start under the full cover, TURN_LEAD 0.4 s before the sheet moves), so it stands by the time it is
+  seen; nothing rises after the page lands. pop_in:false pages stand at once.
+- Page turns inside a tale are live on both sides (story_runner._turn_live): the old page stays the live view and its
+  pieces fold down as the sheet's back reaches them (FOLD_LEAD 0.5 s ahead), the next page (its prebuild SubViewport,
+  drawn by PageTurn right of the fold) pops up as it is uncovered; the two swap in one frame as the sheet leaves.
+- Ending: the same live turn onto the book's title page (CoverBook rendered hidden, its texture under the sheet).
+- PageTurn.reveal(new_tex, old_tex=null), finish_now(). TURN_S 1.3 s.

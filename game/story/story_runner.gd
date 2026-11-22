@@ -1271,27 +1271,23 @@ func _ending_book() -> void:
 	await _wait(1.5)
 	# 2. curtain call
 	await _curtain_call()
-	# 3. fold: the pop-up folds down in a wave, the camera rises (stage.fold goes wide)
+	# 3. the page closes: the pieces fold down as the sheet lifts over them, the title page comes round under it
 	ui.show_page_title("")
-	stage.fold()
-	var t := _quick_fold(FOLD_WAVE_S)  # the stage's own wave is paced for a page turn mid-story: ~8-12 s here
-	_squash_unhinged(t * 0.5)
-	await _wait(t * 0.7)
-	var guard := 0.0
-	while not _all_flat() and guard < 4.0:  # everything lies flat before the page turns (3 fps tiles per tale)
-		guard += await _frame()
-	await _wait(0.3)
-	var tex := await _snapshot()
-	ui.page_turn.cover(tex)
-	ui.show_end_book(str(data.get("title", "")))
+	ui.show_end_book(str(data.get("title", "")), true)  # built hidden: its live view is the page under the sheet
 	await _frame()
-	ui.page_turn.turn(1.1)
+	_fold_by_turn(stage, stage.camera(), TURN_S, TURN_LEAD)
+	_squash_unhinged(TURN_LEAD * 0.5)
+	await _wait(TURN_LEAD)
+	ui.page_turn.reveal(ui.book_texture())
+	ui.page_turn.turn(TURN_S)
 	if sound:
 		sound.step("page_turn")
 		sound.set_bed(null)  # out of the world: only a quiet room tone at the table
 		sound.loop_start("amb.room_fire", "table", 1.5, -16.0)
-	while ui.page_turn.is_turning():
+	while ui.page_turn.is_turning() and ui.page_turn.progress < 0.985:
 		await _frame()
+	ui.show_book()  # the same frame the sheet goes: the book (already drawn under the sheet) takes over
+	ui.page_turn.finish_now()
 	await _wait(0.3)
 	ui.close_book(0.42)
 	await _wait(1.75)  # the board lands shut at 0.5 + 1.25 s
@@ -1308,40 +1304,16 @@ func _ending_book() -> void:
 	await _wait(0.6)
 
 
-const FOLD_WAVE_S := 1.7  ## ending: the outside-in fold wave starts over this long (each piece folds ~0.6 s)
-
-
-## Re-time the fold stage.fold() just started: every visible hinge folds outside-in within `span` seconds (the
-## pieces nearest the page centre last), the cast lies down with the last of them. Returns the last start delay.
-func _quick_fold(span: float) -> float:
-	var hs: Array = []
-	for h in _page_hinges():
-		if (h as PopHinge).is_visible_in_tree():
-			hs.append(h)
-	if hs.is_empty():
-		return 0.5
-	var c := Vector3.ZERO
-	for h: PopHinge in hs:
-		c += h.global_position
-	c /= hs.size()
-	var maxd := 0.001
-	for h: PopHinge in hs:
-		maxd = maxf(maxd, Vector2(h.global_position.x - c.x, h.global_position.z - c.z).length())
-	for h: PopHinge in hs:
-		var d := Vector2(h.global_position.x - c.x, h.global_position.z - c.z).length()
-		h.fold_down((1.0 - d / maxd) * span + randf() * 0.12)
-	for role in stage.actors:
-		(stage.actors[role] as StoryActor).pop_delay = span * 0.8
-	stage.trav_delay = span * 0.8
-	return span
-
-
 func _page_hinges() -> Array:
+	return _page_hinges_of(stage)
+
+
+func _page_hinges_of(st: SpreadStage) -> Array:
 	var all: Array = []
-	all.append_array(stage.world.hinges)
-	all.append_array(stage.extra_hinges)
-	for k in stage.sets:
-		all.append_array((stage.sets[k] as SetPiece).all_hinges())
+	all.append_array(st.world.hinges)
+	all.append_array(st.extra_hinges)
+	for k in st.sets:
+		all.append_array((st.sets[k] as SetPiece).all_hinges())
 	return all.filter(func(h): return is_instance_valid(h))
 
 
@@ -1478,6 +1450,12 @@ func _enter_spread(b: Dictionary) -> void:
 	ui.show_page_title("")
 	ui.hide_flashes()
 	ui.hide_choices()
+	# 2026-11-22 (user: "근데 뒤집혀있다 일어서는 이유가 뭐지?" -> a real pop-up tied to the page): the pieces stand up
+	# WHILE the page opens and fold down WHILE it closes, each timed to the moment the turning sheet uncovers / covers
+	# it on screen; no frame shows a page lying flat or half-popped at rest.
+	if had and not pre.is_empty():
+		await _turn_live(b, key, pre)
+		return
 	if had:
 		var t := stage.fold()
 		await _wait(t + 0.9)
@@ -1498,13 +1476,7 @@ func _enter_spread(b: Dictionary) -> void:
 		while not ps.is_built:  # normally done long ago; otherwise it keeps slicing under the cover
 			await _frame()
 		var t_move := Time.get_ticks_usec()
-		var vp: SubViewport = pre["vp"]
-		vp.remove_child(ps)
-		ps.name = "Spread_" + str(b["id"])
-		add_child(ps)
-		vp.queue_free()
-		_prebuilt.erase(key)
-		stage = ps
+		_adopt_prebuilt(ps, pre["vp"], key, b)
 		print("PERF spread_prebuilt ", key, " frames=", ps.build_frames, " max_slice_ms=", snappedf(ps.max_slice_ms, 0.1),
 			" phases=", ps.perf_phases, " move_ms=", snappedf((Time.get_ticks_usec() - t_move) / 1000.0, 0.1))
 	else:
@@ -1525,17 +1497,139 @@ func _enter_spread(b: Dictionary) -> void:
 	await _frame()
 	await _frame()
 	var wave_t := 0.0
-	# r2: the new page lies flat under the turning sheet and pops up once it lands, so the rise is seen (critic 3).
 	if tex:
-		ui.page_turn.turn(1.1)
+		# the page rises as the sheet turns: each piece starts so that it stands by the time the fold uncovers it
+		wave_t = _pop_by_turn(stage, stage.camera(), TURN_S, TURN_LEAD)
+		await _wait(TURN_LEAD)
+		ui.page_turn.turn(TURN_S)
 		if sound and not cover_shown:
 			sound.step("page_turn")
 		while ui.page_turn.is_turning():
 			await _frame()
-	wave_t = stage.pop(0.0)
+	else:
+		wave_t = stage.pop(0.0)
 	ui.show_page_title(str(b.get("title", "")))
 	_prebuild_after(beats.find(b))
-	await _wait(clampf(wave_t * 0.6, 0.9, 1.8))
+	await _wait(clampf(wave_t * 0.6, 0.9, 1.8) if not tex else 0.9)
+
+
+## Move a prebuilt page out of its waiting SubViewport onto the main stage.
+func _adopt_prebuilt(ps: SpreadStage, vp: SubViewport, key: String, b: Dictionary) -> void:
+	vp.remove_child(ps)
+	ps.name = "Spread_" + str(b["id"])
+	add_child(ps)
+	vp.queue_free()
+	_prebuilt.erase(key)
+	stage = ps
+
+
+## A page turn in the middle of a tale with both pages live: the old page (main view) folds down under the lifting
+## sheet, the next page (its prebuild SubViewport, shown right of the fold) pops up as it is uncovered.
+func _turn_live(b: Dictionary, key: String, pre: Dictionary) -> void:
+	var ps: SpreadStage = pre["stage"]
+	var vp: SubViewport = pre["vp"]
+	while not ps.is_built:
+		await _frame()
+	vp.process_mode = Node.PROCESS_MODE_INHERIT
+	vp.render_target_update_mode = SubViewport.UPDATE_ALWAYS
+	ps.set_pose(_pose, true)
+	ps.preset_open(b)
+	await _frame()
+	_fold_by_turn(stage, stage.camera(), TURN_S, TURN_LEAD)
+	_squash_unhinged(TURN_LEAD * 0.5)
+	var wave_t := _pop_by_turn(ps, ps.camera(), TURN_S, TURN_LEAD)
+	await _wait(TURN_LEAD)
+	ui.page_turn.reveal(vp.get_texture())
+	ui.page_turn.turn(TURN_S)
+	if sound:
+		sound.step("page_turn")
+	while ui.page_turn.is_turning() and ui.page_turn.progress < 0.985:
+		await _frame()
+	# swap in one frame: the next page leaves its SubViewport for the main view as the sheet is lifted away
+	stage.queue_free()
+	stage = null
+	_adopt_prebuilt(ps, vp, key, b)
+	ui.page_turn.finish_now()
+	_spread_key = key
+	await _frame()
+	ui.show_page_title(str(b.get("title", "")))
+	_prebuild_after(beats.find(b))
+	await _wait(clampf(wave_t * 0.3, 0.6, 0.9))
+
+
+const TURN_S := 1.3  ## page turn duration when the pop / fold rides on it
+const TURN_LEAD := 0.4  ## pieces start this long before the sheet starts moving (under the full cover)
+const RISE_LEAD := 0.38  ## a piece starts rising this long before the fold uncovers it (it stands when seen)
+const FOLD_LEAD := 0.5  ## a piece starts folding this long before the sheet's back covers it
+
+
+## Time into a PageTurn of `dur` s when its progress reaches p (PageTurn.step's easing, inverted numerically).
+static func _turn_time(p: float, dur: float) -> float:
+	p = clampf(p, 0.0, 1.0)
+	var lo := 0.0
+	var hi := 1.0
+	for it in 18:
+		var u := (lo + hi) * 0.5
+		var e := u * u * (3.0 - 2.0 * u)
+		if lerpf(e, u, 0.25) < p:
+			lo = u
+		else:
+			hi = u
+	return lo * dur
+
+
+static func _sx(cam: Camera3D, p: Vector3, w: float) -> float:
+	if cam == null or cam.is_position_behind(p):
+		return w * 0.5
+	return clampf(cam.unproject_position(p).x / w, 0.0, 1.0)
+
+
+## Pop a page in step with the page turn about to start (TURN_LEAD from now, `dur` long): a piece at screen x is
+## uncovered when the fold line (right -> left) passes it; it starts RISE_LEAD before that. pop_in:false pages stand
+## at once (stage.pop snaps them). Returns the last start.
+func _pop_by_turn(st: SpreadStage, cam: Camera3D, dur: float, lead: float) -> float:
+	st.pop(0.0)
+	if not st.tale.get("pop_in", true):
+		return 0.5
+	var w := float(st.get_viewport().get_visible_rect().size.x)
+	var last := 0.0
+	var hs: Array = st.world.hinges.duplicate()
+	for k in st.sets:
+		hs.append_array((st.sets[k] as SetPiece).wave_hinges())
+	for h: PopHinge in hs:
+		var x := _sx(cam, h.global_position, w)
+		var d := maxf(0.0, lead + _turn_time(1.0 - x, dur) - RISE_LEAD + randf() * 0.04)
+		h.pop_up(d)
+		last = maxf(last, d)
+	for role in st.actors:
+		var a: StoryActor = st.actors[role]
+		if a.has_meta("in_page"):
+			a.pop_delay = maxf(0.0, lead + _turn_time(1.0 - _sx(cam, a.global_position, w), dur) - 0.2)
+	st.trav_delay = lead + _turn_time(0.5, dur) - 0.3
+	return last
+
+
+## Fold a page in step with the page turn about to start: a piece at screen x is covered by the sheet's back when
+## its edge (2f - W) passes x, i.e. at progress (1 - x) / 2; it starts FOLD_LEAD before that. The camera holds its
+## shot (stage.fold() would glide to the wide).
+func _fold_by_turn(st: SpreadStage, cam: Camera3D, dur: float, lead: float) -> void:
+	var keep := st.shot
+	st.fold()
+	st.shot_to(keep)
+	var w := float(st.get_viewport().get_visible_rect().size.x)
+	for h in _page_hinges_of(st):
+		var ph := h as PopHinge
+		if not ph.is_visible_in_tree():
+			continue
+		var x := _sx(cam, ph.global_position, w)
+		ph.fold_down(maxf(0.0, lead + _turn_time((1.0 - x) * 0.5, dur) - FOLD_LEAD))
+	for role in st.actors:
+		var a: StoryActor = st.actors[role]
+		a.pop_delay = maxf(0.0, lead + _turn_time((1.0 - _sx(cam, a.global_position, w)) * 0.5, dur) - 0.4)
+		a.pop_target = 0.02
+	st.trav_delay = 0.0
+	if st.world and st.world.walker and st.world.walker.visible:
+		st.trav_delay = maxf(0.0, lead + _turn_time((1.0 - _sx(cam, st.traveller_pos(), w)) * 0.5, dur) - 0.4)
 
 
 # ------------------------------------------------------------------ perf: spread prebuild

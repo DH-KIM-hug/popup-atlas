@@ -214,7 +214,7 @@ func has_book() -> bool:
 
 ## The end: the same book lies open on its title page (under a page turn from the folded last spread), then closes.
 ## Returns false when the tale has no book config (the old end card only).
-func show_end_book(title: String) -> bool:
+func show_end_book(title: String, hidden := false) -> bool:
 	if _cover_cfg.is_empty():
 		return false
 	if _book:
@@ -224,8 +224,16 @@ func show_end_book(title: String) -> bool:
 	_cover.add_child(_book)
 	_book.build(_cover_cfg, title)
 	_book.set_open()
-	_cover.visible = true
+	_cover.visible = not hidden  # hidden: the page turn draws its live view right of the fold until it lands
 	return true
+
+
+func book_texture() -> Texture2D:
+	return _book.vp.get_texture() if _book else null
+
+
+func show_book() -> void:
+	_cover.visible = _book != null
 
 
 func close_book(shift := 0.0) -> void:
@@ -519,7 +527,7 @@ func step(dt: float) -> void:
 	for r in _ripples:
 		r[1] += dt
 	_ripples = _ripples.filter(func(r): return r[1] < 0.6)
-	if _cover.visible and _book:
+	if _book:
 		_book.step(dt)
 	if _tab_t >= 0.0:
 		_tab_t += dt
