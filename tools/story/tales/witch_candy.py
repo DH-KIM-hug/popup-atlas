@@ -255,7 +255,7 @@ STREET = {"shop": SHOP, "door": _door, "est": [0.1, -1.2], "street_focus": [0.2,
           "door_view": _rot(SHOP, SHOP_DOOR_X, 0.45, SHOP_YAW), "cat_door": _rot(SHOP, SHOP_DOOR_X + 0.22, 0.45, SHOP_YAW)}
 # inside the shop, in the shop's frame (the facade plane at dz 0, the room 1.0 deep behind it)
 for _k, (_dx, _dz) in {"in_back": (0.0, -0.97), "in_shelf": (-0.35, -0.9), "in_pot": (0.22, -0.62),
-                       "in_counter": (0.47, -0.92), "in_focus": (0.13, -0.66), "in_beam": (0.0, -0.5),
+                       "in_counter": (0.47, -0.92), "in_focus": (0.2, -0.66), "in_beam": (0.0, -0.5),
                        "in_kid": (-0.05, -0.55), "in_witch": (0.5, -0.58), "in_cat": (0.36, -0.4),
                        "in_rabbit": (0.1, -0.88), "in_bear": (0.42, -0.86), "in_fox": (0.6, -0.84),
                        "in_floor": (0.0, -0.02), "in_floor2": (0.0, -0.52),
