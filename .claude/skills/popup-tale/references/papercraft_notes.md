@@ -1,6 +1,6 @@
 # Notes adopted from xikhar/papercraft (2026-11-21)
 
-Source: github.com/xikhar/papercraft (MIT), an agent skill for pop-up papercraft scenes. The user pointed us to it. Below are only the parts that fit this app. Our look stays the one the user chose (photographed miniature, felt ground, night skies when the story needs them), so its bans on felt, sky and horizon do NOT apply here.
+Source: github.com/xikhar/papercraft (MIT), an agent skill for pop-up papercraft scenes. The user pointed us to it. Below are only the parts that fit this app. Our look stays the one the user chose (photographed miniature, night skies when the story needs them), so its bans on sky and horizon do NOT apply here. Its felt ban DOES apply: the user dislikes the felt ground (2026-11-22); build grounds as paper.
 
 ## Process
 - **Write a paper spec before building a new set or spread.** Put it in PLAN.md, one line per field:
@@ -32,6 +32,12 @@ Source: github.com/xikhar/papercraft (MIT), an agent skill for pop-up papercraft
   - Stair rise is at most about 1/8 of character height per step, and the run is about 0.3 H.
   - Treads overlap the next surface by at least about 0.03 H, so feet never drop between them.
 - Keep a walk field (a height per ground cell), where the highest surface wins. Actors take their y from it, so climbing steps and thresholds just works instead of being hand-keyed per door.
+
+## Material (user 2026-11-22: "펠트 질감 싫은뎅", "다시 그려보자")
+- **No felt anywhere: ground, set cards and characters are paper; no stitch lines.** Layered cut / torn paper sheets,
+  fine paper-fibre grain, a dark cut line plus a lighter rim on the lit side, matte. Prompts name the material as cut
+  paper and ban felt, wool, fuzz, stitches and dashed seams explicitly; prove the look on one test card (scenery + a
+  character, final light and lens, next to the old look) before redrawing a cast.
 
 ## Building a world
 - **Houses read from front, side and back.** Any piece the camera sees at an angle needs a body: side walls, roof slopes and a back. Build each part as a T of cards (a front card with a profile card behind) so it holds up at a diagonal.

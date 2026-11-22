@@ -119,6 +119,15 @@ the back door (the room is shown only by gliding the camera through the closed f
 and the front never opens); the tiger is hidden behind his rock / cairn / ledge until he steps out; the rope comes
 only after the prayer; the rich house props, the oil and the axe notches only when used.
 
+## Paper look (user 2026-11-22: "펠트 질감 싫은뎅", "다시 그려보자")
+No felt anywhere: the ground (`ground_style: "paper"`), every set card and every character are matte cut paper, no
+stitch lines. Test card first: `artifacts/sunmoon/paper_test_card.png` (pass-1 road, final light and lens: felt left of
+the road, paper right; 1:1 crops; the raw pieces). Scenery: all eight story_sm_* sheets redrawn piece for piece from
+their felt sheets with the PAPER style block (tools/art/sunmoon_jobs.py, jobs `<sheet>_paper`; felt raws kept as
+`<sheet>_felt.png`), same card ids (the village sheet's steam now merges two wisps: ids shifted by one, table updated).
+Characters: three paper test figures (`cast_<role>_paper_calm`: mother, tiger, sister); the full cast redraw
+(81 figures + 50 cycle frames) waits for the user's OK on the character look.
+
 ## Cast (all SHARED, `game/art/cast/`, skin names generic for reuse)
 
 Every walk and run is a drawn cycle (side 4 facing right, flipped for leftward travel; back 2; front 2), advanced by
@@ -153,7 +162,7 @@ Line → expression map: `LINE_META` in the seed table (copied into script.json 
 - Reused from the shared library through the korean theme: korean_village / korean_nature houses, pines, persimmon
   trees, jars, magpie, bamboo, stone lanterns, rice paddies (template dressing).
 
-## Lines (script.json: 65 used — 63 reuse 톡톡 recordings, 2 new)
+## Lines (script.json: 65 used — 63 reuse 톡톡 recordings, 2 new, recorded)
 - Read-mode lines reused as is: r0100, r0103, r0204, r0300–r0302, r0304, r0400, r0402, r0404, r0500, r0502, r0503,
   r0506, r0507, r0602, r0606, r0609, r0701, r0705, r0706, r0803, r0806, r0808, r0813, r0816, r0901–r0903, r0907,
   r0908, r1001, r1004–r1007, r1101, r1104, r1106, r1107.
@@ -173,8 +182,9 @@ Line → expression map: `LINE_META` in the seed table (copied into script.json 
   r1105, **r1108 (the moral)**.
 - Cut from the play script: every quiz, plate choice, counting line (133–142), "떡 n개" rounds 3–10, the voice and
   hand quizzes, the two-rope choice.
-- **New, needs recording with the narrator voice (Huelyn) — ask the user first; caption placeholders until then
-  (`status: pending`):**
+- **New lines, approved by the user 2026-11-22 ("네네네") and recorded** with the narrator voice (eleven_v4,
+  tools/story/record_lines.py; recorded.json). audit_clips: normal speech rate, no repeat; -16.5 / -16.4 LUFS against
+  the reused narrator's -17.1:
 
 | id | text | chars (with spaces) |
 |---|---|---|
@@ -227,8 +237,8 @@ inside the front wall; the room needed the wall's inside face and an ondol floor
 ## Open / risks
 - Glides between passes cut through ridge cards (OCCLUDE ridge_2_l on the pass-3 approach): phase 2 tracks the mother
   along the road through the gaps (waypoints) or hides set-piece cards on the camera path like meadow cards.
-- The pop-up ridge / rock cards were generated with a felt print ("matte felt and cardstock"); on the paper ground they
-  still read woolly up close. If the user wants paper everywhere, regenerate the scenery prompts as matte paper.
+- (done 2026-11-22) The scenery cards are redrawn as paper. The stream still uses its own shader (woolly blue in
+  close shots): give it a paper mode too.
 - A faint pink key fringe on one ridge card's edge (seen in the tour at close range): re-key / erode that card.
 - The cottage body: the back gable card shows its blank back above the thatch; the back wall uses a wall strip, not
   the back-door card (story_sm_cottage_05) the escape needs.

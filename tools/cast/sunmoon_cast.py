@@ -112,6 +112,10 @@ SHEETS = {
                         (1, SKY, "moon_girl", "front", "the moon with the sister's face", 1),
                         (2, SKY, "sun_girl", "front", "the sun with the sister's face, beaming", 1),
                         (3, SKY, "moon_boy", "front", "the moon with the brother's face, gentle", 1)],
+    # 2026-11-22 paper look test (user: "펠트 질감 싫은뎅"): the same designs as cut paper, no stitching
+    "cast_sm_paper_mom": [(0, MOM, "paper_calm", "front", "PAPER look test: calm, full basket", 1)],
+    "cast_sm_paper_tiger": [(0, TIG, "paper_calm", "front", "PAPER look test: standing upright, sly grin", 1)],
+    "cast_sm_paper_girl": [(0, GIRL, "paper_calm", "front", "PAPER look test: calm", 1)],
 }
 CYCLES = {
     "cast_sm_boy_walk": (BOY, ["walk_cycle:4:side", "walk_back:2:back", "walk_front:2:front"]),

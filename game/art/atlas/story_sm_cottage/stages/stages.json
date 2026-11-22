@@ -4,11 +4,11 @@
    {
     "file": "art/atlas/story_sm_cottage/stages/story_sm_cottage_00_b0.webp",
     "y0": 205,
-    "y1": 497,
+    "y1": 494,
     "img_y0": 205,
-    "img_y1": 497,
+    "img_y1": 494,
     "hinge_units": 0.0,
-    "height_units": 0.5627,
+    "height_units": 0.5603,
     "roof": false
    },
    {
@@ -16,18 +16,18 @@
     "y0": 4,
     "y1": 205,
     "img_y0": 4,
-    "img_y1": 240,
-    "hinge_units": 0.5627,
-    "height_units": 0.3873,
+    "img_y1": 239,
+    "hinge_units": 0.5603,
+    "height_units": 0.3897,
     "roof": true
    }
   ],
   "height_units": 0.95,
   "px": [
-   730,
-   500
+   729,
+   498
   ],
-  "base_y": 497,
+  "base_y": 494,
   "roof_y": 205,
   "door": {
    "file": "art/atlas/story_sm_cottage/stages/story_sm_cottage_00_door.webp",
@@ -45,15 +45,15 @@
   "gable": {
    "eave_l": [
     4,
-    184
+    180
    ],
    "eave_r": [
-    725,
-    184
+    724,
+    180
    ],
    "ridge": [
     333.0,
-    8
+    5
    ]
   }
  }

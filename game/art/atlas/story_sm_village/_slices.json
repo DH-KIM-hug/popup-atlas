@@ -1,24 +1,24 @@
 {
  "sheet": "story_sm_village",
  "bg": [
-  0.988,
-  0.012,
-  0.984
+  0.98,
+  0.02,
+  0.98
  ],
  "dropped": 0,
  "sprites": [
   {
    "id": "story_sm_village_00",
    "bbox": [
-    1330,
-    28,
-    1369,
-    109
+    1272,
+    66,
+    1312,
+    138
    ],
-   "area": 1828,
+   "area": 1507,
    "size": [
-    47,
-    89
+    48,
+    80
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "story_sm_village_01",
    "bbox": [
-    41,
-    35,
-    809,
-    438
+    1328,
+    29,
+    1370,
+    112
    ],
-   "area": 250567,
+   "area": 1855,
    "size": [
-    776,
-    411
+    50,
+    91
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "story_sm_village_02",
    "bbox": [
-    822,
-    125,
-    1180,
-    438
+    40,
+    33,
+    810,
+    439
    ],
-   "area": 83670,
+   "area": 251641,
    "size": [
-    366,
-    321
+    778,
+    414
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,49 +61,49 @@
   {
    "id": "story_sm_village_03",
    "bbox": [
-    1222,
-    28,
-    1473,
-    437
+    822,
+    123,
+    1180,
+    440
    ],
-   "area": 56730,
+   "area": 84541,
    "size": [
-    259,
-    417
-   ],
-   "halo": 0,
-   "touches_border": false,
-   "parts": 3
-  },
-  {
-   "id": "story_sm_village_04",
-   "bbox": [
-    48,
-    503,
-    482,
-    731
-   ],
-   "area": 76194,
-   "size": [
-    442,
-    236
+    366,
+    325
    ],
    "halo": 0,
    "touches_border": false,
    "parts": 1
   },
   {
+   "id": "story_sm_village_04",
+   "bbox": [
+    1223,
+    29,
+    1474,
+    440
+   ],
+   "area": 56370,
+   "size": [
+    259,
+    419
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 2
+  },
+  {
    "id": "story_sm_village_05",
    "bbox": [
-    555,
-    473,
-    970,
-    734
+    46,
+    501,
+    480,
+    731
    ],
-   "area": 86812,
+   "area": 76443,
    "size": [
-    423,
-    269
+    442,
+    238
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,15 +112,15 @@
   {
    "id": "story_sm_village_06",
    "bbox": [
-    1066,
-    490,
-    1463,
-    734
+    554,
+    473,
+    972,
+    737
    ],
-   "area": 83866,
+   "area": 87634,
    "size": [
-    405,
-    252
+    426,
+    272
    ],
    "halo": 0,
    "touches_border": false,
@@ -129,15 +129,15 @@
   {
    "id": "story_sm_village_07",
    "bbox": [
-    327,
-    803,
-    575,
-    980
+    1067,
+    490,
+    1464,
+    735
    ],
-   "area": 36436,
+   "area": 83768,
    "size": [
-    256,
-    185
+    405,
+    253
    ],
    "halo": 0,
    "touches_border": false,
@@ -146,15 +146,32 @@
   {
    "id": "story_sm_village_08",
    "bbox": [
+    326,
+    801,
+    574,
+    983
+   ],
+   "area": 36921,
+   "size": [
+    256,
+    190
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_sm_village_09",
+   "bbox": [
     751,
-    769,
+    767,
     1184,
     1000
    ],
-   "area": 84867,
+   "area": 85942,
    "size": [
     441,
-    239
+    241
    ],
    "halo": 0,
    "touches_border": false,

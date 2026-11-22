@@ -1,0 +1,28 @@
+{
+ "sheet": "cast_sm_paper_mom",
+ "bg": [
+  0.988,
+  0.016,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_paper_mom_00",
+   "bbox": [
+    101,
+    104,
+    824,
+    1596
+   ],
+   "area": 717611,
+   "size": [
+    731,
+    1500
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

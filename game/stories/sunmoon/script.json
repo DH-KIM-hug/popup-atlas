@@ -11112,7 +11112,7 @@
    "id": "sm_n01",
    "speaker": "nar",
    "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "cover",
    "interaction": "cover",
    "used": true,
@@ -11122,19 +11122,18 @@
      "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
      "emotion": null,
      "tags": "[warm, inviting, storytelling, once upon a time]",
-     "audio": "",
+     "audio": "res://audio/voice/sunmoon/nar_afc7903730.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
-   "new": true,
-   "status_note": "new line: record after the user's OK (caption placeholder)"
+   "new": true
   },
   {
    "id": "sm_n02",
    "speaker": "nar",
    "text": "또 보고 싶으면 '다시 보기'를 톡!",
-   "status": "pending",
+   "status": "changed-recorded",
    "beat": "sky",
    "interaction": "end",
    "used": true,
@@ -11144,13 +11143,12 @@
      "text": "또 보고 싶으면 '다시 보기'를 톡!",
      "emotion": null,
      "tags": "[warm, cheerful, inviting]",
-     "audio": "",
+     "audio": "res://audio/voice/sunmoon/nar_9141d9ca27.mp3",
      "source_audio": "",
-     "status": "changed-needs-recording"
+     "status": "changed-recorded"
     }
    ],
-   "new": true,
-   "status_note": "new line: record after the user's OK (caption placeholder)"
+   "new": true
   }
  ]
 }

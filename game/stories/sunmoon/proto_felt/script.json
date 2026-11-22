@@ -226,6 +226,20 @@
    0.3,
    24.0,
    0.0
+  ],
+  "tc_wide": [
+   4.4,
+   13.0,
+   0.32,
+   30.0,
+   0.0
+  ],
+  "tc_close": [
+   2.3,
+   6.0,
+   0.2,
+   30.0,
+   0.0
   ]
  },
  "cast": {
@@ -248,6 +262,18 @@
   "rich": {
    "kind": "actor",
    "skin": "rich_lady"
+  },
+  "mom_p": {
+   "kind": "actor",
+   "skin": "hanbok_mom"
+  },
+  "tiger_p": {
+   "kind": "actor",
+   "skin": "tiger"
+  },
+  "girl_p": {
+   "kind": "actor",
+   "skin": "hanbok_girl"
   }
  },
  "ui": {
@@ -3039,6 +3065,467 @@
      "at": "pass_1",
      "rate": 9.0,
      "wait": 5.0
+    }
+   ]
+  },
+  {
+   "id": "papertest",
+   "title": "종이 시험 카드",
+   "spread": {
+    "seed": 1,
+    "view": 4,
+    "place": "papertest",
+    "light": "late",
+    "spots": {
+     "rich_road": [
+      -0.197,
+      5.291
+     ],
+     "rich_house": [
+      1.125,
+      5.462
+     ],
+     "rich_yard": [
+      0.393,
+      5.512
+     ],
+     "stove": [
+      0.632,
+      5.996
+     ],
+     "siru": [
+      0.287,
+      6.002
+     ],
+     "basin": [
+      0.906,
+      6.127
+     ],
+     "mom_work": [
+      0.438,
+      5.837
+     ],
+     "rich_at": [
+      0.758,
+      5.617
+     ],
+     "tray_at": [
+      0.58,
+      5.617
+     ],
+     "pass_1": [
+      -0.331,
+      0.883
+     ],
+     "pass_1_in": [
+      -0.382,
+      1.805
+     ],
+     "pass_1_out": [
+      -0.012,
+      0.038
+     ],
+     "ridge_1_l": [
+      -2.228,
+      -0.025
+     ],
+     "ridge_1_r": [
+      1.753,
+      1.013
+     ],
+     "hide_1": [
+      0.344,
+      0.869
+     ],
+     "tiger_1": [
+      -0.082,
+      0.434
+     ],
+     "mom_1": [
+      -0.479,
+      1.101
+     ],
+     "grass_1": [
+      -1.104,
+      1.181
+     ],
+     "pass_2": [
+      0.527,
+      -1.316
+     ],
+     "pass_2_in": [
+      0.317,
+      -0.44
+     ],
+     "pass_2_out": [
+      0.36,
+      -2.3
+     ],
+     "ridge_2_l": [
+      -1.451,
+      -2.247
+     ],
+     "ridge_2_r": [
+      2.47,
+      -1.227
+     ],
+     "hide_2": [
+      -0.112,
+      -1.707
+     ],
+     "tiger_2": [
+      0.372,
+      -1.88
+     ],
+     "mom_2": [
+      0.627,
+      -1.027
+     ],
+     "grass_2": [
+      1.238,
+      -0.592
+     ],
+     "pass_3": [
+      -0.267,
+      -3.832
+     ],
+     "pass_3_in": [
+      0.139,
+      -2.779
+     ],
+     "pass_3_out": [
+      -0.68,
+      -4.887
+     ],
+     "ridge_3_l": [
+      -3.106,
+      -5.426
+     ],
+     "ridge_3_r": [
+      2.166,
+      -3.29
+     ],
+     "hide_3": [
+      0.279,
+      -3.884
+     ],
+     "tiger_3": [
+      -0.374,
+      -4.383
+     ],
+     "mom_3": [
+      -0.275,
+      -3.574
+     ],
+     "grass_3": [
+      -0.775,
+      -3.458
+     ],
+     "saddle": [
+      -3.462,
+      -6.465
+     ],
+     "far_ridge": [
+      3.335,
+      -4.412
+     ],
+     "est": [
+      -0.368,
+      1.184
+     ],
+     "mid": [
+      0.525,
+      -1.264
+     ],
+     "tc": [
+      -0.383,
+      1.648
+     ],
+     "tc_fr": [
+      -1.333,
+      1.098
+     ],
+     "tc_pr": [
+      0.567,
+      1.098
+     ],
+     "tc_fb": [
+      -1.003,
+      1.548
+     ],
+     "tc_pb": [
+      0.237,
+      1.548
+     ],
+     "tc_fm": [
+      -1.333,
+      1.698
+     ],
+     "tc_pm": [
+      0.567,
+      1.698
+     ],
+     "tc_fmom": [
+      -0.883,
+      1.998
+     ],
+     "tc_ftig": [
+      -1.163,
+      1.898
+     ],
+     "tc_fgirl": [
+      -0.643,
+      2.068
+     ],
+     "tc_pmom": [
+      0.117,
+      1.998
+     ],
+     "tc_ptig": [
+      0.397,
+      1.898
+     ],
+     "tc_pgirl": [
+      -0.123,
+      2.068
+     ],
+     "tc_chars": [
+      -0.383,
+      2.008
+     ]
+    },
+    "set": [
+     {
+      "card": "story_sm_village_01",
+      "at": "rich_house",
+      "stage": "full",
+      "name": "rich_house",
+      "scale": 1.0,
+      "clear": 1.2,
+      "yaw": -55.0
+     },
+     {
+      "card": "story_sm_village_02",
+      "at": "stove",
+      "stage": 0,
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -40.0
+     },
+     {
+      "card": "story_sm_village_03",
+      "at": "siru",
+      "stage": 0,
+      "name": "siru",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_village_08",
+      "at": "basin",
+      "stage": 0,
+      "name": "basin",
+      "scale": 1.0,
+      "clear": 0.6,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_1_l",
+      "stage": "full",
+      "name": "ridge_1_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_1_r",
+      "stage": "full",
+      "name": "ridge_1_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_04",
+      "at": "hide_1",
+      "stage": "full",
+      "name": "boulder_1",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_1",
+      "stage": "full",
+      "name": "grass_1",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_2_l",
+      "stage": "full",
+      "name": "ridge_2_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_00",
+      "at": "ridge_2_r",
+      "stage": "full",
+      "name": "ridge_2_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_05",
+      "at": "hide_2",
+      "stage": "full",
+      "name": "cairn_2",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_07",
+      "at": "grass_2",
+      "stage": "full",
+      "name": "grass_2",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "ridge_3_l",
+      "stage": "full",
+      "name": "ridge_3_l",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "ridge_3_r",
+      "stage": "full",
+      "name": "ridge_3_r",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_sm_mountain_08",
+      "at": "hide_3",
+      "stage": "full",
+      "name": "ledge_3",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_06",
+      "at": "grass_3",
+      "stage": "full",
+      "name": "grass_3",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_02",
+      "at": "saddle",
+      "stage": "full",
+      "name": "saddle",
+      "scale": 1.3,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_03",
+      "at": "far_ridge",
+      "stage": "full",
+      "name": "far_ridge",
+      "scale": 1.2,
+      "clear": 0.4
+     },
+     {
+      "card": "story_sm_mountain_01",
+      "at": "tc_fr",
+      "stage": "full",
+      "name": "tc_fr",
+      "scale": 0.36,
+      "clear": 0.3
+     },
+     {
+      "card": "story_sm_paper_test_00",
+      "at": "tc_pr",
+      "stage": "full",
+      "name": "tc_pr",
+      "scale": 0.36,
+      "clear": 0.3
+     },
+     {
+      "card": "story_sm_mountain_04",
+      "at": "tc_fb",
+      "stage": "full",
+      "name": "tc_fb",
+      "scale": 0.6,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_paper_test_01",
+      "at": "tc_pb",
+      "stage": "full",
+      "name": "tc_pb",
+      "scale": 0.6,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_mountain_07",
+      "at": "tc_fm",
+      "stage": "full",
+      "name": "tc_fm",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_sm_paper_test_02",
+      "at": "tc_pm",
+      "stage": "full",
+      "name": "tc_pm",
+      "scale": 1.0,
+      "clear": 0.2
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "mom": "calm",
+     "tiger": "calm",
+     "girl": "calm",
+     "mom_p": "paper_calm",
+     "tiger_p": "paper_calm",
+     "girl_p": "paper_calm"
+    },
+    "at": {
+     "mom": "tc_fmom",
+     "tiger": "tc_ftig",
+     "girl": "tc_fgirl",
+     "mom_p": "tc_pmom",
+     "tiger_p": "tc_ptig",
+     "girl_p": "tc_pgirl"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "tc_wide",
+     "at": "tc",
+     "rate": 9.0,
+     "wait": 4.0
+    },
+    {
+     "do": "cam",
+     "shot": "tc_close",
+     "at": "tc_chars",
+     "rate": 1.6,
+     "wait": 4.0
     }
    ]
   }

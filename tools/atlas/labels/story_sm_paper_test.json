@@ -1,0 +1,49 @@
+{
+ "biome": "korean_countryside",
+ "season": "autumn",
+ "tags": [
+  "sunmoon",
+  "story",
+  "korean_traditional",
+  "paper",
+  "test"
+ ],
+ "items": {
+  "00": [
+   "PAPER test: layered mountain ridge (cut / torn paper, pines)",
+   "story_nature",
+   1.2,
+   0,
+   {
+    "tags": [
+     "mountain",
+     "ridge"
+    ]
+   }
+  ],
+  "01": [
+   "PAPER test: big round boulder (layered grey paper)",
+   "story_nature",
+   0.5,
+   0,
+   {
+    "tags": [
+     "rock",
+     "boulder"
+    ]
+   }
+  ],
+  "02": [
+   "PAPER test: red-orange maple bush (cut paper leaves)",
+   "story_nature",
+   0.26,
+   0,
+   {
+    "tags": [
+     "bush",
+     "maple"
+    ]
+   }
+  ]
+ }
+}

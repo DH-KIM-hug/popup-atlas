@@ -9,6 +9,12 @@ How to look:
 - Full-res crops of every window, door and tap moment.
 - `tools/story/check_lines.py` on the autoplay log.
 
+## Look: is it paper?
+- [ ] **No felt anywhere** ("펠트 질감 싫은뎅", 2026-11-22): the ground, every set card and every character are matte cut
+  paper (layered sheets, fine fibre grain, a dark cut line with a lighter lit-side rim); no wool fuzz, no fabric texture,
+  no dashed stitch lines on hems, aprons, ridges or clouds. Tale `ground_style: "paper"`; art prompts use the PAPER
+  style block (tools/art/sunmoon_jobs.py), never "felt" or "stitched". Check a 1:1 crop of ground, a set card and a face.
+
 ## Story logic: does it make sense?
 - [ ] **No teaching.** No quizzes, counting, tallies or morals ("교육적인 요소보다는 동화의 전달"). Taps drive the story, about 3 per moment ("벽돌을 10번이나 누를 이유가 있냐").
 - [ ] **Characters are where the story says.** People at home are inside the house, peeking from the windows, when the threat comes ("돼지들 집에 있어야하지 않겠니?").

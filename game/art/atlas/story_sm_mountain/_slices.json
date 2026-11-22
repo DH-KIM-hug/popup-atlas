@@ -1,9 +1,9 @@
 {
  "sheet": "story_sm_mountain",
  "bg": [
-  0.988,
-  0.008,
-  0.984
+  0.98,
+  0.016,
+  0.98
  ],
  "dropped": 0,
  "sprites": [
@@ -11,14 +11,14 @@
    "id": "story_sm_mountain_00",
    "bbox": [
     39,
-    61,
+    57,
     736,
-    327
+    328
    ],
-   "area": 126270,
+   "area": 127323,
    "size": [
     705,
-    274
+    279
    ],
    "halo": 0,
    "touches_border": false,
@@ -28,14 +28,14 @@
    "id": "story_sm_mountain_01",
    "bbox": [
     790,
-    92,
-    1494,
-    327
+    90,
+    1493,
+    328
    ],
-   "area": 117849,
+   "area": 118275,
    "size": [
-    712,
-    243
+    711,
+    246
    ],
    "halo": 0,
    "touches_border": false,
@@ -45,14 +45,14 @@
    "id": "story_sm_mountain_02",
    "bbox": [
     29,
-    374,
+    372,
     746,
-    612
+    613
    ],
-   "area": 112076,
+   "area": 113257,
    "size": [
     725,
-    246
+    249
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "story_sm_mountain_03",
    "bbox": [
-    791,
-    367,
+    789,
+    364,
     1503,
-    611
+    613
    ],
-   "area": 115967,
+   "area": 117141,
    "size": [
-    720,
-    252
+    722,
+    257
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "story_sm_mountain_04",
    "bbox": [
-    18,
-    712,
+    17,
+    711,
     278,
-    966
+    967
    ],
-   "area": 53947,
+   "area": 53806,
    "size": [
-    268,
-    262
+    269,
+    264
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "story_sm_mountain_05",
    "bbox": [
-    507,
-    654,
+    506,
+    651,
     768,
-    966
+    967
    ],
-   "area": 44971,
+   "area": 46182,
    "size": [
-    269,
-    320
+    270,
+    324
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,15 +112,15 @@
   {
    "id": "story_sm_mountain_06",
    "bbox": [
-    761,
-    738,
+    759,
+    735,
     973,
-    966
+    967
    ],
-   "area": 25685,
+   "area": 26911,
    "size": [
-    220,
-    236
+    222,
+    240
    ],
    "halo": 0,
    "touches_border": false,
@@ -130,16 +130,16 @@
    "id": "story_sm_mountain_07",
    "bbox": [
     983,
-    761,
-    1223,
-    966
+    759,
+    1226,
+    968
    ],
-   "area": 30214,
+   "area": 31537,
    "size": [
-    248,
-    213
+    251,
+    217
    ],
-   "halo": 1,
+   "halo": 0,
    "touches_border": false,
    "parts": 1
   },
@@ -147,31 +147,31 @@
    "id": "story_sm_mountain_08",
    "bbox": [
     1222,
-    660,
+    658,
     1519,
-    966
+    969
    ],
-   "area": 44993,
+   "area": 45267,
    "size": [
     305,
-    314
+    319
    ],
-   "halo": 5,
+   "halo": 0,
    "touches_border": false,
    "parts": 1
   },
   {
    "id": "story_sm_mountain_09",
    "bbox": [
-    290,
-    830,
+    289,
+    829,
     485,
-    966
+    968
    ],
-   "area": 18839,
+   "area": 18987,
    "size": [
-    203,
-    144
+    204,
+    147
    ],
    "halo": 0,
    "touches_border": false,

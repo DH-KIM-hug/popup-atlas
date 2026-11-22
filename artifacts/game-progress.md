@@ -1734,3 +1734,18 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     a faint pink key fringe on one ridge edge; the thatch body's back gable shows a blank card back; the cottage back
     uses a wall strip, not the back-door card; stepping stones too small; the door step rises are 23–30 % of a child's
     height (needs open treads); sky page not prototyped; nothing is wired (handler fx, enter.hidden, hanger poses).
+
+## 2026-11-22 — sunmoon: paper look (user: "펠트 질감 싫은뎅", "다시 그려보자 네네네"), new lines recorded
+  - Recorded (approved) sm_n01 "그림책을 톡 눌러서 펼쳐 볼까요?" and sm_n02 "또 보고 싶으면 '다시 보기'를 톡!" with the sunmoon
+    narrator (eleven_v4, record_lines.py, 114 chars incl. tags); audit_clips clean, -16.5 / -16.4 LUFS (reused narrator
+    -17.1). missing recordings: none.
+  - Paper test card (pass-1 road, late light, final lens): artifacts/sunmoon/paper_test_card.png — felt left of the
+    road, paper right (ridge, boulder, maple, mother, tiger, sister), 1:1 crops, the raw pieces. PAPER style block in
+    tools/art/sunmoon_jobs.py (layered cut / torn paper, fibre grain, dark cut line + lit rim; bans felt, wool, fuzz,
+    stitches, dashed seams). Skill: checklist "Look: is it paper?" and papercraft_notes "Material".
+  - Scenery redrawn as paper piece for piece (all eight story_sm_* sheets, felt raws kept as *_felt.png); card ids kept
+    (village relabelled: two steam wisps merge into the steamer, ids +1, table updated); cottage bands / door / body
+    rebuilt (same measurements). Tour on the paper scenery: artifacts/sunmoon/sunmoon_set_tour_p3.mp4.
+  - Characters: three paper test figures only (cast_<role>_paper_calm); the full cast redraw (81 + 50) waits for the
+    user's OK on the character look.
+  - Regression after the paper ground + scenery: three_pigs 296.3 s CHECK_LINES OK, VOICE_DUP=0 (sun_wind 207.0 s OK earlier; witch_candy not re-run: its voice files are mid-swap in the main session).

@@ -336,6 +336,57 @@ JOBS.append({"id": "story_sm_cottage_in", "kind": "bg", "refs": [RAW_A + "story_
              "straight on from above; (3) a small low wooden table (soban) with one round lid bowl."})
 
 
+# ---------------------------------------------------------------- 2026-11-22 PAPER look (user: "펠트 질감 싫은뎅", "다시 그려보자")
+# No felt anywhere: ground, set cards and characters are matte cut paper; no wool fuzz, no stitch lines. Test card
+# first (one ridge + one rock + one bush; the mother, the tiger and the sister calm), then the full redraw after OK.
+PAPER = ("STYLE (same for every piece): flat orthographic view, a die-cut pop-up book piece made of MATTE CUT PAPER and "
+         "thin cardstock: every colour area is a separate cut or torn sheet of coloured paper glued in layers (a lighter "
+         "or darker paper layer on top for shading and detail), crisp cut edges or softly torn deckled edges, each layer "
+         "edge with a thin darker cut line and a faint lighter rim on its upper-left (lit) side, fine paper-fibre grain "
+         "like Korean hanji / mulberry paper, matte, no gloss. ABSOLUTELY NO felt, NO wool, NO fuzz, NO fabric or "
+         "knitted texture, NO stitches, NO dashed stitch lines, NO sewing seams, NO embroidery. Details are small cut "
+         "paper shapes or a printed line, never stitching. Warm Korean folk-tale picture book for ages 3-7. " + COLOUR)
+PAPER_CHAR = PAPER + ("Characters keep EXACTLY the reference design (face, hair, clothes, colours, proportions); only the "
+                      "material changes from felt to cut paper: hanbok panels as cut paper pieces, trims and ribbons as "
+                      "thin paper strips, fur stripes as cut paper shapes, faces simple and sweet. ")
+JOBS.append({"id": "story_sm_paper_test", "kind": "bg", "refs": [RAW_A + "story_sm_mountain.png"],
+             "aspect": "landscape, any size the tool returns is fine (save it as-is)",
+             "out": RAW_A + "story_sm_paper_test.png",
+             "prompt": "A PROP SHEET for a children's pop-up storybook: THREE separate die-cut stand-up pieces, every "
+             "piece standing on a flat bottom edge (the hinge), " + BG + PAPER + "The reference shows the same pieces in an "
+             "older FELT look: keep their shapes and colours but make them PAPER. (1) a big layered MOUNTAIN RIDGE card: "
+             "two or three overlapping peaks, each peak a separate layer of jade green / blue-green / slate-blue paper "
+             "with torn top edges, a few fan-shaped pine clusters cut from dark green paper on the slopes, thin "
+             "lighter-paper ridge lines (no dashes, no stitching); (2) a big round grey BOULDER cut from layered grey "
+             "papers with a few moss-green paper flecks and a darker paper crack; (3) a red-orange autumn MAPLE bush cut "
+             "from several layers of red, orange and rust paper leaves."})
+for _role, _who, _pose in (("mom", MOM, "standing calmly, a calm gentle smile, holding the round straw basket of rice "
+                            "cakes in both hands in front of her apron"),
+                           ("tiger", TIGER, "standing upright on his hind legs, front paws resting on his round belly, "
+                            "tail curling out to one side without closing the leg gap, a sly little grin"),
+                           ("girl", GIRL, "standing calmly, arms relaxed a little away from the body, a sweet calm "
+                            "smile")):
+    JOBS.append({"id": f"cast_sm_paper_{_role}", "kind": "bg", "refs": REF(_role), "aspect": "portrait or square, any size the tool returns is fine (save it as-is)",
+                 "out": RAW_C + f"cast_sm_paper_{_role}.png",
+                 "prompt": "A CHARACTER CARD for a children's pop-up storybook: ONE full-body die-cut stand-up figure, "
+                 "centred, feet on a horizontal baseline near the bottom, " + BG + PAPER_CHAR + _who + FACE + LEGS +
+                 REF_LINE + "FRONT figure facing the viewer: " + _pose + "."})
+
+# the scenery redraw in paper (after the test card read as paper): every set sheet redrawn PIECE FOR PIECE from its felt
+# sheet (same layout, count, positions, shapes, colours), so the labels and card ids carry over; felt raws kept
+for _sh in ["story_sm_mountain", "story_sm_tree", "story_sm_field", "story_sm_sky", "story_sm_yard", "story_sm_village",
+            "story_sm_cottage", "story_sm_cottage_in"]:
+    JOBS.append({"id": _sh + "_paper", "kind": "bg", "refs": [RAW_A + _sh + ".png"],
+                 "aspect": "the SAME size and orientation as the reference image (save it as-is)",
+                 "out": RAW_A + _sh + "_paper.png",
+                 "prompt": "REDRAW the reference prop sheet for a children's pop-up storybook PIECE FOR PIECE: the SAME "
+                 "number of pieces in the SAME positions, the same shapes, silhouettes, proportions and colours, the "
+                 "same objects; ONLY the material changes: " + BG + PAPER + "Buildings and objects keep their own "
+                 "material read in paper form (thatch as layered cut straw-paper strips, plaster as cream paper, wood "
+                 "grain as cut brown paper strips, lattice as thin cut paper bars, stone as grey paper pieces, rope as "
+                 "twisted paper cord); clouds as layered cut paper with NO dashed lines; plants as cut paper leaves."})
+
+
 if __name__ == "__main__":
     out = os.path.join(HERE, "sunmoon_jobs.json")
     json.dump(JOBS, open(out, "w"), ensure_ascii=False, indent=1)

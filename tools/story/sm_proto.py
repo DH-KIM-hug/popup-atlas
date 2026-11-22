@@ -12,6 +12,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import tales.sunmoon as T
 
 CAST = {r: {"kind": "actor", "skin": c["skin"]} for r, c in T.CAST.items() if c["kind"] == "actor"}
+CAST["girl"] = {"kind": "actor", "skin": "hanbok_girl"}
 
 
 def cams(*shots):
@@ -50,6 +51,34 @@ out = {"tale_id": "sunmoon_proto", "title": "해님 달님 (prototype)", "backdr
        "pop_in": False, "inside_framing": "manual", "spacing": True, "overlap_check": True,
        "overlap_ok": T.EXTRA["overlap_ok"], "shots": T.SHOTS,
        "cast": CAST, "ui": {"speakers": {}}, "voices": {}, "beats": BEATS, "lines": []}
+# 2026-11-22 paper test card: felt originals left of the road, the paper redraws right, on the pass-1 road
+_tc = T._road_spot(-2.55)
+_sp = dict(T.ROAD_A)
+for _nm, (_dx, _dz) in {"tc": (0, 0), "tc_fr": (-0.95, -0.55), "tc_pr": (0.95, -0.55), "tc_fb": (-0.62, -0.1),
+                        "tc_pb": (0.62, -0.1), "tc_fm": (-0.95, 0.05), "tc_pm": (0.95, 0.05), "tc_fmom": (-0.5, 0.35),
+                        "tc_ftig": (-0.78, 0.25), "tc_fgirl": (-0.26, 0.42), "tc_pmom": (0.5, 0.35),
+                        "tc_ptig": (0.78, 0.25), "tc_pgirl": (0.26, 0.42), "tc_chars": (0, 0.36)}.items():
+    _sp[_nm] = [round(_tc[0] + _dx, 3), round(_tc[1] + _dz, 3)]
+_tset = list(T.SET_A) + [
+    {"card": "story_sm_mountain_01", "at": "tc_fr", "stage": "full", "name": "tc_fr", "scale": 0.36, "clear": 0.3},
+    {"card": "story_sm_paper_test_00", "at": "tc_pr", "stage": "full", "name": "tc_pr", "scale": 0.36, "clear": 0.3},
+    {"card": "story_sm_mountain_04", "at": "tc_fb", "stage": "full", "name": "tc_fb", "scale": 0.6, "clear": 0.2},
+    {"card": "story_sm_paper_test_01", "at": "tc_pb", "stage": "full", "name": "tc_pb", "scale": 0.6, "clear": 0.2},
+    {"card": "story_sm_mountain_07", "at": "tc_fm", "stage": "full", "name": "tc_fm", "scale": 1.0, "clear": 0.2},
+    {"card": "story_sm_paper_test_02", "at": "tc_pm", "stage": "full", "name": "tc_pm", "scale": 1.0, "clear": 0.2}]
+PAPER_TEST = {"id": "papertest", "title": "종이 시험 카드", "spread": T._road(light="late", spots=_sp, set=_tset,
+                                                                       place="papertest"),
+              "enter": {"who": {"mom": "calm", "tiger": "calm", "girl": "calm", "mom_p": "paper_calm",
+                                "tiger_p": "paper_calm", "girl_p": "paper_calm"},
+                        "at": {"mom": "tc_fmom", "tiger": "tc_ftig", "girl": "tc_fgirl", "mom_p": "tc_pmom",
+                               "tiger_p": "tc_ptig", "girl_p": "tc_pgirl"}},
+              "steps": cams(("tc_wide", "tc", 9.0, 4.0), ("tc_close", "tc_chars", 1.6, 4.0))}
+SHOTS_TC = {"tc_wide": [4.4, 13.0, 0.32, 30.0, 0.0], "tc_close": [2.3, 6.0, 0.2, 30.0, 0.0]}
+BEATS.append(PAPER_TEST)
+CAST.update({"mom_p": {"kind": "actor", "skin": "hanbok_mom"}, "tiger_p": {"kind": "actor", "skin": "tiger"},
+             "girl_p": {"kind": "actor", "skin": "hanbok_girl"}})
+out["cast"] = CAST
+out["shots"] = {**T.SHOTS, **SHOTS_TC}
 for sub, style in (("proto", "paper"), ("proto_felt", "")):  # proto_felt: the same sets on the felt ground (test card)
     out["ground_style"] = style
     p = os.path.join(ROOT, "game", "stories", "sunmoon", sub, "script.json")

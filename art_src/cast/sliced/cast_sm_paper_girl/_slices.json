@@ -1,0 +1,28 @@
+{
+ "sheet": "cast_sm_paper_girl",
+ "bg": [
+  0.984,
+  0.016,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_paper_girl_00",
+   "bbox": [
+    117,
+    118,
+    880,
+    1462
+   ],
+   "area": 681595,
+   "size": [
+    771,
+    1352
+   ],
+   "halo": 1609,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -12066,6 +12066,1274 @@
   ]
  },
  {
+  "id": "story_sm_paper_test_00",
+  "path": "art/atlas/story_sm_paper_test/story_sm_paper_test_00.webp",
+  "sheet": "story_sm_paper_test",
+  "category": "story_nature",
+  "label": "PAPER test: layered mountain ridge (cut / torn paper, pines)",
+  "height_units": 1.2,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "mountain",
+   "paper",
+   "ridge",
+   "story",
+   "sunmoon",
+   "test"
+  ],
+  "px": [
+   1212,
+   461
+  ]
+ },
+ {
+  "id": "story_sm_paper_test_01",
+  "path": "art/atlas/story_sm_paper_test/story_sm_paper_test_01.webp",
+  "sheet": "story_sm_paper_test",
+  "category": "story_nature",
+  "label": "PAPER test: big round boulder (layered grey paper)",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "boulder",
+   "korean_traditional",
+   "paper",
+   "rock",
+   "story",
+   "sunmoon",
+   "test"
+  ],
+  "px": [
+   475,
+   394
+  ]
+ },
+ {
+  "id": "story_sm_paper_test_02",
+  "path": "art/atlas/story_sm_paper_test/story_sm_paper_test_02.webp",
+  "sheet": "story_sm_paper_test",
+  "category": "story_nature",
+  "label": "PAPER test: red-orange maple bush (cut paper leaves)",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "bush",
+   "korean_traditional",
+   "maple",
+   "paper",
+   "story",
+   "sunmoon",
+   "test"
+  ],
+  "px": [
+   562,
+   417
+  ]
+ },
+ {
+  "id": "story_sm_mountain_00",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_00.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "layered mountain ridge (green peaks, blue peak right, pines)",
+  "height_units": 1.3,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "backdrop",
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "ridge",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   705,
+   279
+  ]
+ },
+ {
+  "id": "story_sm_mountain_01",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_01.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "layered mountain ridge (green left, blue right, pines)",
+  "height_units": 1.15,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "backdrop",
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "ridge",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   711,
+   246
+  ]
+ },
+ {
+  "id": "story_sm_mountain_02",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_02.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "mountain ridge with a saddle notch in the middle (a pass)",
+  "height_units": 1.15,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "backdrop",
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "ridge",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   725,
+   249
+  ]
+ },
+ {
+  "id": "story_sm_mountain_03",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_03.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "layered mountain ridge (blue back peaks, green front)",
+  "height_units": 1.2,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "backdrop",
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "ridge",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   722,
+   257
+  ]
+ },
+ {
+  "id": "story_sm_mountain_04",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_04.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "big round mossy boulder (hide-behind size)",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "boulder",
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "rock",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   269,
+   264
+  ]
+ },
+ {
+  "id": "story_sm_mountain_05",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_05.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "seonangdang: stone cairn with a cloth-strip tree at a pass",
+  "height_units": 0.55,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "cairn",
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "shrine",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   270,
+   324
+  ]
+ },
+ {
+  "id": "story_sm_mountain_06",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_06.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "silver pampas grass (eoksae) clump",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "grass",
+   "korean_traditional",
+   "mountain",
+   "pampas",
+   "pass",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   222,
+   240
+  ]
+ },
+ {
+  "id": "story_sm_mountain_07",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_07.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "red-orange autumn maple bush",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "autumn",
+   "bush",
+   "korean_traditional",
+   "maple",
+   "mountain",
+   "pass",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   251,
+   217
+  ]
+ },
+ {
+  "id": "story_sm_mountain_08",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_08.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "gnarled pine on a rock ledge",
+  "height_units": 0.48,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "pine",
+   "rock",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   305,
+   319
+  ]
+ },
+ {
+  "id": "story_sm_mountain_09",
+  "path": "art/atlas/story_sm_mountain/story_sm_mountain_09.webp",
+  "sheet": "story_sm_mountain",
+  "category": "story_nature",
+  "label": "three small mossy rocks",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "mountain",
+   "pass",
+   "rock",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   204,
+   147
+  ]
+ },
+ {
+  "id": "story_sm_tree_00",
+  "path": "art/atlas/story_sm_tree/story_sm_tree_00.webp",
+  "sheet": "story_sm_tree",
+  "category": "story_nature",
+  "label": "big zelkova crown alone (fork branches + leaf clumps)",
+  "height_units": 0.62,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "climb",
+   "crown",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tree"
+  ],
+  "px": [
+   600,
+   405
+  ]
+ },
+ {
+  "id": "story_sm_tree_01",
+  "path": "art/atlas/story_sm_tree/story_sm_tree_01.webp",
+  "sheet": "story_sm_tree",
+  "category": "story_nature",
+  "label": "big old zelkova tree by the well: thick climbable trunk, fork near the top, wide crown",
+  "height_units": 1.7,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "big",
+   "climb",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tree",
+   "zelkova"
+  ],
+  "px": [
+   601,
+   954
+  ]
+ },
+ {
+  "id": "story_sm_tree_02",
+  "path": "art/atlas/story_sm_tree/story_sm_tree_02.webp",
+  "sheet": "story_sm_tree",
+  "category": "story_nature",
+  "label": "big zelkova trunk alone (roots to fork)",
+  "height_units": 1.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "climb",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tree",
+   "trunk"
+  ],
+  "px": [
+   349,
+   631
+  ]
+ },
+ {
+  "id": "story_sm_tree_03",
+  "path": "art/atlas/story_sm_tree/story_sm_tree_03.webp",
+  "sheet": "story_sm_tree",
+  "category": "story_fx",
+  "label": "sesame-oil streak (glossy golden drip) for a trunk",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "climb",
+   "korean_traditional",
+   "oil",
+   "story",
+   "sunmoon",
+   "tree"
+  ],
+  "px": [
+   69,
+   303
+  ]
+ },
+ {
+  "id": "story_sm_tree_04",
+  "path": "art/atlas/story_sm_tree/story_sm_tree_04.webp",
+  "sheet": "story_sm_tree",
+  "category": "story_fx",
+  "label": "three axe notches (pale wood chips) in a column",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "axe",
+   "climb",
+   "korean_traditional",
+   "notch",
+   "story",
+   "sunmoon",
+   "tree"
+  ],
+  "px": [
+   85,
+   214
+  ]
+ },
+ {
+  "id": "story_sm_tree_05",
+  "path": "art/atlas/story_sm_tree/story_sm_tree_05.webp",
+  "sheet": "story_sm_tree",
+  "category": "story_nature",
+  "label": "stout side branch with leaves",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "branch",
+   "climb",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tree"
+  ],
+  "px": [
+   319,
+   248
+  ]
+ },
+ {
+  "id": "story_sm_field_00",
+  "path": "art/atlas/story_sm_field/story_sm_field_00.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "sorghum stalk clump (rust-red heads)",
+  "height_units": 0.55,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "crop",
+   "field",
+   "korean_traditional",
+   "sorghum",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   260,
+   463
+  ]
+ },
+ {
+  "id": "story_sm_field_01",
+  "path": "art/atlas/story_sm_field/story_sm_field_01.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "sorghum stalk clump, two heads",
+  "height_units": 0.57,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "crop",
+   "field",
+   "korean_traditional",
+   "sorghum",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   288,
+   476
+  ]
+ },
+ {
+  "id": "story_sm_field_02",
+  "path": "art/atlas/story_sm_field/story_sm_field_02.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "sorghum stalk, slim",
+  "height_units": 0.55,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "crop",
+   "field",
+   "korean_traditional",
+   "sorghum",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   244,
+   459
+  ]
+ },
+ {
+  "id": "story_sm_field_03",
+  "path": "art/atlas/story_sm_field/story_sm_field_03.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "sorghum field band (row of stalks)",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "band",
+   "crop",
+   "field",
+   "korean_traditional",
+   "sorghum",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   621,
+   289
+  ]
+ },
+ {
+  "id": "story_sm_field_04",
+  "path": "art/atlas/story_sm_field/story_sm_field_04.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "autumn wild grass with cream daisies",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "field",
+   "grass",
+   "korean_traditional",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   355,
+   315
+  ]
+ },
+ {
+  "id": "story_sm_field_05",
+  "path": "art/atlas/story_sm_field/story_sm_field_05.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "small persimmon sapling",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "field",
+   "korean_traditional",
+   "persimmon",
+   "story",
+   "sunmoon",
+   "tree"
+  ],
+  "px": [
+   307,
+   369
+  ]
+ },
+ {
+  "id": "story_sm_field_06",
+  "path": "art/atlas/story_sm_field/story_sm_field_06.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "autumn reed clump",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "field",
+   "grass",
+   "korean_traditional",
+   "reeds",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   356,
+   330
+  ]
+ },
+ {
+  "id": "story_sm_field_07",
+  "path": "art/atlas/story_sm_field/story_sm_field_07.webp",
+  "sheet": "story_sm_field",
+  "category": "story_nature",
+  "label": "dark low berry bush",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "korean_countryside",
+  "season": "autumn",
+  "tags": [
+   "bush",
+   "field",
+   "korean_traditional",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   347,
+   211
+  ]
+ },
+ {
+  "id": "story_sm_sky_00",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_00.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_fx",
+  "label": "wide cream cloud band (stitched)",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "cloud",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   730,
+   199
+  ]
+ },
+ {
+  "id": "story_sm_sky_01",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_01.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_fx",
+  "label": "plain golden sun disc with rays",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "sky",
+   "story",
+   "sun",
+   "sunmoon"
+  ],
+  "px": [
+   356,
+   354
+  ]
+ },
+ {
+  "id": "story_sm_sky_02",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_02.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_fx",
+  "label": "wide pale-lemon cloud band",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "cloud",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   723,
+   170
+  ]
+ },
+ {
+  "id": "story_sm_sky_03",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_03.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_prop",
+  "label": "the good rope: thick golden shining dongajul (vertical)",
+  "height_units": 2.0,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "good",
+   "rope",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   114,
+   939
+  ]
+ },
+ {
+  "id": "story_sm_sky_04",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_04.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_prop",
+  "label": "the old rope: thin frayed grey-brown rope (vertical)",
+  "height_units": 2.0,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "old",
+   "rope",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   110,
+   938
+  ]
+ },
+ {
+  "id": "story_sm_sky_05",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_05.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_fx",
+  "label": "plain cream full moon disc",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "moon",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   272,
+   272
+  ]
+ },
+ {
+  "id": "story_sm_sky_06",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_06.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_fx",
+  "label": "wide pale blue-grey cloud band",
+  "height_units": 0.28,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "cloud",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   718,
+   166
+  ]
+ },
+ {
+  "id": "story_sm_sky_07",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_07.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_fx",
+  "label": "puffy round cream cloud",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "cloud",
+   "sky",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   458,
+   275
+  ]
+ },
+ {
+  "id": "story_sm_sky_08",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_08.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_prop",
+  "label": "snapped frayed rope end",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "rope",
+   "sky",
+   "snapped",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   145,
+   248
+  ]
+ },
+ {
+  "id": "story_sm_sky_09",
+  "path": "art/atlas/story_sm_sky/story_sm_sky_09.webp",
+  "sheet": "story_sm_sky",
+  "category": "story_fx",
+  "label": "gold five-point star",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "autumn",
+  "tags": [
+   "sky",
+   "star",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   259,
+   247
+  ]
+ },
+ {
+  "id": "story_sm_yard_00",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_00.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "open stone well with wooden frame, rope and bucket (durebak)",
+  "height_units": 0.44,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "water",
+   "well",
+   "yard"
+  ],
+  "px": [
+   386,
+   391
+  ]
+ },
+ {
+  "id": "story_sm_yard_01",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_01.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "wooden well bucket (durebak) with rope handle",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "bucket",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "yard"
+  ],
+  "px": [
+   175,
+   265
+  ]
+ },
+ {
+  "id": "story_sm_yard_02",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_02.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "jar terrace (jangdokdae): three onggi jars on a stone platform",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "jar",
+   "korean_traditional",
+   "onggi",
+   "story",
+   "sunmoon",
+   "yard"
+  ],
+  "px": [
+   513,
+   377
+  ]
+ },
+ {
+  "id": "story_sm_yard_03",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_03.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "big brown onggi jar with lid (hide-behind size)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "jar",
+   "korean_traditional",
+   "onggi",
+   "story",
+   "sunmoon",
+   "yard"
+  ],
+  "px": [
+   278,
+   339
+  ]
+ },
+ {
+  "id": "story_sm_yard_04",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_04.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "sesame-oil bottle with straw stopper",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "bottle",
+   "korean_traditional",
+   "oil",
+   "story",
+   "sunmoon",
+   "yard"
+  ],
+  "px": [
+   160,
+   229
+  ]
+ },
+ {
+  "id": "story_sm_yard_05",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_05.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "small wood axe",
+  "height_units": 0.045,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "axe",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tool",
+   "yard"
+  ],
+  "px": [
+   389,
+   168
+  ]
+ },
+ {
+  "id": "story_sm_yard_06",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_06.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "brushwood fence section (woven twigs)",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "fence",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "yard"
+  ],
+  "px": [
+   526,
+   203
+  ]
+ },
+ {
+  "id": "story_sm_yard_07",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_07.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "bundled firewood stack",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "firewood",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "yard"
+  ],
+  "px": [
+   434,
+   226
+  ]
+ },
+ {
+  "id": "story_sm_yard_08",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_08.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "rolled straw mat",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "korean_traditional",
+   "mat",
+   "story",
+   "sunmoon",
+   "yard"
+  ],
+  "px": [
+   449,
+   184
+  ]
+ },
+ {
+  "id": "story_sm_yard_09",
+  "path": "art/atlas/story_sm_yard/story_sm_yard_09.webp",
+  "sheet": "story_sm_yard",
+  "category": "story_prop",
+  "label": "wooden A-frame carrier (jige)",
+  "height_units": 0.26,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "jige",
+   "korean_traditional",
+   "story",
+   "sunmoon",
+   "tool",
+   "yard"
+  ],
+  "px": [
+   338,
+   298
+  ]
+ },
+ {
+  "id": "story_sm_village_02",
+  "path": "art/atlas/story_sm_village/story_sm_village_02.webp",
+  "sheet": "story_sm_village",
+  "category": "story_building",
+  "label": "tile-roofed hanok gate house (big double wooden gate)",
+  "height_units": 0.85,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "facade",
+   "gate",
+   "hanok",
+   "house",
+   "kitchen",
+   "korean_traditional",
+   "rich_house",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   778,
+   414
+  ]
+ },
+ {
+  "id": "story_sm_village_03",
+  "path": "art/atlas/story_sm_village/story_sm_village_03.webp",
+  "sheet": "story_sm_village",
+  "category": "story_prop",
+  "label": "outdoor clay stove (agungi) with iron cauldron (gamasot) and fire",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "fire",
+   "kitchen",
+   "korean_traditional",
+   "rich_house",
+   "story",
+   "stove",
+   "sunmoon"
+  ],
+  "px": [
+   366,
+   325
+  ]
+ },
+ {
+  "id": "story_sm_village_04",
+  "path": "art/atlas/story_sm_village/story_sm_village_04.webp",
+  "sheet": "story_sm_village",
+  "category": "story_prop",
+  "label": "rice-cake steamer (siru) on a stand, steaming",
+  "height_units": 0.34,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "kitchen",
+   "korean_traditional",
+   "rich_house",
+   "siru",
+   "steam",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   259,
+   419
+  ]
+ },
+ {
+  "id": "story_sm_village_05",
+  "path": "art/atlas/story_sm_village/story_sm_village_05.webp",
+  "sheet": "story_sm_village",
+  "category": "story_prop",
+  "label": "round wooden tray heaped with rice cakes (tteok)",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "food",
+   "kitchen",
+   "korean_traditional",
+   "rich_house",
+   "story",
+   "sunmoon",
+   "tray",
+   "tteok"
+  ],
+  "px": [
+   442,
+   238
+  ]
+ },
+ {
+  "id": "story_sm_village_06",
+  "path": "art/atlas/story_sm_village/story_sm_village_06.webp",
+  "sheet": "story_sm_village",
+  "category": "story_prop",
+  "label": "straw basket full of rice cakes under a cloth",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "basket",
+   "food",
+   "kitchen",
+   "korean_traditional",
+   "rich_house",
+   "story",
+   "sunmoon",
+   "tteok"
+  ],
+  "px": [
+   426,
+   272
+  ]
+ },
+ {
+  "id": "story_sm_village_07",
+  "path": "art/atlas/story_sm_village/story_sm_village_07.webp",
+  "sheet": "story_sm_village",
+  "category": "story_prop",
+  "label": "round straw basket, empty",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "basket",
+   "kitchen",
+   "korean_traditional",
+   "rich_house",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   405,
+   253
+  ]
+ },
+ {
+  "id": "story_sm_village_08",
+  "path": "art/atlas/story_sm_village/story_sm_village_08.webp",
+  "sheet": "story_sm_village",
+  "category": "story_prop",
+  "label": "one round white rice cake (tteok)",
+  "height_units": 0.032,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "food",
+   "kitchen",
+   "korean_traditional",
+   "rich_house",
+   "story",
+   "sunmoon",
+   "tteok"
+  ],
+  "px": [
+   256,
+   190
+  ]
+ },
+ {
+  "id": "story_sm_village_09",
+  "path": "art/atlas/story_sm_village/story_sm_village_09.webp",
+  "sheet": "story_sm_village",
+  "category": "story_prop",
+  "label": "wooden basin of white rice",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "kitchen",
+   "korean_traditional",
+   "rice",
+   "rich_house",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   441,
+   241
+  ]
+ },
+ {
   "id": "story_sm_cottage_00",
   "path": "art/atlas/story_sm_cottage/story_sm_cottage_00.webp",
   "sheet": "story_sm_cottage",
@@ -12085,8 +13353,8 @@
    "thatched"
   ],
   "px": [
-   730,
-   500
+   729,
+   498
   ]
  },
  {
@@ -12129,7 +13397,7 @@
    "window"
   ],
   "px": [
-   204,
+   203,
    184
   ]
  },
@@ -12153,7 +13421,7 @@
   ],
   "px": [
    204,
-   185
+   184
   ]
  },
  {
@@ -12175,8 +13443,8 @@
    "wall"
   ],
   "px": [
-   329,
-   384
+   330,
+   386
   ]
  },
  {
@@ -12200,7 +13468,7 @@
   ],
   "px": [
    564,
-   385
+   386
   ]
  },
  {
@@ -12223,8 +13491,8 @@
    "wall"
   ],
   "px": [
-   360,
-   332
+   362,
+   331
   ]
  },
  {
@@ -12248,1203 +13516,7 @@
   ],
   "px": [
    149,
-   378
-  ]
- },
- {
-  "id": "story_sm_yard_00",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_00.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "open stone well with wooden frame, rope and bucket (durebak)",
-  "height_units": 0.44,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "water",
-   "well",
-   "yard"
-  ],
-  "px": [
-   388,
-   391
-  ]
- },
- {
-  "id": "story_sm_yard_01",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_01.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "wooden well bucket (durebak) with rope handle",
-  "height_units": 0.12,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "bucket",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "yard"
-  ],
-  "px": [
-   174,
-   266
-  ]
- },
- {
-  "id": "story_sm_yard_02",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_02.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "jar terrace (jangdokdae): three onggi jars on a stone platform",
-  "height_units": 0.34,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "jar",
-   "korean_traditional",
-   "onggi",
-   "story",
-   "sunmoon",
-   "yard"
-  ],
-  "px": [
-   513,
-   376
-  ]
- },
- {
-  "id": "story_sm_yard_03",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_03.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "big brown onggi jar with lid (hide-behind size)",
-  "height_units": 0.3,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "jar",
-   "korean_traditional",
-   "onggi",
-   "story",
-   "sunmoon",
-   "yard"
-  ],
-  "px": [
-   277,
-   340
-  ]
- },
- {
-  "id": "story_sm_yard_04",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_04.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "sesame-oil bottle with straw stopper",
-  "height_units": 0.07,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "bottle",
-   "korean_traditional",
-   "oil",
-   "story",
-   "sunmoon",
-   "yard"
-  ],
-  "px": [
-   157,
-   230
-  ]
- },
- {
-  "id": "story_sm_yard_05",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_05.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "small wood axe",
-  "height_units": 0.045,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "axe",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "tool",
-   "yard"
-  ],
-  "px": [
-   389,
-   166
-  ]
- },
- {
-  "id": "story_sm_yard_06",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_06.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "brushwood fence section (woven twigs)",
-  "height_units": 0.17,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "fence",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "yard"
-  ],
-  "px": [
-   524,
-   201
-  ]
- },
- {
-  "id": "story_sm_yard_07",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_07.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "bundled firewood stack",
-  "height_units": 0.15,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "firewood",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "yard"
-  ],
-  "px": [
-   432,
-   226
-  ]
- },
- {
-  "id": "story_sm_yard_08",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_08.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "rolled straw mat",
-  "height_units": 0.1,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "korean_traditional",
-   "mat",
-   "story",
-   "sunmoon",
-   "yard"
-  ],
-  "px": [
-   446,
-   181
-  ]
- },
- {
-  "id": "story_sm_yard_09",
-  "path": "art/atlas/story_sm_yard/story_sm_yard_09.webp",
-  "sheet": "story_sm_yard",
-  "category": "story_prop",
-  "label": "wooden A-frame carrier (jige)",
-  "height_units": 0.26,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "jige",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "tool",
-   "yard"
-  ],
-  "px": [
-   335,
-   299
-  ]
- },
- {
-  "id": "story_sm_tree_00",
-  "path": "art/atlas/story_sm_tree/story_sm_tree_00.webp",
-  "sheet": "story_sm_tree",
-  "category": "story_nature",
-  "label": "big zelkova crown alone (fork branches + leaf clumps)",
-  "height_units": 0.62,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "climb",
-   "crown",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "tree"
-  ],
-  "px": [
-   606,
-   404
-  ]
- },
- {
-  "id": "story_sm_tree_01",
-  "path": "art/atlas/story_sm_tree/story_sm_tree_01.webp",
-  "sheet": "story_sm_tree",
-  "category": "story_nature",
-  "label": "big old zelkova tree by the well: thick climbable trunk, fork near the top, wide crown",
-  "height_units": 1.7,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "big",
-   "climb",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "tree",
-   "zelkova"
-  ],
-  "px": [
-   603,
-   955
-  ]
- },
- {
-  "id": "story_sm_tree_02",
-  "path": "art/atlas/story_sm_tree/story_sm_tree_02.webp",
-  "sheet": "story_sm_tree",
-  "category": "story_nature",
-  "label": "big zelkova trunk alone (roots to fork)",
-  "height_units": 1.12,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "climb",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "tree",
-   "trunk"
-  ],
-  "px": [
-   349,
-   632
-  ]
- },
- {
-  "id": "story_sm_tree_03",
-  "path": "art/atlas/story_sm_tree/story_sm_tree_03.webp",
-  "sheet": "story_sm_tree",
-  "category": "story_fx",
-  "label": "sesame-oil streak (glossy golden drip) for a trunk",
-  "height_units": 0.18,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "climb",
-   "korean_traditional",
-   "oil",
-   "story",
-   "sunmoon",
-   "tree"
-  ],
-  "px": [
-   70,
-   304
-  ]
- },
- {
-  "id": "story_sm_tree_04",
-  "path": "art/atlas/story_sm_tree/story_sm_tree_04.webp",
-  "sheet": "story_sm_tree",
-  "category": "story_fx",
-  "label": "three axe notches (pale wood chips) in a column",
-  "height_units": 0.12,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "axe",
-   "climb",
-   "korean_traditional",
-   "notch",
-   "story",
-   "sunmoon",
-   "tree"
-  ],
-  "px": [
-   84,
-   213
-  ]
- },
- {
-  "id": "story_sm_tree_05",
-  "path": "art/atlas/story_sm_tree/story_sm_tree_05.webp",
-  "sheet": "story_sm_tree",
-  "category": "story_nature",
-  "label": "stout side branch with leaves",
-  "height_units": 0.25,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "branch",
-   "climb",
-   "korean_traditional",
-   "story",
-   "sunmoon",
-   "tree"
-  ],
-  "px": [
-   320,
-   248
-  ]
- },
- {
-  "id": "story_sm_mountain_00",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_00.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "layered mountain ridge (green peaks, blue peak right, pines)",
-  "height_units": 1.3,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "backdrop",
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "ridge",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   705,
-   274
-  ]
- },
- {
-  "id": "story_sm_mountain_01",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_01.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "layered mountain ridge (green left, blue right, pines)",
-  "height_units": 1.15,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "backdrop",
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "ridge",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   712,
-   243
-  ]
- },
- {
-  "id": "story_sm_mountain_02",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_02.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "mountain ridge with a saddle notch in the middle (a pass)",
-  "height_units": 1.15,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "backdrop",
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "ridge",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   725,
-   246
-  ]
- },
- {
-  "id": "story_sm_mountain_03",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_03.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "layered mountain ridge (blue back peaks, green front)",
-  "height_units": 1.2,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "backdrop",
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "ridge",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   720,
-   252
-  ]
- },
- {
-  "id": "story_sm_mountain_04",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_04.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "big round mossy boulder (hide-behind size)",
-  "height_units": 0.5,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "boulder",
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "rock",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   268,
-   262
-  ]
- },
- {
-  "id": "story_sm_mountain_05",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_05.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "seonangdang: stone cairn with a cloth-strip tree at a pass",
-  "height_units": 0.55,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "cairn",
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "shrine",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   269,
-   320
-  ]
- },
- {
-  "id": "story_sm_mountain_06",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_06.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "silver pampas grass (eoksae) clump",
-  "height_units": 0.28,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "grass",
-   "korean_traditional",
-   "mountain",
-   "pampas",
-   "pass",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   220,
-   236
-  ]
- },
- {
-  "id": "story_sm_mountain_07",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_07.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "red-orange autumn maple bush",
-  "height_units": 0.26,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "autumn",
-   "bush",
-   "korean_traditional",
-   "maple",
-   "mountain",
-   "pass",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   248,
-   213
-  ]
- },
- {
-  "id": "story_sm_mountain_08",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_08.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "gnarled pine on a rock ledge",
-  "height_units": 0.48,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "pine",
-   "rock",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   305,
-   314
-  ]
- },
- {
-  "id": "story_sm_mountain_09",
-  "path": "art/atlas/story_sm_mountain/story_sm_mountain_09.webp",
-  "sheet": "story_sm_mountain",
-  "category": "story_nature",
-  "label": "three small mossy rocks",
-  "height_units": 0.2,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "korean_traditional",
-   "mountain",
-   "pass",
-   "rock",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   203,
-   144
-  ]
- },
- {
-  "id": "story_sm_village_01",
-  "path": "art/atlas/story_sm_village/story_sm_village_01.webp",
-  "sheet": "story_sm_village",
-  "category": "story_building",
-  "label": "tile-roofed hanok gate house (big double wooden gate)",
-  "height_units": 0.85,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "facade",
-   "gate",
-   "hanok",
-   "house",
-   "kitchen",
-   "korean_traditional",
-   "rich_house",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   776,
-   411
-  ]
- },
- {
-  "id": "story_sm_village_02",
-  "path": "art/atlas/story_sm_village/story_sm_village_02.webp",
-  "sheet": "story_sm_village",
-  "category": "story_prop",
-  "label": "outdoor clay stove (agungi) with iron cauldron (gamasot) and fire",
-  "height_units": 0.32,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "fire",
-   "kitchen",
-   "korean_traditional",
-   "rich_house",
-   "story",
-   "stove",
-   "sunmoon"
-  ],
-  "px": [
-   366,
-   321
-  ]
- },
- {
-  "id": "story_sm_village_03",
-  "path": "art/atlas/story_sm_village/story_sm_village_03.webp",
-  "sheet": "story_sm_village",
-  "category": "story_prop",
-  "label": "rice-cake steamer (siru) on a stand, steaming",
-  "height_units": 0.34,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "kitchen",
-   "korean_traditional",
-   "rich_house",
-   "siru",
-   "steam",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   259,
-   417
-  ]
- },
- {
-  "id": "story_sm_village_04",
-  "path": "art/atlas/story_sm_village/story_sm_village_04.webp",
-  "sheet": "story_sm_village",
-  "category": "story_prop",
-  "label": "round wooden tray heaped with rice cakes (tteok)",
-  "height_units": 0.09,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "food",
-   "kitchen",
-   "korean_traditional",
-   "rich_house",
-   "story",
-   "sunmoon",
-   "tray",
-   "tteok"
-  ],
-  "px": [
-   442,
-   236
-  ]
- },
- {
-  "id": "story_sm_village_05",
-  "path": "art/atlas/story_sm_village/story_sm_village_05.webp",
-  "sheet": "story_sm_village",
-  "category": "story_prop",
-  "label": "straw basket full of rice cakes under a cloth",
-  "height_units": 0.12,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "basket",
-   "food",
-   "kitchen",
-   "korean_traditional",
-   "rich_house",
-   "story",
-   "sunmoon",
-   "tteok"
-  ],
-  "px": [
-   423,
-   269
-  ]
- },
- {
-  "id": "story_sm_village_06",
-  "path": "art/atlas/story_sm_village/story_sm_village_06.webp",
-  "sheet": "story_sm_village",
-  "category": "story_prop",
-  "label": "round straw basket, empty",
-  "height_units": 0.11,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "basket",
-   "kitchen",
-   "korean_traditional",
-   "rich_house",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   405,
-   252
-  ]
- },
- {
-  "id": "story_sm_village_07",
-  "path": "art/atlas/story_sm_village/story_sm_village_07.webp",
-  "sheet": "story_sm_village",
-  "category": "story_prop",
-  "label": "one round white rice cake (tteok)",
-  "height_units": 0.032,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "food",
-   "kitchen",
-   "korean_traditional",
-   "rich_house",
-   "story",
-   "sunmoon",
-   "tteok"
-  ],
-  "px": [
-   256,
-   185
-  ]
- },
- {
-  "id": "story_sm_village_08",
-  "path": "art/atlas/story_sm_village/story_sm_village_08.webp",
-  "sheet": "story_sm_village",
-  "category": "story_prop",
-  "label": "wooden basin of white rice",
-  "height_units": 0.1,
-  "cross_slot": false,
-  "biome": "korean_village",
-  "season": "autumn",
-  "tags": [
-   "kitchen",
-   "korean_traditional",
-   "rice",
-   "rich_house",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   441,
-   239
-  ]
- },
- {
-  "id": "story_sm_sky_00",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_00.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_fx",
-  "label": "wide cream cloud band (stitched)",
-  "height_units": 0.32,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "cloud",
-   "sky",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   733,
-   197
-  ]
- },
- {
-  "id": "story_sm_sky_01",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_01.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_fx",
-  "label": "plain golden sun disc with rays",
-  "height_units": 0.7,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "sky",
-   "story",
-   "sun",
-   "sunmoon"
-  ],
-  "px": [
-   356,
-   353
-  ]
- },
- {
-  "id": "story_sm_sky_02",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_02.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_fx",
-  "label": "wide pale-lemon cloud band",
-  "height_units": 0.28,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "cloud",
-   "sky",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   730,
-   168
-  ]
- },
- {
-  "id": "story_sm_sky_03",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_03.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_prop",
-  "label": "the good rope: thick golden shining dongajul (vertical)",
-  "height_units": 2.0,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "good",
-   "rope",
-   "sky",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   111,
-   936
-  ]
- },
- {
-  "id": "story_sm_sky_04",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_04.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_prop",
-  "label": "the old rope: thin frayed grey-brown rope (vertical)",
-  "height_units": 2.0,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "old",
-   "rope",
-   "sky",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   106,
-   938
-  ]
- },
- {
-  "id": "story_sm_sky_05",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_05.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_fx",
-  "label": "plain cream full moon disc",
-  "height_units": 0.6,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "moon",
-   "sky",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   268,
-   269
-  ]
- },
- {
-  "id": "story_sm_sky_06",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_06.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_fx",
-  "label": "wide pale blue-grey cloud band",
-  "height_units": 0.28,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "cloud",
-   "sky",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   718,
-   163
-  ]
- },
- {
-  "id": "story_sm_sky_07",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_07.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_fx",
-  "label": "puffy round cream cloud",
-  "height_units": 0.45,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "cloud",
-   "sky",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   455,
-   269
-  ]
- },
- {
-  "id": "story_sm_sky_08",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_08.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_prop",
-  "label": "snapped frayed rope end",
-  "height_units": 0.22,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "rope",
-   "sky",
-   "snapped",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   143,
-   246
-  ]
- },
- {
-  "id": "story_sm_sky_09",
-  "path": "art/atlas/story_sm_sky/story_sm_sky_09.webp",
-  "sheet": "story_sm_sky",
-  "category": "story_fx",
-  "label": "gold five-point star",
-  "height_units": 0.12,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "autumn",
-  "tags": [
-   "sky",
-   "star",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   260,
-   245
-  ]
- },
- {
-  "id": "story_sm_field_00",
-  "path": "art/atlas/story_sm_field/story_sm_field_00.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "sorghum stalk clump (rust-red heads)",
-  "height_units": 0.55,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "crop",
-   "field",
-   "korean_traditional",
-   "sorghum",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   261,
-   464
-  ]
- },
- {
-  "id": "story_sm_field_01",
-  "path": "art/atlas/story_sm_field/story_sm_field_01.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "sorghum stalk clump, two heads",
-  "height_units": 0.57,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "crop",
-   "field",
-   "korean_traditional",
-   "sorghum",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   292,
-   477
-  ]
- },
- {
-  "id": "story_sm_field_02",
-  "path": "art/atlas/story_sm_field/story_sm_field_02.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "sorghum stalk, slim",
-  "height_units": 0.55,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "crop",
-   "field",
-   "korean_traditional",
-   "sorghum",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   245,
-   461
-  ]
- },
- {
-  "id": "story_sm_field_03",
-  "path": "art/atlas/story_sm_field/story_sm_field_03.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "sorghum field band (row of stalks)",
-  "height_units": 0.34,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "band",
-   "crop",
-   "field",
-   "korean_traditional",
-   "sorghum",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   624,
-   285
-  ]
- },
- {
-  "id": "story_sm_field_04",
-  "path": "art/atlas/story_sm_field/story_sm_field_04.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "autumn wild grass with cream daisies",
-  "height_units": 0.22,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "field",
-   "grass",
-   "korean_traditional",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   359,
-   316
-  ]
- },
- {
-  "id": "story_sm_field_05",
-  "path": "art/atlas/story_sm_field/story_sm_field_05.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "small persimmon sapling",
-  "height_units": 0.32,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "field",
-   "korean_traditional",
-   "persimmon",
-   "story",
-   "sunmoon",
-   "tree"
-  ],
-  "px": [
-   307,
-   368
-  ]
- },
- {
-  "id": "story_sm_field_06",
-  "path": "art/atlas/story_sm_field/story_sm_field_06.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "autumn reed clump",
-  "height_units": 0.26,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "field",
-   "grass",
-   "korean_traditional",
-   "reeds",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   359,
-   329
-  ]
- },
- {
-  "id": "story_sm_field_07",
-  "path": "art/atlas/story_sm_field/story_sm_field_07.webp",
-  "sheet": "story_sm_field",
-  "category": "story_nature",
-  "label": "dark low berry bush",
-  "height_units": 0.2,
-  "cross_slot": false,
-  "biome": "korean_countryside",
-  "season": "autumn",
-  "tags": [
-   "bush",
-   "field",
-   "korean_traditional",
-   "story",
-   "sunmoon"
-  ],
-  "px": [
-   350,
-   209
+   381
   ]
  },
  {
@@ -13470,7 +13542,7 @@
   ],
   "px": [
    911,
-   489
+   488
   ]
  },
  {
@@ -13493,7 +13565,7 @@
    "sunmoon"
   ],
   "px": [
-   776,
+   778,
    336
   ]
  },
@@ -13517,7 +13589,7 @@
    "table"
   ],
   "px": [
-   330,
+   331,
    232
   ]
  }

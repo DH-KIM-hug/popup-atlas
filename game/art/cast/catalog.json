@@ -13551,5 +13551,110 @@
   "parts": {},
   "cycle": "dg_front",
   "frame": 1
+ },
+ {
+  "id": "cast_hanbok_mom_paper_calm",
+  "path": "art/cast/cast_hanbok_mom_paper_calm.webp",
+  "sheet": "cast_sm_paper_mom",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "paper_calm",
+  "pose": "paper_calm",
+  "view": "front",
+  "facing": "front",
+  "label": "PAPER look test: calm, full basket",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "woman",
+   "person",
+   "adult",
+   "mother",
+   "hanbok",
+   "korean_traditional",
+   "walker",
+   "sunmoon",
+   "paper_calm",
+   "front",
+   "paper"
+  ],
+  "px": [
+   731,
+   1500
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {}
+ },
+ {
+  "id": "cast_tiger_paper_calm",
+  "path": "art/cast/cast_tiger_paper_calm.webp",
+  "sheet": "cast_sm_paper_tiger",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "paper_calm",
+  "pose": "paper_calm",
+  "view": "front",
+  "facing": "front",
+  "label": "PAPER look test: standing upright, sly grin",
+  "height_units": 0.44,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "animal",
+   "korean_traditional",
+   "villain",
+   "walker",
+   "sunmoon",
+   "paper_calm",
+   "front",
+   "paper"
+  ],
+  "px": [
+   903,
+   1299
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {}
+ },
+ {
+  "id": "cast_hanbok_girl_paper_calm",
+  "path": "art/cast/cast_hanbok_girl_paper_calm.webp",
+  "sheet": "cast_sm_paper_girl",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "paper_calm",
+  "pose": "paper_calm",
+  "view": "front",
+  "facing": "front",
+  "label": "PAPER look test: calm",
+  "height_units": 0.235,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "girl",
+   "person",
+   "child",
+   "hanbok",
+   "korean_traditional",
+   "walker",
+   "sunmoon",
+   "paper_calm",
+   "front",
+   "paper"
+  ],
+  "px": [
+   771,
+   1352
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {}
  }
 ]

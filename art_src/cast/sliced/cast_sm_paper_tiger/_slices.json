@@ -1,0 +1,28 @@
+{
+ "sheet": "cast_sm_paper_tiger",
+ "bg": [
+  0.98,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_sm_paper_tiger_00",
+   "bbox": [
+    89,
+    89,
+    984,
+    1380
+   ],
+   "area": 772448,
+   "size": [
+    903,
+    1299
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

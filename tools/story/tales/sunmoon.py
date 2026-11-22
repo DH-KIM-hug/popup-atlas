@@ -54,8 +54,8 @@ TRIM_SEG = {"sm_r0815": {1: ("res://audio/voice/sunmoon/boy_a18c6b958e_t.mp3",
                              "audio/el/sunmoon/boy_a18c6b958e.mp3 (0-0.84 s: first take only)")}}
 DROPPED = set()
 LINE_META = {
-    "sm_n01": {"status": "pending", "status_note": "new line: record after the user's OK (caption placeholder)"},
-    "sm_n02": {"status": "pending", "status_note": "new line: record after the user's OK (caption placeholder)"},
+    # recorded 2026-11-22 after the user's OK ("네네네"): narrator voice, eleven_v4 (recorded.json)
+    "sm_n01": {}, "sm_n02": {},
     # expression per line (roles: boy, girl, mom, tiger, rich)
     "sm_r0100": {"expr": {"boy": "calm", "girl": "calm", "mom": "calm"}},
     "sm_r0103": {"expr": {"boy": "wave", "girl": "wave", "mom": "wave"}},
@@ -225,10 +225,10 @@ ROAD_A["basin"] = _road_spot(PASS["rich"] + 0.5, 1.25)
 ROAD_A["mom_work"] = _road_spot(PASS["rich"] + 0.35, 0.72)
 ROAD_A["rich_at"] = _road_spot(PASS["rich"] + 0.05, 1.0)
 ROAD_A["tray_at"] = _road_spot(PASS["rich"] + 0.1, 0.82)
-SET_A += [_e("story_sm_village_01", "rich_house", "rich_house", yaw=-55.0, clear=1.2),
-          _e("story_sm_village_02", "stove", "stove", stage=0, yaw=-40.0),
-          _e("story_sm_village_03", "siru", "siru", stage=0, yaw=-30.0),
-          _e("story_sm_village_08", "basin", "basin", stage=0, yaw=-30.0)]
+SET_A += [_e("story_sm_village_02", "rich_house", "rich_house", yaw=-55.0, clear=1.2),
+          _e("story_sm_village_03", "stove", "stove", stage=0, yaw=-40.0),
+          _e("story_sm_village_04", "siru", "siru", stage=0, yaw=-30.0),
+          _e("story_sm_village_09", "basin", "basin", stage=0, yaw=-30.0)]
 for k, pk in enumerate(["p1", "p2", "p3"], start=1):
     z = PASS[pk]
     ROAD_A[f"pass_{k}"] = _road_spot(z)
@@ -368,9 +368,9 @@ BEATS = [
      "enter": {"who": {"mom": "work", "rich": "smile"}, "at": {"mom": "mom_work", "rich": "rich_at"}},
      "steps": [
         {"do": "cam", "shot": "establish", "at": "rich_yard", "from": "crane_high", "rate": 1.0, "wait": 1.2},
-        {"do": "fx", "fx": "pop:story_sm_village_08", "wait": 0.6},   # the rice basin (washing)
-        {"do": "fx", "fx": "pop:story_sm_village_02", "wait": 0.6},   # the stove's fire
-        {"do": "fx", "fx": "pop:story_sm_village_03", "wait": 0.6},   # the steamer, steam rising
+        {"do": "fx", "fx": "pop:story_sm_village_09", "wait": 0.6},   # the rice basin (washing)
+        {"do": "fx", "fx": "pop:story_sm_village_03", "wait": 0.6},   # the stove's fire
+        {"do": "fx", "fx": "pop:story_sm_village_04", "wait": 0.6},   # the steamer, steam rising
         {"do": "cam", "shot": "two_shot", "at": "rich_yard", "rate": 1.6, "wait": 0.3},
         {"do": "pose", "who": "rich", "pose": "give_tray"},
         {"do": "say", "line": "sm_r0204"},
@@ -568,7 +568,7 @@ SOUND = {
     "catalog": "res://audio/sound_catalog.json",
     "light_beds": {"": "day", "morning": "day", "afternoon": "afternoon", "late": "late", "dusk": "dusk",
                    "night": "night"},
-    "fx": {"pop:story_sm_village_02": "fire.ignite", "pop:story_sm_village_03": "kitchen.boil",
+    "fx": {"pop:story_sm_village_03": "fire.ignite", "pop:story_sm_village_04": "kitchen.boil",
            "cake_to_basket": "ui.pop", "cake_to_tiger": "sm.gulp", "cakes_all_to_tiger": "sm.gulp_big",
            "tiger_out": "sm.growl_cute", "eyes_glow": "sm.twinkle", "moon_cloud": "amb.gust", "door_bolt": "sm.bolt",
            "paw_in": "sm.paper_rustle", "poke_hole": "sm.paper_poke", "eye_blink": "sm.blink",
