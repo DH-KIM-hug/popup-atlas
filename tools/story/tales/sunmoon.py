@@ -136,7 +136,7 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "door_ots": [1.3, 9.0, 0.32, 30.0, 25.0],       # over the disguised tiger's shoulder onto the door
          # inside the cottage (its frame: turned COT_YAW): the camera just behind the hidden front wall
          "room": [0.4, 14.0, 0.18, 62.0, -40.0],         # focus 0.46 deep: the camera 0.06 inside the front wall
-         "window_in": [0.34, 4.0, 0.3, 40.0, 140.0],     # turned round: the paper window from inside (hole, eye)
+         "window_in": [0.34, 4.0, 0.4, 40.0, 140.0],     # turned round: the paper window from inside (hole, eye)
          "yard_high": [4.5, 30.0, 0.3, 26.0, -30.0],     # the back yard: jars, well, tree (route reads)
          "jars_low": [1.4, 4.0, 0.15, 30.0, 10.0],
          "tree_low": [2.6, 2.0, 0.6, 34.0, 0.0],         # low under the tree, tilted up to the fork
@@ -145,6 +145,7 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "rope_up": [3.2, -6.0, 2.0, 40.0, 0.0],         # tilt up the rope into the clouds
          "sky_wide": [5.6, -9.0, 1.9, 44.0, 0.0],        # from the cloud tops up into the sky (the finale)
          "sky_high": [7.0, 18.0, 1.6, 40.0, 0.0],
+         "sky_rope": [1.9, -3.0, 0.95, 40.0, 0.0],       # close on the rope: the children climbing out of the clouds
          "pull_back": [10.5, 26.0, 0.3, 24.0, 0.0]}
 
 ROLES_LABEL = {"boy": "오빠", "girl": "동생", "mom": "엄마", "tiger": "호랑이", "rich": "부잣집 마님"}
@@ -288,7 +289,7 @@ for nm, (dx, dz) in {"door": (-0.22, 0.32), "door_in": (-0.22, -0.2), "path_end"
                      "door_inside": (-0.22, -0.02),
                      "back_door": (-0.45, -0.75), "mom_door": (-0.22, 0.45), "boy_at": (-0.42, 0.5),
                      "girl_at": (-0.02, 0.52), "tiger_door": (-0.18, 0.42), "tiger_window": (0.22, 0.4),
-                     "jars": (-0.75, -1.05), "jars_hide": (-0.75, -1.3), "well": (0.35, -1.55),
+                     "jars": (-0.75, -1.05), "corner_g": (-0.78, 0.02), "jars_hide_g": (-0.92, -1.25), "jars_hide": (-0.75, -1.3), "well": (0.35, -1.55),
                      "tree": (0.98, -1.75), "tree_foot": (0.85, -1.45), "tiger_well": (0.12, -1.35),
                      "sorghum_1": (1.75, -2.1), "sorghum_2": (2.1, -1.75), "sorghum_3": (1.55, -2.5),
                      "sorghum_band": (1.9, -2.6), "sorghum_fall": (1.8, -2.05), "fence_1": (-1.25, -1.6),
@@ -346,7 +347,7 @@ SKY_SPOTS = {"rise": [0.0, -0.35], "sun": [-0.9, -0.6], "moon": [0.9, -0.6], "fo
 SET_C = []
 # v2 (2026-11-22, "a real finale, not template + discs"): a floor of paper cloud bands over the whole view, four rows,
 # staggered, the meadow cleared under them; the camera looks up over their tops into the sky
-for _r, (_tw, _sc) in enumerate([(1.1, 1.1), (0.55, 1.3), (0.0, 1.5), (-0.7, 1.8), (-2.2, 3.4)]):
+for _r, (_tw, _sc) in enumerate([(1.1, 1.1), (0.55, 1.3), (0.0, 1.5), (-0.7, 1.8), (-2.2, 3.4), (-3.4, 6.0)]):
     for _c in range(6):
         _x = round(-3.0 + _c * 1.2 + (0.6 if _r % 2 else 0.0), 2)
         _nm = f"cloud_{_r}{_c}"
@@ -367,7 +368,7 @@ BEATS = [
      "enter": {"who": {"boy": "calm", "girl": "calm", "mom": "wave"},
                "at": {"boy": "boy_at", "girl": "girl_at", "mom": "mom_door"}},
      "steps": [
-        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 1.4},
+        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 0.9},
         {"do": "say", "line": "sm_r0100"},
         {"do": "cam", "shot": "medium", "at": "front_focus", "rate": 1.4, "wait": 0.4},
         {"do": "tap_each", "targets": ["boy", "girl"], "prompt": "sm_002", "hint": "sm_002",
@@ -386,7 +387,7 @@ BEATS = [
     {"id": "rich_house", "title": "부잣집", "spread": _road(light="afternoon"),
      "enter": {"who": {"mom": "work", "rich": "smile"}, "at": {"mom": "mom_work", "rich": "rich_at"}},
      "steps": [
-        {"do": "cam", "shot": "establish", "at": "rich_yard", "from": "crane_high", "rate": 1.0, "wait": 1.2},
+        {"do": "cam", "shot": "establish", "at": "rich_yard", "from": "crane_high", "rate": 1.0, "wait": 0.8},
         {"do": "fx", "fx": "pop:basin", "wait": 0.6},   # the rice basin (washing)
         {"do": "fx", "fx": "pop:stove", "wait": 0.6},   # the stove's fire
         {"do": "fx", "fx": "pop:siru", "wait": 0.6},   # the steamer, steam rising
@@ -451,16 +452,16 @@ BEATS = [
         {"do": "fx", "fx": "mom_gone", "wait": 0.6},                   # NEW: the mother's card is simply not there
         {"do": "pose", "who": "tiger", "pose": "dg_calm", "hop": True},    # the disguise: a paper flip into her clothes
         {"do": "cam", "shot": "medium", "at": "tiger_3", "rate": 1.6, "wait": 0.2},
-        {"do": "walk", "who": "tiger", "to": "pass_3_out", "dir": "away", "speed": 0.4, "pose": "dg_cycle",
+        {"do": "walk", "who": "tiger", "to": "pass_3_out", "dir": "away", "speed": 0.4, "pose": "dg",
          "line": "sm_r0507", "exit": True}]},
     # 6 -- the door at night: the room, the knock, the paw, the hole, the eye
     {"id": "door", "title": "문밖의 호랑이", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {"boy": "calm", "girl": "calm"}, "at": {"boy": "in_boy", "girl": "in_girl"}},
      "steps": [
-        {"do": "cam", "shot": "establish", "at": "est", "rate": 1.0, "wait": 0.8},     # the dark cottage, lit window
+        {"do": "cam", "shot": "establish", "at": "est", "rate": 1.0, "wait": 0.4},     # the dark cottage, lit window
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.2, "wait": 0.4},     # glide in through the wall
         {"do": "walk", "who": "tiger", "from": "road_by", "to": "tiger_door", "dir": "toward", "speed": 0.6,
-         "pose": "dg_cycle"},
+         "pose": "dg"},
         {"do": "cam", "shot": "door_ots", "at": "door", "rate": 1.8, "wait": 0.1},
         {"do": "say", "line": "sm_r0602"},                     # 똑똑똑 / 얘들아~ 엄마 왔다 / 걸걸한 목소리예요
         {"do": "cam", "shot": "room", "at": "in_focus", "rate": 2.4, "wait": 0.1},     # reverse: inside
@@ -481,21 +482,21 @@ BEATS = [
                "at": {"boy": "back_door", "girl": "back_door", "tiger": "tiger_door"}},
      "steps": [
         {"do": "cam", "shot": "yard_high", "at": "yard_focus", "rate": 1.0, "wait": 0.4},
-        {"do": "walk", "who": ["boy", "girl"], "to": "corner", "dir": "left", "speed": 0.25, "follow": "boy",
+        {"do": "walk", "who": "girl", "to": "corner_g", "dir": "left", "speed": 0.25, "async": True},
+        {"do": "walk", "who": "boy", "to": "corner", "dir": "left", "speed": 0.25, "follow": "boy",
          "shot": "medium", "line": "sm_r0701"},
         {"do": "tap_steps", "target": "jars", "prompt": "sm_074", "hint": "sm_074", "shot": "jars_low",
          "steps": [{"fx": "hide_behind:jars"}]},                # NEW: they run behind the big jar and crouch
         {"do": "say", "line": "sm_r0704"},
-        {"do": "walk", "who": "tiger", "to": "corner", "via": ["side_front_l"], "speed": 0.55, "pose": "dg_cycle",
+        {"do": "walk", "who": "tiger", "to": "corner", "via": ["side_front_l"], "speed": 0.55, "pose": "dg",
          "follow": "tiger", "shot": "yard_high"},
         {"do": "pose", "who": "tiger", "pose": "search"},
         {"do": "say", "line": "sm_r0705"},
-        {"do": "walk", "who": "tiger", "to": "tiger_door", "via": ["side_front_l"], "speed": 0.5, "pose": "dg_cycle",
-         "exit": True},
-        {"do": "say", "line": "sm_r0706"}]},
+        {"do": "walk", "who": "tiger", "to": "tiger_door", "via": ["side_front_l"], "speed": 0.5, "pose": "dg",
+         "exit": True},]},
     # 8 -- the tree by the well: climb, the well, the oil, the axe
     {"id": "tree", "title": "우물가 큰 나무", "spread": _home(light="night", sky=SKY_NIGHT),
-     "enter": {"who": {"boy": "calm", "girl": "calm"}, "at": {"boy": "jars_hide", "girl": "jars_hide"}},
+     "enter": {"who": {"boy": "calm", "girl": "calm"}, "at": {"boy": "jars_hide", "girl": "jars_hide_g"}},
      "steps": [
         {"do": "walk", "who": "girl", "to": "tree_foot_g", "speed": 0.7, "pose": "run_cycle", "async": True},
         {"do": "walk", "who": "boy", "to": "tree_foot", "speed": 0.7, "pose": "run_cycle", "follow": "boy",
@@ -564,9 +565,11 @@ BEATS = [
     {"id": "sky", "title": "해님 달님", "spread": SKY_C,
      "enter": {"who": {"boy": "rope_a", "girl": "rope_b"}, "at": {"boy": "rise", "girl": "rise"}},
      "steps": [
-        {"do": "cam", "shot": "sky_wide", "at": "focus", "from": "sky_high", "rate": 0.8, "wait": 0.6},
-        {"do": "fx", "fx": "sky_rise", "wait": 2.2},           # the golden rope, the children climbing out of the clouds
-        {"do": "fx", "fx": "sun_moon_reveal", "wait": 0.8},    # sparkles: they rise into the sky as the sun and the moon
+        {"do": "fx", "fx": "sky_discs", "wait": 0.0},
+        {"do": "cam", "shot": "sky_rope", "at": "rise", "from": "sky_rope", "rate": 1.0, "wait": 0.4},
+        {"do": "fx", "fx": "sky_rise", "wait": 3.4},           # close: the golden rope, the children climbing out of the clouds
+        {"do": "cam", "shot": "sky_wide", "at": "focus", "rate": 1.6, "wait": 0.3},
+        {"do": "fx", "fx": "sun_moon_reveal", "wait": 1.2},    # a burst of stars: the sun and the moon grow in the sky
         {"do": "say", "line": "sm_r1101"},
         {"do": "fx", "fx": "night", "wait": 0.5},
         {"do": "say", "line": "sm_r1103"},
@@ -574,8 +577,8 @@ BEATS = [
         {"do": "fx", "fx": "swap_sun_moon", "wait": 1.0},
         {"do": "fx", "fx": "day", "wait": 0.6},
         {"do": "say", "line": "sm_r1106"},
-        {"do": "tap_each", "targets": ["sun", "moon"], "prompt": "sm_115", "hint": "sm_115",
-         "react": {"sun": ["-", "day"], "moon": ["-", "night"]}},
+        {"do": "tap_each", "targets": ["sun_disc", "moon_disc"], "prompt": "sm_115", "hint": "sm_115",
+         "react": {"sun_disc": ["-", "day"], "moon_disc": ["-", "night"]}},
         {"do": "fx", "fx": "day", "wait": 0.4},
         {"do": "say", "line": "sm_r1107"},
         {"do": "end", "after": "sm_n02", "close_book": True}]},

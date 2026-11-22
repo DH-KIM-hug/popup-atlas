@@ -168,7 +168,7 @@
   "window_in": [
    0.34,
    4.0,
-   0.3,
+   0.4,
    40.0,
    140.0
   ],
@@ -225,6 +225,13 @@
    7.0,
    18.0,
    1.6,
+   40.0,
+   0.0
+  ],
+  "sky_rope": [
+   1.9,
+   -3.0,
+   0.95,
    40.0,
    0.0
   ],
@@ -586,6 +593,14 @@
       1.178,
       0.833
      ],
+     "corner_g": [
+      0.468,
+      1.633
+     ],
+     "jars_hide_g": [
+      1.177,
+      0.57
+     ],
      "jars_hide": [
       1.339,
       0.641
@@ -917,7 +932,7 @@
      "at": "est",
      "from": "crane_high",
      "rate": 0.9,
-     "wait": 1.4
+     "wait": 0.9
     },
     {
      "do": "say",
@@ -1334,7 +1349,7 @@
      "at": "rich_yard",
      "from": "crane_high",
      "rate": 1.0,
-     "wait": 1.2
+     "wait": 0.8
     },
     {
      "do": "fx",
@@ -2668,7 +2683,7 @@
      "to": "pass_3_out",
      "dir": "away",
      "speed": 0.4,
-     "pose": "dg_cycle",
+     "pose": "dg",
      "line": "sm_r0507",
      "exit": true
     }
@@ -2785,6 +2800,14 @@
      "jars": [
       1.178,
       0.833
+     ],
+     "corner_g": [
+      0.468,
+      1.633
+     ],
+     "jars_hide_g": [
+      1.177,
+      0.57
      ],
      "jars_hide": [
       1.339,
@@ -3131,7 +3154,7 @@
      "shot": "establish",
      "at": "est",
      "rate": 1.0,
-     "wait": 0.8
+     "wait": 0.4
     },
     {
      "do": "cam",
@@ -3147,7 +3170,7 @@
      "to": "tiger_door",
      "dir": "toward",
      "speed": 0.6,
-     "pose": "dg_cycle"
+     "pose": "dg"
     },
     {
      "do": "cam",
@@ -3335,6 +3358,14 @@
      "jars": [
       1.178,
       0.833
+     ],
+     "corner_g": [
+      0.468,
+      1.633
+     ],
+     "jars_hide_g": [
+      1.177,
+      0.57
      ],
      "jars_hide": [
       1.339,
@@ -3687,10 +3718,15 @@
     },
     {
      "do": "walk",
-     "who": [
-      "boy",
-      "girl"
-     ],
+     "who": "girl",
+     "to": "corner_g",
+     "dir": "left",
+     "speed": 0.25,
+     "async": true
+    },
+    {
+     "do": "walk",
+     "who": "boy",
      "to": "corner",
      "dir": "left",
      "speed": 0.25,
@@ -3722,7 +3758,7 @@
       "side_front_l"
      ],
      "speed": 0.55,
-     "pose": "dg_cycle",
+     "pose": "dg",
      "follow": "tiger",
      "shot": "yard_high"
     },
@@ -3743,12 +3779,8 @@
       "side_front_l"
      ],
      "speed": 0.5,
-     "pose": "dg_cycle",
+     "pose": "dg",
      "exit": true
-    },
-    {
-     "do": "say",
-     "line": "sm_r0706"
     }
    ],
    "sound": {
@@ -3860,6 +3892,14 @@
      "jars": [
       1.178,
       0.833
+     ],
+     "corner_g": [
+      0.468,
+      1.633
+     ],
+     "jars_hide_g": [
+      1.177,
+      0.57
      ],
      "jars_hide": [
       1.339,
@@ -4197,7 +4237,7 @@
     },
     "at": {
      "boy": "jars_hide",
-     "girl": "jars_hide"
+     "girl": "jars_hide_g"
     }
    },
    "steps": [
@@ -4484,6 +4524,14 @@
      "jars": [
       1.178,
       0.833
+     ],
+     "corner_g": [
+      0.468,
+      1.633
+     ],
+     "jars_hide_g": [
+      1.177,
+      0.57
      ],
      "jars_hide": [
       1.339,
@@ -4986,6 +5034,14 @@
      "jars": [
       1.178,
       0.833
+     ],
+     "corner_g": [
+      0.468,
+      1.633
+     ],
+     "jars_hide_g": [
+      1.177,
+      0.57
      ],
      "jars_hide": [
       1.339,
@@ -5552,6 +5608,30 @@
      "cloud_45": [
       3.0,
       -2.2
+     ],
+     "cloud_50": [
+      -2.4,
+      -3.4
+     ],
+     "cloud_51": [
+      -1.2,
+      -3.4
+     ],
+     "cloud_52": [
+      -0.0,
+      -3.4
+     ],
+     "cloud_53": [
+      1.2,
+      -3.4
+     ],
+     "cloud_54": [
+      2.4,
+      -3.4
+     ],
+     "cloud_55": [
+      3.6,
+      -3.4
      ]
     },
     "set": [
@@ -5824,6 +5904,60 @@
       "scale": 3.4,
       "clear": 2.5,
       "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_50",
+      "stage": "full",
+      "name": "cloud_50",
+      "scale": 6.0,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_51",
+      "stage": "full",
+      "name": "cloud_51",
+      "scale": 6.0,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_07",
+      "at": "cloud_52",
+      "stage": "full",
+      "name": "cloud_52",
+      "scale": 6.0,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_00",
+      "at": "cloud_53",
+      "stage": "full",
+      "name": "cloud_53",
+      "scale": 6.0,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_02",
+      "at": "cloud_54",
+      "stage": "full",
+      "name": "cloud_54",
+      "scale": 6.0,
+      "clear": 2.5,
+      "allow_road": true
+     },
+     {
+      "card": "story_sm_sky_06",
+      "at": "cloud_55",
+      "stage": "full",
+      "name": "cloud_55",
+      "scale": 6.0,
+      "clear": 2.5,
+      "allow_road": true
      }
     ],
     "sky": {
@@ -5851,22 +5985,34 @@
    },
    "steps": [
     {
+     "do": "fx",
+     "fx": "sky_discs",
+     "wait": 0.0
+    },
+    {
      "do": "cam",
-     "shot": "sky_wide",
-     "at": "focus",
-     "from": "sky_high",
-     "rate": 0.8,
-     "wait": 0.6
+     "shot": "sky_rope",
+     "at": "rise",
+     "from": "sky_rope",
+     "rate": 1.0,
+     "wait": 0.4
     },
     {
      "do": "fx",
      "fx": "sky_rise",
-     "wait": 2.2
+     "wait": 3.4
+    },
+    {
+     "do": "cam",
+     "shot": "sky_wide",
+     "at": "focus",
+     "rate": 1.6,
+     "wait": 0.3
     },
     {
      "do": "fx",
      "fx": "sun_moon_reveal",
-     "wait": 0.8
+     "wait": 1.2
     },
     {
      "do": "say",
@@ -5902,17 +6048,17 @@
     {
      "do": "tap_each",
      "targets": [
-      "sun",
-      "moon"
+      "sun_disc",
+      "moon_disc"
      ],
      "prompt": "sm_115",
      "hint": "sm_115",
      "react": {
-      "sun": [
+      "sun_disc": [
        "-",
        "day"
       ],
-      "moon": [
+      "moon_disc": [
        "-",
        "night"
       ]
@@ -10627,9 +10773,9 @@
    "speaker": "nar",
    "text": "휴~ 이제 우물가 큰 나무로 달려가요!",
    "status": "reuse",
-   "beat": "backyard",
-   "interaction": "say",
-   "used": true,
+   "beat": "",
+   "interaction": "",
+   "used": false,
    "segs": [
     {
      "speaker": "nar",

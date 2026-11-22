@@ -436,6 +436,18 @@ JOBS.append({"id": "story_sm_door_fx", "kind": "bg", "refs": [RAW_C + "cast_sm_p
              "brown stripe above it, a soft circular edge; (3) the same eye patch with the eye CLOSED in a blink (a "
              "curved line with lashes)."})
 
+# v5: the tiger runs away with his bump: a drawn run cycle (the run-away fell back to his plain walk, bump gone)
+JOBS.append({"id": "cast_sm_tiger_bump_run", "kind": "bg",
+             "refs": [RAW_C + "cast_sm_paper_tiger.png", RAW_C + "cast_sm_tiger_rope.png"], "aspect": WIDE,
+             "out": RAW_C + "cast_sm_tiger_bump_run.png",
+             "prompt": "A CHARACTER SHEET for a children's pop-up storybook: FOUR full-body die-cut figures in one "
+             "horizontal row, " + BG + PAPER_CHAR + TIGER + FACE + LEGS + REF_LINE +
+             "The FIRST reference is his approved paper look; the SECOND shows the pose (the last figure: running away "
+             "with a bump). RUN CYCLE: FOUR SIDE-PROFILE frames facing RIGHT of one run cycle in order (CONTACT, DOWN, "
+             "PASSING, FLIGHT with both feet off the ground), the tiger running away upright with a big round orange "
+             "BUMP on top of his head, comic teary eyes, mouth open 'ouch', arms pumping, legs wide apart with an open "
+             "magenta gap, the same size in every frame, the lowest foot on one baseline."})
+
 
 if __name__ == "__main__":
     out = os.path.join(HERE, "sunmoon_jobs.json")

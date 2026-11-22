@@ -1827,3 +1827,18 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     CHECK_LINES OK (68 segments, sm_n02 at the end), VOICE_DUP=0, missing_audio=[], missing_sound=[], no script
     errors. Regression after the runner change: sun_wind 207.8 s, three_pigs 297.0 s, witch_candy 439.2 s, all
     CHECK_LINES OK, VOICE_DUP=0.
+
+## 2026-11-22 — sunmoon v5/v6: the eye reads, the finale, disguise in every view, 6:26
+  - Eye: the overlay cards took the rig's shot-offset yaw (the eye card faced away); now the template yaw + the
+    cottage's turn; the paper poked window's hole was still magenta (keyed out); the eye sits on the measured hole,
+    a hair in front of the paper: pupil, shine and blink read (artifacts/sunmoon/door_v6.jpg).
+  - Finale: own sun / moon cards high in the finale frame (not story-shot hangers) that grow out of a star burst;
+    a close shot on the rope climb (the children read); a taller back cloud row hides the template's far hills;
+    night tints the sky; taps on the discs (finale_v7.jpg).
+  - The disguise in every view: walks used pose "dg_cycle" (the actor looks for <pose>_cycle / _back / _front and fell
+    back to the plain tiger); now "dg" -> dg_cycle / dg_back / dg_front. The run-away: a stand-in run_bump_cycle (his
+    bump drawing, hopped) until a drawn bump run cycle can be made (Codex hit its usage limit).
+  - Contacts: the girl's own marks at the corner / jars; climbing apart on the trunk. Gates fold for the default wide.
+  - Full run v6 (sunmoon_full_v6.mp4 24.5 MB, full_v6_sheet.jpg): STORY_DONE 386.2 s (6:26), CHECK_LINES OK
+    (67), VOICE_DUP=0, missing_audio=[], missing_sound=[], no script errors. The run-away fix came after it
+    (verified on old_rope_v7.mp4 / runaway_v7.jpg).

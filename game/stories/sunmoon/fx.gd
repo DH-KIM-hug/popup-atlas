@@ -84,8 +84,14 @@ func _card(id: String, h: float) -> Node3D:
 		c.height = h
 		c.thickness = clampf(h * 0.03, 0.002, 0.01)
 		node.add_child(c)
-	node.rotation.y = deg_to_rad(stage.world.rig.yaw_deg)
+	node.rotation.y = _view_yaw()
 	return node
+
+
+## The template view's yaw (the rig's yaw carries the current shot's offset: v4's eye card faced away, blank).
+func _view_yaw() -> float:
+	var t := stage.dir_vec("toward")
+	return atan2(t.x, t.z)
 
 
 func _toward() -> Vector3:
@@ -130,7 +136,7 @@ func _trunk(k: float, side := 0.0) -> Vector3:
 
 func targets() -> Array:
 	var out := ["tray", "window"]
-	for k in ["oil", "rope"]:
+	for k in ["oil", "rope", "sun_disc", "moon_disc"]:
 		if _cards.has(k):
 			out.append(k)
 	return out
@@ -147,6 +153,9 @@ func target_point(t: String) -> Variant:
 		"oil", "rope":
 			if _cards.has(t):
 				return (_cards[t] as Node3D).global_position + Vector3.UP * (0.04 if t == "oil" else 1.3)
+		"sun_disc", "moon_disc":
+			if _cards.has(t):
+				return (_cards[t] as Node3D).global_position + Vector3.UP * 0.31
 	return null
 
 
@@ -155,7 +164,7 @@ func target_radius(t: String) -> float:
 
 
 func wiggle(t: String) -> bool:
-	return t in ["tray", "window", "oil", "rope"]
+	return t in ["tray", "window", "oil", "rope", "sun_disc", "moon_disc"]
 
 
 # ------------------------------------------------------------------ fx
@@ -214,7 +223,7 @@ func fx(name: String) -> bool:
 		"paw_in":  # the floury paw slides in through the gap at the door's edge (seen from inside)
 			var d := stage.spot_point("door_inside")
 			var paw := _card("story_sm_door_fx_01", 0.1)
-			paw.rotation.y += PI + deg_to_rad(-40.0)
+			paw.rotation.y = _view_yaw() + PI + deg_to_rad(-40.0)
 			var side := stage.dir_vec("right").rotated(Vector3.UP, deg_to_rad(-40.0))
 			paw.global_position = d + Vector3.UP * 0.22 + side * 0.2
 			_flyers.append({"node": paw, "age": 0.0, "life": 1.2, "from": paw.global_position,
@@ -226,10 +235,12 @@ func fx(name: String) -> bool:
 			if _cards.has("window_hole"):
 				var w: Node3D = _cards["window_hole"]
 				for k8 in 2:
-					var e8 := _card("story_sm_door_fx_0%d" % (0 if k8 == 0 else 2), 0.12)
+					var e8 := _card("story_sm_door_fx_0%d" % (0 if k8 == 0 else 2), 0.068)
 					e8.reparent(w, false)
 					e8.top_level = false
-					e8.position = Vector3(0.055, 0.05, -0.012)
+					# v5: centred on the measured hole (72 % across, 58 % down the 0.25-tall card), a hair in front of the
+					# paper so the round fur patch fills the hole and the eye reads (v4: behind the paper, unseen)
+					e8.position = Vector3((0.724 - 0.5) * 0.25 * 204.0 / 185.0, (1.0 - 0.585) * 0.25 - 0.034, 0.006)
 					e8.rotation = Vector3.ZERO
 					e8.visible = k8 == 0
 					_cards["eye%d" % k8] = e8
@@ -238,15 +249,15 @@ func fx(name: String) -> bool:
 			return true
 		"poke_hole":
 			var w := _card(WINDOW_HOLE, 0.25)
-			w.global_position = stage.spot_point("window_inside") + Vector3.UP * 0.2 - _toward() * 0.001
-			w.rotation.y += PI
+			w.rotation.y = _view_yaw() + PI + deg_to_rad(-40.0)  # on the wall's inside face (the cottage turns -40)
+			w.global_position = stage.spot_point("window_inside") + Vector3.UP * 0.3 + w.global_transform.basis.z * 0.004
 			_cards["window_hole"] = w
 			return true
 		"hide_behind":
 			for r in ["boy", "girl"]:
 				var a := stage.actor(r)
 				if a:
-					a.walk_to(stage.spot_point("jars_hide") + _right() * (0.07 if r == "boy" else -0.07), 0.5)
+					a.walk_to(stage.spot_point("jars_hide" if r == "boy" else "jars_hide_g"), 0.5)
 					a.set_pose("scared")
 			return true
 		"climb_tree":  # climb_tree:<1..3>: a stretch up the trunk per tap, the third onto the fork
@@ -255,7 +266,7 @@ func fx(name: String) -> bool:
 				var a := stage.actor(r)
 				if a == null:
 					continue
-				var side := 0.07 if r == "boy" else -0.07
+				var side := 0.1 if r == "boy" else -0.1
 				var top := _trunk(1.0, side * 1.4)
 				var goal := top if k >= 3 else _trunk(k / 3.0 - (0.08 if r == "girl" else 0.0), side)
 				a.follow([goal], 0.35, "", true)
@@ -319,12 +330,25 @@ func fx(name: String) -> bool:
 			return true
 		"swap_sun_moon":
 			_sky_faces("sun_girl", "moon_boy")
-			for r3 in ["sun", "moon"]:
-				var h3 := stage.hanger(r3)
+			for pair2 in [["sun_disc", "cast_sunmoon_sky_sun_girl"], ["moon_disc", "cast_sunmoon_sky_moon_boy"]]:
+				if _cards.has(pair2[0]):
+					var c12 := (_cards[pair2[0]] as Node3D).get_child(0) as PaperCard
+					if c12:
+						c12.texture = _texid(str(pair2[1]))
+			for r3 in ["sun_disc", "moon_disc"]:
+				var h3: Node3D = _cards.get(r3)
 				if h3:
 					for k3 in 5:
 						fly(STAR, h3.global_position, h3.global_position + Vector3(randf_range(-0.4, 0.4), randf_range(-0.3, 0.3), 0.05), 0.08, 0.7, 0.1)
 			_sfx("wc.sparkle")
+			return true
+		"sky_discs":  # the sun and the moon of the finale: cards high in the finale frame (not story-shot hangers)
+			_sky_shown(false)
+			for pair in [["sun_disc", "cast_sunmoon_sky_sun_boy", -0.75], ["moon_disc", "cast_sunmoon_sky_moon_girl", 0.75]]:
+				var d9 := _card(str(pair[1]), 0.95)
+				d9.global_position = stage.spot_point("rise") + Vector3.UP * 1.75 + _right() * float(pair[2]) * 1.35 + _toward() * 0.6
+				d9.scale = Vector3.ONE * 0.01
+				_cards[pair[0]] = d9
 			return true
 		"sky_rise":  # the golden rope drops through the cloud floor; the children climb up out of the clouds
 			var base := stage.spot_point("rise")
@@ -352,8 +376,16 @@ func fx(name: String) -> bool:
 			if _cards.has("rope"):
 				(_cards["rope"] as Node3D).queue_free()
 				_cards.erase("rope")
-			_sky_shown(true)
+			for k10 in ["sun_disc", "moon_disc"]:  # the discs grow out of a burst of stars
+				if _cards.has(k10):
+					var d10: Node3D = _cards[k10]
+					for k11 in 8:
+						fly(STAR, d10.global_position + Vector3.UP * 0.3, d10.global_position + Vector3.UP * 0.3 + Vector3(randf_range(-0.5, 0.5), randf_range(-0.4, 0.4), 0.05), 0.07, 0.9, 0.1)
+					var tw2 := create_tween()
+					tw2.tween_property(d10, "scale", Vector3.ONE * 1.12, 0.6).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+					tw2.tween_property(d10, "scale", Vector3.ONE, 0.25)
 			_sfx("wc.sparkle")
+			_sfx("wc.chime")
 			return true
 		"day", "night":
 			stage._set_light("" if p[0] == "day" else "night", false)
@@ -394,7 +426,7 @@ func _gates(cam: Camera3D) -> void:
 		var half := sp.width * 0.5 + 0.25
 		var behind := local.z < 0.25 and absf(local.x) < half and local.y < sp.height + 0.6
 		# v2b: also fold away a gate that stands between the camera and anyone on the page (OCCLUDE 1.0 at the passes)
-		if not behind and local.z > 0.0 and local.y < sp.height + 0.6:
+		if not behind and local.z > 0.0 and local.y < sp.height + 1.4:
 			for r in stage.actors:
 				var a: StoryActor = stage.actors[r]
 				if a.pop_target < 0.5 or not a.visible:
@@ -417,6 +449,11 @@ func step(dt: float) -> void:
 	var cam := stage.camera()
 	if cam:
 		_gates(cam)
+	# the run-away keeps his bump: his run_bump figure with a paper hop while he runs (no drawn bump cycle yet; the
+	# actor would fall back to his plain walk cycle and the bump would vanish)
+	var tg := stage.actor("tiger")
+	if tg and tg.walk_pose == "run_bump" and tg.moving():
+		tg.hop = absf(sin(_t * 11.0)) * 0.035  # the stand-in run_bump_cycle (one drawing) hops
 	if _eye_t >= 0.0 and _cards.has("eye0"):
 		_eye_t += dt
 		var closed := fmod(_eye_t, 1.4) > 1.15
