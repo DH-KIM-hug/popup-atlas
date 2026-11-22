@@ -266,7 +266,10 @@ func fx(name: String) -> bool:
 			stage.shot_to("inside", "in_focus")
 			get_tree().create_timer(1.0).timeout.connect(_pigs_to_room)
 		"outside_view":
-			stage.shot_to("roof", "focus")
+			# (2026-11-22, "시점이 뚝뚝 끊기는거 별로에요") pull straight back out through the front first, then settle on
+			# the house: moving the focus to the yard while still close to the hearth swept the view ~100°/s
+			stage.shot_to("roof", "in_focus")
+			get_tree().create_timer(0.9).timeout.connect(func(): stage.shot_to("roof", "focus"))
 			get_tree().create_timer(0.9).timeout.connect(_pigs_to_windows)
 		"cutaway_open":
 			_cutaway(true)
