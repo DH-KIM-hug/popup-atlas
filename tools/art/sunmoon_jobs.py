@@ -386,6 +386,30 @@ for _sh in ["story_sm_mountain", "story_sm_tree", "story_sm_field", "story_sm_sk
                  "grain as cut brown paper strips, lattice as thin cut paper bars, stone as grey paper pieces, rope as "
                  "twisted paper cord); clouds as layered cut paper with NO dashed lines; plants as cut paper leaves."})
 
+# the full cast in paper (user OK 2026-11-22: "다 종이로 변경"): every cast sheet redrawn PIECE FOR PIECE from its felt
+# sheet (same figures, order, poses, sizes, facing, leg gaps) with the approved paper test figure as the MATERIAL ref
+_PAPER_REF = {"boy": "cast_sm_paper_girl", "girl": "cast_sm_paper_girl", "mom": "cast_sm_paper_mom",
+              "rich": "cast_sm_paper_mom", "tiger": "cast_sm_paper_tiger"}
+_CAST_SHEETS = {"cast_sm_lineup": "mom", "cast_sm_boy_expr": "boy", "cast_sm_girl_expr": "girl",
+                "cast_sm_kids_views": "girl", "cast_sm_mom_expr": "mom", "cast_sm_mom_views": "mom",
+                "cast_sm_tiger_expr_a": "tiger", "cast_sm_tiger_expr_b": "tiger", "cast_sm_tiger_disguise": "tiger",
+                "cast_sm_tiger_tree": "tiger", "cast_sm_tiger_rope": "tiger", "cast_sm_climb": "girl",
+                "cast_sm_treetop": "girl", "cast_sm_rich_expr": "rich", "cast_sm_sunmoon": "girl",
+                "cast_sm_boy_walk": "boy", "cast_sm_girl_walk": "girl", "cast_sm_boy_run": "boy",
+                "cast_sm_girl_run": "girl", "cast_sm_mom_walk": "mom", "cast_sm_tiger_walk": "tiger",
+                "cast_sm_tiger_sneak": "tiger"}
+for _sh, _who in _CAST_SHEETS.items():
+    JOBS.append({"id": _sh + "_paper", "kind": "bg",
+                 "refs": [RAW_C + _sh + "_felt.png", RAW_C + _PAPER_REF[_who] + ".png"],
+                 "aspect": "the SAME size and orientation as the first reference image (save it as-is)",
+                 "out": RAW_C + _sh + "_paper.png",
+                 "prompt": "REDRAW the FIRST reference image (a character sheet for a children's pop-up storybook) "
+                 "PIECE FOR PIECE: the SAME number of separate figures in the SAME order left to right, the same poses, "
+                 "expressions, facing, sizes, positions and proportions, the same clothes, colours and faces, the same "
+                 "open gap between the legs, every figure still fully separate. ONLY the MATERIAL changes, to match "
+                 "the SECOND reference image (the same characters' approved paper look): " + BG + PAPER_CHAR +
+                 "Do not add or remove any figure; do not add any background element."})
+
 
 if __name__ == "__main__":
     out = os.path.join(HERE, "sunmoon_jobs.json")

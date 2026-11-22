@@ -1,24 +1,24 @@
 {
  "sheet": "cast_sm_sunmoon",
  "bg": [
-  0.988,
-  0.02,
-  0.98
+  0.965,
+  0.063,
+  0.965
  ],
  "dropped": 0,
  "sprites": [
   {
    "id": "cast_sm_sunmoon_00",
    "bbox": [
-    25,
-    91,
-    558,
+    23,
+    93,
+    553,
     615
    ],
-   "area": 175812,
+   "area": 173881,
    "size": [
-    541,
-    532
+    538,
+    530
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_sm_sunmoon_01",
    "bbox": [
-    582,
-    110,
-    1066,
+    575,
+    113,
+    1055,
     599
    ],
-   "area": 184219,
+   "area": 181848,
    "size": [
-    492,
-    497
+    488,
+    494
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "cast_sm_sunmoon_02",
    "bbox": [
-    1090,
-    88,
-    1624,
+    1079,
+    89,
+    1611,
     616
    ],
-   "area": 177444,
+   "area": 175814,
    "size": [
-    542,
-    536
+    540,
+    535
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "cast_sm_sunmoon_03",
    "bbox": [
-    1644,
-    107,
-    2132,
+    1629,
+    110,
+    2115,
     601
    ],
-   "area": 188181,
+   "area": 186151,
    "size": [
-    496,
-    502
+    494,
+    499
    ],
    "halo": 0,
    "touches_border": false,

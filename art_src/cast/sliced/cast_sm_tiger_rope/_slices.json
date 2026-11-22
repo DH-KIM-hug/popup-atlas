@@ -1,7 +1,7 @@
 {
  "sheet": "cast_sm_tiger_rope",
  "bg": [
-  0.984,
+  0.98,
   0.031,
   0.976
  ],
@@ -10,15 +10,15 @@
   {
    "id": "cast_sm_tiger_rope_00",
    "bbox": [
-    57,
+    56,
     85,
     424,
-    657
+    656
    ],
-   "area": 141680,
+   "area": 141448,
    "size": [
-    375,
-    580
+    376,
+    579
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_sm_tiger_rope_01",
    "bbox": [
-    488,
+    486,
     40,
-    800,
-    682
+    801,
+    681
    ],
-   "area": 99903,
+   "area": 100039,
    "size": [
-    320,
-    650
+    323,
+    649
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "cast_sm_tiger_rope_02",
    "bbox": [
-    865,
+    864,
     40,
-    1171,
-    682
+    1175,
+    681
    ],
-   "area": 100073,
+   "area": 100530,
    "size": [
-    314,
-    650
+    319,
+    649
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,14 +61,14 @@
   {
    "id": "cast_sm_tiger_rope_03",
    "bbox": [
-    1217,
+    1218,
     69,
-    1666,
+    1663,
     620
    ],
-   "area": 124083,
+   "area": 123887,
    "size": [
-    457,
+    453,
     559
    ],
    "halo": 0,
@@ -78,15 +78,15 @@
   {
    "id": "cast_sm_tiger_rope_04",
    "bbox": [
-    1701,
+    1702,
     68,
-    2132,
-    621
+    2133,
+    619
    ],
-   "area": 112799,
+   "area": 112699,
    "size": [
     439,
-    561
+    559
    ],
    "halo": 0,
    "touches_border": false,

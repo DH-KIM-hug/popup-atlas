@@ -1,8 +1,8 @@
 {
  "sheet": "cast_sm_tiger_disguise",
  "bg": [
-  0.984,
-  0.02,
+  0.969,
+  0.024,
   0.976
  ],
  "dropped": 0,
@@ -11,14 +11,14 @@
    "id": "cast_sm_tiger_disguise_00",
    "bbox": [
     37,
-    91,
-    365,
+    90,
+    366,
     654
    ],
-   "area": 132363,
+   "area": 131676,
    "size": [
-    336,
-    571
+    337,
+    572
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,32 +27,32 @@
   {
    "id": "cast_sm_tiger_disguise_01",
    "bbox": [
-    366,
-    90,
-    738,
+    365,
+    89,
+    739,
     654
    ],
-   "area": 138269,
+   "area": 137237,
    "size": [
-    380,
-    572
+    382,
+    573
    ],
    "halo": 0,
    "touches_border": false,
-   "parts": 3
+   "parts": 2
   },
   {
    "id": "cast_sm_tiger_disguise_02",
    "bbox": [
-    787,
-    90,
-    1125,
+    788,
+    88,
+    1126,
     654
    ],
-   "area": 135400,
+   "area": 135055,
    "size": [
     346,
-    572
+    574
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,14 +61,14 @@
   {
    "id": "cast_sm_tiger_disguise_03",
    "bbox": [
-    1148,
-    90,
+    1147,
+    89,
     1415,
-    654
+    653
    ],
-   "area": 102267,
+   "area": 101979,
    "size": [
-    275,
+    276,
     572
    ],
    "halo": 0,
@@ -78,14 +78,14 @@
   {
    "id": "cast_sm_tiger_disguise_04",
    "bbox": [
-    1475,
-    91,
+    1477,
+    90,
     1761,
-    654
+    653
    ],
-   "area": 122150,
+   "area": 121517,
    "size": [
-    294,
+    292,
     571
    ],
    "halo": 0,
@@ -96,14 +96,14 @@
    "id": "cast_sm_tiger_disguise_05",
    "bbox": [
     1824,
-    89,
-    2161,
+    90,
+    2164,
     654
    ],
-   "area": 133939,
+   "area": 133617,
    "size": [
-    345,
-    573
+    348,
+    572
    ],
    "halo": 0,
    "touches_border": false,

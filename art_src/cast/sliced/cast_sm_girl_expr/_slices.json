@@ -1,9 +1,9 @@
 {
  "sheet": "cast_sm_girl_expr",
  "bg": [
-  0.988,
-  0.02,
-  0.98
+  0.965,
+  0.039,
+  0.976
  ],
  "dropped": 0,
  "sprites": [
@@ -11,14 +11,14 @@
    "id": "cast_sm_girl_expr_00",
    "bbox": [
     52,
-    70,
-    369,
-    641
+    68,
+    368,
+    640
    ],
-   "area": 118346,
+   "area": 118219,
    "size": [
-    325,
-    579
+    324,
+    580
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,46 +27,46 @@
   {
    "id": "cast_sm_girl_expr_01",
    "bbox": [
-    418,
-    69,
-    713,
-    642
+    416,
+    68,
+    712,
+    640
    ],
-   "area": 106504,
+   "area": 106599,
    "size": [
-    303,
-    581
+    304,
+    580
    ],
-   "halo": 0,
+   "halo": 3,
    "touches_border": false,
    "parts": 1
   },
   {
    "id": "cast_sm_girl_expr_02",
    "bbox": [
-    765,
+    764,
     69,
-    1068,
-    642
+    1066,
+    640
    ],
-   "area": 116939,
+   "area": 117675,
    "size": [
-    311,
-    581
+    310,
+    579
    ],
-   "halo": 0,
+   "halo": 258,
    "touches_border": false,
    "parts": 1
   },
   {
    "id": "cast_sm_girl_expr_03",
    "bbox": [
-    1118,
-    69,
-    1416,
-    641
+    1117,
+    68,
+    1415,
+    640
    ],
-   "area": 109159,
+   "area": 108564,
    "size": [
     306,
     580
@@ -78,32 +78,32 @@
   {
    "id": "cast_sm_girl_expr_04",
    "bbox": [
-    1466,
+    1464,
     67,
-    1763,
-    641
+    1762,
+    640
    ],
-   "area": 109032,
+   "area": 108960,
    "size": [
-    305,
-    582
+    306,
+    581
    ],
-   "halo": 0,
+   "halo": 1,
    "touches_border": false,
    "parts": 1
   },
   {
    "id": "cast_sm_girl_expr_05",
    "bbox": [
-    1814,
-    70,
+    1812,
+    69,
     2108,
-    642
+    640
    ],
-   "area": 109480,
+   "area": 109473,
    "size": [
-    302,
-    580
+    304,
+    579
    ],
    "halo": 0,
    "touches_border": false,

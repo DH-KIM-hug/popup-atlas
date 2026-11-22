@@ -1,24 +1,24 @@
 {
  "sheet": "cast_sm_climb",
  "bg": [
-  0.984,
-  0.02,
-  0.976
+  0.969,
+  0.043,
+  0.969
  ],
  "dropped": 0,
  "sprites": [
   {
    "id": "cast_sm_climb_00",
    "bbox": [
-    32,
+    31,
     110,
-    275,
-    642
+    274,
+    640
    ],
-   "area": 76478,
+   "area": 76565,
    "size": [
     251,
-    540
+    538
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_sm_climb_01",
    "bbox": [
-    287,
+    285,
     110,
-    520,
-    642
+    519,
+    640
    ],
-   "area": 73514,
+   "area": 73608,
    "size": [
-    241,
-    540
+    242,
+    538
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "cast_sm_climb_02",
    "bbox": [
-    566,
-    138,
-    809,
-    642
+    564,
+    137,
+    808,
+    640
    ],
-   "area": 79729,
+   "area": 80031,
    "size": [
-    251,
-    512
+    252,
+    511
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "cast_sm_climb_03",
    "bbox": [
-    849,
+    847,
     139,
-    1096,
-    642
+    1095,
+    641
    ],
-   "area": 79365,
+   "area": 79615,
    "size": [
-    255,
-    511
+    256,
+    510
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "cast_sm_climb_04",
    "bbox": [
-    1137,
+    1136,
     106,
     1346,
-    642
+    641
    ],
-   "area": 71699,
+   "area": 71806,
    "size": [
-    217,
-    544
+    218,
+    543
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "cast_sm_climb_05",
    "bbox": [
-    1389,
+    1388,
     98,
-    1615,
-    523
+    1614,
+    522
    ],
-   "area": 62199,
+   "area": 62216,
    "size": [
     234,
-    433
+    432
    ],
    "halo": 0,
    "touches_border": false,
@@ -112,15 +112,15 @@
   {
    "id": "cast_sm_climb_06",
    "bbox": [
-    1624,
+    1623,
     125,
     1891,
-    641
+    640
    ],
-   "area": 75660,
+   "area": 75589,
    "size": [
-    275,
-    524
+    276,
+    523
    ],
    "halo": 0,
    "touches_border": false,
@@ -129,15 +129,15 @@
   {
    "id": "cast_sm_climb_07",
    "bbox": [
-    1910,
+    1909,
     127,
     2162,
-    546
+    545
    ],
-   "area": 63998,
+   "area": 63887,
    "size": [
-    260,
-    427
+    261,
+    426
    ],
    "halo": 0,
    "touches_border": false,

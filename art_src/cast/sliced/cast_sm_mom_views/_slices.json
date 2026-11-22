@@ -1,24 +1,24 @@
 {
  "sheet": "cast_sm_mom_views",
  "bg": [
-  0.988,
-  0.02,
-  0.98
+  0.973,
+  0.027,
+  0.976
  ],
  "dropped": 0,
  "sprites": [
   {
    "id": "cast_sm_mom_views_00",
    "bbox": [
-    60,
-    54,
-    360,
-    802
+    59,
+    55,
+    356,
+    801
    ],
-   "area": 146643,
+   "area": 146076,
    "size": [
-    308,
-    756
+    305,
+    754
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_sm_mom_views_01",
    "bbox": [
-    468,
+    466,
     55,
-    822,
-    802
+    819,
+    801
    ],
-   "area": 172252,
+   "area": 171291,
    "size": [
-    362,
-    755
+    361,
+    754
    ],
    "halo": 0,
    "touches_border": false,
@@ -45,14 +45,14 @@
    "id": "cast_sm_mom_views_02",
    "bbox": [
     902,
-    54,
-    1289,
-    802
+    55,
+    1287,
+    801
    ],
-   "area": 189185,
+   "area": 187788,
    "size": [
-    395,
-    756
+    393,
+    754
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "cast_sm_mom_views_03",
    "bbox": [
-    1340,
+    1341,
     66,
-    1779,
-    802
+    1778,
+    801
    ],
-   "area": 174848,
+   "area": 174305,
    "size": [
-    447,
-    744
+    445,
+    743
    ],
    "halo": 0,
    "touches_border": false,

@@ -1,24 +1,24 @@
 {
  "sheet": "cast_sm_kids_views",
  "bg": [
-  0.976,
+  0.969,
   0.02,
-  0.969
+  0.976
  ],
  "dropped": 0,
  "sprites": [
   {
    "id": "cast_sm_kids_views_00",
    "bbox": [
-    63,
-    59,
-    291,
-    680
+    62,
+    60,
+    292,
+    678
    ],
-   "area": 90700,
+   "area": 90847,
    "size": [
-    236,
-    629
+    238,
+    626
    ],
    "halo": 0,
    "touches_border": false,
@@ -28,14 +28,14 @@
    "id": "cast_sm_kids_views_01",
    "bbox": [
     378,
-    59,
-    675,
-    680
+    58,
+    673,
+    678
    ],
-   "area": 115900,
+   "area": 116100,
    "size": [
-    305,
-    629
+    303,
+    628
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,17 +44,17 @@
   {
    "id": "cast_sm_kids_views_02",
    "bbox": [
-    710,
-    67,
-    996,
-    679
+    709,
+    68,
+    1002,
+    678
    ],
-   "area": 101409,
+   "area": 103206,
    "size": [
-    294,
-    620
+    301,
+    618
    ],
-   "halo": 9,
+   "halo": 0,
    "touches_border": false,
    "parts": 1
   },
@@ -64,14 +64,14 @@
     1032,
     75,
     1367,
-    680
+    679
    ],
-   "area": 130727,
+   "area": 131625,
    "size": [
     343,
-    613
+    612
    ],
-   "halo": 9,
+   "halo": 0,
    "touches_border": false,
    "parts": 1
   },
@@ -80,15 +80,15 @@
    "bbox": [
     1399,
     50,
-    2108,
-    680
+    2109,
+    679
    ],
-   "area": 254611,
+   "area": 256043,
    "size": [
-    717,
-    638
+    718,
+    637
    ],
-   "halo": 9,
+   "halo": 0,
    "touches_border": false,
    "parts": 1
   }

@@ -295,8 +295,8 @@
    "night": "night"
   },
   "fx": {
-   "pop:story_sm_village_02": "fire.ignite",
-   "pop:story_sm_village_03": "kitchen.boil",
+   "pop:stove": "fire.ignite",
+   "pop:siru": "kitchen.boil",
    "cake_to_basket": "ui.pop",
    "cake_to_tiger": "sm.gulp",
    "cakes_all_to_tiger": "sm.gulp_big",
@@ -867,7 +867,7 @@
     "who": {
      "boy": "calm",
      "girl": "calm",
-     "mom": "calm"
+     "mom": "wave"
     },
     "at": {
      "boy": "boy_at",
@@ -1132,7 +1132,7 @@
     },
     "set": [
      {
-      "card": "story_sm_village_01",
+      "card": "story_sm_village_02",
       "at": "rich_house",
       "stage": "full",
       "name": "rich_house",
@@ -1141,7 +1141,7 @@
       "yaw": -55.0
      },
      {
-      "card": "story_sm_village_02",
+      "card": "story_sm_village_03",
       "at": "stove",
       "stage": 0,
       "name": "stove",
@@ -1150,7 +1150,7 @@
       "yaw": -40.0
      },
      {
-      "card": "story_sm_village_03",
+      "card": "story_sm_village_04",
       "at": "siru",
       "stage": 0,
       "name": "siru",
@@ -1159,7 +1159,7 @@
       "yaw": -30.0
      },
      {
-      "card": "story_sm_village_08",
+      "card": "story_sm_village_09",
       "at": "basin",
       "stage": 0,
       "name": "basin",
@@ -1303,17 +1303,17 @@
     },
     {
      "do": "fx",
-     "fx": "pop:story_sm_village_08",
+     "fx": "pop:basin",
      "wait": 0.6
     },
     {
      "do": "fx",
-     "fx": "pop:story_sm_village_02",
+     "fx": "pop:stove",
      "wait": 0.6
     },
     {
      "do": "fx",
-     "fx": "pop:story_sm_village_03",
+     "fx": "pop:siru",
      "wait": 0.6
     },
     {
@@ -1546,7 +1546,7 @@
     },
     "set": [
      {
-      "card": "story_sm_village_01",
+      "card": "story_sm_village_02",
       "at": "rich_house",
       "stage": "full",
       "name": "rich_house",
@@ -1555,7 +1555,7 @@
       "yaw": -55.0
      },
      {
-      "card": "story_sm_village_02",
+      "card": "story_sm_village_03",
       "at": "stove",
       "stage": 0,
       "name": "stove",
@@ -1564,7 +1564,7 @@
       "yaw": -40.0
      },
      {
-      "card": "story_sm_village_03",
+      "card": "story_sm_village_04",
       "at": "siru",
       "stage": 0,
       "name": "siru",
@@ -1573,7 +1573,7 @@
       "yaw": -30.0
      },
      {
-      "card": "story_sm_village_08",
+      "card": "story_sm_village_09",
       "at": "basin",
       "stage": 0,
       "name": "basin",
@@ -1960,7 +1960,7 @@
     },
     "set": [
      {
-      "card": "story_sm_village_01",
+      "card": "story_sm_village_02",
       "at": "rich_house",
       "stage": "full",
       "name": "rich_house",
@@ -1969,7 +1969,7 @@
       "yaw": -55.0
      },
      {
-      "card": "story_sm_village_02",
+      "card": "story_sm_village_03",
       "at": "stove",
       "stage": 0,
       "name": "stove",
@@ -1978,7 +1978,7 @@
       "yaw": -40.0
      },
      {
-      "card": "story_sm_village_03",
+      "card": "story_sm_village_04",
       "at": "siru",
       "stage": 0,
       "name": "siru",
@@ -1987,7 +1987,7 @@
       "yaw": -30.0
      },
      {
-      "card": "story_sm_village_08",
+      "card": "story_sm_village_09",
       "at": "basin",
       "stage": 0,
       "name": "basin",
@@ -2358,7 +2358,7 @@
     },
     "set": [
      {
-      "card": "story_sm_village_01",
+      "card": "story_sm_village_02",
       "at": "rich_house",
       "stage": "full",
       "name": "rich_house",
@@ -2367,7 +2367,7 @@
       "yaw": -55.0
      },
      {
-      "card": "story_sm_village_02",
+      "card": "story_sm_village_03",
       "at": "stove",
       "stage": 0,
       "name": "stove",
@@ -2376,7 +2376,7 @@
       "yaw": -40.0
      },
      {
-      "card": "story_sm_village_03",
+      "card": "story_sm_village_04",
       "at": "siru",
       "stage": 0,
       "name": "siru",
@@ -2385,7 +2385,7 @@
       "yaw": -30.0
      },
      {
-      "card": "story_sm_village_08",
+      "card": "story_sm_village_09",
       "at": "basin",
       "stage": 0,
       "name": "basin",
@@ -5323,7 +5323,7 @@
     },
     {
      "do": "end",
-     "prompt": "sm_n02",
+     "after": "sm_n02",
      "close_book": true
     }
    ],

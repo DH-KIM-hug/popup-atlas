@@ -9357,8 +9357,8 @@
    "front"
   ],
   "px": [
-   281,
-   524
+   280,
+   523
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -9391,8 +9391,8 @@
    "front"
   ],
   "px": [
-   299,
-   519
+   300,
+   517
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -9426,8 +9426,8 @@
    "front"
   ],
   "px": [
-   320,
-   652
+   322,
+   651
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -9459,8 +9459,8 @@
    "front"
   ],
   "px": [
-   453,
-   650
+   454,
+   648
   ],
   "hanging": false,
   "skin": "tiger",
@@ -9492,7 +9492,7 @@
    "front"
   ],
   "px": [
-   382,
+   381,
    622
   ],
   "hanging": false,
@@ -9526,7 +9526,7 @@
    "front"
   ],
   "px": [
-   363,
+   362,
    620
   ],
   "hanging": false,
@@ -9560,8 +9560,8 @@
    "front"
   ],
   "px": [
-   248,
-   615
+   251,
+   616
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -9578,7 +9578,7 @@
   "view": "front",
   "facing": "front",
   "label": "finger at lips (쉿!)",
-  "height_units": 0.243,
+  "height_units": 0.242,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -9594,7 +9594,7 @@
    "front"
   ],
   "px": [
-   319,
+   322,
    594
   ],
   "hanging": false,
@@ -9628,8 +9628,8 @@
    "front"
   ],
   "px": [
-   318,
-   619
+   321,
+   620
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -9646,7 +9646,7 @@
   "view": "front",
   "facing": "front",
   "label": "praying, looking up (하늘님)",
-  "height_units": 0.251,
+  "height_units": 0.252,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -9662,8 +9662,8 @@
    "front"
   ],
   "px": [
-   247,
-   615
+   251,
+   616
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -9680,7 +9680,7 @@
   "view": "front",
   "facing": "front",
   "label": "giggling, hands over mouth",
-  "height_units": 0.248,
+  "height_units": 0.247,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -9696,8 +9696,8 @@
    "front"
   ],
   "px": [
-   247,
-   606
+   252,
+   605
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -9730,8 +9730,8 @@
    "front"
   ],
   "px": [
-   325,
-   579
+   324,
+   580
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -9764,8 +9764,8 @@
    "front"
   ],
   "px": [
-   303,
-   581
+   304,
+   580
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -9782,7 +9782,7 @@
   "view": "front",
   "facing": "front",
   "label": "laughing, blurting it out (도끼로!)",
-  "height_units": 0.235,
+  "height_units": 0.234,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -9798,8 +9798,8 @@
    "front"
   ],
   "px": [
-   311,
-   581
+   310,
+   579
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -9866,8 +9866,8 @@
    "front"
   ],
   "px": [
-   305,
-   582
+   306,
+   581
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -9900,8 +9900,8 @@
    "front"
   ],
   "px": [
-   302,
-   580
+   304,
+   579
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -9934,8 +9934,8 @@
    "side"
   ],
   "px": [
-   236,
-   629
+   238,
+   626
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -9968,8 +9968,8 @@
    "back"
   ],
   "px": [
-   305,
-   629
+   303,
+   628
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10002,8 +10002,8 @@
    "side"
   ],
   "px": [
-   294,
-   620
+   301,
+   618
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10037,7 +10037,7 @@
   ],
   "px": [
    343,
-   613
+   612
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10070,8 +10070,8 @@
    "front"
   ],
   "px": [
-   717,
-   638
+   718,
+   637
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10105,7 +10105,7 @@
   ],
   "px": [
    251,
-   540
+   538
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10138,8 +10138,8 @@
    "back"
   ],
   "px": [
-   241,
-   540
+   242,
+   538
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10172,8 +10172,8 @@
    "back"
   ],
   "px": [
-   251,
-   512
+   252,
+   511
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10206,8 +10206,8 @@
    "back"
   ],
   "px": [
-   255,
-   511
+   256,
+   510
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10240,8 +10240,8 @@
    "front"
   ],
   "px": [
-   217,
-   544
+   218,
+   543
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10275,7 +10275,7 @@
   ],
   "px": [
    234,
-   433
+   432
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10308,8 +10308,8 @@
    "front"
   ],
   "px": [
-   275,
-   524
+   276,
+   523
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10342,8 +10342,8 @@
    "front"
   ],
   "px": [
-   260,
-   427
+   261,
+   426
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10376,8 +10376,8 @@
    "front"
   ],
   "px": [
-   471,
-   652
+   470,
+   650
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10410,8 +10410,8 @@
    "front"
   ],
   "px": [
-   415,
-   650
+   416,
+   652
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10444,8 +10444,8 @@
    "front"
   ],
   "px": [
-   343,
-   652
+   342,
+   650
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -10479,7 +10479,7 @@
   ],
   "px": [
    416,
-   651
+   653
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -10496,7 +10496,7 @@
   "view": "front",
   "facing": "front",
   "label": "waving goodbye, empty basket on arm",
-  "height_units": 0.361,
+  "height_units": 0.36,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -10513,7 +10513,7 @@
    "front"
   ],
   "px": [
-   302,
+   304,
    634
   ],
   "hanging": false,
@@ -10531,7 +10531,7 @@
   "view": "front",
   "facing": "front",
   "label": "finger up, reminding (문 꼭 잠그고)",
-  "height_units": 0.361,
+  "height_units": 0.36,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -10548,8 +10548,8 @@
    "front"
   ],
   "px": [
-   300,
-   634
+   302,
+   635
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -10583,7 +10583,7 @@
    "front"
   ],
   "px": [
-   303,
+   304,
    634
   ],
   "hanging": false,
@@ -10618,7 +10618,7 @@
    "front"
   ],
   "px": [
-   302,
+   304,
    634
   ],
   "hanging": false,
@@ -10636,7 +10636,7 @@
   "view": "front",
   "facing": "front",
   "label": "frightened, clutching the basket",
-  "height_units": 0.359,
+  "height_units": 0.36,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -10653,8 +10653,8 @@
    "front"
   ],
   "px": [
-   302,
-   632
+   305,
+   634
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -10688,8 +10688,8 @@
    "front"
   ],
   "px": [
-   325,
-   631
+   326,
+   633
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -10723,8 +10723,8 @@
    "side"
   ],
   "px": [
-   308,
-   756
+   305,
+   754
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -10758,8 +10758,8 @@
    "back"
   ],
   "px": [
-   362,
-   755
+   361,
+   754
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -10793,8 +10793,8 @@
    "front"
   ],
   "px": [
-   395,
-   756
+   393,
+   754
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -10811,7 +10811,7 @@
   "view": "side",
   "facing": "right",
   "label": "hurrying, empty basket (faces right)",
-  "height_units": 0.354,
+  "height_units": 0.355,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -10828,8 +10828,8 @@
    "side"
   ],
   "px": [
-   447,
-   744
+   445,
+   743
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -10861,8 +10861,8 @@
    "front"
   ],
   "px": [
-   385,
-   646
+   383,
+   648
   ],
   "hanging": false,
   "skin": "rich_lady",
@@ -10894,8 +10894,8 @@
    "front"
   ],
   "px": [
-   433,
-   647
+   431,
+   649
   ],
   "hanging": false,
   "skin": "rich_lady",
@@ -10928,7 +10928,7 @@
   ],
   "px": [
    421,
-   647
+   649
   ],
   "hanging": false,
   "skin": "rich_lady",
@@ -10960,8 +10960,8 @@
    "side"
   ],
   "px": [
-   321,
-   644
+   320,
+   646
   ],
   "hanging": false,
   "skin": "rich_lady",
@@ -10993,8 +10993,8 @@
    "front"
   ],
   "px": [
-   347,
-   482
+   346,
+   474
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11027,7 +11027,7 @@
   ],
   "px": [
    304,
-   469
+   462
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11059,8 +11059,8 @@
    "front"
   ],
   "px": [
-   300,
-   479
+   301,
+   471
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11092,8 +11092,8 @@
    "front"
   ],
   "px": [
-   318,
-   490
+   319,
+   482
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11125,8 +11125,8 @@
    "front"
   ],
   "px": [
-   366,
-   502
+   367,
+   495
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11158,8 +11158,8 @@
    "front"
   ],
   "px": [
-   308,
-   488
+   310,
+   479
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11176,7 +11176,7 @@
   "view": "front",
   "facing": "front",
   "label": "searching, paw shading eyes (어디 갔니?)",
-  "height_units": 0.444,
+  "height_units": 0.447,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11192,7 +11192,7 @@
   ],
   "px": [
    342,
-   493
+   495
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11209,7 +11209,7 @@
   "view": "front",
   "facing": "front",
   "label": "looking up surprised (위에서 웃음소리가?)",
-  "height_units": 0.428,
+  "height_units": 0.427,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11224,8 +11224,8 @@
    "front"
   ],
   "px": [
-   320,
-   477
+   319,
+   473
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11242,7 +11242,7 @@
   "view": "front",
   "facing": "front",
   "label": "sneaky, paw at mouth",
-  "height_units": 0.44,
+  "height_units": 0.439,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11257,8 +11257,8 @@
    "front"
   ],
   "px": [
-   344,
-   490
+   346,
+   486
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11290,8 +11290,8 @@
    "side"
   ],
   "px": [
-   247,
-   496
+   248,
+   495
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11308,7 +11308,7 @@
   "view": "back",
   "facing": "back",
   "label": "standing upright, back view",
-  "height_units": 0.442,
+  "height_units": 0.441,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11323,8 +11323,8 @@
    "back"
   ],
   "px": [
-   292,
-   491
+   293,
+   490
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11341,7 +11341,7 @@
   "view": "front",
   "facing": "front",
   "label": "sitting dazed, bump on the head, stars",
-  "height_units": 0.395,
+  "height_units": 0.394,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11356,8 +11356,8 @@
    "front"
   ],
   "px": [
-   374,
-   483
+   375,
+   480
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11389,8 +11389,8 @@
    "front"
   ],
   "px": [
-   336,
-   571
+   337,
+   572
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11422,8 +11422,8 @@
    "front"
   ],
   "px": [
-   380,
-   572
+   382,
+   573
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11456,7 +11456,7 @@
   ],
   "px": [
    346,
-   572
+   574
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11473,7 +11473,7 @@
   "view": "side",
   "facing": "right",
   "label": "disguised: standing, side (faces right)",
-  "height_units": 0.44,
+  "height_units": 0.441,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11488,7 +11488,7 @@
    "side"
   ],
   "px": [
-   275,
+   276,
    572
   ],
   "hanging": false,
@@ -11521,7 +11521,7 @@
    "back"
   ],
   "px": [
-   294,
+   292,
    571
   ],
   "hanging": false,
@@ -11539,7 +11539,7 @@
   "view": "front",
   "facing": "front",
   "label": "disguised: caught, headscarf slipping",
-  "height_units": 0.441,
+  "height_units": 0.439,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11554,8 +11554,8 @@
    "front"
   ],
   "px": [
-   345,
-   573
+   348,
+   572
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11572,7 +11572,7 @@
   "view": "side",
   "facing": "right",
   "label": "peering into the well (faces right)",
-  "height_units": 0.341,
+  "height_units": 0.343,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11587,7 +11587,7 @@
    "side"
   ],
   "px": [
-   336,
+   338,
    396
   ],
   "hanging": false,
@@ -11605,7 +11605,7 @@
   "view": "side",
   "facing": "right",
   "label": "pulling the bucket rope (faces right)",
-  "height_units": 0.393,
+  "height_units": 0.392,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11620,8 +11620,8 @@
    "side"
   ],
   "px": [
-   330,
-   455
+   331,
+   452
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11653,8 +11653,8 @@
    "side"
   ],
   "px": [
-   345,
-   468
+   348,
+   466
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11686,8 +11686,8 @@
    "side"
   ],
   "px": [
-   329,
-   407
+   330,
+   404
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11704,7 +11704,7 @@
   "view": "side",
   "facing": "right",
   "label": "climbing with an axe, axe high (frame A)",
-  "height_units": 0.49,
+  "height_units": 0.491,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11719,8 +11719,8 @@
    "side"
   ],
   "px": [
-   311,
-   565
+   313,
+   564
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11752,8 +11752,8 @@
    "side"
   ],
   "px": [
-   354,
-   472
+   356,
+   470
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11785,8 +11785,8 @@
    "front"
   ],
   "px": [
-   375,
-   580
+   376,
+   579
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11818,8 +11818,8 @@
    "back"
   ],
   "px": [
-   320,
-   650
+   323,
+   649
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11851,8 +11851,8 @@
    "back"
   ],
   "px": [
-   314,
-   650
+   319,
+   649
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11884,7 +11884,7 @@
    "front"
   ],
   "px": [
-   457,
+   453,
    559
   ],
   "hanging": false,
@@ -11918,7 +11918,7 @@
   ],
   "px": [
    439,
-   561
+   559
   ],
   "hanging": false,
   "skin": "tiger",
@@ -11935,7 +11935,7 @@
   "view": "front",
   "facing": "front",
   "label": "the sun with the brother's face",
-  "height_units": 0.618,
+  "height_units": 0.619,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11949,8 +11949,8 @@
    "front"
   ],
   "px": [
-   541,
-   532
+   538,
+   530
   ],
   "hanging": true,
   "skin": "sunmoon_sky",
@@ -11967,7 +11967,7 @@
   "view": "front",
   "facing": "front",
   "label": "the moon with the sister's face",
-  "height_units": 0.577,
+  "height_units": 0.576,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -11981,8 +11981,8 @@
    "front"
   ],
   "px": [
-   492,
-   497
+   488,
+   494
   ],
   "hanging": true,
   "skin": "sunmoon_sky",
@@ -12013,8 +12013,8 @@
    "front"
   ],
   "px": [
-   542,
-   536
+   540,
+   535
   ],
   "hanging": true,
   "skin": "sunmoon_sky",
@@ -12031,7 +12031,7 @@
   "view": "front",
   "facing": "front",
   "label": "the moon with the brother's face, gentle",
-  "height_units": 0.583,
+  "height_units": 0.582,
   "cross_slot": false,
   "biome": "any",
   "season": "any",
@@ -12045,11 +12045,113 @@
    "front"
   ],
   "px": [
-   496,
-   502
+   494,
+   499
   ],
   "hanging": true,
   "skin": "sunmoon_sky",
+  "parts": {}
+ },
+ {
+  "id": "cast_hanbok_mom_paper_calm",
+  "path": "art/cast/cast_hanbok_mom_paper_calm.webp",
+  "sheet": "cast_sm_paper_mom",
+  "category": "cast",
+  "role": "hanbok_mom",
+  "variant": "paper_calm",
+  "pose": "paper_calm",
+  "view": "front",
+  "facing": "front",
+  "label": "PAPER look test: calm, full basket",
+  "height_units": 0.36,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "woman",
+   "person",
+   "adult",
+   "mother",
+   "hanbok",
+   "korean_traditional",
+   "walker",
+   "sunmoon",
+   "paper_calm",
+   "front"
+  ],
+  "px": [
+   731,
+   1500
+  ],
+  "hanging": false,
+  "skin": "hanbok_mom",
+  "parts": {}
+ },
+ {
+  "id": "cast_tiger_paper_calm",
+  "path": "art/cast/cast_tiger_paper_calm.webp",
+  "sheet": "cast_sm_paper_tiger",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "paper_calm",
+  "pose": "paper_calm",
+  "view": "front",
+  "facing": "front",
+  "label": "PAPER look test: standing upright, sly grin",
+  "height_units": 0.44,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "animal",
+   "korean_traditional",
+   "villain",
+   "walker",
+   "sunmoon",
+   "paper_calm",
+   "front"
+  ],
+  "px": [
+   903,
+   1299
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {}
+ },
+ {
+  "id": "cast_hanbok_girl_paper_calm",
+  "path": "art/cast/cast_hanbok_girl_paper_calm.webp",
+  "sheet": "cast_sm_paper_girl",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "variant": "paper_calm",
+  "pose": "paper_calm",
+  "view": "front",
+  "facing": "front",
+  "label": "PAPER look test: calm",
+  "height_units": 0.235,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "girl",
+   "person",
+   "child",
+   "hanbok",
+   "korean_traditional",
+   "walker",
+   "sunmoon",
+   "paper_calm",
+   "front"
+  ],
+  "px": [
+   771,
+   1352
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
   "parts": {}
  },
  {
@@ -12073,8 +12175,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12103,8 +12205,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12133,8 +12235,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12163,8 +12265,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12193,8 +12295,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12223,8 +12325,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12253,8 +12355,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12283,8 +12385,8 @@
    "cycle"
   ],
   "px": [
-   240,
-   477
+   241,
+   474
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -12553,8 +12655,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12583,8 +12685,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12613,8 +12715,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12643,8 +12745,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12673,8 +12775,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12703,8 +12805,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12733,8 +12835,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12763,8 +12865,8 @@
    "cycle"
   ],
   "px": [
-   260,
-   527
+   261,
+   525
   ],
   "hanging": false,
   "skin": "hanbok_mom",
@@ -12793,8 +12895,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -12823,8 +12925,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -12853,8 +12955,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -12883,8 +12985,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -12913,8 +13015,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -12943,8 +13045,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -12973,8 +13075,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13003,8 +13105,8 @@
    "cycle"
   ],
   "px": [
-   262,
-   380
+   261,
+   377
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13034,7 +13136,7 @@
   ],
   "px": [
    361,
-   525
+   526
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -13064,7 +13166,7 @@
   ],
   "px": [
    361,
-   525
+   526
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -13094,7 +13196,7 @@
   ],
   "px": [
    361,
-   525
+   526
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -13124,7 +13226,7 @@
   ],
   "px": [
    361,
-   525
+   526
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -13154,7 +13256,7 @@
   ],
   "px": [
    361,
-   525
+   526
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -13184,7 +13286,7 @@
   ],
   "px": [
    361,
-   525
+   526
   ],
   "hanging": false,
   "skin": "hanbok_boy",
@@ -13214,7 +13316,7 @@
   ],
   "px": [
    332,
-   515
+   512
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -13244,7 +13346,7 @@
   ],
   "px": [
    332,
-   515
+   512
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -13274,7 +13376,7 @@
   ],
   "px": [
    332,
-   515
+   512
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -13304,7 +13406,7 @@
   ],
   "px": [
    332,
-   515
+   512
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -13334,7 +13436,7 @@
   ],
   "px": [
    332,
-   515
+   512
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -13364,7 +13466,7 @@
   ],
   "px": [
    332,
-   515
+   512
   ],
   "hanging": false,
   "skin": "hanbok_girl",
@@ -13393,8 +13495,8 @@
    "cycle"
   ],
   "px": [
-   317,
-   519
+   318,
+   515
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13423,8 +13525,8 @@
    "cycle"
   ],
   "px": [
-   317,
-   519
+   318,
+   515
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13453,8 +13555,8 @@
    "cycle"
   ],
   "px": [
-   317,
-   519
+   318,
+   515
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13483,8 +13585,8 @@
    "cycle"
   ],
   "px": [
-   317,
-   519
+   318,
+   515
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13513,8 +13615,8 @@
    "cycle"
   ],
   "px": [
-   317,
-   519
+   318,
+   515
   ],
   "hanging": false,
   "skin": "tiger",
@@ -13543,118 +13645,13 @@
    "cycle"
   ],
   "px": [
-   317,
-   519
+   318,
+   515
   ],
   "hanging": false,
   "skin": "tiger",
   "parts": {},
   "cycle": "dg_front",
   "frame": 1
- },
- {
-  "id": "cast_hanbok_mom_paper_calm",
-  "path": "art/cast/cast_hanbok_mom_paper_calm.webp",
-  "sheet": "cast_sm_paper_mom",
-  "category": "cast",
-  "role": "hanbok_mom",
-  "variant": "paper_calm",
-  "pose": "paper_calm",
-  "view": "front",
-  "facing": "front",
-  "label": "PAPER look test: calm, full basket",
-  "height_units": 0.36,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "woman",
-   "person",
-   "adult",
-   "mother",
-   "hanbok",
-   "korean_traditional",
-   "walker",
-   "sunmoon",
-   "paper_calm",
-   "front",
-   "paper"
-  ],
-  "px": [
-   731,
-   1500
-  ],
-  "hanging": false,
-  "skin": "hanbok_mom",
-  "parts": {}
- },
- {
-  "id": "cast_tiger_paper_calm",
-  "path": "art/cast/cast_tiger_paper_calm.webp",
-  "sheet": "cast_sm_paper_tiger",
-  "category": "cast",
-  "role": "tiger",
-  "variant": "paper_calm",
-  "pose": "paper_calm",
-  "view": "front",
-  "facing": "front",
-  "label": "PAPER look test: standing upright, sly grin",
-  "height_units": 0.44,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "tiger",
-   "animal",
-   "korean_traditional",
-   "villain",
-   "walker",
-   "sunmoon",
-   "paper_calm",
-   "front",
-   "paper"
-  ],
-  "px": [
-   903,
-   1299
-  ],
-  "hanging": false,
-  "skin": "tiger",
-  "parts": {}
- },
- {
-  "id": "cast_hanbok_girl_paper_calm",
-  "path": "art/cast/cast_hanbok_girl_paper_calm.webp",
-  "sheet": "cast_sm_paper_girl",
-  "category": "cast",
-  "role": "hanbok_girl",
-  "variant": "paper_calm",
-  "pose": "paper_calm",
-  "view": "front",
-  "facing": "front",
-  "label": "PAPER look test: calm",
-  "height_units": 0.235,
-  "cross_slot": false,
-  "biome": "any",
-  "season": "any",
-  "tags": [
-   "girl",
-   "person",
-   "child",
-   "hanbok",
-   "korean_traditional",
-   "walker",
-   "sunmoon",
-   "paper_calm",
-   "front",
-   "paper"
-  ],
-  "px": [
-   771,
-   1352
-  ],
-  "hanging": false,
-  "skin": "hanbok_girl",
-  "parts": {}
  }
 ]

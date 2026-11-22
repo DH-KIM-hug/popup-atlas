@@ -345,7 +345,7 @@ BEATS = [
     {"id": "cover", "title": "해님 달님", "spread": None, "steps": [{"do": "cover", "prompt": "sm_n01"}]},
     # 1 -- morning at the cottage: the mother goes to work, the children wave her off and lock the door
     {"id": "morning", "title": "산골 오막살이", "spread": _home(light=""),
-     "enter": {"who": {"boy": "calm", "girl": "calm", "mom": "calm"},
+     "enter": {"who": {"boy": "calm", "girl": "calm", "mom": "wave"},
                "at": {"boy": "boy_at", "girl": "girl_at", "mom": "mom_door"}},
      "steps": [
         {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 1.4},
@@ -368,9 +368,9 @@ BEATS = [
      "enter": {"who": {"mom": "work", "rich": "smile"}, "at": {"mom": "mom_work", "rich": "rich_at"}},
      "steps": [
         {"do": "cam", "shot": "establish", "at": "rich_yard", "from": "crane_high", "rate": 1.0, "wait": 1.2},
-        {"do": "fx", "fx": "pop:story_sm_village_09", "wait": 0.6},   # the rice basin (washing)
-        {"do": "fx", "fx": "pop:story_sm_village_03", "wait": 0.6},   # the stove's fire
-        {"do": "fx", "fx": "pop:story_sm_village_04", "wait": 0.6},   # the steamer, steam rising
+        {"do": "fx", "fx": "pop:basin", "wait": 0.6},   # the rice basin (washing)
+        {"do": "fx", "fx": "pop:stove", "wait": 0.6},   # the stove's fire
+        {"do": "fx", "fx": "pop:siru", "wait": 0.6},   # the steamer, steam rising
         {"do": "cam", "shot": "two_shot", "at": "rich_yard", "rate": 1.6, "wait": 0.3},
         {"do": "pose", "who": "rich", "pose": "give_tray"},
         {"do": "say", "line": "sm_r0204"},
@@ -560,7 +560,7 @@ BEATS = [
          "react": {"sun": ["-", "day"], "moon": ["-", "night"]}},
         {"do": "fx", "fx": "day", "wait": 0.3},
         {"do": "say", "line": "sm_r1107"},
-        {"do": "end", "prompt": "sm_n02", "close_book": True}]},
+        {"do": "end", "after": "sm_n02", "close_book": True}]},
 ]
 
 # ---------------------------------------------------------------- sound (phase 2: SoundDirector ids; sm.* to make)
@@ -568,7 +568,7 @@ SOUND = {
     "catalog": "res://audio/sound_catalog.json",
     "light_beds": {"": "day", "morning": "day", "afternoon": "afternoon", "late": "late", "dusk": "dusk",
                    "night": "night"},
-    "fx": {"pop:story_sm_village_03": "fire.ignite", "pop:story_sm_village_04": "kitchen.boil",
+    "fx": {"pop:stove": "fire.ignite", "pop:siru": "kitchen.boil",
            "cake_to_basket": "ui.pop", "cake_to_tiger": "sm.gulp", "cakes_all_to_tiger": "sm.gulp_big",
            "tiger_out": "sm.growl_cute", "eyes_glow": "sm.twinkle", "moon_cloud": "amb.gust", "door_bolt": "sm.bolt",
            "paw_in": "sm.paper_rustle", "poke_hole": "sm.paper_poke", "eye_blink": "sm.blink",

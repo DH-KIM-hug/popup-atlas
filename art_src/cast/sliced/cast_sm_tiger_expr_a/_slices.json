@@ -1,9 +1,9 @@
 {
  "sheet": "cast_sm_tiger_expr_a",
  "bg": [
-  0.988,
-  0.035,
-  0.976
+  0.973,
+  0.047,
+  0.961
  ],
  "dropped": 0,
  "sprites": [
@@ -11,14 +11,14 @@
    "id": "cast_sm_tiger_expr_a_00",
    "bbox": [
     34,
-    128,
-    373,
-    602
+    131,
+    372,
+    597
    ],
-   "area": 104644,
+   "area": 102732,
    "size": [
-    347,
-    482
+    346,
+    474
    ],
    "halo": 0,
    "touches_border": false,
@@ -27,15 +27,15 @@
   {
    "id": "cast_sm_tiger_expr_a_01",
    "bbox": [
-    431,
-    140,
-    727,
-    601
+    430,
+    143,
+    726,
+    597
    ],
-   "area": 92173,
+   "area": 90321,
    "size": [
     304,
-    469
+    462
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "cast_sm_tiger_expr_a_02",
    "bbox": [
-    769,
-    130,
-    1061,
-    601
+    767,
+    133,
+    1060,
+    596
    ],
-   "area": 93343,
+   "area": 91671,
    "size": [
-    300,
-    479
+    301,
+    471
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "cast_sm_tiger_expr_a_03",
    "bbox": [
-    1095,
-    119,
-    1405,
-    601
+    1093,
+    122,
+    1404,
+    596
    ],
-   "area": 101301,
+   "area": 99297,
    "size": [
-    318,
-    490
+    319,
+    482
    ],
    "halo": 0,
    "touches_border": false,
@@ -78,15 +78,15 @@
   {
    "id": "cast_sm_tiger_expr_a_04",
    "bbox": [
-    1440,
-    108,
-    1798,
-    602
+    1438,
+    110,
+    1797,
+    597
    ],
-   "area": 115366,
+   "area": 113097,
    "size": [
-    366,
-    502
+    367,
+    495
    ],
    "halo": 0,
    "touches_border": false,
@@ -95,15 +95,15 @@
   {
    "id": "cast_sm_tiger_expr_a_05",
    "bbox": [
-    1836,
-    122,
+    1834,
+    125,
     2136,
-    602
+    596
    ],
-   "area": 95232,
+   "area": 93729,
    "size": [
-    308,
-    488
+    310,
+    479
    ],
    "halo": 0,
    "touches_border": false,

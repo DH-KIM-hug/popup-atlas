@@ -1,24 +1,24 @@
 {
  "sheet": "cast_sm_rich_expr",
  "bg": [
-  0.984,
-  0.016,
-  0.98
+  0.961,
+  0.039,
+  0.969
  ],
  "dropped": 0,
  "sprites": [
   {
    "id": "cast_sm_rich_expr_00",
    "bbox": [
-    109,
-    47,
-    486,
-    685
+    110,
+    46,
+    485,
+    686
    ],
-   "area": 155994,
+   "area": 155451,
    "size": [
-    385,
-    646
+    383,
+    648
    ],
    "halo": 0,
    "touches_border": false,
@@ -28,14 +28,14 @@
    "id": "cast_sm_rich_expr_01",
    "bbox": [
     605,
-    46,
-    1030,
-    685
+    45,
+    1028,
+    686
    ],
-   "area": 166714,
+   "area": 166176,
    "size": [
-    433,
-    647
+    431,
+    649
    ],
    "halo": 0,
    "touches_border": false,
@@ -44,15 +44,15 @@
   {
    "id": "cast_sm_rich_expr_02",
    "bbox": [
-    1158,
-    46,
-    1571,
-    685
+    1157,
+    45,
+    1570,
+    686
    ],
-   "area": 165078,
+   "area": 164922,
    "size": [
     421,
-    647
+    649
    ],
    "halo": 0,
    "touches_border": false,
@@ -61,15 +61,15 @@
   {
    "id": "cast_sm_rich_expr_03",
    "bbox": [
-    1737,
-    55,
+    1738,
+    54,
     2050,
-    691
+    692
    ],
-   "area": 126091,
+   "area": 125654,
    "size": [
-    321,
-    644
+    320,
+    646
    ],
    "halo": 0,
    "touches_border": false,

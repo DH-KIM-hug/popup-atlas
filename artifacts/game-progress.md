@@ -1775,3 +1775,22 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
     (v8 movie runs read 0); not re-checked under the movie maker.
   - Files: artifacts/cover/wc_cover_sheet.jpg, wc_cover_book_still.png, wc_cover_stand_still.png,
     wc_cover_open_book.mp4, wc_cover_open_stand_alt.mp4, wc_end_close.mp4.
+
+## 2026-11-22 — sunmoon: the whole cast in paper; phase 2 first wiring — the tale plays start to end
+  - User OK ("뒤에 산도 고칠거죠? 다 종이로 변경"): 21 of 22 cast sheets redrawn as cut paper piece for piece from their
+    felt sheets (tools/art/sunmoon_jobs.py `<sheet>_paper`, the approved paper test figure as material reference;
+    felt raws kept as *_felt.png); every sheet sliced to exactly its plan's piece count, cast rebuilt through
+    with_godot.sh: 84 standing figures + 50 cycle frames, paper. cast_sm_girl_walk keeps its felt frames (its paper
+    redraw failed three passes; retrying). The far ridges behind the passes were sunmoon's own felt ridge cards at the
+    time of the test card (paper now); the remaining stitched hills / trees / flowers are the shared template's.
+  - Phase 2 first pass: game/stories/sunmoon/fx.gd (tap targets tray / window / oil / rope; the tiger hidden behind his
+    rock until he steps out; cakes flying; the moon cloud; the mother simply gone; the poked window; hiding behind the
+    jars; climbs on drawn frames along the trunk to the fork; oil streak, slips, axe notches; the golden and the old
+    rope sliding down; rope climbs; the snap and fall into the sorghum; sun / moon faces and their swap), story.tscn.
+  - Full autoplay (artifacts/sunmoon/run_full_v1.log, sunmoon_full_v1.mp4 25.7 MB, full_v1_sheet.jpg): STORY_DONE
+    432.2 s, no script errors, VOICE_DUP=0, missing_audio=[], OVERLAP 0 / OCCLUDE 0; missing_sound = the planned
+    sm.* cues (not made yet). check_lines: sm_n02 never played (the end verb takes `after`, fixed).
+  - Still off: the sun / moon hung in every sky from the first page (fixed: shown only in the sky ending); passes 2
+    and 3 put the camera inside ridge cards for several seconds; the sky ending is the bare template with the discs
+    (needs its cloud floor); 7:12 is over the 6.5 min target; the paw and the eye at the door have no art yet; sm.*
+    sounds to make.
