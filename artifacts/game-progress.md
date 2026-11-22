@@ -1896,6 +1896,18 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Note: a transient parse error in spread_stage.gd (15:45–15:55) broke the sunmoon agent's v7 recording
     (artifacts/sunmoon/sunmoon_full_v7.mp4 is 10 min of nothing; run_full_v7.log shows the error).
 
+  - SPEAKER_OFF check (coordinator): a quote's speaker inside the frame, not > 60 % hidden by a set piece, within
+    1.5 s of the segment and for most of it. First pass: sun_wind 0, three_pigs 5, witch_candy 13, sunmoon 9; now 0
+    on all four (movie runs artifacts/camera/spk5: three_pigs 318.3 s, witch_candy 457.7 s, sunmoon 389.2 s, all
+    VOICE_DUP=0 / CHECK_LINES OK; sun_wind 214.2 s fast run; three_pigs 315.3 s after the brisker tease walk).
+    Deliberate inserts listed in witch_candy `speaker_insert` (wc_009 / wc_010 jar naming, wc_109 her giggle from
+    the shop over Dahyun's magic). The line waits cost ~+4 s three_pigs, ~+5–10 s witch_candy.
+  - sunmoon pass-2 OCCLUDE (mom / tiger behind ridge_2_l / ledge_3): the gate fold-away now tests the head and both
+    sides of each figure, not only the centre; the ridge / ledge occlusions are gone (left: kids behind the jars,
+    the tiger in the sorghum, the finale cloud floor — all intended).
+  - VOICE_DUP is branch-aware: a segment voiced again in another beat (the same ingredient picked in round 2) is
+    not a dup; a segment voiced twice within one beat, or a voice starting over another, still is.
+
 ## 2026-11-22 — covers round 3 (coordinator review)
   - sunmoon back cover redrawn: the sun with the sister's face and the moon with the brother's face over the quiet
     cottage at dusk, sorghum below, nobody on the ground. sun_wind title-page spot redrawn with the traveller's own
