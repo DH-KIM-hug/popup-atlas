@@ -1921,3 +1921,24 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - 8 fps tiles: artifacts/cover/v4/*.jpg (openings ×4, endings ×4, in-book turns sun_wind / three_pigs / sunmoon).
   - Regression (no movie): sun_wind 214.2 s, three_pigs 310.6 s, witch_candy 443.7 s, sunmoon 401.9 s — STORY_DONE
     missing_audio=[] missing_sound=[], CHECK_LINES OK ×4.
+
+## 2026-11-22 — felt → paper: library + the three finished tales
+  - Shared library (part A): all 16 shared atlas sheets, 37 card-kit sheets and the three_pigs / witch_candy story sheets
+    redrawn as cut paper piece for piece (tools/art/paper_jobs.py, Codex, felt raws kept *_felt.png); swapped under the
+    same card ids (tools/art/paper_swap.py: content + position match, magenta-fringe clean, felt layouts kept).
+    Story sheets with derived art re-skinned in place (tools/cast/paper_reskin.py atlas) and their fold bands / doors /
+    house bodies re-cut (house_stages.py, wc_shop_door.py, wc_house_bodies.py, wc_room_wall.py). Engine: paper ground
+    default, layered paper stream, paper bridge deck, paper folded rocks, paper sky backing discs (no stitch ring).
+    QA sheets: art_src/atlas/qa/*_felt_vs_paper.png, art_src/cards/qa/*, art_src/atlas/qa/*_paper_reskin.png.
+  - Casts (part B): 63 cast sheets of three_pigs / sun_wind / witch_candy redrawn; every shipped figure, cycle frame,
+    peek face and rig part repainted from the paper raw in its felt canvas (paper_reskin.py <tale>); rig re-cut from the
+    paper figures (cut_cast_rig + front/lift/side legs + walk arms from paper sheets; same rig set), wolf leg tops
+    trimmed; witch_candy ghost mouths re-derived on paper originals (wc_mouth_v5, erase first, BLACK_LIPS=0).
+    QA: art_src/cast/qa/<tale>_paper_reskin.png, rig_preview*.png.
+  - Runs (paper): three_pigs 314.0 s, sun_wind 214.4 s, witch_candy 443.7 s (forced-free branches frog / bat / ghost);
+    all CHECK_LINES OK, VOICE_DUP=0, missing_audio=[], missing_sound=[], BLACK_LIPS 0, witch_candy OVERLAP 7 (v9: 8),
+    OCCLUDE 0; SET_CHECK zeros except witch_candy lights_1 / lights_2 string lights over the road (as in v9).
+    witch_candy autoplay now avoids re-picking an ingredient (a repeated pick had voiced its line twice).
+  - Videos: artifacts/video/three_pigs_full_v21.mp4, sun_wind_full_v4.mp4, witch_candy_full_v10.mp4 (<30 MB);
+    sheets artifacts/three_pigs/full_v21_sheet.jpg, artifacts/sun_wind/full_v4_sheet.jpg,
+    artifacts/witch_candy/full_v10_sheet.jpg; part A test card artifacts/paper/paper_test_card_A.jpg.
