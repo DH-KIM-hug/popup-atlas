@@ -26,14 +26,14 @@
   "base_y": 486,
   "roof_y": 200,
   "wall_x": [
-   20,
+   22,
    251
   ],
   "side_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_00_side.webp",
   "roof_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_00_roof.webp",
   "gable": {
    "eave_l": [
-    4,
+    5,
     192
    ],
    "eave_r": [
@@ -41,8 +41,8 @@
     192
    ],
    "ridge": [
-    100.5,
-    30
+    99.0,
+    31
    ]
   }
  },
@@ -50,18 +50,18 @@
   "bands": [
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_01_b0.webp",
-    "y0": 219,
+    "y0": 217,
     "y1": 409,
     "hinge_units": 0.0,
-    "height_units": 0.3636,
+    "height_units": 0.3674,
     "roof": false
    },
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_01_b1.webp",
     "y0": 4,
-    "y1": 219,
-    "hinge_units": 0.3636,
-    "height_units": 0.4114,
+    "y1": 217,
+    "hinge_units": 0.3674,
+    "height_units": 0.4076,
     "roof": true
    }
   ],
@@ -71,10 +71,10 @@
    412
   ],
   "base_y": 409,
-  "roof_y": 219,
+  "roof_y": 217,
   "wall_x": [
-   25,
-   396
+   26,
+   395
   ],
   "side_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_01_side.webp",
   "roof_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_01_roof.webp",
@@ -84,12 +84,12 @@
     201
    ],
    "eave_r": [
-    417,
+    416,
     201
    ],
    "ridge": [
-    223.0,
-    41
+    224.0,
+    39
    ]
   }
  },
@@ -121,21 +121,21 @@
   "roof_y": 268,
   "wall_x": [
    18,
-   344
+   343
   ],
   "side_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_02_side.webp",
   "roof_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_02_roof.webp",
   "gable": {
    "eave_l": [
-    17,
+    18,
     268
    ],
    "eave_r": [
-    335,
+    334,
     268
    ],
    "ridge": [
-    267.5,
+    267.0,
     53
    ]
   }
@@ -144,18 +144,18 @@
   "bands": [
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_03_b0.webp",
-    "y0": 194,
+    "y0": 193,
     "y1": 406,
     "hinge_units": 0.0,
-    "height_units": 0.4045,
+    "height_units": 0.4064,
     "roof": false
    },
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_03_b1.webp",
     "y0": 3,
-    "y1": 194,
-    "hinge_units": 0.4045,
-    "height_units": 0.3645,
+    "y1": 193,
+    "hinge_units": 0.4064,
+    "height_units": 0.3626,
     "roof": true
    }
   ],
@@ -165,10 +165,10 @@
    409
   ],
   "base_y": 406,
-  "roof_y": 194,
+  "roof_y": 193,
   "wall_x": [
    26,
-   367
+   365
   ],
   "side_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_03_side.webp",
   "roof_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_03_roof.webp",
@@ -182,7 +182,7 @@
     174
    ],
    "ridge": [
-    209.5,
+    209.0,
     44
    ]
   }
@@ -191,18 +191,18 @@
   "bands": [
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_04_b0.webp",
-    "y0": 178,
+    "y0": 177,
     "y1": 406,
     "hinge_units": 0.0,
-    "height_units": 0.4373,
+    "height_units": 0.4392,
     "roof": false
    },
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_04_b1.webp",
     "y0": 4,
-    "y1": 178,
-    "hinge_units": 0.4373,
-    "height_units": 0.3337,
+    "y1": 177,
+    "hinge_units": 0.4392,
+    "height_units": 0.3318,
     "roof": true
    }
   ],
@@ -212,24 +212,24 @@
    410
   ],
   "base_y": 406,
-  "roof_y": 178,
+  "roof_y": 177,
   "wall_x": [
    24,
-   393
+   391
   ],
   "side_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_04_side.webp",
   "roof_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_04_roof.webp",
   "gable": {
    "eave_l": [
-    3,
-    164
+    5,
+    162
    ],
    "eave_r": [
-    413,
-    164
+    410,
+    162
    ],
    "ridge": [
-    144.5,
+    143.0,
     9
    ]
   }
@@ -238,18 +238,18 @@
   "bands": [
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_05_b0.webp",
-    "y0": 225,
+    "y0": 224,
     "y1": 426,
     "hinge_units": 0.0,
-    "height_units": 0.3844,
+    "height_units": 0.3863,
     "roof": false
    },
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_05_b1.webp",
     "y0": 4,
-    "y1": 225,
-    "hinge_units": 0.3844,
-    "height_units": 0.4226,
+    "y1": 224,
+    "hinge_units": 0.3863,
+    "height_units": 0.4207,
     "roof": true
    }
   ],
@@ -259,25 +259,25 @@
    429
   ],
   "base_y": 426,
-  "roof_y": 225,
+  "roof_y": 224,
   "wall_x": [
-   31,
-   443
+   32,
+   441
   ],
   "side_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_05_side.webp",
   "roof_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_05_roof.webp",
   "gable": {
    "eave_l": [
-    7,
-    212
+    6,
+    214
    ],
    "eave_r": [
-    467,
-    212
+    465,
+    214
    ],
    "ridge": [
-    291.5,
-    15
+    295.5,
+    17
    ]
   }
  },
@@ -285,18 +285,18 @@
   "bands": [
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_06_b0.webp",
-    "y0": 223,
+    "y0": 224,
     "y1": 409,
     "hinge_units": 0.0,
-    "height_units": 0.356,
+    "height_units": 0.3541,
     "roof": false
    },
    {
     "file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_06_b1.webp",
     "y0": 3,
-    "y1": 223,
-    "hinge_units": 0.356,
-    "height_units": 0.421,
+    "y1": 224,
+    "hinge_units": 0.3541,
+    "height_units": 0.4229,
     "roof": true
    }
   ],
@@ -306,25 +306,25 @@
    413
   ],
   "base_y": 409,
-  "roof_y": 223,
+  "roof_y": 224,
   "wall_x": [
    27,
-   412
+   411
   ],
   "side_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_06_side.webp",
   "roof_file": "art/atlas/story_wc_houses_a/stages/story_wc_houses_a_06_roof.webp",
   "gable": {
    "eave_l": [
-    7,
-    210
+    8,
+    209
    ],
    "eave_r": [
-    443,
-    210
+    442,
+    209
    ],
    "ridge": [
-    273.5,
-    13
+    282.0,
+    15
    ]
   }
  }

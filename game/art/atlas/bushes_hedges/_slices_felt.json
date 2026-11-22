@@ -1,0 +1,470 @@
+{
+ "sheet": "bushes_hedges",
+ "bg": [
+  0.984,
+  0.008,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "bushes_hedges_00",
+   "bbox": [
+    37,
+    101,
+    232,
+    260
+   ],
+   "area": 25101,
+   "size": [
+    203,
+    167
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_01",
+   "bbox": [
+    248,
+    103,
+    440,
+    260
+   ],
+   "area": 24054,
+   "size": [
+    200,
+    165
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_02",
+   "bbox": [
+    455,
+    98,
+    647,
+    259
+   ],
+   "area": 24776,
+   "size": [
+    200,
+    169
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_03",
+   "bbox": [
+    665,
+    104,
+    863,
+    259
+   ],
+   "area": 24596,
+   "size": [
+    206,
+    163
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_04",
+   "bbox": [
+    882,
+    101,
+    1072,
+    260
+   ],
+   "area": 24056,
+   "size": [
+    198,
+    167
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_05",
+   "bbox": [
+    1090,
+    108,
+    1281,
+    259
+   ],
+   "area": 22638,
+   "size": [
+    199,
+    159
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_06",
+   "bbox": [
+    1301,
+    111,
+    1500,
+    260
+   ],
+   "area": 23362,
+   "size": [
+    207,
+    157
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_07",
+   "bbox": [
+    32,
+    311,
+    224,
+    510
+   ],
+   "area": 30293,
+   "size": [
+    200,
+    207
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_08",
+   "bbox": [
+    242,
+    316,
+    423,
+    509
+   ],
+   "area": 27138,
+   "size": [
+    189,
+    201
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_09",
+   "bbox": [
+    437,
+    326,
+    657,
+    509
+   ],
+   "area": 32449,
+   "size": [
+    228,
+    191
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_10",
+   "bbox": [
+    671,
+    320,
+    865,
+    509
+   ],
+   "area": 20609,
+   "size": [
+    202,
+    197
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_11",
+   "bbox": [
+    878,
+    340,
+    1068,
+    509
+   ],
+   "area": 15960,
+   "size": [
+    198,
+    177
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_12",
+   "bbox": [
+    1081,
+    318,
+    1285,
+    510
+   ],
+   "area": 18564,
+   "size": [
+    212,
+    200
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_13",
+   "bbox": [
+    1295,
+    330,
+    1508,
+    510
+   ],
+   "area": 28693,
+   "size": [
+    221,
+    188
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_14",
+   "bbox": [
+    28,
+    588,
+    467,
+    684
+   ],
+   "area": 34356,
+   "size": [
+    447,
+    104
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_15",
+   "bbox": [
+    478,
+    593,
+    690,
+    684
+   ],
+   "area": 16525,
+   "size": [
+    220,
+    99
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_16",
+   "bbox": [
+    704,
+    592,
+    893,
+    684
+   ],
+   "area": 16372,
+   "size": [
+    197,
+    100
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_17",
+   "bbox": [
+    910,
+    583,
+    1103,
+    684
+   ],
+   "area": 15405,
+   "size": [
+    201,
+    109
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_18",
+   "bbox": [
+    1116,
+    590,
+    1296,
+    684
+   ],
+   "area": 14091,
+   "size": [
+    188,
+    102
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_19",
+   "bbox": [
+    1306,
+    585,
+    1507,
+    684
+   ],
+   "area": 14938,
+   "size": [
+    209,
+    107
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_20",
+   "bbox": [
+    48,
+    777,
+    195,
+    957
+   ],
+   "area": 16641,
+   "size": [
+    155,
+    188
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_21",
+   "bbox": [
+    230,
+    759,
+    356,
+    958
+   ],
+   "area": 16290,
+   "size": [
+    134,
+    207
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_22",
+   "bbox": [
+    398,
+    738,
+    516,
+    958
+   ],
+   "area": 15965,
+   "size": [
+    126,
+    228
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_23",
+   "bbox": [
+    556,
+    749,
+    692,
+    958
+   ],
+   "area": 17342,
+   "size": [
+    144,
+    217
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_24",
+   "bbox": [
+    719,
+    762,
+    977,
+    958
+   ],
+   "area": 37747,
+   "size": [
+    266,
+    204
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_25",
+   "bbox": [
+    998,
+    774,
+    1254,
+    957
+   ],
+   "area": 35972,
+   "size": [
+    264,
+    191
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "bushes_hedges_26",
+   "bbox": [
+    1274,
+    781,
+    1500,
+    958
+   ],
+   "area": 30635,
+   "size": [
+    234,
+    185
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

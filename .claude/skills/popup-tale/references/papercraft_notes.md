@@ -45,6 +45,18 @@ Source: github.com/xikhar/papercraft (MIT), an agent skill for pop-up papercraft
   atlas|cards <sheet>` maps each new piece onto the old card id by position (the slicer numbers by rows, so never by
   index), keeps `<sheet>_felt.png`, rebuilds atlas_clean, and writes a felt-vs-paper QA sheet
   (`art_src/<atlas|cards>/qa/<sheet>_felt_vs_paper.png`) to look at before committing.
+  * Redraws re-flow pieces (village_props moved half its props): match by content + position (`assign2`), never by
+    position alone; a felt card split by hand (`<nn>a/b`) is matched as its two halves.
+  * Paper redraws carry a magenta halo on thin lit rims (needles, grass, plumes): `clean_fringe` refills magenta-
+    tinted edge pixels from clean neighbours.
+  * Keep the layout: the catalogs keep the felt `px` / aspect (`tools/art/card_aspect_lock.json` for the card kit).
+    A 1 % aspect change cascaded through the template placement and re-dressed whole spreads.
+  * Per-sheet slicer settings carry over (`JOIN`: village_props needs `--join 4`).
+- Finished tales (cast and story sheets with derived art): `tools/cast/paper_reskin.py <tale>` /
+  `paper_reskin.py atlas <sheets>` repaint every shipped image (figure, padded cycle frame, rig part, card) from the
+  paper raw warped into the felt raw's frame, located by a masked-SSD template match; canvases, catalog and rig stay.
+  Pixels a tool painted (pasted doors, recoloured mouths) are kept and counted EDITED; re-run that tool on the new
+  art (wc_shop_door.py, house_stages.py for fold bands, wc_mouth_v5.py for ghost mouths).
 
 ## Building a world
 - **Houses read from front, side and back.** Any piece the camera sees at an angle needs a body: side walls, roof slopes and a back. Build each part as a T of cards (a front card with a profile card behind) so it holds up at a diagonal.

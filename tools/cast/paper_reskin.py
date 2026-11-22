@@ -83,13 +83,13 @@ def build_warped(sheet):
         return (xy[0] + xs.min(), xy[1] + ys.min(), xy[0] + xs.max() + 1, xy[1] + ys.max() + 1)
     fb = [box(*p) for p in fp]
     pb = [box(*p) for p in pp]
+    report = []
     amap, lost, acost = paper_swap.assign2([p[0] for p in fp], [paper_swap.norm(b, FW, FH) for b in fb],
                                            [p[0] for p in pp], [paper_swap.norm(b, PW, PH) for b in pb])
     for i, c in acost.items():
         if c > 0.75:
             report.append(f"  {sheet}: felt piece {i} matched with high cost {c:.2f} (check the QA sheet)")
     canvas = Image.new("RGBA", (FW, FH), (0, 0, 0, 0))
-    report = []
     for i, js in amap.items():
         if not js:
             report.append(f"  {sheet}: felt piece {i} has no paper piece")
