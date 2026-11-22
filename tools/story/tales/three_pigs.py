@@ -333,7 +333,8 @@ BEATS = [
         # the brothers stroll along the road from their houses and tease (tp_023), then wander home
         {"do": "build", "house": "house", "pile": "brick_pile", "target": "house", "taps": 3, "walker": "pig_c",
          "fx": "brick_thunk", "gap": 0.6,
-         "steps": [{"at": 2, "fx": "brothers_tease", "lines": ["tp_023"]}, {"at": 3, "fx": "brothers_leave"}]},
+         "steps": [{"at": 1, "fx": "brothers_tease"}, {"at": 2, "wait_for": ["pig_a"], "lines": ["tp_023"]},
+                   {"at": 3, "fx": "brothers_leave"}]},  # they stroll in during the 2nd brick, tease once in frame
         {"do": "cam", "shot": "low_up", "at": "b_lot", "rate": 0.6},
         {"do": "fx", "fx": "star_burst"},
         {"do": "pose", "who": "pig_c", "pose": "proud"},
@@ -361,9 +362,11 @@ BEATS = [
         {"do": "pose", "who": "pig_a", "pose": "defiant"},
         # reverse: the face at the window ("싫어요")
         {"do": "cam", "shot": "window", "at": "s_win", "rate": 2.6, "wait": 0.1},
-        {"do": "say", "line": "tp_028"},
+        {"do": "say", "line": "tp_028", "segs": [0]},
         # the huffs: close on his puffed cheeks, a shake on every tap, cut wide for the house blowing away
-        {"do": "cam", "shot": "huff_two", "at": "s_huff", "rate": 3.0, "wait": 0.2},
+        # (SPEAKER_OFF 2026-11-22: his threat is said on his face, not on the window)
+        {"do": "cam", "shot": "huff_two", "at": "s_huff", "rate": 3.0, "wait": 0.2, "settle": 0.5},
+        {"do": "say", "line": "tp_028", "segs": [1]},
         # tap the wolf x3: the roof goes, the walls rock, the 3rd blows it all apart; 첫째 stands in the heap
         {"do": "huff", "house": "straw_house", "taps": 3, "prompt": "tp_026", "hint": "tp_026", "result": "blow_apart",
          "ruin": "story_houses_02", "fx": "straw_fly", "gap": 0.7, "cam_result": "story", "cam_result_at": "s_wolf_focus"},
@@ -384,8 +387,9 @@ BEATS = [
         {"do": "say", "line": "tp_031", "segs": [1]},
         {"do": "pose", "who": ["pig_a", "pig_b"], "pose": "defiant"},
         {"do": "cam", "shot": "front", "at": "w_lot", "rate": 2.6, "wait": 0.1},
-        {"do": "say", "line": "tp_032"},
-        {"do": "cam", "shot": "huff_two", "at": "w_huff", "rate": 3.0, "wait": 0.2},
+        {"do": "say", "line": "tp_032", "segs": [0]},
+        {"do": "cam", "shot": "huff_two", "at": "w_huff", "rate": 3.0, "wait": 0.2, "settle": 0.5},  # SPEAKER_OFF
+        {"do": "say", "line": "tp_032", "segs": [1]},
         {"do": "huff", "house": "wood_house", "taps": 3, "result": "collapse", "ruin": "story_houses_05",
          "fx": "wood_wobble", "gap": 0.7, "cam_result": "story", "cam_result_at": "w_wolf_focus"},
         {"do": "say", "line": "tp_033"},
@@ -400,7 +404,7 @@ BEATS = [
      "steps": [
         {"do": "walk", "who": "wolf", "to": "b_wolf", "via": "road", "pose": "side_prowl", "speed": 0.95, "follow": "wolf",
          "line": "tp_043", "segs": [0], "line_late": True},
-        {"do": "cam", "shot": "ots", "at": "b_wolf_focus", "rate": 3.0, "wait": 0.15},
+        {"do": "cam", "shot": "ots", "at": ["b_wolf_focus", "b_wolf_focus", "b_wolf"], "rate": 3.0, "wait": 0.15},  # his shoulder in frame (SPEAKER_OFF)
         {"do": "pose", "who": "wolf", "pose": "shout", "wait": 0.1},
         {"do": "say", "line": "tp_043", "segs": [1]},
         {"do": "say", "line": "tp_044"},

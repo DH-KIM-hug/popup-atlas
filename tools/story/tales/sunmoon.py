@@ -116,8 +116,7 @@ EXTRA = {"theme": "korean",              # the template dressed as a Joseon coun
          "ground_style": "paper",
          "spacing": True, "overlap_check": True, "pop_in": False,
          "overlap_ok": [["boy", "tree"], ["girl", "tree"], ["tiger", "tree"], ["tiger", "well"], ["boy", "jars"],
-                        ["girl", "jars"], ["tiger", "boulder_1"], ["tiger", "cairn_2"], ["tiger", "ledge_3"],
-                        ["tiger", "sorghum_2"]]}
+                        ["girl", "jars"], ["tiger", "boulder_1"], ["tiger", "cairn_2"], ["tiger", "ledge_3"]]}
 # Shots [distance, elevation°, focus height, fov, yaw offset°]
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "crane_high": [9.0, 36.0, 0.3, 24.0, 0.0],      # the whole mountain road: three passes in a row
@@ -513,8 +512,10 @@ BEATS = [
          "follow": "tiger", "shot": "medium"},
         {"do": "say", "line": "sm_r0804"},
         {"do": "pose", "who": "tiger", "pose": "peer_well"},
-        {"do": "cam", "shot": "well_down", "at": ["well", "tiger_well", "tiger_well"], "rate": 1.6, "wait": 0.6},  # the faces in the water, the tiger at the rope (SPEAKER_OFF)
+        {"do": "cam", "shot": "well_down", "at": "well", "rate": 1.6, "wait": 0.6},  # the faces in the water
         {"do": "pose", "who": "tiger", "pose": "pull_rope"},
+        # SPEAKER_OFF (camera agent 2026-11-22): up from the water to the tiger hauling the rope for his line
+        {"do": "cam", "shot": "medium", "at": ["tiger_well", "well"], "rate": 2.4, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "sm_r0806"},
         {"do": "fx", "fx": "bucket_splash", "wait": 0.3},
         {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 2.0, "wait": 0.1},  # v10b pace: sm_r0808 cut (their giggle shows; the tiger hears it)
@@ -552,7 +553,7 @@ BEATS = [
         {"do": "say", "line": "sm_r1001"},
         {"do": "fx", "fx": "rope_down:old", "wait": 0.3},
         {"do": "pose", "who": "tiger", "pose": "grab_up"},
-        {"do": "cam", "shot": "tree_low", "at": "tree_foot", "rate": 2.0, "wait": 0.2},  # SPEAKER_OFF: down to the tiger
+        {"do": "cam", "shot": "pass_two", "at": "tree_foot", "rate": 2.0, "wait": 0.2, "settle": 0.5},  # SPEAKER_OFF: round the trunk to the tiger
         {"do": "say", "line": "sm_r1002"},
         {"do": "fx", "fx": "tiger_rope_climb", "wait": 0.4},   # NEW: rope_a/b frames, creaks
         {"do": "cam", "shot": "rope_up", "at": "tree", "rate": 1.6, "wait": 0.1},

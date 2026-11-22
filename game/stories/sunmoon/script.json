@@ -398,10 +398,6 @@
   [
    "tiger",
    "ledge_3"
-  ],
-  [
-   "tiger",
-   "sorghum_2"
   ]
  ],
  "cast": {
@@ -4335,11 +4331,7 @@
     {
      "do": "cam",
      "shot": "well_down",
-     "at": [
-      "well",
-      "tiger_well",
-      "tiger_well"
-     ],
+     "at": "well",
      "rate": 1.6,
      "wait": 0.6
     },
@@ -4347,6 +4339,17 @@
      "do": "pose",
      "who": "tiger",
      "pose": "pull_rope"
+    },
+    {
+     "do": "cam",
+     "shot": "medium",
+     "at": [
+      "tiger_well",
+      "well"
+     ],
+     "rate": 2.4,
+     "wait": 0.1,
+     "settle": 0.5
     },
     {
      "do": "say",
@@ -5433,10 +5436,11 @@
     },
     {
      "do": "cam",
-     "shot": "tree_low",
+     "shot": "pass_two",
      "at": "tree_foot",
      "rate": 2.0,
-     "wait": 0.2
+     "wait": 0.2,
+     "settle": 0.5
     },
     {
      "do": "say",

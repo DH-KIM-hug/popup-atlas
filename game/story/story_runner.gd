@@ -70,6 +70,12 @@ var cam_jumps := 0
 var cam_jerks := 0
 var _cam_last: Dictionary = {}
 var _beat_id := ""
+## SPEAKER_OFF check (2026-11-22): a quote's speaker must be in the frame and not hidden behind a set piece within
+## SPEAKER_GRACE s of its segment starting, and stay so for most of the rest of it (stage.speaker_state).
+const SPEAKER_GRACE := 1.5
+var speaker_off := 0
+var _spk: Dictionary = {}
+var _spk_unknown := {}
 var _late_pending := false
 var _framed_house := ""  # a "frame" step already set up the coming build's shot
 var _walker_role := "traveller"
@@ -211,6 +217,7 @@ func _process(dt: float) -> void:
 	clock += dt
 	ui.step(dt)
 	_cam_monitor(dt)
+	_speaker_monitor()
 	# Autoplay holds the wind in bursts while a blow step runs (lines keep playing over the gusts).
 	if autoplay and _mode == "blow" and stage:
 		_auto_cycle += dt
@@ -319,6 +326,7 @@ func _say(id: String, only: Array = []) -> void:
 			continue  # a line split across steps (narration during a walk, the quote at the mark)
 		print("SEG ", id, " ", i, " t=", snappedf(clock, 0.01))
 		var s: Dictionary = segs[i]
+		_speaker_begin(id, i, s)
 		ui.show_line(l, i)
 		_apply_expr(l, i)
 		var st := _stream(str(s.get("audio", "")))
@@ -326,10 +334,13 @@ func _say(id: String, only: Array = []) -> void:
 			# one caption, one voice (witch_candy v8): count a segment voiced twice in the run and a voice that starts
 			# while another is still sounding (it would be cut or doubled)
 			var key := "%s:%d" % [id, i]
-			if _voiced.has(key) and not _hint_ids.has(id):
+			# branch-aware (2026-11-22): a line legitimately replayed in a later round (another beat: the same ingredient
+			# picked twice) is not a dup; a segment voiced twice within one beat is
+			var bkey := _beat_id + "/" + key
+			if _voiced.has(bkey) and not _hint_ids.has(id):
 				voice_dup += 1
 				print("VOICE_DUP ", key, " t=", snappedf(clock, 0.01))
-			_voiced[key] = true
+			_voiced[bkey] = true
 			if player.playing and player.get_playback_position() < player.stream.get_length() - 0.15:
 				voice_dup += 1
 				print("VOICE_OVERLAP ", key, " over ", _last_voice, " t=", snappedf(clock, 0.01))
@@ -339,6 +350,7 @@ func _say(id: String, only: Array = []) -> void:
 		if sound:
 			sound.duck(true)
 		await _wait(_seg_duration(s) + 0.08, true)
+		_speaker_end()
 		if _skip:
 			break
 	if _skip:
@@ -429,7 +441,7 @@ func _run() -> void:
 				var miss := int(stage.handler.get("black_missing")) if stage.handler and "black_missing" in stage.handler else 0
 				print("BLACK_LIPS frames-with-wrong-variant=", wrong + miss, " (puppet ", wrong, ", story-expected ", miss, ")")
 		print("VOICE_DUP=", voice_dup)
-		print("CAM_JUMP=", cam_jumps, " CAM_JERK=", cam_jerks)
+		print("CAM_JUMP=", cam_jumps, " CAM_JERK=", cam_jerks, " SPEAKER_OFF=", speaker_off)
 		print("STORY_DONE total=", snappedf(total, 0.1), " missing_audio=", missing_audio,
 			" missing_sound=", sound.missing if sound else [], " beats=", beat_times)
 		story_finished.emit(total)
@@ -485,6 +497,58 @@ func _play_beat(b: Dictionary) -> void:
 			await _wait(stage.cam_settle_left(0.4))
 		await _step(st, b)
 		prev = st
+
+
+func _speaker_monitor() -> void:
+	if _spk.is_empty() or stage == null or not is_instance_valid(stage) or not stage.is_built or ui.page_turn.visible:
+		return
+	var st := stage.speaker_state(str(_spk["who"]))
+	if st == "?":
+		if not _spk_unknown.has(_spk["who"]):
+			_spk_unknown[_spk["who"]] = true
+			print("SPEAKER_UNKNOWN ", _spk["who"])
+		_spk = {}
+		return
+	var el := clock - float(_spk["t0"])
+	if el <= float(_spk["grace"]):
+		if st == "":
+			_spk["seen"] = true
+		else:
+			_spk["why"] = st
+			_spk["at"] = stage.speaker_where(str(_spk["who"]))
+	else:
+		_spk["n"] = int(_spk["n"]) + 1
+		if st == "":
+			_spk["on"] = int(_spk["on"]) + 1
+		else:
+			_spk["why"] = st
+			_spk["at"] = stage.speaker_where(str(_spk["who"]))
+
+
+func _speaker_begin(id: String, i: int, s: Dictionary) -> void:
+	_speaker_end()
+	var who := str(s.get("speaker", "nar"))
+	if who == "nar" or who == "all" or who == "":
+		return
+	if (data.get("speaker_insert", []) as Array).has(id):
+		print("SPEAKER_INSERT ", id, ":", i, " who=", who)  # a deliberate cutaway (the tale lists it): not checked
+		return
+	var dur := _seg_duration(s)
+	_spk = {"who": who, "key": "%s:%d" % [id, i], "t0": clock, "grace": minf(SPEAKER_GRACE, dur * 0.6), "seen": false,
+		"n": 0, "on": 0, "why": ""}
+
+
+func _speaker_end() -> void:
+	if _spk.is_empty():
+		return
+	var n := int(_spk["n"])
+	var frac := float(_spk["on"]) / n if n > 0 else 1.0
+	if not bool(_spk["seen"]) or frac < 0.6:
+		speaker_off += 1
+		print("SPEAKER_OFF ", _spk["key"], " who=", _spk["who"], " t=", snappedf(float(_spk["t0"]), 0.01), " beat=", _beat_id,
+			" shot=", stage.shot if stage and is_instance_valid(stage) else "", " seen=", _spk["seen"], " on=",
+			snappedf(frac, 0.01), " why=", _spk["why"], " at=", _spk.get("at", ""))
+	_spk = {}
 
 
 func _cam_monitor(dt: float) -> void:
@@ -587,11 +651,15 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			await _wait(float(st.get("wait", 0.4)))
 		"cam":
 			var opts: Dictionary = {}
-			for k in ["from", "rate", "shake", "follow"]:
+			for k in ["from", "rate", "shake", "follow", "cut"]:
 				if st.has(k):
 					opts[k] = st[k]
 			stage.shot_to(str(st["shot"]), st.get("at", null), opts)
 			await _wait(float(st.get("wait", 0.6)))
+			if st.has("settle"):  # hold until the glide has gone this fraction of its time (a line follows)
+				await _wait(stage.cam_settle_left(float(st["settle"])))
+		"cam_settle":  # wait for a camera move a tale fx started (a glide in through the door) before the next line
+			await _wait(stage.cam_settle_left(float(st.get("frac", 0.6))))
 		"snap":
 			_snaps[str(st["key"])] = await _snapshot(true)
 		"flash":
@@ -1057,6 +1125,16 @@ func _step_build(st: Dictionary) -> void:
 		if at_steps.has(i):
 			var s2: Dictionary = at_steps[i]
 			stage.fx(str(s2.get("fx", "")))
+			if s2.has("wait_for"):  # the speakers walk into the frame first (SPEAKER_OFF: no line from off the frame)
+				var g := 0.0
+				while g < 8.0:
+					var all_in := true
+					for r in s2["wait_for"]:
+						if stage.speaker_state(str(r)) != "":
+							all_in = false
+					if all_in:
+						break
+					g += await _frame()
 			await _say_lines(s2.get("lines", []))
 		await _wait(float(st.get("gap", 0.45)))
 	if st.get("counter", false):

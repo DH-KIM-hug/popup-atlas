@@ -81,6 +81,15 @@ How to look:
   summary `CAM_JUMP=<n> CAM_JERK=<n>` next to VOICE_DUP: require 0 / 0 (shakes and page turns are not counted).
   No `from` cuts in cam steps (a spread's opening `from` is applied under the page turn); `"cut": true` only where a
   turn hides it. Look at 8 fps full-frame tiles of any flagged moment.
+- [ ] **The speaker is in the frame** (SPEAKER_OFF check, 2026-11-22): every quote's speaker is inside the frame and
+  not hidden behind a set piece (> 60 % of head and body) within 1.5 s of the segment starting, and stays so for most
+  of it; the run log prints `SPEAKER_OFF <line:seg> who= t= beat= shot= why= at=` and `SPEAKER_OFF=<n>` in the summary.
+  Fixes that worked: split a line's segs so the threat is said on the threatener (`say segs`), frame a two-shot
+  between marks (`cam at: [spot, spot]`), `settle` on a cam step / `cam_settle` after an fx glide so the line waits for
+  the camera, a build sub-step `wait_for` (speakers walk into the frame first), an interior shot instead of an outdoor
+  one for someone inside. Deliberate inserts (the witch naming her jars over push-ins) go in the tale's
+  `speaker_insert` list (logged as SPEAKER_INSERT); a speaker shown as something else (sunmoon's children as the sun
+  and moon) is a handler `speaker_point`.
 - [ ] **Interactive steps frame every target first** and hold still. Rings sit fully inside with margin, and each target is at least ~80 pt to tap ("화면이 거기로 안가서 못누름").
   - A build is framed once, for the finished size.
 - [ ] **Nothing overlaps** ("물체랑 사람들끼리 자꾸 겹치잖아"): actors vs actors, actors vs props, props vs props; the run

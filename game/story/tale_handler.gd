@@ -53,6 +53,12 @@ func target_point(_t: String) -> Variant:
 	return null
 
 
+## SPEAKER_OFF check: where a speaker who is not on the page as their actor shows instead (sunmoon's finale: the
+## children are the sun and the moon). null = no stand-in.
+func speaker_point(_who: String) -> Variant:
+	return null
+
+
 func target_radius(_t: String) -> float:
 	return -1.0
 

@@ -686,17 +686,21 @@ func _brew(st: Dictionary, R: Node) -> void:
 	for x in plan.slice(0, 2 if picks[0] != picks[1] else 1):
 		await R._say(x)
 	if yuck != "":
+		# SPEAKER_OFF: Dahyun's "으엑!" with her in the frame (the camera was still on the pot after the splash)
+		stage.shot_to("two_shot", "in_pot", {"rate": 2.4})
+		await R._wait(stage.cam_settle_left(0.5))
 		await R._say(yuck)
 	# magic stir: the witch reaches out, sparkles, the swirl speeds up
 	var w := _a("witch")
 	if w:
 		w.set_pose("magic")
-	stage.shot_to("pot", "in_pot", {"rate": 2.0})
+	stage.shot_to("pot", ["in_pot", "in_witch", "in_witch"], {"rate": 2.0})  # the swirl and the witch stirring it (SPEAKER_OFF)
 	_swirl_speed = 4.0
 	_sfx("wc.stir", _pot_mouth())
 	for k in 6:
 		fly("story_wc_pot_19", (w.centre() if w else _pot_mouth()) - _right() * 0.08, _pot_mouth(), 0.03, 0.5, 0.06, 0.0, 5.0)
 	if st.has("stir"):
+		await R._wait(stage.cam_settle_left(0.5))  # the witch in the frame before her stir line (SPEAKER_OFF)
 		await R._say(str(st["stir"]))
 	else:
 		await R._wait(2.2)  # the stir with its sound only (the line was said in round 1)
@@ -827,10 +831,11 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 	if SoundDirector.current:
 		SoundDirector.current.set_music("", 1.0)
 	_sfx("wc.eerie", _pot_mouth())
-	stage.shot_to("pot_low", "in_pot", {"rate": 1.2})
+	stage.shot_to("two_shot", ["in_pot", "in_witch"], {"rate": 1.2})  # the eerie stir: the witch over the pot (SPEAKER_OFF; the low pot shot cut her head off)
 	_swirl_speed = 5.0
 	_sfx("wc.stir", _pot_mouth())
 	if st.has("stir"):
+		await R._wait(stage.cam_settle_left(0.5))  # the witch in the frame before her stir line (SPEAKER_OFF)
 		await R._say(str(st["stir"]))
 	else:
 		await R._wait(2.6)  # the eerie stir, sound only (no repeat of the stir line)

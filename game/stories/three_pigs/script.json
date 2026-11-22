@@ -1950,8 +1950,14 @@
      "gap": 0.6,
      "steps": [
       {
+       "at": 1,
+       "fx": "brothers_tease"
+      },
+      {
        "at": 2,
-       "fx": "brothers_tease",
+       "wait_for": [
+        "pig_a"
+       ],
        "lines": [
         "tp_023"
        ]
@@ -2298,14 +2304,25 @@
     },
     {
      "do": "say",
-     "line": "tp_028"
+     "line": "tp_028",
+     "segs": [
+      0
+     ]
     },
     {
      "do": "cam",
      "shot": "huff_two",
      "at": "s_huff",
      "rate": 3.0,
-     "wait": 0.2
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tp_028",
+     "segs": [
+      1
+     ]
     },
     {
      "do": "huff",
@@ -2635,14 +2652,25 @@
     },
     {
      "do": "say",
-     "line": "tp_032"
+     "line": "tp_032",
+     "segs": [
+      0
+     ]
     },
     {
      "do": "cam",
      "shot": "huff_two",
      "at": "w_huff",
      "rate": 3.0,
-     "wait": 0.2
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "tp_032",
+     "segs": [
+      1
+     ]
     },
     {
      "do": "huff",
@@ -2942,7 +2970,11 @@
     {
      "do": "cam",
      "shot": "ots",
-     "at": "b_wolf_focus",
+     "at": [
+      "b_wolf_focus",
+      "b_wolf_focus",
+      "b_wolf"
+     ],
      "rate": 3.0,
      "wait": 0.15
     },

@@ -210,7 +210,7 @@ func fx(name: String) -> bool:
 					p.pop_target = 1.0
 				stage.clear_inside(p)
 				var rt := stage.road_route(p.global_position, goal)
-				p.follow(rt, 0.45, "side_walk", false)
+				p.follow(rt, 0.7, "side_walk", false)  # (2026-11-22) a brisker stroll: the tease waits until they are in frame
 				p.pose = "tease" if k == 0 else "violin"
 		"brothers_leave":
 			# back home along the road (첫째 to the straw house, 둘째 to the wood house)

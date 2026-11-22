@@ -156,7 +156,10 @@ BACKDROP = True
 INSIDE_FRAMING = "manual"
 # v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아"): stage spacing solver + OVERLAP / OCCLUDE log; intentional contacts listed
 EXTRA = {"spacing": True, "overlap_check": True, "pop_in": False,
-         "overlap_ok": [["kid", "logs"], ["witch", "pot"], ["kid", "room_floor"], ["kid", "room_floor2"]]}  # the stage does not reframe taps while the camera is inside the shop (rooms are framed here)
+         "overlap_ok": [["kid", "logs"], ["witch", "pot"], ["kid", "room_floor"], ["kid", "room_floor2"]],
+         # SPEAKER_OFF check (2026-11-22): the witch names her jars over push-ins on each jar (a deliberate insert);
+         # her giggle "히히, 핼러윈 마법이야!" is a voice from the shop over Dahyun's magic outside
+         "speaker_insert": ["wc_009", "wc_010", "wc_109"]}  # the stage does not reframe taps while the camera is inside the shop (rooms are framed here)
 # Shots [distance, elevation°, focus height, fov, yaw offset°] (three_pigs vocabulary + interior shots)
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "crane_high": [8.0, 34.0, 0.3, 22.0, 0.0], "establish": [8.0, 17.0, 0.3, 24.0, -4.0],
@@ -252,7 +255,7 @@ STREET = {"shop": SHOP, "door": _door, "est": [0.1, -1.2], "street_focus": [0.2,
           "door_view": _rot(SHOP, SHOP_DOOR_X, 0.45, SHOP_YAW), "cat_door": _rot(SHOP, SHOP_DOOR_X + 0.22, 0.45, SHOP_YAW)}
 # inside the shop, in the shop's frame (the facade plane at dz 0, the room 1.0 deep behind it)
 for _k, (_dx, _dz) in {"in_back": (0.0, -0.97), "in_shelf": (-0.35, -0.9), "in_pot": (0.22, -0.62),
-                       "in_counter": (0.47, -0.92), "in_focus": (0.05, -0.66), "in_beam": (0.0, -0.5),
+                       "in_counter": (0.47, -0.92), "in_focus": (0.13, -0.66), "in_beam": (0.0, -0.5),
                        "in_kid": (-0.05, -0.55), "in_witch": (0.5, -0.58), "in_cat": (0.36, -0.4),
                        "in_rabbit": (0.1, -0.88), "in_bear": (0.42, -0.86), "in_fox": (0.6, -0.84),
                        "in_floor": (0.0, -0.02), "in_floor2": (0.0, -0.52),
@@ -431,6 +434,7 @@ BEATS = [
      "steps": [
         {"do": "fx", "fx": "inside_view", "wait": 1.8},           # the camera glides in through the door
         {"do": "pose", "who": "witch", "pose": "welcome", "wait": 0.1},
+        {"do": "cam_settle", "frac": 0.7},                         # SPEAKER_OFF: in the room before she speaks
         {"do": "say", "line": "wc_005"},
         {"do": "cam", "shot": "pot_low", "at": "in_pot", "rate": 1.8, "wait": 0.6},
         {"do": "fx", "fx": "up:logs", "wait": 0.5},
@@ -454,8 +458,10 @@ BEATS = [
         {"do": "name_jars", "line": "wc_010", "at": [[0.3, "poo"], [1.95, "fish"]], "then": "kid_yuck"},
         {"do": "pose", "who": "kid", "pose": "yuck", "wait": 0.0},
         {"do": "say", "line": "wc_011"},
+        # SPEAKER_OFF: the cat's "냐… 냄새!" with the cat in the frame, then the witch across the pot
+        {"do": "cam", "shot": "two_shot", "at": ["in_cat", "in_pot"], "rate": 2.4, "wait": 0.2, "settle": 0.55},
         {"do": "say", "line": "wc_038"},
-        {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.8, "wait": 0.2},
+        {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.8, "wait": 0.2, "settle": 0.5},
         {"do": "say", "line": "wc_039"},
         {"do": "say", "line": "wc_040"},
     ]},
@@ -484,7 +490,7 @@ BEATS = [
         {"do": "fx", "fx": "pot_clear", "wait": 0.2},
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.2},
         {"do": "pose", "who": "witch", "pose": "welcome"},
-        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.2, "wait": 0.1},
+        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.2, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "wc_126"},
         {"do": "pose", "who": "kid", "pose": "wow"},
         {"do": "cam", "shot": "two_shot", "at": "in_pot", "rate": 1.6, "wait": 0.1},
@@ -492,7 +498,7 @@ BEATS = [
         {"do": "brew", "round": 3, "all_colors": True, "ingredients": INGREDIENTS, "taps": ["snot", "lantern", "fish"],
          "result": "ghost", "candy": "story_wc_candies_06", "pot_color": "black", "stir": "wc_130", "pop": "wc_131",
          "eat": "wc_132", "ghost": "wc_x_ghost_kid"},
-        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 0.1},
+        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 0.1, "settle": 0.5},
         {"do": "fx", "fx": "black_mouth:witch", "wait": 0.0},
         {"do": "pose", "who": "witch", "pose": "ghost"},
         {"do": "say", "line": "wc_133"},
@@ -528,6 +534,7 @@ BEATS = [
      "steps": [
         {"do": "fx", "fx": "inside_view", "wait": 1.6},
         {"do": "pose", "who": "witch", "pose": "welcome"},
+        {"do": "cam_settle", "frac": 0.7},
         {"do": "say", "line": "wc_136"},
         {"do": "cam", "shot": "pot", "at": "in_pot", "rate": 1.8, "wait": 0.1},
         {"do": "fx", "fx": "candy_fountain", "wait": 0.6},         # the leftover candies pour out of the pot

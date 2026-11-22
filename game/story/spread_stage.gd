@@ -309,6 +309,11 @@ func spot_point(v: Variant) -> Vector3:
 	if v is String:
 		return spots.get(v, _anchor)
 	var a: Array = v
+	if not a.is_empty() and a[0] is String:  # a list of spots: their centre (a two-shot framed between its marks)
+		var c := Vector3.ZERO
+		for nm in a:
+			c += spot_point(str(nm))
+		return c / a.size()
 	var q := Vector2(_anchor.x, _anchor.z) + (_cam_basis[0] as Vector2) * float(a[0]) + (_cam_basis[1] as Vector2) * float(a[1])
 	return Vector3(q.x, world.ground.surface_y(q), q.y)
 
@@ -635,6 +640,79 @@ func _actor_box(a: StoryActor) -> Rect2:
 	var b := a.global_position + Vector3.UP * (a.hop + a.lift + a.puppet.height * 0.4)
 	return _screen_box([b - cr * w * 0.5, b + cr * w * 0.5, b + Vector3.UP * a.puppet.height * 0.6 - cr * w * 0.5,
 		b + Vector3.UP * a.puppet.height * 0.6 + cr * w * 0.5])
+
+
+## SPEAKER_OFF check (runner): is the cast member who speaks `speaker` (a caption speaker id: a role, a role without
+## its underscore — "piga" → pig_a —, a sky hanger, or the walker) in the frame and not hidden behind a set piece?
+## Returns "" when visible, else why not ("off", "behind", "hidden", "occluded:<piece>"); "?" when nobody matches.
+func speaker_state(speaker: String) -> String:
+	var role := ""
+	for r in actors:
+		if str(r) == speaker or str(r).replace("_", "") == speaker:
+			role = str(r)
+	var cam := camera()
+	var vs := get_viewport().get_visible_rect().size
+	var screen := Rect2(vs * Vector2(0.02, 0.02), vs * Vector2(0.96, 0.96))
+	var stand_in: Variant = handler.speaker_point(speaker) if handler else null
+	if role == "" or (stand_in != null and (not (actors[role] as StoryActor).visible or (actors[role] as StoryActor).pop_s < 0.5)):
+		var pt: Variant = stand_in
+		if pt == null and hangers.has(speaker):
+			pt = _target_point(speaker)
+		elif pt == null and has_walker:
+			pt = _target_point(walker_role)  # the walker's page: the one person in it
+		if pt == null:
+			return "?"
+		if cam.is_position_behind(pt):
+			return "behind"
+		return "" if screen.has_point(cam.unproject_position(pt)) else "off"
+	var a: StoryActor = actors[role]
+	if not a.visible or a.pop_s < 0.5:
+		return "hidden"
+	if a.has_meta("inside"):  # answering from inside: the face at the window / door must be in the frame
+		var c := a.centre()
+		if cam.is_position_behind(c):
+			return "behind"
+		return "" if screen.has_point(cam.unproject_position(c)) else "off"
+	var ab := _actor_box(a)
+	if ab.size.x <= 1.0:
+		return "behind"
+	var inside := ab.intersection(screen).get_area() / maxf(ab.get_area(), 1.0)
+	if inside < 0.5:
+		return "off"
+	var cam_house := house_of(cam.global_position)
+	var a_house := house_of(a.global_position)
+	if a_house != cam_house and a_house != "":
+		var hs: SetPiece = sets[a_house]
+		if hs.walls == null or hs.walls.visible:  # inside a house whose front stands between us
+			return "occluded:wall"
+	var ad := cam.global_position.distance_to(a.global_position)
+	for k in sets:
+		var sp: SetPiece = sets[k]
+		if not _solid_piece(sp) or sp.walls and not sp.walls.visible or str(k) == cam_house:
+			continue
+		if house_of(sp.global_position) != cam_house:
+			continue
+		var rr := sp.global_transform.basis.x.normalized()
+		var off := a.global_position - sp.global_position
+		var near := sp.global_position + rr * clampf(off.dot(rr), -sp.width * 0.5, sp.width * 0.5)
+		if cam.global_position.distance_to(near) > ad - 0.08:
+			continue
+		if ab.intersection(_piece_box(sp)).get_area() / maxf(ab.get_area(), 1.0) > 0.6:  # most of the head and body
+			return "occluded:" + sp.piece_name
+	return ""
+
+
+## Where the speaker is on screen (for the SPEAKER_OFF log line): "x,y" of its centre in frame fractions.
+func speaker_where(speaker: String) -> String:
+	for r in actors:
+		if str(r) == speaker or str(r).replace("_", "") == speaker:
+			var c := (actors[r] as StoryActor).centre()
+			var cam := camera()
+			if cam.is_position_behind(c):
+				return "behind"
+			var q := cam.unproject_position(c) / get_viewport().get_visible_rect().size
+			return "%.2f,%.2f" % [q.x, q.y]
+	return "-"
 
 
 func _piece_box(sp: SetPiece) -> Rect2:

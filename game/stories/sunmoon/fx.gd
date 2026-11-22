@@ -148,6 +148,17 @@ func targets() -> Array:
 	return out
 
 
+var _swapped := false  ## the sister is the sun now (swap_sun_moon)
+
+
+## (camera agent 2026-11-22, SPEAKER_OFF) in the finale the children speak as the sun and the moon discs.
+func speaker_point(who: String) -> Variant:
+	if (who == "boy" or who == "girl") and _cards.has("sun_disc"):
+		var sun_is := "girl" if _swapped else "boy"
+		return target_point("sun_disc" if who == sun_is else "moon_disc")
+	return null
+
+
 func target_point(t: String) -> Variant:
 	match t:
 		"tray":
@@ -335,6 +346,7 @@ func fx(name: String) -> bool:
 				_cards.erase("rope")
 			return true
 		"swap_sun_moon":
+			_swapped = true
 			_sky_faces("sun_girl", "moon_boy")
 			for pair2 in [["sun_disc", "cast_sunmoon_sky_sun_girl"], ["moon_disc", "cast_sunmoon_sky_moon_boy"]]:
 				if _cards.has(pair2[0]):
@@ -437,13 +449,20 @@ func _gates(cam: Camera3D) -> void:
 				var a: StoryActor = stage.actors[r]
 				if a.pop_target < 0.5 or not a.visible:
 					continue
-				var q := sp.to_local(a.centre())
-				if q.z < 0.0:
-					var k := local.z / (local.z - q.z)
-					var hit := local.lerp(q, k)
-					if absf(hit.x) < sp.width * 0.5 and hit.y > 0.0 and hit.y < sp.height:
-						behind = true
-						break
+				# (camera agent 2026-11-22) the centre, the head and both sides of the body: a ray to the centre alone
+				# slipped past a card's edge that still hid half the figure on the pass-2 tracking shot (OCCLUDE)
+				var h := a.puppet.height
+				var cr := cam.global_transform.basis.x * h * 0.18
+				for pt: Vector3 in [a.centre(), a.global_position + Vector3.UP * h * 0.85, a.centre() + cr, a.centre() - cr]:
+					var q := sp.to_local(pt)
+					if q.z < 0.0:
+						var k := local.z / (local.z - q.z)
+						var hit := local.lerp(q, k)
+						if absf(hit.x) < sp.width * 0.5 and hit.y > 0.0 and hit.y < sp.height:
+							behind = true
+							break
+				if behind:
+					break
 		if sp.visible == behind:
 			sp.visible = not behind
 		if behind:
