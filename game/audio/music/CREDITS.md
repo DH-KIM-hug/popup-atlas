@@ -60,6 +60,30 @@ Copied from 톡톡 동화극장 (`sounds/sfx/intro_*.mp3`, credits in that proje
 | `intro_playful_1.mp3` | `sfx/intro_playful.mp3` (0–12 s) | Funny Ukulele | AtlasAudio | three_pigs (as in 톡톡) |
 | `intro_night_1.mp3` | `sfx/intro_night.mp3` (3–15 s) | Music Box Sleep Lullaby | Tunetank | sunmoon (as in 톡톡) |
 | `intro_magic_1.mp3` | `sfx/intro_magic.mp3` (0–12 s) | Magical Storytime | geoffharvey | witch_candy (톡톡 had none; chosen here) |
+| `intro_happiness_1.mp3` | `sfx/classical_perfect_happiness.mp3` (0–12 s) | Classical Piano by Schumann – Kinderszenen Op. 15 "Perfect Happiness" (〈만족〉, public-domain composition) | Nesrality | wolf_goats (as in 톡톡, 2026-11-23) |
+
+## wolf_goats sound effects (2026-11-23, copied from 톡톡 동화극장 `sounds/sfx/`, credits in that project's `sounds/CREDITS.md`)
+
+Copied unchanged into `../sfx/wg_*.mp3` (catalog ids `wg.*`). Pixabay Content License (no attribution required) unless
+noted; the `el_*` / knock / pop_out sounds were generated for 톡톡 with the user's ElevenLabs account.
+
+| file | source in 톡톡 | origin |
+|---|---|---|
+| `wg_knock.mp3` | `sfx/knock.mp3` | ElevenLabs SFX (톡톡) |
+| `wg_crunch.mp3` | `sfx/crunch.mp3` | Pixabay "Chip Crunch Bite 2", AppleHillStudios |
+| `wg_snore.mp3` | `sfx/el_snore.mp3` | ElevenLabs SFX (톡톡) |
+| `wg_splash.mp3` | `sfx/splash_big.mp3` | OpenGameArt 100-CC0-SFX splash_01/02 (rubberduck) + thump (bart), CC0 |
+| `wg_ding.mp3` | `sfx/ding_glock.mp3` | Pixabay "Ding~", u_31vnwfmzt6 |
+| `wg_tiptoe.mp3` | `sfx/tiptoe_pizz.mp3` | Pixabay "Mischievous Pizzicato", lucadialessandro |
+| `wg_gulp.mp3`, `wg_gulp_2.mp3` | `sfx/gulp.mp3`, `sfx/gulp_2.mp3` | Pixabay "Gulp" / "gulps", freesound_community |
+| `wg_pop.mp3` | `sfx/pop_out.mp3` | ElevenLabs SFX (톡톡) |
+| `wg_brass.mp3` | `sfx/comic_brass.mp3` | Pixabay "Brass Fail 11 A", floraphonic |
+| `wg_whistle_down.mp3` | `sfx/whistle_down.mp3` | Pixabay "Cartoon Slide Whistle Down 1", floraphonic |
+| `wg_snip.mp3` | `sfx/el_scissor_snip.mp3` | ElevenLabs SFX (톡톡) |
+| `wg_stone.mp3` | `sfx/el_stone_plop.mp3` | ElevenLabs SFX (톡톡) |
+| `wg_sleepy.mp3` | `sfx/sleepy_tuba.mp3` | Pixabay "Tuba", freesound_community |
+| `wg_marimba_1/3/5.mp3` | `sfx/marimba_1/3/5.mp3` | Pixabay "Toy Glockenspiel", freesound_community |
+| `wg_door_heavy.mp3` | `sfx/door_heavy_1.mp3` | see 톡톡 `sounds/CREDITS.md` |
 
 ## turnip (커다란 순무, 2026-11-23, copied from 톡톡 동화극장 `sounds/`, credits in that project's `sounds/CREDITS.md`)
 

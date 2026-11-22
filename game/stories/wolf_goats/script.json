@@ -1,0 +1,9240 @@
+{
+ "tale_id": "wolf_goats",
+ "title": "늑대와 일곱 아기염소",
+ "seeded_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/wolf_goats/voice_script_el.json",
+ "clip_map_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/wolf_goats/narration_el.js + read_narration_el.js",
+ "voices": {
+  "nar": "pFZP5JQG7iQjIQuC4Bku",
+  "mom": "hpp4J3VqNfWAUOO0d1Us",
+  "kid": "Lb7qkOn5hF8p7qfCDH8q",
+  "wolf": "EkK5I93UQWFDigLMpZcX"
+ },
+ "models": {
+  "nar": "eleven_v4",
+  "mom": "eleven_v4",
+  "kid": "eleven_v4",
+  "wolf": "eleven_v4"
+ },
+ "settings": {
+  "nar": {
+   "stability": 0.45,
+   "style": 0.35
+  },
+  "mom": {
+   "stability": 0.4,
+   "style": 0.4
+  },
+  "kid": {
+   "stability": 0.35,
+   "style": 0.45
+  },
+  "wolf": {
+   "stability": 0.3,
+   "style": 0.5
+  }
+ },
+ "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Lily, mom=Bella, kid=Annie, wolf=Brian. 아기·꼬마 역(kid)은 아기 말투 태그([baby voice, lisping, very young child, giggly])를 대사 방향에 부여. 2026-10-22: 분필 먹은 늑대의 \"문 열어 줘~\"(한 wolf_aec1bbaaab, 영 en/wolf_173feb4a56)는 고운 목소리로 들리게 녹음 뒤 ffmpeg 로 3반음 올렸다(asetrate 1.19 + atempo 0.84, 길이 그대로). --redo 로 다시 만들면 이 처리도 다시 해야 한다.",
+ "handler": "res://stories/wolf_goats/fx.gd",
+ "shots": {
+  "story": [
+   3.4,
+   12.0,
+   0.28,
+   20.0
+  ],
+  "close": [
+   2.9,
+   12.0,
+   0.32,
+   20.0
+  ],
+  "crane_high": [
+   9.0,
+   36.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "establish": [
+   6.0,
+   17.0,
+   0.35,
+   24.0,
+   -8.0
+  ],
+  "medium": [
+   2.4,
+   9.0,
+   0.3,
+   22.0,
+   6.0
+  ],
+  "two_shot": [
+   2.0,
+   8.0,
+   0.3,
+   24.0,
+   -10.0
+  ],
+  "face": [
+   1.3,
+   6.0,
+   0.3,
+   22.0,
+   0.0
+  ],
+  "track": [
+   3.4,
+   24.0,
+   0.25,
+   22.0,
+   0.0
+  ],
+  "house": [
+   2.8,
+   12.0,
+   0.4,
+   28.0,
+   -30.0
+  ],
+  "door_ots": [
+   1.35,
+   9.0,
+   0.3,
+   30.0,
+   -2.0
+  ],
+  "door_low": [
+   1.1,
+   3.0,
+   0.28,
+   34.0,
+   -42.0
+  ],
+  "room": [
+   0.8,
+   32.0,
+   0.12,
+   64.0,
+   -30.0
+  ],
+  "room_wide": [
+   0.8,
+   32.0,
+   0.12,
+   72.0,
+   -30.0
+  ],
+  "door_in": [
+   0.45,
+   28.0,
+   0.24,
+   56.0,
+   150.0
+  ],
+  "clock_close": [
+   0.42,
+   8.0,
+   0.34,
+   40.0,
+   -16.0
+  ],
+  "stall": [
+   1.5,
+   10.0,
+   0.3,
+   28.0,
+   -12.0
+  ],
+  "mill": [
+   2.2,
+   12.0,
+   0.4,
+   28.0,
+   8.0
+  ],
+  "tree_wide": [
+   5.2,
+   16.0,
+   0.45,
+   26.0,
+   -6.0
+  ],
+  "tree_two": [
+   2.0,
+   9.0,
+   0.25,
+   26.0,
+   12.0
+  ],
+  "belly": [
+   1.15,
+   24.0,
+   0.08,
+   30.0,
+   6.0
+  ],
+  "well_wide": [
+   3.6,
+   18.0,
+   0.3,
+   26.0,
+   4.0
+  ],
+  "well_low": [
+   1.5,
+   6.0,
+   0.28,
+   30.0,
+   -10.0
+  ],
+  "pull_back": [
+   10.5,
+   26.0,
+   0.3,
+   24.0,
+   0.0
+  ]
+ },
+ "ui": {
+  "cover": [
+   [
+    "cast_goat_mom_calm",
+    230
+   ],
+   [
+    "cast_goat_kid_1_calm",
+    120
+   ],
+   [
+    "cast_goat_baby_calm",
+    100
+   ]
+  ],
+  "end": [
+   [
+    "cast_goat_mom_dance",
+    230
+   ],
+   [
+    "cast_goat_kid_3_dance",
+    120
+   ],
+   [
+    "cast_goat_baby_joy_jump",
+    110
+   ]
+  ],
+  "speakers": {
+   "mom": [
+    "엄마 염소",
+    "c8473c",
+    "cast_goat_mom_calm"
+   ],
+   "kid": [
+    "아기 염소",
+    "e0a030",
+    "cast_goat_kid_1_calm"
+   ],
+   "wolf": [
+    "늑대",
+    "6b6f7a",
+    "cast_wolf_calm"
+   ]
+  }
+ },
+ "backdrop": true,
+ "inside_framing": "manual",
+ "sound": {
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "day",
+   "morning": "day",
+   "afternoon": "afternoon",
+   "late": "late",
+   "dusk": "dusk",
+   "night": "night"
+  },
+  "fx": {
+   "kids_hop": "wg.marimba_3",
+   "mom_warn": "ui.pop",
+   "knock": "wg.knock",
+   "munch": "wg.crunch",
+   "voice_ding": "wg.ding",
+   "paw_in": "sm.paper_rustle",
+   "flour": "wc.poof",
+   "sneeze": "wc.poof",
+   "hide": "sm.scurry",
+   "clock_hide": "wg.ding",
+   "swallow": null,
+   "clock_out": "wg.pop",
+   "snore_on": null,
+   "snip": "wg.snip",
+   "belly_pop": "wg.pop",
+   "stone": "wg.stone",
+   "sew": null,
+   "stitched": "wg.ding",
+   "wake": "wg.sleepy",
+   "fall_well": "wg.whistle_down",
+   "wet_out": "wg.brass",
+   "dance_on": "wc.sparkle",
+   "wolf_in": "wg.door_heavy"
+  },
+  "steps": {
+   "cover": {
+    "on_open": {
+     "music": "intro_happiness",
+     "fade": 0.2
+    }
+   },
+   "page_turn": "paper.page_turn",
+   "go_inside": {
+    "door_open": "door.open",
+    "door_shut": "door.shut"
+   },
+   "end": {
+    "close_book": "paper.book_close",
+    "music_fade_on_replay": 2.0
+   }
+  },
+  "footsteps": {
+   "mom": "pig",
+   "kid1": "pig",
+   "kid2": "pig",
+   "kid3": "pig",
+   "kid4": "pig",
+   "kid5": "pig",
+   "kid6": "pig",
+   "baby": "pig",
+   "wolf": "wolf"
+  }
+ },
+ "ground_style": "paper",
+ "spacing": true,
+ "overlap_check": true,
+ "pop_in": false,
+ "overlap_ok": [
+  [
+   "mom",
+   "wolf"
+  ],
+  [
+   "wolf",
+   "kid1"
+  ],
+  [
+   "wolf",
+   "kid2"
+  ],
+  [
+   "wolf",
+   "kid3"
+  ],
+  [
+   "wolf",
+   "kid4"
+  ],
+  [
+   "wolf",
+   "kid5"
+  ],
+  [
+   "wolf",
+   "kid6"
+  ],
+  [
+   "wolf",
+   "well"
+  ],
+  [
+   "wolf",
+   "well_rim"
+  ],
+  [
+   "wolf",
+   "oak"
+  ],
+  [
+   "kid1",
+   "room_floor"
+  ],
+  [
+   "kid2",
+   "room_floor"
+  ],
+  [
+   "kid3",
+   "room_floor"
+  ],
+  [
+   "kid4",
+   "room_floor"
+  ],
+  [
+   "kid5",
+   "room_floor"
+  ],
+  [
+   "kid6",
+   "room_floor"
+  ],
+  [
+   "baby",
+   "room_floor"
+  ],
+  [
+   "mom",
+   "room_floor"
+  ],
+  [
+   "wolf",
+   "room_floor"
+  ],
+  [
+   "kid1",
+   "room_floor2"
+  ],
+  [
+   "kid2",
+   "room_floor2"
+  ],
+  [
+   "kid3",
+   "room_floor2"
+  ],
+  [
+   "kid4",
+   "room_floor2"
+  ],
+  [
+   "kid5",
+   "room_floor2"
+  ],
+  [
+   "kid6",
+   "room_floor2"
+  ],
+  [
+   "baby",
+   "room_floor2"
+  ],
+  [
+   "mom",
+   "room_floor2"
+  ],
+  [
+   "wolf",
+   "room_floor2"
+  ]
+ ],
+ "kid_voice": "kid3",
+ "cast": {
+  "mom": {
+   "kind": "actor",
+   "skin": "goat_mom",
+   "height": 0.31,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "엄마 염소"
+  },
+  "wolf": {
+   "kind": "actor",
+   "skin": "wolf",
+   "height": 0.335,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "늑대 (shared)"
+  },
+  "baby": {
+   "kind": "actor",
+   "skin": "goat_baby",
+   "height": 0.12,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "막내"
+  },
+  "kid1": {
+   "kind": "actor",
+   "skin": "goat_kid_1",
+   "height": 0.162,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "아기 염소 1"
+  },
+  "kid2": {
+   "kind": "actor",
+   "skin": "goat_kid_2",
+   "height": 0.157,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "아기 염소 2"
+  },
+  "kid3": {
+   "kind": "actor",
+   "skin": "goat_kid_3",
+   "height": 0.151,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "아기 염소 3"
+  },
+  "kid4": {
+   "kind": "actor",
+   "skin": "goat_kid_4",
+   "height": 0.145,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "아기 염소 4"
+  },
+  "kid5": {
+   "kind": "actor",
+   "skin": "goat_kid_5",
+   "height": 0.141,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "아기 염소 5"
+  },
+  "kid6": {
+   "kind": "actor",
+   "skin": "goat_kid_6",
+   "height": 0.136,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "아기 염소 6"
+  }
+ },
+ "moral": "",
+ "beats": [
+  {
+   "id": "cover",
+   "title": "늑대와 일곱 아기염소",
+   "spread": null,
+   "steps": [
+    {
+     "do": "cover",
+     "prompt": "wg_n01"
+    }
+   ],
+   "sound": {
+    "music": null,
+    "bed": null
+   }
+  },
+  {
+   "id": "home",
+   "title": "엄마의 당부",
+   "spread": {
+    "seed": 2,
+    "view": 0,
+    "place": "home",
+    "light": "",
+    "spots": {
+     "cottage": [
+      1.85,
+      -1.1
+     ],
+     "door": [
+      1.69,
+      -0.823
+     ],
+     "door_in": [
+      1.96,
+      -1.291
+     ],
+     "wall_in": [
+      1.858,
+      -1.113
+     ],
+     "in_back": [
+      2.385,
+      -2.027
+     ],
+     "in_floor": [
+      1.985,
+      -1.334
+     ],
+     "in_floor2": [
+      2.235,
+      -1.767
+     ],
+     "in_focus": [
+      2.21,
+      -1.724
+     ],
+     "in_clock": [
+      1.66,
+      -2.33
+     ],
+     "in_bed": [
+      2.817,
+      -1.615
+     ],
+     "in_table": [
+      1.934,
+      -2.045
+     ],
+     "in_chair": [
+      2.453,
+      -1.745
+     ],
+     "in_basket": [
+      2.81,
+      -1.123
+     ],
+     "in_stove": [
+      1.298,
+      -1.904
+     ],
+     "in_mom": [
+      2.21,
+      -1.724
+     ],
+     "in_mom2": [
+      2.118,
+      -1.465
+     ],
+     "in_wolf": [
+      1.88,
+      -1.152
+     ],
+     "in_search": [
+      2.103,
+      -1.439
+     ],
+     "in_baby2": [
+      1.822,
+      -1.751
+     ],
+     "in_clock_front": [
+      1.706,
+      -2.13
+     ],
+     "bed_front": [
+      2.706,
+      -1.483
+     ],
+     "table_front": [
+      1.864,
+      -1.924
+     ],
+     "basket_front": [
+      2.649,
+      -1.124
+     ],
+     "basket_via": [
+      2.764,
+      -1.404
+     ],
+     "wolf_door": [
+      1.767,
+      -0.756
+     ],
+     "door_view": [
+      1.4,
+      -0.321
+     ],
+     "in_kid1": [
+      1.62,
+      -1.902
+     ],
+     "in_kid2": [
+      1.75,
+      -1.827
+     ],
+     "in_kid3": [
+      1.88,
+      -1.752
+     ],
+     "in_kid4": [
+      2.01,
+      -1.677
+     ],
+     "in_kid5": [
+      2.27,
+      -1.527
+     ],
+     "in_kid6": [
+      2.4,
+      -1.452
+     ],
+     "in_baby": [
+      2.53,
+      -1.377
+     ],
+     "est": [
+      0.2,
+      -1.0
+     ],
+     "road_near": [
+      -0.45,
+      0.85
+     ],
+     "road_door": [
+      0.65,
+      -0.6
+     ],
+     "road_mid": [
+      0.15,
+      -0.35
+     ],
+     "road_far": [
+      0.78,
+      -3.2
+     ],
+     "stall": [
+      -0.9,
+      -0.5
+     ],
+     "wolf_stall": [
+      -0.5,
+      -0.22
+     ],
+     "mill": [
+      -1.35,
+      -1.95
+     ],
+     "sack": [
+      -0.72,
+      -1.65
+     ],
+     "wolf_mill": [
+      -0.45,
+      -1.42
+     ],
+     "road_mill": [
+      0.35,
+      -1.3
+     ],
+     "errand": [
+      -0.3,
+      -0.9
+     ],
+     "cot_st0": [
+      1.64,
+      -0.736
+     ],
+     "cot_st1": [
+      1.52,
+      -0.717
+     ],
+     "cot_st2": [
+      1.4,
+      -0.697
+     ],
+     "cot_st3": [
+      1.28,
+      -0.678
+     ],
+     "cot_st4": [
+      1.16,
+      -0.658
+     ],
+     "cot_st5": [
+      1.04,
+      -0.639
+     ],
+     "cot_st6": [
+      0.92,
+      -0.619
+     ],
+     "cot_st7": [
+      0.8,
+      -0.6
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.25,
+      "clear": 1.6,
+      "yaw": -30.0,
+      "door_in": true,
+      "box": {
+       "depth": 1.1,
+       "body": true
+      }
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor2",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_03",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_04",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_cottage_04o",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in_open",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_room_00",
+      "at": "in_clock",
+      "stage": "full",
+      "name": "clock",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_00",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_eyes",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_kid",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_open",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_02",
+      "at": "in_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_02",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_07",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_04",
+      "at": "in_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_03",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_09",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_05",
+      "at": "in_chair",
+      "stage": "full",
+      "name": "chair",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_06",
+      "at": "in_chair",
+      "stage": 0,
+      "name": "chair_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_03",
+      "at": "in_basket",
+      "stage": "full",
+      "name": "basket",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_04",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_08",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_11",
+      "at": "in_stove",
+      "stage": "full",
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_meadow_05",
+      "at": "stall",
+      "stage": "full",
+      "name": "stall",
+      "scale": 1.0,
+      "clear": 0.7
+     },
+     {
+      "card": "village_houses_05",
+      "at": "mill",
+      "stage": "full",
+      "name": "mill",
+      "scale": 1.25,
+      "clear": 1.0
+     },
+     {
+      "card": "story_wg_fx_00",
+      "at": "sack",
+      "stage": "full",
+      "name": "sack",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "village_props_27",
+      "at": [
+       -0.95,
+       -1.45
+      ],
+      "stage": "full",
+      "name": "sacks",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st4",
+      "stage": "full",
+      "name": "cot_st4",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st5",
+      "stage": "full",
+      "name": "cot_st5",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st6",
+      "stage": "full",
+      "name": "cot_st6",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st7",
+      "stage": "full",
+      "name": "cot_st7",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "kid1": "calm",
+     "kid2": "calm",
+     "kid3": "calm",
+     "kid4": "calm",
+     "kid5": "calm",
+     "kid6": "calm",
+     "baby": "calm",
+     "mom": "calm"
+    },
+    "at": {
+     "kid1": "in_kid1",
+     "kid2": "in_kid2",
+     "kid3": "in_kid3",
+     "kid4": "in_kid4",
+     "kid5": "in_kid5",
+     "kid6": "in_kid6",
+     "baby": "in_baby",
+     "mom": "in_mom"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wg_r0100"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 1.2,
+     "wait": 0.3,
+     "settle": 0.7
+    },
+    {
+     "do": "fx",
+     "fx": "kids_hop",
+     "wait": 1.2
+    },
+    {
+     "do": "tap_steps",
+     "target": "mom",
+     "prompt": "wg_046",
+     "hint": "wg_046",
+     "shot": "room",
+     "steps": [
+      {
+       "fx": "mom_warn"
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "wg_r0103"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0104"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0105"
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "wave"
+    },
+    {
+     "do": "go_out",
+     "who": [
+      "mom"
+     ],
+     "house": "cottage",
+     "to": "road_door",
+     "shot": "house",
+     "line": "wg_r0106",
+     "then": {
+      "to": "road_mid",
+      "exit": true,
+      "speed": 0.6
+     }
+    }
+   ],
+   "sound": {
+    "music": "home",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "knock",
+   "title": "똑똑똑!",
+   "spread": {
+    "seed": 2,
+    "view": 0,
+    "place": "home",
+    "light": "afternoon",
+    "spots": {
+     "cottage": [
+      1.85,
+      -1.1
+     ],
+     "door": [
+      1.69,
+      -0.823
+     ],
+     "door_in": [
+      1.96,
+      -1.291
+     ],
+     "wall_in": [
+      1.858,
+      -1.113
+     ],
+     "in_back": [
+      2.385,
+      -2.027
+     ],
+     "in_floor": [
+      1.985,
+      -1.334
+     ],
+     "in_floor2": [
+      2.235,
+      -1.767
+     ],
+     "in_focus": [
+      2.21,
+      -1.724
+     ],
+     "in_clock": [
+      1.66,
+      -2.33
+     ],
+     "in_bed": [
+      2.817,
+      -1.615
+     ],
+     "in_table": [
+      1.934,
+      -2.045
+     ],
+     "in_chair": [
+      2.453,
+      -1.745
+     ],
+     "in_basket": [
+      2.81,
+      -1.123
+     ],
+     "in_stove": [
+      1.298,
+      -1.904
+     ],
+     "in_mom": [
+      2.21,
+      -1.724
+     ],
+     "in_mom2": [
+      2.118,
+      -1.465
+     ],
+     "in_wolf": [
+      1.88,
+      -1.152
+     ],
+     "in_search": [
+      2.103,
+      -1.439
+     ],
+     "in_baby2": [
+      1.822,
+      -1.751
+     ],
+     "in_clock_front": [
+      1.706,
+      -2.13
+     ],
+     "bed_front": [
+      2.706,
+      -1.483
+     ],
+     "table_front": [
+      1.864,
+      -1.924
+     ],
+     "basket_front": [
+      2.649,
+      -1.124
+     ],
+     "basket_via": [
+      2.764,
+      -1.404
+     ],
+     "wolf_door": [
+      1.767,
+      -0.756
+     ],
+     "door_view": [
+      1.4,
+      -0.321
+     ],
+     "in_kid1": [
+      1.62,
+      -1.902
+     ],
+     "in_kid2": [
+      1.75,
+      -1.827
+     ],
+     "in_kid3": [
+      1.88,
+      -1.752
+     ],
+     "in_kid4": [
+      2.01,
+      -1.677
+     ],
+     "in_kid5": [
+      2.27,
+      -1.527
+     ],
+     "in_kid6": [
+      2.4,
+      -1.452
+     ],
+     "in_baby": [
+      2.53,
+      -1.377
+     ],
+     "est": [
+      0.2,
+      -1.0
+     ],
+     "road_near": [
+      -0.45,
+      0.85
+     ],
+     "road_door": [
+      0.65,
+      -0.6
+     ],
+     "road_mid": [
+      0.15,
+      -0.35
+     ],
+     "road_far": [
+      0.78,
+      -3.2
+     ],
+     "stall": [
+      -0.9,
+      -0.5
+     ],
+     "wolf_stall": [
+      -0.5,
+      -0.22
+     ],
+     "mill": [
+      -1.35,
+      -1.95
+     ],
+     "sack": [
+      -0.72,
+      -1.65
+     ],
+     "wolf_mill": [
+      -0.45,
+      -1.42
+     ],
+     "road_mill": [
+      0.35,
+      -1.3
+     ],
+     "errand": [
+      -0.3,
+      -0.9
+     ],
+     "cot_st0": [
+      1.64,
+      -0.736
+     ],
+     "cot_st1": [
+      1.52,
+      -0.717
+     ],
+     "cot_st2": [
+      1.4,
+      -0.697
+     ],
+     "cot_st3": [
+      1.28,
+      -0.678
+     ],
+     "cot_st4": [
+      1.16,
+      -0.658
+     ],
+     "cot_st5": [
+      1.04,
+      -0.639
+     ],
+     "cot_st6": [
+      0.92,
+      -0.619
+     ],
+     "cot_st7": [
+      0.8,
+      -0.6
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.25,
+      "clear": 1.6,
+      "yaw": -30.0,
+      "door_in": true,
+      "box": {
+       "depth": 1.1,
+       "body": true
+      }
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor2",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_03",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_04",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_cottage_04o",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in_open",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_room_00",
+      "at": "in_clock",
+      "stage": "full",
+      "name": "clock",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_00",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_eyes",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_kid",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_open",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_02",
+      "at": "in_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_02",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_07",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_04",
+      "at": "in_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_03",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_09",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_05",
+      "at": "in_chair",
+      "stage": "full",
+      "name": "chair",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_06",
+      "at": "in_chair",
+      "stage": 0,
+      "name": "chair_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_03",
+      "at": "in_basket",
+      "stage": "full",
+      "name": "basket",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_04",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_08",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_11",
+      "at": "in_stove",
+      "stage": "full",
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_meadow_05",
+      "at": "stall",
+      "stage": "full",
+      "name": "stall",
+      "scale": 1.0,
+      "clear": 0.7
+     },
+     {
+      "card": "village_houses_05",
+      "at": "mill",
+      "stage": "full",
+      "name": "mill",
+      "scale": 1.25,
+      "clear": 1.0
+     },
+     {
+      "card": "story_wg_fx_00",
+      "at": "sack",
+      "stage": "full",
+      "name": "sack",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "village_props_27",
+      "at": [
+       -0.95,
+       -1.45
+      ],
+      "stage": "full",
+      "name": "sacks",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st4",
+      "stage": "full",
+      "name": "cot_st4",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st5",
+      "stage": "full",
+      "name": "cot_st5",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st6",
+      "stage": "full",
+      "name": "cot_st6",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st7",
+      "stage": "full",
+      "name": "cot_st7",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "kid1": "calm",
+     "kid2": "calm",
+     "kid3": "calm",
+     "kid4": "calm",
+     "kid5": "calm",
+     "kid6": "calm",
+     "baby": "calm"
+    },
+    "at": {
+     "kid1": "in_kid1",
+     "kid2": "in_kid2",
+     "kid3": "in_kid3",
+     "kid4": "in_kid4",
+     "kid5": "in_kid5",
+     "kid6": "in_kid6",
+     "baby": "in_baby"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "establish",
+     "at": "est",
+     "rate": 1.0,
+     "wait": 0.3
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "from": "road_mid",
+     "to": "wolf_door",
+     "via": [
+      "road_door"
+     ],
+     "speed": 0.6,
+     "follow": "wolf",
+     "shot": "track"
+    },
+    {
+     "do": "fx",
+     "fx": "knock",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "door_ots",
+     "at": "wolf_door",
+     "rate": 1.2,
+     "wait": 0.6,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0202"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "wg_r0205"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0206"
+    }
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "chalk",
+   "title": "분필과 늑대",
+   "spread": {
+    "seed": 2,
+    "view": 0,
+    "place": "home",
+    "light": "afternoon",
+    "spots": {
+     "cottage": [
+      1.85,
+      -1.1
+     ],
+     "door": [
+      1.69,
+      -0.823
+     ],
+     "door_in": [
+      1.96,
+      -1.291
+     ],
+     "wall_in": [
+      1.858,
+      -1.113
+     ],
+     "in_back": [
+      2.385,
+      -2.027
+     ],
+     "in_floor": [
+      1.985,
+      -1.334
+     ],
+     "in_floor2": [
+      2.235,
+      -1.767
+     ],
+     "in_focus": [
+      2.21,
+      -1.724
+     ],
+     "in_clock": [
+      1.66,
+      -2.33
+     ],
+     "in_bed": [
+      2.817,
+      -1.615
+     ],
+     "in_table": [
+      1.934,
+      -2.045
+     ],
+     "in_chair": [
+      2.453,
+      -1.745
+     ],
+     "in_basket": [
+      2.81,
+      -1.123
+     ],
+     "in_stove": [
+      1.298,
+      -1.904
+     ],
+     "in_mom": [
+      2.21,
+      -1.724
+     ],
+     "in_mom2": [
+      2.118,
+      -1.465
+     ],
+     "in_wolf": [
+      1.88,
+      -1.152
+     ],
+     "in_search": [
+      2.103,
+      -1.439
+     ],
+     "in_baby2": [
+      1.822,
+      -1.751
+     ],
+     "in_clock_front": [
+      1.706,
+      -2.13
+     ],
+     "bed_front": [
+      2.706,
+      -1.483
+     ],
+     "table_front": [
+      1.864,
+      -1.924
+     ],
+     "basket_front": [
+      2.649,
+      -1.124
+     ],
+     "basket_via": [
+      2.764,
+      -1.404
+     ],
+     "wolf_door": [
+      1.767,
+      -0.756
+     ],
+     "door_view": [
+      1.4,
+      -0.321
+     ],
+     "in_kid1": [
+      1.62,
+      -1.902
+     ],
+     "in_kid2": [
+      1.75,
+      -1.827
+     ],
+     "in_kid3": [
+      1.88,
+      -1.752
+     ],
+     "in_kid4": [
+      2.01,
+      -1.677
+     ],
+     "in_kid5": [
+      2.27,
+      -1.527
+     ],
+     "in_kid6": [
+      2.4,
+      -1.452
+     ],
+     "in_baby": [
+      2.53,
+      -1.377
+     ],
+     "est": [
+      0.2,
+      -1.0
+     ],
+     "road_near": [
+      -0.45,
+      0.85
+     ],
+     "road_door": [
+      0.65,
+      -0.6
+     ],
+     "road_mid": [
+      0.15,
+      -0.35
+     ],
+     "road_far": [
+      0.78,
+      -3.2
+     ],
+     "stall": [
+      -0.9,
+      -0.5
+     ],
+     "wolf_stall": [
+      -0.5,
+      -0.22
+     ],
+     "mill": [
+      -1.35,
+      -1.95
+     ],
+     "sack": [
+      -0.72,
+      -1.65
+     ],
+     "wolf_mill": [
+      -0.45,
+      -1.42
+     ],
+     "road_mill": [
+      0.35,
+      -1.3
+     ],
+     "errand": [
+      -0.3,
+      -0.9
+     ],
+     "cot_st0": [
+      1.64,
+      -0.736
+     ],
+     "cot_st1": [
+      1.52,
+      -0.717
+     ],
+     "cot_st2": [
+      1.4,
+      -0.697
+     ],
+     "cot_st3": [
+      1.28,
+      -0.678
+     ],
+     "cot_st4": [
+      1.16,
+      -0.658
+     ],
+     "cot_st5": [
+      1.04,
+      -0.639
+     ],
+     "cot_st6": [
+      0.92,
+      -0.619
+     ],
+     "cot_st7": [
+      0.8,
+      -0.6
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.25,
+      "clear": 1.6,
+      "yaw": -30.0,
+      "door_in": true,
+      "box": {
+       "depth": 1.1,
+       "body": true
+      }
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor2",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_03",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_04",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_cottage_04o",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in_open",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_room_00",
+      "at": "in_clock",
+      "stage": "full",
+      "name": "clock",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_00",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_eyes",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_kid",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_open",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_02",
+      "at": "in_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_02",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_07",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_04",
+      "at": "in_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_03",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_09",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_05",
+      "at": "in_chair",
+      "stage": "full",
+      "name": "chair",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_06",
+      "at": "in_chair",
+      "stage": 0,
+      "name": "chair_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_03",
+      "at": "in_basket",
+      "stage": "full",
+      "name": "basket",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_04",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_08",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_11",
+      "at": "in_stove",
+      "stage": "full",
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_meadow_05",
+      "at": "stall",
+      "stage": "full",
+      "name": "stall",
+      "scale": 1.0,
+      "clear": 0.7
+     },
+     {
+      "card": "village_houses_05",
+      "at": "mill",
+      "stage": "full",
+      "name": "mill",
+      "scale": 1.25,
+      "clear": 1.0
+     },
+     {
+      "card": "story_wg_fx_00",
+      "at": "sack",
+      "stage": "full",
+      "name": "sack",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "village_props_27",
+      "at": [
+       -0.95,
+       -1.45
+      ],
+      "stage": "full",
+      "name": "sacks",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st4",
+      "stage": "full",
+      "name": "cot_st4",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st5",
+      "stage": "full",
+      "name": "cot_st5",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st6",
+      "stage": "full",
+      "name": "cot_st6",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st7",
+      "stage": "full",
+      "name": "cot_st7",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "kid1": "calm",
+     "kid2": "calm",
+     "kid3": "calm",
+     "kid4": "calm",
+     "kid5": "calm",
+     "kid6": "calm",
+     "baby": "calm",
+     "wolf": "calm"
+    },
+    "at": {
+     "kid1": "in_kid1",
+     "kid2": "in_kid2",
+     "kid3": "in_kid3",
+     "kid4": "in_kid4",
+     "kid5": "in_kid5",
+     "kid6": "in_kid6",
+     "baby": "in_baby",
+     "wolf": "wolf_door"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "track",
+     "at": "wolf_door",
+     "rate": 1.4,
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "to": "wolf_stall",
+     "via": [
+      "road_door",
+      "road_mid"
+     ],
+     "speed": 0.75,
+     "follow": "wolf",
+     "shot": "track"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "hungry"
+    },
+    {
+     "do": "cam",
+     "shot": "stall",
+     "at": [
+      "wolf_stall",
+      "stall"
+     ],
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wg_r0302"
+    },
+    {
+     "do": "tap_steps",
+     "target": "wolf",
+     "prompt": "wg_050",
+     "hint": "wg_050",
+     "shot": "stall",
+     "steps": [
+      {
+       "fx": "munch:1",
+       "wait": 0.7
+      },
+      {
+       "fx": "munch:2",
+       "wait": 0.7
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "wg_r0303"
+    },
+    {
+     "do": "fx",
+     "fx": "voice_ding",
+     "wait": 0.3
+    },
+    {
+     "do": "say",
+     "line": "wg_r0304"
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "to": "wolf_door",
+     "via": [
+      "road_mid",
+      "road_door"
+     ],
+     "speed": 0.75,
+     "follow": "wolf",
+     "shot": "track"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "sweet"
+    },
+    {
+     "do": "cam",
+     "shot": "door_ots",
+     "at": "wolf_door",
+     "rate": 1.8,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "knock",
+     "wait": 0.8
+    },
+    {
+     "do": "say",
+     "line": "wg_r0306"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "wg_r0307"
+    },
+    {
+     "do": "fx",
+     "fx": "show_paw",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "door_low",
+     "at": "wolf_door",
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0308"
+    }
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "paw",
+   "title": "하얀 발",
+   "spread": {
+    "seed": 2,
+    "view": 0,
+    "place": "home",
+    "light": "late",
+    "spots": {
+     "cottage": [
+      1.85,
+      -1.1
+     ],
+     "door": [
+      1.69,
+      -0.823
+     ],
+     "door_in": [
+      1.96,
+      -1.291
+     ],
+     "wall_in": [
+      1.858,
+      -1.113
+     ],
+     "in_back": [
+      2.385,
+      -2.027
+     ],
+     "in_floor": [
+      1.985,
+      -1.334
+     ],
+     "in_floor2": [
+      2.235,
+      -1.767
+     ],
+     "in_focus": [
+      2.21,
+      -1.724
+     ],
+     "in_clock": [
+      1.66,
+      -2.33
+     ],
+     "in_bed": [
+      2.817,
+      -1.615
+     ],
+     "in_table": [
+      1.934,
+      -2.045
+     ],
+     "in_chair": [
+      2.453,
+      -1.745
+     ],
+     "in_basket": [
+      2.81,
+      -1.123
+     ],
+     "in_stove": [
+      1.298,
+      -1.904
+     ],
+     "in_mom": [
+      2.21,
+      -1.724
+     ],
+     "in_mom2": [
+      2.118,
+      -1.465
+     ],
+     "in_wolf": [
+      1.88,
+      -1.152
+     ],
+     "in_search": [
+      2.103,
+      -1.439
+     ],
+     "in_baby2": [
+      1.822,
+      -1.751
+     ],
+     "in_clock_front": [
+      1.706,
+      -2.13
+     ],
+     "bed_front": [
+      2.706,
+      -1.483
+     ],
+     "table_front": [
+      1.864,
+      -1.924
+     ],
+     "basket_front": [
+      2.649,
+      -1.124
+     ],
+     "basket_via": [
+      2.764,
+      -1.404
+     ],
+     "wolf_door": [
+      1.767,
+      -0.756
+     ],
+     "door_view": [
+      1.4,
+      -0.321
+     ],
+     "in_kid1": [
+      1.62,
+      -1.902
+     ],
+     "in_kid2": [
+      1.75,
+      -1.827
+     ],
+     "in_kid3": [
+      1.88,
+      -1.752
+     ],
+     "in_kid4": [
+      2.01,
+      -1.677
+     ],
+     "in_kid5": [
+      2.27,
+      -1.527
+     ],
+     "in_kid6": [
+      2.4,
+      -1.452
+     ],
+     "in_baby": [
+      2.53,
+      -1.377
+     ],
+     "est": [
+      0.2,
+      -1.0
+     ],
+     "road_near": [
+      -0.45,
+      0.85
+     ],
+     "road_door": [
+      0.65,
+      -0.6
+     ],
+     "road_mid": [
+      0.15,
+      -0.35
+     ],
+     "road_far": [
+      0.78,
+      -3.2
+     ],
+     "stall": [
+      -0.9,
+      -0.5
+     ],
+     "wolf_stall": [
+      -0.5,
+      -0.22
+     ],
+     "mill": [
+      -1.35,
+      -1.95
+     ],
+     "sack": [
+      -0.72,
+      -1.65
+     ],
+     "wolf_mill": [
+      -0.45,
+      -1.42
+     ],
+     "road_mill": [
+      0.35,
+      -1.3
+     ],
+     "errand": [
+      -0.3,
+      -0.9
+     ],
+     "cot_st0": [
+      1.64,
+      -0.736
+     ],
+     "cot_st1": [
+      1.52,
+      -0.717
+     ],
+     "cot_st2": [
+      1.4,
+      -0.697
+     ],
+     "cot_st3": [
+      1.28,
+      -0.678
+     ],
+     "cot_st4": [
+      1.16,
+      -0.658
+     ],
+     "cot_st5": [
+      1.04,
+      -0.639
+     ],
+     "cot_st6": [
+      0.92,
+      -0.619
+     ],
+     "cot_st7": [
+      0.8,
+      -0.6
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.25,
+      "clear": 1.6,
+      "yaw": -30.0,
+      "door_in": true,
+      "box": {
+       "depth": 1.1,
+       "body": true
+      }
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor2",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_03",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_04",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_cottage_04o",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in_open",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_room_00",
+      "at": "in_clock",
+      "stage": "full",
+      "name": "clock",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_00",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_eyes",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_kid",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_open",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_02",
+      "at": "in_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_02",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_07",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_04",
+      "at": "in_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_03",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_09",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_05",
+      "at": "in_chair",
+      "stage": "full",
+      "name": "chair",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_06",
+      "at": "in_chair",
+      "stage": 0,
+      "name": "chair_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_03",
+      "at": "in_basket",
+      "stage": "full",
+      "name": "basket",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_04",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_08",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_11",
+      "at": "in_stove",
+      "stage": "full",
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_meadow_05",
+      "at": "stall",
+      "stage": "full",
+      "name": "stall",
+      "scale": 1.0,
+      "clear": 0.7
+     },
+     {
+      "card": "village_houses_05",
+      "at": "mill",
+      "stage": "full",
+      "name": "mill",
+      "scale": 1.25,
+      "clear": 1.0
+     },
+     {
+      "card": "story_wg_fx_00",
+      "at": "sack",
+      "stage": "full",
+      "name": "sack",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "village_props_27",
+      "at": [
+       -0.95,
+       -1.45
+      ],
+      "stage": "full",
+      "name": "sacks",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st4",
+      "stage": "full",
+      "name": "cot_st4",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st5",
+      "stage": "full",
+      "name": "cot_st5",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st6",
+      "stage": "full",
+      "name": "cot_st6",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st7",
+      "stage": "full",
+      "name": "cot_st7",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "kid1": "calm",
+     "kid2": "calm",
+     "kid3": "calm",
+     "kid4": "calm",
+     "kid5": "calm",
+     "kid6": "calm",
+     "baby": "calm",
+     "wolf": "calm"
+    },
+    "at": {
+     "kid1": "in_kid1",
+     "kid2": "in_kid2",
+     "kid3": "in_kid3",
+     "kid4": "in_kid4",
+     "kid5": "in_kid5",
+     "kid6": "in_kid6",
+     "baby": "in_baby",
+     "wolf": "wolf_door"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "track",
+     "at": "wolf_door",
+     "rate": 1.0,
+     "wait": 0.1,
+     "settle": 0.8
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "to": "wolf_mill",
+     "via": [
+      "road_door",
+      "road_mill"
+     ],
+     "speed": 0.7,
+     "pose": "run_cycle",
+     "follow": "wolf",
+     "shot": "track",
+     "line": "wg_r0400"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "hungry"
+    },
+    {
+     "do": "tap_steps",
+     "target": "sack",
+     "shot": "mill",
+     "steps": [
+      {
+       "fx": "flour",
+       "wait": 1.0
+      }
+     ]
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "to": "wolf_door",
+     "via": [
+      "road_mill",
+      "road_door"
+     ],
+     "speed": 0.85,
+     "pose": "flour",
+     "follow": "wolf",
+     "shot": "track"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "paw_show"
+    },
+    {
+     "do": "cam",
+     "shot": "door_low",
+     "at": "wolf_door",
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0402"
+    },
+    {
+     "do": "cam",
+     "shot": "door_ots",
+     "at": "wolf_door",
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.4
+    },
+    {
+     "do": "fx",
+     "fx": "sneeze",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wg_r0403"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "wg_r0405"
+    }
+   ],
+   "sound": {
+    "music": "wolf",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "hide",
+   "title": "숨바꼭질",
+   "spread": {
+    "seed": 2,
+    "view": 0,
+    "place": "home",
+    "light": "late",
+    "spots": {
+     "cottage": [
+      1.85,
+      -1.1
+     ],
+     "door": [
+      1.69,
+      -0.823
+     ],
+     "door_in": [
+      1.96,
+      -1.291
+     ],
+     "wall_in": [
+      1.858,
+      -1.113
+     ],
+     "in_back": [
+      2.385,
+      -2.027
+     ],
+     "in_floor": [
+      1.985,
+      -1.334
+     ],
+     "in_floor2": [
+      2.235,
+      -1.767
+     ],
+     "in_focus": [
+      2.21,
+      -1.724
+     ],
+     "in_clock": [
+      1.66,
+      -2.33
+     ],
+     "in_bed": [
+      2.817,
+      -1.615
+     ],
+     "in_table": [
+      1.934,
+      -2.045
+     ],
+     "in_chair": [
+      2.453,
+      -1.745
+     ],
+     "in_basket": [
+      2.81,
+      -1.123
+     ],
+     "in_stove": [
+      1.298,
+      -1.904
+     ],
+     "in_mom": [
+      2.21,
+      -1.724
+     ],
+     "in_mom2": [
+      2.118,
+      -1.465
+     ],
+     "in_wolf": [
+      1.88,
+      -1.152
+     ],
+     "in_search": [
+      2.103,
+      -1.439
+     ],
+     "in_baby2": [
+      1.822,
+      -1.751
+     ],
+     "in_clock_front": [
+      1.706,
+      -2.13
+     ],
+     "bed_front": [
+      2.706,
+      -1.483
+     ],
+     "table_front": [
+      1.864,
+      -1.924
+     ],
+     "basket_front": [
+      2.649,
+      -1.124
+     ],
+     "basket_via": [
+      2.764,
+      -1.404
+     ],
+     "wolf_door": [
+      1.767,
+      -0.756
+     ],
+     "door_view": [
+      1.4,
+      -0.321
+     ],
+     "in_kid1": [
+      1.62,
+      -1.902
+     ],
+     "in_kid2": [
+      1.75,
+      -1.827
+     ],
+     "in_kid3": [
+      1.88,
+      -1.752
+     ],
+     "in_kid4": [
+      2.01,
+      -1.677
+     ],
+     "in_kid5": [
+      2.27,
+      -1.527
+     ],
+     "in_kid6": [
+      2.4,
+      -1.452
+     ],
+     "in_baby": [
+      2.53,
+      -1.377
+     ],
+     "est": [
+      0.2,
+      -1.0
+     ],
+     "road_near": [
+      -0.45,
+      0.85
+     ],
+     "road_door": [
+      0.65,
+      -0.6
+     ],
+     "road_mid": [
+      0.15,
+      -0.35
+     ],
+     "road_far": [
+      0.78,
+      -3.2
+     ],
+     "stall": [
+      -0.9,
+      -0.5
+     ],
+     "wolf_stall": [
+      -0.5,
+      -0.22
+     ],
+     "mill": [
+      -1.35,
+      -1.95
+     ],
+     "sack": [
+      -0.72,
+      -1.65
+     ],
+     "wolf_mill": [
+      -0.45,
+      -1.42
+     ],
+     "road_mill": [
+      0.35,
+      -1.3
+     ],
+     "errand": [
+      -0.3,
+      -0.9
+     ],
+     "cot_st0": [
+      1.64,
+      -0.736
+     ],
+     "cot_st1": [
+      1.52,
+      -0.717
+     ],
+     "cot_st2": [
+      1.4,
+      -0.697
+     ],
+     "cot_st3": [
+      1.28,
+      -0.678
+     ],
+     "cot_st4": [
+      1.16,
+      -0.658
+     ],
+     "cot_st5": [
+      1.04,
+      -0.639
+     ],
+     "cot_st6": [
+      0.92,
+      -0.619
+     ],
+     "cot_st7": [
+      0.8,
+      -0.6
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.25,
+      "clear": 1.6,
+      "yaw": -30.0,
+      "door_in": true,
+      "box": {
+       "depth": 1.1,
+       "body": true
+      }
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor2",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_03",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_04",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_cottage_04o",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in_open",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_room_00",
+      "at": "in_clock",
+      "stage": "full",
+      "name": "clock",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_00",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_eyes",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_kid",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_open",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_02",
+      "at": "in_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_02",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_07",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_04",
+      "at": "in_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_03",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_09",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_05",
+      "at": "in_chair",
+      "stage": "full",
+      "name": "chair",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_06",
+      "at": "in_chair",
+      "stage": 0,
+      "name": "chair_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_03",
+      "at": "in_basket",
+      "stage": "full",
+      "name": "basket",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_04",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_08",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_11",
+      "at": "in_stove",
+      "stage": "full",
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_meadow_05",
+      "at": "stall",
+      "stage": "full",
+      "name": "stall",
+      "scale": 1.0,
+      "clear": 0.7
+     },
+     {
+      "card": "village_houses_05",
+      "at": "mill",
+      "stage": "full",
+      "name": "mill",
+      "scale": 1.25,
+      "clear": 1.0
+     },
+     {
+      "card": "story_wg_fx_00",
+      "at": "sack",
+      "stage": "full",
+      "name": "sack",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "village_props_27",
+      "at": [
+       -0.95,
+       -1.45
+      ],
+      "stage": "full",
+      "name": "sacks",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st4",
+      "stage": "full",
+      "name": "cot_st4",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st5",
+      "stage": "full",
+      "name": "cot_st5",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st6",
+      "stage": "full",
+      "name": "cot_st6",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st7",
+      "stage": "full",
+      "name": "cot_st7",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {
+     "kid1": "joy",
+     "kid2": "joy",
+     "kid3": "joy",
+     "kid4": "joy",
+     "kid5": "joy",
+     "kid6": "joy",
+     "baby": "calm",
+     "wolf": "search"
+    },
+    "at": {
+     "kid1": "in_kid1",
+     "kid2": "in_kid2",
+     "kid3": "in_kid3",
+     "kid4": "in_kid4",
+     "kid5": "in_kid5",
+     "kid6": "in_kid6",
+     "baby": "in_baby",
+     "wolf": "wolf_door"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "door_in",
+     "at": "door_in",
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "go_inside",
+     "who": [
+      "wolf"
+     ],
+     "house": "cottage",
+     "house_facing": true,
+     "climb_steps": true,
+     "door_clear": true,
+     "to": {
+      "wolf": "in_wolf"
+     },
+     "speed": 0.5,
+     "keep_open": true
+    },
+    {
+     "do": "fx",
+     "fx": "wolf_in",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wg_r0500"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 0.9,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0501"
+    },
+    {
+     "do": "tap_each",
+     "targets": [
+      "bed",
+      "table",
+      "basket"
+     ],
+     "react": {
+      "bed": [
+       "-",
+       "hide:bed"
+      ],
+      "table": [
+       "-",
+       "hide:table"
+      ],
+      "basket": [
+       "-",
+       "hide:basket"
+      ]
+     }
+    },
+    {
+     "do": "tap_steps",
+     "target": "baby",
+     "prompt": "wg_047",
+     "hint": "wg_047",
+     "shot": "room",
+     "steps": [
+      {
+       "fx": "clock_hide",
+       "wait": 1.6
+      }
+     ]
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "to": "in_search",
+     "speed": 0.4,
+     "pose": "flour"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0504"
+    },
+    {
+     "do": "cam",
+     "shot": "clock_close",
+     "at": "in_clock",
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.6
+    },
+    {
+     "do": "fx",
+     "fx": "swallow",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "wg_r0506"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0507"
+    },
+    {
+     "do": "cam",
+     "shot": "room_wide",
+     "at": "in_focus",
+     "rate": 1.4,
+     "wait": 0.1
+    },
+    {
+     "do": "go_out",
+     "who": [
+      "wolf"
+     ],
+     "house": "cottage",
+     "to": "road_door",
+     "pose": "heavy",
+     "shot": "room_wide",
+     "keep_open": true,
+     "speed": 0.5,
+     "then": {
+      "to": "road_mid",
+      "exit": true,
+      "speed": 0.5
+     }
+    }
+   ],
+   "sound": {
+    "music": "chimney",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "mother",
+   "title": "엄마가 왔어요",
+   "spread": {
+    "seed": 2,
+    "view": 0,
+    "place": "home",
+    "light": "dusk",
+    "spots": {
+     "cottage": [
+      1.85,
+      -1.1
+     ],
+     "door": [
+      1.69,
+      -0.823
+     ],
+     "door_in": [
+      1.96,
+      -1.291
+     ],
+     "wall_in": [
+      1.858,
+      -1.113
+     ],
+     "in_back": [
+      2.385,
+      -2.027
+     ],
+     "in_floor": [
+      1.985,
+      -1.334
+     ],
+     "in_floor2": [
+      2.235,
+      -1.767
+     ],
+     "in_focus": [
+      2.21,
+      -1.724
+     ],
+     "in_clock": [
+      1.66,
+      -2.33
+     ],
+     "in_bed": [
+      2.817,
+      -1.615
+     ],
+     "in_table": [
+      1.934,
+      -2.045
+     ],
+     "in_chair": [
+      2.453,
+      -1.745
+     ],
+     "in_basket": [
+      2.81,
+      -1.123
+     ],
+     "in_stove": [
+      1.298,
+      -1.904
+     ],
+     "in_mom": [
+      2.21,
+      -1.724
+     ],
+     "in_mom2": [
+      2.118,
+      -1.465
+     ],
+     "in_wolf": [
+      1.88,
+      -1.152
+     ],
+     "in_search": [
+      2.103,
+      -1.439
+     ],
+     "in_baby2": [
+      1.822,
+      -1.751
+     ],
+     "in_clock_front": [
+      1.706,
+      -2.13
+     ],
+     "bed_front": [
+      2.706,
+      -1.483
+     ],
+     "table_front": [
+      1.864,
+      -1.924
+     ],
+     "basket_front": [
+      2.649,
+      -1.124
+     ],
+     "basket_via": [
+      2.764,
+      -1.404
+     ],
+     "wolf_door": [
+      1.767,
+      -0.756
+     ],
+     "door_view": [
+      1.4,
+      -0.321
+     ],
+     "in_kid1": [
+      1.62,
+      -1.902
+     ],
+     "in_kid2": [
+      1.75,
+      -1.827
+     ],
+     "in_kid3": [
+      1.88,
+      -1.752
+     ],
+     "in_kid4": [
+      2.01,
+      -1.677
+     ],
+     "in_kid5": [
+      2.27,
+      -1.527
+     ],
+     "in_kid6": [
+      2.4,
+      -1.452
+     ],
+     "in_baby": [
+      2.53,
+      -1.377
+     ],
+     "est": [
+      0.2,
+      -1.0
+     ],
+     "road_near": [
+      -0.45,
+      0.85
+     ],
+     "road_door": [
+      0.65,
+      -0.6
+     ],
+     "road_mid": [
+      0.15,
+      -0.35
+     ],
+     "road_far": [
+      0.78,
+      -3.2
+     ],
+     "stall": [
+      -0.9,
+      -0.5
+     ],
+     "wolf_stall": [
+      -0.5,
+      -0.22
+     ],
+     "mill": [
+      -1.35,
+      -1.95
+     ],
+     "sack": [
+      -0.72,
+      -1.65
+     ],
+     "wolf_mill": [
+      -0.45,
+      -1.42
+     ],
+     "road_mill": [
+      0.35,
+      -1.3
+     ],
+     "errand": [
+      -0.3,
+      -0.9
+     ],
+     "cot_st0": [
+      1.64,
+      -0.736
+     ],
+     "cot_st1": [
+      1.52,
+      -0.717
+     ],
+     "cot_st2": [
+      1.4,
+      -0.697
+     ],
+     "cot_st3": [
+      1.28,
+      -0.678
+     ],
+     "cot_st4": [
+      1.16,
+      -0.658
+     ],
+     "cot_st5": [
+      1.04,
+      -0.639
+     ],
+     "cot_st6": [
+      0.92,
+      -0.619
+     ],
+     "cot_st7": [
+      0.8,
+      -0.6
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_cottage_00",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.25,
+      "clear": 1.6,
+      "yaw": -30.0,
+      "door_in": true,
+      "box": {
+       "depth": 1.1,
+       "body": true
+      }
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_05",
+      "at": "in_floor2",
+      "stage": "full",
+      "flat": true,
+      "name": "room_floor2",
+      "scale": 1.25,
+      "clear": 0,
+      "lift": 0.02,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_03",
+      "at": "in_back",
+      "stage": "full",
+      "name": "room_back",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_cottage_04",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_cottage_04o",
+      "at": "wall_in",
+      "stage": "full",
+      "name": "wall_in_open",
+      "scale": 1.25,
+      "clear": 0,
+      "yaw": 150.0,
+      "inside_only": true
+     },
+     {
+      "card": "story_wg_room_00",
+      "at": "in_clock",
+      "stage": "full",
+      "name": "clock",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_00",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_eyes",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_kid",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_01",
+      "at": "in_clock",
+      "stage": 0,
+      "name": "clock_open",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_02",
+      "at": "in_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_02",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_07",
+      "at": "in_bed",
+      "stage": 0,
+      "name": "bed_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_04",
+      "at": "in_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_03",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_09",
+      "at": "in_table",
+      "stage": 0,
+      "name": "table_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_05",
+      "at": "in_chair",
+      "stage": "full",
+      "name": "chair",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_06",
+      "at": "in_chair",
+      "stage": 0,
+      "name": "chair_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_03",
+      "at": "in_basket",
+      "stage": "full",
+      "name": "basket",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_hide_04",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_hide",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_08",
+      "at": "in_basket",
+      "stage": 0,
+      "name": "basket_mess",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_room_11",
+      "at": "in_stove",
+      "stage": "full",
+      "name": "stove",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -30.0
+     },
+     {
+      "card": "story_wg_meadow_05",
+      "at": "stall",
+      "stage": "full",
+      "name": "stall",
+      "scale": 1.0,
+      "clear": 0.7
+     },
+     {
+      "card": "village_houses_05",
+      "at": "mill",
+      "stage": "full",
+      "name": "mill",
+      "scale": 1.25,
+      "clear": 1.0
+     },
+     {
+      "card": "story_wg_fx_00",
+      "at": "sack",
+      "stage": "full",
+      "name": "sack",
+      "scale": 1.0,
+      "clear": 0.3
+     },
+     {
+      "card": "village_props_27",
+      "at": [
+       -0.95,
+       -1.45
+      ],
+      "stage": "full",
+      "name": "sacks",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st0",
+      "stage": "full",
+      "name": "cot_st0",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st1",
+      "stage": "full",
+      "name": "cot_st1",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st2",
+      "stage": "full",
+      "name": "cot_st2",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st3",
+      "stage": "full",
+      "name": "cot_st3",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st4",
+      "stage": "full",
+      "name": "cot_st4",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st5",
+      "stage": "full",
+      "name": "cot_st5",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_21",
+      "at": "cot_st6",
+      "stage": "full",
+      "name": "cot_st6",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     },
+     {
+      "card": "stream_water_22",
+      "at": "cot_st7",
+      "stage": "full",
+      "name": "cot_st7",
+      "scale": 0.5,
+      "clear": 0.08,
+      "yaw": -30.0
+     }
+    ],
+    "focus": "est"
+   },
+   "enter": {
+    "who": {},
+    "at": {},
+    "state": "mess"
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "house",
+     "at": "door_view",
+     "rate": 1.2,
+     "wait": 0.2
+    },
+    {
+     "do": "go_inside",
+     "who": [
+      "mom"
+     ],
+     "from": "door_view",
+     "house": "cottage",
+     "house_facing": true,
+     "climb_steps": true,
+     "door_clear": true,
+     "to": {
+      "mom": "in_mom2"
+     },
+     "speed": 0.55,
+     "keep_open": true
+    },
+    {
+     "do": "cam",
+     "shot": "room_wide",
+     "at": "in_focus",
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "wg_r0601"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0603"
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": [
+      "in_clock",
+      "in_mom2"
+     ],
+     "rate": 1.4,
+     "wait": 0.1,
+     "settle": 0.6
+    },
+    {
+     "do": "tap_steps",
+     "target": "clock",
+     "shot": "room",
+     "steps": [
+      {
+       "fx": "clock_out",
+       "wait": 0.2
+      }
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0604"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0605"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0607"
+    }
+   ],
+   "kid_voice": "baby",
+   "sound": {
+    "music": "night",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "tree",
+   "title": "나무 아래",
+   "spread": {
+    "seed": 2,
+    "view": 4,
+    "place": "tree",
+    "light": "late",
+    "spots": {
+     "oak": [
+      2.4,
+      -2.15
+     ],
+     "well": [
+      1.12,
+      -2.35
+     ],
+     "well_rim": [
+      1.12,
+      -2.3200000000000003
+     ],
+     "hedge": [
+      3.65,
+      -1.35
+     ],
+     "wolf_sleep": [
+      1.55,
+      -1.45
+     ],
+     "belly": [
+      1.55,
+      -1.43
+     ],
+     "mom_kneel": [
+      1.42,
+      -1.22
+     ],
+     "baby_by": [
+      1.02,
+      -1.02
+     ],
+     "mom_near": [
+      1.0,
+      -0.82
+     ],
+     "baby_near": [
+      0.74,
+      -0.76
+     ],
+     "road_near": [
+      -0.5,
+      0.95
+     ],
+     "road_bend": [
+      0.1,
+      -0.2
+     ],
+     "stones": [
+      1.88,
+      -1.82
+     ],
+     "tree_focus": [
+      1.4,
+      -1.4
+     ],
+     "well_focus": [
+      1.0,
+      -1.9
+     ],
+     "wolf_well": [
+      0.84,
+      -2.15
+     ],
+     "wolf_wet": [
+      0.55,
+      -1.85
+     ],
+     "road_far": [
+      -0.4,
+      -4.4
+     ],
+     "road_mid": [
+      0.3,
+      -2.0
+     ],
+     "watch_mom": [
+      1.28,
+      -0.8
+     ],
+     "watch_baby": [
+      1.02,
+      -1.02
+     ],
+     "pop_kid1": [
+      1.6,
+      -0.45
+     ],
+     "watch_kid1": [
+      1.6,
+      -0.45
+     ],
+     "dance_kid1": [
+      0.4,
+      -1.65
+     ],
+     "pop_kid2": [
+      2.0,
+      -0.45
+     ],
+     "watch_kid2": [
+      2.0,
+      -0.45
+     ],
+     "dance_kid2": [
+      1.32,
+      -1.72
+     ],
+     "pop_kid3": [
+      1.75,
+      -0.72
+     ],
+     "watch_kid3": [
+      1.75,
+      -0.72
+     ],
+     "dance_kid3": [
+      0.68,
+      -1.72
+     ],
+     "pop_kid4": [
+      2.15,
+      -0.72
+     ],
+     "watch_kid4": [
+      2.15,
+      -0.72
+     ],
+     "dance_kid4": [
+      1.6,
+      -1.65
+     ],
+     "pop_kid5": [
+      1.9,
+      -1.0
+     ],
+     "watch_kid5": [
+      1.9,
+      -1.0
+     ],
+     "dance_kid5": [
+      0.96,
+      -1.65
+     ],
+     "pop_kid6": [
+      2.3,
+      -1.0
+     ],
+     "watch_kid6": [
+      2.3,
+      -1.0
+     ],
+     "dance_kid6": [
+      1.88,
+      -1.72
+     ],
+     "dance_mom": [
+      1.14,
+      -2.0
+     ],
+     "dance_baby": [
+      1.1,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_meadow_00",
+      "at": "oak",
+      "stage": "full",
+      "name": "oak",
+      "scale": 1.0,
+      "clear": 1.0,
+      "yaw": -12.0
+     },
+     {
+      "card": "story_wg_meadow_01",
+      "at": "well",
+      "stage": "full",
+      "name": "well",
+      "scale": 1.0,
+      "clear": 0.8
+     },
+     {
+      "card": "story_wg_meadow_02",
+      "at": "well_rim",
+      "stage": 0,
+      "name": "well_rim",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wg_meadow_03",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_wg_fx_05",
+      "at": "stones",
+      "stage": "full",
+      "name": "stone_a",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_wg_fx_07",
+      "at": [
+       2.1,
+       -1.84
+      ],
+      "stage": "full",
+      "name": "stone_b",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "meadow_field_25",
+      "at": [
+       1.35,
+       0.25
+      ],
+      "stage": "full",
+      "name": "clearing",
+      "scale": 0.3,
+      "clear": 9.0
+     }
+    ],
+    "focus": "tree_focus"
+   },
+   "enter": {
+    "who": {
+     "wolf": "sleep_full"
+    },
+    "at": {
+     "wolf": "wolf_sleep"
+    }
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "tree_wide",
+     "at": "tree_focus",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 0.6
+    },
+    {
+     "do": "fx",
+     "fx": "snore_on",
+     "wait": 0.6
+    },
+    {
+     "do": "say",
+     "line": "wg_r0701"
+    },
+    {
+     "do": "walk",
+     "who": [
+      "mom",
+      "baby"
+     ],
+     "from": "road_bend",
+     "to": {
+      "mom": "mom_near",
+      "baby": "baby_near"
+     },
+     "speed": 0.42,
+     "follow": "mom",
+     "shot": "tree_wide"
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "shush",
+     "left": 0
+    },
+    {
+     "do": "cam",
+     "shot": "tree_two",
+     "at": [
+      "mom_near",
+      "wolf_sleep"
+     ],
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0704"
+    }
+   ],
+   "kid_voice": "baby",
+   "sound": {
+    "music": "night",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "belly",
+   "title": "늑대 배",
+   "spread": {
+    "seed": 2,
+    "view": 4,
+    "place": "tree",
+    "light": "late",
+    "spots": {
+     "oak": [
+      2.4,
+      -2.15
+     ],
+     "well": [
+      1.12,
+      -2.35
+     ],
+     "well_rim": [
+      1.12,
+      -2.3200000000000003
+     ],
+     "hedge": [
+      3.65,
+      -1.35
+     ],
+     "wolf_sleep": [
+      1.55,
+      -1.45
+     ],
+     "belly": [
+      1.55,
+      -1.43
+     ],
+     "mom_kneel": [
+      1.42,
+      -1.22
+     ],
+     "baby_by": [
+      1.02,
+      -1.02
+     ],
+     "mom_near": [
+      1.0,
+      -0.82
+     ],
+     "baby_near": [
+      0.74,
+      -0.76
+     ],
+     "road_near": [
+      -0.5,
+      0.95
+     ],
+     "road_bend": [
+      0.1,
+      -0.2
+     ],
+     "stones": [
+      1.88,
+      -1.82
+     ],
+     "tree_focus": [
+      1.4,
+      -1.4
+     ],
+     "well_focus": [
+      1.0,
+      -1.9
+     ],
+     "wolf_well": [
+      0.84,
+      -2.15
+     ],
+     "wolf_wet": [
+      0.55,
+      -1.85
+     ],
+     "road_far": [
+      -0.4,
+      -4.4
+     ],
+     "road_mid": [
+      0.3,
+      -2.0
+     ],
+     "watch_mom": [
+      1.28,
+      -0.8
+     ],
+     "watch_baby": [
+      1.02,
+      -1.02
+     ],
+     "pop_kid1": [
+      1.6,
+      -0.45
+     ],
+     "watch_kid1": [
+      1.6,
+      -0.45
+     ],
+     "dance_kid1": [
+      0.4,
+      -1.65
+     ],
+     "pop_kid2": [
+      2.0,
+      -0.45
+     ],
+     "watch_kid2": [
+      2.0,
+      -0.45
+     ],
+     "dance_kid2": [
+      1.32,
+      -1.72
+     ],
+     "pop_kid3": [
+      1.75,
+      -0.72
+     ],
+     "watch_kid3": [
+      1.75,
+      -0.72
+     ],
+     "dance_kid3": [
+      0.68,
+      -1.72
+     ],
+     "pop_kid4": [
+      2.15,
+      -0.72
+     ],
+     "watch_kid4": [
+      2.15,
+      -0.72
+     ],
+     "dance_kid4": [
+      1.6,
+      -1.65
+     ],
+     "pop_kid5": [
+      1.9,
+      -1.0
+     ],
+     "watch_kid5": [
+      1.9,
+      -1.0
+     ],
+     "dance_kid5": [
+      0.96,
+      -1.65
+     ],
+     "pop_kid6": [
+      2.3,
+      -1.0
+     ],
+     "watch_kid6": [
+      2.3,
+      -1.0
+     ],
+     "dance_kid6": [
+      1.88,
+      -1.72
+     ],
+     "dance_mom": [
+      1.14,
+      -2.0
+     ],
+     "dance_baby": [
+      1.1,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_meadow_00",
+      "at": "oak",
+      "stage": "full",
+      "name": "oak",
+      "scale": 1.0,
+      "clear": 1.0,
+      "yaw": -12.0
+     },
+     {
+      "card": "story_wg_meadow_01",
+      "at": "well",
+      "stage": "full",
+      "name": "well",
+      "scale": 1.0,
+      "clear": 0.8
+     },
+     {
+      "card": "story_wg_meadow_02",
+      "at": "well_rim",
+      "stage": 0,
+      "name": "well_rim",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wg_meadow_03",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_wg_fx_05",
+      "at": "stones",
+      "stage": "full",
+      "name": "stone_a",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_wg_fx_07",
+      "at": [
+       2.1,
+       -1.84
+      ],
+      "stage": "full",
+      "name": "stone_b",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "meadow_field_25",
+      "at": [
+       1.35,
+       0.25
+      ],
+      "stage": "full",
+      "name": "clearing",
+      "scale": 0.3,
+      "clear": 9.0
+     }
+    ],
+    "focus": "tree_focus"
+   },
+   "enter": {
+    "who": {
+     "wolf": "sleep_full",
+     "mom": "shush",
+     "baby": "whisper"
+    },
+    "at": {
+     "wolf": "wolf_sleep",
+     "mom": "mom_near",
+     "baby": "baby_near"
+    }
+   },
+   "steps": [
+    {
+     "do": "walk",
+     "who": "mom",
+     "to": "mom_kneel",
+     "speed": 0.25
+    },
+    {
+     "do": "walk",
+     "who": "baby",
+     "to": "baby_by",
+     "speed": 0.25
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "kneel_cut",
+     "left": 0
+    },
+    {
+     "do": "cam",
+     "shot": "belly",
+     "at": "belly",
+     "rate": 1.4,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "snip",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "wg_r0801"
+    },
+    {
+     "do": "tap_steps",
+     "target": "belly",
+     "prompt": "wg_049",
+     "hint": "wg_049",
+     "shot": "belly",
+     "steps": [
+      {
+       "fx": "belly_pop:1",
+       "wait": 0.8
+      },
+      {
+       "fx": "belly_pop:2",
+       "wait": 0.8
+      },
+      {
+       "fx": "belly_pop:3",
+       "wait": 1.0
+      }
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "tree_two",
+     "at": [
+      "belly",
+      "pop_kid3"
+     ],
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0803"
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "ready"
+    },
+    {
+     "do": "say",
+     "line": "wg_r0804"
+    },
+    {
+     "do": "tap_steps",
+     "target": "stones",
+     "prompt": "wg_051",
+     "hint": "wg_051",
+     "shot": "tree_two",
+     "steps": [
+      {
+       "fx": "stone:1",
+       "wait": 1.1
+      },
+      {
+       "fx": "stone:2",
+       "wait": 1.1
+      }
+     ]
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "kneel_sew",
+     "left": 0
+    },
+    {
+     "do": "cam",
+     "shot": "belly",
+     "at": "belly",
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "sew",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "wg_r0807"
+    },
+    {
+     "do": "fx",
+     "fx": "stitched",
+     "wait": 0.6
+    }
+   ],
+   "kid_voice": "kid3",
+   "sound": {
+    "music": "build",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "well",
+   "title": "우물가",
+   "spread": {
+    "seed": 2,
+    "view": 4,
+    "place": "tree",
+    "light": "dusk",
+    "spots": {
+     "oak": [
+      2.4,
+      -2.15
+     ],
+     "well": [
+      1.12,
+      -2.35
+     ],
+     "well_rim": [
+      1.12,
+      -2.3200000000000003
+     ],
+     "hedge": [
+      3.65,
+      -1.35
+     ],
+     "wolf_sleep": [
+      1.55,
+      -1.45
+     ],
+     "belly": [
+      1.55,
+      -1.43
+     ],
+     "mom_kneel": [
+      1.42,
+      -1.22
+     ],
+     "baby_by": [
+      1.02,
+      -1.02
+     ],
+     "mom_near": [
+      1.0,
+      -0.82
+     ],
+     "baby_near": [
+      0.74,
+      -0.76
+     ],
+     "road_near": [
+      -0.5,
+      0.95
+     ],
+     "road_bend": [
+      0.1,
+      -0.2
+     ],
+     "stones": [
+      1.88,
+      -1.82
+     ],
+     "tree_focus": [
+      1.4,
+      -1.4
+     ],
+     "well_focus": [
+      1.0,
+      -1.9
+     ],
+     "wolf_well": [
+      0.84,
+      -2.15
+     ],
+     "wolf_wet": [
+      0.55,
+      -1.85
+     ],
+     "road_far": [
+      -0.4,
+      -4.4
+     ],
+     "road_mid": [
+      0.3,
+      -2.0
+     ],
+     "watch_mom": [
+      1.28,
+      -0.8
+     ],
+     "watch_baby": [
+      1.02,
+      -1.02
+     ],
+     "pop_kid1": [
+      1.6,
+      -0.45
+     ],
+     "watch_kid1": [
+      1.6,
+      -0.45
+     ],
+     "dance_kid1": [
+      0.4,
+      -1.65
+     ],
+     "pop_kid2": [
+      2.0,
+      -0.45
+     ],
+     "watch_kid2": [
+      2.0,
+      -0.45
+     ],
+     "dance_kid2": [
+      1.32,
+      -1.72
+     ],
+     "pop_kid3": [
+      1.75,
+      -0.72
+     ],
+     "watch_kid3": [
+      1.75,
+      -0.72
+     ],
+     "dance_kid3": [
+      0.68,
+      -1.72
+     ],
+     "pop_kid4": [
+      2.15,
+      -0.72
+     ],
+     "watch_kid4": [
+      2.15,
+      -0.72
+     ],
+     "dance_kid4": [
+      1.6,
+      -1.65
+     ],
+     "pop_kid5": [
+      1.9,
+      -1.0
+     ],
+     "watch_kid5": [
+      1.9,
+      -1.0
+     ],
+     "dance_kid5": [
+      0.96,
+      -1.65
+     ],
+     "pop_kid6": [
+      2.3,
+      -1.0
+     ],
+     "watch_kid6": [
+      2.3,
+      -1.0
+     ],
+     "dance_kid6": [
+      1.88,
+      -1.72
+     ],
+     "dance_mom": [
+      1.14,
+      -2.0
+     ],
+     "dance_baby": [
+      1.1,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_meadow_00",
+      "at": "oak",
+      "stage": "full",
+      "name": "oak",
+      "scale": 1.0,
+      "clear": 1.0,
+      "yaw": -12.0
+     },
+     {
+      "card": "story_wg_meadow_01",
+      "at": "well",
+      "stage": "full",
+      "name": "well",
+      "scale": 1.0,
+      "clear": 0.8
+     },
+     {
+      "card": "story_wg_meadow_02",
+      "at": "well_rim",
+      "stage": 0,
+      "name": "well_rim",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wg_meadow_03",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_wg_fx_05",
+      "at": "stones",
+      "stage": "full",
+      "name": "stone_a",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_wg_fx_07",
+      "at": [
+       2.1,
+       -1.84
+      ],
+      "stage": "full",
+      "name": "stone_b",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "meadow_field_25",
+      "at": [
+       1.35,
+       0.25
+      ],
+      "stage": "full",
+      "name": "clearing",
+      "scale": 0.3,
+      "clear": 9.0
+     }
+    ],
+    "focus": "tree_focus"
+   },
+   "enter": {
+    "who": {
+     "wolf": "sleep_stones",
+     "kid1": "calm",
+     "kid2": "calm",
+     "kid3": "calm",
+     "kid4": "calm",
+     "kid5": "calm",
+     "kid6": "calm",
+     "baby": "calm",
+     "mom": "calm"
+    },
+    "at": {
+     "wolf": "wolf_sleep",
+     "mom": "mom_kneel",
+     "baby": "baby_by",
+     "kid1": "pop_kid1",
+     "kid2": "pop_kid2",
+     "kid3": "pop_kid3",
+     "kid4": "pop_kid4",
+     "kid5": "pop_kid5",
+     "kid6": "pop_kid6"
+    },
+    "state": "stones"
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "tree_wide",
+     "at": "tree_focus",
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": "mom",
+     "to": "watch_mom",
+     "speed": 0.4
+    },
+    {
+     "do": "pose",
+     "who": [
+      "kid1",
+      "kid2",
+      "kid3",
+      "kid4",
+      "kid5",
+      "kid6",
+      "baby"
+     ],
+     "pose": "scared"
+    },
+    {
+     "do": "fx",
+     "fx": "wake",
+     "wait": 0.8
+    },
+    {
+     "do": "cam",
+     "shot": "tree_two",
+     "at": "wolf_sleep",
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0902"
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "to": "wolf_well",
+     "speed": 0.3,
+     "pose": "heavy",
+     "follow": "wolf",
+     "shot": "well_wide"
+    },
+    {
+     "do": "pose",
+     "who": "wolf",
+     "pose": "peer_well",
+     "left": 0
+    },
+    {
+     "do": "cam",
+     "shot": "well_low",
+     "at": [
+      "wolf_well",
+      "well"
+     ],
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0904"
+    },
+    {
+     "do": "fx",
+     "fx": "fall_well",
+     "wait": 1.4
+    },
+    {
+     "do": "say",
+     "line": "wg_r0906"
+    },
+    {
+     "do": "fx",
+     "fx": "wet_out",
+     "wait": 1.0
+    },
+    {
+     "do": "cam",
+     "shot": "tree_two",
+     "at": "wolf_wet",
+     "rate": 2.0,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "wg_r0907"
+    },
+    {
+     "do": "cam",
+     "shot": "well_wide",
+     "at": "road_mid",
+     "rate": 1.4,
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": "wolf",
+     "to": "road_far",
+     "via": [
+      "road_mid"
+     ],
+     "speed": 0.9,
+     "pose": "wet",
+     "exit": true,
+     "line": "wg_r0908"
+    }
+   ],
+   "sound": {
+    "music": "chimney",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "together",
+   "title": "모두 모였어요",
+   "spread": {
+    "seed": 2,
+    "view": 4,
+    "place": "tree",
+    "light": "dusk",
+    "spots": {
+     "oak": [
+      2.4,
+      -2.15
+     ],
+     "well": [
+      1.12,
+      -2.35
+     ],
+     "well_rim": [
+      1.12,
+      -2.3200000000000003
+     ],
+     "hedge": [
+      3.65,
+      -1.35
+     ],
+     "wolf_sleep": [
+      1.55,
+      -1.45
+     ],
+     "belly": [
+      1.55,
+      -1.43
+     ],
+     "mom_kneel": [
+      1.42,
+      -1.22
+     ],
+     "baby_by": [
+      1.02,
+      -1.02
+     ],
+     "mom_near": [
+      1.0,
+      -0.82
+     ],
+     "baby_near": [
+      0.74,
+      -0.76
+     ],
+     "road_near": [
+      -0.5,
+      0.95
+     ],
+     "road_bend": [
+      0.1,
+      -0.2
+     ],
+     "stones": [
+      1.88,
+      -1.82
+     ],
+     "tree_focus": [
+      1.4,
+      -1.4
+     ],
+     "well_focus": [
+      1.0,
+      -1.9
+     ],
+     "wolf_well": [
+      0.84,
+      -2.15
+     ],
+     "wolf_wet": [
+      0.55,
+      -1.85
+     ],
+     "road_far": [
+      -0.4,
+      -4.4
+     ],
+     "road_mid": [
+      0.3,
+      -2.0
+     ],
+     "watch_mom": [
+      1.28,
+      -0.8
+     ],
+     "watch_baby": [
+      1.02,
+      -1.02
+     ],
+     "pop_kid1": [
+      1.6,
+      -0.45
+     ],
+     "watch_kid1": [
+      1.6,
+      -0.45
+     ],
+     "dance_kid1": [
+      0.4,
+      -1.65
+     ],
+     "pop_kid2": [
+      2.0,
+      -0.45
+     ],
+     "watch_kid2": [
+      2.0,
+      -0.45
+     ],
+     "dance_kid2": [
+      1.32,
+      -1.72
+     ],
+     "pop_kid3": [
+      1.75,
+      -0.72
+     ],
+     "watch_kid3": [
+      1.75,
+      -0.72
+     ],
+     "dance_kid3": [
+      0.68,
+      -1.72
+     ],
+     "pop_kid4": [
+      2.15,
+      -0.72
+     ],
+     "watch_kid4": [
+      2.15,
+      -0.72
+     ],
+     "dance_kid4": [
+      1.6,
+      -1.65
+     ],
+     "pop_kid5": [
+      1.9,
+      -1.0
+     ],
+     "watch_kid5": [
+      1.9,
+      -1.0
+     ],
+     "dance_kid5": [
+      0.96,
+      -1.65
+     ],
+     "pop_kid6": [
+      2.3,
+      -1.0
+     ],
+     "watch_kid6": [
+      2.3,
+      -1.0
+     ],
+     "dance_kid6": [
+      1.88,
+      -1.72
+     ],
+     "dance_mom": [
+      1.14,
+      -2.0
+     ],
+     "dance_baby": [
+      1.1,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "card": "story_wg_meadow_00",
+      "at": "oak",
+      "stage": "full",
+      "name": "oak",
+      "scale": 1.0,
+      "clear": 1.0,
+      "yaw": -12.0
+     },
+     {
+      "card": "story_wg_meadow_01",
+      "at": "well",
+      "stage": "full",
+      "name": "well",
+      "scale": 1.0,
+      "clear": 0.8
+     },
+     {
+      "card": "story_wg_meadow_02",
+      "at": "well_rim",
+      "stage": 0,
+      "name": "well_rim",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_wg_meadow_03",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.5
+     },
+     {
+      "card": "story_wg_fx_05",
+      "at": "stones",
+      "stage": "full",
+      "name": "stone_a",
+      "scale": 1.0,
+      "clear": 0.2
+     },
+     {
+      "card": "story_wg_fx_07",
+      "at": [
+       2.1,
+       -1.84
+      ],
+      "stage": "full",
+      "name": "stone_b",
+      "scale": 1.0,
+      "clear": 0.1
+     },
+     {
+      "card": "meadow_field_25",
+      "at": [
+       1.35,
+       0.25
+      ],
+      "stage": "full",
+      "name": "clearing",
+      "scale": 0.3,
+      "clear": 9.0
+     }
+    ],
+    "focus": "tree_focus"
+   },
+   "enter": {
+    "who": {
+     "kid1": "joy",
+     "kid2": "joy",
+     "kid3": "joy",
+     "kid4": "joy",
+     "kid5": "joy",
+     "kid6": "joy",
+     "baby": "calm",
+     "mom": "calm"
+    },
+    "at": {
+     "kid1": "watch_kid1",
+     "kid2": "watch_kid2",
+     "kid3": "watch_kid3",
+     "kid4": "watch_kid4",
+     "kid5": "watch_kid5",
+     "kid6": "watch_kid6",
+     "baby": "watch_baby",
+     "mom": "watch_mom"
+    }
+   },
+   "steps": [
+    {
+     "do": "walk",
+     "who": [
+      "mom",
+      "baby"
+     ],
+     "to": {
+      "mom": "dance_mom",
+      "baby": "dance_baby"
+     },
+     "speed": 0.5
+    },
+    {
+     "do": "walk",
+     "who": [
+      "kid1",
+      "kid2",
+      "kid3",
+      "kid4",
+      "kid5",
+      "kid6"
+     ],
+     "to": {
+      "kid1": "dance_kid1",
+      "kid2": "dance_kid2",
+      "kid3": "dance_kid3",
+      "kid4": "dance_kid4",
+      "kid5": "dance_kid5",
+      "kid6": "dance_kid6"
+     },
+     "speed": 0.5
+    },
+    {
+     "do": "cam",
+     "shot": "well_wide",
+     "at": "well_focus",
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "dance_on",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "wg_r1001"
+    },
+    {
+     "do": "tap_each",
+     "targets": [
+      "kid2",
+      "kid5",
+      "baby"
+     ],
+     "prompt": "wg_044",
+     "hint": "wg_044",
+     "react": {
+      "kid2": [
+       "dance"
+      ],
+      "kid5": [
+       "dance"
+      ],
+      "baby": [
+       "joy_jump"
+      ]
+     }
+    },
+    {
+     "do": "say",
+     "line": "wg_r1004"
+    },
+    {
+     "do": "end",
+     "after": "wg_n02",
+     "close_book": true
+    }
+   ],
+   "sound": {
+    "music": "ending",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  }
+ ],
+ "lines": [
+  {
+   "id": "wg_000",
+   "speaker": "nar",
+   "text": "아주 먼 옛날, 엄마 염소와 일곱 마리 아기 염소가 살았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아주 먼 옛날, 엄마 염소와 일곱 마리 아기 염소가 살았어요.",
+     "emotion": null,
+     "tags": "[warm, gentle storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_9eae430ea3.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_9eae430ea3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 0,
+   "source_text": "아주 먼 옛날, 엄마 염소와 일곱 마리 아기 염소가 살았어요."
+  },
+  {
+   "id": "wg_001",
+   "speaker": "nar",
+   "text": "어느 날, 엄마 염소가 바구니를 들고 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어느 날, 엄마 염소가 바구니를 들고 말했어요.",
+     "emotion": null,
+     "tags": "[calm, storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_e3db06fbe6.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_e3db06fbe6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 1,
+   "source_text": "어느 날, 엄마 염소가 바구니를 들고 말했어요."
+  },
+  {
+   "id": "wg_002",
+   "speaker": "mom",
+   "text": "\"엄마는 풀을 뜯으러 다녀올게. 늑대가 오면 문을 열어 주면 안 돼!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "엄마는 풀을 뜯으러 다녀올게. 늑대가 오면 문을 열어 주면 안 돼!",
+     "emotion": "happy",
+     "tags": "[warm, caring, gently firm]",
+     "audio": "res://audio/voice/wolf_goats/mom_3a63b371a4.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_3a63b371a4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 2,
+   "source_text": "\"엄마는 풀을 뜯으러 다녀올게. 늑대가 오면 문을 열어 주면 안 돼!\""
+  },
+  {
+   "id": "wg_003",
+   "speaker": "mom",
+   "text": "\"늑대는 목소리가 굵고 거칠고, 발이 시커멓단다. 꼭 기억해!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "늑대는 목소리가 굵고 거칠고, 발이 시커멓단다. 꼭 기억해!",
+     "emotion": "happy",
+     "tags": "[serious, caring, gentle]",
+     "audio": "res://audio/voice/wolf_goats/mom_462740472a.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_462740472a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 3,
+   "source_text": "\"늑대는 목소리가 굵고 거칠고, 발이 시커멓단다. 꼭 기억해!\""
+  },
+  {
+   "id": "wg_004",
+   "speaker": "kid+nar",
+   "text": "\"네, 엄마!\" 아기 염소들이 큰 소리로 대답했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "네, 엄마!",
+     "emotion": "happy",
+     "tags": "[cheerful, childlike, chorus, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_a312ae8b42.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_a312ae8b42.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 큰 소리로 대답했어요.",
+     "emotion": null,
+     "tags": "[warm]",
+     "audio": "res://audio/voice/wolf_goats/nar_ddb9d8ad67.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_ddb9d8ad67.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 4,
+   "source_text": "\"네, 엄마!\" 아기 염소들이 큰 소리로 대답했어요."
+  },
+  {
+   "id": "wg_005",
+   "speaker": "nar",
+   "text": "엄마가 가고 얼마 뒤, 문밖에서 소리가 났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마가 가고 얼마 뒤, 문밖에서 소리가 났어요.",
+     "emotion": null,
+     "tags": "[hushed, curious]",
+     "audio": "res://audio/voice/wolf_goats/nar_99e9bad4bb.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_99e9bad4bb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 5,
+   "source_text": "엄마가 가고 얼마 뒤, 문밖에서 소리가 났어요."
+  },
+  {
+   "id": "wg_006",
+   "speaker": "wolf+nar",
+   "text": "\"얘들아, 엄마야. 문 열어 줘!\" 굵고 거친 목소리였어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "얘들아, 엄마야. 문 열어 줘!",
+     "emotion": "tonedown:1.1",
+     "tags": "[gruff, hoarse, fake-sweet, comically sly]",
+     "audio": "res://audio/voice/wolf_goats/wolf_4467a84fcc.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_4467a84fcc.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "굵고 거친 목소리였어요.",
+     "emotion": null,
+     "tags": "[playful, hushed]",
+     "audio": "res://audio/voice/wolf_goats/nar_c3352fc353.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_c3352fc353.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 6,
+   "source_text": "\"얘들아, 엄마야. 문 열어 줘!\" 굵고 거친 목소리였어요."
+  },
+  {
+   "id": "wg_007",
+   "speaker": "nar",
+   "text": "아기 염소들이 서로 쳐다보았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 서로 쳐다보았어요.",
+     "emotion": null,
+     "tags": "[curious, soft]",
+     "audio": "res://audio/voice/wolf_goats/nar_731fa4cd0a.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_731fa4cd0a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 7,
+   "source_text": "아기 염소들이 서로 쳐다보았어요."
+  },
+  {
+   "id": "wg_008",
+   "speaker": "kid+nar",
+   "text": "\"목소리가 굵고 거칠어. 우리 엄마가 아니야!\" 첫째가 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "목소리가 굵고 거칠어. 우리 엄마가 아니야!",
+     "emotion": "happy",
+     "tags": "[suspicious, childlike, firm, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_5797552913.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_5797552913.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "첫째가 말했어요.",
+     "emotion": null,
+     "tags": "[calm]",
+     "audio": "res://audio/voice/wolf_goats/nar_bf8067caa0.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_bf8067caa0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 8,
+   "source_text": "\"목소리가 굵고 거칠어. 우리 엄마가 아니야!\" 첫째가 말했어요."
+  },
+  {
+   "id": "wg_009",
+   "speaker": "kid+nar",
+   "text": "\"저리 가요, 늑대!\" 아기 염소들이 소리쳤어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "저리 가요, 늑대!",
+     "emotion": "happy",
+     "tags": "[shouting, brave, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_4dc738e995.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_4dc738e995.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 소리쳤어요.",
+     "emotion": null,
+     "tags": "[calm]",
+     "audio": "res://audio/voice/wolf_goats/nar_800fc548d1.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_800fc548d1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 9,
+   "source_text": "\"저리 가요, 늑대!\" 아기 염소들이 소리쳤어요."
+  },
+  {
+   "id": "wg_010",
+   "speaker": "nar",
+   "text": "늑대는 곰곰이 생각했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 곰곰이 생각했어요.",
+     "emotion": null,
+     "tags": "[comic, thoughtful]",
+     "audio": "res://audio/voice/wolf_goats/nar_1e09e3d532.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1e09e3d532.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 10,
+   "source_text": "늑대는 곰곰이 생각했어요."
+  },
+  {
+   "id": "wg_011",
+   "speaker": "wolf",
+   "text": "\"목소리를 곱게 만들어야지. 분필을 먹어 볼까?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "목소리를 곱게 만들어야지. 분필을 먹어 볼까?",
+     "emotion": "tonedown:1.1",
+     "tags": "[muttering, scheming, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_6a8ef30a1a.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_6a8ef30a1a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 11,
+   "source_text": "\"목소리를 곱게 만들어야지. 분필을 먹어 볼까?\""
+  },
+  {
+   "id": "wg_012",
+   "speaker": "nar",
+   "text": "늑대의 목소리가 가늘고 고와졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대의 목소리가 가늘고 고와졌어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/wolf_goats/nar_429bd7ffdf.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_429bd7ffdf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 12,
+   "source_text": "늑대의 목소리가 가늘고 고와졌어요."
+  },
+  {
+   "id": "wg_013",
+   "speaker": "wolf",
+   "text": "\"얘들아, 엄마야. 문 열어 줘~\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "얘들아, 엄마야. 문 열어 줘~",
+     "emotion": "tonedown:1.1",
+     "tags": "[sweet, high-pitched, gentle, sing-song, imitating a mother]",
+     "audio": "res://audio/voice/wolf_goats/wolf_49832565ec.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_49832565ec.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 13,
+   "source_text": "\"얘들아, 엄마야. 문 열어 줘~\""
+  },
+  {
+   "id": "wg_014",
+   "speaker": "kid+nar",
+   "text": "\"그럼 문틈으로 발을 보여 주세요!\" 아기 염소들이 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "그럼 문틈으로 발을 보여 주세요!",
+     "emotion": "happy",
+     "tags": "[smart, childlike, firm, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_3c4c821f40.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_3c4c821f40.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 말했어요.",
+     "emotion": null,
+     "tags": "[calm]",
+     "audio": "res://audio/voice/wolf_goats/nar_b3d65a9f7f.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_b3d65a9f7f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 14,
+   "source_text": "\"그럼 문틈으로 발을 보여 주세요!\" 아기 염소들이 말했어요."
+  },
+  {
+   "id": "wg_015",
+   "speaker": "nar",
+   "text": "늑대는 밀가루를 발에 묻혀서, 하얀 발을 쑥 내밀었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 밀가루를 발에 묻혀서, 하얀 발을 쑥 내밀었어요.",
+     "emotion": null,
+     "tags": "[playful, sneaky]",
+     "audio": "res://audio/voice/wolf_goats/nar_035cfda688.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_035cfda688.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 15,
+   "source_text": "늑대는 밀가루를 발에 묻혀서, 하얀 발을 쑥 내밀었어요."
+  },
+  {
+   "id": "wg_016",
+   "speaker": "wolf+nar",
+   "text": "\"에취!\" 늑대가 밀가루 재채기를 했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "에취!",
+     "emotion": "tonedown:1.1",
+     "tags": "[sneezes loudly, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_46b742a20c.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_46b742a20c.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "늑대가 밀가루 재채기를 했어요.",
+     "emotion": null,
+     "tags": "[playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_2846efcff7.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_2846efcff7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 16,
+   "source_text": "\"에취!\" 늑대가 밀가루 재채기를 했어요."
+  },
+  {
+   "id": "wg_017",
+   "speaker": "kid+nar",
+   "text": "\"어? 하얀 발이야! 엄마다!\" 아기 염소들은 깜빡 속아서 문을 열었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 하얀 발이야! 엄마다!",
+     "emotion": "happy",
+     "tags": "[excited, childlike, fooled, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_ebb40b8bf2.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_ebb40b8bf2.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소들은 깜빡 속아서 문을 열었어요.",
+     "emotion": null,
+     "tags": "[uh-oh, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_89f7fc5160.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_89f7fc5160.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 17,
+   "source_text": "\"어? 하얀 발이야! 엄마다!\" 아기 염소들은 깜빡 속아서 문을 열었어요."
+  },
+  {
+   "id": "wg_018",
+   "speaker": "nar",
+   "text": "그런데 들어온 건 엄마가 아니라 늑대였어요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그런데 들어온 건 엄마가 아니라 늑대였어요!",
+     "emotion": null,
+     "tags": "[surprised, comic]",
+     "audio": "res://audio/voice/wolf_goats/nar_28529f713b.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_28529f713b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 18,
+   "source_text": "그런데 들어온 건 엄마가 아니라 늑대였어요!"
+  },
+  {
+   "id": "wg_019",
+   "speaker": "kid+nar",
+   "text": "\"숨자, 숨자!\" 아기 염소들이 이불 속, 빨래 바구니 속으로 쏙쏙 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "숨자, 숨자!",
+     "emotion": "happy",
+     "tags": "[whispers, urgent, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_a5448c0c8f.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_a5448c0c8f.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 이불 속, 빨래 바구니 속으로 쏙쏙 숨었어요.",
+     "emotion": null,
+     "tags": "[quick, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_29e75f6e18.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_29e75f6e18.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 19,
+   "source_text": "\"숨자, 숨자!\" 아기 염소들이 이불 속, 빨래 바구니 속으로 쏙쏙 숨었어요."
+  },
+  {
+   "id": "wg_020",
+   "speaker": "nar",
+   "text": "막내는 어디에 숨을까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "막내는 어디에 숨을까요?",
+     "emotion": null,
+     "tags": "[curious, whispers]",
+     "audio": "res://audio/voice/wolf_goats/nar_8c738449c8.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_8c738449c8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 20,
+   "source_text": "막내는 어디에 숨을까요?"
+  },
+  {
+   "id": "wg_021",
+   "speaker": "nar",
+   "text": "막내는 키 큰 시계 속에 쏙 숨었어요. 아무도 몰랐어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "막내는 키 큰 시계 속에 쏙 숨었어요. 아무도 몰랐어요.",
+     "emotion": null,
+     "tags": "[whispers, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_176e03f6ef.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_176e03f6ef.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 21,
+   "source_text": "막내는 키 큰 시계 속에 쏙 숨었어요. 아무도 몰랐어요."
+  },
+  {
+   "id": "wg_022",
+   "speaker": "wolf+nar",
+   "text": "\"어디 숨었나? 다 찾아낼 테다!\" 늑대가 집 안을 뒤졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "어디 숨었나? 다 찾아낼 테다!",
+     "emotion": "tonedown:1.1",
+     "tags": "[growly, comic, searching]",
+     "audio": "res://audio/voice/wolf_goats/wolf_aea3526733.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_aea3526733.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "늑대가 집 안을 뒤졌어요.",
+     "emotion": null,
+     "tags": "[playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_02d6c2423f.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_02d6c2423f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 22,
+   "source_text": "\"어디 숨었나? 다 찾아낼 테다!\" 늑대가 집 안을 뒤졌어요."
+  },
+  {
+   "id": "wg_023",
+   "speaker": "nar",
+   "text": "늑대는 시계 속만 빼고, 아기 염소들을 모두 찾아내서 꿀꺽 삼켜 버렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 시계 속만 빼고, 아기 염소들을 모두 찾아내서 꿀꺽 삼켜 버렸어요.",
+     "emotion": null,
+     "tags": "[comic, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_a13df1a024.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_a13df1a024.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 23,
+   "source_text": "늑대는 시계 속만 빼고, 아기 염소들을 모두 찾아내서 꿀꺽 삼켜 버렸어요."
+  },
+  {
+   "id": "wg_024",
+   "speaker": "nar",
+   "text": "하지만 아기 염소들은 다치지 않았어요. 아주 따뜻하고 포근한 뱃속이었거든요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하지만 아기 염소들은 다치지 않았어요. 아주 따뜻하고 포근한 뱃속이었거든요.",
+     "emotion": null,
+     "tags": "[reassuring, warm, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_1deb0838fd.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1deb0838fd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 24,
+   "source_text": "하지만 아기 염소들은 다치지 않았어요. 아주 따뜻하고 포근한 뱃속이었거든요."
+  },
+  {
+   "id": "wg_025",
+   "speaker": "nar",
+   "text": "집에 돌아온 엄마 염소는 깜짝 놀랐어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "집에 돌아온 엄마 염소는 깜짝 놀랐어요.",
+     "emotion": null,
+     "tags": "[surprised, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_4fbcd8f8b4.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_4fbcd8f8b4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 25,
+   "source_text": "집에 돌아온 엄마 염소는 깜짝 놀랐어요."
+  },
+  {
+   "id": "wg_026",
+   "speaker": "mom",
+   "text": "\"얘들아, 어디 있니? 엄마 왔어!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "얘들아, 어디 있니? 엄마 왔어!",
+     "emotion": "happy",
+     "tags": "[worried, gentle, calling]",
+     "audio": "res://audio/voice/wolf_goats/mom_fa92083fad.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_fa92083fad.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 26,
+   "source_text": "\"얘들아, 어디 있니? 엄마 왔어!\""
+  },
+  {
+   "id": "wg_027",
+   "speaker": "kid+nar",
+   "text": "\"엄마!\" 막내가 시계 속에서 폴짝 나왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "엄마!",
+     "emotion": "happy",
+     "tags": "[relieved, tearful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_70c40f9c07.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_70c40f9c07.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "막내가 시계 속에서 폴짝 나왔어요.",
+     "emotion": null,
+     "tags": "[happy]",
+     "audio": "res://audio/voice/wolf_goats/nar_1d7f1842c1.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1d7f1842c1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 27,
+   "source_text": "\"엄마!\" 막내가 시계 속에서 폴짝 나왔어요."
+  },
+  {
+   "id": "wg_028",
+   "speaker": "kid",
+   "text": "\"늑대가 형들과 누나들을 꿀꺽 삼켰어요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "늑대가 형들과 누나들을 꿀꺽 삼켰어요!",
+     "emotion": "happy",
+     "tags": "[worried, tearful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_b5078b8003.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_b5078b8003.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 28,
+   "source_text": "\"늑대가 형들과 누나들을 꿀꺽 삼켰어요!\""
+  },
+  {
+   "id": "wg_029",
+   "speaker": "mom+nar",
+   "text": "\"걱정 마. 엄마가 꼭 구해 줄게!\" 엄마는 가위와 바늘을 챙겼어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "걱정 마. 엄마가 꼭 구해 줄게!",
+     "emotion": "happy",
+     "tags": "[calm, determined, reassuring]",
+     "audio": "res://audio/voice/wolf_goats/mom_08ceafce96.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_08ceafce96.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "엄마는 가위와 바늘을 챙겼어요.",
+     "emotion": null,
+     "tags": "[calm]",
+     "audio": "res://audio/voice/wolf_goats/nar_9692f32c0d.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_9692f32c0d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 29,
+   "source_text": "\"걱정 마. 엄마가 꼭 구해 줄게!\" 엄마는 가위와 바늘을 챙겼어요."
+  },
+  {
+   "id": "wg_030",
+   "speaker": "nar",
+   "text": "늑대는 배가 불러서, 나무 아래에서 쿨쿨 자고 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 배가 불러서, 나무 아래에서 쿨쿨 자고 있었어요.",
+     "emotion": null,
+     "tags": "[sleepy, comic, snoring]",
+     "audio": "res://audio/voice/wolf_goats/nar_62442a0dce.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_62442a0dce.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 30,
+   "source_text": "늑대는 배가 불러서, 나무 아래에서 쿨쿨 자고 있었어요."
+  },
+  {
+   "id": "wg_031",
+   "speaker": "nar",
+   "text": "엄마와 막내는 살금살금 다가갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마와 막내는 살금살금 다가갔어요.",
+     "emotion": null,
+     "tags": "[whispers, tiptoeing]",
+     "audio": "res://audio/voice/wolf_goats/nar_78e2811576.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_78e2811576.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 31,
+   "source_text": "엄마와 막내는 살금살금 다가갔어요."
+  },
+  {
+   "id": "wg_032",
+   "speaker": "mom",
+   "text": "\"쉿! 늑대가 깨지 않게, 살살 배에서 아기들을 꺼내 줄게.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "쉿! 늑대가 깨지 않게, 살살 배에서 아기들을 꺼내 줄게.",
+     "emotion": "happy",
+     "tags": "[whispers, soft, gentle]",
+     "audio": "res://audio/voice/wolf_goats/mom_c5898e4da1.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_c5898e4da1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 32,
+   "source_text": "\"쉿! 늑대가 깨지 않게, 살살 배에서 아기들을 꺼내 줄게.\""
+  },
+  {
+   "id": "wg_033",
+   "speaker": "nar",
+   "text": "엄마가 가위로 슥삭슥삭, 늑대 배를 열었어요. 늑대는 쿨쿨 자고 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마가 가위로 슥삭슥삭, 늑대 배를 열었어요. 늑대는 쿨쿨 자고 있었어요.",
+     "emotion": null,
+     "tags": "[hushed, gentle, storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_1a21b0d2e3.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1a21b0d2e3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 33,
+   "source_text": "엄마가 가위로 슥삭슥삭, 늑대 배를 열었어요. 늑대는 쿨쿨 자고 있었어요."
+  },
+  {
+   "id": "wg_034",
+   "speaker": "kid+nar",
+   "text": "\"엄마!\" 아기 염소 여섯 마리가 모두 무사히 나왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "엄마!",
+     "emotion": "happy",
+     "tags": "[joyful, relieved, childlike chorus, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_57878e3efa.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_57878e3efa.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소 여섯 마리가 모두 무사히 나왔어요.",
+     "emotion": null,
+     "tags": "[happy]",
+     "audio": "res://audio/voice/wolf_goats/nar_cb64e51092.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_cb64e51092.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 34,
+   "source_text": "\"엄마!\" 아기 염소 여섯 마리가 모두 무사히 나왔어요."
+  },
+  {
+   "id": "wg_035",
+   "speaker": "mom",
+   "text": "\"이제 늑대 배에 돌멩이를 넣어 주자.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "이제 늑대 배에 돌멩이를 넣어 주자.",
+     "emotion": "happy",
+     "tags": "[whispers, playful, sly]",
+     "audio": "res://audio/voice/wolf_goats/mom_a44d00a642.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_a44d00a642.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 35,
+   "source_text": "\"이제 늑대 배에 돌멩이를 넣어 주자.\""
+  },
+  {
+   "id": "wg_036",
+   "speaker": "nar",
+   "text": "엄마가 바늘로 콕콕콕 꿰맸어요. 늑대는 아무것도 몰랐어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마가 바늘로 콕콕콕 꿰맸어요. 늑대는 아무것도 몰랐어요.",
+     "emotion": null,
+     "tags": "[whispers, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_6d80106122.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_6d80106122.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 36,
+   "source_text": "엄마가 바늘로 콕콕콕 꿰맸어요. 늑대는 아무것도 몰랐어요."
+  },
+  {
+   "id": "wg_037",
+   "speaker": "nar",
+   "text": "잠에서 깬 늑대가 비틀비틀 일어났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "잠에서 깬 늑대가 비틀비틀 일어났어요.",
+     "emotion": null,
+     "tags": "[sleepy, comic, yawning]",
+     "audio": "res://audio/voice/wolf_goats/nar_3ee2a12e5b.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_3ee2a12e5b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 37,
+   "source_text": "잠에서 깬 늑대가 비틀비틀 일어났어요."
+  },
+  {
+   "id": "wg_038",
+   "speaker": "wolf",
+   "text": "\"아이고, 배가 무거워. 목이 말라!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "아이고, 배가 무거워. 목이 말라!",
+     "emotion": "tonedown:1.1",
+     "tags": "[groaning, comic, thirsty]",
+     "audio": "res://audio/voice/wolf_goats/wolf_8605632f43.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_8605632f43.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 38,
+   "source_text": "\"아이고, 배가 무거워. 목이 말라!\""
+  },
+  {
+   "id": "wg_039",
+   "speaker": "wolf",
+   "text": "\"우물에서 물을 마셔야지.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "우물에서 물을 마셔야지.",
+     "emotion": "tonedown:1.1",
+     "tags": "[grumbling, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_e645618485.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_e645618485.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 39,
+   "source_text": "\"우물에서 물을 마셔야지.\""
+  },
+  {
+   "id": "wg_040",
+   "speaker": "nar",
+   "text": "풍덩! 늑대가 우물에 빠졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "풍덩! 늑대가 우물에 빠졌어요.",
+     "emotion": null,
+     "tags": "[splash, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_2389d6901f.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_2389d6901f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 40,
+   "source_text": "풍덩! 늑대가 우물에 빠졌어요."
+  },
+  {
+   "id": "wg_041",
+   "speaker": "wolf",
+   "text": "\"으악, 차가워! 다시는 안 올 거야!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "으악, 차가워! 다시는 안 올 거야!",
+     "emotion": "tonedown:1.1",
+     "tags": "[yelps, shivering, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_dadfddafd7.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_dadfddafd7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 41,
+   "source_text": "\"으악, 차가워! 다시는 안 올 거야!\""
+  },
+  {
+   "id": "wg_042",
+   "speaker": "nar",
+   "text": "늑대는 흠뻑 젖은 채 멀리멀리 도망갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 흠뻑 젖은 채 멀리멀리 도망갔어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/wolf_goats/nar_4c583ba1ca.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_4c583ba1ca.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 42,
+   "source_text": "늑대는 흠뻑 젖은 채 멀리멀리 도망갔어요."
+  },
+  {
+   "id": "wg_043",
+   "speaker": "nar",
+   "text": "엄마와 일곱 아기 염소는 손을 잡고 신나게 춤을 추었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마와 일곱 아기 염소는 손을 잡고 신나게 춤을 추었어요.",
+     "emotion": null,
+     "tags": "[joyful, warm]",
+     "audio": "res://audio/voice/wolf_goats/nar_5e0b86f07f.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_5e0b86f07f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 43,
+   "source_text": "엄마와 일곱 아기 염소는 손을 잡고 신나게 춤을 추었어요."
+  },
+  {
+   "id": "wg_044",
+   "speaker": "nar",
+   "text": "아기 염소를 톡! 눌러 같이 춤춰 봐요!",
+   "status": "reuse",
+   "beat": "together",
+   "interaction": "tap_each",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 염소를 톡! 눌러 같이 춤춰 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/wolf_goats/nar_a6915f21fe.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_a6915f21fe.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 44,
+   "source_text": "아기 염소를 톡! 눌러 같이 춤춰 봐요!"
+  },
+  {
+   "id": "wg_045",
+   "speaker": "nar",
+   "text": "엄마 목소리를 잘 아는 아기 염소들은 오래오래 행복하게 살았답니다.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마 목소리를 잘 아는 아기 염소들은 오래오래 행복하게 살았답니다.",
+     "emotion": null,
+     "tags": "[warm, gentle, conclusive]",
+     "audio": "res://audio/voice/wolf_goats/nar_f257c8ab1e.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_f257c8ab1e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 45,
+   "source_text": "엄마 목소리를 잘 아는 아기 염소들은 오래오래 행복하게 살았답니다."
+  },
+  {
+   "id": "wg_046",
+   "speaker": "nar",
+   "text": "엄마 염소를 톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마 염소를 톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/wolf_goats/nar_d611133639.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_d611133639.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 46,
+   "source_text": "엄마 염소를 톡 눌러 봐요!"
+  },
+  {
+   "id": "wg_047",
+   "speaker": "nar",
+   "text": "막내 염소를 톡 눌러서 시계 속에 숨겨 줘요!",
+   "status": "reuse",
+   "beat": "hide",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "막내 염소를 톡 눌러서 시계 속에 숨겨 줘요!",
+     "emotion": null,
+     "tags": "[whispers, playful, encouraging]",
+     "audio": "res://audio/voice/wolf_goats/nar_409557608c.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_409557608c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 47,
+   "source_text": "막내 염소를 톡 눌러서 시계 속에 숨겨 줘요!"
+  },
+  {
+   "id": "wg_048",
+   "speaker": "nar",
+   "text": "엄마 염소를 톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마 염소를 톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/wolf_goats/nar_d611133639.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_d611133639.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 48,
+   "source_text": "엄마 염소를 톡 눌러 봐요!"
+  },
+  {
+   "id": "wg_049",
+   "speaker": "nar",
+   "text": "늑대 배를 톡톡 눌러 봐요!",
+   "status": "reuse",
+   "beat": "belly",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대 배를 톡톡 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/wolf_goats/nar_ec27b4fbee.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_ec27b4fbee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 49,
+   "source_text": "늑대 배를 톡톡 눌러 봐요!"
+  },
+  {
+   "id": "wg_050",
+   "speaker": "nar",
+   "text": "늑대를 톡! 눌러 봐요!",
+   "status": "reuse",
+   "beat": "chalk",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대를 톡! 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/wolf_goats/nar_9bcb4e99c4.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_9bcb4e99c4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 50,
+   "source_text": "늑대를 톡! 눌러 봐요!"
+  },
+  {
+   "id": "wg_051",
+   "speaker": "nar",
+   "text": "돌멩이를 톡! 눌러 봐요!",
+   "status": "reuse",
+   "beat": "belly",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "돌멩이를 톡! 눌러 봐요!",
+     "emotion": null,
+     "tags": "[cheerful, encouraging]",
+     "audio": "res://audio/voice/wolf_goats/nar_4f8d247b2e.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_4f8d247b2e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 51,
+   "source_text": "돌멩이를 톡! 눌러 봐요!"
+  },
+  {
+   "id": "wg_r0100",
+   "speaker": "nar",
+   "text": "아주 먼 옛날, 엄마 염소와 일곱 마리 아기 염소가 살았어요.",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아주 먼 옛날, 엄마 염소와 일곱 마리 아기 염소가 살았어요.",
+     "emotion": null,
+     "tags": "[warm, gentle storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_9eae430ea3.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_9eae430ea3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "calm",
+    "kid2": "calm",
+    "kid3": "calm",
+    "kid4": "calm",
+    "kid5": "calm",
+    "kid6": "calm",
+    "baby": "calm",
+    "mom": "calm"
+   },
+   "source_read": "R01_kitchen#0",
+   "source_text": "아주 먼 옛날, 엄마 염소와 일곱 마리 아기 염소가 살았어요."
+  },
+  {
+   "id": "wg_r0101",
+   "speaker": "nar",
+   "text": "아기 염소들은 날마다 깡충깡충, 집 안을 뛰어다녔지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 염소들은 날마다 깡충깡충, 집 안을 뛰어다녔지요.",
+     "emotion": null,
+     "tags": "[warm, playful storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_700cdc8c0d.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_700cdc8c0d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_kitchen#1",
+   "source_text": "아기 염소들은 날마다 깡충깡충, 집 안을 뛰어다녔지요."
+  },
+  {
+   "id": "wg_r0102",
+   "speaker": "nar",
+   "text": "어느 날, 엄마 염소가 바구니를 들고 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어느 날, 엄마 염소가 바구니를 들고 말했어요.",
+     "emotion": null,
+     "tags": "[calm, storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_e3db06fbe6.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_e3db06fbe6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_kitchen#2",
+   "source_text": "어느 날, 엄마 염소가 바구니를 들고 말했어요."
+  },
+  {
+   "id": "wg_r0103",
+   "speaker": "mom",
+   "text": "\"엄마는 풀을 뜯으러 다녀올게. 늑대가 오면 문을 열어 주면 안 돼!\"",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "엄마는 풀을 뜯으러 다녀올게. 늑대가 오면 문을 열어 주면 안 돼!",
+     "emotion": "happy",
+     "tags": "[warm, caring, gently firm]",
+     "audio": "res://audio/voice/wolf_goats/mom_3a63b371a4.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_3a63b371a4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "warn"
+   },
+   "source_read": "R01_kitchen#3",
+   "source_text": "\"엄마는 풀을 뜯으러 다녀올게. 늑대가 오면 문을 열어 주면 안 돼!\""
+  },
+  {
+   "id": "wg_r0104",
+   "speaker": "mom",
+   "text": "\"늑대는 목소리가 굵고 거칠고, 발이 시커멓단다. 꼭 기억해!\"",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "늑대는 목소리가 굵고 거칠고, 발이 시커멓단다. 꼭 기억해!",
+     "emotion": "happy",
+     "tags": "[serious, caring, gentle]",
+     "audio": "res://audio/voice/wolf_goats/mom_462740472a.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_462740472a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "warn",
+    "kid1": "look_up",
+    "kid2": "look_up",
+    "kid3": "look_up",
+    "kid4": "look_up",
+    "kid5": "look_up",
+    "kid6": "look_up"
+   },
+   "source_read": "R01_kitchen#4",
+   "source_text": "\"늑대는 목소리가 굵고 거칠고, 발이 시커멓단다. 꼭 기억해!\""
+  },
+  {
+   "id": "wg_r0105",
+   "speaker": "kid",
+   "text": "\"네, 엄마!\"",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "네, 엄마!",
+     "emotion": "happy",
+     "tags": "[cheerful, childlike, chorus, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_a312ae8b42.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_a312ae8b42.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "joy",
+    "kid2": "joy",
+    "kid3": "joy",
+    "kid4": "joy",
+    "kid5": "joy",
+    "kid6": "joy",
+    "baby": "calm"
+   },
+   "source_read": "R01_kitchen#5",
+   "source_text": "\"네, 엄마!\" 아기 염소들이 큰 소리로 대답했어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0106",
+   "speaker": "nar",
+   "text": "엄마는 문을 꼭 닫고, 터벅터벅 들판으로 나갔어요.",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "go_out",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마는 문을 꼭 닫고, 터벅터벅 들판으로 나갔어요.",
+     "emotion": null,
+     "tags": "[calm, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_2eea0ae9a5.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_2eea0ae9a5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {},
+   "source_read": "R01_kitchen#6",
+   "source_text": "엄마는 문을 꼭 닫고, 터벅터벅 들판으로 나갔어요."
+  },
+  {
+   "id": "wg_r0200",
+   "speaker": "nar",
+   "text": "엄마가 가고 얼마 뒤, 문밖에서 소리가 났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마가 가고 얼마 뒤, 문밖에서 소리가 났어요.",
+     "emotion": null,
+     "tags": "[hushed, curious]",
+     "audio": "res://audio/voice/wolf_goats/nar_99e9bad4bb.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_99e9bad4bb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "scared",
+    "kid2": "scared",
+    "kid3": "scared",
+    "kid4": "scared",
+    "kid5": "scared",
+    "kid6": "scared",
+    "baby": "worried"
+   },
+   "source_read": "R02_knock#0",
+   "source_text": "엄마가 가고 얼마 뒤, 문밖에서 소리가 났어요."
+  },
+  {
+   "id": "wg_r0201",
+   "speaker": "nar",
+   "text": "문밖에 서 있는 건 늑대였어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "문밖에 서 있는 건 늑대였어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_20ae782764.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_20ae782764.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_knock#1",
+   "source_text": "문밖에 서 있는 건 늑대였어요."
+  },
+  {
+   "id": "wg_r0202",
+   "speaker": "wolf+nar",
+   "text": "\"얘들아, 엄마야. 문 열어 줘!\" 굵고 거친 목소리였어요.",
+   "status": "reuse",
+   "beat": "knock",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "얘들아, 엄마야. 문 열어 줘!",
+     "emotion": "tonedown:1.1",
+     "tags": "[gruff, hoarse, fake-sweet, comically sly]",
+     "audio": "res://audio/voice/wolf_goats/wolf_4467a84fcc.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_4467a84fcc.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "굵고 거친 목소리였어요.",
+     "emotion": null,
+     "tags": "[playful, hushed]",
+     "audio": "res://audio/voice/wolf_goats/nar_c3352fc353.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_c3352fc353.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "shout"
+   },
+   "source_read": "R02_knock#2",
+   "source_text": "\"얘들아, 엄마야. 문 열어 줘!\" 굵고 거친 목소리였어요."
+  },
+  {
+   "id": "wg_r0203",
+   "speaker": "nar",
+   "text": "아기 염소들이 서로 쳐다보았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 서로 쳐다보았어요.",
+     "emotion": null,
+     "tags": "[curious, soft]",
+     "audio": "res://audio/voice/wolf_goats/nar_731fa4cd0a.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_731fa4cd0a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_knock#3",
+   "source_text": "아기 염소들이 서로 쳐다보았어요."
+  },
+  {
+   "id": "wg_r0204",
+   "speaker": "nar",
+   "text": "귀를 쫑긋, 눈을 깜빡깜빡. 뭔가 이상했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "귀를 쫑긋, 눈을 깜빡깜빡. 뭔가 이상했어요.",
+     "emotion": null,
+     "tags": "[hushed, curious]",
+     "audio": "res://audio/voice/wolf_goats/nar_4da40a3962.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_4da40a3962.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_knock#4",
+   "source_text": "귀를 쫑긋, 눈을 깜빡깜빡. 뭔가 이상했어요."
+  },
+  {
+   "id": "wg_r0205",
+   "speaker": "kid",
+   "text": "\"목소리가 굵고 거칠어. 우리 엄마가 아니야!\"",
+   "status": "reuse",
+   "beat": "knock",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "목소리가 굵고 거칠어. 우리 엄마가 아니야!",
+     "emotion": "happy",
+     "tags": "[suspicious, childlike, firm, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_5797552913.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_5797552913.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "suspicious"
+   },
+   "source_read": "R02_knock#5",
+   "source_text": "\"목소리가 굵고 거칠어. 우리 엄마가 아니야!\" 첫째가 말했어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0206",
+   "speaker": "kid",
+   "text": "\"저리 가요, 늑대!\"",
+   "status": "reuse",
+   "beat": "knock",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "저리 가요, 늑대!",
+     "emotion": "happy",
+     "tags": "[shouting, brave, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_4dc738e995.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_4dc738e995.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "shout",
+    "kid2": "shout",
+    "kid3": "shout",
+    "kid4": "shout",
+    "kid5": "shout",
+    "kid6": "shout"
+   },
+   "source_read": "R02_knock#6",
+   "source_text": "\"저리 가요, 늑대!\" 아기 염소들이 소리쳤어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0207",
+   "speaker": "nar",
+   "text": "문은 꽁꽁 잠긴 채 꼼짝도 하지 않았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "문은 꽁꽁 잠긴 채 꼼짝도 하지 않았어요.",
+     "emotion": null,
+     "tags": "[calm, firm]",
+     "audio": "res://audio/voice/wolf_goats/nar_b917f83044.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_b917f83044.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_knock#7",
+   "source_text": "문은 꽁꽁 잠긴 채 꼼짝도 하지 않았어요."
+  },
+  {
+   "id": "wg_r0208",
+   "speaker": "nar",
+   "text": "늑대는 투덜투덜, 문 앞에서 발길을 돌렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 투덜투덜, 문 앞에서 발길을 돌렸어요.",
+     "emotion": null,
+     "tags": "[comic, grumbling]",
+     "audio": "res://audio/voice/wolf_goats/nar_2e14a9b712.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_2e14a9b712.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_knock#8",
+   "source_text": "늑대는 투덜투덜, 문 앞에서 발길을 돌렸어요."
+  },
+  {
+   "id": "wg_r0300",
+   "speaker": "nar",
+   "text": "집 밖에서 늑대는 아기 염소들을 속일 궁리를 했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "집 밖에서 늑대는 아기 염소들을 속일 궁리를 했어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_aef3ad682d.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_aef3ad682d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_chalk#0",
+   "source_text": "집 밖에서 늑대는 아기 염소들을 속일 궁리를 했어요."
+  },
+  {
+   "id": "wg_r0301",
+   "speaker": "nar",
+   "text": "늑대는 곰곰이 생각했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 곰곰이 생각했어요.",
+     "emotion": null,
+     "tags": "[comic, thoughtful]",
+     "audio": "res://audio/voice/wolf_goats/nar_1e09e3d532.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1e09e3d532.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_chalk#1",
+   "source_text": "늑대는 곰곰이 생각했어요."
+  },
+  {
+   "id": "wg_r0302",
+   "speaker": "wolf",
+   "text": "\"목소리를 곱게 만들어야지. 분필을 먹어 볼까?\"",
+   "status": "reuse",
+   "beat": "chalk",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "목소리를 곱게 만들어야지. 분필을 먹어 볼까?",
+     "emotion": "tonedown:1.1",
+     "tags": "[muttering, scheming, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_6a8ef30a1a.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_6a8ef30a1a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "hungry"
+   },
+   "source_read": "R03_chalk#2",
+   "source_text": "\"목소리를 곱게 만들어야지. 분필을 먹어 볼까?\""
+  },
+  {
+   "id": "wg_r0303",
+   "speaker": "nar",
+   "text": "와작와작, 늑대는 분필을 우적우적 씹어 먹었어요.",
+   "status": "reuse",
+   "beat": "chalk",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "와작와작, 늑대는 분필을 우적우적 씹어 먹었어요.",
+     "emotion": null,
+     "tags": "[comic, crunching]",
+     "audio": "res://audio/voice/wolf_goats/nar_ba6bdd56f7.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_ba6bdd56f7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "munch"
+   },
+   "source_read": "R03_chalk#3",
+   "source_text": "와작와작, 늑대는 분필을 우적우적 씹어 먹었어요."
+  },
+  {
+   "id": "wg_r0304",
+   "speaker": "nar",
+   "text": "늑대의 목소리가 가늘고 고와졌어요.",
+   "status": "reuse",
+   "beat": "chalk",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대의 목소리가 가늘고 고와졌어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/wolf_goats/nar_429bd7ffdf.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_429bd7ffdf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "sweet"
+   },
+   "source_read": "R03_chalk#4",
+   "source_text": "늑대의 목소리가 가늘고 고와졌어요."
+  },
+  {
+   "id": "wg_r0305",
+   "speaker": "nar",
+   "text": "늑대가 다시 염소네 문 앞으로 왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대가 다시 염소네 문 앞으로 왔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_2896f43ee4.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_2896f43ee4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_chalk#5",
+   "source_text": "늑대가 다시 염소네 문 앞으로 왔어요."
+  },
+  {
+   "id": "wg_r0306",
+   "speaker": "wolf",
+   "text": "\"얘들아, 엄마야. 문 열어 줘~\"",
+   "status": "reuse",
+   "beat": "chalk",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "얘들아, 엄마야. 문 열어 줘~",
+     "emotion": "tonedown:1.1",
+     "tags": "[sweet, high-pitched, gentle, sing-song, imitating a mother]",
+     "audio": "res://audio/voice/wolf_goats/wolf_49832565ec.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_49832565ec.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "sweet"
+   },
+   "source_read": "R03_chalk#6",
+   "source_text": "\"얘들아, 엄마야. 문 열어 줘~\""
+  },
+  {
+   "id": "wg_r0307",
+   "speaker": "kid",
+   "text": "\"그럼 문틈으로 발을 보여 주세요!\"",
+   "status": "reuse",
+   "beat": "chalk",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "그럼 문틈으로 발을 보여 주세요!",
+     "emotion": "happy",
+     "tags": "[smart, childlike, firm, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_3c4c821f40.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_3c4c821f40.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "suspicious"
+   },
+   "source_read": "R03_chalk#7",
+   "source_text": "\"그럼 문틈으로 발을 보여 주세요!\" 아기 염소들이 말했어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0308",
+   "speaker": "nar",
+   "text": "하지만 시커먼 발을 보고 아기 염소들은 문을 안 열었어요.",
+   "status": "reuse",
+   "beat": "chalk",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하지만 시커먼 발을 보고 아기 염소들은 문을 안 열었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_5a3090d9f3.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_5a3090d9f3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "shout",
+    "kid2": "shout",
+    "kid3": "shout",
+    "kid4": "shout",
+    "kid5": "shout",
+    "kid6": "shout"
+   },
+   "source_read": "R03_chalk#8",
+   "source_text": "하지만 시커먼 발을 보고 아기 염소들은 문을 안 열었어요."
+  },
+  {
+   "id": "wg_r0400",
+   "speaker": "nar",
+   "text": "늑대는 방앗간으로 쪼르르 달려가 밀가루 자루를 찾았어요.",
+   "status": "reuse",
+   "beat": "paw",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 방앗간으로 쪼르르 달려가 밀가루 자루를 찾았어요.",
+     "emotion": null,
+     "tags": "[playful, sneaky]",
+     "audio": "res://audio/voice/wolf_goats/nar_85c6664074.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_85c6664074.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_paw#0",
+   "source_text": "늑대는 방앗간으로 쪼르르 달려가 밀가루 자루를 찾았어요."
+  },
+  {
+   "id": "wg_r0401",
+   "speaker": "nar",
+   "text": "늑대는 다시 염소네 집 문 앞으로 돌아왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 다시 염소네 집 문 앞으로 돌아왔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_e12d0006ef.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_e12d0006ef.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_paw#1",
+   "source_text": "늑대는 다시 염소네 집 문 앞으로 돌아왔어요."
+  },
+  {
+   "id": "wg_r0402",
+   "speaker": "nar",
+   "text": "늑대는 밀가루를 발에 묻혀서, 하얀 발을 쑥 내밀었어요.",
+   "status": "reuse",
+   "beat": "paw",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 밀가루를 발에 묻혀서, 하얀 발을 쑥 내밀었어요.",
+     "emotion": null,
+     "tags": "[playful, sneaky]",
+     "audio": "res://audio/voice/wolf_goats/nar_035cfda688.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_035cfda688.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "paw_show"
+   },
+   "source_read": "R04_paw#2",
+   "source_text": "늑대는 밀가루를 발에 묻혀서, 하얀 발을 쑥 내밀었어요."
+  },
+  {
+   "id": "wg_r0403",
+   "speaker": "wolf",
+   "text": "\"에취!\"",
+   "status": "reuse",
+   "beat": "paw",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "에취!",
+     "emotion": "tonedown:1.1",
+     "tags": "[sneezes loudly, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_46b742a20c.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_46b742a20c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "sneeze"
+   },
+   "source_read": "R04_paw#3",
+   "source_text": "\"에취!\" 늑대가 밀가루 재채기를 했어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0404",
+   "speaker": "nar",
+   "text": "밀가루가 폴폴 날려 늑대 코가 간질간질했거든요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "밀가루가 폴폴 날려 늑대 코가 간질간질했거든요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/wolf_goats/nar_4132faf3e8.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_4132faf3e8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_paw#4",
+   "source_text": "밀가루가 폴폴 날려 늑대 코가 간질간질했거든요."
+  },
+  {
+   "id": "wg_r0405",
+   "speaker": "kid+nar",
+   "text": "\"어? 하얀 발이야! 엄마다!\" 아기 염소들은 깜빡 속아서 문을 열었어요.",
+   "status": "reuse",
+   "beat": "paw",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "어? 하얀 발이야! 엄마다!",
+     "emotion": "happy",
+     "tags": "[excited, childlike, fooled, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_ebb40b8bf2.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_ebb40b8bf2.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소들은 깜빡 속아서 문을 열었어요.",
+     "emotion": null,
+     "tags": "[uh-oh, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_89f7fc5160.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_89f7fc5160.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "joy",
+    "kid2": "joy",
+    "kid3": "joy",
+    "kid4": "joy",
+    "kid5": "joy",
+    "kid6": "joy",
+    "baby": "calm"
+   },
+   "source_read": "R04_paw#5",
+   "source_text": "\"어? 하얀 발이야! 엄마다!\" 아기 염소들은 깜빡 속아서 문을 열었어요."
+  },
+  {
+   "id": "wg_r0500",
+   "speaker": "nar",
+   "text": "그런데 들어온 건 엄마가 아니라 늑대였어요!",
+   "status": "reuse",
+   "beat": "hide",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그런데 들어온 건 엄마가 아니라 늑대였어요!",
+     "emotion": null,
+     "tags": "[surprised, comic]",
+     "audio": "res://audio/voice/wolf_goats/nar_28529f713b.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_28529f713b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "search",
+    "kid1": "scared",
+    "kid2": "scared",
+    "kid3": "scared",
+    "kid4": "scared",
+    "kid5": "scared",
+    "kid6": "scared",
+    "baby": "worried"
+   },
+   "source_read": "R05_hide#0",
+   "source_text": "그런데 들어온 건 엄마가 아니라 늑대였어요!"
+  },
+  {
+   "id": "wg_r0501",
+   "speaker": "kid",
+   "text": "\"숨자, 숨자!\"",
+   "status": "reuse",
+   "beat": "hide",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "숨자, 숨자!",
+     "emotion": "happy",
+     "tags": "[whispers, urgent, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_a5448c0c8f.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_a5448c0c8f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "scared",
+    "kid2": "scared",
+    "kid3": "scared",
+    "kid4": "scared",
+    "kid5": "scared",
+    "kid6": "scared"
+   },
+   "source_read": "R05_hide#1",
+   "source_text": "\"숨자, 숨자!\" 아기 염소들이 이불 속, 빨래 바구니 속으로 쏙쏙 숨었어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0502",
+   "speaker": "nar",
+   "text": "막내는 두리번두리번하다가 키 큰 시계를 보았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "막내는 두리번두리번하다가 키 큰 시계를 보았어요.",
+     "emotion": null,
+     "tags": "[whispers, curious]",
+     "audio": "res://audio/voice/wolf_goats/nar_cc8240efb3.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_cc8240efb3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_hide#2",
+   "source_text": "막내는 두리번두리번하다가 키 큰 시계를 보았어요."
+  },
+  {
+   "id": "wg_r0503",
+   "speaker": "nar",
+   "text": "막내는 키 큰 시계 속에 쏙 숨었어요. 아무도 몰랐어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "막내는 키 큰 시계 속에 쏙 숨었어요. 아무도 몰랐어요.",
+     "emotion": null,
+     "tags": "[whispers, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_176e03f6ef.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_176e03f6ef.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_hide#3",
+   "source_text": "막내는 키 큰 시계 속에 쏙 숨었어요. 아무도 몰랐어요."
+  },
+  {
+   "id": "wg_r0504",
+   "speaker": "wolf",
+   "text": "\"어디 숨었나? 다 찾아낼 테다!\"",
+   "status": "reuse",
+   "beat": "hide",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "어디 숨었나? 다 찾아낼 테다!",
+     "emotion": "tonedown:1.1",
+     "tags": "[growly, comic, searching]",
+     "audio": "res://audio/voice/wolf_goats/wolf_aea3526733.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_aea3526733.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": [
+     "search",
+     "sniff"
+    ]
+   },
+   "source_read": "R05_hide#4",
+   "source_text": "\"어디 숨었나? 다 찾아낼 테다!\" 늑대가 집 안을 뒤졌어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0505",
+   "speaker": "nar",
+   "text": "이불을 휙, 바구니를 뒤적뒤적. 늑대는 킁킁 냄새를 맡았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이불을 휙, 바구니를 뒤적뒤적. 늑대는 킁킁 냄새를 맡았어요.",
+     "emotion": null,
+     "tags": "[playful, sneaky]",
+     "audio": "res://audio/voice/wolf_goats/nar_ebd23fbfa9.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_ebd23fbfa9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_hide#5",
+   "source_text": "이불을 휙, 바구니를 뒤적뒤적. 늑대는 킁킁 냄새를 맡았어요."
+  },
+  {
+   "id": "wg_r0506",
+   "speaker": "nar",
+   "text": "늑대는 시계 속만 빼고, 아기 염소들을 모두 찾아내서 꿀꺽 삼켜 버렸어요.",
+   "status": "reuse",
+   "beat": "hide",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 시계 속만 빼고, 아기 염소들을 모두 찾아내서 꿀꺽 삼켜 버렸어요.",
+     "emotion": null,
+     "tags": "[comic, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_a13df1a024.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_a13df1a024.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_hide#6",
+   "source_text": "늑대는 시계 속만 빼고, 아기 염소들을 모두 찾아내서 꿀꺽 삼켜 버렸어요."
+  },
+  {
+   "id": "wg_r0507",
+   "speaker": "nar",
+   "text": "하지만 아기 염소들은 다치지 않았어요. 아주 따뜻하고 포근한 뱃속이었거든요.",
+   "status": "reuse",
+   "beat": "hide",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "하지만 아기 염소들은 다치지 않았어요. 아주 따뜻하고 포근한 뱃속이었거든요.",
+     "emotion": null,
+     "tags": "[reassuring, warm, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_1deb0838fd.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1deb0838fd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_hide#7",
+   "source_text": "하지만 아기 염소들은 다치지 않았어요. 아주 따뜻하고 포근한 뱃속이었거든요."
+  },
+  {
+   "id": "wg_r0600",
+   "speaker": "nar",
+   "text": "늑대가 떠난 집 안에는 막내만 숨어 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대가 떠난 집 안에는 막내만 숨어 있었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_7a0d325828.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_7a0d325828.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_mother#0",
+   "source_text": "늑대가 떠난 집 안에는 막내만 숨어 있었어요."
+  },
+  {
+   "id": "wg_r0601",
+   "speaker": "nar",
+   "text": "집에 돌아온 엄마 염소는 깜짝 놀랐어요.",
+   "status": "reuse",
+   "beat": "mother",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "집에 돌아온 엄마 염소는 깜짝 놀랐어요.",
+     "emotion": null,
+     "tags": "[surprised, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_4fbcd8f8b4.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_4fbcd8f8b4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "shocked"
+   },
+   "source_read": "R06_mother#1",
+   "source_text": "집에 돌아온 엄마 염소는 깜짝 놀랐어요."
+  },
+  {
+   "id": "wg_r0602",
+   "speaker": "nar",
+   "text": "이불은 엉망진창, 의자는 와르르 넘어져 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이불은 엉망진창, 의자는 와르르 넘어져 있었어요.",
+     "emotion": null,
+     "tags": "[surprised, gentle]",
+     "audio": "res://audio/voice/wolf_goats/nar_a3c2501100.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_a3c2501100.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_mother#2",
+   "source_text": "이불은 엉망진창, 의자는 와르르 넘어져 있었어요."
+  },
+  {
+   "id": "wg_r0603",
+   "speaker": "mom",
+   "text": "\"얘들아, 어디 있니? 엄마 왔어!\"",
+   "status": "reuse",
+   "beat": "mother",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "얘들아, 어디 있니? 엄마 왔어!",
+     "emotion": "happy",
+     "tags": "[worried, gentle, calling]",
+     "audio": "res://audio/voice/wolf_goats/mom_fa92083fad.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_fa92083fad.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "call"
+   },
+   "source_read": "R06_mother#3",
+   "source_text": "\"얘들아, 어디 있니? 엄마 왔어!\""
+  },
+  {
+   "id": "wg_r0604",
+   "speaker": "kid+nar",
+   "text": "\"엄마!\" 막내가 시계 속에서 폴짝 나왔어요.",
+   "status": "reuse",
+   "beat": "mother",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "엄마!",
+     "emotion": "happy",
+     "tags": "[relieved, tearful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_70c40f9c07.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_70c40f9c07.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "막내가 시계 속에서 폴짝 나왔어요.",
+     "emotion": null,
+     "tags": "[happy]",
+     "audio": "res://audio/voice/wolf_goats/nar_1d7f1842c1.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1d7f1842c1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "baby": [
+     "joy_jump",
+     "calm"
+    ],
+    "mom": "hug"
+   },
+   "source_read": "R06_mother#4",
+   "source_text": "\"엄마!\" 막내가 시계 속에서 폴짝 나왔어요."
+  },
+  {
+   "id": "wg_r0605",
+   "speaker": "kid",
+   "text": "\"늑대가 형들과 누나들을 꿀꺽 삼켰어요!\"",
+   "status": "reuse",
+   "beat": "mother",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "늑대가 형들과 누나들을 꿀꺽 삼켰어요!",
+     "emotion": "happy",
+     "tags": "[worried, tearful, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_b5078b8003.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_b5078b8003.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "baby": "cry",
+    "mom": "hug"
+   },
+   "source_read": "R06_mother#5",
+   "source_text": "\"늑대가 형들과 누나들을 꿀꺽 삼켰어요!\""
+  },
+  {
+   "id": "wg_r0606",
+   "speaker": "nar",
+   "text": "막내는 엄마 품에 안겨 훌쩍훌쩍 울었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "막내는 엄마 품에 안겨 훌쩍훌쩍 울었어요.",
+     "emotion": "sad:1.1",
+     "tags": "[tender, soft]",
+     "audio": "res://audio/voice/wolf_goats/nar_e1a97d6be3.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_e1a97d6be3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_mother#6",
+   "source_text": "막내는 엄마 품에 안겨 훌쩍훌쩍 울었어요."
+  },
+  {
+   "id": "wg_r0607",
+   "speaker": "mom+nar",
+   "text": "\"걱정 마. 엄마가 꼭 구해 줄게!\" 엄마는 가위와 바늘을 챙겼어요.",
+   "status": "reuse",
+   "beat": "mother",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "걱정 마. 엄마가 꼭 구해 줄게!",
+     "emotion": "happy",
+     "tags": "[calm, determined, reassuring]",
+     "audio": "res://audio/voice/wolf_goats/mom_08ceafce96.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_08ceafce96.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "엄마는 가위와 바늘을 챙겼어요.",
+     "emotion": null,
+     "tags": "[calm]",
+     "audio": "res://audio/voice/wolf_goats/nar_9692f32c0d.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_9692f32c0d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "ready",
+    "baby": "worried"
+   },
+   "source_read": "R06_mother#7",
+   "source_text": "\"걱정 마. 엄마가 꼭 구해 줄게!\" 엄마는 가위와 바늘을 챙겼어요."
+  },
+  {
+   "id": "wg_r0700",
+   "speaker": "nar",
+   "text": "엄마와 막내는 집을 나와 늑대가 있는 나무를 찾았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마와 막내는 집을 나와 늑대가 있는 나무를 찾았어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_56541df4b0.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_56541df4b0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_tree#0",
+   "source_text": "엄마와 막내는 집을 나와 늑대가 있는 나무를 찾았어요."
+  },
+  {
+   "id": "wg_r0701",
+   "speaker": "nar",
+   "text": "늑대는 배가 불러서, 나무 아래에서 쿨쿨 자고 있었어요.",
+   "status": "reuse",
+   "beat": "tree",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 배가 불러서, 나무 아래에서 쿨쿨 자고 있었어요.",
+     "emotion": null,
+     "tags": "[sleepy, comic, snoring]",
+     "audio": "res://audio/voice/wolf_goats/nar_62442a0dce.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_62442a0dce.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "sleep_full"
+   },
+   "source_read": "R07_tree#1",
+   "source_text": "늑대는 배가 불러서, 나무 아래에서 쿨쿨 자고 있었어요."
+  },
+  {
+   "id": "wg_r0702",
+   "speaker": "nar",
+   "text": "드르렁 드르렁, 배가 불룩불룩 오르락내리락했지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "드르렁 드르렁, 배가 불룩불룩 오르락내리락했지요.",
+     "emotion": null,
+     "tags": "[comic, snoring]",
+     "audio": "res://audio/voice/wolf_goats/nar_ca6078e77b.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_ca6078e77b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_tree#2",
+   "source_text": "드르렁 드르렁, 배가 불룩불룩 오르락내리락했지요."
+  },
+  {
+   "id": "wg_r0703",
+   "speaker": "nar",
+   "text": "엄마와 막내는 살금살금 다가갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마와 막내는 살금살금 다가갔어요.",
+     "emotion": null,
+     "tags": "[whispers, tiptoeing]",
+     "audio": "res://audio/voice/wolf_goats/nar_78e2811576.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_78e2811576.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_tree#3",
+   "source_text": "엄마와 막내는 살금살금 다가갔어요."
+  },
+  {
+   "id": "wg_r0704",
+   "speaker": "mom",
+   "text": "\"쉿! 늑대가 깨지 않게, 살살 배에서 아기들을 꺼내 줄게.\"",
+   "status": "reuse",
+   "beat": "tree",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "쉿! 늑대가 깨지 않게, 살살 배에서 아기들을 꺼내 줄게.",
+     "emotion": "happy",
+     "tags": "[whispers, soft, gentle]",
+     "audio": "res://audio/voice/wolf_goats/mom_c5898e4da1.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_c5898e4da1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "shush"
+   },
+   "source_read": "R07_tree#4",
+   "source_text": "\"쉿! 늑대가 깨지 않게, 살살 배에서 아기들을 꺼내 줄게.\""
+  },
+  {
+   "id": "wg_r0705",
+   "speaker": "kid",
+   "text": "\"엄마, 조심조심이요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "엄마, 조심조심이요.",
+     "emotion": "happy",
+     "tags": "[whispers, worried, childlike, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_e02867a360.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_e02867a360.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "baby": "whisper"
+   },
+   "source_read": "R07_tree#5",
+   "source_text": "\"엄마, 조심조심이요.\" 막내가 소곤소곤 속삭였어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0800",
+   "speaker": "nar",
+   "text": "나무 아래에서 엄마는 잠든 늑대 곁에 앉았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "나무 아래에서 엄마는 잠든 늑대 곁에 앉았어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_5e17558f44.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_5e17558f44.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_belly#0",
+   "source_text": "나무 아래에서 엄마는 잠든 늑대 곁에 앉았어요."
+  },
+  {
+   "id": "wg_r0801",
+   "speaker": "nar",
+   "text": "엄마가 가위로 슥삭슥삭, 늑대 배를 열었어요. 늑대는 쿨쿨 자고 있었어요.",
+   "status": "reuse",
+   "beat": "belly",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마가 가위로 슥삭슥삭, 늑대 배를 열었어요. 늑대는 쿨쿨 자고 있었어요.",
+     "emotion": null,
+     "tags": "[hushed, gentle, storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_1a21b0d2e3.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_1a21b0d2e3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "kneel_cut"
+   },
+   "source_read": "R08_belly#1",
+   "source_text": "엄마가 가위로 슥삭슥삭, 늑대 배를 열었어요. 늑대는 쿨쿨 자고 있었어요."
+  },
+  {
+   "id": "wg_r0802",
+   "speaker": "nar",
+   "text": "아기 염소들이 폴짝폴짝 뛰어나왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 폴짝폴짝 뛰어나왔어요.",
+     "emotion": null,
+     "tags": "[playful, counting-free, bright]",
+     "audio": "res://audio/voice/wolf_goats/nar_c56b61c056_t.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_c56b61c056.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/wolf_goats/nar_c56b61c056.mp3 (trimmed from 2.0 s: the count dropped)"
+    }
+   ],
+   "trimmed_clip": true,
+   "source_read": "R08_belly#2",
+   "source_text": "하나, 둘, 셋… 아기 염소들이 폴짝폴짝 뛰어나왔어요."
+  },
+  {
+   "id": "wg_r0803",
+   "speaker": "kid",
+   "text": "\"엄마!\"",
+   "status": "reuse",
+   "beat": "belly",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "엄마!",
+     "emotion": "happy",
+     "tags": "[joyful, relieved, childlike chorus, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_57878e3efa.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_57878e3efa.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "joy",
+    "kid2": "joy",
+    "kid3": "joy",
+    "kid4": "joy",
+    "kid5": "joy",
+    "kid6": "joy",
+    "mom": "hug"
+   },
+   "source_read": "R08_belly#3",
+   "source_text": "\"엄마!\" 아기 염소 여섯 마리가 모두 무사히 나왔어요.",
+   "trimmed_segs": [
+    0
+   ]
+  },
+  {
+   "id": "wg_r0804",
+   "speaker": "mom",
+   "text": "\"이제 늑대 배에 돌멩이를 넣어 주자.\"",
+   "status": "reuse",
+   "beat": "belly",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mom",
+     "text": "이제 늑대 배에 돌멩이를 넣어 주자.",
+     "emotion": "happy",
+     "tags": "[whispers, playful, sly]",
+     "audio": "res://audio/voice/wolf_goats/mom_a44d00a642.mp3",
+     "source_audio": "audio/el/wolf_goats/mom_a44d00a642.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "ready"
+   },
+   "source_read": "R08_belly#4",
+   "source_text": "\"이제 늑대 배에 돌멩이를 넣어 주자.\""
+  },
+  {
+   "id": "wg_r0805",
+   "speaker": "nar",
+   "text": "아기 염소들은 돌멩이를 데굴데굴 굴려 왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기 염소들은 돌멩이를 데굴데굴 굴려 왔어요.",
+     "emotion": null,
+     "tags": "[whispers, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_640f144d63.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_640f144d63.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_belly#5",
+   "source_text": "아기 염소들은 돌멩이를 데굴데굴 굴려 왔어요."
+  },
+  {
+   "id": "wg_r0806",
+   "speaker": "nar",
+   "text": "엄마는 늑대 배에 돌멩이를 넣었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마는 늑대 배에 돌멩이를 넣었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_64b40927de.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_64b40927de.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_belly#6",
+   "source_text": "엄마는 늑대 배에 돌멩이를 넣었어요."
+  },
+  {
+   "id": "wg_r0807",
+   "speaker": "nar",
+   "text": "엄마가 바늘로 콕콕콕 꿰맸어요. 늑대는 아무것도 몰랐어요.",
+   "status": "reuse",
+   "beat": "belly",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마가 바늘로 콕콕콕 꿰맸어요. 늑대는 아무것도 몰랐어요.",
+     "emotion": null,
+     "tags": "[whispers, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_6d80106122.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_6d80106122.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mom": "kneel_sew"
+   },
+   "source_read": "R08_belly#7",
+   "source_text": "엄마가 바늘로 콕콕콕 꿰맸어요. 늑대는 아무것도 몰랐어요."
+  },
+  {
+   "id": "wg_r0900",
+   "speaker": "nar",
+   "text": "염소 가족이 물러난 뒤에도 늑대는 나무 아래에서 잤어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "염소 가족이 물러난 뒤에도 늑대는 나무 아래에서 잤어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_efc220a26c.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_efc220a26c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_well#0",
+   "source_text": "염소 가족이 물러난 뒤에도 늑대는 나무 아래에서 잤어요."
+  },
+  {
+   "id": "wg_r0901",
+   "speaker": "nar",
+   "text": "잠에서 깬 늑대가 비틀비틀 일어났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "잠에서 깬 늑대가 비틀비틀 일어났어요.",
+     "emotion": null,
+     "tags": "[sleepy, comic, yawning]",
+     "audio": "res://audio/voice/wolf_goats/nar_3ee2a12e5b.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_3ee2a12e5b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "groggy",
+    "kid1": "scared",
+    "kid2": "scared",
+    "kid3": "scared",
+    "kid4": "scared",
+    "kid5": "scared",
+    "kid6": "scared",
+    "baby": "scared",
+    "mom": "shocked"
+   },
+   "source_read": "R09_well#1",
+   "source_text": "잠에서 깬 늑대가 비틀비틀 일어났어요."
+  },
+  {
+   "id": "wg_r0902",
+   "speaker": "wolf",
+   "text": "\"아이고, 배가 무거워. 목이 말라!\"",
+   "status": "reuse",
+   "beat": "well",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "아이고, 배가 무거워. 목이 말라!",
+     "emotion": "tonedown:1.1",
+     "tags": "[groaning, comic, thirsty]",
+     "audio": "res://audio/voice/wolf_goats/wolf_8605632f43.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_8605632f43.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "groggy"
+   },
+   "source_read": "R09_well#2",
+   "source_text": "\"아이고, 배가 무거워. 목이 말라!\""
+  },
+  {
+   "id": "wg_r0903",
+   "speaker": "nar",
+   "text": "뒤뚱뒤뚱, 늑대는 무거운 배를 안고 우물로 갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "뒤뚱뒤뚱, 늑대는 무거운 배를 안고 우물로 갔어요.",
+     "emotion": null,
+     "tags": "[comic, heavy steps]",
+     "audio": "res://audio/voice/wolf_goats/nar_0f7ebe2bdb.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_0f7ebe2bdb.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_well#3",
+   "source_text": "뒤뚱뒤뚱, 늑대는 무거운 배를 안고 우물로 갔어요."
+  },
+  {
+   "id": "wg_r0904",
+   "speaker": "wolf",
+   "text": "\"우물에서 물을 마셔야지.\"",
+   "status": "reuse",
+   "beat": "well",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "우물에서 물을 마셔야지.",
+     "emotion": "tonedown:1.1",
+     "tags": "[grumbling, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_e645618485.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_e645618485.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "peer_well"
+   },
+   "source_read": "R09_well#4",
+   "source_text": "\"우물에서 물을 마셔야지.\""
+  },
+  {
+   "id": "wg_r0905",
+   "speaker": "wolf+nar",
+   "text": "\"으으, 돌멩이가 왜 이리 무겁지?\" 늑대는 우물 안을 기웃기웃 들여다봤어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "으으, 돌멩이가 왜 이리 무겁지?",
+     "emotion": "tonedown:1.1",
+     "tags": "[groaning, puzzled, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_3fbd782280.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_3fbd782280.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "늑대는 우물 안을 기웃기웃 들여다봤어요.",
+     "emotion": null,
+     "tags": "[playful, suspense]",
+     "audio": "res://audio/voice/wolf_goats/nar_9840e0cf7a.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_9840e0cf7a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_well#5",
+   "source_text": "\"으으, 돌멩이가 왜 이리 무겁지?\" 늑대는 우물 안을 기웃기웃 들여다봤어요."
+  },
+  {
+   "id": "wg_r0906",
+   "speaker": "nar",
+   "text": "풍덩! 늑대가 우물에 빠졌어요.",
+   "status": "reuse",
+   "beat": "well",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "풍덩! 늑대가 우물에 빠졌어요.",
+     "emotion": null,
+     "tags": "[splash, playful]",
+     "audio": "res://audio/voice/wolf_goats/nar_2389d6901f.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_2389d6901f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_well#6",
+   "source_text": "풍덩! 늑대가 우물에 빠졌어요."
+  },
+  {
+   "id": "wg_r0907",
+   "speaker": "wolf",
+   "text": "\"으악, 차가워! 다시는 안 올 거야!\"",
+   "status": "reuse",
+   "beat": "well",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "wolf",
+     "text": "으악, 차가워! 다시는 안 올 거야!",
+     "emotion": "tonedown:1.1",
+     "tags": "[yelps, shivering, comic]",
+     "audio": "res://audio/voice/wolf_goats/wolf_dadfddafd7.mp3",
+     "source_audio": "audio/el/wolf_goats/wolf_dadfddafd7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "wolf": "wet"
+   },
+   "source_read": "R09_well#7",
+   "source_text": "\"으악, 차가워! 다시는 안 올 거야!\""
+  },
+  {
+   "id": "wg_r0908",
+   "speaker": "nar",
+   "text": "늑대는 흠뻑 젖은 채 멀리멀리 도망갔어요.",
+   "status": "reuse",
+   "beat": "well",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대는 흠뻑 젖은 채 멀리멀리 도망갔어요.",
+     "emotion": null,
+     "tags": "[playful, comic]",
+     "audio": "res://audio/voice/wolf_goats/nar_4c583ba1ca.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_4c583ba1ca.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_well#8",
+   "source_text": "늑대는 흠뻑 젖은 채 멀리멀리 도망갔어요."
+  },
+  {
+   "id": "wg_r1000",
+   "speaker": "nar",
+   "text": "늑대가 달아난 우물가에 염소 가족이 모였어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "늑대가 달아난 우물가에 염소 가족이 모였어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/wolf_goats/nar_a64d6fb013.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_a64d6fb013.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_together#0",
+   "source_text": "늑대가 달아난 우물가에 염소 가족이 모였어요."
+  },
+  {
+   "id": "wg_r1001",
+   "speaker": "nar",
+   "text": "엄마와 일곱 아기 염소는 손을 잡고 신나게 춤을 추었어요.",
+   "status": "reuse",
+   "beat": "together",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마와 일곱 아기 염소는 손을 잡고 신나게 춤을 추었어요.",
+     "emotion": null,
+     "tags": "[joyful, warm]",
+     "audio": "res://audio/voice/wolf_goats/nar_5e0b86f07f.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_5e0b86f07f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "dance",
+    "kid2": "dance",
+    "kid3": "dance",
+    "kid4": "dance",
+    "kid5": "dance",
+    "kid6": "dance",
+    "baby": "joy_jump",
+    "mom": "dance"
+   },
+   "source_read": "R10_together#1",
+   "source_text": "엄마와 일곱 아기 염소는 손을 잡고 신나게 춤을 추었어요."
+  },
+  {
+   "id": "wg_r1002",
+   "speaker": "nar",
+   "text": "빙글빙글, 깡충깡충! 웃음소리가 까르르 울려 퍼졌지요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "빙글빙글, 깡충깡충! 웃음소리가 까르르 울려 퍼졌지요.",
+     "emotion": "happy:1.2",
+     "tags": "[joyful, warm]",
+     "audio": "res://audio/voice/wolf_goats/nar_b4aade3e0d.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_b4aade3e0d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_together#2",
+   "source_text": "빙글빙글, 깡충깡충! 웃음소리가 까르르 울려 퍼졌지요."
+  },
+  {
+   "id": "wg_r1003",
+   "speaker": "kid+nar",
+   "text": "\"이제 엄마 목소리는 절대 안 잊을래요!\" 아기 염소들이 입을 모았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "kid",
+     "text": "이제 엄마 목소리는 절대 안 잊을래요!",
+     "emotion": "happy",
+     "tags": "[cheerful, childlike, chorus, baby voice, lisping, very young child, giggly]",
+     "audio": "res://audio/voice/wolf_goats/kid_62f2f47eca.mp3",
+     "source_audio": "audio/el/wolf_goats/kid_62f2f47eca.mp3",
+     "status": "reuse"
+    },
+    {
+     "speaker": "nar",
+     "text": "아기 염소들이 입을 모았어요.",
+     "emotion": null,
+     "tags": "[warm]",
+     "audio": "res://audio/voice/wolf_goats/nar_c8bf0fab80.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_c8bf0fab80.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_together#3",
+   "source_text": "\"이제 엄마 목소리는 절대 안 잊을래요!\" 아기 염소들이 입을 모았어요."
+  },
+  {
+   "id": "wg_r1004",
+   "speaker": "nar",
+   "text": "엄마 목소리를 잘 아는 아기 염소들은 오래오래 행복하게 살았답니다.",
+   "status": "reuse",
+   "beat": "together",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마 목소리를 잘 아는 아기 염소들은 오래오래 행복하게 살았답니다.",
+     "emotion": null,
+     "tags": "[warm, gentle, conclusive]",
+     "audio": "res://audio/voice/wolf_goats/nar_f257c8ab1e.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_f257c8ab1e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "kid1": "joy",
+    "kid2": "joy",
+    "kid3": "joy",
+    "kid4": "joy",
+    "kid5": "joy",
+    "kid6": "joy",
+    "baby": "calm",
+    "mom": "dance"
+   },
+   "source_read": "R10_together#4",
+   "source_text": "엄마 목소리를 잘 아는 아기 염소들은 오래오래 행복하게 살았답니다."
+  },
+  {
+   "id": "wg_r1005",
+   "speaker": "nar",
+   "text": "엄마 말을 잘 기억하고, 낯선 이에게는 문을 열어 주지 않는답니다.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마 말을 잘 기억하고, 낯선 이에게는 문을 열어 주지 않는답니다.",
+     "emotion": null,
+     "tags": "[warm, gentle, closing]",
+     "audio": "res://audio/voice/wolf_goats/nar_855bddf020.mp3",
+     "source_audio": "audio/el/wolf_goats/nar_855bddf020.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_together#5",
+   "source_text": "엄마 말을 잘 기억하고, 낯선 이에게는 문을 열어 주지 않는답니다."
+  },
+  {
+   "id": "wg_n01",
+   "speaker": "nar",
+   "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+   "status": "changed-recorded",
+   "beat": "cover",
+   "interaction": "cover",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, warm, cosy Halloween night]",
+     "audio": "res://audio/voice/wolf_goats/nar_f6992243bc.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "wg_n02",
+   "speaker": "nar",
+   "text": "또 보고 싶으면 '다시 보기'를 톡!",
+   "status": "changed-recorded",
+   "beat": "together",
+   "interaction": "end",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "또 보고 싶으면 '다시 보기'를 톡!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/wolf_goats/nar_5d0ad0a7c3.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  }
+ ]
+}

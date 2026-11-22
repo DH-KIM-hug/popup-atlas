@@ -1,0 +1,84 @@
+{
+ "biome": "meadow",
+ "season": "any",
+ "tags": [
+  "wolf_goats",
+  "story",
+  "meadow",
+  "farm"
+ ],
+ "items": {
+  "00": [
+   "big old shady oak tree, thick gnarled trunk, round layered canopy",
+   "story_nature",
+   1.6,
+   0,
+   {
+    "tags": [
+     "tree",
+     "oak"
+    ]
+   }
+  ],
+  "01": [
+   "old round stone well with a shingled roof, winch, rope and bucket",
+   "story_prop",
+   0.55,
+   0,
+   {
+    "tags": [
+     "well",
+     "water"
+    ]
+   }
+  ],
+  "02": [
+   "front half of the stone well's rim (curved stone band)",
+   "story_prop",
+   0.16,
+   0,
+   {
+    "tags": [
+     "well",
+     "rim"
+    ]
+   }
+  ],
+  "03": [
+   "long low leafy hedge bush",
+   "story_nature",
+   0.3,
+   0,
+   {
+    "tags": [
+     "hedge",
+     "bush"
+    ]
+   }
+  ],
+  "04": [
+   "wooden signpost with two blank arrow boards",
+   "story_prop",
+   0.35,
+   0,
+   {
+    "tags": [
+     "sign"
+    ]
+   }
+  ],
+  "05": [
+   "small wooden market stall, striped awning, chalk and jars on the counter",
+   "story_prop",
+   0.45,
+   0,
+   {
+    "tags": [
+     "stall",
+     "shop",
+     "chalk"
+    ]
+   }
+  ]
+ }
+}

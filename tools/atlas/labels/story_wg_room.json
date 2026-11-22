@@ -1,0 +1,179 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "wolf_goats",
+  "story",
+  "furniture",
+  "interior",
+  "room"
+ ],
+ "items": {
+  "00": [
+   "tall grandfather clock (walnut longcase, round face, pendulum glass door)",
+   "story_prop",
+   0.6,
+   0,
+   {
+    "tags": [
+     "clock"
+    ]
+   }
+  ],
+  "01": [
+   "grandfather clock with its case door open (empty case)",
+   "story_prop",
+   0.6,
+   0,
+   {
+    "tags": [
+     "clock",
+     "open"
+    ]
+   }
+  ],
+  "02": [
+   "wooden bed with patchwork quilt (side view)",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "bed",
+     "quilt"
+    ]
+   }
+  ],
+  "03": [
+   "round wicker laundry basket with white sheets",
+   "story_prop",
+   0.17,
+   0,
+   {
+    "tags": [
+     "basket",
+     "laundry"
+    ]
+   }
+  ],
+  "04": [
+   "table with a long red checked tablecloth to the floor",
+   "story_prop",
+   0.21,
+   0,
+   {
+    "tags": [
+     "table",
+     "tablecloth"
+    ]
+   }
+  ],
+  "05": [
+   "wooden chair with heart cut-out",
+   "story_prop",
+   0.22,
+   0,
+   {
+    "tags": [
+     "chair"
+    ]
+   }
+  ],
+  "06": [
+   "wooden chair toppled on its side",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "chair",
+     "messy"
+    ]
+   }
+  ],
+  "07": [
+   "patchwork quilt thrown in a heap",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "quilt",
+     "messy"
+    ]
+   }
+  ],
+  "08": [
+   "laundry basket tipped over, sheets spilling",
+   "story_prop",
+   0.14,
+   0,
+   {
+    "tags": [
+     "basket",
+     "laundry",
+     "messy"
+    ]
+   }
+  ],
+  "09": [
+   "table with its checked cloth pulled half off, cup tipped",
+   "story_prop",
+   0.18,
+   0,
+   {
+    "tags": [
+     "table",
+     "messy"
+    ]
+   }
+  ],
+  "10": [
+   "wooden dresser with plates and cups",
+   "story_prop",
+   0.42,
+   0,
+   {
+    "tags": [
+     "dresser",
+     "cupboard"
+    ]
+   }
+  ],
+  "11": [
+   "small black iron stove with a kettle",
+   "story_prop",
+   0.4,
+   0,
+   {
+    "tags": [
+     "stove",
+     "kettle"
+    ]
+   }
+  ],
+  "12": [
+   "wicker sewing basket with scissors, red thread, pincushion",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "sewing",
+     "scissors"
+    ]
+   }
+  ],
+  "13": [
+   "three-legged wooden stool",
+   "story_prop",
+   0.14,
+   0,
+   {
+    "tags": [
+     "stool"
+    ]
+   }
+  ]
+ }
+}

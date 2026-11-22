@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_wg_kid_expr",
+ "bg": [
+  0.988,
+  0.024,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_wg_kid_expr_00",
+   "bbox": [
+    38,
+    165,
+    370,
+    526
+   ],
+   "area": 65576,
+   "size": [
+    340,
+    369
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_kid_expr_01",
+   "bbox": [
+    428,
+    200,
+    740,
+    583
+   ],
+   "area": 64503,
+   "size": [
+    320,
+    391
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 5
+  },
+  {
+   "id": "cast_wg_kid_expr_02",
+   "bbox": [
+    785,
+    169,
+    1066,
+    583
+   ],
+   "area": 66212,
+   "size": [
+    289,
+    422
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_kid_expr_03",
+   "bbox": [
+    1106,
+    189,
+    1421,
+    583
+   ],
+   "area": 66631,
+   "size": [
+    323,
+    402
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_kid_expr_04",
+   "bbox": [
+    1462,
+    190,
+    1766,
+    583
+   ],
+   "area": 65306,
+   "size": [
+    312,
+    401
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_kid_expr_05",
+   "bbox": [
+    1822,
+    112,
+    2132,
+    584
+   ],
+   "area": 75096,
+   "size": [
+    318,
+    480
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

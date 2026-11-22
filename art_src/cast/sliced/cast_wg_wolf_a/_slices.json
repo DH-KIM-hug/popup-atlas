@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_wg_wolf_a",
+ "bg": [
+  0.984,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_wg_wolf_a_00",
+   "bbox": [
+    41,
+    67,
+    389,
+    650
+   ],
+   "area": 83517,
+   "size": [
+    356,
+    591
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 2
+  },
+  {
+   "id": "cast_wg_wolf_a_01",
+   "bbox": [
+    404,
+    67,
+    656,
+    650
+   ],
+   "area": 78960,
+   "size": [
+    260,
+    591
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_wolf_a_02",
+   "bbox": [
+    731,
+    66,
+    956,
+    650
+   ],
+   "area": 72000,
+   "size": [
+    233,
+    592
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_wolf_a_03",
+   "bbox": [
+    1465,
+    73,
+    1773,
+    648
+   ],
+   "area": 85601,
+   "size": [
+    316,
+    583
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 2
+  },
+  {
+   "id": "cast_wg_wolf_a_04",
+   "bbox": [
+    1826,
+    69,
+    2124,
+    649
+   ],
+   "area": 85067,
+   "size": [
+    306,
+    588
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 2
+  },
+  {
+   "id": "cast_wg_wolf_a_05",
+   "bbox": [
+    988,
+    214,
+    1420,
+    647
+   ],
+   "area": 78814,
+   "size": [
+    440,
+    441
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

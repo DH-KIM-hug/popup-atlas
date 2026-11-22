@@ -313,6 +313,38 @@ Run long work through background agents/workflows with narrow ownership (one own
 - Never run the cast builder's standing pass while Godot imports: it rewrites every figure file and the import reads
   half-written webps (ERR_FILE_CORRUPT); import after the art jobs finish.
 
+**Learned on the fifth tale (wolf_goats phase 1, 2026-11-23)**
+- `seed_script.py --out <file>` does NOT overwrite an existing file without `--force`: a stale temp silently survives
+  and the "diff before copying" compares old with old. Seed into a fresh temp with `--force`
+  (`tools/story/wg_seed.sh` does temp → diff count → copy).
+- A group of look-alike characters (seven kids) is ONE design drawn with a plain marker colour (a green collar) on
+  every expression / cycle sheet; the cast builder clones each figure per member with the marker recoloured and a
+  per-member height (`tools/cast/wolf_goats_cast.py` recolour + clone_kids): 7 kids for the price of one sheet set.
+- Cycle frames drawn close together slice as one piece; split pieces wider than 1.5× the median at their emptiest
+  column before cataloguing (`split_wide` in wolf_goats_cast.py), then `add_cycles.py --noslice`.
+- Rooms: stand the family DEEP in the room (behind ~0.55 of a 1.1 box) and shoot from just inside the front wall
+  looking down (el ~32°, fov 64–72); anyone within ~0.3 of the lens becomes a giant head. Someone in the doorway stays
+  behind the lens; show the doorway with the turned-round `door_in` shot instead.
+- Speakers that are a group ("kid") need a stand-in: handler `speaker_point("kid")` returns the beat's `kid_voice`
+  member (a centred one, set per beat), otherwise SPEAKER_UNKNOWN skips the check.
+- fx props join the overlap check: `stage.register_prop(name, node, r, h)` (moving props carry meta "moving"); the
+  check logs prop vs actor footprints, props inside set pieces and props hiding an actor.
+- Engine extensions: walk `to` may map each role to its own mark; go_inside `keep_open` (the intruder leaves the
+  door standing open). After editing a shared engine script, load-check it (`tools/story/wg_check.gd`): one untyped
+  `for a in vis` broke every tale's runner until fixed.
+- A template card (hill) in a close shot's lens on a new spread: a tiny set entry with a big `clear` opens a lawn.
+- Waiting on a background recording: wait on its PID; `pgrep -f "<script name>"` also matches the waiting shell
+  itself and never ends.
+- OVERLAP_COUNT / OCCLUDE_COUNT in the summary are now run totals over every page (they used to be the last page's
+  own counts, so a page-A overlap printed as "OVERLAP_COUNT 0").
+- Ground terraces (raised meadow steps) are not set pieces: they can hide kids standing behind them and stand in a
+  close shot's lens, and the overlap check cannot see them. Keep marks and close shots off the terrace edges.
+- Inside / outside 180-degree camera turns on a page with long errands came out at CAM_JUMP 3.0–3.05° even with slow
+  rates; show the outside moment from outside (the wolf's floury paw at the door from a low doorstep shot) instead of
+  turning round inside.
+- Pace: the first full run was 7:32 (229 s of narration); errands placed a few steps away (stall, mill across the
+  road), exits that fold out at the road instead of walking off-page, and dropping lines the taps show bring it down.
+
 **Learned on turnip (「커다란 순무」, 2026-11-23)**
 - A growing thing is ONE card sunk into the paper ground (the ground hides what is below it at any camera elevation
   we use): the giant turnip stands at its spot sunk to its violet shoulder and each heave raises it a little; measure

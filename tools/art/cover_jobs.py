@@ -240,6 +240,34 @@ JOBS += [
      "European-style long coat, NOT a Korean hanbok jacket, NOT pink. Do not draw the boy."},
 ]
 
+# ---- 늑대와 일곱 아기염소 (wolf_goats, 2026-11-23): refs are already PAPER (the new goat lineup, the shared paper wolf)
+JOBS += [
+    art("cover_wg_art", [RC + "ref_wg_mom.png", RC + "ref_wg_kid.png", RC + "ref_wg_baby.png", RC + "ref_wg_wolf.png",
+                         RA + "story_wg_cottage.png"], extra_refs_mat=False, subject=
+        "All references are already PAPER: copy their material. SUBJECT: 늑대와 일곱 아기염소 (The Wolf and the Seven Young "
+        "Goats). A sunny meadow farm: the thatched half-timbered COTTAGE from reference 5 (arched green door, shuttered "
+        "windows) stands in the middle distance. In front of it, big in the lower half: THE MOTHER GOAT (reference 1: "
+        "upright, cream goat in a red dotted apron-dress, curved tan horns) with her arms round her SEVEN little KID GOATS "
+        "(reference 2: small cream goats on four legs with coloured paper collars and golden bells: red, orange, "
+        "yellow, green, blue, indigo) and the smallest youngest kid (reference 3: no horns, coral-red collar) in front, "
+        "all happy. At the right edge THE WOLF (reference 4: lanky grey wolf in a mustard vest) peeks sneakily round the "
+        "cottage corner, only his head and one paw showing, funny not scary. A tall grandfather clock is NOT shown. "
+        "SKY (top 40 percent): soft blue paper with thin cloud strips at the edges only. LIGHT: warm morning. PALETTE: "
+        "meadow greens, thatch gold, cream goats, apron red, wolf grey, sky blue."),
+    title("cover_wg_title", "The Korean title on two lines, centred: line 1 '늑대와' (smaller), line 2 '일곱 아기염소' (big).",
+          "Letter colours: '늑대와' wolf grey #7d7a78, '일곱 아기염소' warm cream #f2e3c6 "
+          "letters on an apron-red #c8473c inner layer, a thin dark-brown cut line around each letter, a tiny golden "
+          "bell as decoration beside the words (not touching the letters). v2: v1 turned the first jamo of '늑' into wolf "
+          "ears (it read wrong): NEVER replace or decorate any stroke of a letter; '늑' = ㄴ + ㅡ + ㄱ, all three plainly "
+          "visible."),
+    back("back_wg_art", "cover_wg_art.png", "Evening after the story: the same cottage with warm lit windows, the MOTHER GOAT "
+         "and her SEVEN KIDS (one with each collar colour, the smallest without horns) dancing in a ring round the old "
+         "stone well in front of it, happy; far away on a hill path the small grey WOLF, soaking wet with paper water "
+         "drops, runs off out of the picture. Warm sunset light, a few first stars."),
+    spot("spot_wg", "a tall walnut GRANDFATHER CLOCK with a round cream face, its case door a little open with a soft "
+         "warm glow inside, a small golden bell on a red collar lying in front of it on a round braided rug."),
+]
+
 
 if __name__ == "__main__":
     out = os.path.join(HERE, "cover_jobs.json")

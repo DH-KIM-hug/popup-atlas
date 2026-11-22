@@ -4,13 +4,18 @@ extends SceneTree
 ## ~ water, = road, . grass. godot --headless --path game --script res://../tools/story/probe_spots.gd -- 2 3 4 5
 func _init() -> void:
 	var views := []
+	var sd := 1
 	for a in OS.get_cmdline_user_args():
-		views.append(int(a))
+		if a.begins_with("seed="):  # wolf_goats: seed=2
+			sd = int(a.substr(5))
+		else:
+			views.append(int(a))
 	if views.is_empty():
 		views = [2, 3, 4, 5]
 	for v in views:
 		var w := (load("res://scenes/world/meadow.tscn") as PackedScene).instantiate() as MeadowWorld
 		w.view = v
+		w.seed_value = sd
 		w.walk = false
 		w.with_audio = false
 		root.add_child(w)

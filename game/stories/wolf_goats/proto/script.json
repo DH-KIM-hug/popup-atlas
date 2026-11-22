@@ -1,0 +1,205 @@
+{
+ "tale_id": "wolf_goats_proto",
+ "title": "proto",
+ "backdrop": true,
+ "pop_in": false,
+ "shots": {
+  "crane_high": [
+   9.0,
+   36.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "establish": [
+   6.5,
+   18.0,
+   0.35,
+   24.0,
+   -6.0
+  ],
+  "wide": [
+   7.4,
+   16,
+   0.3,
+   20,
+   0
+  ]
+ },
+ "cast": {},
+ "ui": {
+  "speakers": {}
+ },
+ "voices": {},
+ "beats": [
+  {
+   "id": "v0",
+   "title": "v0",
+   "spread": {
+    "seed": 2,
+    "view": 0,
+    "place": "p0",
+    "light": "",
+    "spots": {},
+    "set": []
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "wait": 2.5
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "v1",
+   "title": "v1",
+   "spread": {
+    "seed": 2,
+    "view": 1,
+    "place": "p1",
+    "light": "",
+    "spots": {},
+    "set": []
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "wait": 2.5
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "v2",
+   "title": "v2",
+   "spread": {
+    "seed": 2,
+    "view": 2,
+    "place": "p2",
+    "light": "",
+    "spots": {},
+    "set": []
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "wait": 2.5
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "v3",
+   "title": "v3",
+   "spread": {
+    "seed": 2,
+    "view": 3,
+    "place": "p3",
+    "light": "",
+    "spots": {},
+    "set": []
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "wait": 2.5
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "v4",
+   "title": "v4",
+   "spread": {
+    "seed": 2,
+    "view": 4,
+    "place": "p4",
+    "light": "",
+    "spots": {},
+    "set": []
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "wait": 2.5
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  },
+  {
+   "id": "v5",
+   "title": "v5",
+   "spread": {
+    "seed": 2,
+    "view": 5,
+    "place": "p5",
+    "light": "",
+    "spots": {},
+    "set": []
+   },
+   "enter": {
+    "who": {}
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "crane_high",
+     "wait": 2.5
+    },
+    {
+     "do": "cam",
+     "shot": "establish",
+     "rate": 1.0,
+     "wait": 3.0
+    }
+   ]
+  }
+ ],
+ "lines": []
+}

@@ -537,7 +537,30 @@ var _overlap_t := 0.0
 var overlap_live := {}
 var overlap_count := 0
 var occlude_count := 0
+## run totals over every page (wolf_goats 2026-11-23: the per-stage counts only covered the last page in the summary)
+static var run_overlaps := 0
+static var run_occludes := 0
 var no_spacing: Array = []  ## roles the tale moves itself (glides): the solver leaves them alone
+## Story props a tale handler makes itself (wolf_goats 2026-11-23, user rule "no overlaps" covers fx props too): name ->
+## {node, r (footprint radius), h (height)}. The overlap check tests each resting prop against the actors (footprints),
+## the set pieces (a prop standing inside a house / tree card) and as an occluder of the actors.
+var props: Dictionary = {}
+
+
+func register_prop(nm: String, node: Node3D, r: float, h: float) -> void:
+	props[nm] = {"node": node, "r": r, "h": h}
+
+
+func unregister_prop(nm: String) -> void:
+	props.erase(nm)
+
+
+func _prop_live(nm: String) -> bool:
+	var q: Dictionary = props[nm]
+	var n: Variant = q["node"]
+	if n == null or not is_instance_valid(n) or not (n as Node3D).is_visible_in_tree():
+		return false
+	return not (n as Node3D).has_meta("moving")
 
 
 func actor_radius(a: StoryActor) -> float:
@@ -776,6 +799,37 @@ func _overlap_check() -> void:
 			var ov := ab.intersection(_piece_box(sp))
 			if ov.get_area() / maxf(area, 1.0) > 0.35:
 				now["OCCLUDE %s %s" % [a.role, sp.piece_name]] = snappedf(ov.get_area() / area, 0.01)
+	# handler props (wolf_goats): resting story props vs actors, vs set pieces, and props hiding an actor
+	for nm in props.keys():
+		if not _prop_live(nm):
+			continue
+		var q: Dictionary = props[nm]
+		var pn: Node3D = q["node"]
+		var pp := pn.global_position
+		var pr := float(q["r"])
+		for a: StoryActor in vis:
+			var d2 := a.global_position - pp
+			d2.y = 0.0
+			var need3 := actor_radius(a) * 0.7 + pr
+			if d2.length() < need3 and absf(a.global_position.y + a.lift - pp.y) < a.puppet.height and not _ok_pair(a.role, nm):
+				now["OVERLAP %s %s prop" % [a.role, nm]] = snappedf(1.0 - d2.length() / need3, 0.01)
+			if house_of(a.global_position) != cam_house or house_of(pp) != cam_house:
+				continue
+			var ab2 := _actor_box(a)
+			if ab2.size.x <= 1.0 or not ab2.intersects(screen):
+				continue
+			if cam.global_position.distance_to(pp) > cam.global_position.distance_to(a.global_position) - 0.08:
+				continue
+			var cr2 := cam.global_transform.basis.x.normalized() * pr
+			var pb := _screen_box([pp - cr2, pp + cr2, pp - cr2 + Vector3.UP * float(q["h"]), pp + cr2 + Vector3.UP * float(q["h"])])
+			if ab2.intersection(pb).get_area() / maxf(ab2.get_area(), 1.0) > 0.35 and not _ok_pair(a.role, nm):
+				now["OCCLUDE %s %s" % [a.role, nm]] = snappedf(ab2.intersection(pb).get_area() / ab2.get_area(), 0.01)
+		for k in sets:
+			var sp: SetPiece = sets[k]
+			if not _solid_piece(sp) or _ok_pair(nm, sp.piece_name):
+				continue
+			if _piece_dist(sp, pp) < pr * 0.7 and pp.y - sp.global_position.y < sp.height:
+				now["OVERLAP %s %s prop_card" % [nm, sp.piece_name]] = snappedf(1.0 - _piece_dist(sp, pp) / (pr * 0.7), 0.01)
 	for key in now:
 		if not overlap_live.has(key):
 			print(key, " t=", snappedf(_t, 0.01), " amt=", now[key], " shot=", shot)
@@ -785,8 +839,10 @@ func _overlap_check() -> void:
 					print("   ", r2, " ", a2.global_position.snapped(Vector3.ONE * 0.01), " moving=", a2.moving(), " path=", a2._path.size())
 			if str(key).begins_with("OCCLUDE"):
 				occlude_count += 1
+				run_occludes += 1
 			else:
 				overlap_count += 1
+				run_overlaps += 1
 	overlap_live = now
 
 
@@ -2199,18 +2255,25 @@ func _camera_inside_check() -> void:
 	if cam == null:
 		return
 	var now := ""
+	var deep := false
 	for k in sets:
 		var sp: SetPiece = sets[k]
 		if sp.bands.is_empty() or sp.walls == null:
 			continue
 		var l := sp.global_transform.affine_inverse() * cam.global_position
-		var inside := l.z < 0.16 and absf(l.x) < sp.width * 0.62 and l.z > -1.5
+		# patjuk 2026-11-23: tale `inside_margin` (default 0.16): how far in front of the wall the facade already folds
+		# away, so a glide into a deep room does not fill the frame with the door on its way through
+		var inside := l.z < float(tale.get("inside_margin", 0.16)) and absf(l.x) < sp.width * 0.62 and l.z > -1.5
 		sp.walls.visible = not inside
 		if inside:
 			now = str(k)
+			deep = deep or l.z < 0.0
+	# with an inside_margin the room's inside-only pieces (the front wall's inside face) wait until the camera is
+	# really behind the front wall, or the glide in passes through that card (patjuk)
+	var inside_shown := now != "" and (not tale.has("inside_margin") or deep)
 	for k in sets:
 		if (sets[k] as SetPiece).has_meta("inside_only"):
-			(sets[k] as SetPiece).visible = now != ""
+			(sets[k] as SetPiece).visible = inside_shown
 	if now != camera_inside:
 		camera_inside = now
 		for r in actors:

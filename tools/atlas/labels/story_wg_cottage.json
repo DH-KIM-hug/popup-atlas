@@ -1,0 +1,93 @@
+{
+ "biome": "fairytale",
+ "season": "any",
+ "tags": [
+  "wolf_goats",
+  "story",
+  "cottage",
+  "farm"
+ ],
+ "items": {
+  "00": [
+   "thatched half-timbered farm cottage front: arched green door, two shuttered windows, stone base",
+   "story_building",
+   1.0,
+   0,
+   {
+    "tags": [
+     "house",
+     "facade",
+     "thatched",
+     "door",
+     "window"
+    ]
+   }
+  ],
+  "01": [
+   "thatched half-timbered cottage back (one small window, no door)",
+   "story_building",
+   0.9,
+   0,
+   {
+    "tags": [
+     "house",
+     "back",
+     "thatched"
+    ]
+   }
+  ],
+  "02": [
+   "arched green plank door leaf with iron ring",
+   "story_building",
+   0.53,
+   0,
+   {
+    "tags": [
+     "door"
+    ]
+   }
+  ],
+  "03": [
+   "cottage room back wall from inside: plaster + beams, curtained window, shelf with jugs",
+   "story_building",
+   0.68,
+   0,
+   {
+    "tags": [
+     "wall",
+     "room",
+     "interior",
+     "window"
+    ]
+   }
+  ],
+  "04": [
+   "cottage front wall seen from inside: arched door with bar latch, two windows (daylight)",
+   "story_building",
+   0.68,
+   0,
+   {
+    "tags": [
+     "wall",
+     "room",
+     "interior",
+     "door"
+    ]
+   }
+  ],
+  "05": [
+   "wooden floorboards with a round braided rug (flat, from above)",
+   "story_building",
+   0.4,
+   0,
+   {
+    "tags": [
+     "floor",
+     "room",
+     "interior",
+     "rug"
+    ]
+   }
+  ]
+ }
+}

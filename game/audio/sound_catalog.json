@@ -1454,6 +1454,240 @@
    "positional": false,
    "loop": false,
    "note": "turnip: 톡톡 sfx/cheer.mp3 (Pixabay 'Applause, small audience', freesound_community)"
+  },
+  "wg.knock": {
+   "files": [
+    "res://audio/sfx/wg_knock.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -4,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/knock.mp3 (ElevenLabs SFX made for 톡톡, three knocks)"
+  },
+  "wg.crunch": {
+   "files": [
+    "res://audio/sfx/wg_crunch.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/crunch.mp3 (Pixabay 'Chip Crunch Bite 2', AppleHillStudios)"
+  },
+  "wg.snore": {
+   "files": [
+    "res://audio/sfx/wg_snore.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/el_snore.mp3 (ElevenLabs SFX made for 톡톡: bassoon in-breath + slide-whistle out)"
+  },
+  "wg.splash": {
+   "files": [
+    "res://audio/sfx/wg_splash.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/splash_big.mp3 (OpenGameArt 100-CC0-SFX splash_01+02, rubberduck; thump, bart; CC0)"
+  },
+  "wg.ding": {
+   "files": [
+    "res://audio/sfx/wg_ding.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/ding_glock.mp3 (Pixabay 'Ding~', u_31vnwfmzt6)"
+  },
+  "wg.tiptoe": {
+   "files": [
+    "res://audio/sfx/wg_tiptoe.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/tiptoe_pizz.mp3 (Pixabay 'Mischievous Pizzicato', lucadialessandro)"
+  },
+  "wg.gulp": {
+   "files": [
+    "res://audio/sfx/wg_gulp.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/gulp.mp3 (Pixabay 'Gulp', freesound_community)"
+  },
+  "wg.gulp_2": {
+   "files": [
+    "res://audio/sfx/wg_gulp_2.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/gulp_2.mp3 (Pixabay 'gulps', freesound_community)"
+  },
+  "wg.pop": {
+   "files": [
+    "res://audio/sfx/wg_pop.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/pop_out.mp3 (ElevenLabs SFX made for 톡톡)"
+  },
+  "wg.brass": {
+   "files": [
+    "res://audio/sfx/wg_brass.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/comic_brass.mp3 (Pixabay 'Brass Fail 11 A', floraphonic)"
+  },
+  "wg.whistle_down": {
+   "files": [
+    "res://audio/sfx/wg_whistle_down.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/whistle_down.mp3 (Pixabay 'Cartoon Slide Whistle Down 1', floraphonic)"
+  },
+  "wg.snip": {
+   "files": [
+    "res://audio/sfx/wg_snip.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/el_scissor_snip.mp3 (ElevenLabs SFX made for 톡톡)"
+  },
+  "wg.stone": {
+   "files": [
+    "res://audio/sfx/wg_stone.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -6,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/el_stone_plop.mp3 (ElevenLabs SFX made for 톡톡: a round stone into a sack)"
+  },
+  "wg.sleepy": {
+   "files": [
+    "res://audio/sfx/wg_sleepy.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -14,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/sleepy_tuba.mp3 (Pixabay 'Tuba', freesound_community)"
+  },
+  "wg.marimba_1": {
+   "files": [
+    "res://audio/sfx/wg_marimba_1.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/marimba_1.mp3 (Pixabay 'Toy Glockenspiel', freesound_community)"
+  },
+  "wg.marimba_3": {
+   "files": [
+    "res://audio/sfx/wg_marimba_3.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/marimba_3.mp3 (same)"
+  },
+  "wg.marimba_5": {
+   "files": [
+    "res://audio/sfx/wg_marimba_5.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/marimba_5.mp3 (same)"
+  },
+  "wg.door_heavy": {
+   "files": [
+    "res://audio/sfx/wg_door_heavy.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.03,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/door_heavy_1.mp3 (see 톡톡 sounds/CREDITS.md)"
   }
  },
  "music": {
@@ -1574,6 +1808,16 @@
    "fade_in": 0.2,
    "fade_out": 2.0,
    "note": "톡톡's finale music (sfx/finale_happy.mp3, Pixabay 'Happy Kids', HitsLab), the feast"
+  },
+  "intro_happiness": {
+   "file": "res://audio/music/intro_happiness_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": false,
+   "fade_in": 0.2,
+   "fade_out": 2.0,
+   "hold": true,
+   "note": "story-start music from 톡톡 동화극장 (sfx/classical_perfect_happiness.mp3, Pixabay 'Classical Piano by Schumann - Kinderszenen Op. 15 Perfect Happiness', Nesrality, Pixabay Content License); plays once when the book opens, beat music waits for it"
   }
  },
  "beds": {

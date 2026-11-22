@@ -1,0 +1,176 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "wolf_goats",
+  "story",
+  "fx"
+ ],
+ "items": {
+  "00": [
+   "big burlap flour sack, tied, flour spilling",
+   "story_prop",
+   0.2,
+   0,
+   {
+    "tags": [
+     "flour",
+     "sack",
+     "mill"
+    ]
+   }
+  ],
+  "01": [
+   "puff cloud of white flour",
+   "story_fx",
+   0.16,
+   0,
+   {
+    "tags": [
+     "flour",
+     "puff",
+     "dust"
+    ]
+   }
+  ],
+  "02": [
+   "water splash bursting up (crown of drops)",
+   "story_fx",
+   0.32,
+   0,
+   {
+    "tags": [
+     "water",
+     "splash"
+    ]
+   }
+  ],
+  "04": [
+   "three white chalk sticks in a pile",
+   "story_prop",
+   0.05,
+   0,
+   {
+    "tags": [
+     "chalk"
+    ]
+   }
+  ],
+  "05": [
+   "round grey stone",
+   "story_prop",
+   0.07,
+   0,
+   {
+    "tags": [
+     "stone",
+     "rock"
+    ]
+   }
+  ],
+  "06": [
+   "oval grey-brown stone",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "stone",
+     "rock"
+    ]
+   }
+  ],
+  "07": [
+   "speckled round stone",
+   "story_prop",
+   0.08,
+   0,
+   {
+    "tags": [
+     "stone",
+     "rock"
+    ]
+   }
+  ],
+  "08": [
+   "chalk stick bitten in half with crumbs",
+   "story_prop",
+   0.03,
+   0,
+   {
+    "tags": [
+     "chalk"
+    ]
+   }
+  ],
+  "10": [
+   "three pale-blue water drops",
+   "story_fx",
+   0.06,
+   0,
+   {
+    "tags": [
+     "water",
+     "drops"
+    ]
+   }
+  ],
+  "13": [
+   "round pale grey-blue snore bubble",
+   "story_fx",
+   0.07,
+   0,
+   {
+    "tags": [
+     "bubble",
+     "snore",
+     "sleep"
+    ]
+   }
+  ],
+  "14": [
+   "pile of grain with a wooden scoop",
+   "story_prop",
+   0.06,
+   0,
+   {
+    "tags": [
+     "grain",
+     "mill"
+    ]
+   }
+  ],
+  "15": [
+   "sparkle burst of cream-gold paper stars",
+   "story_fx",
+   0.15,
+   0,
+   {
+    "tags": [
+     "sparkle",
+     "stars"
+    ]
+   }
+  ]
+ },
+ "merge": [
+  [
+   "02",
+   "03"
+  ],
+  [
+   "08",
+   "09"
+  ],
+  [
+   "10",
+   "11",
+   "12"
+  ],
+  [
+   "15",
+   "16",
+   "17"
+  ]
+ ]
+}

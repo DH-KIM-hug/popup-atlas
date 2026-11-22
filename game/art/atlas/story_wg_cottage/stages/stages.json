@@ -1,0 +1,84 @@
+{
+ "story_wg_cottage_00": {
+  "bands": [
+   {
+    "file": "art/atlas/story_wg_cottage/stages/story_wg_cottage_00_b0.webp",
+    "y0": 232,
+    "y1": 409,
+    "img_y0": 207,
+    "img_y1": 409,
+    "hinge_units": 0.0,
+    "height_units": 0.437,
+    "roof": false
+   },
+   {
+    "file": "art/atlas/story_wg_cottage/stages/story_wg_cottage_00_b1.webp",
+    "y0": 4,
+    "y1": 232,
+    "img_y0": 4,
+    "img_y1": 253,
+    "hinge_units": 0.437,
+    "height_units": 0.563,
+    "roof": true
+   }
+  ],
+  "height_units": 1.0,
+  "px": [
+   673,
+   413
+  ],
+  "base_y": 409,
+  "roof_y": 232,
+  "windows": [
+   [
+    167.5,
+    270.0
+   ],
+   [
+    502.0,
+    270.0
+   ]
+  ],
+  "window_boxes": [
+   [
+    136,
+    236,
+    199,
+    304
+   ],
+   [
+    471,
+    236,
+    533,
+    304
+   ]
+  ],
+  "door": {
+   "file": "art/atlas/story_wg_cottage/stages/story_wg_cottage_00_door.webp",
+   "x0": 278,
+   "x1": 396,
+   "y0": 207,
+   "y1": 375
+  },
+  "wall_x": [
+   25,
+   641
+  ],
+  "side_file": "art/atlas/story_wg_cottage/stages/story_wg_cottage_00_side.webp",
+  "roof_file": "art/atlas/story_wg_cottage/stages/story_wg_cottage_00_roof.webp",
+  "gable": {
+   "eave_l": [
+    4,
+    212
+   ],
+   "eave_r": [
+    668,
+    212
+   ],
+   "ridge": [
+    376.0,
+    34
+   ]
+  }
+ }
+}

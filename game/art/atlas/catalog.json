@@ -14265,5 +14265,1038 @@
    188,
    300
   ]
+ },
+ {
+  "id": "story_wg_cottage_00",
+  "path": "art/atlas/story_wg_cottage/story_wg_cottage_00.webp",
+  "sheet": "story_wg_cottage",
+  "category": "story_building",
+  "label": "thatched half-timbered farm cottage front: arched green door, two shuttered windows, stone base",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "cottage",
+   "door",
+   "facade",
+   "farm",
+   "house",
+   "story",
+   "thatched",
+   "window",
+   "wolf_goats"
+  ],
+  "px": [
+   673,
+   413
+  ]
+ },
+ {
+  "id": "story_wg_cottage_01",
+  "path": "art/atlas/story_wg_cottage/story_wg_cottage_01.webp",
+  "sheet": "story_wg_cottage",
+  "category": "story_building",
+  "label": "thatched half-timbered cottage back (one small window, no door)",
+  "height_units": 0.9,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "back",
+   "cottage",
+   "farm",
+   "house",
+   "story",
+   "thatched",
+   "wolf_goats"
+  ],
+  "px": [
+   585,
+   374
+  ]
+ },
+ {
+  "id": "story_wg_cottage_02",
+  "path": "art/atlas/story_wg_cottage/story_wg_cottage_02.webp",
+  "sheet": "story_wg_cottage",
+  "category": "story_building",
+  "label": "arched green plank door leaf with iron ring",
+  "height_units": 0.53,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "cottage",
+   "door",
+   "farm",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   150,
+   220
+  ]
+ },
+ {
+  "id": "story_wg_cottage_03",
+  "path": "art/atlas/story_wg_cottage/story_wg_cottage_03.webp",
+  "sheet": "story_wg_cottage",
+  "category": "story_building",
+  "label": "cottage room back wall from inside: plaster + beams, curtained window, shelf with jugs",
+  "height_units": 0.68,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "cottage",
+   "farm",
+   "interior",
+   "room",
+   "story",
+   "wall",
+   "window",
+   "wolf_goats"
+  ],
+  "px": [
+   685,
+   287
+  ]
+ },
+ {
+  "id": "story_wg_cottage_04",
+  "path": "art/atlas/story_wg_cottage/story_wg_cottage_04.webp",
+  "sheet": "story_wg_cottage",
+  "category": "story_building",
+  "label": "cottage front wall seen from inside: arched door with bar latch, two windows (daylight)",
+  "height_units": 0.68,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "cottage",
+   "door",
+   "farm",
+   "interior",
+   "room",
+   "story",
+   "wall",
+   "wolf_goats"
+  ],
+  "px": [
+   687,
+   286
+  ]
+ },
+ {
+  "id": "story_wg_cottage_05",
+  "path": "art/atlas/story_wg_cottage/story_wg_cottage_05.webp",
+  "sheet": "story_wg_cottage",
+  "category": "story_building",
+  "label": "wooden floorboards with a round braided rug (flat, from above)",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "cottage",
+   "farm",
+   "floor",
+   "interior",
+   "room",
+   "rug",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   933,
+   219
+  ]
+ },
+ {
+  "id": "story_wg_fx_00",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_00.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_prop",
+  "label": "big burlap flour sack, tied, flour spilling",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "flour",
+   "fx",
+   "mill",
+   "sack",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   323,
+   300
+  ]
+ },
+ {
+  "id": "story_wg_fx_01",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_01.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_fx",
+  "label": "puff cloud of white flour",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "dust",
+   "flour",
+   "fx",
+   "puff",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   342,
+   245
+  ]
+ },
+ {
+  "id": "story_wg_fx_02",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_02.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_fx",
+  "label": "water splash bursting up (crown of drops)",
+  "height_units": 0.32,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fx",
+   "splash",
+   "story",
+   "water",
+   "wolf_goats"
+  ],
+  "px": [
+   385,
+   280
+  ]
+ },
+ {
+  "id": "story_wg_fx_04",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_04.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_prop",
+  "label": "three white chalk sticks in a pile",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "chalk",
+   "fx",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   269,
+   170
+  ]
+ },
+ {
+  "id": "story_wg_fx_05",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_05.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_prop",
+  "label": "round grey stone",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fx",
+   "rock",
+   "stone",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   243,
+   212
+  ]
+ },
+ {
+  "id": "story_wg_fx_06",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_06.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_prop",
+  "label": "oval grey-brown stone",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fx",
+   "rock",
+   "stone",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   301,
+   176
+  ]
+ },
+ {
+  "id": "story_wg_fx_07",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_07.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_prop",
+  "label": "speckled round stone",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fx",
+   "rock",
+   "stone",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   289,
+   236
+  ]
+ },
+ {
+  "id": "story_wg_fx_08",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_08.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_prop",
+  "label": "chalk stick bitten in half with crumbs",
+  "height_units": 0.03,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "chalk",
+   "fx",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   322,
+   119
+  ]
+ },
+ {
+  "id": "story_wg_fx_10",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_10.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_fx",
+  "label": "three pale-blue water drops",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "drops",
+   "fx",
+   "story",
+   "water",
+   "wolf_goats"
+  ],
+  "px": [
+   256,
+   254
+  ]
+ },
+ {
+  "id": "story_wg_fx_13",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_13.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_fx",
+  "label": "round pale grey-blue snore bubble",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bubble",
+   "fx",
+   "sleep",
+   "snore",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   263,
+   246
+  ]
+ },
+ {
+  "id": "story_wg_fx_14",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_14.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_prop",
+  "label": "pile of grain with a wooden scoop",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fx",
+   "grain",
+   "mill",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   372,
+   254
+  ]
+ },
+ {
+  "id": "story_wg_fx_15",
+  "path": "art/atlas/story_wg_fx/story_wg_fx_15.webp",
+  "sheet": "story_wg_fx",
+  "category": "story_fx",
+  "label": "sparkle burst of cream-gold paper stars",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fx",
+   "sparkle",
+   "stars",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   325,
+   247
+  ]
+ },
+ {
+  "id": "story_wg_room_00",
+  "path": "art/atlas/story_wg_room/story_wg_room_00.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "tall grandfather clock (walnut longcase, round face, pendulum glass door)",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "clock",
+   "furniture",
+   "interior",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   139,
+   378
+  ]
+ },
+ {
+  "id": "story_wg_room_01",
+  "path": "art/atlas/story_wg_room/story_wg_room_01.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "grandfather clock with its case door open (empty case)",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "clock",
+   "furniture",
+   "interior",
+   "open",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   177,
+   378
+  ]
+ },
+ {
+  "id": "story_wg_room_02",
+  "path": "art/atlas/story_wg_room/story_wg_room_02.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "wooden bed with patchwork quilt (side view)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bed",
+   "furniture",
+   "interior",
+   "quilt",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   424,
+   272
+  ]
+ },
+ {
+  "id": "story_wg_room_03",
+  "path": "art/atlas/story_wg_room/story_wg_room_03.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "round wicker laundry basket with white sheets",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "basket",
+   "furniture",
+   "interior",
+   "laundry",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   310,
+   242
+  ]
+ },
+ {
+  "id": "story_wg_room_04",
+  "path": "art/atlas/story_wg_room/story_wg_room_04.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "table with a long red checked tablecloth to the floor",
+  "height_units": 0.21,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "furniture",
+   "interior",
+   "room",
+   "story",
+   "table",
+   "tablecloth",
+   "wolf_goats"
+  ],
+  "px": [
+   408,
+   205
+  ]
+ },
+ {
+  "id": "story_wg_room_05",
+  "path": "art/atlas/story_wg_room/story_wg_room_05.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "wooden chair with heart cut-out",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "chair",
+   "furniture",
+   "interior",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   167,
+   248
+  ]
+ },
+ {
+  "id": "story_wg_room_06",
+  "path": "art/atlas/story_wg_room/story_wg_room_06.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "wooden chair toppled on its side",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "chair",
+   "furniture",
+   "interior",
+   "messy",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   290,
+   170
+  ]
+ },
+ {
+  "id": "story_wg_room_07",
+  "path": "art/atlas/story_wg_room/story_wg_room_07.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "patchwork quilt thrown in a heap",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "furniture",
+   "interior",
+   "messy",
+   "quilt",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   423,
+   184
+  ]
+ },
+ {
+  "id": "story_wg_room_08",
+  "path": "art/atlas/story_wg_room/story_wg_room_08.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "laundry basket tipped over, sheets spilling",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "basket",
+   "furniture",
+   "interior",
+   "laundry",
+   "messy",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   275,
+   251
+  ]
+ },
+ {
+  "id": "story_wg_room_09",
+  "path": "art/atlas/story_wg_room/story_wg_room_09.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "table with its checked cloth pulled half off, cup tipped",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "furniture",
+   "interior",
+   "messy",
+   "room",
+   "story",
+   "table",
+   "wolf_goats"
+  ],
+  "px": [
+   324,
+   246
+  ]
+ },
+ {
+  "id": "story_wg_room_10",
+  "path": "art/atlas/story_wg_room/story_wg_room_10.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "wooden dresser with plates and cups",
+  "height_units": 0.42,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "cupboard",
+   "dresser",
+   "furniture",
+   "interior",
+   "room",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   225,
+   323
+  ]
+ },
+ {
+  "id": "story_wg_room_11",
+  "path": "art/atlas/story_wg_room/story_wg_room_11.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "small black iron stove with a kettle",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "furniture",
+   "interior",
+   "kettle",
+   "room",
+   "story",
+   "stove",
+   "wolf_goats"
+  ],
+  "px": [
+   180,
+   314
+  ]
+ },
+ {
+  "id": "story_wg_room_12",
+  "path": "art/atlas/story_wg_room/story_wg_room_12.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "wicker sewing basket with scissors, red thread, pincushion",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "furniture",
+   "interior",
+   "room",
+   "scissors",
+   "sewing",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   201,
+   226
+  ]
+ },
+ {
+  "id": "story_wg_room_13",
+  "path": "art/atlas/story_wg_room/story_wg_room_13.webp",
+  "sheet": "story_wg_room",
+  "category": "story_prop",
+  "label": "three-legged wooden stool",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "furniture",
+   "interior",
+   "room",
+   "stool",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   199,
+   223
+  ]
+ },
+ {
+  "id": "story_wg_hide_00",
+  "path": "art/atlas/story_wg_hide/story_wg_hide_00.webp",
+  "sheet": "story_wg_hide",
+  "category": "story_prop",
+  "label": "grandfather clock closed, the youngest kid goat's eyes peeking through the case glass",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "clock",
+   "goat",
+   "hiding",
+   "interior",
+   "kid_goat",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   198,
+   527
+  ]
+ },
+ {
+  "id": "story_wg_hide_01",
+  "path": "art/atlas/story_wg_hide/story_wg_hide_01.webp",
+  "sheet": "story_wg_hide",
+  "category": "story_prop",
+  "label": "grandfather clock open with the youngest kid goat squeezed inside",
+  "height_units": 0.6,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "clock",
+   "goat",
+   "hiding",
+   "interior",
+   "kid_goat",
+   "open",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   253,
+   525
+  ]
+ },
+ {
+  "id": "story_wg_hide_02",
+  "path": "art/atlas/story_wg_hide/story_wg_hide_02.webp",
+  "sheet": "story_wg_hide",
+  "category": "story_prop",
+  "label": "bed with a lumpy patchwork quilt: three kid goats hiding under it (ears, tail, hooves peek out)",
+  "height_units": 0.335,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bed",
+   "goat",
+   "hiding",
+   "interior",
+   "kid_goat",
+   "quilt",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   569,
+   405
+  ]
+ },
+ {
+  "id": "story_wg_hide_03",
+  "path": "art/atlas/story_wg_hide/story_wg_hide_03.webp",
+  "sheet": "story_wg_hide",
+  "category": "story_prop",
+  "label": "table with a long checked cloth, two kid goats' hooves and a tail peeking under the hem",
+  "height_units": 0.205,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat",
+   "hiding",
+   "interior",
+   "kid_goat",
+   "story",
+   "table",
+   "wolf_goats"
+  ],
+  "px": [
+   648,
+   318
+  ]
+ },
+ {
+  "id": "story_wg_hide_04",
+  "path": "art/atlas/story_wg_hide/story_wg_hide_04.webp",
+  "sheet": "story_wg_hide",
+  "category": "story_prop",
+  "label": "laundry basket with a kid goat's ears and eyes peeking over the rim",
+  "height_units": 0.186,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "basket",
+   "goat",
+   "hiding",
+   "interior",
+   "kid_goat",
+   "laundry",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   469,
+   402
+  ]
+ },
+ {
+  "id": "story_wg_meadow_00",
+  "path": "art/atlas/story_wg_meadow/story_wg_meadow_00.webp",
+  "sheet": "story_wg_meadow",
+  "category": "story_nature",
+  "label": "big old shady oak tree, thick gnarled trunk, round layered canopy",
+  "height_units": 1.6,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "farm",
+   "meadow",
+   "oak",
+   "story",
+   "tree",
+   "wolf_goats"
+  ],
+  "px": [
+   638,
+   557
+  ]
+ },
+ {
+  "id": "story_wg_meadow_01",
+  "path": "art/atlas/story_wg_meadow/story_wg_meadow_01.webp",
+  "sheet": "story_wg_meadow",
+  "category": "story_prop",
+  "label": "old round stone well with a shingled roof, winch, rope and bucket",
+  "height_units": 0.55,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "farm",
+   "meadow",
+   "story",
+   "water",
+   "well",
+   "wolf_goats"
+  ],
+  "px": [
+   409,
+   477
+  ]
+ },
+ {
+  "id": "story_wg_meadow_02",
+  "path": "art/atlas/story_wg_meadow/story_wg_meadow_02.webp",
+  "sheet": "story_wg_meadow",
+  "category": "story_prop",
+  "label": "front half of the stone well's rim (curved stone band)",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "farm",
+   "meadow",
+   "rim",
+   "story",
+   "well",
+   "wolf_goats"
+  ],
+  "px": [
+   372,
+   154
+  ]
+ },
+ {
+  "id": "story_wg_meadow_03",
+  "path": "art/atlas/story_wg_meadow/story_wg_meadow_03.webp",
+  "sheet": "story_wg_meadow",
+  "category": "story_nature",
+  "label": "long low leafy hedge bush",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "bush",
+   "farm",
+   "hedge",
+   "meadow",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   660,
+   233
+  ]
+ },
+ {
+  "id": "story_wg_meadow_04",
+  "path": "art/atlas/story_wg_meadow/story_wg_meadow_04.webp",
+  "sheet": "story_wg_meadow",
+  "category": "story_prop",
+  "label": "wooden signpost with two blank arrow boards",
+  "height_units": 0.35,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "farm",
+   "meadow",
+   "sign",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   250,
+   349
+  ]
+ },
+ {
+  "id": "story_wg_meadow_05",
+  "path": "art/atlas/story_wg_meadow/story_wg_meadow_05.webp",
+  "sheet": "story_wg_meadow",
+  "category": "story_prop",
+  "label": "small wooden market stall, striped awning, chalk and jars on the counter",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "any",
+  "tags": [
+   "chalk",
+   "farm",
+   "meadow",
+   "shop",
+   "stall",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   456,
+   367
+  ]
+ },
+ {
+  "id": "story_wg_cottage_04o",
+  "path": "art/atlas/story_wg_cottage/story_wg_cottage_04o.webp",
+  "sheet": "story_wg_cottage",
+  "category": "story_building",
+  "label": "cottage front wall seen from inside: arched door with bar latch, two windows (daylight) -- doorway open (cut out)",
+  "height_units": 0.68,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "cottage",
+   "door",
+   "farm",
+   "interior",
+   "open",
+   "room",
+   "story",
+   "wall",
+   "wolf_goats"
+  ],
+  "px": [
+   687,
+   286
+  ]
  }
 ]

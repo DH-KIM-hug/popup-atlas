@@ -470,7 +470,9 @@ func _run() -> void:
 			await _play_beat(beats[i])
 		var total := clock - t0
 		if stage and is_instance_valid(stage) and stage.tale.get("overlap_check", false):
-			print("OVERLAP_COUNT ", stage.overlap_count, " OCCLUDE_COUNT ", stage.occlude_count)
+			# totals over every page of the run (the last page's own counts in brackets)
+			print("OVERLAP_COUNT ", SpreadStage.run_overlaps, " OCCLUDE_COUNT ", SpreadStage.run_occludes, " (last page ",
+				stage.overlap_count, " / ", stage.occlude_count, ")")
 		if stage and is_instance_valid(stage):
 			var wrong := 0
 			var used := false
@@ -814,12 +816,16 @@ func _step_walk_actors(st: Dictionary) -> void:
 				if stage and is_instance_valid(stage):
 					stage.shot_to(str(st.get("release_shot", "stage")), st.get("release_at", null), {"rate": 1.2})
 			get_tree().create_timer(float(st["follow_for"])).timeout.connect(rel)
-	if has_to:
+	# wolf_goats 2026-11-23: `to` may map each role to its own mark ({kid1: "watch_kid1", mom: "watch_mom"})
+	var to_map: Dictionary = st["to"] if has_to and st["to"] is Dictionary else {}
+	if has_to and to_map.is_empty():
 		lead = stage.spot_point(st["to"])
 	for i in roles.size():
 		var a := stage.actor(str(roles[i]))
 		if a == null:
 			continue
+		if not to_map.is_empty():
+			lead = stage.spot_point(to_map.get(str(roles[i]), to_map.values()[0]))
 		if a.pop_target < 0.5:
 			var start: Vector3
 			if st.has("from"):
@@ -834,7 +840,7 @@ func _step_walk_actors(st: Dictionary) -> void:
 			a.puppet.set_figure(str(st.get("pose", "calm")) if a.has_pose(str(st.get("pose", ""))) else "calm", d.dot(stage.dir_vec("left")) > 0.5, true)
 		var goal := a.global_position + d * dist
 		if has_to:
-			goal = lead - d * 0.14 * i + stage.dir_vec("away") * 0.05 * (i % 2)
+			goal = lead if not to_map.is_empty() else lead - d * 0.14 * i + stage.dir_vec("away") * 0.05 * (i % 2)
 		if st.has("path"):  # explicit waypoints (spots), feet on the ground
 			var pts: Array = []
 			for q in st["path"]:
@@ -1061,6 +1067,10 @@ func _step_go_inside(st: Dictionary) -> void:
 					a.walk_to(stage.spot_point(tos[str(roles[i])]), spd * 0.8, "")
 			continue
 		stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
+	if st.get("keep_open", false):  # wolf_goats: the wolf leaves the door standing open behind him
+		while _line_busy:
+			await _frame()
+		return
 	sp.open_door(false)
 	if sound:
 		sound.step("go_inside", "door_shut", sp.door_point(true, toward))

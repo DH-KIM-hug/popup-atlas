@@ -28,7 +28,8 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 ATLAS = os.path.join(ROOT, "game", "art", "atlas")
 # catalog id -> number of bands (taps in three_pigs: straw 3, wood 5, brick 10 = 2 per band)
 HOUSES = {"story_houses_00": 3, "story_houses_03": 5, "story_houses_06": 5, "story_houses_08": 3, "story_houses_09": 3,
-          "story_wc_shop_00": 2, "story_sm_cottage_00": 2}
+          "story_wc_shop_00": 2, "story_sm_cottage_00": 2,
+          "story_wg_cottage_00": 2}
 # windows / doors (x0, y0, x1, y1 in facade px, measured on a grid sheet), kept whole in one band
 OPENINGS = {
     "story_houses_00": [(72, 158, 150, 228), (160, 165, 278, 302)],
@@ -39,6 +40,8 @@ OPENINGS = {
     "story_wc_shop_00": [(90, 230, 300, 445), (296, 225, 432, 470)],
     # sunmoon cottage (2026-11-22): lattice paper door and the paper-screen window
     "story_sm_cottage_00": [(214, 207, 362, 422), (422, 207, 588, 343)],
+    # wolf_goats goat cottage (2026-11-23): the arched door pokes into the thatch; the two shuttered windows
+    "story_wg_cottage_00": [(278, 207, 396, 375), (120, 225, 215, 315), (455, 225, 550, 315)],
 }
 # die-cut window glass (x0, y0, x1, y1; the blue panes inside go transparent, mullions stay) so a pig standing just
 # behind the front wall shows its face in the window, framed by it (2026-11-18 user: "아기돼지들 집에 있어야하지 않겠니?")
@@ -46,6 +49,8 @@ GLASS = {
     "story_houses_00": [(85, 170, 138, 223)],
     "story_houses_03": [(78, 142, 123, 200), (308, 142, 353, 200)],
     "story_houses_06": [(62, 188, 105, 243), (290, 188, 333, 243)],
+    # wolf_goats: the kids inside show through the two front windows (both panes of each)
+    "story_wg_cottage_00": [(136, 236, 199, 304), (471, 236, 533, 304)],
 }
 # door leaf (x0, y0 top of the leaf, x1; bottom = base; arch = round top) cut out as its own card on a side hinge
 DOORS = {
@@ -57,6 +62,8 @@ DOORS = {
     "story_wc_shop_00": (304, 242, 425, True, 443),
     # sunmoon cottage: the lattice paper door leaf; the veranda boards and the stepping stone stay on the wall
     "story_sm_cottage_00": (214, 207, 362, False, 422),
+    # wolf_goats: the arched green door; the stone step below stays on the wall
+    "story_wg_cottage_00": (278, 207, 396, True, 375),
 }
 # hand-picked wall cut rows (bottom → top) where the window rows leave too little room for even bands: a cut through a
 # window row steps up around the windows, so they stand whole on the band below
@@ -64,7 +71,7 @@ DOORS = {
 # starts as a foundation, not a floating door
 # (sunmoon 2026-11-22) wall / roof split row and the wall's own x extent where the automatic reads miss (a stone base
 # wider than the walls, a veranda)
-ROOF_Y = {"story_sm_cottage_00": 205}
+ROOF_Y = {"story_sm_cottage_00": 205, "story_wg_cottage_00": 232}
 WALL_X = {"story_sm_cottage_00": (60, 668)}
 CUTS = {"story_houses_06": [293, 275, 214], "story_houses_03": [211, 172, 140]}
 

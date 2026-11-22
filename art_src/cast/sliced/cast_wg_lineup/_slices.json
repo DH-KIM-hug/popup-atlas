@@ -1,0 +1,79 @@
+{
+ "sheet": "cast_wg_lineup",
+ "bg": [
+  0.976,
+  0.02,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_wg_lineup_00",
+   "bbox": [
+    61,
+    57,
+    470,
+    742
+   ],
+   "area": 177122,
+   "size": [
+    417,
+    693
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_lineup_01",
+   "bbox": [
+    549,
+    236,
+    967,
+    740
+   ],
+   "area": 118037,
+   "size": [
+    426,
+    512
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_lineup_02",
+   "bbox": [
+    1054,
+    230,
+    1478,
+    740
+   ],
+   "area": 114758,
+   "size": [
+    432,
+    518
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_wg_lineup_03",
+   "bbox": [
+    1548,
+    301,
+    1923,
+    740
+   ],
+   "area": 89726,
+   "size": [
+    383,
+    447
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

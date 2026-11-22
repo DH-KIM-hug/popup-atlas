@@ -1,0 +1,76 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "wolf_goats",
+  "story",
+  "interior",
+  "hiding",
+  "kid_goat"
+ ],
+ "items": {
+  "00": [
+   "grandfather clock closed, the youngest kid goat's eyes peeking through the case glass",
+   "story_prop",
+   0.6,
+   0,
+   {
+    "tags": [
+     "clock",
+     "goat"
+    ]
+   }
+  ],
+  "01": [
+   "grandfather clock open with the youngest kid goat squeezed inside",
+   "story_prop",
+   0.6,
+   0,
+   {
+    "tags": [
+     "clock",
+     "goat",
+     "open"
+    ]
+   }
+  ],
+  "02": [
+   "bed with a lumpy patchwork quilt: three kid goats hiding under it (ears, tail, hooves peek out)",
+   "story_prop",
+   0.335,
+   0,
+   {
+    "tags": [
+     "bed",
+     "quilt",
+     "goat"
+    ]
+   }
+  ],
+  "03": [
+   "table with a long checked cloth, two kid goats' hooves and a tail peeking under the hem",
+   "story_prop",
+   0.205,
+   0,
+   {
+    "tags": [
+     "table",
+     "goat"
+    ]
+   }
+  ],
+  "04": [
+   "laundry basket with a kid goat's ears and eyes peeking over the rim",
+   "story_prop",
+   0.186,
+   0,
+   {
+    "tags": [
+     "basket",
+     "laundry",
+     "goat"
+    ]
+   }
+  ]
+ }
+}

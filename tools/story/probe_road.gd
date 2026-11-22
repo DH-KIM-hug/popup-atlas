@@ -1,10 +1,13 @@
 extends SceneTree
 ## (sunmoon 2026-11-22) The whole page's road / stream map (world x, z; 0.4 step) and each template view's anchor,
 ## so a tale can lay out a long route (three mountain passes) on one spread.
-## godot --headless --path game --script res://../tools/story/probe_road.gd
+## godot --headless --path game --script res://../tools/story/probe_road.gd [-- <seed>]  (wolf_goats: seed arg)
 func _init() -> void:
 	var w := (load("res://scenes/world/meadow.tscn") as PackedScene).instantiate() as MeadowWorld
 	w.view = 0
+	var ua := OS.get_cmdline_user_args()
+	if ua.size() > 0:
+		w.seed_value = int(ua[0])
 	w.walk = false
 	w.with_audio = false
 	root.add_child(w)

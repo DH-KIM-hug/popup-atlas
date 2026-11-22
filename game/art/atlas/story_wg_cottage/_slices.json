@@ -1,0 +1,113 @@
+{
+ "sheet": "story_wg_cottage",
+ "bg": [
+  0.98,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wg_cottage_00",
+   "bbox": [
+    46,
+    20,
+    711,
+    425
+   ],
+   "area": 215373,
+   "size": [
+    673,
+    413
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_cottage_01",
+   "bbox": [
+    913,
+    56,
+    1490,
+    422
+   ],
+   "area": 180187,
+   "size": [
+    585,
+    374
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_cottage_02",
+   "bbox": [
+    742,
+    209,
+    884,
+    421
+   ],
+   "area": 27774,
+   "size": [
+    150,
+    220
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_cottage_03",
+   "bbox": [
+    45,
+    475,
+    722,
+    754
+   ],
+   "area": 181931,
+   "size": [
+    685,
+    287
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_cottage_04",
+   "bbox": [
+    808,
+    475,
+    1487,
+    753
+   ],
+   "area": 182274,
+   "size": [
+    687,
+    286
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_cottage_05",
+   "bbox": [
+    304,
+    796,
+    1229,
+    1007
+   ],
+   "area": 182922,
+   "size": [
+    933,
+    219
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

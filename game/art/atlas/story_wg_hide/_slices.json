@@ -1,0 +1,96 @@
+{
+ "sheet": "story_wg_hide",
+ "bg": [
+  0.976,
+  0.024,
+  0.973
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wg_hide_00",
+   "bbox": [
+    161,
+    21,
+    351,
+    540
+   ],
+   "area": 76467,
+   "size": [
+    198,
+    527
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_hide_01",
+   "bbox": [
+    487,
+    21,
+    732,
+    538
+   ],
+   "area": 93194,
+   "size": [
+    253,
+    525
+   ],
+   "halo": 1413,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_hide_02",
+   "bbox": [
+    857,
+    125,
+    1418,
+    522
+   ],
+   "area": 154951,
+   "size": [
+    569,
+    405
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_hide_03",
+   "bbox": [
+    124,
+    638,
+    764,
+    948
+   ],
+   "area": 167521,
+   "size": [
+    648,
+    318
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_hide_04",
+   "bbox": [
+    898,
+    561,
+    1359,
+    955
+   ],
+   "area": 131267,
+   "size": [
+    469,
+    402
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

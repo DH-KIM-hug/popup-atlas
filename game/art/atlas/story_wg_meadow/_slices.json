@@ -1,0 +1,113 @@
+{
+ "sheet": "story_wg_meadow",
+ "bg": [
+  0.969,
+  0.012,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wg_meadow_00",
+   "bbox": [
+    22,
+    21,
+    652,
+    570
+   ],
+   "area": 248067,
+   "size": [
+    638,
+    557
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_meadow_01",
+   "bbox": [
+    680,
+    97,
+    1081,
+    566
+   ],
+   "area": 119341,
+   "size": [
+    409,
+    477
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_meadow_02",
+   "bbox": [
+    1131,
+    420,
+    1495,
+    566
+   ],
+   "area": 41590,
+   "size": [
+    372,
+    154
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_meadow_03",
+   "bbox": [
+    24,
+    744,
+    676,
+    969
+   ],
+   "area": 121299,
+   "size": [
+    660,
+    233
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_meadow_04",
+   "bbox": [
+    726,
+    630,
+    968,
+    971
+   ],
+   "area": 40623,
+   "size": [
+    250,
+    349
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_meadow_05",
+   "bbox": [
+    1048,
+    621,
+    1496,
+    980
+   ],
+   "area": 120608,
+   "size": [
+    456,
+    367
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

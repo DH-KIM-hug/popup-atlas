@@ -2037,3 +2037,46 @@ Plan (read script, one place, camera moves only; seed 3 view 4: the long thatche
   line shots; the glide to the barn passes close in front of the line (grandma big at the frame edge for ~0.5 s); the
   paper turn into the tumble pose shows six edge-on slivers for one frame; grandpa only claps during "썰고" (no chopping
   figure); the pulled turnip stays in the garden at the feast.
+
+## 2026-11-23 — wolf_goats (「늑대와 일곱 아기염소」) phase 1: plan, script, art, first playable run
+  - Plan: game/stories/wolf_goats/PLAN.md (beats → 2 spreads on the seed-2 meadow: the goats' cottage page for beats
+    1–6 with camera moves only — room inside the house body, the stall and the mill across the road — and the oak /
+    well page for 7–10). Source: 톡톡's READ-MODE script (all recorded, already softened: swallowing off screen, the
+    wolf runs off soaking wet); only the play script's tap instructions borrowed (wg_044/046/047/049/050/051), voiced
+    once. Narration used 205 s (53 segments); "하나, 둘, 셋…" trimmed off r0802's clip (TRIM, later cut for pace);
+    the moral r1005 and the semi-moral r1003 not used. Cover / replay prompts reuse witch_candy's clips (same narrator
+    voice id) — nothing to record. Story-start music: 톡톡's own for this tale (Schumann 〈만족〉) as intro_happiness.
+  - Seed: tools/story/tales/wolf_goats.py (READ_SCRIPT, READ_SEG_KEEP for narrator tags the picture shows), reseeded
+    through tools/story/wg_seed.sh (temp with --force → diff count → copy: --out without --force silently kept a stale
+    temp the first time).
+  - Art (Codex, paper style blocks, magenta, md5-checked, no duplicates): goat lineup from 톡톡's design; mother goat
+    (13 figures + walk 4/2/2), ONE kid design with a green collar (14 figures + walk 4/2/2 + run 4/2) cloned into six
+    kids with recoloured collars and heights (tools/cast/wolf_goats_cast.py), the youngest (7 figures + walk + run);
+    the shared three_pigs wolf gained 12 figures (knock, chalk munch, sweet voice, floury paw, sneeze, search, asleep
+    full / stitched, groggy, peering, tumbling, soaking wet) + flour walk 4/2/2, full-belly walk 4/2/2, wet run 4/2.
+    Shared atlas sheets: story_wg_cottage (front with arched door → fold bands + door leaf + body via
+    tools/atlas/wg_cottage.py, room walls, floor), story_wg_room (clock, bed, basket, table, chair + messy variants,
+    stove, dresser, sewing basket, stool), story_wg_hide (the same furniture with the kids hiding), story_wg_meadow
+    (oak, stone well, hedge, stall), story_wg_fx (flour sack / puff, splash, chalk, stones, drops, snore bubble,
+    sparkle). Reused: windmill, sacks, stepping stones, the wolf. Book: cover / title (v2: v1 turned the ㄴ of 늑 into
+    wolf ears) / spot / back cover. SFX copied from 톡톡 (knock, crunch, snore, splash, gulp, snip, stone, …) as wg.*.
+  - Engine (shared, small): walk `to` per-role map; go_inside `keep_open`; stage `register_prop` — handler fx props in
+    the overlap / occlusion check; OVERLAP/OCCLUDE summary now totals every page. check_lines knows the tale verb
+    go_out. Regression (no movie): sun_wind 214.5 s, three_pigs 315.7 s, witch_candy 456.5 s, sunmoon 389.7 s —
+    STORY_DONE, missing_audio=[] missing_sound=[], CHECK_LINES OK ×4, 0 script errors.
+  - Iterations v0 → v9 (full movie runs at 1200x900): 7:32 → 6:15 by placing the stall / mill across the road,
+    exits that fold out at the road, dropping lines the taps show (r0200, r0503, r0504 nar, r0703, r0705, r0802,
+    r0803 nar, r0901); room shots from just inside the front wall looking down on a family standing deep in the room
+    (v0: giant heads at the lens); the doorway cut out of the inside front-wall card while the door stands open
+    (story_wg_cottage_04o); the oak scene moved off a meadow terrace step that hid kids and blocked close shots; kid
+    flight / walk orders so nobody crosses anyone; both paws shown from outside (inside ↔ outside turns through the
+    doorway gave CAM_JUMP 3.0–3.1°).
+  - Final run v9 (artifacts/video/wolf_goats_full_v1.mp4 29.8 MB, artifacts/wolf_goats/full_v1_sheet.jpg,
+    artifacts/wolf_goats/run_full_v1.log): STORY_DONE 374.9 s (6:15), CHECK_LINES OK (53 segments), VOICE_DUP=0,
+    CAM_JUMP=0 CAM_JERK=0 SPEAKER_OFF=0, OVERLAP_COUNT 0 OCCLUDE_COUNT 0 (run totals), missing_audio=[],
+    missing_sound=[], SET_CHECK all zero, no script errors. Nothing needs recording.
+  - Still off: 6:15 is over the ~4–5 min aim (205 s narration + 14 taps + 1 page turn + the shared ending ~20 s); the
+    "dark" paw is the wolf's own grey paw held up at the door (no darker figure); the hiding variants (kids peeking from
+    under the quilt / table) are small in the room shot; the mother's return shows the door shut a moment before she
+    opens it; a template butterfly card crosses close to the lens once on the oak page; the wolf's wet run-away is small
+    in the wide; nobody has listened to the mix yet.

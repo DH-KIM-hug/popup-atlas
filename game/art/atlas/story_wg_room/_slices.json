@@ -1,0 +1,249 @@
+{
+ "sheet": "story_wg_room",
+ "bg": [
+  0.976,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wg_room_00",
+   "bbox": [
+    120,
+    20,
+    251,
+    390
+   ],
+   "area": 37629,
+   "size": [
+    139,
+    378
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_01",
+   "bbox": [
+    373,
+    20,
+    542,
+    390
+   ],
+   "area": 46328,
+   "size": [
+    177,
+    378
+   ],
+   "halo": 1174,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_02",
+   "bbox": [
+    649,
+    99,
+    1065,
+    363
+   ],
+   "area": 72973,
+   "size": [
+    424,
+    272
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_03",
+   "bbox": [
+    1153,
+    130,
+    1455,
+    364
+   ],
+   "area": 56151,
+   "size": [
+    310,
+    242
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_04",
+   "bbox": [
+    28,
+    444,
+    428,
+    641
+   ],
+   "area": 68193,
+   "size": [
+    408,
+    205
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_05",
+   "bbox": [
+    499,
+    411,
+    658,
+    651
+   ],
+   "area": 22232,
+   "size": [
+    167,
+    248
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_06",
+   "bbox": [
+    735,
+    474,
+    1017,
+    636
+   ],
+   "area": 25409,
+   "size": [
+    290,
+    170
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_07",
+   "bbox": [
+    1059,
+    462,
+    1474,
+    638
+   ],
+   "area": 46919,
+   "size": [
+    423,
+    184
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_08",
+   "bbox": [
+    14,
+    739,
+    281,
+    982
+   ],
+   "area": 44520,
+   "size": [
+    275,
+    251
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_09",
+   "bbox": [
+    288,
+    740,
+    604,
+    978
+   ],
+   "area": 45008,
+   "size": [
+    324,
+    246
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_10",
+   "bbox": [
+    627,
+    667,
+    844,
+    982
+   ],
+   "area": 58413,
+   "size": [
+    225,
+    323
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_11",
+   "bbox": [
+    888,
+    676,
+    1060,
+    982
+   ],
+   "area": 30308,
+   "size": [
+    180,
+    314
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_12",
+   "bbox": [
+    1094,
+    763,
+    1287,
+    981
+   ],
+   "area": 27999,
+   "size": [
+    201,
+    226
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_room_13",
+   "bbox": [
+    1325,
+    767,
+    1516,
+    982
+   ],
+   "area": 22031,
+   "size": [
+    199,
+    223
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
