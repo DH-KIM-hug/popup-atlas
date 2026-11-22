@@ -468,11 +468,11 @@ func _play_beat(b: Dictionary) -> void:
 			stage.set_pose(_pose)
 	var prev: Dictionary = {}
 	for st: Dictionary in b.get("steps", []):
-		# a quick cam move right before a line: the line starts once the glide is past halfway (the eased moves land
+		# a quick cam move right before a line: the line starts once the glide is well under way (the eased moves land
 		# later than the old exponential chase did, and a quote must not start before its speakers are in frame)
 		if str(st.get("do", "")) == "say" and str(prev.get("do", "")) == "cam" and float(prev.get("rate", 2.4)) >= 2.0 \
 				and stage and is_instance_valid(stage):
-			await _wait(stage.cam_settle_left(0.55))
+			await _wait(stage.cam_settle_left(0.4))
 		await _step(st, b)
 		prev = st
 

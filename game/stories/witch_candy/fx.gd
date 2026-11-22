@@ -1417,11 +1417,14 @@ func _name_jars(st: Dictionary, R: Node) -> void:
 		# straight glide from the jar passed through her card)
 		stage.shot_to("shelf", "shelf_mid", {"rate": 3.0})
 		var tt := 0.0
-		while tt < 0.55:
+		while tt < 0.35:
 			tt += await R._frame()
-		stage.shot_to("face_in", "in_kid", {"rate": 3.0})
+		stage.shot_to("face_in", "in_kid", {"rate": 4.0})
 	while R._line_busy:
 		await R._frame()
+	if str(st.get("then", "")) == "kid_yuck":
+		while stage.cam_settle_left(0.5) > 0.0:  # her "으엑!" starts with her face in the frame
+			await R._frame()
 
 
 ## Out of the shop one at a time (v2, user: "문 아래 돌지방을 통과 ... 이런게 없어야"): the door swings fully open

@@ -1473,7 +1473,7 @@ func preset_open(b: Dictionary) -> void:
 ## in flight). Yaw takes the short way round. The run log's CAM_JUMP / CAM_JERK check (story_runner) measures it.
 const CAM_MIN_S := 0.8
 const CAM_MAX_S := 2.5
-const CAM_LONG_S := 3.5  ## the longest move a far traverse gets (peak speed kept under ~60°/s)
+const CAM_LONG_S := 4.2  ## the longest move a far traverse gets (peak speed kept under ~45°/s)
 const CAM_SLOW_MAX_S := 6.0  ## a slow push-in a tale asks for (rate < 1)
 const CAM_FOLLOW_S := 0.35
 var _cs := {}  ## glide state per parameter: [value, velocity, pre-smoothed goal, its velocity]
@@ -1504,14 +1504,15 @@ func _begin_move(rate: float) -> void:
 		d *= clampf(2.4 / rate, 0.85, 1.0)  # a quick move, never a whip
 	elif rate > 0.0:
 		d = maxf(d, minf(3.0 / rate, CAM_SLOW_MAX_S))
-	d = maxf(d, minf(1.74 * mag / 60.0, CAM_LONG_S))  # a long way (out of a room to the street): longer, never a whip
-	_move_d = maxf(d, CAM_MIN_S)
+	d = maxf(d, minf(1.74 * mag / 45.0, CAM_LONG_S))  # a long way (out of a room to the street): longer, never a whip
+	# a new shot mid-move never hurries the glide that is still under way (its speed carries into the new move)
+	_move_d = maxf(maxf(d, CAM_MIN_S), minf(_move_d - _move_t, CAM_MAX_S))
 	_move_t = 0.0
 	_cam_w = 7.75 / _move_d  # two stages in series: ~95 % of the way at _move_d
 
 
 ## Seconds until the current move has gone `frac` of its time (0.85: nearly landed; the runner holds tap prompts
-## that long, and a line after a quick move until halfway).
+## that long, and a line after a quick move until it is well under way).
 func cam_settle_left(frac := 0.85) -> float:
 	return maxf(0.0, _move_d * frac - _move_t)
 
