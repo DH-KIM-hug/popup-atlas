@@ -1883,6 +1883,18 @@ Deliver: Vite build + run instructions, 30 s gameplay capture, final side-by-sid
   - Tales: three_pigs wolf entrance = crane up at the brick lot, across high, down low on the wolf (no cut);
     witch_candy jar → Dahyun's face goes via the shelf (the straight glide passed through her card) and her "으엑!"
     waits for her face.
+    The chimney pull-out in three_pigs backs out through the front first, then settles on the house; distance
+    glides in log space (even dolly speed).
+  - After (latest build): CAM_JUMP=0 CAM_JERK=0 on all four. witch_candy 443.7 s (movie, artifacts/camera/final4,
+    VOICE_DUP=0, BLACK_LIPS 0, OVERLAP 7 / OCCLUDE 0, CHECK_LINES OK); sunmoon 401.9 s (movie; VOICE_DUP=0,
+    OVERLAP 1 / OCCLUDE 12 vs 11 before: mom / tiger briefly behind ridge_2_l / ledge_3 on the pass-2 tracking
+    shot; CHECK_LINES OK); three_pigs 310.6 s, sun_wind 214.2 s (no-movie runs; CHECK_LINES OK). missing_audio=[]
+    missing_sound=[] everywhere. Runtime: +3 s three_pigs (the wolf's crane), sunmoon ~+6 s (lines wait for quick
+    cams; its before run predates v7), witch_candy / sun_wind within noise of the other agents' changes.
+  - Videos: artifacts/video/witch_candy_full_v11.mp4, artifacts/sunmoon/sunmoon_full_v8.mp4; before / after 8 fps
+    tiles of the three worst moments per tale: artifacts/camera/sheets/<tale>_<n>.jpg.
+  - Note: a transient parse error in spread_stage.gd (15:45–15:55) broke the sunmoon agent's v7 recording
+    (artifacts/sunmoon/sunmoon_full_v7.mp4 is 10 min of nothing; run_full_v7.log shows the error).
 
 ## 2026-11-22 — covers round 3 (coordinator review)
   - sunmoon back cover redrawn: the sun with the sister's face and the moon with the brother's face over the quiet
