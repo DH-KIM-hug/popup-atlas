@@ -1858,8 +1858,11 @@ func _process(dt: float) -> void:
 	var wf := cw
 	if _move_t > _move_d:  # the move has landed: the focus tightens to a follow
 		wf = lerpf(cw, maxf(cw, 4.0 / CAM_FOLLOW_S), clampf((_move_t - _move_d) / 0.8, 0.0, 1.0))
-	rig.distance = _glide("dist", rig.distance, float(_cam[0]), cw, dt)
-	_cam_wrote["dist"] = rig.distance
+	# distance glides in log space: a dolly from 0.6 to 3.9 grows the view at an even rate (a linear glide pulled the
+	# first half of the way out of a room at twice the speed of the rest)
+	var ld := _glide("ldist", log(maxf(rig.distance, 0.05)), log(maxf(float(_cam[0]), 0.05)), cw, dt)
+	_cam_wrote["ldist"] = ld
+	rig.distance = exp(ld)
 	var el_off := 0.0
 	if not has_walker:
 		# stage camera: yaw offset per shot, a hand-held miniature drift (never locked), shake
@@ -2139,19 +2142,25 @@ func _camera_inside_check() -> void:
 
 
 static func _make_disc_texture(fill: Color, rim: Color) -> Texture2D:
-	var n := 192
+	# cut-paper disc (2026-11-22 paper look): two stacked paper layers with a deckled cut, a thin darker cut line at
+	# each edge and a faint fibre tooth; no stitch ring
+	var n := 384
 	var img := Image.create(n, n, false, Image.FORMAT_RGBA8)
 	var c := Vector2(n, n) * 0.5
+	var cut := rim.darkened(0.35)
 	for y in n:
 		for x in n:
 			var p := Vector2(x + 0.5, y + 0.5) - c
 			var a := atan2(p.y, p.x)
-			var r := n * 0.47 + sin(a * 23.0) * 0.8 + sin(a * 7.0 + 1.0) * 1.2  # deckled cut
+			var r := n * 0.47 + sin(a * 23.0) * 1.6 + sin(a * 7.0 + 1.0) * 2.4 + sin(a * 61.0) * 0.6  # deckled cut
+			var r2 := r - 10.0 + sin(a * 17.0 + 2.0) * 1.2
 			var d := p.length()
 			if d < r:
-				var col := fill if d < r - 5.0 else rim
-				if d < r * 0.9 and fmod(a * 12.0 / TAU + 0.5, 1.0) < 0.03 and d > r * 0.84:
-					col = fill.lerp(rim, 0.4)  # faint printed stitch ring
+				var col := fill if d < r2 else rim
+				if absf(d - r2) < 1.2 or d > r - 1.6:
+					col = col.lerp(cut, 0.55)
+				var t := fmod(sin(x * 12.9898 + y * 78.233) * 43758.5453, 1.0)
+				col = col.darkened(absf(t) * 0.04)
 				img.set_pixel(x, y, col)
 			else:
 				img.set_pixel(x, y, Color(0, 0, 0, 0))

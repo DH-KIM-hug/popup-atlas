@@ -45,6 +45,9 @@ var _dim := 1.0  ## street lights factor (pumpkin glow)
 var _dim_t := 1.0
 
 
+var _auto_used := {}  ## ingredients the autoplay already used (_choose_auto)
+
+
 func setup() -> void:
 	for a in OS.get_cmdline_user_args():
 		if a.begins_with("--wc-results="):  # recordings / branch checks: force the results of the rounds
@@ -599,7 +602,13 @@ func _choose_auto(st: Dictionary) -> Array:
 				pairs.append([a, b])
 	if pairs.is_empty():
 		return [keys[randi() % keys.size()], keys[randi() % keys.size()]]
-	return pairs[randi() % pairs.size()]
+	# autoplay: prefer ingredients not used in an earlier round, so a recording never voices the same ingredient
+	# line twice (VOICE_DUP; a child may still pick one again, which is fine)
+	var fresh := pairs.filter(func(pq): return not _auto_used.has(pq[0]) and not _auto_used.has(pq[1]))
+	var pick: Array = (fresh if not fresh.is_empty() else pairs)[randi() % (fresh if not fresh.is_empty() else pairs).size()]
+	_auto_used[pick[0]] = true
+	_auto_used[pick[1]] = true
+	return pick
 
 
 func _result_of(st: Dictionary, picks: Array) -> String:
