@@ -1,0 +1,181 @@
+{
+ "sheet": "story_rp_room",
+ "bg": [
+  0.988,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_rp_room_00",
+   "bbox": [
+    60,
+    64,
+    372,
+    570
+   ],
+   "area": 152291,
+   "size": [
+    320,
+    514
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_01",
+   "bbox": [
+    426,
+    64,
+    742,
+    570
+   ],
+   "area": 154574,
+   "size": [
+    324,
+    514
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_02",
+   "bbox": [
+    796,
+    64,
+    1111,
+    570
+   ],
+   "area": 153938,
+   "size": [
+    323,
+    514
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_03",
+   "bbox": [
+    1166,
+    64,
+    1482,
+    570
+   ],
+   "area": 154589,
+   "size": [
+    324,
+    514
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_04",
+   "bbox": [
+    37,
+    685,
+    338,
+    942
+   ],
+   "area": 50198,
+   "size": [
+    309,
+    265
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_05",
+   "bbox": [
+    370,
+    794,
+    505,
+    939
+   ],
+   "area": 12098,
+   "size": [
+    143,
+    153
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_06",
+   "bbox": [
+    512,
+    634,
+    691,
+    949
+   ],
+   "area": 28520,
+   "size": [
+    187,
+    323
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_07",
+   "bbox": [
+    710,
+    750,
+    938,
+    946
+   ],
+   "area": 34791,
+   "size": [
+    236,
+    204
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_08",
+   "bbox": [
+    959,
+    684,
+    1167,
+    945
+   ],
+   "area": 26218,
+   "size": [
+    216,
+    269
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_room_09",
+   "bbox": [
+    1206,
+    631,
+    1494,
+    955
+   ],
+   "area": 78883,
+   "size": [
+    296,
+    332
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

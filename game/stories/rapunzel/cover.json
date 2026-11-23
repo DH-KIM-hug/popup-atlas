@@ -1,0 +1,44 @@
+{
+ "note": "The tale's picture book: cover / title page / back cover (game/story/book_model.gd) and the ending's curtain call (story_runner._curtain_call). Art: tools/art/rapunzel_jobs.py (cover jobs) -> tools/art/cover_build.py.",
+ "cover": {
+  "art": "res://stories/rapunzel/art/cover_art.webp",
+  "back": "res://stories/rapunzel/art/cover_back.webp",
+  "title": "res://stories/rapunzel/art/cover_title.webp",
+  "spot": "res://stories/rapunzel/art/cover_spot.webp",
+  "end_title": "res://story/art/end_title.webp",
+  "end_rect": [
+   0.5,
+   0.13,
+   0.3
+  ],
+  "mark": [
+   0.5,
+   0.968
+  ],
+  "title_rect": [
+   0.5,
+   0.15,
+   0.74
+  ],
+  "light": "day",
+  "cloth": "3f6b3a",
+  "cloth_dark": "2c4f29",
+  "endpaper": "c8962a",
+  "endpaper_motif": "f4e3b0",
+  "page": "f4ead3"
+ },
+ "curtain": {
+  "who": [
+   [
+    "rap",
+    "short_happy"
+   ],
+   [
+    "prince",
+    "happy"
+   ]
+  ],
+  "shot": "field",
+  "at": "field_focus"
+ }
+}

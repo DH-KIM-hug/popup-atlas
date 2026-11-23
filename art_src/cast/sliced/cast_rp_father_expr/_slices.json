@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_rp_father_expr",
+ "bg": [
+  0.973,
+  0.02,
+  0.961
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_rp_father_expr_00",
+   "bbox": [
+    77,
+    45,
+    312,
+    684
+   ],
+   "area": 101080,
+   "size": [
+    243,
+    647
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_father_expr_01",
+   "bbox": [
+    422,
+    45,
+    672,
+    684
+   ],
+   "area": 104857,
+   "size": [
+    258,
+    647
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_father_expr_02",
+   "bbox": [
+    735,
+    119,
+    1085,
+    684
+   ],
+   "area": 107343,
+   "size": [
+    358,
+    573
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_father_expr_03",
+   "bbox": [
+    1112,
+    45,
+    1416,
+    684
+   ],
+   "area": 109306,
+   "size": [
+    312,
+    647
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_father_expr_04",
+   "bbox": [
+    1490,
+    45,
+    1726,
+    684
+   ],
+   "area": 100735,
+   "size": [
+    244,
+    647
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_father_expr_05",
+   "bbox": [
+    1798,
+    75,
+    2113,
+    687
+   ],
+   "area": 101838,
+   "size": [
+    323,
+    620
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

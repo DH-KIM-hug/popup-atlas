@@ -1,0 +1,147 @@
+{
+ "sheet": "cast_rp_gothel_expr",
+ "bg": [
+  0.98,
+  0.012,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_rp_gothel_expr_00",
+   "bbox": [
+    24,
+    127,
+    266,
+    639
+   ],
+   "area": 78733,
+   "size": [
+    250,
+    520
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_gothel_expr_01",
+   "bbox": [
+    287,
+    127,
+    547,
+    639
+   ],
+   "area": 83253,
+   "size": [
+    268,
+    520
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_gothel_expr_02",
+   "bbox": [
+    550,
+    88,
+    816,
+    638
+   ],
+   "area": 93207,
+   "size": [
+    274,
+    558
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 2
+  },
+  {
+   "id": "cast_rp_gothel_expr_03",
+   "bbox": [
+    838,
+    127,
+    1076,
+    639
+   ],
+   "area": 81343,
+   "size": [
+    246,
+    520
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_gothel_expr_04",
+   "bbox": [
+    1086,
+    127,
+    1372,
+    638
+   ],
+   "area": 93142,
+   "size": [
+    294,
+    519
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_gothel_expr_05",
+   "bbox": [
+    1391,
+    127,
+    1633,
+    638
+   ],
+   "area": 83982,
+   "size": [
+    250,
+    519
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_gothel_expr_06",
+   "bbox": [
+    1650,
+    129,
+    1848,
+    638
+   ],
+   "area": 67825,
+   "size": [
+    206,
+    517
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_gothel_expr_07",
+   "bbox": [
+    1896,
+    122,
+    2147,
+    638
+   ],
+   "area": 80039,
+   "size": [
+    259,
+    524
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

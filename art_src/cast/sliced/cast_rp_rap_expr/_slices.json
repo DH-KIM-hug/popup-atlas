@@ -1,0 +1,130 @@
+{
+ "sheet": "cast_rp_rap_expr",
+ "bg": [
+  0.988,
+  0.024,
+  0.969
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_rp_rap_expr_00",
+   "bbox": [
+    50,
+    55,
+    323,
+    668
+   ],
+   "area": 102580,
+   "size": [
+    281,
+    621
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_expr_01",
+   "bbox": [
+    351,
+    55,
+    613,
+    668
+   ],
+   "area": 97284,
+   "size": [
+    270,
+    621
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_expr_02",
+   "bbox": [
+    639,
+    55,
+    907,
+    668
+   ],
+   "area": 96914,
+   "size": [
+    276,
+    621
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_expr_03",
+   "bbox": [
+    894,
+    55,
+    1250,
+    668
+   ],
+   "area": 103866,
+   "size": [
+    364,
+    621
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_expr_04",
+   "bbox": [
+    1269,
+    59,
+    1521,
+    668
+   ],
+   "area": 98690,
+   "size": [
+    260,
+    617
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_expr_05",
+   "bbox": [
+    1570,
+    56,
+    1829,
+    668
+   ],
+   "area": 95395,
+   "size": [
+    267,
+    620
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_expr_06",
+   "bbox": [
+    1842,
+    55,
+    2143,
+    668
+   ],
+   "area": 101385,
+   "size": [
+    309,
+    621
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

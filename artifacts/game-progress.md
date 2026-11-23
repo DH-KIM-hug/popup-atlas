@@ -2121,3 +2121,65 @@ Plan (read script, one place, camera moves only; seed 3 view 4: the long thatche
     the start of the sea beat passes a wall card (one blurry second); the carry to the shore happens off frame (we see
     the splash and the swimming head); the granny's stirring figure carries its own pot beside the hearth's cauldron;
     the yard is a winter of snow patches on a green paper ground (no snow ground option); hoe weeds read small.
+
+## 2026-11-23 — rapunzel (「라푼젤」) v1: plan, shared cast, tower room art, kit tower, playable tale, full run
+Plan (READ script seeded, READ_SCRIPT = True; 톡톡's intro for rapunzel = intro_magic (already in the catalog); every
+voice is ElevenLabs — nar Annie, rap Sora, gothel Matilda, father Namchun, mother Bella, prince Klamon; softening as in
+톡톡's read script: no fall into thorns, no blindness — Gothel's magic wind sets the prince down softly in the grass):
+| beat | page / place | lines | taps | camera |
+|---|---|---|---|---|
+| cover | book | rp_n01 (new) | open | — |
+| home 담 너머 텃밭 | home (seed 5 view 4): cottage, stone wall + iron gate, rampion garden, witch's cottage | r0100 r0101 r0104 r0106 | — | crane → est, over the wall, parents two-shot |
+| night 라푼젤 풀 | home, night | r0201 r0202 r0204 | rampion ×1 (rp_n03) | gate track, rampion close, low on the witch, two-shot |
+| baby 아기 | home, late | r0206 | — | door three-shot; the witch vanishes in sparkles with the baby |
+| tower 문 없는 탑 | forest (seed 4 view 0): kit tower (stage 0) | r0300 r0301 | the witch ×1 (rp_n04) → the tower rises | crane → wide, witch, wide, window |
+| hair 머리를 내려요 | forest | r0401 r0403 | window ×1 (rp_n05) → the braid unrolls | low up the wall, window, braid fall, climb |
+| song 탑 안의 노래 | forest, late | r0501 rp_x_hum r0503 | window ×1 (rp_n06) → the hum + notes | window side |
+| prince 노랫소리 | forest, dusk | r0600 r0602 r0606 r0607 r0609 | — (the braid falls by itself) | road track, look up, hide two-shot, climb |
+| climb 왕자가 올라와요 | forest, dusk | r0701 r0702 | window ×1 (ring only) | low, window, braid fall, climb |
+| meet 탑 꼭대기 방 | room (ring of wall cards, seed 4 view 5) | r0704 r0705 | — | room, low on her, two-shot |
+| snip 싹둑 | room, late | r0802 r0803 r0805 | — | room, low on the witch, two-shot; snip → short hair → she vanishes |
+| empty 빈 탑 | forest, dusk | r0900 r0902 r0903 r0905 r0906 r0907 r0908 | — | road, low, braid, climb (stops ¾), the witch at the window, the float down, the walk out |
+| reunion 노래를 따라서 | forest (the field cottage down the road), evening | rp_x_hum r1004 r1005 r1006 r1007 r1008 + rp_n02 | the pair ×1 (rp_n07) → hands + petals | field, reunion two-shot, field; book closes |
+- Cuts (picture tells / no lesson): r0102 r0103 r0105 r0200 r0203 r0205 r0207 r0302-r0305 (r0304 counts animals)
+  r0400 r0402 r0404-r0406 r0500 r0502 r0504 r0505 r0601 r0603-r0605 r0608 r0700 r0703 r0706-r0709 r0800 r0801 r0804
+  r0806 r0901 r0904 r0909 r1000-r1003 r1009, the moral r1010. Read script 391 s of narration -> ~190 s used.
+- One caption, one voice: ElevenLabs speech-to-text on suspicious clips found the prince's r0907 says "라푼젤" five times
+  (11.2 s -> 6.70-9.30 s kept) and Rapunzel's r0704 says her line twice (0-2.85 s kept); TRIM_SEG via tools/story/rp_trim.py.
+- Voice: 7 new narrator lines recorded with the read script's narrator voice (Lb7qkOn5hF8p7qfCDH8q, eleven_v4; 337
+  characters, ledger artifacts/rapunzel/el_ledger.json): rp_n01 cover, rp_n02 replay (the other tales' clips are another
+  narrator voice), rp_n03..n07 tap prompts (the play script's taps were quizzes, nothing to borrow). Checked by STT: each
+  clip says its sentence once. Nobody has listened to them yet.
+- Art (Codex, paper style blocks, magenta, single-character refs, md5-unique raws): NEW shared cast skins rapunzel
+  (7 long-braid figures, 8 short-hair figures incl. side / back, 5 window figures, short-hair walk 4/2/2), gothel (12
+  figures + 2 window figures + climb_cycle 2 + walk 4/2/2), prince (12 figures + climb_cycle 2 + walk 4/2/2 + run 4/2),
+  peasant_father (6 + walk 4/2/2), peasant_mother (4) via tools/cast/rapunzel_cast.py (merging);
+  contact artifacts/rapunzel/cast_contact.png. NEW shared atlas sheets story_rp_garden (rampion plants / bed, pulled
+  rampion, cradle, braid segment + end + hooked braid, sparkles, notes, petals, wind, rose hedge, scissors) and
+  story_rp_room (four inside-wall panels of a round tower room, bed, stool, table, rug, spinning wheel, tower window
+  from outside). Book: cover / title / back / spot (tools/art/rapunzel_jobs.py, cover_jobs untouched).
+  Reused: village_houses_13 (parents' cottage, with the new HouseBody), fairytale_west_06 (witch's cottage),
+  fairytale_west_11 / _12 (wall, gate), forest_broadleaf_00, farm_animals_16 (rabbit), village_houses_20 (field
+  cottage), spring_blossom flowers, story_room_03 floor, intro_magic.
+- Buildings: the tower is the building kit's own 3D round tower (kit preset rapunzel_tower, another agent's
+  game/core/world/building.gd, uncommitted at the time), placed as a set entry `{"build": spec}`; the tale copies the
+  preset at seed time and drops the window's glass card so the window is open (Rapunzel / Gothel lean out of it, the
+  braid hangs from its sill in front of the wall along the tower's own front normal). No building code edited.
+  Wish for the kit: an opening flag for "open (no card)" and an exposed window anchor (world point of opening k) so
+  tales need not recompute it from spec numbers.
+- Engine (small): story_actor plays a `climb_cycle` flipbook (if the skin has one) for vertical travel, advanced by
+  height climbed; check_lines knows the tale verb climb_braid.
+- Sound: rp.* sfx + 톡톡's rapunzel music (-22 LUFS) and the Mendelssohn 'song' cue (tools/audio/rapunzel_sounds.py,
+  merge-only; CREDITS.md section); cover on_open intro_magic.
+- Full movie run (1200x900; artifacts/video/rapunzel_full_v1.mp4 27.9 MB, sheet artifacts/rapunzel/full_v1_sheet.jpg,
+  log artifacts/rapunzel/run_full_v1.log): STORY_DONE 355.0 s (5:55), CHECK_LINES OK (47 segments), VOICE_DUP=0,
+  CAM_JUMP=0 CAM_JERK=0, SPEAKER_OFF=0, OVERLAP_COUNT 0 OCCLUDE_COUNT 0 (climber / braid / tower, the pair's hands,
+  the father at the rampion, the hedge landing listed in overlap_ok), missing_audio=[] missing_sound=[], SET_CHECK all
+  zero, no script errors. Rounds: v-a 6:19 (SPEAKER_OFF 4: window speakers measured from the ground, the prince hidden
+  by the tree; mother behind the cottage; a room wall filling the lens at the room page open) -> v-d.
+- Still off: 5:55 vs the 4-5 min aim (≈190 s narration + 6 taps + 3 page turns + 3 climbs + the ending); the field
+  cottage's roof sits in the bottom-left corner of the forest page's opening crane; the braid reads thin in the
+  widest shots; the window figures are small in wide shots (fine in the window close-ups); the room is a ring of flat
+  wall cards (fine from inside, a card set from outside at the page open); Rapunzel's teleport is sparkles in the room
+  (the field is seen only at the reunion); the rabbit is tiny; nobody has listened to the mix or the 7 new clips yet.
+- Regression after the story_actor edit (no movie): three_pigs STORY_DONE 315.9 s, CHECK_LINES OK (39), no script errors. The tale needs the building kit (game/core/world/building.gd + game/art/buildings/kit.json, another agent's uncommitted work at the time of this commit) to show its tower.

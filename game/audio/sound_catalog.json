@@ -1688,6 +1688,136 @@
    "positional": false,
    "loop": false,
    "note": "wolf_goats: copied from 톡톡 동화극장 sounds/sfx/door_heavy_1.mp3 (see 톡톡 sounds/CREDITS.md)"
+  },
+  "rp.creak": {
+   "files": [
+    "res://audio/sfx/rp_creak.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": true,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/creak.mp3 (Pixabay 'Old Wooden Door', Universfield): the garden gate"
+  },
+  "rp.pull": {
+   "files": [
+    "res://audio/sfx/rp_pull.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/pull_pop_2.mp3 (Pixabay 'Cartoon Yoink 1', floraphonic): the rampion comes up"
+  },
+  "rp.magic": {
+   "files": [
+    "res://audio/sfx/rp_magic.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/magic_wand.mp3: the witch appears / vanishes"
+  },
+  "rp.knock": {
+   "files": [
+    "res://audio/sfx/rp_knock.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/knock_2.mp3 (ElevenLabs SFX made for 톡톡): the stick's 톡"
+  },
+  "rp.rise": {
+   "files": [
+    "res://audio/sfx/rp_rise.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -8,
+   "pitch_rand": 0.0,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/chime_up.mp3 (Pixabay 'Fairy Dust Shimmer 1', floraphonic): the tower rises"
+  },
+  "rp.slide": {
+   "files": [
+    "res://audio/sfx/rp_slide.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/slide_down.mp3 (synthesised slide whistle, CC0): the braid 스르르"
+  },
+  "rp.harp": {
+   "files": [
+    "res://audio/sfx/rp_harp.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -12,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/harp_gliss.mp3 (Pixabay 'Harp Glissando Up C7 1', floraphonic): the song's notes"
+  },
+  "rp.snip": {
+   "files": [
+    "res://audio/sfx/rp_snip.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -9,
+   "pitch_rand": 0.0,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/el_scissor_snip.mp3 (ElevenLabs SFX made for 톡톡): 싹둑"
+  },
+  "rp.whoosh": {
+   "files": [
+    "res://audio/sfx/rp_whoosh.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/wind_gust.mp3: the soft magic wind"
+  },
+  "rp.petals": {
+   "files": [
+    "res://audio/sfx/rp_petals.mp3"
+   ],
+   "bus": "SFX",
+   "gain_db": -10,
+   "pitch_rand": 0.04,
+   "vol_rand_db": 1,
+   "no_repeat": false,
+   "positional": false,
+   "loop": false,
+   "note": "rapunzel: 톡톡 sfx/sparkle.mp3 (Pixabay 'Magic Twinkle', Universfield): petals at the reunion"
   }
  },
  "music": {
@@ -1818,6 +1948,24 @@
    "fade_out": 2.0,
    "hold": true,
    "note": "story-start music from 톡톡 동화극장 (sfx/classical_perfect_happiness.mp3, Pixabay 'Classical Piano by Schumann - Kinderszenen Op. 15 Perfect Happiness', Nesrality, Pixabay Content License); plays once when the book opens, beat music waits for it"
+  },
+  "rapunzel": {
+   "file": "res://audio/music/music_rapunzel_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": true,
+   "fade_in": 2.0,
+   "fade_out": 2.0,
+   "note": "톡톡's rapunzel music (music/el_rapunzel_bgm.mp3, Eleven Music made for 톡톡: forest tower, lute / harp / recorder / strings, 76 BPM), -22 LUFS"
+  },
+  "rp_song": {
+   "file": "res://audio/music/rp_song_1.mp3",
+   "bus": "Music",
+   "gain_db": 0,
+   "loop": true,
+   "fade_in": 1.5,
+   "fade_out": 2.0,
+   "note": "톡톡's 'song over the wood' (sfx/classical_songs_without_words.mp3: Mendelssohn, Songs without Words op. 19, piano, abydos_music on Pixabay, Pixabay Content License; first 18 s), -22 LUFS"
   }
  },
  "beds": {

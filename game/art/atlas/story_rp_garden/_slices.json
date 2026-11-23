@@ -1,0 +1,334 @@
+{
+ "sheet": "story_rp_garden",
+ "bg": [
+  0.988,
+  0.012,
+  0.984
+ ],
+ "dropped": 5,
+ "sprites": [
+  {
+   "id": "story_rp_garden_00",
+   "bbox": [
+    21,
+    182,
+    203,
+    432
+   ],
+   "area": 22994,
+   "size": [
+    190,
+    258
+   ],
+   "halo": 1,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_01",
+   "bbox": [
+    220,
+    152,
+    389,
+    434
+   ],
+   "area": 24305,
+   "size": [
+    177,
+    290
+   ],
+   "halo": 16,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_02",
+   "bbox": [
+    408,
+    243,
+    810,
+    424
+   ],
+   "area": 48136,
+   "size": [
+    410,
+    189
+   ],
+   "halo": 2,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_03",
+   "bbox": [
+    828,
+    198,
+    1084,
+    448
+   ],
+   "area": 41832,
+   "size": [
+    264,
+    258
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_04",
+   "bbox": [
+    1082,
+    127,
+    1247,
+    472
+   ],
+   "area": 18820,
+   "size": [
+    173,
+    353
+   ],
+   "halo": 4,
+   "touches_border": false,
+   "parts": 4
+  },
+  {
+   "id": "story_rp_garden_05",
+   "bbox": [
+    1272,
+    51,
+    1348,
+    602
+   ],
+   "area": 31098,
+   "size": [
+    84,
+    559
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_06",
+   "bbox": [
+    1389,
+    243,
+    1495,
+    538
+   ],
+   "area": 20799,
+   "size": [
+    114,
+    303
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_07",
+   "bbox": [
+    51,
+    570,
+    144,
+    981
+   ],
+   "area": 20543,
+   "size": [
+    101,
+    419
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_08",
+   "bbox": [
+    180,
+    680,
+    370,
+    867
+   ],
+   "area": 6825,
+   "size": [
+    198,
+    195
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 22
+  },
+  {
+   "id": "story_rp_garden_09",
+   "bbox": [
+    390,
+    717,
+    571,
+    857
+   ],
+   "area": 7072,
+   "size": [
+    189,
+    148
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_10",
+   "bbox": [
+    575,
+    697,
+    769,
+    900
+   ],
+   "area": 3714,
+   "size": [
+    202,
+    211
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_11",
+   "bbox": [
+    669,
+    697,
+    755,
+    755
+   ],
+   "area": 3531,
+   "size": [
+    94,
+    66
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_12",
+   "bbox": [
+    686,
+    763,
+    769,
+    824
+   ],
+   "area": 3086,
+   "size": [
+    91,
+    69
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_13",
+   "bbox": [
+    781,
+    699,
+    1014,
+    887
+   ],
+   "area": 5562,
+   "size": [
+    241,
+    196
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_14",
+   "bbox": [
+    788,
+    768,
+    1014,
+    840
+   ],
+   "area": 4703,
+   "size": [
+    234,
+    80
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_15",
+   "bbox": [
+    1018,
+    674,
+    1323,
+    901
+   ],
+   "area": 51143,
+   "size": [
+    313,
+    235
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_16",
+   "bbox": [
+    1350,
+    678,
+    1507,
+    909
+   ],
+   "area": 12491,
+   "size": [
+    165,
+    239
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_17",
+   "bbox": [
+    628,
+    830,
+    718,
+    900
+   ],
+   "area": 2829,
+   "size": [
+    98,
+    78
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_rp_garden_18",
+   "bbox": [
+    781,
+    819,
+    909,
+    887
+   ],
+   "area": 3263,
+   "size": [
+    136,
+    76
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -1,0 +1,96 @@
+{
+ "sheet": "cast_rp_rap_window",
+ "bg": [
+  0.988,
+  0.031,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_rp_rap_window_00",
+   "bbox": [
+    71,
+    82,
+    404,
+    616
+   ],
+   "area": 129838,
+   "size": [
+    341,
+    542
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_window_01",
+   "bbox": [
+    492,
+    82,
+    823,
+    599
+   ],
+   "area": 127006,
+   "size": [
+    339,
+    525
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_window_02",
+   "bbox": [
+    909,
+    82,
+    1238,
+    637
+   ],
+   "area": 125304,
+   "size": [
+    337,
+    563
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_window_03",
+   "bbox": [
+    1319,
+    82,
+    1648,
+    599
+   ],
+   "area": 121892,
+   "size": [
+    337,
+    525
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_window_04",
+   "bbox": [
+    1724,
+    82,
+    2098,
+    615
+   ],
+   "area": 133305,
+   "size": [
+    382,
+    541
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

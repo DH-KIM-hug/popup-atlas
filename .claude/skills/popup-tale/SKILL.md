@@ -385,6 +385,26 @@ Run long work through background agents/workflows with narrow ownership (one own
 - The shared slot: with four agents chaining Godot jobs, `with_godot.sh`'s 3 s poll lost the race for 30+ minutes;
   a waiter that polls the lock dir every 0.2 s and then takes it the same way (mkdir + pid + trap) gets a turn.
 
+**Learned on rapunzel (「라푼젤」, 2026-11-23)**
+- 3D buildings come from the building kit (game/core/world/building.gd, presets in res://art/buildings/kit.json; another
+  agent owns that code): a set entry `{"build": "<preset>" | {spec}, "at", "scale", "stage"}`. To change a preset for one
+  tale (an OPEN window without its glass card) read the preset at seed time, edit a copy and pass it as the spec
+  (tools/story/tales/rapunzel.py `_tower_spec`); the handler reads `SetPiece.building.spec` / `.unit` for positions
+  (window sill = opening y × unit, wall at r × unit along the building's own +z). `stage: 0` + fx `pop:<name>` raises it.
+- A rope / braid from a window: a column of tiled cards from the sill to the grass, offset along the building's own front
+  normal beyond its wall + plinth (never through the wall), unrolled top to bottom; climbers stand in front of it and go
+  up with a drawn two-frame back-view `climb_cycle` (story_actor picks it for vertical travel and advances it by height
+  climbed: the puppet only measures ground speed). Overlap contacts (climber / braid / tower) go in `overlap_ok`.
+- People at a high window are actors lifted to the sill showing an upper-body `win_*` figure; SPEAKER_OFF measures an
+  actor from the ground, so the handler's `speaker_point` returns the window for them.
+- A room on its own page can be a ring of inside-wall cards (yaw = angle + 180) with flat floor cards; leave out the
+  walls on the camera side: the page-open wide looked at the back of the front wall filling the lens.
+- `add_cycles.py --tag X` removes the first argument equal to X: a tag equal to the skin name ("rapunzel") broke the call.
+- Reused 톡톡 clips can hold repeated takes even in the read script (the prince's 11 s "라푼젤…" said it five times):
+  ElevenLabs speech-to-text (word timings) + silencedetect find the take to keep (tools/story/rp_trim.py, TRIM_SEG).
+- Check the read script's narrator voice id before reusing other tales' cover / replay clips: rapunzel's narrator is a
+  different ElevenLabs voice (Annie), so its cover / replay prompts were recorded new.
+
 **Rules for every tale from now on (user, 2026-11-22/23, after sunmoon and the four-tale pass)**
 - Nothing overlaps (user: "최대한 겹치게 하지마라는 규칙은 없었나"): no character, set piece or fx prop (ropes, jars,
   baskets, flying props) may sit inside another or hide a speaker. OVERLAP_COUNT and OCCLUDE_COUNT must be 0 in the

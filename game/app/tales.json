@@ -7,6 +7,7 @@
   {"id": "sunmoon", "kind": "classic", "free": false},
   {"id": "wolf_goats", "kind": "classic", "free": false},
   {"id": "patjuk", "kind": "classic", "free": true},
-  {"id": "turnip", "kind": "classic", "free": false}
+  {"id": "turnip", "kind": "classic", "free": false},
+  {"id": "rapunzel", "kind": "classic", "free": false}
  ]
 }

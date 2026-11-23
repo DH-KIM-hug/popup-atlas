@@ -1,0 +1,45 @@
+{
+ "sheet": "cast_rp_gothel_window",
+ "bg": [
+  0.988,
+  0.016,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_rp_gothel_window_00",
+   "bbox": [
+    185,
+    48,
+    796,
+    783
+   ],
+   "area": 274763,
+   "size": [
+    619,
+    743
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_gothel_window_01",
+   "bbox": [
+    1058,
+    50,
+    1774,
+    783
+   ],
+   "area": 295096,
+   "size": [
+    724,
+    741
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

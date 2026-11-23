@@ -1,0 +1,113 @@
+{
+ "sheet": "cast_rp_prince_more",
+ "bg": [
+  0.988,
+  0.02,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_rp_prince_more_00",
+   "bbox": [
+    60,
+    23,
+    310,
+    698
+   ],
+   "area": 81670,
+   "size": [
+    258,
+    683
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_prince_more_01",
+   "bbox": [
+    418,
+    2,
+    662,
+    698
+   ],
+   "area": 81878,
+   "size": [
+    252,
+    704
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_prince_more_02",
+   "bbox": [
+    756,
+    59,
+    977,
+    698
+   ],
+   "area": 81479,
+   "size": [
+    229,
+    647
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_prince_more_03",
+   "bbox": [
+    1075,
+    63,
+    1335,
+    698
+   ],
+   "area": 95199,
+   "size": [
+    268,
+    643
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_prince_more_04",
+   "bbox": [
+    1376,
+    26,
+    1770,
+    631
+   ],
+   "area": 107606,
+   "size": [
+    402,
+    613
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_prince_more_05",
+   "bbox": [
+    1816,
+    66,
+    2102,
+    698
+   ],
+   "area": 105264,
+   "size": [
+    294,
+    640
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

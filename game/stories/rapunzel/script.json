@@ -1,0 +1,7710 @@
+{
+ "tale_id": "rapunzel",
+ "title": "라푼젤",
+ "seeded_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/rapunzel/voice_script_el.json",
+ "clip_map_from": "/Users/house_of_4k2b/projects/2026/patjuk-game/tales/rapunzel/narration_el.js + read_narration_el.js",
+ "voices": {
+  "nar": "Lb7qkOn5hF8p7qfCDH8q",
+  "rap": "5l5f8iK3YPeGga21rQIX",
+  "gothel": "TC0Zp7WVFzhA8zpTlRqV",
+  "father": "qAZH0aMXY8tw1QufPN0D",
+  "mother": "hpp4J3VqNfWAUOO0d1Us",
+  "prince": "a4CnuaYbALRvW39mDitg"
+ },
+ "models": {
+  "nar": "eleven_v4",
+  "rap": "eleven_v4",
+  "gothel": "eleven_v4",
+  "father": "eleven_v4",
+  "mother": "eleven_v4",
+  "prince": "eleven_v4"
+ },
+ "settings": {
+  "nar": {
+   "stability": 0.5,
+   "style": 0.35
+  },
+  "rap": {
+   "stability": 0.4,
+   "style": 0.5
+  },
+  "gothel": {
+   "stability": 0.55,
+   "style": 0.4
+  },
+  "father": {
+   "stability": 0.45,
+   "style": 0.4
+  },
+  "mother": {
+   "stability": 0.45,
+   "style": 0.4
+  },
+  "prince": {
+   "stability": 0.45,
+   "style": 0.4
+  }
+ },
+ "voice_notes": "ElevenLabs 목소리 배정(2026-10-21, SPEC §6): nar=Annie(여자 내레이터 돌려 쓰기 Lily→Huelyn→Annie — 직전 두 편이 미녀와 야수 Huelyn·빨간 자동차 Lily 라 Annie; 부드럽고 사랑스러운 낭독), rap=Sora(신데렐라 오디션 A-2 \"Warm & Expressive Storyteller\", 젊은 서울 여성·표현이 풍부 — 허밍 \"라라라~\"와 기쁨·놀람 표정이 큰 역이라 선택. 공주 목소리로 Luna 는 백설·신데렐라·인어에 세 번, Yun 은 미녀에 써서 새 목소리를 쓴다. 허밍이 밋밋하면 Yoojin(Cm89zxZzEGaMu7ajYw2K, 밝고 친근)으로 바꾼다), gothel=Matilda(마녀·새엄마 원형, 헨젤 마녀·인어 마녀·백설 왕비와 같은 목소리 — 엄하고 투덜거리지만 소리 지르지 않게 연기 지시, stability .55 로 음색 고정. 헨젤 마녀와 너무 같게 들리면 Wisdom(Pyj2w3lxZ0VMpAJ4CmRu, 격식 있고 절제된 중년)으로), father=Namchun(할아버지·아버지 원형), mother=Bella(엄마 원형), prince=Klamon(N-5 한국어 전문 밝고 따뜻한 청년 — 백설 왕자 Eric·신데렐라·인어 왕자 Sunjun·미녀 George 와 다른 목소리; 미운 아기 오리에서 카드 한 줄만 썼던 목소리. 어색하면 Taehyun(T6CkalnggsFZDOXwglLf)). 아기·새·토끼·말은 목소리 없음. 허밍 \"라라라, 라라라~\"는 라푼젤 목소리의 extra.hum(말풍선 없음, vo). 수 세기 없음. 교훈은 대사로 읽지 않는다(끝 화면 글자만). 모델 eleven_v4, 배역별 settings.",
+ "handler": "res://stories/rapunzel/fx.gd",
+ "shots": {
+  "story": [
+   3.0,
+   12.0,
+   0.26,
+   22.0
+  ],
+  "close": [
+   2.4,
+   12.0,
+   0.28,
+   20.0
+  ],
+  "crane_high": [
+   8.5,
+   34.0,
+   0.3,
+   24.0,
+   0.0
+  ],
+  "h_est": [
+   5.0,
+   16.0,
+   0.35,
+   24.0,
+   0.0
+  ],
+  "parents": [
+   1.9,
+   8.0,
+   0.26,
+   26.0,
+   -12.0
+  ],
+  "garden": [
+   2.4,
+   16.0,
+   0.2,
+   26.0,
+   8.0
+  ],
+  "night_gate": [
+   2.6,
+   12.0,
+   0.25,
+   26.0,
+   -15.0
+  ],
+  "rampion": [
+   1.4,
+   12.0,
+   0.18,
+   28.0,
+   10.0
+  ],
+  "caught": [
+   1.8,
+   6.0,
+   0.3,
+   28.0,
+   20.0
+  ],
+  "witch_low": [
+   1.4,
+   3.0,
+   0.32,
+   30.0,
+   -10.0
+  ],
+  "door": [
+   2.2,
+   9.0,
+   0.3,
+   26.0,
+   -18.0
+  ],
+  "tower_wide": [
+   5.4,
+   9.0,
+   1.05,
+   28.0,
+   0.0
+  ],
+  "tower_low": [
+   3.2,
+   4.0,
+   0.75,
+   40.0,
+   14.0
+  ],
+  "witch_tap": [
+   1.7,
+   9.0,
+   0.3,
+   26.0,
+   12.0
+  ],
+  "window": [
+   1.7,
+   2.0,
+   1.32,
+   28.0,
+   0.0
+  ],
+  "window_side": [
+   1.9,
+   6.0,
+   1.25,
+   30.0,
+   28.0
+  ],
+  "braid_fall": [
+   3.2,
+   4.0,
+   0.75,
+   38.0,
+   14.0
+  ],
+  "climb": [
+   2.8,
+   6.0,
+   0.8,
+   36.0,
+   18.0
+  ],
+  "foot": [
+   2.2,
+   9.0,
+   0.3,
+   26.0,
+   10.0
+  ],
+  "road_in": [
+   2.8,
+   11.0,
+   0.3,
+   24.0,
+   -8.0
+  ],
+  "hide": [
+   2.6,
+   10.0,
+   0.45,
+   30.0,
+   -20.0
+  ],
+  "float": [
+   3.4,
+   5.0,
+   0.85,
+   36.0,
+   6.0
+  ],
+  "track": [
+   2.8,
+   14.0,
+   0.3,
+   26.0,
+   10.0
+  ],
+  "field": [
+   2.6,
+   11.0,
+   0.28,
+   26.0,
+   -14.0
+  ],
+  "reunion": [
+   1.7,
+   7.0,
+   0.27,
+   28.0,
+   8.0
+  ],
+  "room": [
+   0.62,
+   12.0,
+   0.26,
+   62.0,
+   0.0
+  ],
+  "room_low": [
+   0.55,
+   5.0,
+   0.28,
+   58.0,
+   -18.0
+  ],
+  "room_two": [
+   0.58,
+   9.0,
+   0.27,
+   60.0,
+   16.0
+  ],
+  "pull_back": [
+   9.5,
+   26.0,
+   0.3,
+   24.0,
+   0.0
+  ]
+ },
+ "ui": {
+  "cover": [
+   [
+    "cast_rapunzel_calm",
+    230
+   ],
+   [
+    "cast_prince_calm",
+    250
+   ]
+  ],
+  "end": [
+   [
+    "cast_rapunzel_short_happy",
+    210
+   ],
+   [
+    "cast_prince_happy",
+    250
+   ]
+  ],
+  "speakers": {
+   "rap": [
+    "라푼젤",
+    "c9a227",
+    "cast_rapunzel_calm"
+   ],
+   "gothel": [
+    "고텔",
+    "3f6b3a",
+    "cast_gothel_calm"
+   ],
+   "prince": [
+    "왕자",
+    "c8322b",
+    "cast_prince_calm"
+   ],
+   "father": [
+    "아빠",
+    "7a5230",
+    "cast_peasant_father_calm"
+   ],
+   "mother": [
+    "엄마",
+    "c8962a",
+    "cast_peasant_mother_calm"
+   ]
+  }
+ },
+ "backdrop": true,
+ "sound": {
+  "catalog": "res://audio/sound_catalog.json",
+  "light_beds": {
+   "": "day",
+   "afternoon": "afternoon",
+   "late": "late",
+   "dusk": "dusk",
+   "night": "night",
+   "evening": "evening"
+  },
+  "fx": {
+   "sparkle": "wc.sparkle",
+   "gate": "rp.creak",
+   "pull_rampion": "rp.pull",
+   "witch_appear": "rp.magic",
+   "wand": "rp.knock",
+   "tower_rise": "rp.rise",
+   "window": "wc.plop",
+   "braid": "rp.slide",
+   "notes": "rp.harp",
+   "in_window": "wc.plop",
+   "snip": "rp.snip",
+   "vanish": "rp.magic",
+   "wind_float": "rp.whoosh",
+   "hold_hands": "rp.petals"
+  },
+  "steps": {
+   "cover": {
+    "on_open": {
+     "music": "intro_magic",
+     "fade": 0.2
+    }
+   },
+   "page_turn": "paper.page_turn",
+   "end": {
+    "close_book": "paper.book_close",
+    "music_fade_on_replay": 2.0
+   }
+  },
+  "footsteps": {
+   "rap": "pig",
+   "gothel": "pig",
+   "prince": "pig",
+   "father": "pig",
+   "mother": "pig"
+  }
+ },
+ "ground_style": "paper",
+ "spacing": true,
+ "overlap_check": true,
+ "pop_in": false,
+ "overlap_ok": [
+  [
+   "gothel",
+   "braid"
+  ],
+  [
+   "prince",
+   "braid"
+  ],
+  [
+   "braid",
+   "tower"
+  ],
+  [
+   "prince",
+   "hedge"
+  ],
+  [
+   "rap",
+   "prince"
+  ],
+  [
+   "father",
+   "rampion"
+  ],
+  [
+   "rap",
+   "tower"
+  ],
+  [
+   "gothel",
+   "tower"
+  ],
+  [
+   "prince",
+   "tower"
+  ]
+ ],
+ "cast": {
+  "rap": {
+   "kind": "actor",
+   "skin": "rapunzel",
+   "height": 0.31,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "라푼젤"
+  },
+  "gothel": {
+   "kind": "actor",
+   "skin": "gothel",
+   "height": 0.34,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "고텔"
+  },
+  "prince": {
+   "kind": "actor",
+   "skin": "prince",
+   "height": 0.38,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "왕자"
+  },
+  "father": {
+   "kind": "actor",
+   "skin": "peasant_father",
+   "height": 0.37,
+   "views": [
+    "front",
+    "side",
+    "back"
+   ],
+   "label": "아빠"
+  },
+  "mother": {
+   "kind": "actor",
+   "skin": "peasant_mother",
+   "height": 0.35,
+   "views": [
+    "front"
+   ],
+   "label": "엄마"
+  }
+ },
+ "moral": "",
+ "beats": [
+  {
+   "id": "cover",
+   "title": "라푼젤",
+   "spread": null,
+   "steps": [
+    {
+     "do": "cover",
+     "prompt": "rp_n01"
+    }
+   ],
+   "sound": {
+    "music": null,
+    "bed": null
+   }
+  },
+  {
+   "id": "home",
+   "title": "담 너머 텃밭",
+   "spread": {
+    "seed": 5,
+    "view": 4,
+    "place": "home",
+    "light": "",
+    "spots": {
+     "h_focus": [
+      -1.0,
+      -1.5
+     ],
+     "cottage": [
+      -2.35,
+      -1.05
+     ],
+     "door": [
+      -2.1,
+      -0.75
+     ],
+     "mother_at": [
+      -1.38,
+      -0.62
+     ],
+     "father_at": [
+      -1.05,
+      -0.7
+     ],
+     "parents": [
+      -1.2,
+      -0.66
+     ],
+     "wall_l": [
+      -1.75,
+      -1.62
+     ],
+     "wall_m": [
+      -0.43,
+      -1.62
+     ],
+     "gate": [
+      -1.08,
+      -1.62
+     ],
+     "gate_in": [
+      -1.08,
+      -1.4
+     ],
+     "gate_out": [
+      -1.08,
+      -1.9
+     ],
+     "bed": [
+      -1.0,
+      -2.35
+     ],
+     "rampion": [
+      -0.62,
+      -2.12
+     ],
+     "ramp_2": [
+      -1.45,
+      -2.18
+     ],
+     "ramp_3": [
+      -0.25,
+      -2.4
+     ],
+     "pull_at": [
+      -0.78,
+      -2.1
+     ],
+     "witch_at": [
+      -0.38,
+      -2.2
+     ],
+     "witch_house": [
+      -1.1,
+      -3.25
+     ],
+     "garden_focus": [
+      -0.8,
+      -2.2
+     ],
+     "caught": [
+      -0.58,
+      -2.15
+     ],
+     "baby_at": [
+      -0.95,
+      -0.45
+     ],
+     "f_back": [
+      -1.68,
+      -0.6
+     ],
+     "m_door": [
+      -1.35,
+      -0.5
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_13",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.15,
+      "clear": 1.0,
+      "yaw": 30.0
+     },
+     {
+      "card": "fairytale_west_11",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 1.25,
+      "clear": 0.3
+     },
+     {
+      "card": "fairytale_west_11",
+      "at": "wall_m",
+      "stage": "full",
+      "name": "wall_m",
+      "scale": 1.25,
+      "clear": 0.3
+     },
+     {
+      "card": "fairytale_west_12",
+      "at": "gate",
+      "stage": "full",
+      "name": "gate",
+      "scale": 0.95,
+      "clear": 0.3
+     },
+     {
+      "card": "story_rp_garden_02",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.25,
+      "clear": 0.5
+     },
+     {
+      "card": "story_rp_garden_00",
+      "at": "rampion",
+      "stage": "full",
+      "name": "rampion",
+      "scale": 1.1,
+      "clear": 0.15
+     },
+     {
+      "card": "story_rp_garden_01",
+      "at": "ramp_2",
+      "stage": "full",
+      "name": "ramp_2",
+      "scale": 1.1,
+      "clear": 0.15
+     },
+     {
+      "card": "story_rp_garden_00",
+      "at": "ramp_3",
+      "stage": "full",
+      "name": "ramp_3",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "fairytale_west_06",
+      "at": "witch_house",
+      "stage": "full",
+      "name": "witch_house",
+      "scale": 1.1,
+      "clear": 1.0
+     }
+    ],
+    "focus": "h_focus"
+   },
+   "enter": {
+    "who": {
+     "mother": "calm",
+     "father": "calm"
+    },
+    "at": {
+     "mother": "mother_at",
+     "father": "father_at"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "h_est",
+     "at": "h_focus",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 0.9
+    },
+    {
+     "do": "say",
+     "line": "rp_r0100"
+    },
+    {
+     "do": "cam",
+     "shot": "garden",
+     "at": "garden_focus",
+     "rate": 1.2,
+     "wait": 0.3,
+     "settle": 0.6
+    },
+    {
+     "do": "fx",
+     "fx": "sparkle:rampion",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "rp_r0101"
+    },
+    {
+     "do": "cam",
+     "shot": "parents",
+     "at": "parents",
+     "rate": 1.3,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "rp_r0104"
+    },
+    {
+     "do": "say",
+     "line": "rp_r0106"
+    }
+   ],
+   "sound": {
+    "music": "rapunzel",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "night",
+   "title": "라푼젤 풀",
+   "spread": {
+    "seed": 5,
+    "view": 4,
+    "place": "home",
+    "light": "night",
+    "spots": {
+     "h_focus": [
+      -1.0,
+      -1.5
+     ],
+     "cottage": [
+      -2.35,
+      -1.05
+     ],
+     "door": [
+      -2.1,
+      -0.75
+     ],
+     "mother_at": [
+      -1.38,
+      -0.62
+     ],
+     "father_at": [
+      -1.05,
+      -0.7
+     ],
+     "parents": [
+      -1.2,
+      -0.66
+     ],
+     "wall_l": [
+      -1.75,
+      -1.62
+     ],
+     "wall_m": [
+      -0.43,
+      -1.62
+     ],
+     "gate": [
+      -1.08,
+      -1.62
+     ],
+     "gate_in": [
+      -1.08,
+      -1.4
+     ],
+     "gate_out": [
+      -1.08,
+      -1.9
+     ],
+     "bed": [
+      -1.0,
+      -2.35
+     ],
+     "rampion": [
+      -0.62,
+      -2.12
+     ],
+     "ramp_2": [
+      -1.45,
+      -2.18
+     ],
+     "ramp_3": [
+      -0.25,
+      -2.4
+     ],
+     "pull_at": [
+      -0.78,
+      -2.1
+     ],
+     "witch_at": [
+      -0.38,
+      -2.2
+     ],
+     "witch_house": [
+      -1.1,
+      -3.25
+     ],
+     "garden_focus": [
+      -0.8,
+      -2.2
+     ],
+     "caught": [
+      -0.58,
+      -2.15
+     ],
+     "baby_at": [
+      -0.95,
+      -0.45
+     ],
+     "f_back": [
+      -1.68,
+      -0.6
+     ],
+     "m_door": [
+      -1.35,
+      -0.5
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_13",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.15,
+      "clear": 1.0,
+      "yaw": 30.0
+     },
+     {
+      "card": "fairytale_west_11",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 1.25,
+      "clear": 0.3
+     },
+     {
+      "card": "fairytale_west_11",
+      "at": "wall_m",
+      "stage": "full",
+      "name": "wall_m",
+      "scale": 1.25,
+      "clear": 0.3
+     },
+     {
+      "card": "fairytale_west_12",
+      "at": "gate",
+      "stage": "full",
+      "name": "gate",
+      "scale": 0.95,
+      "clear": 0.3
+     },
+     {
+      "card": "story_rp_garden_02",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.25,
+      "clear": 0.5
+     },
+     {
+      "card": "story_rp_garden_00",
+      "at": "rampion",
+      "stage": "full",
+      "name": "rampion",
+      "scale": 1.1,
+      "clear": 0.15
+     },
+     {
+      "card": "story_rp_garden_01",
+      "at": "ramp_2",
+      "stage": "full",
+      "name": "ramp_2",
+      "scale": 1.1,
+      "clear": 0.15
+     },
+     {
+      "card": "story_rp_garden_00",
+      "at": "ramp_3",
+      "stage": "full",
+      "name": "ramp_3",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "fairytale_west_06",
+      "at": "witch_house",
+      "stage": "full",
+      "name": "witch_house",
+      "scale": 1.1,
+      "clear": 1.0
+     }
+    ],
+    "focus": "h_focus",
+    "sky": {
+     "bg": "#101a3a",
+     "fog": "#24305e",
+     "fog_energy": 0.7,
+     "top": "#0d1636",
+     "horizon": "#34477f",
+     "stars": "story_sm_sky_09",
+     "n": 14,
+     "moon": "story_sm_sky_05",
+     "moon_at": [
+      -0.6,
+      10.5,
+      2.6,
+      1.6
+     ],
+     "far": 17.0
+    }
+   },
+   "enter": {
+    "who": {
+     "father": "calm",
+     "mother": "sad"
+    },
+    "at": {
+     "father": "father_at",
+     "mother": "m_door"
+    },
+    "hidden": {
+     "gothel": "witch_at"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "night_gate",
+     "at": "gate",
+     "rate": 1.0,
+     "wait": 0.4
+    },
+    {
+     "do": "fx",
+     "fx": "gate:open",
+     "wait": 0.3
+    },
+    {
+     "do": "walk",
+     "who": "father",
+     "via": [
+      "gate_in",
+      "gate_out"
+     ],
+     "to": "pull_at",
+     "speed": 0.3,
+     "follow": "father",
+     "shot": "night_gate"
+    },
+    {
+     "do": "fx",
+     "fx": "gate:close",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "rampion",
+     "at": [
+      "pull_at",
+      "rampion"
+     ],
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "tap_steps",
+     "target": "rampion",
+     "prompt": "rp_n03",
+     "hint": "rp_n03",
+     "steps": [
+      {
+       "fx": "pull_rampion",
+       "wait": 0.6
+      }
+     ]
+    },
+    {
+     "do": "fx",
+     "fx": "witch_appear",
+     "wait": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0201"
+    },
+    {
+     "do": "cam",
+     "shot": "witch_low",
+     "at": "witch_at",
+     "rate": 2.2,
+     "shake": 0.5,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0202"
+    },
+    {
+     "do": "cam",
+     "shot": "caught",
+     "at": [
+      "pull_at",
+      "witch_at"
+     ],
+     "rate": 1.5,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0204"
+    },
+    {
+     "do": "pose",
+     "who": "father",
+     "pose": "sorry",
+     "wait": 0.6
+    }
+   ],
+   "sound": {
+    "music": "night",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "baby",
+   "title": "아기",
+   "spread": {
+    "seed": 5,
+    "view": 4,
+    "place": "home",
+    "light": "late",
+    "spots": {
+     "h_focus": [
+      -1.0,
+      -1.5
+     ],
+     "cottage": [
+      -2.35,
+      -1.05
+     ],
+     "door": [
+      -2.1,
+      -0.75
+     ],
+     "mother_at": [
+      -1.38,
+      -0.62
+     ],
+     "father_at": [
+      -1.05,
+      -0.7
+     ],
+     "parents": [
+      -1.2,
+      -0.66
+     ],
+     "wall_l": [
+      -1.75,
+      -1.62
+     ],
+     "wall_m": [
+      -0.43,
+      -1.62
+     ],
+     "gate": [
+      -1.08,
+      -1.62
+     ],
+     "gate_in": [
+      -1.08,
+      -1.4
+     ],
+     "gate_out": [
+      -1.08,
+      -1.9
+     ],
+     "bed": [
+      -1.0,
+      -2.35
+     ],
+     "rampion": [
+      -0.62,
+      -2.12
+     ],
+     "ramp_2": [
+      -1.45,
+      -2.18
+     ],
+     "ramp_3": [
+      -0.25,
+      -2.4
+     ],
+     "pull_at": [
+      -0.78,
+      -2.1
+     ],
+     "witch_at": [
+      -0.38,
+      -2.2
+     ],
+     "witch_house": [
+      -1.1,
+      -3.25
+     ],
+     "garden_focus": [
+      -0.8,
+      -2.2
+     ],
+     "caught": [
+      -0.58,
+      -2.15
+     ],
+     "baby_at": [
+      -0.95,
+      -0.45
+     ],
+     "f_back": [
+      -1.68,
+      -0.6
+     ],
+     "m_door": [
+      -1.35,
+      -0.5
+     ]
+    },
+    "set": [
+     {
+      "card": "village_houses_13",
+      "at": "cottage",
+      "stage": "full",
+      "name": "cottage",
+      "scale": 1.15,
+      "clear": 1.0,
+      "yaw": 30.0
+     },
+     {
+      "card": "fairytale_west_11",
+      "at": "wall_l",
+      "stage": "full",
+      "name": "wall_l",
+      "scale": 1.25,
+      "clear": 0.3
+     },
+     {
+      "card": "fairytale_west_11",
+      "at": "wall_m",
+      "stage": "full",
+      "name": "wall_m",
+      "scale": 1.25,
+      "clear": 0.3
+     },
+     {
+      "card": "fairytale_west_12",
+      "at": "gate",
+      "stage": "full",
+      "name": "gate",
+      "scale": 0.95,
+      "clear": 0.3
+     },
+     {
+      "card": "story_rp_garden_02",
+      "at": "bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.25,
+      "clear": 0.5
+     },
+     {
+      "card": "story_rp_garden_00",
+      "at": "rampion",
+      "stage": "full",
+      "name": "rampion",
+      "scale": 1.1,
+      "clear": 0.15
+     },
+     {
+      "card": "story_rp_garden_01",
+      "at": "ramp_2",
+      "stage": "full",
+      "name": "ramp_2",
+      "scale": 1.1,
+      "clear": 0.15
+     },
+     {
+      "card": "story_rp_garden_00",
+      "at": "ramp_3",
+      "stage": "full",
+      "name": "ramp_3",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "fairytale_west_06",
+      "at": "witch_house",
+      "stage": "full",
+      "name": "witch_house",
+      "scale": 1.1,
+      "clear": 1.0
+     }
+    ],
+    "focus": "h_focus"
+   },
+   "enter": {
+    "who": {
+     "mother": "sad",
+     "father": "sorry",
+     "gothel": "cradle"
+    },
+    "at": {
+     "mother": "m_door",
+     "father": "f_back",
+     "gothel": "baby_at"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "sparkle:baby_at",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "door",
+     "at": [
+      "baby_at",
+      "m_door"
+     ],
+     "rate": 1.0,
+     "wait": 0.3,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "rp_r0206"
+    },
+    {
+     "do": "fx",
+     "fx": "vanish:gothel",
+     "wait": 1.0
+    }
+   ],
+   "sound": {
+    "music": "rapunzel",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "tower",
+   "title": "문 없는 탑",
+   "spread": {
+    "built": [],
+    "seed": 4,
+    "view": 0,
+    "place": "forest",
+    "light": "afternoon",
+    "spots": {
+     "tower": [
+      -0.95,
+      -2.25
+     ],
+     "f_focus": [
+      -0.6,
+      -1.8
+     ],
+     "win_foot": [
+      -0.95,
+      -1.94
+     ],
+     "climb_at": [
+      -0.95,
+      -1.9
+     ],
+     "gothel_tap": [
+      -0.55,
+      -1.75
+     ],
+     "gothel_call": [
+      -0.62,
+      -1.72
+     ],
+     "rabbit": [
+      -1.45,
+      -1.75
+     ],
+     "prince_in": [
+      1.05,
+      -3.3
+     ],
+     "prince_mid": [
+      0.45,
+      -2.0
+     ],
+     "prince_foot": [
+      -0.5,
+      -1.62
+     ],
+     "prince_look": [
+      -0.58,
+      -1.6
+     ],
+     "tree": [
+      1.8,
+      -2.35
+     ],
+     "hide_at": [
+      2.1,
+      -2.1
+     ],
+     "gothel_in": [
+      1.0,
+      -3.4
+     ],
+     "gothel_mid": [
+      0.4,
+      -2.05
+     ],
+     "hedge": [
+      -0.3,
+      -1.95
+     ],
+     "land": [
+      -0.42,
+      -1.72
+     ],
+     "road_bend": [
+      0.0,
+      -0.5
+     ],
+     "field_in": [
+      -0.45,
+      0.25
+     ],
+     "f_cottage": [
+      -1.75,
+      0.15
+     ],
+     "rap_field": [
+      -1.15,
+      0.5
+     ],
+     "prince_meet": [
+      -0.9,
+      0.55
+     ],
+     "field_focus": [
+      -1.0,
+      0.4
+     ],
+     "flowers_1": [
+      -1.5,
+      0.85
+     ],
+     "flowers_2": [
+      -1.95,
+      0.75
+     ],
+     "track_mid": [
+      0.2,
+      -1.0
+     ],
+     "lawn": [
+      1.6,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "build": {
+       "parts": [
+        {
+         "name": "tower",
+         "type": "tower",
+         "shape": "round",
+         "n": 22,
+         "r": 0.3,
+         "h": 2.1,
+         "wall": "ashlar",
+         "thick": 0.05,
+         "plinth": {
+          "h": 0.06,
+          "mat": "fieldstone",
+          "out": 0.04
+         },
+         "openings": [
+          {
+           "edge": 0,
+           "u": 0.5,
+           "w": 0.16,
+           "h": 0.24,
+           "y": 1.6,
+           "kind": "arch"
+          }
+         ],
+         "roof": {
+          "type": "cone",
+          "mat": "slate",
+          "h": 0.8,
+          "overhang": 0.1,
+          "thick": 0.03
+         }
+        },
+        {
+         "name": "balcony",
+         "type": "card",
+         "card": "story_bk_parts_13",
+         "at": [
+          0.0,
+          0.31
+         ],
+         "base": 1.53,
+         "h": 0.1,
+         "w": 0.32
+        },
+        {
+         "name": "flag",
+         "type": "flag",
+         "card": "story_bk_parts_08",
+         "at": [
+          0,
+          0
+         ],
+         "base": 2.85,
+         "h": 0.32
+        }
+       ]
+      },
+      "at": "tower",
+      "name": "tower",
+      "scale": 0.8,
+      "stage": 0,
+      "clear": 0.9
+     },
+     {
+      "card": "forest_broadleaf_00",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_rp_garden_15",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "farm_animals_16",
+      "at": "rabbit",
+      "stage": "full",
+      "name": "rabbit",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "village_houses_20",
+      "at": "f_cottage",
+      "stage": "full",
+      "name": "f_cottage",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": 35.0
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "flowers_1",
+      "stage": "full",
+      "name": "flowers_1",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_07",
+      "at": "flowers_2",
+      "stage": "full",
+      "name": "flowers_2",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "lawn",
+      "stage": "full",
+      "name": "lawn",
+      "scale": 0.8,
+      "clear": 2.2
+     }
+    ],
+    "focus": "f_focus"
+   },
+   "enter": {
+    "who": {
+     "gothel": "calm"
+    },
+    "at": {
+     "gothel": "gothel_tap"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "tower_wide",
+     "at": "tower",
+     "from": "crane_high",
+     "rate": 0.9,
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "witch_tap",
+     "at": [
+      "gothel_tap",
+      "tower"
+     ],
+     "rate": 1.3,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "rp_r0300"
+    },
+    {
+     "do": "tap_steps",
+     "target": "gothel",
+     "prompt": "rp_n04",
+     "hint": "rp_n04",
+     "steps": [
+      {
+       "fx": "wand",
+       "wait": 0.4
+      }
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "tower_wide",
+     "at": "tower",
+     "rate": 1.4,
+     "wait": 0.1
+    },
+    {
+     "do": "fx",
+     "fx": "tower_rise",
+     "wait": 0.4
+    },
+    {
+     "do": "say",
+     "line": "rp_r0301"
+    },
+    {
+     "do": "fx",
+     "fx": "window:rap:win_smile",
+     "wait": 0.3
+    },
+    {
+     "do": "cam",
+     "shot": "window",
+     "at": "tower",
+     "rate": 1.3,
+     "wait": 0.2,
+     "settle": 0.6
+    }
+   ],
+   "sound": {
+    "music": "rapunzel",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "hair",
+   "title": "머리를 내려요",
+   "spread": {
+    "built": [
+     "tower"
+    ],
+    "seed": 4,
+    "view": 0,
+    "place": "forest",
+    "light": "afternoon",
+    "spots": {
+     "tower": [
+      -0.95,
+      -2.25
+     ],
+     "f_focus": [
+      -0.6,
+      -1.8
+     ],
+     "win_foot": [
+      -0.95,
+      -1.94
+     ],
+     "climb_at": [
+      -0.95,
+      -1.9
+     ],
+     "gothel_tap": [
+      -0.55,
+      -1.75
+     ],
+     "gothel_call": [
+      -0.62,
+      -1.72
+     ],
+     "rabbit": [
+      -1.45,
+      -1.75
+     ],
+     "prince_in": [
+      1.05,
+      -3.3
+     ],
+     "prince_mid": [
+      0.45,
+      -2.0
+     ],
+     "prince_foot": [
+      -0.5,
+      -1.62
+     ],
+     "prince_look": [
+      -0.58,
+      -1.6
+     ],
+     "tree": [
+      1.8,
+      -2.35
+     ],
+     "hide_at": [
+      2.1,
+      -2.1
+     ],
+     "gothel_in": [
+      1.0,
+      -3.4
+     ],
+     "gothel_mid": [
+      0.4,
+      -2.05
+     ],
+     "hedge": [
+      -0.3,
+      -1.95
+     ],
+     "land": [
+      -0.42,
+      -1.72
+     ],
+     "road_bend": [
+      0.0,
+      -0.5
+     ],
+     "field_in": [
+      -0.45,
+      0.25
+     ],
+     "f_cottage": [
+      -1.75,
+      0.15
+     ],
+     "rap_field": [
+      -1.15,
+      0.5
+     ],
+     "prince_meet": [
+      -0.9,
+      0.55
+     ],
+     "field_focus": [
+      -1.0,
+      0.4
+     ],
+     "flowers_1": [
+      -1.5,
+      0.85
+     ],
+     "flowers_2": [
+      -1.95,
+      0.75
+     ],
+     "track_mid": [
+      0.2,
+      -1.0
+     ],
+     "lawn": [
+      1.6,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "build": {
+       "parts": [
+        {
+         "name": "tower",
+         "type": "tower",
+         "shape": "round",
+         "n": 22,
+         "r": 0.3,
+         "h": 2.1,
+         "wall": "ashlar",
+         "thick": 0.05,
+         "plinth": {
+          "h": 0.06,
+          "mat": "fieldstone",
+          "out": 0.04
+         },
+         "openings": [
+          {
+           "edge": 0,
+           "u": 0.5,
+           "w": 0.16,
+           "h": 0.24,
+           "y": 1.6,
+           "kind": "arch"
+          }
+         ],
+         "roof": {
+          "type": "cone",
+          "mat": "slate",
+          "h": 0.8,
+          "overhang": 0.1,
+          "thick": 0.03
+         }
+        },
+        {
+         "name": "balcony",
+         "type": "card",
+         "card": "story_bk_parts_13",
+         "at": [
+          0.0,
+          0.31
+         ],
+         "base": 1.53,
+         "h": 0.1,
+         "w": 0.32
+        },
+        {
+         "name": "flag",
+         "type": "flag",
+         "card": "story_bk_parts_08",
+         "at": [
+          0,
+          0
+         ],
+         "base": 2.85,
+         "h": 0.32
+        }
+       ]
+      },
+      "at": "tower",
+      "name": "tower",
+      "scale": 0.8,
+      "stage": 0,
+      "clear": 0.9
+     },
+     {
+      "card": "forest_broadleaf_00",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_rp_garden_15",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "farm_animals_16",
+      "at": "rabbit",
+      "stage": "full",
+      "name": "rabbit",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "village_houses_20",
+      "at": "f_cottage",
+      "stage": "full",
+      "name": "f_cottage",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": 35.0
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "flowers_1",
+      "stage": "full",
+      "name": "flowers_1",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_07",
+      "at": "flowers_2",
+      "stage": "full",
+      "name": "flowers_2",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "lawn",
+      "stage": "full",
+      "name": "lawn",
+      "scale": 0.8,
+      "clear": 2.2
+     }
+    ],
+    "focus": "f_focus"
+   },
+   "enter": {
+    "who": {
+     "gothel": "talk"
+    },
+    "at": {
+     "gothel": "gothel_call"
+    },
+    "rp": {
+     "window": {
+      "rap": "win_smile"
+     }
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "tower_low",
+     "at": [
+      "gothel_call",
+      "tower"
+     ],
+     "rate": 1.2,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "rp_r0401"
+    },
+    {
+     "do": "cam",
+     "shot": "window",
+     "at": "tower",
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "tap_steps",
+     "target": "window",
+     "prompt": "rp_n05",
+     "hint": "rp_n05",
+     "steps": [
+      {
+       "fx": "braid:down",
+       "wait": 0.3
+      }
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "braid_fall",
+     "at": "win_foot",
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "rp_r0403"
+    },
+    {
+     "do": "walk",
+     "who": "gothel",
+     "to": "climb_at",
+     "speed": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "climb",
+     "at": "climb_at",
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "climb_braid",
+     "who": "gothel",
+     "speed": 0.24,
+     "cam": "climb"
+    },
+    {
+     "do": "fx",
+     "fx": "braid:up",
+     "wait": 0.5
+    }
+   ],
+   "sound": {
+    "music": "rapunzel",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "song",
+   "title": "탑 안의 노래",
+   "spread": {
+    "built": [
+     "tower"
+    ],
+    "seed": 4,
+    "view": 0,
+    "place": "forest",
+    "light": "late",
+    "spots": {
+     "tower": [
+      -0.95,
+      -2.25
+     ],
+     "f_focus": [
+      -0.6,
+      -1.8
+     ],
+     "win_foot": [
+      -0.95,
+      -1.94
+     ],
+     "climb_at": [
+      -0.95,
+      -1.9
+     ],
+     "gothel_tap": [
+      -0.55,
+      -1.75
+     ],
+     "gothel_call": [
+      -0.62,
+      -1.72
+     ],
+     "rabbit": [
+      -1.45,
+      -1.75
+     ],
+     "prince_in": [
+      1.05,
+      -3.3
+     ],
+     "prince_mid": [
+      0.45,
+      -2.0
+     ],
+     "prince_foot": [
+      -0.5,
+      -1.62
+     ],
+     "prince_look": [
+      -0.58,
+      -1.6
+     ],
+     "tree": [
+      1.8,
+      -2.35
+     ],
+     "hide_at": [
+      2.1,
+      -2.1
+     ],
+     "gothel_in": [
+      1.0,
+      -3.4
+     ],
+     "gothel_mid": [
+      0.4,
+      -2.05
+     ],
+     "hedge": [
+      -0.3,
+      -1.95
+     ],
+     "land": [
+      -0.42,
+      -1.72
+     ],
+     "road_bend": [
+      0.0,
+      -0.5
+     ],
+     "field_in": [
+      -0.45,
+      0.25
+     ],
+     "f_cottage": [
+      -1.75,
+      0.15
+     ],
+     "rap_field": [
+      -1.15,
+      0.5
+     ],
+     "prince_meet": [
+      -0.9,
+      0.55
+     ],
+     "field_focus": [
+      -1.0,
+      0.4
+     ],
+     "flowers_1": [
+      -1.5,
+      0.85
+     ],
+     "flowers_2": [
+      -1.95,
+      0.75
+     ],
+     "track_mid": [
+      0.2,
+      -1.0
+     ],
+     "lawn": [
+      1.6,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "build": {
+       "parts": [
+        {
+         "name": "tower",
+         "type": "tower",
+         "shape": "round",
+         "n": 22,
+         "r": 0.3,
+         "h": 2.1,
+         "wall": "ashlar",
+         "thick": 0.05,
+         "plinth": {
+          "h": 0.06,
+          "mat": "fieldstone",
+          "out": 0.04
+         },
+         "openings": [
+          {
+           "edge": 0,
+           "u": 0.5,
+           "w": 0.16,
+           "h": 0.24,
+           "y": 1.6,
+           "kind": "arch"
+          }
+         ],
+         "roof": {
+          "type": "cone",
+          "mat": "slate",
+          "h": 0.8,
+          "overhang": 0.1,
+          "thick": 0.03
+         }
+        },
+        {
+         "name": "balcony",
+         "type": "card",
+         "card": "story_bk_parts_13",
+         "at": [
+          0.0,
+          0.31
+         ],
+         "base": 1.53,
+         "h": 0.1,
+         "w": 0.32
+        },
+        {
+         "name": "flag",
+         "type": "flag",
+         "card": "story_bk_parts_08",
+         "at": [
+          0,
+          0
+         ],
+         "base": 2.85,
+         "h": 0.32
+        }
+       ]
+      },
+      "at": "tower",
+      "name": "tower",
+      "scale": 0.8,
+      "stage": 0,
+      "clear": 0.9
+     },
+     {
+      "card": "forest_broadleaf_00",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_rp_garden_15",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "farm_animals_16",
+      "at": "rabbit",
+      "stage": "full",
+      "name": "rabbit",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "village_houses_20",
+      "at": "f_cottage",
+      "stage": "full",
+      "name": "f_cottage",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": 35.0
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "flowers_1",
+      "stage": "full",
+      "name": "flowers_1",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_07",
+      "at": "flowers_2",
+      "stage": "full",
+      "name": "flowers_2",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "lawn",
+      "stage": "full",
+      "name": "lawn",
+      "scale": 0.8,
+      "clear": 2.2
+     }
+    ],
+    "focus": "f_focus"
+   },
+   "enter": {
+    "who": {},
+    "rp": {
+     "window": {
+      "rap": "win_sing"
+     }
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "window_side",
+     "at": "tower",
+     "rate": 1.0,
+     "wait": 0.3,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "rp_r0501"
+    },
+    {
+     "do": "tap_steps",
+     "target": "window",
+     "prompt": "rp_n06",
+     "hint": "rp_n06",
+     "steps": [
+      {
+       "fx": "notes",
+       "wait": 0.1,
+       "lines": [
+        "rp_x_hum"
+       ]
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "rp_r0503"
+    }
+   ],
+   "sound": {
+    "music": "rp_song",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "prince",
+   "title": "노랫소리",
+   "spread": {
+    "built": [
+     "tower"
+    ],
+    "seed": 4,
+    "view": 0,
+    "place": "forest",
+    "light": "dusk",
+    "spots": {
+     "tower": [
+      -0.95,
+      -2.25
+     ],
+     "f_focus": [
+      -0.6,
+      -1.8
+     ],
+     "win_foot": [
+      -0.95,
+      -1.94
+     ],
+     "climb_at": [
+      -0.95,
+      -1.9
+     ],
+     "gothel_tap": [
+      -0.55,
+      -1.75
+     ],
+     "gothel_call": [
+      -0.62,
+      -1.72
+     ],
+     "rabbit": [
+      -1.45,
+      -1.75
+     ],
+     "prince_in": [
+      1.05,
+      -3.3
+     ],
+     "prince_mid": [
+      0.45,
+      -2.0
+     ],
+     "prince_foot": [
+      -0.5,
+      -1.62
+     ],
+     "prince_look": [
+      -0.58,
+      -1.6
+     ],
+     "tree": [
+      1.8,
+      -2.35
+     ],
+     "hide_at": [
+      2.1,
+      -2.1
+     ],
+     "gothel_in": [
+      1.0,
+      -3.4
+     ],
+     "gothel_mid": [
+      0.4,
+      -2.05
+     ],
+     "hedge": [
+      -0.3,
+      -1.95
+     ],
+     "land": [
+      -0.42,
+      -1.72
+     ],
+     "road_bend": [
+      0.0,
+      -0.5
+     ],
+     "field_in": [
+      -0.45,
+      0.25
+     ],
+     "f_cottage": [
+      -1.75,
+      0.15
+     ],
+     "rap_field": [
+      -1.15,
+      0.5
+     ],
+     "prince_meet": [
+      -0.9,
+      0.55
+     ],
+     "field_focus": [
+      -1.0,
+      0.4
+     ],
+     "flowers_1": [
+      -1.5,
+      0.85
+     ],
+     "flowers_2": [
+      -1.95,
+      0.75
+     ],
+     "track_mid": [
+      0.2,
+      -1.0
+     ],
+     "lawn": [
+      1.6,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "build": {
+       "parts": [
+        {
+         "name": "tower",
+         "type": "tower",
+         "shape": "round",
+         "n": 22,
+         "r": 0.3,
+         "h": 2.1,
+         "wall": "ashlar",
+         "thick": 0.05,
+         "plinth": {
+          "h": 0.06,
+          "mat": "fieldstone",
+          "out": 0.04
+         },
+         "openings": [
+          {
+           "edge": 0,
+           "u": 0.5,
+           "w": 0.16,
+           "h": 0.24,
+           "y": 1.6,
+           "kind": "arch"
+          }
+         ],
+         "roof": {
+          "type": "cone",
+          "mat": "slate",
+          "h": 0.8,
+          "overhang": 0.1,
+          "thick": 0.03
+         }
+        },
+        {
+         "name": "balcony",
+         "type": "card",
+         "card": "story_bk_parts_13",
+         "at": [
+          0.0,
+          0.31
+         ],
+         "base": 1.53,
+         "h": 0.1,
+         "w": 0.32
+        },
+        {
+         "name": "flag",
+         "type": "flag",
+         "card": "story_bk_parts_08",
+         "at": [
+          0,
+          0
+         ],
+         "base": 2.85,
+         "h": 0.32
+        }
+       ]
+      },
+      "at": "tower",
+      "name": "tower",
+      "scale": 0.8,
+      "stage": 0,
+      "clear": 0.9
+     },
+     {
+      "card": "forest_broadleaf_00",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_rp_garden_15",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "farm_animals_16",
+      "at": "rabbit",
+      "stage": "full",
+      "name": "rabbit",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "village_houses_20",
+      "at": "f_cottage",
+      "stage": "full",
+      "name": "f_cottage",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": 35.0
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "flowers_1",
+      "stage": "full",
+      "name": "flowers_1",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_07",
+      "at": "flowers_2",
+      "stage": "full",
+      "name": "flowers_2",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "lawn",
+      "stage": "full",
+      "name": "lawn",
+      "scale": 0.8,
+      "clear": 2.2
+     }
+    ],
+    "focus": "f_focus"
+   },
+   "enter": {
+    "who": {},
+    "rp": {
+     "window": {
+      "rap": "win_sing"
+     }
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "notes",
+     "wait": 0.0
+    },
+    {
+     "do": "cam",
+     "shot": "road_in",
+     "at": "prince_mid",
+     "rate": 1.0,
+     "wait": 0.2
+    },
+    {
+     "do": "walk",
+     "who": "prince",
+     "from": "prince_in",
+     "to": "prince_mid",
+     "speed": 0.3,
+     "follow": "prince",
+     "shot": "road_in",
+     "line": "rp_r0600"
+    },
+    {
+     "do": "pose",
+     "who": "prince",
+     "pose": "listen",
+     "wait": 0.2
+    },
+    {
+     "do": "say",
+     "line": "rp_r0602"
+    },
+    {
+     "do": "pose",
+     "who": "prince",
+     "pose": "look_up",
+     "wait": 0.6
+    },
+    {
+     "do": "walk",
+     "who": "gothel",
+     "from": "gothel_in",
+     "to": "gothel_mid",
+     "speed": 0.3,
+     "async": true
+    },
+    {
+     "do": "walk",
+     "who": "prince",
+     "to": "hide_at",
+     "via": [
+      "prince_mid"
+     ],
+     "speed": 0.45,
+     "pose": "run",
+     "follow": "prince",
+     "shot": "hide",
+     "line": "rp_r0606"
+    },
+    {
+     "do": "pose",
+     "who": "prince",
+     "pose": "hide",
+     "left": 1,
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": "gothel",
+     "to": "gothel_call",
+     "speed": 0.3,
+     "follow": "gothel",
+     "shot": "foot"
+    },
+    {
+     "do": "pose",
+     "who": "gothel",
+     "pose": "talk",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "tower_low",
+     "at": [
+      "gothel_call",
+      "tower"
+     ],
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0607"
+    },
+    {
+     "do": "fx",
+     "fx": "window:rap:win_letdown",
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "braid:down",
+     "wait": 1.2
+    },
+    {
+     "do": "walk",
+     "who": "gothel",
+     "to": "climb_at",
+     "speed": 0.22
+    },
+    {
+     "do": "cam",
+     "shot": "climb",
+     "at": "climb_at",
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "climb_braid",
+     "who": "gothel",
+     "speed": 0.26,
+     "cam": "climb"
+    },
+    {
+     "do": "fx",
+     "fx": "braid:up",
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "hide",
+     "at": "hide_at",
+     "rate": 1.3,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "pose",
+     "who": "prince",
+     "pose": "delighted",
+     "hop": true,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "rp_r0609"
+    }
+   ],
+   "sound": {
+    "music": "rapunzel",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  },
+  {
+   "id": "climb",
+   "title": "왕자가 올라와요",
+   "spread": {
+    "built": [
+     "tower"
+    ],
+    "seed": 4,
+    "view": 0,
+    "place": "forest",
+    "light": "dusk",
+    "spots": {
+     "tower": [
+      -0.95,
+      -2.25
+     ],
+     "f_focus": [
+      -0.6,
+      -1.8
+     ],
+     "win_foot": [
+      -0.95,
+      -1.94
+     ],
+     "climb_at": [
+      -0.95,
+      -1.9
+     ],
+     "gothel_tap": [
+      -0.55,
+      -1.75
+     ],
+     "gothel_call": [
+      -0.62,
+      -1.72
+     ],
+     "rabbit": [
+      -1.45,
+      -1.75
+     ],
+     "prince_in": [
+      1.05,
+      -3.3
+     ],
+     "prince_mid": [
+      0.45,
+      -2.0
+     ],
+     "prince_foot": [
+      -0.5,
+      -1.62
+     ],
+     "prince_look": [
+      -0.58,
+      -1.6
+     ],
+     "tree": [
+      1.8,
+      -2.35
+     ],
+     "hide_at": [
+      2.1,
+      -2.1
+     ],
+     "gothel_in": [
+      1.0,
+      -3.4
+     ],
+     "gothel_mid": [
+      0.4,
+      -2.05
+     ],
+     "hedge": [
+      -0.3,
+      -1.95
+     ],
+     "land": [
+      -0.42,
+      -1.72
+     ],
+     "road_bend": [
+      0.0,
+      -0.5
+     ],
+     "field_in": [
+      -0.45,
+      0.25
+     ],
+     "f_cottage": [
+      -1.75,
+      0.15
+     ],
+     "rap_field": [
+      -1.15,
+      0.5
+     ],
+     "prince_meet": [
+      -0.9,
+      0.55
+     ],
+     "field_focus": [
+      -1.0,
+      0.4
+     ],
+     "flowers_1": [
+      -1.5,
+      0.85
+     ],
+     "flowers_2": [
+      -1.95,
+      0.75
+     ],
+     "track_mid": [
+      0.2,
+      -1.0
+     ],
+     "lawn": [
+      1.6,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "build": {
+       "parts": [
+        {
+         "name": "tower",
+         "type": "tower",
+         "shape": "round",
+         "n": 22,
+         "r": 0.3,
+         "h": 2.1,
+         "wall": "ashlar",
+         "thick": 0.05,
+         "plinth": {
+          "h": 0.06,
+          "mat": "fieldstone",
+          "out": 0.04
+         },
+         "openings": [
+          {
+           "edge": 0,
+           "u": 0.5,
+           "w": 0.16,
+           "h": 0.24,
+           "y": 1.6,
+           "kind": "arch"
+          }
+         ],
+         "roof": {
+          "type": "cone",
+          "mat": "slate",
+          "h": 0.8,
+          "overhang": 0.1,
+          "thick": 0.03
+         }
+        },
+        {
+         "name": "balcony",
+         "type": "card",
+         "card": "story_bk_parts_13",
+         "at": [
+          0.0,
+          0.31
+         ],
+         "base": 1.53,
+         "h": 0.1,
+         "w": 0.32
+        },
+        {
+         "name": "flag",
+         "type": "flag",
+         "card": "story_bk_parts_08",
+         "at": [
+          0,
+          0
+         ],
+         "base": 2.85,
+         "h": 0.32
+        }
+       ]
+      },
+      "at": "tower",
+      "name": "tower",
+      "scale": 0.8,
+      "stage": 0,
+      "clear": 0.9
+     },
+     {
+      "card": "forest_broadleaf_00",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_rp_garden_15",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "farm_animals_16",
+      "at": "rabbit",
+      "stage": "full",
+      "name": "rabbit",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "village_houses_20",
+      "at": "f_cottage",
+      "stage": "full",
+      "name": "f_cottage",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": 35.0
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "flowers_1",
+      "stage": "full",
+      "name": "flowers_1",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_07",
+      "at": "flowers_2",
+      "stage": "full",
+      "name": "flowers_2",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "lawn",
+      "stage": "full",
+      "name": "lawn",
+      "scale": 0.8,
+      "clear": 2.2
+     }
+    ],
+    "focus": "f_focus"
+   },
+   "enter": {
+    "who": {
+     "prince": "call"
+    },
+    "at": {
+     "prince": "prince_look"
+    },
+    "rp": {
+     "window": {
+      "rap": "win_smile"
+     }
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "tower_low",
+     "at": [
+      "prince_look",
+      "tower"
+     ],
+     "rate": 1.0,
+     "wait": 0.3,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "rp_r0701"
+    },
+    {
+     "do": "cam",
+     "shot": "window",
+     "at": "tower",
+     "rate": 1.4,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "tap_steps",
+     "target": "window",
+     "hint": "rp_n05",
+     "steps": [
+      {
+       "fx": "braid:down",
+       "wait": 0.3
+      }
+     ]
+    },
+    {
+     "do": "cam",
+     "shot": "braid_fall",
+     "at": "win_foot",
+     "rate": 1.2,
+     "wait": 0.6
+    },
+    {
+     "do": "walk",
+     "who": "prince",
+     "to": "climb_at",
+     "speed": 0.22
+    },
+    {
+     "do": "cam",
+     "shot": "climb",
+     "at": "climb_at",
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "climb_braid",
+     "who": "prince",
+     "speed": 0.24,
+     "cam": "climb",
+     "line": "rp_r0702"
+    }
+   ],
+   "sound": {
+    "music": "rapunzel",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "meet",
+   "title": "탑 꼭대기 방",
+   "spread": {
+    "seed": 4,
+    "view": 5,
+    "place": "room",
+    "light": "dusk",
+    "spots": {
+     "r_c": [
+      -1.7,
+      -1.2
+     ],
+     "r_focus": [
+      -1.7,
+      -1.5
+     ],
+     "r_win": [
+      -1.7,
+      -1.72
+     ],
+     "r_rap": [
+      -1.52,
+      -1.58
+     ],
+     "r_prince": [
+      -1.9,
+      -1.6
+     ],
+     "r_gothel": [
+      -1.94,
+      -1.56
+     ],
+     "r_bed": [
+      -1.2,
+      -1.45
+     ],
+     "r_table": [
+      -2.1799999999999997,
+      -1.5
+     ],
+     "r_wheel": [
+      -2.2199999999999998,
+      -1.15
+     ],
+     "r_rug": [
+      -1.7,
+      -1.3499999999999999
+     ],
+     "r_two": [
+      -1.7,
+      -1.58
+     ],
+     "rw_180": [
+      -1.7,
+      -1.92
+     ],
+     "rw_135": [
+      -1.191,
+      -1.709
+     ],
+     "rw_225": [
+      -2.209,
+      -1.709
+     ],
+     "rw_90": [
+      -0.98,
+      -1.2
+     ],
+     "rw_270": [
+      -2.42,
+      -1.2
+     ],
+     "rf_0": [
+      -2.05,
+      -1.5499999999999998
+     ],
+     "rf_1": [
+      -1.35,
+      -1.5499999999999998
+     ],
+     "rf_2": [
+      -2.05,
+      -0.8999999999999999
+     ],
+     "rf_3": [
+      -1.35,
+      -0.8999999999999999
+     ]
+    },
+    "set": [
+     {
+      "card": "story_rp_room_01",
+      "at": "rw_180",
+      "stage": "full",
+      "name": "rw_180",
+      "scale": 1.45,
+      "clear": 1.6,
+      "yaw": 0.0
+     },
+     {
+      "card": "story_rp_room_02",
+      "at": "rw_135",
+      "stage": "full",
+      "name": "rw_135",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 315.0
+     },
+     {
+      "card": "story_rp_room_03",
+      "at": "rw_225",
+      "stage": "full",
+      "name": "rw_225",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 45.0
+     },
+     {
+      "card": "story_rp_room_00",
+      "at": "rw_90",
+      "stage": "full",
+      "name": "rw_90",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 270.0
+     },
+     {
+      "card": "story_rp_room_00",
+      "at": "rw_270",
+      "stage": "full",
+      "name": "rw_270",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 90.0
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_0",
+      "stage": "full",
+      "name": "rf_0",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.012
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_1",
+      "stage": "full",
+      "name": "rf_1",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.013000000000000001
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_2",
+      "stage": "full",
+      "name": "rf_2",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.014
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_3",
+      "stage": "full",
+      "name": "rf_3",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.015
+     },
+     {
+      "card": "story_rp_room_07",
+      "at": "r_rug",
+      "stage": "full",
+      "name": "rug",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.02
+     },
+     {
+      "card": "story_rp_room_04",
+      "at": "r_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.15,
+      "clear": 0,
+      "yaw": -70.0
+     },
+     {
+      "card": "story_rp_room_06",
+      "at": "r_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 60.0
+     },
+     {
+      "card": "story_rp_room_08",
+      "at": "r_wheel",
+      "stage": "full",
+      "name": "wheel",
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 80.0
+     }
+    ],
+    "focus": "r_focus"
+   },
+   "enter": {
+    "who": {
+     "rap": "surprised",
+     "prince": "calm"
+    },
+    "at": {
+     "rap": "r_rap",
+     "prince": "r_prince"
+    },
+    "left": {
+     "prince": 0
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "fx",
+     "fx": "in_window:prince",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "r_two",
+     "rate": 1.0,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "room_low",
+     "at": "r_rap",
+     "rate": 1.4,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0704"
+    },
+    {
+     "do": "cam",
+     "shot": "room_two",
+     "at": "r_two",
+     "rate": 1.3,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0705"
+    }
+   ],
+   "sound": {
+    "music": "rapunzel",
+    "bed": "room"
+   }
+  },
+  {
+   "id": "snip",
+   "title": "싹둑",
+   "spread": {
+    "seed": 4,
+    "view": 5,
+    "place": "room",
+    "light": "late",
+    "spots": {
+     "r_c": [
+      -1.7,
+      -1.2
+     ],
+     "r_focus": [
+      -1.7,
+      -1.5
+     ],
+     "r_win": [
+      -1.7,
+      -1.72
+     ],
+     "r_rap": [
+      -1.52,
+      -1.58
+     ],
+     "r_prince": [
+      -1.9,
+      -1.6
+     ],
+     "r_gothel": [
+      -1.94,
+      -1.56
+     ],
+     "r_bed": [
+      -1.2,
+      -1.45
+     ],
+     "r_table": [
+      -2.1799999999999997,
+      -1.5
+     ],
+     "r_wheel": [
+      -2.2199999999999998,
+      -1.15
+     ],
+     "r_rug": [
+      -1.7,
+      -1.3499999999999999
+     ],
+     "r_two": [
+      -1.7,
+      -1.58
+     ],
+     "rw_180": [
+      -1.7,
+      -1.92
+     ],
+     "rw_135": [
+      -1.191,
+      -1.709
+     ],
+     "rw_225": [
+      -2.209,
+      -1.709
+     ],
+     "rw_90": [
+      -0.98,
+      -1.2
+     ],
+     "rw_270": [
+      -2.42,
+      -1.2
+     ],
+     "rf_0": [
+      -2.05,
+      -1.5499999999999998
+     ],
+     "rf_1": [
+      -1.35,
+      -1.5499999999999998
+     ],
+     "rf_2": [
+      -2.05,
+      -0.8999999999999999
+     ],
+     "rf_3": [
+      -1.35,
+      -0.8999999999999999
+     ]
+    },
+    "set": [
+     {
+      "card": "story_rp_room_01",
+      "at": "rw_180",
+      "stage": "full",
+      "name": "rw_180",
+      "scale": 1.45,
+      "clear": 1.6,
+      "yaw": 0.0
+     },
+     {
+      "card": "story_rp_room_02",
+      "at": "rw_135",
+      "stage": "full",
+      "name": "rw_135",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 315.0
+     },
+     {
+      "card": "story_rp_room_03",
+      "at": "rw_225",
+      "stage": "full",
+      "name": "rw_225",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 45.0
+     },
+     {
+      "card": "story_rp_room_00",
+      "at": "rw_90",
+      "stage": "full",
+      "name": "rw_90",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 270.0
+     },
+     {
+      "card": "story_rp_room_00",
+      "at": "rw_270",
+      "stage": "full",
+      "name": "rw_270",
+      "scale": 1.45,
+      "clear": 0,
+      "yaw": 90.0
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_0",
+      "stage": "full",
+      "name": "rf_0",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.012
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_1",
+      "stage": "full",
+      "name": "rf_1",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.013000000000000001
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_2",
+      "stage": "full",
+      "name": "rf_2",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.014
+     },
+     {
+      "card": "story_room_03",
+      "at": "rf_3",
+      "stage": "full",
+      "name": "rf_3",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.015
+     },
+     {
+      "card": "story_rp_room_07",
+      "at": "r_rug",
+      "stage": "full",
+      "name": "rug",
+      "scale": 1.6,
+      "clear": 0,
+      "flat": true,
+      "lift": 0.02
+     },
+     {
+      "card": "story_rp_room_04",
+      "at": "r_bed",
+      "stage": "full",
+      "name": "bed",
+      "scale": 1.15,
+      "clear": 0,
+      "yaw": -70.0
+     },
+     {
+      "card": "story_rp_room_06",
+      "at": "r_table",
+      "stage": "full",
+      "name": "table",
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 60.0
+     },
+     {
+      "card": "story_rp_room_08",
+      "at": "r_wheel",
+      "stage": "full",
+      "name": "wheel",
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 80.0
+     }
+    ],
+    "focus": "r_focus"
+   },
+   "enter": {
+    "who": {
+     "rap": "chatty",
+     "gothel": "calm"
+    },
+    "at": {
+     "rap": "r_rap",
+     "gothel": "r_gothel"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "room",
+     "at": "r_two",
+     "rate": 1.0,
+     "wait": 0.2,
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "rp_r0802"
+    },
+    {
+     "do": "cam",
+     "shot": "room_low",
+     "at": "r_gothel",
+     "rate": 1.8,
+     "wait": 0.1,
+     "shake": 0.4,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0803"
+    },
+    {
+     "do": "pose",
+     "who": "gothel",
+     "pose": "scissors",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "room_two",
+     "at": "r_two",
+     "rate": 1.3,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "snip",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "rp_r0805"
+    },
+    {
+     "do": "fx",
+     "fx": "vanish:rap",
+     "wait": 1.0
+    }
+   ],
+   "sound": {
+    "music": "night",
+    "bed": "room"
+   }
+  },
+  {
+   "id": "empty",
+   "title": "빈 탑",
+   "spread": {
+    "built": [
+     "tower"
+    ],
+    "seed": 4,
+    "view": 0,
+    "place": "forest",
+    "light": "dusk",
+    "spots": {
+     "tower": [
+      -0.95,
+      -2.25
+     ],
+     "f_focus": [
+      -0.6,
+      -1.8
+     ],
+     "win_foot": [
+      -0.95,
+      -1.94
+     ],
+     "climb_at": [
+      -0.95,
+      -1.9
+     ],
+     "gothel_tap": [
+      -0.55,
+      -1.75
+     ],
+     "gothel_call": [
+      -0.62,
+      -1.72
+     ],
+     "rabbit": [
+      -1.45,
+      -1.75
+     ],
+     "prince_in": [
+      1.05,
+      -3.3
+     ],
+     "prince_mid": [
+      0.45,
+      -2.0
+     ],
+     "prince_foot": [
+      -0.5,
+      -1.62
+     ],
+     "prince_look": [
+      -0.58,
+      -1.6
+     ],
+     "tree": [
+      1.8,
+      -2.35
+     ],
+     "hide_at": [
+      2.1,
+      -2.1
+     ],
+     "gothel_in": [
+      1.0,
+      -3.4
+     ],
+     "gothel_mid": [
+      0.4,
+      -2.05
+     ],
+     "hedge": [
+      -0.3,
+      -1.95
+     ],
+     "land": [
+      -0.42,
+      -1.72
+     ],
+     "road_bend": [
+      0.0,
+      -0.5
+     ],
+     "field_in": [
+      -0.45,
+      0.25
+     ],
+     "f_cottage": [
+      -1.75,
+      0.15
+     ],
+     "rap_field": [
+      -1.15,
+      0.5
+     ],
+     "prince_meet": [
+      -0.9,
+      0.55
+     ],
+     "field_focus": [
+      -1.0,
+      0.4
+     ],
+     "flowers_1": [
+      -1.5,
+      0.85
+     ],
+     "flowers_2": [
+      -1.95,
+      0.75
+     ],
+     "track_mid": [
+      0.2,
+      -1.0
+     ],
+     "lawn": [
+      1.6,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "build": {
+       "parts": [
+        {
+         "name": "tower",
+         "type": "tower",
+         "shape": "round",
+         "n": 22,
+         "r": 0.3,
+         "h": 2.1,
+         "wall": "ashlar",
+         "thick": 0.05,
+         "plinth": {
+          "h": 0.06,
+          "mat": "fieldstone",
+          "out": 0.04
+         },
+         "openings": [
+          {
+           "edge": 0,
+           "u": 0.5,
+           "w": 0.16,
+           "h": 0.24,
+           "y": 1.6,
+           "kind": "arch"
+          }
+         ],
+         "roof": {
+          "type": "cone",
+          "mat": "slate",
+          "h": 0.8,
+          "overhang": 0.1,
+          "thick": 0.03
+         }
+        },
+        {
+         "name": "balcony",
+         "type": "card",
+         "card": "story_bk_parts_13",
+         "at": [
+          0.0,
+          0.31
+         ],
+         "base": 1.53,
+         "h": 0.1,
+         "w": 0.32
+        },
+        {
+         "name": "flag",
+         "type": "flag",
+         "card": "story_bk_parts_08",
+         "at": [
+          0,
+          0
+         ],
+         "base": 2.85,
+         "h": 0.32
+        }
+       ]
+      },
+      "at": "tower",
+      "name": "tower",
+      "scale": 0.8,
+      "stage": 0,
+      "clear": 0.9
+     },
+     {
+      "card": "forest_broadleaf_00",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_rp_garden_15",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "farm_animals_16",
+      "at": "rabbit",
+      "stage": "full",
+      "name": "rabbit",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "village_houses_20",
+      "at": "f_cottage",
+      "stage": "full",
+      "name": "f_cottage",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": 35.0
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "flowers_1",
+      "stage": "full",
+      "name": "flowers_1",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_07",
+      "at": "flowers_2",
+      "stage": "full",
+      "name": "flowers_2",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "lawn",
+      "stage": "full",
+      "name": "lawn",
+      "scale": 0.8,
+      "clear": 2.2
+     }
+    ],
+    "focus": "f_focus"
+   },
+   "enter": {
+    "who": {},
+    "hidden": {
+     "gothel": "win_foot"
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "road_in",
+     "at": "prince_mid",
+     "rate": 1.0,
+     "wait": 0.2
+    },
+    {
+     "do": "walk",
+     "who": "prince",
+     "from": "prince_in",
+     "to": "prince_look",
+     "via": [
+      "prince_mid"
+     ],
+     "speed": 0.34,
+     "follow": "prince",
+     "shot": "foot",
+     "line": "rp_r0900"
+    },
+    {
+     "do": "pose",
+     "who": "prince",
+     "pose": "call",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "tower_low",
+     "at": [
+      "prince_look",
+      "tower"
+     ],
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0902"
+    },
+    {
+     "do": "fx",
+     "fx": "braid:hook",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "braid_fall",
+     "at": "win_foot",
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "rp_r0903"
+    },
+    {
+     "do": "walk",
+     "who": "prince",
+     "to": "climb_at",
+     "speed": 0.24
+    },
+    {
+     "do": "cam",
+     "shot": "climb",
+     "at": "climb_at",
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "climb_braid",
+     "who": "prince",
+     "speed": 0.28,
+     "cam": "climb",
+     "stop": 0.75
+    },
+    {
+     "do": "fx",
+     "fx": "window:gothel:win_stern",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "window_side",
+     "at": "tower",
+     "rate": 1.4,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0905"
+    },
+    {
+     "do": "fx",
+     "fx": "window:gothel:win_wand",
+     "wait": 0.2
+    },
+    {
+     "do": "cam",
+     "shot": "float",
+     "at": [
+      "land",
+      "win_foot"
+     ],
+     "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "fx",
+     "fx": "wind_float",
+     "wait": 0.0
+    },
+    {
+     "do": "say",
+     "line": "rp_r0906"
+    },
+    {
+     "do": "fx",
+     "fx": "braid:up",
+     "wait": 0.2
+    },
+    {
+     "do": "fx",
+     "fx": "window:gothel:",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "foot",
+     "at": "land",
+     "rate": 1.2,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r0907"
+    },
+    {
+     "do": "walk",
+     "who": "prince",
+     "via": [
+      "track_mid",
+      "road_bend"
+     ],
+     "to": "field_in",
+     "speed": 0.36,
+     "follow": "prince",
+     "shot": "track",
+     "line": "rp_r0908"
+    }
+   ],
+   "sound": {
+    "music": "night",
+    "bed": "@light"
+   }
+  },
+  {
+   "id": "reunion",
+   "title": "노래를 따라서",
+   "spread": {
+    "built": [
+     "tower"
+    ],
+    "seed": 4,
+    "view": 0,
+    "place": "forest",
+    "light": "evening",
+    "spots": {
+     "tower": [
+      -0.95,
+      -2.25
+     ],
+     "f_focus": [
+      -0.6,
+      -1.8
+     ],
+     "win_foot": [
+      -0.95,
+      -1.94
+     ],
+     "climb_at": [
+      -0.95,
+      -1.9
+     ],
+     "gothel_tap": [
+      -0.55,
+      -1.75
+     ],
+     "gothel_call": [
+      -0.62,
+      -1.72
+     ],
+     "rabbit": [
+      -1.45,
+      -1.75
+     ],
+     "prince_in": [
+      1.05,
+      -3.3
+     ],
+     "prince_mid": [
+      0.45,
+      -2.0
+     ],
+     "prince_foot": [
+      -0.5,
+      -1.62
+     ],
+     "prince_look": [
+      -0.58,
+      -1.6
+     ],
+     "tree": [
+      1.8,
+      -2.35
+     ],
+     "hide_at": [
+      2.1,
+      -2.1
+     ],
+     "gothel_in": [
+      1.0,
+      -3.4
+     ],
+     "gothel_mid": [
+      0.4,
+      -2.05
+     ],
+     "hedge": [
+      -0.3,
+      -1.95
+     ],
+     "land": [
+      -0.42,
+      -1.72
+     ],
+     "road_bend": [
+      0.0,
+      -0.5
+     ],
+     "field_in": [
+      -0.45,
+      0.25
+     ],
+     "f_cottage": [
+      -1.75,
+      0.15
+     ],
+     "rap_field": [
+      -1.15,
+      0.5
+     ],
+     "prince_meet": [
+      -0.9,
+      0.55
+     ],
+     "field_focus": [
+      -1.0,
+      0.4
+     ],
+     "flowers_1": [
+      -1.5,
+      0.85
+     ],
+     "flowers_2": [
+      -1.95,
+      0.75
+     ],
+     "track_mid": [
+      0.2,
+      -1.0
+     ],
+     "lawn": [
+      1.6,
+      -1.15
+     ]
+    },
+    "set": [
+     {
+      "build": {
+       "parts": [
+        {
+         "name": "tower",
+         "type": "tower",
+         "shape": "round",
+         "n": 22,
+         "r": 0.3,
+         "h": 2.1,
+         "wall": "ashlar",
+         "thick": 0.05,
+         "plinth": {
+          "h": 0.06,
+          "mat": "fieldstone",
+          "out": 0.04
+         },
+         "openings": [
+          {
+           "edge": 0,
+           "u": 0.5,
+           "w": 0.16,
+           "h": 0.24,
+           "y": 1.6,
+           "kind": "arch"
+          }
+         ],
+         "roof": {
+          "type": "cone",
+          "mat": "slate",
+          "h": 0.8,
+          "overhang": 0.1,
+          "thick": 0.03
+         }
+        },
+        {
+         "name": "balcony",
+         "type": "card",
+         "card": "story_bk_parts_13",
+         "at": [
+          0.0,
+          0.31
+         ],
+         "base": 1.53,
+         "h": 0.1,
+         "w": 0.32
+        },
+        {
+         "name": "flag",
+         "type": "flag",
+         "card": "story_bk_parts_08",
+         "at": [
+          0,
+          0
+         ],
+         "base": 2.85,
+         "h": 0.32
+        }
+       ]
+      },
+      "at": "tower",
+      "name": "tower",
+      "scale": 0.8,
+      "stage": 0,
+      "clear": 0.9
+     },
+     {
+      "card": "forest_broadleaf_00",
+      "at": "tree",
+      "stage": "full",
+      "name": "tree",
+      "scale": 1.0,
+      "clear": 0.4
+     },
+     {
+      "card": "story_rp_garden_15",
+      "at": "hedge",
+      "stage": "full",
+      "name": "hedge",
+      "scale": 1.0,
+      "clear": 0.25
+     },
+     {
+      "card": "farm_animals_16",
+      "at": "rabbit",
+      "stage": "full",
+      "name": "rabbit",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "village_houses_20",
+      "at": "f_cottage",
+      "stage": "full",
+      "name": "f_cottage",
+      "scale": 1.0,
+      "clear": 0.9,
+      "yaw": 35.0
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "flowers_1",
+      "stage": "full",
+      "name": "flowers_1",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_07",
+      "at": "flowers_2",
+      "stage": "full",
+      "name": "flowers_2",
+      "scale": 1.0,
+      "clear": 0.15
+     },
+     {
+      "card": "spring_blossom_16",
+      "at": "lawn",
+      "stage": "full",
+      "name": "lawn",
+      "scale": 0.8,
+      "clear": 2.2
+     }
+    ],
+    "focus": "f_focus"
+   },
+   "enter": {
+    "who": {
+     "prince": "sad",
+     "rap": "short_sing"
+    },
+    "at": {
+     "prince": "field_in",
+     "rap": "rap_field"
+    },
+    "left": {
+     "rap": 0
+    },
+    "keep": []
+   },
+   "steps": [
+    {
+     "do": "cam",
+     "shot": "field",
+     "at": "field_focus",
+     "rate": 1.1,
+     "wait": 0.2,
+     "settle": 0.5
+    },
+    {
+     "do": "fx",
+     "fx": "notes:rap",
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "rp_x_hum"
+    },
+    {
+     "do": "pose",
+     "who": "prince",
+     "pose": "delighted",
+     "hop": true,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "rp_r1004"
+    },
+    {
+     "do": "walk",
+     "who": "prince",
+     "to": "prince_meet",
+     "speed": 0.45,
+     "pose": "run"
+    },
+    {
+     "do": "pose",
+     "who": "rap",
+     "pose": "short_joy",
+     "hop": true,
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "reunion",
+     "at": [
+      "rap_field",
+      "prince_meet"
+     ],
+     "rate": 1.3,
+     "wait": 0.1,
+     "settle": 0.5
+    },
+    {
+     "do": "say",
+     "line": "rp_r1005"
+    },
+    {
+     "do": "say",
+     "line": "rp_r1006"
+    },
+    {
+     "do": "tap_steps",
+     "target": "rap",
+     "prompt": "rp_n07",
+     "hint": "rp_n07",
+     "steps": [
+      {
+       "fx": "hold_hands",
+       "wait": 0.6
+      }
+     ]
+    },
+    {
+     "do": "say",
+     "line": "rp_r1007"
+    },
+    {
+     "do": "cam",
+     "shot": "field",
+     "at": "field_focus",
+     "rate": 0.8,
+     "wait": 0.1
+    },
+    {
+     "do": "say",
+     "line": "rp_r1008"
+    },
+    {
+     "do": "end",
+     "after": "rp_n02",
+     "close_book": true
+    }
+   ],
+   "sound": {
+    "music": "rp_song",
+    "bed": "@light",
+    "emitters": [
+     "trees"
+    ]
+   }
+  }
+ ],
+ "lines": [
+  {
+   "id": "rp_000",
+   "speaker": "nar",
+   "text": "옛날에 아기를 기다리는 부부가 살았어요. 아기가 곧 올 거예요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "옛날에 아기를 기다리는 부부가 살았어요. 아기가 곧 올 거예요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling, slow, unhurried]",
+     "audio": "res://audio/voice/rapunzel/nar_c838ad03e4.mp3",
+     "source_audio": "audio/el/rapunzel/nar_c838ad03e4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 0,
+   "source_text": "옛날에 아기를 기다리는 부부가 살았어요. 아기가 곧 올 거예요."
+  },
+  {
+   "id": "rp_001",
+   "speaker": "nar",
+   "text": "담 너머 텃밭은 마녀 고텔의 마법 텃밭이라 아무도 들어가지 못했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "담 너머 텃밭은 마녀 고텔의 마법 텃밭이라 아무도 들어가지 못했어요.",
+     "emotion": null,
+     "tags": "[calm, a little mysterious, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_ad13144cb5.mp3",
+     "source_audio": "audio/el/rapunzel/nar_ad13144cb5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 1,
+   "source_text": "담 너머 텃밭은 마녀 고텔의 마법 텃밭이라 아무도 들어가지 못했어요."
+  },
+  {
+   "id": "rp_002",
+   "speaker": "mother",
+   "text": "\"저 라푼젤 풀이 너무너무 먹고 싶어요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "mother",
+     "text": "저 라푼젤 풀이 너무너무 먹고 싶어요.",
+     "emotion": "sad",
+     "tags": "[soft, longing, wishful, gentle]",
+     "audio": "res://audio/voice/rapunzel/mother_510c8ffafe.mp3",
+     "source_audio": "audio/el/rapunzel/mother_510c8ffafe.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 2,
+   "source_text": "저 라푼젤 풀이 너무너무 먹고 싶어요."
+  },
+  {
+   "id": "rp_003",
+   "speaker": "father",
+   "text": "\"내가 가져올게요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "father",
+     "text": "내가 가져올게요.",
+     "emotion": null,
+     "tags": "[kind, a little nervous, decided]",
+     "audio": "res://audio/voice/rapunzel/father_554c3aeab5.mp3",
+     "source_audio": "audio/el/rapunzel/father_554c3aeab5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 3,
+   "source_text": "내가 가져올게요."
+  },
+  {
+   "id": "rp_004",
+   "speaker": "nar",
+   "text": "밤이 되자, 아버지는 살금살금 담을 넘었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "밤이 되자, 아버지는 살금살금 담을 넘었어요.",
+     "emotion": null,
+     "tags": "[hushed, sneaky, slow, playful]",
+     "audio": "res://audio/voice/rapunzel/nar_3e2fdcf860.mp3",
+     "source_audio": "audio/el/rapunzel/nar_3e2fdcf860.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 4,
+   "source_text": "밤이 되자, 아버지는 살금살금 담을 넘었어요."
+  },
+  {
+   "id": "rp_005",
+   "speaker": "gothel",
+   "text": "\"누구냐! 내 풀을 뽑다니!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "누구냐! 내 풀을 뽑다니!",
+     "emotion": "toneup",
+     "tags": "[stern old witch, grumbling, sharp but NOT shouting, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_aea135cadf.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_aea135cadf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 5,
+   "source_text": "누구냐! 내 풀을 뽑다니!"
+  },
+  {
+   "id": "rp_006",
+   "speaker": "father",
+   "text": "\"아, 아내가 너무너무 먹고 싶어 해서요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "father",
+     "text": "아, 아내가 너무너무 먹고 싶어 해서요.",
+     "emotion": "sad",
+     "tags": "[startled, apologetic, small voice]",
+     "audio": "res://audio/voice/rapunzel/father_75d97af326.mp3",
+     "source_audio": "audio/el/rapunzel/father_75d97af326.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 6,
+   "source_text": "아, 아내가 너무너무 먹고 싶어 해서요."
+  },
+  {
+   "id": "rp_007",
+   "speaker": "gothel",
+   "text": "\"내 풀을 가져가도 좋다. 대신 아기가 태어나면 내가 키우마.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "내 풀을 가져가도 좋다. 대신 아기가 태어나면 내가 키우마.",
+     "emotion": null,
+     "tags": "[stern, slow, serious bargain, grumbling, calm]",
+     "audio": "res://audio/voice/rapunzel/gothel_e46546734f.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_e46546734f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 7,
+   "source_text": "내 풀을 가져가도 좋다. 대신 아기가 태어나면 내가 키우마."
+  },
+  {
+   "id": "rp_008",
+   "speaker": "father",
+   "text": "\"네… 알겠어요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "father",
+     "text": "네… 알겠어요.",
+     "emotion": "sad",
+     "tags": "[hesitant, quiet, a pause before 알겠어요]",
+     "audio": "res://audio/voice/rapunzel/father_5227432e81.mp3",
+     "source_audio": "audio/el/rapunzel/father_5227432e81.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 8,
+   "source_text": "네… 알겠어요."
+  },
+  {
+   "id": "rp_009",
+   "speaker": "nar",
+   "text": "아기가 태어났어요. 마녀 고텔은 아기를 데려가 라푼젤이라고 이름 짓고 정성껏 키웠어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기가 태어났어요. 마녀 고텔은 아기를 데려가 라푼젤이라고 이름 짓고 정성껏 키웠어요.",
+     "emotion": null,
+     "tags": "[gentle, matter-of-fact, warm at 정성껏]",
+     "audio": "res://audio/voice/rapunzel/nar_bce129dadc.mp3",
+     "source_audio": "audio/el/rapunzel/nar_bce129dadc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 9,
+   "source_text": "아기가 태어났어요. 마녀 고텔은 아기를 데려가 라푼젤이라고 이름 짓고 정성껏 키웠어요."
+  },
+  {
+   "id": "rp_010",
+   "speaker": "nar",
+   "text": "라푼젤이 열두 살이 되자, 마녀는 지팡이를 톡 두드렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤이 열두 살이 되자, 마녀는 지팡이를 톡 두드렸어요.",
+     "emotion": null,
+     "tags": "[calm, a tiny pause before 톡]",
+     "audio": "res://audio/voice/rapunzel/nar_cf100de579.mp3",
+     "source_audio": "audio/el/rapunzel/nar_cf100de579.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 10,
+   "source_text": "라푼젤이 열두 살이 되자, 마녀는 지팡이를 톡 두드렸어요."
+  },
+  {
+   "id": "rp_011",
+   "speaker": "nar",
+   "text": "숲속에 문도 계단도 없는 높은 탑이 쑥 솟았어요. 창문은 꼭대기에 하나뿐이에요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "숲속에 문도 계단도 없는 높은 탑이 쑥 솟았어요. 창문은 꼭대기에 하나뿐이에요.",
+     "emotion": null,
+     "tags": "[wondering, rising at 쑥, then clear and slow]",
+     "audio": "res://audio/voice/rapunzel/nar_93f58ee80d.mp3",
+     "source_audio": "audio/el/rapunzel/nar_93f58ee80d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 11,
+   "source_text": "숲속에 문도 계단도 없는 높은 탑이 쑥 솟았어요. 창문은 꼭대기에 하나뿐이에요."
+  },
+  {
+   "id": "rp_012",
+   "speaker": "gothel",
+   "text": "\"자, 잠겨라. 밖은 위험하단다. 여기가 제일 안전해.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "자, 잠겨라. 밖은 위험하단다. 여기가 제일 안전해.",
+     "emotion": null,
+     "tags": "[stern but protective, low, slow, grumbling, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_6f506f9a4b.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_6f506f9a4b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 12,
+   "source_text": "자, 잠겨라. 밖은 위험하단다. 여기가 제일 안전해."
+  },
+  {
+   "id": "rp_013",
+   "speaker": "nar",
+   "text": "창문 위에는 새 한 마리, 탑 아래에는 토끼 한 마리가 있어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "창문 위에는 새 한 마리, 탑 아래에는 토끼 한 마리가 있어요.",
+     "emotion": null,
+     "tags": "[clear, slow, pointing out, a pause between the two halves]",
+     "audio": "res://audio/voice/rapunzel/nar_92c7ccacbc.mp3",
+     "source_audio": "audio/el/rapunzel/nar_92c7ccacbc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 13,
+   "source_text": "창문 위에는 새 한 마리, 탑 아래에는 토끼 한 마리가 있어요."
+  },
+  {
+   "id": "rp_014",
+   "speaker": "nar",
+   "text": "탑 위에 있는 새를 톡, 눌러 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "탑 위에 있는 새를 톡, 눌러 봐요.",
+     "emotion": null,
+     "tags": "[inviting, clear, slow, stress on 위]",
+     "audio": "res://audio/voice/rapunzel/nar_9631c7a459.mp3",
+     "source_audio": "audio/el/rapunzel/nar_9631c7a459.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 14,
+   "source_text": "탑 위에 있는 새를 톡, 눌러 봐요."
+  },
+  {
+   "id": "rp_015",
+   "speaker": "nar",
+   "text": "그건 탑 아래에 있는 토끼예요. 위를 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 탑 아래에 있는 토끼예요. 위를 봐요.",
+     "emotion": null,
+     "tags": "[gentle, encouraging, not disappointed]",
+     "audio": "res://audio/voice/rapunzel/nar_7f347ae8cd.mp3",
+     "source_audio": "audio/el/rapunzel/nar_7f347ae8cd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 15,
+   "source_text": "그건 탑 아래에 있는 토끼예요. 위를 봐요."
+  },
+  {
+   "id": "rp_016",
+   "speaker": "nar",
+   "text": "맞아요, 탑 위에 새!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요, 탑 위에 새!",
+     "emotion": "happy",
+     "tags": "[bright, warm praise]",
+     "audio": "res://audio/voice/rapunzel/nar_d4e63a2238.mp3",
+     "source_audio": "audio/el/rapunzel/nar_d4e63a2238.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 16,
+   "source_text": "맞아요, 탑 위에 새!"
+  },
+  {
+   "id": "rp_017",
+   "speaker": "nar",
+   "text": "이번엔 탑 아래에 있는 토끼를 톡, 눌러 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "이번엔 탑 아래에 있는 토끼를 톡, 눌러 봐요.",
+     "emotion": null,
+     "tags": "[inviting, clear, slow, stress on 아래]",
+     "audio": "res://audio/voice/rapunzel/nar_0a4b9dace0.mp3",
+     "source_audio": "audio/el/rapunzel/nar_0a4b9dace0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 17,
+   "source_text": "이번엔 탑 아래에 있는 토끼를 톡, 눌러 봐요."
+  },
+  {
+   "id": "rp_018",
+   "speaker": "nar",
+   "text": "그건 탑 위에 있는 새예요. 아래를 봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 탑 위에 있는 새예요. 아래를 봐요.",
+     "emotion": null,
+     "tags": "[gentle, encouraging, not disappointed]",
+     "audio": "res://audio/voice/rapunzel/nar_fe7e5c2fe8.mp3",
+     "source_audio": "audio/el/rapunzel/nar_fe7e5c2fe8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 18,
+   "source_text": "그건 탑 위에 있는 새예요. 아래를 봐요."
+  },
+  {
+   "id": "rp_019",
+   "speaker": "nar",
+   "text": "맞아요, 탑 아래에 토끼!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요, 탑 아래에 토끼!",
+     "emotion": "happy",
+     "tags": "[bright, warm praise]",
+     "audio": "res://audio/voice/rapunzel/nar_c1a93722c2.mp3",
+     "source_audio": "audio/el/rapunzel/nar_c1a93722c2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 19,
+   "source_text": "맞아요, 탑 아래에 토끼!"
+  },
+  {
+   "id": "rp_020",
+   "speaker": "gothel",
+   "text": "\"라푼젤, 라푼젤, 머리를 내려 줘!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "라푼젤, 라푼젤, 머리를 내려 줘!",
+     "emotion": "toneup",
+     "tags": "[calling up loudly but not harsh, sing-song chant, slow]",
+     "audio": "res://audio/voice/rapunzel/gothel_8819c79387.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_8819c79387.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 20,
+   "source_text": "라푼젤, 라푼젤, 머리를 내려 줘!"
+  },
+  {
+   "id": "rp_021",
+   "speaker": "nar",
+   "text": "스르르~ 금빛 머리가 탑 아래까지 닿았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "스르르~ 금빛 머리가 탑 아래까지 닿았어요.",
+     "emotion": null,
+     "tags": "[soft sliding sound on 스르르, then calm]",
+     "audio": "res://audio/voice/rapunzel/nar_f03a1cb3f7.mp3",
+     "source_audio": "audio/el/rapunzel/nar_f03a1cb3f7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 21,
+   "source_text": "스르르~ 금빛 머리가 탑 아래까지 닿았어요."
+  },
+  {
+   "id": "rp_022",
+   "speaker": "nar",
+   "text": "고텔은 머리를 잡고 천천히 올라가요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고텔은 머리를 잡고 천천히 올라가요.",
+     "emotion": null,
+     "tags": "[slow, steady, a little effortful]",
+     "audio": "res://audio/voice/rapunzel/nar_0204858413.mp3",
+     "source_audio": "audio/el/rapunzel/nar_0204858413.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 22,
+   "source_text": "고텔은 머리를 잡고 천천히 올라가요."
+  },
+  {
+   "id": "rp_023",
+   "speaker": "nar",
+   "text": "라푼젤은 혼자 있을 때면 창가에서 노래를 불렀어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 혼자 있을 때면 창가에서 노래를 불렀어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_12273b3cc5.mp3",
+     "source_audio": "audio/el/rapunzel/nar_12273b3cc5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 23,
+   "source_text": "라푼젤은 혼자 있을 때면 창가에서 노래를 불렀어요."
+  },
+  {
+   "id": "rp_024",
+   "speaker": "rap",
+   "text": "\"내 노래가 숲 끝까지 닿았으면.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "내 노래가 숲 끝까지 닿았으면.",
+     "emotion": null,
+     "tags": "[young girl, wistful, soft, dreamy]",
+     "audio": "res://audio/voice/rapunzel/rap_84274be138.mp3",
+     "source_audio": "audio/el/rapunzel/rap_84274be138.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 24,
+   "source_text": "내 노래가 숲 끝까지 닿았으면."
+  },
+  {
+   "id": "rp_025",
+   "speaker": "nar",
+   "text": "바닥에 리본 세 개가 있어요. 길이가 다 달라요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "바닥에 리본 세 개가 있어요. 길이가 다 달라요.",
+     "emotion": null,
+     "tags": "[clear, slow, pointing out]",
+     "audio": "res://audio/voice/rapunzel/nar_2008eba603.mp3",
+     "source_audio": "audio/el/rapunzel/nar_2008eba603.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 25,
+   "source_text": "바닥에 리본 세 개가 있어요. 길이가 다 달라요."
+  },
+  {
+   "id": "rp_026",
+   "speaker": "nar",
+   "text": "라푼젤 머리를 묶을 제일 긴 리본을 찾아봐요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤 머리를 묶을 제일 긴 리본을 찾아봐요.",
+     "emotion": null,
+     "tags": "[inviting, clear, slow, stress on 제일 긴]",
+     "audio": "res://audio/voice/rapunzel/nar_885b6147fe.mp3",
+     "source_audio": "audio/el/rapunzel/nar_885b6147fe.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 26,
+   "source_text": "라푼젤 머리를 묶을 제일 긴 리본을 찾아봐요."
+  },
+  {
+   "id": "rp_027",
+   "speaker": "nar",
+   "text": "그건 중간 리본이에요. 더 긴 리본이 있어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 중간 리본이에요. 더 긴 리본이 있어요.",
+     "emotion": null,
+     "tags": "[gentle, encouraging, not disappointed]",
+     "audio": "res://audio/voice/rapunzel/nar_d08db5c20a.mp3",
+     "source_audio": "audio/el/rapunzel/nar_d08db5c20a.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 27,
+   "source_text": "그건 중간 리본이에요. 더 긴 리본이 있어요."
+  },
+  {
+   "id": "rp_028",
+   "speaker": "nar",
+   "text": "그건 제일 짧은 리본이에요. 더 긴 리본이 있어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 제일 짧은 리본이에요. 더 긴 리본이 있어요.",
+     "emotion": null,
+     "tags": "[gentle, encouraging, not disappointed]",
+     "audio": "res://audio/voice/rapunzel/nar_3695fe91fd.mp3",
+     "source_audio": "audio/el/rapunzel/nar_3695fe91fd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 28,
+   "source_text": "그건 제일 짧은 리본이에요. 더 긴 리본이 있어요."
+  },
+  {
+   "id": "rp_029",
+   "speaker": "nar",
+   "text": "맞아요, 제일 긴 리본!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요, 제일 긴 리본!",
+     "emotion": "happy",
+     "tags": "[bright, warm praise]",
+     "audio": "res://audio/voice/rapunzel/nar_017e086da3.mp3",
+     "source_audio": "audio/el/rapunzel/nar_017e086da3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 29,
+   "source_text": "맞아요, 제일 긴 리본!"
+  },
+  {
+   "id": "rp_030",
+   "speaker": "nar",
+   "text": "그럼 제일 짧은 리본은 어디 있을까요?",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그럼 제일 짧은 리본은 어디 있을까요?",
+     "emotion": null,
+     "tags": "[inviting, clear, slow, stress on 제일 짧은]",
+     "audio": "res://audio/voice/rapunzel/nar_42657dc48d.mp3",
+     "source_audio": "audio/el/rapunzel/nar_42657dc48d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 30,
+   "source_text": "그럼 제일 짧은 리본은 어디 있을까요?"
+  },
+  {
+   "id": "rp_031",
+   "speaker": "nar",
+   "text": "그건 중간 리본이에요. 더 짧은 리본이 있어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그건 중간 리본이에요. 더 짧은 리본이 있어요.",
+     "emotion": null,
+     "tags": "[gentle, encouraging, not disappointed]",
+     "audio": "res://audio/voice/rapunzel/nar_ca82cc96d4.mp3",
+     "source_audio": "audio/el/rapunzel/nar_ca82cc96d4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 31,
+   "source_text": "그건 중간 리본이에요. 더 짧은 리본이 있어요."
+  },
+  {
+   "id": "rp_032",
+   "speaker": "nar",
+   "text": "맞아요, 제일 짧은 리본!",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "맞아요, 제일 짧은 리본!",
+     "emotion": "happy",
+     "tags": "[bright, warm praise]",
+     "audio": "res://audio/voice/rapunzel/nar_e7e0d9ce52.mp3",
+     "source_audio": "audio/el/rapunzel/nar_e7e0d9ce52.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 32,
+   "source_text": "맞아요, 제일 짧은 리본!"
+  },
+  {
+   "id": "rp_033",
+   "speaker": "nar",
+   "text": "라푼젤은 리본을 묶은 머리를 창가에 늘어뜨리고 또 노래했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 리본을 묶은 머리를 창가에 늘어뜨리고 또 노래했어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, closing the scene]",
+     "audio": "res://audio/voice/rapunzel/nar_100b6a9184.mp3",
+     "source_audio": "audio/el/rapunzel/nar_100b6a9184.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 33,
+   "source_text": "라푼젤은 리본을 묶은 머리를 창가에 늘어뜨리고 또 노래했어요."
+  },
+  {
+   "id": "rp_034",
+   "speaker": "nar",
+   "text": "어느 해질녘, 숲을 지나던 왕자가 노랫소리를 들었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어느 해질녘, 숲을 지나던 왕자가 노랫소리를 들었어요.",
+     "emotion": null,
+     "tags": "[calm, a little wonder, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_806230d4e7.mp3",
+     "source_audio": "audio/el/rapunzel/nar_806230d4e7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 34,
+   "source_text": "어느 해질녘, 숲을 지나던 왕자가 노랫소리를 들었어요."
+  },
+  {
+   "id": "rp_035",
+   "speaker": "prince",
+   "text": "\"어디서 이렇게 고운 노래가 들리지?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "어디서 이렇게 고운 노래가 들리지?",
+     "emotion": null,
+     "tags": "[young man, curious, gentle, listening]",
+     "audio": "res://audio/voice/rapunzel/prince_bc55120850.mp3",
+     "source_audio": "audio/el/rapunzel/prince_bc55120850.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 35,
+   "source_text": "어디서 이렇게 고운 노래가 들리지?"
+  },
+  {
+   "id": "rp_036",
+   "speaker": "nar",
+   "text": "왕자는 탑을 한 바퀴 돌았지만 문이 없었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 탑을 한 바퀴 돌았지만 문이 없었어요.",
+     "emotion": null,
+     "tags": "[calm, slightly puzzled, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_285773e042.mp3",
+     "source_audio": "audio/el/rapunzel/nar_285773e042.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 36,
+   "source_text": "왕자는 탑을 한 바퀴 돌았지만 문이 없었어요."
+  },
+  {
+   "id": "rp_037",
+   "speaker": "nar",
+   "text": "그때 마녀 고텔이 왔어요. 왕자는 나무 뒤에 숨었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그때 마녀 고텔이 왔어요. 왕자는 나무 뒤에 숨었어요.",
+     "emotion": null,
+     "tags": "[hushed, quick, a little suspense but light]",
+     "audio": "res://audio/voice/rapunzel/nar_ca8d5cfb62.mp3",
+     "source_audio": "audio/el/rapunzel/nar_ca8d5cfb62.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 37,
+   "source_text": "그때 마녀 고텔이 왔어요. 왕자는 나무 뒤에 숨었어요."
+  },
+  {
+   "id": "rp_038",
+   "speaker": "prince",
+   "text": "\"아, 저렇게 올라가는구나!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "아, 저렇게 올라가는구나!",
+     "emotion": "toneup",
+     "tags": "[young man, whispering discovery, delighted]",
+     "audio": "res://audio/voice/rapunzel/prince_5d829dac87.mp3",
+     "source_audio": "audio/el/rapunzel/prince_5d829dac87.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 38,
+   "source_text": "아, 저렇게 올라가는구나!"
+  },
+  {
+   "id": "rp_039",
+   "speaker": "nar",
+   "text": "다음 날 저녁, 왕자는 탑 아래에서 외쳤어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다음 날 저녁, 왕자는 탑 아래에서 외쳤어요.",
+     "emotion": null,
+     "tags": "[calm, anticipating]",
+     "audio": "res://audio/voice/rapunzel/nar_a933242324.mp3",
+     "source_audio": "audio/el/rapunzel/nar_a933242324.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 39,
+   "source_text": "다음 날 저녁, 왕자는 탑 아래에서 외쳤어요."
+  },
+  {
+   "id": "rp_040",
+   "speaker": "prince",
+   "text": "\"라푼젤, 라푼젤, 머리를 내려 줘요!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "라푼젤, 라푼젤, 머리를 내려 줘요!",
+     "emotion": "toneup",
+     "tags": "[young man, calling up warmly, sing-song chant, slow]",
+     "audio": "res://audio/voice/rapunzel/prince_778d486be2.mp3",
+     "source_audio": "audio/el/rapunzel/prince_778d486be2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 40,
+   "source_text": "라푼젤, 라푼젤, 머리를 내려 줘요!"
+  },
+  {
+   "id": "rp_041",
+   "speaker": "rap",
+   "text": "\"어머, 할머니가 아니네?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "어머, 할머니가 아니네?",
+     "emotion": "toneup",
+     "tags": "[young girl, surprised, a little giggle, not afraid]",
+     "audio": "res://audio/voice/rapunzel/rap_0433eb0505.mp3",
+     "source_audio": "audio/el/rapunzel/rap_0433eb0505.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 41,
+   "source_text": "어머, 할머니가 아니네?"
+  },
+  {
+   "id": "rp_042",
+   "speaker": "prince",
+   "text": "\"놀라게 해서 미안해요. 노래가 너무 고와서 왔어요. 저와 함께 성으로 가요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "놀라게 해서 미안해요. 노래가 너무 고와서 왔어요. 저와 함께 성으로 가요.",
+     "emotion": null,
+     "tags": "[young man, gentle, sincere, warm, unhurried]",
+     "audio": "res://audio/voice/rapunzel/prince_f080baa503.mp3",
+     "source_audio": "audio/el/rapunzel/prince_f080baa503.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 42,
+   "source_text": "놀라게 해서 미안해요. 노래가 너무 고와서 왔어요. 저와 함께 성으로 가요."
+  },
+  {
+   "id": "rp_043",
+   "speaker": "rap",
+   "text": "\"좋아요. 비단실을 가져오면 사다리를 엮을게요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "좋아요. 비단실을 가져오면 사다리를 엮을게요.",
+     "emotion": "happy",
+     "tags": "[young girl, bright, hopeful, clear]",
+     "audio": "res://audio/voice/rapunzel/rap_85d3ba32ee.mp3",
+     "source_audio": "audio/el/rapunzel/rap_85d3ba32ee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 43,
+   "source_text": "좋아요. 비단실을 가져오면 사다리를 엮을게요."
+  },
+  {
+   "id": "rp_044",
+   "speaker": "nar",
+   "text": "그날부터 왕자는 저녁마다 비단실을 가져왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그날부터 왕자는 저녁마다 비단실을 가져왔어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_4d4cb1eab4.mp3",
+     "source_audio": "audio/el/rapunzel/nar_4d4cb1eab4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 44,
+   "source_text": "그날부터 왕자는 저녁마다 비단실을 가져왔어요."
+  },
+  {
+   "id": "rp_045",
+   "speaker": "nar",
+   "text": "어느 날, 라푼젤이 무심코 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어느 날, 라푼젤이 무심코 말했어요.",
+     "emotion": null,
+     "tags": "[calm, light, a small pause at the end]",
+     "audio": "res://audio/voice/rapunzel/nar_95880345a5.mp3",
+     "source_audio": "audio/el/rapunzel/nar_95880345a5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 45,
+   "source_text": "어느 날, 라푼젤이 무심코 말했어요."
+  },
+  {
+   "id": "rp_046",
+   "speaker": "rap",
+   "text": "\"할머니, 할머니는 왜 왕자님보다 훨씬 무거워요?\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "할머니, 할머니는 왜 왕자님보다 훨씬 무거워요?",
+     "emotion": null,
+     "tags": "[young girl, innocent, curious, chatty]",
+     "audio": "res://audio/voice/rapunzel/rap_43f835827d.mp3",
+     "source_audio": "audio/el/rapunzel/rap_43f835827d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 46,
+   "source_text": "할머니, 할머니는 왜 왕자님보다 훨씬 무거워요?"
+  },
+  {
+   "id": "rp_047",
+   "speaker": "gothel",
+   "text": "\"뭐라고? 왕자라니!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "뭐라고? 왕자라니!",
+     "emotion": "toneup",
+     "tags": "[stern old witch, startled and cross, grumbling, NOT screaming, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_0a719ec3fd.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_0a719ec3fd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 47,
+   "source_text": "뭐라고? 왕자라니!"
+  },
+  {
+   "id": "rp_048",
+   "speaker": "nar",
+   "text": "마녀는 가위 한 번으로 라푼젤의 머리를 자르고, 지팡이를 톡 두드려 먼 들판의 작은 오두막으로 데려갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀는 가위 한 번으로 라푼젤의 머리를 자르고, 지팡이를 톡 두드려 먼 들판의 작은 오두막으로 데려갔어요.",
+     "emotion": null,
+     "tags": "[calm, matter-of-fact, not dramatic, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_0f6dd8fa6d.mp3",
+     "source_audio": "audio/el/rapunzel/nar_0f6dd8fa6d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 48,
+   "source_text": "마녀는 가위 한 번으로 라푼젤의 머리를 자르고, 지팡이를 톡 두드려 먼 들판의 작은 오두막으로 데려갔어요."
+  },
+  {
+   "id": "rp_049",
+   "speaker": "nar",
+   "text": "그날 저녁, 왕자는 아무것도 모르고 탑에 왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그날 저녁, 왕자는 아무것도 모르고 탑에 왔어요.",
+     "emotion": null,
+     "tags": "[calm, a little suspense but light]",
+     "audio": "res://audio/voice/rapunzel/nar_4011fc6b51.mp3",
+     "source_audio": "audio/el/rapunzel/nar_4011fc6b51.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 49,
+   "source_text": "그날 저녁, 왕자는 아무것도 모르고 탑에 왔어요."
+  },
+  {
+   "id": "rp_050",
+   "speaker": "nar",
+   "text": "마녀는 잘린 머리를 고리에 걸어 내려 주었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀는 잘린 머리를 고리에 걸어 내려 주었어요.",
+     "emotion": null,
+     "tags": "[hushed, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_adc409ac38.mp3",
+     "source_audio": "audio/el/rapunzel/nar_adc409ac38.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 50,
+   "source_text": "마녀는 잘린 머리를 고리에 걸어 내려 주었어요."
+  },
+  {
+   "id": "rp_051",
+   "speaker": "gothel",
+   "text": "\"라푼젤은 여기 없다. 다시는 못 볼 거다. 자, 내려가라.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "라푼젤은 여기 없다. 다시는 못 볼 거다. 자, 내려가라.",
+     "emotion": null,
+     "tags": "[stern old witch, low, firm, grumbling, slow, NOT shouting, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_aa8463d154.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_aa8463d154.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 51,
+   "source_text": "라푼젤은 여기 없다. 다시는 못 볼 거다. 자, 내려가라."
+  },
+  {
+   "id": "rp_052",
+   "speaker": "nar",
+   "text": "휘익~ 마법 바람이 왕자를 탑 아래 풀숲에 사뿐 내려놓았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "휘익~ 마법 바람이 왕자를 탑 아래 풀숲에 사뿐 내려놓았어요.",
+     "emotion": null,
+     "tags": "[a soft whoosh on 휘익, then gentle and soft at 사뿐]",
+     "audio": "res://audio/voice/rapunzel/nar_ffa5b72846.mp3",
+     "source_audio": "audio/el/rapunzel/nar_ffa5b72846.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 52,
+   "source_text": "휘익~ 마법 바람이 왕자를 탑 아래 풀숲에 사뿐 내려놓았어요."
+  },
+  {
+   "id": "rp_053",
+   "speaker": "prince",
+   "text": "\"라푼젤… 어디로 갔을까.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "라푼젤… 어디로 갔을까.",
+     "emotion": "sad",
+     "tags": "[young man, sad, quiet, puzzled, a pause after 라푼젤]",
+     "audio": "res://audio/voice/rapunzel/prince_8fbc9c7e0b.mp3",
+     "source_audio": "audio/el/rapunzel/prince_8fbc9c7e0b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 53,
+   "source_text": "라푼젤… 어디로 갔을까."
+  },
+  {
+   "id": "rp_054",
+   "speaker": "nar",
+   "text": "왕자는 슬픈 얼굴로 숲을 걷고 또 걸었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 슬픈 얼굴로 숲을 걷고 또 걸었어요.",
+     "emotion": "sad",
+     "tags": "[slow, gentle, a little sad, long vowels at 걷고 또 걸었어요]",
+     "audio": "res://audio/voice/rapunzel/nar_e1c5f8198d.mp3",
+     "source_audio": "audio/el/rapunzel/nar_e1c5f8198d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 54,
+   "source_text": "왕자는 슬픈 얼굴로 숲을 걷고 또 걸었어요."
+  },
+  {
+   "id": "rp_055",
+   "speaker": "nar",
+   "text": "그때, 바람을 타고 노랫소리가 들려왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그때, 바람을 타고 노랫소리가 들려왔어요.",
+     "emotion": null,
+     "tags": "[hopeful, brightening, a pause after 그때]",
+     "audio": "res://audio/voice/rapunzel/nar_27135d21b0.mp3",
+     "source_audio": "audio/el/rapunzel/nar_27135d21b0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 55,
+   "source_text": "그때, 바람을 타고 노랫소리가 들려왔어요."
+  },
+  {
+   "id": "rp_056",
+   "speaker": "prince",
+   "text": "\"이 노래는… 라푼젤!\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "이 노래는… 라푼젤!",
+     "emotion": "toneup",
+     "tags": "[young man, realising, then joyful shout, a pause after 노래는]",
+     "audio": "res://audio/voice/rapunzel/prince_61cd899dc2.mp3",
+     "source_audio": "audio/el/rapunzel/prince_61cd899dc2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 56,
+   "source_text": "이 노래는… 라푼젤!"
+  },
+  {
+   "id": "rp_057",
+   "speaker": "rap",
+   "text": "\"왕자님! 찾아와 줬군요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "왕자님! 찾아와 줬군요.",
+     "emotion": "happy",
+     "tags": "[young girl, overjoyed, bright, warm]",
+     "audio": "res://audio/voice/rapunzel/rap_0cfc97a8b4.mp3",
+     "source_audio": "audio/el/rapunzel/rap_0cfc97a8b4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 57,
+   "source_text": "왕자님! 찾아와 줬군요."
+  },
+  {
+   "id": "rp_058",
+   "speaker": "prince",
+   "text": "\"포기하지 않길 잘했어요. 이제 함께 가요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "포기하지 않길 잘했어요. 이제 함께 가요.",
+     "emotion": "happy",
+     "tags": "[young man, relieved, warm, gentle, smiling]",
+     "audio": "res://audio/voice/rapunzel/prince_3933aea604.mp3",
+     "source_audio": "audio/el/rapunzel/prince_3933aea604.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 58,
+   "source_text": "포기하지 않길 잘했어요. 이제 함께 가요."
+  },
+  {
+   "id": "rp_059",
+   "speaker": "nar",
+   "text": "두 사람은 손을 꼭 잡고 성으로 떠났어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "두 사람은 손을 꼭 잡고 성으로 떠났어요.",
+     "emotion": "happy",
+     "tags": "[warm, joyful, storybook ending tone]",
+     "audio": "res://audio/voice/rapunzel/nar_3aae7edfc4.mp3",
+     "source_audio": "audio/el/rapunzel/nar_3aae7edfc4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 59,
+   "source_text": "두 사람은 손을 꼭 잡고 성으로 떠났어요."
+  },
+  {
+   "id": "rp_060",
+   "speaker": "nar",
+   "text": "마녀 고텔은 텃밭으로 돌아갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀 고텔은 텃밭으로 돌아갔어요.",
+     "emotion": null,
+     "tags": "[calm, quiet, final, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_c1569bab25.mp3",
+     "source_audio": "audio/el/rapunzel/nar_c1569bab25.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_index": 60,
+   "source_text": "마녀 고텔은 텃밭으로 돌아갔어요."
+  },
+  {
+   "id": "rp_x_hum",
+   "speaker": "rap",
+   "text": "\"라라라, 라라라~\"",
+   "status": "reuse",
+   "beat": "song",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "라라라, 라라라~",
+     "emotion": "happy",
+     "tags": "[softly singing a simple happy little tune, humming, gentle, slow, young girl, no words]",
+     "audio": "res://audio/voice/rapunzel/rap_fe82daa386.mp3",
+     "source_audio": "audio/el/rapunzel/rap_fe82daa386.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_extra": "hum"
+  },
+  {
+   "id": "rp_r0100",
+   "speaker": "nar",
+   "text": "옛날에 아기를 기다리는 부부가 살았어요. 아기가 곧 올 거예요.",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "옛날에 아기를 기다리는 부부가 살았어요. 아기가 곧 올 거예요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling, slow, unhurried]",
+     "audio": "res://audio/voice/rapunzel/nar_c838ad03e4.mp3",
+     "source_audio": "audio/el/rapunzel/nar_c838ad03e4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mother": "calm",
+    "father": "calm"
+   },
+   "source_read": "R01_garden#0",
+   "source_text": "옛날에 아기를 기다리는 부부가 살았어요. 아기가 곧 올 거예요."
+  },
+  {
+   "id": "rp_r0101",
+   "speaker": "nar",
+   "text": "담 너머 텃밭은 마녀 고텔의 마법 텃밭이라 아무도 들어가지 못했어요.",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "담 너머 텃밭은 마녀 고텔의 마법 텃밭이라 아무도 들어가지 못했어요.",
+     "emotion": null,
+     "tags": "[calm, a little mysterious, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_ad13144cb5.mp3",
+     "source_audio": "audio/el/rapunzel/nar_ad13144cb5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_garden#1",
+   "source_text": "담 너머 텃밭은 마녀 고텔의 마법 텃밭이라 아무도 들어가지 못했어요."
+  },
+  {
+   "id": "rp_r0102",
+   "speaker": "nar",
+   "text": "텃밭에는 초록 라푼젤 풀이 싱싱하게 쑥쑥 자라고 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "텃밭에는 초록 라푼젤 풀이 싱싱하게 쑥쑥 자라고 있었어요.",
+     "emotion": null,
+     "tags": "[calm, a little mysterious, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_bf79decb65.mp3",
+     "source_audio": "audio/el/rapunzel/nar_bf79decb65.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_garden#2",
+   "source_text": "텃밭에는 초록 라푼젤 풀이 싱싱하게 쑥쑥 자라고 있었어요."
+  },
+  {
+   "id": "rp_r0103",
+   "speaker": "nar",
+   "text": "엄마가 아빠에게 나직이 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마가 아빠에게 나직이 말했어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_c1e1e4dd23.mp3",
+     "source_audio": "audio/el/rapunzel/nar_c1e1e4dd23.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_garden#3",
+   "source_text": "엄마가 아빠에게 나직이 말했어요."
+  },
+  {
+   "id": "rp_r0104",
+   "speaker": "mother",
+   "text": "\"저 라푼젤 풀이 너무너무 먹고 싶어요.\"",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "mother",
+     "text": "저 라푼젤 풀이 너무너무 먹고 싶어요.",
+     "emotion": "sad",
+     "tags": "[soft, longing, wishful, gentle]",
+     "audio": "res://audio/voice/rapunzel/mother_510c8ffafe.mp3",
+     "source_audio": "audio/el/rapunzel/mother_510c8ffafe.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "mother": "longing",
+    "father": "calm"
+   },
+   "source_read": "R01_garden#4",
+   "source_text": "저 라푼젤 풀이 너무너무 먹고 싶어요."
+  },
+  {
+   "id": "rp_r0105",
+   "speaker": "nar",
+   "text": "엄마는 창가에서 텃밭을 보며 꿀꺽 침을 삼켰어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "엄마는 창가에서 텃밭을 보며 꿀꺽 침을 삼켰어요.",
+     "emotion": null,
+     "tags": "[soft, wishful, gentle]",
+     "audio": "res://audio/voice/rapunzel/nar_b8f300d900.mp3",
+     "source_audio": "audio/el/rapunzel/nar_b8f300d900.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R01_garden#5",
+   "source_text": "엄마는 창가에서 텃밭을 보며 꿀꺽 침을 삼켰어요."
+  },
+  {
+   "id": "rp_r0106",
+   "speaker": "father",
+   "text": "\"내가 가져올게요.\"",
+   "status": "reuse",
+   "beat": "home",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "father",
+     "text": "내가 가져올게요.",
+     "emotion": null,
+     "tags": "[kind, a little nervous, decided]",
+     "audio": "res://audio/voice/rapunzel/father_554c3aeab5.mp3",
+     "source_audio": "audio/el/rapunzel/father_554c3aeab5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "father": "promise",
+    "mother": "happy"
+   },
+   "source_read": "R01_garden#6",
+   "source_text": "내가 가져올게요."
+  },
+  {
+   "id": "rp_r0200",
+   "speaker": "nar",
+   "text": "밤이 되자, 아버지는 살금살금 담을 넘었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "밤이 되자, 아버지는 살금살금 담을 넘었어요.",
+     "emotion": null,
+     "tags": "[hushed, sneaky, slow, playful]",
+     "audio": "res://audio/voice/rapunzel/nar_3e2fdcf860.mp3",
+     "source_audio": "audio/el/rapunzel/nar_3e2fdcf860.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_rampion#0",
+   "source_text": "밤이 되자, 아버지는 살금살금 담을 넘었어요."
+  },
+  {
+   "id": "rp_r0201",
+   "speaker": "nar",
+   "text": "아버지가 풀을 쑥 뽑은 순간, 반짝! 마녀가 나타났어요.",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아버지가 풀을 쑥 뽑은 순간, 반짝! 마녀가 나타났어요.",
+     "emotion": null,
+     "tags": "[hushed, then a small surprise]",
+     "audio": "res://audio/voice/rapunzel/nar_537498ebb5.mp3",
+     "source_audio": "audio/el/rapunzel/nar_537498ebb5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "father": "shock"
+   },
+   "source_read": "R02_rampion#1",
+   "source_text": "아버지가 풀을 쑥 뽑은 순간, 반짝! 마녀가 나타났어요."
+  },
+  {
+   "id": "rp_r0202",
+   "speaker": "gothel",
+   "text": "\"누구냐! 내 풀을 뽑다니!\"",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "누구냐! 내 풀을 뽑다니!",
+     "emotion": "toneup",
+     "tags": "[stern old witch, grumbling, sharp but NOT shouting, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_aea135cadf.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_aea135cadf.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "point",
+    "father": "shock"
+   },
+   "source_read": "R02_rampion#2",
+   "source_text": "누구냐! 내 풀을 뽑다니!"
+  },
+  {
+   "id": "rp_r0203",
+   "speaker": "father",
+   "text": "\"아, 아내가 너무너무 먹고 싶어 해서요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "father",
+     "text": "아, 아내가 너무너무 먹고 싶어 해서요.",
+     "emotion": "sad",
+     "tags": "[startled, apologetic, small voice]",
+     "audio": "res://audio/voice/rapunzel/father_75d97af326.mp3",
+     "source_audio": "audio/el/rapunzel/father_75d97af326.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_rampion#3",
+   "source_text": "아, 아내가 너무너무 먹고 싶어 해서요."
+  },
+  {
+   "id": "rp_r0204",
+   "speaker": "gothel",
+   "text": "\"내 풀을 가져가도 좋다. 대신 아기가 태어나면 내가 키우마.\"",
+   "status": "reuse",
+   "beat": "night",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "내 풀을 가져가도 좋다. 대신 아기가 태어나면 내가 키우마.",
+     "emotion": null,
+     "tags": "[stern, slow, serious bargain, grumbling, calm]",
+     "audio": "res://audio/voice/rapunzel/gothel_e46546734f.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_e46546734f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "talk",
+    "father": "sorry"
+   },
+   "source_read": "R02_rampion#4",
+   "source_text": "내 풀을 가져가도 좋다. 대신 아기가 태어나면 내가 키우마."
+  },
+  {
+   "id": "rp_r0205",
+   "speaker": "father",
+   "text": "\"네… 알겠어요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "father",
+     "text": "네… 알겠어요.",
+     "emotion": "sad",
+     "tags": "[hesitant, quiet, a pause before 알겠어요]",
+     "audio": "res://audio/voice/rapunzel/father_5227432e81.mp3",
+     "source_audio": "audio/el/rapunzel/father_5227432e81.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "father": "sorry"
+   },
+   "source_read": "R02_rampion#5",
+   "source_text": "네… 알겠어요."
+  },
+  {
+   "id": "rp_r0206",
+   "speaker": "nar",
+   "text": "아기가 태어났어요. 마녀 고텔은 아기를 데려가 라푼젤이라고 이름 짓고 정성껏 키웠어요.",
+   "status": "reuse",
+   "beat": "baby",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "아기가 태어났어요. 마녀 고텔은 아기를 데려가 라푼젤이라고 이름 짓고 정성껏 키웠어요.",
+     "emotion": null,
+     "tags": "[gentle, matter-of-fact, warm at 정성껏]",
+     "audio": "res://audio/voice/rapunzel/nar_bce129dadc.mp3",
+     "source_audio": "audio/el/rapunzel/nar_bce129dadc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "cradle",
+    "mother": "sad",
+    "father": "sorry"
+   },
+   "source_read": "R02_rampion#6",
+   "source_text": "아기가 태어났어요. 마녀 고텔은 아기를 데려가 라푼젤이라고 이름 짓고 정성껏 키웠어요."
+  },
+  {
+   "id": "rp_r0207",
+   "speaker": "nar",
+   "text": "고텔은 아기를 토닥토닥 재우고, 맛있는 죽도 보글보글 끓여 주었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고텔은 아기를 토닥토닥 재우고, 맛있는 죽도 보글보글 끓여 주었어요.",
+     "emotion": null,
+     "tags": "[gentle, warm]",
+     "audio": "res://audio/voice/rapunzel/nar_1963651515.mp3",
+     "source_audio": "audio/el/rapunzel/nar_1963651515.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R02_rampion#7",
+   "source_text": "고텔은 아기를 토닥토닥 재우고, 맛있는 죽도 보글보글 끓여 주었어요."
+  },
+  {
+   "id": "rp_r0300",
+   "speaker": "nar",
+   "text": "라푼젤이 열두 살이 되자, 마녀는 지팡이를 톡 두드렸어요.",
+   "status": "reuse",
+   "beat": "tower",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤이 열두 살이 되자, 마녀는 지팡이를 톡 두드렸어요.",
+     "emotion": null,
+     "tags": "[calm, a tiny pause before 톡]",
+     "audio": "res://audio/voice/rapunzel/nar_cf100de579.mp3",
+     "source_audio": "audio/el/rapunzel/nar_cf100de579.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "calm"
+   },
+   "source_read": "R03_tower#0",
+   "source_text": "라푼젤이 열두 살이 되자, 마녀는 지팡이를 톡 두드렸어요."
+  },
+  {
+   "id": "rp_r0301",
+   "speaker": "nar",
+   "text": "숲속에 문도 계단도 없는 높은 탑이 쑥 솟았어요. 창문은 꼭대기에 하나뿐이에요.",
+   "status": "reuse",
+   "beat": "tower",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "숲속에 문도 계단도 없는 높은 탑이 쑥 솟았어요. 창문은 꼭대기에 하나뿐이에요.",
+     "emotion": null,
+     "tags": "[wondering, rising at 쑥, then clear and slow]",
+     "audio": "res://audio/voice/rapunzel/nar_93f58ee80d.mp3",
+     "source_audio": "audio/el/rapunzel/nar_93f58ee80d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_tower#1",
+   "source_text": "숲속에 문도 계단도 없는 높은 탑이 쑥 솟았어요. 창문은 꼭대기에 하나뿐이에요."
+  },
+  {
+   "id": "rp_r0302",
+   "speaker": "nar",
+   "text": "고텔은 라푼젤을 탑 꼭대기 방에 살게 했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고텔은 라푼젤을 탑 꼭대기 방에 살게 했어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_67efeda5f3.mp3",
+     "source_audio": "audio/el/rapunzel/nar_67efeda5f3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_tower#2",
+   "source_text": "고텔은 라푼젤을 탑 꼭대기 방에 살게 했어요."
+  },
+  {
+   "id": "rp_r0303",
+   "speaker": "gothel",
+   "text": "\"자, 잠겨라. 밖은 위험하단다. 여기가 제일 안전해.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "자, 잠겨라. 밖은 위험하단다. 여기가 제일 안전해.",
+     "emotion": null,
+     "tags": "[stern but protective, low, slow, grumbling, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_6f506f9a4b.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_6f506f9a4b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_tower#3",
+   "source_text": "자, 잠겨라. 밖은 위험하단다. 여기가 제일 안전해."
+  },
+  {
+   "id": "rp_r0304",
+   "speaker": "nar",
+   "text": "창문 위에는 새 한 마리, 탑 아래에는 토끼 한 마리가 있어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "창문 위에는 새 한 마리, 탑 아래에는 토끼 한 마리가 있어요.",
+     "emotion": null,
+     "tags": "[clear, slow, pointing out, a pause between the two halves]",
+     "audio": "res://audio/voice/rapunzel/nar_92c7ccacbc.mp3",
+     "source_audio": "audio/el/rapunzel/nar_92c7ccacbc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_tower#4",
+   "source_text": "창문 위에는 새 한 마리, 탑 아래에는 토끼 한 마리가 있어요."
+  },
+  {
+   "id": "rp_r0305",
+   "speaker": "nar",
+   "text": "새는 짹짹, 토끼는 깡충깡충, 라푼젤은 창가에서 빙긋 웃었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "새는 짹짹, 토끼는 깡충깡충, 라푼젤은 창가에서 빙긋 웃었어요.",
+     "emotion": null,
+     "tags": "[light, cheerful]",
+     "audio": "res://audio/voice/rapunzel/nar_09e065bb38.mp3",
+     "source_audio": "audio/el/rapunzel/nar_09e065bb38.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R03_tower#5",
+   "source_text": "새는 짹짹, 토끼는 깡충깡충, 라푼젤은 창가에서 빙긋 웃었어요."
+  },
+  {
+   "id": "rp_r0400",
+   "speaker": "nar",
+   "text": "그 뒤로 고텔은 찾아올 때마다 탑 아래에서 외쳤어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그 뒤로 고텔은 찾아올 때마다 탑 아래에서 외쳤어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_10ec9fd07f.mp3",
+     "source_audio": "audio/el/rapunzel/nar_10ec9fd07f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_hair#0",
+   "source_text": "그 뒤로 고텔은 찾아올 때마다 탑 아래에서 외쳤어요."
+  },
+  {
+   "id": "rp_r0401",
+   "speaker": "gothel",
+   "text": "\"라푼젤, 라푼젤, 머리를 내려 줘!\"",
+   "status": "reuse",
+   "beat": "hair",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "라푼젤, 라푼젤, 머리를 내려 줘!",
+     "emotion": "toneup",
+     "tags": "[calling up loudly but not harsh, sing-song chant, slow]",
+     "audio": "res://audio/voice/rapunzel/gothel_8819c79387.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_8819c79387.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "talk"
+   },
+   "source_read": "R04_hair#1",
+   "source_text": "라푼젤, 라푼젤, 머리를 내려 줘!"
+  },
+  {
+   "id": "rp_r0402",
+   "speaker": "nar",
+   "text": "라푼젤은 창가에서 길게 땋은 머리를 풀어 내렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 창가에서 길게 땋은 머리를 풀어 내렸어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_613a889509.mp3",
+     "source_audio": "audio/el/rapunzel/nar_613a889509.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_hair#2",
+   "source_text": "라푼젤은 창가에서 길게 땋은 머리를 풀어 내렸어요."
+  },
+  {
+   "id": "rp_r0403",
+   "speaker": "nar",
+   "text": "스르르~ 금빛 머리가 탑 아래까지 닿았어요.",
+   "status": "reuse",
+   "beat": "hair",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "스르르~ 금빛 머리가 탑 아래까지 닿았어요.",
+     "emotion": null,
+     "tags": "[soft sliding sound on 스르르, then calm]",
+     "audio": "res://audio/voice/rapunzel/nar_f03a1cb3f7.mp3",
+     "source_audio": "audio/el/rapunzel/nar_f03a1cb3f7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_hair#3",
+   "source_text": "스르르~ 금빛 머리가 탑 아래까지 닿았어요."
+  },
+  {
+   "id": "rp_r0404",
+   "speaker": "nar",
+   "text": "고텔은 머리를 잡고 천천히 올라가요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고텔은 머리를 잡고 천천히 올라가요.",
+     "emotion": null,
+     "tags": "[slow, steady, a little effortful]",
+     "audio": "res://audio/voice/rapunzel/nar_0204858413.mp3",
+     "source_audio": "audio/el/rapunzel/nar_0204858413.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_hair#4",
+   "source_text": "고텔은 머리를 잡고 천천히 올라가요."
+  },
+  {
+   "id": "rp_r0405",
+   "speaker": "nar",
+   "text": "영차, 영차! 머리카락이 흔들흔들, 고텔은 끙끙 올라갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "영차, 영차! 머리카락이 흔들흔들, 고텔은 끙끙 올라갔어요.",
+     "emotion": null,
+     "tags": "[slow, effortful, a little playful]",
+     "audio": "res://audio/voice/rapunzel/nar_27176c377b.mp3",
+     "source_audio": "audio/el/rapunzel/nar_27176c377b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_hair#5",
+   "source_text": "영차, 영차! 머리카락이 흔들흔들, 고텔은 끙끙 올라갔어요."
+  },
+  {
+   "id": "rp_r0406",
+   "speaker": "nar",
+   "text": "창문에 닿자, 라푼젤은 머리를 스르륵 끌어올렸어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "창문에 닿자, 라푼젤은 머리를 스르륵 끌어올렸어요.",
+     "emotion": null,
+     "tags": "[calm, gentle]",
+     "audio": "res://audio/voice/rapunzel/nar_74de95494e.mp3",
+     "source_audio": "audio/el/rapunzel/nar_74de95494e.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R04_hair#6",
+   "source_text": "창문에 닿자, 라푼젤은 머리를 스르륵 끌어올렸어요."
+  },
+  {
+   "id": "rp_r0500",
+   "speaker": "nar",
+   "text": "고텔이 돌아가면 탑 꼭대기 방은 조용해졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고텔이 돌아가면 탑 꼭대기 방은 조용해졌어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_a0903c931b.mp3",
+     "source_audio": "audio/el/rapunzel/nar_a0903c931b.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_song#0",
+   "source_text": "고텔이 돌아가면 탑 꼭대기 방은 조용해졌어요."
+  },
+  {
+   "id": "rp_r0501",
+   "speaker": "nar",
+   "text": "라푼젤은 혼자 있을 때면 창가에서 노래를 불렀어요.",
+   "status": "reuse",
+   "beat": "song",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 혼자 있을 때면 창가에서 노래를 불렀어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_12273b3cc5.mp3",
+     "source_audio": "audio/el/rapunzel/nar_12273b3cc5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_song#1",
+   "source_text": "라푼젤은 혼자 있을 때면 창가에서 노래를 불렀어요."
+  },
+  {
+   "id": "rp_r0502",
+   "speaker": "nar",
+   "text": "라라라, 고운 노랫소리가 창밖으로 두둥실 퍼져 나갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라라라, 고운 노랫소리가 창밖으로 두둥실 퍼져 나갔어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_3bd7a880f6.mp3",
+     "source_audio": "audio/el/rapunzel/nar_3bd7a880f6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_song#2",
+   "source_text": "라라라, 고운 노랫소리가 창밖으로 두둥실 퍼져 나갔어요."
+  },
+  {
+   "id": "rp_r0503",
+   "speaker": "rap",
+   "text": "\"내 노래가 숲 끝까지 닿았으면.\"",
+   "status": "reuse",
+   "beat": "song",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "내 노래가 숲 끝까지 닿았으면.",
+     "emotion": null,
+     "tags": "[young girl, wistful, soft, dreamy]",
+     "audio": "res://audio/voice/rapunzel/rap_84274be138.mp3",
+     "source_audio": "audio/el/rapunzel/rap_84274be138.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "rap": "win_smile"
+   },
+   "source_read": "R05_song#3",
+   "source_text": "내 노래가 숲 끝까지 닿았으면."
+  },
+  {
+   "id": "rp_r0504",
+   "speaker": "nar",
+   "text": "라푼젤은 제일 긴 리본으로 머리를 곱게 묶었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 제일 긴 리본으로 머리를 곱게 묶었어요.",
+     "emotion": null,
+     "tags": "[warm, gentle]",
+     "audio": "res://audio/voice/rapunzel/nar_d2b35e9dd1.mp3",
+     "source_audio": "audio/el/rapunzel/nar_d2b35e9dd1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_song#4",
+   "source_text": "라푼젤은 제일 긴 리본으로 머리를 곱게 묶었어요."
+  },
+  {
+   "id": "rp_r0505",
+   "speaker": "nar",
+   "text": "라푼젤은 리본을 묶은 머리를 창가에 늘어뜨리고 또 노래했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 리본을 묶은 머리를 창가에 늘어뜨리고 또 노래했어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, closing the scene]",
+     "audio": "res://audio/voice/rapunzel/nar_100b6a9184.mp3",
+     "source_audio": "audio/el/rapunzel/nar_100b6a9184.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R05_song#5",
+   "source_text": "라푼젤은 리본을 묶은 머리를 창가에 늘어뜨리고 또 노래했어요."
+  },
+  {
+   "id": "rp_r0600",
+   "speaker": "nar",
+   "text": "어느 해질녘, 숲을 지나던 왕자가 노랫소리를 들었어요.",
+   "status": "reuse",
+   "beat": "prince",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어느 해질녘, 숲을 지나던 왕자가 노랫소리를 들었어요.",
+     "emotion": null,
+     "tags": "[calm, a little wonder, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_806230d4e7.mp3",
+     "source_audio": "audio/el/rapunzel/nar_806230d4e7.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_voice#0",
+   "source_text": "어느 해질녘, 숲을 지나던 왕자가 노랫소리를 들었어요."
+  },
+  {
+   "id": "rp_r0601",
+   "speaker": "nar",
+   "text": "해가 뉘엿뉘엿 지고, 숲이 발그레 물들었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "해가 뉘엿뉘엿 지고, 숲이 발그레 물들었어요.",
+     "emotion": null,
+     "tags": "[calm, soft, evening]",
+     "audio": "res://audio/voice/rapunzel/nar_e976e2faab.mp3",
+     "source_audio": "audio/el/rapunzel/nar_e976e2faab.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_voice#1",
+   "source_text": "해가 뉘엿뉘엿 지고, 숲이 발그레 물들었어요."
+  },
+  {
+   "id": "rp_r0602",
+   "speaker": "prince",
+   "text": "\"어디서 이렇게 고운 노래가 들리지?\"",
+   "status": "reuse",
+   "beat": "prince",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "어디서 이렇게 고운 노래가 들리지?",
+     "emotion": null,
+     "tags": "[young man, curious, gentle, listening]",
+     "audio": "res://audio/voice/rapunzel/prince_bc55120850.mp3",
+     "source_audio": "audio/el/rapunzel/prince_bc55120850.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "prince": "listen"
+   },
+   "source_read": "R06_voice#2",
+   "source_text": "어디서 이렇게 고운 노래가 들리지?"
+  },
+  {
+   "id": "rp_r0603",
+   "speaker": "nar",
+   "text": "왕자는 말에서 내려 노랫소리가 나는 탑으로 다가갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 말에서 내려 노랫소리가 나는 탑으로 다가갔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_41c886173c.mp3",
+     "source_audio": "audio/el/rapunzel/nar_41c886173c.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_voice#3",
+   "source_text": "왕자는 말에서 내려 노랫소리가 나는 탑으로 다가갔어요."
+  },
+  {
+   "id": "rp_r0604",
+   "speaker": "nar",
+   "text": "왕자는 탑을 한 바퀴 돌았지만 문이 없었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 탑을 한 바퀴 돌았지만 문이 없었어요.",
+     "emotion": null,
+     "tags": "[calm, slightly puzzled, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_285773e042.mp3",
+     "source_audio": "audio/el/rapunzel/nar_285773e042.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_voice#4",
+   "source_text": "왕자는 탑을 한 바퀴 돌았지만 문이 없었어요."
+  },
+  {
+   "id": "rp_r0605",
+   "speaker": "nar",
+   "text": "왕자는 고개를 갸웃갸웃, 탑을 올려다보았어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 고개를 갸웃갸웃, 탑을 올려다보았어요.",
+     "emotion": null,
+     "tags": "[calm, slightly puzzled]",
+     "audio": "res://audio/voice/rapunzel/nar_d47a480b50.mp3",
+     "source_audio": "audio/el/rapunzel/nar_d47a480b50.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_voice#5",
+   "source_text": "왕자는 고개를 갸웃갸웃, 탑을 올려다보았어요."
+  },
+  {
+   "id": "rp_r0606",
+   "speaker": "nar",
+   "text": "그때 마녀 고텔이 왔어요. 왕자는 나무 뒤에 숨었어요.",
+   "status": "reuse",
+   "beat": "prince",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그때 마녀 고텔이 왔어요. 왕자는 나무 뒤에 숨었어요.",
+     "emotion": null,
+     "tags": "[hushed, quick, a little suspense but light]",
+     "audio": "res://audio/voice/rapunzel/nar_ca8d5cfb62.mp3",
+     "source_audio": "audio/el/rapunzel/nar_ca8d5cfb62.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "calm"
+   },
+   "source_read": "R06_voice#6",
+   "source_text": "그때 마녀 고텔이 왔어요. 왕자는 나무 뒤에 숨었어요."
+  },
+  {
+   "id": "rp_r0607",
+   "speaker": "gothel",
+   "text": "\"라푼젤, 라푼젤, 머리를 내려 줘!\"",
+   "status": "reuse",
+   "beat": "prince",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "라푼젤, 라푼젤, 머리를 내려 줘!",
+     "emotion": "toneup",
+     "tags": "[calling up loudly but not harsh, sing-song chant, slow]",
+     "audio": "res://audio/voice/rapunzel/gothel_8819c79387.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_8819c79387.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "talk"
+   },
+   "source_read": "R06_voice#7",
+   "source_text": "라푼젤, 라푼젤, 머리를 내려 줘!"
+  },
+  {
+   "id": "rp_r0608",
+   "speaker": "nar",
+   "text": "고텔이 머리카락을 타고 창문 안으로 올라갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고텔이 머리카락을 타고 창문 안으로 올라갔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_5e0a73f0ee.mp3",
+     "source_audio": "audio/el/rapunzel/nar_5e0a73f0ee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R06_voice#8",
+   "source_text": "고텔이 머리카락을 타고 창문 안으로 올라갔어요."
+  },
+  {
+   "id": "rp_r0609",
+   "speaker": "prince",
+   "text": "\"아, 저렇게 올라가는구나!\"",
+   "status": "reuse",
+   "beat": "prince",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "아, 저렇게 올라가는구나!",
+     "emotion": "toneup",
+     "tags": "[young man, whispering discovery, delighted]",
+     "audio": "res://audio/voice/rapunzel/prince_5d829dac87.mp3",
+     "source_audio": "audio/el/rapunzel/prince_5d829dac87.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "prince": "delighted"
+   },
+   "source_read": "R06_voice#9",
+   "source_text": "아, 저렇게 올라가는구나!"
+  },
+  {
+   "id": "rp_r0700",
+   "speaker": "nar",
+   "text": "다음 날 저녁, 왕자는 탑 아래에서 외쳤어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "다음 날 저녁, 왕자는 탑 아래에서 외쳤어요.",
+     "emotion": null,
+     "tags": "[calm, anticipating]",
+     "audio": "res://audio/voice/rapunzel/nar_a933242324.mp3",
+     "source_audio": "audio/el/rapunzel/nar_a933242324.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_prince#0",
+   "source_text": "다음 날 저녁, 왕자는 탑 아래에서 외쳤어요."
+  },
+  {
+   "id": "rp_r0701",
+   "speaker": "prince",
+   "text": "\"라푼젤, 라푼젤, 머리를 내려 줘요!\"",
+   "status": "reuse",
+   "beat": "climb",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "라푼젤, 라푼젤, 머리를 내려 줘요!",
+     "emotion": "toneup",
+     "tags": "[young man, calling up warmly, sing-song chant, slow]",
+     "audio": "res://audio/voice/rapunzel/prince_778d486be2.mp3",
+     "source_audio": "audio/el/rapunzel/prince_778d486be2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "prince": "call"
+   },
+   "source_read": "R07_prince#1",
+   "source_text": "라푼젤, 라푼젤, 머리를 내려 줘요!"
+  },
+  {
+   "id": "rp_r0702",
+   "speaker": "nar",
+   "text": "라푼젤이 내린 머리를 붙잡고 왕자가 영차영차 올라갔어요.",
+   "status": "reuse",
+   "beat": "climb",
+   "interaction": "climb_braid",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤이 내린 머리를 붙잡고 왕자가 영차영차 올라갔어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_db8dd754f1.mp3",
+     "source_audio": "audio/el/rapunzel/nar_db8dd754f1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_prince#2",
+   "source_text": "라푼젤이 내린 머리를 붙잡고 왕자가 영차영차 올라갔어요."
+  },
+  {
+   "id": "rp_r0703",
+   "speaker": "nar",
+   "text": "왕자가 창문으로 쑥 들어오자, 라푼젤은 깜짝 놀랐어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자가 창문으로 쑥 들어오자, 라푼젤은 깜짝 놀랐어요.",
+     "emotion": null,
+     "tags": "[light, a small surprise]",
+     "audio": "res://audio/voice/rapunzel/nar_a83c8ee8d3.mp3",
+     "source_audio": "audio/el/rapunzel/nar_a83c8ee8d3.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "rap": "surprised",
+    "prince": "calm"
+   },
+   "source_read": "R07_prince#3",
+   "source_text": "왕자가 창문으로 쑥 들어오자, 라푼젤은 깜짝 놀랐어요."
+  },
+  {
+   "id": "rp_r0704",
+   "speaker": "rap",
+   "text": "\"어머, 할머니가 아니네?\"",
+   "status": "reuse",
+   "beat": "meet",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "어머, 할머니가 아니네?",
+     "emotion": "toneup",
+     "tags": "[young girl, surprised, a little giggle, not afraid]",
+     "audio": "res://audio/voice/rapunzel/rap_0433eb0505_t.mp3",
+     "source_audio": "audio/el/rapunzel/rap_0433eb0505.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/rapunzel/rap_0433eb0505.mp3 (0-2.85 s: the giggle and the first take)"
+    }
+   ],
+   "expr": {
+    "rap": "surprised"
+   },
+   "source_read": "R07_prince#4",
+   "source_text": "어머, 할머니가 아니네?"
+  },
+  {
+   "id": "rp_r0705",
+   "speaker": "prince",
+   "text": "\"놀라게 해서 미안해요. 노래가 너무 고와서 왔어요. 저와 함께 성으로 가요.\"",
+   "status": "reuse",
+   "beat": "meet",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "놀라게 해서 미안해요. 노래가 너무 고와서 왔어요. 저와 함께 성으로 가요.",
+     "emotion": null,
+     "tags": "[young man, gentle, sincere, warm, unhurried]",
+     "audio": "res://audio/voice/rapunzel/prince_f080baa503.mp3",
+     "source_audio": "audio/el/rapunzel/prince_f080baa503.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "prince": "happy",
+    "rap": "joy"
+   },
+   "source_read": "R07_prince#5",
+   "source_text": "놀라게 해서 미안해요. 노래가 너무 고와서 왔어요. 저와 함께 성으로 가요."
+  },
+  {
+   "id": "rp_r0706",
+   "speaker": "rap",
+   "text": "\"좋아요. 비단실을 가져오면 사다리를 엮을게요.\"",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "좋아요. 비단실을 가져오면 사다리를 엮을게요.",
+     "emotion": "happy",
+     "tags": "[young girl, bright, hopeful, clear]",
+     "audio": "res://audio/voice/rapunzel/rap_85d3ba32ee.mp3",
+     "source_audio": "audio/el/rapunzel/rap_85d3ba32ee.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_prince#6",
+   "source_text": "좋아요. 비단실을 가져오면 사다리를 엮을게요."
+  },
+  {
+   "id": "rp_r0707",
+   "speaker": "nar",
+   "text": "왕자는 바깥세상 이야기를 조잘조잘 들려주었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 바깥세상 이야기를 조잘조잘 들려주었어요.",
+     "emotion": null,
+     "tags": "[warm, light]",
+     "audio": "res://audio/voice/rapunzel/nar_f63013e3b9.mp3",
+     "source_audio": "audio/el/rapunzel/nar_f63013e3b9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_prince#7",
+   "source_text": "왕자는 바깥세상 이야기를 조잘조잘 들려주었어요."
+  },
+  {
+   "id": "rp_r0708",
+   "speaker": "nar",
+   "text": "그날부터 왕자는 저녁마다 비단실을 가져왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그날부터 왕자는 저녁마다 비단실을 가져왔어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_4d4cb1eab4.mp3",
+     "source_audio": "audio/el/rapunzel/nar_4d4cb1eab4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_prince#8",
+   "source_text": "그날부터 왕자는 저녁마다 비단실을 가져왔어요."
+  },
+  {
+   "id": "rp_r0709",
+   "speaker": "nar",
+   "text": "비단실이 차곡차곡 쌓이고, 두 사람은 날마다 도란도란 이야기를 나눴어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "비단실이 차곡차곡 쌓이고, 두 사람은 날마다 도란도란 이야기를 나눴어요.",
+     "emotion": null,
+     "tags": "[warm, gentle, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_8ff6580ec6.mp3",
+     "source_audio": "audio/el/rapunzel/nar_8ff6580ec6.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R07_prince#9",
+   "source_text": "비단실이 차곡차곡 쌓이고, 두 사람은 날마다 도란도란 이야기를 나눴어요."
+  },
+  {
+   "id": "rp_r0800",
+   "speaker": "nar",
+   "text": "왕자가 없는 낮, 탑 안에는 고텔과 라푼젤이 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자가 없는 낮, 탑 안에는 고텔과 라푼젤이 있었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_4f3dedd5dc.mp3",
+     "source_audio": "audio/el/rapunzel/nar_4f3dedd5dc.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_snip#0",
+   "source_text": "왕자가 없는 낮, 탑 안에는 고텔과 라푼젤이 있었어요."
+  },
+  {
+   "id": "rp_r0801",
+   "speaker": "nar",
+   "text": "어느 날, 라푼젤이 무심코 말했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "어느 날, 라푼젤이 무심코 말했어요.",
+     "emotion": null,
+     "tags": "[calm, light, a small pause at the end]",
+     "audio": "res://audio/voice/rapunzel/nar_95880345a5.mp3",
+     "source_audio": "audio/el/rapunzel/nar_95880345a5.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_snip#1",
+   "source_text": "어느 날, 라푼젤이 무심코 말했어요."
+  },
+  {
+   "id": "rp_r0802",
+   "speaker": "rap",
+   "text": "\"할머니, 할머니는 왜 왕자님보다 훨씬 무거워요?\"",
+   "status": "reuse",
+   "beat": "snip",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "할머니, 할머니는 왜 왕자님보다 훨씬 무거워요?",
+     "emotion": null,
+     "tags": "[young girl, innocent, curious, chatty]",
+     "audio": "res://audio/voice/rapunzel/rap_43f835827d.mp3",
+     "source_audio": "audio/el/rapunzel/rap_43f835827d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "rap": "chatty",
+    "gothel": "calm"
+   },
+   "source_read": "R08_snip#2",
+   "source_text": "할머니, 할머니는 왜 왕자님보다 훨씬 무거워요?"
+  },
+  {
+   "id": "rp_r0803",
+   "speaker": "gothel",
+   "text": "\"뭐라고? 왕자라니!\"",
+   "status": "reuse",
+   "beat": "snip",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "뭐라고? 왕자라니!",
+     "emotion": "toneup",
+     "tags": "[stern old witch, startled and cross, grumbling, NOT screaming, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_0a719ec3fd.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_0a719ec3fd.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "cross"
+   },
+   "source_read": "R08_snip#3",
+   "source_text": "뭐라고? 왕자라니!"
+  },
+  {
+   "id": "rp_r0804",
+   "speaker": "nar",
+   "text": "고텔은 부들부들 떨며 커다란 가위를 꺼냈어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "고텔은 부들부들 떨며 커다란 가위를 꺼냈어요.",
+     "emotion": null,
+     "tags": "[tense but not scary, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_c489b253ff.mp3",
+     "source_audio": "audio/el/rapunzel/nar_c489b253ff.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_snip#4",
+   "source_text": "고텔은 부들부들 떨며 커다란 가위를 꺼냈어요."
+  },
+  {
+   "id": "rp_r0805",
+   "speaker": "nar",
+   "text": "마녀는 가위 한 번으로 라푼젤의 머리를 자르고, 지팡이를 톡 두드려 먼 들판의 작은 오두막으로 데려갔어요.",
+   "status": "reuse",
+   "beat": "snip",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀는 가위 한 번으로 라푼젤의 머리를 자르고, 지팡이를 톡 두드려 먼 들판의 작은 오두막으로 데려갔어요.",
+     "emotion": null,
+     "tags": "[calm, matter-of-fact, not dramatic, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_0f6dd8fa6d.mp3",
+     "source_audio": "audio/el/rapunzel/nar_0f6dd8fa6d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_snip#5",
+   "source_text": "마녀는 가위 한 번으로 라푼젤의 머리를 자르고, 지팡이를 톡 두드려 먼 들판의 작은 오두막으로 데려갔어요."
+  },
+  {
+   "id": "rp_r0806",
+   "speaker": "nar",
+   "text": "라푼젤은 짧아진 머리를 만지며 훌쩍훌쩍 울었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 짧아진 머리를 만지며 훌쩍훌쩍 울었어요.",
+     "emotion": null,
+     "tags": "[soft, a little sad]",
+     "audio": "res://audio/voice/rapunzel/nar_7c980d57de.mp3",
+     "source_audio": "audio/el/rapunzel/nar_7c980d57de.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R08_snip#6",
+   "source_text": "라푼젤은 짧아진 머리를 만지며 훌쩍훌쩍 울었어요."
+  },
+  {
+   "id": "rp_r0900",
+   "speaker": "nar",
+   "text": "그날 저녁, 왕자는 아무것도 모르고 탑에 왔어요.",
+   "status": "reuse",
+   "beat": "empty",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그날 저녁, 왕자는 아무것도 모르고 탑에 왔어요.",
+     "emotion": null,
+     "tags": "[calm, a little suspense but light]",
+     "audio": "res://audio/voice/rapunzel/nar_4011fc6b51.mp3",
+     "source_audio": "audio/el/rapunzel/nar_4011fc6b51.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_empty#0",
+   "source_text": "그날 저녁, 왕자는 아무것도 모르고 탑에 왔어요."
+  },
+  {
+   "id": "rp_r0901",
+   "speaker": "nar",
+   "text": "탑은 텅 비고, 바람만 휘잉 지나갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "탑은 텅 비고, 바람만 휘잉 지나갔어요.",
+     "emotion": null,
+     "tags": "[hushed, a little suspense but light]",
+     "audio": "res://audio/voice/rapunzel/nar_7f2a8dc2f9.mp3",
+     "source_audio": "audio/el/rapunzel/nar_7f2a8dc2f9.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_empty#1",
+   "source_text": "탑은 텅 비고, 바람만 휘잉 지나갔어요."
+  },
+  {
+   "id": "rp_r0902",
+   "speaker": "prince",
+   "text": "\"라푼젤, 라푼젤, 머리를 내려 줘요!\"",
+   "status": "reuse",
+   "beat": "empty",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "라푼젤, 라푼젤, 머리를 내려 줘요!",
+     "emotion": "toneup",
+     "tags": "[young man, calling up warmly, sing-song chant, slow]",
+     "audio": "res://audio/voice/rapunzel/prince_778d486be2.mp3",
+     "source_audio": "audio/el/rapunzel/prince_778d486be2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "prince": "call"
+   },
+   "source_read": "R09_empty#2",
+   "source_text": "라푼젤, 라푼젤, 머리를 내려 줘요!"
+  },
+  {
+   "id": "rp_r0903",
+   "speaker": "nar",
+   "text": "마녀는 잘린 머리를 고리에 걸어 내려 주었어요.",
+   "status": "reuse",
+   "beat": "empty",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀는 잘린 머리를 고리에 걸어 내려 주었어요.",
+     "emotion": null,
+     "tags": "[hushed, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_adc409ac38.mp3",
+     "source_audio": "audio/el/rapunzel/nar_adc409ac38.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_empty#3",
+   "source_text": "마녀는 잘린 머리를 고리에 걸어 내려 주었어요."
+  },
+  {
+   "id": "rp_r0904",
+   "speaker": "nar",
+   "text": "왕자는 머리카락을 타고 올라가 방 안의 고텔과 마주쳤어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 머리카락을 타고 올라가 방 안의 고텔과 마주쳤어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_fb64fe0fea.mp3",
+     "source_audio": "audio/el/rapunzel/nar_fb64fe0fea.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_empty#4",
+   "source_text": "왕자는 머리카락을 타고 올라가 방 안의 고텔과 마주쳤어요."
+  },
+  {
+   "id": "rp_r0905",
+   "speaker": "gothel",
+   "text": "\"라푼젤은 여기 없다. 다시는 못 볼 거다. 자, 내려가라.\"",
+   "status": "reuse",
+   "beat": "empty",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "gothel",
+     "text": "라푼젤은 여기 없다. 다시는 못 볼 거다. 자, 내려가라.",
+     "emotion": null,
+     "tags": "[stern old witch, low, firm, grumbling, slow, NOT shouting, not scary]",
+     "audio": "res://audio/voice/rapunzel/gothel_aa8463d154.mp3",
+     "source_audio": "audio/el/rapunzel/gothel_aa8463d154.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "gothel": "win_stern"
+   },
+   "source_read": "R09_empty#5",
+   "source_text": "라푼젤은 여기 없다. 다시는 못 볼 거다. 자, 내려가라."
+  },
+  {
+   "id": "rp_r0906",
+   "speaker": "nar",
+   "text": "휘익~ 마법 바람이 왕자를 탑 아래 풀숲에 사뿐 내려놓았어요.",
+   "status": "reuse",
+   "beat": "empty",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "휘익~ 마법 바람이 왕자를 탑 아래 풀숲에 사뿐 내려놓았어요.",
+     "emotion": null,
+     "tags": "[a soft whoosh on 휘익, then gentle and soft at 사뿐]",
+     "audio": "res://audio/voice/rapunzel/nar_ffa5b72846.mp3",
+     "source_audio": "audio/el/rapunzel/nar_ffa5b72846.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_empty#6",
+   "source_text": "휘익~ 마법 바람이 왕자를 탑 아래 풀숲에 사뿐 내려놓았어요."
+  },
+  {
+   "id": "rp_r0907",
+   "speaker": "prince",
+   "text": "\"라푼젤… 어디로 갔을까.\"",
+   "status": "reuse",
+   "beat": "empty",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "라푼젤… 어디로 갔을까.",
+     "emotion": "sad",
+     "tags": "[young man, sad, quiet, puzzled, a pause after 라푼젤]",
+     "audio": "res://audio/voice/rapunzel/prince_8fbc9c7e0b_t.mp3",
+     "source_audio": "audio/el/rapunzel/prince_8fbc9c7e0b.mp3",
+     "status": "reuse",
+     "trimmed_from": "audio/el/rapunzel/prince_8fbc9c7e0b.mp3 (6.70-9.30 s: '라푼젤 어디로 갔을까?')"
+    }
+   ],
+   "expr": {
+    "prince": "sad"
+   },
+   "source_read": "R09_empty#7",
+   "source_text": "라푼젤… 어디로 갔을까."
+  },
+  {
+   "id": "rp_r0908",
+   "speaker": "nar",
+   "text": "왕자는 슬픈 얼굴로 숲을 걷고 또 걸었어요.",
+   "status": "reuse",
+   "beat": "empty",
+   "interaction": "walk",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자는 슬픈 얼굴로 숲을 걷고 또 걸었어요.",
+     "emotion": "sad",
+     "tags": "[slow, gentle, a little sad, long vowels at 걷고 또 걸었어요]",
+     "audio": "res://audio/voice/rapunzel/nar_e1c5f8198d.mp3",
+     "source_audio": "audio/el/rapunzel/nar_e1c5f8198d.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_empty#8",
+   "source_text": "왕자는 슬픈 얼굴로 숲을 걷고 또 걸었어요."
+  },
+  {
+   "id": "rp_r0909",
+   "speaker": "nar",
+   "text": "터벅터벅, 왕자의 발걸음은 무겁기만 했어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "터벅터벅, 왕자의 발걸음은 무겁기만 했어요.",
+     "emotion": null,
+     "tags": "[slow, gentle, a little sad]",
+     "audio": "res://audio/voice/rapunzel/nar_5f76b6cc94.mp3",
+     "source_audio": "audio/el/rapunzel/nar_5f76b6cc94.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R09_empty#9",
+   "source_text": "터벅터벅, 왕자의 발걸음은 무겁기만 했어요."
+  },
+  {
+   "id": "rp_r1000",
+   "speaker": "nar",
+   "text": "숲을 벗어난 왕자가 작은 오두막이 있는 들판에 이르렀어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "숲을 벗어난 왕자가 작은 오두막이 있는 들판에 이르렀어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_64f549da25.mp3",
+     "source_audio": "audio/el/rapunzel/nar_64f549da25.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#0",
+   "source_text": "숲을 벗어난 왕자가 작은 오두막이 있는 들판에 이르렀어요."
+  },
+  {
+   "id": "rp_r1001",
+   "speaker": "nar",
+   "text": "라푼젤은 그 오두막 곁에서 노래하고 있었어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤은 그 오두막 곁에서 노래하고 있었어요.",
+     "emotion": null,
+     "tags": "[calm, warm storytelling]",
+     "audio": "res://audio/voice/rapunzel/nar_897c35756f.mp3",
+     "source_audio": "audio/el/rapunzel/nar_897c35756f.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#1",
+   "source_text": "라푼젤은 그 오두막 곁에서 노래하고 있었어요."
+  },
+  {
+   "id": "rp_r1002",
+   "speaker": "nar",
+   "text": "그때, 바람을 타고 노랫소리가 들려왔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그때, 바람을 타고 노랫소리가 들려왔어요.",
+     "emotion": null,
+     "tags": "[hopeful, brightening, a pause after 그때]",
+     "audio": "res://audio/voice/rapunzel/nar_27135d21b0.mp3",
+     "source_audio": "audio/el/rapunzel/nar_27135d21b0.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#2",
+   "source_text": "그때, 바람을 타고 노랫소리가 들려왔어요."
+  },
+  {
+   "id": "rp_r1003",
+   "speaker": "nar",
+   "text": "왕자의 귀가 쫑긋, 발걸음이 점점 빨라졌어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "왕자의 귀가 쫑긋, 발걸음이 점점 빨라졌어요.",
+     "emotion": null,
+     "tags": "[hopeful, brightening]",
+     "audio": "res://audio/voice/rapunzel/nar_65910cb572.mp3",
+     "source_audio": "audio/el/rapunzel/nar_65910cb572.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#3",
+   "source_text": "왕자의 귀가 쫑긋, 발걸음이 점점 빨라졌어요."
+  },
+  {
+   "id": "rp_r1004",
+   "speaker": "prince",
+   "text": "\"이 노래는… 라푼젤!\"",
+   "status": "reuse",
+   "beat": "reunion",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "이 노래는… 라푼젤!",
+     "emotion": "toneup",
+     "tags": "[young man, realising, then joyful shout, a pause after 노래는]",
+     "audio": "res://audio/voice/rapunzel/prince_61cd899dc2.mp3",
+     "source_audio": "audio/el/rapunzel/prince_61cd899dc2.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "prince": "delighted"
+   },
+   "source_read": "R10_reunion#4",
+   "source_text": "이 노래는… 라푼젤!"
+  },
+  {
+   "id": "rp_r1005",
+   "speaker": "rap",
+   "text": "\"왕자님! 찾아와 줬군요.\"",
+   "status": "reuse",
+   "beat": "reunion",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "rap",
+     "text": "왕자님! 찾아와 줬군요.",
+     "emotion": "happy",
+     "tags": "[young girl, overjoyed, bright, warm]",
+     "audio": "res://audio/voice/rapunzel/rap_0cfc97a8b4.mp3",
+     "source_audio": "audio/el/rapunzel/rap_0cfc97a8b4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "rap": "short_joy"
+   },
+   "source_read": "R10_reunion#5",
+   "source_text": "왕자님! 찾아와 줬군요."
+  },
+  {
+   "id": "rp_r1006",
+   "speaker": "prince",
+   "text": "\"포기하지 않길 잘했어요. 이제 함께 가요.\"",
+   "status": "reuse",
+   "beat": "reunion",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "prince",
+     "text": "포기하지 않길 잘했어요. 이제 함께 가요.",
+     "emotion": "happy",
+     "tags": "[young man, relieved, warm, gentle, smiling]",
+     "audio": "res://audio/voice/rapunzel/prince_3933aea604.mp3",
+     "source_audio": "audio/el/rapunzel/prince_3933aea604.mp3",
+     "status": "reuse"
+    }
+   ],
+   "expr": {
+    "prince": "happy"
+   },
+   "source_read": "R10_reunion#6",
+   "source_text": "포기하지 않길 잘했어요. 이제 함께 가요."
+  },
+  {
+   "id": "rp_r1007",
+   "speaker": "nar",
+   "text": "꽃잎이 팔랑팔랑 날리고, 두 사람은 손을 꼭 잡았어요.",
+   "status": "reuse",
+   "beat": "reunion",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "꽃잎이 팔랑팔랑 날리고, 두 사람은 손을 꼭 잡았어요.",
+     "emotion": null,
+     "tags": "[warm, joyful]",
+     "audio": "res://audio/voice/rapunzel/nar_446d860ef8.mp3",
+     "source_audio": "audio/el/rapunzel/nar_446d860ef8.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#7",
+   "source_text": "꽃잎이 팔랑팔랑 날리고, 두 사람은 손을 꼭 잡았어요."
+  },
+  {
+   "id": "rp_r1008",
+   "speaker": "nar",
+   "text": "두 사람은 손을 꼭 잡고 성으로 떠났어요.",
+   "status": "reuse",
+   "beat": "reunion",
+   "interaction": "say",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "두 사람은 손을 꼭 잡고 성으로 떠났어요.",
+     "emotion": "happy",
+     "tags": "[warm, joyful, storybook ending tone]",
+     "audio": "res://audio/voice/rapunzel/nar_3aae7edfc4.mp3",
+     "source_audio": "audio/el/rapunzel/nar_3aae7edfc4.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#8",
+   "source_text": "두 사람은 손을 꼭 잡고 성으로 떠났어요."
+  },
+  {
+   "id": "rp_r1009",
+   "speaker": "nar",
+   "text": "마녀 고텔은 텃밭으로 돌아갔어요.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀 고텔은 텃밭으로 돌아갔어요.",
+     "emotion": null,
+     "tags": "[calm, quiet, final, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_c1569bab25.mp3",
+     "source_audio": "audio/el/rapunzel/nar_c1569bab25.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#9",
+   "source_text": "마녀 고텔은 텃밭으로 돌아갔어요."
+  },
+  {
+   "id": "rp_r1010",
+   "speaker": "nar",
+   "text": "멀리 떨어져 있어도 포기하지 않으면, 사랑하는 사람을 다시 만날 수 있답니다.",
+   "status": "reuse",
+   "beat": "",
+   "interaction": "",
+   "used": false,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "멀리 떨어져 있어도 포기하지 않으면, 사랑하는 사람을 다시 만날 수 있답니다.",
+     "emotion": null,
+     "tags": "[warm, gentle, closing the book, slow]",
+     "audio": "res://audio/voice/rapunzel/nar_21ab7e7cb1.mp3",
+     "source_audio": "audio/el/rapunzel/nar_21ab7e7cb1.mp3",
+     "status": "reuse"
+    }
+   ],
+   "source_read": "R10_reunion#10",
+   "source_text": "멀리 떨어져 있어도 포기하지 않으면, 사랑하는 사람을 다시 만날 수 있답니다."
+  },
+  {
+   "id": "rp_n01",
+   "speaker": "nar",
+   "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+   "status": "changed-recorded",
+   "beat": "cover",
+   "interaction": "cover",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "그림책을 톡 눌러서 펼쳐 볼까요?",
+     "emotion": null,
+     "tags": "[cheerful, inviting, warm]",
+     "audio": "res://audio/voice/rapunzel/nar_4b6348e4da.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "rp_n02",
+   "speaker": "nar",
+   "text": "또 보고 싶으면 '다시 보기'를 톡!",
+   "status": "changed-recorded",
+   "beat": "reunion",
+   "interaction": "end",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "또 보고 싶으면 '다시 보기'를 톡!",
+     "emotion": null,
+     "tags": "[cheerful, inviting]",
+     "audio": "res://audio/voice/rapunzel/nar_0359bfdd0d.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "rp_n03",
+   "speaker": "nar",
+   "text": "라푼젤 풀을 톡 눌러서 쑥 뽑아 봐요.",
+   "status": "changed-recorded",
+   "beat": "night",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤 풀을 톡 눌러서 쑥 뽑아 봐요.",
+     "emotion": null,
+     "tags": "[hushed, playful, inviting]",
+     "audio": "res://audio/voice/rapunzel/nar_a339b69ca0.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "rp_n04",
+   "speaker": "nar",
+   "text": "마녀를 톡 눌러서 지팡이를 두드려 봐요.",
+   "status": "changed-recorded",
+   "beat": "tower",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "마녀를 톡 눌러서 지팡이를 두드려 봐요.",
+     "emotion": null,
+     "tags": "[warm, a little mysterious, inviting]",
+     "audio": "res://audio/voice/rapunzel/nar_421a8e991f.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "rp_n05",
+   "speaker": "nar",
+   "text": "창문을 톡 눌러서 머리카락을 내려 줘요.",
+   "status": "changed-recorded",
+   "beat": "hair",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "창문을 톡 눌러서 머리카락을 내려 줘요.",
+     "emotion": null,
+     "tags": "[warm, playful, inviting]",
+     "audio": "res://audio/voice/rapunzel/nar_ef83624048.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "rp_n06",
+   "speaker": "nar",
+   "text": "라푼젤을 톡 누르면 노래를 불러요.",
+   "status": "changed-recorded",
+   "beat": "song",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "라푼젤을 톡 누르면 노래를 불러요.",
+     "emotion": null,
+     "tags": "[warm, gentle, inviting]",
+     "audio": "res://audio/voice/rapunzel/nar_e94be57aee.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  },
+  {
+   "id": "rp_n07",
+   "speaker": "nar",
+   "text": "두 사람을 톡 눌러서 손을 꼭 잡게 해 줘요.",
+   "status": "changed-recorded",
+   "beat": "reunion",
+   "interaction": "tap_steps",
+   "used": true,
+   "segs": [
+    {
+     "speaker": "nar",
+     "text": "두 사람을 톡 눌러서 손을 꼭 잡게 해 줘요.",
+     "emotion": null,
+     "tags": "[warm, joyful, inviting]",
+     "audio": "res://audio/voice/rapunzel/nar_5f1e86a6aa.mp3",
+     "source_audio": "",
+     "status": "changed-recorded"
+    }
+   ],
+   "new": true
+  }
+ ]
+}

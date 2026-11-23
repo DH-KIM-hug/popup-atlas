@@ -108,3 +108,23 @@ the turnip music were generated for 톡톡 with the user's ElevenLabs account.
 | `../sfx/tn_grow.mp3` | `sfx/chime_up.mp3` | Pixabay "Fairy Dust Shimmer 1", floraphonic |
 | `../sfx/tn_slurp.mp3` | `sfx/slurp_1.mp3` | Pixabay "Cartoon Slurp", freesound_community |
 | `../sfx/tn_cheer.mp3` | `sfx/cheer.mp3` | Pixabay "Applause, small audience", freesound_community |
+
+## rapunzel (라푼젤, 2026-11-23, copied from 톡톡 동화극장 `sounds/`, credits in that project's `sounds/CREDITS.md`)
+
+Music loudness-matched to -22 LUFS; sound effects copied unchanged into `../sfx/rp_*.mp3` (catalog ids `rp.*`, merged by
+`tools/audio/rapunzel_sounds.py`). The story-start music is the shared `intro_magic_1.mp3` (톡톡's rapunzel intro).
+
+| file | source in 톡톡 | origin |
+|---|---|---|
+| `music_rapunzel_1.mp3` | `music/el_rapunzel_bgm.mp3` | Eleven Music (톡톡): forest tower, lute / harp / recorder / strings |
+| `rp_song_1.mp3` | `sfx/classical_songs_without_words.mp3` | Mendelssohn, Songs without Words op. 19 (public domain), piano by abydos_music, Pixabay |
+| `../sfx/rp_creak.mp3` | `sfx/creak.mp3` | Pixabay "Old Wooden Door", Universfield |
+| `../sfx/rp_pull.mp3` | `sfx/pull_pop_2.mp3` | Pixabay "Cartoon Yoink 1", floraphonic |
+| `../sfx/rp_magic.mp3` | `sfx/magic_wand.mp3` | see 톡톡 `sounds/CREDITS.md` |
+| `../sfx/rp_knock.mp3` | `sfx/knock_2.mp3` | ElevenLabs SFX (톡톡) |
+| `../sfx/rp_rise.mp3` | `sfx/chime_up.mp3` | Pixabay "Fairy Dust Shimmer 1", floraphonic |
+| `../sfx/rp_slide.mp3` | `sfx/slide_down.mp3` | synthesised in 톡톡 (CC0) |
+| `../sfx/rp_harp.mp3` | `sfx/harp_gliss.mp3` | Pixabay "Harp Glissando Up C7 1", floraphonic |
+| `../sfx/rp_snip.mp3` | `sfx/el_scissor_snip.mp3` | ElevenLabs SFX (톡톡) |
+| `../sfx/rp_whoosh.mp3` | `sfx/wind_gust.mp3` | see 톡톡 `sounds/CREDITS.md` |
+| `../sfx/rp_petals.mp3` | `sfx/sparkle.mp3` | Pixabay "Magic Twinkle", Universfield |

@@ -1,0 +1,147 @@
+{
+ "sheet": "cast_rp_rap_short",
+ "bg": [
+  0.984,
+  0.039,
+  0.957
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "cast_rp_rap_short_00",
+   "bbox": [
+    28,
+    85,
+    256,
+    648
+   ],
+   "area": 80413,
+   "size": [
+    236,
+    571
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_short_01",
+   "bbox": [
+    298,
+    85,
+    522,
+    648
+   ],
+   "area": 75980,
+   "size": [
+    232,
+    571
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_short_02",
+   "bbox": [
+    563,
+    85,
+    786,
+    648
+   ],
+   "area": 76927,
+   "size": [
+    231,
+    571
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_short_03",
+   "bbox": [
+    811,
+    90,
+    1066,
+    646
+   ],
+   "area": 68918,
+   "size": [
+    263,
+    564
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_short_04",
+   "bbox": [
+    1071,
+    86,
+    1399,
+    648
+   ],
+   "area": 81237,
+   "size": [
+    336,
+    570
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_short_05",
+   "bbox": [
+    1393,
+    90,
+    1595,
+    646
+   ],
+   "area": 62932,
+   "size": [
+    210,
+    564
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_short_06",
+   "bbox": [
+    1658,
+    87,
+    1879,
+    646
+   ],
+   "area": 77436,
+   "size": [
+    229,
+    567
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "cast_rp_rap_short_07",
+   "bbox": [
+    1920,
+    85,
+    2144,
+    648
+   ],
+   "area": 80117,
+   "size": [
+    232,
+    571
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

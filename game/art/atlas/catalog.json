@@ -16613,5 +16613,582 @@
    215,
    187
   ]
+ },
+ {
+  "id": "story_rp_garden_00",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_00.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_nature",
+  "label": "rampion plant (라푼젤 상추): leaf rosette with blue-violet bells",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "plant",
+   "rampion",
+   "rapunzel",
+   "story",
+   "vegetable"
+  ],
+  "px": [
+   190,
+   258
+  ]
+ },
+ {
+  "id": "story_rp_garden_01",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_01.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_nature",
+  "label": "rampion plant, more bell stems",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "plant",
+   "rampion",
+   "rapunzel",
+   "story",
+   "vegetable"
+  ],
+  "px": [
+   177,
+   290
+  ]
+ },
+ {
+  "id": "story_rp_garden_02",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_02.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_prop",
+  "label": "rampion garden bed: five rosettes in tilled soil, stone edging",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "garden_bed",
+   "rampion",
+   "rapunzel",
+   "story",
+   "vegetable"
+  ],
+  "px": [
+   410,
+   189
+  ]
+ },
+ {
+  "id": "story_rp_garden_03",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_03.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_prop",
+  "label": "wooden rocking cradle with a sleeping baby",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "baby",
+   "cradle",
+   "fairytale",
+   "garden",
+   "nursery",
+   "rapunzel",
+   "story"
+  ],
+  "px": [
+   264,
+   258
+  ]
+ },
+ {
+  "id": "story_rp_garden_04",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_04.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_prop",
+  "label": "pulled rampion plant with its long white root",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "pulled",
+   "rampion",
+   "rapunzel",
+   "root",
+   "story"
+  ],
+  "px": [
+   173,
+   353
+  ]
+ },
+ {
+  "id": "story_rp_garden_05",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_05.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_fx",
+  "label": "golden braid segment with red bows (vertical, flat ends: tile it)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "braid",
+   "fairytale",
+   "garden",
+   "hair",
+   "rapunzel",
+   "rapunzel_braid",
+   "story"
+  ],
+  "px": [
+   84,
+   559
+  ]
+ },
+ {
+  "id": "story_rp_garden_06",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_06.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_fx",
+  "label": "golden braid end: tassel with a red bow",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "braid",
+   "fairytale",
+   "garden",
+   "hair",
+   "rapunzel",
+   "rapunzel_braid",
+   "story"
+  ],
+  "px": [
+   114,
+   303
+  ]
+ },
+ {
+  "id": "story_rp_garden_07",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_07.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_prop",
+  "label": "cut-off golden braid hanging from an iron hook",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "braid",
+   "fairytale",
+   "garden",
+   "hair",
+   "hook",
+   "rapunzel",
+   "story"
+  ],
+  "px": [
+   101,
+   419
+  ]
+ },
+ {
+  "id": "story_rp_garden_08",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_08.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_fx",
+  "label": "burst of gold and pale-green magic sparkles",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "magic",
+   "rapunzel",
+   "sparkle",
+   "story"
+  ],
+  "px": [
+   198,
+   195
+  ]
+ },
+ {
+  "id": "story_rp_garden_09",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_09.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_fx",
+  "label": "two golden music notes",
+  "height_units": 0.07,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "music",
+   "notes",
+   "rapunzel",
+   "song",
+   "story"
+  ],
+  "px": [
+   189,
+   148
+  ]
+ },
+ {
+  "id": "story_rp_garden_10",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_10.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_fx",
+  "label": "cluster of coral and cream petals",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "flower",
+   "garden",
+   "petals",
+   "rapunzel",
+   "story"
+  ],
+  "px": [
+   202,
+   211
+  ]
+ },
+ {
+  "id": "story_rp_garden_13",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_13.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_fx",
+  "label": "swirl of pale-blue wind curls",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "gust",
+   "magic",
+   "rapunzel",
+   "story",
+   "wind"
+  ],
+  "px": [
+   241,
+   196
+  ]
+ },
+ {
+  "id": "story_rp_garden_15",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_15.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_nature",
+  "label": "low rose-cane hedge clump with coral roses (soft, no thorns)",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bush",
+   "fairytale",
+   "garden",
+   "hedge",
+   "rapunzel",
+   "rose",
+   "story"
+  ],
+  "px": [
+   313,
+   235
+  ]
+ },
+ {
+  "id": "story_rp_garden_16",
+  "path": "art/atlas/story_rp_garden/story_rp_garden_16.webp",
+  "sheet": "story_rp_garden",
+  "category": "story_prop",
+  "label": "big silver scissors, open",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "garden",
+   "rapunzel",
+   "scissors",
+   "story"
+  ],
+  "px": [
+   165,
+   239
+  ]
+ },
+ {
+  "id": "story_rp_room_00",
+  "path": "art/atlas/story_rp_room/story_rp_room_00.webp",
+  "sheet": "story_rp_room",
+  "category": "story_building",
+  "label": "round tower room inside wall: stone + plaster, beam on top",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "interior",
+   "rapunzel",
+   "room",
+   "stone",
+   "story",
+   "tower",
+   "wall"
+  ],
+  "px": [
+   320,
+   514
+  ]
+ },
+ {
+  "id": "story_rp_room_01",
+  "path": "art/atlas/story_rp_room/story_rp_room_01.webp",
+  "sheet": "story_rp_room",
+  "category": "story_building",
+  "label": "round tower room inside wall with an arched window (dusk forest), curtains",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "interior",
+   "rapunzel",
+   "room",
+   "story",
+   "tower",
+   "wall",
+   "window"
+  ],
+  "px": [
+   324,
+   514
+  ]
+ },
+ {
+  "id": "story_rp_room_02",
+  "path": "art/atlas/story_rp_room/story_rp_room_02.webp",
+  "sheet": "story_rp_room",
+  "category": "story_building",
+  "label": "round tower room inside wall with a shelf (jug, books, candle)",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "interior",
+   "rapunzel",
+   "room",
+   "shelf",
+   "story",
+   "tower",
+   "wall"
+  ],
+  "px": [
+   323,
+   514
+  ]
+ },
+ {
+  "id": "story_rp_room_03",
+  "path": "art/atlas/story_rp_room/story_rp_room_03.webp",
+  "sheet": "story_rp_room",
+  "category": "story_building",
+  "label": "round tower room inside wall with a round mirror and a cloak on a hook",
+  "height_units": 0.7,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "interior",
+   "mirror",
+   "rapunzel",
+   "room",
+   "story",
+   "tower",
+   "wall"
+  ],
+  "px": [
+   324,
+   514
+  ]
+ },
+ {
+  "id": "story_rp_room_04",
+  "path": "art/atlas/story_rp_room/story_rp_room_04.webp",
+  "sheet": "story_rp_room",
+  "category": "story_prop",
+  "label": "small wooden bed with a patchwork quilt (side view)",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bed",
+   "fairytale",
+   "furniture",
+   "interior",
+   "rapunzel",
+   "story",
+   "tower"
+  ],
+  "px": [
+   309,
+   265
+  ]
+ },
+ {
+  "id": "story_rp_room_05",
+  "path": "art/atlas/story_rp_room/story_rp_room_05.webp",
+  "sheet": "story_rp_room",
+  "category": "story_prop",
+  "label": "three-legged wooden stool",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "furniture",
+   "interior",
+   "rapunzel",
+   "stool",
+   "story",
+   "tower"
+  ],
+  "px": [
+   143,
+   153
+  ]
+ },
+ {
+  "id": "story_rp_room_06",
+  "path": "art/atlas/story_rp_room/story_rp_room_06.webp",
+  "sheet": "story_rp_room",
+  "category": "story_prop",
+  "label": "small round table with a jug of wildflowers",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "flowers",
+   "furniture",
+   "interior",
+   "rapunzel",
+   "story",
+   "table",
+   "tower"
+  ],
+  "px": [
+   187,
+   323
+  ]
+ },
+ {
+  "id": "story_rp_room_07",
+  "path": "art/atlas/story_rp_room/story_rp_room_07.webp",
+  "sheet": "story_rp_room",
+  "category": "story_prop",
+  "label": "round braided rug",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "floor",
+   "interior",
+   "rapunzel",
+   "rug",
+   "story",
+   "tower"
+  ],
+  "px": [
+   236,
+   204
+  ]
+ },
+ {
+  "id": "story_rp_room_08",
+  "path": "art/atlas/story_rp_room/story_rp_room_08.webp",
+  "sheet": "story_rp_room",
+  "category": "story_prop",
+  "label": "small wooden spinning wheel",
+  "height_units": 0.2,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "furniture",
+   "interior",
+   "rapunzel",
+   "spinning_wheel",
+   "story",
+   "tower"
+  ],
+  "px": [
+   216,
+   269
+  ]
+ },
+ {
+  "id": "story_rp_room_09",
+  "path": "art/atlas/story_rp_room/story_rp_room_09.webp",
+  "sheet": "story_rp_room",
+  "category": "story_building",
+  "label": "tower window from outside: deep arched stone frame, open wooden shutters, stone sill, dark inside",
+  "height_units": 0.24,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "fairytale",
+   "interior",
+   "rapunzel",
+   "shutters",
+   "story",
+   "tower",
+   "window"
+  ],
+  "px": [
+   296,
+   332
+  ]
  }
 ]

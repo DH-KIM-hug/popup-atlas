@@ -214,7 +214,12 @@ func _process(dt: float) -> void:
 			else:
 				_moving = false
 		var dn := to / maxf(dist, 1e-5)
-		if _fly and absf(dn.y) > 0.92 and (puppet.has_pose("walk_back") or puppet.has_pose("back_walk")):
+		if _fly and absf(dn.y) > 0.92 and puppet.has_pose("climb_cycle"):
+			# climbing a rope / braid (rapunzel): the drawn hand-over-hand flipbook, seen from behind
+			view = "back"
+			puppet.set_figure("climb_cycle", false)
+			puppet._hp += step / maxf(puppet.height * 0.4, 0.01)  # hand over hand by height climbed (the puppet measures ground speed only)
+		elif _fly and absf(dn.y) > 0.92 and (puppet.has_pose("walk_back") or puppet.has_pose("back_walk")):
 			# climbing straight up / down (a ladder): seen from behind (drawn back walk cycle), a rung-to-rung bob
 			view = "back"
 			puppet.set_figure("walk_back" if puppet.has_pose("walk_back") else "back_walk", false)
