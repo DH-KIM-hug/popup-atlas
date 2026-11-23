@@ -11,3 +11,7 @@
 - Story-flow critics read the play-through contact sheet + script.json and score /10 with fixes; apply the top fixes
   in one fix round.
 - Motion is judged by you on 8 fps tiles first (cheap), then by the user on mp4s — critics on stills miss gait bugs.
+- New prop types to "fix" engineering read as dropped-in 3D clutter; the look gap to the reference was lens/light/ground,
+  not mechanisms.
+- When vs-reference critics and vs-previous-version critics disagree, the user sided with vs-reference (photographed
+  miniature). Show the user a comparison grid and let them pick.

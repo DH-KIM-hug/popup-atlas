@@ -229,6 +229,130 @@ func _process(dt: float) -> void:
 			_pick_view(dn)
 	elif _v < 0.01 and puppet.pose != pose and _flip_ok():
 		puppet.set_figure(pose, facing_left and view_of(pose) == "side")
+	_move_log(dt)
+
+
+## MOVE log (always on; one line per travel segment, read by tools/story/motion_review.py and gate.py):
+##   MOVE <t0> <t1> <role> <verb> <cycle|none> <dist> skin= hgt= figs= views= cyc= exp= vmax= dvmax= dg= dz= box= trk=
+## verb: walk / run (walk_to / follow on the ground), climb (waypoints off the ground), fly (moved by a tale handler:
+## hops, flights, lift arcs, rolls). cycle: the drawn cycle shown most while travelling, "none" = no drawn cycle
+## (a static card hopping / gliding, or the old leg rig: figs= says which). dist: ground + vertical travel (world).
+## figs: figure:view:frames (view "rig" = rigged legs). cyc: drawn cycles shown (frame flips / cycle frames; static
+## cards: the hop phase); exp: ground distance / (0.9 · height), the cycles a no-skate walk needs
+## (CastPuppet._cycle_step). vmax / dvmax: top ground speed and the largest one-frame ground-speed change (world / s);
+## dg / dz: ground and vertical travel. box: screen box of the figure over the segment (viewport fractions
+## x0,y0,x1,y1); trk: t,x,y,h at 4 Hz (foot point, on-screen height; viewport fractions) so tiles can follow the mover.
+var _mv := {}
+var _mv_last := Vector3.INF
+var _mv_still := 0.0
+var _mv_hp := 0.0
+var _mv_ci := -1
+
+
+func _move_log(dt: float) -> void:
+	var p := global_position + Vector3(0, hop + lift, 0)
+	var seen := is_visible_in_tree() and pop_s > 0.5 and camera != null
+	if _mv_last == Vector3.INF or not seen:
+		_mv_last = p
+		_move_flush()
+		return
+	var d := p - _mv_last
+	_mv_last = p
+	var h := maxf(puppet.height, 0.01)
+	if d.length() > maxf(0.5 * h, 0.1):  # place_at / a page change: a teleport, not travel
+		_move_flush()
+		return
+	var v := d.length() / maxf(dt, 1e-4)
+	if v < 0.02:
+		_mv_still += dt
+		if _mv_still > 0.3:
+			_move_flush()
+		return
+	_mv_still = 0.0
+	if _mv.is_empty():
+		_mv = {"t0": StoryRunner.now, "dg": 0.0, "dv": 0.0, "vmax": 0.0, "dvmax": 0.0, "v": 0.0, "figs": {},
+			"views": {}, "verbs": {}, "cyc": 0.0, "box": Rect2(), "has_box": false, "trk": [], "tk": -1.0}
+		_mv_hp = puppet._hp
+		_mv_ci = int(puppet._cyc_i)
+	_mv["t1"] = StoryRunner.now
+	_mv["dg"] = float(_mv["dg"]) + Vector2(d.x, d.z).length()
+	_mv["dv"] = float(_mv["dv"]) + absf(d.y)
+	var vg := Vector2(d.x, d.z).length() / maxf(dt, 1e-4)  # ground speed (a hop's rise is not a speed jump)
+	_mv["n"] = int(_mv.get("n", 0)) + 1
+	if int(_mv["n"]) > 1:
+		_mv["dvmax"] = maxf(float(_mv["dvmax"]), absf(vg - float(_mv["v"])))
+	_mv["v"] = vg
+	_mv["vmax"] = maxf(float(_mv["vmax"]), vg)
+	var cyc: Dictionary = puppet._def().get("cycles", {})
+	var fig := str(puppet.pose)
+	# cycles actually shown: every drawn-frame change of the flipbook counts 1 / frames (hops: the hop phase)
+	var ci := int(puppet._cyc_i)
+	if cyc.has(fig):
+		if ci != _mv_ci:
+			_mv["cyc"] = float(_mv["cyc"]) + 1.0 / maxf(float((cyc[fig] as Array).size()), 1.0)
+	else:
+		var hp := float(puppet._hp)
+		_mv["cyc"] = float(_mv["cyc"]) + (hp - _mv_hp if hp >= _mv_hp else hp)
+	_mv_hp = float(puppet._hp)
+	_mv_ci = ci
+	var fk := "%s:%s" % [fig, puppet.pose_view(fig) if (cyc.has(fig) or not puppet._rigged) else "rig"]
+	_mv["figs"][fk] = int((_mv["figs"] as Dictionary).get(fk, 0)) + 1
+	_mv["views"][view] = int((_mv["views"] as Dictionary).get(view, 0)) + 1
+	var running := walk_pose.contains("run") or (walk_pose == "scared" and speed >= 0.4)
+	var verb := ("climb" if _fly else ("run" if running else "walk")) if _moving else "fly"
+	_mv["verbs"][verb] = int((_mv["verbs"] as Dictionary).get(verb, 0)) + 1
+	if camera.is_position_behind(p):
+		return
+	var vs := get_viewport().get_visible_rect().size
+	var a := camera.unproject_position(p) / vs
+	var b := camera.unproject_position(p + Vector3(0, h * pop_s, 0)) / vs
+	var r := Rect2(a, Vector2.ZERO).expand(b)
+	_mv["box"] = r if not _mv["has_box"] else (_mv["box"] as Rect2).merge(r)
+	_mv["has_box"] = true
+	if StoryRunner.now - float(_mv["tk"]) >= 0.25:
+		_mv["tk"] = StoryRunner.now
+		(_mv["trk"] as Array).append("%.2f,%.3f,%.3f,%.3f" % [StoryRunner.now, a.x, a.y, a.distance_to(b)])
+
+
+func _move_flush() -> void:
+	_mv_still = 0.0
+	if _mv.is_empty():
+		return
+	var m := _mv
+	_mv = {}
+	var h := maxf(puppet.height, 0.01)
+	var dist := float(m["dg"]) + float(m["dv"])
+	if int(m.get("n", 0)) < 4 or (float(m["dg"]) < 0.25 * h and float(m["dv"]) < h):
+		return  # a nudge (spacing, a snap), a hop in place: not travel
+	var best := func(dct: Dictionary) -> String:
+		var k := ""
+		for x: String in dct:
+			if k == "" or int(dct[x]) > int(dct[k]):
+				k = x
+		return k
+	var cyc: Dictionary = puppet._def().get("cycles", {})
+	var cy := "none"
+	var top := 0
+	for fk: String in m["figs"]:
+		var f := fk.get_slice(":", 0)
+		if cyc.has(f) and int(m["figs"][fk]) > top:
+			top = int(m["figs"][fk])
+			cy = f
+	var parts := []
+	for fk: String in m["figs"]:
+		parts.append("%s:%d" % [fk, m["figs"][fk]])
+	var vparts := []
+	for k: String in m["views"]:
+		vparts.append("%s:%d" % [k, m["views"][k]])
+	var bx: Rect2 = m["box"]
+	print("MOVE %.2f %.2f %s %s %s %.3f skin=%s hgt=%.3f figs=%s views=%s cyc=%.2f exp=%.2f vmax=%.3f dvmax=%.3f dg=%.3f dz=%.3f box=%.3f,%.3f,%.3f,%.3f trk=%s" % [
+		float(m["t0"]), float(m["t1"]), role, best.call(m["verbs"]), cy, dist, puppet.skin, h, ",".join(parts),
+		",".join(vparts), float(m["cyc"]), float(m["dg"]) / (0.9 * h), float(m["vmax"]), float(m["dvmax"]),
+		float(m["dg"]), float(m["dv"]), bx.position.x, bx.position.y, bx.end.x, bx.end.y, ";".join(m["trk"])])
+
+
+func _exit_tree() -> void:
+	_move_flush()
 
 
 func _flip_ok() -> bool:

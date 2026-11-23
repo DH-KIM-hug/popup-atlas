@@ -20,3 +20,14 @@ Write this plan into the progress log before building; it is what every agent ge
 6. **Pop-up moments**: what folds up on each page turn, and one big pop-up set piece per tale (a house rising, a roof
    folding down) — that is the format's charm.
 7. **Asset list**: for each card, catalogue id if it exists, else "new (shared)" or "new (tale-only)".
+8. **Length**: 톡톡 scripts run ~4+ min of narration; measure clip durations while planning and cut ~40% to reach
+   ~3 min. Count narration + page turns + taps before promising a length, and report the change after each round:
+   - three_pigs: 36 reused lines play ~189 s on their own; 9 page turns (~5 s each) and ~37 taps put the first full
+     run at 5:21.
+   - wolf_goats: the first full run was 7:32 (229 s of narration); errands placed a few steps away (stall, mill across
+     the road), exits that fold out at the road instead of walking off-page, and dropping lines the taps show bring it
+     down.
+   - A refrain of seven arrivals (patjuk) is the tale (a line + quote + tap each) but costs ~13 s each: keep the taps
+     for the ones the child needs (the kitchen helpers) and let the granny hand the bowls herself in the yard.
+9. **Places**: list each place the lines name (텃밭, 부엌, 헛간 지붕, 쥐구멍) and what makes it that place on screen (sets.md).
+10. **Branches** (if any): choice space and result tables (engine.md "Branching tales").

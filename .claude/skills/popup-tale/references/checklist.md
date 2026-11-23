@@ -1,6 +1,8 @@
 # Pre-delivery checklist (every user complaint from 「해와 바람」 and 「아기 돼지 삼형제」)
 
-Run this on the LATEST full recording before sending anything to the user. Each item is something the user caught
+The automated part of this list is now `tools/story/gate.py <tale> <run.log> <full.mp4>` (counters, check_lines,
+motion tiles with your verdicts, the fixed visual checklist in artifacts/<tale>/gate.md): see SKILL.md "THE GATE".
+The rest is still read by eye. Run this on the LATEST full recording before sending anything to the user. Each item is something the user caught
 by eye after we said "done". The quote is what they said; check it yourself first.
 
 How to look:

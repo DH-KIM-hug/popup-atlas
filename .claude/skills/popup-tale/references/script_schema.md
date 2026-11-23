@@ -87,8 +87,8 @@ Line `expr` {role: pose | [pose per seg]} is applied by the runner as each seg s
  "source_index": 12, "source_text": "…"}
 ```
 Tale top level `theme` (sunmoon 2026-11-22): template dressing, "" (western meadow village) or "korean" (Joseon
-countryside: man-made cards only from the korean_* sheets). `ground_style`: "" (felt) or "paper" (matte cut-paper
-ground sheets; sunmoon). Read-mode lines (`READ_SCRIPT` in the seed table) carry
+countryside: man-made cards only from the korean_* sheets). `ground_style`: "paper" (matte cut-paper ground sheets;
+the default since 2026-11-22, first set on sunmoon) or "felt" (opt-in for before/after cards only; earlier "" meant felt). Read-mode lines (`READ_SCRIPT` in the seed table) carry
 `source_read` "<scene key>#<line>" instead of `source_index`.
 `status`: `reuse` (unchanged text, 톡톡 clip copied) | `changed-needs-recording` | `changed-recorded` | `pending`
 (new line, recording not approved yet: plays caption-only for an estimated read time, listed in STORY_DONE

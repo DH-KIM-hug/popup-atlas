@@ -1,520 +1,162 @@
 ---
 name: popup-tale
-description: Make a new tale (or a big chunk of one) for the 팝업 동화 iPad pop-up storybook app in Godot (repo popup-atlas, game/). Covers script.json seeded from 톡톡 동화극장, beats and spreads on the shared world templates, reusing the shared card atlas and cast library, generating only missing art (Codex magenta pipeline), character expression sets and the front-facing paper-puppet walk, story verbs and taps, voice lines, recording beats with the Godot movie maker, and blind critic loops. Use it whenever the user asks to add or adapt a story/동화 in this app ("다른 동화도 만들자", "아기 돼지 삼형제 만들어줘", "새 동화 추가"), to add characters or scenes to a tale, or to judge/fix how a tale's characters move, emote or look — even if they don't say "skill".
+description: Make a new tale (or a big chunk of one) for the 팝업 동화 iPad pop-up storybook app in Godot (repo popup-atlas, game/). Covers script.json seeded from 톡톡 동화극장, beats and spreads on the shared world templates, reusing the shared card atlas and cast library, generating only missing art (Codex magenta pipeline), expression sets and drawn walk / run cycles, story verbs and taps, voice lines and sound, recording with the Godot movie maker, the mandatory gate (gate.py + motion tiles) and blind critic loops. Use it whenever the user asks to add or adapt a story/동화 in this app ("다른 동화도 만들자", "아기 돼지 삼형제 만들어줘", "새 동화 추가"), to add characters or scenes to a tale, or to judge/fix how a tale's characters move, emote or look — even if they don't say "skill".
 ---
 
 # Pop-up tale production (팝업 동화)
 
-This is how the first tale, 「해와 바람」 (sun_wind), was built, with every mistake that cost a round folded in, so the next tale goes right the first time. Read `docs/BRIEF.md` (contracts, style rules, asset-reuse policy) and the tail of `artifacts/game-progress.md` before starting; append a dated entry there after every round.
+Tales so far: 「해와 바람」 (sun_wind, the first), 「아기 돼지 삼형제」 (three_pigs), 사탕마녀 (witch_candy), 해님 달님
+(sunmoon), 늑대와 일곱 아기 염소 (wolf_goats), 「커다란 순무」 (turnip), 「팥죽할멈과 호랑이」 (patjuk), 「라푼젤」
+(rapunzel). Every mistake that cost a round is folded into the references so the next tale goes right the first time.
+Read `docs/BRIEF.md` (contracts, style rules, asset-reuse policy) and the tail of `artifacts/game-progress.md` before
+starting; append a dated entry there after every round.
 
-The user talks in Korean, wants to SEE results (send recordings and contact sheets with SendUserFile, not just numbers), and gives short, sharp feedback on motion ("뒤로 걷는데?", "팔자걸음", "휘청거려"). Treat each such remark as a bug report: reproduce it with an 8 fps zoomed frame tile first, find the cause, fix, re-record, show.
+The user talks in Korean, wants to SEE results (send recordings and contact sheets with SendUserFile, not just
+numbers), and gives short, sharp feedback on motion ("뒤로 걷는데?", "팔자걸음", "휘청거려"). Treat each such remark as a
+bug report: reproduce it with an 8 fps zoomed frame tile first, find the cause, fix, re-record, show.
 
-## Before showing the user anything
+## User rules (decided by the user; latest version only — details in the reference named)
+Source and reuse
+- From 톡톡 동화극장 (`~/projects/2026/patjuk-game`, READ-ONLY) only the **script** carries over, and even it is a draft
+  to adapt to pop-up scenes. Characters, backgrounds and props are made new for the pop-up look; 톡톡 art is a design
+  reference at most.
+- **Reuse first**: shared card library `game/art/atlas/catalog.json`, shared cast `game/art/cast/catalog.json`, world
+  template `scenes/world/meadow.tscn`; new generic art goes into the shared libraries with tags, only truly
+  tale-unique art in `game/stories/<tale_id>/art/` (art.md).
+Look
+- The look is fixed: the photographed miniature (low lens, shallow DOF, raking warm light). Don't re-tune the
+  template look per tale; dress it.
+- **No felt anywhere** ("펠트 질감 싫은뎅", 2026-11-22): ground, set cards and characters are matte cut paper, no
+  stitching; paper is the engine default (art.md; the old felt default is superseded).
+- **No white / cream rim on puppets** ("흰색 테두리가 별로", 2026-11-23): cast cards cut in the figure's own colour (art.md).
+- **Steam, smoke and puffs only from hot things** ("이상한데서 김이 모락모락", "셋째집 연기뭐지?") (sets.md "Stray effects").
+- **Holes read as what the story says** ("구멍을 그렇게 파니...?"): planting hole flat dip + heap, mouse hole a low bank (sets.md).
+- **Houses solid from every angle** ("집들은 무조건 입체적으로 아주 잘 들어맞게", 2026-11-23): every house, barn, shop,
+  cottage — story and template — is a closed, tight 3D volume; non-box buildings come from the building kit; never a
+  flat card (sets.md).
+- **The place named in the story reads on screen** ("순무는 텃밭이 없네용?"): a 텃밭 is tilled soil with rows (sets.md).
+The book tells the tale (2026-11-18: "팝업북은 어떤 교육적인 요소보다는 그냥 동화의 전달에 좀 의미를 뒀으면")
+- No quizzes, no counting drills, no spoken or printed morals. Cut source lines that count ("열 장", "여덟 번",
+  "하나, 둘, 셋") or teach; trim a count in its own sentence at the pause (sound.md), otherwise drop the line or list it
+  for the user.
+- Taps drive the story: a few natural taps per moment (about 3 to build a house, 3 huffs; "벽돌을 10번이나 누를 이유가
+  있냐"), never a tally on screen. Voice a tap instruction only for the first tap of each kind; later taps show only
+  the ring hint.
+- Characters are where the story says they are ("아기돼지들 집에 있어야하지 않겠니?"): someone "at home" is in the house —
+  peeking out of a die-cut window, answering from inside, running in through the door (house_stages.py GLASS / DOORS,
+  `enter.inside`, `go_inside`); when the house falls they are revealed where it stood (motion.md "Peeks").
+- A refuge stays closed ("앞 벽은 막혀있어야", "굴뚝으로 들어가면 그제서야 안을"): show the inside by moving the camera in
+  after the threat entered, never by opening the wall (sets.md; the earlier fold-open cutaway is superseded).
+- Things appear only when the story reaches them ("둘째 집 짓기도 전에 있음", "짚이랑 벽돌을 왜 가지고 있지") and a prop that
+  leaves the story leaves the screen; what the narration brings travels on screen ("초대장이 날아왔으면 좋겠고") (sets.md).
+- Every action reaches its outcome on screen: the villain's defeat ends with him visibly running away ("늑대가 도망가서
+  달려야"); a surprise gets dramatic irony first ("처음엔 나온지 몰라야지 나중에 놀라는거") (camera.md).
+Motion
+- Every walk and run is a drawn cycle for the view it travels in ("이전 걸음 이상해요", "돼지 옆으로 달려가는 모습 이상해유",
+  "늑대도 이상한디요?"); the card faces its travel direction ("뒤로 걷는데?", "앞뒤 왼쪽 오른쪽도 되긴 해"); no hopping
+  static card for travel (motion.md).
+- Entries climb the steps through a fully open door, nobody passes through door cards or sills ("문에 겹친다던지 문 아래
+  돌지방을 통과") (sets.md "Doors and entries").
+- **Nothing overlaps** ("최대한 겹치게 하지마라는 규칙은 없었나", "물체랑 사람들끼리 자꾸 겹치잖아"): OVERLAP_COUNT /
+  OCCLUDE_COUNT 0 or listed in `overlap_ok` with a reason (sets.md).
+Camera (2026-11-19 shot plan, camera.md)
+- A page is a film: varied shots, wide establish, push-in on completion, light progressing, the book closes at the end.
+- Same place = one spread with camera moves, no page turn ("책장 안넘기고 한번에 처리하는게 좋을거같음 카메라 무빙으로").
+- No jerky viewpoint jumps ("시점이 뚝뚝 끊기는거 별로에요"): CAM_JUMP / CAM_JERK 0.
+- Taps: frame every target first ("화면이 거기로 안가서 못누름"), ≥ ~80 pt; frame each build once for the finished house
+  ("Frame each build once"); interactive moments get their own framing ("선반으로 카메라를 옮기는 건 어때?").
+- The speaker is on screen and unhidden when the quote plays ("도착 전에 문 열라고 하네", "앞의 집때문에 안보여").
+Sound
+- The cover opens with 톡톡's intro track for the tale; no generated opening sounds ("다 별루") (sound.md).
+- Never spend on ElevenLabs without asking; reuse 톡톡 clips, trim instead of re-recording (sound.md).
+Delivery
+- Full recordings at 1200x900 ("왼쪽 오른쪽 상단 글자 잘리는데") (tooling.md); mp4 < 30 MB; say what nobody checked.
 
-Run `references/checklist.md` on the latest full recording. It lists every issue the user caught by eye on the first two tales, with their words, grouped as story logic, lines, motion, camera, sound and delivery. Most rounds on 「아기 돼지 삼형제」 were spent on items in that list that we could have caught ourselves:
+## Pipeline (one tale)
+1. **Plan** (`references/planning.md`): beats → spreads (template, seed/view, route), the cast with every
+   pose/expression and travel direction per beat, props, taps/holds per beat, line changes, places named, length.
+   Write `game/stories/<tale_id>/script.json` with `tools/story/seed_script.py` (schema: `references/script_schema.md`;
+   reseed and diff rules: `references/engine.md`).
+2. **Engine**: new cast / props / fx go to data and the tale's handler; keep sun_wind and the other tales playing
+   (`references/engine.md`).
+3. **Art** (`references/art.md`): search the catalogs; generate only what's missing with the Codex pipeline; full
+   expression sets; drawn walk / run / back / front cycles per walker (`references/motion.md`).
+4. **Voice + sound** (`references/sound.md`): reuse recordings; changed/new lines need the same voice ids — ask the
+   user before recording; mark status in script.json; wire SoundDirector cues and the intro music.
+5. **Sets + wire** (`references/sets.md`, `references/camera.md`): spots probed, houses solid, props in their beats,
+   shots per line; autoplay every beat, record with the movie maker, look at frame tiles, fix. Full unattended run
+   start → end with `--autoplay --quit-on-done`.
+6. **Judge** (`references/critic_loop.md`): run THE GATE below; then ≥3 lens-diverse blind critics.
+7. **Deliver**: commit + push per milestone (on main unless told otherwise), send mp4s (< 30 MB, re-encode crf 26–30 if
+   bigger) and a contact sheet, report honestly what still looks off and what nobody has listened to.
+
+Run long work through background agents/workflows with narrow ownership (one owner per file set, never two writers on
+the same Godot project files; use a git worktree for parallel look experiments). Brief every agent with the relevant
+reference files — they don't know them.
+
+## Before showing the user anything — THE GATE
+A tale is not shown to the user until `gate.py` prints GATE PASS. An accepted exception must be written in
+`artifacts/<tale>/gate.md` with a reason.
+1. Record the full run with `--log-track` (and `--log-sound`) at 1200x900 through `tools/story/with_godot.sh`
+   (MOVE lines are always printed by StoryActor; TRACK lines with `--log-track` give tighter motion crops).
+2. `python3 tools/story/motion_review.py <tale> <run.log> <full.mp4>` → `artifacts/<tale>/motion/<NN>_<actor>_<t>.jpg`
+   tiles + `artifacts/<tale>/motion/motion_review.md` (one row per walk / run / climb / flight segment; MOTION_FLAG
+   lines; MOTION_FLAGS=n).
+3. Open EVERY tile and write a verdict (`ok` / `fix` + note) in each row of motion_review.md.
+4. Tick the fixed visual checklist in `artifacts/<tale>/gate.md` (gate.py writes it the first time): no white / cream
+   rim on puppets ("흰색 테두리가 별로"); steam / smoke / puffs only from hot things ("이상한데서 김이 모락모락"); holes read as
+   what the story says ("구멍을 그렇게 파니...?"); no flat-card houses ("집들은 무조건 입체적으로"); no empty shots; the place
+   named in the story reads on screen ("순무는 텃밭이 없네용?"); paper, not felt ("펠트 질감 싫은뎅").
+5. `python3 tools/story/gate.py <tale> <run.log> <full.mp4>` must print GATE PASS. It runs check_lines.py and requires
+   VOICE_DUP, CAM_JUMP, CAM_JERK, SPEAKER_OFF, OVERLAP_COUNT, OCCLUDE_COUNT, SET_CHECK road / water, missing_audio,
+   missing_sound and MOTION_FLAGS all 0 / empty, every motion verdict filled and every gate.md box ticked.
+   A deliberate non-zero item passes only as a line under "## Accepted exceptions" in gate.md: `- <id gate.py
+   printed>: <reason>` (e.g. `- MOTION_FLAG 04: the cat's roof hop is a jump`). gate.md and the verdicts belong to
+   one run: a new log starts them fresh. Logs from before 2026-11-23 have no MOVE lines (MOTION_NOLOG): re-record.
+   Re-using a recording with a movie-less re-run of the same build: `--ref-log <log recorded with the mp4>` (counters
+   are read from that log; a movie-less run reports false VOICE_DUP).
+
+Then read the rest by eye with `references/checklist.md` (every complaint the user made, with their words: story logic,
+lines, motion, camera, sound, delivery). Most rounds on 「아기 돼지 삼형제」 went on items we could have caught ourselves:
 - a house standing before its build;
 - pigs outside while the wolf knocked;
 - a quote before the speaker arrived;
 - tap targets off-screen;
 - hopping-card runs;
 - a sound preview made from an old capture.
-
 Two rules guard against this:
 - Review the newest build, never an earlier capture.
-- When a fix touches timing or staging, re-check the neighbouring beats, because fixes caused regressions: framing added 15 s, and a split line read as missing.
+- When a fix touches timing or staging, re-check the neighbouring beats, because fixes caused regressions: framing
+  added 15 s, and a split line read as missing.
 
-## What carries over and what is new (user decisions)
-
-- From 톡톡 동화극장 (`~/projects/2026/patjuk-game`, READ-ONLY) only the **script** carries over, and even it is a draft to adapt to pop-up scenes. Characters, backgrounds and props are made new for the pop-up look; 톡톡 art is a design reference at most.
-- **Reuse first**: shared card library `game/art/atlas/catalog.json` (419 cards, tags category/biome/season), shared cast `game/art/cast/catalog.json`, world template `scenes/world/meadow.tscn`. New generic art (a wolf, a pig, a straw house) goes into the shared libraries with tags so later tales reuse it; only truly tale-unique art goes in `game/stories/<tale_id>/art/`.
-- The look is fixed (user chose the photographed-miniature look: low lens, shallow DOF, raking warm light). The ground is PAPER, not felt: the user dislikes the felt texture (2026-11-22). Don't re-tune the template look per tale; dress it.
-- Before building a new set, read `references/papercraft_notes.md`. It is adapted from xikhar/papercraft and covers:
-  - a paper spec per set and one test card first;
-  - card rise and fold timings;
-  - rigid pieces never sway;
-  - open walkable steps and a walk field;
-  - house bodies that read from the side;
-  - no stamped repeats and a contact shadow under every piece.
-
-## The book tells the tale (user, 2026-11-18: "팝업북은 어떤 교육적인 요소보다는 그냥 동화의 전달에 좀 의미를 뒀으면")
-- No quizzes, no counting drills, no spoken or printed morals. Cut source lines that count ("열 장", "여덟 번",
-  "하나, 둘, 셋") or teach; if a clip's count sits in its own sentence, trim the clip at the pause instead of
-  re-recording (`TRIM` in tools/story/tales/<tale>.py) and say so; otherwise drop the line or list it for the user.
-- Taps drive the story: a few natural taps per moment (about 3 to build a house, 3 huffs), never a tally on screen.
-- Voice a tap instruction only for the first tap of each kind; later taps show only the ring hint.
-- Characters are where the story says they are: someone "at home" is in the house — peeking out of a die-cut
-  window, answering from inside, running in through the door (house_stages.py GLASS / DOORS, `enter.inside`,
-  `go_inside`); when the house falls they are revealed where it stood (user: "아기돼지들 집에 있어야하지 않겠니?").
-
-## Direction (user-approved shot plan, 2026-11-19)
-- A page is a film, not a stage play: mix wide / medium / close, change angle every line or two; never one frontal
-  medium for every beat. Establish a new place with a wide (crane) before the first action there.
-- Each repeated set piece gets its own rhythm (straw quick, wood with a camera bump per hammer, brick slow and warm);
-  completions get a slow low-angle push-in; threats enter low and menacing, then over the shoulder toward the target;
-  dialogue across a wall is shot / reverse shot (OTS on the speaker, window close-up on the answer); effort = close +
-  a small shake per tap, the result cut wide; the strong outcome holds frontal and steady.
-- Escapes: side tracking plus a high wide so the route reads. Keep the 180° rule (threat screen-left, heroes right).
-- The camera always drifts slightly (hand-held miniature); the light progresses with the story (day → afternoon →
-  late → dusk → night → warm evening) and the ending pulls back and closes the book.
-- Never expose the backdrop: clamp shots or use `backdrop`; close-ups must not show card edges (sightline stations).
-
-- Interactive steps frame their targets first (user: "화면이 거기로 안가서 못누름"): before a prompt, the stage camera
-  settles on a shot with every target on screen and ≥ ~80 pt to tap, and holds until the taps are done
-  (SpreadStage.frame_targets, runner `_frame_first`).
-- A build is framed ONCE (user: "Frame each build once"): before its intro line, a `frame` step (or the build itself)
-  sets a shot that already fits the FINISHED house (full height and width), the pile, the builder and the tap rings,
-  and holds it for every tap; no reframes between taps, and story beats inside the build (the brothers' tease) play
-  in that same shot. The ring around a house mid-build sizes to the walls standing now, not the finished height.
-- Split a line across steps when its parts belong to different moments (`say`/`walk` take `segs`): narration while
-  the wolf walks, his quote only once he stands at the door (user: "도착 전에 문 열라고 하네").
-- Listen for doubled words in generated clips: two wolf clips began with a faint extra "그럼"; find it on the
-  envelope (silencedetect / RMS plot) and trim (`TRIM_SEG` in the tale table), no re-recording.
-
-## Sound (2026-11-19, shared SoundDirector)
-- `game/core/audio/sound_director.gd` + `game/audio/sound_catalog.json` (ids, beds, sprinkle sets, emitters,
-  footstep contact frames, music slots); a tale maps fx / steps to ids in its `sound` block (seed table `SOUND` +
-  per-beat `sound`: music, bed "@light", emitters). Buses Voice / Music / Ambience / SFX are created in code;
-  Music -7 dB and Ambience -3 dB duck while a line plays (deterministic envelope from `_say`); Master limiter -1 dB.
-- Footsteps come from drawn-cycle contact frames (CastPuppet.foot_contact); surfaces from GroundLayers; beds follow
-  the spread's light; birds / frogs / owl sprinkle at tree crowns (MeadowWorld.trees) or the water; one stream
-  emitter slides along the water line nearest the camera focus; leaf rustle swells with gusts and huffs.
-- `--log-sound` prints `SFX <t> <id>` per cue; STORY_DONE reports `missing_sound=[]`.
-- A step that starts while a scripted flight (wolf_launch) still moves the actor is cancelled by the flight's
-  landing (`place_at`): wait the flight out before the next walk.
-
-- After every full autoplay run `python3 tools/story/check_lines.py <tale> <log>`: every used line and segment
-  exactly once, in order (a "missing line" report from a viewer can then be answered from the log, and a real gap is
-  caught before the user hears it).
-- Set pieces and props appear only when the story reaches them (stage 0 + fx `up:` at their beat; `built` for later
-  beats): a house or material standing before its build reads as a mistake.
-
-## Pipeline (one tale)
-
-1. **Plan** (`references/planning.md`): list beats → spreads (which template, seed/view, route), the cast with every pose/expression each beat needs, props, the taps/holds per beat, and which lines change. Write `game/stories/<tale_id>/script.json` with `tools/story/seed_script.py` and edit it (schema: `references/script_schema.md`). After a tale-file edit, regenerate with `--out <scratch>.json --no-audio`, **diff it against script.json and copy it only if the diff is your change**: the seeder re-reads the 톡톡 source, so upstream text / clip renames come along (2026-11-22: witch_candy lost 10 voice clips that way); otherwise patch script.json by hand. A tale-file edit that never reached script.json plays nothing (the sunmoon rope reorder sat unapplied through three test runs).
-2. **Story engine generalisation** — the runner (`game/story/story_runner.gd`) is data-driven, but `spread_stage.gd` still hard-codes the sun_wind cast (sun/wind sky hangers, traveller, hat, coat, wind gusts). For a new tale, move cast/props/fx to data (cast entries in script.json → CastPuppet / SkyHanger / prop cards by catalog id; fx as small per-tale handler scripts in `game/stories/<tale_id>/`), keeping sun_wind working. Verify sun_wind still autoplays start to end after the refactor.
-3. **Art** (`references/art_pipeline.md`): search the catalogs; generate only what's missing with the Codex pipeline; build full expression sets; cut walkers into the front-facing rig.
-4. **Voice** (`references/voice.md`): reuse recordings for unchanged lines; changed/new lines need recording with the same voice ids — **ask the user before spending on ElevenLabs**, and mark status in script.json.
-5. **Wire + verify**: autoplay every beat, record with the movie maker, look at frame tiles, fix. Full unattended run start → end with `--autoplay --quit-on-done`.
-6. **Judge** (`references/critic_loop.md`): ≥3 lens-diverse blind critics; for motion, 8 fps zoom tiles reviewed by you before any critic.
-7. **Deliver**: commit + push per milestone (on main unless told otherwise), send mp4s (< 30 MB, re-encode crf 26–30 if bigger) and a contact sheet, report honestly what still looks off.
-
-Run long work through background agents/workflows with narrow ownership (one owner per file set, never two writers on the same Godot project files; use a git worktree for parallel look experiments). Brief every agent with the relevant lessons below — they don't know them.
-
-## Lessons that cost rounds on sun_wind (apply up front)
-
-**Characters and motion** (details: `references/walk_rig.md`)
-- One smiling figure is not a character. Give every narrated emotion its own figure: calm walking face, surprised, cold/shivering, hot/sweating, relieved, sad/angry as the tale needs. Map line → expression in script.json; no beat may show a grin over "앗!" or "추워!".
-- A card must face the way it travels, or it reads as moonwalking (sun_wind's first walk: a front-facing card moving away). Characters may walk in any direction — toward the camera, away, left, right — as long as the figure for that direction exists: front view (walking toward us), back view (walking away), side profile (left/right; flip the card for the other side). Pick the figure from the travel direction relative to the camera each frame (with a short turn when it changes). Plan which directions each walker needs and generate those views; front-only walkers are limited to walking toward the camera.
-- Front-facing legs need front-view boots/feet (toes at the viewer). Side-view feet → 팔자걸음.
-- Legs live behind the garment (per-figure depth deep enough for max leg tilt; cap tilt ~20° fwd/24° back); never shorten/slide a leg so its top shows; use pre-drawn half-bent and lifted leg cards; steps narrow (inside the coat width).
-- Swinging arms (separate arm cards with a round shoulder cap) stop the "soldier march"; posed-arm expressions keep baked arms.
-- Keep the body steady: weight-shift roll ≈ 0.6° (4° read as 휘청), small bob/bounce, tiny head lag. Narrow the step width when you reduce roll, or feet leave the coat.
-- Characters keep doing things during weather/interaction beats (the traveller kept walking through wind and sun) — a story in motion, not a stage play of standing cards.
-- Water: stand in the actual water channel, sink to the water line, hide legs below it, ripples on the water — never sink into the bank.
-
-**Art**
-- A shared style block leaks: "tiny flower and leaf motifs" printed leaves onto the sun and the wind. Use per-category style blocks (sky characters, animals, buildings) with explicit negatives.
-- Codex image jobs: magenta #FF00FF background, md5-check every raw (another session's image once landed in our file), accept wide outputs (2172x724 was reported FAILED but was fine), keep old raws, contact-sheet and look before slicing.
-- Card children: attach decoration (backing discs etc.) as a child of the card itself; siblings kept stale positions when a story started mid-way with `--beat`.
-- Pose switches can flip hats/props on and off (hat flicker): check pose → figure mapping keeps worn props consistent.
-
-**Look/quality loop**
-- New prop types to "fix" engineering read as dropped-in 3D clutter; the look gap to the reference was lens/light/ground, not mechanisms.
-- When vs-reference critics and vs-previous-version critics disagree, the user sided with vs-reference (photographed miniature). Show the user a comparison grid and let them pick.
-- Single critics are noise (0.83 → 0.44 on re-judge). Use ≥3 lens-diverse critics and ask "impressed" per side.
-
-**Learned on the second tale (three_pigs phase 1)**
-- After seeding, `script.json` is the source of truth; hand-edited beats live in `tools/story/tales/<tale>.py` so a `--force` reseed reproduces them.
-- Adding cards to the shared library can change existing spreads (templates pick cards by category). Give story-specific set pieces their own categories (`story_building`, `story_prop`, `story_fx`) or check sun_wind's layout is unchanged.
-- The slicer numbers pieces by rows, not left to right — map pieces by bbox, not by index.
-- Fold-up buildings: generate one finished front and cut it into layers along mortar/plank/straw lines (`tools/atlas/house_stages.py`); generating separate aligned pieces is unreliable.
-- Rig tools are per character (`tools/cast/characters.py`): tails join legs, ears get mistaken for arms (search arms between shoulders and hips), figures from different sheets come out at different scales (normalise per character), and figures drawn with overlapping legs can't be rigged — ask for a visible gap between the legs in walking/running prompts or plan them as static cards with a paper hop.
-- 톡톡 scripts run ~4+ min of narration; measure clip durations while planning and cut ~40% to reach ~3 min.
-- Codex image jobs take ~1 min each; 4 in parallel worked without duplicates.
-
-**Learned on the second tale (three_pigs phase 2: engine + wiring)**
-- The engine is data now: `cast` kinds walker / hanger / actor / prop, `spread.spots/set/light/focus`, tale `shots`,
-  `ui` (cover / end pictures, speaker chips) and a per-tale `handler` (TaleHandler) for fx. Verbs and fields:
-  `references/script_schema.md`. Moving sun_wind's fx out verbatim and checking same-view captures (noise floor,
-  identical hidden-card counts) + a full autoplay run kept it safe.
-- Pick spots with `tools/story/probe_spots.gd` (ground map around the anchor): view 2's anchor sits on the stream —
-  the first straw house and the wolf stood in the water.
-- After regenerating art (house bands, leg cards), run `gd_run.import_project("game")` before recording: a run with
-  stale imported textures and a new stages.json drew the bands scrambled.
-- `gd_run.capture_scene` stills do not follow the story camera shots; judge framing / focus from movie-maker
-  recordings (`tools/story/rec_beat.sh TALE BEAT SEC out.mp4`) and 8 fps tiles (`tools/story/tiles.py`).
-- A pose call every frame must not restart a running paper flip (CastPuppet.set_figure compares with `_flip_to`):
-  otherwise expressions lag a whole line behind the words.
-- House fold bands: cut rows that cross no window, step the cut around doors (the door rises whole with the first
-  band) and hand-pick rows when the windows leave no room (`OPENINGS` / `CUTS` in tools/atlas/house_stages.py).
-- A front leg card wider than the thigh printed on the body card shows as a sliver beside the thigh; trim the hidden
-  top to the body/hips silhouette with a short taper above the hem (`tools/cast/trim_leg_tops.py`), not a straight
-  cut (that left a step).
-- Unrigged figures (legs drawn together) work as one card with a paper hop (CastPuppet hop_frac / hop_len_frac):
-  cheaper than regenerating; keep them for runs, tiptoe and hungry poses.
-- The movie maker runs time-sliced builds per frame at 30 fps: the first page behind the cover took 21 s of story
-  time at 3 ms/frame; it now builds at 10 ms/frame (the cover is a still page).
-- Houses go on open meadow beside the road, never across it (user: "the brick and wood houses are built across the
-  road"). SpreadStage prints `SET_CHECK <name> road=<n> water=<n>` for every set piece (base-line samples against the
-  path felt and stream); run all beats (`tools/story/cap_beats.py TALE tag 40 <beats...>`) and require zeros.
-- A house's first build stage must read as a house beginning (floor, lower walls, door), not a lone door; stand it
-  at the page open (`"stage": 1`) and let the taps raise the rest (the build verb counts from the bands standing).
-- Stray pixels in a band image stretch its card: PaperCard sizes `height` to its contour bounds (specks dropped)
-  while the stage positions by the image's opaque rect; the wood roof band carried a few edge pixels down to the
-  floor and drew as a giant gable. Keep band images free of specks (house_stages.py eave-tip rule).
-- Review a beat with ~12 evenly spaced frames and require the acting characters in every one: the wolf beats
-  first used the wide stage shot and the wolf stood at the frame edge the whole time. Frame the shot between the
-  actor's mark and the set piece (`cam at`), not on the set piece alone.
-- Faces behind die-cut windows sit in the wall's shadow: light them with a small shadowless fill between face and
-  wall (too strong blows the window out; 0.45 at range 0.22 read well).
-- Same-place story moves use camera moves on one spread, not page turns (user: "책장 안넘기고 한번에 처리하는게
-  좋을거같음 카메라 무빙으로"). Template views of one seed are only camera stations in one world: put every lot of a
-  place on one spread (spots converted into one view's frame), list the camera stations in `spread.sightlines`
-  (incl. `["story", "road", a, b]` for tracking shots), glide `cam at`, track runners with `walk follow` +
-  `via: "road"`, and give later beats `built` (what stands at that beat, ruins included) so `--beat` starts and
-  prebuilds are right. Page turns only where the place really changes.
-- Every walk is a drawn cycle too (user: "늑대도 이상한디요?", "이전 걸음 이상해요"): per character side walk (4) + back (2)
-  + front (2) frames, run cycles, and special walks (carrying: `<walk_pose>_cycle`); `tools/cast/add_cycles.py` slices
-  a sheet into catalogued frames. StoryActor picks the cycle for the travel view; the leg-swapping rig is not used in
-  three_pigs. Villains lean INTO a sneak (never back), and do a sniff pose standing, not walking.
-- Runs need a drawn run cycle; rigid-card hops read as stickers (user: "돼지 옆으로 달려가는 모습 이상해유"). Generate
-  per character 4 side frames (contact, down, passing, flight; legs apart, arms pumping, the line's face) + 2 back
-  frames, pad each character's frames to one canvas (bottom-aligned), catalogue them with `cycle` / `frame`;
-  CastPuppet plays them advanced by ground distance (one cycle per ~0.9 height, no skating), bounce on flight.
-  Paper turns narrow to 15 %, never edge-on.
-- A house is a front with a body: an open door must show an interior, and side views must show walls (user: "문열때보면
-  뒷편이 없는곳으로 가다보니 이상한디?"). Give every enterable house a `box` (set entry: depth, side, inner, floor
-  cards): side walls in the house's material, an inside back wall, plank floor and ceiling, and the front turned round
-  at the back. It stands only while the house is whole. Runners stop in front of the door (not beside the house).
-- Props the story uses later appear when they are used (the wolf finds the ladder in the grass and stands it up),
-  not standing in place from the first shot.
-- People at home show as PEEK figures at the windows (head + hands on the sill, cast `peek_*`): one per window, the
-  head about 65 % of the opening, same scale in every house, a darker interior plane behind, a slight warm fill; a
-  whole figure scaled into a window looked wrong (user: "바깥보여줄때 창문에 돼지들이 이상해"). When nobody is at a
-  window (they're at the hearth) show firelight behind the glass instead.
-- A refuge's walls stay closed in-story; show interiors by moving the camera inside, not by opening the wall the
-  threat could walk through (user: "방이 열려도 앞 벽은 막혀있어야하는거아닌지", "굴뚝으로 들어가면 그제서야 안을 보여주면
-  되자너"). Build the room inside the house footprint from the start of the beat (hidden by the facade), glide the camera
-  in only after the threat has entered (SpreadStage hides a facade's wall bands only while the camera is within 0.16 of
-  it or behind it; `inside_only` pieces such as a ceiling show only then), and glide back out to the closed house.
-- (superseded by the rule above for refuges) A cutaway needs a room: when a facade folds open, pop up a back wall, angled side walls and a floor (story_room
-  sheet) with the furniture standing in it, and connect the hearth to the outside chimney with a flue; otherwise the
-  meadow shows through and the roof floats (user: "집 뒤편도 있어야하지않을까유").
-- Story lines that open a beat start after the camera has landed (`cam` wait ≥ 1.2 s after a page pop).
-- Pace: 36 reused lines play ~189 s on their own; 9 page turns (~5 s each) and ~37 taps put the first full run at
-  5:21. Count narration + turns + taps before promising a length.
-
-**Learned on the third tale (witch_candy phase 1: plan, branches, art, world prototype)**
-- Branching tales: pick the choice space so every combination has its own result and nothing needs explaining
-  (three colour groups × two picks = 6 colour sets = 6 results), every result's lines already recorded, and each
-  result's look reused elsewhere (the finale's six transformations). Put branch tables (ingredients, combos, results)
-  in the tale table; the seeder now marks any nested line id used (`_ids_in`), and check_lines must become
-  branch-aware before wiring.
-- One spread with a house that has a body + a room inside its footprint lets characters go in and out many times
-  with camera glides only (no page turns). The room back wall must be the wall's full height (derive a taller card)
-  or a gap shows the outside above it.
-- A drawn doorway is not a hole: paste the door art into the doorway, then cut the leaf with DOORS (5th value = the
-  leaf's bottom row so the steps stay on the wall) — `tools/atlas/wc_shop_door.py`, `house_stages.py`.
-- Reference images: a multi-character lineup as the only ref made the model draw its FIRST character on every friend's
-  sheet (rabbit / bear / fox cycles came out as Dahyun). Use single-character crops of the lineup as refs plus "THIS
-  SHEET SHOWS ONLY <X> ... do NOT draw <other>".
-- "Black lips" came out as small dark "O" mouths until the prompt said "thick solid JET-BLACK lips like black
-  lipstick, a big black ring around the 'oooh' mouth, NO sheet costume" (one figure came out in a ghost-sheet costume).
-- Purples vs the magenta key: say "BLUE-violet indigo plum, never reddish purple or pink" in every block, and run
-  `tools/atlas/fill_holes.py` after slicing (add_sheet.py and add_cycles.py do): it restores enclosed holes (purple
-  candies, ribbons, jar contents) and undoes the keyer's half-transparency / green despill inside reddish-purple cloth.
-- Never run `tools/atlas/build_catalog.py` or `tools/cast/build_cast.py` for one new sheet: the first moves every
-  unlabelled piece of every sheet to rejects, the second rewrites the cast catalog and drops the drawn cycles. Use
-  `tools/atlas/add_sheet.py <sheet>` (labels file + optional `merge` of split pieces) and a per-tale cast builder that
-  merges (`tools/cast/witch_candy_cast.py`). Sheets with several characters need a per-role height scale.
-- Shell: zsh does not word-split `$var`, so `run_jobs.py ... $group` passed one bogus id and exited silently; run the
-  runner loop under `bash -c`. Seven parallel Codex runners gave occasional "no accessible image" failures: retry.
-- Cycle sheets slice slowly (~3 min each at 2172 px); slice once and use `add_cycles.py --noslice` after fixes.
-
-**Learned on the third tale (witch_candy phase 2: village, night, interior, branches)**
-- A street needs many houses, each dressed differently (user: "마을을 더 많이 각자 할로윈 장식"): generate night
-  facades with their own decorations drawn in, plus an add-on decoration sheet, and lay them out from the probed road
-  (tools/story/probe_spots_wide.gd) in the tale table (x from the road edge, SET_CHECK zeros).
-- Night is not a light preset alone: the depth haze kept its daytime grey-green. Spread `sky` sets the backdrop / haze
-  colour and adds a fog-free sky card (stars) + moon far behind; `glow` on set entries makes printed light emit (only
-  bright warm texels) and `light` adds warm pools (flicker for candles / pumpkins).
-- Interiors inside a house: every room shot keeps the camera within ~0.5 of its focus (behind the hidden front wall);
-  outdoor shot distances put the camera outside. Disable the stage's automatic tap reframing while the camera is
-  inside (it pulls the camera out through the wall) and frame taps with an explicit room shot. The meadow felt can rise
-  through a box floor: lay raised floor cards.
-- Tale verbs: an unknown step goes to the handler's `run_step(st, runner)`; the handler uses the runner's _say /
-  _wait / _wait_tap so captions, faces and SEG logs stay generic, and prints `PLAN <verb><n> <ids>` for check_lines.
-- Handler-driven moves that keep a fixed figure (roll, float, hop): keep the path height in the move's own state;
-  reading the actor's lift (which includes the hop) back as height made Dahyun climb into the sky.
-- Outdoor actions route via the road (houses in front of the shop hid her walking straight to the camera); tracking
-  shots go above the roofs (a medium follow clipped through a house).
-- `--beat=<id>` starts need `enter.at` on every beat (a `keep`-only beat leaves the cast at the anchor, popped down).
-- Branch coverage: force results with a tale arg (`--wc-results=a,b`) and run every result at least once.
-
-**Learned on witch_candy v2 (user on v1: "집 문이 길쪽으로", "앞의 집때문에 안보여", "문 아래 돌지방을 통과")**
-- Houses face the road from both sides (set `yaw` ±50° in the stage frame), each with a short stepping-stone path
-  to the road's edge; offsets inside a turned house (room spots, decorations, door) are given in the house's own frame
-  and rotated in the tale table; shots inside / at a turned house carry its yaw as their yaw offset.
-- A speaker hidden by a house: turn the camera to face them (a shot with the house's yaw from the road) instead of
-  moving people; then check what stands between camera and speaker in the new direction (a lamp, the next house) and
-  move that, and keep queues short so the last in line does not fill the lens.
-- Entries: the door swings INTO the house (`door_in`) and fully open before anyone moves (`door_clear`); characters
-  climb to the drawn sill (`climb_steps`, SetPiece.door_sill) in front of the wall, cross at sill height (their card is
-  parallel to the wall when the camera faces the door) and step down inside; exits reverse it (tale `leave_shop`). A
-  character taller than the doorway pokes its hat over the wall while on the sill: size it to fit.
-- `_check_footprint` samples along the piece's own base line (turned pieces).
-
-**Learned on witch_candy v3 (flying invite, house bodies, ghost set piece, overlaps)**
-- A prop the narration brings must travel on screen: the invitations ride a curving, flipping path from the far
-  street to the kids with the camera tracking (handler `_track` node drives the stage focus), then open toward the
-  camera when caught.
-- Turned houses need bodies: tools/atlas/wc_house_bodies.py splits each front into wall / roof bands, crops a strip of
-  its own wall (side walls, back) and roof print, finds eaves + ridge; SetPiece `box: {body: true}` builds side walls,
-  a back, two roof slopes and the gable repeated at the back.
-- A surprise needs dramatic irony first ("처음엔 나온지 몰라야지 나중에 놀라는거"): glimpses nobody reacts to (out of the
-  pot steam behind the friends, over a shoulder, over the pot rim, mimicking at the back), then the big reaction.
-- Overlaps: measure them. Stage `overlap_check` logs OVERLAP (footprints: actor / actor, actor / set base line; open
-  doorways excluded) and OCCLUDE (a nearer piece covering > 35 % of an actor, only pieces the camera can see: inside a
-  house only its room) with OVERLAP_COUNT at the end; `spacing` eases standing actors apart. The big sources were not
-  marks but movement: a group walking to one goal, followers bunching at the first waypoint of a file, a U-turn
-  through the file, people cutting through furniture to their marks, a queue reaching the next house. Fixes: walk by
-  distance (formation kept), snake-follow files (followers on the leader's trail at fixed spacing), two-lane loops,
-  `via` waypoints round furniture (and who enters first), queues along the house front.
-
-- (v4) A changed feature must replace the drawn one, not sit on it (the ghost lips were a ring over a mouth): recolour
-  the feature region (tools/cast/wc_black_mouth.py) or draw the variant; and a story state on a character (a black
-  mouth) is a CastPuppet state every figure change maps through, checked by a run-log counter that also counts the
-  roles the story expects in that state (a check that only watches puppets already in the state reported 0 while the
-  state was never set). Handler fx names with ":" match on the part before it.
-
-- (v5) "Replace" means erase then draw: tools/cast/wc_mouth_v5.py erases a feature with a nearby patch of the same
-  material (reject patches containing blush / hair / eyes, colour-match, feather) and composites the new feature
-  lifted from a figure where the model drew it natively (same character, same design): a whole-figure sheet with the
-  new feature (cast_wc_surprised_black) gave both the reveal figures and the decal source. Show three-row crops.
-  PIL ImageDraw.floodfill does nothing on an image made directly by Image.fromarray(numpy): `.copy()` it first.
-
-**Learned on the fourth tale (sunmoon phase 1: plan, art, Korean sets)**
-- Check 톡톡 for a READ-MODE script (`read_script_el.json` + `read_narration_el.js`): sunmoon's is the tale told
-  straight, already free of quizzes and counting, and every line is recorded. `READ_SCRIPT = True` in the tale table
-  seeds those lines (`<prefix>_r<scene><line>`, `READ_SEG_KEEP` for seg trims); borrow only the play script's tap
-  instructions, voiced once. Measure: the read script ran 423 s of narration, trimmed to 263 s by dropping lead-ins the
-  picture tells.
-- A non-western tale dresses the template with `theme` (tale top level → MeadowWorld / CardLibrary): "korean" keeps
-  nature cards from every sheet and takes man-made cards only from `korean_*`. Other tales are untouched (default "").
-- A sub-variant of a character (the tiger in the mother's clothes) needs its OWN figure as the reference for its cycle
-  sheet: with only the base character as ref, the sneak cycle invented rainbow sleeves and a blue ribbon.
-- `house_stages.py` misreads fronts whose stone base is wider than the walls: give `ROOF_Y` / `WALL_X` per house, and
-  `tools/atlas/sm_cottage.py` shows how to merge fold bands + door leaf with a `wc_house_bodies` body in one entry.
-- Ground style is a tale choice (user 2026-11-22: "펠트 질감 싫은뎅"): tale top-level `ground_style: "paper"` renders the
-  template's ground sheets as matte cut paper (ground shader `paper` uniform, dark cut-line edges); default "" = felt.
-  Prove a look change with one test card (same shot, same light and lens, side by side) before dressing a tale.
-- Shots for a set built from card "gates" (ridges either side of a road) must stay inside the gaps; mid-page sky / light
-  changes must not read the rig's current yaw (it carries the shot's offset).
-- Never run the cast builder's standing pass while Godot imports: it rewrites every figure file and the import reads
-  half-written webps (ERR_FILE_CORRUPT); import after the art jobs finish.
-
-**Learned on the fifth tale (wolf_goats phase 1, 2026-11-23)**
-- `seed_script.py --out <file>` does NOT overwrite an existing file without `--force`: a stale temp silently survives
-  and the "diff before copying" compares old with old. Seed into a fresh temp with `--force`
-  (`tools/story/wg_seed.sh` does temp → diff count → copy).
-- A group of look-alike characters (seven kids) is ONE design drawn with a plain marker colour (a green collar) on
-  every expression / cycle sheet; the cast builder clones each figure per member with the marker recoloured and a
-  per-member height (`tools/cast/wolf_goats_cast.py` recolour + clone_kids): 7 kids for the price of one sheet set.
-- Cycle frames drawn close together slice as one piece; split pieces wider than 1.5× the median at their emptiest
-  column before cataloguing (`split_wide` in wolf_goats_cast.py), then `add_cycles.py --noslice`.
-- Rooms: stand the family DEEP in the room (behind ~0.55 of a 1.1 box) and shoot from just inside the front wall
-  looking down (el ~32°, fov 64–72); anyone within ~0.3 of the lens becomes a giant head. Someone in the doorway stays
-  behind the lens; show the doorway with the turned-round `door_in` shot instead.
-- Speakers that are a group ("kid") need a stand-in: handler `speaker_point("kid")` returns the beat's `kid_voice`
-  member (a centred one, set per beat), otherwise SPEAKER_UNKNOWN skips the check.
-- fx props join the overlap check: `stage.register_prop(name, node, r, h)` (moving props carry meta "moving"); the
-  check logs prop vs actor footprints, props inside set pieces and props hiding an actor.
-- Engine extensions: walk `to` may map each role to its own mark; go_inside `keep_open` (the intruder leaves the
-  door standing open). After editing a shared engine script, load-check it (`tools/story/wg_check.gd`): one untyped
-  `for a in vis` broke every tale's runner until fixed.
-- A template card (hill) in a close shot's lens on a new spread: a tiny set entry with a big `clear` opens a lawn.
-- Waiting on a background recording: wait on its PID; `pgrep -f "<script name>"` also matches the waiting shell
-  itself and never ends.
-- OVERLAP_COUNT / OCCLUDE_COUNT in the summary are now run totals over every page (they used to be the last page's
-  own counts, so a page-A overlap printed as "OVERLAP_COUNT 0").
-- Ground terraces (raised meadow steps) are not set pieces: they can hide kids standing behind them and stand in a
-  close shot's lens, and the overlap check cannot see them. Keep marks and close shots off the terrace edges.
-- Inside / outside 180-degree camera turns on a page with long errands came out at CAM_JUMP 3.0–3.05° even with slow
-  rates; show the outside moment from outside (the wolf's floury paw at the door from a low doorstep shot) instead of
-  turning round inside.
-- Pace: the first full run was 7:32 (229 s of narration); errands placed a few steps away (stall, mill across the
-  road), exits that fold out at the road instead of walking off-page, and dropping lines the taps show bring it down.
-
-**Learned on turnip (「커다란 순무」, 2026-11-23)**
-- A growing thing is ONE card sunk into the paper ground (the ground hides what is below it at any camera elevation
-  we use): the giant turnip stands at its spot sunk to its violet shoulder and each heave raises it a little; measure
-  the drawn bulb's height on the card first (the root tail is long: the first sink showed the whole bulb by the
-  fourth pull). Growth stages before it are card swaps with a paper pop (sprout -> rosette -> crown -> sunk turnip).
-- A pulling line: side `pull` figures mirrored toward the target, marks a hand's width apart, the contacts listed in
-  `overlap_ok` and the roles added to `stage.no_spacing` by the handler; each heave is a spring on the actor's pop
-  node (`a._root.quaternion` about the view axis, pivot at the feet), so the whole line leans back and settles. Put
-  the pulled object a step BEHIND the line (z) and the first puller clear of its widest part, or it hides him.
-- An animal with no drawn run cycle must walk with no `pose` ("run" falls back to its standing side card = a hopping
-  card); give it speed instead.
-- A character on a roof: `lift` (not a raised position) keeps the overlap check off the building's base line; the hop
-  down is a handler arc on lift. The shot of the roof must keep the camera in front of the cast (a long lens from
-  further away): a close low shot of a building behind the line glides the camera through the line.
-- Cover jobs can live in the tale's own jobs file (`import cover_jobs as _cj; _cj.art/title/back/spot`), so the shared
-  tools/art/cover_jobs.py stays untouched while other tales edit it.
-- characters.sliced_path(..., "x") drops pieces under 30 % of the tallest: a lineup with a mouse beside a grandpa
-  needs an area filter (tools/cast/turnip_cast.py).
-- 톡톡 extra clips can hold repeated takes (the puppy's growl ran 10.5 s, grandpa's "영~차!" twice): check every clip's
-  envelope, not only the narration, and trim with TRIM_SEG.
-
-**Learned on patjuk (「팥죽할멈과 호랑이」, 2026-11-23)**
-- Check the voices table before planning new lines: speakers marked `"tc"` (patjuk's granny and all seven helpers)
-  are Typecast clips with no ElevenLabs voice id, so no new line can be recorded for them; every new line went to the
-  narrator. Name the actor role after the voice script's speaker key ("halmi", "bam"…): the stage finds a speaker's
-  actor by that name (SPEAKER_OFF, speaker chips, line `expr`).
-- Reusing another tale's house for a room people act in: size the house to the cast first. sunmoon's cottage room
-  (0.62 deep) could not frame the 0.57-tall tiger (giant paws, cut-off heads); the cottage stands 1.3× with a 0.95
-  body, its front line where it was (only door x and the inside scale). Inside shots aim at DEEP spots (z ≈ -0.85 of
-  the house frame) so the camera stays behind the front wall; a shot aimed at a mid-room spot put the camera outside
-  the house and the facade filled the frame.
-- A glide into a deep room passes the facade close enough to fill the frame with the door; tale `inside_margin`
-  (spread_stage, default 0.16) folds the facade away earlier (patjuk 0.8; the inside-face card waits until the camera is behind the wall).
-- A refrain of seven arrivals is the tale (a line + quote + tap each) but costs ~13 s each: keep the taps for the
-  ones the child needs (the kitchen helpers) and let the granny hand the bowls herself in the yard.
-- `.import` with `valid=false` (a webp rewritten while another agent's Godot imported): "Failed loading resource" in
-  the run log; move the .import away and import again. Grep run logs for "Failed loading" after art changes.
-- The shared slot: with four agents chaining Godot jobs, `with_godot.sh`'s 3 s poll lost the race for 30+ minutes;
-  a waiter that polls the lock dir every 0.2 s and then takes it the same way (mkdir + pid + trap) gets a turn.
-
-**Learned on rapunzel (「라푼젤」, 2026-11-23)**
-- 3D buildings come from the building kit (game/core/world/building.gd, presets in res://art/buildings/kit.json; another
-  agent owns that code): a set entry `{"build": "<preset>" | {spec}, "at", "scale", "stage"}`. To change a preset for one
-  tale (an OPEN window without its glass card) read the preset at seed time, edit a copy and pass it as the spec
-  (tools/story/tales/rapunzel.py `_tower_spec`); the handler reads `SetPiece.building.spec` / `.unit` for positions
-  (window sill = opening y × unit, wall at r × unit along the building's own +z). `stage: 0` + fx `pop:<name>` raises it.
-- A rope / braid from a window: a column of tiled cards from the sill to the grass, offset along the building's own front
-  normal beyond its wall + plinth (never through the wall), unrolled top to bottom; climbers stand in front of it and go
-  up with a drawn two-frame back-view `climb_cycle` (story_actor picks it for vertical travel and advances it by height
-  climbed: the puppet only measures ground speed). Overlap contacts (climber / braid / tower) go in `overlap_ok`.
-- People at a high window are actors lifted to the sill showing an upper-body `win_*` figure; SPEAKER_OFF measures an
-  actor from the ground, so the handler's `speaker_point` returns the window for them.
-- A room on its own page can be a ring of inside-wall cards (yaw = angle + 180) with flat floor cards; leave out the
-  walls on the camera side: the page-open wide looked at the back of the front wall filling the lens.
-- `add_cycles.py --tag X` removes the first argument equal to X: a tag equal to the skin name ("rapunzel") broke the call.
-- Reused 톡톡 clips can hold repeated takes even in the read script (the prince's 11 s "라푼젤…" said it five times):
-  ElevenLabs speech-to-text (word timings) + silencedetect find the take to keep (tools/story/rp_trim.py, TRIM_SEG).
-- Check the read script's narrator voice id before reusing other tales' cover / replay clips: rapunzel's narrator is a
-  different ElevenLabs voice (Annie), so its cover / replay prompts were recorded new.
-
-**Rules for every tale from now on (user, 2026-11-22/23, after sunmoon and the four-tale pass)**
-- Nothing overlaps (user: "최대한 겹치게 하지마라는 규칙은 없었나"): no character, set piece or fx prop (ropes, jars,
-  baskets, flying props) may sit inside another or hide a speaker. OVERLAP_COUNT and OCCLUDE_COUNT must be 0 in the
-  final run, or each remaining line listed as an intended contact (`overlap_ok`) with a reason. Check fx props too,
-  not only actors: the sunmoon rope hung through the tree canopy ("동아줄이 나무에 걸려서 뭔가 이상하네융") until it
-  was offset along the tree card's own normal in front of the trunk.
-- A prop that leaves the story leaves the screen: the golden rope rises away (fx `rope_gone`) before the rotten one
-  comes down, and the drop happens during its line, in shot.
-- Story start music: the cover opens with 톡톡's intro track for the tale (`sound.steps.cover.on_open =
-  {"music": "intro_<mood>", "fade": 0.2}`; catalog music entries with `"hold": true` play once and make the next
-  `set_music` wait until they end). The cover beat's own music is null. Moods so far: cozy (sun_wind), playful
-  (three_pigs), night (sunmoon), magic (witch_candy); look up which intro 톡톡 used for the tale first (the user
-  rejected every generated opening sound: "다 별루").
-- Record what the user will see at 1200x900 with an absolute `--write-movie` path, `--import` first after new assets.
-- After regenerating script.json with seed_script.py, diff it before copying: upstream 톡톡 text and clips change
-  (witch_candy lost 10 clips once), and a hand reorder in the tale .py only reaches the game after a reseed.
-
-**Houses solid from every angle (user rule 2026-11-23: "집들은 무조건 입체적으로 아주 잘 들어맞게")**
-- Every house / barn / shop / cottage in every tale is a closed volume whose pieces fit tightly: no flat front cards, no
-  slit between front, sides and roof, no background through corners or under eaves, roof neither floating nor sunk,
-  sides in the front's own material, readable from any story camera and from oblique orbit angles.
-- Drawn fronts get a BODY automatically: `tools/atlas/house_bodies.py [ids] --sheet <contact.jpg>` traces each card's
-  outline (chimney cut off by a 1-D opening of the roof line, thin strings opened away, walls fitted as lines through
-  the drawn wall edges, the eave line = the overhang's underside), writes `game/art/atlas/bodies.json` (merge) +
-  crops of the house's own art (`<sheet>/bodies/<id>_side|roof|back|chimney.webp`: the most wall-like / roof-like
-  patch, mirror-tiled; the back = its own gable over plain wall). `game/core/world/house_body.gd` (HouseBody)
-  extrudes the outline back: side walls on the wall edges, the roof surface along the drawn roof line, soffits under
-  the overhang, the outline filled at the back, the chimney as a box seated in the roof, every face doubled inward
-  (darker) for cameras inside. It starts at the card's FRONT face, grown 0.8 mm: a PaperCard's own cut edge does not
-  draw from above, and a body that started behind the card left a slit along the roof (found with the orbit probe).
-- Where bodies attach: SetPiece `box` (enterable houses: rooms, refuges; floor / ceiling / `inner` back wall from the
-  box cfg still apply; `body: true` and side / inner side cards are superseded) and AUTOMATICALLY on every set entry
-  whose card has a bodies.json entry (turnip's farmhouse and barn, sunmoon's gate house, the goats' mill, the pigs'
-  home); auto bodies are not `enterable` (house_of / overlap logic unchanged). Banded houses keep their build: the body
-  stands only when the house is whole and folds with band 0. The template village's house cards get bodies too
-  (meadow.gd `_add_house_body`: on the card's hinge, or at the static card's transform; the clean atlas copies are
-  cropped: `clean_off`). Door / window reveals (`HouseBody.add_reveal`) line every door_box / window_box.
-- The clean copy offset, the inner faces and the winding: Godot draws the clockwise side (HouseBody._wind keeps
-  quads clockwise seen from their outward normal). Test a new body with the orbit probe, not a story still.
-- AUDIT every tale's houses with `tools/story/house_orbit_all.sh OUT LABEL [tales]` (house_orbit.gd per beat: each set
-  house + the nearest template houses, nine solo views on magenta: front, ±35°, ±70°, back-¾ both sides, high, low,
-  plus the story shot; `tools/story/house_audit.py` paints background seen THROUGH the house red and counts it). Red in
-  a closed house is a defect; in a pavilion, gateway or courtyard it is the real opening.
-- Buildings that are not one drawn front (팔각정, round towers, hanok with curved eaves, pagodas, castles) are built in
-  3D from a spec: `game/core/world/building.gd` (Building) + `game/art/buildings/kit.json` (presets and materials,
-  written by `tools/atlas/building_kit.py`; paper swatches `story_bk_materials`, doors / windows / gate / portcullis /
-  drawbridge / flags / railings / finial `story_bk_parts`). Place one with a set entry
-  `{"build": "<preset>" | {spec}, "at", "yaw", "scale", "state": {"portcullis": 1, "drawbridge": 1}, "name", "clear"}`
-  (SetPiece.setup_building: one hinge, pops with the page; `sp.set_state(key, v)` moves a portcullis / drawbridge).
-  Spec format and presets: references/script_schema.md ("Buildings from the kit"). Kit sheet: house_orbit.sh with a
-  6th argument (presets) renders the solo orbit + a context shot on the meadow (castle: approach, gate, tower window).
-
-**Learned on turnip v2 (2026-11-23, user: "순무는 텃밭이 없네용?")**
-- The place named in the story must read on screen: a 텃밭 is tilled soil with rows, not meadow. v1 grew the turnip on
-  plain green paper with one tiny raised-bed card far behind. Before wiring, list each place the lines name (텃밭, 부엌,
-  헛간 지붕, 쥐구멍) and check one wide and one close frame of each shows what makes it that place.
-- A ground area is a FLAT card, not a standing one: set entry `"flat": true, "floor": true, "lift": 0.016` lays a
-  top-down piece on the page (its `at` is the front edge; it runs away from the camera by its height) and registers
-  its rectangle in `GroundLayers.floors`, so people, spots and later set pieces stand on its top (cover patches stay
-  under it). v3 (user: "a thick brown slab / rug floating"): keep it a SHEET, not a slab: `"thick": 0.0015`,
-  `"edge": "<soil colour>"` (the cut edge in the sheet's own dark colour, never the cream card rim) and the smallest
-  lift that clears the ground's cover patches under it (probe them: tools/story/probe_ground_tn.gd res=0.005
-  abs=0.022; 0.007 high), grass tufts / edging on the rim. Low shots flatten it: stand low cards on it (vegetable rows with their own soil ridge,
-  fence, edging) and raise close-shot elevations a few degrees (8° → 13°) so soil and rows stay in frame.
-- Shared kit: atlas sheets `story_veg_garden` (soil ridges, lettuce / onion / small-turnip / strawberry rows, tomatoes,
-  peas trellis, pumpkin vine, picket fence + open gate, wheelbarrow, basket, row markers, stone edging) and
-  `story_veg_ground` (tilled plot / dug patch / stepping-stone and earth paths, top-down, lay flat): jobs
-  tools/art/garden_jobs.py; after `add_sheet.py` run `tools/atlas/veg_garden_fix.py` (fill_holes restores the magenta
-  rims of REAL holes such as wheel spokes and trellis gaps; it clears them, tones the plot toward cocoa brown and
-  writes mirrored copies `<id>m` of the row cards).
-- No stamped rows: mix pieces in a row, use the mirrored copies, vary scale (0.85–1.12), turn ±3–6°, uneven gaps and a
-  few mm of depth jitter. Tools lying around (a rake) lie FLAT (`flat: true`) when they sit near a walk: a standing
-  tool card on a route counted OVERLAP / OCCLUDE in three places before it lay down.
-- Lay out a garden around the action: rows on one side, an open bed where the line stands, nothing on the walk routes
-  (house door → gate gap → line, line → feast table); things that land or are set down (the pulled turnip) go behind
-  the actors, never between them and the camera (OCCLUDE), and leave with the story (carried to the table, cooked).
-
-**Learned on turnip v4 (user on v3: "흰색 테두리가 별로", "구멍을 그렇게 파니...?", "이상한데서 김이 모락모락")**
-- No cream die-cut rim on puppets: PaperCard gives every card under `res://art/cast/` `rim_mix` 0 and a cut wall in
-  the figure's own colour (darkened); CastPuppet `_rim_window` keeps it 0. Story props that should read as soil
-  (a hole, a heap, a seed) get the same from the handler (turnip fx `_soil`). Check baked art before blaming a shader:
-  measure the rings just inside the alpha edge (dark = line art, so the rim was the shader).
-- Look for smoke / puffs nobody asked for: the template's ChimneySmoke keeps rising where its house was cleared
-  (hide it in the handler for a set with its own houses); figures drawn "huffing" carry a breath cloud
-  (tools/cast/erase_puffs.py: cream component from a seed, inside-silhouette part inpainted, the rest cleared);
-  sparkle bursts on growth / cooking read as steam from afar. Steam only where something is hot, from its mouth.
-- A planting hole is a dark dip laid FLAT in the furrow plus a low heap beside it, never a mound with an arch (that is
-  a burrow); a mouse hole is a low bank tucked at an edge (tools/atlas/tn_holes.py derives all three from cards we
-  had). Ambient butterflies / leaves hide whenever they would show over 4 % of the frame height (wide shots only).
-
-**Tooling gotchas**
-- Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
-- One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).
-- A moving story camera can pass through cards: hide hinged AND static cards near the camera path (`_clear_sightlines`, `_clear_statics_here`).
-- Never `rm $VAR/*` — use literal paths or `"${VAR:?}"`.
+## Read X when doing Y
+| doing | read |
+|---|---|
+| planning a tale, length, places, branches | references/planning.md |
+| script.json fields, step verbs, shots, kit specs | references/script_schema.md |
+| seeding / reseeding, handlers, runner, branches, states | references/engine.md |
+| walks, runs, cycles, facing, peeks, climbs, flights, pulls, water | references/motion.md |
+| shots, framing, sightlines, taps, speakers, interiors, CAM_JUMP | references/camera.md |
+| houses, bodies, building kit, rooms, doors, props, overlaps, gardens, ground, night | references/sets.md |
+| finding / generating / slicing art, paper look, rims, reference images, feature edits | references/art.md |
+| voice lines, clip trims, SoundDirector, intro music | references/sound.md |
+| Godot slot, imports, recording, probes, shell gotchas | references/tooling.md |
+| a new set or spread: paper spec, card motion, walkable steps, cut edges | references/papercraft_notes.md |
+| eye review before delivery | references/checklist.md |
+| critics, A/B against the reference | references/critic_loop.md |
 
 ## Commands
-
 ```sh
 G=/Applications/Godot.app/Contents/MacOS/Godot
-$G --path game --resolution 1366x1024                                   # play
-$G --path game --resolution 1366x1024 --fixed-fps 30 --write-movie /tmp/x.avi --quit-after 600 -- --beat=<id> --autoplay
-$G --path game --resolution 1200x900 --fixed-fps 30 --write-movie /ABS/full.avi -- --autoplay --quit-on-done
-# Full recordings to show the user: 1200x900, not 1366x1024. On this Mac (1920x1080, usable 960) a 1024-tall window is
-# clamped to 928, stretch "expand" widens the view to 1507x1024, and the top-left page tab and top-right subtitle
-# button land outside the video (user, 2026-11-22: "왼쪽 오른쪽 상단 글자 잘리는데"). 1200x900 keeps the 1366x1024
-# canvas whole. --write-movie needs an ABSOLUTE path. Run every Godot command through tools/story/with_godot.sh.
+W=tools/story/with_godot.sh                                              # every Godot command goes through it
+$W $G --path game --resolution 1366x1024                                 # play
+$W $G --path game --resolution 1366x1024 --fixed-fps 30 --write-movie /tmp/x.avi --quit-after 600 -- --beat=<id> --autoplay
+$W $G --path game --resolution 1200x900 --fixed-fps 30 --write-movie /ABS/full.avi -- --tale=<id> --autoplay --quit-on-done --log-sound --log-track
 ffmpeg -i /tmp/x.avi -c:v libx264 -crf 26 -pix_fmt yuv420p -c:a aac out.mp4
-ffmpeg -ss 6 -t 2 -i out.mp4 -vf "fps=8,crop=W:H:X:Y,tile=8x2" -frames:v 1 tile.jpg   # motion check
+ffmpeg -ss 6 -t 2 -i out.mp4 -vf "fps=8,crop=W:H:X:Y,tile=8x2" -frames:v 1 tile.jpg   # motion check by hand
+python3 tools/story/check_lines.py <tale> <log>
+python3 tools/story/motion_review.py <tale> <log> <mp4>      # then write the verdicts
+python3 tools/story/gate.py <tale> <log> <mp4>               # must print GATE PASS
 python3 -c 'import sys; sys.path.insert(0,"/Users/house_of_4k2b/.claude/skills/scenario-godot-expert/scripts"); import gd_run; print(gd_run.check_all("game"))'
 ```
-
-The story scene takes the script via `StoryRunner.script_path`; make `game/stories/<tale_id>/story.tscn` point at the tale's script (and a tale picker later).
+`--write-movie` needs an ABSOLUTE path; `--import` first after new assets (tooling.md).

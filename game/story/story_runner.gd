@@ -33,6 +33,7 @@ var ui: StoryUI
 var stage: SpreadStage
 var player: AudioStreamPlayer
 var clock := 0.0
+static var now := 0.0  ## the story clock, for logs from other nodes (StoryActor --log-track)
 var missing_audio: Array[String] = []
 var beat_times: Dictionary = {}
 
@@ -220,6 +221,7 @@ func _process(dt: float) -> void:
 		print("PERF hitch ms=", snappedf(dt * 1000.0, 0.1), " t=", snappedf(clock, 0.01), " mode=", _mode, " line=", _last_line)
 	dt = PaperSpring.frame_dt(dt)
 	clock += dt
+	now = clock
 	ui.step(dt)
 	_cam_monitor(dt)
 	_speaker_monitor()
