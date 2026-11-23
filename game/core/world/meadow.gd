@@ -70,6 +70,7 @@ var _start := Vector2.ZERO  ## traveller start on the page
 var _cam_ground := Vector2.ZERO
 var _cam_h := 2.0  ## camera height above the page (lens keep-out)
 var _houses: Array = []  ## [pos, h, yaw] for chimney smoke
+var chimney_smoke := false  ## template chimney smoke (off: it rose from the wrong places)
 ## the village's house cards (2026-11-23 house bodies): {id, path, h0, h, pos, yaw, lean, tilt, hinge (or null), thick,
 ## body (HouseBody or null)}; the orbit probe (tools/story/house_orbit.gd) reads it
 var house_cards: Array = []
@@ -869,6 +870,11 @@ func _build_life() -> void:
 	amb.seed_value = seed_value
 	amb.position.y = 0.03
 	add_child(amb)
+	# 2026-11-23 (user: "왜 자꾸 이상한데서 김이 모락모락", "또 라푼젤에도 김이 있네"): template chimney smoke guessed a
+	# chimney spot from the card size and kept rising over cleared lots, thatch with no chimney, story houses. Off by
+	# default in every world; steam/smoke only where a tale places it on something hot (e.g. turnip's pot).
+	if not chimney_smoke:
+		return
 	for hz in _houses:
 		var p: Vector3 = hz[0]
 		var smoke := ChimneySmoke.new()
