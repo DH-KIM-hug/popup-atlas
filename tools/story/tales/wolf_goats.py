@@ -108,13 +108,9 @@ EXTRA = {"ground_style": "paper", "spacing": True, "overlap_check": True, "pop_i
          # (read script: "가르는 순간은 엄마 몸이 가린다"); the wolf leans over the well rim and drops into it
          # the kids hop out of the sleeping wolf's belly (they start inside his footprint, by design)
          "overlap_ok": [["mom", "wolf"], ["wolf", "kid1"], ["wolf", "kid2"], ["wolf", "kid3"], ["wolf", "kid4"],
-                        ["wolf", "kid5"], ["wolf", "kid6"], ["wolf", "well"], ["wolf", "well_rim"], ["wolf", "oak"],
-                        ["kid1", "room_floor"], ["kid2", "room_floor"], ["kid3", "room_floor"], ["kid4", "room_floor"],
-                        ["kid5", "room_floor"], ["kid6", "room_floor"], ["baby", "room_floor"], ["mom", "room_floor"],
-                        ["wolf", "room_floor"], ["kid1", "room_floor2"], ["kid2", "room_floor2"],
-                        ["kid3", "room_floor2"], ["kid4", "room_floor2"], ["kid5", "room_floor2"],
-                        ["kid6", "room_floor2"], ["baby", "room_floor2"], ["mom", "room_floor2"],
-                        ["wolf", "room_floor2"]],
+                        ["wolf", "kid5"], ["wolf", "kid6"], ["wolf", "well"], ["wolf", "well_rim"], ["wolf", "oak"]]
+                       + [[r, f] for f in ["room_floor", "room_rug"]  # the room floor + rug (wave 1)
+                          for r in ["kid1", "kid2", "kid3", "kid4", "kid5", "kid6", "baby", "mom", "wolf"]],
          "kid_voice": "kid3"}
 
 COT_YAW = -30.0
@@ -180,9 +176,11 @@ def _e(card, at, name, scale=1.0, **kw):
 # road. Up the road on the left, the little market stall (chalk); over the bridge, the windmill (flour).
 COT = [1.85, -1.1]
 HOUSE_SCALE = 1.25
+FLOOR_LIFT = 0.065  # a 0.05 meadow tier crosses the right half of the cottage footprint (probe_ground_tn.gd seed=2
+# view=0: the front edge stands on the low side), so the one floor sheet lifts over the tier top plus its cover patches
 HOME = {"cottage": COT}
-_IN = {"door": (0.0, 0.32), "door_in": (0.0, -0.22), "wall_in": (0.0, -0.015), "in_back": (0.0, -1.07), "in_floor": (0.0, -0.27),
-       "in_floor2": (0.0, -0.77), "in_focus": (0.0, -0.72), "in_clock": (-0.78, -0.97), "in_bed": (0.58, -0.93),
+_IN = {"door": (0.0, 0.32), "door_in": (0.0, -0.22), "wall_in": (0.0, -0.015), "in_back": (0.0, -1.07), "in_floor": (0.0, -0.02),
+       "in_rug": (0.0, -0.33), "in_focus": (0.0, -0.72), "in_clock": (-0.78, -0.97), "in_bed": (0.58, -0.93),
        "in_table": (-0.4, -0.86), "in_chair": (0.2, -0.86), "in_basket": (0.82, -0.5), "in_stove": (-0.88, -0.42),
        # v2: the family stands deep in the room (the camera just inside the front wall looks down on them; the wolf in
        # the doorway stays behind the lens); the mother behind the gap in the kids' row
@@ -204,10 +202,14 @@ HOME.update({"est": [0.2, -1.0], "road_near": [-0.45, 0.85], "road_door": [0.65,
 SET_A = [
     _e("story_wg_cottage_00", "cottage", "cottage", HOUSE_SCALE, yaw=COT_YAW, clear=1.6, door_in=True,
        box={"depth": 1.1, "body": True}),
-    {"card": "story_wg_cottage_05", "at": "in_floor", "stage": "full", "flat": True, "name": "room_floor",
-     "scale": HOUSE_SCALE, "clear": 0, "lift": 0.02, "yaw": COT_YAW},
-    {"card": "story_wg_cottage_05", "at": "in_floor2", "stage": "full", "flat": True, "name": "room_floor2",
-     "scale": HOUSE_SCALE, "clear": 0, "lift": 0.02, "yaw": COT_YAW},
+    # wave 1 (2026-11-24, felt removal): the room floor is ONE plain paper plank sheet laid flat over the whole footprint
+    # (front wall to back wall, 2.06 wide, one plane: two sheets at their own ground heights met in a step where a
+    # meadow tier crosses the house), registered as a floor so the meadow never shows through, and one cut-paper rag
+    # rug on top (was the floorboards card with a woolly braided rug, laid twice, the meadow showing between)
+    {"card": "story_wg_floor_02", "at": "in_floor", "stage": "full", "flat": True, "floor": True, "name": "room_floor",
+     "scale": HOUSE_SCALE, "clear": 0, "lift": FLOOR_LIFT, "thick": 0.0015, "edge": "#6b3a1c", "yaw": COT_YAW},
+    {"card": "story_wg_floor_01", "at": "in_rug", "stage": "full", "flat": True, "floor": True, "name": "room_rug",
+     "scale": HOUSE_SCALE, "clear": 0, "lift": 0.003, "thick": 0.0012, "edge": "#8a3b20", "yaw": COT_YAW},
     {"card": "story_wg_cottage_03", "at": "in_back", "stage": "full", "name": "room_back", "scale": HOUSE_SCALE,
      "clear": 0, "yaw": COT_YAW},
     {"card": "story_wg_cottage_04", "at": "wall_in", "stage": "full", "name": "wall_in", "scale": HOUSE_SCALE,

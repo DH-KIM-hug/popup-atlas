@@ -15860,8 +15860,8 @@
    "yard"
   ],
   "px": [
-   272,
-   285
+   542,
+   570
   ]
  },
  {
@@ -18084,6 +18084,78 @@
   "px": [
    325,
    107
+  ]
+ },
+ {
+  "id": "story_wg_floor_00",
+  "path": "art/atlas/story_wg_floor/story_wg_floor_00.webp",
+  "sheet": "story_wg_floor",
+  "category": "story_building",
+  "label": "honey plank floor, boards left to right (flat, top-down, paper; lay two back to back for a deep room)",
+  "height_units": 0.44,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "floor",
+   "interior",
+   "planks",
+   "room",
+   "story",
+   "wolf_goats",
+   "wood"
+  ],
+  "px": [
+   1644,
+   438
+  ]
+ },
+ {
+  "id": "story_wg_floor_01",
+  "path": "art/atlas/story_wg_floor/story_wg_floor_01.webp",
+  "sheet": "story_wg_floor",
+  "category": "story_prop",
+  "label": "oval rag rug of cut paper rings, cream / gold / rust (flat, top-down)",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "floor",
+   "furniture",
+   "interior",
+   "room",
+   "rug",
+   "story",
+   "wolf_goats"
+  ],
+  "px": [
+   662,
+   359
+  ]
+ },
+ {
+  "id": "story_wg_floor_02",
+  "path": "art/atlas/story_wg_floor/story_wg_floor_02.webp",
+  "sheet": "story_wg_floor",
+  "category": "story_building",
+  "label": "honey plank floor, one sheet for a whole room (flat, top-down, paper; two plank sheets in one)",
+  "height_units": 0.864,
+  "cross_slot": false,
+  "biome": "fairytale",
+  "season": "any",
+  "tags": [
+   "floor",
+   "interior",
+   "planks",
+   "room",
+   "story",
+   "wolf_goats",
+   "wood"
+  ],
+  "px": [
+   1644,
+   860
   ]
  }
 ]

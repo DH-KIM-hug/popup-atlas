@@ -392,39 +392,39 @@
   ],
   [
    "kid1",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "kid2",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "kid3",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "kid4",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "kid5",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "kid6",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "baby",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "mom",
-   "room_floor2"
+   "room_rug"
   ],
   [
    "wolf",
-   "room_floor2"
+   "room_rug"
   ]
  ],
  "kid_voice": "kid3",
@@ -576,12 +576,12 @@
       -2.027
      ],
      "in_floor": [
-      1.985,
-      -1.334
+      1.86,
+      -1.117
      ],
-     "in_floor2": [
-      2.235,
-      -1.767
+     "in_rug": [
+      2.015,
+      -1.386
      ],
      "in_focus": [
       2.21,
@@ -784,25 +784,31 @@
       }
      },
      {
-      "card": "story_wg_cottage_05",
+      "card": "story_wg_floor_02",
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.065,
+      "thick": 0.0015,
+      "edge": "#6b3a1c",
       "yaw": -30.0
      },
      {
-      "card": "story_wg_cottage_05",
-      "at": "in_floor2",
+      "card": "story_wg_floor_01",
+      "at": "in_rug",
       "stage": "full",
       "flat": true,
-      "name": "room_floor2",
+      "floor": true,
+      "name": "room_rug",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.003,
+      "thick": 0.0012,
+      "edge": "#8a3b20",
       "yaw": -30.0
      },
      {
@@ -1219,12 +1225,12 @@
       -2.027
      ],
      "in_floor": [
-      1.985,
-      -1.334
+      1.86,
+      -1.117
      ],
-     "in_floor2": [
-      2.235,
-      -1.767
+     "in_rug": [
+      2.015,
+      -1.386
      ],
      "in_focus": [
       2.21,
@@ -1427,25 +1433,31 @@
       }
      },
      {
-      "card": "story_wg_cottage_05",
+      "card": "story_wg_floor_02",
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.065,
+      "thick": 0.0015,
+      "edge": "#6b3a1c",
       "yaw": -30.0
      },
      {
-      "card": "story_wg_cottage_05",
-      "at": "in_floor2",
+      "card": "story_wg_floor_01",
+      "at": "in_rug",
       "stage": "full",
       "flat": true,
-      "name": "room_floor2",
+      "floor": true,
+      "name": "room_rug",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.003,
+      "thick": 0.0012,
+      "edge": "#8a3b20",
       "yaw": -30.0
      },
      {
@@ -1843,12 +1855,12 @@
       -2.027
      ],
      "in_floor": [
-      1.985,
-      -1.334
+      1.86,
+      -1.117
      ],
-     "in_floor2": [
-      2.235,
-      -1.767
+     "in_rug": [
+      2.015,
+      -1.386
      ],
      "in_focus": [
       2.21,
@@ -2051,25 +2063,31 @@
       }
      },
      {
-      "card": "story_wg_cottage_05",
+      "card": "story_wg_floor_02",
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.065,
+      "thick": 0.0015,
+      "edge": "#6b3a1c",
       "yaw": -30.0
      },
      {
-      "card": "story_wg_cottage_05",
-      "at": "in_floor2",
+      "card": "story_wg_floor_01",
+      "at": "in_rug",
       "stage": "full",
       "flat": true,
-      "name": "room_floor2",
+      "floor": true,
+      "name": "room_rug",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.003,
+      "thick": 0.0012,
+      "edge": "#8a3b20",
       "yaw": -30.0
      },
      {
@@ -2549,12 +2567,12 @@
       -2.027
      ],
      "in_floor": [
-      1.985,
-      -1.334
+      1.86,
+      -1.117
      ],
-     "in_floor2": [
-      2.235,
-      -1.767
+     "in_rug": [
+      2.015,
+      -1.386
      ],
      "in_focus": [
       2.21,
@@ -2757,25 +2775,31 @@
       }
      },
      {
-      "card": "story_wg_cottage_05",
+      "card": "story_wg_floor_02",
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.065,
+      "thick": 0.0015,
+      "edge": "#6b3a1c",
       "yaw": -30.0
      },
      {
-      "card": "story_wg_cottage_05",
-      "at": "in_floor2",
+      "card": "story_wg_floor_01",
+      "at": "in_rug",
       "stage": "full",
       "flat": true,
-      "name": "room_floor2",
+      "floor": true,
+      "name": "room_rug",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.003,
+      "thick": 0.0012,
+      "edge": "#8a3b20",
       "yaw": -30.0
      },
      {
@@ -3220,12 +3244,12 @@
       -2.027
      ],
      "in_floor": [
-      1.985,
-      -1.334
+      1.86,
+      -1.117
      ],
-     "in_floor2": [
-      2.235,
-      -1.767
+     "in_rug": [
+      2.015,
+      -1.386
      ],
      "in_focus": [
       2.21,
@@ -3428,25 +3452,31 @@
       }
      },
      {
-      "card": "story_wg_cottage_05",
+      "card": "story_wg_floor_02",
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.065,
+      "thick": 0.0015,
+      "edge": "#6b3a1c",
       "yaw": -30.0
      },
      {
-      "card": "story_wg_cottage_05",
-      "at": "in_floor2",
+      "card": "story_wg_floor_01",
+      "at": "in_rug",
       "stage": "full",
       "flat": true,
-      "name": "room_floor2",
+      "floor": true,
+      "name": "room_rug",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.003,
+      "thick": 0.0012,
+      "edge": "#8a3b20",
       "yaw": -30.0
      },
      {
@@ -3926,12 +3956,12 @@
       -2.027
      ],
      "in_floor": [
-      1.985,
-      -1.334
+      1.86,
+      -1.117
      ],
-     "in_floor2": [
-      2.235,
-      -1.767
+     "in_rug": [
+      2.015,
+      -1.386
      ],
      "in_focus": [
       2.21,
@@ -4134,25 +4164,31 @@
       }
      },
      {
-      "card": "story_wg_cottage_05",
+      "card": "story_wg_floor_02",
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.065,
+      "thick": 0.0015,
+      "edge": "#6b3a1c",
       "yaw": -30.0
      },
      {
-      "card": "story_wg_cottage_05",
-      "at": "in_floor2",
+      "card": "story_wg_floor_01",
+      "at": "in_rug",
       "stage": "full",
       "flat": true,
-      "name": "room_floor2",
+      "floor": true,
+      "name": "room_rug",
       "scale": 1.25,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.003,
+      "thick": 0.0012,
+      "edge": "#8a3b20",
       "yaw": -30.0
      },
      {

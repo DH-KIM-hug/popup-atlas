@@ -41,6 +41,19 @@
   paper raw warped into the felt raw's frame, located by a masked-SSD template match; canvases, catalog and rig stay.
   Pixels a tool painted (pasted doors, recoloured mouths) are kept and counted EDITED; re-run that tool on the new
   art (wc_shop_door.py, house_stages.py for fold bands, wc_mouth_v5.py for ghost mouths).
+- Paper redraws still carried a wormy fibre nap that read as wool felt in close-ups (gate audit v1: witch_candy cast,
+  sunmoon pines / ridges / big tree, wolf_goats rug). `tools/art/paper_flatten.py [--apply] [--qa sheet.jpg] <globs>`
+  fixes that without a redraw: transparent pixels filled with edge colour, 2x LANCZOS up, MedianFilter 7 then 5, back
+  down to the SAME size, original alpha (ids, catalog px, house bands, rig anchors all stay valid; the shader adds its
+  own fine fibre). It keeps faces, eyes, cut lines and printed motifs, and removes the nap and most thin dashed seams
+  (wider white dashes, e.g. a mailbox hem, survive: redraw those). Originals go to `art_src/prepaper/<repo path>`
+  (local, not committed: git holds them), `manifest.json` there skips files already flat and re-flattens files a
+  builder rewrote: run it again after `build_cast.py` / `paper_swap.py` / new cycle frames. 2026-11-24: applied to
+  all of atlas / atlas_clean / cards and every cast skin except rigged ones (pig_a/b/c, traveller, wolf: their
+  `rig/` parts must be flattened in the same pass) and rapunzel's. Use `--jobs` (2000 files ≈ 10 min).
+- A ground sheet with a design baked on it (floorboards + rug) gets laid twice and the meadow shows through the gaps:
+  floors are plain sheets that cover the whole footprint edge to edge (`floor: true`, so people stand on them), and a
+  rug / mat is its own flat card on top (wolf_goats `story_wg_floor_00` planks ×2 + `_01` rug).
 
 ## Generate what is missing (Codex magenta pipeline)
 - Jobs: `tools/atlas/make_jobs.py` (props/scenery sheets of ~20–30 sprites) or `tools/cast/make_jobs.py` (characters)

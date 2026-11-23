@@ -1,0 +1,45 @@
+{
+ "sheet": "story_wg_floor",
+ "bg": [
+  0.969,
+  0.016,
+  0.976
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_wg_floor_00",
+   "bbox": [
+    69,
+    48,
+    1705,
+    478
+   ],
+   "area": 697661,
+   "size": [
+    1644,
+    438
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_wg_floor_01",
+   "bbox": [
+    552,
+    512,
+    1206,
+    863
+   ],
+   "area": 186417,
+   "size": [
+    662,
+    359
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+{
+ "biome": "fairytale",
+ "season": "any",
+ "tags": ["wolf_goats", "story", "interior", "room", "floor"],
+ "items": {
+  "00": ["honey plank floor, boards left to right (flat, top-down, paper; lay two back to back for a deep room)", "story_building", 0.44, 0, {"tags": ["planks", "wood"]}],
+  "01": ["oval rag rug of cut paper rings, cream / gold / rust (flat, top-down)", "story_prop", 0.4, 0, {"tags": ["rug", "furniture"]}]
+ }
+}
