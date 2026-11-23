@@ -218,6 +218,11 @@ func _process(dt: float) -> void:
 	d.y = 0.0
 	_last_pos = p
 	var dist := d.length()
+	if dist > maxf(0.5 * height, 0.1):
+		# a teleport (place_at at a walk's `from`, a pop-out at a bush / hole, a page change), not travel: measured as
+		# travel it read as ~90 m/s for a few frames and spun drawn cycles 1.6-2.6x too fast (turnip v5 gate SKATE)
+		dist = 0.0
+		d = Vector3.ZERO
 	var inst_speed := dist / dt
 	speed = lerpf(speed, inst_speed, 1.0 - exp(-12.0 * dt))
 	if dist > 1e-5:

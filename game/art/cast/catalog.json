@@ -31168,5 +31168,725 @@
   "parts": {},
   "cycle": "walk_front",
   "frame": 1
+ },
+ {
+  "id": "cast_puppy_run_cycle_0",
+  "path": "art/cast/cast_puppy_run_cycle_0.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_puppy_run_cycle_1",
+  "path": "art/cast/cast_puppy_run_cycle_1.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_puppy_run_cycle_2",
+  "path": "art/cast/cast_puppy_run_cycle_2.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_puppy_run_cycle_3",
+  "path": "art/cast/cast_puppy_run_cycle_3.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_puppy_run_back_0",
+  "path": "art/cast/cast_puppy_run_back_0.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_puppy_run_back_1",
+  "path": "art/cast/cast_puppy_run_back_1.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_puppy_run_front_0",
+  "path": "art/cast/cast_puppy_run_front_0.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_puppy_run_front_1",
+  "path": "art/cast/cast_puppy_run_front_1.webp",
+  "sheet": "cast_tn_dog_run",
+  "category": "cast",
+  "role": "puppy",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.115,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "puppy",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   317,
+   258
+  ],
+  "hanging": false,
+  "skin": "puppy",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_tabby_cat_run_cycle_0",
+  "path": "art/cast/cast_tabby_cat_run_cycle_0.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_tabby_cat_run_cycle_1",
+  "path": "art/cast/cast_tabby_cat_run_cycle_1.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_tabby_cat_run_cycle_2",
+  "path": "art/cast/cast_tabby_cat_run_cycle_2.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_tabby_cat_run_cycle_3",
+  "path": "art/cast/cast_tabby_cat_run_cycle_3.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_tabby_cat_run_back_0",
+  "path": "art/cast/cast_tabby_cat_run_back_0.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_tabby_cat_run_back_1",
+  "path": "art/cast/cast_tabby_cat_run_back_1.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_tabby_cat_run_front_0",
+  "path": "art/cast/cast_tabby_cat_run_front_0.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_tabby_cat_run_front_1",
+  "path": "art/cast/cast_tabby_cat_run_front_1.webp",
+  "sheet": "cast_tn_cat_run",
+  "category": "cast",
+  "role": "tabby_cat",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.105,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tabby_cat",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   332,
+   315
+  ],
+  "hanging": false,
+  "skin": "tabby_cat",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_mouse_run_cycle_0",
+  "path": "art/cast/cast_mouse_run_cycle_0.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_cycle_0",
+  "pose": "run_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 0 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_mouse_run_cycle_1",
+  "path": "art/cast/cast_mouse_run_cycle_1.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_cycle_1",
+  "pose": "run_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 1 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_mouse_run_cycle_2",
+  "path": "art/cast/cast_mouse_run_cycle_2.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_cycle_2",
+  "pose": "run_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 2 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_mouse_run_cycle_3",
+  "path": "art/cast/cast_mouse_run_cycle_3.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_cycle_3",
+  "pose": "run_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "run_cycle frame 3 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_mouse_run_back_0",
+  "path": "art/cast/cast_mouse_run_back_0.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_mouse_run_back_1",
+  "path": "art/cast/cast_mouse_run_back_1.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_mouse_run_front_0",
+  "path": "art/cast/cast_mouse_run_front_0.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_mouse_run_front_1",
+  "path": "art/cast/cast_mouse_run_front_1.webp",
+  "sheet": "cast_tn_mouse_run",
+  "category": "cast",
+  "role": "mouse",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mouse",
+   "turnip",
+   "cycle"
+  ],
+  "px": [
+   312,
+   235
+  ],
+  "hanging": false,
+  "skin": "mouse",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
  }
 ]

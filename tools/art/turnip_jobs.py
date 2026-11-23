@@ -172,6 +172,25 @@ for role, who, extra in [
          "FRONT-VIEW frames trotting TOWARD the viewer (front paws alternating). All eight the SAME scale as the "
          "reference, feet on one common baseline.", REF(role))
 
+# ---------------------------------------------------------------- round 3 (v5, user on v4: "애들 달리는거 점검좀"):
+# drawn RUN cycles for the animals (they ran on their trot / scurry walk cycles, at run speed); refs = the single crop +
+# the animal's own walk sheet (same design, same scale)
+for role, who, gait in [("dog", DOG, "GALLOP: a happy puppy dash, ears flying back, tongue out"),
+                        ("cat", CAT, "BOUNDING RUN: a light quick cat dash, body stretched long, tail streaming back"),
+                        ("mouse", MOUSE, "SCURRY DASH: a tiny quick mouse dash, body low and stretched, tail streaming back")]:
+    cast(f"cast_tn_{role}_run", "EIGHT", who,
+         f"RUN CYCLE ({gait}): EIGHT full-body figures on FOUR legs, left to right: (1)-(4) FOUR SIDE-PROFILE frames "
+         "facing RIGHT of ONE run cycle in order: (1) REACH (front legs stretched far forward, hind legs stretched far "
+         "back, body long and low), (2) FRONT FEET LANDING (front paws down under the chest, hind legs coming forward), "
+         "(3) GATHER (all four paws bunched together under the body, back rounded, hind paws planted ahead of the front "
+         "paws), (4) PUSH-OFF (hind legs pushing back, front legs reaching forward, all four feet off the ground); every "
+         "leg separate with open magenta gaps between them, leaning forward, an eager happy face, the SAME head and "
+         "body size in all four; (5)-(6) TWO BACK-VIEW frames running AWAY from the viewer (seen from directly behind: "
+         "the back of the head and ears, the tail up, the hind legs alternating, one paw kicked up); (7)-(8) TWO "
+         "FRONT-VIEW frames running straight TOWARD the viewer (the face to us, ears flying, front paws alternating, one "
+         "paw lifted high). All eight the SAME scale as the reference figures, feet (or the lowest paw) on one common "
+         "baseline.", REF(role) + [RAW_C + f"cast_tn_{role}_walk.png"])
+
 # ---------------------------------------------------------------- set / prop sheets (round 1, no character refs)
 TN_GARDEN = PAPER + ("Vegetable leaves and plants are the subject here (veins as cut lines are fine). NO faces on "
                      "anything, NO animals, NO people. ")

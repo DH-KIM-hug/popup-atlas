@@ -454,8 +454,8 @@ func _process(dt: float) -> void:
 		max_turn_deg = 0.0
 	super._process(dt)
 	max_turn_deg = mt
-	if _turn.scale.x < 0.15:  # paper turn: narrow to 15 %, swap there; never a card edge-on sliver
-		_turn.scale.x = 0.15
+	if _turn.scale.x < 0.3:  # paper turn: narrow to 30 %, swap there; never a card edge-on sliver (15 % still read as
+		_turn.scale.x = 0.3   # a sliver in 8 fps tiles of runs turning at their marks, turnip v5)
 	var fdt := PaperSpring.frame_dt(dt)
 	if fdt <= 0.0:
 		return
@@ -538,7 +538,9 @@ func _cycle_step(frames: Array, dt: float) -> void:
 	var flight := (n == 4 and f == 3) or (n == 2 and false)
 	var y := height * (0.05 if flight else (0.015 if f == 0 else 0.0))
 	var pl := 0.03 * sin(_pose_hop * PI)
-	_tilt.transform = Transform3D(Basis.from_scale(Vector3(m, 1, 1)) * Basis(Vector3(0, 0, 1), -deg_to_rad(4.0) * m), Vector3(0, y + pl, 0))
+	# the forward lean is for profiles only: a front / back card tilted 4° reads as leaning sideways (휘청; turnip v5)
+	var lean := -deg_to_rad(4.0) * m if pose_view(pose) == "side" else 0.0
+	_tilt.transform = Transform3D(Basis.from_scale(Vector3(m, 1, 1)) * Basis(Vector3(0, 0, 1), lean), Vector3(0, y + pl, 0))
 	_body.position = Vector3.ZERO
 	_body.rotation = Vector3.ZERO
 

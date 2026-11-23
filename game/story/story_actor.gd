@@ -114,7 +114,7 @@ func set_pose(p: String, left := -1) -> void:
 	if left >= 0:
 		facing_left = left == 1
 	if not _moving:
-		puppet.set_figure(p, facing_left and view_of(p) == "side")
+		_swap_figure(p, facing_left and view_of(p) == "side")
 
 
 ## Turn a standing side figure toward a world point (screen-left / right of it).
@@ -228,7 +228,9 @@ func _process(dt: float) -> void:
 		else:
 			_pick_view(dn)
 	elif _v < 0.01 and puppet.pose != pose and _flip_ok():
-		puppet.set_figure(pose, facing_left and view_of(pose) == "side")
+		_swap_figure(pose, facing_left and view_of(pose) == "side")
+	if _log_track:
+		_track_log(dt)
 	_move_log(dt)
 
 
@@ -355,6 +357,52 @@ func _exit_tree() -> void:
 	_move_flush()
 
 
+## --log-track: while travelling (and 0.4 s after), 8 times a second: the figure shown and its screen box (viewport
+## px: foot point x, y and on-screen height) so motion tiles can be cut around the runner (tools/story/run_tiles.py).
+static var _log_track: bool = "--log-track" in OS.get_cmdline_user_args()
+var _trk_t := 0.0
+var _trk_idle := 9.0
+static var _trk_vp_logged := false
+
+
+func _track_log(dt: float) -> void:
+	_trk_idle = 0.0 if _moving else _trk_idle + dt
+	if _trk_idle > 0.4 or camera == null or not is_visible_in_tree():
+		return
+	_trk_t -= dt
+	if _trk_t > 0.0:
+		return
+	_trk_t += 0.125
+	var cam := get_viewport().get_camera_3d()  # the camera that renders this frame (the page's own may differ)
+	if cam == null:
+		return
+	var foot := global_position + Vector3(0, hop + lift, 0)
+	var head := foot + Vector3(0, puppet.height * pop_s, 0)
+	if cam.is_position_behind(foot):
+		return
+	var vs := get_viewport().get_visible_rect().size
+	var a := cam.unproject_position(foot)
+	var b := cam.unproject_position(head)
+	if not _trk_vp_logged:
+		_trk_vp_logged = true
+		print("TRACK_VP ", int(vs.x), "x", int(vs.y), " same_cam=", int(cam == camera))
+	print("TRACK ", role, " t=", snappedf(StoryRunner.now, 0.01), " x=", int(a.x), " y=", int(a.y), " h=", int(a.distance_to(b)),
+		" fig=", puppet.pose, " view=", view, " v=", snappedf(_v, 0.01), " moving=", int(_moving))
+
+
+## Travel figure changes: a paper turn only when the view or the facing changes. Standing profile -> side run cycle
+## -> pull (same view, same facing) swaps in place: a flip there read as the card turning edge-on for nothing at every
+## start and stop of a run (turnip v5).
+func _swap_figure(fig: String, mirror: bool) -> void:
+	var same := puppet.pose != fig and puppet._flip_t < 0.0 and view_of(puppet.pose) == view_of(fig) \
+		and view_of(fig) == "side" and mirror == puppet._mirror and (_travel_fig(fig) or _travel_fig(str(puppet.pose)))
+	puppet.set_figure(fig, mirror, same)
+
+
+static func _travel_fig(f: String) -> bool:  # expression changes (pull -> tumble) keep their paper flip
+	return f.contains("cycle") or f.contains("walk") or f.begins_with("run")
+
+
 func _flip_ok() -> bool:
 	return true
 
@@ -397,7 +445,8 @@ func _pick_view(dir: Vector3) -> void:
 	# figure for the view (fall back to a view this role has)
 	var fig := walk_pose
 	# drawn cycles (side / back) when the cast has them: running (run pose or fast) or walking
-	var running := walk_pose in ["run", "run_cycle", "run_away", "scared"] and speed >= 0.4
+	# turnip v5: small animals run at small speeds (a mouse's dash is 0.22/s): the run threshold scales with height
+	var running := walk_pose in ["run", "run_cycle", "run_away", "scared"] and speed >= minf(0.4, puppet.height * 3.0)
 	var rc := ""
 	if nv == "side":
 		rc = "run_cycle" if running else "walk_cycle"
@@ -411,6 +460,9 @@ func _pick_view(dir: Vector3) -> void:
 		rc = "run_front" if running and puppet.has_pose("run_front") else "walk_front"
 		if walk_pose != "" and puppet.has_pose(walk_pose + "_front"):  # e.g. ghost -> ghost_front (parade)
 			rc = walk_pose + "_front"
+	if rc != "" and not puppet.has_pose(rc) and rc.begins_with("run"):
+		# no drawn run for this view: the walk cycle (a static card hopping reads as a sticker; turnip v4 cat / dog)
+		rc = {"side": "walk_cycle", "back": "walk_back", "front": "walk_front"}[nv]
 	if rc != "" and puppet.has_pose(rc):
 		fig = rc
 	if fig == "" or not puppet.has_pose(fig) or view_of(fig) != nv:
@@ -424,7 +476,7 @@ func _pick_view(dir: Vector3) -> void:
 				fig = pose if view_of(pose) == "front" else "calm"
 	view = nv
 	facing_left = left
-	puppet.set_figure(fig, facing_left and view_of(fig) == "side")
+	_swap_figure(fig, facing_left and view_of(fig) == "side")
 	if _log_figs and fig != _last_fig_logged:  # --log-figs: which figure each travel uses (hopping-card check)
 		_last_fig_logged = fig
 		print("TRAVEL_FIG ", role, " ", fig, " view=", nv, " puppet_fig=", puppet.get("pose"))

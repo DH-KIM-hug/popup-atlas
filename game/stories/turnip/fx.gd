@@ -606,7 +606,8 @@ func step(dt: float) -> void:
 		h["t"] = float(h["t"]) + dt / float(h["life"])
 		var k9 := clampf(float(h["t"]), 0.0, 1.0)
 		if a9:
-			a9.place_at((h["from"] as Vector3).lerp(h["to"], k9))
+			# eased along the ground (v5 gate SPEED_JUMP: a linear slide started and stopped at full speed in one frame)
+			a9.place_at((h["from"] as Vector3).lerp(h["to"], k9 * k9 * (3.0 - 2.0 * k9)))
 			a9.lift = lerpf(float(h["h0"]), 0.0, k9 * k9) + sin(k9 * PI) * float(h["arc"])
 		if k9 >= 1.0:
 			_hops.erase(h)

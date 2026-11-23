@@ -95,6 +95,7 @@ SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          "crane_high": [8.5, 34.0, 0.3, 24.0, 0.0],
          "establish": [5.6, 24.0, 0.3, 24.0, -6.0],           # the garden plot, house and barn behind (v2: higher)
          "garden": [3.4, 17.0, 0.25, 24.0, 4.0],
+         "run_small": [2.0, 12.0, 0.12, 24.0, 6.0],           # v5: tracking a running animal (garden left them ~100 px)
          "medium": [2.2, 13.0, 0.2, 22.0, 6.0],
          "seed": [1.15, 16.0, 0.1, 24.0, -6.0],                # grandpa kneeling, the hole, the seed in his palm
          "sprout": [1.6, 14.0, 0.1, 24.0, 8.0],
@@ -154,7 +155,12 @@ FARM = {"turnip": [TX, TZ], "est": [-1.6, -1.45], "garden_focus": [-1.55, -1.0],
         "bush": [0.02, -1.25], "bush_out": [-0.15, -1.08], "yard": [-0.15, -2.25], "yard_in": [-0.5, -1.6],
         # v4 (user: the big grassy dome stood in the open lawn): a low bank with the hole, tucked at the plot's right
         # rim between grass tufts; the mouse comes out onto the bed in front of it
-        "mouse_hole": [-0.54, -0.68], "hole_out": [-0.6, -0.6],
+        # v5 (user on v4: "애들 달리는거 점검좀"): the bank moved back to the line's depth at the rim, so the mouse dashes
+        # out sideways (left) to its mark instead of away from the camera
+        "mouse_hole": [-0.46, -0.82], "hole_out": [-0.47, -0.77],
+        # v5 run routes: every helper's last stretch runs LEFT along the line (a side run, already facing the way it
+        # pulls), never behind the turnip leaves or behind the one ahead
+        "gm_in": [-0.95, -0.95], "girl_in": [-0.8, -0.92], "cat_wide": [-0.58, -1.95], "cat_in": [-0.45, -1.05],  # cat: left of the lawn flower she ran behind (v5)
         # the feast stands off the plot, behind its open right half (v2): table between the garden and the barn
         "pot_spot": [-1.05, -1.98], "table": [-1.05, -2.0], "lanterns": [-1.05, -2.3], "bread": [-0.88, -1.98],
         "turnip_land": [-1.0, -1.22],    # the open bed behind the line (v2: was in the plot's rows; in front it hid the line)
@@ -227,9 +233,9 @@ SET_GARDEN = [
     _g(VEG + "18", -2.22, -0.36, "edging_c", 1.0),
     # grass tufts on the open rim (front right, right side, back right): the sheet's edge tucked into the meadow
     _g("meadow_field_10", -1.75, -0.31, "tuft_a", 0.55), _g("meadow_field_10", -1.4, -0.34, "tuft_b", 0.5, yaw=8.0),
-    _g("meadow_field_09", -0.43, -0.66, "tuft_c", 0.35), _g("meadow_field_10", -0.58, -0.95, "tuft_d", 0.55),
-    _g("meadow_field_10", -0.6, -0.76, "tuft_g", 0.45),  # v4: behind the mouse's bank
-    _g("meadow_field_10", -1.6, -1.4, "tuft_e", 0.5), _g("meadow_field_09", -0.5, -1.36, "tuft_f", 0.35),
+    _g("meadow_field_09", -0.36, -0.74, "tuft_c", 0.35), _g("meadow_field_10", -0.58, -0.95, "tuft_d", 0.55),
+    _g("meadow_field_10", -0.41, -0.97, "tuft_g", 0.45),  # v4/v5: behind the mouse's bank
+    _g("meadow_field_10", -1.6, -1.4, "tuft_e", 0.5), _g("meadow_field_09", -0.36, -1.4, "tuft_f", 0.35),
     _g(VEG + "15", -1.98, -0.73, "marker_a", 1.0), _g(VEG + "17", -1.96, -1.15, "marker_b", 1.0, yaw=-8.0),
     # around the plot: scarecrow, wheelbarrow, watering can, a basket of the day's vegetables, sunflowers
     _g("meadow_field_16", -3.32, -1.5, "scarecrow", 1.0), _g(VEG + "13", -3.42, -0.8, "wheelbarrow", 1.0),
@@ -334,11 +340,14 @@ BEATS = [
         {"do": "pose", "who": "grandpa", "pose": "call", "wait": 0.1},
         {"do": "say", "line": "tn_x_call_grandma"},
         {"do": "cam", "shot": "house", "at": ["house_door", "line_grandpa"], "rate": 1.3, "wait": 0.2},
+        # v5: v4 ran her through the gate and behind the turnip leaves and grandpa (hidden for a second); now
+        # straight across the open bed's back (no fence there), then LEFT into her mark (side run, facing the turnip)
         {"do": "walk", "who": "grandma", "from": "house_door", "to": "line_grandma", "speed": 0.42, "pose": "run",
-         "via": ["gate_out", "gate_in"], "follow": "grandma", "shot": "garden", "line": "tn_r0307"}]},
+         "via": ["gm_in"], "follow": "grandma", "shot": "garden", "line": "tn_r0307", "end_pose": "side_walk"}]},
     # 4 -- grandma: 같이 해 봐요! two pull; a hand's width up; she calls the girl
     {"id": "grandma", "title": "할머니~!", "spread": _farm(light="afternoon"), "tn": {"turnip": "big"},
-     "enter": _enter(2, extra={"who": {"grandma": "calm"}}),
+     # v5: she stays in profile facing the turnip when she arrives (v4 flipped run -> front calm -> side pull)
+     "enter": _enter(2, extra={"who": {"grandma": "side_walk", "girl": "calm"}, "at": {"girl": "yard"}}),
      "steps": [
         {"do": "fx", "fx": "get_up:grandpa", "wait": 0.1},
         {"do": "cam", "shot": "line", "at": ["turnip", "line_grandma"], "rate": 1.4, "wait": 0.2, "settle": 0.5},
@@ -352,10 +361,11 @@ BEATS = [
         {"do": "pose", "who": "grandma", "pose": "pull", "left": 1, "wait": 0.1}]},
     # 5 -- the girl skips in from the yard: three pull, a little more
     {"id": "girl", "title": "손녀", "spread": _farm(light="afternoon"), "tn": {"turnip": "big", "rise": 0.042},
-     "enter": _enter(2),
+     "enter": _enter(2, extra={"who": {"girl": "calm"}, "at": {"girl": "yard"}}),
      "steps": [
-        {"do": "cam", "shot": "yard", "at": ["yard_in", "line_grandma"], "rate": 1.2, "wait": 0.2},
-        {"do": "walk", "who": "girl", "from": "yard", "to": "line_girl", "speed": 0.42, "pose": "run",
+        # v5: she is already in the yard (v4 popped her in at a spot off the frame's edge); the shot finds her first
+        {"do": "cam", "shot": "yard", "at": ["yard", "line_grandma"], "rate": 1.2, "wait": 1.1, "settle": 0.4},
+        {"do": "walk", "who": "girl", "to": "line_girl", "speed": 0.42, "pose": "run", "via": ["girl_in"],
          "follow": "girl", "shot": "garden", "line": "tn_r0501"},
         {"do": "pose", "who": "girl", "pose": "pull", "left": 1, "wait": 0.1},
         {"do": "cam", "shot": "line_low", "at": ["turnip", "line_girl"], "rate": 1.4, "wait": 0.2, "settle": 0.5},
@@ -370,7 +380,7 @@ BEATS = [
         {"do": "fx", "fx": "rustle:bush", "wait": 0.3},
         {"do": "say", "line": "tn_r0601"},
         {"do": "tap_steps", "target": "bush", "steps": [{"fx": "dog_out", "wait": 0.3}]},
-        {"do": "walk", "who": "dog", "to": "line_dog", "speed": 0.4, "follow": "dog", "shot": "garden",
+        {"do": "walk", "who": "dog", "to": "line_dog", "speed": 0.36, "pose": "run", "follow": "dog", "shot": "run_small",
          "line": "tn_r0602", "segs": [0]},
         {"do": "pose", "who": "dog", "pose": "happy", "wait": 0.1},
         {"do": "say", "line": "tn_r0602", "segs": [1]},
@@ -387,9 +397,9 @@ BEATS = [
         {"do": "fx", "fx": "cat_roof", "wait": 0.5},
         {"do": "say", "line": "tn_r0701"},
         {"do": "fx", "fx": "cat_down", "wait": 0.15},
-        {"do": "cam", "shot": "medium", "at": "barn_foot", "rate": 1.6, "wait": 0.85},
-        {"do": "walk", "who": "cat", "from": "barn_foot", "to": "line_cat", "speed": 0.5,
-         "follow": "cat", "shot": "garden", "line": "tn_r0702"},
+        {"do": "cam", "shot": "run_small", "at": "barn_foot", "rate": 1.6, "wait": 0.85},  # v5: low, she is not under the caption
+        {"do": "walk", "who": "cat", "from": "barn_foot", "to": "line_cat", "speed": 0.4, "pose": "run",
+         "via": ["cat_wide", "cat_in"], "follow": "cat", "shot": "run_small", "line": "tn_r0702"},
         {"do": "fx", "fx": "glare", "wait": 0.1},
         {"do": "cam", "shot": "glare", "at": ["line_dog", "line_cat"], "rate": 1.4, "wait": 0.2, "settle": 0.5},
         {"do": "say", "line": "tn_r0703"},
@@ -411,7 +421,7 @@ BEATS = [
         {"do": "say", "line": "tn_x_squeak_mouse"},
         {"do": "tap_steps", "target": "mouse_hole", "prompt": "tn_034", "hint": "tn_034",
          "steps": [{"fx": "mouse_out", "wait": 0.3}]},
-        {"do": "walk", "who": "mouse", "to": "line_mouse", "speed": 0.22, "follow": "mouse", "shot": "glare",
+        {"do": "walk", "who": "mouse", "to": "line_mouse", "speed": 0.22, "pose": "run", "follow": "mouse", "shot": "glare",
          "line": "tn_r0802"},
         {"do": "cam", "shot": "glare", "at": ["line_cat", "line_mouse"], "rate": 1.4, "wait": 0.2, "settle": 0.5},
         {"do": "say", "line": "tn_r0803"},
@@ -439,7 +449,7 @@ BEATS = [
         {"do": "fx", "fx": "carry", "wait": 1.0},  # v2: the turnip rolls off to the table before anyone walks
         {"do": "fx", "fx": "pop:table", "wait": 0.15},
         {"do": "fx", "fx": "pop:lanterns", "wait": 0.15},
-        {"do": "cam", "shot": "garden", "at": "feast_focus", "rate": 1.0, "wait": 0.2},
+        {"do": "cam", "shot": "garden", "at": ["eat_grandpa", "line_mouse"], "rate": 1.0, "wait": 0.2},  # v5: the mouse stays in
         {"do": "fx", "fx": "to_table", "wait": 0.1},
         {"do": "walk", "who": ALL6, "to": {r: f"eat_{r}" for r in ALL6}, "speed": 0.3, "line": "tn_r1000"},
         {"do": "cam", "shot": "feast", "at": "feast_view", "rate": 1.2, "wait": 0.2, "settle": 0.5},

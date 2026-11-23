@@ -2339,3 +2339,44 @@ User on v3: "각 인형들의 흰색 테두리가 별로같음. 그리고 구멍
 - Still off: the planting hole is small and quiet in the seed shot (reads as a dip, not a feature); grandma's scarf
   knot keeps a ragged edge where the cloud was cut away (visible only in close-ups); the mouse is still larger than
   its hole's arch; sound unchanged, nobody has listened to the mix.
+
+## 2026-11-23 — turnip v5: the runs (user on v4: "애들 달리는거 점검좀...")
+Every travel checked with 8 fps tiles cut around the runner (new `--log-track`: StoryActor prints TRACK foot point +
+screen height 8x/s; tools/story/run_tiles.py cuts strips from it; the viewport is the project's 1366x1024 base size,
+and tn_rec.sh's movie now comes out 1366x1024, so the delivered mp4 is scaled to 1200x900 after encoding).
+What v4 did, run by run:
+- grandma (kitchen door -> line, 80-85 s): drawn run_front, but routed through the gate and BEHIND the turnip leaves and
+  grandpa (hidden ~83-85 s; OCCLUDE stayed 0); then run -> front calm -> side pull = three paper flips.
+- girl (yard -> line, 105-110 s): popped in at a spot off the frame's right edge; run_front only.
+- dog (bush -> line, 125-128 s): no run cycle in the cast: walked its trot cycle at run speed.
+- cat (barn -> line, 147-151 s): no run cycle: walk_front toward the camera for 4 s, ~100 px tall in a wide follow
+  shot (blurry), under the caption at the start, an edge-on flip before the glare.
+- mouse (hole -> line, 183-185 s): walk_back AWAY from the camera (the hole sat in front of the line), tiny.
+- gate findings (coordinator): drawn cycles flipped 1.6-2.6x faster than the travel (grandma x2.6, girl x2.3, dog x1.6,
+  mouse x2.2); SPEED_JUMP on the cat's roof hop and the tumble slides.
+Fixes:
+- New drawn RUN cycles (Codex magenta, refs = single crop + own walk sheet, paper look, no rim): puppy gallop, tabby
+  bound, mouse scurry dash; 4 side + 2 back + 2 front each (tools/art/turnip_jobs.py round 3, add_cycles.py, catalog
+  cast_{puppy,tabby_cat,mouse}_run_{cycle,back,front}_*). Dog / cat / mouse walks now `pose: run`.
+- Cycle speed: PaperPuppet measured a place_at (walk `from`, pop-out at the bush / hole) as ~90 m/s travel for a few
+  frames; jumps > max(0.5 h, 0.1) per frame are now teleports (core/characters/paper_puppet.gd). MOVE cyc/exp now
+  7.5/7.1 grandma, 7.8/7.5 girl, 6.0/6.2 dog, 3.0/3.0 mouse.
+- StoryActor: run threshold scales with height (min(0.4, 3 h): the mouse's 0.22 dash is a run); a missing run cycle
+  falls back to the walk cycle of that view (never a static card); travel-figure swaps in the same view and facing
+  (standing profile -> side cycle -> pull) are instant, no paper turn. CastPuppet: paper turns narrow to 30 % (15 % read
+  as an edge-on sliver in tiles); the 4° lean only on profile cycles (front / back cards leaned sideways).
+- Routes (tools/story/tales/turnip.py): every helper's last stretch runs LEFT along the line, side view, already
+  facing the turnip: grandma across the open bed's back (gm_in), end pose side_walk; the girl waits in the yard from
+  grandma's call (no pop), the yard shot holds 1.1 s; cat via cat_wide / cat_in (left of a lawn flower she ran behind)
+  with a close follow shot (run_small) and a low shot at the barn foot; the mouse hole moved to the line's depth at
+  the rim (-0.46, -0.82), the mouse comes out of its mouth and dashes left; tufts c / g / f moved off the routes; the
+  feast walk's shot frames both ends (eat_grandpa .. line_mouse). fx.gd: hops / tumble slides eased along the ground.
+- Full movie run (real pace, artifacts/turnip/rec/run_v5.log): STORY_DONE 281.9 s, CHECK_LINES OK (54), VOICE_DUP=0,
+  CAM_JUMP=0 CAM_JERK=0, SPEAKER_OFF=0, OVERLAP_COUNT 0 OCCLUDE_COUNT 0, SET_CHECK all zero, MOTION_FLAGS=0, no script
+  errors; GATE PASS (tools/story/gate.py, 15 segments reviewed in artifacts/turnip/motion/motion_review.md, gate.md
+  ticked). Video artifacts/video/turnip_full_v5.mp4 (1200x900, 21.0 MB); before / after strips
+  artifacts/turnip/v5_runs.jpg. three_pigs autoplays end to end with the engine changes (no script errors).
+- Still off: grandma pops up in the kitchen doorway (no door opens); the girl enters from the frame's right edge (the
+  yard shot does not reach her spot); front<->side turns mid-run still show a 30 % card for ~0.1 s, and a beat start
+  re-poses grandpa (call -> pull) with a flip right as grandma arrives; the cat's run toward the camera is long (~4 s);
+  in the feast walk the mouse is small and soft at the frame's right.
