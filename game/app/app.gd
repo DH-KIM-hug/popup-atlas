@@ -10,6 +10,17 @@ var _runner: StoryRunner
 
 func _ready() -> void:
 	get_tree().scene_changed.connect(_on_scene)
+	if OS.has_feature("web"):
+		# web build only (docs/WEB_BUILD.md): one console line every 5 s so a browser test can read GPU memory
+		var t := Timer.new()
+		t.wait_time = 5.0
+		t.autostart = true
+		t.timeout.connect(func(): print("WEB_PERF fps=%d video_mb=%.0f tex_mb=%.0f static_mb=%.0f scene=%s" % [
+			Engine.get_frames_per_second(), Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED) / 1048576.0,
+			Performance.get_monitor(Performance.RENDER_TEXTURE_MEM_USED) / 1048576.0,
+			Performance.get_monitor(Performance.MEMORY_STATIC) / 1048576.0,
+			get_tree().current_scene.scene_file_path if get_tree().current_scene else ""]))
+		add_child(t)
 	# screenshot hook for the app-shell sheets: --app-capture=<png> [--app-capture-at=<seconds>] saves the window, quits
 	var cap := ""
 	var at := 4.0
@@ -95,7 +106,7 @@ func _add_home(sc: Node) -> void:
 			return
 		var vis := get_viewport().get_visible_rect().size
 		var win := Vector2(DisplayServer.window_get_size())
-		var sc_f := DisplayServer.screen_get_scale() if OS.has_feature("mobile") else 1.0
+		var sc_f := DisplayServer.screen_get_scale() if (OS.has_feature("mobile") or OS.has_feature("web")) else 1.0
 		var u := vis.x / maxf(1.0, win.x / sc_f)
 		b.scale = Vector2(u, u)
 		b.size = Vector2(128, AppTheme.TAP)

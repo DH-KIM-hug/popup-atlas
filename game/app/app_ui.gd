@@ -77,7 +77,7 @@ func _ready() -> void:
 func px_per_pt() -> float:
 	var vis := get_viewport().get_visible_rect().size
 	var win := Vector2(DisplayServer.window_get_size())
-	var sf := DisplayServer.screen_get_scale() if OS.has_feature("mobile") else 1.0
+	var sf := DisplayServer.screen_get_scale() if (OS.has_feature("mobile") or OS.has_feature("web")) else 1.0
 	if win.x <= 0:
 		return 1.0
 	return vis.x / (win.x / sf)

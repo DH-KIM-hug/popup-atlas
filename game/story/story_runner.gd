@@ -127,7 +127,7 @@ const RENDER_HEIGHT := 1024.0
 
 
 func _apply_render_scale() -> void:
-	if not OS.has_feature("mobile"):
+	if not (OS.has_feature("mobile") or OS.has_feature("web")):  # web: the browser canvas is device pixels too
 		return
 	var h := float(DisplayServer.window_get_size().y)
 	if h > RENDER_HEIGHT:

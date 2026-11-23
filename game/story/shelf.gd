@@ -53,6 +53,7 @@ func _ready() -> void:
 		get_tree().change_scene_to_file.call_deferred(STORY_SCENE % "sun_wind")
 		return
 	set_anchors_preset(Control.PRESET_FULL_RECT)
+	mouse_filter = Control.MOUSE_FILTER_IGNORE  # a STOP root eats the tap before _unhandled_input picks the book
 	var tr := TextureRect.new()
 	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	tr.stretch_mode = TextureRect.STRETCH_SCALE
