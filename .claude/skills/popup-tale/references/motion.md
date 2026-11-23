@@ -94,6 +94,26 @@ measures an actor from the ground, so the handler's `speaker_point` returns the 
 - A rope / braid climb: climbers stand in front of it and go up with a drawn two-frame back-view `climb_cycle`
   (story_actor picks it for vertical travel and advances it by height climbed: the puppet only measures ground speed).
   The rope itself: sets.md.
+- Climb selection (wave 1, 2026-11-24, generalised from rapunzel's braid): a `follow(points, spd, wpose, true)` leg
+  that rises or drops ≥ ¼ of the figure's height at more than 30° from level is a climb (ladder, tree, rope, braid);
+  so is any off-ground leg whose walk pose is `climb` or names a `<x>_climb` cycle (runner `climb` step: `"pose":
+  "climb"`). StoryActor shows `<walk_pose>_climb` if the skin has it (tiger `axe_climb`, `rope_climb`), else
+  `climb_cycle`; a fast drop (> 0.9 /s) or a `fall` / `tumble` pose keeps the drawn falling figure. Handlers that
+  `set_pose("climb_a")` then `follow(...)` get the cycle automatically; pass the walk pose to pick a variant
+  (sunmoon tiger: `follow(pts, 0.12, "axe", true)` → axe_climb). Without any climb cycle a straight-up leg falls back
+  to the back walk with a rung bob (old ladder behaviour).
+- Shared climb / run cycles made in wave 1 (tools/art/wave1_jobs.py → tools/cast/wave1_cast.py): wolf `run_back`,
+  `climb_cycle` (ladder); tiger `run_back`, `climb_cycle` (trunk, from behind), `dg_back` (the drawn walk-away in
+  mother's clothes, replaces the static card while walking; `dg_front` is still a static card), aliases
+  `rope_climb` (rope_a/b) and `axe_climb` (axe_a/b); goat_kid_1..6 `run_front`; hanbok_boy / hanbok_girl
+  `climb_cycle` (alias of climb_a/b: hands up, from behind; their rope_a/b are a praying and a sitting figure, not
+  climb frames); mother_pig, rich_lady, peasant_mother `walk_cycle` / `walk_back` / `walk_front`.
+- Objects travel by their own paper motion, never a rigid slide (wave 1, patjuk's helpers): catalog field `gait` on
+  the skin (CastPuppet._gait_step, phase by ground distance, a contact sound per landing): `hop` (chestnut, dung,
+  awl: arcs with squash / stretch), `crawl` (turtle: low quick shuffle, faces its travel way), `roll` (straw mat:
+  turns over about its middle, lowest corner on the ground), `thump` (stone mortar: rocks from bottom corner to
+  corner with a dip), `stride` (A-frame jige: lighter rock on its legs). MOVE logs the figure as `<fig>:gait-<kind>`
+  and motion_review does not count it as a static card. Look at the tiles: a gait reads only at a readable size.
 - A character on a roof: `lift` (not a raised position) keeps the overlap check off the building's base line; the hop
   down is a handler arc on lift (turnip's cat).
 - Handler-driven moves that keep a fixed figure (roll, float, hop): keep the path height in the move's own state;

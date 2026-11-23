@@ -27159,7 +27159,8 @@
   ],
   "hanging": false,
   "skin": "pj_bam",
-  "parts": {}
+  "parts": {},
+  "gait": "hop"
  },
  {
   "id": "cast_pj_jara_calm",
@@ -27193,7 +27194,8 @@
   ],
   "hanging": false,
   "skin": "pj_jara",
-  "parts": {}
+  "parts": {},
+  "gait": "crawl"
  },
  {
   "id": "cast_pj_ddong_calm",
@@ -27227,7 +27229,8 @@
   ],
   "hanging": false,
   "skin": "pj_ddong",
-  "parts": {}
+  "parts": {},
+  "gait": "hop"
  },
  {
   "id": "cast_pj_songgot_calm",
@@ -27261,7 +27264,8 @@
   ],
   "hanging": false,
   "skin": "pj_songgot",
-  "parts": {}
+  "parts": {},
+  "gait": "hop"
  },
  {
   "id": "cast_pj_jeolgu_calm",
@@ -27295,7 +27299,8 @@
   ],
   "hanging": false,
   "skin": "pj_jeolgu",
-  "parts": {}
+  "parts": {},
+  "gait": "thump"
  },
  {
   "id": "cast_pj_myeongseok_calm",
@@ -27329,7 +27334,8 @@
   ],
   "hanging": false,
   "skin": "pj_myeongseok",
-  "parts": {}
+  "parts": {},
+  "gait": "roll"
  },
  {
   "id": "cast_pj_jige_calm",
@@ -27363,7 +27369,8 @@
   ],
   "hanging": false,
   "skin": "pj_jige",
-  "parts": {}
+  "parts": {},
+  "gait": "stride"
  },
  {
   "id": "cast_pj_bam_act",
@@ -27397,7 +27404,8 @@
   ],
   "hanging": false,
   "skin": "pj_bam",
-  "parts": {}
+  "parts": {},
+  "gait": "hop"
  },
  {
   "id": "cast_pj_jara_act",
@@ -27431,7 +27439,8 @@
   ],
   "hanging": false,
   "skin": "pj_jara",
-  "parts": {}
+  "parts": {},
+  "gait": "crawl"
  },
  {
   "id": "cast_pj_ddong_act",
@@ -27465,7 +27474,8 @@
   ],
   "hanging": false,
   "skin": "pj_ddong",
-  "parts": {}
+  "parts": {},
+  "gait": "hop"
  },
  {
   "id": "cast_pj_songgot_act",
@@ -27499,7 +27509,8 @@
   ],
   "hanging": false,
   "skin": "pj_songgot",
-  "parts": {}
+  "parts": {},
+  "gait": "hop"
  },
  {
   "id": "cast_pj_jeolgu_act",
@@ -27533,7 +27544,8 @@
   ],
   "hanging": false,
   "skin": "pj_jeolgu",
-  "parts": {}
+  "parts": {},
+  "gait": "thump"
  },
  {
   "id": "cast_pj_myeongseok_act",
@@ -27567,7 +27579,8 @@
   ],
   "hanging": false,
   "skin": "pj_myeongseok",
-  "parts": {}
+  "parts": {},
+  "gait": "roll"
  },
  {
   "id": "cast_pj_jige_act",
@@ -27601,7 +27614,8 @@
   ],
   "hanging": false,
   "skin": "pj_jige",
-  "parts": {}
+  "parts": {},
+  "gait": "stride"
  },
  {
   "id": "cast_hanbok_granny_walk_cycle_0",
@@ -31888,5 +31902,1633 @@
   "parts": {},
   "cycle": "run_front",
   "frame": 1
+ },
+ {
+  "id": "cast_wolf_run_back_0",
+  "path": "art/cast/cast_wolf_run_back_0.webp",
+  "sheet": "cast_w1_wolf_back",
+  "category": "cast",
+  "role": "wolf",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (drawn cycle)",
+  "height_units": 0.388,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "wolf",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   352,
+   622
+  ],
+  "hanging": false,
+  "skin": "wolf",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_wolf_run_back_1",
+  "path": "art/cast/cast_wolf_run_back_1.webp",
+  "sheet": "cast_w1_wolf_back",
+  "category": "cast",
+  "role": "wolf",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (drawn cycle)",
+  "height_units": 0.388,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "wolf",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   352,
+   622
+  ],
+  "hanging": false,
+  "skin": "wolf",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_wolf_climb_cycle_0",
+  "path": "art/cast/cast_wolf_climb_cycle_0.webp",
+  "sheet": "cast_w1_wolf_back",
+  "category": "cast",
+  "role": "wolf",
+  "variant": "climb_cycle_0",
+  "pose": "climb_cycle_0",
+  "view": "back",
+  "facing": "back",
+  "label": "climb_cycle frame 0 (drawn cycle)",
+  "height_units": 0.388,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "wolf",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   352,
+   622
+  ],
+  "hanging": false,
+  "skin": "wolf",
+  "parts": {},
+  "cycle": "climb_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_wolf_climb_cycle_1",
+  "path": "art/cast/cast_wolf_climb_cycle_1.webp",
+  "sheet": "cast_w1_wolf_back",
+  "category": "cast",
+  "role": "wolf",
+  "variant": "climb_cycle_1",
+  "pose": "climb_cycle_1",
+  "view": "back",
+  "facing": "back",
+  "label": "climb_cycle frame 1 (drawn cycle)",
+  "height_units": 0.388,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "wolf",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   352,
+   622
+  ],
+  "hanging": false,
+  "skin": "wolf",
+  "parts": {},
+  "cycle": "climb_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_run_back_0",
+  "path": "art/cast/cast_tiger_run_back_0.webp",
+  "sheet": "cast_w1_tiger_back",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "run_back_0",
+  "pose": "run_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   448,
+   564
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_run_back_1",
+  "path": "art/cast/cast_tiger_run_back_1.webp",
+  "sheet": "cast_w1_tiger_back",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "run_back_1",
+  "pose": "run_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "run_back frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   448,
+   564
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "run_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_climb_cycle_0",
+  "path": "art/cast/cast_tiger_climb_cycle_0.webp",
+  "sheet": "cast_w1_tiger_back",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "climb_cycle_0",
+  "pose": "climb_cycle_0",
+  "view": "back",
+  "facing": "back",
+  "label": "climb_cycle frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   448,
+   564
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "climb_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_climb_cycle_1",
+  "path": "art/cast/cast_tiger_climb_cycle_1.webp",
+  "sheet": "cast_w1_tiger_back",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "climb_cycle_1",
+  "pose": "climb_cycle_1",
+  "view": "back",
+  "facing": "back",
+  "label": "climb_cycle frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   448,
+   564
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "climb_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_tiger_dg_back_0",
+  "path": "art/cast/cast_tiger_dg_back_0.webp",
+  "sheet": "cast_w1_tiger_dg_back",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_back_0",
+  "pose": "dg_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "dg_back frame 0 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   475,
+   786
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_tiger_dg_back_1",
+  "path": "art/cast/cast_tiger_dg_back_1.webp",
+  "sheet": "cast_w1_tiger_dg_back",
+  "category": "cast",
+  "role": "tiger",
+  "variant": "dg_back_1",
+  "pose": "dg_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "dg_back frame 1 (drawn cycle)",
+  "height_units": 0.427,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   475,
+   786
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "cycle": "dg_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_goat_kid_4_run_front_0",
+  "path": "art/cast/cast_goat_kid_4_run_front_0.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_4",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.164,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_4",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_4",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_goat_kid_4_run_front_1",
+  "path": "art/cast/cast_goat_kid_4_run_front_1.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_4",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.164,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_4",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_4",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_mother_pig_walk_cycle_0",
+  "path": "art/cast/cast_mother_pig_walk_cycle_0.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_cycle_0",
+  "pose": "walk_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 0 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_mother_pig_walk_cycle_1",
+  "path": "art/cast/cast_mother_pig_walk_cycle_1.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_cycle_1",
+  "pose": "walk_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 1 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_mother_pig_walk_cycle_2",
+  "path": "art/cast/cast_mother_pig_walk_cycle_2.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_cycle_2",
+  "pose": "walk_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 2 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_mother_pig_walk_cycle_3",
+  "path": "art/cast/cast_mother_pig_walk_cycle_3.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_cycle_3",
+  "pose": "walk_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 3 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_mother_pig_walk_back_0",
+  "path": "art/cast/cast_mother_pig_walk_back_0.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_back_0",
+  "pose": "walk_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 0 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_mother_pig_walk_back_1",
+  "path": "art/cast/cast_mother_pig_walk_back_1.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_back_1",
+  "pose": "walk_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 1 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_mother_pig_walk_front_0",
+  "path": "art/cast/cast_mother_pig_walk_front_0.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_front_0",
+  "pose": "walk_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 0 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_mother_pig_walk_front_1",
+  "path": "art/cast/cast_mother_pig_walk_front_1.webp",
+  "sheet": "cast_w1_mother_pig_walk",
+  "category": "cast",
+  "role": "mother_pig",
+  "variant": "walk_front_1",
+  "pose": "walk_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 1 (drawn cycle)",
+  "height_units": 0.301,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "mother_pig",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   246,
+   458
+  ],
+  "hanging": false,
+  "skin": "mother_pig",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_rich_lady_walk_cycle_0",
+  "path": "art/cast/cast_rich_lady_walk_cycle_0.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_cycle_0",
+  "pose": "walk_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 0 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_rich_lady_walk_cycle_1",
+  "path": "art/cast/cast_rich_lady_walk_cycle_1.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_cycle_1",
+  "pose": "walk_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 1 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_rich_lady_walk_cycle_2",
+  "path": "art/cast/cast_rich_lady_walk_cycle_2.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_cycle_2",
+  "pose": "walk_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 2 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_rich_lady_walk_cycle_3",
+  "path": "art/cast/cast_rich_lady_walk_cycle_3.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_cycle_3",
+  "pose": "walk_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 3 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_rich_lady_walk_back_0",
+  "path": "art/cast/cast_rich_lady_walk_back_0.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_back_0",
+  "pose": "walk_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 0 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_rich_lady_walk_back_1",
+  "path": "art/cast/cast_rich_lady_walk_back_1.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_back_1",
+  "pose": "walk_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 1 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_rich_lady_walk_front_0",
+  "path": "art/cast/cast_rich_lady_walk_front_0.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_front_0",
+  "pose": "walk_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 0 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_rich_lady_walk_front_1",
+  "path": "art/cast/cast_rich_lady_walk_front_1.webp",
+  "sheet": "cast_w1_rich_lady_walk",
+  "category": "cast",
+  "role": "rich_lady",
+  "variant": "walk_front_1",
+  "pose": "walk_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 1 (drawn cycle)",
+  "height_units": 0.344,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "rich_lady",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   271,
+   461
+  ],
+  "hanging": false,
+  "skin": "rich_lady",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_peasant_mother_walk_cycle_0",
+  "path": "art/cast/cast_peasant_mother_walk_cycle_0.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_cycle_0",
+  "pose": "walk_cycle_0",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 0 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 0
+ },
+ {
+  "id": "cast_peasant_mother_walk_cycle_1",
+  "path": "art/cast/cast_peasant_mother_walk_cycle_1.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_cycle_1",
+  "pose": "walk_cycle_1",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 1 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 1
+ },
+ {
+  "id": "cast_peasant_mother_walk_cycle_2",
+  "path": "art/cast/cast_peasant_mother_walk_cycle_2.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_cycle_2",
+  "pose": "walk_cycle_2",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 2 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 2
+ },
+ {
+  "id": "cast_peasant_mother_walk_cycle_3",
+  "path": "art/cast/cast_peasant_mother_walk_cycle_3.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_cycle_3",
+  "pose": "walk_cycle_3",
+  "view": "side",
+  "facing": "right",
+  "label": "walk_cycle frame 3 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_cycle",
+  "frame": 3
+ },
+ {
+  "id": "cast_peasant_mother_walk_back_0",
+  "path": "art/cast/cast_peasant_mother_walk_back_0.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_back_0",
+  "pose": "walk_back_0",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 0 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 0
+ },
+ {
+  "id": "cast_peasant_mother_walk_back_1",
+  "path": "art/cast/cast_peasant_mother_walk_back_1.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_back_1",
+  "pose": "walk_back_1",
+  "view": "back",
+  "facing": "back",
+  "label": "walk_back frame 1 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_back",
+  "frame": 1
+ },
+ {
+  "id": "cast_peasant_mother_walk_front_0",
+  "path": "art/cast/cast_peasant_mother_walk_front_0.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_front_0",
+  "pose": "walk_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 0 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_peasant_mother_walk_front_1",
+  "path": "art/cast/cast_peasant_mother_walk_front_1.webp",
+  "sheet": "cast_w1_peasant_mother_walk",
+  "category": "cast",
+  "role": "peasant_mother",
+  "variant": "walk_front_1",
+  "pose": "walk_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "walk_front frame 1 (drawn cycle)",
+  "height_units": 0.271,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "peasant_mother",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   256,
+   542
+  ],
+  "hanging": false,
+  "skin": "peasant_mother",
+  "parts": {},
+  "cycle": "walk_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_goat_kid_1_run_front_0",
+  "path": "art/cast/cast_goat_kid_1_run_front_0.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_1",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.183,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_1",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_1",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_goat_kid_1_run_front_1",
+  "path": "art/cast/cast_goat_kid_1_run_front_1.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_1",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.183,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_1",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_1",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_goat_kid_2_run_front_0",
+  "path": "art/cast/cast_goat_kid_2_run_front_0.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_2",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.178,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_2",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_2",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_goat_kid_2_run_front_1",
+  "path": "art/cast/cast_goat_kid_2_run_front_1.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_2",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.178,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_2",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_2",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_goat_kid_3_run_front_0",
+  "path": "art/cast/cast_goat_kid_3_run_front_0.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_3",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.171,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_3",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_3",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_goat_kid_3_run_front_1",
+  "path": "art/cast/cast_goat_kid_3_run_front_1.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_3",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.171,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_3",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_3",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_goat_kid_5_run_front_0",
+  "path": "art/cast/cast_goat_kid_5_run_front_0.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_5",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.159,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_5",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_5",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_goat_kid_5_run_front_1",
+  "path": "art/cast/cast_goat_kid_5_run_front_1.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_5",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.159,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_5",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_5",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "id": "cast_goat_kid_6_run_front_0",
+  "path": "art/cast/cast_goat_kid_6_run_front_0.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_6",
+  "variant": "run_front_0",
+  "pose": "run_front_0",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 0 (drawn cycle)",
+  "height_units": 0.154,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_6",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_6",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 0
+ },
+ {
+  "id": "cast_goat_kid_6_run_front_1",
+  "path": "art/cast/cast_goat_kid_6_run_front_1.webp",
+  "sheet": "cast_w1_kid_run_front",
+  "category": "cast",
+  "role": "goat_kid_6",
+  "variant": "run_front_1",
+  "pose": "run_front_1",
+  "view": "front",
+  "facing": "front",
+  "label": "run_front frame 1 (drawn cycle)",
+  "height_units": 0.154,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "goat_kid_6",
+   "wave1",
+   "cycle"
+  ],
+  "px": [
+   549,
+   702
+  ],
+  "hanging": false,
+  "skin": "goat_kid_6",
+  "parts": {},
+  "cycle": "run_front",
+  "frame": 1
+ },
+ {
+  "path": "art/cast/cast_hanbok_boy_climb_a.webp",
+  "sheet": "cast_sm_climb",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "view": "back",
+  "facing": "back",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   251,
+   538
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "id": "cast_hanbok_boy_climb_cycle_0",
+  "variant": "climb_cycle_0",
+  "pose": "climb_cycle_0",
+  "cycle": "climb_cycle",
+  "frame": 0,
+  "label": "climb_cycle frame 0 (alias of climb_a, wave 1)"
+ },
+ {
+  "path": "art/cast/cast_hanbok_boy_climb_b.webp",
+  "sheet": "cast_sm_climb",
+  "category": "cast",
+  "role": "hanbok_boy",
+  "view": "back",
+  "facing": "back",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_boy",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   242,
+   538
+  ],
+  "hanging": false,
+  "skin": "hanbok_boy",
+  "parts": {},
+  "id": "cast_hanbok_boy_climb_cycle_1",
+  "variant": "climb_cycle_1",
+  "pose": "climb_cycle_1",
+  "cycle": "climb_cycle",
+  "frame": 1,
+  "label": "climb_cycle frame 1 (alias of climb_b, wave 1)"
+ },
+ {
+  "path": "art/cast/cast_hanbok_girl_climb_a.webp",
+  "sheet": "cast_sm_climb",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "view": "back",
+  "facing": "back",
+  "height_units": 0.235,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   252,
+   511
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "id": "cast_hanbok_girl_climb_cycle_0",
+  "variant": "climb_cycle_0",
+  "pose": "climb_cycle_0",
+  "cycle": "climb_cycle",
+  "frame": 0,
+  "label": "climb_cycle frame 0 (alias of climb_a, wave 1)"
+ },
+ {
+  "path": "art/cast/cast_hanbok_girl_climb_b.webp",
+  "sheet": "cast_sm_climb",
+  "category": "cast",
+  "role": "hanbok_girl",
+  "view": "back",
+  "facing": "back",
+  "height_units": 0.234,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "hanbok_girl",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   256,
+   510
+  ],
+  "hanging": false,
+  "skin": "hanbok_girl",
+  "parts": {},
+  "id": "cast_hanbok_girl_climb_cycle_1",
+  "variant": "climb_cycle_1",
+  "pose": "climb_cycle_1",
+  "cycle": "climb_cycle",
+  "frame": 1,
+  "label": "climb_cycle frame 1 (alias of climb_b, wave 1)"
+ },
+ {
+  "path": "art/cast/cast_tiger_rope_a.webp",
+  "sheet": "cast_sm_tiger_rope",
+  "category": "cast",
+  "role": "tiger",
+  "view": "back",
+  "facing": "back",
+  "height_units": 0.494,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   323,
+   649
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "id": "cast_tiger_rope_climb_0",
+  "variant": "rope_climb_0",
+  "pose": "rope_climb_0",
+  "cycle": "rope_climb",
+  "frame": 0,
+  "label": "rope_climb frame 0 (alias of rope_a, wave 1)"
+ },
+ {
+  "path": "art/cast/cast_tiger_rope_b.webp",
+  "sheet": "cast_sm_tiger_rope",
+  "category": "cast",
+  "role": "tiger",
+  "view": "back",
+  "facing": "back",
+  "height_units": 0.494,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   319,
+   649
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "id": "cast_tiger_rope_climb_1",
+  "variant": "rope_climb_1",
+  "pose": "rope_climb_1",
+  "cycle": "rope_climb",
+  "frame": 1,
+  "label": "rope_climb frame 1 (alias of rope_b, wave 1)"
+ },
+ {
+  "path": "art/cast/cast_tiger_axe_a.webp",
+  "sheet": "cast_sm_tiger_tree",
+  "category": "cast",
+  "role": "tiger",
+  "view": "side",
+  "facing": "right",
+  "height_units": 0.491,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   313,
+   564
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "id": "cast_tiger_axe_climb_0",
+  "variant": "axe_climb_0",
+  "pose": "axe_climb_0",
+  "cycle": "axe_climb",
+  "frame": 0,
+  "label": "axe_climb frame 0 (alias of axe_a, wave 1)"
+ },
+ {
+  "path": "art/cast/cast_tiger_axe_b.webp",
+  "sheet": "cast_sm_tiger_tree",
+  "category": "cast",
+  "role": "tiger",
+  "view": "side",
+  "facing": "right",
+  "height_units": 0.408,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "tiger",
+   "wave1",
+   "cycle",
+   "alias"
+  ],
+  "px": [
+   356,
+   470
+  ],
+  "hanging": false,
+  "skin": "tiger",
+  "parts": {},
+  "id": "cast_tiger_axe_climb_1",
+  "variant": "axe_climb_1",
+  "pose": "axe_climb_1",
+  "cycle": "axe_climb",
+  "frame": 1,
+  "label": "axe_climb frame 1 (alias of axe_b, wave 1)"
  }
 ]

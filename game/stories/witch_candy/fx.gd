@@ -150,11 +150,18 @@ func _drop_flyer(n: Node3D) -> void:
 		n.queue_free()
 
 
+## wave 1 (2026-11-24, gate audit v1: "small white cloud puffs float in mid-air in the room, away from the pot"; user
+## rule "이상한데서 김이 모락모락": steam / smoke / puffs only from hot things): the smoke cloud only at the boiling
+## pot's mouth, rising straight up; a POOF on a character is a ring of golden sparkles rising round them (no cloud);
+## nothing is thrown sideways into the room any more (the four sparkles flew out level and hung by the wainscot).
 func _poof(at: Vector3, big := 1.0) -> void:
-	fly("story_wc_pot_16", at, at + Vector3.UP * 0.06 * big, 0.12 * big, 0.45, 0.02, 0.15)
-	for k in 4:
-		var d := _right().rotated(Vector3.UP, k * PI * 0.5 + 0.4) * 0.12 * big
-		fly("story_wc_pot_19", at, at + d + Vector3.UP * (0.08 + 0.04 * k) * big, 0.04 * big, 0.5, 0.05, 0.0, 6.0)
+	var at_pot := _sp("pot") != null and at.distance_to(_pot_mouth()) < 0.12
+	if at_pot:
+		fly("story_wc_pot_16", at, at + Vector3.UP * 0.1 * big, 0.12 * big, 0.45, 0.02, 0.15)
+	else:
+		for k in 5:
+			var d := _right() * (float(k) - 2.0) * 0.035 * big
+			fly("story_wc_pot_19", at + d, at + d * 1.3 + Vector3.UP * (0.08 + 0.02 * (k % 2)) * big, 0.03 * big, 0.5, 0.05, 0.0, 6.0)
 	_sfx("wc.boing", at)
 
 
@@ -873,7 +880,7 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 	stage.shake(1.4)
 	_eerie_t = 0.4
 	await R._say(str(st["eat"]))
-	_wisps = 1.0  # white wisps puff out of the black "oooh" mouth while she says it
+	_wisps = 0.0  # wave 1: no white wisps out of the "oooh" mouth (puffs only from hot things); was 1.0
 	await R._say(str(st["ghost"]))
 	_wisps = 0.0
 	if w:
@@ -1124,7 +1131,7 @@ func _step_ghost(dt: float) -> void:
 	if _eerie > 0.6 and fmod(_t, 0.45) < dt:  # smoke only while the pot is brewing (not over faces later)
 		var po := _pot_open()
 		var st0: Vector3 = po[0] + (po[1] as Vector3) * randf_range(-0.5, 0.5) * float(po[3]) + Vector3.UP * float(po[4]) * 0.5
-		fly("story_wc_pot_16", st0, st0 + Vector3.UP * 0.18 + _sx() * sin(_t) * 0.03, 0.045, 1.3, 0.0, 0.0, 1.0)
+		fly("story_wc_pot_16", st0, st0 + Vector3.UP * 0.1 + _sx() * sin(_t) * 0.02, 0.04, 1.1, 0.0, 0.0, 1.0)
 	# ghost-mouth wisps: little white puffs out of the "oooh" mouth
 	if _wisps > 0.0:
 		_wisp_cd -= dt
@@ -1716,7 +1723,8 @@ func step(dt: float) -> void:
 	if _liquid and _liquid.visible and _eerie <= 0.6 and fmod(_t, 0.8) < dt:  # gentle steam off the boiling top
 		var po := _pot_open()
 		var s0: Vector3 = po[0] + (po[1] as Vector3) * randf_range(-0.4, 0.4) * float(po[3]) + Vector3.UP * float(po[4]) * 0.6
-		fly("story_wc_pot_16", s0, s0 + Vector3.UP * 0.12, 0.03, 1.2, 0.0, 0.0, 0.6)
+		# wave 1: wisps stay low over the boiling top (risen 0.12 they hung in mid-air by the window, read as stray puffs)
+		fly("story_wc_pot_16", s0, s0 + Vector3.UP * 0.05, 0.022, 0.9, 0.0, 0.0, 0.6)
 	_step_glides(dt)
 	_step_ghost(dt)
 	_step_parade_ghost(dt)

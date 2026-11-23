@@ -162,3 +162,6 @@ SOUND = {"catalog": "res://audio/sound_catalog.json", "light_beds": {"": "day"},
 for _b in BEATS:
     if _b.get("spread"):
         _b["sound"] = {"bed": "@light", "emitters": ["stream", "trees"]}
+
+# wave 1 (2026-11-24, gate audit v1): the gate needs OVERLAP_COUNT / OCCLUDE_COUNT printed for every tale
+EXTRA = {"overlap_check": True}

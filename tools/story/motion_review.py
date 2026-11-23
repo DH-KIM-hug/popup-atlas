@@ -19,6 +19,11 @@ Automatic flags (printed as `MOTION_FLAG <NN> <kind> <actor> t=<t0> ...`, then `
   SKATE            drawn-cycle phase advanced vs ground distance (one cycle per 0.9 height) off by > 40 %
   GLIDE            a handler slid a figure with no cycle along the ground (> 1 height, little height change)
   SPEED_JUMP       the speed changed by more than ~2.5 heights / s within one frame (a pop start / stop)
+  OFF_FRAME        the mover is off the frame (less than half its figure inside, or not drawn by the camera) or under
+                   the caption strip (more than half its head-and-body box behind the shown caption) for more than
+                   30 % of the segment (wave 1; gate audit v1: "the camera loses the traveller" in 5 of 7 tales).
+                   From TRACK (8 Hz, the camera that renders) or MOVE trk (4 Hz); CAPTION 1|0 lines say when the caption
+                   shows (older logs: the caption counts as always shown)
 The offset between the story clock and the video is the video length minus the last logged t (fixed 30 fps runs);
 pass --offset to override. A log without MOVE (and TRACK) lines cannot be reviewed: MOTION_NOLOG, exit 2.
 """
@@ -126,11 +131,77 @@ def catalog_cycles():
     return cyc
 
 
-def flags_for(s, cat):
+CAPTION_RECT = (0.12, 0.834, 0.88, 0.975)  # story_ui.gd caption strip (anchors 0.12-0.88, 170-26 px above the bottom)
+OFF_FRAC = 0.30
+
+
+def parse_captions(text):
+    """[(t0, t1)] while the caption strip shows; None when the log has no CAPTION lines."""
+    ev = [(float(m.group(2)), m.group(1) == "1") for m in re.finditer(r"^CAPTION ([01]) t=(\d+(?:\.\d+)?)", text, re.M)]
+    if not ev:
+        return None
+    out, t0 = [], None
+    for t, on in ev:
+        if on and t0 is None:
+            t0 = t
+        elif not on and t0 is not None:
+            out.append((t0, t))
+            t0 = None
+    if t0 is not None:
+        out.append((t0, 1e9))
+    return out
+
+
+def frame_samples(s, tr, vp):
+    """(t, x, y, h) in viewport fractions: TRACK if logged (finer, the rendering camera), else MOVE trk."""
+    tt = [q for q in tr.get(s["role"], []) if s["t0"] <= q[0] <= s["t1"]]
+    if len(tt) >= 2:
+        return [(q[0], q[1] / vp[0], q[2] / vp[1], q[3] / vp[1]) for q in tt], 8.0
+    return [(q[0], q[1], q[2], q[3]) for q in s["trk"] if s["t0"] <= q[0] <= s["t1"]], 4.0
+
+
+def off_frame(s, tr, vp, caps):
+    """("OFF_FRAME", why) when the mover is off the frame or under the caption for > 30 % of the segment."""
+    dur = s["t1"] - s["t0"]
+    if dur < 0.6 or s.get("track_only"):
+        return None
+    pts, hz = frame_samples(s, tr, vp)
+    want = max(1, int(dur * hz))
+    off = under = 0
+    for t, x, y, h in pts:
+        w = 0.45 * h  # a figure is about half as wide as tall
+        x0, x1, y0, y1 = x - w / 2, x + w / 2, y - h, y
+        area = max((x1 - x0) * (y1 - y0), 1e-6)
+        ix = max(0.0, min(x1, 1.0) - max(x0, 0.0)) * max(0.0, min(y1, 1.0) - max(y0, 0.0))
+        if ix / area < 0.5:
+            off += 1
+            continue
+        if caps is None or any(a <= t <= b for a, b in caps):
+            cx0, cy0, cx1, cy1 = CAPTION_RECT
+            ub0 = y - 0.9 * h  # head and body (upper 60 %)
+            ub1 = y - 0.3 * h
+            cov = max(0.0, min(x1, cx1) - max(x0, cx0)) * max(0.0, min(ub1, cy1) - max(ub0, cy0))
+            if cov / max((x1 - x0) * (ub1 - ub0), 1e-6) > 0.5:
+                under += 1
+    missing = max(0, want - len(pts))  # no sample: behind the camera / not drawn
+    bad = (off + under + missing) / max(want, len(pts), 1)
+    if bad > OFF_FRAC:
+        return ("OFF_FRAME", f"{bad * 100:.0f}% of {dur:.1f} s off the frame / under the caption (off {off}, under "
+                f"caption {under}, not drawn {missing} of {max(want, len(pts))} samples)")
+    return None
+
+
+def flags_for(s, cat, tr=None, vp=(1366.0, 1024.0), caps=None):
     out = []
+    if tr is not None and s["verb"] in ("walk", "run", "climb", "fly"):
+        of = off_frame(s, tr, vp, caps)
+        if of:
+            out.append(of)
     skin_c = cat.get(s["skin"], {})
     n = sum(f[2] for f in s["figs"]) or 1
-    static = [(f, v, c) for f, v, c in s["figs"] if v != "rig" and f not in skin_c]
+    # "rig": the legacy leg rig (sun_wind); "gait-<kind>": an object's own paper motion (CastPuppet._gait_step:
+    # hop / crawl / roll / thump / stride, patjuk's helpers) - neither is a static card
+    static = [(f, v, c) for f, v, c in s["figs"] if v != "rig" and not v.startswith("gait") and f not in skin_c]
     nstatic = sum(c for _, _, c in static)
     h = max(s["hgt"], 0.01)
     if s.get("track_only"):
@@ -305,6 +376,8 @@ def main():
     ap.add_argument("mp4")
     ap.add_argument("--offset", type=float, default=None)
     ap.add_argument("--no-tiles", action="store_true")
+    ap.add_argument("--out", default=None, help="write tiles + motion_review.md here instead of artifacts/<tale>/motion "
+                    "(a beat check that must not replace the tale's gate review)")
     ap.add_argument("--ref-log", default=None, help="the log recorded WITH the mp4, when <run.log> is a later re-run "
                     "of the same build (no movie): times are mapped through shared LINE / SEG / BEAT prints")
     a = ap.parse_args()
@@ -331,7 +404,7 @@ def main():
         off = a.offset
     print(f"MOTION_OFFSET {off:.2f} (video {dur:.1f} s, {W}x{H})")
     cat = catalog_cycles()
-    out = ROOT / "artifacts" / a.tale / "motion"
+    out = Path(a.out) if a.out else ROOT / "artifacts" / a.tale / "motion"
     out.mkdir(parents=True, exist_ok=True)
     md = out / "motion_review.md"
     run_id = f"{log.name} {log_hash(log)}"
@@ -341,8 +414,11 @@ def main():
         prev = {}
     rows = []
     nflags = 0
+    caps = parse_captions(ref_text)
+    m = re.search(r"^TRACK_VP (\d+)x(\d+)", text, re.M)
+    vp = (float(m.group(1)), float(m.group(2))) if m else (1366.0, 1024.0)
     for i, s in enumerate(segs, 1):
-        fl = flags_for(s, cat)
+        fl = flags_for(s, cat, tr, vp, caps)
         for k, why in fl:
             nflags += 1
             print(f"MOTION_FLAG {i:02d} {k} {s['role']} t={s['t0']:.2f}-{s['t1']:.2f} {s['verb']} {why}")

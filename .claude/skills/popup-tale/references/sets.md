@@ -165,6 +165,13 @@ new set: papercraft_notes.md.
   OVERLAP_COUNT and OCCLUDE_COUNT must be 0 in the final run, or each remaining line listed as an intended contact
   (`overlap_ok`) with a reason. The sunmoon rope hung through the tree canopy ("동아줄이 나무에 걸려서 뭔가 이상하네융")
   until it was offset along the tree card's own normal in front of the trunk.
+- OCCLUDE also casts rays (wave 1, game/story/sight_check.gd, gate runs only: `--log-track` or the movie maker):
+  from the camera to a 3x3 grid over the head and body of every MOVING actor and of the actor whose quote plays;
+  template lawn cards (by the print's alpha), set-piece cards and roofs / house bodies, other actors' figures and
+  handler props count when they hide ≥ 45 % of the points for 0.4 s: `OCCLUDE <role> lawn:<print>` /
+  `<piece>` / `<role>` / `world:<node>` / `fx:<node>`. It catches what the box test missed (a roof filling the frame
+  over the witch_candy parade, Dahyun's hat in the doorway, turnip's template leaves over a runner). List an intended
+  one in `overlap_ok` ([role, "lawn:<print>"] or [role, "<piece>"]).
 - Stage `overlap_check` logs OVERLAP (footprints: actor / actor, actor / set base line; open doorways excluded) and
   OCCLUDE (a nearer piece covering > 35 % of an actor, only pieces the camera can see: inside a house only its room)
   with OVERLAP_COUNT at the end; OVERLAP_COUNT / OCCLUDE_COUNT in the summary are run totals over every page (they used
@@ -206,7 +213,9 @@ new set: papercraft_notes.md.
   an edge (tools/atlas/tn_holes.py derives all three from cards we had). Soil props get the soil cut edge (art.md).
 
 ## Stray effects (user: "이상한데서 김이 모락모락", "셋째집 연기뭐지?")
-Steam only where something is hot, from its mouth. Look for smoke / puffs nobody asked for: the template's ChimneySmoke
+Steam only where something is hot, from its mouth. A magic POOF on a character is golden sparkles rising round
+them, never a white cloud (witch_candy wave 1: clouds and sparkles thrown sideways from a poof hung in mid-air by
+the wainscot and read as stray steam); no wisps out of mouths. Look for smoke / puffs nobody asked for: the template's ChimneySmoke
 keeps rising where its house was cleared (hide it in the handler for a set with its own houses), and background village
 chimneys bleed through; figures drawn "huffing" carry a breath cloud (tools/cast/erase_puffs.py: cream component from
 a seed, inside-silhouette part inpainted, the rest cleared); sparkle bursts on growth / cooking read as steam from

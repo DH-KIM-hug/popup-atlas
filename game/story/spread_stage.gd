@@ -173,6 +173,14 @@ func build_async(seed_v: int, view_i: int, with_audio: bool, budget_ms: float) -
 	await _slicer.tick()
 	if has_walker:
 		_swap_puppet(cast[walker_role])
+		# MOVE / TRACK lines for the legacy Walker (gate audit v1: sun_wind's traveller was invisible to the gate)
+		var wl := WalkerLog.new()
+		wl.name = "WalkerLog"
+		wl.walker = world.walker
+		wl.puppet = world.puppet
+		wl.role = walker_role
+		wl.skin = str((cast[walker_role] as Dictionary).get("skin", walker_role))
+		add_child(wl)
 	else:
 		world.puppet.visible = false
 		world.puppet.process_mode = Node.PROCESS_MODE_DISABLED
@@ -556,6 +564,11 @@ static func _sky_texture(top: Color, hor: Color) -> Texture2D:
 ##    tale `overlap_ok` ([a, b] or [a, "*"]) are intentional contacts (holding the pot, sitting on the step).
 var _overlap_t := 0.0
 var overlap_live := {}
+var talking := ""  ## the role whose quote is playing (runner, for the line-of-sight OCCLUDE check)
+var _sight_on: bool = "--log-track" in OS.get_cmdline_user_args() or "--sight-check" in OS.get_cmdline_user_args() \
+	or Engine.get_write_movie_path() != ""
+var _sight_t := 0
+var _sight_prev := {}
 var overlap_count := 0
 var occlude_count := 0
 ## run totals over every page (wolf_goats 2026-11-23: the per-stage counts only covered the last page in the summary)
@@ -822,6 +835,35 @@ func _overlap_check() -> void:
 			var ov := ab.intersection(_piece_box(sp))
 			if ov.get_area() / maxf(area, 1.0) > 0.35:
 				now["OCCLUDE %s %s" % [a.role, sp.piece_name]] = snappedf(ov.get_area() / area, 0.01)
+	# line of sight (wave 1): template lawn cards, roofs / house bodies, other actors' figures and props crossing the
+	# rays to a MOVING or SPEAKING actor's head and body (SightCheck). Only in gate runs (--log-track / movie maker):
+	# it costs a few ms per check. A blocker must hold for two checks in a row (0.4 s) to count.
+	if _sight_on:
+		_sight_t += 1
+		var cand := {}
+		if _sight_t % 2 == 0:
+			for a: StoryActor in vis:
+				if not (a.moving() or (talking != "" and (a.role == talking or a.role.replace("_", "") == talking))):
+					continue
+				if house_of(a.global_position) != cam_house:
+					continue
+				var ab3 := _actor_box(a)
+				if ab3.size.x <= 1.0 or ab3.intersection(screen).get_area() < 0.5 * ab3.get_area():
+					continue  # off the frame: MOTION_FLAG off_frame / SPEAKER_OFF report that
+				var hid := SightCheck.hidden(self, cam, a, world)
+				for bn: String in hid:
+					var who := bn.get_slice(":", 1) if bn.contains(":") else bn
+					if float(hid[bn]) >= 0.45 and not _ok_pair(a.role, bn) and not _ok_pair(a.role, who):
+						var key := "OCCLUDE %s %s" % [a.role, bn]
+						cand[key] = snappedf(float(hid[bn]), 0.01)
+			for key in cand:
+				if _sight_prev.has(key) and not now.has(key):
+					now[key] = cand[key]
+			_sight_prev = cand
+		else:
+			for key in _sight_prev:  # keep confirmed blockers live between sight passes (no re-print)
+				if overlap_live.has(key):
+					now[key] = _sight_prev[key]
 	# handler props (wolf_goats): resting story props vs actors, vs set pieces, and props hiding an actor
 	for nm in props.keys():
 		if not _prop_live(nm):
@@ -900,6 +942,15 @@ func _add_light(sp: SetPiece, cfg: Array) -> void:
 ## in the set entry for pieces meant to sit on the road (none so far).
 func _check_footprint(sp: SetPiece, e: Dictionary) -> void:
 	var g := world.ground
+	# sky / floating pieces (clouds, hanging lanterns, a flue lifted over the hearth) have no footprint on the page:
+	# gate audit v1 counted sunmoon's 22 cloud bands as "on the road". Set entry `sky`, catalog tags sky / cloud /
+	# hanging, or a base lifted clear of the ground.
+	var ce := atlas_entry(str(e.get("card", "")))
+	var tags: Array = ce.get("tags", [])
+	var elev := sp.global_position.y - g.surface_y(Vector2(sp.global_position.x, sp.global_position.z))
+	if e.get("sky", false) or bool(ce.get("hanging", false)) or tags.has("sky") or tags.has("cloud") or elev > 0.12:
+		print("SET_CHECK ", sp.piece_name, " road=0 water=0 sky=1 elev=", snappedf(elev, 0.01))
+		return
 	var r: Vector3 = sp.global_transform.basis.x.normalized()  # the piece's own base line (turned pieces too)
 	var t: Vector3 = sp.global_transform.basis.z.normalized()
 	var road := 0

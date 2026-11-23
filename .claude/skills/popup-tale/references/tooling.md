@@ -26,9 +26,18 @@
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI
   layout with `gd_run.capture_scene` instead (but its stills do not follow story camera shots: camera.md).
 - For capture, use a fixed step (`--fixed-fps 30`) so autoplay recordings are frame-identical across runs.
+- One beat at the gate's size: `tools/story/with_godot.sh tools/story/w1_beat.sh TALE BEAT SEC /ABS/out.mp4`
+  (1200x900, --log-track --log-sound, the AVI to ~/.Trash); then `motion_review.py TALE out.log out.mp4`.
+- Movie-maker runs build the next page in one go (StoryRunner `_movie`): the per-frame wall-time budget of the
+  page prebuild turned into story time when the machine was slow (patjuk gate v1b froze 14 min on the cover with the
+  disk 99 % full). Recordings need no `--fixed` for this.
+- `RUNNER_OFF_TREE` in a log: a runner coroutine resumed after the runner left the tree (app quit / scene change);
+  `_frame` now parks it. Before 2026-11-24 this spun `_wait` forever in one frame (`get_tree()` null, 0 s steps):
+  patjuk gate v1 wrote 5 GB of errors and never ended. Never call `get_tree()` in a loop without an in-tree check.
 - Run-log flags: `--log-sound` (SFX lines), `--log-track` (StoryActor TRACK lines: foot point and on-screen height 8×/s
   while travelling), `--log-figs` (TRAVEL_FIG: the figure each travel uses). StoryActor prints MOVE lines for every
-  travel segment (motion_review.py reads them).
+  travel segment (motion_review.py reads them); the legacy Walker (sun_wind's traveller) prints them through
+  WalkerLog (figures `<pose>:rig`). `CAPTION 1|0 t=` lines say when the caption strip shows (OFF_FRAME check).
 - Motion tiles by hand: `tools/story/tiles.py IN.mp4 START DUR X Y W H OUT.jpg [cols]` (8 fps, crop, 2× scale);
   the gate's `tools/story/motion_review.py` cuts them per segment automatically.
 

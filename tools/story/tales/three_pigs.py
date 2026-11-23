@@ -490,3 +490,6 @@ for _b in BEATS:
 SOUND["fx"]["wolf_land"] = ["wolf.flop", {"sound": "wolf.yelp_far", "gain_db": 4, "delay": 0.1}]  # landing thud + yelp
 SOUND["fx"].update({"up:straw_pile": "ui.pop", "up:wood_pile": "ui.pop", "up:brick_pile": "ui.pop", "up:bucket": "ui.pop",
                     "up:wood_house:1": "build.hammer"})
+
+# wave 1 (2026-11-24, gate audit v1): the gate needs OVERLAP_COUNT / OCCLUDE_COUNT printed for every tale
+EXTRA = {"overlap_check": True}

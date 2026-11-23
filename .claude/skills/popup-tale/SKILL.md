@@ -101,7 +101,9 @@ A tale is not shown to the user until `gate.py` prints GATE PASS. An accepted ex
    (MOVE lines are always printed by StoryActor; TRACK lines with `--log-track` give tighter motion crops).
 2. `python3 tools/story/motion_review.py <tale> <run.log> <full.mp4>` → `artifacts/<tale>/motion/<NN>_<actor>_<t>.jpg`
    tiles + `artifacts/<tale>/motion/motion_review.md` (one row per walk / run / climb / flight segment; MOTION_FLAG
-   lines; MOTION_FLAGS=n).
+   lines; MOTION_FLAGS=n). OFF_FRAME (wave 1): the mover is off the frame, not drawn or under the shown caption for
+   more than 30 % of its segment — the camera lost the traveller (the commonest audit v1 failure); fix the shot,
+   don't accept it.
 3. Open EVERY tile and write a verdict (`ok` / `fix` + note) in each row of motion_review.md.
 4. Tick the fixed visual checklist in `artifacts/<tale>/gate.md` (gate.py writes it the first time): no white / cream
    rim on puppets ("흰색 테두리가 별로"); steam / smoke / puffs only from hot things ("이상한데서 김이 모락모락"); holes read as

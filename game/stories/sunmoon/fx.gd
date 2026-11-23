@@ -332,7 +332,7 @@ func fx(name: String) -> bool:
 		"axe_climb":
 			if tig:
 				tig.set_pose("axe_a")
-				tig.follow([_trunk(0.25, 0.1), _trunk(0.45, 0.1), _trunk(0.62, 0.1)], 0.12, "", true)
+				tig.follow([_trunk(0.25, 0.1), _trunk(0.45, 0.1), _trunk(0.62, 0.1)], 0.12, "axe", true)  # wave 1: the axe_climb cycle
 				for k in 3:
 					var n := _card(NOTCHES, 0.1)
 					n.global_position = _trunk(0.2 + 0.18 * k)

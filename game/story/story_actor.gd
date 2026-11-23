@@ -39,6 +39,7 @@ var hop_v := 0.0
 var lift := 0.0  ## extra height (falling, launched); set by tale fx
 var _root: Node3D
 var _climb_t := 0.0
+var _seg_from := Vector3.ZERO  ## where the current waypoint leg started (climb detection)
 
 
 func setup(role_: String, skin: String, height: float, cam: Camera3D, ground_: MeadowGround) -> void:
@@ -155,6 +156,7 @@ func follow(points: Array, spd := -1.0, wpose := "", fly := true) -> void:
 	if spd > 0.0:
 		speed = spd
 	walk_pose = wpose
+	_seg_from = global_position
 	_target = _path.pop_front()
 	_moving = true
 
@@ -210,14 +212,18 @@ func _process(dt: float) -> void:
 		global_position = p
 		if dist - step < 0.004:
 			if not _path.is_empty():
+				_seg_from = global_position
 				_target = _path.pop_front()
 			else:
 				_moving = false
 		var dn := to / maxf(dist, 1e-5)
-		if _fly and absf(dn.y) > 0.92 and puppet.has_pose("climb_cycle"):
-			# climbing a rope / braid (rapunzel): the drawn hand-over-hand flipbook, seen from behind
-			view = "back"
-			puppet.set_figure("climb_cycle", false)
+		var cf := _climb_fig(dn)
+		if cf == "fall":
+			_swap_figure(pose, facing_left and view_of(pose) == "side")  # a fall keeps its drawn falling figure
+		elif cf != "":
+			# climbing (ladder, tree, rope, braid): the drawn climb flipbook for this climb (wave 1, 2026-11-24)
+			view = view_of(cf)
+			puppet.set_figure(cf, facing_left and view == "side")
 			puppet._hp += step / maxf(puppet.height * 0.4, 0.01)  # hand over hand by height climbed (the puppet measures ground speed only)
 		elif _fly and absf(dn.y) > 0.92 and (puppet.has_pose("walk_back") or puppet.has_pose("back_walk")):
 			# climbing straight up / down (a ladder): seen from behind (drawn back walk cycle), a rung-to-rung bob
@@ -298,6 +304,8 @@ func _move_log(dt: float) -> void:
 	_mv_hp = float(puppet._hp)
 	_mv_ci = ci
 	var fk := "%s:%s" % [fig, puppet.pose_view(fig) if (cyc.has(fig) or not puppet._rigged) else "rig"]
+	if not cyc.has(fig) and puppet.gait() != "":
+		fk = "%s:gait-%s" % [fig, puppet.gait()]  # object gait (hop / crawl / roll / thump / stride), not a static card
 	_mv["figs"][fk] = int((_mv["figs"] as Dictionary).get(fk, 0)) + 1
 	_mv["views"][view] = int((_mv["views"] as Dictionary).get(view, 0)) + 1
 	var running := walk_pose.contains("run") or (walk_pose == "scared" and speed >= 0.4)
@@ -333,7 +341,7 @@ func _move_flush() -> void:
 				k = x
 		return k
 	var cyc: Dictionary = puppet._def().get("cycles", {})
-	var cy := "none"
+	var cy := "none" if puppet.gait() == "" else "gait-" + puppet.gait()
 	var top := 0
 	for fk: String in m["figs"]:
 		var f := fk.get_slice(":", 0)
@@ -442,6 +450,16 @@ func _pick_view(dir: Vector3) -> void:
 		if nv == "side" or (view == "side" and nv == view):
 			if absf(a) > 20.0 and absf(a) < 160.0:
 				left = a < 0.0
+	if puppet.gait() != "":
+		# an object with its own paper gait (patjuk's helpers): keeps its figure, a side figure faces the travel way
+		var gf := walk_pose if walk_pose != "" and puppet.has_pose(walk_pose) else pose
+		if not puppet.has_pose(gf):
+			gf = "calm"
+		view = view_of(gf)
+		if view == "side" and d != Vector3.ZERO:
+			facing_left = left
+		_swap_figure(gf, facing_left and view == "side")
+		return
 	# figure for the view (fall back to a view this role has)
 	var fig := walk_pose
 	# drawn cycles (side / back) when the cast has them: running (run pose or fast) or walking
@@ -480,3 +498,25 @@ func _pick_view(dir: Vector3) -> void:
 	if _log_figs and fig != _last_fig_logged:  # --log-figs: which figure each travel uses (hopping-card check)
 		_last_fig_logged = fig
 		print("TRAVEL_FIG ", role, " ", fig, " view=", nv, " puppet_fig=", puppet.get("pose"))
+
+
+## Climb figure (wave 1, 2026-11-24; generalises rapunzel's braid climb): an off-ground leg (follow(..., fly = true))
+## that rises or drops at least a quarter of the figure's height at more than 30° from level, or any leg of a
+## follow / climb step with walk pose "climb" / "<x>_climb" / "<x>" that has a drawn "<x>_climb" cycle. Picks
+## `<walk_pose>_climb` (axe_climb, rope_climb) when the skin has it, else `climb_cycle`; "" = not a climb (or no
+## climb cycle: the caller falls back to the ladder bob on the back walk); "fall" = a fast drop or a falling figure
+## (keeps the drawn falling card).
+func _climb_fig(dn: Vector3) -> String:
+	if not _fly:
+		return ""
+	var leg := _target - _seg_from
+	var steep := absf(dn.y) > 0.5 and absf(leg.y) > 0.25 * puppet.height
+	var named := walk_pose == "climb" or walk_pose.ends_with("_climb") or puppet.has_pose(walk_pose + "_climb")
+	if not (steep or named):
+		return ""
+	if pose.contains("slip") or (dn.y < -0.5 and (speed > 0.9 or pose.contains("fall") or pose.contains("tumble"))):
+		return "fall"  # sunmoon's oily-trunk slips keep the drawn slip figure
+	for c: String in [walk_pose if walk_pose.ends_with("_climb") else walk_pose + "_climb", "climb_cycle"]:
+		if c != "_climb" and puppet.has_pose(c):
+			return c
+	return ""

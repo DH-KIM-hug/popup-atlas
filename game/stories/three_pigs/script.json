@@ -47,6 +47,7 @@
  },
  "voice_notes": "ElevenLabs 목소리 확정 배정: nar=Annie, mom=Bella, piga=Hopsi, pigb=Peanut, pigc=Mithi, wolf=Brian. 아기·꼬마 역(piga, pigb, pigc)은 아기 말투 태그([baby voice, lisping, very young child, giggly])를 대사 방향에 부여.",
  "handler": "res://stories/three_pigs/fx.gd",
+ "overlap_check": true,
  "shots": {
   "stage": [
    4.6,

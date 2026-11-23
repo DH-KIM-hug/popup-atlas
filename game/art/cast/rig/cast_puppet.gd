@@ -161,6 +161,8 @@ static func skin_def(s: String) -> Dictionary:
 		d["paths"][str(e["id"])] = pth if pth.begins_with("res://") else "res://" + pth
 		d["hu"][str(e["id"])] = float(e.get("height_units", 0.0))
 		d["views"][v] = str(e.get("view", "front"))
+		if e.has("gait"):  # an object that travels by its own paper motion (wave 1: patjuk's helpers)
+			d["gait"] = str(e["gait"])
 		if e.has("cycle"):  # flipbook frame of a drawn cycle (run): cycles[pose] = [paths in order]
 			if not d.has("cycles"):
 				d["cycles"] = {}
@@ -550,6 +552,9 @@ func _hop_step(dt: float) -> void:
 	if cyc.has(pose):
 		_cycle_step(cyc[pose], dt)
 		return
+	if gait() != "":
+		_gait_step(gait(), dt)
+		return
 	var m := -1.0 if _mirror else 1.0
 	var moving := speed > 0.03
 	var y := 0.0
@@ -903,3 +908,87 @@ func _rim_window(c: PaperCard, vmin: float, vmax: float, rim: float) -> void:
 	m.set_shader_parameter("rim_v_max", vmax)
 	m.set_shader_parameter("rim_width", rim)
 	m.set_shader_parameter("rim_mix", 0.0)  # no cream die-cut rim on any puppet (2026-11-23, see PaperCard._materials)
+
+
+# ------------------------------------------------------------------ object gaits (wave 1, 2026-11-24)
+## Things that are not people travel by a paper motion that fits them instead of a drawn cycle (patjuk's helpers;
+## gate audit v1: "the chestnut, turtle, dung, awl, mortar, mat and jige all slide in as static cards"). Catalog
+## field `gait` on the skin's figures:
+##   hop    - bounces along (chestnut, dung, awl): one arc per 0.55 height, squash on landing, stretch on take-off
+##   crawl  - low quick shuffle (turtle): tiny bob, alternating tilt, one step per 0.3 height
+##   roll   - rolls along (straw mat): turns over and over about its middle, one turn per pi x its height
+##   thump  - heavy waddle (stone mortar): rocks onto one bottom corner, then the other, a dip on each landing
+##   stride - two-legged rock (A-frame carrier): a lighter waddle on its two legs with a small bob
+## The phase advances with ground distance (no skating); `foot_contact("hop", 0)` on each landing (footsteps / thuds).
+func gait() -> String:
+	return str(_def().get("gait", ""))
+
+
+func _gait_step(g: String, dt: float) -> void:
+	var m := -1.0 if _mirror else 1.0
+	var moving := speed > 0.03
+	var h := height
+	var per := {"hop": 0.55, "crawl": 0.3, "roll": PI * 0.5, "thump": 0.45, "stride": 0.4}.get(g, 0.5) as float
+	var hp0 := floorf(_hp)
+	if moving:
+		_hp += speed * dt / maxf(h * per, 0.01)
+	else:
+		_hp = lerpf(_hp, roundf(_hp), 1.0 - exp(-8.0 * dt))  # settle on a rest pose
+	if floorf(_hp) != hp0 and moving:
+		foot_contact.emit("hop", 0)
+	var ph := fposmod(_hp, 1.0)
+	var y := 0.0
+	var rz := 0.0
+	var sx := 1.0
+	var sy := 1.0
+	var pivot := Vector3.ZERO  # rotation pivot in card space (bottom centre = origin)
+	match g:
+		"hop":
+			var air := clampf((ph - 0.15) / 0.85, 0.0, 1.0)
+			y = sin(PI * air) * h * 0.22
+			if ph < 0.15:  # squashed on the ground between hops
+				var k := sin(PI * ph / 0.15)
+				sy = 1.0 - 0.16 * k
+				sx = 1.0 + 0.12 * k
+			else:
+				sy = 1.0 + 0.06 * sin(PI * air)
+			rz = -deg_to_rad(6.0) * sin(TAU * air) * m
+		"crawl":
+			y = absf(sin(TAU * ph)) * h * 0.02
+			rz = deg_to_rad(2.5) * sin(TAU * ph)
+			sx = 1.0 + 0.03 * sin(TAU * ph * 2.0)
+		"roll":
+			rz = -TAU * _hp * m
+			pivot = Vector3(0, h * 0.5, 0)
+			# the centre rides high enough that the turning card's lowest corner just touches the ground
+			y = absf(_half_w() * sin(rz)) + absf(h * 0.5 * cos(rz)) - h * 0.5
+		"thump":
+			var side := 1.0 if int(floorf(_hp)) % 2 == 0 else -1.0
+			var lift := sin(PI * ph)
+			rz = deg_to_rad(9.0) * lift * side
+			pivot = Vector3(side * _half_w(), 0, 0)
+			if ph < 0.12:
+				sy = 1.0 - 0.08 * sin(PI * ph / 0.12)
+				sx = 1.0 + 0.05 * sin(PI * ph / 0.12)
+		"stride":
+			var side2 := 1.0 if int(floorf(_hp)) % 2 == 0 else -1.0
+			rz = deg_to_rad(7.0) * sin(PI * ph) * side2
+			pivot = Vector3(side2 * _half_w() * 0.8, 0, 0)
+			y = sin(PI * ph) * h * 0.03
+	if not moving and g != "roll":
+		y = 0.0
+		var idle := deg_to_rad(1.0) * idle_amount * sin(_t * 1.3 + 0.7)
+		rz = idle
+	var pl := 0.03 * sin(_pose_hop * PI)
+	var b := Basis.from_scale(Vector3(m, 1, 1)) * Basis(Vector3(0, 0, 1), rz) * Basis.from_scale(Vector3(sx, sy, 1))
+	var o := pivot - b * pivot + Vector3(0, y + pl, 0)
+	_tilt.transform = Transform3D(b, o)
+	_body.position = Vector3.ZERO
+	_body.rotation = Vector3.ZERO
+
+
+func _half_w() -> float:
+	if _body and _body.texture:
+		var sz := _body.texture.get_size()
+		return height * sz.x / maxf(sz.y, 1.0) * 0.5
+	return height * 0.4

@@ -203,7 +203,21 @@ func _dt() -> float:
 	return PaperSpring.frame_dt(get_process_delta_time())
 
 
+## A coroutine that resumes while the runner is out of the tree (the app quitting or the scene changing during a
+## line / tween / timer) must not spin: get_tree() is null there and `await null.process_frame` returns at once with
+## a 0 s step, so every `_wait` loop ran forever in one frame (patjuk gate v1: 5 GB of errors, the run never ended).
+## Off the tree it parks until the runner is back (never, when it is being freed: the coroutine is dropped with it).
+static var _off_tree_logged := false
+var _cap_logged := false
+
+
 func _frame() -> float:
+	if not is_inside_tree():
+		if not _off_tree_logged:
+			_off_tree_logged = true
+			print("RUNNER_OFF_TREE t=", snappedf(clock, 0.01), " line=", _last_line, " (a coroutine resumed after the runner left the tree; parked)")
+		await tree_entered
+		return 0.0
 	await get_tree().process_frame
 	return _dt()
 
@@ -225,6 +239,11 @@ func _process(dt: float) -> void:
 	ui.step(dt)
 	_cam_monitor(dt)
 	_speaker_monitor()
+	# CAPTION 1|0 t=: when the caption strip shows / hides (motion_review.py: a mover under the caption)
+	var cap_on: bool = ui._caption != null and ui._caption.visible
+	if cap_on != _cap_logged:
+		_cap_logged = cap_on
+		print("CAPTION ", int(cap_on), " t=", snappedf(clock, 0.01))
 	# Autoplay holds the wind in bursts while a blow step runs (lines keep playing over the gusts).
 	if autoplay and _mode == "blow" and stage:
 		_auto_cycle += dt
@@ -580,11 +599,15 @@ func _speaker_begin(id: String, i: int, s: Dictionary) -> void:
 		print("SPEAKER_INSERT ", id, ":", i, " who=", who)  # a deliberate cutaway (the tale lists it): not checked
 		return
 	var dur := _seg_duration(s)
+	if stage and is_instance_valid(stage):
+		stage.talking = who
 	_spk = {"who": who, "key": "%s:%d" % [id, i], "t0": clock, "grace": minf(SPEAKER_GRACE, dur * 0.6), "seen": false,
 		"n": 0, "on": 0, "why": ""}
 
 
 func _speaker_end() -> void:
+	if stage and is_instance_valid(stage):
+		stage.talking = ""
 	if _spk.is_empty():
 		return
 	var n := int(_spk["n"])
@@ -1804,6 +1827,7 @@ static func _key_of(sp: Dictionary) -> String:
 ## Not in fixed-step runs (captures, recordings): there each spread is built at its page turn exactly as before, so
 ## the global RNG sequence (hinge jitter, gusts) and every frame stay reproducible.
 const SHELF_SCENE := "res://story/shelf.tscn"
+var _movie: bool = Engine.get_write_movie_path() != ""
 var end_choice := ""  ## --end-choice=replay|other (recordings of the end tabs)
 
 
@@ -1818,6 +1842,11 @@ const COVER_BUILD_MS := 28.0  ## the cover is a still page: build the first spre
 func _prebuild_after(i: int, budget_ms := PREBUILD_BUDGET_MS) -> void:
 	if fixed_step:
 		return
+	if _movie:
+		# movie maker (recordings): a frame's wall time never reaches the video, so build the next page in one go.
+		# A wall-time budget per frame made the build take story time when the machine was slow: the patjuk gate v1b
+		# recording froze 14 min on the cover (disk 99 % full, every 28 ms slice did almost nothing).
+		budget_ms = 0.0
 	for j in range(i + 1, beats.size()):
 		var sp: Variant = beats[j].get("spread")
 		if not sp is Dictionary:

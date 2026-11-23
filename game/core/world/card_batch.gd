@@ -109,6 +109,7 @@ func commit() -> void:
 		_mms[idx] = mm
 		var mmi := MultiMeshInstance3D.new()
 		mmi.name = (e["path"] as String).get_file().get_basename()
+		mmi.set_meta("print_idx", idx)
 		mmi.multimesh = mm
 		mmi.material_override = material
 		mmi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_ON if _DBG_MESH_SHADOWS else GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -229,3 +230,75 @@ func hide_static(r: int) -> void:
 	_recs[r]["hidden"] = true
 	if committed:
 		_write(r)
+
+
+# ------------------------------------------------------------------ sight check (story OCCLUDE, wave 1 2026-11-24)
+
+## For each segment from -> tos[i] (world): "lawn:<print>" of the first visible card whose cut shape it crosses, or
+## "" (SightCheck). One pass over the records: a cheap distance cull against the corridor of all segments first.
+func blockers(from: Vector3, tos: Array[Vector3]) -> Array:
+	var out := []
+	out.resize(tos.size())
+	out.fill("")
+	if tos.is_empty() or not committed:
+		return out
+	var g := global_transform
+	var mid := Vector3.ZERO
+	for t in tos:
+		mid += t
+	mid /= float(tos.size())
+	var spread := 0.0
+	for t in tos:
+		spread = maxf(spread, t.distance_to(mid))
+	for idx: int in _by_print:
+		var e := atlas.entry(idx)
+		if not e.get("ok", false):
+			continue
+		var quad: Vector4 = e.get("quad", Vector4.ZERO)
+		if quad.z <= 0.0 or quad.w <= 0.0:
+			continue
+		var reach := Vector2(quad.z, quad.w).length()
+		var img: Image = null
+		for r: int in _by_print[idx]:
+			var rec := _recs[r]
+			if not rec.has("slot"):
+				continue
+			var xf: Transform3D = rec["xf"]
+			if rec.has("hinge"):
+				var base: Node3D = rec["base"]
+				if not base.is_visible_in_tree():
+					continue
+				xf = base.transform * (rec["hinge"] as PopHinge).transform * Transform3D(rec["scale"], Vector3.ZERO)
+			elif rec.get("hidden", false):
+				continue
+			var w := g * xf
+			var sc := w.basis.get_scale().x
+			if sc < 1e-4:
+				continue  # folded / collapsed
+			# the card's centre must be near the corridor camera -> figure
+			var c := w.origin + w.basis.y * quad.w * 0.5
+			var seg := Geometry3D.get_closest_point_to_segment(c, from, mid)
+			if seg.distance_to(c) > reach * sc + spread:
+				continue
+			var inv := w.affine_inverse()
+			var lf := inv * from
+			for i in tos.size():
+				if out[i] != "":
+					continue
+				var hit: Variant = SightCheck._cross(lf, inv * tos[i])
+				if hit == null:
+					continue
+				var p: Vector3 = hit
+				var u := (p.x - quad.x) / quad.z
+				var v := (quad.y - p.y) / quad.w
+				if u < 0.0 or u > 1.0 or v < 0.0 or v > 1.0:
+					continue
+				if img == null:
+					var ai := SightCheck._alpha_img(load(str(e["path"])) as Texture2D)
+					img = ai[0] if not ai.is_empty() else Image.create(1, 1, false, Image.FORMAT_RGBA8)
+					if ai.is_empty():
+						img.set_pixel(0, 0, Color(1, 1, 1, 1))
+				if img.get_pixel(clampi(int(u * img.get_width()), 0, img.get_width() - 1),
+						clampi(int(v * img.get_height()), 0, img.get_height() - 1)).a > SightCheck.ALPHA_MIN:
+					out[i] = "lawn:" + (str(e["path"]).get_file().get_basename())
+	return out
