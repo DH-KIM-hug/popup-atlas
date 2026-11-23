@@ -2161,8 +2161,8 @@ voice is ElevenLabs — nar Annie, rap Sora, gothel Matilda, father Namchun, mot
   Reused: village_houses_13 (parents' cottage, with the new HouseBody), fairytale_west_06 (witch's cottage),
   fairytale_west_11 / _12 (wall, gate), forest_broadleaf_00, farm_animals_16 (rabbit), village_houses_20 (field
   cottage), spring_blossom flowers, story_room_03 floor, intro_magic.
-- Buildings: the tower is the building kit's own 3D round tower (kit preset rapunzel_tower, another agent's
-  game/core/world/building.gd, uncommitted at the time), placed as a set entry `{"build": spec}`; the tale copies the
+- Buildings: the tower is the building kit's own 3D round tower (kit preset rapunzel_tower, the kit owner's
+  game/core/world/building.gd, 023a98b), placed as a set entry `{"build": spec}`; the tale copies the
   preset at seed time and drops the window's glass card so the window is open (Rapunzel / Gothel lean out of it, the
   braid hangs from its sill in front of the wall along the tower's own front normal). No building code edited.
   Wish for the kit: an opening flag for "open (no card)" and an exposed window anchor (world point of opening k) so
@@ -2182,4 +2182,4 @@ voice is ElevenLabs — nar Annie, rap Sora, gothel Matilda, father Namchun, mot
   widest shots; the window figures are small in wide shots (fine in the window close-ups); the room is a ring of flat
   wall cards (fine from inside, a card set from outside at the page open); Rapunzel's teleport is sparkles in the room
   (the field is seen only at the reunion); the rabbit is tiny; nobody has listened to the mix or the 7 new clips yet.
-- Regression after the story_actor edit (no movie): three_pigs STORY_DONE 315.9 s, CHECK_LINES OK (39), no script errors. The tale needs the building kit (game/core/world/building.gd + game/art/buildings/kit.json, another agent's uncommitted work at the time of this commit) to show its tower.
+- Regression after the story_actor edit (no movie): three_pigs STORY_DONE 315.9 s, CHECK_LINES OK (39), no script errors. The tower comes from the building kit (game/core/world/building.gd + game/art/buildings/kit.json, committed by its owner in 023a98b).
