@@ -2284,3 +2284,27 @@ voice is ElevenLabs — nar Annie, rap Sora, gothel Matilda, father Namchun, mot
   little grey-violet in its gaps; the mouse is still tiny in wide line shots; grandpa's head at the frame edge as
   grandma runs out (unchanged from v1); a small blue butterfly can still cross the low feast shot; nobody has listened
   to the mix (sound unchanged from v1).
+
+## 2026-11-23 — turnip v3: the garden plot flush with the ground, a lived-in bed, varied rows, feast in the garden
+User on v2: the tilled plot read as a thick brown slab / rug floating on the ground; the right half bare; stamped rows;
+no garden at the feast; the mouse tiny.
+- Flush plot: v2 lifted a 4 mm card 16 mm (a 2 cm step with a cream card rim). Probe (tools/story/probe_ground_tn.gd
+  res=0.005 abs=0.022): one ground cover patch (7 mm) lies under the plot's left half, nothing else. The plot is now a
+  1.5 mm sheet lifted 5 mm (just over that patch), its cut edge in soil brown (`thick` / `edge` on flat set entries,
+  SpreadStage; the floor top follows the sheet), grass tufts on the open rim; the stepping stones likewise. Feet stand
+  on the sheet (floor), the turnip too.
+- The open bed: a fresh furrow ridge and a shorter one in front of the line (low, below the feet line in the line
+  shots), soil clods, a hand hoe (story_pj_field_04) at the front edge, three sprouts coming up at the far right end, the
+  hay rake lying flat at the back-right corner (standing, it counted OVERLAP / OCCLUDE on three different walks); the
+  line's marks, the turnip's landing and every walk stay clear.
+- Rows: mirrored copies `<id>m` of the row cards (tools/atlas/veg_garden_fix.py writes them + catalog entries,
+  merge-only), every row mixes pieces / mirrors, scale 0.84–1.12, turns ±3–6°, uneven gaps and depth jitter.
+- Feast: the shot leans toward the rows (`feast_view` between table and plot, 3.5 / 22° / fov 28, yaw 8): fence, bean
+  poles, sunflowers and the plot beside / in front of the table. Mouse height 0.05 → 0.066 (cat 0.105).
+- Full movie run (real pace, artifacts/turnip/rec/run_v3.log): STORY_DONE 279.0 s, CHECK_LINES OK (54), VOICE_DUP=0,
+  CAM_JUMP=0 CAM_JERK=0, SPEAKER_OFF=0, OVERLAP_COUNT 0 OCCLUDE_COUNT 0, SET_CHECK all zero, missing_audio=[]
+  missing_sound=[], no script errors. Video artifacts/video/turnip_full_v3.mp4 (1200x900, 25.5 MB), sheet
+  artifacts/turnip/full_v3_sheet.jpg.
+- Still off: on the lowest shots the sheet's right edge is a thin dark line against the grass; people at the feast
+  are smaller (the wider shot); the rolling turnip still passes big behind the walkers; a small butterfly crosses some
+  low shots; sound unchanged, nobody has listened to the mix.

@@ -64,3 +64,29 @@ for cid, (sat, val) in TONE.items():
     sh = cid.rsplit("_", 1)[0]
     if sh in (sys.argv[1:] or ["story_veg_garden", "story_veg_ground"]):
         tone(f"game/art/atlas/{sh}/{cid}.webp", sat, val)
+
+# (turnip v3) mirrored variants so a vegetable row is not one card stamped side by side: <id>m.webp in the
+# story_veg_garden folder + a catalog entry each (merge-only: the catalog is re-read right before writing)
+import json, os
+MIRROR = ["story_veg_garden_%02d" % k for k in (0, 1, 2, 3, 4, 5, 6, 7, 8)] + \
+    ["story_tn_garden_10", "story_tn_garden_11", "story_tn_garden_12"]
+if "story_veg_garden" in (sys.argv[1:] or ["story_veg_garden", "story_veg_ground"]):
+    cat = json.load(open("game/art/atlas/catalog.json"))
+    by = {e["id"]: e for e in cat}
+    add = []
+    for cid in MIRROR:
+        src = by.get(cid)
+        if not src:
+            continue
+        out = f"game/art/atlas/story_veg_garden/{cid}m.webp"
+        Image.open("game/" + src["path"]).transpose(Image.FLIP_LEFT_RIGHT).save(out, "WEBP", lossless=True, quality=100,
+                                                                                   method=6)
+        e = dict(src)
+        e.update({"id": cid + "m", "path": f"art/atlas/story_veg_garden/{cid}m.webp", "sheet": "story_veg_garden",
+                  "label": src["label"] + " (mirrored)", "tags": sorted(set(src.get("tags", []) + ["mirrored"]))})
+        add.append(e)
+    cat = json.load(open("game/art/atlas/catalog.json"))  # re-read: another session may have written meanwhile
+    ids = {e["id"] for e in add}
+    cat = [e for e in cat if e["id"] not in ids] + add
+    json.dump(cat, open("game/art/atlas/catalog.json", "w"), indent=1, ensure_ascii=False)
+    print("mirrored", len(add))

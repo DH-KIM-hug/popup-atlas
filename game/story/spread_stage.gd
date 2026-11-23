@@ -413,6 +413,11 @@ func _build_set(list: Array) -> void:
 			sp.setup_building(e["build"], float(e.get("scale", 1.0)), n_up, e.get("state", {}))
 		else:
 			sp.setup(ce, float(e.get("scale", SET_SCALE)), e.has("stage") and not e.get("flat", false), n_up, bool(e.get("flat", false)))
+			if sp.flat and sp.card:  # a ground sheet (turnip v3): thin, its cut edge in its own colour so no slab shows
+				if e.has("thick"):
+					sp.card.thickness = float(e["thick"])
+				if e.has("edge"):
+					sp.card.edge_color = Color(str(e["edge"]))
 		var p := spot_point(e.get("at", "anchor"))
 		if e.has("off"):
 			var o: Array = e["off"]
@@ -457,7 +462,7 @@ func _build_set(list: Array) -> void:
 			var fp := PackedVector2Array()
 			for c3: Vector3 in [p - fr, p + fr, p + fr + fa, p - fr + fa]:
 				fp.append(Vector2(c3.x, c3.z))
-			world.ground.floors.append([fp, p.y + 0.006])
+			world.ground.floors.append([fp, p.y + 0.003 + sp.card.thickness * 0.5])
 			_build_spots()
 			_clear_area(p + fa * 0.5, Vector2(sp.width, sp.height).length() * 0.5, float(e.get("clear", 1.0)))
 		_check_footprint(sp, e)

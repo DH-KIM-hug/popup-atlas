@@ -17714,5 +17714,306 @@
    993,
    98
   ]
+ },
+ {
+  "id": "story_veg_garden_00m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_00m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "long low tilled soil ridge (one garden row, nothing growing) (mirrored)",
+  "height_units": 0.045,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mirrored",
+   "ridge",
+   "row",
+   "soil",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   355,
+   63
+  ]
+ },
+ {
+  "id": "story_veg_garden_01m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_01m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "long low tilled soil ridge, darker furrow at its foot (mirrored)",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mirrored",
+   "ridge",
+   "row",
+   "soil",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   349,
+   71
+  ]
+ },
+ {
+  "id": "story_veg_garden_02m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_02m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of four lettuce heads on a soil ridge (mirrored)",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "lettuce",
+   "mirrored",
+   "row",
+   "story",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   354,
+   101
+  ]
+ },
+ {
+  "id": "story_veg_garden_03m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_03m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of spring onions on a soil ridge (mirrored)",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mirrored",
+   "onion",
+   "row",
+   "story",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   314,
+   141
+  ]
+ },
+ {
+  "id": "story_veg_garden_04m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_04m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of four ordinary small turnips half sunk in a soil ridge (mirrored)",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mirrored",
+   "row",
+   "story",
+   "turnip",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   356,
+   146
+  ]
+ },
+ {
+  "id": "story_veg_garden_05m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_05m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "two tomato plants tied to wooden stakes (mirrored)",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mirrored",
+   "stakes",
+   "story",
+   "tomato",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   289,
+   215
+  ]
+ },
+ {
+  "id": "story_veg_garden_06m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_06m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of peas on a low stick-and-string trellis (mirrored)",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "beans",
+   "farm",
+   "garden",
+   "mirrored",
+   "peas",
+   "row",
+   "story",
+   "trellis",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   358,
+   179
+  ]
+ },
+ {
+  "id": "story_veg_garden_07m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_07m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "pumpkin vine with two small pumpkins (mirrored)",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mirrored",
+   "pumpkin",
+   "story",
+   "vegetable",
+   "vegetable_garden",
+   "vine"
+  ],
+  "px": [
+   379,
+   168
+  ]
+ },
+ {
+  "id": "story_veg_garden_08m",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_08m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of strawberry plants on a soil ridge (mirrored)",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mirrored",
+   "row",
+   "story",
+   "strawberry",
+   "vegetable_garden"
+  ],
+  "px": [
+   368,
+   127
+  ]
+ },
+ {
+  "id": "story_tn_garden_10m",
+  "path": "art/atlas/story_veg_garden/story_tn_garden_10m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of three cabbages in soil (mirrored)",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "cabbage",
+   "farm",
+   "garden",
+   "mirrored",
+   "row",
+   "story",
+   "turnip",
+   "vegetable"
+  ],
+  "px": [
+   520,
+   180
+  ]
+ },
+ {
+  "id": "story_tn_garden_11m",
+  "path": "art/atlas/story_veg_garden/story_tn_garden_11m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of carrot tops with orange shoulders (mirrored)",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "carrot",
+   "farm",
+   "garden",
+   "mirrored",
+   "row",
+   "story",
+   "turnip",
+   "vegetable"
+  ],
+  "px": [
+   351,
+   232
+  ]
+ },
+ {
+  "id": "story_tn_garden_12m",
+  "path": "art/atlas/story_veg_garden/story_tn_garden_12m.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "bean poles tied at the top with vines and pods (mirrored)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "beans",
+   "farm",
+   "garden",
+   "mirrored",
+   "poles",
+   "story",
+   "turnip",
+   "vine"
+  ],
+  "px": [
+   248,
+   289
+  ]
  }
 ]

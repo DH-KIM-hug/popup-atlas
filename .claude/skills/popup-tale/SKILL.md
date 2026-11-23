@@ -464,13 +464,20 @@ Run long work through background agents/workflows with narrow ownership (one own
 - A ground area is a FLAT card, not a standing one: set entry `"flat": true, "floor": true, "lift": 0.016` lays a
   top-down piece on the page (its `at` is the front edge; it runs away from the camera by its height) and registers
   its rectangle in `GroundLayers.floors`, so people, spots and later set pieces stand on its top (cover patches stay
-  under it; lift ≥ 0.015). Low shots flatten it: stand low cards on it (vegetable rows with their own soil ridge,
+  under it). v3 (user: "a thick brown slab / rug floating"): keep it a SHEET, not a slab: `"thick": 0.0015`,
+  `"edge": "<soil colour>"` (the cut edge in the sheet's own dark colour, never the cream card rim) and the smallest
+  lift that clears the ground's cover patches under it (probe them: tools/story/probe_ground_tn.gd res=0.005
+  abs=0.022; 0.007 high), grass tufts / edging on the rim. Low shots flatten it: stand low cards on it (vegetable rows with their own soil ridge,
   fence, edging) and raise close-shot elevations a few degrees (8° → 13°) so soil and rows stay in frame.
 - Shared kit: atlas sheets `story_veg_garden` (soil ridges, lettuce / onion / small-turnip / strawberry rows, tomatoes,
   peas trellis, pumpkin vine, picket fence + open gate, wheelbarrow, basket, row markers, stone edging) and
   `story_veg_ground` (tilled plot / dug patch / stepping-stone and earth paths, top-down, lay flat): jobs
   tools/art/garden_jobs.py; after `add_sheet.py` run `tools/atlas/veg_garden_fix.py` (fill_holes restores the magenta
-  rims of REAL holes such as wheel spokes and trellis gaps; it clears them and tones the plot toward cocoa brown).
+  rims of REAL holes such as wheel spokes and trellis gaps; it clears them, tones the plot toward cocoa brown and
+  writes mirrored copies `<id>m` of the row cards).
+- No stamped rows: mix pieces in a row, use the mirrored copies, vary scale (0.85–1.12), turn ±3–6°, uneven gaps and a
+  few mm of depth jitter. Tools lying around (a rake) lie FLAT (`flat: true`) when they sit near a walk: a standing
+  tool card on a route counted OVERLAP / OCCLUDE in three places before it lay down.
 - Lay out a garden around the action: rows on one side, an open bed where the line stands, nothing on the walk routes
   (house door → gate gap → line, line → feast table); things that land or are set down (the pulled turnip) go behind
   the actors, never between them and the camera (OCCLUDE), and leave with the story (carried to the table, cooked).

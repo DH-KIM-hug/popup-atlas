@@ -40,7 +40,7 @@ func _init() -> void:
 				c = "="
 			else:
 				var y := w.ground.surface_y(q)
-				var lv := int(round((y - an.y) / 0.05))
+				var lv := int(round((y - (an.y if not a.has("abs") else float(a["abs"]))) / float(a.get("res", 0.05))))
 				c = "." if lv == 0 else (str(clampi(lv, -9, 9)) if lv > 0 else "-")
 			line += c
 			x += st

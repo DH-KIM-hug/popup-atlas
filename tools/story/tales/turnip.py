@@ -109,7 +109,7 @@ SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          "glare": [1.5, 6.0, 0.1, 26.0, 14.0],                  # the dog and the cat nose to nose
          "hole": [1.05, 7.0, 0.05, 26.0, 16.0],                # down at the mouse hole
          "pop": [3.6, 15.0, 0.26, 26.0, 0.0],                  # the big pull: room above for the flying turnip
-         "feast": [2.6, 15.0, 0.22, 24.0, 0.0],
+         "feast": [3.5, 22.0, 0.2, 28.0, 8.0],                  # v3: from the garden side, the rows beside / behind the table
          "pot": [1.4, 16.0, 0.18, 26.0, 6.0],
          "pull_back": [9.5, 26.0, 0.3, 24.0, 0.0]}
 
@@ -120,7 +120,7 @@ CAST = {
     "girl": {"kind": "actor", "skin": "farm_girl", "height": 0.2, "views": ["front", "side", "back"], "label": "손녀"},
     "dog": {"kind": "actor", "skin": "puppy", "height": 0.115, "views": ["side", "front", "back"], "label": "강아지"},
     "cat": {"kind": "actor", "skin": "tabby_cat", "height": 0.105, "views": ["side", "front", "back"], "label": "고양이"},
-    "mouse": {"kind": "actor", "skin": "mouse", "height": 0.05, "views": ["side", "front", "back"], "label": "생쥐"},
+    "mouse": {"kind": "actor", "skin": "mouse", "height": 0.066, "views": ["side", "front", "back"], "label": "생쥐"},
 }
 UI = {
     "cover": [["cast_farm_grandpa_calm", 230], ["cast_farm_girl_calm", 160], ["cast_puppy_happy", 110]],
@@ -157,7 +157,7 @@ FARM = {"turnip": [TX, TZ], "est": [-1.6, -1.45], "garden_focus": [-1.55, -1.0],
         "pot_spot": [-1.05, -1.98], "table": [-1.05, -2.0], "lanterns": [-1.05, -2.3], "bread": [-0.88, -1.98],
         "turnip_land": [-1.0, -1.22],    # the open bed behind the line (v2: was in the plot's rows; in front it hid the line)
         "turnip_rest": [-0.42, -2.02],   # the pulled turnip carried beside the table (v2)
-        "feast_focus": [-1.05, -1.75],
+        "feast_focus": [-1.05, -1.75], "feast_view": [-1.45, -1.5],  # v3: the shot leans toward the rows
         # the feast: grandpa and grandma at the table's ends, the girl and the animals in front with their bowls
         # (in line order left to right, so nobody's path crosses another's on the way from the line)
         "eat_grandpa": [-1.55, -1.95], "eat_grandma": [-1.38, -1.55], "eat_girl": [-1.18, -1.47],
@@ -184,37 +184,53 @@ def _g(card, x, z, name, scale=1.0, **kw):
 
 
 VEG = "story_veg_garden_"
+TN = "story_tn_garden_"
 SET_GARDEN = [
+    # v3 (user: the v2 plot read as a thick slab / rug): a thin sheet just above the ground's cover patches (one lies
+    # under its left half, 0.007 high), its cut edge soil-dark, grass tufts along the open rim
     {"card": "story_veg_ground_00", "at": [-1.8, PLOT["z_front"]], "stage": "full", "name": "plot", "scale": 0.98,
-     "clear": 0.85, "flat": True, "floor": True, "lift": 0.016},
+     "clear": 0.85, "flat": True, "floor": True, "lift": 0.005, "thick": 0.0015, "edge": "#4a3222"},
     {"card": "story_veg_ground_01", "at": [-1.92, -1.98], "stage": "full", "name": "stones", "scale": 0.72,
-     "clear": 0.3, "flat": True, "lift": 0.004, "yaw": 74.0},
-    # row 1 (front): lettuces
-    _g(VEG + "02", -2.78, -0.52, "lettuce_a", 1.05), _g(VEG + "02", -2.45, -0.53, "lettuce_b", 1.12),
-    _g(VEG + "08", -2.13, -0.52, "strawb_a", 1.15),
-    # row 2: carrots + onions
-    _g("story_tn_garden_11", -2.86, -0.72, "carrots_a", 1.05), _g("story_tn_garden_11", -2.66, -0.73, "carrots_b", 1.0),
-    _g("story_tn_garden_11", -2.46, -0.72, "carrots_c", 1.08), _g(VEG + "03", -2.16, -0.73, "onions_a", 1.0),
+     "clear": 0.3, "flat": True, "lift": 0.0045, "thick": 0.0015, "edge": "#8a7a62", "yaw": 74.0},
+    # v3: every row mixes pieces, mirrored copies (<id>m), scales, a little turn and uneven gaps (no stamped repeats)
+    # row 1 (front): lettuces and strawberries
+    _g(VEG + "02", -2.82, -0.52, "lettuce_a", 1.0), _g(VEG + "08m", -2.5, -0.535, "strawb_a", 1.12, yaw=5.0),
+    _g(VEG + "02m", -2.17, -0.515, "lettuce_b", 0.9, yaw=-4.0),
+    # row 2: carrots and spring onions
+    _g(TN + "11", -2.9, -0.725, "carrots_a", 1.0), _g(TN + "11m", -2.71, -0.735, "carrots_b", 0.88, yaw=-5.0),
+    _g(VEG + "03", -2.45, -0.72, "onions_a", 0.95), _g(TN + "11", -2.16, -0.73, "carrots_c", 1.1, yaw=4.0),
     # row 3: the turnip row (small turnips; a bare sown ridge; the giant at its right end, handler card)
-    _g(VEG + "04", -2.78, -0.94, "turnips_a", 1.05), _g(VEG + "04", -2.46, -0.95, "turnips_b", 0.98),
-    _g(VEG + "00", -2.12, -0.94, "ridge_a", 1.1),
+    _g(VEG + "04", -2.8, -0.94, "turnips_a", 1.0), _g(VEG + "04m", -2.5, -0.95, "turnips_b", 0.88, yaw=5.0),
+    _g(VEG + "00", -2.16, -0.945, "ridge_a", 1.05, yaw=-3.0),
     # row 4: peas on a trellis, tomatoes
-    _g(VEG + "06", -2.76, -1.14, "peas_a", 1.0), _g(VEG + "05", -2.42, -1.15, "tomatoes_a", 1.0),
-    _g(VEG + "06", -2.12, -1.14, "peas_b", 0.92),
+    _g(VEG + "06", -2.79, -1.14, "peas_a", 1.0), _g(VEG + "05m", -2.46, -1.155, "tomatoes_a", 0.94, yaw=-4.0),
+    _g(VEG + "06m", -2.14, -1.14, "peas_b", 0.84, yaw=6.0),
     # row 5 (back): cabbages, pumpkin, beans
-    _g("story_tn_garden_10", -2.78, -1.31, "cabbages_a", 1.05), _g(VEG + "07", -2.44, -1.32, "pumpkin_a", 1.0),
-    _g("story_tn_garden_12", -2.14, -1.32, "beans_a", 0.9),
+    _g(TN + "10", -2.81, -1.31, "cabbages_a", 1.0), _g(VEG + "07m", -2.48, -1.32, "pumpkin_a", 0.95, yaw=4.0),
+    _g(TN + "12m", -2.16, -1.325, "beans_a", 0.88),
+    # the open bed (v3: lived in, nothing on the line's marks or the walks): a fresh furrow and clods in front, a hand
+    # hoe, sprouts coming up at the far right end, the rake leaning at the edge
+    _g(VEG + "01", -1.2, -0.45, "furrow_a", 0.85), _g(VEG + "00m", -1.62, -0.44, "furrow_b", 0.75, yaw=4.0),
+    _g(TN + "08", -0.98, -0.52, "clods_a", 0.7), _g(TN + "08", -1.42, -0.56, "clods_b", 0.55, yaw=20.0),
+    _g("story_pj_field_04", -1.85, -0.43, "hoe", 1.0, yaw=-8.0),
+    _g(TN + "02", -0.68, -0.98, "sprout_a", 1.0), _g(TN + "02", -0.67, -1.07, "sprout_b", 0.85, yaw=15.0),
+    _g(TN + "02", -0.69, -1.31, "sprout_c", 0.95, yaw=-10.0),
+    _g("meadow_field_22", -0.62, -1.42, "rake", 0.8, yaw=-70.0, flat=True, lift=0.009, thick=0.003),
     # fence: left side (turned), back (gate open), stone edging in front of the rows
     _g(VEG + "09", -3.1, -0.62, "fence_l1", 1.0, yaw=90.0), _g(VEG + "09", -3.1, -1.04, "fence_l2", 1.0, yaw=90.0),
     _g(VEG + "10", -3.1, -1.36, "fence_l3", 0.95, yaw=90.0),
     _g(VEG + "09", -2.83, -1.47, "fence_b1", 1.0), _g(VEG + "09", -2.42, -1.47, "fence_b2", 1.0),
     _g(VEG + "11", -2.08, -1.47, "gate", 1.0),
-    _g(VEG + "18", -2.78, -0.36, "edging_a", 1.0), _g(VEG + "18", -2.5, -0.35, "edging_b", 1.0),
+    _g(VEG + "18", -2.78, -0.36, "edging_a", 1.0), _g(VEG + "18", -2.5, -0.35, "edging_b", 0.95, yaw=3.0),
     _g(VEG + "18", -2.22, -0.36, "edging_c", 1.0),
-    _g(VEG + "15", -1.98, -0.73, "marker_a", 1.0), _g(VEG + "17", -1.96, -1.15, "marker_b", 1.0),
+    # grass tufts on the open rim (front right, right side, back right): the sheet's edge tucked into the meadow
+    _g("meadow_field_10", -1.75, -0.31, "tuft_a", 0.55), _g("meadow_field_10", -1.4, -0.34, "tuft_b", 0.5, yaw=8.0),
+    _g("meadow_field_09", -0.57, -0.62, "tuft_c", 0.35), _g("meadow_field_10", -0.58, -0.95, "tuft_d", 0.55),
+    _g("meadow_field_10", -1.6, -1.4, "tuft_e", 0.5), _g("meadow_field_09", -0.5, -1.36, "tuft_f", 0.35),
+    _g(VEG + "15", -1.98, -0.73, "marker_a", 1.0), _g(VEG + "17", -1.96, -1.15, "marker_b", 1.0, yaw=-8.0),
     # around the plot: scarecrow, wheelbarrow, watering can, a basket of the day's vegetables, sunflowers
     _g("meadow_field_16", -3.32, -1.5, "scarecrow", 1.0), _g(VEG + "13", -3.42, -0.8, "wheelbarrow", 1.0),
-    _g("story_tn_garden_06", -1.95, -0.26, "can", 1.0), _g(VEG + "14", -3.3, -0.3, "basket", 1.0),
+    _g("story_tn_garden_06", -2.02, -0.24, "can", 1.0), _g(VEG + "14", -3.3, -0.3, "basket", 1.0),
     _g("meadow_field_27", -2.5, -1.62, "sunflowers", 1.0),
 ]
 SET = [
@@ -423,14 +439,14 @@ BEATS = [
         {"do": "cam", "shot": "garden", "at": "feast_focus", "rate": 1.0, "wait": 0.2},
         {"do": "fx", "fx": "to_table", "wait": 0.1},
         {"do": "walk", "who": ALL6, "to": {r: f"eat_{r}" for r in ALL6}, "speed": 0.3, "line": "tn_r1000"},
-        {"do": "cam", "shot": "feast", "at": "feast_focus", "rate": 1.2, "wait": 0.2, "settle": 0.5},
+        {"do": "cam", "shot": "feast", "at": "feast_view", "rate": 1.2, "wait": 0.2, "settle": 0.5},
         {"do": "fx", "fx": "cook", "wait": 0.2},
         {"do": "say", "line": "tn_r1001"},
         {"do": "fx", "fx": "boil", "wait": 0.2},
         {"do": "say", "line": "tn_r1002"},
         {"do": "tap_steps", "target": "pot", "prompt": "tn_060", "hint": "tn_060", "shot": "pot",
          "steps": [{"fx": "bowls:0", "wait": 0.6}, {"fx": "bowls:1", "wait": 0.8}]},
-        {"do": "cam", "shot": "feast", "at": "feast_focus", "rate": 1.2, "wait": 0.2, "settle": 0.5},
+        {"do": "cam", "shot": "feast", "at": "feast_view", "rate": 1.2, "wait": 0.2, "settle": 0.5},
         {"do": "say", "line": "tn_r1006"},
         {"do": "end", "after": "tn_n02", "close_book": True}]},
 ]

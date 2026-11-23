@@ -186,11 +186,11 @@
    0.0
   ],
   "feast": [
-   2.6,
-   15.0,
-   0.22,
-   24.0,
-   0.0
+   3.5,
+   22.0,
+   0.2,
+   28.0,
+   8.0
   ],
   "pot": [
    1.4,
@@ -416,7 +416,7 @@
   "mouse": {
    "kind": "actor",
    "skin": "mouse",
-   "height": 0.05,
+   "height": 0.066,
    "views": [
     "side",
     "front",
@@ -543,6 +543,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -608,68 +612,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -707,6 +747,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -724,8 +788,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -765,7 +829,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -778,7 +844,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -786,39 +854,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -826,40 +905,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -870,44 +944,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -973,8 +1131,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -982,6 +1141,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -998,7 +1206,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -1259,6 +1468,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -1324,68 +1537,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -1423,6 +1672,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -1440,8 +1713,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -1481,7 +1754,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -1494,7 +1769,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -1502,39 +1779,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -1542,40 +1830,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -1586,44 +1869,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -1689,8 +2056,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -1698,6 +2066,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -1714,7 +2131,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -1974,6 +2392,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -2039,68 +2461,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -2138,6 +2596,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -2155,8 +2637,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -2196,7 +2678,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -2209,7 +2693,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -2217,39 +2703,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -2257,40 +2754,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -2301,44 +2793,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -2404,8 +2980,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -2413,6 +2990,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -2429,7 +3055,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -2742,6 +3369,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -2807,68 +3438,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -2906,6 +3573,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -2923,8 +3614,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -2964,7 +3655,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -2977,7 +3670,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -2985,39 +3680,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -3025,40 +3731,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -3069,44 +3770,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -3172,8 +3957,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -3181,6 +3967,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -3197,7 +4032,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -3474,6 +4310,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -3539,68 +4379,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -3638,6 +4514,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -3655,8 +4555,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -3696,7 +4596,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -3709,7 +4611,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -3717,39 +4621,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -3757,40 +4672,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -3801,44 +4711,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -3904,8 +4898,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -3913,6 +4908,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -3929,7 +4973,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -4202,6 +5247,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -4267,68 +5316,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -4366,6 +5451,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -4383,8 +5492,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -4424,7 +5533,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -4437,7 +5548,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -4445,39 +5558,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -4485,40 +5609,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -4529,44 +5648,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -4632,8 +5835,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -4641,6 +5845,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -4657,7 +5910,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -4963,6 +6217,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -5028,68 +6286,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -5127,6 +6421,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -5144,8 +6462,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -5185,7 +6503,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -5198,7 +6518,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -5206,39 +6528,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -5246,40 +6579,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -5290,44 +6618,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -5393,8 +6805,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -5402,6 +6815,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -5418,7 +6880,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -5764,6 +7227,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -5829,68 +7296,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -5928,6 +7431,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -5945,8 +7472,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -5986,7 +7513,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -5999,7 +7528,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -6007,39 +7538,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -6047,40 +7589,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -6091,44 +7628,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -6194,8 +7815,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -6203,6 +7825,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -6219,7 +7890,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -6519,6 +8191,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -6584,68 +8260,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -6683,6 +8395,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -6700,8 +8436,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -6741,7 +8477,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -6754,7 +8492,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -6762,39 +8502,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -6802,40 +8553,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -6846,44 +8592,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -6949,8 +8779,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -6958,6 +8789,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -6974,7 +8854,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -7260,6 +9141,10 @@
       -1.05,
       -1.75
      ],
+     "feast_view": [
+      -1.45,
+      -1.5
+     ],
      "eat_grandpa": [
       -1.55,
       -1.95
@@ -7325,68 +9210,104 @@
       -0.85
      ],
      "lettuce_a": [
-      -2.78,
+      -2.82,
       -0.52
-     ],
-     "lettuce_b": [
-      -2.45,
-      -0.53
      ],
      "strawb_a": [
-      -2.13,
-      -0.52
+      -2.5,
+      -0.535
+     ],
+     "lettuce_b": [
+      -2.17,
+      -0.515
      ],
      "carrots_a": [
-      -2.86,
-      -0.72
+      -2.9,
+      -0.725
      ],
      "carrots_b": [
-      -2.66,
-      -0.73
-     ],
-     "carrots_c": [
-      -2.46,
-      -0.72
+      -2.71,
+      -0.735
      ],
      "onions_a": [
+      -2.45,
+      -0.72
+     ],
+     "carrots_c": [
       -2.16,
       -0.73
      ],
      "turnips_a": [
-      -2.78,
+      -2.8,
       -0.94
      ],
      "turnips_b": [
-      -2.46,
+      -2.5,
       -0.95
      ],
      "ridge_a": [
-      -2.12,
-      -0.94
+      -2.16,
+      -0.945
      ],
      "peas_a": [
-      -2.76,
+      -2.79,
       -1.14
      ],
      "tomatoes_a": [
-      -2.42,
-      -1.15
+      -2.46,
+      -1.155
      ],
      "peas_b": [
-      -2.12,
+      -2.14,
       -1.14
      ],
      "cabbages_a": [
-      -2.78,
+      -2.81,
       -1.31
      ],
      "pumpkin_a": [
-      -2.44,
+      -2.48,
       -1.32
      ],
      "beans_a": [
-      -2.14,
-      -1.32
+      -2.16,
+      -1.325
+     ],
+     "furrow_a": [
+      -1.2,
+      -0.45
+     ],
+     "furrow_b": [
+      -1.62,
+      -0.44
+     ],
+     "clods_a": [
+      -0.98,
+      -0.52
+     ],
+     "clods_b": [
+      -1.42,
+      -0.56
+     ],
+     "hoe": [
+      -1.85,
+      -0.43
+     ],
+     "sprout_a": [
+      -0.68,
+      -0.98
+     ],
+     "sprout_b": [
+      -0.67,
+      -1.07
+     ],
+     "sprout_c": [
+      -0.69,
+      -1.31
+     ],
+     "rake": [
+      -0.62,
+      -1.42
      ],
      "fence_l1": [
       -3.1,
@@ -7424,6 +9345,30 @@
       -2.22,
       -0.36
      ],
+     "tuft_a": [
+      -1.75,
+      -0.31
+     ],
+     "tuft_b": [
+      -1.4,
+      -0.34
+     ],
+     "tuft_c": [
+      -0.57,
+      -0.62
+     ],
+     "tuft_d": [
+      -0.58,
+      -0.95
+     ],
+     "tuft_e": [
+      -1.6,
+      -1.4
+     ],
+     "tuft_f": [
+      -0.5,
+      -1.36
+     ],
      "marker_a": [
       -1.98,
       -0.73
@@ -7441,8 +9386,8 @@
       -0.8
      ],
      "can": [
-      -1.95,
-      -0.26
+      -2.02,
+      -0.24
      ],
      "basket": [
       -3.3,
@@ -7482,7 +9427,9 @@
       "clear": 0.85,
       "flat": true,
       "floor": true,
-      "lift": 0.016
+      "lift": 0.005,
+      "thick": 0.0015,
+      "edge": "#4a3222"
      },
      {
       "card": "story_veg_ground_01",
@@ -7495,7 +9442,9 @@
       "scale": 0.72,
       "clear": 0.3,
       "flat": true,
-      "lift": 0.004,
+      "lift": 0.0045,
+      "thick": 0.0015,
+      "edge": "#8a7a62",
       "yaw": 74.0
      },
      {
@@ -7503,39 +9452,50 @@
       "at": "lettuce_a",
       "stage": "full",
       "name": "lettuce_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_02",
-      "at": "lettuce_b",
-      "stage": "full",
-      "name": "lettuce_b",
-      "scale": 1.12,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_08",
+      "card": "story_veg_garden_08m",
       "at": "strawb_a",
       "stage": "full",
       "name": "strawb_a",
-      "scale": 1.15,
-      "clear": 0
+      "scale": 1.12,
+      "clear": 0,
+      "yaw": 5.0
+     },
+     {
+      "card": "story_veg_garden_02m",
+      "at": "lettuce_b",
+      "stage": "full",
+      "name": "lettuce_b",
+      "scale": 0.9,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
       "card": "story_tn_garden_11",
       "at": "carrots_a",
       "stage": "full",
       "name": "carrots_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_11",
+      "card": "story_tn_garden_11m",
       "at": "carrots_b",
       "stage": "full",
       "name": "carrots_b",
-      "scale": 1.0,
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": -5.0
+     },
+     {
+      "card": "story_veg_garden_03",
+      "at": "onions_a",
+      "stage": "full",
+      "name": "onions_a",
+      "scale": 0.95,
       "clear": 0
      },
      {
@@ -7543,40 +9503,35 @@
       "at": "carrots_c",
       "stage": "full",
       "name": "carrots_c",
-      "scale": 1.08,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_03",
-      "at": "onions_a",
-      "stage": "full",
-      "name": "onions_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 1.1,
+      "clear": 0,
+      "yaw": 4.0
      },
      {
       "card": "story_veg_garden_04",
       "at": "turnips_a",
       "stage": "full",
       "name": "turnips_a",
-      "scale": 1.05,
+      "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_veg_garden_04",
+      "card": "story_veg_garden_04m",
       "at": "turnips_b",
       "stage": "full",
       "name": "turnips_b",
-      "scale": 0.98,
-      "clear": 0
+      "scale": 0.88,
+      "clear": 0,
+      "yaw": 5.0
      },
      {
       "card": "story_veg_garden_00",
       "at": "ridge_a",
       "stage": "full",
       "name": "ridge_a",
-      "scale": 1.1,
-      "clear": 0
+      "scale": 1.05,
+      "clear": 0,
+      "yaw": -3.0
      },
      {
       "card": "story_veg_garden_06",
@@ -7587,44 +9542,128 @@
       "clear": 0
      },
      {
-      "card": "story_veg_garden_05",
+      "card": "story_veg_garden_05m",
       "at": "tomatoes_a",
       "stage": "full",
       "name": "tomatoes_a",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.94,
+      "clear": 0,
+      "yaw": -4.0
      },
      {
-      "card": "story_veg_garden_06",
+      "card": "story_veg_garden_06m",
       "at": "peas_b",
       "stage": "full",
       "name": "peas_b",
-      "scale": 0.92,
-      "clear": 0
+      "scale": 0.84,
+      "clear": 0,
+      "yaw": 6.0
      },
      {
       "card": "story_tn_garden_10",
       "at": "cabbages_a",
       "stage": "full",
       "name": "cabbages_a",
-      "scale": 1.05,
-      "clear": 0
-     },
-     {
-      "card": "story_veg_garden_07",
-      "at": "pumpkin_a",
-      "stage": "full",
-      "name": "pumpkin_a",
       "scale": 1.0,
       "clear": 0
      },
      {
-      "card": "story_tn_garden_12",
+      "card": "story_veg_garden_07m",
+      "at": "pumpkin_a",
+      "stage": "full",
+      "name": "pumpkin_a",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_12m",
       "at": "beans_a",
       "stage": "full",
       "name": "beans_a",
-      "scale": 0.9,
+      "scale": 0.88,
       "clear": 0
+     },
+     {
+      "card": "story_veg_garden_01",
+      "at": "furrow_a",
+      "stage": "full",
+      "name": "furrow_a",
+      "scale": 0.85,
+      "clear": 0
+     },
+     {
+      "card": "story_veg_garden_00m",
+      "at": "furrow_b",
+      "stage": "full",
+      "name": "furrow_b",
+      "scale": 0.75,
+      "clear": 0,
+      "yaw": 4.0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_a",
+      "stage": "full",
+      "name": "clods_a",
+      "scale": 0.7,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_08",
+      "at": "clods_b",
+      "stage": "full",
+      "name": "clods_b",
+      "scale": 0.55,
+      "clear": 0,
+      "yaw": 20.0
+     },
+     {
+      "card": "story_pj_field_04",
+      "at": "hoe",
+      "stage": "full",
+      "name": "hoe",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": -8.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_a",
+      "stage": "full",
+      "name": "sprout_a",
+      "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_b",
+      "stage": "full",
+      "name": "sprout_b",
+      "scale": 0.85,
+      "clear": 0,
+      "yaw": 15.0
+     },
+     {
+      "card": "story_tn_garden_02",
+      "at": "sprout_c",
+      "stage": "full",
+      "name": "sprout_c",
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": -10.0
+     },
+     {
+      "card": "meadow_field_22",
+      "at": "rake",
+      "stage": "full",
+      "name": "rake",
+      "scale": 0.8,
+      "clear": 0,
+      "yaw": -70.0,
+      "flat": true,
+      "lift": 0.009,
+      "thick": 0.003
      },
      {
       "card": "story_veg_garden_09",
@@ -7690,8 +9729,9 @@
       "at": "edging_b",
       "stage": "full",
       "name": "edging_b",
-      "scale": 1.0,
-      "clear": 0
+      "scale": 0.95,
+      "clear": 0,
+      "yaw": 3.0
      },
      {
       "card": "story_veg_garden_18",
@@ -7699,6 +9739,55 @@
       "stage": "full",
       "name": "edging_c",
       "scale": 1.0,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_a",
+      "stage": "full",
+      "name": "tuft_a",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_b",
+      "stage": "full",
+      "name": "tuft_b",
+      "scale": 0.5,
+      "clear": 0,
+      "yaw": 8.0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_c",
+      "stage": "full",
+      "name": "tuft_c",
+      "scale": 0.35,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_d",
+      "stage": "full",
+      "name": "tuft_d",
+      "scale": 0.55,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
+      "at": "tuft_e",
+      "stage": "full",
+      "name": "tuft_e",
+      "scale": 0.5,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_09",
+      "at": "tuft_f",
+      "stage": "full",
+      "name": "tuft_f",
+      "scale": 0.35,
       "clear": 0
      },
      {
@@ -7715,7 +9804,8 @@
       "stage": "full",
       "name": "marker_b",
       "scale": 1.0,
-      "clear": 0
+      "clear": 0,
+      "yaw": -8.0
      },
      {
       "card": "meadow_field_16",
@@ -7874,7 +9964,7 @@
     {
      "do": "cam",
      "shot": "feast",
-     "at": "feast_focus",
+     "at": "feast_view",
      "rate": 1.2,
      "wait": 0.2,
      "settle": 0.5
@@ -7917,7 +10007,7 @@
     {
      "do": "cam",
      "shot": "feast",
-     "at": "feast_focus",
+     "at": "feast_view",
      "rate": 1.2,
      "wait": 0.2,
      "settle": 0.5
