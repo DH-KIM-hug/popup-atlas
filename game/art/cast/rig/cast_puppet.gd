@@ -900,3 +900,4 @@ func _rim_window(c: PaperCard, vmin: float, vmax: float, rim: float) -> void:
 	m.set_shader_parameter("rim_v_min", vmin)
 	m.set_shader_parameter("rim_v_max", vmax)
 	m.set_shader_parameter("rim_width", rim)
+	m.set_shader_parameter("rim_mix", 0.0)  # no cream die-cut rim on any puppet (2026-11-23, see PaperCard._materials)

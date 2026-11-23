@@ -18,7 +18,8 @@ const T_CROWN := "story_tn_garden_01"
 const T_SPROUT := "story_tn_garden_02"
 const T_YOUNG := "story_tn_garden_03"
 const SEED := "story_tn_garden_04"
-const HEAP := "story_tn_garden_05"
+const HOLE := "story_tn_garden_15"  ## v4: the planting hole, a small dark dip laid flat in the furrow
+const HEAP := "story_tn_garden_16"  ## v4: the tiny heap of loose soil beside it (was 05, a burrow-like mound)
 const DROPS := "story_tn_garden_07"
 const CLODS := "story_tn_garden_08"
 const POT := "story_tn_feast_01"
@@ -53,6 +54,18 @@ func setup() -> void:
 	for r in LINE:
 		if not stage.no_spacing.has(r):
 			stage.no_spacing.append(r)  # the line holds on (contacts); the solver must not push it apart
+	_no_smoke()
+
+
+## v4 (user: "왜 자꾸 이상한데서 김이 모락모락 나는거???"): the template's chimney smoke kept rising where its houses had
+## been cleared for the farm (over the thatched roof, in the garden): no smoke on this farm; the only steam is the pot's.
+func _no_smoke() -> void:
+	if stage.world == null:
+		return
+	for n in stage.world.get_children():
+		if n is ChimneySmoke:
+			(n as Node3D).visible = false
+			n.process_mode = Node.PROCESS_MODE_DISABLED
 
 
 func build_async() -> void:
@@ -96,6 +109,20 @@ func _card(id: String, h: float) -> Node3D:
 		node.add_child(c)
 	node.rotation.y = _view_yaw()
 	return node
+
+
+## v4: soil pieces (hole, heap, seed) without the cream die-cut rim (it outlined the hole like a sticker) and with a
+## soil-dark cut edge. PaperCard sets its (texture-cached) materials when its mesh is built: wait for them.
+func _soil(c: PaperCard) -> void:
+	if not is_instance_valid(c):
+		return
+	var m0 := c.get_surface_override_material(0) as ShaderMaterial
+	var m2 := c.get_surface_override_material(2) as ShaderMaterial
+	if m0 == null or m2 == null:
+		get_tree().process_frame.connect(_soil.bind(c), CONNECT_ONE_SHOT)
+		return
+	m0.set_shader_parameter("rim_mix", 0.0)
+	m2.set_shader_parameter("edge_color", Color("#3a281c"))
 
 
 func _view_yaw() -> float:
@@ -159,11 +186,25 @@ func _set_turnip(state: String, rise := 0.0) -> void:
 		_free(k)
 	var p := _turnip_base()
 	match state:
-		"hole":
-			var h := _card(HEAP, 0.075)
+		"hole":  # v4: a shallow planting hole (a dark dip laid flat in the furrow) + a tiny heap of loose soil beside it
+			var h := _card(HEAP, 0.026)
 			h.global_position = p
+			var hc := h.get_child(0) as Node3D
+			if hc:
+				hc.position = Vector3(-0.075, 0.0, -0.012)  # to the hole's left (away from grandpa), a little behind
+				_soil(hc as PaperCard)
+			var tex := _texid(HOLE)
+			if tex:
+				var d := PaperCard.new()
+				d.texture = tex
+				d.height = 0.055  # the dip's depth on the ground (front to back); ~0.073 wide
+				d.thickness = 0.0012
+				h.add_child(d)
+				_soil(d)
+				d.rotation = Vector3(-PI * 0.5, 0.0, 0.0)  # lies on the soil, print up, its top edge away from us
+				d.position = Vector3(0.0, 0.003, 0.0275)  # centred on the turnip spot, just over the plot sheet
 			_cards["heap"] = h
-			stage.register_prop("heap", h, 0.07, 0.07)
+			stage.register_prop("heap", h, 0.05, 0.03)
 		"sprout", "young", "crown":
 			var id := {"sprout": T_SPROUT, "young": T_YOUNG, "crown": T_CROWN}[state] as String
 			var hh := {"sprout": 0.05, "young": 0.13, "crown": 0.26}[state] as float
@@ -202,10 +243,7 @@ func _grow_to(state: String) -> void:
 	if oh and is_instance_valid(oh):
 		_pop(oh, false, true)
 	if _cards.has("turnip"):
-		_pop(_cards["turnip"])
-	for k in 6:
-		var c := _turnip_base() + Vector3.UP * 0.12
-		fly(SPARKLE, c, c + Vector3(randf_range(-0.2, 0.2), randf_range(0.05, 0.3), 0.02), 0.06, 0.8, 0.1)
+		_pop(_cards["turnip"])  # v4: no sparkle burst here (cream puffs over the garden read as stray steam)
 
 
 # ------------------------------------------------------------------ tap targets
@@ -268,6 +306,7 @@ func fx(name: String) -> bool:
 			return true
 		"seed_palm":  # a seed in grandpa's palm, just above the hole
 			var s := _card(SEED, 0.022)
+			_soil(s.get_child(0) as PaperCard)
 			s.global_position = _spot("line_grandpa") - _right() * 0.1 + Vector3.UP * 0.05 + _toward() * 0.03
 			_cards["seed"] = s
 			_pop(s)
@@ -276,7 +315,7 @@ func fx(name: String) -> bool:
 			if _cards.has("seed"):
 				var s2: Node3D = _cards["seed"]
 				_cards.erase("seed")
-				fly(SEED, s2.global_position, _turnip_base() + Vector3.UP * 0.012 + _toward() * 0.04, 0.022, 0.6, 0.05)
+				fly(SEED, s2.global_position, _turnip_base() + Vector3.UP * 0.004, 0.022, 0.6, 0.05)  # into the dip
 				s2.queue_free()
 			var gp := stage.actor("grandpa")
 			if gp:
@@ -459,15 +498,12 @@ func fx(name: String) -> bool:
 				_carry = {"t": 0.0, "from": tn2.global_position, "node": tn2}
 			return true
 		"cook":  # the pot, the bread and the chopping board on the table
-			if _cards.has("turnip"):  # 썰고 끓이고: the turnip folds down into the cooking (a puff of sparkles)
+			if _cards.has("turnip"):  # 썰고 끓이고: the turnip folds down into the cooking (v4: no sparkle puff beside the table)
 				var tn3: Node3D = _cards["turnip"]
 				_cards.erase("turnip")
 				stage.unregister_prop("turnip")
 				_carry = {}
 				_pop(tn3, false, true)
-				for k3 in 5:
-					var c7 := tn3.global_position
-					fly(SPARKLE, c7, c7 + Vector3(randf_range(-0.2, 0.2), randf_range(0.1, 0.3), 0.0), 0.05, 0.7, 0.1)
 			var tb := stage.set_piece("table")
 			if tb:
 				var top := tb.global_position + Vector3.UP * tb.height * 0.93 + _toward() * 0.015
@@ -597,12 +633,13 @@ func step(dt: float) -> void:
 				n.queue_free()
 			elif g["up"]:
 				n.scale = Vector3.ONE
-	# steam over the pot
-	if _steam_t >= 0.0 and _cards.has("pot"):
+	# steam over the pot: the only steam in the tale, small, rising straight from the pot's mouth (v4: 0.07 -> 0.045
+	# tall, rises 0.12 instead of 0.22, from the rim, not above the lid)
+	if _steam_t >= 0.0 and _cards.has("pot") and is_instance_valid(_cards["pot"]):
 		_steam_t += dt
-		if fmod(_steam_t, 0.9) < dt:
-			var pp: Vector3 = (_cards["pot"] as Node3D).global_position + Vector3.UP * 0.1
-			fly(STEAM, pp, pp + Vector3.UP * 0.22, 0.07, 1.4, 0.0)
+		if fmod(_steam_t, 1.1) < dt:
+			var pp: Vector3 = (_cards["pot"] as Node3D).global_position + Vector3.UP * 0.075
+			fly(STEAM, pp, pp + Vector3.UP * 0.12, 0.045, 1.5, 0.0)
 	for f: Dictionary in _flyers.duplicate():
 		var fn: Node3D = f["node"]
 		if not is_instance_valid(fn):

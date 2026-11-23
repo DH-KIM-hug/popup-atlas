@@ -2308,3 +2308,34 @@ no garden at the feast; the mouse tiny.
 - Still off: on the lowest shots the sheet's right edge is a thin dark line against the grass; people at the feast
   are smaller (the wider shot); the rolling turnip still passes big behind the walkers; a small butterfly crosses some
   low shots; sound unchanged, nobody has listened to the mix.
+
+## 2026-11-23 — turnip v4: no white rims on the puppets, a real planting hole, a tucked mouse hole, no stray steam
+User on v3: "각 인형들의 흰색 테두리가 별로같음. 그리고 구멍을 그렇게 파니...? 너무 이상한데 그리고 왜 자꾸 이상한데서 김이
+모락모락 나는거???"
+- White rims: not baked (the rings just inside every figure's alpha edge are dark line art). Two engine sources on every
+  PaperCard: the print shader's cream die-cut rim (`rim_mix` 0.35 inside the cut line) and the cream paper-core cut wall.
+  Cast-wide now (game/core/paper_card.gd): any texture under res://art/cast/ gets `rim_mix` 0 and a cut wall in the
+  figure's own average colour, darkened; CastPuppet `_rim_window` keeps `rim_mix` 0 on its own material copies. Checked
+  three_pigs `home` (mother pig) and sun_wind `wind_turn` (rigged traveller): clean edges, no join seams.
+- The seed hole: v3 used story_tn_garden_05 (a domed heap with a burrow arch). New derived cards (tools/atlas/tn_holes.py,
+  no generation): _15 a small dark dip cut from the dug-soil sheet, laid FLAT in the furrow (darker toward the bottom,
+  lit far lip), _16 a tiny low heap of loose soil (05 with its arch patched, squashed), set beside it; hole / heap /
+  seed without the atlas cream rim and with a soil-dark cut wall (fx `_soil`); the seed rolls into the dip's centre.
+- The mouse hole: _17, story_tn_garden_13 cut to a low bank (dome top and top grass gone, a shaded torn top edge),
+  moved from the open lawn (-0.5, -0.36) to the plot's right rim (-0.54, -0.68) between grass tufts (tuft_c moved
+  right, tuft_g behind); the mouse comes out onto the bed in front of it.
+- Stray steam / puffs, every source: (1) the template's ChimneySmoke kept rising from cleared template houses (grey
+  puffs over the thatched roof): the turnip handler hides every ChimneySmoke; (2) breath clouds baked into
+  cast_farm_{grandpa,grandma,girl}_sit_tired (the "휴우" beat): tools/cast/erase_puffs.py erases them (cloud cleared,
+  wisp over cheek / scarf / beard inpainted, jaw line rebuilt; originals kept in art_src/cast/puff_orig/); (3) sparkle
+  bursts on each growth step and when the turnip folds into the cooking: removed (the sun's sparkles stay); (4) the
+  pot's steam: smaller (0.045 tall, rises 0.12, from the pot mouth), only while the pot is on the table.
+- Ambient flyers (PaperAmbient, all tales): hidden whenever they would show over 4 % of the frame height (wide shots
+  only); the pale-blue butterfly by the sitting family is gone.
+- Full movie run (real pace, artifacts/turnip/rec/run_v4.log): STORY_DONE 278.7 s, CHECK_LINES OK (54), VOICE_DUP=0,
+  CAM_JUMP=0 CAM_JERK=0, SPEAKER_OFF=0, OVERLAP_COUNT 0 OCCLUDE_COUNT 0, SET_CHECK all zero, missing_audio=[]
+  missing_sound=[], no script errors. Video artifacts/video/turnip_full_v4.mp4 (1200x900, 26.0 MB), sheet
+  artifacts/turnip/full_v4_sheet.jpg, before / after crops artifacts/turnip/v4_fixes.jpg.
+- Still off: the planting hole is small and quiet in the seed shot (reads as a dip, not a feature); grandma's scarf
+  knot keeps a ragged edge where the cloud was cut away (visible only in close-ups); the mouse is still larger than
+  its hole's arch; sound unchanged, nobody has listened to the mix.

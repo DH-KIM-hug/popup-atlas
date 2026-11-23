@@ -91,6 +91,12 @@ static func _materials(tex: Texture2D, back_print_: bool, edge: Color, size: Vec
 	var side := ShaderMaterial.new()
 	side.shader = EDGE_SHADER
 	side.set_shader_parameter("edge_color", edge.lerp(avg, 0.42).darkened(0.1))  # INT r3: darker coloured core edge (r2: lerp 0.3)
+	# Cast figures (every puppet, 2026-11-23, user on turnip v3: "각 인형들의 흰색 테두리가 별로같음"): no cream die-cut
+	# rim on the print and no cream core on the cut wall; the edge takes the figure's own colour, a little darker.
+	if tex.resource_path.begins_with("res://art/cast/"):
+		front.set_shader_parameter("rim_mix", 0.0)
+		side.set_shader_parameter("edge_color", avg.darkened(0.3))
+		side.set_shader_parameter("brightness", 1.0)
 	side.set_shader_parameter("fibre_tex", FIBRE)
 	var mats := [front, back, side]
 	_mat_cache[key] = mats

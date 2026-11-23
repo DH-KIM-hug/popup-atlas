@@ -18015,5 +18015,75 @@
    248,
    289
   ]
+ },
+ {
+  "id": "story_tn_garden_15",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_15.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_ground",
+  "label": "small planting hole in tilled soil (top-down, lay flat)",
+  "height_units": 0.06,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "hole",
+   "soil",
+   "planting",
+   "story",
+   "turnip",
+   "flat"
+  ],
+  "px": [
+   200,
+   150
+  ]
+ },
+ {
+  "id": "story_tn_garden_16",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_16.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "tiny low heap of loose dug soil",
+  "height_units": 0.03,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "soil",
+   "heap",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   268,
+   63
+  ]
+ },
+ {
+  "id": "story_tn_garden_17",
+  "path": "art/atlas/story_tn_garden/story_tn_garden_17.webp",
+  "sheet": "story_tn_garden",
+  "category": "story_prop",
+  "label": "low grassy bank with a mouse hole",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "mouse_hole",
+   "story",
+   "turnip"
+  ],
+  "px": [
+   325,
+   107
+  ]
  }
 ]

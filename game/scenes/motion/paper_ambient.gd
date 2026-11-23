@@ -15,6 +15,9 @@ const TEX := "res://scenes/motion/tex/"
 ## (turnip v2 2026-11-23) a butterfly / leaf this close to the story camera filled the lens as a grey-blue blur on
 ## close and low shots: it is hidden while that near (it flies on and shows again further off)
 const NEAR_CAM := 0.9
+## (turnip v4 2026-11-23, user: big pale-blue butterflies crossing near faces on low shots) ...and while it would
+## show larger than this fraction of the frame height: flyers belong to the wide shots only
+const MAX_FRAC := 0.04
 const WINGS := ["orange", "lemon", "blue", "rose"]
 const LEAVES := ["ochre", "red", "orange", "sage"]
 
@@ -103,6 +106,15 @@ func _respawn(p: Dictionary, anywhere := false) -> void:
 	p["rest"] = 0.0
 
 
+func _shows(cam: Camera3D, at: Vector3, size: float) -> bool:
+	if cam == null:
+		return true
+	var d := cam.global_position.distance_to(at)
+	if d <= NEAR_CAM:
+		return false
+	return size / (2.0 * d * tan(deg_to_rad(cam.fov) * 0.5)) < MAX_FRAC
+
+
 func _process(dt: float) -> void:
 	if PopHinge.fixed_dt > 0.0:
 		dt = PopHinge.fixed_dt
@@ -119,7 +131,7 @@ func _process(dt: float) -> void:
 		var vel := Vector3(p["rx"] * p["a"] * TAU * cos(t * p["a"] * TAU + p["p"]), 0,
 			p["rz"] * p["b"] * TAU * cos(t * p["b"] * TAU + p["q"]))
 		root.position = pos
-		root.visible = cam == null or cam.global_position.distance_to(root.global_position) > NEAR_CAM
+		root.visible = _shows(cam, root.global_position, 0.08)
 		if vel.length() > 1e-4:
 			root.rotation.y = atan2(vel.x, vel.z)
 		# Flap: wings sweep up together (the body line is the hinge), mostly-up stroke like a real one.
@@ -138,7 +150,7 @@ func _process(dt: float) -> void:
 			n.position = Vector3(p["x"], 0.004, p["z"])
 			n.rotation = Vector3(-PI * 0.5, p["ph"], 0)
 			continue
-		n.visible = cam == null or cam.global_position.distance_to(n.global_position) > NEAR_CAM
+		n.visible = _shows(cam, n.global_position, 0.06)
 		p["y"] = maxf(0.0, p["y"] - p["fall"] * dt)
 		var sw := sin(_t * p["sw"] * TAU + p["ph"])
 		p["x"] += p["amp"] * cos(_t * p["sw"] * TAU + p["ph"]) * p["sw"] * TAU * dt * 0.5 + 0.03 * dt

@@ -482,6 +482,19 @@ Run long work through background agents/workflows with narrow ownership (one own
   (house door → gate gap → line, line → feast table); things that land or are set down (the pulled turnip) go behind
   the actors, never between them and the camera (OCCLUDE), and leave with the story (carried to the table, cooked).
 
+**Learned on turnip v4 (user on v3: "흰색 테두리가 별로", "구멍을 그렇게 파니...?", "이상한데서 김이 모락모락")**
+- No cream die-cut rim on puppets: PaperCard gives every card under `res://art/cast/` `rim_mix` 0 and a cut wall in
+  the figure's own colour (darkened); CastPuppet `_rim_window` keeps it 0. Story props that should read as soil
+  (a hole, a heap, a seed) get the same from the handler (turnip fx `_soil`). Check baked art before blaming a shader:
+  measure the rings just inside the alpha edge (dark = line art, so the rim was the shader).
+- Look for smoke / puffs nobody asked for: the template's ChimneySmoke keeps rising where its house was cleared
+  (hide it in the handler for a set with its own houses); figures drawn "huffing" carry a breath cloud
+  (tools/cast/erase_puffs.py: cream component from a seed, inside-silhouette part inpainted, the rest cleared);
+  sparkle bursts on growth / cooking read as steam from afar. Steam only where something is hot, from its mouth.
+- A planting hole is a dark dip laid FLAT in the furrow plus a low heap beside it, never a mound with an arch (that is
+  a burrow); a mouse hole is a low bank tucked at an edge (tools/atlas/tn_holes.py derives all three from cards we
+  had). Ambient butterflies / leaves hide whenever they would show over 4 % of the frame height (wide shots only).
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

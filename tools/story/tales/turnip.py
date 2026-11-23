@@ -152,7 +152,9 @@ FARM = {"turnip": [TX, TZ], "est": [-1.6, -1.45], "garden_focus": [-1.55, -1.0],
         "house": [-2.05, -2.75], "house_door": [-2.05, -2.5], "barn": [-0.55, -2.95],
         "barn_foot": [-0.35, -2.55], "barn_roof": [-0.55, -2.92],
         "bush": [0.02, -1.25], "bush_out": [-0.15, -1.08], "yard": [-0.15, -2.25], "yard_in": [-0.5, -1.6],
-        "mouse_hole": [-0.5, -0.36], "hole_out": [-0.6, -0.3],
+        # v4 (user: the big grassy dome stood in the open lawn): a low bank with the hole, tucked at the plot's right
+        # rim between grass tufts; the mouse comes out onto the bed in front of it
+        "mouse_hole": [-0.54, -0.68], "hole_out": [-0.6, -0.6],
         # the feast stands off the plot, behind its open right half (v2): table between the garden and the barn
         "pot_spot": [-1.05, -1.98], "table": [-1.05, -2.0], "lanterns": [-1.05, -2.3], "bread": [-0.88, -1.98],
         "turnip_land": [-1.0, -1.22],    # the open bed behind the line (v2: was in the plot's rows; in front it hid the line)
@@ -225,7 +227,8 @@ SET_GARDEN = [
     _g(VEG + "18", -2.22, -0.36, "edging_c", 1.0),
     # grass tufts on the open rim (front right, right side, back right): the sheet's edge tucked into the meadow
     _g("meadow_field_10", -1.75, -0.31, "tuft_a", 0.55), _g("meadow_field_10", -1.4, -0.34, "tuft_b", 0.5, yaw=8.0),
-    _g("meadow_field_09", -0.57, -0.62, "tuft_c", 0.35), _g("meadow_field_10", -0.58, -0.95, "tuft_d", 0.55),
+    _g("meadow_field_09", -0.43, -0.66, "tuft_c", 0.35), _g("meadow_field_10", -0.58, -0.95, "tuft_d", 0.55),
+    _g("meadow_field_10", -0.6, -0.76, "tuft_g", 0.45),  # v4: behind the mouse's bank
     _g("meadow_field_10", -1.6, -1.4, "tuft_e", 0.5), _g("meadow_field_09", -0.5, -1.36, "tuft_f", 0.35),
     _g(VEG + "15", -1.98, -0.73, "marker_a", 1.0), _g(VEG + "17", -1.96, -1.15, "marker_b", 1.0, yaw=-8.0),
     # around the plot: scarecrow, wheelbarrow, watering can, a basket of the day's vegetables, sunflowers
@@ -238,7 +241,7 @@ SET = [
     _e("village_houses_04", "barn", "barn", 0.95, clear=1.0),
     *SET_GARDEN,
     _e("bushes_hedges_26", "bush", "bush", 1.0, clear=0.35),
-    _e("story_tn_garden_13", "mouse_hole", "mouse_hole", 1.0, clear=0.25),
+    _e("story_tn_garden_17", "mouse_hole", "mouse_hole", 1.0, clear=0.2),  # v4: low bank (was 13, a big dome)
     # the feast (popped in its beat)
     _e("story_tn_feast_00", "table", "table", 1.0, stage=0, clear=0),
     _e("story_tn_feast_08", "lanterns", "lanterns", 1.0, stage=0, clear=0, glow=0.8,

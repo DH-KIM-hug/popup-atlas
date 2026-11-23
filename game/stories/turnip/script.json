@@ -508,12 +508,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -756,12 +756,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -1178,6 +1182,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -1258,12 +1270,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -1433,12 +1445,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -1681,12 +1693,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -2103,6 +2119,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -2183,12 +2207,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -2357,12 +2381,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -2605,12 +2629,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -3027,6 +3055,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -3107,12 +3143,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -3334,12 +3370,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -3582,12 +3618,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -4004,6 +4044,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -4084,12 +4132,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -4275,12 +4323,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -4523,12 +4571,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -4945,6 +4997,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -5025,12 +5085,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -5212,12 +5272,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -5460,12 +5520,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -5882,6 +5946,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -5962,12 +6034,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -6182,12 +6254,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -6430,12 +6502,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -6852,6 +6928,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -6932,12 +7016,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -7192,12 +7276,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -7440,12 +7524,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -7862,6 +7950,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -7942,12 +8038,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -8156,12 +8252,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -8404,12 +8500,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -8826,6 +8926,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -8906,12 +9014,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
@@ -9106,12 +9214,12 @@
       -1.6
      ],
      "mouse_hole": [
-      -0.5,
-      -0.36
+      -0.54,
+      -0.68
      ],
      "hole_out": [
       -0.6,
-      -0.3
+      -0.6
      ],
      "pot_spot": [
       -1.05,
@@ -9354,12 +9462,16 @@
       -0.34
      ],
      "tuft_c": [
-      -0.57,
-      -0.62
+      -0.43,
+      -0.66
      ],
      "tuft_d": [
       -0.58,
       -0.95
+     ],
+     "tuft_g": [
+      -0.6,
+      -0.76
      ],
      "tuft_e": [
       -1.6,
@@ -9776,6 +9888,14 @@
      },
      {
       "card": "meadow_field_10",
+      "at": "tuft_g",
+      "stage": "full",
+      "name": "tuft_g",
+      "scale": 0.45,
+      "clear": 0
+     },
+     {
+      "card": "meadow_field_10",
       "at": "tuft_e",
       "stage": "full",
       "name": "tuft_e",
@@ -9856,12 +9976,12 @@
       "clear": 0.35
      },
      {
-      "card": "story_tn_garden_13",
+      "card": "story_tn_garden_17",
       "at": "mouse_hole",
       "stage": "full",
       "name": "mouse_hole",
       "scale": 1.0,
-      "clear": 0.25
+      "clear": 0.2
      },
      {
       "card": "story_tn_feast_00",
