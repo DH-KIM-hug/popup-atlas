@@ -118,3 +118,13 @@ the line (z) and the first puller clear of its widest part, or it hides him.
 ## Water
 Wading characters stand in the actual water channel, sink to the water line, hide legs below it, ripples on the water —
 never sink into the bank.
+
+## Runs (turnip v5, 2026-11-23, user: "애들 달리는거 점검좀...")
+- Measure travel speed only from real movement. A placement or a pop-out jump counted as movement made drawn cycles spin 2–3× too fast; MOTION_FLAGS catches it.
+- Plan each helper's last stretch as a sideways run in the direction they face when they stop. They arrive with no flips and never pass behind the set piece or the line.
+- A hole or entrance sits at the depth of its destination, so the exit is sideways. A hole in front of the goal makes the character walk away from the camera.
+- Small animals need their own run cycles (side 4, back 2, front 2). The run threshold scales with figure height, and a missing run falls back to that view's walk cycle, never to a static card.
+- Changing figure within the same side view and facing is instant. Paper turns narrow to 30% of the card width; 15% read as edge-on. Front and back cards never lean sideways.
+- Template lawn cards such as flowers can hide a runner without OCCLUDE catching it. Look at the motion tiles and bend the route.
+- Start a runner in view or bring them in from off-frame; never pop them in at a spot.
+- Godot screen coordinates are in the 1366x1024 base viewport. Scale them to the video before cropping.
