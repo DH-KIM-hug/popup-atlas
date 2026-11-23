@@ -46,6 +46,7 @@ var _t := 0.0
 var _hops: Array = []  ## [{role, t, life, from, to, h0, arc}] (the cat off the ridge)
 var _out := {}  ## the turnip's flight: {t, from, to}
 var _steam_t := -1.0
+var _carry := {}  ## v2: the pulled turnip rolled from the garden to beside the table {t, from, node}
 
 
 func setup() -> void:
@@ -311,7 +312,8 @@ func fx(name: String) -> bool:
 			_grow_to("big")
 			_rise = 0.0
 			(_cards["turnip"] as Node3D).global_position = _turnip_base() + Vector3.UP * -SINK0
-			var spots := [[-2.0, -0.35], [-0.35, -1.55], [-2.55, -1.15], [-1.95, -1.55], [-0.1, -0.7]]
+			# round the garden plot, never in its rows (v2)
+			var spots := [[-3.35, -1.1], [-0.35, -1.55], [-2.95, -1.75], [-1.55, -0.16], [-0.1, -0.7]]
 			for k in spots.size():
 				var f := _card(FLOWERS[k], 0.15)
 				f.global_position = stage.spot_point(spots[k])
@@ -450,7 +452,22 @@ func fx(name: String) -> bool:
 			for r in LINE:
 				_lean[r] = [0.0, 0.0]
 			return true
+		"carry":  # v2: the pulled turnip goes with them to the table (it does not stay lying in the garden)
+			if _cards.has("turnip") and _turnip_state == "out":
+				var tn2: Node3D = _cards["turnip"]
+				tn2.set_meta("moving", true)
+				_carry = {"t": 0.0, "from": tn2.global_position, "node": tn2}
+			return true
 		"cook":  # the pot, the bread and the chopping board on the table
+			if _cards.has("turnip"):  # 썰고 끓이고: the turnip folds down into the cooking (a puff of sparkles)
+				var tn3: Node3D = _cards["turnip"]
+				_cards.erase("turnip")
+				stage.unregister_prop("turnip")
+				_carry = {}
+				_pop(tn3, false, true)
+				for k3 in 5:
+					var c7 := tn3.global_position
+					fly(SPARKLE, c7, c7 + Vector3(randf_range(-0.2, 0.2), randf_range(0.1, 0.3), 0.0), 0.05, 0.7, 0.1)
 			var tb := stage.set_piece("table")
 			if tb:
 				var top := tb.global_position + Vector3.UP * tb.height * 0.93 + _toward() * 0.015
@@ -532,6 +549,21 @@ func step(dt: float) -> void:
 			stage.register_prop("turnip", o, 0.2, 0.3)
 			stage.shake(0.6)
 			_sfx("wolf.flop", land)
+	# v2: the turnip carried to beside the table (rolled in small bumps, set down lying)
+	if not _carry.is_empty():
+		var cn: Node3D = _carry["node"]
+		_carry["t"] = float(_carry["t"]) + dt / 2.2
+		var kc := clampf(float(_carry["t"]), 0.0, 1.0)
+		var ke := kc * kc * (3.0 - 2.0 * kc)
+		var to := _spot("turnip_rest") + Vector3.UP * 0.15 + _right() * 0.32
+		if is_instance_valid(cn):
+			# rolled along the ground in little bumps (floating high it filled the lens at the walk to the table)
+			cn.global_position = (_carry["from"] as Vector3).lerp(to, ke) + Vector3.UP * absf(sin(kc * PI * 4.0)) * 0.025
+		if kc >= 1.0:
+			_carry = {}
+			if is_instance_valid(cn):
+				cn.remove_meta("moving")
+				stage.register_prop("turnip", cn, 0.2, 0.3)
 	# the cat's hop off the ridge
 	for h: Dictionary in _hops.duplicate():
 		var a9 := stage.actor(str(h["role"]))

@@ -1,0 +1,65 @@
+{
+ "biome": "meadow",
+ "season": "summer",
+ "tags": [
+  "story",
+  "garden",
+  "vegetable_garden",
+  "farm"
+ ],
+ "items": {
+  "00": [
+   "tilled vegetable plot seen from above (lay flat: ridges run left-right; height = its depth)",
+   "story_ground",
+   1.0,
+   0,
+   {
+    "tags": [
+     "soil",
+     "plot",
+     "flat",
+     "ridges"
+    ]
+   }
+  ],
+  "01": [
+   "stepping-stone garden path seen from above (lay flat; height = its width)",
+   "story_ground",
+   0.14,
+   0,
+   {
+    "tags": [
+     "path",
+     "stones",
+     "flat"
+    ]
+   }
+  ],
+  "02": [
+   "square patch of freshly dug soil seen from above (lay flat)",
+   "story_ground",
+   0.5,
+   0,
+   {
+    "tags": [
+     "soil",
+     "flat",
+     "dug"
+    ]
+   }
+  ],
+  "03": [
+   "beaten earth path strip seen from above (lay flat)",
+   "story_ground",
+   0.1,
+   0,
+   {
+    "tags": [
+     "path",
+     "earth",
+     "flat"
+    ]
+   }
+  ]
+ }
+}

@@ -38,6 +38,9 @@ const HILL_T := 0.06
 ## Low stacked felt hill tiers: each entry [Vector2 centre, float radius, int tiers]. Tiers are cut card
 ## (HILL_T thick) with a visible cut edge; they never cover the path or the stream (clipped out).
 @export var hill_specs: Array = []
+## Flat story pieces laid on the ground that people walk on (turnip v2 2026-11-23: the tilled garden plot):
+## [[PackedVector2Array poly (XZ), float top y]]; surface_y returns the top inside them (SpreadStage, set `floor`).
+var floors: Array = []
 @export var hill_colors: PackedColorArray = PackedColorArray([Color("6e8a66"), Color("8aa276"), Color("a3b384"), Color("b8bf8e")])
 ## Large low-frequency value mottling of the felt (±value), the "not one flat fill" fix.
 @export var felt_mottle_strength := 0.95
@@ -132,7 +135,16 @@ func stream_distance(p: Vector2) -> float:
 
 
 ## Height of the walkable/placeable surface at p (page XZ).
+func floor_top(p: Vector2) -> float:
+	for f: Array in floors:
+		if Geometry2D.is_point_in_polygon(p, f[0]):
+			return float(f[1])
+	return -INF
+
+
 func surface_y(p: Vector2) -> float:
+	if not floors.is_empty() and floor_top(p) > -INF:
+		return floor_top(p)
 	for h in _hills:
 		if Geometry2D.is_point_in_polygon(p, h[0]):
 			return h[1]

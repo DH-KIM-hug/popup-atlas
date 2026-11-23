@@ -140,6 +140,8 @@ func build() -> void:
 # ------------------------------------------------------------------ queries
 
 func surface_y(p: Vector2) -> float:
+	if not floors.is_empty() and floor_top(p) > -INF:
+		return floor_top(p)
 	for h in _hills:
 		if Geometry2D.is_point_in_polygon(p, h[0]):
 			return h[1]

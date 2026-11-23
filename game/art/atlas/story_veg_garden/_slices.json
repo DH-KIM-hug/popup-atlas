@@ -1,0 +1,334 @@
+{
+ "sheet": "story_veg_garden",
+ "bg": [
+  0.988,
+  0.016,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_veg_garden_00",
+   "bbox": [
+    28,
+    132,
+    375,
+    187
+   ],
+   "area": 14339,
+   "size": [
+    355,
+    63
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_01",
+   "bbox": [
+    408,
+    125,
+    749,
+    188
+   ],
+   "area": 16047,
+   "size": [
+    349,
+    71
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_02",
+   "bbox": [
+    790,
+    96,
+    1136,
+    189
+   ],
+   "area": 27372,
+   "size": [
+    354,
+    101
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_03",
+   "bbox": [
+    1185,
+    57,
+    1491,
+    190
+   ],
+   "area": 18345,
+   "size": [
+    314,
+    141
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_04",
+   "bbox": [
+    28,
+    318,
+    376,
+    456
+   ],
+   "area": 30965,
+   "size": [
+    356,
+    146
+   ],
+   "halo": 12,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_05",
+   "bbox": [
+    426,
+    250,
+    707,
+    457
+   ],
+   "area": 35694,
+   "size": [
+    289,
+    215
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_06",
+   "bbox": [
+    745,
+    286,
+    1095,
+    457
+   ],
+   "area": 41383,
+   "size": [
+    358,
+    179
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_07",
+   "bbox": [
+    1136,
+    297,
+    1507,
+    457
+   ],
+   "area": 44818,
+   "size": [
+    379,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_08",
+   "bbox": [
+    28,
+    575,
+    388,
+    694
+   ],
+   "area": 36563,
+   "size": [
+    368,
+    127
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_09",
+   "bbox": [
+    438,
+    563,
+    848,
+    694
+   ],
+   "area": 38443,
+   "size": [
+    418,
+    139
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_10",
+   "bbox": [
+    916,
+    548,
+    1129,
+    694
+   ],
+   "area": 20367,
+   "size": [
+    221,
+    154
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_11",
+   "bbox": [
+    1222,
+    524,
+    1455,
+    702
+   ],
+   "area": 5482,
+   "size": [
+    241,
+    186
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_12",
+   "bbox": [
+    1294,
+    524,
+    1455,
+    702
+   ],
+   "area": 23097,
+   "size": [
+    169,
+    186
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_13",
+   "bbox": [
+    32,
+    791,
+    386,
+    958
+   ],
+   "area": 30516,
+   "size": [
+    362,
+    175
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_14",
+   "bbox": [
+    418,
+    743,
+    716,
+    958
+   ],
+   "area": 45672,
+   "size": [
+    306,
+    223
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_15",
+   "bbox": [
+    787,
+    779,
+    859,
+    949
+   ],
+   "area": 7123,
+   "size": [
+    80,
+    178
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_16",
+   "bbox": [
+    872,
+    779,
+    946,
+    949
+   ],
+   "area": 7387,
+   "size": [
+    82,
+    178
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_17",
+   "bbox": [
+    958,
+    781,
+    1030,
+    949
+   ],
+   "area": 7029,
+   "size": [
+    80,
+    176
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_garden_18",
+   "bbox": [
+    1072,
+    877,
+    1507,
+    935
+   ],
+   "area": 19047,
+   "size": [
+    443,
+    66
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

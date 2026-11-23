@@ -93,23 +93,23 @@ EXTRA = {"ground_style": "paper", "spacing": True, "overlap_check": True, "pop_i
 
 SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          "crane_high": [8.5, 34.0, 0.3, 24.0, 0.0],
-         "establish": [5.4, 17.0, 0.35, 24.0, -6.0],          # house, barn and garden
-         "garden": [3.4, 13.0, 0.25, 24.0, 4.0],
-         "medium": [2.2, 9.0, 0.22, 22.0, 6.0],
+         "establish": [5.6, 24.0, 0.3, 24.0, -6.0],           # the garden plot, house and barn behind (v2: higher)
+         "garden": [3.4, 17.0, 0.25, 24.0, 4.0],
+         "medium": [2.2, 13.0, 0.2, 22.0, 6.0],
          "seed": [1.15, 16.0, 0.1, 24.0, -6.0],                # grandpa kneeling, the hole, the seed in his palm
-         "sprout": [1.6, 10.0, 0.12, 24.0, 8.0],
-         "grown": [2.4, 6.0, 0.3, 24.0, -4.0],                 # low: the leaves as tall as grandpa
-         "line": [2.5, 8.0, 0.22, 24.0, 10.0],                 # the turnip and the line, from a little to the right
-         "line_low": [2.1, 3.0, 0.24, 28.0, -12.0],           # low, from the turnip's side: effort
-         "line_wide": [3.6, 11.0, 0.22, 24.0, 4.0],            # the whole line of six and the turnip
+         "sprout": [1.6, 14.0, 0.1, 24.0, 8.0],
+         "grown": [2.4, 10.0, 0.28, 24.0, -4.0],                 # low: the leaves as tall as grandpa
+         "line": [2.5, 13.0, 0.2, 24.0, 10.0],                 # the turnip and the line, from a little to the right
+         "line_low": [2.1, 7.0, 0.22, 28.0, -12.0],           # low, from the turnip's side: effort
+         "line_wide": [3.6, 15.0, 0.2, 24.0, 4.0],            # the whole line of six and the turnip
          "house": [3.2, 10.0, 0.4, 24.0, -10.0],               # the farmhouse door (grandma comes out)
          "yard": [3.0, 10.0, 0.3, 24.0, 18.0],                 # the girl from the yard
          "bush": [1.7, 7.0, 0.16, 26.0, 14.0],
-         "barn": [2.7, 4.0, 0.7, 18.0, 6.0],                   # up at the barn roof (long lens; the camera stays in front of the line)
+         "barn": [4.4, 9.0, 0.62, 12.0, 6.0],                  # up at the barn roof: a long lens from far back, so the glide stays well in front of the line (v2)
          "glare": [1.5, 6.0, 0.1, 26.0, 14.0],                  # the dog and the cat nose to nose
          "hole": [1.05, 7.0, 0.05, 26.0, 16.0],                # down at the mouse hole
-         "pop": [3.6, 10.0, 0.3, 26.0, 0.0],                  # the big pull: room above for the flying turnip
-         "feast": [2.6, 13.0, 0.22, 24.0, 0.0],
+         "pop": [3.6, 15.0, 0.26, 26.0, 0.0],                  # the big pull: room above for the flying turnip
+         "feast": [2.6, 15.0, 0.22, 24.0, 0.0],
          "pot": [1.4, 16.0, 0.18, 26.0, 6.0],
          "pull_back": [9.5, 26.0, 0.3, 24.0, 0.0]}
 
@@ -147,34 +147,82 @@ def _e(card, at, name, scale=1.0, **kw):
 TX, TZ = -1.6, -0.95  # the turnip stands a step behind the line, so grandpa is in front of its leaves
 LINE_X = {"grandpa": -1.34, "grandma": -1.2, "girl": -1.07, "dog": -0.95, "cat": -0.85, "mouse": -0.775}
 LZ = -0.85
-FARM = {"turnip": [TX, TZ], "est": [-1.1, -1.4], "garden_focus": [-1.25, -1.0], "line_focus": [-1.2, -0.85],
+FARM = {"turnip": [TX, TZ], "est": [-1.6, -1.45], "garden_focus": [-1.55, -1.0], "line_focus": [-1.2, -0.85],
         "seed_focus": [-1.52, -0.8],
         "house": [-2.05, -2.75], "house_door": [-2.05, -2.5], "barn": [-0.55, -2.95],
         "barn_foot": [-0.35, -2.55], "barn_roof": [-0.55, -2.92],
         "bush": [0.02, -1.25], "bush_out": [-0.15, -1.08], "yard": [-0.15, -2.25], "yard_in": [-0.5, -1.6],
-        "mouse_hole": [-0.55, -0.42], "hole_out": [-0.62, -0.3],
-        "cabbages": [-2.6, -0.3], "carrots": [-2.3, -1.3], "beans": [-2.65, -1.9], "bed": [-1.95, -1.6],
-        "pot_spot": [-1.25, -1.98], "table": [-1.25, -2.0], "lanterns": [-1.25, -2.3], "bread": [-1.08, -1.98],
-        "bench": [-1.25, -1.62], "turnip_land": [-2.15, -0.8],
-        "feast_focus": [-1.25, -1.75],
+        "mouse_hole": [-0.5, -0.36], "hole_out": [-0.6, -0.3],
+        # the feast stands off the plot, behind its open right half (v2): table between the garden and the barn
+        "pot_spot": [-1.05, -1.98], "table": [-1.05, -2.0], "lanterns": [-1.05, -2.3], "bread": [-0.88, -1.98],
+        "turnip_land": [-1.0, -1.22],    # the open bed behind the line (v2: was in the plot's rows; in front it hid the line)
+        "turnip_rest": [-0.42, -2.02],   # the pulled turnip carried beside the table (v2)
+        "feast_focus": [-1.05, -1.75],
         # the feast: grandpa and grandma at the table's ends, the girl and the animals in front with their bowls
         # (in line order left to right, so nobody's path crosses another's on the way from the line)
-        "eat_grandpa": [-1.75, -1.95], "eat_grandma": [-1.58, -1.55], "eat_girl": [-1.38, -1.45],
-        "eat_dog": [-1.16, -1.42], "eat_cat": [-0.98, -1.45], "eat_mouse": [-0.83, -1.5],
-        "gp_side": [-1.3, -0.85]}
+        "eat_grandpa": [-1.55, -1.95], "eat_grandma": [-1.38, -1.55], "eat_girl": [-1.18, -1.47],
+        "eat_dog": [-0.96, -1.44], "eat_cat": [-0.78, -1.47], "eat_mouse": [-0.63, -1.52],
+        "gp_side": [-1.3, -0.85],
+        # the 텃밭 (v2, user: "순무는 텃밭이 없네용?"): the gate gap in the back fence and the path to the house door
+        "gate_out": [-1.78, -1.62], "gate_in": [-1.72, -1.3], "plot_focus": [-1.75, -1.0]}
 for _r, _x in LINE_X.items():
     FARM[f"line_{_r}"] = [_x, LZ]
+
+# ---------------------------------------------------------------- the vegetable garden (v2, 2026-11-23)
+# A tilled plot (story_veg_ground_00, laid flat, `floor`: people stand on its top) x -3.0..-0.6, z -1.36..-0.38;
+# ridges run left-right. The left half holds five vegetable rows (front -> back: lettuce, carrots, the turnip row with
+# small turnips, peas / tomatoes, cabbages / pumpkin / onions); the giant turnip grows at the right end of its row and
+# the right half is its open working bed (the pulling line stands there; the turnip lands in front of the line; the
+# walks to the feast cross it behind). Picket fence on the left and the back (the gate open, a gap where the stepping
+# stones come from the house door), stone edging along the front of the rows. Shared kit: tools/art/garden_jobs.py.
+PLOT = {"x0": -3.0, "x1": -0.6, "z_front": -0.38}
+
+
+def _g(card, x, z, name, scale=1.0, **kw):
+    FARM[name] = [x, z]
+    return _e(card, name, name, scale, clear=0, **kw)
+
+
+VEG = "story_veg_garden_"
+SET_GARDEN = [
+    {"card": "story_veg_ground_00", "at": [-1.8, PLOT["z_front"]], "stage": "full", "name": "plot", "scale": 0.98,
+     "clear": 0.85, "flat": True, "floor": True, "lift": 0.016},
+    {"card": "story_veg_ground_01", "at": [-1.92, -1.98], "stage": "full", "name": "stones", "scale": 0.72,
+     "clear": 0.3, "flat": True, "lift": 0.004, "yaw": 74.0},
+    # row 1 (front): lettuces
+    _g(VEG + "02", -2.78, -0.52, "lettuce_a", 1.05), _g(VEG + "02", -2.45, -0.53, "lettuce_b", 1.12),
+    _g(VEG + "08", -2.13, -0.52, "strawb_a", 1.15),
+    # row 2: carrots + onions
+    _g("story_tn_garden_11", -2.86, -0.72, "carrots_a", 1.05), _g("story_tn_garden_11", -2.66, -0.73, "carrots_b", 1.0),
+    _g("story_tn_garden_11", -2.46, -0.72, "carrots_c", 1.08), _g(VEG + "03", -2.16, -0.73, "onions_a", 1.0),
+    # row 3: the turnip row (small turnips; a bare sown ridge; the giant at its right end, handler card)
+    _g(VEG + "04", -2.78, -0.94, "turnips_a", 1.05), _g(VEG + "04", -2.46, -0.95, "turnips_b", 0.98),
+    _g(VEG + "00", -2.12, -0.94, "ridge_a", 1.1),
+    # row 4: peas on a trellis, tomatoes
+    _g(VEG + "06", -2.76, -1.14, "peas_a", 1.0), _g(VEG + "05", -2.42, -1.15, "tomatoes_a", 1.0),
+    _g(VEG + "06", -2.12, -1.14, "peas_b", 0.92),
+    # row 5 (back): cabbages, pumpkin, beans
+    _g("story_tn_garden_10", -2.78, -1.31, "cabbages_a", 1.05), _g(VEG + "07", -2.44, -1.32, "pumpkin_a", 1.0),
+    _g("story_tn_garden_12", -2.14, -1.32, "beans_a", 0.9),
+    # fence: left side (turned), back (gate open), stone edging in front of the rows
+    _g(VEG + "09", -3.1, -0.62, "fence_l1", 1.0, yaw=90.0), _g(VEG + "09", -3.1, -1.04, "fence_l2", 1.0, yaw=90.0),
+    _g(VEG + "10", -3.1, -1.36, "fence_l3", 0.95, yaw=90.0),
+    _g(VEG + "09", -2.83, -1.47, "fence_b1", 1.0), _g(VEG + "09", -2.42, -1.47, "fence_b2", 1.0),
+    _g(VEG + "11", -2.08, -1.47, "gate", 1.0),
+    _g(VEG + "18", -2.78, -0.36, "edging_a", 1.0), _g(VEG + "18", -2.5, -0.35, "edging_b", 1.0),
+    _g(VEG + "18", -2.22, -0.36, "edging_c", 1.0),
+    _g(VEG + "15", -1.98, -0.73, "marker_a", 1.0), _g(VEG + "17", -1.96, -1.15, "marker_b", 1.0),
+    # around the plot: scarecrow, wheelbarrow, watering can, a basket of the day's vegetables, sunflowers
+    _g("meadow_field_16", -3.32, -1.5, "scarecrow", 1.0), _g(VEG + "13", -3.42, -0.8, "wheelbarrow", 1.0),
+    _g("story_tn_garden_06", -1.95, -0.26, "can", 1.0), _g(VEG + "14", -3.3, -0.3, "basket", 1.0),
+    _g("meadow_field_27", -2.5, -1.62, "sunflowers", 1.0),
+]
 SET = [
     _e("village_houses_15", "house", "house", 1.15, clear=1.4),
     _e("village_houses_04", "barn", "barn", 0.95, clear=1.0),
-    _e("story_tn_garden_10", "cabbages", "cabbages", clear=0.3),
-    _e("story_tn_garden_11", "carrots", "carrots", clear=0.3),
-    _e("story_tn_garden_12", "beans", "beans", clear=0.3),
-    _e("story_tn_garden_14", "bed", "bed", clear=0.35),
+    *SET_GARDEN,
     _e("bushes_hedges_26", "bush", "bush", 1.0, clear=0.35),
     _e("story_tn_garden_13", "mouse_hole", "mouse_hole", 1.0, clear=0.25),
-    _e("meadow_field_18", [-2.9, -0.9], "fence_l", 1.0, clear=0.2, yaw=80.0),
-    _e("village_props_21", [-1.75, -2.35], "bucket", 1.0, clear=0.1),
     # the feast (popped in its beat)
     _e("story_tn_feast_00", "table", "table", 1.0, stage=0, clear=0),
     _e("story_tn_feast_08", "lanterns", "lanterns", 1.0, stage=0, clear=0, glow=0.8,
@@ -268,7 +316,7 @@ BEATS = [
         {"do": "say", "line": "tn_x_call_grandma"},
         {"do": "cam", "shot": "house", "at": ["house_door", "line_grandpa"], "rate": 1.3, "wait": 0.2},
         {"do": "walk", "who": "grandma", "from": "house_door", "to": "line_grandma", "speed": 0.42, "pose": "run",
-         "follow": "grandma", "shot": "garden", "line": "tn_r0307"}]},
+         "via": ["gate_out", "gate_in"], "follow": "grandma", "shot": "garden", "line": "tn_r0307"}]},
     # 4 -- grandma: 같이 해 봐요! two pull; a hand's width up; she calls the girl
     {"id": "grandma", "title": "할머니~!", "spread": _farm(light="afternoon"), "tn": {"turnip": "big"},
      "enter": _enter(2, extra={"who": {"grandma": "calm"}}),
@@ -369,6 +417,7 @@ BEATS = [
                "at": {"grandpa": "line_grandpa", "grandma": "line_grandma", "girl": "line_girl", "dog": "line_dog",
                       "cat": "line_cat", "mouse": "line_mouse"}},
      "steps": [
+        {"do": "fx", "fx": "carry", "wait": 1.0},  # v2: the turnip rolls off to the table before anyone walks
         {"do": "fx", "fx": "pop:table", "wait": 0.15},
         {"do": "fx", "fx": "pop:lanterns", "wait": 0.15},
         {"do": "cam", "shot": "garden", "at": "feast_focus", "rate": 1.0, "wait": 0.2},

@@ -457,6 +457,24 @@ Run long work through background agents/workflows with narrow ownership (one own
   Spec format and presets: references/script_schema.md ("Buildings from the kit"). Kit sheet: house_orbit.sh with a
   6th argument (presets) renders the solo orbit + a context shot on the meadow (castle: approach, gate, tower window).
 
+**Learned on turnip v2 (2026-11-23, user: "순무는 텃밭이 없네용?")**
+- The place named in the story must read on screen: a 텃밭 is tilled soil with rows, not meadow. v1 grew the turnip on
+  plain green paper with one tiny raised-bed card far behind. Before wiring, list each place the lines name (텃밭, 부엌,
+  헛간 지붕, 쥐구멍) and check one wide and one close frame of each shows what makes it that place.
+- A ground area is a FLAT card, not a standing one: set entry `"flat": true, "floor": true, "lift": 0.016` lays a
+  top-down piece on the page (its `at` is the front edge; it runs away from the camera by its height) and registers
+  its rectangle in `GroundLayers.floors`, so people, spots and later set pieces stand on its top (cover patches stay
+  under it; lift ≥ 0.015). Low shots flatten it: stand low cards on it (vegetable rows with their own soil ridge,
+  fence, edging) and raise close-shot elevations a few degrees (8° → 13°) so soil and rows stay in frame.
+- Shared kit: atlas sheets `story_veg_garden` (soil ridges, lettuce / onion / small-turnip / strawberry rows, tomatoes,
+  peas trellis, pumpkin vine, picket fence + open gate, wheelbarrow, basket, row markers, stone edging) and
+  `story_veg_ground` (tilled plot / dug patch / stepping-stone and earth paths, top-down, lay flat): jobs
+  tools/art/garden_jobs.py; after `add_sheet.py` run `tools/atlas/veg_garden_fix.py` (fill_holes restores the magenta
+  rims of REAL holes such as wheel spokes and trellis gaps; it clears them and tones the plot toward cocoa brown).
+- Lay out a garden around the action: rows on one side, an open bed where the line stands, nothing on the walk routes
+  (house door → gate gap → line, line → feast table); things that land or are set down (the pulled turnip) go behind
+  the actors, never between them and the camera (OCCLUDE), and leave with the story (carried to the table, cooked).
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

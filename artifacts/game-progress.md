@@ -2238,3 +2238,49 @@ voice is ElevenLabs — nar Annie, rap Sora, gothel Matilda, father Namchun, mot
     roofs extrude as a hipped block (the ridge runs back level, no back slope); sun_wind's houses are only far
     village background (body visible but blurred); the castle approach still shows the dark sky band above the far
     hills on a low lens (tale `backdrop`); windmill_tower sails turn in front of the cap but read thin edge-on.
+
+## 2026-11-23 — turnip v2: a real 텃밭 (user on v1: "순무는 텃밭이 없네용?")
+- Problem: the story happens in grandpa's 텃밭 but v1 grew the turnip on plain green meadow paper; the only garden was
+  one small raised-bed card far behind.
+- The garden now (tools/story/tales/turnip.py `SET_GARDEN`, spots in `FARM`): a tilled plot of brown cut-paper ridges
+  and furrows laid FLAT on the page (2.4 × 1.0, x -3.0..-0.6, z -1.36..-0.38; new set fields `flat` + `floor`: people,
+  spots and the turnip stand on its top), five vegetable rows on its left half (front → back: lettuces + strawberries;
+  carrots + spring onions; the turnip row with ordinary small turnips, a bare sown ridge and the giant at its right end;
+  peas on a trellis + tomatoes on stakes; cabbages + pumpkin vine + the bean poles), row-marker sticks, a stone edging
+  along the front of the rows, a picket fence on the left and back with the gate standing open, stepping stones from
+  the gate gap to the farmhouse door, a scarecrow, a wheelbarrow, a basket of vegetables, the watering can and
+  sunflowers round it. The right half is the giant turnip's open bed: the pulling line stands on it, nothing grows on
+  the walk routes (house door → gate gap → line, line → table).
+- Art: REUSED story_tn_garden 10/11/12 (cabbages, carrots, bean poles), 06 (watering can), 13 (mouse mound), the turnip
+  stages; meadow_field_16 scarecrow, meadow_field_27 sunflowers; the house / barn / bush / feast sheets. NEW shared
+  sheets (Codex, paper style block per category, magenta, md5-unique, contact sheets art_src/atlas/qa/story_veg_*):
+  story_veg_garden (18 cards: 2 soil ridges, lettuce / onion / small-turnip / strawberry rows, tomatoes on stakes, peas
+  trellis, pumpkin vine, long + short picket fence, open gate, wheelbarrow, vegetable basket, 3 row markers, stone
+  edging) and story_veg_ground (4 top-down pieces to lay flat: tilled plot, dug patch, stepping-stone path, earth
+  path); categories story_nature / story_prop / story_ground, tags garden / vegetable_garden / farm (generic: any
+  tale's cottage garden). Jobs tools/art/garden_jobs.py; labels tools/atlas/labels/story_veg_*.json; after add_sheet
+  run tools/atlas/veg_garden_fix.py (fill_holes had restored the magenta rims of real holes: wheel spokes, trellis gaps;
+  also tones the plot from orange toward cocoa).
+- Engine (small, shared): GroundLayers.floors + `floor_top` (surface_y returns a floor piece's top inside it; empty for
+  every other tale), SpreadStage `_build_set` registers a `flat` + `floor` entry's rectangle, re-resolves the spots and
+  clears meadow cards under it; PaperAmbient hides a butterfly / leaf within 0.9 of the story camera (they filled the
+  lens as grey-blue / yellow blurs on close shots). Regression (no movie): sun_wind STORY_DONE 214.8 s, patjuk 365.1 s,
+  CHECK_LINES OK, CAM 0/0, SPEAKER_OFF 0, overlap 0, SET_CHECK zeros, 0 script errors (artifacts/turnip/regress_v2).
+- Shots: establishing crane lands on the plot with the farmhouse and barn behind (`establish` 24°, focus between plot
+  and house); close shots raised a few degrees (line 8° → 13°, line_low 3° → 7°, line_wide / pop 15°, sprout 14°,
+  grown 10°) so soil and rows stay in frame. v1 list: the glide to the barn now ends on a long lens from far back
+  (`barn` 4.4 / 9° / fov 12) so it no longer passes in front of the line; the pulled turnip lands on the open bed
+  BEHIND the line (in front it hid four pullers: OCCLUDE 4 in the first try), rolls to beside the table before the walk
+  and folds into the cooking at 썰고; it is no longer lying in the garden at the feast.
+- Full movie run (real pace) artifacts/turnip/rec/run_v2.log: see the numbers below; video
+  artifacts/video/turnip_full_v2.mp4 (1200x900, scaled from the movie maker's 1366x1024 viewport; v1 was delivered at
+  1366x1024), contact sheet artifacts/turnip/full_v2_sheet.jpg.
+- Numbers (final movie run, real pace, 1200x900 window): STORY_DONE 278.7 s (4:39, v1 4:37), CHECK_LINES OK (54),
+  VOICE_DUP=0, CAM_JUMP=0 CAM_JERK=0, SPEAKER_OFF=0, OVERLAP_COUNT 0 OCCLUDE_COUNT 0 (the pulling line's holds stay in
+  overlap_ok), SET_CHECK all zero (40 pieces), missing_audio=[] missing_sound=[], no script errors. Video 24.9 MB.
+- Still off: at the feast table the plot is only a dark strip at the frame's bottom (the table stands off the plot on
+  purpose); the rolling turnip passes big behind the walkers on the way to the table; the plot's right half (the
+  turnip's bed) is bare soil; rows repeat the same card side by side (no flipped variants); the peas trellis keeps a
+  little grey-violet in its gaps; the mouse is still tiny in wide line shots; grandpa's head at the frame edge as
+  grandma runs out (unchanged from v1); a small blue butterfly can still cross the low feast shot; nobody has listened
+  to the mix (sound unchanged from v1).

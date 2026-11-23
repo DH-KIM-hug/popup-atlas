@@ -17190,5 +17190,529 @@
    296,
    332
   ]
+ },
+ {
+  "id": "story_veg_garden_00",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_00.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "long low tilled soil ridge (one garden row, nothing growing)",
+  "height_units": 0.045,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "ridge",
+   "row",
+   "soil",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   355,
+   63
+  ]
+ },
+ {
+  "id": "story_veg_garden_01",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_01.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "long low tilled soil ridge, darker furrow at its foot",
+  "height_units": 0.05,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "ridge",
+   "row",
+   "soil",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   349,
+   71
+  ]
+ },
+ {
+  "id": "story_veg_garden_02",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_02.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of four lettuce heads on a soil ridge",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "lettuce",
+   "row",
+   "story",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   354,
+   101
+  ]
+ },
+ {
+  "id": "story_veg_garden_03",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_03.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of spring onions on a soil ridge",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "onion",
+   "row",
+   "story",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   314,
+   141
+  ]
+ },
+ {
+  "id": "story_veg_garden_04",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_04.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of four ordinary small turnips half sunk in a soil ridge",
+  "height_units": 0.11,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "row",
+   "story",
+   "turnip",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   356,
+   146
+  ]
+ },
+ {
+  "id": "story_veg_garden_05",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_05.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "two tomato plants tied to wooden stakes",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "stakes",
+   "story",
+   "tomato",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   289,
+   215
+  ]
+ },
+ {
+  "id": "story_veg_garden_06",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_06.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of peas on a low stick-and-string trellis",
+  "height_units": 0.16,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "beans",
+   "farm",
+   "garden",
+   "peas",
+   "row",
+   "story",
+   "trellis",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   358,
+   179
+  ]
+ },
+ {
+  "id": "story_veg_garden_07",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_07.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "pumpkin vine with two small pumpkins",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "pumpkin",
+   "story",
+   "vegetable",
+   "vegetable_garden",
+   "vine"
+  ],
+  "px": [
+   379,
+   168
+  ]
+ },
+ {
+  "id": "story_veg_garden_08",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_08.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_nature",
+  "label": "row of strawberry plants on a soil ridge",
+  "height_units": 0.08,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "row",
+   "story",
+   "strawberry",
+   "vegetable_garden"
+  ],
+  "px": [
+   368,
+   127
+  ]
+ },
+ {
+  "id": "story_veg_garden_09",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_09.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "long low cream picket fence section",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "fence",
+   "garden",
+   "picket",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   418,
+   139
+  ]
+ },
+ {
+  "id": "story_veg_garden_10",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_10.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "short picket fence section with a corner post",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "fence",
+   "garden",
+   "picket",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   221,
+   154
+  ]
+ },
+ {
+  "id": "story_veg_garden_11",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_11.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "small picket garden gate standing open on its post",
+  "height_units": 0.17,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "fence",
+   "garden",
+   "gate",
+   "picket",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   241,
+   186
+  ]
+ },
+ {
+  "id": "story_veg_garden_13",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_13.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "empty wooden wheelbarrow",
+  "height_units": 0.13,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "story",
+   "tool",
+   "vegetable_garden",
+   "wheelbarrow"
+  ],
+  "px": [
+   362,
+   175
+  ]
+ },
+ {
+  "id": "story_veg_garden_14",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_14.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "wicker basket heaped with fresh vegetables",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "basket",
+   "farm",
+   "garden",
+   "harvest",
+   "story",
+   "vegetable",
+   "vegetable_garden"
+  ],
+  "px": [
+   306,
+   223
+  ]
+ },
+ {
+  "id": "story_veg_garden_15",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_15.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "row marker stick with a carrot seed-packet card",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "marker",
+   "sign",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   80,
+   178
+  ]
+ },
+ {
+  "id": "story_veg_garden_16",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_16.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "row marker stick with a cabbage seed-packet card",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "marker",
+   "sign",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   82,
+   178
+  ]
+ },
+ {
+  "id": "story_veg_garden_17",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_17.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "row marker stick with a pea seed-packet card",
+  "height_units": 0.09,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "garden",
+   "marker",
+   "sign",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   80,
+   176
+  ]
+ },
+ {
+  "id": "story_veg_garden_18",
+  "path": "art/atlas/story_veg_garden/story_veg_garden_18.webp",
+  "sheet": "story_veg_garden",
+  "category": "story_prop",
+  "label": "low border edging of rounded field stones",
+  "height_units": 0.04,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "border",
+   "edging",
+   "farm",
+   "garden",
+   "stones",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   443,
+   66
+  ]
+ },
+ {
+  "id": "story_veg_ground_00",
+  "path": "art/atlas/story_veg_ground/story_veg_ground_00.webp",
+  "sheet": "story_veg_ground",
+  "category": "story_ground",
+  "label": "tilled vegetable plot seen from above (lay flat: ridges run left-right; height = its depth)",
+  "height_units": 1.0,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "flat",
+   "garden",
+   "plot",
+   "ridges",
+   "soil",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   1374,
+   562
+  ]
+ },
+ {
+  "id": "story_veg_ground_01",
+  "path": "art/atlas/story_veg_ground/story_veg_ground_01.webp",
+  "sheet": "story_veg_ground",
+  "category": "story_ground",
+  "label": "stepping-stone garden path seen from above (lay flat; height = its width)",
+  "height_units": 0.14,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "farm",
+   "flat",
+   "garden",
+   "path",
+   "stones",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   993,
+   139
+  ]
+ },
+ {
+  "id": "story_veg_ground_02",
+  "path": "art/atlas/story_veg_ground/story_veg_ground_02.webp",
+  "sheet": "story_veg_ground",
+  "category": "story_ground",
+  "label": "square patch of freshly dug soil seen from above (lay flat)",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "dug",
+   "farm",
+   "flat",
+   "garden",
+   "soil",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   310,
+   309
+  ]
+ },
+ {
+  "id": "story_veg_ground_03",
+  "path": "art/atlas/story_veg_ground/story_veg_ground_03.webp",
+  "sheet": "story_veg_ground",
+  "category": "story_ground",
+  "label": "beaten earth path strip seen from above (lay flat)",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "meadow",
+  "season": "summer",
+  "tags": [
+   "earth",
+   "farm",
+   "flat",
+   "garden",
+   "path",
+   "story",
+   "vegetable_garden"
+  ],
+  "px": [
+   993,
+   98
+  ]
  }
 ]

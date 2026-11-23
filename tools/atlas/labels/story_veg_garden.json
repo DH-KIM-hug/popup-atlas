@@ -1,0 +1,247 @@
+{
+ "biome": "meadow",
+ "season": "summer",
+ "tags": [
+  "story",
+  "garden",
+  "vegetable_garden",
+  "farm"
+ ],
+ "items": {
+  "00": [
+   "long low tilled soil ridge (one garden row, nothing growing)",
+   "story_nature",
+   0.045,
+   0,
+   {
+    "tags": [
+     "soil",
+     "ridge",
+     "row"
+    ]
+   }
+  ],
+  "01": [
+   "long low tilled soil ridge, darker furrow at its foot",
+   "story_nature",
+   0.05,
+   0,
+   {
+    "tags": [
+     "soil",
+     "ridge",
+     "row"
+    ]
+   }
+  ],
+  "02": [
+   "row of four lettuce heads on a soil ridge",
+   "story_nature",
+   0.09,
+   0,
+   {
+    "tags": [
+     "lettuce",
+     "vegetable",
+     "row"
+    ]
+   }
+  ],
+  "03": [
+   "row of spring onions on a soil ridge",
+   "story_nature",
+   0.12,
+   0,
+   {
+    "tags": [
+     "onion",
+     "vegetable",
+     "row"
+    ]
+   }
+  ],
+  "04": [
+   "row of four ordinary small turnips half sunk in a soil ridge",
+   "story_nature",
+   0.11,
+   0,
+   {
+    "tags": [
+     "turnip",
+     "vegetable",
+     "row"
+    ]
+   }
+  ],
+  "05": [
+   "two tomato plants tied to wooden stakes",
+   "story_nature",
+   0.22,
+   0,
+   {
+    "tags": [
+     "tomato",
+     "vegetable",
+     "stakes"
+    ]
+   }
+  ],
+  "06": [
+   "row of peas on a low stick-and-string trellis",
+   "story_nature",
+   0.16,
+   0,
+   {
+    "tags": [
+     "peas",
+     "beans",
+     "vegetable",
+     "trellis",
+     "row"
+    ]
+   }
+  ],
+  "07": [
+   "pumpkin vine with two small pumpkins",
+   "story_nature",
+   0.14,
+   0,
+   {
+    "tags": [
+     "pumpkin",
+     "vegetable",
+     "vine"
+    ]
+   }
+  ],
+  "08": [
+   "row of strawberry plants on a soil ridge",
+   "story_nature",
+   0.08,
+   0,
+   {
+    "tags": [
+     "strawberry",
+     "row"
+    ]
+   }
+  ],
+  "09": [
+   "long low cream picket fence section",
+   "story_prop",
+   0.14,
+   0,
+   {
+    "tags": [
+     "fence",
+     "picket"
+    ]
+   }
+  ],
+  "10": [
+   "short picket fence section with a corner post",
+   "story_prop",
+   0.15,
+   0,
+   {
+    "tags": [
+     "fence",
+     "picket"
+    ]
+   }
+  ],
+  "11": [
+   "small picket garden gate standing open on its post",
+   "story_prop",
+   0.17,
+   0,
+   {
+    "tags": [
+     "fence",
+     "gate",
+     "picket"
+    ]
+   }
+  ],
+  "13": [
+   "empty wooden wheelbarrow",
+   "story_prop",
+   0.13,
+   0,
+   {
+    "tags": [
+     "wheelbarrow",
+     "tool"
+    ]
+   }
+  ],
+  "14": [
+   "wicker basket heaped with fresh vegetables",
+   "story_prop",
+   0.12,
+   0,
+   {
+    "tags": [
+     "basket",
+     "vegetable",
+     "harvest"
+    ]
+   }
+  ],
+  "15": [
+   "row marker stick with a carrot seed-packet card",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "marker",
+     "sign"
+    ]
+   }
+  ],
+  "16": [
+   "row marker stick with a cabbage seed-packet card",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "marker",
+     "sign"
+    ]
+   }
+  ],
+  "17": [
+   "row marker stick with a pea seed-packet card",
+   "story_prop",
+   0.09,
+   0,
+   {
+    "tags": [
+     "marker",
+     "sign"
+    ]
+   }
+  ],
+  "18": [
+   "low border edging of rounded field stones",
+   "story_prop",
+   0.04,
+   0,
+   {
+    "tags": [
+     "edging",
+     "stones",
+     "border"
+    ]
+   }
+  ]
+ },
+ "merge": [
+  [
+   "11",
+   "12"
+  ]
+ ]
+}

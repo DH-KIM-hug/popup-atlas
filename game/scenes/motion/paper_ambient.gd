@@ -12,6 +12,9 @@ extends Node3D
 @export var seed_value := 4
 
 const TEX := "res://scenes/motion/tex/"
+## (turnip v2 2026-11-23) a butterfly / leaf this close to the story camera filled the lens as a grey-blue blur on
+## close and low shots: it is hidden while that near (it flies on and shows again further off)
+const NEAR_CAM := 0.9
 const WINGS := ["orange", "lemon", "blue", "rose"]
 const LEAVES := ["ochre", "red", "orange", "sage"]
 
@@ -104,6 +107,7 @@ func _process(dt: float) -> void:
 	if PopHinge.fixed_dt > 0.0:
 		dt = PopHinge.fixed_dt
 	_t += dt
+	var cam := get_viewport().get_camera_3d() if is_inside_tree() else null
 	for f in _flies:
 		var root: Node3D = f[0]
 		var p: Dictionary = f[3]
@@ -115,6 +119,7 @@ func _process(dt: float) -> void:
 		var vel := Vector3(p["rx"] * p["a"] * TAU * cos(t * p["a"] * TAU + p["p"]), 0,
 			p["rz"] * p["b"] * TAU * cos(t * p["b"] * TAU + p["q"]))
 		root.position = pos
+		root.visible = cam == null or cam.global_position.distance_to(root.global_position) > NEAR_CAM
 		if vel.length() > 1e-4:
 			root.rotation.y = atan2(vel.x, vel.z)
 		# Flap: wings sweep up together (the body line is the hinge), mostly-up stroke like a real one.
@@ -133,6 +138,7 @@ func _process(dt: float) -> void:
 			n.position = Vector3(p["x"], 0.004, p["z"])
 			n.rotation = Vector3(-PI * 0.5, p["ph"], 0)
 			continue
+		n.visible = cam == null or cam.global_position.distance_to(n.global_position) > NEAR_CAM
 		p["y"] = maxf(0.0, p["y"] - p["fall"] * dt)
 		var sw := sin(_t * p["sw"] * TAU + p["ph"])
 		p["x"] += p["amp"] * cos(_t * p["sw"] * TAU + p["ph"]) * p["sw"] * TAU * dt * 0.5 + 0.03 * dt

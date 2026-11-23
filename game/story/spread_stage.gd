@@ -449,6 +449,17 @@ func _build_set(list: Array) -> void:
 			_set_glow(sp, float(e["glow"]))
 		if e.has("light"):  # a warm pool of light: [energy, height (units), range, colour, flicker]
 			_add_light(sp, e["light"])
+		if e.get("flat", false) and e.get("floor", false):
+			# a flat piece people stand on (turnip's garden plot): its rectangle lifts the walk surface, and the spots
+			# resolve again so marks / pieces on it stand on its top (turnip v2 2026-11-23)
+			var fr := sp.global_transform.basis.x.normalized() * sp.width * 0.5
+			var fa := -sp.global_transform.basis.z.normalized() * sp.height
+			var fp := PackedVector2Array()
+			for c3: Vector3 in [p - fr, p + fr, p + fr + fa, p - fr + fa]:
+				fp.append(Vector2(c3.x, c3.z))
+			world.ground.floors.append([fp, p.y + 0.006])
+			_build_spots()
+			_clear_area(p + fa * 0.5, Vector2(sp.width, sp.height).length() * 0.5, float(e.get("clear", 1.0)))
 		_check_footprint(sp, e)
 		_clear_area(p, sp.height * 0.75 + 0.12, float(e.get("clear", 1.0)))
 		await _slicer.tick()

@@ -1,0 +1,79 @@
+{
+ "sheet": "story_veg_ground",
+ "bg": [
+  0.98,
+  0.012,
+  0.984
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_veg_ground_00",
+   "bbox": [
+    83,
+    55,
+    1449,
+    609
+   ],
+   "area": 730319,
+   "size": [
+    1374,
+    562
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_ground_01",
+   "bbox": [
+    467,
+    693,
+    1452,
+    824
+   ],
+   "area": 119221,
+   "size": [
+    993,
+    139
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_ground_02",
+   "bbox": [
+    76,
+    670,
+    378,
+    971
+   ],
+   "area": 82800,
+   "size": [
+    310,
+    309
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_veg_ground_03",
+   "bbox": [
+    467,
+    884,
+    1452,
+    974
+   ],
+   "area": 76165,
+   "size": [
+    993,
+    98
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}
