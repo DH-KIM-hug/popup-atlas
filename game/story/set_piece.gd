@@ -174,6 +174,56 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int, flat_ := f
 	shown = clampi(n_up, 0, bands.size())
 
 
+var building: Building  ## a 3D kit building (setup_building) instead of a card
+
+
+## A kit building (Building.make: pavilion, tower, castle ...) on one hinge: it pops up and folds with the page like a
+## card. Its parts that move (portcullis, drawbridge) take set_state.
+func setup_building(spec_v: Variant, scale_: float, n_up: int, state: Dictionary = {}) -> void:
+	id = str(spec_v) if spec_v is String else "building"
+	facade = Node3D.new()
+	facade.name = "Facade"
+	add_child(facade)
+	walls = Node3D.new()
+	walls.name = "Walls"
+	facade.add_child(walls)
+	var base := Node3D.new()
+	walls.add_child(base)
+	hinge = PopHinge.new()
+	hinge.weight = 2.0
+	base.add_child(hinge)
+	building = Building.make(spec_v, scale_, {"state": state} if not state.is_empty() else {})
+	if building == null:
+		return
+	hinge.add_child(building)
+	var mn := Vector3(INF, INF, INF)
+	var mx := -mn
+	for mi in building.find_children("*", "MeshInstance3D", true, false):
+		var m := mi as MeshInstance3D
+		var bb: AABB = m.get_aabb()
+		for k in 8:
+			var q: Vector3 = _local_pt(m, bb.get_endpoint(k))
+			mn = mn.min(q)
+			mx = mx.max(q)
+	width = mx.x - mn.x
+	height = mx.y
+	shown = 1 if n_up != 0 else 0
+
+
+func _local_pt(m: Node3D, p: Vector3) -> Vector3:
+	var t := Transform3D.IDENTITY
+	var n: Node = m
+	while n != null and n != building:
+		t = (n as Node3D).transform * t
+		n = n.get_parent()
+	return t * p
+
+
+func set_state(key: String, v: float) -> void:
+	if building:
+		building.set_state(key, v)
+
+
 ## The door leaf: its own card, hinged on its left edge, a hair in front of the wall (the wall has the hole).
 func _add_door(h: PopHinge, root: Node3D, s: float) -> void:
 	var tex: Texture2D = load("res://" + str(_door_box["file"]))
@@ -289,8 +339,19 @@ func window_box(i: int) -> Array:
 ## the roof and a copy of the front facing backwards (a closed volume from the side). cfg {depth, side, inner, floor}:
 ## card paths. Hidden while the house is not whole (being built, blown away).
 func add_box(cfg: Dictionary) -> void:
-	if bands.is_empty() or box != null:
+	if box != null:
 		return
+	# 2026-11-23 (user: "집들은 무조건 입체적으로 아주 잘 들어맞게"): every house card with a body spec
+	# (tools/atlas/house_bodies.py) gets its front's outline extruded back (HouseBody): side walls on the drawn wall
+	# edges, the roof along the drawn roof line, soffits, the gable at the back, the chimney seated, reveals in the
+	# door / windows. Floor, ceiling and an inside back wall from cfg stay (rooms).
+	var hb_spec := HouseBody.spec_for(id)
+	if not hb_spec.is_empty():
+		_add_body(cfg, hb_spec)
+		return
+	if bands.is_empty():
+		return
+	enterable = not cfg.get("auto", false)
 	var s := _px_scale
 	var d := float(cfg.get("depth", 0.45))
 	var x0 := (float(_wall_x[0]) - _px_w * 0.5) * s
@@ -337,6 +398,67 @@ func add_box(cfg: Dictionary) -> void:
 			var c: PaperCard = mk.call(floor, d, x1 - x0, Vector3((x0 + x1) * 0.5, 0.004 + k * (wall_h - 0.01), 0), 0.0)
 			c.get_parent().rotation.x = -PI * 0.5
 			c.get_parent().scale = Vector3((x1 - x0) / maxf(d * c.texture.get_size().x / maxf(c.texture.get_size().y, 1.0), 0.001), 1, 1)
+	box.visible = shown >= band_count()
+
+
+var enterable := false  ## a box from the script (rooms, refuges): house_of() counts it; auto bodies do not
+var body: HouseBody
+
+
+func _add_body(cfg: Dictionary, sp: Dictionary) -> void:
+	enterable = not cfg.get("auto", false)
+	var d := float(cfg.get("depth", -1.0))
+	box = Node3D.new()
+	box.name = "Box"
+	var thick := 0.02
+	if not bands.is_empty():
+		thick = band_cards[0].thickness
+		add_child(box)
+		body = HouseBody.for_facade(id, _px_w, _base_px, _px_scale, thick, d)
+	else:
+		if card == null:
+			return
+		thick = card.thickness
+		(card.get_parent() as Node3D).add_child(box)  # on the hinge: it pops up and folds with the card
+		body = HouseBody.for_card(id, card.texture, height, thick, d)
+	if body == null:
+		return
+	box.add_child(body)
+	var deep := minf(0.035, body.depth * 0.12)
+	if not _door_box.is_empty():
+		body.add_reveal([_door_box["x0"], _door_box["y0"], _door_box["x1"], _door_box["y1"]], deep, thick, false)
+	for b: Array in _window_boxes:
+		body.add_reveal(b, deep, thick, true)
+	var dd := body.depth
+	var s := _px_scale
+	if bands.is_empty():
+		return
+	var x0 := (float(_wall_x[0]) - _px_w * 0.5) * s
+	var x1 := (float(_wall_x[1]) - _px_w * 0.5) * s
+	var wall_h := (_base_px - _roof_px) * s
+	var mk := func(path: String, h: float, w: float, pos: Vector3, yaw: float) -> PaperCard:
+		var c := PaperCard.new()
+		c.texture = load(path)
+		c.height = h
+		c.thickness = 0.006
+		c.back_print = false
+		var ts := c.texture.get_size()
+		var n := Node3D.new()
+		n.position = pos
+		n.rotation.y = yaw
+		n.scale = Vector3(w / maxf(h * ts.x / maxf(ts.y, 1.0), 0.001), 1, 1)
+		box.add_child(n)
+		n.add_child(c)
+		return c
+	var inner := str(cfg.get("inner", ""))
+	if inner != "" and not cfg.get("body", false):
+		mk.call(inner, wall_h * float(cfg.get("inner_h", 1.0)), x1 - x0 - 0.01, Vector3((x0 + x1) * 0.5, 0, -dd + 0.012), 0.0)
+	var floor := str(cfg.get("floor", ""))
+	if floor != "":
+		for k in 2:  # floor and ceiling: planks lying flat
+			var c: PaperCard = mk.call(floor, dd - 0.02, x1 - x0 - 0.01, Vector3((x0 + x1) * 0.5, 0.004 + k * (wall_h - 0.01), -0.008), 0.0)
+			c.get_parent().rotation.x = -PI * 0.5
+			c.get_parent().scale = Vector3((x1 - x0 - 0.01) / maxf((dd - 0.02) * c.texture.get_size().x / maxf(c.texture.get_size().y, 1.0), 0.001), 1, 1)
 	box.visible = shown >= band_count()
 
 
@@ -519,8 +641,9 @@ func _process(dt: float) -> void:
 		var o := 1.0
 		if not bands.is_empty():
 			o = clampf((bands[0] as PopHinge).openness(), 0.0, 1.0)
-		box.scale.y = maxf(o, 0.001)
-		box.visible = shown >= bands.size() and o > 0.02
+		if not bands.is_empty():
+			box.scale.y = maxf(o, 0.001)
+			box.visible = shown >= bands.size() and o > 0.02
 	if flat:
 		var fs := PaperSpring.step(_flat_s, _flat_v, _flat_t, 8.0, 0.6, dt)
 		_flat_s = fs.x

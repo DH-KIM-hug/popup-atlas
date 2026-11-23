@@ -94,3 +94,35 @@ ground sheets; sunmoon). Read-mode lines (`READ_SCRIPT` in the seed table) carry
 (new line, recording not approved yet: plays caption-only for an estimated read time, listed in STORY_DONE
 missing_audio; set via LINE_META in tools/story/tales/<tale>.py).
 Add an `expr`/`pose` hint per line when the speaker's face must change (surprised, cold, hot…), so wiring is data.
+
+## Buildings from the kit (2026-11-23)
+Set entry: `{"build": "<preset>" | {spec}, "at": spot, "off", "yaw", "scale" (world units per spec unit, default 1),
+"name", "clear", "stage" (0 = not yet standing), "state": {"portcullis": 0..1 (1 raised), "drawbridge": 0..1 (1 down)}}`.
+A handler moves parts with `stage.set_piece(name).set_state("drawbridge", 0.0)` (eases at 0.6 / s).
+Presets (game/art/buildings/kit.json, from tools/atlas/building_kit.py): octagon_pavilion (팔각정: curved giwa pyramid,
+dancheong beams, red pillars, Korean railing, steps), gazebo (hexagonal, shingles), round_hut (thatch cone), round_tower
+(slate cone), rapunzel_tower (2.1 tall, one high window + balcony, flag; reuse it alone), windmill_tower (octagonal
+planks, shingle pyramid), two_storey (half-timber, terracotta hip, two floors of windows), hanok_l (two hip blocks in
+an L, curved giwa eaves, lattice doors), pagoda (three tiers: skirt roofs onto the storey above, pyramid + finial),
+castle (keep with battlements + slate hip, four round corner towers with cone roofs and flags, curtain walls with
+battlements and a walkway, gatehouse with an arched passage, portcullis and drawbridge, a plank bridge).
+Spec: `{"scale", "parts": [part...], "state"}`; every part has `type`, `name`, `at` [x, z], `yaw`, `base` (y of its
+foot, to stack tiers) and:
+| type | fields |
+|---|---|
+| block / tower | `shape` rect (`size` [w, d]) / ngon (`n`, `r`) / round (`r`, n 24) / poly (`pts`); `h`, `wall` (material), `thick`, `plinth` {h, mat, out}, `openings` [{edge (0 = front, then left, back, right / round the polygon), u (0..1 along the edge), w, h, y (sill), kind door / window / arch / gate, card (atlas id of the leaf, recessed in the reveal), open}], `crenel` {h, w, gap, d}, `roof` |
+| pavilion | shape fields, `h` (pillar height), `platform`, `platform_mat`, `deck`, `pillar`, `pillar_r`, `beam`, `beam_h`, `railing` (card), `railing_h`, `steps` (front), `roof` |
+| wall_run | `from` [x, z], `to`, `h`, `thick`, `wall`, `crenel` (both edges, walkway between) |
+| gate | a rect block + `gate_w`, `gate_h` (arched passage through front and back with its vault and floor), `portcullis` (card), `drawbridge` (card) |
+| stairs | `steps`, `w`, `rise`, `run`, `mat` |
+| bridge | `from`, `to`, `y`, `w`, `thick`, `mat` |
+| flag | `card`, `h` (sways) |
+| card | `card`, `h`, `w` |
+`roof`: {type gable / hip / pyramid / cone / skirt / flat / none, `h` (rise) or `pitch`, `overhang`, `mat`, `thick`,
+`curve` (0..1 Korean upturned eaves + sagging slope), `ridge` "x" / "z", `lift`, `finial` (card), `finial_h`,
+skirt: `upper_r` + `upper` {size / r of the storey above}}. The eave height is set so the roof surface passes the
+wall tops (no slit); a gable's end walls follow the roof underside. Materials: plaster, fieldstone, ashlar, brick,
+planks, halftimber, hanok_wall, terracotta, slate, thatch, giwa, dancheong, lacquer, shingle (`tile` = world size).
+Compound buildings (castles) are parts placed relative to each other; parts that meet overlap a little inside each
+other (a tower's wall cuts through the curtain wall's end) so no gap shows; never two coplanar faces (inset a wing
+by a few mm).

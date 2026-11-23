@@ -402,6 +402,41 @@ Run long work through background agents/workflows with narrow ownership (one own
 - After regenerating script.json with seed_script.py, diff it before copying: upstream 톡톡 text and clips change
   (witch_candy lost 10 clips once), and a hand reorder in the tale .py only reaches the game after a reseed.
 
+**Houses solid from every angle (user rule 2026-11-23: "집들은 무조건 입체적으로 아주 잘 들어맞게")**
+- Every house / barn / shop / cottage in every tale is a closed volume whose pieces fit tightly: no flat front cards, no
+  slit between front, sides and roof, no background through corners or under eaves, roof neither floating nor sunk,
+  sides in the front's own material, readable from any story camera and from oblique orbit angles.
+- Drawn fronts get a BODY automatically: `tools/atlas/house_bodies.py [ids] --sheet <contact.jpg>` traces each card's
+  outline (chimney cut off by a 1-D opening of the roof line, thin strings opened away, walls fitted as lines through
+  the drawn wall edges, the eave line = the overhang's underside), writes `game/art/atlas/bodies.json` (merge) +
+  crops of the house's own art (`<sheet>/bodies/<id>_side|roof|back|chimney.webp`: the most wall-like / roof-like
+  patch, mirror-tiled; the back = its own gable over plain wall). `game/core/world/house_body.gd` (HouseBody)
+  extrudes the outline back: side walls on the wall edges, the roof surface along the drawn roof line, soffits under
+  the overhang, the outline filled at the back, the chimney as a box seated in the roof, every face doubled inward
+  (darker) for cameras inside. It starts at the card's FRONT face, grown 0.8 mm: a PaperCard's own cut edge does not
+  draw from above, and a body that started behind the card left a slit along the roof (found with the orbit probe).
+- Where bodies attach: SetPiece `box` (enterable houses: rooms, refuges; floor / ceiling / `inner` back wall from the
+  box cfg still apply; `body: true` and side / inner side cards are superseded) and AUTOMATICALLY on every set entry
+  whose card has a bodies.json entry (turnip's farmhouse and barn, sunmoon's gate house, the goats' mill, the pigs'
+  home); auto bodies are not `enterable` (house_of / overlap logic unchanged). Banded houses keep their build: the body
+  stands only when the house is whole and folds with band 0. The template village's house cards get bodies too
+  (meadow.gd `_add_house_body`: on the card's hinge, or at the static card's transform; the clean atlas copies are
+  cropped: `clean_off`). Door / window reveals (`HouseBody.add_reveal`) line every door_box / window_box.
+- The clean copy offset, the inner faces and the winding: Godot draws the clockwise side (HouseBody._wind keeps
+  quads clockwise seen from their outward normal). Test a new body with the orbit probe, not a story still.
+- AUDIT every tale's houses with `tools/story/house_orbit_all.sh OUT LABEL [tales]` (house_orbit.gd per beat: each set
+  house + the nearest template houses, nine solo views on magenta: front, ±35°, ±70°, back-¾ both sides, high, low,
+  plus the story shot; `tools/story/house_audit.py` paints background seen THROUGH the house red and counts it). Red in
+  a closed house is a defect; in a pavilion, gateway or courtyard it is the real opening.
+- Buildings that are not one drawn front (팔각정, round towers, hanok with curved eaves, pagodas, castles) are built in
+  3D from a spec: `game/core/world/building.gd` (Building) + `game/art/buildings/kit.json` (presets and materials,
+  written by `tools/atlas/building_kit.py`; paper swatches `story_bk_materials`, doors / windows / gate / portcullis /
+  drawbridge / flags / railings / finial `story_bk_parts`). Place one with a set entry
+  `{"build": "<preset>" | {spec}, "at", "yaw", "scale", "state": {"portcullis": 1, "drawbridge": 1}, "name", "clear"}`
+  (SetPiece.setup_building: one hinge, pops with the page; `sp.set_state(key, v)` moves a portcullis / drawbridge).
+  Spec format and presets: references/script_schema.md ("Buildings from the kit"). Kit sheet: house_orbit.sh with a
+  6th argument (presets) renders the solo orbit + a context shot on the meadow (castle: approach, gate, tower window).
+
 **Tooling gotchas**
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI layout with `gd_run.capture_scene` instead.
 - One Godot process per project at a time (import races mark files valid=false — delete the .import and reimport).

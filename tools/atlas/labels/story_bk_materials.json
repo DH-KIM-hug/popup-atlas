@@ -1,0 +1,165 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "building_kit",
+  "material",
+  "story"
+ ],
+ "items": {
+  "00": [
+   "cream lime plaster (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "01": [
+   "grey fieldstone (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "02": [
+   "castle ashlar blocks (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "03": [
+   "red brick (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "04": [
+   "brown vertical wood planks (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "05": [
+   "white half-timber (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "06": [
+   "korean hanok wall (paper panels, wood posts) (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "07": [
+   "terracotta roof tiles (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "08": [
+   "blue-grey slate shingles (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "09": [
+   "golden straw thatch (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "10": [
+   "korean giwa roof tiles (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "11": [
+   "korean dancheong painted beam (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "12": [
+   "dark red lacquered wood (pillars) (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ],
+  "13": [
+   "honey wooden shingles (tileable swatch)",
+   "story_material",
+   0.3,
+   0,
+   {
+    "tags": [
+     "swatch"
+    ]
+   }
+  ]
+ }
+}

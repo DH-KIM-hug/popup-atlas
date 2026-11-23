@@ -1,0 +1,200 @@
+{
+ "biome": "any",
+ "season": "any",
+ "tags": [
+  "building_kit",
+  "story"
+ ],
+ "items": {
+  "00": [
+   "wooden arched door, iron hinges, ring handle",
+   "story_building",
+   0.4,
+   0,
+   {
+    "tags": [
+     "door"
+    ]
+   }
+  ],
+  "01": [
+   "castle gate double door in a stone arch",
+   "story_building",
+   0.5,
+   0,
+   {
+    "tags": [
+     "door",
+     "gate",
+     "castle"
+    ]
+   }
+  ],
+  "02": [
+   "iron portcullis with spikes",
+   "story_building",
+   0.45,
+   0,
+   {
+    "tags": [
+     "gate",
+     "castle"
+    ]
+   }
+  ],
+  "03": [
+   "drawbridge planks with iron bands and chain rings",
+   "story_building",
+   0.45,
+   0,
+   {
+    "tags": [
+     "gate",
+     "castle",
+     "bridge"
+    ]
+   }
+  ],
+  "04": [
+   "arched castle window, night glass",
+   "story_building",
+   0.25,
+   0,
+   {
+    "tags": [
+     "window",
+     "castle"
+    ]
+   }
+  ],
+  "05": [
+   "square cottage window, lit, green shutters",
+   "story_building",
+   0.22,
+   0,
+   {
+    "tags": [
+     "window"
+    ]
+   }
+  ],
+  "06": [
+   "round window, lit",
+   "story_building",
+   0.18,
+   0,
+   {
+    "tags": [
+     "window"
+    ]
+   }
+  ],
+  "07": [
+   "korean lattice paper window / door",
+   "story_building",
+   0.35,
+   0,
+   {
+    "tags": [
+     "window",
+     "door",
+     "korean"
+    ]
+   }
+  ],
+  "08": [
+   "red swallow-tail pennant on a pole",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "flag",
+     "castle"
+    ]
+   }
+  ],
+  "09": [
+   "blue banner flag with a gold star on a pole",
+   "story_prop",
+   0.3,
+   0,
+   {
+    "tags": [
+     "flag",
+     "castle"
+    ]
+   }
+  ],
+  "10": [
+   "wooden railing section, balusters",
+   "story_building",
+   0.12,
+   0,
+   {
+    "tags": [
+     "railing"
+    ]
+   }
+  ],
+  "11": [
+   "korean red-brown railing section",
+   "story_building",
+   0.12,
+   0,
+   {
+    "tags": [
+     "railing",
+     "korean"
+    ]
+   }
+  ],
+  "12": [
+   "golden roof finial",
+   "story_building",
+   0.15,
+   0,
+   {
+    "tags": [
+     "finial",
+     "pavilion"
+    ]
+   }
+  ],
+  "13": [
+   "small stone balcony with balustrade",
+   "story_building",
+   0.15,
+   0,
+   {
+    "tags": [
+     "balcony",
+     "castle"
+    ]
+   }
+  ],
+  "14": [
+   "korean dancheong eave bracket band",
+   "story_building",
+   0.1,
+   0,
+   {
+    "tags": [
+     "korean",
+     "pavilion"
+    ]
+   }
+  ],
+  "15": [
+   "small wooden staircase (side view)",
+   "story_building",
+   0.25,
+   0,
+   {
+    "tags": [
+     "stairs"
+    ]
+   }
+  ]
+ }
+}

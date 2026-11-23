@@ -70,6 +70,10 @@ var _start := Vector2.ZERO  ## traveller start on the page
 var _cam_ground := Vector2.ZERO
 var _cam_h := 2.0  ## camera height above the page (lens keep-out)
 var _houses: Array = []  ## [pos, h, yaw] for chimney smoke
+## the village's house cards (2026-11-23 house bodies): {id, path, h0, h, pos, yaw, lean, tilt, hinge (or null), thick,
+## body (HouseBody or null)}; the orbit probe (tools/story/house_orbit.gd) reads it
+var house_cards: Array = []
+var _last_place := {}
 var _fill_mask: FastNoiseLite  ## r2: low-frequency density mask (clearings vs clumps)
 ## perf: set before add_child to spread the build over frames (BuildSlicer budget); null = build in _ready at once.
 var slicer: BuildSlicer
@@ -312,6 +316,7 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 		trees.append(pos + Vector3(0, h * 0.75, 0))  # sound: bird / leaf-rustle points (top of the crown)
 	if force_static or not pop_on_load or q.distance_to(_start) > pop_radius:
 		statics.add(it["path"], float(it["h"]), h, pos, yaw, lean, cross, tilt)
+		_last_place = {"pos": pos, "yaw": yaw, "lean": lean, "tilt": tilt, "hinge": null, "thick": CardAtlas.thickness_for(float(it["h"])) * h / float(it["h"]), "parent": null}
 		return
 	var base := Node3D.new()
 	base.position = pos
@@ -325,6 +330,7 @@ func _place(it: Dictionary, h: float, q: Vector2, yaw: float, cross := false, w 
 	base.add_child(hinge)
 	hinges.append(hinge)
 	var thick := clampf(h * 0.04, 0.011, 0.04)  # r3: thicker board
+	_last_place = {"pos": pos, "yaw": yaw, "lean": lean, "tilt": tilt, "hinge": hinge, "thick": thick, "parent": hinge}
 	var rec := -1
 	if cross:
 		var cc := CrossCard.new()
@@ -489,7 +495,19 @@ func _village(c: Vector2) -> void:
 		if _free(q, r):
 			_reserve(q, r)
 			var yaw := rng.randf_range(-0.3, 0.3)
+			var sw: Dictionary = (Building.kit().get("swap", {}) as Dictionary).get(id, {})
+			if not sw.is_empty():  # 2026-11-23: an open pavilion card stands as the kit's 3D pavilion
+				house_cards.append({"id": id, "path": e["path"], "h0": float(e["h"]), "h": h,
+					"pos": Vector3(q.x, ground.surface_y(q), q.y), "yaw": yaw, "lean": 0.0, "tilt": 0.0, "hinge": null,
+					"thick": 0.0, "body": _place_building(str(sw["preset"]), h / float(sw.get("h", 1.0)), q, yaw, h * float(e["aspect"])),
+					"building": true})
+				lib.mark(id)
+				_houses.append([Vector3(q.x, ground.surface_y(q), q.y), h, yaw, h * float(e["aspect"])])
+				continue
 			_place(e, h, q, yaw, false)
+			house_cards.append({"id": id, "path": e["path"], "h0": float(e["h"]), "h": h, "pos": _last_place["pos"],
+				"yaw": yaw, "lean": _last_place["lean"], "tilt": _last_place["tilt"], "hinge": _last_place["hinge"],
+				"thick": _last_place["thick"], "body": _add_house_body(id, e, h)})
 			lib.mark(id)
 			_houses.append([Vector3(q.x, ground.surface_y(q), q.y), h, yaw, h * float(e["aspect"])])
 	# yard props, fences, lanterns, a well, washing line, garden flowers
@@ -508,6 +526,51 @@ func _village(c: Vector2) -> void:
 	for k in 24:
 		await slicer.tick()
 		_try("flower" if k % 2 == 0 else "bush", c + Vector2(rng.randf_range(-2.8, 2.8), rng.randf_range(-1.8, 2.6)), 0.4, 0.8, 1.05)
+
+
+## A kit building (Building) standing where the template picked a card: on a hinge that rises in the page wave.
+func _place_building(preset: String, sc: float, q: Vector2, yaw: float, w: float) -> Node3D:
+	var pos := Vector3(q.x, ground.surface_y(q), q.y)
+	contact.add(pos, yaw, w, 0.16, 1.0)
+	var base := Node3D.new()
+	base.position = pos
+	base.rotation.y = yaw
+	add_child(base)
+	var b := Building.make(preset, sc)
+	if b == null:
+		return null
+	if pop_on_load and q.distance_to(_start) <= pop_radius:
+		var hinge := PopHinge.new()
+		hinge.start_up = not pop_on_load
+		hinge.weight = 2.0
+		hinge.set_meta("card_h", 1.0)
+		hinge.set_meta("half_w", w * 0.5)
+		base.add_child(hinge)
+		hinges.append(hinge)
+		hinge.add_child(b)
+	else:
+		base.add_child(b)
+	return b
+
+
+## The house card's body (2026-11-23, HouseBody): the front's outline extruded back, on the card's hinge (it pops up
+## and folds with the card) or, for a static far card, at the card's transform.
+func _add_house_body(id: String, e: Dictionary, h: float) -> HouseBody:
+	var tex := _tex_of(e["path"])
+	var b := HouseBody.for_card(id, tex, h, float(_last_place["thick"]), -1.0, 0.05)
+	if b == null:
+		return null
+	var hg: Variant = _last_place["hinge"]
+	if hg != null:
+		(hg as Node3D).add_child(b)
+	else:
+		var n := Node3D.new()
+		n.name = "HouseBodyStatic"
+		n.position = _last_place["pos"]
+		n.basis = Basis(Vector3.UP, float(_last_place["yaw"])) * Basis(Vector3.BACK, float(_last_place["lean"])) * Basis(Vector3.RIGHT, float(_last_place["tilt"]))
+		add_child(n)
+		n.add_child(b)
+	return b
 
 
 func _wheat_field(c: Vector2) -> void:

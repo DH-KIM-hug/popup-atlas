@@ -396,12 +396,12 @@ static func atlas_entry(id: String) -> Dictionary:
 ## (0 = an empty lot, "full" = all), a plain card always stands unless stage == 0.
 func _build_set(list: Array) -> void:
 	for e: Dictionary in list:
-		var nm := str(e.get("name", e.get("at", e["card"])))
+		var nm := str(e.get("name", e.get("at", e.get("card", e.get("build", "building")))))
 		if sets.has(nm):
 			continue
-		var ce := atlas_entry(str(e["card"]))
-		if ce.is_empty():
-			push_warning("SpreadStage: no catalog card " + str(e["card"]))
+		var ce := atlas_entry(str(e.get("card", "")))
+		if ce.is_empty() and not e.has("build"):
+			push_warning("SpreadStage: no catalog card " + str(e.get("card", "")))
 			continue
 		var sp := SetPiece.new()
 		sp.name = "Set_" + nm
@@ -409,7 +409,10 @@ func _build_set(list: Array) -> void:
 		add_child(sp)
 		var stg: Variant = e.get("stage", "full")
 		var n_up := 99 if str(stg) == "full" else int(stg)
-		sp.setup(ce, float(e.get("scale", SET_SCALE)), e.has("stage") and not e.get("flat", false), n_up, bool(e.get("flat", false)))
+		if e.has("build"):  # a 3D building from the kit (Building: pavilions, towers, castles, 2026-11-23)
+			sp.setup_building(e["build"], float(e.get("scale", 1.0)), n_up, e.get("state", {}))
+		else:
+			sp.setup(ce, float(e.get("scale", SET_SCALE)), e.has("stage") and not e.get("flat", false), n_up, bool(e.get("flat", false)))
 		var p := spot_point(e.get("at", "anchor"))
 		if e.has("off"):
 			var o: Array = e["off"]
@@ -435,6 +438,8 @@ func _build_set(list: Array) -> void:
 					var bp := str(be.get("path", ""))
 					bx[k] = bp if bp.begins_with("res://") else "res://" + bp
 			sp.add_box(bx)
+		elif not e.get("flat", false) and e.has("card") and not HouseBody.spec_for(str(e["card"])).is_empty():
+			sp.add_box({"auto": true})  # every house stands as a volume (2026-11-23)
 		if e.get("inside_only", false):
 			sp.set_meta("inside_only", true)
 			sp.visible = false
@@ -632,7 +637,7 @@ func _spacing_step(dt: float) -> void:
 func house_of(p: Vector3) -> String:
 	for k in sets:
 		var sp: SetPiece = sets[k]
-		if sp.box == null:
+		if sp.box == null or not sp.enterable:
 			continue
 		var l := sp.global_transform.affine_inverse() * p
 		if l.z < 0.02 and l.z > -1.2 and absf(l.x) < sp.width * 0.5:
@@ -852,6 +857,8 @@ func _set_glow(sp: SetPiece, g: float) -> void:
 		cards.append(sp.card)
 	for c: PaperCard in cards:
 		_glow_pending.append([c, g])  # the card builds its materials deferred: applied in _process once they exist
+	if sp.body:
+		sp.body.set_glow(g)
 
 
 var _glow_pending: Array = []

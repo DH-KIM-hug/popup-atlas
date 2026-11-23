@@ -1,0 +1,1181 @@
+{
+ "materials": {
+  "plaster": {
+   "tex": "res://art/buildings/tiles/plaster.webp",
+   "tile": 0.7,
+   "colour": "#dcdb96"
+  },
+  "fieldstone": {
+   "tex": "res://art/buildings/tiles/fieldstone.webp",
+   "tile": 0.6,
+   "colour": "#8e8d8c"
+  },
+  "ashlar": {
+   "tex": "res://art/buildings/tiles/ashlar.webp",
+   "tile": 0.68,
+   "colour": "#b5a89b"
+  },
+  "brick": {
+   "tex": "res://art/buildings/tiles/brick.webp",
+   "tile": 0.48,
+   "colour": "#c86a4a"
+  },
+  "planks": {
+   "tex": "res://art/buildings/tiles/planks.webp",
+   "tile": 0.6,
+   "colour": "#b36a33"
+  },
+  "halftimber": {
+   "tex": "res://art/buildings/tiles/halftimber.webp",
+   "tile": 0.8,
+   "colour": "#d0b499"
+  },
+  "hanok_wall": {
+   "tex": "res://art/buildings/tiles/hanok_wall.webp",
+   "tile": 0.84,
+   "colour": "#debb9c"
+  },
+  "terracotta": {
+   "tex": "res://art/buildings/tiles/terracotta.webp",
+   "tile": 0.52,
+   "colour": "#d45c31"
+  },
+  "slate": {
+   "tex": "res://art/buildings/tiles/slate.webp",
+   "tile": 0.52,
+   "colour": "#68778a"
+  },
+  "thatch": {
+   "tex": "res://art/buildings/tiles/thatch.webp",
+   "tile": 0.6,
+   "colour": "#d89b48"
+  },
+  "giwa": {
+   "tex": "res://art/buildings/tiles/giwa.webp",
+   "tile": 0.52,
+   "colour": "#565555"
+  },
+  "dancheong": {
+   "tex": "res://art/buildings/tiles/dancheong.webp",
+   "tile": 0.4,
+   "colour": "#96875e"
+  },
+  "lacquer": {
+   "tex": "res://art/buildings/tiles/lacquer.webp",
+   "tile": 0.5,
+   "colour": "#88261e"
+  },
+  "shingle": {
+   "tex": "res://art/buildings/tiles/shingle.webp",
+   "tile": 0.44,
+   "colour": "#c27a3e"
+  }
+ },
+ "cards": {
+  "door": "story_bk_parts_00",
+  "gate_door": "story_bk_parts_01",
+  "portcullis": "story_bk_parts_02",
+  "drawbridge": "story_bk_parts_03",
+  "castle_window": "story_bk_parts_04",
+  "cottage_window": "story_bk_parts_05",
+  "round_window": "story_bk_parts_06",
+  "lattice": "story_bk_parts_07",
+  "flag_red": "story_bk_parts_08",
+  "flag_blue": "story_bk_parts_09",
+  "railing": "story_bk_parts_10",
+  "railing_kr": "story_bk_parts_11",
+  "finial": "story_bk_parts_12",
+  "balcony": "story_bk_parts_13",
+  "bracket": "story_bk_parts_14",
+  "steps": "story_bk_parts_15"
+ },
+ "kit": {
+  "octagon_pavilion": {
+   "parts": [
+    {
+     "name": "pavilion",
+     "type": "pavilion",
+     "shape": "ngon",
+     "n": 8,
+     "r": 0.55,
+     "h": 0.5,
+     "platform": 0.14,
+     "platform_mat": "fieldstone",
+     "deck": "planks",
+     "pillar": "lacquer",
+     "pillar_r": 0.028,
+     "beam": "dancheong",
+     "beam_h": 0.07,
+     "railing": "story_bk_parts_11",
+     "railing_h": 0.09,
+     "roof": {
+      "type": "pyramid",
+      "mat": "giwa",
+      "h": 0.42,
+      "overhang": 0.2,
+      "curve": 0.9,
+      "thick": 0.03,
+      "finial": "story_bk_parts_12",
+      "finial_h": 0.13
+     }
+    }
+   ]
+  },
+  "gazebo": {
+   "parts": [
+    {
+     "name": "gazebo",
+     "type": "pavilion",
+     "shape": "ngon",
+     "n": 6,
+     "r": 0.42,
+     "h": 0.46,
+     "platform": 0.08,
+     "platform_mat": "fieldstone",
+     "deck": "planks",
+     "pillar": "planks",
+     "pillar_r": 0.022,
+     "beam": "planks",
+     "beam_h": 0.05,
+     "railing": "story_bk_parts_10",
+     "railing_h": 0.1,
+     "roof": {
+      "type": "pyramid",
+      "mat": "shingle",
+      "h": 0.36,
+      "overhang": 0.08,
+      "thick": 0.025,
+      "finial": "story_bk_parts_12",
+      "finial_h": 0.1
+     }
+    }
+   ]
+  },
+  "round_hut": {
+   "parts": [
+    {
+     "name": "hut",
+     "type": "block",
+     "shape": "round",
+     "n": 18,
+     "r": 0.4,
+     "h": 0.42,
+     "wall": "plaster",
+     "thick": 0.04,
+     "plinth": {
+      "h": 0.04,
+      "mat": "fieldstone",
+      "out": 0.02
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.16,
+       "h": 0.3,
+       "kind": "arch",
+       "card": "story_bk_parts_00"
+      },
+      {
+       "edge": 4,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.1,
+       "y": 0.2,
+       "kind": "window",
+       "card": "story_bk_parts_06"
+      },
+      {
+       "edge": 14,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.1,
+       "y": 0.2,
+       "kind": "window",
+       "card": "story_bk_parts_06"
+      }
+     ],
+     "roof": {
+      "type": "cone",
+      "mat": "thatch",
+      "h": 0.5,
+      "overhang": 0.1,
+      "thick": 0.04
+     }
+    }
+   ]
+  },
+  "round_tower": {
+   "parts": [
+    {
+     "name": "tower",
+     "type": "tower",
+     "shape": "round",
+     "n": 20,
+     "r": 0.32,
+     "h": 1.2,
+     "wall": "fieldstone",
+     "thick": 0.05,
+     "plinth": {
+      "h": 0.05,
+      "mat": "fieldstone",
+      "out": 0.03
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.15,
+       "h": 0.28,
+       "kind": "arch",
+       "card": "story_bk_parts_00"
+      },
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.18,
+       "y": 0.75,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      },
+      {
+       "edge": 10,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.18,
+       "y": 0.75,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ],
+     "roof": {
+      "type": "cone",
+      "mat": "slate",
+      "h": 0.7,
+      "overhang": 0.06,
+      "thick": 0.03
+     }
+    }
+   ]
+  },
+  "rapunzel_tower": {
+   "parts": [
+    {
+     "name": "tower",
+     "type": "tower",
+     "shape": "round",
+     "n": 22,
+     "r": 0.3,
+     "h": 2.1,
+     "wall": "ashlar",
+     "thick": 0.05,
+     "plinth": {
+      "h": 0.06,
+      "mat": "fieldstone",
+      "out": 0.04
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.16,
+       "h": 0.24,
+       "y": 1.6,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ],
+     "roof": {
+      "type": "cone",
+      "mat": "slate",
+      "h": 0.8,
+      "overhang": 0.1,
+      "thick": 0.03
+     }
+    },
+    {
+     "name": "balcony",
+     "type": "card",
+     "card": "story_bk_parts_13",
+     "at": [
+      0.0,
+      0.31
+     ],
+     "base": 1.53,
+     "h": 0.1,
+     "w": 0.32
+    },
+    {
+     "name": "flag",
+     "type": "flag",
+     "card": "story_bk_parts_08",
+     "at": [
+      0,
+      0
+     ],
+     "base": 2.85,
+     "h": 0.32
+    }
+   ]
+  },
+  "windmill_tower": {
+   "parts": [
+    {
+     "name": "mill",
+     "type": "tower",
+     "shape": "ngon",
+     "n": 8,
+     "r": 0.36,
+     "h": 0.95,
+     "wall": "planks",
+     "thick": 0.04,
+     "plinth": {
+      "h": 0.1,
+      "mat": "fieldstone",
+      "out": 0.04
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.16,
+       "h": 0.28,
+       "kind": "arch",
+       "card": "story_bk_parts_00"
+      },
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.1,
+       "y": 0.6,
+       "kind": "window",
+       "card": "story_bk_parts_06"
+      }
+     ],
+     "roof": {
+      "type": "pyramid",
+      "mat": "shingle",
+      "h": 0.42,
+      "overhang": 0.06,
+      "thick": 0.03
+     }
+    },
+    {
+     "name": "sails",
+     "type": "sails",
+     "at": [
+      0.0,
+      0.45
+     ],
+     "base": 1.17,
+     "shaft": 0.2,
+     "len": 0.62,
+     "w": 0.13,
+     "cloth": "plaster",
+     "frame": "planks"
+    }
+   ]
+  },
+  "two_storey": {
+   "parts": [
+    {
+     "name": "house",
+     "type": "block",
+     "shape": "rect",
+     "size": [
+      1.0,
+      0.7
+     ],
+     "h": 0.95,
+     "wall": "halftimber",
+     "thick": 0.04,
+     "plinth": {
+      "h": 0.05,
+      "mat": "fieldstone",
+      "out": 0.02
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.17,
+       "h": 0.3,
+       "kind": "door",
+       "card": "story_bk_parts_00"
+      },
+      {
+       "edge": 0,
+       "u": 0.2,
+       "w": 0.16,
+       "h": 0.14,
+       "y": 0.12,
+       "kind": "window",
+       "card": "story_bk_parts_05"
+      },
+      {
+       "edge": 0,
+       "u": 0.8,
+       "w": 0.16,
+       "h": 0.14,
+       "y": 0.12,
+       "kind": "window",
+       "card": "story_bk_parts_05"
+      },
+      {
+       "edge": 0,
+       "u": 0.3,
+       "w": 0.16,
+       "h": 0.14,
+       "y": 0.58,
+       "kind": "window",
+       "card": "story_bk_parts_05"
+      },
+      {
+       "edge": 0,
+       "u": 0.7,
+       "w": 0.16,
+       "h": 0.14,
+       "y": 0.58,
+       "kind": "window",
+       "card": "story_bk_parts_05"
+      },
+      {
+       "edge": 1,
+       "u": 0.5,
+       "w": 0.16,
+       "h": 0.14,
+       "y": 0.58,
+       "kind": "window",
+       "card": "story_bk_parts_05"
+      },
+      {
+       "edge": 3,
+       "u": 0.5,
+       "w": 0.16,
+       "h": 0.14,
+       "y": 0.58,
+       "kind": "window",
+       "card": "story_bk_parts_05"
+      }
+     ],
+     "roof": {
+      "type": "hip",
+      "mat": "terracotta",
+      "h": 0.42,
+      "overhang": 0.07,
+      "thick": 0.03
+     }
+    }
+   ]
+  },
+  "hanok_l": {
+   "parts": [
+    {
+     "name": "main",
+     "type": "block",
+     "shape": "rect",
+     "size": [
+      1.3,
+      0.5
+     ],
+     "h": 0.42,
+     "wall": "hanok_wall",
+     "thick": 0.04,
+     "plinth": {
+      "h": 0.1,
+      "mat": "fieldstone",
+      "out": 0.06
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.3,
+       "w": 0.18,
+       "h": 0.28,
+       "kind": "door",
+       "card": "story_bk_parts_07"
+      },
+      {
+       "edge": 0,
+       "u": 0.62,
+       "w": 0.18,
+       "h": 0.28,
+       "kind": "door",
+       "card": "story_bk_parts_07"
+      }
+     ],
+     "roof": {
+      "type": "hip",
+      "mat": "giwa",
+      "h": 0.34,
+      "overhang": 0.16,
+      "curve": 0.8,
+      "thick": 0.03
+     }
+    },
+    {
+     "name": "wing",
+     "type": "block",
+     "shape": "rect",
+     "size": [
+      0.5,
+      0.75
+     ],
+     "at": [
+      0.4,
+      0.545
+     ],
+     "h": 0.4,
+     "wall": "hanok_wall",
+     "thick": 0.04,
+     "plinth": {
+      "h": 0.1,
+      "mat": "fieldstone",
+      "out": 0.06
+     },
+     "openings": [
+      {
+       "edge": 3,
+       "u": 0.55,
+       "w": 0.18,
+       "h": 0.26,
+       "kind": "door",
+       "card": "story_bk_parts_07"
+      },
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.18,
+       "h": 0.2,
+       "y": 0.05,
+       "kind": "window",
+       "card": "story_bk_parts_07"
+      }
+     ],
+     "roof": {
+      "type": "hip",
+      "mat": "giwa",
+      "h": 0.3,
+      "overhang": 0.16,
+      "curve": 0.8,
+      "thick": 0.03,
+      "ridge": "z"
+     }
+    }
+   ]
+  },
+  "pagoda": {
+   "parts": [
+    {
+     "name": "tier0",
+     "type": "block",
+     "shape": "rect",
+     "size": [
+      0.8,
+      0.8
+     ],
+     "h": 0.42,
+     "wall": "lacquer",
+     "thick": 0.04,
+     "plinth": {
+      "h": 0.1,
+      "mat": "fieldstone",
+      "out": 0.08
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.2,
+       "h": 0.3,
+       "kind": "door",
+       "card": "story_bk_parts_07"
+      }
+     ],
+     "roof": {
+      "type": "skirt",
+      "mat": "giwa",
+      "h": 0.18,
+      "overhang": 0.22,
+      "curve": 0.8,
+      "thick": 0.03,
+      "upper_r": true,
+      "upper": {
+       "size": [
+        0.6,
+        0.6
+       ]
+      }
+     }
+    },
+    {
+     "name": "tier1",
+     "type": "block",
+     "shape": "rect",
+     "size": [
+      0.6,
+      0.6
+     ],
+     "base": 0.6,
+     "h": 0.32,
+     "wall": "lacquer",
+     "thick": 0.04,
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.16,
+       "h": 0.16,
+       "y": 0.08,
+       "kind": "window",
+       "card": "story_bk_parts_07"
+      }
+     ],
+     "roof": {
+      "type": "skirt",
+      "mat": "giwa",
+      "h": 0.15,
+      "overhang": 0.2,
+      "curve": 0.8,
+      "thick": 0.03,
+      "upper_r": true,
+      "upper": {
+       "size": [
+        0.42,
+        0.42
+       ]
+      }
+     }
+    },
+    {
+     "name": "tier2",
+     "type": "block",
+     "shape": "rect",
+     "size": [
+      0.42,
+      0.42
+     ],
+     "base": 1.0,
+     "h": 0.26,
+     "wall": "lacquer",
+     "thick": 0.04,
+     "roof": {
+      "type": "pyramid",
+      "mat": "giwa",
+      "h": 0.3,
+      "overhang": 0.18,
+      "curve": 0.9,
+      "thick": 0.03,
+      "finial": "story_bk_parts_12",
+      "finial_h": 0.18
+     }
+    }
+   ]
+  },
+  "castle": {
+   "scale": 1.0,
+   "parts": [
+    {
+     "name": "keep",
+     "type": "block",
+     "shape": "rect",
+     "size": [
+      1.1,
+      0.9
+     ],
+     "at": [
+      0,
+      -0.35
+     ],
+     "h": 1.55,
+     "wall": "ashlar",
+     "thick": 0.06,
+     "plinth": {
+      "h": 0.06,
+      "mat": "fieldstone",
+      "out": 0.03
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.22,
+       "h": 0.36,
+       "y": 0.0,
+       "kind": "arch",
+       "card": "story_bk_parts_00"
+      },
+      {
+       "edge": 0,
+       "u": 0.22,
+       "w": 0.12,
+       "h": 0.22,
+       "y": 0.75,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      },
+      {
+       "edge": 0,
+       "u": 0.78,
+       "w": 0.12,
+       "h": 0.22,
+       "y": 0.75,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      },
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.12,
+       "h": 0.22,
+       "y": 1.1,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      },
+      {
+       "edge": 1,
+       "u": 0.5,
+       "w": 0.12,
+       "h": 0.22,
+       "y": 0.9,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      },
+      {
+       "edge": 3,
+       "u": 0.5,
+       "w": 0.12,
+       "h": 0.22,
+       "y": 0.9,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ],
+     "crenel": {
+      "h": 0.09,
+      "w": 0.09,
+      "gap": 0.07,
+      "d": 0.06
+     },
+     "roof": {
+      "type": "hip",
+      "mat": "slate",
+      "h": 0.55,
+      "overhang": -0.045,
+      "lift": 0.0
+     }
+    },
+    {
+     "name": "keep_flag",
+     "type": "flag",
+     "card": "story_bk_parts_09",
+     "at": [
+      0.0,
+      -0.35
+     ],
+     "base": 2.15,
+     "h": 0.42
+    },
+    {
+     "name": "gatehouse",
+     "type": "gate",
+     "shape": "rect",
+     "size": [
+      0.8,
+      0.42
+     ],
+     "at": [
+      0,
+      1.5
+     ],
+     "h": 0.95,
+     "wall": "ashlar",
+     "thick": 0.06,
+     "gate_w": 0.34,
+     "gate_h": 0.5,
+     "plinth": {
+      "h": 0.04,
+      "mat": "fieldstone",
+      "out": 0.02
+     },
+     "crenel": {
+      "h": 0.09,
+      "w": 0.09,
+      "gap": 0.07,
+      "d": 0.06
+     },
+     "portcullis": "story_bk_parts_02",
+     "drawbridge": "story_bk_parts_03",
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.2,
+       "w": 0.09,
+       "h": 0.17,
+       "y": 0.62,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      },
+      {
+       "edge": 0,
+       "u": 0.8,
+       "w": 0.09,
+       "h": 0.17,
+       "y": 0.62,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ]
+    },
+    {
+     "name": "tower0",
+     "type": "tower",
+     "shape": "round",
+     "n": 20,
+     "r": 0.34,
+     "at": [
+      -1.5,
+      1.5
+     ],
+     "h": 1.25,
+     "wall": "ashlar",
+     "thick": 0.06,
+     "plinth": {
+      "h": 0.05,
+      "mat": "fieldstone",
+      "out": 0.03
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.2,
+       "y": 0.8,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ],
+     "crenel": {
+      "h": 0.08,
+      "w": 0.07,
+      "gap": 0.06,
+      "d": 0.06
+     },
+     "roof": {
+      "type": "cone",
+      "mat": "slate",
+      "h": 0.75,
+      "overhang": 0.03,
+      "lift": 0.09
+     }
+    },
+    {
+     "name": "flag0",
+     "type": "flag",
+     "card": "story_bk_parts_08",
+     "at": [
+      -1.5,
+      1.5
+     ],
+     "base": 2.05,
+     "h": 0.32
+    },
+    {
+     "name": "tower1",
+     "type": "tower",
+     "shape": "round",
+     "n": 20,
+     "r": 0.34,
+     "at": [
+      1.5,
+      1.5
+     ],
+     "h": 1.25,
+     "wall": "ashlar",
+     "thick": 0.06,
+     "plinth": {
+      "h": 0.05,
+      "mat": "fieldstone",
+      "out": 0.03
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.2,
+       "y": 0.8,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ],
+     "crenel": {
+      "h": 0.08,
+      "w": 0.07,
+      "gap": 0.06,
+      "d": 0.06
+     },
+     "roof": {
+      "type": "cone",
+      "mat": "slate",
+      "h": 0.75,
+      "overhang": 0.03,
+      "lift": 0.09
+     }
+    },
+    {
+     "name": "flag1",
+     "type": "flag",
+     "card": "story_bk_parts_08",
+     "at": [
+      1.5,
+      1.5
+     ],
+     "base": 2.05,
+     "h": 0.32
+    },
+    {
+     "name": "tower2",
+     "type": "tower",
+     "shape": "round",
+     "n": 20,
+     "r": 0.34,
+     "at": [
+      1.5,
+      -1.5
+     ],
+     "h": 1.25,
+     "wall": "ashlar",
+     "thick": 0.06,
+     "plinth": {
+      "h": 0.05,
+      "mat": "fieldstone",
+      "out": 0.03
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.2,
+       "y": 0.8,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ],
+     "crenel": {
+      "h": 0.08,
+      "w": 0.07,
+      "gap": 0.06,
+      "d": 0.06
+     },
+     "roof": {
+      "type": "cone",
+      "mat": "slate",
+      "h": 0.75,
+      "overhang": 0.03,
+      "lift": 0.09
+     }
+    },
+    {
+     "name": "flag2",
+     "type": "flag",
+     "card": "story_bk_parts_08",
+     "at": [
+      1.5,
+      -1.5
+     ],
+     "base": 2.05,
+     "h": 0.32
+    },
+    {
+     "name": "tower3",
+     "type": "tower",
+     "shape": "round",
+     "n": 20,
+     "r": 0.34,
+     "at": [
+      -1.5,
+      -1.5
+     ],
+     "h": 1.25,
+     "wall": "ashlar",
+     "thick": 0.06,
+     "plinth": {
+      "h": 0.05,
+      "mat": "fieldstone",
+      "out": 0.03
+     },
+     "openings": [
+      {
+       "edge": 0,
+       "u": 0.5,
+       "w": 0.1,
+       "h": 0.2,
+       "y": 0.8,
+       "kind": "arch",
+       "card": "story_bk_parts_04"
+      }
+     ],
+     "crenel": {
+      "h": 0.08,
+      "w": 0.07,
+      "gap": 0.06,
+      "d": 0.06
+     },
+     "roof": {
+      "type": "cone",
+      "mat": "slate",
+      "h": 0.75,
+      "overhang": 0.03,
+      "lift": 0.09
+     }
+    },
+    {
+     "name": "flag3",
+     "type": "flag",
+     "card": "story_bk_parts_08",
+     "at": [
+      -1.5,
+      -1.5
+     ],
+     "base": 2.05,
+     "h": 0.32
+    },
+    {
+     "name": "wall0",
+     "type": "wall_run",
+     "from": [
+      -1.262,
+      1.5
+     ],
+     "to": [
+      -0.4,
+      1.5
+     ],
+     "h": 0.78,
+     "thick": 0.16,
+     "wall": "ashlar",
+     "crenel": {
+      "h": 0.08,
+      "w": 0.08,
+      "gap": 0.06,
+      "d": 0.05
+     }
+    },
+    {
+     "name": "wall1",
+     "type": "wall_run",
+     "from": [
+      0.4,
+      1.5
+     ],
+     "to": [
+      1.262,
+      1.5
+     ],
+     "h": 0.78,
+     "thick": 0.16,
+     "wall": "ashlar",
+     "crenel": {
+      "h": 0.08,
+      "w": 0.08,
+      "gap": 0.06,
+      "d": 0.05
+     }
+    },
+    {
+     "name": "wall2",
+     "type": "wall_run",
+     "from": [
+      1.5,
+      1.262
+     ],
+     "to": [
+      1.5,
+      -1.262
+     ],
+     "h": 0.78,
+     "thick": 0.16,
+     "wall": "ashlar",
+     "crenel": {
+      "h": 0.08,
+      "w": 0.08,
+      "gap": 0.06,
+      "d": 0.05
+     }
+    },
+    {
+     "name": "wall3",
+     "type": "wall_run",
+     "from": [
+      1.262,
+      -1.5
+     ],
+     "to": [
+      -1.262,
+      -1.5
+     ],
+     "h": 0.78,
+     "thick": 0.16,
+     "wall": "ashlar",
+     "crenel": {
+      "h": 0.08,
+      "w": 0.08,
+      "gap": 0.06,
+      "d": 0.05
+     }
+    },
+    {
+     "name": "wall4",
+     "type": "wall_run",
+     "from": [
+      -1.5,
+      -1.262
+     ],
+     "to": [
+      -1.5,
+      1.262
+     ],
+     "h": 0.78,
+     "thick": 0.16,
+     "wall": "ashlar",
+     "crenel": {
+      "h": 0.08,
+      "w": 0.08,
+      "gap": 0.06,
+      "d": 0.05
+     }
+    },
+    {
+     "name": "bridge",
+     "type": "bridge",
+     "from": [
+      -0.55,
+      -0.6
+     ],
+     "to": [
+      -1.228,
+      -1.228
+     ],
+     "y": 0.95,
+     "w": 0.14,
+     "mat": "planks"
+    }
+   ],
+   "state": {
+    "portcullis": 1.0,
+    "drawbridge": 1.0
+   }
+  }
+ },
+ "swap": {
+  "korean_village_04": {
+   "preset": "octagon_pavilion",
+   "h": 1.17
+  }
+ }
+}

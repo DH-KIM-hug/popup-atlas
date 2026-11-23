@@ -1,0 +1,283 @@
+{
+ "sheet": "story_bk_parts",
+ "bg": [
+  0.976,
+  0.012,
+  0.98
+ ],
+ "dropped": 0,
+ "sprites": [
+  {
+   "id": "story_bk_parts_00",
+   "bbox": [
+    52,
+    80,
+    310,
+    442
+   ],
+   "area": 85395,
+   "size": [
+    266,
+    370
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_01",
+   "bbox": [
+    357,
+    28,
+    724,
+    450
+   ],
+   "area": 135026,
+   "size": [
+    375,
+    430
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_02",
+   "bbox": [
+    766,
+    98,
+    1089,
+    434
+   ],
+   "area": 55786,
+   "size": [
+    331,
+    344
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_03",
+   "bbox": [
+    1146,
+    54,
+    1489,
+    446
+   ],
+   "area": 105983,
+   "size": [
+    351,
+    400
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_04",
+   "bbox": [
+    51,
+    502,
+    212,
+    750
+   ],
+   "area": 33078,
+   "size": [
+    169,
+    256
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_05",
+   "bbox": [
+    271,
+    547,
+    523,
+    735
+   ],
+   "area": 44617,
+   "size": [
+    260,
+    196
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_06",
+   "bbox": [
+    575,
+    553,
+    737,
+    718
+   ],
+   "area": 20857,
+   "size": [
+    170,
+    173
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_07",
+   "bbox": [
+    793,
+    500,
+    980,
+    755
+   ],
+   "area": 47281,
+   "size": [
+    195,
+    263
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_08",
+   "bbox": [
+    1052,
+    524,
+    1263,
+    756
+   ],
+   "area": 16813,
+   "size": [
+    219,
+    240
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_09",
+   "bbox": [
+    1323,
+    524,
+    1495,
+    748
+   ],
+   "area": 17559,
+   "size": [
+    180,
+    232
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_10",
+   "bbox": [
+    32,
+    849,
+    308,
+    975
+   ],
+   "area": 19752,
+   "size": [
+    284,
+    134
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_11",
+   "bbox": [
+    340,
+    844,
+    594,
+    978
+   ],
+   "area": 18138,
+   "size": [
+    262,
+    142
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_12",
+   "bbox": [
+    628,
+    812,
+    702,
+    978
+   ],
+   "area": 5874,
+   "size": [
+    82,
+    174
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_13",
+   "bbox": [
+    733,
+    817,
+    972,
+    977
+   ],
+   "area": 26589,
+   "size": [
+    247,
+    168
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_14",
+   "bbox": [
+    1007,
+    855,
+    1285,
+    945
+   ],
+   "area": 21713,
+   "size": [
+    286,
+    98
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  },
+  {
+   "id": "story_bk_parts_15",
+   "bbox": [
+    1300,
+    804,
+    1507,
+    983
+   ],
+   "area": 24325,
+   "size": [
+    215,
+    187
+   ],
+   "halo": 0,
+   "touches_border": false,
+   "parts": 1
+  }
+ ]
+}

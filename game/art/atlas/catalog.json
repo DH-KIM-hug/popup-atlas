@@ -15985,5 +15985,633 @@
    343,
    144
   ]
+ },
+ {
+  "id": "story_bk_materials_00",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_00.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "cream lime plaster (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   264,
+   275
+  ]
+ },
+ {
+  "id": "story_bk_materials_01",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_01.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "grey fieldstone (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   267,
+   275
+  ]
+ },
+ {
+  "id": "story_bk_materials_02",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_02.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "castle ashlar blocks (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   265,
+   275
+  ]
+ },
+ {
+  "id": "story_bk_materials_03",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_03.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "red brick (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   267,
+   277
+  ]
+ },
+ {
+  "id": "story_bk_materials_04",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_04.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "brown vertical wood planks (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   267,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_materials_05",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_05.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "white half-timber (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   268,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_materials_06",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_06.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "korean hanok wall (paper panels, wood posts) (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   266,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_materials_07",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_07.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "terracotta roof tiles (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   267,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_materials_08",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_08.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "blue-grey slate shingles (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   269,
+   277
+  ]
+ },
+ {
+  "id": "story_bk_materials_09",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_09.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "golden straw thatch (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   266,
+   277
+  ]
+ },
+ {
+  "id": "story_bk_materials_10",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_10.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "korean giwa roof tiles (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   267,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_materials_11",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_11.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "korean dancheong painted beam (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   267,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_materials_12",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_12.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "dark red lacquered wood (pillars) (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   268,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_materials_13",
+  "path": "art/atlas/story_bk_materials/story_bk_materials_13.webp",
+  "sheet": "story_bk_materials",
+  "category": "story_material",
+  "label": "honey wooden shingles (tileable swatch)",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "material",
+   "story",
+   "swatch"
+  ],
+  "px": [
+   266,
+   276
+  ]
+ },
+ {
+  "id": "story_bk_parts_00",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_00.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "wooden arched door, iron hinges, ring handle",
+  "height_units": 0.4,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "door",
+   "story"
+  ],
+  "px": [
+   266,
+   370
+  ]
+ },
+ {
+  "id": "story_bk_parts_01",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_01.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "castle gate double door in a stone arch",
+  "height_units": 0.5,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "castle",
+   "door",
+   "gate",
+   "story"
+  ],
+  "px": [
+   375,
+   430
+  ]
+ },
+ {
+  "id": "story_bk_parts_02",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_02.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "iron portcullis with spikes",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "castle",
+   "gate",
+   "story"
+  ],
+  "px": [
+   331,
+   344
+  ]
+ },
+ {
+  "id": "story_bk_parts_03",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_03.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "drawbridge planks with iron bands and chain rings",
+  "height_units": 0.45,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "bridge",
+   "building_kit",
+   "castle",
+   "gate",
+   "story"
+  ],
+  "px": [
+   351,
+   400
+  ]
+ },
+ {
+  "id": "story_bk_parts_04",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_04.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "arched castle window, night glass",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "castle",
+   "story",
+   "window"
+  ],
+  "px": [
+   169,
+   256
+  ]
+ },
+ {
+  "id": "story_bk_parts_05",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_05.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "square cottage window, lit, green shutters",
+  "height_units": 0.22,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "story",
+   "window"
+  ],
+  "px": [
+   260,
+   196
+  ]
+ },
+ {
+  "id": "story_bk_parts_06",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_06.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "round window, lit",
+  "height_units": 0.18,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "story",
+   "window"
+  ],
+  "px": [
+   170,
+   173
+  ]
+ },
+ {
+  "id": "story_bk_parts_07",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_07.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "korean lattice paper window / door",
+  "height_units": 0.35,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "door",
+   "korean",
+   "story",
+   "window"
+  ],
+  "px": [
+   195,
+   263
+  ]
+ },
+ {
+  "id": "story_bk_parts_08",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_08.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_prop",
+  "label": "red swallow-tail pennant on a pole",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "castle",
+   "flag",
+   "story"
+  ],
+  "px": [
+   219,
+   240
+  ]
+ },
+ {
+  "id": "story_bk_parts_09",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_09.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_prop",
+  "label": "blue banner flag with a gold star on a pole",
+  "height_units": 0.3,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "castle",
+   "flag",
+   "story"
+  ],
+  "px": [
+   180,
+   232
+  ]
+ },
+ {
+  "id": "story_bk_parts_10",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_10.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "wooden railing section, balusters",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "railing",
+   "story"
+  ],
+  "px": [
+   284,
+   134
+  ]
+ },
+ {
+  "id": "story_bk_parts_11",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_11.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "korean red-brown railing section",
+  "height_units": 0.12,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "korean",
+   "railing",
+   "story"
+  ],
+  "px": [
+   262,
+   142
+  ]
+ },
+ {
+  "id": "story_bk_parts_12",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_12.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "golden roof finial",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "finial",
+   "pavilion",
+   "story"
+  ],
+  "px": [
+   82,
+   174
+  ]
+ },
+ {
+  "id": "story_bk_parts_13",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_13.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "small stone balcony with balustrade",
+  "height_units": 0.15,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "balcony",
+   "building_kit",
+   "castle",
+   "story"
+  ],
+  "px": [
+   247,
+   168
+  ]
+ },
+ {
+  "id": "story_bk_parts_14",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_14.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "korean dancheong eave bracket band",
+  "height_units": 0.1,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "korean",
+   "pavilion",
+   "story"
+  ],
+  "px": [
+   286,
+   98
+  ]
+ },
+ {
+  "id": "story_bk_parts_15",
+  "path": "art/atlas/story_bk_parts/story_bk_parts_15.webp",
+  "sheet": "story_bk_parts",
+  "category": "story_building",
+  "label": "small wooden staircase (side view)",
+  "height_units": 0.25,
+  "cross_slot": false,
+  "biome": "any",
+  "season": "any",
+  "tags": [
+   "building_kit",
+   "stairs",
+   "story"
+  ],
+  "px": [
+   215,
+   187
+  ]
  }
 ]

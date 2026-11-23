@@ -32,6 +32,13 @@ How to look:
   from each door to the road.
 - [ ] **Story props move on screen** ("초대장이 날아왔으면 좋겠고"): what the narration says arrives (an invitation on the
   wind) visibly travels there, fluttering, with the camera following, then is caught / opened toward the camera.
+- [ ] **Houses solid from every angle** ("집들은 무조건 입체적으로 아주 잘 들어맞게", 2026-11-23): every house, barn, shop,
+  cottage (story set pieces AND the template village's houses) is a closed volume: side walls in its own material,
+  roof following its drawn roof line with even eaves, chimney seated, back filled, door / window reveals; no slit
+  between front and body, no background through corners, under eaves or along the ridge, no roof floating or sunk.
+  Run `tools/story/house_orbit_all.sh OUT LABEL <tale>` and look at every sheet: red (background through a closed
+  house) must be zero apart from real openings (pavilions, gateways, courtyards). Non-box buildings come from the kit
+  (pavilion, round tower, hanok L, pagoda, castle), never a flat card.
 - [ ] **Angled houses need bodies** ("사선으로 돼 있으니까 집도 집처럼 보여줘야"): a house turned to the road shows side walls,
   a roof running back and a back from every camera position (no flat cut-outs, no hollow backs).
 - [ ] **No half-popped scenery at a spread's start** ("어떤 건 서 있고 어떤 건 안 서 있고"): unless a tale wants the wave,
