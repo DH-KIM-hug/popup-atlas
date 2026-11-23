@@ -4,7 +4,9 @@ extends Node3D
 ## A building is an assembly of PARTS placed relative to each other; every part is a closed paper volume whose faces
 ## are printed with the shared paper material swatches (story_bk_materials, mirror-tiled) and whose pieces are built
 ## from the same edges, so corners, eaves, ridges and apexes meet exactly:
-##   block     walls on a footprint (rect, ngon, round, poly) with real thickness, openings cut through them (door /
+##   block     walls on a footprint (rect, ngon, round, poly; round / ngon `flat`: a straight front chord for a wide
+##             opening) with real thickness, `flare` (corbelled skirt under an overhanging storey), `floor`, openings
+##             cut through them (`ledge`: a projecting sill slab; door /
 ##             window / arch with reveals, an arch's spandrels and intrados), optional crenellations, plinth and roof
 ##   pavilion  stone platform, pillars on the footprint's corners, a painted beam band, railings, a roof (팔각정, gazebo)
 ##   wall_run  a curtain wall from a to b: a solid slab with a walkway on top and battlements on its outer edge
@@ -179,9 +181,17 @@ func _footprint(p: Dictionary) -> PackedVector2Array:
 			var n := int(p.get("n", 8 if shape == "ngon" else 24))
 			var r := float(p.get("r", 0.5)) * u
 			var off := PI / n if shape == "ngon" else 0.0  # flat edge to the front
-			for i in n:
-				var a := PI * 0.5 + off + TAU * i / n
-				pts.append(Vector2(cos(a) * r, sin(a) * r))
+			if p.has("flat"):
+				# `flat`: a straight front chord this wide (spec units) centred on +z, the rest of the ring evenly round
+				# it: edge 0 is then one flat wall wide enough for a real window (a facet of a 22-gon is a slot)
+				var ac := asin(clampf(float(p["flat"]) * u * 0.5 / r, 0.0, 0.95))
+				for i in n:
+					var a2 := PI * 0.5 + ac + (TAU - 2.0 * ac) * i / (n - 1)
+					pts.append(Vector2(cos(a2) * r, sin(a2) * r))
+			else:
+				for i in n:
+					var a := PI * 0.5 + off + TAU * i / n
+					pts.append(Vector2(cos(a) * r, sin(a) * r))
 		"poly":
 			for q: Array in p.get("pts", []):
 				pts.append(Vector2(float(q[0]), float(q[1])) * u)
@@ -277,7 +287,8 @@ func _build() -> void:
 
 
 ## Walls with thickness on footprint pts from y0 to y1; openings cut through. Returns nothing.
-## openings: [{edge, u (0..1 along the edge), w, h, y, kind: door|window|arch|gate, card, depth, through}]
+## openings: [{edge, u (0..1 along the edge), w, h, y, kind: door|window|arch|gate, card, open (no card), ledge, depth,
+## through}]
 func _walls(pts: PackedVector2Array, y0: float, y1: float, thick: float, mat: String, openings: Array, cap := false, inner := true) -> void:
 	var n := pts.size()
 	var inn := _offset(pts, -thick)
@@ -358,6 +369,9 @@ func _walls(pts: PackedVector2Array, y0: float, y1: float, thick: float, mat: St
 			rv.call(s1, s1, v0, spring, -Vector3(dir.x, 0, dir.y))
 			if v0 > y0 + 0.001:
 				rv.call(s0, s1, v0, v0, Vector3.UP)  # sill
+			var opd: Dictionary = h[5]
+			if opd.has("ledge"):
+				_ledge(a, dir, o2, s0, s1, v0, opd["ledge"], mat)
 			if not arch:
 				rv.call(s0, s1, v1, v1, Vector3.DOWN)
 			else:
@@ -399,6 +413,67 @@ func _walls(pts: PackedVector2Array, y0: float, y1: float, thick: float, mat: St
 
 
 var _pending_nodes: Array[Node3D] = []
+
+
+## A stone sill / ledge under an opening (opening `ledge`: {out, h, over} in spec units): a solid slab whose top is
+## flush with the reveal's sill, projecting `out` from the wall face, `over` wider than the opening on each side.
+func _ledge(a: Vector2, dir: Vector2, o2: Vector2, s0: float, s1: float, v0: float, cfg: Dictionary, mat: String) -> void:
+	var out := float(cfg.get("out", 0.05)) * unit
+	var hh := float(cfg.get("h", 0.03)) * unit
+	var ov := float(cfg.get("over", 0.03)) * unit
+	var back := 0.004 * unit  # tucked into the wall so no slit shows at the face
+	var P := func(s: float, y: float, o: float) -> Vector3:
+		var q := a + dir * s + o2 * o
+		return Vector3(q.x, y, q.y)
+	var sa := s0 - ov
+	var sb := s1 + ov
+	var yb := v0 - hh
+	var tile := _tile(mat)
+	var uv := [Vector2(0, 0), Vector2((sb - sa) / tile, 0), Vector2((sb - sa) / tile, out / tile), Vector2(0, out / tile)]
+	var o3 := Vector3(o2.x, 0, o2.y)
+	var d3 := Vector3(dir.x, 0, dir.y)
+	_quad(mat, 0.95, P.call(sa, v0, -back), P.call(sb, v0, -back), P.call(sb, v0, out), P.call(sa, v0, out), Vector3.UP, uv)  # top
+	_quad(mat, 0.6, P.call(sa, yb, -back), P.call(sb, yb, -back), P.call(sb, yb, out), P.call(sa, yb, out), Vector3.DOWN, uv)  # under
+	var uvf := [Vector2(0, 0), Vector2((sb - sa) / tile, 0), Vector2((sb - sa) / tile, hh / tile), Vector2(0, hh / tile)]
+	_quad(mat, 0.85, P.call(sa, yb, out), P.call(sb, yb, out), P.call(sb, v0, out), P.call(sa, v0, out), o3, uvf)  # front
+	var uve := [Vector2(0, 0), Vector2(out / tile, 0), Vector2(out / tile, hh / tile), Vector2(0, hh / tile)]
+	_quad(mat, 0.8, P.call(sa, yb, -back), P.call(sa, yb, out), P.call(sa, v0, out), P.call(sa, v0, -back), -d3, uve)
+	_quad(mat, 0.8, P.call(sb, yb, -back), P.call(sb, yb, out), P.call(sb, v0, out), P.call(sb, v0, -back), d3, uve)
+
+
+## `flare`: a corbelled skirt under a part (an overhanging top storey on a slimmer shaft): a frustum from the part's
+## footprint at its base down `h` to the same shape at radius ratio r0 / r, closed underneath. `floor`: a floor laid
+## inside the walls at the part's base (a room you can look into through an open window).
+func _flare(pts: PackedVector2Array, y_top: float, cfg: Dictionary, r: float, mat: String) -> void:
+	var fh := float(cfg.get("h", 0.15)) * unit
+	var k := float(cfg.get("r0", r * 0.6)) * unit / maxf(r * unit, 1e-6)
+	var c := _centroid(pts)
+	var low := PackedVector2Array()
+	for q in pts:
+		low.append(c + (q - c) * k)
+	var tile := _tile(mat)
+	var arc := 0.0
+	var yb := y_top - fh
+	for i in pts.size():
+		var a := pts[i]
+		var b := pts[(i + 1) % pts.size()]
+		var la := low[i]
+		var lb := low[(i + 1) % pts.size()]
+		var L := a.distance_to(b)
+		var o2 := _edge_out(a, b)
+		_quad(mat, 0.82, Vector3(la.x, yb, la.y), Vector3(lb.x, yb, lb.y), Vector3(b.x, y_top, b.y), Vector3(a.x, y_top, a.y),
+			Vector3(o2.x, -0.6, o2.y), [Vector2(arc / tile, 0), Vector2((arc + L) / tile, 0), Vector2((arc + L) / tile, fh / tile), Vector2(arc / tile, fh / tile)])
+		_tri(mat, 0.55, Vector3(la.x, yb, la.y), Vector3(lb.x, yb, lb.y), Vector3(c.x, yb, c.y), Vector3.DOWN, [la / tile, lb / tile, c / tile])
+		arc += L
+
+
+func _floor(pts: PackedVector2Array, y: float, mat: String) -> void:
+	var c := _centroid(pts)
+	var tile := _tile(mat)
+	for i in pts.size():
+		var a := pts[i]
+		var b := pts[(i + 1) % pts.size()]
+		_tri(mat, 0.9, Vector3(a.x, y, a.y), Vector3(b.x, y, b.y), Vector3(c.x, y, c.y), Vector3.UP, [a / tile, b / tile, c / tile])
 
 
 ## A card from the shared atlas (doors, windows, flags, railings), height h; squeezed to width w when w > 0.
@@ -679,6 +754,10 @@ func _block(p: Dictionary) -> void:
 		var ph := float(pl.get("h", 0.05)) * unit
 		_prism(_offset(pts, float(pl.get("out", 0.02)) * unit), -0.03 * unit, ph, str(pl.get("mat", "fieldstone")), 1.0)
 		y0 = ph
+	if p.has("flare"):
+		_flare(pts, 0.0, p["flare"], float(p.get("r", 0.5)), mat)
+	if p.has("floor"):
+		_floor(_offset(pts, -thick * 0.98), y0 + 0.002 * unit, str(p["floor"]))
 	_walls(pts, y0, y0 + h, thick, mat, p.get("openings", []), not p.has("roof"))
 	var y_top := y0 + h
 	if p.has("crenel"):
@@ -1026,6 +1105,29 @@ func _card(p: Dictionary, node: Node3D) -> void:
 	var c := _atlas_card(str(p.get("card", "")), float(p.get("h", 0.2)) * unit, float(p.get("w", -1.0)) * unit if p.has("w") else -1.0)
 	if c:
 		node.add_child(c)
+
+
+# ------------------------------------------------------------------ rooms
+
+## Is world point `wp` inside a part that has a `floor` (a room: between its floor and its wall tops, within its inner
+## wall)? SpreadStage.house_of uses it so a camera / cast inside a kit room counts as "in the building".
+func room_at(wp: Vector3) -> bool:
+	var l := global_transform.affine_inverse() * wp
+	for p: Dictionary in spec.get("parts", []):
+		if not p.has("floor"):
+			continue
+		var at: Array = p.get("at", [0.0, 0.0])
+		var q := l - Vector3(float(at[0]), float(p.get("base", 0.0)), float(at[1])) * unit
+		if q.y < -0.01 * unit or q.y > float(p.get("h", 0.6)) * unit:
+			continue
+		var thick := float(p.get("thick", 0.04)) * unit
+		if str(p.get("shape", "rect")) == "rect":
+			var sz: Array = p.get("size", [1.0, 1.0])
+			if absf(q.x) < float(sz[0]) * unit * 0.5 - thick and absf(q.z) < float(sz[1]) * unit * 0.5 - thick:
+				return true
+		elif Vector2(q.x, q.z).length() < float(p.get("r", 0.5)) * unit - thick:
+			return true
+	return false
 
 
 # ------------------------------------------------------------------ moving parts

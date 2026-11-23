@@ -653,6 +653,8 @@ func _spacing_step(dt: float) -> void:
 func house_of(p: Vector3) -> String:
 	for k in sets:
 		var sp: SetPiece = sets[k]
+		if sp.building and sp.visible and sp.shown > 0 and sp.building.room_at(p):  # a kit building's room (rapunzel)
+			return str(k)
 		if sp.box == null or not sp.enterable:
 			continue
 		var l := sp.global_transform.affine_inverse() * p
@@ -2293,6 +2295,11 @@ func _camera_inside_check() -> void:
 			deep = deep or l.z < 0.0
 	# with an inside_margin the room's inside-only pieces (the front wall's inside face) wait until the camera is
 	# really behind the front wall, or the glide in passes through that card (patjuk)
+	if now == "":  # a kit building's room (no facade to fold: its walls are solid all round, rapunzel's tower room)
+		for k in sets:
+			var sp: SetPiece = sets[k]
+			if sp.building and sp.visible and sp.shown > 0 and sp.building.room_at(cam.global_position):
+				now = str(k)
 	var inside_shown := now != "" and (not tale.has("inside_margin") or deep)
 	for k in sets:
 		if (sets[k] as SetPiece).has_meta("inside_only"):

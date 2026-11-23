@@ -82,6 +82,19 @@ new set: papercraft_notes.md.
 - To change a preset for one tale (an OPEN window without its glass card) read the preset at seed time, edit a copy
   and pass it as the spec (tools/story/tales/rapunzel.py `_tower_spec`); the handler reads `SetPiece.building.spec` /
   `.unit` for positions (window sill = opening y × unit, wall at r × unit along the building's own +z).
+- A window someone leans out of / a room at the top (rapunzel v2, user: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서
+  만나는거 같지도 않자너"): on a round / ngon part an opening wider than one facet was silently clipped to the facet (a
+  22-gon facet is a slot) and centred off the part's +z: give the part `flat: <width>` (a straight front chord, edge 0
+  centred on +z), size the opening to the figure (the peek head ≈ 65 % of its width), `ledge` for the sill slab, `open`
+  for no glass card, `floor` + the part's own walls for the room behind it, `flare` to corbel a wide top room out over
+  a slim shaft. The window figure stands IN the reveal (behind the outer face, hands on the sill), not on the wall.
+  The room is the building's own top storey: the camera follows the climber up and dollies in through the window
+  (outside and inside shots share one focus deep in the room, elevation and height: only the distance changes, so
+  the path is a straight line through the opening); `Building.room_at` makes `house_of` / `camera_inside` treat the
+  room as inside (speaker / occlusion checks). Turn round inside by pivoting at the room's middle (shot distance
+  ~0.1), never about a far focus (the lens swings through the cast). What the window shows from inside is staged:
+  treetop cards beyond it, below the eye line, visible only while the camera is in the room (the template has
+  nothing toward the reader but haze). Never a separate room page standing in a field.
 - Kit sheet: house_orbit.sh with a 6th argument (presets) renders the solo orbit + a context shot on the meadow
   (castle: approach, gate, tower window).
 
@@ -123,8 +136,9 @@ new set: papercraft_notes.md.
 - Reusing another tale's house for a room people act in: size the house to the cast first. sunmoon's cottage room
   (0.62 deep) could not frame the 0.57-tall tiger (giant paws, cut-off heads); the cottage stands 1.3× with a 0.95
   body, its front line where it was (only door x and the inside scale). Room camera rules: camera.md "Interiors".
-- A room on its own page can be a ring of inside-wall cards (yaw = angle + 180) with flat floor cards; leave out the
-  walls on the camera side: the page-open wide looked at the back of the front wall filling the lens (rapunzel).
+- A room on its own page as a ring of inside-wall cards (rapunzel v1) read as a cutaway box standing in a field
+  (user: "탑 위에서 만나는거 같지도 않자너"): superseded; a room the story places somewhere (the top of the tower) is that
+  building's own interior on the same spread ("Buildings from the kit").
 
 ## Props: appear, travel, leave
 - Set pieces and props appear only when the story reaches them (stage 0 + fx `up:` at their beat; `built` for later

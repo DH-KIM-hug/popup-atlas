@@ -2380,3 +2380,50 @@ Fixes:
   yard shot does not reach her spot); front<->side turns mid-run still show a 30 % card for ~0.1 s, and a beat start
   re-poses grandpa (call -> pull) with a flip right as grandma arrives; the cat's run toward the camera is long (~4 s);
   in the feast walk the mouse is small and soft at the frame's right.
+
+## 2026-11-24 — rapunzel v2: the girl in the tower window, the room at the top of the same tower, the braid from her head
+User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는거 같지도 않자너", "바닥까지 닿는 머리가..... 라푼젤과도 떨어져있음".
+- Cause (v1): the window was a 0.16-wide arch on a 22-gon tower facet; Building._walls clips an opening to its edge, so
+  the real hole was a facet-wide slot centred off the tower's +z (the dark opening to one side); her win_* card stood
+  in front of the wall next to it at a head as big as the slot; the balcony card hung on the wall below; the braid
+  started 0.035 in front of the wall at the window's centre, away from her drawn braid; the room was its own page (a
+  ring of wall cards = an open box in a field, a forest at eye level in its window).
+- Building kit (game/core/world/building.gd, generic, other presets unchanged): round / ngon `flat: <w>` (a straight
+  front chord = edge 0 centred on +z, wide enough for a real opening), opening `ledge` {out, h, over} (a projecting
+  stone sill slab flush with the reveal's sill), part `flare` {h, r0} (corbelled skirt: a wide top storey on a slim
+  shaft), part `floor` (a plank floor inside the walls), `Building.room_at(p)` (point inside a floored part). Preset
+  rapunzel_tower rebuilt (tools/atlas/building_kit.py + kit.json patched in place, tiles untouched): slim shaft r 0.34
+  h 1.62, the round room r 0.56 h 0.56 at 1.84 corbelled out, a 0.14 x 0.25 arched window in a 0.26 flat front with a
+  ledge, open (no glass card), plank floor, slate cone, flag. Kit sheet rebuilt: artifacts/houses/kit_rp/kit_sheet_rp.jpg
+  (castle, round_tower, windmill_tower unchanged; orbit holes rapunzel_tower 0).
+- SpreadStage: house_of / _camera_inside_check count a kit building's room (Building.room_at): the camera in the room
+  = inside the tower (speaker / occlusion checks, the room light and window view switch on).
+- Tale (tools/story/tales/rapunzel.py, game/stories/rapunzel/fx.gd, script.json reseeded): TOWER_SCALE 1.0 (the room
+  fits the cast); Rapunzel / Gothel stand IN the reveal (behind the outer face, hands on the sill, head ≈ 65 % of the
+  opening, a 0.12 shadowless warm fill on the face); the room page is gone: meet / snip are camera moves on the forest
+  spread — the climb camera follows the prince up the braid, eases to a still at the sill, he hangs under the sill
+  while Rapunzel steps back, climbs in over the sill and the camera dollies straight through the window (window / room
+  shots share one focus deep in the room, elevation and height; only distance changes); furniture cards stand on the
+  kit floor (children of the building), a warm room light, treetop cards below the window seen only from inside; the
+  snip beat opens with a pivot at the room's middle to the window (sky, treetops below, the braid over the sill on its
+  hook) while Gothel arrives, then the same room, same window. THE BRAID: 0.3 segments at 1.5x width (reads in the
+  wides), from the sill ledge's front edge down along the tower's front normal, lined up with the end of the braid
+  drawn on her win_letdown figure; inside it runs over the sill, the hook under it, down the inner wall and along the
+  floor to the braid drawn on her standing figure (no gap from her head to the grass at any angle). `rap`/`braid` in
+  overlap_ok (the braid is her hair). The empty beat opens by dollying out of the window.
+- Full run (1200x900 movie maker, absolute path, --import first; artifacts/video/rapunzel_full_v2.mp4 28.4 MB crf 33,
+  log artifacts/rapunzel/run_full_v2.log): STORY_DONE 394.8 s (v1 355 s: the camera climbs, the dolly in and the
+  pivot add ~40 s), CHECK_LINES OK 47, VOICE_DUP 0, CAM_JUMP 0 CAM_JERK 0 SPEAKER_OFF 0, OVERLAP 0 OCCLUDE 0,
+  SET_CHECK 0, missing_audio / missing_sound empty. motion_review 13 segments all ok (verdicts in
+  artifacts/rapunzel/motion/motion_review.md); MOTION_FLAG 11 GLIDE (the magic-wind float) accepted in gate.md;
+  visual checklist ticked; gate.py: GATE PASS. Before/after: artifacts/rapunzel/v2_tower.jpg (window close-up, head ->
+  braid join close and wide, hair-down wide, singing, prince climb, climb -> window -> over the sill, the room, the
+  braid in the room, the window from inside, Gothel in the same room).
+- Fixed on the way: two narrator lines that started over a bare road / tower (camera settled first); a CAM_JERK at the
+  top of each climb (follow released with an eased shot); Rapunzel overlapping the climber at the sill (she steps back
+  when he is 0.3 below).
+- Gotcha: one full recording came out with frozen video (11.9k PERF hitch lines, the window close-up repeated for
+  ~30 s) while the log was fine; a re-record was clean. Check a contact sheet of the AVI before trusting a run.
+- Still off: 6:35 vs the 4-5 min aim; the room's back wall is the kit's ashlar print (plain, no tapestry); the treetop
+  view through the window is a few cards (reads as "high up" but simple); Gothel's climb ends with a few frames of
+  back-walk over the sill (reads fine); nobody has listened to the mix.

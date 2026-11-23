@@ -12,10 +12,11 @@ once each; the cover / replay prompts are recorded in the same voice (the other 
 
 Places (page turns only where the place changes):
   home   the parents' cottage, a garden wall with a gate, the witch's rampion garden behind it (seed 5, view 4)
-  forest the lone tower in a forest clearing (the building kit's 3D round tower, kit preset rapunzel_tower), the road
-         through the wood and, down the road, a small cottage in a field (seed 4, view 0): the tower beats, the
-         empty-tower beat and the reunion are camera moves on this one spread
-  room   the round room at the top of the tower (a ring of eight inside-wall cards on its own page)
+  forest the lone tower in a forest clearing (the building kit's 3D tower, kit preset rapunzel_tower: a slim shaft
+         with the round room on top, corbelled out, a real window with a stone sill), the road through the wood and,
+         down the road, a small cottage in a field (seed 4, view 0): the tower beats, the room at the top of the tower
+         (v2: the camera follows the climber up the braid and dollies in through the window; no page of its own),
+         the empty-tower beat and the reunion are camera moves on this one spread
 Cut for pace (the picture tells it) or for the tale-not-lesson rule: r0102 r0103 r0105 r0200 r0203 r0205 r0207
 r0302-r0305 (r0304 counts the animals) r0400 r0402 r0404-r0406 r0500 r0502 r0504 r0505 r0601 r0603-r0605 r0608 r0700
 r0703 r0706-r0709 r0800 r0801 r0804 r0806 r0901 r0904 r0909 r1000-r1003 r1009 r1010 (the moral).
@@ -89,10 +90,11 @@ HANDLER = "res://stories/rapunzel/fx.gd"
 BACKDROP = True
 EXTRA = {"ground_style": "paper", "spacing": True, "overlap_check": True, "pop_in": False,
          # intended contacts (reason): climbers hold the braid; the braid hangs against the tower; the prince lands
-         # in the soft rose hedge; the two hold hands at the reunion; the father pulls the rampion he stands at
+         # in the soft rose hedge; the two hold hands at the reunion; the father pulls the rampion he stands at;
+         # the braid is Rapunzel's own hair (it runs from her head over the sill: v2)
          "overlap_ok": [["gothel", "braid"], ["prince", "braid"], ["braid", "tower"], ["prince", "hedge"],
                         ["rap", "prince"], ["father", "rampion"], ["rap", "tower"], ["gothel", "tower"],
-                        ["prince", "tower"]]}
+                        ["prince", "tower"], ["rap", "braid"]]}
 
 SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          "crane_high": [8.5, 34.0, 0.3, 24.0, 0.0],
@@ -105,25 +107,19 @@ SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          "caught": [1.8, 6.0, 0.3, 28.0, 20.0],           # the witch and the father across the bed
          "witch_low": [1.4, 3.0, 0.32, 30.0, -10.0],
          "door": [2.2, 9.0, 0.3, 26.0, -18.0],
-         # forest: the tower
-         "tower_wide": [5.4, 9.0, 1.05, 28.0, 0.0],
-         "tower_low": [3.2, 4.0, 0.75, 40.0, 14.0],         # low at the foot, looking up the wall
+         # forest: the tower (window / room shots: SHOTS.update below, from the kit tower's numbers)
+         "tower_wide": [8.0, 9.0, 1.7, 28.0, 0.0],
+         "tower_low": [4.2, 2.0, 1.25, 44.0, 14.0],        # low at the foot, looking up the wall to the window
          "witch_tap": [1.7, 9.0, 0.3, 26.0, 12.0],
-         "window": [1.7, 2.0, 1.32, 28.0, 0.0],            # level with the window
-         "window_side": [1.9, 6.0, 1.25, 30.0, 28.0],
-         "braid_fall": [3.2, 4.0, 0.75, 38.0, 14.0],       # the braid running down the whole wall
-         "climb": [2.8, 6.0, 0.8, 36.0, 18.0],
+         "braid_fall": [4.4, 3.0, 1.15, 42.0, 14.0],       # the braid running down the whole wall
+         "climb": [2.2, 5.0, 0.22, 38.0, 16.0],            # following the climber up the braid
          "foot": [2.2, 9.0, 0.3, 26.0, 10.0],
          "road_in": [2.8, 11.0, 0.3, 24.0, -8.0],
          "hide": [2.6, 10.0, 0.45, 30.0, -20.0],             # the prince by the tree, the tower behind
-         "float": [3.4, 5.0, 0.85, 36.0, 6.0],
+         "float": [4.0, 4.0, 1.1, 40.0, 6.0],
          "track": [2.8, 14.0, 0.3, 26.0, 10.0],
          "field": [2.6, 11.0, 0.28, 26.0, -14.0],
          "reunion": [1.7, 7.0, 0.27, 28.0, 8.0],
-         # the tower room (inside a ring of wall cards): the camera stays inside the ring
-         "room": [0.62, 12.0, 0.26, 62.0, 0.0],
-         "room_low": [0.55, 5.0, 0.28, 58.0, -18.0],
-         "room_two": [0.58, 9.0, 0.27, 60.0, 16.0],
          "pull_back": [9.5, 26.0, 0.3, 24.0, 0.0]}
 
 ROLES_LABEL = {"rap": "라푼젤", "gothel": "고텔", "prince": "왕자", "father": "아빠", "mother": "엄마"}
@@ -190,33 +186,48 @@ def _home(**kw):
 # The tower stands in the clearing left of the road; the hiding tree right of the road; the field cottage down the
 # road at the front left (the prince walks out of the wood to it).
 TOWER = [-0.95, -2.25]
-TOWER_SCALE = 0.8
+TOWER_SCALE = 1.0  # the kit preset is in world units: its top room fits the cast (v2)
 KIT = "/Users/house_of_4k2b/orca/popup-atlas/game/art/buildings/kit.json"
 
 
 def _tower_spec():
-    """The kit's rapunzel_tower, with its high window left OPEN (no glass card): Rapunzel / Gothel lean out of it and
-    the braid hangs from its sill. Read from the kit at seed time, so kit updates reach the tale on a reseed."""
+    """The kit's rapunzel_tower (a slim shaft, the round room on top corbelled out, a real window in a flat front with
+    a stone sill ledge, open: no glass card). Read from the kit at seed time, so kit updates reach the tale on a
+    reseed."""
     kit = _json.load(open(KIT))["kit"]
     sp = copy.deepcopy(kit["rapunzel_tower"])
     for p in sp["parts"]:
         for op in p.get("openings", []):
             op.pop("card", None)
+            op["open"] = True
     return sp
 
 
 def _tower_window():
     sp = _json.load(open(KIT))["kit"]["rapunzel_tower"]
-    t = sp["parts"][0]
+    t = [p for p in sp["parts"] if p.get("openings")][0]
     op = t["openings"][0]
-    return {"r": t["r"] * TOWER_SCALE, "sill": op["y"] * TOWER_SCALE, "top": (op["y"] + op["h"]) * TOWER_SCALE,
-            "w": op["w"] * TOWER_SCALE}
+    k = TOWER_SCALE
+    r, fl, base = t["r"] * k, t.get("flat", 0.0) * k, t.get("base", 0.0) * k
+    face = (r * r - (fl * 0.5) ** 2) ** 0.5
+    return {"r": r, "face": face, "inner": face - t["thick"] * k, "floor": base, "sill": base + op["y"] * k,
+            "top": base + (op["y"] + op["h"]) * k, "w": op["w"] * k, "room_r": r - t["thick"] * k}
 
 
 WIN = _tower_window()
+TX, TZ = TOWER
+# the room at the top of the tower: the window on its front (toward the reader), the camera dollies in along the
+# window's axis (shots at r_focus: same focus, elevation and height, only the distance changes), the cast stands deep
+FH = round(WIN["floor"] + 0.2, 3)  # room focus height (waist height of the cast standing on the room floor)
 FOREST = {"tower": TOWER, "f_focus": [-0.6, -1.8],
-          "win_foot": [TOWER[0], round(TOWER[1] + WIN["r"] + 0.07, 3)],   # under the window, in front of the wall
-          "climb_at": [TOWER[0], round(TOWER[1] + WIN["r"] + 0.11, 3)],   # a climber's feet at the braid
+          "win_foot": [TX, round(TZ + WIN["face"] + 0.14, 3)],   # under the window, in front of the braid
+          "climb_at": [TX, round(TZ + WIN["face"] + 0.11, 3)],   # a climber's feet at the braid
+          "win_at": [TX, round(TZ + WIN["face"], 3)],            # the window itself
+          "r_focus": [TX, TZ - 0.35],
+          # the pivot inside: the camera stays near the room's middle (TZ + 0.05), its focus 0.9 ahead in the view
+          "pv_front": [TX, TZ - 0.7], "pv_side": [TX - 0.9, TZ + 0.2], "pv_win": [TX, TZ + 1.1],
+          "r_rap": [TX + 0.17, TZ - 0.24], "r_prince": [TX - 0.15, TZ - 0.12], "r_gothel": [TX - 0.2, TZ - 0.2],
+          "r_two": [TX, TZ - 0.18],
           "gothel_tap": [-0.55, -1.75], "gothel_call": [-0.62, -1.72], "rabbit": [-1.45, -1.75],
           "prince_in": [1.05, -3.3], "prince_mid": [0.45, -2.0], "prince_foot": [-0.5, -1.62],
           "prince_look": [-0.58, -1.6], "tree": [1.8, -2.35], "hide_at": [2.1, -2.1], "gothel_in": [1.0, -3.4],
@@ -225,7 +236,7 @@ FOREST = {"tower": TOWER, "f_focus": [-0.6, -1.8],
           "prince_meet": [-0.9, 0.55], "field_focus": [-1.0, 0.4], "flowers_1": [-1.5, 0.85], "flowers_2": [-1.95, 0.75],
           "track_mid": [0.2, -1.0], "lawn": [1.6, -1.15]}
 SET_FOREST = [
-    {"build": _tower_spec(), "at": "tower", "name": "tower", "scale": TOWER_SCALE, "stage": 0, "clear": 0.9},
+    {"build": _tower_spec(), "at": "tower", "name": "tower", "scale": TOWER_SCALE, "stage": 0, "clear": 1.0},
     _e("forest_broadleaf_00", "tree", "tree", 1.0, clear=0.4),
     _e("story_rp_garden_15", "hedge", "hedge", 1.0, clear=0.25),
     _e("farm_animals_16", "rabbit", "rabbit", 1.0, clear=0.15),
@@ -236,50 +247,31 @@ SET_FOREST = [
     # (v1 review: template trees filled half the frame on "아, 저렇게 올라가는구나!")
     _e("spring_blossom_16", "lawn", "lawn", 0.8, clear=2.2),
 ]
+SHOTS.update({
+    # outside the window and inside the room share one focus (r_focus, deep in the room on the window's axis), one
+    # elevation and height: going from one to the other only changes the distance, so the camera dollies straight
+    # through the open window
+    "window": [1.6, 8.0, FH, 34.0, 0.0],
+    "window_side": [1.5, 8.0, round(WIN["sill"] + 0.1, 3), 34.0, 24.0],   # at win_at, a little from the side
+    "climb_top": [2.2, 5.0, round(WIN["sill"] - 0.15, 3), 38.0, 16.0],     # at climb_at: the follow let go at the sill
+    "room": [0.72, 8.0, FH, 62.0, 0.0],
+    "room_low": [0.5, 4.0, round(FH - 0.03, 3), 58.0, -14.0],              # at r_rap
+    "room_low_g": [0.45, 4.0, FH, 58.0, 10.0],                             # at r_gothel
+    "room_two": [0.52, 6.0, FH, 60.0, 12.0],                               # at r_two
+    # turning round inside, the camera pivots 0.2 in front of the room's middle, ≥ 0.45 from the cast (each shot's focus 0.9 ahead of it in the view:
+    # pv_front / pv_side / pv_win; a turn about one near focus swung the lens through the cast, a 0.1 distance shook
+    # with the hand-held drift and pulled the haze into the room): front -> side (the spinning wheel wall) -> the
+    # window, with the braid's hook under the sill and the treetops far below
+    "pivot": [0.9, 8.0, FH, 56.0, 0.0],
+    "pivot_side": [0.9, 8.0, FH, 56.0, 90.0],
+    "room_win": [0.9, 10.0, round(WIN["sill"] - 0.03, 3), 60.0, 180.0],
+})
+# the room's furniture is the handler's (fx.gd: bed, table, stool, spinning wheel, rug on the kit's plank floor)
 
 
 def _forest(**kw):
     sp = {"built": ["tower"], "seed": 4, "view": 0, "place": "forest", "light": "afternoon", "spots": FOREST, "set": SET_FOREST,
           "focus": "f_focus"}
-    sp.update(kw)
-    return sp
-
-
-# ---------------------------------------------------------------- page 3: the tower room (seed 4, view 5)
-# A ring of eight inside-wall cards (radius RR) round RC, the window wall at the back, a plank floor laid flat; the
-# camera stays inside the ring (room shots ~0.6 from a focus 0.3 behind the centre).
-RC = [-1.7, -1.2]
-RR = 0.72
-ROOM = {"r_c": RC, "r_focus": [RC[0], RC[1] - 0.3], "r_win": [RC[0], RC[1] - 0.52], "r_rap": [RC[0] + 0.18, RC[1] - 0.38],
-        "r_prince": [RC[0] - 0.2, RC[1] - 0.4], "r_gothel": [RC[0] - 0.24, RC[1] - 0.36], "r_bed": [RC[0] + 0.5, RC[1] - 0.25],
-        "r_table": [RC[0] - 0.48, RC[1] - 0.3], "r_wheel": [RC[0] - 0.52, RC[1] + 0.05], "r_rug": [RC[0], RC[1] - 0.15],
-        "r_two": [RC[0], RC[1] - 0.38]}
-SET_ROOM = []
-# (the three walls on the camera side are left out: the room shots never turn round, and the page's opening wide
-# looked at the back of the front wall card filling the lens)
-_walls = {180: "story_rp_room_01", 135: "story_rp_room_02", 225: "story_rp_room_03", 90: "story_rp_room_00",
-          270: "story_rp_room_00"}
-for _th, _card in _walls.items():
-    nm = f"rw_{_th}"
-    t = _m.radians(_th)
-    ROOM[nm] = [round(RC[0] + RR * _m.sin(t), 3), round(RC[1] + RR * _m.cos(t), 3)]
-    SET_ROOM.append({"card": _card, "at": nm, "stage": "full", "name": nm, "scale": 1.45, "clear": 1.6 if _th == 180 else 0,
-                     "yaw": float((_th + 180) % 360)})
-for k, (dx, dz) in enumerate([(-0.35, -0.35), (0.35, -0.35), (-0.35, 0.3), (0.35, 0.3)]):
-    ROOM[f"rf_{k}"] = [RC[0] + dx, RC[1] + dz]
-    SET_ROOM.append({"card": "story_room_03", "at": f"rf_{k}", "stage": "full", "name": f"rf_{k}", "scale": 1.6,
-                     "clear": 0, "flat": True, "lift": 0.012 + 0.001 * k})
-SET_ROOM += [
-    {"card": "story_rp_room_07", "at": "r_rug", "stage": "full", "name": "rug", "scale": 1.6, "clear": 0, "flat": True,
-     "lift": 0.02},
-    _e("story_rp_room_04", "r_bed", "bed", 1.15, yaw=-70.0, clear=0),
-    _e("story_rp_room_06", "r_table", "table", 1.1, yaw=60.0, clear=0),
-    _e("story_rp_room_08", "r_wheel", "wheel", 1.1, yaw=80.0, clear=0),
-]
-
-
-def _room(**kw):
-    sp = {"seed": 4, "view": 5, "place": "room", "light": "late", "spots": ROOM, "set": SET_ROOM, "focus": "r_focus"}
     sp.update(kw)
     return sp
 
@@ -346,27 +338,27 @@ BEATS = [
         {"do": "fx", "fx": "tower_rise", "wait": 0.4},
         {"do": "say", "line": "rp_r0301"},
         {"do": "fx", "fx": "window:rap:win_smile", "wait": 0.3},
-        {"do": "cam", "shot": "window", "at": "tower", "rate": 1.3, "wait": 0.2, "settle": 0.6}]},
+        {"do": "cam", "shot": "window", "at": "r_focus", "rate": 1.3, "wait": 0.2, "settle": 0.6}]},
     # 5 -- 라푼젤, 라푼젤, 머리를 내려 줘! the braid; the witch climbs
     {"id": "hair", "title": "머리를 내려요", "spread": _forest(light="afternoon"),
      "enter": {"who": {"gothel": "talk"}, "at": {"gothel": "gothel_call"}, "rp": {"window": {"rap": "win_smile"}}},
      "steps": [
         {"do": "cam", "shot": "tower_low", "at": ["gothel_call", "tower"], "rate": 1.2, "wait": 0.2, "settle": 0.6},
         {"do": "say", "line": "rp_r0401"},
-        {"do": "cam", "shot": "window", "at": "tower", "rate": 1.4, "wait": 0.2, "settle": 0.6},
+        {"do": "cam", "shot": "window", "at": "r_focus", "rate": 1.4, "wait": 0.2, "settle": 0.6},
         {"do": "tap_steps", "target": "window", "prompt": "rp_n05", "hint": "rp_n05",
          "steps": [{"fx": "braid:down", "wait": 0.3}]},
         {"do": "cam", "shot": "braid_fall", "at": "win_foot", "rate": 1.2, "wait": 0.1},
         {"do": "say", "line": "rp_r0403"},
         {"do": "walk", "who": "gothel", "to": "climb_at", "speed": 0.2},
         {"do": "cam", "shot": "climb", "at": "climb_at", "rate": 1.2, "wait": 0.1},
-        {"do": "climb_braid", "who": "gothel", "speed": 0.24, "cam": "climb"},
+        {"do": "climb_braid", "who": "gothel", "speed": 0.3, "cam": "climb"},
         {"do": "fx", "fx": "braid:up", "wait": 0.5}]},
     # 6 -- alone in the tower she sings at the window; the song drifts over the wood
     {"id": "song", "title": "탑 안의 노래", "spread": _forest(light="late"),
      "enter": {"who": {}, "rp": {"window": {"rap": "win_sing"}}},
      "steps": [
-        {"do": "cam", "shot": "window_side", "at": "tower", "rate": 1.0, "wait": 0.3, "settle": 0.6},
+        {"do": "cam", "shot": "window_side", "at": "win_at", "rate": 1.0, "wait": 0.3, "settle": 0.6},
         {"do": "say", "line": "rp_r0501"},
         {"do": "tap_steps", "target": "window", "prompt": "rp_n06", "hint": "rp_n06",
          "steps": [{"fx": "notes", "wait": 0.1, "lines": ["rp_x_hum"]}]},
@@ -376,7 +368,7 @@ BEATS = [
      "enter": {"who": {}, "rp": {"window": {"rap": "win_sing"}}},
      "steps": [
         {"do": "fx", "fx": "notes", "wait": 0.0},
-        {"do": "cam", "shot": "road_in", "at": "prince_mid", "rate": 1.0, "wait": 0.2},
+        {"do": "cam", "shot": "road_in", "at": "prince_mid", "rate": 1.0, "wait": 0.2, "settle": 0.9},
         {"do": "walk", "who": "prince", "from": "prince_in", "to": "prince_mid", "speed": 0.3, "follow": "prince",
          "shot": "road_in", "line": "rp_r0600"},
         {"do": "pose", "who": "prince", "pose": "listen", "wait": 0.2},
@@ -394,7 +386,7 @@ BEATS = [
         {"do": "fx", "fx": "braid:down", "wait": 1.2},
         {"do": "walk", "who": "gothel", "to": "climb_at", "speed": 0.22},
         {"do": "cam", "shot": "climb", "at": "climb_at", "rate": 1.2, "wait": 0.1},
-        {"do": "climb_braid", "who": "gothel", "speed": 0.26, "cam": "climb"},
+        {"do": "climb_braid", "who": "gothel", "speed": 0.3, "cam": "climb"},
         {"do": "fx", "fx": "braid:up", "wait": 0.6},
         {"do": "cam", "shot": "hide", "at": "hide_at", "rate": 1.3, "wait": 0.1, "settle": 0.5},
         {"do": "pose", "who": "prince", "pose": "delighted", "hop": True, "wait": 0.1},
@@ -405,41 +397,53 @@ BEATS = [
      "steps": [
         {"do": "cam", "shot": "tower_low", "at": ["prince_look", "tower"], "rate": 1.0, "wait": 0.3, "settle": 0.6},
         {"do": "say", "line": "rp_r0701"},
-        {"do": "cam", "shot": "window", "at": "tower", "rate": 1.4, "wait": 0.2, "settle": 0.6},
+        {"do": "cam", "shot": "window", "at": "r_focus", "rate": 1.4, "wait": 0.2, "settle": 0.6},
         {"do": "tap_steps", "target": "window", "hint": "rp_n05", "steps": [{"fx": "braid:down", "wait": 0.3}]},
         {"do": "cam", "shot": "braid_fall", "at": "win_foot", "rate": 1.2, "wait": 0.6},
         {"do": "walk", "who": "prince", "to": "climb_at", "speed": 0.22},
         {"do": "cam", "shot": "climb", "at": "climb_at", "rate": 1.2, "wait": 0.1},
-        {"do": "climb_braid", "who": "prince", "speed": 0.24, "cam": "climb", "line": "rp_r0702"}]},
-    # 9 -- the room: the prince climbs in; Rapunzel's surprise; he asks her to come away
-    {"id": "meet", "title": "탑 꼭대기 방", "spread": _room(light="dusk"),
-     "enter": {"who": {"rap": "surprised", "prince": "calm"}, "at": {"rap": "r_rap", "prince": "r_prince"},
-               "left": {"prince": 0}},
+        {"do": "climb_braid", "who": "prince", "speed": 0.32, "cam": "climb", "line": "rp_r0702", "hold": True}]},
+    # 9 -- the room at the top of the same tower: the prince climbs in over the sill, the camera follows him through
+    # the window into the round room; Rapunzel's surprise; he asks her to come away (v2: no page turn)
+    {"id": "meet", "title": "탑 꼭대기 방", "spread": _forest(light="dusk"),
+     "enter": {"who": {"rap": "surprised"}, "at": {"rap": "r_rap"}, "keep": ["prince"],
+               "rp": {"room": ["rap"], "braid": "hooked"}},
      "steps": [
-        {"do": "fx", "fx": "in_window:prince", "wait": 0.1},
-        {"do": "cam", "shot": "room", "at": "r_two", "rate": 1.0, "wait": 0.2, "settle": 0.6},
+        {"do": "cam", "shot": "window", "at": "r_focus", "from": "window", "rate": 1.2, "wait": 0.1, "settle": 0.7},
+        {"do": "climb_in", "who": "prince", "to": "r_prince", "pose": "calm"},
+        {"do": "cam", "shot": "room", "at": "r_focus", "rate": 0.9, "wait": 0.2, "settle": 0.9},
         {"do": "cam", "shot": "room_low", "at": "r_rap", "rate": 1.4, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "rp_r0704"},
         {"do": "cam", "shot": "room_two", "at": "r_two", "rate": 1.3, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "rp_r0705"}]},
-    # 10 -- one day: "why are you heavier than the prince?" -- the scissors; she is taken far away
-    {"id": "snip", "title": "싹둑", "spread": _room(light="late"),
-     "enter": {"who": {"rap": "chatty", "gothel": "calm"}, "at": {"rap": "r_rap", "gothel": "r_gothel"}},
+    # 10 -- one day (the same room): the window from inside, the braid on its hook; the witch, not the prince;
+    # "why are you heavier than the prince?" -- the scissors; she is taken far away
+    {"id": "snip", "title": "싹둑", "spread": _forest(light="late"),
+     "enter": {"who": {"rap": "chatty"}, "at": {"rap": "r_rap"}, "keep": ["prince"],
+               "rp": {"room": ["rap"], "braid": "hooked"}},
      "steps": [
-        {"do": "cam", "shot": "room", "at": "r_two", "rate": 1.0, "wait": 0.2, "settle": 0.6},
+        {"do": "cam", "shot": "pivot", "at": "pv_front", "from": "pivot", "rate": 1.0, "wait": 0.0, "settle": 0.6},
+        {"do": "cam", "shot": "pivot_side", "at": "pv_side", "rate": 1.0, "wait": 0.0, "settle": 0.6},
+        {"do": "cam", "shot": "room_win", "at": "pv_win", "rate": 1.0, "wait": 1.2, "settle": 0.9},
+        {"do": "fx", "fx": "room_swap:prince:gothel:r_gothel:calm", "wait": 0.3},
+        {"do": "cam", "shot": "pivot_side", "at": "pv_side", "rate": 1.0, "wait": 0.0, "settle": 0.6},
+        {"do": "cam", "shot": "pivot", "at": "pv_front", "rate": 1.0, "wait": 0.0, "settle": 0.6},
+        {"do": "cam", "shot": "room", "at": "r_focus", "rate": 1.0, "wait": 0.2, "settle": 0.9},
         {"do": "say", "line": "rp_r0802"},
-        {"do": "cam", "shot": "room_low", "at": "r_gothel", "rate": 1.8, "wait": 0.1, "shake": 0.4, "settle": 0.5},
+        {"do": "cam", "shot": "room_low_g", "at": "r_gothel", "rate": 1.8, "wait": 0.1, "shake": 0.4, "settle": 0.5},
         {"do": "say", "line": "rp_r0803"},
         {"do": "pose", "who": "gothel", "pose": "scissors", "wait": 0.2},
-        {"do": "cam", "shot": "room_two", "at": "r_two", "rate": 1.3, "wait": 0.1, "settle": 0.5},
+        {"do": "cam", "shot": "room", "at": "r_focus", "rate": 1.3, "wait": 0.1, "settle": 0.5},
         {"do": "fx", "fx": "snip", "wait": 0.0},
         {"do": "say", "line": "rp_r0805"},
-        {"do": "fx", "fx": "vanish:rap", "wait": 1.0}]},
+        {"do": "fx", "fx": "vanish:rap", "wait": 0.8},
+        {"do": "fx", "fx": "vanish:gothel", "wait": 0.8}]},
     # 11 -- the empty tower: the cut braid on the hook; the witch at the window; the soft magic wind
     {"id": "empty", "title": "빈 탑", "spread": _forest(light="dusk"),
      "enter": {"who": {}, "hidden": {"gothel": "win_foot"}},
      "steps": [
-        {"do": "cam", "shot": "road_in", "at": "prince_mid", "rate": 1.0, "wait": 0.2},
+        {"do": "cam", "shot": "window", "at": "r_focus", "rate": 1.0, "wait": 0.1, "settle": 0.9},
+        {"do": "cam", "shot": "road_in", "at": "prince_mid", "rate": 1.0, "wait": 0.2, "settle": 0.9},
         {"do": "walk", "who": "prince", "from": "prince_in", "to": "prince_look", "via": ["prince_mid"], "speed": 0.34,
          "follow": "prince", "shot": "foot", "line": "rp_r0900"},
         {"do": "pose", "who": "prince", "pose": "call", "wait": 0.1},
@@ -450,9 +454,9 @@ BEATS = [
         {"do": "say", "line": "rp_r0903"},
         {"do": "walk", "who": "prince", "to": "climb_at", "speed": 0.24},
         {"do": "cam", "shot": "climb", "at": "climb_at", "rate": 1.2, "wait": 0.1},
-        {"do": "climb_braid", "who": "prince", "speed": 0.28, "cam": "climb", "stop": 0.75},
+        {"do": "climb_braid", "who": "prince", "speed": 0.3, "cam": "climb", "stop": 0.75},
         {"do": "fx", "fx": "window:gothel:win_stern", "wait": 0.2},
-        {"do": "cam", "shot": "window_side", "at": "tower", "rate": 1.4, "wait": 0.1, "settle": 0.5},
+        {"do": "cam", "shot": "window_side", "at": "win_at", "rate": 1.4, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "rp_r0905"},
         {"do": "fx", "fx": "window:gothel:win_wand", "wait": 0.2},
         {"do": "cam", "shot": "float", "at": ["land", "win_foot"], "rate": 1.2, "wait": 0.1},

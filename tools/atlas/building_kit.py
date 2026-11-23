@@ -119,13 +119,18 @@ def kit():
                       {"edge": 0, "u": 0.5, "w": 0.1, "h": 0.18, "y": 0.75, "kind": "arch", "card": CARD["castle_window"]},
                       {"edge": 10, "u": 0.5, "w": 0.1, "h": 0.18, "y": 0.75, "kind": "arch", "card": CARD["castle_window"]}],
          "roof": {"type": "cone", "mat": "slate", "h": 0.7, "overhang": 0.06, "thick": 0.03}}]}
+    # a slim shaft carrying an overhanging round room (corbelled out), a real window in a flat front chord: wide enough
+    # for a girl to lean out (opening open, no glass card: Rapunzel, the braid), a stone sill ledge under it, a plank
+    # floor inside so the room reads through the window and from inside (units = world units at scale 1)
     K["rapunzel_tower"] = {"parts": [
-        {"name": "tower", "type": "tower", "shape": "round", "n": 22, "r": 0.3, "h": 2.1, "wall": "ashlar",
-         "thick": 0.05, "plinth": {"h": 0.06, "mat": "fieldstone", "out": 0.04},
-         "openings": [{"edge": 0, "u": 0.5, "w": 0.16, "h": 0.24, "y": 1.6, "kind": "arch", "card": CARD["castle_window"]}],
-         "roof": {"type": "cone", "mat": "slate", "h": 0.8, "overhang": 0.1, "thick": 0.03}},
-        {"name": "balcony", "type": "card", "card": CARD["balcony"], "at": [0.0, 0.31], "base": 1.53, "h": 0.1, "w": 0.32},
-        {"name": "flag", "type": "flag", "card": CARD["flag_red"], "at": [0, 0], "base": 2.85, "h": 0.32}]}
+        {"name": "shaft", "type": "tower", "shape": "round", "n": 22, "r": 0.34, "h": 1.62, "wall": "ashlar",
+         "thick": 0.05, "plinth": {"h": 0.06, "mat": "fieldstone", "out": 0.04}},
+        {"name": "tower", "type": "tower", "shape": "round", "n": 28, "r": 0.56, "flat": 0.26, "h": 0.56, "base": 1.84,
+         "wall": "ashlar", "thick": 0.06, "floor": "planks", "flare": {"h": 0.16, "r0": 0.34},
+         "openings": [{"edge": 0, "u": 0.5, "w": 0.14, "h": 0.25, "y": 0.15, "kind": "arch", "card": CARD["castle_window"],
+                       "open": True, "ledge": {"out": 0.05, "h": 0.03, "over": 0.03}}],
+         "roof": {"type": "cone", "mat": "slate", "h": 0.95, "overhang": 0.08, "thick": 0.03}},
+        {"name": "flag", "type": "flag", "card": CARD["flag_red"], "at": [0, 0], "base": 3.35, "h": 0.32}]}
     K["windmill_tower"] = {"parts": [
         {"name": "mill", "type": "tower", "shape": "ngon", "n": 8, "r": 0.36, "h": 0.95, "wall": "planks", "thick": 0.04,
          "plinth": {"h": 0.1, "mat": "fieldstone", "out": 0.04},
