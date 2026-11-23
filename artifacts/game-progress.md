@@ -2183,3 +2183,58 @@ voice is ElevenLabs — nar Annie, rap Sora, gothel Matilda, father Namchun, mot
   wall cards (fine from inside, a card set from outside at the page open); Rapunzel's teleport is sparkles in the room
   (the field is seen only at the reunion); the rabbit is tiny; nobody has listened to the mix or the 7 new clips yet.
 - Regression after the story_actor edit (no movie): three_pigs STORY_DONE 315.9 s, CHECK_LINES OK (39), no script errors. The tower comes from the building kit (game/core/world/building.gd + game/art/buildings/kit.json, committed by its owner in 023a98b).
+
+## 2026-11-23 — houses solid from every angle (user rule) + the building kit (pavilions, towers, hanok, pagoda, castle)
+  - Rule (user): "집들은 무조건 입체적으로 아주 잘 들어맞게" — every house / barn / shop / cottage in every tale is a closed
+    volume whose pieces fit tightly; scope added: "팔각정 등 팔각 집도", "성은 단순 육면체가 아닐거라고".
+  - Audit tool: tools/story/house_orbit.gd / house_orbit.sh / house_orbit_all.sh (per tale beat: each set house + the
+    nearest template village houses, nine solo views on magenta + the story shot) and tools/story/house_audit.py (red =
+    background seen through the house, counted). Before: every template village house was a flat card (edge-on at
+    ±70°, the mirrored print at the back); three_pigs' straw / wood / brick houses had side cards but no roof body (the
+    ceiling planks showed from above, the back was the plain card back), its home cottage and turnip's farmhouse and
+    barn, sunmoon's gate house and the goats' mill were flat cards; witch_candy's turned houses, the sunmoon / patjuk /
+    wolf_goats cottages had straight eave->ridge slopes that left the drawn roof edge sticking up as a flat card,
+    slots under the eaves and at the corners (patjuk back views 600 px of background, wolf_goats ±70° 900–1750 px).
+  - Fix (shared): tools/atlas/house_bodies.py traces every building card's outline (chimney cut by a 1-D opening of the
+    roof line; walls fitted as lines; eave line = the overhang underside; per-card overrides for a windmill, roofs whose
+    own print has no plain roofing → the kit's paper swatch) → game/art/atlas/bodies.json + own-art crops
+    (side / roof / back / chimney, mirror-tiled small patches so no sunflower / log end repeats on a side wall).
+    game/core/world/house_body.gd extrudes the outline from the card's front face (grown 0.8 mm: a PaperCard's cut
+    edge does not draw from above, a body starting behind the card left a slit along the roof), soffits, filled back,
+    closed foot, chimney box with its own front (three_pigs' brick facade has no drawn stack), inner faces darker,
+    door / window reveals. SetPiece: `box` uses it (rooms / refuges keep floor / ceiling / inner wall), and every set
+    entry whose card has a body gets one automatically (not `enterable`). meadow.gd gives every village house card its
+    body (hinged or static; clean-copy offset + rim); the open pavilion card korean_village_04 is replaced on the page
+    by the kit's 3D 팔각정.
+  - Building kit (new, shared): game/core/world/building.gd (parts: block / tower / pavilion / wall_run / gate / stairs /
+    bridge / flag / card / sails; roofs gable / hip / pyramid / cone / skirt / flat with even overhang, Korean curve,
+    eave height set so the roof meets the wall tops; openings with reveals, arch spandrels and vaults; crenellations;
+    portcullis / drawbridge states) + game/art/buildings/kit.json from tools/atlas/building_kit.py; art (Codex, paper,
+    magenta, md5-unique): story_bk_materials (14 swatches) + story_bk_parts (16 doors / windows / gate / portcullis /
+    drawbridge / flags / railings / finial / bracket / stairs), tagged building_kit. Presets: octagon_pavilion, gazebo,
+    round_hut, round_tower, rapunzel_tower, windmill_tower, two_storey, hanok_l, pagoda, castle. Set entry
+    `{"build": preset | spec, ...}` (SetPiece.setup_building). Sheet: artifacts/houses/kit_sheet.jpg.
+  - Audit (background seen through each tale's houses, summed over the 9 orbit views; before → after, pavilion's real
+    openings excluded): patjuk 1740 → 30, sun_wind 591 → 65, sunmoon 995 → 52, three_pigs 1043 → 89, turnip 483 → 38,
+    witch_candy 15465 → 11, wolf_goats 5609 → 60 (the rest are 1–2 px cut-line specks at die-cut windows / eave tips).
+    The numbers understate the change: a flat card has no holes; the sheets show it. Sheets:
+    artifacts/houses/compare/<tale>_before_after.jpg, artifacts/houses/compare/houses_before_after.jpg (49 houses),
+    artifacts/houses/kit_sheet.jpg (10 presets + castle approach / gate / tower window), contact sheets
+    artifacts/houses/bodies_contact_v6.jpg.
+  - Behaviour kept: three_pigs builds still rise band by band (the body stands once the house is whole, folds with band
+    0) and blow down / collapse; doors open into rooms; refuge fronts hide only while the camera is inside (the body's
+    darker inner faces close the room); witch_candy turned houses glow at night (bodies too).
+  - Regression, no-movie autoplay 1200x900 (artifacts/houses/regress/<tale>.log): STORY_DONE sun_wind 214.5 s,
+    three_pigs 316.2, witch_candy 456.8, sunmoon 390.2, wolf_goats 375.8, patjuk 365.3, turnip 278.1; CHECK_LINES OK ×7;
+    CAM_JUMP 0 CAM_JERK 0 SPEAKER_OFF 0 ×7; missing_audio / missing_sound empty; 0 script errors; no repeated voice
+    keys. Unchanged from the pre-change baseline (artifacts/wolf_goats/regress): VOICE_OVERLAP counts of fixed-fps no-movie
+    runs (story clock faster than audio; same numbers before), witch_candy OVERLAP 7 (kids / witch at the shop door)
+    and SET_CHECK 2 (the string lights across the road), sunmoon OVERLAP 5 / OCCLUDE 15 (jars, sorghum, sky clouds) and
+    SET_CHECK 22 — none involve a house; wolf_goats / patjuk / turnip / sun_wind / three_pigs overlap 0.
+  - Clips (1200x900, movie maker): artifacts/houses/clips/{sun_wind_bet, three_pigs_wolf_straw, witch_candy_invite,
+    sunmoon_morning, sunmoon_rich_house, wolf_goats_home, patjuk_winter, turnip_seed}.mp4.
+  - Still off: during a three_pigs build the rising bands are flat until the house is whole; roof prints of a few
+    western cottages come from their own small roof patch (repeat reads as a pattern at the high view); eave-front
+    roofs extrude as a hipped block (the ridge runs back level, no back slope); sun_wind's houses are only far
+    village background (body visible but blurred); the castle approach still shows the dark sky band above the far
+    hills on a low lens (tale `backdrop`); windmill_tower sails turn in front of the cap but read thin edge-on.
