@@ -2427,3 +2427,40 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
 - Still off: 6:35 vs the 4-5 min aim; the room's back wall is the kit's ashlar print (plain, no tapestry); the treetop
   view through the window is a few cards (reads as "high up" but simple); Gothel's climb ends with a few frames of
   back-walk over the sill (reads fine); nobody has listened to the mix.
+
+## 2026-11-24 — wave 1 after gate audit v1: shared cycles, gate checks, engine fixes (d6acfdc + this commit)
+  - Shared cycles (Codex magenta, paper style block, refs = the shipped figures; tools/art/wave1_jobs.py ->
+    tools/cast/wave1_cast.py): wolf run_back + climb_cycle (ladder); tiger run_back, climb_cycle (trunk), dg_back (the
+    drawn walk-away in mother's clothes), aliases rope_climb (rope_a/b) and axe_climb (axe_a/b); goat_kid_1..6
+    run_front (drawn once on the green kid 4, recoloured); hanbok_boy / hanbok_girl climb_cycle (alias of climb_a/b;
+    their rope_a/b are praying / sitting figures, not climb frames); mother_pig, rich_lady, peasant_mother walk_cycle
+    / walk_back / walk_front. All 7 sheets came out first try (~1 min each, 4 runners).
+  - Engine: StoryActor climb selection (steep off-ground leg or walk pose climb / <x>_climb -> <x>_climb or
+    climb_cycle; falls and slips keep their figure), generalising rapunzel's braid. CastPuppet object gaits
+    (catalog `gait`: hop chestnut / dung / awl, crawl turtle, roll mat, thump mortar, stride jige), MOVE logs
+    `<fig>:gait-<kind>`. hobak_cat needed no new art: its ghost_cycle / ghost_front exist; the audit's static "ghost"
+    was the black-mouth figure on a step-up leg (reviewed again in wave 2's parade re-record).
+  - Gate: motion_review OFF_FRAME (> 30 % of a segment off the frame, not drawn or under the shown caption; runner
+    prints CAPTION 1|0), `--out` for beat checks; SightCheck rays for OCCLUDE on moving / speaking actors in gate
+    runs (template lawn cards by print alpha, set-piece cards, roofs / bodies, other actors, props; boxes the camera
+    or the actor stands in are ignored); SET_CHECK skips sky / cloud / hanging / lifted pieces; overlap_check on
+    for sun_wind and three_pigs; WalkerLog gives sun_wind's traveller MOVE / TRACK lines.
+  - Runner: patjuk crash = a coroutine resumed after the runner left the tree, `await null.process_frame` returned
+    at once with a 0 s step and `_wait` spun forever (5 GB log); `_frame` parks it now (RUNNER_OFF_TREE). The 14 min
+    frozen cover = wall-time-budgeted prebuild under the movie maker on a slow machine; movie runs build in one go.
+  - witch_candy: poof clouds only at the pot mouth (straight up), golden sparkles (no cloud) on characters, no mouth
+    wisps, pot steam kept low over the boiling top. sunmoon: the axe climb passes walk pose "axe".
+  - Proof beats (1200x900, --log-track, tools/story/w1_beat.sh; artifacts/wave1/rec/, motion tiles
+    artifacts/wave1/motion/<tale>/): three_pigs chimney (wolf ladder in climb_cycle), sunmoon tree (kids
+    climb_cycle, tiger axe_climb), patjuk helpers (gaits, 0 static cards, 0 script errors, 78 s clean), wolf_goats
+    hide (kid4 run_front; OCCLUDE false positives from the cottage box fixed -> 0), witch_candy round1 (puffs) and
+    parade (OCCLUDE now catches house_5 / house_6 roofs over the parade and the cat behind the witch), sun_wind
+    wind_turn (2 MOVE segments, MOTION_FLAGS 0). Sheet: artifacts/wave1/wave1_sheet.jpg.
+  - Felt removal (item 2) was done by a helper agent in parallel (paper_flatten): see its entry / commit.
+  - For wave 2: OFF_FRAME and OCCLUDE will now fail most tales until the camera follows movers (sunmoon tree:
+    tiger climbs off frame; patjuk helpers under the caption; wolf_goats kid4's run_front is at the frame edge).
+    patjuk helpers hiding in the hearth / jar count OCCLUDE <helper> cottage: list them in overlap_ok or mark them
+    inside. Static figure for ~4 frames at a run start (kid2 scared -> run_back) is the paper turn, still flagged
+    STATIC_CARD on very short scurries. tiger dg_front is still a static card. sun_wind traveller still on the leg rig
+    (no drawn cycles). rapunzel: OFF_FRAME found only 1 segment on its audit log; the audit's "prince reunion off
+    frame" shows on screen in TRACK, so it may be an occlusion — check by eye.
