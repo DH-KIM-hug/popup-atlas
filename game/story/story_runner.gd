@@ -1125,7 +1125,7 @@ func _step_go_inside(st: Dictionary) -> void:
 			else:  # one after another (setting off together they crossed each other's paths)
 				var aa := a
 				if _alive():
-					get_tree().create_timer(0.8 * i).timeout.connect(func():
+					get_tree().create_timer((1.1 if piped_q else 0.8) * i).timeout.connect(func():
 						if _alive() and is_instance_valid(aa):
 							aa.follow(apts, spd, "", false))
 		else:
