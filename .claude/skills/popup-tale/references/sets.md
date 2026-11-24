@@ -178,6 +178,10 @@ new set: papercraft_notes.md.
   pull). Growth stages before it are card swaps with a paper pop (sprout -> rosette -> crown -> sunk turnip).
 - Things that land or are set down (the pulled turnip) go behind the actors, never between them and the camera
   (OCCLUDE), and leave with the story (carried to the table, cooked).
+- Something cut or dropped stays where it fell (rapunzel v3, the snip): a slim card where the drawn part hung,
+  toppling onto the floor (a tween on rotation.z about its foot, edge toward the lens: from a low room shot it reads
+  as lying on the floor), shot a few degrees higher so it clears the caption. Size it from the drawn part, not the
+  card: the braid's tassel card scaled to her braid's length drew as wide as she is; the slim braid card fits.
 
 ## Nothing overlaps (user: "최대한 겹치게 하지마라는 규칙은 없었나", "물체랑 사람들끼리 자꾸 겹치잖아")
 - No character, set piece or fx prop (ropes, jars, baskets, flying props) may sit inside another or hide a speaker.

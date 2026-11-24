@@ -32,6 +32,10 @@ place on one spread (spots converted into one view's frame), list the camera sta
 (incl. `["story", "road", a, b]` for tracking shots), glide `cam at`, track runners with `walk follow` +
 `via: "road"`, and give later beats `built` (what stands at that beat, ruins included) so `--beat` starts and
 prebuilds are right. Page turns only where the place really changes.
+- A place the story calls far away but that shares the spread (rapunzel v3: "먼 들판의 작은 오두막" next to the tower):
+  its house stays a lot (`stage: 0`) until the story reaches it and pops up there (fx `pop:<name>`), and its shots
+  turn off the landmark it is far from (field / reunion yaw 62-68: the tower leaves the frame). v2 had the cottage's
+  thatch in the corner of every tower wide and the tower right behind the reunion.
 
 ## Smooth camera (user: "모든 동화 마찬가진데 시점이 뚝뚝 끊기는거 별로에요")
 The camera moves continuously; every move eases in and out, a new shot mid-move bends the path (velocity carried

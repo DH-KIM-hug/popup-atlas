@@ -29,5 +29,9 @@ Write this plan into the progress log before building; it is what every agent ge
      down.
    - A refrain of seven arrivals (patjuk) is the tale (a line + quote + tap each) but costs ~13 s each: keep the taps
      for the ones the child needs (the kitchen helpers) and let the granny hand the bowls herself in the yard.
+   - Measure the idle time before cutting lines (rapunzel v3): per SEG, `next event − start − clip length` from the
+     run log; v2 had 182 s idle in 395 s. A pace pass in the tale table (`_pace`: cam rates ×1.4 up to 2.0, settles
+     ≤ 0.45, waits ×0.6, walks ×1.4 up to 0.46, climbs ×1.45; the opening crane keeps its slow rate) took 395 → 361 s
+     with every line kept, CAM_JUMP / CAM_JERK still 0. Long silent stretches were climbs and room pivots.
 9. **Places**: list each place the lines name (텃밭, 부엌, 헛간 지붕, 쥐구멍) and what makes it that place on screen (sets.md).
 10. **Branches** (if any): choice space and result tables (engine.md "Branching tales").

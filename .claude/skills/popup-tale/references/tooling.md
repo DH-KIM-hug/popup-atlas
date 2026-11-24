@@ -45,6 +45,11 @@
   WalkerLog (figures `<pose>:rig`). `CAPTION 1|0 t=` lines say when the caption strip shows (OFF_FRAME check).
 - Motion tiles by hand: `tools/story/tiles.py IN.mp4 START DUR X Y W H OUT.jpg [cols]` (8 fps, crop, 2× scale);
   the gate's `tools/story/motion_review.py` cuts them per segment automatically.
+- A full disk ruins a run silently (2026-11-25): the movie writer warned "available space is low", the AVI came out
+  corrupt (ffmpeg mjpeg errors, a 61 s mp4 of a 361 s story) and the run log lost most lines (no SEG / MOVE, 2k
+  PERF hitch lines) while STORY_DONE and the summary still printed. Moving AVIs to ~/.Trash does NOT free space. Check
+  `df` before a full run (a 6 min run at 1200x900 is ~6 GB of AVI), and after it compare the mp4 duration with
+  STORY_DONE and count MOVE lines before reviewing anything.
 
 ## Probes
 - `tools/story/probe_spots.gd` (ground map around the anchor), `tools/story/probe_spots_wide.gd` (roads for streets),
