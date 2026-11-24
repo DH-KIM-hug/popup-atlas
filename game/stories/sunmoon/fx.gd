@@ -64,6 +64,14 @@ func build_async() -> void:
 		rig.dof_amount = 0.012
 		rig.dof_near_margin = 3.0
 		rig.dof_far_margin = 8.0
+		# v15 (gate audit: "blocky square pixel artifacts in the cloud backdrop"): the far-blur pass turned the far cloud
+		# rows into a mosaic of squares; the finale is cut paper on one plane of interest, no blur
+		rig.dof_enabled = false
+		for r0 in ["boy", "girl"]:  # v15: folded until the rope brings them up (they stood behind the cloud bands)
+			var a0 := stage.actor(r0)
+			if a0:
+				a0.pop_target = 0.02
+				a0.pop_s = 0.02
 	_sky_shown()
 
 
@@ -147,6 +155,50 @@ func _rope_spot(side: float) -> Vector3:
 func _tree_base() -> Vector3:
 	var sp := stage.set_piece("tree")
 	return sp.global_position if sp else stage.spot_point("tree")
+
+
+## v15 (gate audit: "the escape out of the back door is never shown"): the back wall card story_sm_cottage_08 (the
+## back with its doorway, mirrored so the door is on the jars' side) carries a separate plank leaf (cottage_09) hinged
+## at the doorway's outer edge; it swings INTO the house (never over the children), and on opening the children,
+## folded flat in the doorway until then, stand up and step out.
+const LEAF := "story_sm_cottage_09"
+const BACK_H := 0.95  ## the back card's height (0.75 x 1.267): the door art measured on its 386 px
+const DOOR_C := 130.0 / 386.0 * BACK_H  ## doorway centre right of the card's middle (seen from the yard)
+const DOOR_W := 80.0 / 386.0 * BACK_H
+const DOOR_SILL := 43.0 / 386.0 * BACK_H
+var _bdoor_open := 0.0
+
+
+func _back_door(open: bool) -> void:
+	var cb := stage.set_piece("cot_back")
+	if cb == null:
+		return
+	if not _cards.has("bdoor"):
+		var piv := Node3D.new()
+		piv.top_level = true
+		stage.add_child(piv)
+		var b := cb.global_transform.basis.orthonormalized()
+		piv.global_transform = Transform3D(b, cb.global_position + b.x * (DOOR_C + DOOR_W * 0.5) + b.z * 0.022
+				+ Vector3.UP * DOOR_SILL)
+		var c := PaperCard.new()
+		c.texture = _texid(LEAF)
+		c.height = 131.0 / 386.0 * BACK_H
+		c.thickness = 0.006
+		piv.add_child(c)
+		c.position = Vector3(-DOOR_W * 0.5, 0.0, 0.0)
+		_cards["bdoor"] = piv
+	var piv2: Node3D = _cards["bdoor"]
+	var tw := create_tween()
+	tw.tween_property(piv2, "rotation:y", piv2.rotation.y + (-1.75 if open else 1.75) * (1.0 if open != (_bdoor_open > 0.5) else 0.0), 0.7) \
+			.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_sfx("door.open" if open else "door.shut", cb.global_position)
+	_bdoor_open = 1.0 if open else 0.0
+	if open:
+		tw.tween_callback(func() -> void:
+			for r in ["boy", "girl"]:
+				var a := stage.actor(r)
+				if a:
+					a.pop_target = 1.0)
 
 
 func _rope_gone() -> void:
@@ -234,7 +286,12 @@ func fx(name: String) -> bool:
 			return true
 		"tiger_out":  # tiger_out:<hide spot>:<mark>
 			if tig:
-				tig.place_at(stage.spot_point(p[1]) - _toward() * 0.25)
+				# v15: he waits behind and BESIDE the rock (away from his mark), so stepping out is a side walk into
+				# the road, not a walk away from the lens (gate: SKATE / back view)
+				var hp := stage.spot_point(p[1])
+				var away := hp - stage.spot_point(p[2])
+				away.y = 0.0
+				tig.place_at(hp - _toward() * 0.12 + away.normalized() * 0.18)
 				tig.pop_target = 1.0
 				tig.set_pose("roar")
 				tig.walk_to(stage.spot_point(p[2]), 0.45)
@@ -266,9 +323,10 @@ func fx(name: String) -> bool:
 			var paw := _card("story_sm_door_fx_01", 0.1)
 			paw.rotation.y = _view_yaw() + PI + deg_to_rad(-40.0)
 			var side := stage.dir_vec("right").rotated(Vector3.UP, deg_to_rad(-40.0))
-			paw.global_position = d + Vector3.UP * 0.22 + side * 0.2
+			var inw := paw.global_transform.basis.z * 0.05  # v15: clear of the wall_in card (it hid the paw)
+			paw.global_position = d + inw + Vector3.UP * 0.2 + side * 0.2
 			_flyers.append({"node": paw, "age": 0.0, "life": 1.2, "from": paw.global_position,
-				"to": d + Vector3.UP * 0.22 + side * 0.06, "arc": 0.0, "keep": true})
+				"to": d + inw + Vector3.UP * 0.2 + side * 0.06, "arc": 0.0, "keep": true})
 			_cards["paw"] = paw
 			_sfx("sm.paper_rustle", d)
 			return true
@@ -289,6 +347,9 @@ func fx(name: String) -> bool:
 			_sfx("sm.blink")
 			return true
 		"poke_hole":
+			if _cards.has("paw") and is_instance_valid(_cards["paw"]):  # v15: the paw is gone (it hid the boy later)
+				(_cards["paw"] as Node3D).queue_free()
+			_cards.erase("paw")
 			var w := _card(WINDOW_HOLE, 0.25)
 			w.rotation.y = _view_yaw() + PI + deg_to_rad(-40.0)  # on the wall's inside face (the cottage turns -40)
 			w.global_position = stage.spot_point("window_inside") + Vector3.UP * 0.3 + w.global_transform.basis.z * 0.004
@@ -303,6 +364,7 @@ func fx(name: String) -> bool:
 			return true
 		"climb_tree":  # climb_tree:<1..3>: a stretch up the trunk per tap, the third onto the fork
 			var k := int(p[1])
+			stage.shot_to("tree_climb", "tree", {"rate": 2.0})  # v15: the tap framing held the trunk; climbers left it
 			for r in ["boy", "girl"]:
 				var a := stage.actor(r)
 				if a == null:
@@ -310,7 +372,7 @@ func fx(name: String) -> bool:
 				var side := 0.1 if r == "boy" else -0.1
 				var top := _trunk(1.0, side * 1.4)
 				var goal := top if k >= 3 else _trunk(k / 3.0 - (0.08 if r == "girl" else 0.0), side)
-				a.follow([goal], 0.35, "", true)
+				a.follow([goal], 0.45, "", true)  # v15 pace (0.35)
 				a.set_pose(("sit_hold" if r == "boy" else "sit_scared") if k >= 3 else ("climb_a" if k % 2 == 1 else "climb_b"))
 			return true
 		"oil_smear":
@@ -324,6 +386,7 @@ func fx(name: String) -> bool:
 				_cards.erase("oil")
 			return true
 		"tiger_slip":
+			stage.shot_to("tree_climb", "tree", {"rate": 2.0})  # v15: the slips in the whole-trunk frame
 			if tig:
 				tig.set_pose("slip")
 				var base := tig.global_position
@@ -332,7 +395,7 @@ func fx(name: String) -> bool:
 		"axe_climb":
 			if tig:
 				tig.set_pose("axe_a")
-				tig.follow([_trunk(0.25, 0.1), _trunk(0.45, 0.1), _trunk(0.62, 0.1)], 0.12, "axe", true)  # wave 1: the axe_climb cycle
+				tig.follow([_trunk(0.25, -0.12), _trunk(0.45, -0.12), _trunk(0.62, -0.12)], 0.12, "axe", true)  # v15: the trunk side away from the ropes (the golden rope hid him: OCCLUDE)  # wave 1: the axe_climb cycle
 				for k in 3:
 					var n := _card(NOTCHES, 0.1)
 					n.global_position = _trunk(0.2 + 0.18 * k)
@@ -350,6 +413,31 @@ func fx(name: String) -> bool:
 			_cards["rope"] = r
 			_sfx("wc.chime", x)
 			return true
+		"door_cards_off", "kids_in":  # kids_in, v15: once the camera is out of the room the children wait behind the back door
+			for k in ["paw", "eye0", "eye1", "window_hole"]:  # the door-beat cards stay in the room no longer
+				if _cards.has(k):
+					if is_instance_valid(_cards[k]):
+						(_cards[k] as Node3D).queue_free()
+					_cards.erase(k)
+			_eye_t = -1.0
+			if p[0] == "door_cards_off":
+				return true
+			for r in ["boy", "girl"]:
+				var ak := stage.actor(r)
+				if ak:
+					ak.place_at(stage.spot_point("out_" + r))
+					ak.pop_target = 0.02
+					ak.pop_s = 0.02
+			return true
+		"tiger_flat", "tiger_up":  # v15: the tiger waits folded at the front door while the camera rises past him
+			if tig:
+				tig.pop_target = 0.02 if p[0] == "tiger_flat" else 1.0
+				if p[0] == "tiger_flat":
+					tig.pop_s = 0.02
+			return true
+		"back_door":  # back_door:open|shut — v15: the plank leaf swings into the house; on open the children step out
+			_back_door(p.size() < 2 or p[1] != "shut")
+			return true
 		"rope_gone":  # the golden rope rises out of the picture with the children (start of the rotten-rope page)
 			_rope_gone()
 			return true
@@ -359,14 +447,18 @@ func fx(name: String) -> bool:
 				var a2 := stage.actor(r2)
 				if a2 and _cards.has("rope"):
 					var rp := (_cards["rope"] as Node3D).global_position
-					a2.follow([rp + Vector3.UP * (0.55 * k2 + (0.0 if r2 == "boy" else -0.28)) + _toward() * 0.03], 0.4, "", true)
-					a2.set_pose("rope_a" if k2 % 2 == 1 else "rope_b")
+					# v15: hands up from behind between pulls (rope_a / rope_b are a praying and a sitting figure, front
+					# view); the climb itself plays the drawn climb_cycle (StoryActor climb selection); the sister a
+					# body length below her brother (they overlapped at 0.28)
+					a2.follow([rp + Vector3.UP * (0.55 * k2 + (0.0 if r2 == "boy" else -0.55)) + _toward() * 0.12
+							+ _right() * (0.06 if r2 == "boy" else -0.06)], 0.4, "", true)
+					a2.set_pose("climb_a" if r2 == "boy" else "climb_b")
 			return true
 		"tiger_rope_climb":
 			if tig and _cards.has("rope"):
 				var rp2 := (_cards["rope"] as Node3D).global_position
 				tig.set_pose("rope_a")
-				tig.follow([rp2 + Vector3.UP * 0.5 + _toward() * 0.03, rp2 + Vector3.UP * 0.9 + _toward() * 0.03], 0.25, "", true)
+				tig.follow([rp2 + Vector3.UP * 0.5 + _toward() * 0.03, rp2 + Vector3.UP * 0.9 + _toward() * 0.03], 0.25, "rope", true)  # v15: the drawn rope_climb cycle
 			return true
 		"rope_snap":
 			if tig:
@@ -393,6 +485,11 @@ func fx(name: String) -> bool:
 			return true
 		"sky_discs":  # the sun and the moon of the finale: cards high in the finale frame (not story-shot hangers)
 			_sky_shown(false)
+			for r0 in ["boy", "girl"]:  # v15: folded until the rope brings them up (they stood behind the cloud bands)
+				var a0 := stage.actor(r0)
+				if a0:
+					a0.pop_target = 0.02
+					a0.pop_s = 0.02
 			for pair in [["sun_disc", "cast_sunmoon_sky_sun_boy", -0.75], ["moon_disc", "cast_sunmoon_sky_moon_girl", 0.75]]:
 				var d9 := _card(str(pair[1]), 1.15)
 				d9.global_position = stage.spot_point("rise") + Vector3.UP * 1.75 + _right() * float(pair[2]) * 1.35 + _toward() * 0.6
@@ -409,8 +506,13 @@ func fx(name: String) -> bool:
 				var a5 := stage.actor(r5)
 				if a5:
 					var off := 0.04 if r5 == "boy" else -0.04
-					a5.place_at(base + Vector3.UP * (-0.35 if r5 == "boy" else -0.65) + _toward() * 0.05 + _right() * off)
-					a5.follow([base + Vector3.UP * (1.4 if r5 == "boy" else 1.1) + _toward() * 0.05 + _right() * off], 0.32, "", true)
+					# v15: they climb from behind on the drawn climb_cycle (no rope_a / rope_b swaps: those are front
+					# praying / sitting figures), heads and shoulders already over the cloud tops (they started fully
+					# behind the near cloud bands: OCCLUDE) and the sister a body length below
+					a5.set_pose("climb_a" if r5 == "boy" else "climb_b")
+					a5.place_at(base + Vector3.UP * (0.65 if r5 == "boy" else 0.3) + _toward() * 0.05 + _right() * off)
+					a5.pop_target = 1.0
+					a5.follow([base + Vector3.UP * (1.6 if r5 == "boy" else 1.25) + _toward() * 0.05 + _right() * off], 0.32, "", true)
 			_climbing = true
 			_sfx("wc.chime", base)
 			return true
@@ -484,7 +586,9 @@ func _gates(cam: Camera3D) -> void:
 				# slipped past a card's edge that still hid half the figure on the pass-2 tracking shot (OCCLUDE)
 				var h := a.puppet.height
 				var cr := cam.global_transform.basis.x * h * 0.18
-				for pt: Vector3 in [a.centre(), a.global_position + Vector3.UP * h * 0.85, a.centre() + cr, a.centre() - cr]:
+				for pt: Vector3 in [a.centre(), a.global_position + Vector3.UP * h * 0.85, a.centre() + cr, a.centre() - cr,
+						a.global_position + Vector3.UP * h * 0.15, a.global_position + Vector3.UP * h * 0.6 + cr,
+						a.global_position + Vector3.UP * h * 0.6 - cr]:  # v15: feet and shoulders too (OCCLUDE rays)
 					var q := sp.to_local(pt)
 					if q.z < 0.0:
 						var k := local.z / (local.z - q.z)
@@ -515,12 +619,6 @@ func step(dt: float) -> void:
 		var closed := fmod(_eye_t, 1.4) > 1.15
 		(_cards["eye0"] as Node3D).visible = not closed
 		(_cards["eye1"] as Node3D).visible = closed
-	if _climbing:
-		var f := "rope_a" if int(_t * 3.0) % 2 == 0 else "rope_b"
-		for r7 in ["boy", "girl"]:
-			var a7 := stage.actor(r7)
-			if a7 and a7.moving():
-				a7.set_pose(f)
 	for f: Dictionary in _flyers.duplicate():
 		var n: Node3D = f["node"]
 		if not is_instance_valid(n):

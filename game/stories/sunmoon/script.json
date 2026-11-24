@@ -172,6 +172,34 @@
    40.0,
    140.0
   ],
+  "door_paw": [
+   0.42,
+   4.0,
+   0.24,
+   56.0,
+   140.0
+  ],
+  "yard_front": [
+   3.8,
+   14.0,
+   0.3,
+   28.0,
+   -22.0
+  ],
+  "pass_low2": [
+   1.8,
+   3.0,
+   0.32,
+   30.0,
+   -18.0
+  ],
+  "pass_low3": [
+   1.8,
+   3.0,
+   0.32,
+   30.0,
+   40.0
+  ],
   "yard_high": [
    4.5,
    30.0,
@@ -208,10 +236,10 @@
    0.0
   ],
   "rope_up": [
-   3.2,
-   -6.0,
+   3.6,
    2.0,
-   40.0,
+   1.7,
+   46.0,
    0.0
   ],
   "sky_wide": [
@@ -241,6 +269,69 @@
    0.3,
    24.0,
    0.0
+  ],
+  "cot_rise": [
+   3.2,
+   40.0,
+   0.3,
+   30.0,
+   -60.0
+  ],
+  "back_left": [
+   2.5,
+   22.0,
+   0.25,
+   30.0,
+   -170.0
+  ],
+  "jars_bl": [
+   1.6,
+   14.0,
+   0.18,
+   30.0,
+   -165.0
+  ],
+  "corner_l": [
+   2.9,
+   16.0,
+   0.25,
+   40.0,
+   -130.0
+  ],
+  "yard_crane": [
+   3.6,
+   52.0,
+   0.2,
+   30.0,
+   -20.0
+  ],
+  "tree_climb": [
+   3.4,
+   5.0,
+   0.9,
+   38.0,
+   -10.0
+  ],
+  "run_l": [
+   3.0,
+   24.0,
+   0.25,
+   30.0,
+   -125.0
+  ],
+  "tree_high": [
+   3.6,
+   45.0,
+   0.6,
+   32.0,
+   -60.0
+  ],
+  "well_side": [
+   1.9,
+   12.0,
+   0.3,
+   30.0,
+   40.0
   ]
  },
  "ui": {
@@ -401,8 +492,41 @@
   [
    "tiger",
    "ledge_3"
+  ],
+  [
+   "boy",
+   "jars_b"
+  ],
+  [
+   "girl",
+   "jars_b"
+  ],
+  [
+   "tiger",
+   "sorghum_1"
+  ],
+  [
+   "tiger",
+   "sorghum_2"
+  ],
+  [
+   "tiger",
+   "well_b"
+  ],
+  [
+   "boy",
+   "tree_b"
+  ],
+  [
+   "girl",
+   "tree_b"
+  ],
+  [
+   "tiger",
+   "tree_b"
   ]
  ],
+ "inside_margin": 0.3,
  "cast": {
   "boy": {
    "kind": "actor",
@@ -537,12 +661,12 @@
       2.059
      ],
      "in_boy": [
-      1.252,
-      1.834
+      1.284,
+      1.718
      ],
      "in_girl": [
-      1.417,
-      1.933
+      1.49,
+      1.877
      ],
      "in_focus": [
       1.374,
@@ -577,16 +701,16 @@
       1.349
      ],
      "mom_door": [
-      0.62,
-      2.322
+      0.496,
+      2.283
      ],
      "boy_at": [
-      0.435,
-      2.232
+      0.79,
+      2.556
      ],
      "girl_at": [
-      0.728,
-      2.504
+      1.097,
+      2.657
      ],
      "tiger_door": [
       0.67,
@@ -605,12 +729,12 @@
       1.633
      ],
      "jars_hide_g": [
-      1.177,
-      0.57
+      1.372,
+      0.447
      ],
      "jars_hide": [
-      1.339,
-      0.641
+      1.343,
+      0.683
      ],
      "well": [
       2.342,
@@ -633,8 +757,8 @@
       1.635
      ],
      "sorghum_2": [
-      3.812,
-      2.128
+      4.196,
+      2.059
      ],
      "sorghum_3": [
       3.872,
@@ -645,8 +769,8 @@
       1.349
      ],
      "sorghum_fall": [
-      3.775,
-      1.706
+      3.716,
+      1.853
      ],
      "fence_1": [
       1.149,
@@ -665,8 +789,8 @@
       0.748
      ],
      "tree_foot_g": [
-      2.486,
-      1.499
+      2.389,
+      1.522
      ],
      "hills_exit": [
       3.653,
@@ -691,6 +815,70 @@
      "kids_run": [
       2.303,
       1.515
+     ],
+     "back_wall": [
+      1.489,
+      1.629
+     ],
+     "bdoor": [
+      1.257,
+      1.408
+     ],
+     "out_boy": [
+      1.385,
+      1.333
+     ],
+     "out_girl": [
+      1.273,
+      1.264
+     ],
+     "yard_b": [
+      1.645,
+      1.132
+     ],
+     "yard_g": [
+      1.515,
+      0.945
+     ],
+     "bk_focus": [
+      1.344,
+      1.102
+     ],
+     "corner_jars": [
+      0.909,
+      0.998
+     ],
+     "jars_twin": [
+      1.185,
+      0.825
+     ],
+     "run_mid": [
+      2.016,
+      1.079
+     ],
+     "tg_start": [
+      0.273,
+      1.6
+     ],
+     "well_twin": [
+      2.349,
+      1.149
+     ],
+     "tw_via0": [
+      0.695,
+      0.988
+     ],
+     "tw_via": [
+      1.28,
+      1.179
+     ],
+     "tiger_trunk": [
+      2.531,
+      1.445
+     ],
+     "tree_twin": [
+      2.96,
+      1.401
      ],
      "front_focus": [
       0.616,
@@ -810,6 +998,33 @@
       "yaw": -40.0
      },
      {
+      "card": "story_sm_yard_02",
+      "at": "jars_twin",
+      "stage": "full",
+      "name": "jars_b",
+      "scale": 1.0,
+      "clear": 1.4,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well_twin",
+      "stage": "full",
+      "name": "well_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_cottage_08",
+      "at": "back_wall",
+      "stage": "full",
+      "name": "cot_back",
+      "scale": 1.267,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
       "card": "story_sm_yard_00",
       "at": "well",
       "stage": "full",
@@ -826,6 +1041,15 @@
       "scale": 1.0,
       "clear": 0.9,
       "yaw": -20.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree_twin",
+      "stage": "full",
+      "name": "tree_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 160.0
      },
      {
       "card": "story_sm_yard_07",
@@ -938,8 +1162,8 @@
      "shot": "establish",
      "at": "est",
      "from": "crane_high",
-     "rate": 0.9,
-     "wait": 0.9
+     "rate": 1.2,
+     "wait": 0.6
     },
     {
      "do": "say",
@@ -985,14 +1209,19 @@
      "line": "sm_r0104"
     },
     {
+     "do": "cam",
+     "shot": "yard_front",
+     "at": "front_focus",
+     "rate": 1.6,
+     "wait": 0.3
+    },
+    {
      "do": "walk",
      "who": "mom",
      "to": "road_by",
      "dir": "away",
-     "speed": 0.32,
+     "speed": 0.42,
      "pose": "walk_empty",
-     "follow": "mom",
-     "shot": "story",
      "async": true
     },
     {
@@ -1362,17 +1591,17 @@
     {
      "do": "fx",
      "fx": "pop:basin",
-     "wait": 0.6
+     "wait": 0.35
     },
     {
      "do": "fx",
      "fx": "pop:stove",
-     "wait": 0.6
+     "wait": 0.35
     },
     {
      "do": "fx",
      "fx": "pop:siru",
-     "wait": 0.6
+     "wait": 0.35
     },
     {
      "do": "cam",
@@ -1771,8 +2000,8 @@
      "do": "cam",
      "shot": "crane_high",
      "at": "mid",
-     "rate": 0.8,
-     "wait": 0.4
+     "rate": 1.1,
+     "wait": 0.3
     },
     {
      "do": "walk",
@@ -1785,9 +2014,16 @@
      "line": "sm_r0300"
     },
     {
+     "do": "cam",
+     "shot": "pass_low",
+     "at": "tiger_1",
+     "rate": 3.0,
+     "wait": 0.5
+    },
+    {
      "do": "fx",
      "fx": "tiger_out:hide_1:tiger_1",
-     "wait": 0.2
+     "wait": 1.0
     },
     {
      "do": "cam",
@@ -2186,6 +2422,13 @@
    },
    "steps": [
     {
+     "do": "cam",
+     "shot": "track_side",
+     "at": "pass_2_in",
+     "rate": 1.6,
+     "wait": 1.0
+    },
+    {
      "do": "walk",
      "who": "mom",
      "to": "mom_2",
@@ -2195,13 +2438,20 @@
      "shot": "track_side"
     },
     {
+     "do": "cam",
+     "shot": "pass_low2",
+     "at": "tiger_2",
+     "rate": 3.0,
+     "wait": 0.5
+    },
+    {
      "do": "fx",
      "fx": "tiger_out:hide_2:tiger_2",
-     "wait": 0.2
+     "wait": 1.0
     },
     {
      "do": "cam",
-     "shot": "pass_low",
+     "shot": "pass_low2",
      "at": "tiger_2",
      "rate": 3.0,
      "shake": 0.4,
@@ -2597,6 +2847,13 @@
    },
    "steps": [
     {
+     "do": "cam",
+     "shot": "track_side",
+     "at": "pass_3_in",
+     "rate": 1.6,
+     "wait": 0.8
+    },
+    {
      "do": "walk",
      "who": "mom",
      "to": "mom_3",
@@ -2607,6 +2864,13 @@
      "line": "sm_r0500"
     },
     {
+     "do": "cam",
+     "shot": "pass_low3",
+     "at": "tiger_3",
+     "rate": 2.6,
+     "wait": 0.5
+    },
+    {
      "do": "fx",
      "fx": "eyes_glow:hide_3",
      "wait": 0.8
@@ -2614,11 +2878,11 @@
     {
      "do": "fx",
      "fx": "tiger_out:hide_3:tiger_3",
-     "wait": 0.2
+     "wait": 1.0
     },
     {
      "do": "cam",
-     "shot": "pass_low",
+     "shot": "pass_low3",
      "at": "tiger_3",
      "rate": 2.6,
      "shake": 0.4,
@@ -2685,7 +2949,7 @@
      "shot": "medium",
      "at": "tiger_3",
      "rate": 1.6,
-     "wait": 0.2
+     "wait": 1.1
     },
     {
      "do": "walk",
@@ -2694,6 +2958,8 @@
      "dir": "away",
      "speed": 0.4,
      "pose": "dg",
+     "follow": "tiger",
+     "shot": "track_back",
      "line": "sm_r0507",
      "exit": true
     }
@@ -2752,12 +3018,12 @@
       2.059
      ],
      "in_boy": [
-      1.252,
-      1.834
+      1.284,
+      1.718
      ],
      "in_girl": [
-      1.417,
-      1.933
+      1.49,
+      1.877
      ],
      "in_focus": [
       1.374,
@@ -2792,16 +3058,16 @@
       1.349
      ],
      "mom_door": [
-      0.62,
-      2.322
+      0.496,
+      2.283
      ],
      "boy_at": [
-      0.435,
-      2.232
+      0.79,
+      2.556
      ],
      "girl_at": [
-      0.728,
-      2.504
+      1.097,
+      2.657
      ],
      "tiger_door": [
       0.67,
@@ -2820,12 +3086,12 @@
       1.633
      ],
      "jars_hide_g": [
-      1.177,
-      0.57
+      1.372,
+      0.447
      ],
      "jars_hide": [
-      1.339,
-      0.641
+      1.343,
+      0.683
      ],
      "well": [
       2.342,
@@ -2848,8 +3114,8 @@
       1.635
      ],
      "sorghum_2": [
-      3.812,
-      2.128
+      4.196,
+      2.059
      ],
      "sorghum_3": [
       3.872,
@@ -2860,8 +3126,8 @@
       1.349
      ],
      "sorghum_fall": [
-      3.775,
-      1.706
+      3.716,
+      1.853
      ],
      "fence_1": [
       1.149,
@@ -2880,8 +3146,8 @@
       0.748
      ],
      "tree_foot_g": [
-      2.486,
-      1.499
+      2.389,
+      1.522
      ],
      "hills_exit": [
       3.653,
@@ -2906,6 +3172,70 @@
      "kids_run": [
       2.303,
       1.515
+     ],
+     "back_wall": [
+      1.489,
+      1.629
+     ],
+     "bdoor": [
+      1.257,
+      1.408
+     ],
+     "out_boy": [
+      1.385,
+      1.333
+     ],
+     "out_girl": [
+      1.273,
+      1.264
+     ],
+     "yard_b": [
+      1.645,
+      1.132
+     ],
+     "yard_g": [
+      1.515,
+      0.945
+     ],
+     "bk_focus": [
+      1.344,
+      1.102
+     ],
+     "corner_jars": [
+      0.909,
+      0.998
+     ],
+     "jars_twin": [
+      1.185,
+      0.825
+     ],
+     "run_mid": [
+      2.016,
+      1.079
+     ],
+     "tg_start": [
+      0.273,
+      1.6
+     ],
+     "well_twin": [
+      2.349,
+      1.149
+     ],
+     "tw_via0": [
+      0.695,
+      0.988
+     ],
+     "tw_via": [
+      1.28,
+      1.179
+     ],
+     "tiger_trunk": [
+      2.531,
+      1.445
+     ],
+     "tree_twin": [
+      2.96,
+      1.401
      ],
      "front_focus": [
       0.616,
@@ -3025,6 +3355,33 @@
       "yaw": -40.0
      },
      {
+      "card": "story_sm_yard_02",
+      "at": "jars_twin",
+      "stage": "full",
+      "name": "jars_b",
+      "scale": 1.0,
+      "clear": 1.4,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well_twin",
+      "stage": "full",
+      "name": "well_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_cottage_08",
+      "at": "back_wall",
+      "stage": "full",
+      "name": "cot_back",
+      "scale": 1.267,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
       "card": "story_sm_yard_00",
       "at": "well",
       "stage": "full",
@@ -3041,6 +3398,15 @@
       "scale": 1.0,
       "clear": 0.9,
       "yaw": -20.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree_twin",
+      "stage": "full",
+      "name": "tree_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 160.0
      },
      {
       "card": "story_sm_yard_07",
@@ -3168,14 +3534,7 @@
      "shot": "establish",
      "at": "est",
      "rate": 1.0,
-     "wait": 0.4
-    },
-    {
-     "do": "cam",
-     "shot": "room",
-     "at": "in_focus",
-     "rate": 1.2,
-     "wait": 0.4
+     "wait": 0.2
     },
     {
      "do": "walk",
@@ -3184,7 +3543,9 @@
      "to": "tiger_door",
      "dir": "toward",
      "speed": 0.6,
-     "pose": "dg"
+     "pose": "dg",
+     "follow": "tiger",
+     "shot": "story"
     },
     {
      "do": "cam",
@@ -3201,8 +3562,9 @@
      "do": "cam",
      "shot": "room",
      "at": "in_focus",
-     "rate": 2.4,
-     "wait": 0.1
+     "rate": 1.6,
+     "wait": 1.0,
+     "settle": 0.5
     },
     {
      "do": "say",
@@ -3210,7 +3572,7 @@
     },
     {
      "do": "cam",
-     "shot": "window_in",
+     "shot": "door_paw",
      "at": "door_inside",
      "rate": 2.2,
      "wait": 0.1
@@ -3315,12 +3677,12 @@
       2.059
      ],
      "in_boy": [
-      1.252,
-      1.834
+      1.284,
+      1.718
      ],
      "in_girl": [
-      1.417,
-      1.933
+      1.49,
+      1.877
      ],
      "in_focus": [
       1.374,
@@ -3355,16 +3717,16 @@
       1.349
      ],
      "mom_door": [
-      0.62,
-      2.322
+      0.496,
+      2.283
      ],
      "boy_at": [
-      0.435,
-      2.232
+      0.79,
+      2.556
      ],
      "girl_at": [
-      0.728,
-      2.504
+      1.097,
+      2.657
      ],
      "tiger_door": [
       0.67,
@@ -3383,12 +3745,12 @@
       1.633
      ],
      "jars_hide_g": [
-      1.177,
-      0.57
+      1.372,
+      0.447
      ],
      "jars_hide": [
-      1.339,
-      0.641
+      1.343,
+      0.683
      ],
      "well": [
       2.342,
@@ -3411,8 +3773,8 @@
       1.635
      ],
      "sorghum_2": [
-      3.812,
-      2.128
+      4.196,
+      2.059
      ],
      "sorghum_3": [
       3.872,
@@ -3423,8 +3785,8 @@
       1.349
      ],
      "sorghum_fall": [
-      3.775,
-      1.706
+      3.716,
+      1.853
      ],
      "fence_1": [
       1.149,
@@ -3443,8 +3805,8 @@
       0.748
      ],
      "tree_foot_g": [
-      2.486,
-      1.499
+      2.389,
+      1.522
      ],
      "hills_exit": [
       3.653,
@@ -3469,6 +3831,70 @@
      "kids_run": [
       2.303,
       1.515
+     ],
+     "back_wall": [
+      1.489,
+      1.629
+     ],
+     "bdoor": [
+      1.257,
+      1.408
+     ],
+     "out_boy": [
+      1.385,
+      1.333
+     ],
+     "out_girl": [
+      1.273,
+      1.264
+     ],
+     "yard_b": [
+      1.645,
+      1.132
+     ],
+     "yard_g": [
+      1.515,
+      0.945
+     ],
+     "bk_focus": [
+      1.344,
+      1.102
+     ],
+     "corner_jars": [
+      0.909,
+      0.998
+     ],
+     "jars_twin": [
+      1.185,
+      0.825
+     ],
+     "run_mid": [
+      2.016,
+      1.079
+     ],
+     "tg_start": [
+      0.273,
+      1.6
+     ],
+     "well_twin": [
+      2.349,
+      1.149
+     ],
+     "tw_via0": [
+      0.695,
+      0.988
+     ],
+     "tw_via": [
+      1.28,
+      1.179
+     ],
+     "tiger_trunk": [
+      2.531,
+      1.445
+     ],
+     "tree_twin": [
+      2.96,
+      1.401
      ],
      "front_focus": [
       0.616,
@@ -3588,6 +4014,33 @@
       "yaw": -40.0
      },
      {
+      "card": "story_sm_yard_02",
+      "at": "jars_twin",
+      "stage": "full",
+      "name": "jars_b",
+      "scale": 1.0,
+      "clear": 1.4,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well_twin",
+      "stage": "full",
+      "name": "well_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_cottage_08",
+      "at": "back_wall",
+      "stage": "full",
+      "name": "cot_back",
+      "scale": 1.267,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
       "card": "story_sm_yard_00",
       "at": "well",
       "stage": "full",
@@ -3604,6 +4057,15 @@
       "scale": 1.0,
       "clear": 0.9,
       "yaw": -20.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree_twin",
+      "stage": "full",
+      "name": "tree_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 160.0
      },
      {
       "card": "story_sm_yard_07",
@@ -3721,44 +4183,76 @@
      "girl": "calm",
      "tiger": "dg_calm"
     },
+    "keep": [
+     "boy",
+     "girl"
+    ],
     "at": {
-     "boy": "back_door",
-     "girl": "back_door_g",
-     "tiger": "tiger_door"
+     "tiger": "tg_start"
     }
    },
    "steps": [
     {
+     "do": "fx",
+     "fx": "door_cards_off",
+     "wait": 0.0
+    },
+    {
      "do": "cam",
-     "shot": "yard_high",
-     "at": "yard_focus",
-     "rate": 1.0,
-     "wait": 0.4
+     "shot": "cot_rise",
+     "at": "est",
+     "rate": 1.3,
+     "wait": 1.4
+    },
+    {
+     "do": "fx",
+     "fx": "kids_in",
+     "wait": 0.0
+    },
+    {
+     "do": "cam",
+     "shot": "back_left",
+     "at": "bk_focus",
+     "rate": 1.2,
+     "wait": 1.6
+    },
+    {
+     "do": "fx",
+     "fx": "back_door:open",
+     "wait": 0.9
     },
     {
      "do": "walk",
      "who": "girl",
-     "to": "corner_g",
-     "dir": "left",
-     "speed": 0.25,
+     "to": "yard_g",
+     "speed": 0.22,
      "async": true
     },
     {
      "do": "walk",
      "who": "boy",
-     "to": "corner",
-     "dir": "left",
-     "speed": 0.25,
-     "follow": "boy",
-     "shot": "medium",
+     "to": "yard_b",
+     "speed": 0.22,
      "line": "sm_r0701"
+    },
+    {
+     "do": "fx",
+     "fx": "back_door:shut",
+     "wait": 0.1
+    },
+    {
+     "do": "cam",
+     "shot": "jars_bl",
+     "at": "jars_hide",
+     "rate": 1.6,
+     "wait": 0.6
     },
     {
      "do": "tap_steps",
      "target": "jars",
      "prompt": "sm_074",
      "hint": "sm_074",
-     "shot": "jars_low",
+     "shot": "jars_bl",
      "steps": [
       {
        "fx": "hide_behind:jars"
@@ -3770,6 +4264,13 @@
      "line": "sm_r0704"
     },
     {
+     "do": "cam",
+     "shot": "corner_l",
+     "at": "corner_jars",
+     "rate": 1.6,
+     "wait": 0.2
+    },
+    {
      "do": "walk",
      "who": "tiger",
      "to": "corner",
@@ -3777,9 +4278,7 @@
       "side_front_l"
      ],
      "speed": 0.55,
-     "pose": "dg",
-     "follow": "tiger",
-     "shot": "yard_high"
+     "pose": "dg"
     },
     {
      "do": "pose",
@@ -3793,11 +4292,8 @@
     {
      "do": "walk",
      "who": "tiger",
-     "to": "tiger_door",
-     "via": [
-      "side_front_l"
-     ],
-     "speed": 0.5,
+     "to": "tg_start",
+     "speed": 0.55,
      "pose": "dg",
      "exit": true
     }
@@ -3853,12 +4349,12 @@
       2.059
      ],
      "in_boy": [
-      1.252,
-      1.834
+      1.284,
+      1.718
      ],
      "in_girl": [
-      1.417,
-      1.933
+      1.49,
+      1.877
      ],
      "in_focus": [
       1.374,
@@ -3893,16 +4389,16 @@
       1.349
      ],
      "mom_door": [
-      0.62,
-      2.322
+      0.496,
+      2.283
      ],
      "boy_at": [
-      0.435,
-      2.232
+      0.79,
+      2.556
      ],
      "girl_at": [
-      0.728,
-      2.504
+      1.097,
+      2.657
      ],
      "tiger_door": [
       0.67,
@@ -3921,12 +4417,12 @@
       1.633
      ],
      "jars_hide_g": [
-      1.177,
-      0.57
+      1.372,
+      0.447
      ],
      "jars_hide": [
-      1.339,
-      0.641
+      1.343,
+      0.683
      ],
      "well": [
       2.342,
@@ -3949,8 +4445,8 @@
       1.635
      ],
      "sorghum_2": [
-      3.812,
-      2.128
+      4.196,
+      2.059
      ],
      "sorghum_3": [
       3.872,
@@ -3961,8 +4457,8 @@
       1.349
      ],
      "sorghum_fall": [
-      3.775,
-      1.706
+      3.716,
+      1.853
      ],
      "fence_1": [
       1.149,
@@ -3981,8 +4477,8 @@
       0.748
      ],
      "tree_foot_g": [
-      2.486,
-      1.499
+      2.389,
+      1.522
      ],
      "hills_exit": [
       3.653,
@@ -4007,6 +4503,70 @@
      "kids_run": [
       2.303,
       1.515
+     ],
+     "back_wall": [
+      1.489,
+      1.629
+     ],
+     "bdoor": [
+      1.257,
+      1.408
+     ],
+     "out_boy": [
+      1.385,
+      1.333
+     ],
+     "out_girl": [
+      1.273,
+      1.264
+     ],
+     "yard_b": [
+      1.645,
+      1.132
+     ],
+     "yard_g": [
+      1.515,
+      0.945
+     ],
+     "bk_focus": [
+      1.344,
+      1.102
+     ],
+     "corner_jars": [
+      0.909,
+      0.998
+     ],
+     "jars_twin": [
+      1.185,
+      0.825
+     ],
+     "run_mid": [
+      2.016,
+      1.079
+     ],
+     "tg_start": [
+      0.273,
+      1.6
+     ],
+     "well_twin": [
+      2.349,
+      1.149
+     ],
+     "tw_via0": [
+      0.695,
+      0.988
+     ],
+     "tw_via": [
+      1.28,
+      1.179
+     ],
+     "tiger_trunk": [
+      2.531,
+      1.445
+     ],
+     "tree_twin": [
+      2.96,
+      1.401
      ],
      "front_focus": [
       0.616,
@@ -4126,6 +4686,33 @@
       "yaw": -40.0
      },
      {
+      "card": "story_sm_yard_02",
+      "at": "jars_twin",
+      "stage": "full",
+      "name": "jars_b",
+      "scale": 1.0,
+      "clear": 1.4,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well_twin",
+      "stage": "full",
+      "name": "well_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_cottage_08",
+      "at": "back_wall",
+      "stage": "full",
+      "name": "cot_back",
+      "scale": 1.267,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
       "card": "story_sm_yard_00",
       "at": "well",
       "stage": "full",
@@ -4142,6 +4729,15 @@
       "scale": 1.0,
       "clear": 0.9,
       "yaw": -20.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree_twin",
+      "stage": "full",
+      "name": "tree_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 160.0
      },
      {
       "card": "story_sm_yard_07",
@@ -4265,6 +4861,13 @@
    },
    "steps": [
     {
+     "do": "cam",
+     "shot": "run_l",
+     "at": "run_mid",
+     "rate": 1.6,
+     "wait": 1.0
+    },
+    {
      "do": "walk",
      "who": "girl",
      "to": "tree_foot_g",
@@ -4277,22 +4880,28 @@
      "who": "boy",
      "to": "tree_foot",
      "speed": 0.7,
-     "pose": "run_cycle",
-     "follow": "boy",
-     "shot": "yard_high"
+     "pose": "run_cycle"
     },
     {
      "do": "cam",
-     "shot": "tree_low",
+     "shot": "tree_high",
      "at": "tree",
-     "rate": 1.4,
-     "wait": 0.2
+     "rate": 1.8,
+     "wait": 0.6
+    },
+    {
+     "do": "cam",
+     "shot": "tree_climb",
+     "at": "tree",
+     "rate": 1.8,
+     "wait": 0.3
     },
     {
      "do": "tap_steps",
      "target": "tree",
      "prompt": "sm_079",
      "hint": "sm_079",
+     "shot": "tree_climb",
      "steps": [
       {
        "fx": "climb_tree:1"
@@ -4313,14 +4922,19 @@
      "wait": 0.1
     },
     {
+     "do": "cam",
+     "shot": "well_side",
+     "at": "tiger_well",
+     "rate": 1.6,
+     "wait": 0.2
+    },
+    {
      "do": "walk",
      "who": "tiger",
-     "from": "side_back_l",
+     "from": "tw_via",
      "to": "tiger_well",
      "speed": 0.7,
-     "pose": "walk_cycle",
-     "follow": "tiger",
-     "shot": "medium"
+     "pose": "walk_cycle"
     },
     {
      "do": "say",
@@ -4397,11 +5011,25 @@
      "line": "sm_r0811"
     },
     {
+     "do": "cam",
+     "shot": "tree_climb",
+     "at": "tree",
+     "rate": 2.0,
+     "wait": 1.2
+    },
+    {
+     "do": "walk",
+     "who": "tiger",
+     "to": "tiger_trunk",
+     "speed": 0.6,
+     "pose": "walk_cycle"
+    },
+    {
      "do": "tap_steps",
      "target": "oil",
      "prompt": "sm_091",
      "hint": "sm_091",
-     "shot": "tree_low",
+     "shot": "tree_climb",
      "steps": [
       {
        "fx": "oil_smear"
@@ -4427,6 +5055,13 @@
     {
      "do": "say",
      "line": "sm_r0815"
+    },
+    {
+     "do": "cam",
+     "shot": "tree_climb",
+     "at": "tree",
+     "rate": 1.8,
+     "wait": 0.1
     },
     {
      "do": "fx",
@@ -4492,12 +5127,12 @@
       2.059
      ],
      "in_boy": [
-      1.252,
-      1.834
+      1.284,
+      1.718
      ],
      "in_girl": [
-      1.417,
-      1.933
+      1.49,
+      1.877
      ],
      "in_focus": [
       1.374,
@@ -4532,16 +5167,16 @@
       1.349
      ],
      "mom_door": [
-      0.62,
-      2.322
+      0.496,
+      2.283
      ],
      "boy_at": [
-      0.435,
-      2.232
+      0.79,
+      2.556
      ],
      "girl_at": [
-      0.728,
-      2.504
+      1.097,
+      2.657
      ],
      "tiger_door": [
       0.67,
@@ -4560,12 +5195,12 @@
       1.633
      ],
      "jars_hide_g": [
-      1.177,
-      0.57
+      1.372,
+      0.447
      ],
      "jars_hide": [
-      1.339,
-      0.641
+      1.343,
+      0.683
      ],
      "well": [
       2.342,
@@ -4588,8 +5223,8 @@
       1.635
      ],
      "sorghum_2": [
-      3.812,
-      2.128
+      4.196,
+      2.059
      ],
      "sorghum_3": [
       3.872,
@@ -4600,8 +5235,8 @@
       1.349
      ],
      "sorghum_fall": [
-      3.775,
-      1.706
+      3.716,
+      1.853
      ],
      "fence_1": [
       1.149,
@@ -4620,8 +5255,8 @@
       0.748
      ],
      "tree_foot_g": [
-      2.486,
-      1.499
+      2.389,
+      1.522
      ],
      "hills_exit": [
       3.653,
@@ -4646,6 +5281,70 @@
      "kids_run": [
       2.303,
       1.515
+     ],
+     "back_wall": [
+      1.489,
+      1.629
+     ],
+     "bdoor": [
+      1.257,
+      1.408
+     ],
+     "out_boy": [
+      1.385,
+      1.333
+     ],
+     "out_girl": [
+      1.273,
+      1.264
+     ],
+     "yard_b": [
+      1.645,
+      1.132
+     ],
+     "yard_g": [
+      1.515,
+      0.945
+     ],
+     "bk_focus": [
+      1.344,
+      1.102
+     ],
+     "corner_jars": [
+      0.909,
+      0.998
+     ],
+     "jars_twin": [
+      1.185,
+      0.825
+     ],
+     "run_mid": [
+      2.016,
+      1.079
+     ],
+     "tg_start": [
+      0.273,
+      1.6
+     ],
+     "well_twin": [
+      2.349,
+      1.149
+     ],
+     "tw_via0": [
+      0.695,
+      0.988
+     ],
+     "tw_via": [
+      1.28,
+      1.179
+     ],
+     "tiger_trunk": [
+      2.531,
+      1.445
+     ],
+     "tree_twin": [
+      2.96,
+      1.401
      ],
      "front_focus": [
       0.616,
@@ -4765,6 +5464,33 @@
       "yaw": -40.0
      },
      {
+      "card": "story_sm_yard_02",
+      "at": "jars_twin",
+      "stage": "full",
+      "name": "jars_b",
+      "scale": 1.0,
+      "clear": 1.4,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well_twin",
+      "stage": "full",
+      "name": "well_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_cottage_08",
+      "at": "back_wall",
+      "stage": "full",
+      "name": "cot_back",
+      "scale": 1.267,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
       "card": "story_sm_yard_00",
       "at": "well",
       "stage": "full",
@@ -4781,6 +5507,15 @@
       "scale": 1.0,
       "clear": 0.9,
       "yaw": -20.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree_twin",
+      "stage": "full",
+      "name": "tree_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 160.0
      },
      {
       "card": "story_sm_yard_07",
@@ -4907,11 +5642,11 @@
    "steps": [
     {
      "do": "cam",
-     "shot": "face",
+     "shot": "tree_climb",
      "at": "tree",
      "rate": 2.0,
      "wait": 0.3,
-     "settle": 0.7
+     "settle": 0.5
     },
     {
      "do": "say",
@@ -5007,12 +5742,12 @@
       2.059
      ],
      "in_boy": [
-      1.252,
-      1.834
+      1.284,
+      1.718
      ],
      "in_girl": [
-      1.417,
-      1.933
+      1.49,
+      1.877
      ],
      "in_focus": [
       1.374,
@@ -5047,16 +5782,16 @@
       1.349
      ],
      "mom_door": [
-      0.62,
-      2.322
+      0.496,
+      2.283
      ],
      "boy_at": [
-      0.435,
-      2.232
+      0.79,
+      2.556
      ],
      "girl_at": [
-      0.728,
-      2.504
+      1.097,
+      2.657
      ],
      "tiger_door": [
       0.67,
@@ -5075,12 +5810,12 @@
       1.633
      ],
      "jars_hide_g": [
-      1.177,
-      0.57
+      1.372,
+      0.447
      ],
      "jars_hide": [
-      1.339,
-      0.641
+      1.343,
+      0.683
      ],
      "well": [
       2.342,
@@ -5103,8 +5838,8 @@
       1.635
      ],
      "sorghum_2": [
-      3.812,
-      2.128
+      4.196,
+      2.059
      ],
      "sorghum_3": [
       3.872,
@@ -5115,8 +5850,8 @@
       1.349
      ],
      "sorghum_fall": [
-      3.775,
-      1.706
+      3.716,
+      1.853
      ],
      "fence_1": [
       1.149,
@@ -5135,8 +5870,8 @@
       0.748
      ],
      "tree_foot_g": [
-      2.486,
-      1.499
+      2.389,
+      1.522
      ],
      "hills_exit": [
       3.653,
@@ -5161,6 +5896,70 @@
      "kids_run": [
       2.303,
       1.515
+     ],
+     "back_wall": [
+      1.489,
+      1.629
+     ],
+     "bdoor": [
+      1.257,
+      1.408
+     ],
+     "out_boy": [
+      1.385,
+      1.333
+     ],
+     "out_girl": [
+      1.273,
+      1.264
+     ],
+     "yard_b": [
+      1.645,
+      1.132
+     ],
+     "yard_g": [
+      1.515,
+      0.945
+     ],
+     "bk_focus": [
+      1.344,
+      1.102
+     ],
+     "corner_jars": [
+      0.909,
+      0.998
+     ],
+     "jars_twin": [
+      1.185,
+      0.825
+     ],
+     "run_mid": [
+      2.016,
+      1.079
+     ],
+     "tg_start": [
+      0.273,
+      1.6
+     ],
+     "well_twin": [
+      2.349,
+      1.149
+     ],
+     "tw_via0": [
+      0.695,
+      0.988
+     ],
+     "tw_via": [
+      1.28,
+      1.179
+     ],
+     "tiger_trunk": [
+      2.531,
+      1.445
+     ],
+     "tree_twin": [
+      2.96,
+      1.401
      ],
      "front_focus": [
       0.616,
@@ -5280,6 +6079,33 @@
       "yaw": -40.0
      },
      {
+      "card": "story_sm_yard_02",
+      "at": "jars_twin",
+      "stage": "full",
+      "name": "jars_b",
+      "scale": 1.0,
+      "clear": 1.4,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_yard_00",
+      "at": "well_twin",
+      "stage": "full",
+      "name": "well_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
+      "card": "story_sm_cottage_08",
+      "at": "back_wall",
+      "stage": "full",
+      "name": "cot_back",
+      "scale": 1.267,
+      "clear": 0,
+      "yaw": 140.0
+     },
+     {
       "card": "story_sm_yard_00",
       "at": "well",
       "stage": "full",
@@ -5296,6 +6122,15 @@
       "scale": 1.0,
       "clear": 0.9,
       "yaw": -20.0
+     },
+     {
+      "card": "story_sm_tree_01",
+      "at": "tree_twin",
+      "stage": "full",
+      "name": "tree_b",
+      "scale": 1.0,
+      "clear": 0,
+      "yaw": 160.0
      },
      {
       "card": "story_sm_yard_07",
@@ -5548,23 +6383,23 @@
      ],
      "cloud_01": [
       -1.8,
-      1.1
+      1.075
      ],
      "cloud_02": [
       -0.6,
-      1.1
+      1.05
      ],
      "cloud_03": [
       0.6,
-      1.1
+      1.025
      ],
      "cloud_04": [
       1.8,
-      1.1
+      1.0
      ],
      "cloud_05": [
       3.0,
-      1.1
+      0.975
      ],
      "cloud_10": [
       -2.4,
@@ -5572,23 +6407,23 @@
      ],
      "cloud_11": [
       -1.2,
-      0.55
+      0.525
      ],
      "cloud_12": [
       -0.0,
-      0.55
+      0.5
      ],
      "cloud_13": [
       1.2,
-      0.55
+      0.475
      ],
      "cloud_14": [
       2.4,
-      0.55
+      0.45
      ],
      "cloud_15": [
       3.6,
-      0.55
+      0.425
      ],
      "cloud_20": [
       -3.0,
@@ -5596,23 +6431,23 @@
      ],
      "cloud_21": [
       -1.8,
-      0.0
+      -0.025
      ],
      "cloud_22": [
       -0.6,
-      0.0
+      -0.05
      ],
      "cloud_23": [
       0.6,
-      0.0
+      -0.075
      ],
      "cloud_24": [
       1.8,
-      0.0
+      -0.1
      ],
      "cloud_25": [
       3.0,
-      0.0
+      -0.125
      ],
      "cloud_30": [
       -2.4,
@@ -5620,23 +6455,23 @@
      ],
      "cloud_31": [
       -1.2,
-      -0.7
+      -0.725
      ],
      "cloud_32": [
       -0.0,
-      -0.7
+      -0.75
      ],
      "cloud_33": [
       1.2,
-      -0.7
+      -0.775
      ],
      "cloud_34": [
       2.4,
-      -0.7
+      -0.8
      ],
      "cloud_35": [
       3.6,
-      -0.7
+      -0.825
      ],
      "cloud_40": [
       -3.0,
@@ -5644,23 +6479,23 @@
      ],
      "cloud_41": [
       -1.8,
-      -2.2
+      -2.225
      ],
      "cloud_42": [
       -0.6,
-      -2.2
+      -2.25
      ],
      "cloud_43": [
       0.6,
-      -2.2
+      -2.275
      ],
      "cloud_44": [
       1.8,
-      -2.2
+      -2.3
      ],
      "cloud_45": [
       3.0,
-      -2.2
+      -2.325
      ],
      "cloud_50": [
       -2.4,
@@ -5668,23 +6503,23 @@
      ],
      "cloud_51": [
       -1.2,
-      -3.4
+      -3.425
      ],
      "cloud_52": [
       -0.0,
-      -3.4
+      -3.45
      ],
      "cloud_53": [
       1.2,
-      -3.4
+      -3.475
      ],
      "cloud_54": [
       2.4,
-      -3.4
+      -3.5
      ],
      "cloud_55": [
       3.6,
-      -3.4
+      -3.525
      ]
     },
     "set": [
@@ -6027,10 +6862,7 @@
     "focus": "focus"
    },
    "enter": {
-    "who": {
-     "boy": "rope_a",
-     "girl": "rope_b"
-    },
+    "who": {},
     "at": {
      "boy": "rise",
      "girl": "rise"
@@ -6053,7 +6885,7 @@
     {
      "do": "fx",
      "fx": "sky_rise",
-     "wait": 3.0
+     "wait": 2.2
     },
     {
      "do": "cam",
@@ -6065,7 +6897,7 @@
     {
      "do": "fx",
      "fx": "sun_moon_reveal",
-     "wait": 0.9
+     "wait": 0.6
     },
     {
      "do": "say",

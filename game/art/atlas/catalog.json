@@ -13449,6 +13449,52 @@
   ]
  },
  {
+  "id": "story_sm_cottage_08",
+  "path": "art/atlas/story_sm_cottage/story_sm_cottage_08.webp",
+  "sheet": "story_sm_cottage",
+  "category": "story_building",
+  "label": "cottage back with the back door open (dark doorway; mirrored: the door at the house's left seen from the front)",
+  "height_units": 0.75,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "back",
+   "cottage",
+   "door",
+   "facade",
+   "korean_traditional",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   564,
+   386
+  ]
+ },
+ {
+  "id": "story_sm_cottage_09",
+  "path": "art/atlas/story_sm_cottage/story_sm_cottage_09.webp",
+  "sheet": "story_sm_cottage",
+  "category": "story_building",
+  "label": "cottage back door leaf (planks, ring pull)",
+  "height_units": 0.2545,
+  "cross_slot": false,
+  "biome": "korean_village",
+  "season": "autumn",
+  "tags": [
+   "cottage",
+   "door",
+   "korean_traditional",
+   "story",
+   "sunmoon"
+  ],
+  "px": [
+   80,
+   131
+  ]
+ },
+ {
   "id": "story_sm_cottage_06",
   "path": "art/atlas/story_sm_cottage/story_sm_cottage_06.webp",
   "sheet": "story_sm_cottage",

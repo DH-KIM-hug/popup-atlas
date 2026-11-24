@@ -116,7 +116,13 @@ EXTRA = {"theme": "korean",              # the template dressed as a Joseon coun
          "ground_style": "paper",
          "spacing": True, "overlap_check": True, "pop_in": False,
          "overlap_ok": [["boy", "tree"], ["girl", "tree"], ["tiger", "tree"], ["tiger", "well"], ["boy", "jars"],
-                        ["girl", "jars"], ["tiger", "boulder_1"], ["tiger", "cairn_2"], ["tiger", "ledge_3"]]}
+                        ["girl", "jars"], ["tiger", "boulder_1"], ["tiger", "cairn_2"], ["tiger", "ledge_3"],
+                        # v15: the jar terrace printed on both faces (seen from the back yard too); the tiger lands IN
+                        # the sorghum (the story: "수수밭에 쿵!")
+                        ["boy", "jars_b"], ["girl", "jars_b"], ["tiger", "sorghum_1"], ["tiger", "sorghum_2"], ["tiger", "well_b"], ["boy", "tree_b"], ["girl", "tree_b"],
+                        ["tiger", "tree_b"]],
+         # v15: the facade folds away a little earlier on the glides into the room (two cream frames at the wall)
+         "inside_margin": 0.3}
 # Shots [distance, elevation°, focus height, fov, yaw offset°]
 SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "crane_high": [9.0, 36.0, 0.3, 24.0, 0.0],      # the whole mountain road: three passes in a row
@@ -137,16 +143,31 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          # inside the cottage (its frame: turned COT_YAW): the camera just behind the hidden front wall
          "room": [0.4, 14.0, 0.18, 62.0, -40.0],         # focus 0.46 deep: the camera 0.06 inside the front wall
          "window_in": [0.34, 4.0, 0.4, 40.0, 140.0],     # turned round: the paper window from inside (hole, eye)
+         "door_paw": [0.42, 4.0, 0.24, 56.0, 140.0],     # turned round to the door, the paw low at its edge
+         "yard_front": [3.8, 14.0, 0.3, 28.0, -22.0],    # the cottage front, the path: she leaves, they go in
+         "pass_low2": [1.8, 3.0, 0.32, 30.0, -18.0],     # pass 2 (sides swapped): the tiger clear of her
+         "pass_low3": [1.8, 3.0, 0.32, 30.0, 40.0],      # pass 3 (the road's diagonal bend)
          "yard_high": [4.5, 30.0, 0.3, 26.0, -30.0],     # the back yard: jars, well, tree (route reads)
          "jars_low": [1.4, 4.0, 0.15, 30.0, 10.0],
          "tree_low": [2.6, 2.0, 0.6, 34.0, 0.0],         # low under the tree, tilted up to the fork
          "tree_top": [1.6, 12.0, 1.25, 30.0, -12.0],     # the kids in the fork
          "well_down": [0.9, 55.0, 0.1, 30.0, 0.0],       # looking down into the well (the reflection)
-         "rope_up": [3.2, -6.0, 2.0, 40.0, 0.0],         # tilt up the rope into the clouds
+         "rope_up": [3.6, 2.0, 1.7, 46.0, 0.0],         # tilt up the rope into the clouds
          "sky_wide": [5.6, -9.0, 1.9, 44.0, 0.0],        # from the cloud tops up into the sky (the finale)
          "sky_high": [7.0, 18.0, 1.6, 40.0, 0.0],
          "sky_rope": [1.9, -3.0, 0.95, 40.0, 0.0],       # close on the rope: the children climbing out of the clouds
-         "pull_back": [10.5, 26.0, 0.3, 24.0, 0.0]}
+         "pull_back": [10.5, 26.0, 0.3, 24.0, 0.0],
+         # v15 (gate audit: the escape never on screen, the roof filling the frame, the brother's face beside the big
+         # tiger): yaw -40 looks into the cottage front, 140 from behind, -130 its left (jars) side, 50 its right
+         "cot_rise": [3.2, 40.0, 0.3, 30.0, -60.0],       # out of the room through the front wall and up
+         "back_left": [2.5, 22.0, 0.25, 30.0, -170.0],    # behind the cottage, from the back-left: back door, jars
+         "jars_bl": [1.6, 14.0, 0.18, 30.0, -165.0],      # the jars close, the kids crouched on our side of them
+         "corner_l": [2.9, 16.0, 0.25, 40.0, -130.0],     # from the left side: the tiger at the corner, the kids behind the jars
+         "yard_crane": [3.6, 52.0, 0.2, 30.0, -20.0],     # high over the roof: jars -> well -> tree, the run reads
+         "tree_climb": [3.4, 5.0, 0.9, 38.0, -10.0],
+         "run_l": [3.0, 24.0, 0.25, 30.0, -125.0],        # from the left side: the run to the tree goes away from us
+         "tree_high": [3.6, 45.0, 0.6, 32.0, -60.0],      # high round the front to the tree (over the roof line)     # the whole trunk: roots to the fork (climbers in frame)
+         "well_side": [1.9, 12.0, 0.3, 30.0, 40.0]}      # the well from the tree side (no roof in the lens)
 
 ROLES_LABEL = {"boy": "오빠", "girl": "동생", "mom": "엄마", "tiger": "호랑이", "rich": "부잣집 마님"}
 CAST = {
@@ -283,19 +304,25 @@ COT = spot(0, 1.6, 4.6)
 HOME = {"cottage": COT}
 for nm, (dx, dz) in {"door": (-0.22, 0.32), "door_in": (-0.22, -0.2), "path_end": (-0.22, 1.05),
                      "step": (-0.22, 0.12), "room_back": (0.0, -0.5), "room_floor": (0.0, -0.02),
-                     "room_floor2": (0.0, -0.3), "lamp": (0.36, -0.38), "in_boy": (-0.05, -0.33),
-                     "in_girl": (0.14, -0.36), "in_focus": (0.0, -0.46), "window_out": (0.2, 0.35),
+                     "room_floor2": (0.0, -0.3), "lamp": (0.36, -0.38), "in_boy": (-0.1, -0.44),
+                     "in_girl": (0.16, -0.45), "in_focus": (0.0, -0.46), "window_out": (0.2, 0.35),
                      "window_inside": (0.2, -0.02), "wall_in": (0.0, -0.014), "soban": (0.3, -0.22),
                      "door_inside": (-0.22, -0.02),
-                     "back_door": (-0.45, -0.75), "back_door_g": (-0.22, -0.82), "mom_door": (-0.22, 0.45), "boy_at": (-0.42, 0.5),
-                     "girl_at": (-0.02, 0.52), "tiger_door": (-0.18, 0.42), "tiger_window": (0.22, 0.4),
-                     "jars": (-0.75, -1.05), "corner_g": (-0.78, 0.02), "jars_hide_g": (-0.92, -1.25), "jars_hide": (-0.75, -1.3), "well": (0.35, -1.55),
+                     "back_door": (-0.45, -0.75), "back_door_g": (-0.22, -0.82), "mom_door": (-0.34, 0.5), "boy_at": (0.06, 0.52),
+                     "girl_at": (0.36, 0.4), "tiger_door": (-0.18, 0.42), "tiger_window": (0.22, 0.4),
+                     "jars": (-0.75, -1.05), "corner_g": (-0.78, 0.02), "jars_hide_g": (-0.85, -1.47), "jars_hide": (-0.72, -1.27), "well": (0.35, -1.55),
                      "tree": (0.98, -1.75), "tree_foot": (0.85, -1.45), "tiger_well": (0.12, -1.35),
-                     "sorghum_1": (1.75, -2.1), "sorghum_2": (2.1, -1.75), "sorghum_3": (1.55, -2.5),
-                     "sorghum_band": (1.9, -2.6), "sorghum_fall": (1.8, -2.05), "fence_1": (-1.25, -1.6),
+                     "sorghum_1": (1.75, -2.1), "sorghum_2": (2.35, -2.05), "sorghum_3": (1.55, -2.5),
+                     "sorghum_band": (1.9, -2.6), "sorghum_fall": (1.85, -1.9), "fence_1": (-1.25, -1.6),
                      "firewood": (0.62, -0.42), "side_front_l": (-0.95, 0.35), "side_back_l": (-1.0, -0.95),
-                     "tree_foot_g": (0.68, -1.38), "hills_exit": (2.9, -0.55), "exit_mid": (1.45, -1.3), "side_back_r": (1.0, -0.9), "yard_focus": (0.3, -1.4), "corner": (-0.9, -0.3),
-                     "kids_run": (0.55, -1.25)}.items():
+                     "tree_foot_g": (0.62, -1.3), "hills_exit": (2.9, -0.55), "exit_mid": (1.45, -1.3), "side_back_r": (1.0, -0.9), "yard_focus": (0.3, -1.4), "corner": (-0.9, -0.3),
+                     "kids_run": (0.55, -1.25),
+                     # v15: the back wall card (cottage_08, the back door open at the house's left) and the escape
+                     "back_wall": (0.0, -0.64), "bdoor": (-0.32, -0.66), "out_boy": (-0.27, -0.8),
+                     "out_girl": (-0.4, -0.78), "yard_b": (-0.2, -1.12), "yard_g": (-0.42, -1.18),
+                     "bk_focus": (-0.45, -0.95), "corner_jars": (-0.85, -0.75), "jars_twin": (-0.75, -1.06),
+                     "run_mid": (0.05, -1.4), "tg_start": (-0.95, 0.12), "well_twin": (0.35, -1.56),
+                     "tw_via0": (-1.02, -0.62), "tw_via": (-0.45, -0.85), "tiger_trunk": (0.68, -1.45), "tree_twin": (0.98, -1.76)}.items():
     HOME[nm] = rot(COT, dx, dz, COT_YAW)
 HOME["front_focus"] = rot(COT, -0.1, 0.6, COT_YAW)
 HOME["est"] = rot(COT, 0.1, -0.2, COT_YAW)
@@ -316,8 +343,19 @@ SET_B = [
     {"card": "story_sm_cottage_07", "at": "lamp", "stage": "full", "name": "lamp", "scale": 1.0, "clear": 0,
      "yaw": COT_YAW, "inside_only": True, "light": [0.32, 0.3, 0.8, "#ffb060", True]},
     _e("story_sm_yard_02", "jars", "jars", yaw=COT_YAW, clear=0.5),
+    # v15: the jars seen from the back yard (a card's back is plain stock): the same print on the far face
+    {"card": "story_sm_yard_02", "at": "jars_twin", "stage": "full", "name": "jars_b", "scale": 1.0, "clear": 1.4,
+     "yaw": COT_YAW + 180.0},
+    # v15: the cottage's back wall with the back door (the escape is shown from outside: the door swings open, the
+    # children step out); the leaf is a handler card (fx back_door)
+    {"card": "story_sm_yard_00", "at": "well_twin", "stage": "full", "name": "well_b", "scale": 1.0, "clear": 0,
+     "yaw": COT_YAW + 180.0},
+    {"card": "story_sm_cottage_08", "at": "back_wall", "stage": "full", "name": "cot_back", "scale": 1.267, "clear": 0,
+     "yaw": COT_YAW + 180.0},
     _e("story_sm_yard_00", "well", "well", yaw=COT_YAW, clear=0.5),
     _e("story_sm_tree_01", "tree", "tree", yaw=COT_YAW + 20.0, clear=0.9),
+    {"card": "story_sm_tree_01", "at": "tree_twin", "stage": "full", "name": "tree_b", "scale": 1.0, "clear": 0,
+     "yaw": COT_YAW + 200.0},
     _e("story_sm_yard_07", "firewood", "firewood", yaw=COT_YAW, clear=0.3),
     _e("story_sm_yard_06", "fence_1", "fence_1", yaw=COT_YAW + 70.0, clear=0.3),
     _e("story_sm_field_00", "sorghum_1", "sorghum_1", yaw=COT_YAW, clear=0.3),
@@ -351,7 +389,9 @@ for _r, (_tw, _sc) in enumerate([(1.1, 1.1), (0.55, 1.3), (0.0, 1.5), (-0.7, 1.8
     for _c in range(6):
         _x = round(-3.0 + _c * 1.2 + (0.6 if _r % 2 else 0.0), 2)
         _nm = f"cloud_{_r}{_c}"
-        SKY_SPOTS[_nm] = [_x, _tw]
+        # v15 (gate audit: "blocky square pixel artifacts in the cloud backdrop"): the cards of one row stood at the
+        # same depth and overlapped, z-fighting in blocks; each column now sits a few cm apart
+        SKY_SPOTS[_nm] = [_x, round(_tw - 0.025 * _c, 3)]
         SET_C.append({"card": _CLOUDS[(_r + _c) % 4], "at": _nm, "stage": "full", "name": _nm, "scale": _sc,
                       "clear": 2.5, "allow_road": True})
 SKY_DAY = {"bg": "#cfe9f7", "fog": "#e3f1f8", "fog_energy": 0.45, "top": "#7ec4ec", "horizon": "#fff0c4",
@@ -368,7 +408,7 @@ BEATS = [
      "enter": {"who": {"boy": "calm", "girl": "calm", "mom": "wave"},
                "at": {"boy": "boy_at", "girl": "girl_at", "mom": "mom_door"}},
      "steps": [
-        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 0.9},
+        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 1.2, "wait": 0.6},
         {"do": "say", "line": "sm_r0100"},
         {"do": "cam", "shot": "medium", "at": "front_focus", "rate": 1.4, "wait": 0.4},
         {"do": "tap_each", "targets": ["boy", "girl"], "prompt": "sm_002", "hint": "sm_002",
@@ -377,8 +417,9 @@ BEATS = [
         {"do": "cam", "shot": "two_shot", "at": "mom_door", "rate": 1.6, "wait": 0.3},
         {"do": "say", "line": "sm_r0104"},
         # she walks down the stepping stones to the path and away up it (back walk cycle), basket on her arm
-        {"do": "walk", "who": "mom", "to": "road_by", "dir": "away", "speed": 0.32, "pose": "walk_empty", "follow": "mom", "shot": "story",
-         "async": True},
+        # v15: one held shot for both (the follow on her left the children's go-inside off the frame)
+        {"do": "cam", "shot": "yard_front", "at": "front_focus", "rate": 1.6, "wait": 0.3},
+        {"do": "walk", "who": "mom", "to": "road_by", "dir": "away", "speed": 0.42, "pose": "walk_empty", "async": True},
         # the children go in through the door (one door cycle, seen from behind), the door shuts and is bolted
         {"do": "go_inside", "who": ["boy", "girl"], "house": "cottage", "speed": 0.3},
         {"do": "fx", "fx": "door_bolt", "wait": 0.3},        # NEW fx: a wooden bar slides across (sound only + cam bump)
@@ -388,9 +429,9 @@ BEATS = [
      "enter": {"who": {"mom": "work", "rich": "smile"}, "at": {"mom": "mom_work", "rich": "rich_at"}},
      "steps": [
         {"do": "cam", "shot": "establish", "at": "rich_yard", "from": "crane_high", "rate": 1.0, "wait": 0.8},
-        {"do": "fx", "fx": "pop:basin", "wait": 0.6},   # the rice basin (washing)
-        {"do": "fx", "fx": "pop:stove", "wait": 0.6},   # the stove's fire
-        {"do": "fx", "fx": "pop:siru", "wait": 0.6},   # the steamer, steam rising
+        {"do": "fx", "fx": "pop:basin", "wait": 0.35},   # the rice basin (washing)
+        {"do": "fx", "fx": "pop:stove", "wait": 0.35},   # the stove's fire
+        {"do": "fx", "fx": "pop:siru", "wait": 0.35},   # the steamer, steam rising
         {"do": "cam", "shot": "two_shot", "at": "rich_yard", "rate": 1.6, "wait": 0.3},
         {"do": "pose", "who": "rich", "pose": "give_tray"},
         {"do": "say", "line": "sm_r0204"},
@@ -404,10 +445,11 @@ BEATS = [
     {"id": "pass1", "title": "첫째 고개", "spread": _road(light="late"),
      "enter": {"who": {"mom": "tired_full"}, "at": {"mom": "pass_1_in"}, "hidden": {"tiger": "hide_1"}},
      "steps": [
-        {"do": "cam", "shot": "crane_high", "at": "mid", "rate": 0.8, "wait": 0.4},      # the whole road: 3 passes
+        {"do": "cam", "shot": "crane_high", "at": "mid", "rate": 1.1, "wait": 0.3},      # the whole road: 3 passes
         {"do": "walk", "who": "mom", "to": "mom_1", "dir": "away", "speed": 0.34, "follow": "mom",
          "shot": "track_side", "line": "sm_r0300"},
-        {"do": "fx", "fx": "tiger_out:hide_1:tiger_1", "wait": 0.2},   # NEW: steps out from behind the rock (low)
+        {"do": "cam", "shot": "pass_low", "at": "tiger_1", "rate": 3.0, "wait": 0.5},   # v15: the rock framed first
+        {"do": "fx", "fx": "tiger_out:hide_1:tiger_1", "wait": 1.0},
         {"do": "cam", "shot": "pass_low", "at": "tiger_1", "rate": 3.0, "shake": 0.6, "wait": 0.1},
         {"do": "say", "line": "sm_r0301"},
         {"do": "cam", "shot": "pass_two", "at": ["mom_1", "tiger_1"], "rate": 2.4, "wait": 0.1},  # SPEAKER_OFF: both in
@@ -421,10 +463,12 @@ BEATS = [
      "enter": {"who": {"mom": "scared_full", "tiger": "belly1"}, "at": {"mom": "pass_2_in"},
                "hidden": {"tiger": "hide_2"}},
      "steps": [
+        {"do": "cam", "shot": "track_side", "at": "pass_2_in", "rate": 1.6, "wait": 1.0},   # v15: land on her first
         {"do": "walk", "who": "mom", "to": "mom_2", "dir": "away", "speed": 0.34, "follow": "mom",
          "shot": "track_side"},  # v10 pace: sm_r0400 cut (the dusk and the second pass are on screen)
-        {"do": "fx", "fx": "tiger_out:hide_2:tiger_2", "wait": 0.2},
-        {"do": "cam", "shot": "pass_low", "at": "tiger_2", "rate": 3.0, "shake": 0.4, "wait": 0.1},
+        {"do": "cam", "shot": "pass_low2", "at": "tiger_2", "rate": 3.0, "wait": 0.5},   # v15: the rock framed first
+        {"do": "fx", "fx": "tiger_out:hide_2:tiger_2", "wait": 1.0},
+        {"do": "cam", "shot": "pass_low2", "at": "tiger_2", "rate": 3.0, "shake": 0.4, "wait": 0.1},
         {"do": "say", "line": "sm_r0402"},
         {"do": "tap_steps", "target": "mom", "shot": "two_shot",
          "steps": [{"fx": "cake_to_tiger:2"}]},     # v2 pace: one tap hands over both
@@ -435,11 +479,13 @@ BEATS = [
      "enter": {"who": {"mom": "scared_full", "tiger": "belly1"}, "at": {"mom": "pass_3_in"},
                "hidden": {"tiger": "hide_3"}},
      "steps": [
+        {"do": "cam", "shot": "track_side", "at": "pass_3_in", "rate": 1.6, "wait": 0.8},   # v15: land on her first
         {"do": "walk", "who": "mom", "to": "mom_3", "dir": "away", "speed": 0.3, "follow": "mom",
          "shot": "track_side", "line": "sm_r0500"},
-        {"do": "fx", "fx": "eyes_glow:hide_3", "wait": 0.8},           # NEW: two warm eye glints by the ledge first
-        {"do": "fx", "fx": "tiger_out:hide_3:tiger_3", "wait": 0.2},
-        {"do": "cam", "shot": "pass_low", "at": "tiger_3", "rate": 2.6, "shake": 0.4, "wait": 0.1},
+        {"do": "cam", "shot": "pass_low3", "at": "tiger_3", "rate": 2.6, "wait": 0.5},   # v15: the rock framed first
+        {"do": "fx", "fx": "eyes_glow:hide_3", "wait": 0.8},           # two warm eye glints by the ledge first
+        {"do": "fx", "fx": "tiger_out:hide_3:tiger_3", "wait": 1.0},
+        {"do": "cam", "shot": "pass_low3", "at": "tiger_3", "rate": 2.6, "shake": 0.4, "wait": 0.1},
         {"do": "say", "line": "sm_r0502"},
         {"do": "tap_steps", "target": "mom", "shot": "basket", "steps": [{"fx": "cakes_all_to_tiger"}]},
         {"do": "say", "line": "sm_r0503"},
@@ -451,22 +497,27 @@ BEATS = [
         {"do": "say", "line": "sm_r0506"},
         {"do": "fx", "fx": "mom_gone", "wait": 0.4},                   # NEW: the mother's card is simply not there
         {"do": "pose", "who": "tiger", "pose": "dg_calm", "hop": True},    # the disguise: a paper flip into her clothes
-        {"do": "cam", "shot": "medium", "at": "tiger_3", "rate": 1.6, "wait": 0.2},
+        # v15 (gate audit 2:23: the walk-away played while the camera was still on the moon, only his ears showed):
+        # land on him first, then follow him off in the drawn dg_back cycle
+        {"do": "cam", "shot": "medium", "at": "tiger_3", "rate": 1.6, "wait": 1.1},
         {"do": "walk", "who": "tiger", "to": "pass_3_out", "dir": "away", "speed": 0.4, "pose": "dg",
-         "line": "sm_r0507", "exit": True}]},
+         "follow": "tiger", "shot": "track_back", "line": "sm_r0507", "exit": True}]},
     # 6 -- the door at night: the room, the knock, the paw, the hole, the eye
     {"id": "door", "title": "문밖의 호랑이", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {"boy": "calm", "girl": "calm"}, "at": {"boy": "in_boy", "girl": "in_girl"}},
      "steps": [
-        {"do": "cam", "shot": "establish", "at": "est", "rate": 1.0, "wait": 0.4},     # the dark cottage, lit window
-        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.2, "wait": 0.4},     # glide in through the wall
+        {"do": "cam", "shot": "establish", "at": "est", "rate": 1.0, "wait": 0.2},     # the dark cottage, lit window
+        # v15 (gate audit: he arrived while the camera dollied through the door): he comes up the path ON screen
         {"do": "walk", "who": "tiger", "from": "road_by", "to": "tiger_door", "dir": "toward", "speed": 0.6,
-         "pose": "dg"},
+         "pose": "dg", "follow": "tiger", "shot": "story"},
         {"do": "cam", "shot": "door_ots", "at": "door", "rate": 1.8, "wait": 0.1},
         {"do": "say", "line": "sm_r0602"},                     # 똑똑똑 / 얘들아~ 엄마 왔다 / 걸걸한 목소리예요
-        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 2.4, "wait": 0.1},     # reverse: inside
+        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.6, "wait": 1.0, "settle": 0.5},  # glide in, inside
         {"do": "say", "line": "sm_r0604"},
-        {"do": "cam", "shot": "window_in", "at": "door_inside", "rate": 2.2, "wait": 0.1},   # turned to the door
+        # v15: wider, lower, so the floury paw the line names is in the frame (the window_in close showed lattice
+        # only); the children stand deep in the room, behind the lens of the turned-round shots (the boy's head swept
+        # through the frame)
+        {"do": "cam", "shot": "door_paw", "at": "door_inside", "rate": 2.2, "wait": 0.1},   # turned to the door
         {"do": "fx", "fx": "paw_in", "wait": 0.8},             # a floury paw slides in at the door's edge
         {"do": "say", "line": "sm_r0606"},
         {"do": "cam", "shot": "window_in", "at": "window_inside", "rate": 1.8, "wait": 0.2},
@@ -479,37 +530,51 @@ BEATS = [
         {"do": "cam", "shot": "room", "at": "in_boy", "rate": 2.4, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "sm_r0610"}]},
     # 7 -- the back yard: out of the back door, hide behind the jars
+    # v15 (gate audit: "the escape out of the back door is never shown", the camera went out through the paper wall
+    # and held on the lattice): the camera leaves the room through the front wall it came in by, rises and swings
+    # round the left side to the back of the cottage; the back door swings in and the children tiptoe out (seen from
+    # outside), hide on our side of the jars; the tiger comes round the corner on the far side of them (irony)
     {"id": "backyard", "title": "뒷마당", "spread": _home(light="night", sky=SKY_NIGHT),
-     "enter": {"who": {"boy": "calm", "girl": "calm", "tiger": "dg_calm"},
-               "at": {"boy": "back_door", "girl": "back_door_g", "tiger": "tiger_door"}},
+     # the children stay in the room (keep) until the camera has left it; fx kids_in then folds them behind the back
+     # door (it places them there too, so a --beat start works)
+     "enter": {"who": {"boy": "calm", "girl": "calm", "tiger": "dg_calm"}, "keep": ["boy", "girl"],
+               "at": {"tiger": "tg_start"}},
      "steps": [
-        {"do": "cam", "shot": "yard_high", "at": "yard_focus", "rate": 1.0, "wait": 0.4},
-        {"do": "walk", "who": "girl", "to": "corner_g", "dir": "left", "speed": 0.25, "async": True},
-        {"do": "walk", "who": "boy", "to": "corner", "dir": "left", "speed": 0.25, "follow": "boy",
-         "shot": "medium", "line": "sm_r0701"},
-        {"do": "tap_steps", "target": "jars", "prompt": "sm_074", "hint": "sm_074", "shot": "jars_low",
-         "steps": [{"fx": "hide_behind:jars"}]},                # NEW: they run behind the big jar and crouch
+        {"do": "fx", "fx": "door_cards_off", "wait": 0.0},   # the paw / eye cards off before the camera pulls back
+        {"do": "cam", "shot": "cot_rise", "at": "est", "rate": 1.3, "wait": 1.4},
+        {"do": "fx", "fx": "kids_in", "wait": 0.0},
+        {"do": "cam", "shot": "back_left", "at": "bk_focus", "rate": 1.2, "wait": 1.6},
+        {"do": "fx", "fx": "back_door:open", "wait": 0.9},
+        {"do": "walk", "who": "girl", "to": "yard_g", "speed": 0.22, "async": True},
+        {"do": "walk", "who": "boy", "to": "yard_b", "speed": 0.22, "line": "sm_r0701"},
+        {"do": "fx", "fx": "back_door:shut", "wait": 0.1},
+        {"do": "cam", "shot": "jars_bl", "at": "jars_hide", "rate": 1.6, "wait": 0.6},
+        {"do": "tap_steps", "target": "jars", "prompt": "sm_074", "hint": "sm_074", "shot": "jars_bl",
+         "steps": [{"fx": "hide_behind:jars"}]},                # they run behind the big jar and crouch
         {"do": "say", "line": "sm_r0704"},
-        {"do": "walk", "who": "tiger", "to": "corner", "via": ["side_front_l"], "speed": 0.55, "pose": "dg",
-         "follow": "tiger", "shot": "yard_high"},
+        {"do": "cam", "shot": "corner_l", "at": "corner_jars", "rate": 1.6, "wait": 0.2},
+        {"do": "walk", "who": "tiger", "to": "corner", "via": ["side_front_l"], "speed": 0.55, "pose": "dg"},
         {"do": "pose", "who": "tiger", "pose": "search"},
         {"do": "say", "line": "sm_r0705"},
-        {"do": "walk", "who": "tiger", "to": "tiger_door", "via": ["side_front_l"], "speed": 0.5, "pose": "dg",
-         "exit": True},]},
+        {"do": "walk", "who": "tiger", "to": "tg_start", "speed": 0.55, "pose": "dg", "exit": True},]},
     # 8 -- the tree by the well: climb, the well, the oil, the axe
     {"id": "tree", "title": "우물가 큰 나무", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {"boy": "calm", "girl": "calm"}, "at": {"boy": "jars_hide", "girl": "jars_hide_g"}},
      "steps": [
+        # v15: the run seen from the cottage's left side, away from us to the tree (run_back; the zelkova has a printed
+        # back, tree_b): yard_high's follow and a crane over the roof both put the thatch across the lens
+        {"do": "cam", "shot": "run_l", "at": "run_mid", "rate": 1.6, "wait": 1.0},
         {"do": "walk", "who": "girl", "to": "tree_foot_g", "speed": 0.7, "pose": "run_cycle", "async": True},
-        {"do": "walk", "who": "boy", "to": "tree_foot", "speed": 0.7, "pose": "run_cycle", "follow": "boy",
-         "shot": "yard_high"},
-        {"do": "cam", "shot": "tree_low", "at": "tree", "rate": 1.4, "wait": 0.2},
+        {"do": "walk", "who": "boy", "to": "tree_foot", "speed": 0.7, "pose": "run_cycle"},
+        {"do": "cam", "shot": "tree_high", "at": "tree", "rate": 1.8, "wait": 0.6},    # round the front high (no roof)
+        {"do": "cam", "shot": "tree_climb", "at": "tree", "rate": 1.8, "wait": 0.3},   # roots to fork: climbers in frame
         # three taps: each a stretch up the trunk (drawn climb frames A/B, hands on the bark), then onto the fork
-        {"do": "tap_steps", "target": "tree", "prompt": "sm_079", "hint": "sm_079",
+        {"do": "tap_steps", "target": "tree", "prompt": "sm_079", "hint": "sm_079", "shot": "tree_climb",
          "steps": [{"fx": "climb_tree:1"}, {"fx": "climb_tree:2"}, {"fx": "climb_tree:3"}]},   # NEW
         {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 1.4, "wait": 0.1},
-        {"do": "walk", "who": "tiger", "from": "side_back_l", "to": "tiger_well", "speed": 0.7, "pose": "walk_cycle",
-         "follow": "tiger", "shot": "medium"},
+        {"do": "cam", "shot": "well_side", "at": "tiger_well", "rate": 1.6, "wait": 0.2},
+        {"do": "walk", "who": "tiger", "from": "tw_via", "to": "tiger_well", "speed": 0.7,
+         "pose": "walk_cycle"},
         {"do": "say", "line": "sm_r0804"},
         {"do": "pose", "who": "tiger", "pose": "peer_well"},
         {"do": "cam", "shot": "well_down", "at": "well", "rate": 1.6, "wait": 0.6},  # the faces in the water
@@ -524,19 +589,24 @@ BEATS = [
         {"do": "say", "line": "sm_r0810"},
         {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 2.0, "wait": 0.1},
         {"do": "say", "line": "sm_r0811"},
-        {"do": "tap_steps", "target": "oil", "prompt": "sm_091", "hint": "sm_091", "shot": "tree_low",
+        # v15: he goes to the trunk first (the slips played by the well, off the tree)
+        {"do": "cam", "shot": "tree_climb", "at": "tree", "rate": 2.0, "wait": 1.2},
+        {"do": "walk", "who": "tiger", "to": "tiger_trunk", "speed": 0.6, "pose": "walk_cycle"},
+        {"do": "tap_steps", "target": "oil", "prompt": "sm_091", "hint": "sm_091", "shot": "tree_climb",
          "steps": [{"fx": "oil_smear"}]},                       # NEW: the bottle pours, a glossy streak on the bark
         {"do": "fx", "fx": "tiger_slip:2", "wait": 0.2},       # NEW: two tries, two slides down  # v10 pace: sm_r0813 cut (the slips are shown, with sound)
         {"do": "cam", "shot": "tree_top", "at": "tree", "rate": 2.2, "wait": 0.1},
         {"do": "say", "line": "sm_r0814"},
         {"do": "say", "line": "sm_r0815"},
+        {"do": "cam", "shot": "tree_climb", "at": "tree", "rate": 1.8, "wait": 0.1},   # v15: the tiger AND the kids
         {"do": "fx", "fx": "axe_climb", "wait": 0.2},          # NEW: axe frames A/B, a notch per chop, he rises
         {"do": "say", "line": "sm_r0816"}]},
     # 9 -- the rope from the sky
     {"id": "rope", "title": "하늘 동아줄", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {"boy": "sit_hold", "girl": "sit_scared", "tiger": "axe_a"}, "keep": ["boy", "girl", "tiger"]},
      "steps": [
-        {"do": "cam", "shot": "face", "at": "tree", "rate": 2.0, "wait": 0.3, "settle": 0.7},  # SPEAKER_OFF: the boy in frame first
+        # v15 (gate audit 4:42: the boy's face floated beside the big tiger in a low "face" shot): the whole trunk
+        {"do": "cam", "shot": "tree_climb", "at": "tree", "rate": 2.0, "wait": 0.3, "settle": 0.5},
         {"do": "say", "line": "sm_r0902"},
         {"do": "fx", "fx": "rope_down:good", "wait": 0.3},     # NEW: the golden rope slides down, sparkles, a chime
         {"do": "cam", "shot": "rope_up", "at": "tree", "rate": 1.2, "wait": 0.1},
@@ -570,13 +640,13 @@ BEATS = [
          "exit": True, "line": "sm_r1007"}]},
     # 11 -- the sky: the brother becomes the sun, the sister the moon; they swap; day and night
     {"id": "sky", "title": "해님 달님", "spread": SKY_C,
-     "enter": {"who": {"boy": "rope_a", "girl": "rope_b"}, "at": {"boy": "rise", "girl": "rise"}},
+     "enter": {"who": {}, "at": {"boy": "rise", "girl": "rise"}},
      "steps": [
         {"do": "fx", "fx": "sky_discs", "wait": 0.0},
         {"do": "cam", "shot": "sky_rope", "at": "rise", "from": "sky_rope", "rate": 1.0, "wait": 0.4},
-        {"do": "fx", "fx": "sky_rise", "wait": 3.0},           # close: the golden rope, the children climbing out of the clouds
+        {"do": "fx", "fx": "sky_rise", "wait": 2.2},           # close: the golden rope, the children climbing out of the clouds
         {"do": "cam", "shot": "sky_wide", "at": "focus", "rate": 1.6, "wait": 0.3},
-        {"do": "fx", "fx": "sun_moon_reveal", "wait": 0.9},    # a burst of stars: the sun and the moon grow in the sky
+        {"do": "fx", "fx": "sun_moon_reveal", "wait": 0.6},    # a burst of stars: the sun and the moon grow in the sky
         {"do": "say", "line": "sm_r1101"},
         {"do": "fx", "fx": "night", "wait": 0.3},
         {"do": "say", "line": "sm_r1103"},
