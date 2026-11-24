@@ -146,12 +146,16 @@ BEATS = [{'id': 'cover', 'title': '해와 바람', 'spread': None, 'steps': [{'d
  {'id': 'ending',
   'title': '끝',
   'enter': {'pose': 'shirt'},
-  'spread': {'seed': 1, 'view': 4},
+  # 2026-11-24 (gate audit v1 / R1: "the empty road at the ending"): he no longer walks out of the bottom of the frame
+  # and comes back for the curtain call; the camera keeps strolling with him under the sun and the wind to the end
+  'spread': {'seed': 1, 'view': 4, 'route': [1.6, -1.6]},
   'steps': [{'do': 'cam', 'shot': 'story'},
             {'do': 'fx', 'fx': 'carry_coat'},
             {'do': 'fx', 'fx': 'friends'},
-            {'do': 'walk_away', 'dist': 3.2, 'line': 'sw_n02'},
+            {'do': 'stroll', 'speed': 0.1},
+            {'do': 'say', 'line': 'sw_n02'},
             {'do': 'say', 'line': 'sw_060'},
+            {'do': 'stop'},
             {'do': 'end', 'after': 'sw_n03'}]}]
 
 

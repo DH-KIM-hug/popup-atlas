@@ -507,7 +507,11 @@
    },
    "spread": {
     "seed": 1,
-    "view": 4
+    "view": 4,
+    "route": [
+     1.6,
+     -1.6
+    ]
    },
    "steps": [
     {
@@ -523,13 +527,19 @@
      "fx": "friends"
     },
     {
-     "do": "walk_away",
-     "dist": 3.2,
+     "do": "stroll",
+     "speed": 0.1
+    },
+    {
+     "do": "say",
      "line": "sw_n02"
     },
     {
      "do": "say",
      "line": "sw_060"
+    },
+    {
+     "do": "stop"
     },
     {
      "do": "end",
@@ -2084,7 +2094,7 @@
    "text": "외투를 팔에 걸고, 나그네는 다시 즐겁게 길을 떠나요.",
    "status": "changed-recorded",
    "beat": "ending",
-   "interaction": "walk_away",
+   "interaction": "say",
    "used": true,
    "segs": [
     {
