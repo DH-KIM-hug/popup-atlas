@@ -66,6 +66,9 @@ OVERRIDE = {
     "village_houses_05": {"poly": [[45, 120], [62, 62], [101, 34], [140, 62], [157, 120], [167, 264], [35, 264]],
                           "roof_y": 120, "lines": [[48.6, -0.0], [154.0, 0.0]], "depth": 0.9, "roof_mat": "slate"},
 }
+# patjuk wave 2 ("fence backs are flat"): the yard's stone-and-clay walls with their straw caps get a thin body
+OVERRIDE.update({"story_pj_yard_00": {"depth": 0.06, "no_chimney": True},
+                 "story_pj_yard_01": {"depth": 0.18, "no_chimney": True}})
 DEPTH = 0.72  # default body depth / wall width
 
 

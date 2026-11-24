@@ -489,6 +489,11 @@ func _pick_view(dir: Vector3) -> void:
 	# drawn cycles (side / back) when the cast has them: running (run pose or fast) or walking
 	# turnip v5: small animals run at small speeds (a mouse's dash is 0.22/s): the run threshold scales with height
 	var running := walk_pose in ["run", "run_cycle", "run_away", "scared"] and speed >= minf(0.4, puppet.height * 3.0)
+	# wave 2 (patjuk): a drawn special run (tiger run_bump / run_cry: side `<pose>_cycle` only) takes the shared
+	# run_back / run_front away from / toward the camera, not the walk (MOTION_FLAG RUN_WALK_CYCLE)
+	if not running and walk_pose.begins_with("run_") and puppet.has_pose(walk_pose + "_cycle") \
+			and speed >= minf(0.4, puppet.height * 3.0):
+		running = true
 	var rc := ""
 	if nv == "side":
 		rc = "run_cycle" if running else "walk_cycle"
