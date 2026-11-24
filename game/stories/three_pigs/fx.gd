@@ -210,6 +210,10 @@ func fx(name: String) -> bool:
 					p.pop_target = 1.0
 				stage.clear_inside(p)
 				var rt := stage.road_route(p.global_position, goal)
+				# 2026-11-24 (gate OFF_FRAME: 5-9 s of the stroll were off the frame): they set off from the last stretch
+				# of the road, just outside the build shot, so the walk is on screen (moved while nobody sees them)
+				rt = _route_tail(rt, 2.6)
+				p.place_at(rt[0])
 				p.follow(rt, 0.7, "side_walk", false)  # (2026-11-22) a brisker stroll: the tease waits until they are in frame
 				p.pose = "tease" if k == 0 else "violin"
 		"brothers_leave":
@@ -219,8 +223,16 @@ func fx(name: String) -> bool:
 				var p2 := _a(r)
 				if p2 and p2.pop_target > 0.5:
 					var goal2 := stage.spot_point(homes[r]) if stage.spots.has(homes[r]) else p2.global_position + stage.dir_vec("right") * 2.4
-					p2.follow(stage.road_route(p2.global_position, goal2), 0.45, "side_walk", false)
+					# 2026-11-24 (gate OFF_FRAME): only the stretch that leaves the shot; once out of it they fold down
+					# (the next beat puts them inside their houses)
+					var rt2 := _route_head([p2.global_position] + stage.road_route(p2.global_position, goal2), 1.15 if r == "pig_a" else 1.3)
+					p2.follow(rt2, 0.45, "side_walk", false)
 					p2.pose = "calm"
+					var p3 := p2
+					get_tree().create_timer(_route_len(rt2) / 0.45 + 0.1).timeout.connect(func():
+						if is_instance_valid(p3) and not p3.moving():
+							p3.pop_delay = 0.0
+							p3.pop_target = 0.02)
 			_music.clear()
 		"straw_fly", "wood_wobble", "brick_huff":
 			_huff_wind(name)
@@ -323,6 +335,40 @@ func fx(name: String) -> bool:
 				return true
 			return false
 	return true
+
+
+static func _route_len(rt: Array) -> float:
+	var L := 0.0
+	for i in range(1, rt.size()):
+		L += (rt[i] as Vector3).distance_to(rt[i - 1])
+	return L
+
+
+## The last `keep` of a route (its end unchanged).
+static func _route_tail(rt: Array, keep: float) -> Array:
+	var rev := rt.duplicate()
+	rev.reverse()
+	var h := _route_head(rev, keep)
+	h.reverse()
+	return h
+
+
+## The first `keep` of a route.
+static func _route_head(rt: Array, keep: float) -> Array:
+	if rt.size() < 2:
+		return rt
+	var out: Array = [rt[0]]
+	var left := keep
+	for i in range(1, rt.size()):
+		var a: Vector3 = rt[i - 1]
+		var b: Vector3 = rt[i]
+		var d := a.distance_to(b)
+		if d >= left:
+			out.append(a.lerp(b, left / maxf(d, 1e-5)))
+			return out
+		out.append(b)
+		left -= d
+	return out
 
 
 func _spark(h: SetPiece) -> void:

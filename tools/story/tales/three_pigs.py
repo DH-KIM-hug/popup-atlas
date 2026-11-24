@@ -117,6 +117,7 @@ SHOTS = {"stage": [4.6, 13.0, 0.3, 20.0], "story": [3.7, 13.0, 0.28, 20.0], "clo
          "cheeks": [1.25, 6.0, 0.42, 20.0, 8.0],          # close on the wolf's puffed cheeks
          "huff_two": [2.2, 7.0, 0.36, 22.0, 10.0],        # huff two-shot: the wolf's face foreground left, the house right
          "pull_back": [10.5, 26.0, 0.3, 24.0, 0.0],       # ending: the whole village
+         "chase": [3.8, 22.0, 0.3, 20.0, 0.0],              # the wolf's escape: close behind and above him
          # inside the brick house (camera just behind the closed front wall, looking at the hearth)
          "inside": [0.6, 5.0, 0.26, 68.0]}
 CAST = {
@@ -160,6 +161,10 @@ KITCHEN = [  # the room INSIDE the brick house footprint (user 2026-11-19: "방�
     {"card": "story_hearth_01", "at": "b_lot", "off": [0.33, -0.6], "stage": 0, "name": "k_pot", "clear": 0, "lift": 0.06, "scale": 1.2},
     {"card": "story_hearth_12", "at": "b_lot", "off": [-0.36, -0.71], "stage": 0, "name": "k_table", "clear": 0},
     {"card": "story_hearth_14", "at": "b_lot", "off": [-0.22, -0.72], "stage": 0, "name": "k_shelf", "clear": 0, "scale": 1.6, "lift": 0.3},
+    # 2026-11-24 (gate audit v1: "the cutaway room's right wall is a plain unprinted cream card"): a curtained window
+    # on the right wall, seen only from inside
+    {"card": "story_hearth_15", "at": "b_lot", "off": [0.485, -0.3], "stage": 0, "name": "k_win_r", "clear": 0,
+     "yaw": -90, "lift": 0.2, "inside_only": True},
 ]
 # view 2: the stream runs diagonally just behind the anchor; the straw lot is on the near-left grass
 STRAW_SPOTS = {"lot": [-1.1, -0.05], "pile": [-0.64, 0.26], "pig_a": [-0.48, 0.42], "wolf": [-1.72, 0.32],
@@ -222,6 +227,7 @@ VILLAGE["wolf_exit"] = [0.9, -6.6]   # far along the road beyond the brick house
 VILLAGE["wolf_watch"] = [1.25, -4.6]    # where the camera stays and lets him go
 VILLAGE["est"] = [round((VILLAGE["s_lot"][0] + VILLAGE["b_lot"][0]) * 0.5 + 0.3, 3),
                  round((VILLAGE["s_lot"][1] + VILLAGE["b_lot"][1]) * 0.5, 3)]
+VILLAGE["b_door"] = [VILLAGE["b_lot"][0], round(VILLAGE["b_lot"][1] + 0.12, 3)]  # at the brick door (file runs)
 VILLAGE["ladder_find"] = [VILLAGE["b_lot"][0] - 1.12, VILLAGE["b_lot"][1] + 0.3]
 VILLAGE["s_wolf_from"] = [VILLAGE["s_wolf"][0] - 0.75, VILLAGE["s_wolf"][1]]
 # every camera station of the page (sightlines): the build / wolf shots at each lot, the roof and the escape tracking
@@ -394,7 +400,10 @@ BEATS = [
          "fx": "wood_wobble", "gap": 0.7, "cam_result": "story", "cam_result_at": "w_wolf_focus"},
         {"do": "say", "line": "tp_033"},
         # ESCAPE: both run along the road to the brick house, the camera follows; in through the door
-        {"do": "walk", "who": ["pig_a", "pig_b"], "to": "b_front", "via": "road", "pose": "run", "speed": 0.8,
+        # 2026-11-24 (gate audit v1: "the pigs run through the wolf"): in single file round the wolf (who stands on the
+        # road by the wood house), straight to the brick door
+        {"do": "walk", "who": ["pig_a", "pig_b"], "to": "b_door", "pose": "run", "speed": 0.8,
+         "path": [[0.72, -1.08], [0.22, -1.62], [-0.3, -2.02], [-0.533, -2.2], "b_door"], "file": True, "spacing": 0.16,
          "follow": "pig_a", "shot": "high", "line": "tp_034"},
         {"do": "cam", "shot": "story", "at": "b_focus", "wait": 0.2},
         {"do": "go_inside", "who": ["pig_a", "pig_b"], "house": "house", "windows": [1, -1], "speed": 0.45},
@@ -453,10 +462,13 @@ BEATS = [
         {"do": "fx", "fx": "", "wait": 0.45},  # he lands (thud, dust, hop) before he runs
         # (user: "마지막에 늑대가 도망가서 달려야 되지 않을까?") he lands beside the house (thud, dust, hop) and runs off
         # along the road away from the village, scalded and smoking; the camera follows him, then lets him go
-        {"do": "walk", "who": "wolf", "to": "wolf_exit", "path": [[0.3, -2.05], [1.1, -2.3], [1.45, -3.05], [1.48, -3.9],
+        {"do": "walk", "who": "wolf", "to": "wolf_exit", "path": [[-1.0, -2.0], [0.3, -2.05], [1.1, -2.3], [1.45, -3.05], [1.48, -3.9],
                                                                     [1.3, -4.7], [1.1, -5.6], [0.9, -6.6]],
          "pose": "run_away", "speed": 0.75, "line": "tp_053",
-         "exit": True, "follow": "wolf", "shot": "high", "follow_for": 3.6, "release_shot": "village", "release_at": "wolf_watch"},
+         # 2026-11-24 (gate audit v1: "the wolf ends as a speck"): a chase shot (close enough to read the drawn
+         # run_back) follows him for most of the line, then turns back to the brick house
+         "exit": True, "follow": "wolf", "shot": "chase", "follow_for": 7.6, "release_shot": "village",
+         "release_at": "b_focus"},
     ]},
     {"id": "ending", "title": "벽돌 집", "spread": _village(light="evening", built=["straw_ruin", "wood_ruin", "house", "ladder", "straw_pile", "wood_pile", "brick_pile", "bucket"]),
      # the wolf is gone: the brothers come out in front of the brick house, safe and happy, mom joins them
@@ -492,4 +504,13 @@ SOUND["fx"].update({"up:straw_pile": "ui.pop", "up:wood_pile": "ui.pop", "up:bri
                     "up:wood_house:1": "build.hammer"})
 
 # wave 1 (2026-11-24, gate audit v1): the gate needs OVERLAP_COUNT / OCCLUDE_COUNT printed for every tale
-EXTRA = {"overlap_check": True}
+# 2026-11-24 (gate audit v1: the glides into / out of the brick house filled the frame with the door and shutters for
+# ~1 s): the facade folds away while the camera is within 0.5 of it (patjuk's inside_margin)
+EXTRA = {"overlap_check": True, "inside_margin": 0.5,
+         # intended contacts (2026-11-24 gate): pig_a's build trips into the straw pile; the wolf on the ladder / roof /
+         # down the flue into the hearth and pot; the brothers in the brick doorway (the door gap is narrower than the
+         # drawn arch); the wolf sneaks along the brick pile to the ladder lying beside it
+         "overlap_ok": [["pig_a", "straw_pile"], ["wolf", "ladder"], ["wolf", "house"], ["wolf", "k_hearth"],
+                        ["wolf", "fire_l"], ["wolf", "fire_m"], ["wolf", "fire"], ["wolf", "k_back"], ["wolf", "k_pot"],
+                        ["wolf", "k_logs"], ["wolf", "k_flue"], ["pig_a", "house"], ["pig_b", "house"],
+                        ["pig_c", "house"], ["wolf", "brick_pile"]]}

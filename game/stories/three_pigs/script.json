@@ -182,6 +182,13 @@
    5.0,
    0.26,
    68.0
+  ],
+  "chase": [
+   3.8,
+   22.0,
+   0.3,
+   20.0,
+   0.0
   ]
  },
  "ui": {
@@ -852,6 +859,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [
@@ -1193,6 +1204,20 @@
       "clear": 0,
       "scale": 1.6,
       "lift": 0.3
+     },
+     {
+      "card": "story_hearth_15",
+      "at": "b_lot",
+      "off": [
+       0.485,
+       -0.3
+      ],
+      "stage": 0,
+      "name": "k_win_r",
+      "clear": 0,
+      "yaw": -90,
+      "lift": 0.2,
+      "inside_only": true
      }
     ],
     "focus": "s_focus",
@@ -1604,6 +1629,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [],
@@ -1895,6 +1924,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [],
@@ -2200,6 +2233,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [],
@@ -2581,6 +2618,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [],
@@ -2697,13 +2738,33 @@
       "pig_a",
       "pig_b"
      ],
-     "to": "b_front",
-     "via": "road",
+     "to": "b_door",
      "pose": "run",
      "speed": 0.8,
      "follow": "pig_a",
      "shot": "high",
-     "line": "tp_034"
+     "line": "tp_034",
+     "path": [
+      [
+       0.72,
+       -1.08
+      ],
+      [
+       0.22,
+       -1.62
+      ],
+      [
+       -0.3,
+       -2.02
+      ],
+      [
+       -0.533,
+       -2.2
+      ],
+      "b_door"
+     ],
+     "file": true,
+     "spacing": 0.16
     },
     {
      "do": "cam",
@@ -2933,6 +2994,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [],
@@ -3248,6 +3313,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [],
@@ -3439,6 +3508,10 @@
      "to": "wolf_exit",
      "path": [
       [
+       -1.0,
+       -2.0
+      ],
+      [
        0.3,
        -2.05
       ],
@@ -3472,10 +3545,10 @@
      "line": "tp_053",
      "exit": true,
      "follow": "wolf",
-     "shot": "high",
-     "follow_for": 3.6,
+     "shot": "chase",
+     "follow_for": 7.6,
      "release_shot": "village",
-     "release_at": "wolf_watch"
+     "release_at": "b_focus"
     }
    ],
    "sound": {
@@ -3686,6 +3759,10 @@
      "s_wolf_from": [
       -2.498,
       1.805
+     ],
+     "b_door": [
+      -0.533,
+      -2.666
      ]
     },
     "set": [],
@@ -5305,5 +5382,68 @@
    ],
    "new": true
   }
+ ],
+ "inside_margin": 0.5,
+ "overlap_ok": [
+  [
+   "pig_a",
+   "straw_pile"
+  ],
+  [
+   "wolf",
+   "ladder"
+  ],
+  [
+   "wolf",
+   "house"
+  ],
+  [
+   "wolf",
+   "k_hearth"
+  ],
+  [
+   "wolf",
+   "fire_l"
+  ],
+  [
+   "wolf",
+   "fire_m"
+  ],
+  [
+   "wolf",
+   "fire"
+  ],
+  [
+   "wolf",
+   "k_back"
+  ],
+  [
+   "wolf",
+   "k_pot"
+  ],
+  [
+   "wolf",
+   "k_logs"
+  ],
+  [
+   "wolf",
+   "k_flue"
+  ],
+  [
+   "pig_a",
+   "house"
+  ],
+  [
+   "pig_b",
+   "house"
+  ],
+  [
+   "pig_c",
+   "house"
+  ],
+  [
+   "wolf",
+   "brick_pile"
+  ]
  ]
 }
