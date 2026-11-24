@@ -2577,3 +2577,25 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
   standing wolf; house_orbit_all.sh not re-run after the doorway cut; 5:54 is still above the 5:00 aim (201 s of
   lines + 17 taps + the fixed ending). Nobody has listened to the mix.
 - Sheet: artifacts/wolf_goats/fixes_sheet.jpg (v1 / v2 per fix).
+
+## 2026-11-25 — rapunzel v3 (fixes in; full recording + gate BLOCKED by a full disk)
+- Kept v2's tower window / top room / braid-from-head work. Re-checked v2 against the audit and Gemini R1: the father's
+  walk to the garden and Gothel's first climb were already on screen in v2 (no change).
+- Fixed (793a117a): the field cottage is a lot (`stage: 0`) until the reunion, where it pops up (v2: its thatch sat in
+  the corner of every tower wide); the field / reunion shots turned off the tower (yaw 68 / 62: "먼 들판" no longer
+  has the tower right behind it; the grey fan card in the v2 reunion foreground is gone with it); the prince hears
+  the song further up the road (field_hear) and runs ~1.0 to her side by side for that camera (v2: a 0.57 hop, and
+  he stood in front of her); at the snip the cut braid topples to the floor beside her and stays (v2: it just
+  vanished), room_snip shot 15° so it clears the caption; the magic-wind float shot is closer (3.0 / el 6 / h 0.8: v2
+  read as a speck); the mother is indoors at night (v2: her head filled the lens while the camera followed the
+  father); a pace pass in the tale table (`_pace`: cam rates ×1.4 ≤ 2.0, settles ≤ 0.45, waits ×0.6, walks ×1.4
+  ≤ 0.46, climbs ×1.45; the second Gothel climb brisker). Beat proofs (1200x900, --log-track) of snip / reunion /
+  night / empty: no script errors; fixes sheet artifacts/rapunzel/fixes_sheet.jpg (v2 vs those beat clips).
+- Length: one full run of an intermediate build printed STORY_DONE 361.4 s (v2 394.8; target 5 min not reached:
+  every line is kept, the long stretches are the climbs, room pivots and the ending), with CAM_JUMP 0 CAM_JERK 0
+  SPEAKER_OFF 0 VOICE_DUP 0 OVERLAP 0 OCCLUDE 1, but that run is void: the disk filled during it (0.1-0.5 GB free),
+  the AVI came out corrupt (61 s mp4) and the log lost its SEG / MOVE lines. A few more trims went in after it.
+- NOT DONE: the full v3 recording, motion review, gate.md and gate.py. The disk has stayed at 0.4-1.7 GB free for
+  over an hour (the AVIs every agent moved to ~/.Trash still hold the space; a full run needs ~6 GB): needs the
+  Trash emptied (the user's call), then `tools/story/with_godot.sh sh tools/story/rp_rec.sh full 420
+  /ABS/artifacts/rapunzel/rec/full_v3.mp4 --log-track`, motion_review, verdicts, gate.md, gate.py.
