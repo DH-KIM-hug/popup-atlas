@@ -1150,6 +1150,38 @@ func _step_go_inside(st: Dictionary) -> void:
 		var gd := 0.0
 		while sp.door_open_amount() < 0.95 and gd < 2.0 and _alive():
 			gd += await _frame()
+	if st.get("pipeline", false) and st.get("climb_steps", false):
+		# (2026-11-24 witch_candy pace) the next one steps up while the one before is over the sill: a tidy file
+		# through the door, no one standing still waiting for the last to reach its mark
+		for i in roles.size():
+			if not _alive():
+				return
+			var a := stage.actor(str(roles[i]))
+			if a == null:
+				continue
+			_enter_one(a, str(roles[i]), st, sp, toward, front, spd, i)
+			var gp := 0.0
+			while _alive() and gp < 8.0 and not a.get_meta("entered_sill", false):
+				gp += await _frame()
+		var gw := 0.0
+		while _alive() and gw < 10.0:
+			var busy := false
+			for r in roles:
+				var ar := stage.actor(str(r))
+				if ar and not ar.get_meta("entered_door", true):
+					busy = true
+			if not busy:
+				break
+			gw += await _frame()
+		if not _alive():
+			return
+		sp.open_door(false)
+		if sound:
+			sound.step("go_inside", "door_shut", sp.door_point(true, toward))
+		await _wait(0.35)
+		while _line_busy and _alive():
+			await _frame()
+		return
 	for i in roles.size():
 		if not _alive():
 			return
@@ -1204,6 +1236,48 @@ func _step_go_inside(st: Dictionary) -> void:
 	await _wait(0.35)
 	while _line_busy and _alive():
 		await _frame()
+
+
+## One actor of a pipelined go_inside: up to the doorway, up the steps, over the sill, on to its mark in the room.
+## Meta entered_sill: over the threshold (the next may step up); entered_door: inside and walking to its mark.
+func _enter_one(a: StoryActor, role: String, st: Dictionary, sp: SetPiece, toward: Vector3, front: Vector3, spd: float, i: int) -> void:
+	a.set_meta("entered_sill", false)
+	a.set_meta("entered_door", false)
+	if i > 0:
+		a.walk_to(front, spd * 0.8, "")
+		var g2 := 0.0
+		while a.moving() and g2 < 6.0 and _alive():
+			g2 += await _frame()
+	if not _alive() or not is_instance_valid(a):
+		return
+	var sill := sp.door_sill()
+	var fr: Vector3 = sp.door_point(true, toward)
+	var bk: Vector3 = sp.door_point(false, toward)
+	a.follow([fr - toward * 0.06 + Vector3.UP * sill * 0.5, fr - toward * 0.1 + Vector3.UP * sill,
+		bk + Vector3.UP * sill, bk - toward * 0.08 + Vector3.UP * 0.02], spd * 0.7, "", true)
+	var g3 := 0.0
+	while a.moving() and g3 < 6.0 and _alive() and is_instance_valid(a):
+		if a._path.size() <= 1:
+			a.set_meta("entered_sill", true)
+		g3 += await _frame()
+	if not _alive() or not is_instance_valid(a):
+		return
+	a.set_meta("entered_sill", true)
+	a.set_meta("entered_door", true)
+	var tos: Dictionary = st.get("to", {})
+	if tos.has(role):
+		var vias: Dictionary = st.get("via", {})
+		if vias.has(role):
+			var vv: Variant = vias[role]
+			var vp: Array = []
+			for q in (vv if vv is Array else [vv]):
+				vp.append(stage.spot_point(q))
+			vp.append(stage.spot_point(tos[role]))
+			a.follow(vp, spd * 0.8, "", false)
+		else:
+			a.walk_to(stage.spot_point(tos[role]), spd * 0.8, "")
+	else:
+		stage.put_inside(role, str(st.get("house", "house")), 0)
 
 
 ## climb {who, on (set piece), path [[x, y] in set heights from its base centre], pose, speed, line}.
