@@ -113,7 +113,9 @@ EXTRA = {"ground_style": "paper", "spacing": True, "overlap_check": True, "pop_i
          # (read script: "가르는 순간은 엄마 몸이 가린다"); the wolf leans over the well rim and drops into it
          # the kids hop out of the sleeping wolf's belly (they start inside his footprint, by design)
          "overlap_ok": [["mom", "wolf"], ["wolf", "kid1"], ["wolf", "kid2"], ["wolf", "kid3"], ["wolf", "kid4"],
-                        ["wolf", "kid5"], ["wolf", "kid6"], ["wolf", "well"], ["wolf", "well_rim"], ["wolf", "oak"]]
+                        ["wolf", "kid5"], ["wolf", "kid6"], ["wolf", "well"], ["wolf", "well_rim"], ["wolf", "oak"],
+                        # the two kids dive into the laundry basket (its card turns into the hiding variant)
+                        ["kid3", "basket"], ["kid4", "basket"]]
                        + [[r, f] for f in ["room_floor", "room_rug"]  # the room floor + rug (wave 1)
                           for r in ["kid1", "kid2", "kid3", "kid4", "kid5", "kid6", "baby", "mom", "wolf"]],
          "kid_voice": "kid3"}
@@ -421,7 +423,7 @@ BEATS = [
         # wall to the cottage and the full-bellied wolf waddles out of the open door, down the path and off up the
         # road with the camera following him, under the narrator's reassurance
         {"do": "cam", "shot": "room_wide", "at": "in_focus", "rate": 1.4, "wait": 0.5},
-        {"do": "cam", "shot": "house", "at": "door_view", "rate": 1.4, "wait": 0.1, "settle": 0.6},
+        {"do": "cam", "shot": "house", "at": "door_view", "rate": 0.8, "wait": 0.1, "settle": 0.6},
         {"do": "go_out", "who": ["wolf"], "house": "cottage", "to": "road_door", "pose": "heavy", "shot": "house",
          "keep_open": True, "speed": 0.55, "line": "wg_r0507",
          "then": {"to": "road_far", "exit": True, "speed": 0.75, "follow": "track"}}]},
@@ -517,11 +519,8 @@ BEATS = [
                "at": {**{k: f"watch_{k}" for k in K6}, "baby": "watch_baby2", "mom": "watch_mom"}},
      "steps": [
         # v2 pace: everyone walks to the dance at once (two groups, no paths cross)
-        {"do": "cam", "shot": "well_wide", "at": "well_focus", "rate": 1.4, "wait": 0.1, "settle": 0.7},
-        {"do": "walk", "who": ["mom", "baby"], "to": {"mom": "dance_mom", "baby": "dance_baby"}, "speed": 0.55,
-         "async": True},
-        {"do": "walk", "who": K6, "to": {k: f"dance_{k}" for k in K6}, "speed": 0.55},
-        {"do": "cam", "shot": "well_wide", "at": "well_focus", "rate": 1.2, "wait": 0.1, "settle": 0.5},
+        # v2: they dance where they stand on the meadow (the walk to the well left the frame and crossed in the file)
+        {"do": "cam", "shot": "pop_wide", "at": ["watch_mom", "pop_kid4"], "rate": 1.2, "wait": 0.1, "settle": 0.6},
         {"do": "fx", "fx": "dance_on", "wait": 0.2},
         {"do": "say", "line": "wg_r1001"},
         {"do": "tap_each", "targets": ["kid2", "kid5", "baby"], "prompt": "wg_044", "hint": "wg_044",

@@ -374,8 +374,8 @@ func _hide_run(f: String) -> void:
 			continue
 		a.set_pose("scared")
 		var pts: Array = []
-		if HIDE_VIA.has(f):  # two to the basket: the second goes round a step nearer the camera (no bump)
-			pts.append(stage.spot_point(HIDE_VIA[f]) + _toward() * 0.1 * i)
+		if HIDE_VIA.has(f):  # two to the basket: the first (from further left) goes round a step deeper (no bump)
+			pts.append(stage.spot_point(HIDE_VIA[f]) - _toward() * 0.12 * (kids.size() - 1 - i))
 		pts.append(front + _right() * 0.11 * (i - 1) + _toward() * 0.04 * (i % 2))
 		a.follow(pts, 0.6, "run_cycle", false)
 	var g := 0.0

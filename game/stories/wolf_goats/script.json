@@ -364,6 +364,14 @@
    "oak"
   ],
   [
+   "kid3",
+   "basket"
+  ],
+  [
+   "kid4",
+   "basket"
+  ],
+  [
    "kid1",
    "room_floor"
   ],
@@ -3950,7 +3958,7 @@
      "do": "cam",
      "shot": "house",
      "at": "door_view",
-     "rate": 1.4,
+     "rate": 0.8,
      "wait": 0.1,
      "settle": 0.6
     },
@@ -6044,52 +6052,14 @@
    "steps": [
     {
      "do": "cam",
-     "shot": "well_wide",
-     "at": "well_focus",
-     "rate": 1.4,
-     "wait": 0.1,
-     "settle": 0.7
-    },
-    {
-     "do": "walk",
-     "who": [
-      "mom",
-      "baby"
+     "shot": "pop_wide",
+     "at": [
+      "watch_mom",
+      "pop_kid4"
      ],
-     "to": {
-      "mom": "dance_mom",
-      "baby": "dance_baby"
-     },
-     "speed": 0.55,
-     "async": true
-    },
-    {
-     "do": "walk",
-     "who": [
-      "kid1",
-      "kid2",
-      "kid3",
-      "kid4",
-      "kid5",
-      "kid6"
-     ],
-     "to": {
-      "kid1": "dance_kid1",
-      "kid2": "dance_kid2",
-      "kid3": "dance_kid3",
-      "kid4": "dance_kid4",
-      "kid5": "dance_kid5",
-      "kid6": "dance_kid6"
-     },
-     "speed": 0.55
-    },
-    {
-     "do": "cam",
-     "shot": "well_wide",
-     "at": "well_focus",
      "rate": 1.2,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.6
     },
     {
      "do": "fx",
