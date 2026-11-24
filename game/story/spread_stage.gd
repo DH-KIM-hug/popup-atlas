@@ -2702,8 +2702,17 @@ func _camera_inside_check() -> void:
 		# wolf_goats 2026-11-24 (tale `inside_door_hide`): the door leaf (not one of the walls) also folds away while the
 		# camera passes the front wall, or a glide in / out fills the frame with the door; seen from deep in the room
 		# (the turned-round door shot) it stands
-		if sp.door_pivot and tale.get("inside_door_hide", false):
-			sp.door_pivot.visible = not (inside and l.z > -0.12)
+		if tale.get("inside_door_hide", false):
+			# a room shot from just in front of the wall (inside the margin): the roof band (eave + door arch top)
+			# and the body's door / window reveals fold away too, or they frame the room like a tunnel
+			var front_in := inside and l.z > -0.12
+			if sp.door_pivot:
+				sp.door_pivot.visible = not front_in
+			if sp.roof:
+				sp.roof.visible = not front_in
+			if sp.body:
+				for rv in sp.body.find_children("Reveal*", "", false, false):
+					(rv as Node3D).visible = not front_in
 		if inside:
 			now = str(k)
 			deep = deep or l.z < 0.0
