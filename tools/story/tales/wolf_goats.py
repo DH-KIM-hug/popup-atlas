@@ -108,7 +108,7 @@ INSIDE_FRAMING = "manual"
 EXTRA = {"ground_style": "paper", "spacing": True, "overlap_check": True, "pop_in": False,
          # v2 (glides in / out through the front wall filled the frame with the door leaf and the wall's inside face):
          # the facade and the door fold away 0.55 in front of the wall, the inside face waits until the camera is in
-         "inside_margin": 0.55, "inside_door_hide": True,
+         "inside_margin": 0.7, "inside_door_hide": True,
          # intended contacts (reason): the mother kneels in front of the sleeping wolf so her body hides the opening
          # (read script: "가르는 순간은 엄마 몸이 가린다"); the wolf leans over the well rim and drops into it
          # the kids hop out of the sleeping wolf's belly (they start inside his footprint, by design)
@@ -132,8 +132,8 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          # v2: the room is shot from just in front of the front wall (inside_margin folds the facade and the door
          # away there), a longer lens and lower: the kids read bigger and the wolf in the room stays clear of the lens
          # (v1 [0.8, 32, 0.12, 64]: a high wide view from right behind the wall, the kids small, the wolf a giant)
-         "room": [1.25, 24.0, 0.14, 52.0, COT_YAW],
-         "room_wide": [1.4, 26.0, 0.14, 60.0, COT_YAW],
+         "room": [1.1, 24.0, 0.14, 54.0, COT_YAW],
+         "room_wide": [1.25, 26.0, 0.14, 62.0, COT_YAW],
          "door_in": [0.45, 28.0, 0.24, 56.0, COT_YAW + 180.0],  # turned round inside: the door (paw under it)
          "clock_close": [0.42, 8.0, 0.34, 40.0, COT_YAW + 14.0],
          "stall": [1.5, 10.0, 0.3, 28.0, -12.0],
@@ -202,7 +202,7 @@ _IN = {"door": (0.0, 0.32), "door_in": (0.0, -0.22), "wall_in": (0.0, -0.015), "
        "in_baby2": (-0.35, -0.55), "in_clock_front": (-0.64, -0.82),
        "bed_front": (0.55, -0.76), "table_front": (-0.4, -0.72), "basket_front": (0.68, -0.42),
        "basket_via": (0.64, -0.72),
-       "wolf_door": (0.1, 0.34), "door_view": (0.0, 0.9)}
+       "wolf_door": (0.1, 0.34), "door_view": (0.0, 0.9), "wolf_step": (0.0, 0.2)}
 for _nm, (_dx, _dz) in _IN.items():
     HOME[_nm] = rot(COT, _dx, _dz, COT_YAW)
 # the kids in a row with a gap on the door's axis (the mother walks out through it, the wolf comes in through it)
@@ -211,7 +211,7 @@ for _k, _x in zip(KIDS, [-0.68, -0.51, -0.34, -0.17, 0.17, 0.34, 0.51]):  # v2: 
 # v2 (pace: the first full run took 7:32): the stall and the mill stand across the road from the cottage, a few steps
 # away, so the wolf's errands are short camera moves, not long walks
 HOME.update({"est": [0.2, -1.0], "road_near": [-0.45, 0.85], "road_door": [0.65, -0.6], "road_mid": [0.15, -0.35],
-             "road_far": [0.78, -3.2], "stall": [-0.9, -0.5], "wolf_stall": [-0.5, -0.22], "mill": [-1.35, -1.95],
+             "road_far": [0.78, -3.2], "road_mid2": [0.42, -1.5], "stall": [-0.9, -0.5], "wolf_stall": [-0.5, -0.22], "mill": [-1.35, -1.95],
              "sack": [-0.72, -1.65], "wolf_mill": [-0.45, -1.42], "road_mill": [0.35, -1.3], "errand": [-0.3, -0.9]})
 SET_A = [
     _e("story_wg_cottage_00", "cottage", "cottage", HOUSE_SCALE, yaw=COT_YAW, clear=1.6, door_in=True,
@@ -396,7 +396,7 @@ BEATS = [
         {"do": "say", "line": "wg_r0405"}]},
     # 5 -- hide and seek: the wolf bursts in; the kids hide (taps); the youngest into the clock; off-screen gulps
     {"id": "hide", "title": "숨바꼭질", "spread": _home(light="late"),
-     "enter": {"who": {**_all("joy", K6), "baby": "calm", "wolf": "search"}, "at": {**IN_KIDS, "wolf": "wolf_door"}},
+     "enter": {"who": {**_all("joy", K6), "baby": "calm", "wolf": "search"}, "at": {**IN_KIDS, "wolf": "wolf_step"}},
      "steps": [
         # v2 (audit: the turned-round door shot swung 180 degrees inside, CAM_JUMP, and the glide passed through the
         # side wall; the wolf filled the lens): the kids open the door, the wolf goes in seen from outside, then the
@@ -420,7 +420,8 @@ BEATS = [
         # v2 (audit: an 18 s clock close-up while the wolf left off screen): the camera backs out through the front
         # wall to the cottage and the full-bellied wolf waddles out of the open door, down the path and off up the
         # road with the camera following him, under the narrator's reassurance
-        {"do": "cam", "shot": "house", "at": "door_view", "rate": 0.9, "wait": 0.1, "settle": 0.6},
+        {"do": "cam", "shot": "room_wide", "at": "in_focus", "rate": 1.4, "wait": 0.5},
+        {"do": "cam", "shot": "house", "at": "door_view", "rate": 1.4, "wait": 0.1, "settle": 0.6},
         {"do": "go_out", "who": ["wolf"], "house": "cottage", "to": "road_door", "pose": "heavy", "shot": "house",
          "keep_open": True, "speed": 0.55, "line": "wg_r0507",
          "then": {"to": "road_far", "exit": True, "speed": 0.75, "follow": "track"}}]},
@@ -430,9 +431,10 @@ BEATS = [
      "steps": [
         # v2 (audit: she reached a shut door and vanished; 13 s before the first line): she comes home up the road
         # under the narration, the door stands open (the doorway is cut now), she goes in, the camera follows
-        {"do": "cam", "shot": "house", "at": "door_view", "rate": 1.2, "wait": 0.1},
-        {"do": "walk", "who": "mom", "from": "road_mid", "to": "door_view", "via": ["road_door"], "speed": 0.75,
-         "follow": "mom", "shot": "house", "line": "wg_r0601"},
+        {"do": "cam", "shot": "track", "at": "road_mid", "rate": 1.4, "wait": 0.1, "settle": 0.8},
+        {"do": "walk", "who": "mom", "from": "road_mid2", "to": "door_view", "via": ["road_mid", "road_door"],
+         "speed": 0.85, "follow": "mom", "shot": "track", "line": "wg_r0601"},
+        {"do": "cam", "shot": "house", "at": "door_view", "rate": 1.6, "wait": 0.1},
         {"do": "pose", "who": "mom", "pose": "shocked", "wait": 0.2},
         {"do": "go_inside", "who": ["mom"], "house": "cottage", "house_facing": True, "climb_steps": True,
          "door_clear": True, "to": {"mom": "in_mom2"}, "speed": 0.6, "keep_open": True},
@@ -515,6 +517,7 @@ BEATS = [
                "at": {**{k: f"watch_{k}" for k in K6}, "baby": "watch_baby2", "mom": "watch_mom"}},
      "steps": [
         # v2 pace: everyone walks to the dance at once (two groups, no paths cross)
+        {"do": "cam", "shot": "well_wide", "at": "well_focus", "rate": 1.4, "wait": 0.1, "settle": 0.7},
         {"do": "walk", "who": ["mom", "baby"], "to": {"mom": "dance_mom", "baby": "dance_baby"}, "speed": 0.55,
          "async": True},
         {"do": "walk", "who": K6, "to": {k: f"dance_{k}" for k in K6}, "speed": 0.55},

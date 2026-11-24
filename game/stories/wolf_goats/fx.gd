@@ -21,7 +21,8 @@ const DROPS := "story_wg_fx_10"
 const BUBBLE := "story_wg_fx_13"
 const SPARKLE := "story_wg_fx_15"
 const K6 := ["kid1", "kid2", "kid3", "kid4", "kid5", "kid6"]
-const HIDE := {"bed": ["kid5", "kid6"], "table": ["kid1", "kid2", "kid3"], "basket": ["kid4"]}  # by row position
+# by row position; v2: kid3 runs to the basket with kid4 (from beside the table its dash was 0.2: no run reads)
+const HIDE := {"bed": ["kid5", "kid6"], "table": ["kid1", "kid2"], "basket": ["kid3", "kid4"]}
 const HIDE_VIA := {"basket": "basket_via"}  # kid4 goes round behind the row (nobody crosses anyone)
 
 var _tex := {}
@@ -373,8 +374,8 @@ func _hide_run(f: String) -> void:
 			continue
 		a.set_pose("scared")
 		var pts: Array = []
-		if HIDE_VIA.has(f):
-			pts.append(stage.spot_point(HIDE_VIA[f]))
+		if HIDE_VIA.has(f):  # two to the basket: the second goes round a step nearer the camera (no bump)
+			pts.append(stage.spot_point(HIDE_VIA[f]) + _toward() * 0.1 * i)
 		pts.append(front + _right() * 0.11 * (i - 1) + _toward() * 0.04 * (i % 2))
 		a.follow(pts, 0.6, "run_cycle", false)
 	var g := 0.0
