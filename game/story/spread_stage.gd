@@ -651,7 +651,20 @@ func _standing(a: StoryActor) -> bool:
 
 func _solid_piece(sp: SetPiece) -> bool:
 	return sp.visible and sp.shown > 0 and not sp.flat and not sp.piece_name.begins_with("lights_") \
-		and not sp.has_meta("inside_only") and not str(sp.piece_name).contains("_st") and sp.height > 0.08
+		and not sp.has_meta("inside_only") and not str(sp.piece_name).contains("_st") and sp.height > 0.08 \
+		and _piece_standing(sp)
+
+
+## (2026-11-24, three_pigs: OVERLAP pig_a wood_ruin while the ruin card still lay folded flat) a piece whose hinges are
+## all folded down is not standing; pieces without hinges count as standing
+func _piece_standing(sp: SetPiece) -> bool:
+	var hs := sp.all_hinges()
+	if hs.is_empty():
+		return true
+	for h in hs:
+		if h.openness() > 0.1:
+			return true
+	return false
 
 
 func _spacing_step(dt: float) -> void:
