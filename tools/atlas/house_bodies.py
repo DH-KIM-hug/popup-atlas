@@ -42,17 +42,29 @@ IDS = ([f"village_houses_{i:02d}" for i in range(21) if i not in (10, 11)]
 # no_chimney / depth (fraction of the wall width) / chimney_k (opening width as a fraction of the card width)
 OVERRIDE = {
     "story_wc_houses_b_05": {"roof_y": 245},
-    "story_sm_cottage_00": {"roof_y": 205},
+    "story_sm_cottage_00": {"roof_y": 230, "wall_x": [63, 668]},
+    "story_wg_cottage_00": {"roof_y": 242, "wall_x": [35, 630], "side_rect": [35, 244, 630, 345]},
     "winter_snow_09": {"chimneys": [[193, 5, 252, 70]]},
     # roofs whose own print has no plain roofing band: the kit's paper swatch of the same material
+    "village_houses_01": {"roof_mat": "terracotta"},
+    "village_houses_06": {"no_chimney": True, "roof_mat": "terracotta"},
+    "village_houses_08": {"no_chimney": True},
+    "korean_village_02": {"no_chimney": True},
+    "korean_village_03": {"no_chimney": True},
+    "korean_village_04": {"no_chimney": True},
+    "fairytale_west_06": {"roof_y": 176, "wall_x": [27, 212], "chimneys": [[166, 15, 207, 85]]},
+    "story_houses_00": {"wall_x": [28, 380]},
     "story_wc_houses_a_00": {"roof_mat": "slate"},
-    "story_wc_houses_a_02": {"roof_y": 268, "roof_mat": "slate"},
+    "story_wc_houses_a_02": {"roof_y": 298, "roof_mat": "slate", "chimneys": [[41, 80, 95, 238]]},
+    "story_wc_houses_a_06": {"roof_mat": "slate"},
+    "story_wc_houses_b_01": {"roof_mat": "slate", "chimneys": [[218, 17, 282, 118]], "side_rect": [34, 377, 164, 395]},
+    "story_wc_houses_b_04": {"wall_x": [30, 270], "chimneys": [[42, 37, 97, 150]]},
+    "story_wc_houses_b_06": {"roof_y": 182, "chimneys": [[227, 22, 282, 120]]},
     "house_round_thatch": {"roof_mat": "thatch"},
     "story_houses_06": {"roof_mat": "terracotta"},
     # windmill: the tower and its cap; the sails stay on the front card
     "village_houses_05": {"poly": [[45, 120], [62, 62], [101, 34], [140, 62], [157, 120], [167, 264], [35, 264]],
                           "roof_y": 120, "lines": [[48.6, -0.0], [154.0, 0.0]], "depth": 0.9, "roof_mat": "slate"},
-    "story_wc_houses_b_06": {"chimneys": [[227, 22, 282, 120]]},
 }
 DEPTH = 0.72  # default body depth / wall width
 
@@ -207,33 +219,43 @@ def find_chimneys(roof, ry, wx0, wx1, base, ov):
 
 def find_patch(arr, region, pw, ph):
     """The patch inside `region` closest to the region's dominant colour with the least detail (RGBA, opaque)."""
+    reg = region & (arr[..., 3] > 200)
     rgb = arr[..., :3].astype(float)
-    px = rgb[region]
+    px = rgb[reg]
     if len(px) == 0:
         return np.full((ph, pw, 4), 200, np.uint8)
     q = (px // 32).astype(int)
     keys = q[:, 0] * 64 + q[:, 1] * 8 + q[:, 2]
     mode = np.bincount(keys).argmax()
     dom = px[keys == mode].mean(0)
-    ys, xs = np.nonzero(region)
+    ys, xs = np.nonzero(reg)
     y0, y1, x0, x1 = ys.min(), ys.max() + 1, xs.min(), xs.max() + 1
-    ph = min(ph, y1 - y0)
-    pw = min(pw, x1 - x0)
     lum = rgb.mean(2)
-    best, bxy = None, (y0, x0)
-    step = max(2, min(pw, ph) // 5)
-    for yy in range(y0, max(y0 + 1, y1 - ph + 1), step):
-        for xx in range(x0, max(x0 + 1, x1 - pw + 1), step):
-            if region[yy:yy + ph, xx:xx + pw].mean() < 0.97:
-                continue
-            pt = rgb[yy:yy + ph, xx:xx + pw]
-            col = np.abs(pt.reshape(-1, 3) - dom).sum(1).mean()
-            L = lum[yy:yy + ph, xx:xx + pw]
-            det = np.abs(np.diff(L, axis=1)).mean() + np.abs(np.diff(L, axis=0)).mean()
-            v = col + 3.0 * det
-            if best is None or v < best:
-                best, bxy = v, (yy, xx)
-    out = arr[bxy[0]:bxy[0] + ph, bxy[1]:bxy[1] + pw].copy()
+    for scale in (1.0, 0.7, 0.45, 0.25):
+        cw = max(4, min(int(round(pw * scale)), x1 - x0))
+        ch = max(4, min(int(round(ph * scale)), y1 - y0))
+        best, bxy = None, None
+        step = max(1, min(cw, ch) // 5)
+        for yy in range(y0, max(y0 + 1, y1 - ch + 1), step):
+            for xx in range(x0, max(x0 + 1, x1 - cw + 1), step):
+                if reg[yy:yy + ch, xx:xx + cw].mean() < 0.97:
+                    continue
+                pt = rgb[yy:yy + ch, xx:xx + cw]
+                col = np.abs(pt.reshape(-1, 3) - dom).sum(1).mean()
+                L = lum[yy:yy + ch, xx:xx + cw]
+                det = np.abs(np.diff(L, axis=1)).mean() + np.abs(np.diff(L, axis=0)).mean()
+                v = col + 3.0 * det
+                if best is None or v < best:
+                    best, bxy = v, (yy, xx)
+        if best is not None:
+            out = arr[bxy[0]:bxy[0] + ch, bxy[1]:bxy[1] + cw].copy()
+            m = reg[bxy[0]:bxy[0] + ch, bxy[1]:bxy[1] + cw]
+            if not m.all():
+                out[~m, :3] = np.clip(dom.round(), 0, 255).astype(np.uint8)
+            out[..., 3] = 255
+            return out
+    out = np.zeros((max(4, min(ph, 8)), max(4, min(pw, 8)), 4), np.uint8)
+    out[..., :3] = np.clip(dom.round(), 0, 255).astype(np.uint8)
     out[..., 3] = 255
     return out
 
@@ -286,6 +308,11 @@ def fit_line(ys, xs, tol):
     bb, aa = np.polyfit(ys[keep], xs[keep], 1)
     if abs(bb) > 0.25:  # a wall leans at most a little; more is a decoration
         return float(np.median(xs[keep])), 0.0
+    if abs(bb) > 0.12:
+        ym = float(np.median(ys[keep]))
+        xm = aa + bb * ym
+        bb = float(np.clip(bb, -0.12, 0.12))
+        aa = xm - bb * ym
     return float(aa), float(bb)
 
 
@@ -436,13 +463,14 @@ def build(cid, e, stage):
                         cand.append(bt)
             ry = max(cand) if cand else ry_guess
         wx = lambda k, y: lines[k][0] + lines[k][1] * y
-        roof = op.copy()
-        roof[ry + 1:] = False
-        roof = opening(roof, max(3, int(0.018 * w)))
+        roof_raw = op.copy()
+        roof_raw[ry + 1:] = False
+        roof_clean = opening(roof_raw, max(3, int(0.018 * w)))
+        roof = roof_raw.copy()
         chim = []
         wx0, wx1 = int(round(wx(0, ry))), int(round(wx(1, ry)))
         if not ov.get("no_chimney"):
-            chim = find_chimneys(roof, ry, wx0, wx1, base, ov) + [list(c) for c in ov.get("chimneys", [])]
+            chim = [list(c) for c in ov["chimneys"]] if "chimneys" in ov else find_chimneys(roof_clean, ry, wx0, wx1, base, ov)
             for c in chim:
                 x0, x1 = c[0], c[2]
                 tl = first_row(roof[:, max(0, x0 - 2)])
@@ -464,11 +492,12 @@ def build(cid, e, stage):
         keep = lab2[min(base - 2, (ry + base) // 2), cx]
         M = lab2 == keep
         M = fill_holes(M)
-        # close pinches
+        # close pinches and pad 1 px so HouseBody covers PaperCard's downscaled contour edge
         M = morph(morph(np.pad(M, 4), 3, "dilate"), 3, "erode")[4:-4, 4:-4] & True
+        M = morph(np.pad(M, 4), 3, "dilate")[4:-4, 4:-4] & True
         M[base:] = False
         M = fill_holes(M)
-        poly = simplify_loop(trace(M), 0.9)
+        poly = simplify_loop(trace(M), 0.6)
     for c in chim:  # seat: the deepest roof row under the stack (it sinks into the roof)
         under = [first_row(M[:, x]) for x in range(max(0, c[0]), min(w, c[2]))]
         under = [u for u in under if u < h]
@@ -479,7 +508,11 @@ def build(cid, e, stage):
     wx0 = int(round(lines[0][0] + lines[0][1] * ry))
     wx1 = int(round(lines[1][0] + lines[1][1] * ry))
     wall_reg = np.zeros((h, w), bool)
-    wall_reg[ry + 3:base - 3, max(0, wx0 + 3):max(0, wx1 - 3)] = True
+    if "side_rect" in ov:
+        sx0, sy0, sx1, sy1 = ov["side_rect"]
+        wall_reg[max(0, sy0):min(h, sy1), max(0, sx0):min(w, sx1)] = True
+    else:
+        wall_reg[ry + 3:base - 3, max(0, wx0 + 3):max(0, wx1 - 3)] = True
     # small patches: a plain piece of wall exists between the windows and painted flowers (mirror-tiled it reads as
     # the plain wall material; a bigger patch dragged a sunflower or a log end along every side wall)
     side = None

@@ -83,8 +83,26 @@ def unmix_local(rgb, a, bg, r=3, near=6, tol=0.12):
 def unmix_despill(rgb, a, bg):
     out = rgb.copy()
     soft = (a > 0.02) & (a < 0.98)
-    aa = a[soft][:, None]
-    out[soft] = np.clip((rgb[soft] - (1 - aa) * bg) / aa, 0, 1)
+    if soft.any():
+        aa = a[soft][:, None]
+        raw_u = (rgb[soft] - (1 - aa) * bg) / aa
+        # When (rgb - (1-a)*bg)/a drops R or B below 0 against #FF00FF, dividing G by a creates neon-green edge pixels.
+        # Only use full unmix when channels don't severely clip and a >= 0.35; otherwise cap subtraction to avoid clipping.
+        valid_u = (aa[:, 0] >= 0.35) & (raw_u.min(-1) >= -0.02)
+        safe_u = np.clip(raw_u, 0, 1)
+        # Fallback for clipping soft pixels: neutral despill (reduce magenta excess without boosting G above natural max)
+        obs = rgb[soft]
+        orig_g_ex = np.clip(obs[:, 1] - np.maximum(obs[:, 0], obs[:, 2]), 0.0, None)
+        spill_rb = np.clip(np.minimum(obs[:, 0], obs[:, 2]) - obs[:, 1], 0.0, None)
+        fb = obs.copy()
+        fb[:, 0] = np.where((obs[:, 0] > obs[:, 1]) & (obs[:, 2] > obs[:, 1]), obs[:, 0] - spill_rb, obs[:, 0])
+        fb[:, 2] = np.where((obs[:, 0] > obs[:, 1]) & (obs[:, 2] > obs[:, 1]), obs[:, 2] - spill_rb, obs[:, 2])
+        chosen = np.where(valid_u[:, None], safe_u, fb)
+        # Never allow unmix to invent green excess that was not present in the source pixel
+        max_rb = np.maximum(chosen[:, 0], chosen[:, 2])
+        cap_g = max_rb + orig_g_ex + 0.04
+        chosen[:, 1] = np.minimum(chosen[:, 1], cap_g)
+        out[soft] = np.clip(chosen, 0, 1)
     # despill: limit min(R,B) excess over G on edge band pixels
     edge = dilate(a < 0.5, 3) & (a >= 0.02)
     r, g, b = out[..., 0], out[..., 1], out[..., 2]

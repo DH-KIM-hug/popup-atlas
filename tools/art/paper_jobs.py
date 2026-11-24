@@ -73,8 +73,15 @@ def job(jid, raw_dir, sheet, extra=""):
                  "prompt": REDRAW + BG + PAPER + MATERIALS + extra})
 
 
+KOREAN_NATURE_EXTRA = (
+    "BAN yellow radial pine-needle fan spokes, radial needle starbursts, and dashed or dotted ridge stitch lines: "
+    "draw pine foliage pads as solid layered matte cut-paper green scalloped shapes with thin darker cut edges, "
+    "and draw mountain ridges as smooth solid layered cut-paper hills with clean paper-tier edges (no dashes, no stitches). "
+)
+
 for s in ATLAS_SHARED:
-    job("atlas_" + s, RAW_A, s, CHAR if s in ("farm_animals",) else "")
+    extra = CHAR if s in ("farm_animals",) else (KOREAN_NATURE_EXTRA if s == "korean_nature" else "")
+    job("atlas_" + s, RAW_A, s, extra)
 for s in CARD_SHEETS:
     job("cards_" + s, RAW_K, s, CHAR if "animals" in s else "")
 for tale, sheets in TALE_SHEETS.items():

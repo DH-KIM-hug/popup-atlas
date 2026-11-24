@@ -15,6 +15,20 @@ import numpy as np
 from PIL import Image
 from PIL import ImageDraw
 
+def is_magenta_bg(col):
+    r, g, b = col[..., 0], col[..., 1], col[..., 2]
+    mx = np.maximum(np.maximum(r, g), b)
+    mn = np.minimum(np.minimum(r, g), b)
+    ch = mx - mn
+    sat = ch / np.maximum(mx, 1e-4)
+    hue = np.zeros_like(mx)
+    rm = (mx == r) & (ch > 0)
+    bm_ = (mx == b) & (ch > 0) & ~rm
+    hue[rm] = (60.0 * (g[rm] - b[rm]) / ch[rm]) % 360.0
+    hue[bm_] = 60.0 * (r[bm_] - g[bm_]) / ch[bm_] + 240.0
+    return (hue >= 276.0) & (hue <= 340.0) & (sat > 0.30) & ((np.minimum(r, b) - g) > 0.16) & (np.abs(r - b) < 0.28)
+
+
 raw_p, sdir = sys.argv[1], sys.argv[2]
 tol = float(sys.argv[sys.argv.index("--tol") + 1]) if "--tol" in sys.argv else 0.30
 raw = np.asarray(Image.open(raw_p).convert("RGB")).astype(np.float32) / 255.0
@@ -30,7 +44,7 @@ for m in meta["sprites"]:
     x0, y0 = int(m["bbox"][0]) - 4, int(m["bbox"][1]) - 4  # the slicer pads 4 px
     clear = im[..., 3] < 128
     # enclosed holes = clear pixels not reachable from the border (flood fill on a padded mask, in C)
-    mk = Image.fromarray(np.pad(clear, 1, constant_values=True).astype(np.uint8) * 255)
+    mk = Image.fromarray(np.pad(clear, 1, constant_values=True).astype(np.uint8) * 255).copy()
     ImageDraw.floodfill(mk, (0, 0), 128)
     hole = (np.asarray(mk)[1:-1, 1:-1] == 255)
     ys, xs = np.where(hole)
@@ -38,7 +52,7 @@ for m in meta["sprites"]:
     ok = (ry >= 0) & (ry < raw.shape[0]) & (rx >= 0) & (rx < raw.shape[1])
     ys, xs, ry, rx = ys[ok], xs[ok], ry[ok], rx[ok]
     col = raw[ry, rx]
-    far = np.sqrt(((col - bg) ** 2).sum(-1)) > tol
+    far = (np.sqrt(((col - bg) ** 2).sum(-1)) > tol) & ~is_magenta_bg(col)
     im[ys[far], xs[far], :3] = (col[far] * 255).astype(np.uint8)
     im[ys[far], xs[far], 3] = 255
     fixed = int(far.sum())
@@ -53,7 +67,7 @@ for m in meta["sprites"]:
     ys, xs, ry, rx = ys[ok], xs[ok], ry[ok], rx[ok]
     col = raw[ry, rx]
     cur = im[ys, xs, :3].astype(np.float32) / 255.0
-    chg = ((np.abs(col - cur).max(-1) > 0.04) | (im[ys, xs, 3] < 255)) & (np.sqrt(((col - bg) ** 2).sum(-1)) > tol)
+    chg = ((np.abs(col - cur).max(-1) > 0.04) | (im[ys, xs, 3] < 255)) & (np.sqrt(((col - bg) ** 2).sum(-1)) > tol) & ~is_magenta_bg(col)
     im[ys[chg], xs[chg], :3] = (col[chg] * 255).astype(np.uint8)
     im[ys[chg], xs[chg], 3] = 255  # the keyer had made purple cloth half transparent
     fixed += int(chg.sum())
