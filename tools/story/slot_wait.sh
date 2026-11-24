@@ -1,10 +1,14 @@
 #!/bin/sh
-# Wait for the shared Godot slot with a fast poll (0.2 s; with_godot.sh's 3 s poll loses the race), then take it
-# through with_godot.sh:   tools/story/slot_wait.sh <command ...>
+# Take the shared Godot slot (same lock dir as tools/story/with_godot.sh) with a 0.2 s mkdir poll and run one command
+# holding it:   tools/story/slot_wait.sh <command ...>
+# with_godot.sh polls every 3 s and loses every race against agents polling faster (tooling.md "One Godot per
+# project"); this one tries the mkdir itself on every poll and sets the trap only once the lock is its own.
 ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 LOCK="$ROOT/.godot_slot.lock"
-while [ -d "$LOCK" ]; do
-  if [ -f "$LOCK/pid" ] && ! kill -0 "$(cat "$LOCK/pid")" 2>/dev/null; then break; fi
+while ! mkdir "$LOCK" 2>/dev/null; do
+  if [ -f "$LOCK/pid" ] && ! kill -0 "$(cat "$LOCK/pid" 2>/dev/null)" 2>/dev/null; then rm -f "$LOCK/pid"; rmdir "$LOCK" 2>/dev/null; continue; fi
   sleep 0.2
 done
-exec "$ROOT/tools/story/with_godot.sh" "$@"
+echo $$ > "$LOCK/pid"
+trap 'rm -f "$LOCK/pid"; rmdir "$LOCK" 2>/dev/null' EXIT INT TERM
+cd "$ROOT" && "$@"
