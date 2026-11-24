@@ -468,19 +468,43 @@ func _belly_pop(k: int) -> void:
 		if a == null:
 			continue
 		var goal := stage.spot_point("pop_" + r)
-		a.place_at(base + _right() * 0.04 * (j * 2 - 1))
+		var from := base + _right() * 0.04 * (j * 2 - 1)
+		a.place_at(from)
 		a.lift = 0.0
 		a.pop_delay = 0.15 * j
 		a.pop_target = 1.0
 		a.set_pose("pop")
-		a.hop_v = 1.1
-		var mid := base.lerp(goal, 0.5) + Vector3.UP * 0.22
-		a.follow([mid, goal], 0.7, "", true)
+		# v2 (audit: "kids float out of the belly" -- a constant-speed walk cycle along two straight legs in the air):
+		# a quick ballistic leap holding the drawn "pop" figure (the path height in the move's own state), a little
+		# bounce and a thud on landing
+		_leap(a, from, goal, 0.18, 0.55, 0.15 * j)
 		_popped.append(r)
 		get_tree().create_timer(1.1).timeout.connect(func():
 			if is_instance_valid(a):
 				a.set_pose("joy"))
 		_sfx("wg.marimba_%d" % [1, 3, 5][(k - 1) % 3])
+
+
+## A leap along a parabola (peak `h` over the higher end, `dur` s) holding the actor's current figure; lands with a bounce.
+func _leap(a: StoryActor, from: Vector3, to: Vector3, h: float, dur: float, delay := 0.0) -> void:
+	if delay > 0.0:
+		await get_tree().create_timer(delay).timeout
+	if not is_instance_valid(a):
+		return
+	var t := 0.0
+	while t < dur and is_instance_valid(a):
+		t += get_process_delta_time()
+		var k := clampf(t / dur, 0.0, 1.0)
+		var p := from.lerp(to, k)
+		p.y = lerpf(from.y, to.y, k)
+		a.nudge(p)
+		a.lift = 4.0 * h * k * (1.0 - k)
+		await get_tree().process_frame
+	if is_instance_valid(a):
+		a.lift = 0.0
+		a.place_at(to)
+		a.hop_v = 0.35
+		_sfx("foot.pig.grass", to)
 
 
 func _stone(k: int) -> void:
@@ -613,6 +637,8 @@ func _go_out(st: Dictionary, R: Node) -> void:
 			var a2 := _a(str(r))
 			if a2:
 				a2.follow([stage.spot_point(then.get("to", "road_far"))], float(then.get("speed", 0.45)), pose, false)
+		if then.has("follow") and not roles.is_empty():  # v2: the camera follows him off up the road
+			stage.follow_actor(str(roles[0]), str(then["follow"]))
 		var g4 := 0.0
 		while g4 < 12.0:
 			var busy := false

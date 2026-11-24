@@ -112,17 +112,17 @@
    -42.0
   ],
   "room": [
-   0.8,
-   32.0,
-   0.12,
-   64.0,
+   1.25,
+   24.0,
+   0.14,
+   52.0,
    -30.0
   ],
   "room_wide": [
-   0.8,
-   32.0,
-   0.12,
-   72.0,
+   1.4,
+   26.0,
+   0.14,
+   60.0,
    -30.0
   ],
   "door_in": [
@@ -155,10 +155,10 @@
   ],
   "tree_wide": [
    5.2,
-   16.0,
+   23.0,
    0.45,
    26.0,
-   -6.0
+   -22.0
   ],
   "tree_two": [
    2.0,
@@ -167,11 +167,18 @@
    26.0,
    12.0
   ],
-  "belly": [
-   1.15,
-   24.0,
-   0.08,
+  "pop_wide": [
+   2.9,
+   17.0,
+   0.2,
    30.0,
+   10.0
+  ],
+  "belly": [
+   2.1,
+   20.0,
+   0.1,
+   34.0,
    6.0
   ],
   "well_wide": [
@@ -313,6 +320,8 @@
  "spacing": true,
  "overlap_check": true,
  "pop_in": false,
+ "inside_margin": 0.55,
+ "inside_door_hide": true,
  "overlap_ok": [
   [
    "mom",
@@ -454,7 +463,7 @@
   "baby": {
    "kind": "actor",
    "skin": "goat_baby",
-   "height": 0.12,
+   "height": 0.13,
    "views": [
     "front",
     "side",
@@ -465,7 +474,7 @@
   "kid1": {
    "kind": "actor",
    "skin": "goat_kid_1",
-   "height": 0.162,
+   "height": 0.178,
    "views": [
     "front",
     "side",
@@ -476,7 +485,7 @@
   "kid2": {
    "kind": "actor",
    "skin": "goat_kid_2",
-   "height": 0.157,
+   "height": 0.173,
    "views": [
     "front",
     "side",
@@ -487,7 +496,7 @@
   "kid3": {
    "kind": "actor",
    "skin": "goat_kid_3",
-   "height": 0.151,
+   "height": 0.166,
    "views": [
     "front",
     "side",
@@ -498,7 +507,7 @@
   "kid4": {
    "kind": "actor",
    "skin": "goat_kid_4",
-   "height": 0.145,
+   "height": 0.16,
    "views": [
     "front",
     "side",
@@ -509,7 +518,7 @@
   "kid5": {
    "kind": "actor",
    "skin": "goat_kid_5",
-   "height": 0.141,
+   "height": 0.155,
    "views": [
     "front",
     "side",
@@ -520,7 +529,7 @@
   "kid6": {
    "kind": "actor",
    "skin": "goat_kid_6",
-   "height": 0.136,
+   "height": 0.15,
    "views": [
     "front",
     "side",
@@ -620,8 +629,8 @@
       -1.465
      ],
      "in_wolf": [
-      1.88,
-      -1.152
+      1.97,
+      -1.308
      ],
      "in_search": [
       2.103,
@@ -660,32 +669,32 @@
       -0.321
      ],
      "in_kid1": [
-      1.62,
-      -1.902
+      1.551,
+      -1.942
      ],
      "in_kid2": [
-      1.75,
-      -1.827
+      1.698,
+      -1.857
      ],
      "in_kid3": [
-      1.88,
-      -1.752
+      1.846,
+      -1.772
      ],
      "in_kid4": [
-      2.01,
-      -1.677
+      1.993,
+      -1.687
      ],
      "in_kid5": [
-      2.27,
-      -1.527
+      2.287,
+      -1.517
      ],
      "in_kid6": [
-      2.4,
-      -1.452
+      2.434,
+      -1.432
      ],
      "in_baby": [
-      2.53,
-      -1.377
+      2.582,
+      -1.347
      ],
      "est": [
       0.2,
@@ -1140,7 +1149,7 @@
     {
      "do": "fx",
      "fx": "kids_hop",
-     "wait": 1.2
+     "wait": 0.6
     },
     {
      "do": "tap_steps",
@@ -1183,7 +1192,7 @@
      "then": {
       "to": "road_mid",
       "exit": true,
-      "speed": 0.6
+      "speed": 0.75
      }
     }
    ],
@@ -1269,8 +1278,8 @@
       -1.465
      ],
      "in_wolf": [
-      1.88,
-      -1.152
+      1.97,
+      -1.308
      ],
      "in_search": [
       2.103,
@@ -1309,32 +1318,32 @@
       -0.321
      ],
      "in_kid1": [
-      1.62,
-      -1.902
+      1.551,
+      -1.942
      ],
      "in_kid2": [
-      1.75,
-      -1.827
+      1.698,
+      -1.857
      ],
      "in_kid3": [
-      1.88,
-      -1.752
+      1.846,
+      -1.772
      ],
      "in_kid4": [
-      2.01,
-      -1.677
+      1.993,
+      -1.687
      ],
      "in_kid5": [
-      2.27,
-      -1.527
+      2.287,
+      -1.517
      ],
      "in_kid6": [
-      2.4,
-      -1.452
+      2.434,
+      -1.432
      ],
      "in_baby": [
-      2.53,
-      -1.377
+      2.582,
+      -1.347
      ],
      "est": [
       0.2,
@@ -1779,7 +1788,7 @@
      "via": [
       "road_door"
      ],
-     "speed": 0.6,
+     "speed": 0.8,
      "follow": "wolf",
      "shot": "track"
     },
@@ -1899,8 +1908,8 @@
       -1.465
      ],
      "in_wolf": [
-      1.88,
-      -1.152
+      1.97,
+      -1.308
      ],
      "in_search": [
       2.103,
@@ -1939,32 +1948,32 @@
       -0.321
      ],
      "in_kid1": [
-      1.62,
-      -1.902
+      1.551,
+      -1.942
      ],
      "in_kid2": [
-      1.75,
-      -1.827
+      1.698,
+      -1.857
      ],
      "in_kid3": [
-      1.88,
-      -1.752
+      1.846,
+      -1.772
      ],
      "in_kid4": [
-      2.01,
-      -1.677
+      1.993,
+      -1.687
      ],
      "in_kid5": [
-      2.27,
-      -1.527
+      2.287,
+      -1.517
      ],
      "in_kid6": [
-      2.4,
-      -1.452
+      2.434,
+      -1.432
      ],
      "in_baby": [
-      2.53,
-      -1.377
+      2.582,
+      -1.347
      ],
      "est": [
       0.2,
@@ -2400,8 +2409,9 @@
      "do": "cam",
      "shot": "track",
      "at": "wolf_door",
-     "rate": 1.4,
-     "wait": 0.1
+     "rate": 1.8,
+     "wait": 0.1,
+     "settle": 0.85
     },
     {
      "do": "walk",
@@ -2411,7 +2421,7 @@
       "road_door",
       "road_mid"
      ],
-     "speed": 0.75,
+     "speed": 0.9,
      "follow": "wolf",
      "shot": "track"
     },
@@ -2462,10 +2472,6 @@
      "wait": 0.3
     },
     {
-     "do": "say",
-     "line": "wg_r0304"
-    },
-    {
      "do": "walk",
      "who": "wolf",
      "to": "wolf_door",
@@ -2473,9 +2479,10 @@
       "road_mid",
       "road_door"
      ],
-     "speed": 0.75,
+     "speed": 0.9,
      "follow": "wolf",
-     "shot": "track"
+     "shot": "track",
+     "line": "wg_r0304"
     },
     {
      "do": "pose",
@@ -2611,8 +2618,8 @@
       -1.465
      ],
      "in_wolf": [
-      1.88,
-      -1.152
+      1.97,
+      -1.308
      ],
      "in_search": [
       2.103,
@@ -2651,32 +2658,32 @@
       -0.321
      ],
      "in_kid1": [
-      1.62,
-      -1.902
+      1.551,
+      -1.942
      ],
      "in_kid2": [
-      1.75,
-      -1.827
+      1.698,
+      -1.857
      ],
      "in_kid3": [
-      1.88,
-      -1.752
+      1.846,
+      -1.772
      ],
      "in_kid4": [
-      2.01,
-      -1.677
+      1.993,
+      -1.687
      ],
      "in_kid5": [
-      2.27,
-      -1.527
+      2.287,
+      -1.517
      ],
      "in_kid6": [
-      2.4,
-      -1.452
+      2.434,
+      -1.432
      ],
      "in_baby": [
-      2.53,
-      -1.377
+      2.582,
+      -1.347
      ],
      "est": [
       0.2,
@@ -3154,7 +3161,7 @@
       "road_mill",
       "road_door"
      ],
-     "speed": 0.85,
+     "speed": 1.0,
      "pose": "flour",
      "follow": "wolf",
      "shot": "track"
@@ -3288,8 +3295,8 @@
       -1.465
      ],
      "in_wolf": [
-      1.88,
-      -1.152
+      1.97,
+      -1.308
      ],
      "in_search": [
       2.103,
@@ -3328,32 +3335,32 @@
       -0.321
      ],
      "in_kid1": [
-      1.62,
-      -1.902
+      1.551,
+      -1.942
      ],
      "in_kid2": [
-      1.75,
-      -1.827
+      1.698,
+      -1.857
      ],
      "in_kid3": [
-      1.88,
-      -1.752
+      1.846,
+      -1.772
      ],
      "in_kid4": [
-      2.01,
-      -1.677
+      1.993,
+      -1.687
      ],
      "in_kid5": [
-      2.27,
-      -1.527
+      2.287,
+      -1.517
      ],
      "in_kid6": [
-      2.4,
-      -1.452
+      2.434,
+      -1.432
      ],
      "in_baby": [
-      2.53,
-      -1.377
+      2.582,
+      -1.347
      ],
      "est": [
       0.2,
@@ -3787,11 +3794,11 @@
    "steps": [
     {
      "do": "cam",
-     "shot": "door_in",
-     "at": "door_in",
-     "rate": 1.4,
-     "wait": 0.2,
-     "settle": 0.6
+     "shot": "door_ots",
+     "at": "wolf_door",
+     "rate": 1.6,
+     "wait": 0.1,
+     "settle": 0.5
     },
     {
      "do": "go_inside",
@@ -3805,7 +3812,7 @@
      "to": {
       "wolf": "in_wolf"
      },
-     "speed": 0.5,
+     "speed": 0.65,
      "keep_open": true
     },
     {
@@ -3814,16 +3821,16 @@
      "wait": 0.1
     },
     {
-     "do": "say",
-     "line": "wg_r0500"
-    },
-    {
      "do": "cam",
      "shot": "room",
      "at": "in_focus",
-     "rate": 0.9,
+     "rate": 1.6,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.6
+    },
+    {
+     "do": "say",
+     "line": "wg_r0500"
     },
     {
      "do": "say",
@@ -3893,15 +3900,12 @@
      "line": "wg_r0506"
     },
     {
-     "do": "say",
-     "line": "wg_r0507"
-    },
-    {
      "do": "cam",
-     "shot": "room_wide",
-     "at": "in_focus",
-     "rate": 1.4,
-     "wait": 0.1
+     "shot": "house",
+     "at": "door_view",
+     "rate": 0.9,
+     "wait": 0.1,
+     "settle": 0.6
     },
     {
      "do": "go_out",
@@ -3911,13 +3915,15 @@
      "house": "cottage",
      "to": "road_door",
      "pose": "heavy",
-     "shot": "room_wide",
+     "shot": "house",
      "keep_open": true,
-     "speed": 0.5,
+     "speed": 0.55,
+     "line": "wg_r0507",
      "then": {
-      "to": "road_mid",
+      "to": "road_far",
       "exit": true,
-      "speed": 0.5
+      "speed": 0.75,
+      "follow": "track"
      }
     }
    ],
@@ -4000,8 +4006,8 @@
       -1.465
      ],
      "in_wolf": [
-      1.88,
-      -1.152
+      1.97,
+      -1.308
      ],
      "in_search": [
       2.103,
@@ -4040,32 +4046,32 @@
       -0.321
      ],
      "in_kid1": [
-      1.62,
-      -1.902
+      1.551,
+      -1.942
      ],
      "in_kid2": [
-      1.75,
-      -1.827
+      1.698,
+      -1.857
      ],
      "in_kid3": [
-      1.88,
-      -1.752
+      1.846,
+      -1.772
      ],
      "in_kid4": [
-      2.01,
-      -1.677
+      1.993,
+      -1.687
      ],
      "in_kid5": [
-      2.27,
-      -1.527
+      2.287,
+      -1.517
      ],
      "in_kid6": [
-      2.4,
-      -1.452
+      2.434,
+      -1.432
      ],
      "in_baby": [
-      2.53,
-      -1.377
+      2.582,
+      -1.347
      ],
      "est": [
       0.2,
@@ -4485,6 +4491,25 @@
      "shot": "house",
      "at": "door_view",
      "rate": 1.2,
+     "wait": 0.1
+    },
+    {
+     "do": "walk",
+     "who": "mom",
+     "from": "road_mid",
+     "to": "door_view",
+     "via": [
+      "road_door"
+     ],
+     "speed": 0.75,
+     "follow": "mom",
+     "shot": "house",
+     "line": "wg_r0601"
+    },
+    {
+     "do": "pose",
+     "who": "mom",
+     "pose": "shocked",
      "wait": 0.2
     },
     {
@@ -4492,7 +4517,6 @@
      "who": [
       "mom"
      ],
-     "from": "door_view",
      "house": "cottage",
      "house_facing": true,
      "climb_steps": true,
@@ -4500,7 +4524,7 @@
      "to": {
       "mom": "in_mom2"
      },
-     "speed": 0.55,
+     "speed": 0.6,
      "keep_open": true
     },
     {
@@ -4510,10 +4534,6 @@
      "rate": 1.6,
      "wait": 0.1,
      "settle": 0.6
-    },
-    {
-     "do": "say",
-     "line": "wg_r0601"
     },
     {
      "do": "say",
@@ -4661,6 +4681,10 @@
       1.02,
       -1.02
      ],
+     "watch_baby2": [
+      0.98,
+      -0.62
+     ],
      "pop_kid1": [
       1.6,
       -0.45
@@ -4670,7 +4694,7 @@
       -0.45
      ],
      "dance_kid1": [
-      0.4,
+      0.66,
       -1.65
      ],
      "pop_kid2": [
@@ -4682,7 +4706,7 @@
       -0.45
      ],
      "dance_kid2": [
-      1.32,
+      1.34,
       -1.72
      ],
      "pop_kid3": [
@@ -4694,7 +4718,7 @@
       -0.72
      ],
      "dance_kid3": [
-      0.68,
+      0.88,
       -1.72
      ],
      "pop_kid4": [
@@ -4718,7 +4742,7 @@
       -1.0
      ],
      "dance_kid5": [
-      0.96,
+      1.1,
       -1.65
      ],
      "pop_kid6": [
@@ -4730,7 +4754,7 @@
       -1.0
      ],
      "dance_kid6": [
-      1.88,
+      1.86,
       -1.72
      ],
      "dance_mom": [
@@ -4738,8 +4762,8 @@
       -2.0
      ],
      "dance_baby": [
-      1.1,
-      -1.15
+      0.42,
+      -1.08
      ]
     },
     "set": [
@@ -4846,7 +4870,7 @@
       "mom": "mom_near",
       "baby": "baby_near"
      },
-     "speed": 0.42,
+     "speed": 0.55,
      "follow": "mom",
      "shot": "tree_wide"
     },
@@ -4974,6 +4998,10 @@
       1.02,
       -1.02
      ],
+     "watch_baby2": [
+      0.98,
+      -0.62
+     ],
      "pop_kid1": [
       1.6,
       -0.45
@@ -4983,7 +5011,7 @@
       -0.45
      ],
      "dance_kid1": [
-      0.4,
+      0.66,
       -1.65
      ],
      "pop_kid2": [
@@ -4995,7 +5023,7 @@
       -0.45
      ],
      "dance_kid2": [
-      1.32,
+      1.34,
       -1.72
      ],
      "pop_kid3": [
@@ -5007,7 +5035,7 @@
       -0.72
      ],
      "dance_kid3": [
-      0.68,
+      0.88,
       -1.72
      ],
      "pop_kid4": [
@@ -5031,7 +5059,7 @@
       -1.0
      ],
      "dance_kid5": [
-      0.96,
+      1.1,
       -1.65
      ],
      "pop_kid6": [
@@ -5043,7 +5071,7 @@
       -1.0
      ],
      "dance_kid6": [
-      1.88,
+      1.86,
       -1.72
      ],
      "dance_mom": [
@@ -5051,8 +5079,8 @@
       -2.0
      ],
      "dance_baby": [
-      1.1,
-      -1.15
+      0.42,
+      -1.08
      ]
     },
     "set": [
@@ -5137,15 +5165,15 @@
    "steps": [
     {
      "do": "walk",
-     "who": "mom",
-     "to": "mom_kneel",
-     "speed": 0.25
-    },
-    {
-     "do": "walk",
-     "who": "baby",
-     "to": "baby_by",
-     "speed": 0.25
+     "who": [
+      "mom",
+      "baby"
+     ],
+     "to": {
+      "mom": "mom_kneel",
+      "baby": "baby_by"
+     },
+     "speed": 0.32
     },
     {
      "do": "pose",
@@ -5156,7 +5184,11 @@
     {
      "do": "cam",
      "shot": "belly",
-     "at": "belly",
+     "at": [
+      "belly",
+      "belly",
+      "pop_kid3"
+     ],
      "rate": 1.4,
      "wait": 0.1,
      "settle": 0.5
@@ -5179,21 +5211,21 @@
      "steps": [
       {
        "fx": "belly_pop:1",
-       "wait": 0.8
+       "wait": 0.6
       },
       {
        "fx": "belly_pop:2",
-       "wait": 0.8
+       "wait": 0.6
       },
       {
        "fx": "belly_pop:3",
-       "wait": 1.0
+       "wait": 0.9
       }
      ]
     },
     {
      "do": "cam",
-     "shot": "tree_two",
+     "shot": "pop_wide",
      "at": [
       "belly",
       "pop_kid3"
@@ -5220,15 +5252,15 @@
      "target": "stones",
      "prompt": "wg_051",
      "hint": "wg_051",
-     "shot": "tree_two",
+     "shot": "pop_wide",
      "steps": [
       {
        "fx": "stone:1",
-       "wait": 1.1
+       "wait": 0.8
       },
       {
        "fx": "stone:2",
-       "wait": 1.1
+       "wait": 1.0
       }
      ]
     },
@@ -5363,6 +5395,10 @@
       1.02,
       -1.02
      ],
+     "watch_baby2": [
+      0.98,
+      -0.62
+     ],
      "pop_kid1": [
       1.6,
       -0.45
@@ -5372,7 +5408,7 @@
       -0.45
      ],
      "dance_kid1": [
-      0.4,
+      0.66,
       -1.65
      ],
      "pop_kid2": [
@@ -5384,7 +5420,7 @@
       -0.45
      ],
      "dance_kid2": [
-      1.32,
+      1.34,
       -1.72
      ],
      "pop_kid3": [
@@ -5396,7 +5432,7 @@
       -0.72
      ],
      "dance_kid3": [
-      0.68,
+      0.88,
       -1.72
      ],
      "pop_kid4": [
@@ -5420,7 +5456,7 @@
       -1.0
      ],
      "dance_kid5": [
-      0.96,
+      1.1,
       -1.65
      ],
      "pop_kid6": [
@@ -5432,7 +5468,7 @@
       -1.0
      ],
      "dance_kid6": [
-      1.88,
+      1.86,
       -1.72
      ],
      "dance_mom": [
@@ -5440,8 +5476,8 @@
       -2.0
      ],
      "dance_baby": [
-      1.1,
-      -1.15
+      0.42,
+      -1.08
      ]
     },
     "set": [
@@ -5546,9 +5582,15 @@
     },
     {
      "do": "walk",
-     "who": "mom",
-     "to": "watch_mom",
-     "speed": 0.4
+     "who": [
+      "mom",
+      "baby"
+     ],
+     "to": {
+      "mom": "watch_mom",
+      "baby": "watch_baby2"
+     },
+     "speed": 0.45
     },
     {
      "do": "pose",
@@ -5571,7 +5613,11 @@
     {
      "do": "cam",
      "shot": "tree_two",
-     "at": "wolf_sleep",
+     "at": [
+      "wolf_sleep",
+      "wolf_sleep",
+      "watch_mom"
+     ],
      "rate": 1.6,
      "wait": 0.1,
      "settle": 0.5
@@ -5584,7 +5630,7 @@
      "do": "walk",
      "who": "wolf",
      "to": "wolf_well",
-     "speed": 0.3,
+     "speed": 0.38,
      "pose": "heavy",
      "follow": "wolf",
      "shot": "well_wide"
@@ -5757,6 +5803,10 @@
       1.02,
       -1.02
      ],
+     "watch_baby2": [
+      0.98,
+      -0.62
+     ],
      "pop_kid1": [
       1.6,
       -0.45
@@ -5766,7 +5816,7 @@
       -0.45
      ],
      "dance_kid1": [
-      0.4,
+      0.66,
       -1.65
      ],
      "pop_kid2": [
@@ -5778,7 +5828,7 @@
       -0.45
      ],
      "dance_kid2": [
-      1.32,
+      1.34,
       -1.72
      ],
      "pop_kid3": [
@@ -5790,7 +5840,7 @@
       -0.72
      ],
      "dance_kid3": [
-      0.68,
+      0.88,
       -1.72
      ],
      "pop_kid4": [
@@ -5814,7 +5864,7 @@
       -1.0
      ],
      "dance_kid5": [
-      0.96,
+      1.1,
       -1.65
      ],
      "pop_kid6": [
@@ -5826,7 +5876,7 @@
       -1.0
      ],
      "dance_kid6": [
-      1.88,
+      1.86,
       -1.72
      ],
      "dance_mom": [
@@ -5834,8 +5884,8 @@
       -2.0
      ],
      "dance_baby": [
-      1.1,
-      -1.15
+      0.42,
+      -1.08
      ]
     },
     "set": [
@@ -5923,7 +5973,7 @@
      "kid4": "watch_kid4",
      "kid5": "watch_kid5",
      "kid6": "watch_kid6",
-     "baby": "watch_baby",
+     "baby": "watch_baby2",
      "mom": "watch_mom"
     }
    },
@@ -5938,7 +5988,8 @@
       "mom": "dance_mom",
       "baby": "dance_baby"
      },
-     "speed": 0.5
+     "speed": 0.55,
+     "async": true
     },
     {
      "do": "walk",
@@ -5958,7 +6009,7 @@
       "kid5": "dance_kid5",
       "kid6": "dance_kid6"
      },
-     "speed": 0.5
+     "speed": 0.55
     },
     {
      "do": "cam",
@@ -7541,7 +7592,7 @@
     }
    ],
    "expr": {
-    "wolf": "shout"
+    "wolf": "knock"
    },
    "source_read": "R02_knock#2",
    "source_text": "\"얘들아, 엄마야. 문 열어 줘!\" 굵고 거친 목소리였어요."
@@ -7795,7 +7846,7 @@
    "text": "늑대의 목소리가 가늘고 고와졌어요.",
    "status": "reuse",
    "beat": "chalk",
-   "interaction": "say",
+   "interaction": "walk",
    "used": true,
    "segs": [
     {
@@ -8268,7 +8319,7 @@
    "text": "하지만 아기 염소들은 다치지 않았어요. 아주 따뜻하고 포근한 뱃속이었거든요.",
    "status": "reuse",
    "beat": "hide",
-   "interaction": "say",
+   "interaction": "go_out",
    "used": true,
    "segs": [
     {
@@ -8312,7 +8363,7 @@
    "text": "집에 돌아온 엄마 염소는 깜짝 놀랐어요.",
    "status": "reuse",
    "beat": "mother",
-   "interaction": "say",
+   "interaction": "walk",
    "used": true,
    "segs": [
     {
