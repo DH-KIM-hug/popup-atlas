@@ -85,12 +85,12 @@
    ],
    "area": 40648,
    "size": [
-    272,
-    285
+    542,
+    570
    ],
-   "halo": 4,
+   "halo": 0,
    "touches_border": false,
-   "parts": 7
+   "parts": 1
   },
   {
    "id": "story_pj_yard_05",
