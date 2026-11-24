@@ -80,9 +80,12 @@ var _spk_unknown := {}
 var _late_pending := false
 var _framed_house := ""  # a "frame" step already set up the coming build's shot
 var _walker_role := "traveller"
+var _exiting := false
+var _leaving := false
 
 
 func _ready() -> void:
+	tree_exiting.connect(func(): _exiting = true)
 	_parse_args()
 	_apply_render_scale()
 	if fixed_step:
@@ -199,38 +202,66 @@ func _load_script() -> void:
 
 # ------------------------------------------------------------------ clock + input
 
+func _enter_tree() -> void:
+	if not _leaving:
+		_exiting = false
+
+
+func _exit_tree() -> void:
+	_exiting = true
+
+
+func _notification(what: int) -> void:
+	if what == NOTIFICATION_PREDELETE:
+		_leaving = true
+		_exiting = true
+
+
+func _alive() -> bool:
+	return not _exiting and is_inside_tree() and get_tree() != null
+
+
 func _dt() -> float:
-	return PaperSpring.frame_dt(get_process_delta_time())
+	return PaperSpring.frame_dt(get_process_delta_time()) if _alive() else 0.0
 
 
 ## A coroutine that resumes while the runner is out of the tree (the app quitting or the scene changing during a
 ## line / tween / timer) must not spin: get_tree() is null there and `await null.process_frame` returns at once with
 ## a 0 s step, so every `_wait` loop ran forever in one frame (patjuk gate v1: 5 GB of errors, the run never ended).
-## Off the tree it parks until the runner is back (never, when it is being freed: the coroutine is dropped with it).
+## When exiting, `_alive()` returns false so every coroutine unwinds cleanly; if detached temporarily, it parks.
 static var _off_tree_logged := false
 var _cap_logged := false
 
 
 func _frame() -> float:
-	if not is_inside_tree():
-		if not _off_tree_logged:
-			_off_tree_logged = true
-			print("RUNNER_OFF_TREE t=", snappedf(clock, 0.01), " line=", _last_line, " (a coroutine resumed after the runner left the tree; parked)")
-		await tree_entered
+	if not _alive():
+		if not _exiting and not is_inside_tree():
+			if not _off_tree_logged:
+				_off_tree_logged = true
+				print("RUNNER_OFF_TREE t=", snappedf(clock, 0.01), " line=", _last_line, " (a coroutine resumed after the runner left the tree; parked)")
+			await tree_entered
 		return 0.0
-	await get_tree().process_frame
+	var tree := get_tree()
+	if tree == null:
+		_exiting = true
+		return 0.0
+	await tree.process_frame
+	if not _alive():
+		return 0.0
 	return _dt()
 
 
 func _wait(sec: float, skippable := false) -> void:
 	var t := 0.0
-	while t < sec:
+	while t < sec and _alive():
 		t += await _frame()
 		if skippable and _skip:
 			return
 
 
 func _process(dt: float) -> void:
+	if _exiting or not is_inside_tree():
+		return
 	if dt > 0.03 and clock > 1.0:
 		print("PERF hitch ms=", snappedf(dt * 1000.0, 0.1), " t=", snappedf(clock, 0.01), " mode=", _mode, " line=", _last_line)
 	dt = PaperSpring.frame_dt(dt)
@@ -256,6 +287,8 @@ func _process(dt: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	if _exiting or not is_inside_tree():
+		return
 	if event is InputEventMouseButton and (event as InputEventMouseButton).button_index == MOUSE_BUTTON_LEFT:
 		var mb := event as InputEventMouseButton
 		if mb.pressed:
@@ -265,6 +298,8 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func _pointer_down(p: Vector2) -> void:
+	if _exiting or not is_inside_tree():
+		return
 	_press = true
 	ui.ripple(p)
 	if _mode == "cover":
@@ -414,6 +449,9 @@ func _say(id: String, only: Array = []) -> void:
 			sound.duck(true)
 		await _wait(_seg_duration(s) + 0.08, true)
 		_speaker_end()
+		if not _alive():
+			_line_busy = false
+			return
 		if _skip:
 			break
 	if _skip:
@@ -423,20 +461,27 @@ func _say(id: String, only: Array = []) -> void:
 	_skip = false
 	await _wait(0.25, true)
 	_skip = false
-	ui.hide_line(0.5)
+	if _alive():
+		ui.hide_line(0.5)
 	_line_busy = false
 
 
 func _say_lines(ids: Array) -> void:
 	for id in ids:
+		if not _alive():
+			return
 		await _say(str(id))
 
 
 ## Waits until one of `targets` is tapped (autoplay: simulated after a pause; `auto_order` picks which).
 ## Plays `hint` after a quiet spell. Returns the tapped target.
 func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer := true, reframe := true) -> String:
+	if not _alive():
+		return ""
 	if reframe and not _choosing and stage and is_instance_valid(stage) and stage.frame_targets(targets):
 		await _wait(1.2)  # the camera settles on every target before the child is asked to tap
+	if not _alive():
+		return ""
 	_expect = targets
 	_tapped = ""
 	var idle := 0.0
@@ -444,8 +489,10 @@ func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer 
 	if show_pointer:
 		var tg := str(targets[0])
 		ui.pointer_source = func(): return _pointer_at(tg)
-	while _tapped == "":
+	while _tapped == "" and _alive():
 		var dt: float = await _frame()
+		if not _alive():
+			break
 		idle += dt
 		if autoplay and idle > 8.0 and not _choosing and stage and stage.target_screen(str(targets[0])).x < -999.0:
 			push_warning("StoryRunner: tap target not on the page: " + str(targets))
@@ -462,7 +509,8 @@ func _wait_tap(targets: Array, hint := "", auto_order: Array = [], show_pointer 
 	var hit := _tapped
 	_tapped = ""
 	_expect = []
-	ui.pointer_source = Callable()
+	if is_instance_valid(ui):
+		ui.pointer_source = Callable()
 	return hit
 
 
@@ -477,7 +525,7 @@ func _pointer_at(target: String) -> Vector3:
 # ------------------------------------------------------------------ main loop
 
 func _run() -> void:
-	while true:
+	while _alive():
 		var t0 := clock
 		var i0 := 0
 		if start_beat != "":
@@ -488,7 +536,11 @@ func _run() -> void:
 			_prebuild_after(i0 - 1, COVER_BUILD_MS)  # first spread builds behind the cover page
 		_warm_cast()
 		for i in range(i0, beats.size()):
+			if not _alive():
+				return
 			await _play_beat(beats[i])
+		if not _alive():
+			return
 		var total := clock - t0
 		if stage and is_instance_valid(stage) and stage.tale.get("overlap_check", false):
 			# totals over every page of the run (the last page's own counts in brackets)
@@ -512,22 +564,30 @@ func _run() -> void:
 		story_finished.emit(total)
 		if autoplay and end_choice != "":
 			await _wait(1.0)
+			if not _alive():
+				return
 			if end_choice == "other":
 				ui.ripple(ui.other_button_pos())
 				await _wait(0.3)
-				_go_shelf()
+				if _alive():
+					_go_shelf()
 				return
 			ui.ripple(ui.end_button_pos())
 			await _wait(0.3)
+			if not _alive():
+				return
 			_replay = true
 			end_choice = ""
 		elif autoplay:
 			if quit_on_done:
 				await _wait(2.0)
-				get_tree().quit()
+				if _alive():
+					get_tree().quit()
 			return
-		while not _replay:
+		while not _replay and _alive():
 			await _frame()
+		if not _alive():
+			return
 		_replay = false
 		start_beat = ""
 		if sound:
@@ -538,6 +598,8 @@ func _run() -> void:
 
 
 func _play_beat(b: Dictionary) -> void:
+	if not _alive():
+		return
 	beat_times[str(b["id"])] = snappedf(clock, 0.1)
 	print("BEAT ", b["id"], " t=", snappedf(clock, 0.01))
 	_beat_id = str(b["id"])
@@ -549,17 +611,23 @@ func _play_beat(b: Dictionary) -> void:
 		sound.enter_beat(b, null, false)
 	if b.get("spread") is Dictionary:
 		await _enter_spread(b)
+		if not _alive():
+			return
 		if sound:
 			sound.enter_beat(b, stage, _spread_key != key0)
-		if enter.has("pose") and stage.puppet().pose != _pose:
+		if enter.has("pose") and stage and is_instance_valid(stage) and stage.puppet().pose != _pose:
 			stage.set_pose(_pose)
 	var prev: Dictionary = {}
 	for st: Dictionary in b.get("steps", []):
+		if not _alive():
+			return
 		# a quick cam move right before a line: the line starts once the glide is well under way (the eased moves land
 		# later than the old exponential chase did, and a quote must not start before its speakers are in frame)
 		if str(st.get("do", "")) == "say" and str(prev.get("do", "")) == "cam" and float(prev.get("rate", 2.4)) >= 2.0 \
 				and stage and is_instance_valid(stage):
 			await _wait(stage.cam_settle_left(0.4))
+		if not _alive():
+			return
 		await _step(st, b)
 		prev = st
 
@@ -698,12 +766,13 @@ func _apply_expr(l: Dictionary, seg_i: int) -> void:
 func _wait_actors(roles: Array, guard_s := 30.0) -> void:
 	var g := 0.0
 	await _frame()
-	while g < guard_s:
+	while g < guard_s and _alive():
 		var busy := _line_busy
-		for r in roles:
-			var a := stage.actor(str(r))
-			if a and a.moving():
-				busy = true
+		if stage and is_instance_valid(stage):
+			for r in roles:
+				var a := stage.actor(str(r))
+				if a and a.moving():
+					busy = true
 		if not busy:
 			return
 		g += await _frame()
@@ -743,7 +812,12 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 				_say.bind(str(st["line"])).call()
 			await _frame()
 			var guard2 := 0.0
-			while (stage.walking() or _line_busy) and guard2 < 30.0:
+			var exited := false
+			while _alive() and (stage.walking() or _line_busy) and guard2 < 30.0:
+				if not exited and not stage.walker_in_frame():
+					exited = true
+					stage.walk_stop()
+					stage.walk_away_frame_sky()
 				guard2 += await _frame()
 		"stroll":
 			# he walks on along the road while the next steps play (wind, sun); "stop" ends it
@@ -752,7 +826,7 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 			stage.stroll_stop()
 			await _frame()
 			var guard3 := 0.0
-			while stage.walking() and guard3 < 5.0:
+			while _alive() and stage.walking() and guard3 < 5.0:
 				guard3 += await _frame()
 		"pose":
 			if st.has("who"):
@@ -779,7 +853,7 @@ func _step(st: Dictionary, b: Dictionary) -> void:
 					_say.bind(str(st["line"])).call()
 				await _frame()
 				var guard := 0.0
-				while (stage.walking() or _line_busy) and guard < 30.0:
+				while _alive() and (stage.walking() or _line_busy) and guard < 30.0:
 					guard += await _frame()
 		"climb":
 			await _step_climb(st)
@@ -838,9 +912,10 @@ func _step_walk_actors(st: Dictionary) -> void:
 		stage.follow_actor(str(st["follow"]), str(st.get("shot", "story")))
 		if st.has("follow_for"):  # follow briefly, then let him go (the camera holds, he runs off into the distance)
 			var rel := func():
-				if stage and is_instance_valid(stage):
+				if _alive() and stage and is_instance_valid(stage):
 					stage.shot_to(str(st.get("release_shot", "stage")), st.get("release_at", null), {"rate": 1.2})
-			get_tree().create_timer(float(st["follow_for"])).timeout.connect(rel)
+			if _alive():
+				get_tree().create_timer(float(st["follow_for"])).timeout.connect(rel)
 	# wolf_goats 2026-11-23: `to` may map each role to its own mark ({kid1: "watch_kid1", mom: "watch_mom"})
 	var to_map: Dictionary = st["to"] if has_to and st["to"] is Dictionary else {}
 	if has_to and to_map.is_empty():
@@ -919,18 +994,26 @@ func _step_walk_actors(st: Dictionary) -> void:
 			_late_pending = true
 			var go := func():
 				_late_pending = false
-				_say(str(st["line"]), segs_l)
-			get_tree().create_timer(late).timeout.connect(go)
+				if _alive():
+					_say(str(st["line"]), segs_l)
+			if _alive():
+				get_tree().create_timer(late).timeout.connect(go)
+			else:
+				_late_pending = false
 		else:
 			_say.bind(str(st["line"]), st.get("segs", [])).call()
 	if st.get("async", false):
 		return
 	await _wait(0.1)
+	if not _alive():
+		return
 	await _wait_actors(roles)
-	while _file_busy:
+	while _file_busy and _alive():
 		await _frame()
-	while _late_pending or _line_busy:  # the late narration has played before the next step (the quote)
+	while (_late_pending or _line_busy) and _alive():  # the late narration has played before the next step (the quote)
 		await _frame()
+	if not _alive():
+		return
 	if sound and str(st.get("end_pose", "")) == "sniff" and stage.actor("wolf"):
 		sound.play("wolf.sniff", stage.actor("wolf").centre())
 	if st.get("exit", false):
@@ -961,8 +1044,10 @@ func _file_follow(roles: Array, spacing: float, spd: float, pose: String) -> voi
 	for k in range(1, trail.size()):
 		lens.append(float(lens[k - 1]) + (trail[k] as Vector3).distance_to(trail[k - 1]))
 	var g := 0.0
-	while g < 60.0:
+	while g < 60.0 and _alive():
 		g += await _frame()
+		if not _alive() or lead == null or not is_instance_valid(lead):
+			return
 		var p := lead.global_position
 		if p.distance_to(trail[trail.size() - 1]) > 0.02:
 			lens.append(float(lens[lens.size() - 1]) + p.distance_to(trail[trail.size() - 1]))
@@ -1036,35 +1121,48 @@ func _step_go_inside(st: Dictionary) -> void:
 				a.follow(apts, spd, "", false)
 			else:  # one after another (setting off together they crossed each other's paths)
 				var aa := a
-				get_tree().create_timer(0.8 * i).timeout.connect(func(): aa.follow(apts, spd, "", false))
+				if _alive():
+					get_tree().create_timer(0.8 * i).timeout.connect(func():
+						if _alive() and is_instance_valid(aa):
+							aa.follow(apts, spd, "", false))
 		else:
 			a.walk_to(qspot, spd, "")
 	if st.has("approach"):
 		await _wait(0.85 * roles.size())
 	for i in roles.size():
+		if not _alive():
+			return
 		var a := stage.actor(str(roles[i]))
 		if a == null:
 			continue
 		var g := 0.0
-		while a.moving() and g < 12.0:
+		while a.moving() and g < 12.0 and _alive():
 			g += await _frame()
+	if not _alive():
+		return
 	sp.open_door(true)
 	if sound:
 		sound.step("go_inside", "door_open", sp.door_point(true, toward))
 	await _wait(0.35)
+	if not _alive():
+		return
 	if st.get("door_clear", false):  # the door swings fully clear before anyone steps in
 		var gd := 0.0
-		while sp.door_open_amount() < 0.95 and gd < 2.0:
+		while sp.door_open_amount() < 0.95 and gd < 2.0 and _alive():
 			gd += await _frame()
 	for i in roles.size():
+		if not _alive():
+			return
 		var a := stage.actor(str(roles[i]))
 		if a == null:
 			continue
 		if i > 0:  # step up to the doorway (moving away from the camera: back view)
 			a.walk_to(front, spd * 0.8, "")
 			var g2 := 0.0
-			while a.moving() and g2 < 6.0:
+			while a.moving() and g2 < 6.0 and _alive():
 				g2 += await _frame()
+		if not _alive():
+			return
 		if st.get("climb_steps", false):
 			# up the steps onto the sill (feet follow the step height), over the threshold, a step down inside
 			var sill := sp.door_sill()
@@ -1075,8 +1173,10 @@ func _step_go_inside(st: Dictionary) -> void:
 		else:
 			a.walk_to(sp.door_point(false, toward), spd * 0.8, "")
 		var g3 := 0.0
-		while a.moving() and g3 < 6.0:
+		while a.moving() and g3 < 6.0 and _alive():
 			g3 += await _frame()
+		if not _alive():
+			return
 		if st.has("to"):  # room: true (witch_candy): they walk on into the room to their spots (no window faces)
 			var tos: Dictionary = st["to"]
 			if tos.has(str(roles[i])):
@@ -1093,14 +1193,16 @@ func _step_go_inside(st: Dictionary) -> void:
 			continue
 		stage.put_inside(str(roles[i]), house, int(wins[i]) if i < wins.size() else 0)
 	if st.get("keep_open", false):  # wolf_goats: the wolf leaves the door standing open behind him
-		while _line_busy:
+		while _line_busy and _alive():
 			await _frame()
+		return
+	if not _alive():
 		return
 	sp.open_door(false)
 	if sound:
 		sound.step("go_inside", "door_shut", sp.door_point(true, toward))
 	await _wait(0.35)
-	while _line_busy:
+	while _line_busy and _alive():
 		await _frame()
 
 
@@ -1140,8 +1242,10 @@ func _step_tap_each(st: Dictionary) -> void:
 	await _say(str(st.get("prompt", "")))
 	var left: Array = (st.get("targets", []) as Array).duplicate()
 	var react: Dictionary = st.get("react", {})
-	while not left.is_empty():
+	while not left.is_empty() and _alive():
 		var hit := await _wait_tap(left, str(st.get("hint", "")))
+		if not _alive():
+			return
 		left.erase(hit)
 		var a := stage.actor(hit)
 		var r: Array = react.get(hit, [])
@@ -1161,8 +1265,12 @@ func _step_tap_steps(st: Dictionary) -> void:
 	await _frame_first([str((first[0] as Dictionary).get("target", st.get("target", "")))] if not first.is_empty() else [])
 	await _say(str(st.get("prompt", "")))
 	for s: Dictionary in st.get("steps", []):
+		if not _alive():
+			return
 		var tg := str(s.get("target", st.get("target", "")))
 		var hit := await _wait_tap([tg], str(st.get("hint", "")))
+		if not _alive():
+			return
 		stage.wiggle(hit)
 		stage.fx(str(s.get("fx", "")))
 		await _wait(float(s.get("wait", 0.5)))
@@ -1191,7 +1299,11 @@ func _step_build(st: Dictionary) -> void:
 		await _say(str(st["prompt"]))
 	var shown0 := sp.shown if sp else 0  # bands already standing (a foundation) are not rebuilt
 	for i in range(1, taps + 1):
+		if not _alive():
+			return
 		await _wait_tap([str(st.get("target", house))], str(st.get("hint", "")), [], true, false)
+		if not _alive():
+			return
 		stage.build_ctx["tap"] = i
 		if sp:
 			var n := shown0 + ceili(float(i) * (sp.band_count() - shown0) / taps)
@@ -1204,7 +1316,7 @@ func _step_build(st: Dictionary) -> void:
 			stage.fx(str(s2.get("fx", "")))
 			if s2.has("wait_for"):  # the speakers walk into the frame first (SPEAKER_OFF: no line from off the frame)
 				var g := 0.0
-				while g < 8.0:
+				while g < 8.0 and _alive():
 					var all_in := true
 					for r in s2["wait_for"]:
 						if stage.speaker_state(str(r)) != "":
@@ -1236,7 +1348,11 @@ func _step_huff(st: Dictionary) -> void:
 		await _say(str(st["prompt"]))
 	stage.build_ctx = {"house": house, "walker": who, "tap": 0, "taps": taps, "result": result}
 	for i in range(1, taps + 1):
+		if not _alive():
+			return
 		await _wait_tap([str(st.get("target", who))], str(st.get("hint", "")))
+		if not _alive():
+			return
 		stage.build_ctx["tap"] = i
 		if wolf:
 			wolf.set_pose(str(st.get("huff_pose", "huff")))
@@ -1257,7 +1373,10 @@ func _step_huff(st: Dictionary) -> void:
 					else:
 						sp.collapse(0.05)
 						stage.fx("pop:" + str(st.get("ruin", "")))
-						get_tree().create_timer(0.45).timeout.connect(stage.reveal_inside.bind(house))
+						if _alive():
+							get_tree().create_timer(0.45).timeout.connect(func():
+								if _alive() and stage and is_instance_valid(stage):
+									stage.reveal_inside(house))
 				"collapse":
 					if i < taps:
 						sp.wobble(0.05 + 0.06 * i)
@@ -1265,7 +1384,10 @@ func _step_huff(st: Dictionary) -> void:
 						sp.wobble(0.4)
 						sp.collapse(0.25)
 						stage.fx("pop:" + str(st.get("ruin", "")))
-						get_tree().create_timer(0.7).timeout.connect(stage.reveal_inside.bind(house))
+						if _alive():
+							get_tree().create_timer(0.7).timeout.connect(func():
+								if _alive() and stage and is_instance_valid(stage):
+									stage.reveal_inside(house))
 				_:
 					sp.shiver(0.6)
 		if st.get("counter", false):
@@ -1288,16 +1410,20 @@ func _step_cover(st: Dictionary, b: Dictionary) -> void:
 		_say.bind(str(st.get("prompt", ""))).call()
 	_tapped = ""
 	var idle := 0.0
-	while _tapped != "book":
+	while _tapped != "book" and _alive():
 		idle += await _frame()
+		if not _alive():
+			return
 		if (autoplay and idle > 2.6) or (picked and idle > 0.15):
 			_auto_tap("book")
+	if not _alive():
+		return
 	_skip = true
 	if sound:
 		sound.step("cover", "on_open")
 	_mode = "opening"
 	ui.open_cover()  # the board swings over the spine, the camera pushes into the title page
-	while _line_busy or ui.cover_opening():
+	while (_line_busy or ui.cover_opening()) and _alive():
 		await _frame()
 	_mode = "idle"
 
@@ -1313,8 +1439,10 @@ func _step_blow(st: Dictionary) -> void:
 	var k := 0
 	var hints := 0
 	ui.pointer_source = func(): return _pointer_at(_blow_target)
-	while k < steps.size():
+	while k < steps.size() and _alive():
 		var dt: float = await _frame()
+		if not _alive():
+			return
 		if _press:
 			amount += dt
 			idle = 0.0
@@ -1343,7 +1471,11 @@ func _step_shine(st: Dictionary) -> void:
 	await _say(str(st.get("prompt", "")))
 	var tg := str(st.get("target", "sun"))
 	for s: Dictionary in st.get("steps", []):
+		if not _alive():
+			return
 		await _wait_tap([tg], str(st.get("hint", "")))
+		if not _alive():
+			return
 		stage.wiggle(tg)
 		stage.fx(str(s.get("fx", "")))
 		await _say_lines(s.get("lines", []))
@@ -1363,8 +1495,10 @@ func _step_quiz(st: Dictionary) -> void:
 	if autoplay:
 		order = wrong.keys() + [answer]  # autoplay shows the wrong path once, then answers
 	var tried := 0
-	while true:
+	while _alive():
 		var hit := await _wait_tap(targets, "", [order[mini(tried, order.size() - 1)]] if autoplay else [], false)
+		if not _alive():
+			return
 		tried += 1
 		if hit == answer:
 			ui.choice_right(hit)
@@ -1382,7 +1516,11 @@ func _step_quiz(st: Dictionary) -> void:
 func _step_gentle(st: Dictionary) -> void:
 	await _say(str(st.get("prompt", "")))
 	for i in int(st.get("taps", 3)):
+		if not _alive():
+			return
 		await _wait_tap([str(st.get("target", "wind"))], str(st.get("hint", "")))
+		if not _alive():
+			return
 		stage.fx(str(st.get("fx", "gentle_gust")))
 		await _wait(0.6)
 	await _say_lines(st.get("lines", []))
@@ -1423,24 +1561,36 @@ func _ending_book() -> void:
 	var cc: Dictionary = data.get("ui", {}).get("curtain", {})
 	if cc.has("shot"):  # the camera eases onto the cast during the hold (the tale may have pulled back to a wide)
 		stage.shot_to(str(cc["shot"]), cc.get("at", null), {"rate": 1.4})
+	elif stage.has_walker:
+		stage.shot_to("story", null, {"rate": 1.4})
 	await _wait(1.5)
+	if not _alive():
+		return
 	# 2. curtain call
 	await _curtain_call()
+	if not _alive():
+		return
 	# 3. the page closes: the pieces fold down as the sheet lifts over them, the title page comes round under it
 	ui.show_page_title("")
 	ui.show_end_book(str(data.get("title", "")), true)  # built hidden: its live view is the page under the sheet
 	await _frame()
+	if not _alive():
+		return
 	_fold_by_turn(stage, stage.camera(), TURN_S, TURN_LEAD)
 	_squash_unhinged(TURN_LEAD * 0.5)
 	await _wait(TURN_LEAD)
+	if not _alive():
+		return
 	ui.page_turn.reveal(ui.book_texture())
 	ui.page_turn.turn(TURN_S)
 	if sound:
 		sound.step("page_turn")
 		sound.set_bed(null)  # out of the world: only a quiet room tone at the table
 		sound.loop_start("amb.room_fire", "table", 1.5, -16.0)
-	while ui.page_turn.is_turning() and ui.page_turn.progress < 0.985:
+	while _alive() and ui.page_turn.is_turning() and ui.page_turn.progress < 0.985:
 		await _frame()
+	if not _alive():
+		return
 	ui.show_book()  # the same frame the sheet goes: the book (already drawn under the sheet) takes over
 	ui.page_turn.finish_now()
 	await _wait(0.3)
@@ -1526,7 +1676,7 @@ func _curtain_call() -> void:
 	_expect = roles
 	_tapped = ""
 	var left := 1.3 if autoplay else float(cc.get("hold", 3.5))
-	while left > 0.0:
+	while left > 0.0 and _alive():
 		left -= await _frame()
 		if _tapped != "":
 			for e: Array in who:
@@ -1543,16 +1693,19 @@ func _walker_return(back: float) -> void:
 	var w: Walker = stage.world.walker
 	if w == null or w.path == null:
 		return
+	var walked := stage.walk_away_back(back)
 	var L := w.path.curve.get_baked_length()
-	var anchor := w.offset - stage.stroll_dir * back
+	var anchor := w.offset - stage.stroll_dir * walked
 	var mark := clampf(anchor + stage.stroll_dir * 0.22, 0.0, L)
 	w.offset = clampf(anchor - stage.stroll_dir * 0.75, 0.0, L)
 	w.target_offset = w.offset
 	await _frame()
+	if not _alive():
+		return
 	stage.walk_to_offset(mark)
 	var g := 0.0
 	await _frame()
-	while stage.walking() and g < 5.0:
+	while _alive() and stage.walking() and g < 5.0:
 		g += await _frame()
 
 
@@ -1580,23 +1733,36 @@ func _curtain_gesture(e: Array) -> void:
 # ------------------------------------------------------------------ spreads + page turn
 
 func _snapshot(without_ui := false) -> Texture2D:
+	if not _alive() or DisplayServer.get_name() == "headless":
+		return null
 	if without_ui:
 		ui.visible = false
-		await get_tree().process_frame
+		await _frame()
+		if not _alive():
+			return null
 	await RenderingServer.frame_post_draw
-	var img := get_viewport().get_texture().get_image()
+	if not _alive() or get_viewport() == null:
+		return null
+	var tex_vp := get_viewport().get_texture()
+	if tex_vp == null:
+		return null
+	var img := tex_vp.get_image()
 	if without_ui:
 		ui.visible = true
-		img.resize(img.get_width() / 2, img.get_height() / 2, Image.INTERPOLATE_BILINEAR)
-	return ImageTexture.create_from_image(img)
+		if img:
+			img.resize(img.get_width() / 2, img.get_height() / 2, Image.INTERPOLATE_BILINEAR)
+	return ImageTexture.create_from_image(img) if img else null
 
 
 func _enter_spread(b: Dictionary) -> void:
+	if not _alive():
+		return
 	var sp: Dictionary = b["spread"]
 	var key := _key_of(sp)
 	if key == _spread_key and stage:
 		await stage.enter_beat(b)  # same page: the next beat's set pieces / light / cast
-		ui.show_page_title(str(b.get("title", "")))
+		if _alive():
+			ui.show_page_title(str(b.get("title", "")))
 		return
 	var had := stage != null and is_instance_valid(stage)
 	var pre: Dictionary = _prebuilt.get(key, {})
@@ -1614,22 +1780,39 @@ func _enter_spread(b: Dictionary) -> void:
 	if had:
 		var t := stage.fold()
 		await _wait(t + 0.9)
+		if not _alive():
+			return
 	var cover_shown := ui.cover_visible()
 	var tex: Texture2D = null
 	if had or cover_shown:
 		tex = await _snapshot()
-		ui.page_turn.cover(tex)
+		if not _alive():
+			return
+		if tex:
+			ui.page_turn.cover(tex)
 		ui.hide_cover()
 		await _frame()
+		if not _alive():
+			return
 	if had:
-		stage.queue_free()
+		if stage and is_instance_valid(stage):
+			stage.queue_free()
 		stage = null
 		await _frame()
+		if not _alive():
+			return
 	var t_build := Time.get_ticks_usec()
 	if not pre.is_empty():
 		var ps: SpreadStage = pre["stage"]
-		while not ps.is_built:  # normally done long ago; otherwise it keeps slicing under the cover
+		var wait_t0 := Time.get_ticks_usec()
+		var warned := false
+		while _alive() and is_instance_valid(ps) and not ps.is_built:  # normally done long ago; otherwise it keeps slicing under the cover
+			if not warned and (Time.get_ticks_usec() - wait_t0) > 30_000_000:
+				warned = true
+				push_warning("StoryRunner: prebuild_wait >30s for %s phases=%s" % [key, str(ps.perf_phases)])
 			await _frame()
+		if not _alive() or not is_instance_valid(ps):
+			return
 		var t_move := Time.get_ticks_usec()
 		_adopt_prebuilt(ps, pre["vp"], key, b)
 		print("PERF spread_prebuilt ", key, " frames=", ps.build_frames, " max_slice_ms=", snappedf(ps.max_slice_ms, 0.1),
@@ -1644,6 +1827,8 @@ func _enter_spread(b: Dictionary) -> void:
 		if rt.size() == 2:
 			stage.route = Vector2(float(rt[0]), float(rt[1]))
 		stage.build(int(sp.get("seed", 1)), int(sp.get("view", 0)), not mute)
+		if not _alive():
+			return
 		print("PERF spread_build ", key, " ms=", snappedf((Time.get_ticks_usec() - t_build) / 1000.0, 0.1))
 	stage.set_pose(_pose, true)
 	if stage.is_built:
@@ -1651,16 +1836,22 @@ func _enter_spread(b: Dictionary) -> void:
 	_spread_key = key
 	await _frame()
 	await _frame()
+	if not _alive():
+		return
 	var wave_t := 0.0
 	if tex:
 		# the page rises as the sheet turns: each piece starts so that it stands by the time the fold uncovers it
 		wave_t = _pop_by_turn(stage, stage.camera(), TURN_S, TURN_LEAD)
 		await _wait(TURN_LEAD)
+		if not _alive():
+			return
 		ui.page_turn.turn(TURN_S)
 		if sound and not cover_shown:
 			sound.step("page_turn")
-		while ui.page_turn.is_turning():
+		while _alive() and ui.page_turn.is_turning():
 			await _frame()
+		if not _alive():
+			return
 	else:
 		wave_t = stage.pop(0.0)
 	ui.show_page_title(str(b.get("title", "")))
@@ -1683,23 +1874,36 @@ func _adopt_prebuilt(ps: SpreadStage, vp: SubViewport, key: String, b: Dictionar
 func _turn_live(b: Dictionary, key: String, pre: Dictionary) -> void:
 	var ps: SpreadStage = pre["stage"]
 	var vp: SubViewport = pre["vp"]
-	while not ps.is_built:
+	var wait_t0 := Time.get_ticks_usec()
+	var warned := false
+	while _alive() and is_instance_valid(ps) and not ps.is_built:
+		if not warned and (Time.get_ticks_usec() - wait_t0) > 30_000_000:
+			warned = true
+			push_warning("StoryRunner: turn_live prebuild_wait >30s for %s phases=%s" % [key, str(ps.perf_phases)])
 		await _frame()
+	if not _alive() or not is_instance_valid(ps) or not is_instance_valid(vp):
+		return
 	vp.process_mode = Node.PROCESS_MODE_INHERIT
 	vp.render_target_update_mode = SubViewport.UPDATE_ALWAYS
 	ps.set_pose(_pose, true)
 	ps.preset_open(b)
 	await _frame()
+	if not _alive():
+		return
 	_fold_by_turn(stage, stage.camera(), TURN_S, TURN_LEAD)
 	_squash_unhinged(TURN_LEAD * 0.5)
 	var wave_t := _pop_by_turn(ps, ps.camera(), TURN_S, TURN_LEAD)
 	await _wait(TURN_LEAD)
+	if not _alive():
+		return
 	ui.page_turn.reveal(vp.get_texture())
 	ui.page_turn.turn(TURN_S)
 	if sound:
 		sound.step("page_turn")
-	while ui.page_turn.is_turning() and ui.page_turn.progress < 0.985:
+	while _alive() and ui.page_turn.is_turning() and ui.page_turn.progress < 0.985:
 		await _frame()
+	if not _alive():
+		return
 	# swap in one frame: the next page leaves its SubViewport for the main view as the sheet is lifted away
 	stage.queue_free()
 	stage = null
@@ -1832,10 +2036,16 @@ var end_choice := ""  ## --end-choice=replay|other (recordings of the end tabs)
 
 
 func _go_shelf() -> void:
+	if _exiting:
+		return
+	_leaving = true
+	_exiting = true
 	if sound:
 		sound.loop_stop("table", 0.3)
 	Engine.set_meta("popup_from_story", true)  # the shelf stays (command-line args would send it back to a story)
-	get_tree().change_scene_to_file(SHELF_SCENE)
+	var tree := get_tree()
+	if tree:
+		tree.change_scene_to_file(SHELF_SCENE)
 const COVER_BUILD_MS := 28.0  ## the cover is a still page: build the first spread fast behind it
 
 
@@ -1883,7 +2093,7 @@ var _cast_textures: Array[Texture2D] = []  ## kept loaded: a pose swap must not 
 
 
 func _warm_cast() -> void:
-	if not _cast_textures.is_empty():
+	if not _cast_textures.is_empty() or not _alive():
 		return
 	var sl := BuildSlicer.new(2.0, get_tree())
 	var prefixes: Array = []
@@ -1892,6 +2102,8 @@ func _warm_cast() -> void:
 		if str(cfg.get("kind", "")) in ["walker", "actor"]:
 			prefixes.append("cast_" + str(cfg.get("skin", role)) + "_" if str(cfg.get("kind")) == "actor" else "cast_" + str(cfg.get("skin", role)))
 	for f in ResourceLoader.list_directory(CAST_RIG_DIR):
+		if not _alive():
+			return
 		var ok := false
 		for pf in prefixes:
 			if f.begins_with(str(pf)) and f.ends_with(".png"):
@@ -1903,23 +2115,33 @@ func _warm_cast() -> void:
 			_cast_textures.append(tex)
 			PaperCard.warm(tex)
 		await sl.tick()
+		if not _alive():
+			return
 	for cast: String in (CastSkins.CAST_IDS if data.get("cast", {}).has("sun") else {}):
 		for variant: String in CastSkins.CAST_IDS[cast]:
+			if not _alive():
+				return
 			var tex := CastSkins.texture(cast, variant)
 			if tex:
 				_cast_textures.append(tex)
 				PaperCard.warm(tex)
 			await sl.tick()
+			if not _alive():
+				return
 	for role in (data.get("cast", {}) as Dictionary):
 		var cfg: Dictionary = data["cast"][role]
 		if str(cfg.get("kind", "")) != "actor":
 			continue
 		var d := CastPuppet.skin_def(str(cfg.get("skin", role)))
 		for id in (d.get("paths", {}) as Dictionary):
+			if not _alive():
+				return
 			var tex := load(str(d["paths"][id])) as Texture2D
 			if tex:
 				_cast_textures.append(tex)
 				PaperCard.warm(tex)
 			await sl.tick()
+			if not _alive():
+				return
 	print("PERF cast_warm textures=", _cast_textures.size(), " frames=", sl.frames)
 

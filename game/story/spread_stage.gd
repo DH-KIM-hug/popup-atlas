@@ -512,7 +512,8 @@ func _build_sky(sky: Dictionary) -> void:
 		mi.rotation.y = yaw
 		return mi
 	var far := float(sky.get("far", 16.0))
-	mk.call(_sky_texture(Color(str(sky.get("top", "#0b1230"))), Color(str(sky.get("horizon", "#2b3d7a")))),
+	var draw_stars := int(sky.get("n", 14)) > 0
+	mk.call(_sky_texture(Color(str(sky.get("top", "#0b1230"))), Color(str(sky.get("horizon", "#2b3d7a"))), draw_stars),
 		far * 4.0, far * 1.1, _anchor + aw * far + Vector3.UP * far * 0.42, 1.0)
 	var star := str(sky.get("stars", ""))
 	var ce := atlas_entry(star)
@@ -531,24 +532,50 @@ func _build_sky(sky: Dictionary) -> void:
 			_anchor + r * float(ma[0]) + aw * float(ma[1]) + Vector3.UP * float(ma[2]), 1.15)
 
 
-static func _sky_texture(top: Color, hor: Color) -> Texture2D:
-	var w := 512
-	var h := 160
-	var img := Image.create(w, h, false, Image.FORMAT_RGBA8)
+static func _sky_texture(top: Color, hor: Color, draw_stars := true) -> Texture2D:
+	var w := 1280
+	var h := 400
 	var rng := RandomNumberGenerator.new()
 	rng.seed = 5
+	# Smooth low-amplitude paper fibre tooth (coarse 8 px lattice, bilinearly interpolated: zero salt-and-pepper blocks).
+	var step := 8
+	var gw := (w >> 3) + 2
+	var gh := (h >> 3) + 2
+	var grid := PackedFloat32Array()
+	grid.resize(gw * gh)
+	for i in grid.size():
+		grid[i] = rng.randf_range(-0.006, 0.006)
+	var data := PackedByteArray()
+	data.resize(w * h * 4)
 	for y in h:
 		var c := top.lerp(hor, pow(float(y) / h, 1.6))
+		var gy := y >> 3
+		var fy := float(y & 7) / float(step)
+		var row0 := gy * gw
+		var row1 := (gy + 1) * gw
 		for x in w:
-			var n := rng.randf_range(-0.012, 0.012)  # cardstock grain
-			img.set_pixel(x, y, Color(c.r + n, c.g + n, c.b + n))
-	for i in 160:  # printed pin-prick stars, fewer near the horizon
-		var x := rng.randi_range(0, w - 2)
-		var y := int(pow(rng.randf(), 1.7) * h * 0.8)
-		var b := rng.randf_range(0.55, 0.95)
-		img.set_pixel(x, y, Color(1.0, 0.95, 0.8).lerp(top, 1.0 - b))
-		if rng.randf() < 0.25:
-			img.set_pixel(x + 1, y, Color(1.0, 0.95, 0.8).lerp(top, 1.2 - b))
+			var gx := x >> 3
+			var fx := float(x & 7) / float(step)
+			var n0 := lerpf(grid[row0 + gx], grid[row0 + gx + 1], fx)
+			var n1 := lerpf(grid[row1 + gx], grid[row1 + gx + 1], fx)
+			var n := lerpf(n0, n1, fy)
+			var idx := (y * w + x) * 4
+			data[idx] = int(clampf(c.r + n, 0.0, 1.0) * 255.0)
+			data[idx + 1] = int(clampf(c.g + n, 0.0, 1.0) * 255.0)
+			data[idx + 2] = int(clampf(c.b + n, 0.0, 1.0) * 255.0)
+			data[idx + 3] = 255
+	var img := Image.create_from_data(w, h, false, Image.FORMAT_RGBA8, data)
+	if draw_stars:
+		for i in 160:  # soft anti-aliased pin-prick stars, fewer near the horizon
+			var sx := rng.randi_range(1, w - 2)
+			var sy := clampi(int(pow(rng.randf(), 1.7) * h * 0.8), 1, h - 2)
+			var b := rng.randf_range(0.55, 0.95)
+			var sc := Color(1.0, 0.95, 0.8)
+			img.set_pixel(sx, sy, img.get_pixel(sx, sy).lerp(sc, b))
+			for d: Vector2i in [Vector2i(-1, 0), Vector2i(1, 0), Vector2i(0, -1), Vector2i(0, 1)]:
+				var qx := sx + d.x
+				var qy := sy + d.y
+				img.set_pixel(qx, qy, img.get_pixel(qx, qy).lerp(sc, b * 0.35))
 	img.generate_mipmaps()
 	return ImageTexture.create_from_image(img)
 
@@ -569,6 +596,7 @@ var _sight_on: bool = "--log-track" in OS.get_cmdline_user_args() or "--sight-ch
 	or Engine.get_write_movie_path() != ""
 var _sight_t := 0
 var _sight_prev := {}
+var _occlude_streak := {}
 var overlap_count := 0
 var occlude_count := 0
 ## run totals over every page (wolf_goats 2026-11-23: the per-stage counts only covered the last page in the summary)
@@ -659,7 +687,7 @@ func _spacing_step(dt: float) -> void:
 		if push.length() > 1e-4:
 			var q := a.global_position + push * minf(1.0, dt * 4.0)
 			q.y = world.ground.surface_y(Vector2(q.x, q.z))
-			a.place_at(q)
+			a.nudge(q)
 
 
 ## The house (set name) whose box holds point p, "" outside every house.
@@ -676,19 +704,53 @@ func house_of(p: Vector3) -> String:
 	return ""
 
 
-func _screen_box(pts: Array) -> Rect2:
+func _screen_box(pts: Array, edges: Array = []) -> Rect2:
+	if pts.is_empty():
+		return Rect2()
 	var cam := camera()
-	var r := Rect2()
-	var first := true
-	for p: Vector3 in pts:
-		if cam.is_position_behind(p):
-			return Rect2()
-		var s := cam.unproject_position(p)
-		if first:
-			r = Rect2(s, Vector2.ZERO)
-			first = false
+	var origin := cam.global_position
+	var fwd := -cam.global_transform.basis.z.normalized()
+	var near_d := maxf(cam.near, 0.02)
+	var dz := PackedFloat32Array()
+	dz.resize(pts.size())
+	var any_behind := false
+	var any_front := false
+	for i in pts.size():
+		var d := ((pts[i] as Vector3) - origin).dot(fwd)
+		dz[i] = d
+		if d < near_d:
+			any_behind = true
 		else:
-			r = r.expand(s)
+			any_front = true
+	if not any_front:
+		return Rect2()
+	var proj: Array[Vector3] = []
+	for i in pts.size():
+		if dz[i] >= near_d:
+			proj.append(pts[i] as Vector3)
+	if any_behind:
+		if not edges.is_empty():
+			for e: Array in edges:
+				var i0 := int(e[0])
+				var i1 := int(e[1])
+				var d0 := dz[i0]
+				var d1 := dz[i1]
+				if (d0 >= near_d) != (d1 >= near_d):
+					var t := (near_d - d0) / (d1 - d0)
+					proj.append((pts[i0] as Vector3).lerp(pts[i1] as Vector3, t))
+		elif pts.size() <= 8:
+			for i in pts.size():
+				for j in range(i + 1, pts.size()):
+					var d0 := dz[i]
+					var d1 := dz[j]
+					if (d0 >= near_d) != (d1 >= near_d):
+						var t := (near_d - d0) / (d1 - d0)
+						proj.append((pts[i] as Vector3).lerp(pts[j] as Vector3, t))
+	if proj.is_empty():
+		return Rect2()
+	var r := Rect2(cam.unproject_position(proj[0]), Vector2.ZERO)
+	for i in range(1, proj.size()):
+		r = r.expand(cam.unproject_position(proj[i]))
 	return r
 
 
@@ -774,11 +836,133 @@ func speaker_where(speaker: String) -> String:
 	return "-"
 
 
+func _piece_height(sp: SetPiece) -> float:
+	if sp.shown <= 0:
+		return 0.0
+	if not sp.bands.is_empty() and sp.shown < sp.bands.size():
+		var top := 0.0
+		for k in mini(sp.shown, sp.band_cards.size()):
+			var root := sp.bands[k].get_parent() as Node3D
+			var c := sp.band_cards[k]
+			if root and c:
+				top = maxf(top, root.position.y + c.position.y + c.height)
+		return top if top > 0.0 else sp.height * float(sp.shown) / float(sp.bands.size())
+	return sp.height
+
+
+func _building_bounds(sp: SetPiece) -> AABB:
+	if sp.building_aabb.size.x > 0.0:
+		return sp.building_aabb
+	return AABB(Vector3(-sp.width * 0.5, 0.0, -sp.width * 0.5), Vector3(sp.width, sp.height, sp.width))
+
+
 func _piece_box(sp: SetPiece) -> Rect2:
 	var r := sp.global_transform.basis.x.normalized() * sp.width * 0.5
 	var b := sp.global_position
-	var h := Vector3.UP * sp.height * 0.92
+	var h := Vector3.UP * _piece_height(sp) * 0.92
 	return _screen_box([b - r, b + r, b - r + h, b + r + h])
+
+
+func _piece_screen_box(sp: SetPiece) -> Rect2:
+	if sp.body != null and (sp.box == null or sp.box.visible):
+		var poly: Array = sp.body.spec.get("poly", [])
+		if not poly.is_empty():
+			var pts: Array = []
+			var edges: Array = []
+			var xf := sp.body.global_transform
+			var d := sp.body.depth
+			var n := poly.size()
+			for i in n:
+				var pt: Array = poly[i]
+				var l := sp.body.to_local_px(Vector2(float(pt[0]), float(pt[1])))
+				var ly := maxf(l.y, 0.0)
+				pts.append(xf * Vector3(l.x, ly, 0.0))
+				pts.append(xf * Vector3(l.x, ly, -d))
+				var nxt := (i + 1) % n
+				edges.append([2 * i, 2 * nxt])
+				edges.append([2 * i + 1, 2 * nxt + 1])
+				edges.append([2 * i, 2 * i + 1])
+			return _screen_box(pts, edges)
+	elif sp.building != null:
+		var bb := _building_bounds(sp)
+		var xf := sp.global_transform
+		var p0 := bb.position
+		var p1 := bb.end
+		var pts := [
+			xf * Vector3(p0.x, p0.y, p0.z), xf * Vector3(p1.x, p0.y, p0.z),
+			xf * Vector3(p1.x, p1.y, p0.z), xf * Vector3(p0.x, p1.y, p0.z),
+			xf * Vector3(p0.x, p0.y, p1.z), xf * Vector3(p1.x, p0.y, p1.z),
+			xf * Vector3(p1.x, p1.y, p1.z), xf * Vector3(p0.x, p1.y, p1.z),
+		]
+		const BOX_EDGES := [
+			[0, 1], [1, 2], [2, 3], [3, 0],
+			[4, 5], [5, 6], [6, 7], [7, 4],
+			[0, 4], [1, 5], [2, 6], [3, 7],
+		]
+		return _screen_box(pts, BOX_EDGES)
+	return _piece_box(sp)
+
+
+func _actor_occlude_box(b: StoryActor) -> Rect2:
+	var cr := camera().global_transform.basis.x.normalized()
+	var bw := b.puppet.height * 0.42
+	var raw_bd: Variant = b.puppet.get("_body")
+	if is_instance_valid(raw_bd) and raw_bd is PaperCard:
+		var bd := raw_bd as PaperCard
+		if bd.texture:
+			var ts := bd.texture.get_size()
+			bw = maxf(bw, bd.height * ts.x / maxf(ts.y, 1.0))
+	var base := b.global_position + Vector3.UP * (b.hop + b.lift)
+	var top := base + Vector3.UP * (b.puppet.height * b.pop_s)
+	return _screen_box([base - cr * bw * 0.5, base + cr * bw * 0.5, top - cr * bw * 0.5, top + cr * bw * 0.5])
+
+
+func _walker_box(wp: Vector3, wh: float) -> Rect2:
+	var cr := camera().global_transform.basis.x
+	var w := trav_h * 0.42
+	var b := wp + Vector3.UP * wh * 0.4
+	return _screen_box([b - cr * w * 0.5, b + cr * w * 0.5, b + Vector3.UP * wh * 0.6 - cr * w * 0.5,
+		b + Vector3.UP * wh * 0.6 + cr * w * 0.5])
+
+
+func _set_occludes_subject(cam: Camera3D, sp: SetPiece, pos: Vector3, centre: Vector3, h: float, ab: Rect2, ad: float) -> float:
+	if sp.shown <= 0:
+		return 0.0
+	if sp._cut > 0.3 and sp.box == null:
+		return 0.0
+	if sp.has_door() and sp.door_open_amount() > 0.3 and absf(sp.door_offset(pos)) < sp.door_half_width() + 0.06:
+		if (sp.global_transform.affine_inverse() * pos).z > -0.15:
+			return 0.0
+	if (sp.body != null and (sp.box == null or sp.box.visible)) or sp.building != null:
+		var box_aabb: AABB
+		if sp.body != null and (sp.box == null or sp.box.visible):
+			var d := sp.body.depth
+			box_aabb = AABB(Vector3(-sp.width * 0.5, 0.0, -d), Vector3(sp.width, sp.height * 0.96, d))
+		else:
+			var bb := _building_bounds(sp)
+			box_aabb = AABB(bb.position, Vector3(bb.size.x, bb.size.y * 0.96, bb.size.z))
+		var inv := sp.global_transform.affine_inverse()
+		var l_c := inv * cam.global_position
+		var cr := cam.global_transform.basis.x.normalized() * (h * 0.16)
+		var any_hit := false
+		for pt: Vector3 in [centre, centre - cr, centre + cr]:
+			var hit: Variant = box_aabb.intersects_segment(l_c, inv * pt)
+			if hit != null and cam.global_position.distance_to(sp.global_transform * (hit as Vector3)) < ad - 0.08:
+				any_hit = true
+				break
+		if not any_hit:
+			return 0.0
+		var ov := ab.intersection(_piece_screen_box(sp))
+		var frac := ov.get_area() / maxf(ab.get_area(), 1.0)
+		return snappedf(frac, 0.01) if frac > 0.35 else 0.0
+	var rr := sp.global_transform.basis.x.normalized()
+	var off := pos - sp.global_position
+	var near := sp.global_position + rr * clampf(off.dot(rr), -sp.width * 0.5, sp.width * 0.5)
+	if cam.global_position.distance_to(near) > ad - 0.08:
+		return 0.0
+	var ov2 := ab.intersection(_piece_box(sp))
+	var frac2 := ov2.get_area() / maxf(ab.get_area(), 1.0)
+	return snappedf(frac2, 0.01) if frac2 > 0.35 else 0.0
 
 
 func _overlap_check() -> void:
@@ -786,12 +970,17 @@ func _overlap_check() -> void:
 	var vs := get_viewport().get_visible_rect().size
 	var screen := Rect2(Vector2.ZERO, vs)
 	var now := {}
+	var occl_cand := {}
 	var vis: Array = []
 	var cam_house := house_of(cam.global_position) if camera_inside != "" else ""
 	for r in actors:
 		var a: StoryActor = actors[r]
 		if a.pop_s > 0.5 and a.visible and not a.has_meta("inside"):
 			vis.append(a)
+	var walker_on := has_walker and trav_s > 0.5 and world.puppet != null and world.puppet.visible
+	var wp := traveller_pos() + Vector3(0, hop - sink + ground_dy, 0) if walker_on else Vector3.ZERO
+	var wr := trav_h * 0.22
+	var wh := trav_h * trav_s
 	for i in vis.size():
 		var a: StoryActor = vis[i]
 		for j in range(i + 1, vis.size()):
@@ -819,22 +1008,64 @@ func _overlap_check() -> void:
 			continue
 		var ad := cam.global_position.distance_to(a.global_position)
 		var area := ab.get_area()
+		for b: StoryActor in vis:
+			if b == a or house_of(b.global_position) != cam_house or _ok_pair(a.role, b.role):
+				continue
+			var bd := cam.global_position.distance_to(b.global_position)
+			if bd >= ad - 0.12:
+				continue
+			var bb := _actor_occlude_box(b)
+			if bb.size.x <= 1.0:
+				continue
+			var ov_frac := ab.intersection(bb).get_area() / maxf(area, 1.0)
+			if ov_frac > 0.45:
+				occl_cand["OCCLUDE %s %s" % [a.role, b.role]] = snappedf(ov_frac, 0.01)
 		for k in sets:
 			var sp: SetPiece = sets[k]
-			if not _solid_piece(sp) or sp.walls and not sp.walls.visible or str(k) == cam_house:
+			if not _solid_piece(sp) or (sp.walls and not sp.walls.visible) or str(k) == cam_house or _ok_pair(a.role, sp.piece_name):
 				continue
 			if house_of(sp.global_position) != cam_house:
 				continue
-			# the piece's nearest base point to the actor decides who is in front (a back wall is behind, not beside)
-			var rr := sp.global_transform.basis.x.normalized()
-			var off := a.global_position - sp.global_position
-			var near := sp.global_position + rr * clampf(off.dot(rr), -sp.width * 0.5, sp.width * 0.5)
-			var sd := cam.global_position.distance_to(near)
-			if sd > ad - 0.08:
+			var frac := _set_occludes_subject(cam, sp, a.global_position, a.centre(), a.puppet.height, ab, ad)
+			if frac > 0.0:
+				now["OCCLUDE %s %s" % [a.role, sp.piece_name]] = frac
+	if walker_on:
+		for a: StoryActor in vis:
+			var d := wp - a.global_position
+			d.y = 0.0
+			var need := (wr + actor_radius(a)) * 0.8
+			if d.length() < need and absf(hop - sink + ground_dy - a.lift) < 0.1 and not _ok_pair(walker_role, a.role):
+				now["OVERLAP %s %s actor" % [walker_role, a.role]] = snappedf(1.0 - d.length() / need, 0.01)
+		for k in sets:
+			var sp: SetPiece = sets[k]
+			if not _solid_piece(sp) or _ok_pair(walker_role, sp.piece_name):
 				continue
-			var ov := ab.intersection(_piece_box(sp))
-			if ov.get_area() / maxf(area, 1.0) > 0.35:
-				now["OCCLUDE %s %s" % [a.role, sp.piece_name]] = snappedf(ov.get_area() / area, 0.01)
+			var dd := _piece_dist(sp, wp)
+			if sp.has_door() and absf(sp.door_offset(wp)) < sp.door_half_width():
+				continue
+			if dd < wr * 0.7:
+				now["OVERLAP %s %s card" % [walker_role, sp.piece_name]] = snappedf(1.0 - dd / (wr * 0.7), 0.01)
+		if house_of(wp) == cam_house:
+			var wb := _walker_box(wp, wh)
+			if wb.size.x > 1.0 and wb.intersects(screen):
+				var wd := cam.global_position.distance_to(wp)
+				var wc := wp + Vector3.UP * wh * 0.55
+				for k in sets:
+					var sp: SetPiece = sets[k]
+					if not _solid_piece(sp) or (sp.walls and not sp.walls.visible) or str(k) == cam_house or _ok_pair(walker_role, sp.piece_name):
+						continue
+					if house_of(sp.global_position) != cam_house:
+						continue
+					var frac := _set_occludes_subject(cam, sp, wp, wc, trav_h, wb, wd)
+					if frac > 0.0:
+						now["OCCLUDE %s %s" % [walker_role, sp.piece_name]] = frac
+	for okey in occl_cand:
+		_occlude_streak[okey] = int(_occlude_streak.get(okey, 0)) + 1
+		if int(_occlude_streak[okey]) >= 2 and not now.has(okey):
+			now[okey] = occl_cand[okey]
+	for okey in _occlude_streak.keys():
+		if not occl_cand.has(okey):
+			_occlude_streak.erase(okey)
 	# line of sight (wave 1): template lawn cards, roofs / house bodies, other actors' figures and props crossing the
 	# rays to a MOVING or SPEAKING actor's head and body (SightCheck). Only in gate runs (--log-track / movie maker):
 	# it costs a few ms per check. A blocker must hold for two checks in a row (0.4 s) to count.
@@ -856,6 +1087,15 @@ func _overlap_check() -> void:
 					if float(hid[bn]) >= 0.45 and not _ok_pair(a.role, bn) and not _ok_pair(a.role, who):
 						var key := "OCCLUDE %s %s" % [a.role, bn]
 						cand[key] = snappedf(float(hid[bn]), 0.01)
+			if walker_on and (walking() or strolling_on or (talking != "" and (walker_role == talking or walker_role.replace("_", "") == talking))) and house_of(wp) == cam_house:
+				var wb3 := _walker_box(wp, wh)
+				if wb3.size.x > 1.0 and wb3.intersection(screen).get_area() >= 0.5 * wb3.get_area():
+					var hid_w := SightCheck.hidden_at(self, cam, wp, wh, world.walker, world)
+					for bn: String in hid_w:
+						var who := bn.get_slice(":", 1) if bn.contains(":") else bn
+						if float(hid_w[bn]) >= 0.45 and not _ok_pair(walker_role, bn) and not _ok_pair(walker_role, who):
+							var key := "OCCLUDE %s %s" % [walker_role, bn]
+							cand[key] = snappedf(float(hid_w[bn]), 0.01)
 			for key in cand:
 				if _sight_prev.has(key) and not now.has(key):
 					now[key] = cand[key]
@@ -872,6 +1112,19 @@ func _overlap_check() -> void:
 		var pn: Node3D = q["node"]
 		var pp := pn.global_position
 		var pr := float(q["r"])
+		if walker_on:
+			var dw := wp - pp
+			dw.y = 0.0
+			var needw := wr * 0.7 + pr
+			if dw.length() < needw and absf(wp.y - pp.y) < trav_h and not _ok_pair(walker_role, nm):
+				now["OVERLAP %s %s prop" % [walker_role, nm]] = snappedf(1.0 - dw.length() / needw, 0.01)
+			if house_of(wp) == cam_house and house_of(pp) == cam_house:
+				var wb2 := _walker_box(wp, wh)
+				if wb2.size.x > 1.0 and wb2.intersects(screen) and cam.global_position.distance_to(pp) <= cam.global_position.distance_to(wp) - 0.08:
+					var crw := cam.global_transform.basis.x.normalized() * pr
+					var pbw := _screen_box([pp - crw, pp + crw, pp - crw + Vector3.UP * float(q["h"]), pp + crw + Vector3.UP * float(q["h"])])
+					if wb2.intersection(pbw).get_area() / maxf(wb2.get_area(), 1.0) > 0.35 and not _ok_pair(walker_role, nm):
+						now["OCCLUDE %s %s" % [walker_role, nm]] = snappedf(wb2.intersection(pbw).get_area() / wb2.get_area(), 0.01)
 		for a: StoryActor in vis:
 			var d2 := a.global_position - pp
 			d2.y = 0.0
@@ -951,20 +1204,23 @@ func _check_footprint(sp: SetPiece, e: Dictionary) -> void:
 	if e.get("sky", false) or bool(ce.get("hanging", false)) or tags.has("sky") or tags.has("cloud") or elev > 0.12:
 		print("SET_CHECK ", sp.piece_name, " road=0 water=0 sky=1 elev=", snappedf(elev, 0.01))
 		return
+	var allow_road := bool(e.get("allow_road", false))
+	var allow_water := bool(e.get("allow_water", false))
 	var r: Vector3 = sp.global_transform.basis.x.normalized()  # the piece's own base line (turned pieces too)
 	var t: Vector3 = sp.global_transform.basis.z.normalized()
 	var road := 0
 	var water := 0
-	for i in 9:
-		for dz: float in [-0.04, 0.0, 0.06]:
-			var q3: Vector3 = sp.global_position + r * (float(i) / 8.0 - 0.5) * sp.width * 0.92 + t * dz
-			var q := Vector2(q3.x, q3.z)
-			if g.path_distance(q) < 0.0:
-				road += 1
-			if g.stream_distance(q) < 0.0:
-				water += 1
+	if not (allow_road and allow_water):
+		for i in 9:
+			for dz: float in [-0.04, 0.0, 0.06]:
+				var q3: Vector3 = sp.global_position + r * (float(i) / 8.0 - 0.5) * sp.width * 0.92 + t * dz
+				var q := Vector2(q3.x, q3.z)
+				if not allow_road and g.path_distance(q) < 0.0:
+					road += 1
+				if not allow_water and g.stream_distance(q) < 0.0:
+					water += 1
 	print("SET_CHECK ", sp.piece_name, " road=", road, " water=", water, " w=", snappedf(sp.width, 0.01))
-	if (road > 0 and not e.get("allow_road", false)) or water > 0:
+	if road > 0 or water > 0:
 		push_warning("SpreadStage: set piece %s on the road / in the water (road %d, water %d)" % [sp.piece_name, road, water])
 
 
@@ -997,6 +1253,19 @@ func _clear_area(p: Vector3, r: float, k := 1.0) -> void:
 		if (hinge.get_parent() as Node3D).visible:
 			keep.append(hinge)
 	world.hinges = keep
+	for hc: Dictionary in world.house_cards:
+		if hc.get("hinge") != null:
+			continue
+		var raw: Variant = hc.get("body_node")
+		if not is_instance_valid(raw) or not (raw is Node3D):
+			continue
+		var bn := raw as Node3D
+		if not bn.visible:
+			continue
+		var o: Vector3 = hc["pos"]
+		if Vector2(o.x - p.x, o.z - p.z).length() < r + float(hc.get("w", 0.5)) * 0.5:
+			bn.visible = false
+			hidden.append(o)
 	_hide_contact_blobs(hidden)
 
 
@@ -1339,8 +1608,10 @@ func _layout_sky() -> void:
 ## A cut-paper sky disc behind the card (cast `backing`: [fill, rim]) so the sky cast reads against orange trees
 ## and haze (sun_wind critics 1-2).
 func _add_backing(h: SkyHanger, cfg: Dictionary) -> void:
+	if not is_inside_tree() or get_tree() == null:
+		return
 	await get_tree().process_frame  # SkyHanger builds its card in _ready
-	if not is_instance_valid(h):
+	if not is_inside_tree() or not is_instance_valid(h):
 		return
 	var c := h.card()
 	var disc := PaperCard.new()
@@ -1509,35 +1780,74 @@ func _clear_sightlines_here(all: Array[PopHinge], hidden: Array[Vector3], shot_n
 ## Same test for the template's static cards (CardBatch), which lie beyond the pop radius: the road camera now
 ## travels with him, so it can reach them. Hidden instances are collapsed to zero size.
 func _clear_statics_here(cam: Camera3D, rects: Array) -> void:
-	if world.batch == null:
-		return
 	var cp := cam.global_position
-	var bt := world.batch
-	var n := 0
-	for r in bt.static_ids():
-		n += 1
-		if n % 256 == 0:
-			await _slicer.tick()
-		if bt.is_static_hidden(r):
+	if world.batch != null:
+		var bt := world.batch
+		var n := 0
+		for r in bt.static_ids():
+			n += 1
+			if n % 256 == 0:
+				await _slicer.tick()
+			if bt.is_static_hidden(r):
+				continue
+			var xf := bt.static_xform(r)
+			var ab := bt.static_aabb(r)
+			var sc := xf.basis.get_scale()
+			var p := xf.origin
+			var hh := ab.end.y * sc.y
+			var hw := maxf(absf(ab.position.x), absf(ab.end.x)) * sc.x
+			var hide := Vector2(p.x - cp.x, p.z - cp.z).length() < 0.9 + hw
+			if not hide and not (cam.is_position_behind(p) or cam.is_position_behind(p + Vector3(0, hh, 0))):
+				var a := cam.unproject_position(p)
+				var b := cam.unproject_position(p + Vector3(0, hh, 0))
+				var ppu := absf(a.y - b.y) / maxf(hh, 0.001)
+				var rr := Rect2(a.x - hw * ppu, b.y, hw * ppu * 2.0, a.y - b.y).abs()
+				for sr in rects:
+					if cp.distance_to(p) < float(sr[1]) and rr.intersects(sr[0]):
+						hide = true
+			if hide:
+				bt.hide_static(r)  # collapsed to zero size, shadow quad too (was: MultiMesh instance scaled to 0.0001)
+				_statics_hidden += 1
+				for hc: Dictionary in world.house_cards:
+					if hc.get("hinge") != null:
+						continue
+					var raw: Variant = hc.get("body_node")
+					if not is_instance_valid(raw) or not (raw is Node3D):
+						continue
+					var bn := raw as Node3D
+					if not bn.visible:
+						continue
+					var o: Vector3 = hc["pos"]
+					if Vector2(o.x - p.x, o.z - p.z).length() < 0.05:
+						bn.visible = false
+	var hidden_buildings: Array[Vector3] = []
+	for hc: Dictionary in world.house_cards:
+		if not hc.get("building", false) or hc.get("hinge") != null:
 			continue
-		var xf := bt.static_xform(r)
-		var ab := bt.static_aabb(r)
-		var sc := xf.basis.get_scale()
-		var p := xf.origin
-		var hh := ab.end.y * sc.y
-		var hw := maxf(absf(ab.position.x), absf(ab.end.x)) * sc.x
+		var raw: Variant = hc.get("body_node")
+		if not is_instance_valid(raw) or not (raw is Node3D):
+			continue
+		var bn := raw as Node3D
+		if not bn.visible:
+			continue
+		var p: Vector3 = hc.get("pos", bn.global_position)
+		var hh := maxf(float(hc.get("h", 1.0)), 0.001)
+		var hw := float(hc.get("w", 1.0)) * 0.5
 		var hide := Vector2(p.x - cp.x, p.z - cp.z).length() < 0.9 + hw
 		if not hide and not (cam.is_position_behind(p) or cam.is_position_behind(p + Vector3(0, hh, 0))):
 			var a := cam.unproject_position(p)
 			var b := cam.unproject_position(p + Vector3(0, hh, 0))
-			var ppu := absf(a.y - b.y) / maxf(hh, 0.001)
+			var ppu := absf(a.y - b.y) / hh
 			var rr := Rect2(a.x - hw * ppu, b.y, hw * ppu * 2.0, a.y - b.y).abs()
 			for sr in rects:
 				if cp.distance_to(p) < float(sr[1]) and rr.intersects(sr[0]):
 					hide = true
 		if hide:
-			bt.hide_static(r)  # collapsed to zero size, shadow quad too (was: MultiMesh instance scaled to 0.0001)
+			bn.visible = false
 			_statics_hidden += 1
+			hidden_buildings.append(p)
+	if not hidden_buildings.is_empty():
+		_hide_contact_blobs(hidden_buildings)
 
 
 func _hide_contact_blobs(points: Array[Vector3]) -> void:
@@ -1788,8 +2098,14 @@ func traveller_pos() -> Vector3:
 	return world.walker.global_position
 
 
+var _walk_away_off := -1.0
+var _walk_away_tilted := false
+
+
 ## Ending: the camera stops following and he walks off down the road.
 func walk_away(dist: float) -> void:
+	_walk_away_off = world.walker.offset
+	_walk_away_tilted = false
 	_cam_anchor = Node3D.new()
 	_cam_anchor.top_level = true
 	add_child(_cam_anchor)
@@ -1798,6 +2114,46 @@ func walk_away(dist: float) -> void:
 	world.rig.focus_target = _cam_anchor
 	follow_sky = false
 	walk_by(dist)
+
+
+func walker_in_frame() -> bool:
+	var cam := camera()
+	if cam == null or not has_walker:
+		return false
+	var foot := traveller_pos() + Vector3(0, hop - sink + ground_dy, 0)
+	var head := foot + Vector3(0, trav_h * trav_s, 0)
+	if cam.is_position_behind(foot) and cam.is_position_behind(head):
+		return false
+	var vs := get_viewport().get_visible_rect().size
+	var fa := cam.unproject_position(foot)
+	var fb := cam.unproject_position(head)
+	var r := Rect2(fa, Vector2.ZERO).expand(fb)
+	var w := maxf(r.size.y * 0.42, 4.0)
+	var box := Rect2(r.get_center().x - w * 0.5, r.position.y, w, r.size.y)
+	var scr := Rect2(Vector2.ZERO, vs)
+	return box.intersection(scr).get_area() > box.get_area() * 0.15
+
+
+func walk_stop() -> void:
+	if not has_walker or world == null or world.walker == null:
+		return
+	world.walker.target_offset = world.walker.offset
+	if "_moving" in world.walker:
+		world.walker.set("_moving", false)
+
+
+func walk_away_frame_sky() -> void:
+	if _walk_away_tilted:
+		return
+	_walk_away_tilted = true
+	_cam = [3.7, 9.5, 0.56, 21.5, 0.0]
+	_begin_move(0.9)
+
+
+func walk_away_back(fallback: float) -> float:
+	if _walk_away_off >= 0.0 and has_walker and world and world.walker:
+		return absf(world.walker.offset - _walk_away_off)
+	return fallback
 
 
 ## Keep walking along the road at `speed` until stroll_stop() (camera and sky cast follow him).

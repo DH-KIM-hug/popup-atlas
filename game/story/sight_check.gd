@@ -128,11 +128,13 @@ static func _owner_name(stage: Node3D, n: Node) -> String:
 ## Fraction of the actor's head-and-body points hidden, per blocker: {name: frac}. 3 x 3 rays over the upper 70 %
 ## of the figure (legs behind a fence or a pot are fine, a hidden face / body is not).
 static func hidden(stage: Node3D, cam: Camera3D, a: StoryActor, world: MeadowWorld) -> Dictionary:
+	return hidden_at(stage, cam, a.global_position + Vector3.UP * (a.hop + a.lift), a.puppet.height * a.pop_s, a, world)
+
+
+static func hidden_at(stage: Node3D, cam: Camera3D, base: Vector3, h: float, skip: Node, world: MeadowWorld) -> Dictionary:
 	var out := {}
-	var h := a.puppet.height * a.pop_s
-	var w := a.puppet.height * 0.42
+	var w := h * 0.42
 	var cr := cam.global_transform.basis.x.normalized()
-	var base := a.global_position + Vector3.UP * (a.hop + a.lift)
 	var from := cam.global_position
 	var n := 0
 	var tos: Array[Vector3] = []
@@ -145,7 +147,7 @@ static func hidden(stage: Node3D, cam: Camera3D, a: StoryActor, world: MeadowWor
 			tos.append(q + (from - q).normalized() * 0.03)  # stop short of the figure's own card
 	var lawn: Array = world.batch.blockers(from, tos) if world and world.batch else []
 	for i in tos.size():
-		var b := blocker(stage, cam, from, tos[i], a, world)
+		var b := blocker(stage, cam, from, tos[i], skip, world)
 		if b == "" and i < lawn.size():
 			b = str(lawn[i])
 		if b != "":

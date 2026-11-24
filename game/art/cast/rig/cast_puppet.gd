@@ -239,7 +239,16 @@ func set_figure(p: String, mirror: bool, instant := false) -> void:
 		return  # this flip is already under way
 	_mirror_to = mirror
 	if instant or not is_inside_tree():
+		_flip_t = -1.0
+		_flip_to = ""
 		_apply_pose(p)
+		return
+	if _flip_t >= 0.0:
+		if _flip_t < FLIP_IN_S:
+			_flip_to = p
+		else:
+			_apply_pose(p)
+			_flip_to = ""
 		return
 	_flip_to = p
 	_flip_t = 0.0
@@ -432,6 +441,8 @@ func set_pose(p: String, instant := false) -> void:
 	if not (_def()["poses"] as Dictionary).has(p) or (p == pose and _flip_t < 0.0):
 		return
 	if instant or not is_inside_tree():
+		_flip_t = -1.0
+		_flip_to = ""
 		_apply_pose(p)
 		return
 	_flip_to = p
@@ -456,8 +467,6 @@ func _process(dt: float) -> void:
 		max_turn_deg = 0.0
 	super._process(dt)
 	max_turn_deg = mt
-	if _turn.scale.x < 0.3:  # paper turn: narrow to 30 %, swap there; never a card edge-on sliver (15 % still read as
-		_turn.scale.x = 0.3   # a sliver in 8 fps tiles of runs turning at their marks, turnip v5)
 	var fdt := PaperSpring.frame_dt(dt)
 	if fdt <= 0.0:
 		return
@@ -619,6 +628,7 @@ func _apply_pose(p: String) -> void:
 	if not _skin_ok():
 		super._apply_pose(p)
 		return
+	_cyc_i = -1
 	var sk: Dictionary = _def()
 	var dir: String = sk["dir"]
 	if _skin_rig.is_empty():

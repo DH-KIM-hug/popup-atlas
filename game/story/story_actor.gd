@@ -137,6 +137,15 @@ func place_at(p: Vector3) -> void:
 	_target = p
 
 
+func nudge(p: Vector3) -> void:
+	global_position = p
+	if not _moving:
+		_target = p
+	if _mv.is_empty():
+		_mv_last = p + Vector3(0, hop + lift, 0)
+	_nudged = true
+
+
 func walk_to(p: Vector3, spd := -1.0, wpose := "") -> void:
 	_path.clear()
 	_fly = false
@@ -255,15 +264,25 @@ var _mv_last := Vector3.INF
 var _mv_still := 0.0
 var _mv_hp := 0.0
 var _mv_ci := -1
+var _nudged := false
 
 
 func _move_log(dt: float) -> void:
 	var p := global_position + Vector3(0, hop + lift, 0)
 	var seen := is_visible_in_tree() and pop_s > 0.5 and camera != null
 	if _mv_last == Vector3.INF or not seen:
+		_nudged = false
 		_mv_last = p
 		_move_flush()
 		return
+	if _nudged and not _moving:
+		_nudged = false
+		_mv_last = p
+		_mv_still += dt
+		if _mv_still > 0.3:
+			_move_flush()
+		return
+	_nudged = false
 	var d := p - _mv_last
 	_mv_last = p
 	var h := maxf(puppet.height, 0.01)
@@ -398,17 +417,22 @@ func _track_log(dt: float) -> void:
 		" fig=", puppet.pose, " view=", view, " v=", snappedf(_v, 0.01), " moving=", int(_moving))
 
 
-## Travel figure changes: a paper turn only when the view or the facing changes. Standing profile -> side run cycle
-## -> pull (same view, same facing) swaps in place: a flip there read as the card turning edge-on for nothing at every
-## start and stop of a run (turnip v5).
-func _swap_figure(fig: String, mirror: bool) -> void:
-	var same := puppet.pose != fig and puppet._flip_t < 0.0 and view_of(puppet.pose) == view_of(fig) \
-		and view_of(fig) == "side" and mirror == puppet._mirror and (_travel_fig(fig) or _travel_fig(str(puppet.pose)))
-	puppet.set_figure(fig, mirror, same)
+## Travel figure changes: a paper turn only when the view or the facing changes. Entering a travel cycle from a
+## standing figure OR same-view travel swaps (front/back/side with same facing) swap in place cleanly (no static slide).
+func _swap_figure(fig: String, mirror: bool, from_pick := false) -> void:
+	var cur := str(puppet.pose)
+	var entering_travel := not _is_travel_fig(cur) and _is_travel_fig(fig)
+	var same_view_travel := view_of(cur) == view_of(fig) and (view_of(fig) != "side" or mirror == puppet._mirror) \
+		and (_is_travel_fig(fig) or _is_travel_fig(cur))
+	var instant := entering_travel or same_view_travel
+	if from_pick and not instant and puppet._flip_t >= 0.0:
+		return
+	puppet.set_figure(fig, mirror, instant)
 
 
-static func _travel_fig(f: String) -> bool:  # expression changes (pull -> tumble) keep their paper flip
-	return f.contains("cycle") or f.contains("walk") or f.begins_with("run")
+func _is_travel_fig(f: String) -> bool:  # expression changes (pull -> tumble) keep their paper flip
+	var cyc: Dictionary = puppet._def().get("cycles", {})
+	return cyc.has(f) or f.contains("cycle") or f.contains("walk") or f.begins_with("run")
 
 
 func _flip_ok() -> bool:
@@ -458,7 +482,7 @@ func _pick_view(dir: Vector3) -> void:
 		view = view_of(gf)
 		if view == "side" and d != Vector3.ZERO:
 			facing_left = left
-		_swap_figure(gf, facing_left and view == "side")
+		_swap_figure(gf, facing_left and view == "side", true)
 		return
 	# figure for the view (fall back to a view this role has)
 	var fig := walk_pose
@@ -494,7 +518,7 @@ func _pick_view(dir: Vector3) -> void:
 				fig = pose if view_of(pose) == "front" else "calm"
 	view = nv
 	facing_left = left
-	_swap_figure(fig, facing_left and view_of(fig) == "side")
+	_swap_figure(fig, facing_left and view_of(fig) == "side", true)
 	if _log_figs and fig != _last_fig_logged:  # --log-figs: which figure each travel uses (hopping-card check)
 		_last_fig_logged = fig
 		print("TRAVEL_FIG ", role, " ", fig, " view=", nv, " puppet_fig=", puppet.get("pose"))

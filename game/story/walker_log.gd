@@ -17,6 +17,8 @@ var _still := 0.0
 var _mv := {}
 var _trk_t := 0.0
 var _trk_idle := 9.0
+var _v := 0.0
+static var _trk_vp_logged := false
 
 
 func _h() -> float:
@@ -24,29 +26,36 @@ func _h() -> float:
 
 
 func _cam() -> Camera3D:
-	return get_viewport().get_camera_3d()
+	var vp := get_viewport()
+	return vp.get_camera_3d() if vp else null
+
+
+func _pos() -> Vector3:
+	return walker.global_position + Vector3(0, float(puppet.position.y) if puppet and is_instance_valid(puppet) else 0.0, 0)
 
 
 func _process(dt: float) -> void:
 	dt = PaperSpring.frame_dt(dt)
 	if dt <= 0.0 or walker == null or not is_instance_valid(walker):
 		return
-	var p := walker.global_position
-	var seen := walker.is_visible_in_tree()
+	var p := _pos()
+	var seen := puppet != null and is_instance_valid(puppet) and puppet.is_visible_in_tree() and walker.scale.y > 0.5
 	if _last == Vector3.INF or not seen:
 		_last = p
+		_v = 0.0
 		_flush()
 		return
 	var d := p - _last
 	_last = p
 	var h := _h()
-	var v := d.length() / maxf(dt, 1e-4)
-	var moving := v >= 0.02
-	if _log_track:
-		_track(dt, moving)
 	if d.length() > maxf(0.5 * h, 0.1):
+		_v = 0.0
 		_flush()  # a teleport (page change), not travel
 		return
+	_v = d.length() / maxf(dt, 1e-4)
+	var moving := _v >= 0.02
+	if _log_track:
+		_track(dt, moving)
 	if not moving:
 		_still += dt
 		if _still > 0.3:
@@ -122,13 +131,18 @@ func _track(dt: float, moving: bool) -> void:
 	var cam := _cam()
 	if cam == null:
 		return
-	var foot := walker.global_position
+	var foot := _pos()
 	if cam.is_position_behind(foot):
 		return
+	var vp := get_viewport()
+	if vp and not _trk_vp_logged:
+		_trk_vp_logged = true
+		var vs := vp.get_visible_rect().size
+		print("TRACK_VP ", int(vs.x), "x", int(vs.y), " same_cam=1")
 	var a := cam.unproject_position(foot)
 	var b := cam.unproject_position(foot + Vector3(0, _h(), 0))
 	print("TRACK ", role, " t=", snappedf(StoryRunner.now, 0.01), " x=", int(a.x), " y=", int(a.y), " h=", int(a.distance_to(b)),
-		" fig=", str(puppet.get("pose") if puppet and "pose" in puppet else "walk"), " view=front v=0 moving=", int(moving))
+		" fig=", str(puppet.get("pose") if puppet and "pose" in puppet else "walk"), " view=front v=", snappedf(_v, 0.01), " moving=", int(moving))
 
 
 func _exit_tree() -> void:

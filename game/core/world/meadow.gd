@@ -498,17 +498,22 @@ func _village(c: Vector2) -> void:
 			var yaw := rng.randf_range(-0.3, 0.3)
 			var sw: Dictionary = (Building.kit().get("swap", {}) as Dictionary).get(id, {})
 			if not sw.is_empty():  # 2026-11-23: an open pavilion card stands as the kit's 3D pavilion
+				var pb := _place_building(str(sw["preset"]), h / float(sw.get("h", 1.0)), q, yaw, h * float(e["aspect"]))
 				house_cards.append({"id": id, "path": e["path"], "h0": float(e["h"]), "h": h,
 					"pos": Vector3(q.x, ground.surface_y(q), q.y), "yaw": yaw, "lean": 0.0, "tilt": 0.0, "hinge": null,
-					"thick": 0.0, "body": _place_building(str(sw["preset"]), h / float(sw.get("h", 1.0)), q, yaw, h * float(e["aspect"])),
-					"building": true})
+					"thick": 0.0, "body": pb,
+					"body_node": pb.get_parent() if pb and not (pb.get_parent() is PopHinge) else null,
+					"w": h * float(e["aspect"]), "building": true})
 				lib.mark(id)
 				_houses.append([Vector3(q.x, ground.surface_y(q), q.y), h, yaw, h * float(e["aspect"])])
 				continue
 			_place(e, h, q, yaw, false)
+			var hb := _add_house_body(id, e, h)
 			house_cards.append({"id": id, "path": e["path"], "h0": float(e["h"]), "h": h, "pos": _last_place["pos"],
 				"yaw": yaw, "lean": _last_place["lean"], "tilt": _last_place["tilt"], "hinge": _last_place["hinge"],
-				"thick": _last_place["thick"], "body": _add_house_body(id, e, h)})
+				"thick": _last_place["thick"], "body": hb,
+				"body_node": hb.get_parent() if hb and _last_place["hinge"] == null else null,
+				"w": h * float(e["aspect"])})
 			lib.mark(id)
 			_houses.append([Vector3(q.x, ground.surface_y(q), q.y), h, yaw, h * float(e["aspect"])])
 	# yard props, fences, lanterns, a well, washing line, garden flowers

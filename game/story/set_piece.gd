@@ -175,6 +175,7 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int, flat_ := f
 
 
 var building: Building  ## a 3D kit building (setup_building) instead of a card
+var building_aabb := AABB()  ## local bounds of the kit building in SetPiece space
 
 
 ## A kit building (Building.make: pavilion, tower, castle ...) on one hinge: it pops up and folds with the page like a
@@ -207,6 +208,9 @@ func setup_building(spec_v: Variant, scale_: float, n_up: int, state: Dictionary
 			mx = mx.max(q)
 	width = mx.x - mn.x
 	height = mx.y
+	if mn.x < INF:
+		var y0 := maxf(mn.y, 0.0)
+		building_aabb = AABB(Vector3(mn.x, y0, mn.z), Vector3(mx.x - mn.x, maxf(mx.y - y0, 0.01), mx.z - mn.z))
 	shown = 1 if n_up != 0 else 0
 
 
@@ -579,10 +583,18 @@ func band_down(k: int, delay := 0.0) -> void:
 
 
 func _hide_later(h: PopHinge, t: float) -> void:
+	if not is_instance_valid(h) or not is_inside_tree() or get_tree() == null:
+		return
+	var h_ref: WeakRef = weakref(h)
 	var tm := get_tree().create_timer(t)
 	tm.timeout.connect(func():
-		if is_instance_valid(h) and not h.is_up:
-			(h.get_parent() as Node3D).visible = false)
+		if not is_instance_valid(self) or not is_inside_tree():
+			return
+		var hr := h_ref.get_ref() as PopHinge
+		if is_instance_valid(hr) and not hr.is_up:
+			var p := hr.get_parent() as Node3D
+			if is_instance_valid(p):
+				p.visible = false)
 
 
 ## Everything falls: top band first, staggered.

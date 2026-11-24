@@ -15,6 +15,9 @@ signal pose_changed(pose: String)
 
 const RIG_DIR := "res://art/chars_rig/"
 const CHAR_DIR := "res://art/chars/"
+const MIN_FLIP_SCALE := 0.65
+const FLIP_IN_S := 0.065
+const FLIP_OUT_S := 0.10
 const POSES := {
 	"walk": "sw_trav_walk", "walk_nohat": "sw_trav_walk_nohat", "hold": "sw_trav_hold",
 	"shirt": "sw_trav_shirt", "fan": "sw_trav_fan", "sit": "sw_trav_sit",
@@ -107,6 +110,8 @@ func set_pose(p: String, instant := false) -> void:
 	if not POSES.has(p) or (p == pose and _flip_t < 0.0):
 		return
 	if instant or not is_inside_tree():
+		_flip_t = -1.0
+		_flip_to = ""
 		_apply_pose(p)
 		return
 	_flip_to = p
@@ -251,20 +256,20 @@ func _process(dt: float) -> void:
 	var squash := 1.0
 	if _flip_t >= 0.0:
 		_flip_t += dt
-		var ft := 0.11
+		var ft := FLIP_IN_S
 		if _flip_t < ft:
-			squash = cos(_flip_t / ft * PI * 0.5)
+			squash = lerpf(1.0, MIN_FLIP_SCALE, 1.0 - cos(_flip_t / ft * PI * 0.5))
 		elif _flip_to != "":
 			_apply_pose(_flip_to)
 			_flip_to = ""
 			_pose_hop = 1.0
 		if _flip_t >= ft:
-			var u := clampf((_flip_t - ft) / 0.16, 0.0, 1.0)
-			squash = sin(u * PI * 0.5) + 0.08 * sin(u * PI) # small overshoot
+			var u := clampf((_flip_t - ft) / FLIP_OUT_S, 0.0, 1.0)
+			squash = lerpf(MIN_FLIP_SCALE, 1.0, sin(u * PI * 0.5)) + 0.05 * sin(u * PI) # small overshoot
 			if u >= 1.0:
 				_flip_t = -1.0
 				squash = 1.0
-	_turn.scale = Vector3(maxf(squash, 0.02), 1, 1)
+	_turn.scale = Vector3(squash, 1, 1)
 	_pose_hop = maxf(0.0, _pose_hop - dt * 4.0)
 	var pose_lift := 0.03 * sin(_pose_hop * PI)
 
