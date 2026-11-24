@@ -158,6 +158,12 @@ BACKDROP = True
 INSIDE_FRAMING = "manual"
 # v3 (user: "물체랑 사람들끼리 자꾸 겹치잖아"): stage spacing solver + OVERLAP / OCCLUDE log; intentional contacts listed
 EXTRA = {"spacing": True, "overlap_check": True, "pop_in": False,
+         # 2026-11-24: the glide in / out through the door folds the facade and the door leaf away early (no frame
+         # filled with the door, gate audit 1:02 / 6:32)
+         "inside_margin": 0.45, "inside_door_hide": True,
+         # actor-behind-actor OCCLUDE counts for the actor who moves or speaks (a friend behind Dahyun in her face
+         # close-up is framing, not a hidden speaker); the back row is staged to show in the room wides
+         "occlude_subjects_only": True,
          "overlap_ok": [["kid", "logs"], ["witch", "pot"], ["kid", "room_floor"], ["kid", "room_floor2"]],
          # SPEAKER_OFF check (2026-11-22): the witch names her jars over push-ins on each jar (a deliberate insert);
          # her giggle "히히, 핼러윈 마법이야!" is a voice from the shop over Dahyun's magic outside
@@ -167,16 +173,21 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "crane_high": [8.0, 34.0, 0.3, 22.0, 0.0], "establish": [8.0, 17.0, 0.3, 24.0, -4.0],
          "street": [5.0, 11.0, 0.32, 22.0, 6.0], "medium": [2.6, 9.0, 0.3, 20.0, 6.0],
          "face": [1.5, 7.0, 0.3, 20.0, 0.0],
-         "sky": [2.6, 3.0, 0.8, 34.0, 0.0],              # tilt up on her loop over the street, the moon behind
+         "sky": [2.0, 5.0, 0.85, 34.0, 0.0],             # tilt up on her loop over the street, the moon behind (closer 2026-11-24: she was a speck)
          "sky_wide": [5.5, 2.0, 1.1, 30.0, 0.0],         # the whole sky over the street (parade end, tour)
          "high": [6.0, 28.0, 0.2, 22.0, 4.0], "pull_back": [10.5, 24.0, 0.3, 24.0, 0.0],
          "tour": [3.2, 9.0, 0.3, 22.0, 0.0],             # the village tour: low along the street
-         "track": [3.4, 27.0, 0.25, 22.0, 0.0],          # following an action outside: above the roofs (no clipping)
+         # following an action outside: above the roofs (no clipping); 2026-11-24 raised 27 -> 46 deg (gate audit 4:03:
+         # the lens sat in the near house's roof over Dahyun's glow walk)
+         "track": [3.2, 46.0, 0.25, 24.0, 0.0],
          # v2 (user: "처음 마녀가 인사할때 앞의 집때문에 안보여 ... 카메라를 회전해서"): the camera turns round to face the
          # shop door straight on from the road (the shop faces the road at SHOP_YAW), so nothing stands in between
          "door_cam": [1.6, 14.0, 0.3, 28.0, SHOP_YAW],  # straight on from the road: nothing in between
          "hero": [1.05, 2.0, 0.24, 36.0, SHOP_YAW],      # low on the doorstep: the transformed hero, the light behind
          "door_wide": [2.6, 24.0, 0.3, 26.0, SHOP_YAW],  # raised: the door, its path and a file of people on it
+         # 2026-11-24 (gate audit v1: Dahyun's hat filled the doorway while the friends went in): the queue on the
+         # path seen from the side and above, so nobody waiting stands between the lens and the door
+         "door_entry": [2.3, 30.0, 0.3, 28.0, SHOP_YAW - 30.0],
          "roof_cam": [2.6, 14.0, 0.75, 26.0, SHOP_YAW + 12.0],  # the shop roof from the road in front of it
          # inside the shop (camera just behind the front wall, which hides while the camera is inside), in the
          # shop's frame
@@ -192,8 +203,10 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "pick2": [0.8, 12.0, 0.02, 34.0, SHOP_YAW + 20.0],  # over Dahyun's shoulder from the right
          "pick3": [0.76, 2.0, 0.06, 36.0, SHOP_YAW - 12.0],  # low, a little from the left (the ghost candy)       # push-in on one jar on the shelf as it is named
          # the parade: high enough to clear the roofs (low follow shots put the camera inside house cards)
-         "parade_side": [2.6, 32.0, 0.22, 26.0, -25.0],   # the whole file and the back of the line, from above
-         "parade_back": [2.4, 40.0, 0.22, 28.0, 30.0],    # following the last marcher closely (the ghost in view)
+         "parade_side": [2.8, 58.0, 0.22, 28.0, -60.0],  # 2026-11-24: high, across the file (no roof, no totem)   # the whole file and the back of the line, from above
+         # 2026-11-24 (gate audit v1: a blue roof filled the frame over the parade at the corner): straight down the road
+         # behind the file (no house between the lens and the road) and higher
+         "parade_back": [2.8, 60.0, 0.22, 28.0, -60.0],     # following the last marcher closely (the ghost in view)
          "surprise": [1.4, 30.0, 0.25, 30.0, 0.0]}        # everyone turning to the ghost    # close on Dahyun inside
 CAST = {
     "kid": {"kind": "actor", "skin": "dahyun", "views": ["front", "side", "back"], "label": "다현이 (little wizard)"},
@@ -246,8 +259,10 @@ SHOP = [0.8, -2.9]
 SHOP_DOOR_X = 0.16  # the doorway's centre right of the facade's centre (facade px 364 of 582 at 1.05 high)
 _door = _rot(SHOP, SHOP_DOOR_X, 0.2, SHOP_YAW)
 STREET = {"shop": SHOP, "door": _door, "est": [0.1, -1.2], "street_focus": [0.2, -1.6],
-          "kids": [-0.05, 0.45], "kid_at": [-0.02, 0.42], "rabbit_at": [-0.22, 0.5], "bear_at": [0.17, 0.52],
-          "fox_at": [-0.1, 0.66], "kids_mid": [-0.05, -1.7], "witch_door": _rot(SHOP, -0.02, 0.36, SHOP_YAW),
+          "kids": [-0.05, 0.45], "kid_at": [-0.12, 0.44], "rabbit_at": [-0.3, 0.5], "bear_at": [0.19, 0.52],
+          # 2026-11-24: the fox in the row between Dahyun and the bear, not in front of them (OCCLUDE); the row stays
+          # inside the road so the walk up the street passes no house
+          "fox_at": [0.04, 0.58], "kids_mid": [-0.05, -1.7], "witch_door": _rot(SHOP, -0.02, 0.36, SHOP_YAW),
           "lantern_bump": [-0.38, -1.05], "moon_loop": [0.4, -3.6], "fly_loop": [0.45, -1.6], "roof": SHOP,
           "parade_a": [-0.22, -0.35], "parade_b": [-0.05, -2.2], "parade_l": [-0.2, -1.6], "parade_u1": [-0.12, 0.12], "parade_u3": [0.14, 0.02],
           "parade_u2": [0.1, -0.45], "parade_r": [0.04, -1.6], "tour_a": [-0.05, 0.6], "tour_b": [-0.05, -2.4],
@@ -259,8 +274,11 @@ STREET = {"shop": SHOP, "door": _door, "est": [0.1, -1.2], "street_focus": [0.2,
 for _k, (_dx, _dz) in {"in_back": (0.0, -0.97), "in_shelf": (-0.35, -0.9), "in_pot": (0.22, -0.62),
                        "in_counter": (0.47, -0.92), "in_focus": (0.2, -0.66), "in_beam": (0.0, -0.5),
                        "in_kid": (-0.05, -0.55), "in_witch": (0.5, -0.58), "in_cat": (0.36, -0.4),
-                       "in_rabbit": (0.1, -0.88), "in_bear": (0.42, -0.86), "in_fox": (0.6, -0.84),
-                       "in_floor": (0.0, -0.02), "in_floor2": (0.0, -0.52),
+                       # 2026-11-24 (gate: the fox stood fully behind the witch, the bear half): the friends in a back
+                       # row that shows between and over the front row (Dahyun left, the pot, the witch right)
+                       "in_rabbit": (0.0, -0.86), "in_bear": (0.18, -0.88), "in_fox": (0.34, -0.86),
+                       "in_right0": (0.4, -0.24),
+                       "in_floor": (0.0, -0.02), "in_floor2": (0.0, -0.39),
                        "in_door": (SHOP_DOOR_X, -0.18), "in_shelf_front": (-0.22, -0.66), "in_via": (-0.18, -0.76), "in_right": (0.56, -0.42), "in_right2": (0.5, -0.76)}.items():
     STREET[_k] = _rot(SHOP, _dx, _dz, SHOP_YAW)
 
@@ -348,10 +366,12 @@ SKY = {"bg": "#0b1230", "fog": "#1b2856", "fog_energy": 0.75, "top": "#0a1130", 
        "far": 17.0}
 ROOM_SET = [
     # plank floor lying flat over the whole room, a little above the meadow (its felt is higher toward the back)
-    {"card": "story_wc_room_03", "at": "in_floor", "stage": "full", "flat": True, "name": "room_floor", "scale": 1.22,
-     "clear": 0, "lift": 0.02},
-    {"card": "story_wc_room_03", "at": "in_floor2", "stage": "full", "flat": True, "name": "room_floor2", "scale": 1.22,
-     "clear": 0, "lift": 0.02},
+    # 2026-11-24 (gate audit: the green meadow showed through at the front left): floors people stand on ("floor"),
+    # raised clear of the meadow's rise, a thin sheet with a plank-brown cut edge; the second ends at the back wall
+    {"card": "story_wc_room_03", "at": "in_floor", "stage": "full", "flat": True, "floor": True, "name": "room_floor",
+     "scale": 1.22, "clear": 0, "lift": 0.045, "thick": 0.003, "edge": "#7a4a22"},
+    {"card": "story_wc_room_03", "at": "in_floor2", "stage": "full", "flat": True, "floor": True, "name": "room_floor2",
+     "scale": 1.22, "clear": 0, "lift": 0.045, "thick": 0.003, "edge": "#7a4a22"},
     {"card": "story_wc_room_09", "at": "in_back", "stage": "full", "name": "room_back", "scale": 1.0, "clear": 0},
     {"card": "story_wc_room_04", "at": "in_shelf", "stage": "full", "name": "shelf", "scale": 1.0, "clear": 0},
     {"card": "story_wc_room_06", "at": "in_counter", "stage": "full", "name": "counter", "scale": 1.0, "clear": 0},
@@ -385,7 +405,11 @@ ROUND = {  # NEW verb `brew`: one round = pick two -> stir -> POOF -> candy -> e
              "results": RESULTS, "and_in": True, "autoplay": "random_new_result"},
 }
 
-ALL = ["kid", "witch", "cat", "rabbit", "bear", "fox"]
+# 2026-11-24: one order out of the shop, in the parade file and back in (no one passes anyone in the queue); the
+# witch walks last (the little ghost tags along behind her) and the friends round the pot / the cat to the back row
+ALL = ["kid", "cat", "rabbit", "bear", "fox", "witch"]
+FRIENDS_VIA = {"rabbit": ["in_right0", "in_right", "in_right2"], "bear": ["in_right0", "in_right", "in_right2"],
+               "fox": ["in_right0", "in_right", "in_right2"]}
 ROOM_AT = {"kid": "in_kid", "witch": "in_witch", "cat": "in_cat", "rabbit": "in_rabbit", "bear": "in_bear",
            "fox": "in_fox"}
 ROOM_WHO = {"kid": "calm", "witch": "calm", "cat": "sit", "rabbit": "calm", "bear": "calm", "fox": "calm"}
@@ -398,7 +422,7 @@ BEATS = [
                "at": {"kid": "kid_at", "rabbit": "rabbit_at", "bear": "bear_at", "fox": "fox_at"}},
      "steps": [
         # the Halloween street: a crane down over the lit houses, the shop glowing dimly at the far end
-        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 1.6},
+        {"do": "cam", "shot": "establish", "at": "est", "from": "crane_high", "rate": 0.9, "wait": 1.0},
         # four pumpkin invitations ride the wind in from the end of the street, the camera following one
         {"do": "fx", "fx": "invites_flutter", "wait": 0.2},
         {"do": "say", "line": "wc_000"},
@@ -415,26 +439,26 @@ BEATS = [
         {"do": "fx", "fx": "shop_lights_on", "wait": 0.8},
         {"do": "say", "line": "wc_002"},
         # up the street (back walk cycles), the camera following them
-        {"do": "walk", "who": ["kid", "rabbit", "bear", "fox"], "dist": 1.9, "dir": "away", "speed": 0.5,
+        {"do": "walk", "who": ["kid", "rabbit", "bear", "fox"], "dist": 1.9, "dir": "away", "speed": 0.6,
          "follow": "kid", "shot": "street"},
         # the camera turns round on the road to face the shop door straight on: the witch in full view
         {"do": "cam", "shot": "door_cam", "at": "door_view", "rate": 1.4, "wait": 0.6},
         {"do": "fx", "fx": "door_open", "wait": 0.4},
-        {"do": "walk", "who": "witch", "from": "in_door", "to": "witch_door", "dir": "toward", "speed": 0.28},
+        {"do": "walk", "who": "witch", "from": "in_door", "to": "witch_door", "dir": "toward", "speed": 0.38},
         {"do": "pose", "who": "witch", "pose": "welcome", "wait": 0.1},
         {"do": "say", "line": "wc_003"},
         {"do": "walk", "who": "cat", "from": "in_door", "to": "cat_door", "dir": "toward", "speed": 0.28, "async": True},
-        {"do": "cam", "shot": "door_cam", "at": "door_view", "rate": 1.4, "wait": 0.1},
+        {"do": "cam", "shot": "door_entry", "at": "door_view", "rate": 1.4, "wait": 0.1},
         # one door, everyone in (seen from behind), on into the room to their places
         # the witch leads them in; the small cat waits last (nearest the camera), nobody hides the door
         {"do": "go_inside", "who": ["rabbit", "bear", "fox", "witch", "kid", "cat"], "house": "shop",
-         "to": ROOM_AT, "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "front", "approach": "road_shop", "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.62,
+         "to": ROOM_AT, "via": FRIENDS_VIA, "queue": "front", "approach": "road_shop", "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.8, "pipeline": True,
          "line": "wc_004"},
     ]},
     {"id": "fire", "title": "뽀글뽀글 솥", "spread": _street(),
      "enter": {"who": ROOM_WHO, "at": ROOM_AT},
      "steps": [
-        {"do": "fx", "fx": "inside_view", "wait": 1.8},           # the camera glides in through the door
+        {"do": "fx", "fx": "inside_view", "wait": 1.2},           # the camera glides in through the door
         {"do": "pose", "who": "witch", "pose": "welcome", "wait": 0.1},
         {"do": "cam_settle", "frac": 0.7},                         # SPEAKER_OFF: in the room before she speaks
         {"do": "say", "line": "wc_005"},
@@ -520,21 +544,21 @@ BEATS = [
         {"do": "leave_shop", "who": ALL, "pose": "ghost", "to": "road_shop", "spacing": 0.21},
         {"do": "fx", "fx": "ghost_sneak", "wait": 0.0},
         {"do": "walk", "who": ALL, "pose": "ghost", "path": ["road_shop", "parade_l", "parade_a"], "file": True,
-         "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_side", "line": "wc_135"},
+         "spacing": 0.17, "speed": 0.46, "follow": "witch", "shot": "parade_side", "line": "wc_135"},
         {"do": "walk", "who": ALL, "pose": "ghost", "path": ["parade_u1", "parade_u3", "parade_u2", "parade_r", "road_shop"],
-         "file": True, "spacing": 0.17, "speed": 0.46, "follow": "fox", "shot": "parade_back", "line": "wc_x_ghost_all"},
+         "file": True, "spacing": 0.17, "speed": 0.46, "follow": "witch", "shot": "parade_back", "line": "wc_x_ghost_all"},
         {"do": "parade_surprise"},
         {"do": "ghost_flight"},
-        {"do": "fx", "fx": "ghost_vanish", "wait": 1.0},
-        {"do": "cam", "shot": "door_wide", "at": "door_view", "rate": 1.4, "wait": 0.2},
-        {"do": "go_inside", "who": ["kid", "witch", "cat", "rabbit", "bear", "fox"], "house": "shop", "to": ROOM_AT,
-         "via": {"rabbit": ["in_right", "in_right2"], "bear": ["in_right"], "fox": ["in_right"]}, "queue": "front", "approach": "road_shop",
-         "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.65},
+        {"do": "fx", "fx": "ghost_vanish", "wait": 0.5},
+        {"do": "cam", "shot": "door_entry", "at": "door_view", "rate": 1.4, "wait": 0.2},
+        {"do": "go_inside", "who": ALL, "house": "shop", "to": ROOM_AT,
+         "via": FRIENDS_VIA, "queue": "front", "approach": "road_shop",
+         "queue_gap": 0.16, "house_facing": True, "door_clear": True, "climb_steps": True, "speed": 0.8, "pipeline": True},
     ]},
     {"id": "finale", "title": "다 같이 변신", "spread": _street(),
      "enter": {"who": ROOM_WHO, "at": ROOM_AT},
      "steps": [
-        {"do": "fx", "fx": "inside_view", "wait": 1.6},
+        {"do": "fx", "fx": "inside_view", "wait": 1.2},
         {"do": "pose", "who": "witch", "pose": "welcome"},
         {"do": "cam_settle", "frac": 0.7},
         {"do": "say", "line": "wc_136"},
@@ -556,8 +580,9 @@ BEATS = [
         {"do": "say", "line": "wc_141"},
         {"do": "say", "line": "wc_142"},
         {"do": "tap_steps", "target": "witch", "prompt": "wc_143", "hint": "wc_143", "steps": [{"fx": "witch_wave"}]},
-        {"do": "fx", "fx": "outside_view", "wait": 1.2},
-        {"do": "cam", "shot": "pull_back", "at": "est", "rate": 0.6, "wait": 2.4},
+        # 2026-11-24: the book closes on the room tableau (the glide out and the pull-back came back in through the door
+        # before the fold, two door close-ups and 7 s)
+        {"do": "cam", "shot": "room", "at": "in_focus", "rate": 1.2, "wait": 1.0},
         {"do": "end", "after": "wc_n02", "close_book": True},
     ]},
 ]

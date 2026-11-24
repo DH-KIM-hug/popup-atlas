@@ -783,7 +783,7 @@ func _walk_home(R: Node) -> void:
 			pts.append(stage.spot_point("road_shop") if kid.global_position.distance_to(stage.spot_point("road_shop")) < kid.global_position.distance_to(stage.spot_point("door")) else stage.spot_point("door") + _out() * 0.2)
 		pts.append_array(_door_steps(true))
 		pts.append(home)
-		kid.follow(pts, 0.32, "", true)
+		kid.follow(pts, 0.45, "", true)  # 2026-11-24 pace: 0.32 -> 0.45
 		await R._wait(0.3)
 		fx("inside_view")
 		var g := 0.0
@@ -821,14 +821,14 @@ func _brew_ghost(st: Dictionary, R: Node) -> void:
 		var hit: String = await R._wait_tap([key], "", [key], true, false)
 		_drop_in(hit)
 		cols.append(str(ings[hit]["color"]))
-		await R._wait(0.35)
+		await R._wait(0.3)  # 2026-11-24 pace: the three ghost taps' waits trimmed (0.35 / 0.45 / 0.5 / 0.5)
 		stage.shot_to("pot", "in_pot", {"rate": 4.0})
-		await R._wait(0.45)
+		await R._wait(0.4)
 		_set_liquid(cols)
-		await R._wait(0.5)
+		await R._wait(0.35)
 		if cols.size() < taps.size():
 			stage.shot_to("pick3", "shelf_mid", {"rate": 4.0})
-			await R._wait(0.5)
+			await R._wait(0.4)
 	_picking = false
 	# v3 build-up: the room lights flicker and dim, the music drops, the pot glows an eerie green, smoke swirls up
 	var w := _a("witch")
@@ -1169,6 +1169,12 @@ var _pg_dir := Vector3.FORWARD
 var _pg_ducked := false
 
 
+## 2026-11-24: the witch walks last in the parade file (one order out, round and back in: no queue crossings); the
+## little ghost tags along behind her and peeks out between her and the fox
+const PARADE_LAST := "witch"
+const PARADE_NEXT := "fox"
+
+
 func _parade_ghost_start() -> void:
 	_pg_on = true
 	_pg_t = -3.0  # it appears a few seconds into the walk
@@ -1181,7 +1187,7 @@ func _step_parade_ghost(dt: float) -> void:
 	if not _pg_on:
 		return
 	_pg_t += dt
-	var last := _a("fox")
+	var last := _a(PARADE_LAST)
 	if last == null or _pg_t < 0.0:
 		return
 	var gh := _ghost_card()
@@ -1201,7 +1207,7 @@ func _step_parade_ghost(dt: float) -> void:
 		amp = 0.04
 		gh.rotation.z = sin(_t * 5.0) * 0.25
 	elif phase >= 7.0 and phase < 10.0:  # peeking out between the last two
-		var b := _a("bear")
+		var b := _a(PARADE_NEXT)
 		if b:
 			tgt = last.global_position.lerp(b.global_position, 0.5) + _pg_dir.cross(Vector3.UP).normalized() * 0.09 + Vector3.UP * 0.16
 	elif phase >= 10.0 and phase < 11.2:  # the rabbit almost turns round: it ducks down out of sight
@@ -1222,7 +1228,7 @@ func _step_parade_ghost(dt: float) -> void:
 func _parade_surprise(R: Node) -> void:
 	_pg_on = false
 	var gh := _ghost_card()
-	var fox := _a("fox")
+	var fox := _a(PARADE_LAST)
 	gh.global_position = fox.global_position - _pg_dir * 0.16 + Vector3.UP * 0.14 if fox else gh.global_position
 	stage.shot_to("surprise", null, {"rate": 2.0})
 	stage._focus_goal = gh.global_position - Vector3.UP * 0.12
@@ -1248,6 +1254,8 @@ func _parade_surprise(R: Node) -> void:
 
 ## Then, while they stand startled, it flies all over the village: down the street, round the lamp posts and along the
 ## strings of lights, over the roofs, past lit windows, a loop in front of the moon, back over the kids.
+const FLIGHT_SEC := 7.5
+
 func _ghost_flight(R: Node) -> void:
 	var gh := _ghost_card()
 	var up := Vector3.UP
@@ -1268,18 +1276,18 @@ func _ghost_flight(R: Node) -> void:
 		pts.append(loop + _right() * cos(a3) * 0.32 + up * (0.85 + sin(a3) * 0.22))
 	var kid := _a("kid")
 	pts.append((kid.global_position if kid else loop) + up * 0.45)
-	_gmove(pts, 13.0, 0.03)
+	_gmove(pts, FLIGHT_SEC, 0.03)  # 2026-11-24 pace: 13 s -> 9 s (a silent stretch)
 	_track = gh
 	stage.shot_to("track", null, {"rate": 2.2})
 	var t := 0.0
 	var next_whoosh := 0.0
 	var switched := false
-	while not _gpath.is_empty() and t < 16.0:
+	while not _gpath.is_empty() and t < FLIGHT_SEC + 3.0:
 		t += await R._frame()
 		if t >= next_whoosh:
 			next_whoosh = t + 1.3
 			_sfx("wc.swoosh", gh.global_position)
-		if not switched and float(_gpath.get("t", 0.0)) > 13.0 * 0.62:
+		if not switched and float(_gpath.get("t", 0.0)) > FLIGHT_SEC * 0.62:
 			switched = true
 			stage.shot_to("sky", null, {"rate": 1.6})
 		for r in ["kid", "witch", "rabbit", "bear", "fox"]:  # they watch it go
@@ -1309,9 +1317,10 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			var pts := [p0 + _sx() * 0.32 + _out() * 0.12, p0 + _sx() * 0.5 + _out() * 0.05, p0 - _sx() * 0.06 + _out() * 0.1, p0]
 			kid.follow(pts, 0.16, "duck", false)
 			var cat := _a("cat")
+			R._say(act)
+			await R._wait(1.0)  # 2026-11-24: the cat sets off a step behind her (it walked into her: OVERLAP)
 			if cat:
 				cat.follow([cat.global_position + _out() * 0.05 - _sx() * 0.1] + pts.slice(0, 2), 0.11, "", false)  # behind, slower
-			R._say(act)
 			await _wait_moving(R, ["kid", "cat"])
 			if cat:
 				cat.walk_to(stage.spot_point("in_cat"), 0.18, "")
@@ -1400,14 +1409,14 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			_kid_light.position = Vector3(0, 0.18, 0.08)
 			kid.add_child(_kid_light)
 			_sfx("wc.glow", kid.centre())
-			_glide("kid", [stage.spot_point("door") + _out() * 0.25, stage.spot_point("road_shop"), stage.spot_point("road_mid")], 0.34, "hop", "tf_pumpkin")
+			_glide("kid", [stage.spot_point("door") + _out() * 0.25, stage.spot_point("road_shop"), stage.spot_point("road_mid")], 0.44, "hop", "tf_pumpkin")
 			stage.follow_actor("kid", "track")
 			R._say(act)
 			await _wait_glide(R, "kid")
 			await _while_line(R)
-			await R._wait(0.8)
+			await R._wait(0.4)
 			_dim_t = 1.0
-			_glide("kid", [stage.spot_point("road_shop"), stage.spot_point("door") + _out() * 0.2], 0.4, "hop", "tf_pumpkin")
+			_glide("kid", [stage.spot_point("road_shop"), stage.spot_point("door") + _out() * 0.2], 0.5, "hop", "tf_pumpkin")
 			await _wait_glide(R, "kid")
 		_:
 			await R._say(act)
@@ -1452,6 +1461,12 @@ func _name_jars(st: Dictionary, R: Node) -> void:
 ## (inward), each walks to the doorway, steps up onto the sill, over it and down the steps, then on to a place in a
 ## tidy file along the front path. {who, pose, to (spot), spacing}
 func _leave_shop(st: Dictionary, R: Node) -> void:
+	# 2026-11-24: the ghost-candy float ends before they walk out (feet on the ground; a bobbing lift read as a static
+	# card sliding at every walk start in the gate)
+	_floating = false
+	for r in ["kid", "witch", "cat", "rabbit", "bear", "fox"]:
+		if _a(r):
+			_a(r).lift = 0.0
 	var sp := _sp("shop")
 	fx("door_open")
 	var g := 0.0
@@ -1469,9 +1484,9 @@ func _leave_shop(st: Dictionary, R: Node) -> void:
 			pts.push_front(stage.spot_point("in_via"))
 		var end := to + o * float(st.get("spacing", 0.15)) * float(roles.size() - 1 - i) * 0.0 - (to - stage.spot_point("door")).normalized() * float(st.get("spacing", 0.15)) * i
 		pts.append(Vector3(end.x, stage.world.ground.surface_y(Vector2(end.x, end.z)), end.z))
-		a.follow(pts, 0.55, str(st.get("pose", "")), true)
+		a.follow(pts, 0.78, str(st.get("pose", "")), true)  # 2026-11-24 pace: 0.55 -> 0.78
 		var g2 := 0.0
-		while a.moving() and a._path.size() > 1 and g2 < 8.0:  # the next one starts once this one is down the steps
+		while a.moving() and a._path.size() > 3 and g2 < 8.0:  # the next one starts once this one is over the sill
 			g2 += await R._frame()
 	var g3 := 0.0
 	while g3 < 8.0:  # everyone down the steps and in the file before the parade starts
@@ -1523,7 +1538,7 @@ func _go_out(R: Node, shot := "story") -> void:
 	var g := 0.0
 	while sp.door_open_amount() < 0.95 and g < 2.0:  # the door swings fully clear first
 		g += await R._frame()
-	_glide("kid", _door_steps(false), 0.36, "walk", fig)
+	_glide("kid", _door_steps(false), 0.45, "walk", fig)
 	await _wait_glide(R, "kid")
 	kid.hop_v = 0.9  # the hero pose on the doorstep: a hop, sparkles, a lift in the music
 	for k in 6:

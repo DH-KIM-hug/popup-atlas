@@ -102,9 +102,9 @@
    0.0
   ],
   "sky": [
-   2.6,
-   3.0,
-   0.8,
+   2.0,
+   5.0,
+   0.85,
    34.0,
    0.0
   ],
@@ -137,10 +137,10 @@
    0.0
   ],
   "track": [
-   3.4,
-   27.0,
+   3.2,
+   46.0,
    0.25,
-   22.0,
+   24.0,
    0.0
   ],
   "door_cam": [
@@ -163,6 +163,13 @@
    0.3,
    26.0,
    -45.0
+  ],
+  "door_entry": [
+   2.3,
+   30.0,
+   0.3,
+   28.0,
+   -75.0
   ],
   "roof_cam": [
    2.6,
@@ -242,18 +249,18 @@
    -57.0
   ],
   "parade_side": [
-   2.6,
-   32.0,
-   0.22,
-   26.0,
-   -25.0
-  ],
-  "parade_back": [
-   2.4,
-   40.0,
+   2.8,
+   58.0,
    0.22,
    28.0,
-   30.0
+   -60.0
+  ],
+  "parade_back": [
+   2.8,
+   60.0,
+   0.22,
+   28.0,
+   -60.0
   ],
   "surprise": [
    1.4,
@@ -527,20 +534,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -655,24 +662,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -984,10 +995,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -995,10 +1009,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -1933,7 +1950,7 @@
      "at": "est",
      "from": "crane_high",
      "rate": 0.9,
-     "wait": 1.6
+     "wait": 1.0
     },
     {
      "do": "fx",
@@ -2021,7 +2038,7 @@
      ],
      "dist": 1.9,
      "dir": "away",
-     "speed": 0.5,
+     "speed": 0.6,
      "follow": "kid",
      "shot": "street"
     },
@@ -2043,7 +2060,7 @@
      "from": "in_door",
      "to": "witch_door",
      "dir": "toward",
-     "speed": 0.28
+     "speed": 0.38
     },
     {
      "do": "pose",
@@ -2066,7 +2083,7 @@
     },
     {
      "do": "cam",
-     "shot": "door_cam",
+     "shot": "door_entry",
      "at": "door_view",
      "rate": 1.4,
      "wait": 0.1
@@ -2092,14 +2109,19 @@
      },
      "via": {
       "rabbit": [
+       "in_right0",
        "in_right",
        "in_right2"
       ],
       "bear": [
-       "in_right"
+       "in_right0",
+       "in_right",
+       "in_right2"
       ],
       "fox": [
-       "in_right"
+       "in_right0",
+       "in_right",
+       "in_right2"
       ]
      },
      "queue": "front",
@@ -2108,7 +2130,8 @@
      "house_facing": true,
      "door_clear": true,
      "climb_steps": true,
-     "speed": 0.62,
+     "speed": 0.8,
+     "pipeline": true,
      "line": "wc_004"
     }
    ],
@@ -2167,20 +2190,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -2295,24 +2318,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -2624,10 +2651,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -2635,10 +2665,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -3574,7 +3607,7 @@
     {
      "do": "fx",
      "fx": "inside_view",
-     "wait": 1.8
+     "wait": 1.2
     },
     {
      "do": "pose",
@@ -3697,20 +3730,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -3825,24 +3858,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -4154,10 +4191,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -4165,10 +4205,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -5250,20 +5293,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -5378,24 +5421,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -5707,10 +5754,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -5718,10 +5768,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -6901,20 +6954,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -7029,24 +7082,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -7358,10 +7415,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -7369,10 +7429,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -8569,20 +8632,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -8697,24 +8760,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -9026,10 +9093,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -9037,10 +9107,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -10214,20 +10287,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -10342,24 +10415,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -10671,10 +10748,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -10682,10 +10762,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -11634,11 +11717,11 @@
      "do": "leave_shop",
      "who": [
       "kid",
-      "witch",
       "cat",
       "rabbit",
       "bear",
-      "fox"
+      "fox",
+      "witch"
      ],
      "pose": "ghost",
      "to": "road_shop",
@@ -11653,11 +11736,11 @@
      "do": "walk",
      "who": [
       "kid",
-      "witch",
       "cat",
       "rabbit",
       "bear",
-      "fox"
+      "fox",
+      "witch"
      ],
      "pose": "ghost",
      "path": [
@@ -11668,7 +11751,7 @@
      "file": true,
      "spacing": 0.17,
      "speed": 0.46,
-     "follow": "fox",
+     "follow": "witch",
      "shot": "parade_side",
      "line": "wc_135"
     },
@@ -11676,11 +11759,11 @@
      "do": "walk",
      "who": [
       "kid",
-      "witch",
       "cat",
       "rabbit",
       "bear",
-      "fox"
+      "fox",
+      "witch"
      ],
      "pose": "ghost",
      "path": [
@@ -11693,7 +11776,7 @@
      "file": true,
      "spacing": 0.17,
      "speed": 0.46,
-     "follow": "fox",
+     "follow": "witch",
      "shot": "parade_back",
      "line": "wc_x_ghost_all"
     },
@@ -11706,11 +11789,11 @@
     {
      "do": "fx",
      "fx": "ghost_vanish",
-     "wait": 1.0
+     "wait": 0.5
     },
     {
      "do": "cam",
-     "shot": "door_wide",
+     "shot": "door_entry",
      "at": "door_view",
      "rate": 1.4,
      "wait": 0.2
@@ -11719,11 +11802,11 @@
      "do": "go_inside",
      "who": [
       "kid",
-      "witch",
       "cat",
       "rabbit",
       "bear",
-      "fox"
+      "fox",
+      "witch"
      ],
      "house": "shop",
      "to": {
@@ -11736,14 +11819,19 @@
      },
      "via": {
       "rabbit": [
+       "in_right0",
        "in_right",
        "in_right2"
       ],
       "bear": [
-       "in_right"
+       "in_right0",
+       "in_right",
+       "in_right2"
       ],
       "fox": [
-       "in_right"
+       "in_right0",
+       "in_right",
+       "in_right2"
       ]
      },
      "queue": "front",
@@ -11752,7 +11840,8 @@
      "house_facing": true,
      "door_clear": true,
      "climb_steps": true,
-     "speed": 0.65
+     "speed": 0.8,
+     "pipeline": true
     }
    ],
    "sound": {
@@ -11810,20 +11899,20 @@
       0.45
      ],
      "kid_at": [
-      -0.02,
-      0.42
+      -0.12,
+      0.44
      ],
      "rabbit_at": [
-      -0.22,
+      -0.3,
       0.5
      ],
      "bear_at": [
-      0.17,
+      0.19,
       0.52
      ],
      "fox_at": [
-      -0.1,
-      0.66
+      0.04,
+      0.58
      ],
      "kids_mid": [
       -0.05,
@@ -11938,24 +12027,28 @@
       -2.928
      ],
      "in_rabbit": [
-      1.493,
-      -3.452
+      1.408,
+      -3.508
      ],
      "in_bear": [
-      1.705,
-      -3.211
+      1.55,
+      -3.395
      ],
      "in_fox": [
-      1.818,
-      -3.07
+      1.649,
+      -3.268
+     ],
+     "in_right0": [
+      1.253,
+      -2.787
      ],
      "in_floor": [
       0.814,
       -2.914
      ],
      "in_floor2": [
-      1.168,
-      -3.268
+      1.076,
+      -3.176
      ],
      "in_door": [
       1.04,
@@ -12267,10 +12360,13 @@
       "at": "in_floor",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -12278,10 +12374,13 @@
       "at": "in_floor2",
       "stage": "full",
       "flat": true,
+      "floor": true,
       "name": "room_floor2",
       "scale": 1.22,
       "clear": 0,
-      "lift": 0.02,
+      "lift": 0.045,
+      "thick": 0.003,
+      "edge": "#7a4a22",
       "yaw": -45.0
      },
      {
@@ -13217,7 +13316,7 @@
     {
      "do": "fx",
      "fx": "inside_view",
-     "wait": 1.6
+     "wait": 1.2
     },
     {
      "do": "pose",
@@ -13307,11 +13406,11 @@
      "do": "pose",
      "who": [
       "kid",
-      "witch",
       "cat",
       "rabbit",
       "bear",
-      "fox"
+      "fox",
+      "witch"
      ],
      "pose": "cheer"
     },
@@ -13346,16 +13445,11 @@
      ]
     },
     {
-     "do": "fx",
-     "fx": "outside_view",
-     "wait": 1.2
-    },
-    {
      "do": "cam",
-     "shot": "pull_back",
-     "at": "est",
-     "rate": 0.6,
-     "wait": 2.4
+     "shot": "room",
+     "at": "in_focus",
+     "rate": 1.2,
+     "wait": 1.0
     },
     {
      "do": "end",
@@ -17709,5 +17803,8 @@
    ],
    "new": true
   }
- ]
+ ],
+ "inside_margin": 0.45,
+ "inside_door_hide": true,
+ "occlude_subjects_only": true
 }
