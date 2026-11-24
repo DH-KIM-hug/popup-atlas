@@ -2497,3 +2497,37 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
     - ≤ 1 s camera transitions with no line playing (an empty yard at 3:07, a glide over the shore at 5:20);
     - the swimming head is small in the swim shot;
     - nobody has listened to the mix.
+
+## 2026-11-25 — sunmoon v15: the escape on screen, climbs in shot, gate pass (59a1d88 + this commit)
+- Back-door escape (audit: "the camera goes inside the paper wall, the escape is never seen"): the camera leaves the
+  room through the front wall it came in by, rises (cot_rise) and swings round the cottage's left side to the back
+  (back_left); a new back wall card story_sm_cottage_08 (cottage_05 mirrored, doorway painted dark) with a handler
+  plank leaf (cottage_09) that swings INTO the house (fx back_door); the kids stay in the room (enter.keep) until the
+  camera is out, then wait folded in the doorway (fx kids_in) and step out as it opens; they hide on OUR side of the
+  jars while the tiger comes round the front corner (corner_l, irony). Twin cards (jars_b, well_b, tree_b) for pieces
+  now seen from behind (a card's back is plain stock).
+- Roof in the lens: the run to the tree is shot from the cottage's left side (run_l, run_back cycles), the camera
+  goes to the tree high round the front (tree_high); the tiger walks in from behind the back wall (well_side yaw 40).
+- Climbs: tree climbs frame the climbers (handler tap target "climbers" + shot_to tree_climb per tap: the tap
+  framing on the tree kept a trunk close and the kids left the top); rope climbs and the sky rise rest on climb_a /
+  climb_b (rope_a/b are praying / sitting front figures) and climb in climb_cycle; the tiger's rotten-rope climb in
+  rope_climb; the axe climb on the trunk side away from the ropes. Tiger walks to the trunk before the oil slips.
+- 4:42 floating face: the rope page opens on the whole trunk (tree_climb), not a low face shot.
+- dg slide: the walk-away waits for the camera to land and follows him (dg_back cycle).
+- Sky blocks: z-fighting of overlapping cloud cards at one depth (not DOF, not compression): each column 2.5 cm
+  apart; DOF also off on the sky page.
+- Felt ridge: already paper after the Gemini redraw (checked at full res).
+- Smaller: the tiger comes up the path to the door on screen; the floury paw is in frame (it sat inside the wall_in
+  card) and leaves before the room shot; morning kids / mother positions (OVERLAP); pass-2/3 open on the mother;
+  the tiger steps out beside his rock with the rock framed first (pass_low2 / pass_low3); kids deeper in the room.
+- Engine (2d62f86): overlap check ignores two actors > 0.6 h apart in height (stacked climbers).
+- Gate: artifacts/sunmoon/rec/full_v15.log, GATE PASS (OVERLAP 1 = a 0.01 shoulder touch on the door steps and
+  MOTION_FLAG 31 = the drawn slip figure, both accepted in gate.md); OCCLUDE 0, CAM_JUMP/JERK 0, SPEAKER_OFF 0,
+  check_lines 64/64. 38 motion rows looked at, all ok.
+- Video artifacts/video/sunmoon_v15.mp4 (27.7 MB, 2-pass 470k), fixes artifacts/sunmoon/fixes_sheet.jpg.
+- Length 6:37 (story 395 s; was 6:30): NOT tightened — the voice alone is 226 s and the escape / climbs now take the
+  shots they need; trims went into waits only. Getting to ~5 min means cutting or merging lines (user call).
+- Still off: the sky kids pop up at the rope's foot; the pass-3 low shot shows the tiger's big back; a corner of
+  thatch for ~1 s in the crane to the tree; the boy is small in the fork on the rope page; nobody listened to the mix.
+- Shared slot: other agents' wrappers took the lock while a run held it (the lock pid was overwritten mid-run), and
+  one run died after 5 s; a 0.03 s poller (scratchpad) was needed to get turns.
