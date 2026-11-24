@@ -18,4 +18,7 @@ ffmpeg -y -loglevel error -i "$AVI" -vf "scale=1200:900" -c:v libx264 -crf 28 -p
   -c:a aac -b:a 96k "$OUT"
 mv "$AVI" "$HOME/.Trash/$(basename "$AVI" .avi)_$(date +%s).avi"
 grep -E "STORY_DONE|SCRIPT ERROR|Failed loading" "$LOG" | head -5 || true
+# frozen video (the movie maker sometimes repeats frames for seconds while the log runs on: turnip t2 2026-11-24, 36
+# freezes, an 11 MB file instead of 19 MB); 0 expected, re-record otherwise
+echo "FROZEN_VIDEO $(ffmpeg -i "$OUT" -vf "scale=300:225,freezedetect=n=0.0005:d=2.5" -map 0:v -f null - 2>&1 | grep -c freeze_start)"
 ls -la "$OUT"

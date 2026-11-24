@@ -224,7 +224,10 @@ def flags_for(s, cat, tr=None, vp=(1366.0, 1024.0), caps=None):
     dz = s["dz"] if s.get("dz", -1) >= 0 else max(0.0, s["dist"] - dg)
     if s["verb"] in ("walk", "run") and cyc_frames > 0.8 * n and dg > 0.5 * h and s["exp"] > 0:
         r = s["cyc"] / s["exp"]
-        if r < 0.6 or r > 1.4:
+        # (2026-11-24) the shown-cycle count moves in whole drawn frames (½ cycle for a 2-frame back / front cycle,
+        # plus the frame the paper turn swaps in): on a sub-metre shuffle at a door that is ±0.5 by itself
+        # (three_pigs pig_a: 1.00 for 0.70 = one frame); only a gap larger than one frame step is a skate
+        if (r < 0.6 or r > 1.4) and abs(s["cyc"] - s["exp"]) > 0.5:
             out.append(("SKATE", f"cycles {s['cyc']:.2f} for {s['exp']:.2f} expected (x{r:.2f})"))
     if s["verb"] == "fly" and nstatic > 0.6 * n and dg > 1.0 * h and dz < 0.2 * dg:
         out.append(("GLIDE", f"{dg / h:.1f} heights along the ground with {static[0][0] if static else '?'}"))
