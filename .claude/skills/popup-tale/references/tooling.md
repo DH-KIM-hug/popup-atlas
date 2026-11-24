@@ -4,7 +4,12 @@
 - One Godot process per project at a time (import races mark files valid=false). Run every Godot command through
   `tools/story/with_godot.sh <command ...>` (a mkdir lock dir with pid + trap; it waits while another agent holds it).
 - The shared slot: with four agents chaining Godot jobs, `with_godot.sh`'s 3 s poll lost the race for 30+ minutes; a
-  waiter that polls the lock dir every 0.2 s and then takes it the same way (mkdir + pid + trap) gets a turn.
+  waiter that polls the lock dir every 0.2 s and then takes it the same way (mkdir + pid + trap) gets a turn:
+  `tools/story/slot_wait.sh <command>`. It must do the mkdir itself on every poll: a waiter that only watched the dir
+  and then exec'd with_godot.sh lost the race once and sat in with_godot's 3 s poll for 30 min. Never nest them
+  (a script run under slot_wait that calls with_godot.sh — house_orbit.sh does — waits on its own lock forever).
+- A full gate recording in one call: `tools/story/slot_wait.sh tools/story/full_rec.sh TALE /ABS/out.mp4 MAX_S`
+  (--import, 1200x900, frame cap MAX_S·30 so the slot is never held forever, --log-sound --log-track, AVI to Trash).
 - Waiting on a background recording: wait on its PID; `pgrep -f "<script name>"` also matches the waiting shell itself
   and never ends. Never kill processes you didn't start, never kill by pattern.
 
