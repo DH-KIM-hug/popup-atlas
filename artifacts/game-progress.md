@@ -2464,3 +2464,36 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
     STATIC_CARD on very short scurries. tiger dg_front is still a static card. sun_wind traveller still on the leg rig
     (no drawn cycles). rapunzel: OFF_FRAME found only 1 segment on its audit log; the audit's "prince reunion off
     frame" shows on screen in TRACK, so it may be an occlusion — check by eye.
+
+## 2026-11-24 — patjuk wave 2 (gate audit v1 items): GATE PASS
+  - State check first: the full run no longer crashes (wave 1 park); CHECK_LINES OK 56. The baseline (base_w2) had 13
+    MOTION_FLAGS (helpers off frame / under the caption, the tiger's escape in walk_back, the carry off frame + GLIDE) and OCCLUDE 7.
+  - Fixes (tools/story/tales/patjuk.py, game/stories/patjuk/fx.gd, script.json reseeded):
+    - the tiger steps out of the boulder on camera;
+    - after he leaves up the road, the camera turns back to the granny (`follow_for`);
+    - helpers enter from just inside the door along the floor, in a looking-down room shot (`kitchen_help`);
+    - the mortar hides OVER THE OUTSIDE of the door and drops on the tiger as he bursts out (shot `door_drop`); no turning round inside to the bare inner front-wall card;
+    - the kitchen shots are wide lenses aimed at the tiger's middle (no cut heads);
+    - the camera pans with him from the hearth to the jar (the kitchen was empty);
+    - the floor-trap shot is raised so the dung ring sits above the caption;
+    - the night arrival is tracked from above the pines (`night_arrive`);
+    - the granny is placed behind the door before the yard beat (3 s of empty yard cut);
+    - the carry is tracked (`carry`); the roll rides across the top of the jige; a thrown arc into the waves and a splash growing from the water line (was a ×9 card popping up); the jige steps aside;
+    - snow paper ground on the cottage spread (`_snow_ground`);
+    - the yard walls get thin house bodies (house_bodies.py OVERRIDE);
+    - the jige goes round behind the mat;
+    - tighter waits.
+  - Shared: StoryActor treats a drawn special run (`run_cry` / `run_bump` + `_cycle`) as a run for the view pick (run_back / run_cry_front instead of the walk).
+  - tiger_slip magenta rim: already clean (0 magenta edge pixels on slip / slip_fall / fallen / rolled_cry / swim after the Gemini rim clean); nothing to do.
+  - Run w2_r6 (1200x900 movie maker, --log-track --log-sound):
+    - STORY_DONE 353.0 s (5:53, was 365.1);
+    - all counters 0;
+    - CHECK_LINES OK;
+    - 37 motion segments, all ok, MOTION_FLAGS 0;
+    - gate.py: GATE PASS.
+  - Files: video artifacts/video/patjuk_v2.mp4 (27 MB); fixes sheet artifacts/patjuk/fixes_sheet.jpg.
+  - Still off:
+    - 5:53 against the ~5 min aim: the voice alone is 221 s, the seven-helper refrain plus taps stays, and no lines were cut;
+    - ≤ 1 s camera transitions with no line playing (an empty yard at 3:07, a glide over the shore at 5:20);
+    - the swimming head is small in the swim shot;
+    - nobody has listened to the mix.

@@ -196,6 +196,13 @@
    40.0,
    140.0
   ],
+  "door_paw": [
+   0.42,
+   4.0,
+   0.24,
+   56.0,
+   140.0
+  ],
   "yard_high": [
    4.5,
    30.0,
@@ -266,6 +273,69 @@
    24.0,
    -30.0
   ],
+  "cot_rise": [
+   3.2,
+   40.0,
+   0.3,
+   30.0,
+   -60.0
+  ],
+  "back_left": [
+   2.5,
+   22.0,
+   0.25,
+   30.0,
+   -170.0
+  ],
+  "jars_bl": [
+   1.6,
+   14.0,
+   0.18,
+   30.0,
+   -165.0
+  ],
+  "corner_l": [
+   2.4,
+   16.0,
+   0.25,
+   32.0,
+   -130.0
+  ],
+  "yard_crane": [
+   3.6,
+   52.0,
+   0.2,
+   30.0,
+   -20.0
+  ],
+  "tree_climb": [
+   3.4,
+   5.0,
+   0.9,
+   38.0,
+   -10.0
+  ],
+  "run_l": [
+   3.0,
+   24.0,
+   0.25,
+   30.0,
+   -125.0
+  ],
+  "tree_high": [
+   3.6,
+   45.0,
+   0.6,
+   32.0,
+   -60.0
+  ],
+  "well_side": [
+   1.9,
+   12.0,
+   0.3,
+   30.0,
+   20.0
+  ],
   "field_est": [
    5.2,
    20.0,
@@ -317,24 +387,45 @@
   ],
   "kitchen": [
    0.8,
-   14.0,
-   0.2,
-   64.0,
+   16.0,
+   0.27,
+   72.0,
    -40.0
   ],
   "kitchen_low": [
-   0.7,
-   4.0,
+   0.78,
+   8.0,
+   0.33,
+   72.0,
+   -40.0
+  ],
+  "kitchen_help": [
+   0.74,
+   30.0,
+   0.12,
+   70.0,
+   -40.0
+  ],
+  "kitchen_floor": [
+   0.8,
+   28.0,
    0.24,
-   62.0,
+   76.0,
    -40.0
   ],
   "kitchen_door": [
    0.72,
-   8.0,
-   0.26,
-   56.0,
+   6.0,
+   0.38,
+   78.0,
    140.0
+  ],
+  "door_drop": [
+   1.35,
+   5.0,
+   0.36,
+   38.0,
+   -40.0
   ],
   "kitchen_side": [
    0.85,
@@ -359,10 +450,31 @@
   ],
   "yard_low": [
    1.5,
-   5.0,
+   6.0,
    0.22,
    32.0,
-   -55.0
+   -22.0
+  ],
+  "night_arrive": [
+   3.2,
+   32.0,
+   0.3,
+   30.0,
+   -30.0
+  ],
+  "carry": [
+   1.7,
+   16.0,
+   0.25,
+   38.0,
+   -85.0
+  ],
+  "sea_view": [
+   1.9,
+   13.0,
+   0.22,
+   36.0,
+   -80.0
   ],
   "sea": [
    2.1,
@@ -477,6 +589,7 @@
    "roll": "wc.roll",
    "jige_lift": "prop.ladder_raise",
    "splash": "wg.splash",
+   "throw": "wc.swoosh",
    "swim": "wc.wave",
    "feast": "wc.chime",
    "hop_all": "wc.sparkle"
@@ -573,6 +686,18 @@
   [
    "ddong",
    "kfloor"
+  ],
+  [
+   "ddong",
+   "hearth"
+  ],
+  [
+   "jeolgu",
+   "myeongseok"
+  ],
+  [
+   "jeolgu",
+   "jige"
   ]
  ],
  "cast": {
@@ -955,22 +1080,30 @@
      "steps": [
       {
        "fx": "hoe:1",
-       "wait": 0.4
+       "wait": 0.3
       },
       {
        "fx": "hoe:2",
-       "wait": 0.4
+       "wait": 0.3
       },
       {
        "fx": "hoe:3",
-       "wait": 0.4
+       "wait": 0.3
       }
      ]
     },
     {
+     "do": "cam",
+     "shot": "field_low",
+     "at": "tiger_at",
+     "rate": 3.0,
+     "wait": 0.1,
+     "settle": 0.7
+    },
+    {
      "do": "fx",
      "fx": "tiger_out:boulder:tiger_at",
-     "wait": 0.2
+     "wait": 0.1
     },
     {
      "do": "cam",
@@ -1028,13 +1161,16 @@
      "segs": [
       1
      ],
-     "exit": true
+     "exit": true,
+     "follow_for": 5.2,
+     "release_shot": "field_two",
+     "release_at": "granny_at"
     },
     {
      "do": "pose",
      "who": "halmi",
      "pose": "look_far",
-     "wait": 1.2
+     "wait": 0.8
     }
    ],
    "sound": {
@@ -1179,16 +1315,16 @@
       1.603
      ],
      "jeolgu_land": [
-      0.837,
-      1.551
+      0.767,
+      2.511
      ],
      "granny_door": [
       1.243,
       1.892
      ],
      "corner": [
-      1.807,
-      2.339
+      2.125,
+      2.084
      ],
      "tiger_fire": [
       1.418,
@@ -1214,6 +1350,10 @@
       1.677,
       1.903
      ],
+     "help_loop": [
+      1.492,
+      1.501
+     ],
      "jara_k": [
       1.586,
       1.918
@@ -1223,12 +1363,12 @@
       1.612
      ],
      "lintel": [
-      0.878,
-      1.912
+      0.814,
+      1.989
      ],
      "yard_c": [
-      0.711,
-      2.79
+      0.387,
+      2.818
      ],
      "y_granny": [
       0.341,
@@ -1239,8 +1379,12 @@
       2.83
      ],
      "y_jige": [
-      1.02,
-      3.402
+      1.475,
+      3.17
+     ],
+     "y_jige_via": [
+      0.949,
+      2.507
      ],
      "wall_l": [
       -0.175,
@@ -1787,16 +1931,16 @@
       1.603
      ],
      "jeolgu_land": [
-      0.837,
-      1.551
+      0.767,
+      2.511
      ],
      "granny_door": [
       1.243,
       1.892
      ],
      "corner": [
-      1.807,
-      2.339
+      2.125,
+      2.084
      ],
      "tiger_fire": [
       1.418,
@@ -1822,6 +1966,10 @@
       1.677,
       1.903
      ],
+     "help_loop": [
+      1.492,
+      1.501
+     ],
      "jara_k": [
       1.586,
       1.918
@@ -1831,12 +1979,12 @@
       1.612
      ],
      "lintel": [
-      0.878,
-      1.912
+      0.814,
+      1.989
      ],
      "yard_c": [
-      0.711,
-      2.79
+      0.387,
+      2.818
      ],
      "y_granny": [
       0.341,
@@ -1847,8 +1995,12 @@
       2.83
      ],
      "y_jige": [
-      1.02,
-      3.402
+      1.475,
+      3.17
+     ],
+     "y_jige_via": [
+      0.949,
+      2.507
      ],
      "wall_l": [
       -0.175,
@@ -2226,20 +2378,21 @@
     },
     {
      "do": "cam",
-     "shot": "kitchen",
-     "at": "k_focus",
+     "shot": "kitchen_help",
+     "at": "k_floor2",
      "rate": 1.2,
-     "wait": 0.2
+     "wait": 0.1,
+     "settle": 0.8
     },
     {
      "do": "fx",
      "fx": "door:open",
-     "wait": 0.4
+     "wait": 0.2
     },
     {
      "do": "fx",
      "fx": "arrive:bam",
-     "wait": 0.9
+     "wait": 0.3
     },
     {
      "do": "say",
@@ -2255,7 +2408,7 @@
      "steps": [
       {
        "fx": "give:bam",
-       "wait": 0.9
+       "wait": 0.7
       }
      ],
      "prompt": "pj_n04",
@@ -2276,7 +2429,7 @@
     {
      "do": "fx",
      "fx": "arrive:jara",
-     "wait": 0.9
+     "wait": 0.3
     },
     {
      "do": "say",
@@ -2292,7 +2445,7 @@
      "steps": [
       {
        "fx": "give:jara",
-       "wait": 0.9
+       "wait": 0.7
       }
      ]
     },
@@ -2311,7 +2464,7 @@
     {
      "do": "fx",
      "fx": "arrive:ddong",
-     "wait": 0.9
+     "wait": 0.3
     },
     {
      "do": "say",
@@ -2327,7 +2480,7 @@
      "steps": [
       {
        "fx": "give:ddong",
-       "wait": 0.9
+       "wait": 0.7
       }
      ]
     },
@@ -2346,7 +2499,7 @@
     {
      "do": "fx",
      "fx": "arrive:songgot",
-     "wait": 0.9
+     "wait": 0.3
     },
     {
      "do": "say",
@@ -2362,7 +2515,7 @@
      "steps": [
       {
        "fx": "give:songgot",
-       "wait": 0.9
+       "wait": 0.7
       }
      ]
     },
@@ -2381,7 +2534,7 @@
     {
      "do": "fx",
      "fx": "arrive:jeolgu",
-     "wait": 0.9
+     "wait": 0.3
     },
     {
      "do": "say",
@@ -2397,9 +2550,19 @@
      "steps": [
       {
        "fx": "give:jeolgu",
-       "wait": 0.9
+       "wait": 0.7
       }
      ]
+    },
+    {
+     "do": "cam",
+     "shot": "door_drop",
+     "at": [
+      "door_out",
+      "lintel"
+     ],
+     "rate": 1.0,
+     "wait": 0.0
     },
     {
      "do": "fx",
@@ -2558,16 +2721,16 @@
       1.603
      ],
      "jeolgu_land": [
-      0.837,
-      1.551
+      0.767,
+      2.511
      ],
      "granny_door": [
       1.243,
       1.892
      ],
      "corner": [
-      1.807,
-      2.339
+      2.125,
+      2.084
      ],
      "tiger_fire": [
       1.418,
@@ -2593,6 +2756,10 @@
       1.677,
       1.903
      ],
+     "help_loop": [
+      1.492,
+      1.501
+     ],
      "jara_k": [
       1.586,
       1.918
@@ -2602,12 +2769,12 @@
       1.612
      ],
      "lintel": [
-      0.878,
-      1.912
+      0.814,
+      1.989
      ],
      "yard_c": [
-      0.711,
-      2.79
+      0.387,
+      2.818
      ],
      "y_granny": [
       0.341,
@@ -2618,8 +2785,12 @@
       2.83
      ],
      "y_jige": [
-      1.02,
-      3.402
+      1.475,
+      3.17
+     ],
+     "y_jige_via": [
+      0.949,
+      2.507
      ],
      "wall_l": [
       -0.175,
@@ -2990,33 +3161,39 @@
    },
    "steps": [
     {
-     "do": "cam",
-     "shot": "yard",
-     "at": "y_focus",
-     "rate": 1.0,
-     "wait": 0.2,
-     "settle": 0.8
+     "do": "fx",
+     "fx": "place:halmi:tiger_door",
+     "wait": 0.0
     },
     {
      "do": "fx",
      "fx": "door:open",
-     "wait": 0.3
+     "wait": 0.0
+    },
+    {
+     "do": "cam",
+     "shot": "yard",
+     "at": [
+      "y_granny",
+      "y_jige"
+     ],
+     "rate": 1.0,
+     "wait": 0.1,
+     "settle": 0.4
     },
     {
      "do": "walk",
      "who": "halmi",
      "via": [
-      "k_mid_r",
-      "tiger_door",
       "door"
      ],
      "to": "y_granny",
-     "speed": 0.34
+     "speed": 0.45
     },
     {
      "do": "fx",
      "fx": "door:close",
-     "wait": 0.1
+     "wait": 0.0
     },
     {
      "do": "fx",
@@ -3034,7 +3211,7 @@
     {
      "do": "fx",
      "fx": "give:myeongseok",
-     "wait": 1.0
+     "wait": 0.8
     },
     {
      "do": "fx",
@@ -3064,7 +3241,7 @@
     {
      "do": "fx",
      "fx": "give:jige",
-     "wait": 1.0
+     "wait": 0.8
     },
     {
      "do": "fx",
@@ -3234,16 +3411,16 @@
       1.603
      ],
      "jeolgu_land": [
-      0.837,
-      1.551
+      0.767,
+      2.511
      ],
      "granny_door": [
       1.243,
       1.892
      ],
      "corner": [
-      1.807,
-      2.339
+      2.125,
+      2.084
      ],
      "tiger_fire": [
       1.418,
@@ -3269,6 +3446,10 @@
       1.677,
       1.903
      ],
+     "help_loop": [
+      1.492,
+      1.501
+     ],
      "jara_k": [
       1.586,
       1.918
@@ -3278,12 +3459,12 @@
       1.612
      ],
      "lintel": [
-      0.878,
-      1.912
+      0.814,
+      1.989
      ],
      "yard_c": [
-      0.711,
-      2.79
+      0.387,
+      2.818
      ],
      "y_granny": [
       0.341,
@@ -3294,8 +3475,12 @@
       2.83
      ],
      "y_jige": [
-      1.02,
-      3.402
+      1.475,
+      3.17
+     ],
+     "y_jige_via": [
+      0.949,
+      2.507
      ],
      "wall_l": [
       -0.175,
@@ -3702,28 +3887,28 @@
       "tiger_door"
      ],
      "to": "granny_wait",
-     "speed": 0.3
+     "speed": 0.45
     },
     {
      "do": "fx",
      "fx": "door:close",
-     "wait": 0.1
+     "wait": 0.0
     },
     {
      "do": "cam",
-     "shot": "snow_est",
+     "shot": "night_arrive",
      "at": "front_focus",
-     "rate": 1.0,
-     "wait": 0.3
+     "rate": 1.4,
+     "wait": 0.2
     },
     {
      "do": "walk",
      "who": "tiger",
      "from": "road_by",
      "to": "door_out",
-     "speed": 0.5,
+     "speed": 0.55,
      "follow": "tiger",
-     "shot": "yard_wide",
+     "shot": "night_arrive",
      "line": "pj_r0701"
     },
     {
@@ -3802,6 +3987,16 @@
      "segs": [
       0
      ]
+    },
+    {
+     "do": "cam",
+     "shot": "kitchen_low",
+     "at": [
+      "k_low_l",
+      "k_low_r"
+     ],
+     "rate": 1.6,
+     "wait": 0.0
     },
     {
      "do": "walk",
@@ -3980,16 +4175,16 @@
       1.603
      ],
      "jeolgu_land": [
-      0.837,
-      1.551
+      0.767,
+      2.511
      ],
      "granny_door": [
       1.243,
       1.892
      ],
      "corner": [
-      1.807,
-      2.339
+      2.125,
+      2.084
      ],
      "tiger_fire": [
       1.418,
@@ -4015,6 +4210,10 @@
       1.677,
       1.903
      ],
+     "help_loop": [
+      1.492,
+      1.501
+     ],
      "jara_k": [
       1.586,
       1.918
@@ -4024,12 +4223,12 @@
       1.612
      ],
      "lintel": [
-      0.878,
-      1.912
+      0.814,
+      1.989
      ],
      "yard_c": [
-      0.711,
-      2.79
+      0.387,
+      2.818
      ],
      "y_granny": [
       0.341,
@@ -4040,8 +4239,12 @@
       2.83
      ],
      "y_jige": [
-      1.02,
-      3.402
+      1.475,
+      3.17
+     ],
+     "y_jige_via": [
+      0.949,
+      2.507
      ],
      "wall_l": [
       -0.175,
@@ -4433,12 +4636,15 @@
     {
      "do": "fx",
      "fx": "backstep",
-     "wait": 1.2
+     "wait": 1.0
     },
     {
      "do": "cam",
-     "shot": "kitchen",
-     "at": "k_focus",
+     "shot": "kitchen_floor",
+     "at": [
+      "k_focus",
+      "dung"
+     ],
      "rate": 2.0,
      "wait": 0.1,
      "settle": 0.5
@@ -4478,22 +4684,32 @@
     {
      "do": "fx",
      "fx": "door:open",
-     "wait": 0.1
+     "wait": 0.0
+    },
+    {
+     "do": "cam",
+     "shot": "door_drop",
+     "at": [
+      "door_out",
+      "lintel"
+     ],
+     "rate": 1.0,
+     "wait": 0.2
     },
     {
      "do": "walk",
      "who": "tiger",
-     "to": "tiger_door",
+     "via": [
+      "tiger_door",
+      "door"
+     ],
+     "to": "door_out",
      "speed": 0.55,
      "pose": "run_cry"
     },
     {
-     "do": "cam",
-     "shot": "kitchen_door",
-     "at": "door_view",
-     "rate": 0.65,
-     "wait": 0.1,
-     "settle": 0.5
+     "do": "cam_settle",
+     "frac": 0.85
     },
     {
      "do": "tap_steps",
@@ -4501,9 +4717,16 @@
      "steps": [
       {
        "fx": "trap:jeolgu",
-       "wait": 1.0
+       "wait": 0.8
       }
      ]
+    },
+    {
+     "do": "cam",
+     "shot": "door_drop",
+     "at": "door_out",
+     "rate": 2.0,
+     "wait": 0.1
     },
     {
      "do": "say",
@@ -4655,16 +4878,16 @@
       1.603
      ],
      "jeolgu_land": [
-      0.837,
-      1.551
+      0.767,
+      2.511
      ],
      "granny_door": [
       1.243,
       1.892
      ],
      "corner": [
-      1.807,
-      2.339
+      2.125,
+      2.084
      ],
      "tiger_fire": [
       1.418,
@@ -4690,6 +4913,10 @@
       1.677,
       1.903
      ],
+     "help_loop": [
+      1.492,
+      1.501
+     ],
      "jara_k": [
       1.586,
       1.918
@@ -4699,12 +4926,12 @@
       1.612
      ],
      "lintel": [
-      0.878,
-      1.912
+      0.814,
+      1.989
      ],
      "yard_c": [
-      0.711,
-      2.79
+      0.387,
+      2.818
      ],
      "y_granny": [
       0.341,
@@ -4715,8 +4942,12 @@
       2.83
      ],
      "y_jige": [
-      1.02,
-      3.402
+      1.475,
+      3.17
+     ],
+     "y_jige_via": [
+      0.949,
+      2.507
      ],
      "wall_l": [
       -0.175,
@@ -5105,18 +5336,15 @@
      "do": "cam",
      "shot": "yard",
      "at": "y_focus",
-     "rate": 0.4,
-     "wait": 0.6
+     "rate": 1.4,
+     "wait": 0.3
     },
     {
      "do": "walk",
      "who": "tiger",
-     "via": [
-      "door"
-     ],
      "to": "y_tiger",
-     "speed": 0.3,
-     "pose": "run_bump",
+     "speed": 0.45,
+     "pose": "run_cry",
      "line": "pj_r0900"
     },
     {
@@ -5146,15 +5374,15 @@
      "steps": [
       {
        "fx": "roll:1",
-       "wait": 0.5
+       "wait": 0.4
       },
       {
        "fx": "roll:2",
-       "wait": 0.5
+       "wait": 0.4
       },
       {
        "fx": "roll:3",
-       "wait": 0.8
+       "wait": 0.7
       }
      ]
     },
@@ -5172,31 +5400,45 @@
      "steps": [
       {
        "fx": "jige_lift",
-       "wait": 0.8
+       "wait": 1.0
       }
      ]
     },
     {
      "do": "fx",
      "fx": "jige_carry",
-     "wait": 0.6
+     "wait": 0.0
     },
     {
      "do": "cam",
-     "shot": "sea",
-     "at": "sea",
-     "rate": 1.0,
-     "wait": 0.2,
-     "settle": 0.6
+     "shot": "carry",
+     "follow": "jige",
+     "rate": 1.4,
+     "wait": 0.2
     },
     {
      "do": "say",
      "line": "pj_r0904"
     },
     {
+     "do": "cam",
+     "shot": "sea_view",
+     "at": [
+      "shore",
+      "sea_splash"
+     ],
+     "rate": 1.6,
+     "wait": 0.1
+    },
+    {
      "do": "fx",
-     "fx": "splash",
-     "wait": 1.0
+     "fx": "throw",
+     "wait": 1.6
+    },
+    {
+     "do": "fx",
+     "fx": "jige_home",
+     "wait": 0.0
     },
     {
      "do": "fx",
@@ -5347,16 +5589,16 @@
       1.603
      ],
      "jeolgu_land": [
-      0.837,
-      1.551
+      0.767,
+      2.511
      ],
      "granny_door": [
       1.243,
       1.892
      ],
      "corner": [
-      1.807,
-      2.339
+      2.125,
+      2.084
      ],
      "tiger_fire": [
       1.418,
@@ -5382,6 +5624,10 @@
       1.677,
       1.903
      ],
+     "help_loop": [
+      1.492,
+      1.501
+     ],
      "jara_k": [
       1.586,
       1.918
@@ -5391,12 +5637,12 @@
       1.612
      ],
      "lintel": [
-      0.878,
-      1.912
+      0.814,
+      1.989
      ],
      "yard_c": [
-      0.711,
-      2.79
+      0.387,
+      2.818
      ],
      "y_granny": [
       0.341,
@@ -5407,8 +5653,12 @@
       2.83
      ],
      "y_jige": [
-      1.02,
-      3.402
+      1.475,
+      3.17
+     ],
+     "y_jige_via": [
+      0.949,
+      2.507
      ],
      "wall_l": [
       -0.175,
@@ -5805,7 +6055,7 @@
      "do": "cam",
      "shot": "yard",
      "at": "y_feast",
-     "rate": 1.2,
+     "rate": 1.0,
      "wait": 0.3,
      "settle": 0.6
     },

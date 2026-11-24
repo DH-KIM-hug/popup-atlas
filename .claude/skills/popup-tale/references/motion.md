@@ -42,6 +42,10 @@ StoryActor / CastPuppet (2026-11-18 three_pigs):
 - Pose switches can flip hats/props on and off (hat flicker): check pose → figure mapping keeps worn props consistent.
 - Standing figures breathe (body card only, about the hips, so the planted legs don't slide).
 
+- A beat's `enter` figure is shown for the beat's first frames: give it the figure the first line wants (turnip
+  grandpa, 2026-11-24: enter `side_walk` between a surprised front and the next line's clap front showed a side card
+  for 0.2 s, read as a thin turn at 0:47). Front → side → front within half a second reads as a glitch, not a turn.
+
 ## Expressions
 One smiling figure is not a character. Give every narrated emotion its own figure: calm walking face, surprised,
 cold/shivering, hot/sweating, relieved, sad/angry as the tale needs. Map line → expression in script.json (line `expr`);
@@ -114,6 +118,9 @@ measures an actor from the ground, so the handler's `speaker_point` returns the 
   turns over about its middle, lowest corner on the ground), `thump` (stone mortar: rocks from bottom corner to
   corner with a dip), `stride` (A-frame jige: lighter rock on its legs). MOVE logs the figure as `<fig>:gait-<kind>`
   and motion_review does not count it as a static card. Look at the tiles: a gait reads only at a readable size.
+- A pop-out jump (kids out of the wolf's belly, wolf_goats v2) is a handler leap: a parabola in the move's own state
+  holding the drawn "pop" figure, a bounce and a soft thud on landing (fx.gd `_leap`). `follow(...)` through a mid-air
+  point walked the walk cycle along two straight legs in the air at constant speed ("kids float out of the belly").
 - A character on a roof: `lift` (not a raised position) keeps the overlap check off the building's base line; the hop
   down is a handler arc on lift (turnip's cat).
 - Handler-driven moves that keep a fixed figure (roll, float, hop): keep the path height in the move's own state;
@@ -131,6 +138,11 @@ measures an actor from the ground, so the handler's `speaker_point` returns the 
   kids at the top and a fork close lost the tiger climbing below them. A tiger that slips on an oiled trunk walks to the
   trunk first (the slips played in the air by the well).
 
+- A throw is a glide on an arc from the carrier to the landing point, the splash grows UP from the water line where
+  it lands (~a third of the actor's height) and sinks back; never a card scaled up out of nothing in mid-shot.
+- A carried roll sits ACROSS the top of the carrier (lift ≈ 0.6 of the carrier's height, a hair behind it, a small
+  bob with the stride); at hip height it read as two cards pasted side by side.
+
 ## Routes and groups
 - Outdoor actions route via the road (houses in front of the shop hid her walking straight to the camera); tracking
   shots go above the roofs (camera.md).
@@ -143,6 +155,10 @@ Side `pull` figures mirrored toward the target, marks a hand's width apart, the 
 roles added to `stage.no_spacing` by the handler; each heave is a spring on the actor's pop node (`a._root.quaternion`
 about the view axis, pivot at the feet), so the whole line leans back and settles. Put the pulled object a step BEHIND
 the line (z) and the first puller clear of its widest part, or it hides him.
+
+- Special drawn runs (`run_bump`, `run_cry`: a side `<pose>_cycle` only) count as runs for the view pick
+  (StoryActor, wave 2): away from / toward the camera they take the shared `run_back` / `<pose>_front` / `run_front`
+  instead of the walk (MOTION_FLAG RUN_WALK_CYCLE), at run speed (≥ 0.4 or 3 heights / s).
 
 ## Water
 Wading characters stand in the actual water channel, sink to the water line, hide legs below it, ripples on the water —
@@ -157,3 +173,8 @@ never sink into the bank.
 - Template lawn cards such as flowers can hide a runner without OCCLUDE catching it. Look at the motion tiles and bend the route.
 - Start a runner in view or bring them in from off-frame; never pop them in at a spot.
 - Godot screen coordinates are in the 1366x1024 base viewport. Scale them to the video before cropping.
+- A tale float / bob that writes `lift` every frame (witch_candy `_floating` from the ghost candy) runs until switched
+  off: MOVE counts the bob as travel on the standing card, so every later walk start read STATIC_CARD and verb "fly".
+  Switch such effects off (lift 0) before anyone walks.
+- Small walkers (the 0.17-tall cat) on a fast stepped path (door sill) flag SPEED_JUMP at the corners: give them a
+  slower speed than the file.

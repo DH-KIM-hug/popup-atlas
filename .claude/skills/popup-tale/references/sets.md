@@ -70,6 +70,10 @@ new set: papercraft_notes.md.
   side walls, a back, two roof slopes and the gable repeated at the back). `tools/atlas/sm_cottage.py` shows how to
   merge fold bands + door leaf with a `wc_house_bodies` body in one entry.
 
+- Garden / yard walls are buildings too ("fence backs are flat"): give a wall card a thin house body
+  (`tools/atlas/house_bodies.py <ids>` with an OVERRIDE `depth` 0.06–0.18 and `no_chimney`): side, cap and a back in
+  its own print; low shots from inside the yard otherwise look at a blank card back.
+
 ## Buildings from the kit (non-box buildings)
 - Buildings that are not one drawn front (팔각정, round towers, hanok with curved eaves, pagodas, castles) are built in
   3D from a spec, never a flat card: `game/core/world/building.gd` (Building) + `game/art/buildings/kit.json`
@@ -131,6 +135,10 @@ new set: papercraft_notes.md.
   opens.
 
 ## Rooms and refuges
+- A door that never opens (wolf_goats v2, audit "mom vanishes at the closed door"): the cottage's lower wall band had
+  no doorway hole (alpha 255 behind the leaf since phase 1), so the leaf swung inward behind a painted door and
+  everyone walked through it. After any band regeneration / reskin, check the band's alpha inside the DOORS box is 0
+  (tools/atlas/wg_door_hole.py cuts it with house_stages.py's leaf mask).
 - A refuge's walls stay closed in-story; show interiors by moving the camera inside, not by opening the wall the
   threat could walk through (user: "방이 열려도 앞 벽은 막혀있어야하는거아닌지", "굴뚝으로 들어가면 그제서야 안을 보여주면
   되자너"). Build the room inside the house footprint from the start of the beat (hidden by the facade), glide the camera
@@ -141,6 +149,9 @@ new set: papercraft_notes.md.
 - One spread with a house that has a body + a room inside its footprint lets characters go in and out many times with
   camera glides only (no page turns). The room back wall must be the wall's full height (derive a taller card) or a
   gap shows the outside above it. The meadow can rise through a box floor: lay raised floor cards.
+- Every inside wall the room shots see carries print (three_pigs, 2026-11-24: the right side wall read as a blank cream
+  card in the firelight): a shelf, a curtained window (`story_hearth_15`, `inside_only`, flat on the wall at its yaw)
+  or hanging pans; check the near side walls, which the wide fov sees most of.
 - Reusing another tale's house for a room people act in: size the house to the cast first. sunmoon's cottage room
   (0.62 deep) could not frame the 0.57-tall tiger (giant paws, cut-off heads); the cottage stands 1.3× with a 0.95
   body, its front line where it was (only door x and the inside scale). Room camera rules: camera.md "Interiors".
@@ -220,6 +231,11 @@ new set: papercraft_notes.md.
   furrow plus a low heap beside it, never a mound with an arch (that is a burrow); a mouse hole is a low bank tucked at
   an edge (tools/atlas/tn_holes.py derives all three from cards we had). Soil props get the soil cut edge (art.md).
 
+- Snow (patjuk wave 2, "no snow ground"): a winter spread tints its own paper ground in the tale handler
+  (`_snow_ground` in game/stories/patjuk/fx.gd: every ground ShaderMaterial's base / mottle toward snow white, the
+  sandy road less so it reads as a trodden track, cut edges light blue-grey so terrace edges do not draw dark cracks);
+  falling flakes alone over green paper read as a meadow in a snow globe.
+
 ## Stray effects (user: "이상한데서 김이 모락모락", "셋째집 연기뭐지?")
 Steam only where something is hot, from its mouth. A magic POOF on a character is golden sparkles rising round
 them, never a white cloud (witch_candy wave 1: clouds and sparkles thrown sideways from a poof hung in mid-air by
@@ -228,3 +244,13 @@ keeps rising where its house was cleared (hide it in the handler for a set with 
 chimneys bleed through; figures drawn "huffing" carry a breath cloud (tools/cast/erase_puffs.py: cream component from
 a seed, inside-silhouette part inpainted, the rest cleared); sparkle bursts on growth / cooking read as steam from
 afar. Ambient butterflies / leaves hide whenever they would show over 4 % of the frame height (wide shots only).
+- A room floor laid flat a hair above the meadow (lift 0.02) lets the meadow's rise show through as a green patch
+  (witch_candy shop, front left): make it a `floor: true` sheet lifted clear (0.045, thick 0.003, plank-brown `edge`)
+  so people stand on it, and end it at the back wall (a sheet poking out behind the house shows from the street).
+- Room staging for the box check: a back row deeper than the front row and offset into the gaps (Dahyun, pot, witch in
+  front; rabbit, bear, fox behind the gaps) shows everyone in the room wide; a friend straight behind the witch was 100 %
+  OCCLUDE. Tale `occlude_subjects_only` then limits actor-behind-actor OCCLUDE to whoever moves or speaks (a bystander
+  behind the subject of a face close-up is framing).
+- One order out of the house, in the file and back in (witch_candy: kid, cat, rabbit, bear, fox, witch): a different
+  order at each step makes the queue cross itself (OVERLAP at every regroup). Room vias round the furniture must not
+  cross a mark already taken (host first in -> friends round the left of the pot; host last -> round the right).

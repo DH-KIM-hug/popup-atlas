@@ -100,7 +100,10 @@ EXTRA = {"theme": "korean", "ground_style": "paper", "inside_margin": 0.8,
          "overlap_ok": [["tiger", "boulder"], ["tiger", "bam"], ["tiger", "jara"], ["tiger", "ddong"], ["tiger", "songgot"], ["tiger", "jeolgu"],
                         ["tiger", "myeongseok"], ["tiger", "jige"], ["jige", "wall_r"], ["tiger", "hearth"],
                         ["tiger", "muldok"], ["halmi", "hearth"], ["bam", "hearth"], ["jara", "muldok"],
-                        ["songgot", "crack"], ["ddong", "kfloor"]]}
+                        ["songgot", "crack"], ["ddong", "kfloor"],
+                        # wave 2: hiding places in plain sight: the dung lies flat on the floor behind the hearth, the
+                        # mortar over the door behind the mat / carrier in low yard shots
+                        ["ddong", "hearth"], ["jeolgu", "myeongseok"], ["jeolgu", "jige"]]}
 
 SHOTS = copy.deepcopy(SM.SHOTS)
 SHOTS.update({
@@ -112,13 +115,27 @@ SHOTS.update({
     "road_up": [3.0, 14.0, 0.3, 26.0, 0.0],         # the tiger walking off up the mountain road
     "snow_est": [5.5, 22.0, 0.35, 26.0, -18.0],      # the cottage in winter, from the road
     # inside the kitchen (the cottage frame turned COT_YAW): the camera just behind the hidden front wall
-    "kitchen": [0.8, 14.0, 0.2, 64.0, -40.0],
-    "kitchen_low": [0.7, 4.0, 0.24, 62.0, -40.0],    # at k_low_l / k_low_r (deep spots: the camera stays inside)
-    "kitchen_door": [0.72, 8.0, 0.26, 56.0, 140.0],  # turned round: the inside of the front wall, the door
+    # wave 2 (gate audit v1: "the tiger is too close in the kitchen", heads cut off): the 0.57-tall tiger stands
+    # ~0.6 from a camera that must stay behind the front wall, so the kitchen shots are wide lenses aimed from just
+    # inside the front wall at the back wall, focus at the tiger's middle (his whole figure in frame)
+    "kitchen": [0.8, 16.0, 0.27, 72.0, -40.0],
+    "kitchen_low": [0.78, 8.0, 0.33, 72.0, -40.0],    # at k_low_l / k_low_r (deep spots: the camera stays inside)
+    # the helpers come in on the floor: looking down from just inside the front wall, the floor mid-frame (they used
+    # to arrive along the bottom edge under the caption)
+    "kitchen_help": [0.74, 30.0, 0.12, 70.0, -40.0],
+    "kitchen_floor": [0.8, 28.0, 0.24, 76.0, -40.0],  # the tiger and the floor traps (dung, crack) together
+    # turned round: the door with the tiger AND the lintel above it (the mortar's drop), a wide lens
+    "kitchen_door": [0.72, 6.0, 0.38, 78.0, 140.0],
+    "door_drop": [1.35, 5.0, 0.36, 38.0, -40.0],     # outside: the open door, the lintel, the tiger bursting out
     "kitchen_side": [0.85, 10.0, 0.24, 60.0, 50.0],  # from the right side of the kitchen: the door AND the hearth
     "yard": [2.2, 14.0, 0.25, 30.0, -40.0],          # the yard in front of the cottage, facing the house
     "yard_wide": [3.6, 20.0, 0.3, 28.0, -30.0],
-    "yard_low": [1.5, 5.0, 0.22, 32.0, -55.0],
+    "yard_low": [1.5, 6.0, 0.22, 32.0, -22.0],   # wave 2: from the right, the low yard wall no longer in front of her
+    "night_arrive": [3.2, 32.0, 0.3, 30.0, -30.0],  # the tiger's night walk to the door seen from above the pines
+    "carry": [1.7, 16.0, 0.25, 38.0, -85.0],
+    # the throw and the swim from the yard side (the old sea shot looked from far round the corner; the glide back
+    # to the yard for the feast swung over the page as a high flat view)
+    "sea_view": [1.9, 13.0, 0.22, 36.0, -80.0],          # tracking the carrier from the yard to the shore
     "sea": [2.1, 12.0, 0.22, 36.0, -130.0],            # over the cottage roof to the sea behind it
     "pull_back": [10.5, 26.0, 0.3, 24.0, -30.0],
 })
@@ -205,12 +222,15 @@ for nm, (dx, dz) in {
         "fire": (-0.45, -0.66), "jara_rim": (0.45, -0.66), "cauldron": (-0.45, -0.75), "muldok": (0.5, -0.78), "crack": (-0.26, -0.45),
         "k_focus": (0.0, -0.85), "k_low_l": (-0.3, -0.88), "k_low_r": (0.3, -0.88), "k_wood": (-0.8, -0.6), "k_basket": (-0.8, -0.3), "k_left": (-0.4, -0.5),
         "door_view": (-0.2, -0.12), "k_mid_r": (0.32, -0.38),
-        "granny_k": (0.15, -0.8), "jeolgu_land": (-0.55, -0.28), "granny_door": (-0.02, -0.28), "corner": (0.7, -0.3),
+        "granny_k": (0.15, -0.8), "jeolgu_land": (DX + 0.3, 0.5), "granny_door": (-0.02, -0.28), "corner": (0.78, -0.7),
         "tiger_fire": (-0.16, -0.72), "tiger_jar": (0.24, -0.72), "dung": (-0.02, -0.55),
-        "tiger_door": (DX, -0.14), "bam_k": (-0.6, -0.42), "granny_wait": (0.32, -0.55), "jara_k": (0.26, -0.48), "help_in": (-0.05, -0.62),
-        "lintel": (DX, -0.03),
+        "tiger_door": (DX, -0.14), "bam_k": (-0.6, -0.42), "granny_wait": (0.32, -0.55), "help_loop": (-0.08, -0.74), "jara_k": (0.26, -0.48), "help_in": (-0.05, -0.62),
+        # wave 2: the mortar hides OUTSIDE over the door (it hops out of the open door and up), so its drop on the
+        # tiger's head is shot from the yard as he bursts out (the inside of the front wall was a flat card with a
+        # white base strip and the outer door's reveal lines showing through: "the mortar-climax wall frame")
+        "lintel": (DX, 0.07),
         # the yard (in front of the house)
-        "yard_c": (0.15, 0.75), "y_granny": (-0.5, 0.55), "y_mat": (0.32, 0.66), "y_jige": (0.78, 1.02),
+        "yard_c": (-0.08, 0.98), "y_granny": (-0.5, 0.55), "y_mat": (0.32, 0.66), "y_jige": (0.98, 0.55), "y_jige_via": (0.15, 0.38),
         "wall_l": (-0.78, 1.02), "wall_r": (0.6, 1.2), "y_tiger": (0.0, 0.8), "y_help_in": (DX, 1.35),
         "gate": (DX, 1.25), "y_focus": (0.0, 0.7), "y_feast": (0.12, 0.68), "y_out": (1.9, 1.3), "shore": (2.95, 0.6),
         "sea": (3.4, -0.4), "sea_splash": (3.2, -0.35), "snow_1": (-1.25, 0.55), "snow_2": (1.15, 0.45),
@@ -274,18 +294,24 @@ HIDE = {"bam": "fire", "jara": "muldok", "ddong": "dung", "songgot": "crack", "j
 def helper(h, line, first=False, yard=False):
     """A helper's moment: in at the door (or the yard gate) during the narration, its quote, a tap on the cauldron
     (the granny's bowl in the yard) sends a bowl of porridge, then it goes to its hiding place under the last seg."""
-    tap = {"do": "tap_steps", "target": "cauldron", "steps": [{"fx": f"give:{h}", "wait": 0.9}]}
+    tap = {"do": "tap_steps", "target": "cauldron", "steps": [{"fx": f"give:{h}", "wait": 0.7}]}
     if yard:  # pace: in the yard the granny hands the bowl herself (no tap)
-        tap = {"do": "fx", "fx": f"give:{h}", "wait": 1.0}
+        tap = {"do": "fx", "fx": f"give:{h}", "wait": 0.8}
     if first:
         tap.update({"prompt": "pj_n04", "hint": "pj_n04"})
     cam = []  # r5: one wide kitchen shot for all (the side shot was a blank wall; inside, the door card stays shut)
-    return [{"do": "fx", "fx": f"arrive:{h}", "wait": 0.0 if yard else 0.9},
+    if h == "jeolgu":  # wave 2: it thumps out of the door and up over it: the camera goes out to the yard to see it
+        # (turning round inside showed the inside of the front wall as a bare card; the glide out facing the back
+        # wall is clean, and the yard beat then starts outside)
+        cam = [{"do": "cam", "shot": "door_drop", "at": ["door_out", "lintel"], "rate": 1.0, "wait": 0.0}]
+    back = []
+    return [{"do": "fx", "fx": f"arrive:{h}", "wait": 0.0 if yard else 0.3},
             {"do": "say", "line": line, "segs": [0, 1]},
-            *(cam if first else []),
             tap,
+            *cam,
             {"do": "fx", "fx": f"hide:{h}", "wait": 0.0},
-            {"do": "say", "line": line, "segs": [2]}]
+            {"do": "say", "line": line, "segs": [2]},
+            *back]
 
 
 # ---------------------------------------------------------------- beats
@@ -300,9 +326,10 @@ BEATS = [
         {"do": "cam", "shot": "field_med", "at": "field", "rate": 1.4, "wait": 0.6},  # pace: pj_r0101 cut (the field shows)
         {"do": "cam", "shot": "hoe", "at": "granny_at", "rate": 1.6, "wait": 0.2, "settle": 0.6},
         {"do": "tap_steps", "target": "halmi", "prompt": "pj_n03", "hint": "pj_n03",
-         "steps": [{"fx": "hoe:1", "wait": 0.4}, {"fx": "hoe:2", "wait": 0.4}, {"fx": "hoe:3", "wait": 0.4}]},
+         "steps": [{"fx": "hoe:1", "wait": 0.3}, {"fx": "hoe:2", "wait": 0.3}, {"fx": "hoe:3", "wait": 0.3}]},
         # pace: pj_r0102 cut (the three hoe taps are the weeding)
-        {"do": "fx", "fx": "tiger_out:boulder:tiger_at", "wait": 0.2},
+        {"do": "cam", "shot": "field_low", "at": "tiger_at", "rate": 3.0, "wait": 0.1, "settle": 0.7},
+        {"do": "fx", "fx": "tiger_out:boulder:tiger_at", "wait": 0.1},
         {"do": "cam", "shot": "field_low", "at": "tiger_at", "rate": 3.0, "shake": 0.6, "wait": 0.1},
         {"do": "say", "line": "pj_r0201"},
         {"do": "fx", "fx": "hoe_drop", "wait": 0.1},
@@ -311,8 +338,11 @@ BEATS = [
         {"do": "say", "line": "pj_r0202"},
         {"do": "say", "line": "pj_r0204", "segs": [0]},
         {"do": "walk", "who": "tiger", "to": "road_away", "dir": "away", "speed": 0.45, "follow": "tiger",
-         "shot": "road_up", "line": "pj_r0204", "segs": [1], "exit": True},
-        {"do": "pose", "who": "halmi", "pose": "look_far", "wait": 1.2}]},  # pace: pj_r0205 cut (she looks after him)
+         "shot": "road_up", "line": "pj_r0204", "segs": [1], "exit": True,
+         # wave 2: the camera lets him go up the road and turns back to the granny looking after him (the follow
+         # ended on an empty road and his exit pop showed)
+         "follow_for": 5.2, "release_shot": "field_two", "release_at": "granny_at"},
+        {"do": "pose", "who": "halmi", "pose": "look_far", "wait": 0.8}]},  # pace: pj_r0205 cut (she looks after him)
     # 2 -- winter: the cottage under snow, the kitchen, the granny crying over the porridge
     {"id": "winter", "title": "동짓날", "spread": _home(light="dusk"),
      "enter": {"who": {"halmi": "cry_stir"}, "at": {"halmi": "granny_k"}},
@@ -332,8 +362,8 @@ BEATS = [
         {"do": "fx", "fx": "knock", "wait": 0.6},
         # pace: pj_r0400 cut (the knock is heard, she turns to the door)
         {"do": "pose", "who": "halmi", "pose": "calm", "wait": 0.1},
-        {"do": "cam", "shot": "kitchen", "at": "k_focus", "rate": 1.2, "wait": 0.2},
-        {"do": "fx", "fx": "door:open", "wait": 0.4},
+        {"do": "cam", "shot": "kitchen_help", "at": "k_floor2", "rate": 1.2, "wait": 0.1, "settle": 0.8},
+        {"do": "fx", "fx": "door:open", "wait": 0.2},
         *helper("bam", "pj_r0401", first=True), *helper("jara", "pj_r0402"), *helper("ddong", "pj_r0501"),
         *helper("songgot", "pj_r0502"), *helper("jeolgu", "pj_r0503"),
         {"do": "fx", "fx": "door:close", "wait": 0.3}]},
@@ -341,10 +371,13 @@ BEATS = [
     {"id": "yard", "title": "마당", "spread": _home(light="dusk"),
      "enter": {"who": {"halmi": "calm"}, "at": {"halmi": "granny_k"}, "keep": ["halmi", *KITCHEN_HELP]},
      "steps": [
-        {"do": "cam", "shot": "yard", "at": "y_focus", "rate": 1.0, "wait": 0.2, "settle": 0.8},
-        {"do": "fx", "fx": "door:open", "wait": 0.3},
-        {"do": "walk", "who": "halmi", "via": ["k_mid_r", "tiger_door", "door"], "to": "y_granny", "speed": 0.34},
-        {"do": "fx", "fx": "door:close", "wait": 0.1},
+        # wave 2: she is already behind the door (an unseen move inside the closed house; the walk through the
+        # kitchen left the yard empty for 3 s)
+        {"do": "fx", "fx": "place:halmi:tiger_door", "wait": 0.0},
+        {"do": "fx", "fx": "door:open", "wait": 0.0},
+        {"do": "cam", "shot": "yard", "at": ["y_granny", "y_jige"], "rate": 1.0, "wait": 0.1, "settle": 0.4},
+        {"do": "walk", "who": "halmi", "via": ["door"], "to": "y_granny", "speed": 0.45},
+        {"do": "fx", "fx": "door:close", "wait": 0.0},
         # pace: pj_r0601 cut (the yard helpers come on screen)
         *helper("myeongseok", "pj_r0602", yard=True), *helper("jige", "pj_r0603", yard=True),
         {"do": "cam", "shot": "yard_low", "at": "y_granny", "rate": 1.6, "wait": 0.1, "settle": 0.5},
@@ -356,11 +389,12 @@ BEATS = [
      "steps": [
         {"do": "fx", "fx": "steam:off", "wait": 0.0},  # (r6: a steam puff floated into the door shot's lens)
         {"do": "fx", "fx": "door:open", "wait": 0.2},
-        {"do": "walk", "who": "halmi", "via": ["door", "tiger_door"], "to": "granny_wait", "speed": 0.3},
-        {"do": "fx", "fx": "door:close", "wait": 0.1},
-        {"do": "cam", "shot": "snow_est", "at": "front_focus", "rate": 1.0, "wait": 0.3},
-        {"do": "walk", "who": "tiger", "from": "road_by", "to": "door_out", "speed": 0.5, 
-         "follow": "tiger", "shot": "yard_wide", "line": "pj_r0701"},
+        {"do": "walk", "who": "halmi", "via": ["door", "tiger_door"], "to": "granny_wait", "speed": 0.45},
+        {"do": "fx", "fx": "door:close", "wait": 0.0},
+        # wave 2: the night walk to the door seen from above the pines (a pine card filled the lens at road level)
+        {"do": "cam", "shot": "night_arrive", "at": "front_focus", "rate": 1.4, "wait": 0.2},
+        {"do": "walk", "who": "tiger", "from": "road_by", "to": "door_out", "speed": 0.55,
+         "follow": "tiger", "shot": "night_arrive", "line": "pj_r0701"},
         {"do": "cam", "shot": "yard_low", "at": "door_out", "rate": 2.0, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "pj_r0702"},
         {"do": "go_inside", "who": "tiger", "house": "cottage", "to": {"tiger": "tiger_fire"}, "speed": 0.6,
@@ -375,6 +409,8 @@ BEATS = [
          "steps": [{"fx": "trap:bam", "wait": 1.0}]},
         {"do": "say", "line": "pj_r0705"},
         {"do": "say", "line": "pj_r0706", "segs": [0]},
+        # wave 2: the camera pans with him from the hearth to the jar (it held the hearth while he left the frame)
+        {"do": "cam", "shot": "kitchen_low", "at": ["k_low_l", "k_low_r"], "rate": 1.6, "wait": 0.0},
         {"do": "walk", "who": "tiger", "to": "tiger_jar", "speed": 0.35, "line": "pj_r0706",
          "segs": [1]},
         {"do": "fx", "fx": "tiger_dip", "wait": 0.6},
@@ -386,38 +422,46 @@ BEATS = [
      "enter": {"who": {}, "keep": ["halmi", "tiger", "ddong", "songgot", "jeolgu", "myeongseok", "jige", "bam", "jara"]},
      "steps": [
         {"do": "say", "line": "pj_r0801"},
-        {"do": "fx", "fx": "backstep", "wait": 1.2},
-        {"do": "cam", "shot": "kitchen", "at": "k_focus", "rate": 2.0, "wait": 0.1, "settle": 0.5},
+        {"do": "fx", "fx": "backstep", "wait": 1.0},
+        # wave 2: higher and over the dung so its tap ring sits above the caption (it was cut by the frame edge)
+        {"do": "cam", "shot": "kitchen_floor", "at": ["k_focus", "dung"], "rate": 2.0, "wait": 0.1, "settle": 0.5},
         {"do": "tap_steps", "target": "ddong", "steps": [{"fx": "trap:ddong", "wait": 1.2}]},
         {"do": "say", "line": "pj_r0802"},
         {"do": "tap_steps", "target": "crack", "steps": [{"fx": "trap:songgot", "wait": 0.9}]},
         {"do": "say", "line": "pj_r0804"},
         {"do": "say", "line": "pj_r0805"},
-        {"do": "fx", "fx": "door:open", "wait": 0.1},
-        {"do": "walk", "who": "tiger", "to": "tiger_door", "speed": 0.55, "pose": "run_cry"},
-        {"do": "cam", "shot": "kitchen_door", "at": "door_view", "rate": 0.65, "wait": 0.1, "settle": 0.5},
-        {"do": "tap_steps", "target": "jeolgu", "steps": [{"fx": "trap:jeolgu", "wait": 1.0}]},
+        {"do": "fx", "fx": "door:open", "wait": 0.0},
+        # wave 2: he bursts out of the door; the camera goes out with him and the mortar drops from over the door
+        {"do": "cam", "shot": "door_drop", "at": ["door_out", "lintel"], "rate": 1.0, "wait": 0.2},
+        {"do": "walk", "who": "tiger", "via": ["tiger_door", "door"], "to": "door_out", "speed": 0.55,
+         "pose": "run_cry"},
+        {"do": "cam_settle", "frac": 0.85},
+        {"do": "tap_steps", "target": "jeolgu", "steps": [{"fx": "trap:jeolgu", "wait": 0.8}]},
+        {"do": "cam", "shot": "door_drop", "at": "door_out", "rate": 2.0, "wait": 0.1},
         {"do": "say", "line": "pj_r0806"},
         {"do": "pose", "who": "tiger", "pose": "dazed", "wait": 0.8}]},  # pace: pj_r0807 cut (the stagger shows)
     # 7 -- the yard at night: flat out, rolled up in the mat, carried off to the sea
     {"id": "sea", "title": "마당과 바다", "spread": _home(light="night", sky=SKY_NIGHT),
      "enter": {"who": {}, "keep": ["halmi", "tiger", "myeongseok", "jige", "bam", "jara", "ddong", "songgot", "jeolgu"]},
      "steps": [
-        {"do": "cam", "shot": "yard", "at": "y_focus", "rate": 0.4, "wait": 0.6},
-        {"do": "walk", "who": "tiger", "via": ["door"], "to": "y_tiger", "speed": 0.3, "pose": "run_bump",
-         "line": "pj_r0900"},
+        {"do": "cam", "shot": "yard", "at": "y_focus", "rate": 1.4, "wait": 0.3},
+        {"do": "walk", "who": "tiger", "to": "y_tiger", "speed": 0.45, "pose": "run_cry", "line": "pj_r0900"},
         {"do": "fx", "fx": "door:close", "wait": 0.1},
         {"do": "fx", "fx": "tiger_flat", "wait": 0.5},
         {"do": "cam", "shot": "yard_low", "at": ["y_tiger", "y_mat"], "rate": 1.8, "wait": 0.1, "settle": 0.5},
         {"do": "tap_steps", "target": "myeongseok",
-         "steps": [{"fx": "roll:1", "wait": 0.5}, {"fx": "roll:2", "wait": 0.5}, {"fx": "roll:3", "wait": 0.8}]},
+         "steps": [{"fx": "roll:1", "wait": 0.4}, {"fx": "roll:2", "wait": 0.4}, {"fx": "roll:3", "wait": 0.7}]},
         {"do": "say", "line": "pj_r0901"},
         {"do": "say", "line": "pj_r0903"},
-        {"do": "tap_steps", "target": "jige", "steps": [{"fx": "jige_lift", "wait": 0.8}]},
-        {"do": "fx", "fx": "jige_carry", "wait": 0.6},
-        {"do": "cam", "shot": "sea", "at": "sea", "rate": 1.0, "wait": 0.2, "settle": 0.6},
+        {"do": "tap_steps", "target": "jige", "steps": [{"fx": "jige_lift", "wait": 1.0}]},
+        # wave 2: the carry is on screen (a tracking shot on the carrier while the line plays), then the throw into
+        # the waves and a small splash rising from the water (a giant card used to pop up in an empty sea shot)
+        {"do": "fx", "fx": "jige_carry", "wait": 0.0},
+        {"do": "cam", "shot": "carry", "follow": "jige", "rate": 1.4, "wait": 0.2},
         {"do": "say", "line": "pj_r0904"},
-        {"do": "fx", "fx": "splash", "wait": 1.0},
+        {"do": "cam", "shot": "sea_view", "at": ["shore", "sea_splash"], "rate": 1.6, "wait": 0.1},
+        {"do": "fx", "fx": "throw", "wait": 1.6},
+        {"do": "fx", "fx": "jige_home", "wait": 0.0},
         {"do": "fx", "fx": "swim", "wait": 0.2},
         {"do": "say", "line": "pj_r0905"}]},
     # 8 -- the porridge feast in the yard
@@ -426,7 +470,7 @@ BEATS = [
                "keep": ["bam", "jara", "ddong", "songgot", "jeolgu", "myeongseok", "jige"]},
      "steps": [
         {"do": "fx", "fx": "feast", "wait": 0.6},
-        {"do": "cam", "shot": "yard", "at": "y_feast", "rate": 1.2, "wait": 0.3, "settle": 0.6},
+        {"do": "cam", "shot": "yard", "at": "y_feast", "rate": 1.0, "wait": 0.3, "settle": 0.6},
         {"do": "say", "line": "pj_r1001"},
         {"do": "fx", "fx": "hop_all", "wait": 0.2},
         {"do": "cam", "shot": "yard_low", "at": ["y_granny", "y_feast"], "rate": 1.6, "wait": 0.1, "settle": 0.5},
@@ -444,7 +488,7 @@ SOUND = {
            "give": "sm.gulp", "hide": "wc.plop", "tiger_crouch": "fire.crackle_m",
            "trap:bam": "wc.boing", "trap:jara": "wc.bonk", "trap:ddong": "sm.slide", "trap:songgot": "sm.paper_poke",
            "trap:jeolgu": "wc.bonk", "tiger_dip": "kitchen.splash", "backstep": "wc.swoosh",
-           "tiger_flat": "wolf.flop", "roll": "wc.roll", "jige_lift": "prop.ladder_raise", "splash": "wg.splash",
+           "tiger_flat": "wolf.flop", "roll": "wc.roll", "jige_lift": "prop.ladder_raise", "splash": "wg.splash", "throw": "wc.swoosh",
            "swim": "wc.wave", "feast": "wc.chime", "hop_all": "wc.sparkle"},
     "steps": {"cover": {"on_open": {"music": "intro_cozy", "fade": 0.2}}, "page_turn": "paper.page_turn",
               "go_inside": {"door_open": "door.open", "door_shut": "door.shut"},

@@ -86,6 +86,21 @@ full-frame tiles of any flagged moment.
   and holds it for every tap; no reframes between taps, and story beats inside the build (the brothers' tease) play
   in that same shot. The ring around a house mid-build sizes to the walls standing now, not the finished height.
 
+- Exits and escapes stay on screen (2026-11-24, sun_wind / three_pigs gate audit): a walk-off that leaves the frame
+  under a held camera, then an empty road under the closing line, then a return for the curtain call read as a hole
+  ("the empty road at the ending"). The traveller now strolls on with the camera under the closing lines (stroll +
+  say + stop), and the curtain call has no walker return. A fleeing villain is followed at a readable size (a
+  `chase` shot, el ~22° to see over the trees, ~3.8 away) for most of the line; `follow_for` then releases to a shot
+  that turns back to the home (he leaves the frame by the camera turning, not by shrinking to a speck in a static
+  wide, and the exit pop happens off frame). A follow from the `high` shot (6+ away) kept him a dark speck in the
+  night forest.
+
+- Carries and throws are tracked: `cam` with `follow: <carrier>` while the line plays, then a shot that holds both
+  the thrower and the landing; the carrier steps aside after (patjuk: the carry to the sea used to happen off frame
+  and a splash popped up in an empty sea shot).
+- A pine / hill card filling the lens on a tracking shot at road level: track from above the template's trees
+  (el ~30°) instead of moving the trees (patjuk night arrival).
+
 ## Interiors
 - Every room shot keeps the camera within ~0.5 of its focus (behind the hidden front wall); outdoor shot distances put
   the camera outside. Disable the stage's automatic tap reframing while the camera is inside (it pulls the camera out
@@ -97,8 +112,17 @@ full-frame tiles of any flagged moment.
   camera outside the house and the facade filled the frame (patjuk).
 - A glide into a deep room passes the facade close enough to fill the frame with the door; tale `inside_margin`
   (spread_stage, default 0.16) folds the facade away earlier (patjuk 0.8; the inside-face card waits until the camera
-  is behind the wall).
+  is behind the wall). three_pigs' brick house (0.78 deep box, `inside` shot 0.6 at fov 68): 0.5 cut the "door and
+  shutters fill the frame for a second" on the way in and out to a medium of the facade, then the room.
 - Shots inside / at a turned house carry its yaw as their yaw offset.
+- Room shots from just in front of the wall (wolf_goats v2): tale `inside_margin` (0.55) folds the facade away while
+  the camera is that close, and `inside_door_hide` also folds the door leaf, the roof band (eave + door arch top) and
+  the body's door / window reveals (else they frame the room like a tunnel and a glide in fills the frame with the
+  door). A room shot can then stand ~0.4 in front of the wall with a longer lens (dist 1.25, el 24, fov 52): the
+  kids read bigger and the wolf in the room stays clear of the lens. Never turn 180 degrees inside (door_in): show the
+  entry from outside, then glide in after the threat (CAM_JUMP 3.03 and a glide through the side wall otherwise).
+- A character leaving a house is followed outside (wolf_goats v2: go_out `then.follow`; the v1 clock close-up held
+  18 s while the wolf left off screen). The reassurance line plays over his waddle, not over a still.
 
 - Leaving a room for somewhere behind the house (sunmoon v15 back-door escape, gate audit: "the escape is never
   seen"): leave through the wall the camera came in by (a glide straight from the room to a back-yard shot crossed the
@@ -118,7 +142,30 @@ full-frame tiles of any flagged moment.
 - Far depth-of-field blur on big flat backdrops renders as a square mosaic (sunmoon's far sky cloud rows): turn the
   rig's DOF off on a page whose interest is one plane (`rig.dof_enabled = false`).
 
+- Kitchen-sized rooms with a big actor (patjuk wave 2, "the tiger is too close in the kitchen"): the camera cannot
+  back off past the front wall, so widen the lens (fov 68–78) and aim at the actor's middle (focus ≈ half his
+  height) from just inside the front wall; a 62° lens at 0.5 cut the 0.57 tiger's head off in every trap shot.
+  Small actors entering along the floor get a looking-down room shot (el ~30°, focus 0.1): at el 14° they crossed
+  the bottom edge under the caption (OFF_FRAME). Floor tap targets near the lens: raise the shot until the ring sits
+  above the caption.
+- Never turn round inside to face the front wall: the inside of a front wall is one flat card (its stand strip, the
+  outer door's reveal lines and the ceiling edge show) and the next glide out passes through it. Show what happens
+  at the door from OUTSIDE (glide out facing the back wall: clean), and stage door moments outside (patjuk's mortar
+  now hides over the outside of the door and drops on the tiger as he bursts out).
+
 ## Judging framing
 `gd_run.capture_scene` stills do not follow the story camera shots; judge framing / focus from movie-maker recordings
 (`tools/story/rec_beat.sh TALE BEAT SEC out.mp4`) and 8 fps tiles (`tools/story/tiles.py`).
 Follow smoothing and still zones: papercraft_notes.md ("Camera").
+
+## Lessons from witch_candy wave 2 (2026-11-24)
+- A queue on the path straight toward the lens hides the doorway (Dahyun's hat over the friends going in): shoot an
+  entry / exit file from the side and above (`door_entry` 30°, yaw 30° off the door axis toward the side with no near
+  house; +34° put house_7's roof in the lens) with `at: [door, end of path]` so the whole queue is in frame (OFF_FRAME).
+- The "broken blue roof" in the audit was the lens inside the near house's roof (a 27° track over a lined street), not
+  the house body (house_orbit red 0): tracking shots over a street go 45°+; a low sky shot needs its focus over the road
+  (a lens beside a chimney filled half the frame).
+- A file followed by its LAST walker leaves the leaders off the frame bottom (OFF_FRAME on 4 of 6): follow the middle
+  one and pull back; seen high from the side (58-60°, yaw -60°) the file reads as a file, not a totem pole.
+- Glide in through a shut door: tale `inside_margin` (0.75 here) + `inside_door_hide` fold the facade and leaf away
+  before the lens reaches them; otherwise every room entry passes a frame-filling door.

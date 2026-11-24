@@ -56,6 +56,45 @@ func enter_beat(b: Dictionary) -> void:
 
 func build_async() -> void:
 	enter_beat(stage.beat)
+	if str((stage.beat.get("spread", {}) as Dictionary).get("place", "")) == "home":
+		_snow_ground()
+
+
+## Winter (동짓날): the cottage spread's paper ground is snow, not green meadow (wave 2: "no snow ground"). The
+## ground sheet, hill tiers and cover patches are tinted toward snow; the sandy road keeps a trodden track.
+func _snow_ground() -> void:
+	var g: Node = stage.world.ground if stage.world else null
+	if g == null:
+		return
+	var seen := {}
+	var stack: Array = [g]
+	while not stack.is_empty():
+		var n: Node = stack.pop_back()
+		stack.append_array(n.get_children())
+		var mi := n as MeshInstance3D
+		if mi == null or mi.mesh == null:
+			continue
+		var mats: Array = [mi.material_override]
+		for s in mi.mesh.get_surface_count():
+			mats.append(mi.get_surface_override_material(s))
+			mats.append(mi.mesh.surface_get_material(s))
+		for m in mats:
+			var sm := m as ShaderMaterial
+			if sm == null or seen.has(sm.get_instance_id()):
+				continue
+			seen[sm.get_instance_id()] = true
+			var base: Variant = sm.get_shader_parameter("base_color")
+			if base is Color:
+				var c: Color = base
+				var sandy := c.r > c.g + 0.04 and c.g > c.b + 0.04
+				var k := 0.55 if sandy else 0.86
+				sm.set_shader_parameter("base_color", c.lerp(Color("eef1f2"), k))
+				var mo: Variant = sm.get_shader_parameter("mottle_color")
+				if mo is Color:
+					sm.set_shader_parameter("mottle_color", (mo as Color).lerp(Color("d3dbe2"), k))
+			var ec: Variant = sm.get_shader_parameter("edge_color")
+			if ec is Color:
+				sm.set_shader_parameter("edge_color", (ec as Color).lerp(Color("c2cbd3"), 0.8))
 
 
 # ------------------------------------------------------------------ helpers
@@ -222,7 +261,9 @@ func fx(name: String) -> bool:
 			var h := _a(p[1])
 			if h:
 				var yard := p[1] in YARD
-				h.place_at(stage.spot_point("y_help_in" if yard else "door_out"))
+				# wave 2: kitchen helpers step in from just inside the open door (below the looking-down room shot) so
+				# they cross the floor in frame; from door_out they spent most of the walk hidden behind the wall
+				h.place_at(stage.spot_point("y_help_in" if yard else "door_in"))
 				h.pop_delay = 0.0
 				h.pop_target = 1.0
 				h.set_pose("calm")
@@ -230,7 +271,8 @@ func fx(name: String) -> bool:
 				if yard:
 					h.walk_to(goal, 0.32)
 				else:
-					h.follow([stage.spot_point("door"), goal], 0.5, "", false)
+					# in along the floor toward the hearth, then round to the granny: most of the path is in frame
+					h.follow([stage.spot_point("help_loop"), goal], 0.38, "", false)
 			return true
 		"give":  # give:<helper>: a bowl of porridge flies from the cauldron to the helper
 			var h2 := _a(p[1])
@@ -289,22 +331,27 @@ func fx(name: String) -> bool:
 		"jige_carry":  # the carrier walks off along the path to the road with the roll on its back
 			var j2 := _a("jige")
 			if j2:
-				j2.follow([stage.spot_point("y_out"), stage.spot_point("shore")], 0.42, "", false)
+				j2.follow([stage.spot_point("y_out"), stage.spot_point("shore")], 0.56, "", false)
+			return true
+		"place":  # place:<role>:<spot>: an unseen move (she is inside the closed house while the camera is outside)
+			var pa := _a(p[1])
+			if pa:
+				pa.place_at(stage.spot_point(p[2]))
+			return true
+		"jige_home":  # after the throw the carrier steps aside along the shore, out of the swimmer's way (he swims
+			# off screen-right along the waves, the carrier steps screen-left; both stay in the shot)
+			var j3 := _a("jige")
+			var cam3 := stage.camera()
+			if j3 and cam3:
+				var side := -cam3.global_transform.basis.x
+				side.y = 0.0
+				j3.walk_to(_ground(j3.global_position + side.normalized() * 0.32), 0.3)
+			return true
+		"throw":  # the carrier at the shore tips the roll off its back: an arc into the waves, a splash on landing
+			_throw()
 			return true
 		"splash":
-			var at2 := stage.spot_point("sea_splash")
-			var s := _card(SPLASH, 0.1)
-			_face_cam(s)
-			s.global_position = at2
-			var tw := create_tween()
-			tw.tween_property(s, "scale", Vector3.ONE * 9.0, 0.45).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
-			tw.tween_interval(1.3)
-			tw.tween_property(s, "scale", Vector3.ONE * 0.05, 0.5)
-			tw.tween_callback(s.queue_free)
-			var tg := _a("tiger")
-			if tg:
-				tg.pop_target = 0.02  # thrown: off the carrier's back into the waves
-			_carry = false
+			_splash()
 			return true
 		"swim":
 			_swim = _card("cast_tiger_swim", 0.3)
@@ -350,12 +397,19 @@ func _hide(h: String) -> void:
 			get_tree().create_timer(1.1).timeout.connect(func():
 				a.pop_target = 0.02
 				_sfx("sm.paper_poke", goal))
-		"jeolgu":  # hops up onto the lintel above the door
+		"jeolgu":  # thumps out of the open door and up onto the lintel over it (outside: wave 2)
 			var up := stage.spot_point("lintel")
-			a.follow([up], 0.3, "", false)
-			get_tree().create_timer(0.9).timeout.connect(func(): glide(a, up, 0.5, 0.0, _lintel_h()))
-		"myeongseok", "jige":
+			var sill := stage.spot_point("door")
+			a.follow([stage.spot_point("tiger_door"), sill], 0.34, "", false)
+			var dt := (a.global_position.distance_to(stage.spot_point("tiger_door"))
+				+ stage.spot_point("tiger_door").distance_to(sill)) / 0.34
+			get_tree().create_timer(dt + 0.1).timeout.connect(func():
+				if is_instance_valid(a):
+					glide(a, up, 0.55, 0.06, _lintel_h()))
+		"myeongseok":
 			a.walk_to(goal, 0.3)
+		"jige":  # round behind the rolled mat to the wall (it used to stride across in front of the mat)
+			a.follow([stage.spot_point("y_jige_via"), goal], 0.3, "", false)
 	_sfx("wc.plop", goal)
 
 
@@ -457,6 +511,36 @@ func _roll(k: int) -> void:
 			_sfx("wc.roll", tig.centre()))
 
 
+func _throw() -> void:
+	var tig := _a("tiger")
+	_carry = false
+	if tig == null:
+		_splash()
+		return
+	var to := stage.spot_point("sea_splash")
+	glide(tig, to, 0.8, 0.3, 0.0)
+	get_tree().create_timer(0.8).timeout.connect(func():
+		if is_instance_valid(tig):
+			tig.pop_target = 0.02  # into the waves
+		_splash())
+
+
+## A splash rising from the water where he lands (wave 2: was a giant card scaled ×9 out of nothing in mid-shot):
+## the card grows UP from the water line, holds, and sinks back; about a third of the tiger's height.
+func _splash() -> void:
+	var at2 := stage.spot_point("sea_splash")
+	var s := _card(SPLASH, 0.24)
+	_face_cam(s)
+	s.global_position = at2 - Vector3.UP * 0.01
+	s.scale = Vector3(0.5, 0.05, 1.0)
+	var tw := create_tween()
+	tw.tween_property(s, "scale", Vector3.ONE, 0.3).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+	tw.tween_interval(0.8)
+	tw.tween_property(s, "scale", Vector3(0.8, 0.03, 1.0), 0.45).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tw.tween_callback(s.queue_free)
+	_sfx("wg.splash", at2)
+
+
 func _feast() -> void:
 	var c := stage.spot_point("y_feast")
 	var t := _card(SOBAN, 0.12)
@@ -544,8 +628,10 @@ func step(dt: float) -> void:
 		var j := _a("jige")
 		var tig := _a("tiger")
 		if j and tig:
-			tig.place_at(j.global_position - _toward() * 0.02)
-			tig.lift = j.puppet.height * 0.45
+			# wave 2: the roll lies across the top of the A-frame's rack, just behind its poles, rocking with its stride
+			# (it hung beside the carrier at its hip, read as two cards pasted together)
+			tig.place_at(j.global_position - _toward() * 0.035)
+			tig.lift = j.puppet.height * 0.62 + absf(sin(_t * 7.0)) * 0.006
 	if _swim and is_instance_valid(_swim):
 		_swim_t += dt
 		var cam2 := stage.camera()
