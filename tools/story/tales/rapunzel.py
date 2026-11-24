@@ -116,10 +116,11 @@ SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          "foot": [2.2, 9.0, 0.3, 26.0, 10.0],
          "road_in": [2.8, 11.0, 0.3, 24.0, -8.0],
          "hide": [2.6, 10.0, 0.45, 30.0, -20.0],             # the prince by the tree, the tower behind
-         "float": [3.0, 6.0, 0.8, 40.0, 6.0],   # v3: closer, the floating prince reads (v2: a speck)
+         "float": [3.0, 6.0, 0.8, 40.0, 6.0],
+         "float_hi": [3.0, 6.0, 1.45, 40.0, 6.0],  # v3: where the float starts (3/4 up the braid), then glides down with him   # v3: closer, the floating prince reads (v2: a speck)
          "track": [2.8, 14.0, 0.3, 26.0, 10.0],
-         "field": [3.0, 11.0, 0.28, 28.0, 68.0],   # v3: turned off the tower (the cottage is "far away")
-         "reunion": [1.7, 7.0, 0.27, 28.0, 62.0],
+         "field": [3.0, 11.0, 0.28, 28.0, 62.0],   # v3: turned off the tower (the cottage is "far away")
+         "reunion": [1.7, 7.0, 0.27, 28.0, 45.0],
          "pull_back": [9.5, 26.0, 0.3, 24.0, 0.0]}
 
 ROLES_LABEL = {"rap": "라푼젤", "gothel": "고텔", "prince": "왕자", "father": "아빠", "mother": "엄마"}
@@ -185,6 +186,9 @@ def _home(**kw):
 # Road (probed seed=4 0): x ~0.4 at z -1.5, x ~1.0 at z -3.0, bending left toward the reader (x -0.6 at z 0.6).
 # The tower stands in the clearing left of the road; the hiding tree right of the road; the field cottage down the
 # road at the front left (the prince walks out of the wood to it).
+# v3: shot yaw θ puts the camera at (sin θ, cos θ)·d in the stage frame [right, toward]: screen right is
+# (cos θ, -sin θ). prince_meet = rap_field + 0.27·right(45°) (side by side in the reunion two-shot), field_hear =
+# prince_meet + 1.0·right(62°) (his run crosses the field shot sideways); at 62° the tower is ~55° off the axis.
 TOWER = [-0.95, -2.25]
 TOWER_SCALE = 1.0  # the kit preset is in world units: its top room fits the cast (v2)
 KIT = "/Users/house_of_4k2b/orca/popup-atlas/game/art/buildings/kit.json"
@@ -233,8 +237,8 @@ FOREST = {"tower": TOWER, "f_focus": [-0.6, -1.8],
           "prince_look": [-0.58, -1.6], "tree": [1.8, -2.35], "hide_at": [2.1, -2.1], "gothel_in": [1.0, -3.4],
           "gothel_mid": [0.4, -2.05], "hedge": [-0.3, -1.95], "land": [-0.42, -1.72],
           "road_bend": [0.0, -0.5], "field_in": [-0.45, 0.25], "f_cottage": [-1.75, 0.15], "rap_field": [-1.15, 0.5],
-          "prince_meet": [-1.05, 0.26], "field_focus": [-1.0, 0.4], "flowers_1": [-1.5, 0.85], "flowers_2": [-1.95, 0.75],
-          "track_mid": [0.2, -1.0], "lawn": [1.6, -1.15], "field_hear": [-0.12, -0.05]}
+          "prince_meet": [-0.96, 0.31], "field_focus": [-1.0, 0.4], "flowers_1": [-1.5, 0.85], "flowers_2": [-1.95, 0.75],
+          "track_mid": [0.2, -1.0], "lawn": [1.6, -1.15], "field_hear": [-0.49, -0.57]}
 SET_FOREST = [
     {"build": _tower_spec(), "at": "tower", "name": "tower", "scale": TOWER_SCALE, "stage": 0, "clear": 1.0},
     _e("forest_broadleaf_00", "tree", "tree", 1.0, clear=0.4),
@@ -381,6 +385,7 @@ BEATS = [
         {"do": "walk", "who": "prince", "to": "hide_at", "via": ["prince_mid"], "speed": 0.45, "pose": "run",
          "follow": "prince", "shot": "hide", "line": "rp_r0606"},
         {"do": "pose", "who": "prince", "pose": "hide", "left": 1, "wait": 0.1},
+        {"do": "cam", "shot": "foot", "at": "gothel_mid", "rate": 1.4, "wait": 0.2, "settle": 0.8},  # v3: on her before she walks (OFF_FRAME)
         {"do": "walk", "who": "gothel", "to": "gothel_call", "speed": 0.3, "follow": "gothel", "shot": "foot"},
         {"do": "pose", "who": "gothel", "pose": "talk", "wait": 0.1},
         {"do": "cam", "shot": "tower_low", "at": ["gothel_call", "tower"], "rate": 1.2, "wait": 0.1, "settle": 0.5},
@@ -462,8 +467,9 @@ BEATS = [
         {"do": "cam", "shot": "window_side", "at": "win_at", "rate": 1.4, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "rp_r0905"},
         {"do": "fx", "fx": "window:gothel:win_wand", "wait": 0.2},
-        {"do": "cam", "shot": "float", "at": ["land", "win_foot"], "rate": 1.2, "wait": 0.1},
+        {"do": "cam", "shot": "float_hi", "at": ["land", "win_foot"], "rate": 1.2, "wait": 0.1, "settle": 0.8},
         {"do": "fx", "fx": "wind_float", "wait": 0.0},
+        {"do": "cam", "shot": "float", "at": ["land", "win_foot"], "rate": 0.55, "wait": 0.0},
         {"do": "say", "line": "rp_r0906"},
         {"do": "fx", "fx": "braid:up", "wait": 0.2},
         {"do": "fx", "fx": "window:gothel:", "wait": 0.1},

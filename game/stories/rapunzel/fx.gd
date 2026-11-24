@@ -50,6 +50,7 @@ var _room_built := false
 var _room_light: OmniLight3D
 var _view: Node3D  ## treetops seen from the window (inside only)
 var _hook: Array = []  ## the hook + the braid over the sill, down the inner wall and along the floor to her (inside)
+var _hang := {}  ## role -> where a climber stopped part way up the braid holds (v3: stage spacing dropped him to the grass)
 var _bx := 0.0  ## the braid's line right of the window's centre (her drawn braid's end when she let it down)
 
 
@@ -674,6 +675,7 @@ func fx(name: String) -> bool:
 		"wind_float":  # 휘익~ the magic wind lifts the prince off the braid and sets him down softly in the grass
 			var pr := stage.actor("prince")
 			if pr:
+				_hang.erase("prince")
 				_float = {"t": 0.0, "life": 5.2, "from": pr.global_position, "to": _spot("land"), "h0": pr.lift}
 				pr.set_pose("float")
 				pr.set_meta("moving", true)
@@ -763,7 +765,10 @@ func _climb(st: Dictionary, R: Node) -> void:
 	if stop >= 1.0 and not bool(st.get("hold", false)):
 		await _climb_in(who, "", "", R)
 	elif bool(st.get("hold", false)):
-		a.set_pose("climb_cycle", 0)  # hanging on the braid just under the sill (seen from behind) until he climbs in
+		a.set_pose("climb_cycle", 0)
+	if stop < 1.0:
+		a.set_pose("climb_cycle", 0)
+		_hang[who] = a.global_position  # hanging on the braid just under the sill (seen from behind) until he climbs in
 
 
 ## Over the sill: from the top of the braid into the window and down onto the room floor (to a spot: standing there
@@ -808,6 +813,10 @@ func step(dt: float) -> void:
 		var ra := stage.actor(str(r))
 		if ra and not ra.moving() and absf(ra.global_position.y - _floor_y()) > 0.002:
 			ra.global_position.y = _floor_y()
+	for h in _hang:  # hanging on the braid part way up (empty tower): nothing moves him off it
+		var ha := stage.actor(str(h))
+		if ha and not ha.moving():
+			ha.global_position = _hang[h]
 	# braid unroll / draw up
 	if not _braid_anim.is_empty() and not _braid.is_empty():
 		_braid_anim["t"] = float(_braid_anim["t"]) + dt / float(_braid_anim["life"])
