@@ -2531,3 +2531,49 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
   thatch for ~1 s in the crane to the tree; the boy is small in the fork on the rope page; nobody listened to the mix.
 - Shared slot: other agents' wrappers took the lock while a run held it (the lock pid was overwritten mid-run), and
   one run died after 5 s; a 0.03 s poller (scratchpad) was needed to get turns.
+
+## 2026-11-24/25 — wave 2: sun_wind v7, three_pigs v24, turnip v6 (gate re-runs after the Gemini takeover)
+- Tools: `tools/story/full_rec.sh TALE /ABS/out.mp4 MAX_S` (--import, 1200x900, frame cap, --log-sound --log-track,
+  AVI to Trash, prints FROZEN_VIDEO from ffmpeg freezedetect) and `tools/story/slot_wait.sh` (takes the shared Godot
+  slot on a 0.03 s mkdir poll). With three agents recording, 4 of 11 full runs had frozen stretches (8-16 s of repeated
+  frames while the log ran on) — always check FROZEN_VIDEO before reviewing. motion_review SKATE ignores a one-frame
+  difference on sub-metre shuffles. spread_stage: the overlap check skips pieces whose hinges all lie folded.
+- sun_wind v7 (artifacts/video/sun_wind_v7.mp4, 3:22, GATE PASS): the ending no longer walks him out of the bottom of
+  the frame, holds ~6 s of empty road under "해님과 바람은 오늘도..." and brings him back for the curtain call: he
+  strolls on with the coat on his arm under both closing lines (stroll / say / stop); the curtain call has no walker
+  return. 7 motion rows ok, counters 0, house orbit closed_red 0. The traveller stays on the legacy front-walk rig
+  (no drawn cycles exist for his 15 coat / hat / shirt states; every travel is toward the camera, the rig the user
+  approved); the stream entry (2:26-2:32) checked at 10 fps, no edge-on frame. Still 3:22, under the 4-5 min aim.
+  Sheet: artifacts/sun_wind/fixes_sheet.jpg.
+- turnip v6 (artifacts/video/turnip_v6.mp4, 4:42, GATE PASS): grandpa's 0:47 "thin turn" was the beat's enter figure
+  (side_walk) shown for 0.2 s between the surprised and the clap fronts; he enters in the clap figure now. 0:40 is one
+  paper turn at the 65 % minimum width (reads fine). Reskinned puppets checked at full res: no rims, paper. v5 fixes
+  intact (plot, holes, runs, no stray steam). Sheet: artifacts/turnip/fixes_sheet.jpg.
+- three_pigs: see the v24 entry below once recorded.
+
+## 2026-11-25 — wolf_goats v2: gate audit items (artifacts/video/wolf_goats_v2.mp4, 5:54; GATE FAIL by one CAM_JUMP)
+- Run: artifacts/wolf_goats/rec/v2/full_c.log / .mp4 (1200x900, movie maker, --import, --log-sound --log-track).
+  STORY_DONE 353.5 s (v1 375 s), CHECK_LINES OK 53, VOICE_DUP 0, CAM_JERK 0, SPEAKER_OFF 0, OVERLAP 0, OCCLUDE 0,
+  SET_CHECK 0, missing_audio / missing_sound empty, MOTION_FLAGS 1 (30: the tumble into the well, accepted), 32 motion
+  verdicts ok, checklist ticked. gate.py: GATE FAIL (1) = CAM_JUMP 3.03 deg (limit 3.0) on the glide out of the room at
+  2:58. The fix (a "porch" shot just outside the door instead of the long dolly to the house shot) plus two pace trims
+  (r0302 over the walk to the stall, r0701 over the tiptoe in, knock walk 0.8 -> 1.0) are committed but NOT recorded:
+  the disk filled (~0.7 GB free, ~/.Trash holds the AVIs) and the re-record was aborted.
+- Fixed: the doorway was never cut into the cottage's wall band (the door always looked shut; mom "vanished" at it):
+  tools/atlas/wg_door_hole.py. The mother now comes home up the road (followed) and walks in through the open door.
+  The wolf's errand to the stall and his exit with the full belly are followed by the camera (go_out `then.follow`);
+  the 18 s clock close-up is now: clock line -> room -> out to the door, reassurance line over his waddle. The wolf
+  enters seen from outside, then the camera glides in (no 180-degree turn inside, no lens-filling wolf). Room shots
+  stand just in front of the wall inside the margin (tale inside_margin 0.7 + new inside_door_hide: the door leaf, roof
+  band and reveals fold away too: spread_stage hunks d703d26, c5ca59d), longer lens, kids x1.1 and a wider row.
+  Kids leap out of the belly on a parabola holding the pop figure (fx.gd _leap), the belly shot is wider; the stone
+  two-shot is higher (pop_wide); the dance happens where they stand (no walk off frame); the youngest stands beside
+  the mother at the well. The wolf's knock line uses the knock pose (the front "shout" figure turned invisible on the
+  door step after the side knock pose: open engine issue, not traced). Floor + rug read as paper planks / rag rug.
+- Pace trims: walks quicker (wolf 0.6/0.75 -> 0.8-1.0, mom / baby tiptoes), r0304 over the walk back from the stall,
+  belly / stone tap waits 0.8-1.1 -> 0.6-1.0, mother + baby walk together, the dance walk removed. No line cut.
+- Still off: the gate's CAM_JUMP (fix unrecorded); mother pops up on the road ~1 s into her line (3:09); a raised meadow
+  tier stands as a green bank at the right of the tree / belly / dance shots; kids 3 / 4 run to the basket behind the
+  standing wolf; house_orbit_all.sh not re-run after the doorway cut; 5:54 is still above the 5:00 aim (201 s of
+  lines + 17 taps + the fixed ending). Nobody has listened to the mix.
+- Sheet: artifacts/wolf_goats/fixes_sheet.jpg (v1 / v2 per fix).
