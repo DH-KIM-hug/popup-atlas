@@ -326,7 +326,9 @@ BEATS = [
         {"do": "say", "line": "tn_r0204"}]},
     # 3 -- grandpa alone: 꿈쩍도 안 해요, 엉덩방아, he calls grandma; she comes running out of the kitchen
     {"id": "grandpa", "title": "영차!", "spread": _farm(light="afternoon"), "tn": {"turnip": "big"},
-     "enter": {"who": {"grandpa": "side_walk"}, "at": {"grandpa": "gp_side"}, "left": {"grandpa": 1}},
+     # 2026-11-24 (R1 "0:47 turn"): he enters in his first line's clapping front figure; the side_walk enter showed a
+     # side card for 0.2 s between the surprised and clap fronts (a front-side-front blip)
+     "enter": {"who": {"grandpa": "clap"}, "at": {"grandpa": "gp_side"}, "left": {"grandpa": 1}},
      "steps": [
         {"do": "cam", "shot": "medium", "at": "line_focus", "rate": 1.2, "wait": 0.2},
         {"do": "say", "line": "tn_r0301"},
