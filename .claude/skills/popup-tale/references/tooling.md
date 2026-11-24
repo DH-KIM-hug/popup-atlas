@@ -56,3 +56,8 @@
 - zsh does not word-split `$var`, so `run_jobs.py ... $group` passed one bogus id and exited silently; run loops under
   `bash -c`.
 - Commit + push per milestone, only your own paths (`git commit -- <paths>`).
+
+- The shared slot under load (wolf_goats v2, 2026-11-25: five agents chaining 15-min full recordings): a beat test
+  waited 30-45 min for its turn. Batch every beat you need into ONE slot hold (tools/story/wg_beats.sh TAG
+  beat:sec ...), trust the full run for the rest, and never kill a waiter with with_godot.sh's own trap (it would
+  remove the holder's lock dir): `kill -9` only your own waiting PID.
