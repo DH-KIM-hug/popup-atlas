@@ -2697,6 +2697,11 @@ func _camera_inside_check() -> void:
 		# away, so a glide into a deep room does not fill the frame with the door on its way through
 		var inside := l.z < float(tale.get("inside_margin", 0.16)) and absf(l.x) < sp.width * 0.62 and l.z > -1.5
 		sp.walls.visible = not inside
+		# wolf_goats 2026-11-24 (tale `inside_door_hide`): the door leaf (not one of the walls) also folds away while the
+		# camera passes the front wall, or a glide in / out fills the frame with the door; seen from deep in the room
+		# (the turned-round door shot) it stands
+		if sp.door_pivot and tale.get("inside_door_hide", false):
+			sp.door_pivot.visible = not (inside and l.z > -0.12)
 		if inside:
 			now = str(k)
 			deep = deep or l.z < 0.0
