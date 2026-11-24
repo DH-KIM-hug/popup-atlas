@@ -127,7 +127,9 @@ SHOTS = {"story": [3.4, 12.0, 0.28, 20.0], "close": [2.9, 12.0, 0.32, 20.0],
          "medium": [2.4, 9.0, 0.3, 22.0, 6.0], "two_shot": [2.0, 8.0, 0.3, 24.0, -10.0],
          "face": [1.3, 6.0, 0.3, 22.0, 0.0],
          "track": [3.4, 24.0, 0.25, 22.0, 0.0],             # following the wolf along the road, above the verge
-         "house": [2.8, 12.0, 0.4, 28.0, COT_YAW],         # straight on to the cottage from its path
+         "house": [2.8, 12.0, 0.4, 28.0, COT_YAW],
+         # v2: just outside the door, straight on (the glide out of the room to the full house shot read as a jump)
+         "porch": [1.6, 16.0, 0.25, 40.0, COT_YAW],         # straight on to the cottage from its path
          "door_ots": [1.35, 9.0, 0.3, 30.0, COT_YAW + 28.0],  # over the wolf's shoulder onto the door
          "door_low": [1.1, 3.0, 0.28, 34.0, COT_YAW - 12.0],  # low at the doorstep: the wolf looming at the door
          # inside the cottage (camera just behind the hidden front wall), in the cottage's frame
@@ -340,7 +342,7 @@ BEATS = [
      "enter": {"who": {**_all("calm")}, "at": IN_KIDS},
      "steps": [
         {"do": "cam", "shot": "establish", "at": "est", "rate": 1.0, "wait": 0.3},
-        {"do": "walk", "who": "wolf", "from": "road_mid", "to": "wolf_door", "via": ["road_door"], "speed": 0.8,
+        {"do": "walk", "who": "wolf", "from": "road_mid", "to": "wolf_door", "via": ["road_door"], "speed": 1.0,
          "follow": "wolf", "shot": "track"},
         {"do": "fx", "fx": "knock", "wait": 0.2},
         {"do": "cam", "shot": "door_ots", "at": "wolf_door", "rate": 1.2, "wait": 0.6, "settle": 0.5},
@@ -354,10 +356,9 @@ BEATS = [
      "steps": [
         {"do": "cam", "shot": "track", "at": "wolf_door", "rate": 1.8, "wait": 0.1, "settle": 0.85},
         {"do": "walk", "who": "wolf", "to": "wolf_stall", "via": ["road_door", "road_mid"], "speed": 0.9,
-         "follow": "wolf", "shot": "track"},
+         "follow": "wolf", "shot": "track", "line": "wg_r0302"},
         {"do": "pose", "who": "wolf", "pose": "hungry"},
         {"do": "cam", "shot": "stall", "at": ["wolf_stall", "stall"], "rate": 1.6, "wait": 0.1, "settle": 0.3},
-        {"do": "say", "line": "wg_r0302"},
         {"do": "tap_steps", "target": "wolf", "prompt": "wg_050", "hint": "wg_050", "shot": "stall",
          "steps": [{"fx": "munch:1", "wait": 0.7}, {"fx": "munch:2", "wait": 0.7}]},
         {"do": "say", "line": "wg_r0303"},
@@ -423,7 +424,7 @@ BEATS = [
         # wall to the cottage and the full-bellied wolf waddles out of the open door, down the path and off up the
         # road with the camera following him, under the narrator's reassurance
         {"do": "cam", "shot": "room_wide", "at": "in_focus", "rate": 1.4, "wait": 0.5},
-        {"do": "cam", "shot": "house", "at": "door_view", "rate": 0.8, "wait": 0.1, "settle": 0.6},
+        {"do": "cam", "shot": "porch", "at": "door", "rate": 1.2, "wait": 0.1, "settle": 0.6},
         {"do": "go_out", "who": ["wolf"], "house": "cottage", "to": "road_door", "pose": "heavy", "shot": "house",
          "keep_open": True, "speed": 0.55, "line": "wg_r0507",
          "then": {"to": "road_far", "exit": True, "speed": 0.75, "follow": "track"}}]},
@@ -455,9 +456,8 @@ BEATS = [
      "steps": [
         {"do": "cam", "shot": "tree_wide", "at": "tree_focus", "from": "crane_high", "rate": 0.9, "wait": 0.6},
         {"do": "fx", "fx": "snore_on", "wait": 0.6},
-        {"do": "say", "line": "wg_r0701"},
         {"do": "walk", "who": ["mom", "baby"], "from": "road_bend", "to": {"mom": "mom_near", "baby": "baby_near"},
-         "speed": 0.55, "follow": "mom", "shot": "tree_wide"},
+         "speed": 0.55, "follow": "mom", "shot": "tree_wide", "line": "wg_r0701"},
         {"do": "pose", "who": "mom", "pose": "shush", "left": 0},
         {"do": "cam", "shot": "tree_two", "at": ["mom_near", "wolf_sleep"], "rate": 1.6, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "wg_r0704"},

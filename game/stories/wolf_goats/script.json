@@ -97,6 +97,13 @@
    28.0,
    -30.0
   ],
+  "porch": [
+   1.6,
+   16.0,
+   0.25,
+   40.0,
+   -30.0
+  ],
   "door_ots": [
    1.35,
    9.0,
@@ -1812,7 +1819,7 @@
      "via": [
       "road_door"
      ],
-     "speed": 0.8,
+     "speed": 1.0,
      "follow": "wolf",
      "shot": "track"
     },
@@ -2455,7 +2462,8 @@
      ],
      "speed": 0.9,
      "follow": "wolf",
-     "shot": "track"
+     "shot": "track",
+     "line": "wg_r0302"
     },
     {
      "do": "pose",
@@ -2472,10 +2480,6 @@
      "rate": 1.6,
      "wait": 0.1,
      "settle": 0.3
-    },
-    {
-     "do": "say",
-     "line": "wg_r0302"
     },
     {
      "do": "tap_steps",
@@ -3956,9 +3960,9 @@
     },
     {
      "do": "cam",
-     "shot": "house",
-     "at": "door_view",
-     "rate": 0.8,
+     "shot": "porch",
+     "at": "door",
+     "rate": 1.2,
      "wait": 0.1,
      "settle": 0.6
     },
@@ -4928,10 +4932,6 @@
      "wait": 0.6
     },
     {
-     "do": "say",
-     "line": "wg_r0701"
-    },
-    {
      "do": "walk",
      "who": [
       "mom",
@@ -4944,7 +4944,8 @@
      },
      "speed": 0.55,
      "follow": "mom",
-     "shot": "tree_wide"
+     "shot": "tree_wide",
+     "line": "wg_r0701"
     },
     {
      "do": "pose",
@@ -7838,7 +7839,7 @@
    "text": "\"목소리를 곱게 만들어야지. 분필을 먹어 볼까?\"",
    "status": "reuse",
    "beat": "chalk",
-   "interaction": "say",
+   "interaction": "walk",
    "used": true,
    "segs": [
     {
@@ -8620,7 +8621,7 @@
    "text": "늑대는 배가 불러서, 나무 아래에서 쿨쿨 자고 있었어요.",
    "status": "reuse",
    "beat": "tree",
-   "interaction": "say",
+   "interaction": "walk",
    "used": true,
    "segs": [
     {
