@@ -438,6 +438,22 @@ func _make_hook() -> void:
 		_braid_run(p0, p1)
 
 
+## v3 (싹둑): the cut braid stays in the room. Where the braid drawn on her standing figure hung (her left: screen
+## right) a braid card stands for a moment and topples onto the floor beside her, on its edge toward the lens (from
+## the low room shots it reads as the braid lying on the floor); it joins the floor run to the hook (cleared with it).
+func _drop_cut_braid(r: StoryActor) -> void:
+	var c := _card(BRAID, r.puppet.height * 0.68)  # the slim braid (the tassel card drew as wide as her)
+	c.scale = Vector3(BRAID_X, 1, 1)
+	var p := r.global_position + _right() * (ROOM_BRAID_X + 0.012) + _toward() * 0.012
+	p.y = _floor_y() + 0.004
+	c.global_position = p
+	_hook.append(c)
+	var tw := c.create_tween()
+	tw.tween_property(c, "rotation:z", -PI * 0.5, 0.45).set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN)
+	tw.tween_property(c, "rotation:z", -PI * 0.5 + 0.08, 0.08)
+	tw.tween_property(c, "rotation:z", -PI * 0.5, 0.1)
+
+
 func _clear_hook() -> void:
 	for c in _hook:
 		if is_instance_valid(c):
@@ -648,6 +664,7 @@ func fx(name: String) -> bool:
 				var mid := (g4.centre() + r3.centre()) * 0.5 + Vector3.UP * 0.08
 				fly(SCISSORS, g4.centre() + Vector3.UP * 0.1, mid, 0.06, 0.5, 0.06)
 				get_tree().create_timer(0.6).timeout.connect(func() -> void:
+					_drop_cut_braid(r3)
 					r3.set_pose("short_sad")
 					r3.hop_v = 0.5
 					stage.shake(0.4)

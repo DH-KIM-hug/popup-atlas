@@ -116,10 +116,10 @@ SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          "foot": [2.2, 9.0, 0.3, 26.0, 10.0],
          "road_in": [2.8, 11.0, 0.3, 24.0, -8.0],
          "hide": [2.6, 10.0, 0.45, 30.0, -20.0],             # the prince by the tree, the tower behind
-         "float": [4.0, 4.0, 1.1, 40.0, 6.0],
+         "float": [3.0, 6.0, 0.8, 40.0, 6.0],   # v3: closer, the floating prince reads (v2: a speck)
          "track": [2.8, 14.0, 0.3, 26.0, 10.0],
-         "field": [2.6, 11.0, 0.28, 26.0, -14.0],
-         "reunion": [1.7, 7.0, 0.27, 28.0, 8.0],
+         "field": [3.0, 11.0, 0.28, 28.0, 68.0],   # v3: turned off the tower (the cottage is "far away")
+         "reunion": [1.7, 7.0, 0.27, 28.0, 62.0],
          "pull_back": [9.5, 26.0, 0.3, 24.0, 0.0]}
 
 ROLES_LABEL = {"rap": "라푼젤", "gothel": "고텔", "prince": "왕자", "father": "아빠", "mother": "엄마"}
@@ -161,7 +161,7 @@ HOME = {"h_focus": [-1.0, -1.5], "cottage": [-2.35, -1.05], "door": [-2.1, -0.75
         "gate_out": [-1.08, -1.9], "bed": [-1.0, -2.35], "rampion": [-0.62, -2.12], "ramp_2": [-1.45, -2.18],
         "ramp_3": [-0.25, -2.4], "pull_at": [-0.78, -2.1], "witch_at": [-0.38, -2.2], "witch_house": [-1.1, -3.25],
         "garden_focus": [-0.8, -2.2], "caught": [-0.58, -2.15], "baby_at": [-0.95, -0.45], "f_back": [-1.68, -0.6],
-        "m_door": [-1.35, -0.5]}
+        "m_door": [-1.35, -0.5], "m_night": [-1.85, -0.78]}
 SET_HOME = [
     _e("village_houses_13", "cottage", "cottage", 1.15, yaw=30.0, clear=1.0),
     _e("fairytale_west_11", "wall_l", "wall_l", 1.25, clear=0.3),
@@ -233,14 +233,16 @@ FOREST = {"tower": TOWER, "f_focus": [-0.6, -1.8],
           "prince_look": [-0.58, -1.6], "tree": [1.8, -2.35], "hide_at": [2.1, -2.1], "gothel_in": [1.0, -3.4],
           "gothel_mid": [0.4, -2.05], "hedge": [-0.3, -1.95], "land": [-0.42, -1.72],
           "road_bend": [0.0, -0.5], "field_in": [-0.45, 0.25], "f_cottage": [-1.75, 0.15], "rap_field": [-1.15, 0.5],
-          "prince_meet": [-0.9, 0.55], "field_focus": [-1.0, 0.4], "flowers_1": [-1.5, 0.85], "flowers_2": [-1.95, 0.75],
-          "track_mid": [0.2, -1.0], "lawn": [1.6, -1.15]}
+          "prince_meet": [-1.05, 0.26], "field_focus": [-1.0, 0.4], "flowers_1": [-1.5, 0.85], "flowers_2": [-1.95, 0.75],
+          "track_mid": [0.2, -1.0], "lawn": [1.6, -1.15], "field_hear": [-0.12, -0.05]}
 SET_FOREST = [
     {"build": _tower_spec(), "at": "tower", "name": "tower", "scale": TOWER_SCALE, "stage": 0, "clear": 1.0},
     _e("forest_broadleaf_00", "tree", "tree", 1.0, clear=0.4),
     _e("story_rp_garden_15", "hedge", "hedge", 1.0, clear=0.25),
     _e("farm_animals_16", "rabbit", "rabbit", 1.0, clear=0.15),
-    _e("village_houses_20", "f_cottage", "f_cottage", 1.0, yaw=35.0, clear=0.9),
+    # v3: the field cottage is a lot until the reunion (it pops up there: its thatch filled the corner of every
+    # tower wide, and "far away in a field" read as "next to the tower")
+    _e("village_houses_20", "f_cottage", "f_cottage", 1.0, yaw=35.0, clear=0.9, stage=0),
     _e("spring_blossom_16", "flowers_1", "flowers_1", 1.0, clear=0.15),
     _e("spring_blossom_07", "flowers_2", "flowers_2", 1.0, clear=0.15),
     # a small primrose patch whose big `clear` opens a lawn between the hiding spot and the "hide" shot's lens
@@ -255,6 +257,7 @@ SHOTS.update({
     "window_side": [1.5, 8.0, round(WIN["sill"] + 0.1, 3), 34.0, 24.0],   # at win_at, a little from the side
     "climb_top": [2.2, 5.0, round(WIN["sill"] - 0.15, 3), 38.0, 16.0],     # at climb_at: the follow let go at the sill
     "room": [0.72, 8.0, FH, 62.0, 0.0],
+    "room_snip": [0.78, 15.0, FH, 62.0, 0.0],   # v3: a little higher, so the cut braid on the floor clears the caption
     "room_low": [0.5, 4.0, round(FH - 0.03, 3), 58.0, -14.0],              # at r_rap
     "room_low_g": [0.45, 4.0, FH, 58.0, 10.0],                             # at r_gothel
     "room_two": [0.52, 6.0, FH, 60.0, 12.0],                               # at r_two
@@ -298,7 +301,7 @@ BEATS = [
         {"do": "say", "line": "rp_r0106"}]},
     # 2 -- night: the father slips through the gate; the tap pulls the rampion; the witch appears; the bargain
     {"id": "night", "title": "라푼젤 풀", "spread": _home(light="night", sky=SKY_NIGHT),
-     "enter": {"who": {"father": "calm", "mother": "sad"}, "at": {"father": "father_at", "mother": "m_door"},
+     "enter": {"who": {"father": "calm"}, "at": {"father": "father_at"},  # v3: the mother is indoors at night (her head filled the lens as the camera followed him)
                "hidden": {"gothel": "witch_at"}},
      "steps": [
         {"do": "cam", "shot": "night_gate", "at": "gate", "rate": 1.0, "wait": 0.4},
@@ -383,11 +386,11 @@ BEATS = [
         {"do": "cam", "shot": "tower_low", "at": ["gothel_call", "tower"], "rate": 1.2, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "rp_r0607"},
         {"do": "fx", "fx": "window:rap:win_letdown", "wait": 0.2},
-        {"do": "fx", "fx": "braid:down", "wait": 1.2},
+        {"do": "fx", "fx": "braid:down", "wait": 0.7},
         {"do": "walk", "who": "gothel", "to": "climb_at", "speed": 0.22},
         {"do": "cam", "shot": "climb", "at": "climb_at", "rate": 1.2, "wait": 0.1},
-        {"do": "climb_braid", "who": "gothel", "speed": 0.3, "cam": "climb"},
-        {"do": "fx", "fx": "braid:up", "wait": 0.6},
+        {"do": "climb_braid", "who": "gothel", "speed": 0.36, "cam": "climb"},  # the second time: brisker
+        {"do": "fx", "fx": "braid:up", "wait": 0.4},
         {"do": "cam", "shot": "hide", "at": "hide_at", "rate": 1.3, "wait": 0.1, "settle": 0.5},
         {"do": "pose", "who": "prince", "pose": "delighted", "hop": True, "wait": 0.1},
         {"do": "say", "line": "rp_r0609"}]},
@@ -433,7 +436,7 @@ BEATS = [
         {"do": "cam", "shot": "room_low_g", "at": "r_gothel", "rate": 1.8, "wait": 0.1, "shake": 0.4, "settle": 0.5},
         {"do": "say", "line": "rp_r0803"},
         {"do": "pose", "who": "gothel", "pose": "scissors", "wait": 0.2},
-        {"do": "cam", "shot": "room", "at": "r_focus", "rate": 1.3, "wait": 0.1, "settle": 0.5},
+        {"do": "cam", "shot": "room_snip", "at": "r_focus", "rate": 1.3, "wait": 0.1, "settle": 0.5},
         {"do": "fx", "fx": "snip", "wait": 0.0},
         {"do": "say", "line": "rp_r0805"},
         {"do": "fx", "fx": "vanish:rap", "wait": 0.8},
@@ -466,19 +469,21 @@ BEATS = [
         {"do": "fx", "fx": "window:gothel:", "wait": 0.1},
         {"do": "cam", "shot": "foot", "at": "land", "rate": 1.2, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "rp_r0907"},
-        {"do": "walk", "who": "prince", "via": ["track_mid", "road_bend"], "to": "field_in", "speed": 0.36,
+        {"do": "walk", "who": "prince", "via": ["track_mid", "road_bend"], "to": "field_hear", "speed": 0.42,
          "follow": "prince", "shot": "track", "line": "rp_r0908"}]},
     # 12 -- down the road out of the wood: the song again; the reunion by the little cottage
     {"id": "reunion", "title": "노래를 따라서", "spread": _forest(light="evening"),
-     "enter": {"who": {"prince": "sad", "rap": "short_sing"}, "at": {"prince": "field_in", "rap": "rap_field"},
+     "enter": {"who": {"prince": "sad", "rap": "short_sing"}, "at": {"prince": "field_hear", "rap": "rap_field"},
                "left": {"rap": 0}},
      "steps": [
-        {"do": "cam", "shot": "field", "at": "field_focus", "rate": 1.1, "wait": 0.2, "settle": 0.5},
+        {"do": "fx", "fx": "pop:f_cottage", "wait": 0.0},  # v3: the far cottage pops up as the page reaches it
+        {"do": "cam", "shot": "field", "at": ["rap_field", "field_hear"], "rate": 1.1, "wait": 0.2, "settle": 0.5},
         {"do": "fx", "fx": "notes:rap", "wait": 0.1},
         {"do": "say", "line": "rp_x_hum"},
         {"do": "pose", "who": "prince", "pose": "delighted", "hop": True, "wait": 0.1},
         {"do": "say", "line": "rp_r1004"},
-        {"do": "walk", "who": "prince", "to": "prince_meet", "speed": 0.45, "pose": "run"},
+        {"do": "walk", "who": "prince", "to": "prince_meet", "speed": 0.5, "pose": "run", "follow": "prince",
+         "shot": "field"},
         {"do": "pose", "who": "rap", "pose": "short_joy", "hop": True, "wait": 0.1},
         {"do": "cam", "shot": "reunion", "at": ["rap_field", "prince_meet"], "rate": 1.3, "wait": 0.1, "settle": 0.5},
         {"do": "say", "line": "rp_r1005"},
@@ -486,10 +491,30 @@ BEATS = [
         {"do": "tap_steps", "target": "rap", "prompt": "rp_n07", "hint": "rp_n07",
          "steps": [{"fx": "hold_hands", "wait": 0.6}]},
         {"do": "say", "line": "rp_r1007"},
-        {"do": "cam", "shot": "field", "at": "field_focus", "rate": 0.8, "wait": 0.1},
+        {"do": "cam", "shot": "field", "at": "field_focus", "rate": 1.2, "wait": 0.1},
         {"do": "say", "line": "rp_r1008"},
         {"do": "end", "after": "rp_n02", "close_book": True}]},
 ]
+# v3 pace pass (6:35 -> toward 5 min, no line cut): camera glides a little quicker and lines follow sooner;
+# walks and climbs at a brisker pace. Opening establishing cranes keep their slow rate.
+def _pace(b):
+    for k, st in enumerate(b.get("steps", [])):
+        d = st.get("do")
+        if d == "cam" and not (k == 0 and "from" in st and st.get("from") == "crane_high"):
+            if float(st.get("rate", 2.4)) < 2.0:
+                st["rate"] = round(min(2.0, float(st["rate"]) * 1.4), 2)
+            if "settle" in st:
+                st["settle"] = min(float(st["settle"]), 0.45)
+            if float(st.get("wait", 0.6)) > 0.3:
+                st["wait"] = round(float(st["wait"]) * 0.6, 2)
+        elif d == "walk" and "speed" in st and st.get("pose") != "run":
+            st["speed"] = round(max(float(st["speed"]), min(0.46, float(st["speed"]) * 1.4)), 2)
+        elif d == "climb_braid":
+            st["speed"] = round(float(st["speed"]) * 1.45, 2)
+
+
+for _b in BEATS:
+    _pace(_b)
 for _b in BEATS:  # every page beat states where everyone stands (`--beat` starts, same-page changes)
     if _b["spread"] is not None:
         _b["enter"].setdefault("keep", [])

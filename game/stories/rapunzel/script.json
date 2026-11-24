@@ -180,9 +180,9 @@
    -20.0
   ],
   "float": [
-   4.0,
-   4.0,
-   1.1,
+   3.0,
+   6.0,
+   0.8,
    40.0,
    6.0
   ],
@@ -194,18 +194,18 @@
    10.0
   ],
   "field": [
-   2.6,
+   3.0,
    11.0,
    0.28,
-   26.0,
-   -14.0
+   28.0,
+   68.0
   ],
   "reunion": [
    1.7,
    7.0,
    0.27,
    28.0,
-   8.0
+   62.0
   ],
   "pull_back": [
    9.5,
@@ -238,6 +238,13 @@
   "room": [
    0.72,
    8.0,
+   2.04,
+   62.0,
+   0.0
+  ],
+  "room_snip": [
+   0.78,
+   15.0,
    2.04,
    62.0,
    0.0
@@ -600,6 +607,10 @@
      "m_door": [
       -1.35,
       -0.5
+     ],
+     "m_night": [
+      -1.85,
+      -0.78
      ]
     },
     "set": [
@@ -707,9 +718,9 @@
      "do": "cam",
      "shot": "garden",
      "at": "garden_focus",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.3,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "fx",
@@ -724,9 +735,9 @@
      "do": "cam",
      "shot": "parents",
      "at": "parents",
-     "rate": 1.3,
+     "rate": 1.82,
      "wait": 0.2,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -845,6 +856,10 @@
      "m_door": [
       -1.35,
       -0.5
+     ],
+     "m_night": [
+      -1.85,
+      -0.78
      ]
     },
     "set": [
@@ -943,12 +958,10 @@
    },
    "enter": {
     "who": {
-     "father": "calm",
-     "mother": "sad"
+     "father": "calm"
     },
     "at": {
-     "father": "father_at",
-     "mother": "m_door"
+     "father": "father_at"
     },
     "hidden": {
      "gothel": "witch_at"
@@ -960,8 +973,8 @@
      "do": "cam",
      "shot": "night_gate",
      "at": "gate",
-     "rate": 1.0,
-     "wait": 0.4
+     "rate": 1.4,
+     "wait": 0.24
     },
     {
      "do": "fx",
@@ -976,7 +989,7 @@
       "gate_out"
      ],
      "to": "pull_at",
-     "speed": 0.3,
+     "speed": 0.42,
      "follow": "father",
      "shot": "night_gate"
     },
@@ -992,9 +1005,9 @@
       "pull_at",
       "rampion"
      ],
-     "rate": 1.4,
+     "rate": 1.96,
      "wait": 0.2,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "tap_steps",
@@ -1024,7 +1037,7 @@
      "rate": 2.2,
      "shake": 0.5,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -1037,9 +1050,9 @@
       "pull_at",
       "witch_at"
      ],
-     "rate": 1.5,
+     "rate": 2.0,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -1157,6 +1170,10 @@
      "m_door": [
       -1.35,
       -0.5
+     ],
+     "m_night": [
+      -1.85,
+      -0.78
      ]
     },
     "set": [
@@ -1262,9 +1279,9 @@
       "baby_at",
       "m_door"
      ],
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.3,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -1412,8 +1429,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -1434,6 +1451,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -1541,7 +1562,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -1599,9 +1620,9 @@
       "gothel_tap",
       "tower"
      ],
-     "rate": 1.3,
+     "rate": 1.82,
      "wait": 0.2,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -1623,7 +1644,7 @@
      "do": "cam",
      "shot": "tower_wide",
      "at": "tower",
-     "rate": 1.4,
+     "rate": 1.96,
      "wait": 0.1
     },
     {
@@ -1644,9 +1665,9 @@
      "do": "cam",
      "shot": "window",
      "at": "r_focus",
-     "rate": 1.3,
+     "rate": 1.82,
      "wait": 0.2,
-     "settle": 0.6
+     "settle": 0.45
     }
    ],
    "sound": {
@@ -1790,8 +1811,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -1812,6 +1833,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -1919,7 +1944,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -1974,9 +1999,9 @@
       "gothel_call",
       "tower"
      ],
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.2,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -1986,9 +2011,9 @@
      "do": "cam",
      "shot": "window",
      "at": "r_focus",
-     "rate": 1.4,
+     "rate": 1.96,
      "wait": 0.2,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "tap_steps",
@@ -2006,7 +2031,7 @@
      "do": "cam",
      "shot": "braid_fall",
      "at": "win_foot",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
@@ -2017,19 +2042,19 @@
      "do": "walk",
      "who": "gothel",
      "to": "climb_at",
-     "speed": 0.2
+     "speed": 0.28
     },
     {
      "do": "cam",
      "shot": "climb",
      "at": "climb_at",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
      "do": "climb_braid",
      "who": "gothel",
-     "speed": 0.3,
+     "speed": 0.43,
      "cam": "climb"
     },
     {
@@ -2179,8 +2204,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -2201,6 +2226,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -2308,7 +2337,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -2355,9 +2384,9 @@
      "do": "cam",
      "shot": "window_side",
      "at": "win_at",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.3,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -2524,8 +2553,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -2546,6 +2575,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -2653,7 +2686,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -2705,16 +2738,16 @@
      "do": "cam",
      "shot": "road_in",
      "at": "prince_mid",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.2,
-     "settle": 0.9
+     "settle": 0.45
     },
     {
      "do": "walk",
      "who": "prince",
      "from": "prince_in",
      "to": "prince_mid",
-     "speed": 0.3,
+     "speed": 0.42,
      "follow": "prince",
      "shot": "road_in",
      "line": "rp_r0600"
@@ -2740,7 +2773,7 @@
      "who": "gothel",
      "from": "gothel_in",
      "to": "gothel_mid",
-     "speed": 0.3,
+     "speed": 0.42,
      "async": true
     },
     {
@@ -2767,7 +2800,7 @@
      "do": "walk",
      "who": "gothel",
      "to": "gothel_call",
-     "speed": 0.3,
+     "speed": 0.42,
      "follow": "gothel",
      "shot": "foot"
     },
@@ -2784,9 +2817,9 @@
       "gothel_call",
       "tower"
      ],
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -2800,39 +2833,39 @@
     {
      "do": "fx",
      "fx": "braid:down",
-     "wait": 1.2
+     "wait": 0.7
     },
     {
      "do": "walk",
      "who": "gothel",
      "to": "climb_at",
-     "speed": 0.22
+     "speed": 0.31
     },
     {
      "do": "cam",
      "shot": "climb",
      "at": "climb_at",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
      "do": "climb_braid",
      "who": "gothel",
-     "speed": 0.3,
+     "speed": 0.52,
      "cam": "climb"
     },
     {
      "do": "fx",
      "fx": "braid:up",
-     "wait": 0.6
+     "wait": 0.4
     },
     {
      "do": "cam",
      "shot": "hide",
      "at": "hide_at",
-     "rate": 1.3,
+     "rate": 1.82,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "pose",
@@ -2987,8 +3020,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -3009,6 +3042,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -3116,7 +3153,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -3171,9 +3208,9 @@
       "prince_look",
       "tower"
      ],
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.3,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -3183,9 +3220,9 @@
      "do": "cam",
      "shot": "window",
      "at": "r_focus",
-     "rate": 1.4,
+     "rate": 1.96,
      "wait": 0.2,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "tap_steps",
@@ -3202,26 +3239,26 @@
      "do": "cam",
      "shot": "braid_fall",
      "at": "win_foot",
-     "rate": 1.2,
-     "wait": 0.6
+     "rate": 1.68,
+     "wait": 0.36
     },
     {
      "do": "walk",
      "who": "prince",
      "to": "climb_at",
-     "speed": 0.22
+     "speed": 0.31
     },
     {
      "do": "cam",
      "shot": "climb",
      "at": "climb_at",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
      "do": "climb_braid",
      "who": "prince",
-     "speed": 0.32,
+     "speed": 0.46,
      "cam": "climb",
      "line": "rp_r0702",
      "hold": true
@@ -3365,8 +3402,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -3387,6 +3424,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -3494,7 +3535,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -3550,9 +3591,9 @@
      "shot": "window",
      "at": "r_focus",
      "from": "window",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1,
-     "settle": 0.7
+     "settle": 0.45
     },
     {
      "do": "climb_in",
@@ -3564,17 +3605,17 @@
      "do": "cam",
      "shot": "room",
      "at": "r_focus",
-     "rate": 0.9,
+     "rate": 1.26,
      "wait": 0.2,
-     "settle": 0.9
+     "settle": 0.45
     },
     {
      "do": "cam",
      "shot": "room_low",
      "at": "r_rap",
-     "rate": 1.4,
+     "rate": 1.96,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -3584,9 +3625,9 @@
      "do": "cam",
      "shot": "room_two",
      "at": "r_two",
-     "rate": 1.3,
+     "rate": 1.82,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -3731,8 +3772,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -3753,6 +3794,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -3860,7 +3905,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -3916,25 +3961,25 @@
      "shot": "pivot",
      "at": "pv_front",
      "from": "pivot",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.0,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "cam",
      "shot": "pivot_side",
      "at": "pv_side",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.0,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "cam",
      "shot": "room_win",
      "at": "pv_win",
-     "rate": 1.0,
-     "wait": 1.2,
-     "settle": 0.9
+     "rate": 1.4,
+     "wait": 0.72,
+     "settle": 0.45
     },
     {
      "do": "fx",
@@ -3945,25 +3990,25 @@
      "do": "cam",
      "shot": "pivot_side",
      "at": "pv_side",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.0,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "cam",
      "shot": "pivot",
      "at": "pv_front",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.0,
-     "settle": 0.6
+     "settle": 0.45
     },
     {
      "do": "cam",
      "shot": "room",
      "at": "r_focus",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.2,
-     "settle": 0.9
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -3973,10 +4018,10 @@
      "do": "cam",
      "shot": "room_low_g",
      "at": "r_gothel",
-     "rate": 1.8,
+     "rate": 2.0,
      "wait": 0.1,
      "shake": 0.4,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -3990,11 +4035,11 @@
     },
     {
      "do": "cam",
-     "shot": "room",
+     "shot": "room_snip",
      "at": "r_focus",
-     "rate": 1.3,
+     "rate": 1.82,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "fx",
@@ -4154,8 +4199,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -4176,6 +4221,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -4283,7 +4332,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -4328,17 +4377,17 @@
      "do": "cam",
      "shot": "window",
      "at": "r_focus",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.1,
-     "settle": 0.9
+     "settle": 0.45
     },
     {
      "do": "cam",
      "shot": "road_in",
      "at": "prince_mid",
-     "rate": 1.0,
+     "rate": 1.4,
      "wait": 0.2,
-     "settle": 0.9
+     "settle": 0.45
     },
     {
      "do": "walk",
@@ -4348,7 +4397,7 @@
      "via": [
       "prince_mid"
      ],
-     "speed": 0.34,
+     "speed": 0.46,
      "follow": "prince",
      "shot": "foot",
      "line": "rp_r0900"
@@ -4366,9 +4415,9 @@
       "prince_look",
       "tower"
      ],
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -4383,7 +4432,7 @@
      "do": "cam",
      "shot": "braid_fall",
      "at": "win_foot",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
@@ -4394,19 +4443,19 @@
      "do": "walk",
      "who": "prince",
      "to": "climb_at",
-     "speed": 0.24
+     "speed": 0.34
     },
     {
      "do": "cam",
      "shot": "climb",
      "at": "climb_at",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
      "do": "climb_braid",
      "who": "prince",
-     "speed": 0.3,
+     "speed": 0.43,
      "cam": "climb",
      "stop": 0.75
     },
@@ -4419,9 +4468,9 @@
      "do": "cam",
      "shot": "window_side",
      "at": "win_at",
-     "rate": 1.4,
+     "rate": 1.96,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -4439,7 +4488,7 @@
       "land",
       "win_foot"
      ],
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
@@ -4465,9 +4514,9 @@
      "do": "cam",
      "shot": "foot",
      "at": "land",
-     "rate": 1.2,
+     "rate": 1.68,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -4480,8 +4529,8 @@
       "track_mid",
       "road_bend"
      ],
-     "to": "field_in",
-     "speed": 0.36,
+     "to": "field_hear",
+     "speed": 0.46,
      "follow": "prince",
      "shot": "track",
      "line": "rp_r0908"
@@ -4625,8 +4674,8 @@
       0.5
      ],
      "prince_meet": [
-      -0.9,
-      0.55
+      -1.05,
+      0.26
      ],
      "field_focus": [
       -1.0,
@@ -4647,6 +4696,10 @@
      "lawn": [
       1.6,
       -1.15
+     ],
+     "field_hear": [
+      -0.12,
+      -0.05
      ]
     },
     "set": [
@@ -4754,7 +4807,7 @@
      {
       "card": "village_houses_20",
       "at": "f_cottage",
-      "stage": "full",
+      "stage": 0,
       "name": "f_cottage",
       "scale": 1.0,
       "clear": 0.9,
@@ -4793,7 +4846,7 @@
      "rap": "short_sing"
     },
     "at": {
-     "prince": "field_in",
+     "prince": "field_hear",
      "rap": "rap_field"
     },
     "left": {
@@ -4803,12 +4856,20 @@
    },
    "steps": [
     {
+     "do": "fx",
+     "fx": "pop:f_cottage",
+     "wait": 0.0
+    },
+    {
      "do": "cam",
      "shot": "field",
-     "at": "field_focus",
-     "rate": 1.1,
+     "at": [
+      "rap_field",
+      "field_hear"
+     ],
+     "rate": 1.54,
      "wait": 0.2,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "fx",
@@ -4834,8 +4895,10 @@
      "do": "walk",
      "who": "prince",
      "to": "prince_meet",
-     "speed": 0.45,
-     "pose": "run"
+     "speed": 0.5,
+     "pose": "run",
+     "follow": "prince",
+     "shot": "field"
     },
     {
      "do": "pose",
@@ -4851,9 +4914,9 @@
       "rap_field",
       "prince_meet"
      ],
-     "rate": 1.3,
+     "rate": 1.82,
      "wait": 0.1,
-     "settle": 0.5
+     "settle": 0.45
     },
     {
      "do": "say",
@@ -4883,7 +4946,7 @@
      "do": "cam",
      "shot": "field",
      "at": "field_focus",
-     "rate": 0.8,
+     "rate": 1.68,
      "wait": 0.1
     },
     {
