@@ -9,7 +9,7 @@
   and then exec'd with_godot.sh lost the race once and sat in with_godot's 3 s poll for 30 min. Never nest them
   (a script run under slot_wait that calls with_godot.sh — house_orbit.sh does — waits on its own lock forever).
 - A full gate recording in one call: `tools/story/slot_wait.sh tools/story/full_rec.sh TALE /ABS/out.mp4 MAX_S`
-  (--import, 1200x900, frame cap MAX_S·30 so the slot is never held forever, --log-sound --log-track, AVI to Trash).
+  (--import, 1200x900, frame cap MAX_S·30 so the slot is never held forever, --log-sound --log-track; refuses to start under 10 GB free, deletes the AVI once the mp4 is verified).
 - Waiting on a background recording: wait on its PID; `pgrep -f "<script name>"` also matches the waiting shell itself
   and never ends. Never kill processes you didn't start, never kill by pattern.
 
@@ -26,13 +26,13 @@
   On this Mac (1920x1080, usable 960) a 1024-tall window is clamped to 928, stretch "expand" widens the view to
   1507x1024, and the top-left page tab and top-right subtitle button land outside the video (user, 2026-11-22: "왼쪽
   오른쪽 상단 글자 잘리는데"). 1200x900 keeps the 1366x1024 canvas whole. Per-tale wrappers: tools/story/tn_rec.sh,
-  wg_rec.sh, pj_rec.sh, rp_rec.sh (import → record → mp4 → avi to Trash); single beats: `tools/story/rec_beat.sh TALE
+  wg_rec.sh, pj_rec.sh, rp_rec.sh (disk check → import → record → mp4 → AVI deleted by drop_avi.sh); single beats: `tools/story/rec_beat.sh TALE
   BEAT SEC out.mp4`; many beats: `tools/story/cap_beats.py TALE tag 40 <beats...>`.
 - Movie maker (`--write-movie`, windowed) records audio+video but crops the frame edges slightly on this Mac; check UI
   layout with `gd_run.capture_scene` instead (but its stills do not follow story camera shots: camera.md).
 - For capture, use a fixed step (`--fixed-fps 30`) so autoplay recordings are frame-identical across runs.
 - One beat at the gate's size: `tools/story/with_godot.sh tools/story/w1_beat.sh TALE BEAT SEC /ABS/out.mp4`
-  (1200x900, --log-track --log-sound, the AVI to ~/.Trash); then `motion_review.py TALE out.log out.mp4`.
+  (1200x900, --log-track --log-sound, the AVI deleted once encoded); then `motion_review.py TALE out.log out.mp4`.
 - Movie-maker runs build the next page in one go (StoryRunner `_movie`): the per-frame wall-time budget of the
   page prebuild turned into story time when the machine was slow (patjuk gate v1b froze 14 min on the cover with the
   disk 99 % full). Recordings need no `--fixed` for this.
@@ -47,7 +47,9 @@
   the gate's `tools/story/motion_review.py` cuts them per segment automatically.
 - A full disk ruins a run silently (2026-11-25): the movie writer warned "available space is low", the AVI came out
   corrupt (ffmpeg mjpeg errors, a 61 s mp4 of a 361 s story) and the run log lost most lines (no SEG / MOVE, 2k
-  PERF hitch lines) while STORY_DONE and the summary still printed. Moving AVIs to ~/.Trash does NOT free space. Check
+  PERF hitch lines) while STORY_DONE and the summary still printed. Moving AVIs to ~/.Trash does NOT free space: raw
+  AVIs are deleted for good (user 2026-11-25: "휴지통에 넣지말고 완전 삭제") by `tools/story/drop_avi.sh AVI MP4` once the
+  mp4 lasts ≥ 90 % of the AVI; `tools/story/need_disk.sh GB` guards every recorder. Record one tale at a time. Check
   `df` before a full run (a 6 min run at 1200x900 is ~6 GB of AVI), and after it compare the mp4 duration with
   STORY_DONE and count MOVE lines before reviewing anything.
 
@@ -57,7 +59,9 @@
   (house solidity, sets.md).
 
 ## Shell
-- Never `rm $VAR/*` — use literal paths or `"${VAR:?}"`; move old files to ~/.Trash.
+- Never `rm $VAR/*` — use literal paths or `"${VAR:?}"`. Files you made and no longer need (raw AVIs, old builds) are
+  deleted for good with `rm -f -- <literal path>`, never moved to ~/.Trash (same disk; it filled it). Never delete
+  what you didn't make.
 - zsh does not word-split `$var`, so `run_jobs.py ... $group` passed one bogus id and exited silently; run loops under
   `bash -c`.
 - Commit + push per milestone, only your own paths (`git commit -- <paths>`).

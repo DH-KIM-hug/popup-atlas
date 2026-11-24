@@ -12,6 +12,6 @@ for item in $LIST; do
   FR=$(python3 -c "print(int(float('$SEC')*30))")
   "$ROOT/tools/story/with_godot.sh" "$G" --path "$ROOT/game" --resolution 1200x900 --fixed-fps 30 --write-movie "$AVI" \
     --quit-after "$FR" -- --tale="$T" --beat="$B" --autoplay > "$OUT/${T}_${B}.log" 2>&1
-  ffmpeg -y -loglevel error -i "$AVI" -c:v libx264 -crf 26 -preset veryfast -pix_fmt yuv420p -c:a aac "$MP4" && mv "$AVI" ~/.Trash/ 2>/dev/null
+  ffmpeg -y -loglevel error -i "$AVI" -c:v libx264 -crf 26 -preset veryfast -pix_fmt yuv420p -c:a aac "$MP4" && "$ROOT/tools/story/drop_avi.sh" "$AVI" "$MP4"
   echo "$MP4 $(grep -c 'SCRIPT ERROR' "$OUT/${T}_${B}.log") errors"
 done
