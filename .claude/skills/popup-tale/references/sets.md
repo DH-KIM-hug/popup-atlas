@@ -122,6 +122,14 @@ new set: papercraft_notes.md.
   taller than the doorway pokes its hat over the wall while on the sill: size it to fit. Walkable structures:
   papercraft_notes.md.
 
+- A card's back is plain stock (grey / dark silhouette): a piece the camera sees from behind in some beat (sunmoon's
+  jar terrace, well and zelkova from the back yard) gets a twin card at the same spot, 0.01 behind, yawed 180°
+  (`<piece>_b`, contacts in `overlap_ok`). A back door the story uses (sunmoon v15): a back-wall card with the doorway
+  painted dark (story_sm_cottage_08, mirrored from cottage_05 so the door is on the side the story needs) stood 0.02
+  behind the body's back at the box depth, the leaf its own card (cottage_09) on a handler pivot at its hinge edge,
+  swinging INTO the house (fx `back_door:open|shut`); the children wait folded flat in the doorway and stand up as it
+  opens.
+
 ## Rooms and refuges
 - A refuge's walls stay closed in-story; show interiors by moving the camera inside, not by opening the wall the
   threat could walk through (user: "방이 열려도 앞 벽은 막혀있어야하는거아닌지", "굴뚝으로 들어가면 그제서야 안을 보여주면

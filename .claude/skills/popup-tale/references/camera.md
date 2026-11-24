@@ -100,6 +100,24 @@ full-frame tiles of any flagged moment.
   is behind the wall).
 - Shots inside / at a turned house carry its yaw as their yaw offset.
 
+- Leaving a room for somewhere behind the house (sunmoon v15 back-door escape, gate audit: "the escape is never
+  seen"): leave through the wall the camera came in by (a glide straight from the room to a back-yard shot crossed the
+  back wall and room cards: full-frame cream), rise outside (el ~40), then swing round the side at distance >= 2.5;
+  show the escape from outside (the back door swings in, the children step out). Keep the characters in the room
+  (`enter.keep`) until the camera is out, then move them behind the door unseen, folded flat (`pop_s` / `pop_target`
+  0.02); a beat change that teleports them out of a room the camera still shows reads as a vanish.
+- A turned-round inside shot (camera just behind the door / window, looking out) has anyone standing mid-room beside
+  the lens: stand people deeper than the lens or a head sweeps through the frame in the pivot. The prop the line names
+  is in that shot (the floury paw at the door's edge: a 0.34 close at window height showed only lattice; low and wide
+  instead, 0.42 / fov 56).
+- Shot yaw offsets are from the template VIEW, not the house: for a house turned by Y, Y looks at its front, Y+180
+  from behind, Y-90 its left side, Y+90 its right (sunmoon cottage -40: -130 left, 50 right, 140 back). A long yaw
+  swing at low elevation passes through the house (the thatch filled the lens for 2 s twice): add a high step in
+  between (el >= 45) or shoot from the side the house is not on; a crane at el 52 from the front still had the roof
+  over the lower half of the frame.
+- Far depth-of-field blur on big flat backdrops renders as a square mosaic (sunmoon's far sky cloud rows): turn the
+  rig's DOF off on a page whose interest is one plane (`rig.dof_enabled = false`).
+
 ## Judging framing
 `gd_run.capture_scene` stills do not follow the story camera shots; judge framing / focus from movie-maker recordings
 (`tools/story/rec_beat.sh TALE BEAT SEC out.mp4`) and 8 fps tiles (`tools/story/tiles.py`).

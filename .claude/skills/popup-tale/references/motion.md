@@ -122,6 +122,15 @@ measures an actor from the ground, so the handler's `speaker_point` returns the 
   landing (`place_at`): wait the flight out before the next walk.
 - A prop the narration brings travels on screen (flying invitations): sets.md "Props".
 
+- Rest poses on a climb are climb figures (`climb_a` / `climb_b`, back view): hanbok kids' `rope_a` / `rope_b` are a
+  praying and a sitting FRONT figure and showed between every pull (sunmoon v14); a handler that `set_pose()`s every
+  frame during a climb hides nothing while moving (the climb cycle wins) but shows its pose at every rest. Two climbers
+  on one rope a body length apart (0.55 for 0.32-tall kids) and 0.06 in front of the rope card; the overlap check
+  ignores two actors more than 0.6 h apart in height (2026-11-24). A climb shot frames the whole trunk, roots to the
+  sitter's head in the fork (tree_climb: distance 3.4, el 5, focus 0.9, fov 38): a trunk close at focus 0.6 lost the
+  kids at the top and a fork close lost the tiger climbing below them. A tiger that slips on an oiled trunk walks to the
+  trunk first (the slips played in the air by the well).
+
 ## Routes and groups
 - Outdoor actions route via the road (houses in front of the shop hid her walking straight to the camera); tracking
   shots go above the roofs (camera.md).
