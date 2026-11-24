@@ -988,7 +988,9 @@ func _overlap_check() -> void:
 			var d := a.global_position - b.global_position
 			d.y = 0.0
 			var need := (actor_radius(a) + actor_radius(b)) * 0.8
-			if d.length() < need and absf(a.lift - b.lift) < 0.1 and not _ok_pair(a.role, b.role):
+			# climbers one above the other on a rope / trunk (moved by global y, lift 0) are not one footprint
+			var dyh := absf(a.global_position.y - b.global_position.y) < 0.6 * minf(a.puppet.height, b.puppet.height)
+			if d.length() < need and absf(a.lift - b.lift) < 0.1 and dyh and not _ok_pair(a.role, b.role):
 				now["OVERLAP %s %s actor" % [a.role, b.role]] = snappedf(1.0 - d.length() / need, 0.01)
 		for k in sets:
 			var sp: SetPiece = sets[k]
