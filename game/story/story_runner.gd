@@ -1090,6 +1090,7 @@ func _step_go_inside(st: Dictionary) -> void:
 		toward = sp.global_transform.basis.z.normalized()
 	var spd := float(st.get("speed", 0.4))
 	var front := sp.door_point(true, toward)
+	var piped_q := bool(st.get("pipeline", false)) and bool(st.get("climb_steps", false))
 	# one queue in front of the door: the first at the door, the others a step further out toward the camera, so
 	# nobody walks back toward the camera (a front view) while waiting; then the door opens ONCE, everyone goes in
 	# one after the other (back view through the doorway) and it shuts ONCE after the last is inside
@@ -1115,6 +1116,8 @@ func _step_go_inside(st: Dictionary) -> void:
 			# round by the end of the path (v7: walking straight to the queue cut across the neighbour house's front)
 			# from the end of the path straight in along it: each stops behind the one before (nobody passes anyone)
 			var near := a.global_position.distance_to(stage.spot_point(st["approach"])) < 0.25
+			if piped_q and a.global_position.distance_to(qspot) < stage.spot_point(st["approach"]).distance_to(qspot):
+				near = true  # (pipeline) already nearer its place than the end of the path: straight there (the host at the door)
 			var apts: Array = ([qspot] if near else [stage.spot_point(st["approach"]), qspot]) if str(st.get("queue", "")) == "front" \
 				else [stage.spot_point(st["approach"]) + stage.dir_vec("right") * 0.08 * (i - 2), qspot]
 			if i == 0:
