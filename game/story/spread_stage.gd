@@ -1010,7 +1010,12 @@ func _overlap_check() -> void:
 			continue
 		var ad := cam.global_position.distance_to(a.global_position)
 		var area := ab.get_area()
+		# tale `occlude_subjects_only` (witch_candy 2026-11-24): actor-behind-actor counts only for the actor who moves
+		# or speaks (the rule: nobody hides a speaker / a mover); a bystander behind the subject of a close-up is framing
+		var subj_only := bool(tale.get("occlude_subjects_only", false)) and not (a.moving() or (talking != "" and (a.role == talking or a.role.replace("_", "") == talking)))
 		for b: StoryActor in vis:
+			if subj_only:
+				break
 			if b == a or house_of(b.global_position) != cam_house or _ok_pair(a.role, b.role):
 				continue
 			var bd := cam.global_position.distance_to(b.global_position)

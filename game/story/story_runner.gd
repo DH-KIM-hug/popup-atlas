@@ -1127,11 +1127,14 @@ func _step_go_inside(st: Dictionary) -> void:
 							aa.follow(apts, spd, "", false))
 		else:
 			a.walk_to(qspot, spd, "")
-	if st.has("approach"):
+	var piped := bool(st.get("pipeline", false)) and bool(st.get("climb_steps", false))
+	if st.has("approach") and not piped:
 		await _wait(0.85 * roles.size())
 	for i in roles.size():
 		if not _alive():
 			return
+		if piped and i > 0:
+			break  # pipelined: the first at the door opens it; the others finish queueing in _enter_one
 		var a := stage.actor(str(roles[i]))
 		if a == null:
 			continue
@@ -1244,6 +1247,11 @@ func _enter_one(a: StoryActor, role: String, st: Dictionary, sp: SetPiece, towar
 	a.set_meta("entered_sill", false)
 	a.set_meta("entered_door", false)
 	if i > 0:
+		var gq := 0.0
+		while (a.moving() or gq < 0.1) and gq < 8.0 and _alive() and is_instance_valid(a):  # done queueing first
+			gq += await _frame()
+		if not _alive() or not is_instance_valid(a):
+			return
 		a.walk_to(front, spd * 0.8, "")
 		var g2 := 0.0
 		while a.moving() and g2 < 6.0 and _alive():
