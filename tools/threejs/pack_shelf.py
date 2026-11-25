@@ -40,7 +40,13 @@ def main():
             if rp:
                 src = os.path.join(GAME, rp.replace('res://', ''))
                 dst = os.path.join(cov_dir, f'{tid}_{k}.webp')
-                shutil.copyfile(src, dst)
+                from PIL import Image
+                im = Image.open(src)
+                im = im.convert('RGBA') if im.mode in ('RGBA', 'LA', 'P') else im.convert('RGB')
+                w = 640 if k == 'art' else 720  # shelf thumbnails (a book is ~25 % of the screen width)
+                if im.width > w:
+                    im = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
+                im.save(dst, 'WEBP', quality=82, alpha_quality=90, method=5)
                 item[k + '_img'] = f'shared/covers/{tid}_{k}.webp'
         sz = os.path.join(out, 'tales', f'{tid}.size.json')
         if os.path.exists(sz):

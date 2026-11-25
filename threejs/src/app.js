@@ -20,6 +20,7 @@ renderer.shadowMap.type = THREE.PCFShadowMap;
 renderer.outputColorSpace = THREE.LinearSRGBColorSpace; // the post pass writes display values itself
 renderer.toneMapping = THREE.NoToneMapping;
 renderer.info.autoReset = false;
+renderer.debug.checkShaderErrors = Q.has('debug');
 const audio = new AudioPlayer(DATA);
 audio.ensure();
 const app = { renderer, audio, Q, data: DATA, errors };

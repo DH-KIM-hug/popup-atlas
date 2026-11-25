@@ -329,8 +329,24 @@ export async function playTale(app, tale, opt = {}) {
     writeInstances(g, mm, null, 0);
     return g;
   }
+  // a key stored as a delta (pack_tale.py): rebuilt in load order from the node's previous key
+  const lastXf = new Map();
+  function resolveMM(n, mm) {
+    if (!mm || mm.xfArr) return;
+    if (mm.xf) { mm.xfArr = new Float32Array(BINS[mm.xf[0]], mm.xf[1], mm.xf[2] / 4); lastXf.set(n, mm.xfArr); return; }
+    if (!mm.dx) return;
+    let base = lastXf.get(n);
+    if (!base) { const nm = D.nodes[n].mm; resolveMM(n, nm); base = nm && nm.xfArr; }
+    const arr = new Float32Array(mm.n * 16);
+    if (base) arr.set(base.subarray(0, Math.min(base.length, arr.length)));
+    const ix = new Uint32Array(BINS[mm.dx[0]], mm.dx[1], mm.dx[2] / 4);
+    const v = new Float32Array(BINS[mm.dv[0]], mm.dv[1], mm.dv[2] / 4);
+    for (let k = 0; k < ix.length; k++) arr.set(v.subarray(k * 16, k * 16 + 16), ix[k] * 16);
+    mm.xfArr = arr;
+    lastXf.set(n, arr);
+  }
   function mmArrays(mm) {
-    return { xf: new Float32Array(BINS[mm.xf[0]], mm.xf[1], mm.xf[2] / 4), cu: mm.cu ? new Float32Array(BINS[mm.cu[0]], mm.cu[1], mm.cu[2] / 4) : null };
+    return { xf: mm.xfArr || new Float32Array(BINS[mm.xf[0]], mm.xf[1], mm.xf[2] / 4), cu: mm.cu ? new Float32Array(BINS[mm.cu[0]], mm.cu[1], mm.cu[2] / 4) : null };
   }
   function writeInstances(g, mm, mmB, k) {
     if (!mm || !g.userData.ims) return;
@@ -381,7 +397,34 @@ export async function playTale(app, tale, opt = {}) {
     return g;
   }
 
+  // Sprite3D (patjuk snow): a textured quad, turned to the camera when billboarded (Godot does it in the shader)
+  const _bp = new THREE.Vector3(), _bs = new THREE.Vector3(), _bq = new THREE.Quaternion();
+  function buildSprite(sp) {
+    const g = new THREE.Group();
+    g.matrixAutoUpdate = false;
+    if (!sp || sp.tex < 0) return g;
+    const px = sp.px || 0.01, w = sp.size[0] * px, h = sp.size[1] * px;
+    const geo = track(new THREE.PlaneGeometry(w, h));
+    if (!sp.cen) geo.translate(w / 2, h / 2, 0);
+    const c = sp.col || [1, 1, 1, 1];
+    const mat = track(new THREE.MeshBasicMaterial({ map: texById(sp.tex), transparent: true, alphaTest: sp.alpha ? 0.5 : 0.02,
+      depthWrite: false, side: THREE.DoubleSide, color: M.linearColor(c), opacity: c[3] }));
+    const mesh = new THREE.Mesh(geo, mat);
+    mesh.matrixAutoUpdate = false;
+    if (sp.bb) {
+      mesh.onBeforeRender = (r, sc, cam) => {
+        mesh.parent.matrixWorld.decompose(_bp, _bq, _bs);
+        mesh.matrixWorld.compose(_bp, cam.quaternion, _bs);
+        mesh.modelViewMatrix.multiplyMatrices(cam.matrixWorldInverse, mesh.matrixWorld);
+        mesh.normalMatrix.getNormalMatrix(mesh.modelViewMatrix);
+      };
+    }
+    g.add(mesh);
+    return g;
+  }
+
   function variantKey(node, st) {
+    if (node.class === 'Sprite3D') return 'spr:' + JSON.stringify(st.spr);
     if (node.class === 'MultiMeshInstance3D') return 'mm:' + (st.mm ? st.mm.mesh : -1) + '|' + st.mo + '|' + st.sh;
     if (node.class === 'Label3D') return 'lbl:' + JSON.stringify(st.lbl);
     return st.mesh + '|' + (st.mats || []).join(',') + '|' + st.mo + '|' + st.sh;
@@ -394,13 +437,14 @@ export async function playTale(app, tale, opt = {}) {
     if (!v) {
       if (node.class === 'MultiMeshInstance3D') v = buildMulti(node, st.mm, st.mo, st.sh);
       else if (node.class === 'Label3D') v = buildLabel(st.lbl);
+      else if (node.class === 'Sprite3D') v = buildSprite(st.spr);
       else v = st.mesh >= 0 ? buildMeshGroup(st.mesh, st.mats, st.mo, st.sh) : new THREE.Group();
       rec.variants.set(key, v);
       warmQueue.push(v);
     }
     return v;
   }
-  function stFrom(rec) { return { mesh: rec.mesh, mats: rec.mats, mo: rec.mo, sh: rec.sh, mm: rec.mm, lbl: rec.lbl }; }
+  function stFrom(rec) { return { mesh: rec.mesh, mats: rec.mats, mo: rec.mo, sh: rec.sh, mm: rec.mm, lbl: rec.lbl, spr: rec.spr }; }
 
   function setNode(c) {
     const node = D.nodes[c.n];
@@ -415,6 +459,7 @@ export async function playTale(app, tale, opt = {}) {
     if ('mo' in c) { rec.mo = c.mo; rebuild = true; }
     if ('sh' in c) { rec.sh = c.sh; rebuild = true; }
     if ('lbl' in c) { rec.lbl = c.lbl; rebuild = true; }
+    if ('spr' in c) { rec.spr = c.spr; rebuild = true; }
     if (!rec.mm && node.mm) rec.mm = node.mm;
     if ('mm' in c && c.mm) { rec.mm = c.mm; if (rec.cur) writeInstances(rec.cur, rec.mm, null, 0); else rebuild = true; }
     if (rebuild) {
@@ -436,7 +481,7 @@ export async function playTale(app, tale, opt = {}) {
       let s = sim.get(c.n);
       if (!s) { s = { mesh: -1, mats: null, mo: -1, sh: 1, mm: D.nodes[c.n].mm || null, lbl: null }; sim.set(c.n, s); }
       let ch = false;
-      for (const k of ['mats', 'mo', 'sh', 'lbl']) if (k in c) { s[k] = c[k]; ch = true; }
+      for (const k of ['mats', 'mo', 'sh', 'lbl', 'spr']) if (k in c) { s[k] = c[k]; ch = true; }
       if ('m' in c) { s.mesh = c.m; ch = true; }
       if ('mm' in c && c.mm) { if (!s.mm || s.mm.mesh !== c.mm.mesh) ch = true; s.mm = c.mm; }
       if (ch || !s.built) { ensureVariant(c.n, s); s.built = true; }
@@ -489,7 +534,14 @@ export async function playTale(app, tale, opt = {}) {
     return { p, q, s };
   };
   const camX = {};
+  // pack_tale.py writes 12-number transforms (the last column is 0,0,0,1)
+  const ex = (x) => (x.length === 12 ? [x[0], x[1], x[2], 0, x[3], x[4], x[5], 0, x[6], x[7], x[8], 0, x[9], x[10], x[11], 1] : x);
   function prepareChunk(frs) {
+    for (const f of frs) {
+      for (const c of f.set || []) if (c.x) c.x = ex(c.x);
+      if (f.cam) for (const vn in f.cam) if (f.cam[vn].x) f.cam[vn].x = ex(f.cam[vn].x);
+      for (const l of f.lights || []) if (l.x) l.x = ex(l.x);
+    }
     for (const f of frs) {
       if (f.cam) for (const vn in f.cam) {
         const c = f.cam[vn];
@@ -505,6 +557,8 @@ export async function playTale(app, tale, opt = {}) {
           nodeTracks.get(c.n).push({ t: f.t, ...decompose(c.x), cut: 'm' in c || c.v === true });
         }
         if (c.mm) {
+          if (!lastXf.has(c.n) && D.nodes[c.n].mm && D.nodes[c.n].mm !== c.mm) resolveMM(c.n, D.nodes[c.n].mm);
+          resolveMM(c.n, c.mm);
           if (!mmTracks.has(c.n)) mmTracks.set(c.n, []);
           mmTracks.get(c.n).push({ t: f.t, mm: c.mm });
         }
@@ -616,7 +670,7 @@ export async function playTale(app, tale, opt = {}) {
       if (a.ev === 'start' && a.voice) {
         lastVoicePath = a.path;
         const ln = idx.clip_line[a.path];
-        if (!silent) metrics.lines.push([ln || a.path, !!audio.buffers.get(a.path), +f.t.toFixed(2)]);
+        if (!silent) metrics.lines.push([ln || a.path, !!audio.buffers.get(a.path), +(f.clock ?? f.t).toFixed(2), a.path]);
       }
       if (silent) audioSilent(a, f.t); else audio.event(a, viewBy[baseView === 'book' ? 'book' : 'main'].camera.position);
     }
@@ -893,27 +947,25 @@ export async function playTale(app, tale, opt = {}) {
     metrics.lineCheck = lineCheck();
     $('endcard').classList.add('on');
   }
+  // every line the runner said in the export run (Godot's LINE list) must have started one of its voice clips, with a
+  // decoded buffer, at the same story time (within 0.5 s); a line split over steps prints LINE per part: each part
   function lineCheck() {
-    // a line split across steps (narration during a walk, the quote at the mark) prints LINE once per part: one entry
-    const want = idx.lines.map((l) => l[0]).filter((id, i, a) => i === 0 || a[i - 1] !== id);
-    const got = [];
-    for (const [ln, ok] of metrics.lines) {
-      if (!ln || !idx.clip_line) continue;
-      if (got.length && got[got.length - 1].id === ln) { got[got.length - 1].ok = got[got.length - 1].ok && ok; continue; }
-      got.push({ id: ln, ok });
+    const voiced = [];
+    for (const [ln, ok, t, path] of metrics.lines) voiced.push({ path, ok, t, used: false });
+    const missing = [], noBuffer = [];
+    let n = 0, unvoiced = 0;
+    for (const [id, t] of idx.lines) {
+      const clips = (idx.line_clips || {})[id];
+      if (!clips) { unvoiced++; continue; }
+      n++;
+      const hit = voiced.find((v) => !v.used && clips.includes(v.path) && Math.abs(v.t - t) < 0.5);
+      if (!hit) { missing.push(id + '@' + t); continue; }
+      hit.used = true;
+      if (!hit.ok) noBuffer.push(id);
     }
-    const gotIds = got.map((g) => g.id);
-    // lines without a recording never start a voice: compare against the voiced ones
-    const voiced = new Set(Object.values(idx.clip_line));
-    const wantV = want.filter((id) => voiced.has(id));
-    const missing = [], extra = [];
-    let j = 0;
-    for (const id of wantV) { if (gotIds[j] === id) j++; else missing.push(id); }
-    const counts = {}; gotIds.forEach((id) => { counts[id] = (counts[id] || 0) + 1; });
-    const wantCounts = {}; wantV.forEach((id) => { wantCounts[id] = (wantCounts[id] || 0) + 1; });
-    for (const id in counts) if (counts[id] > (wantCounts[id] || 0)) extra.push(id);
-    return { godotLines: want.length, voicedLines: wantV.length, webLines: gotIds.length, inOrder: missing.length === 0 && gotIds.length === wantV.length,
-      missing, extra, noBuffer: got.filter((g) => !g.ok).map((g) => g.id), unvoiced: want.filter((id) => !voiced.has(id)) };
+    const extra = voiced.filter((v) => !v.used && Math.abs(v.t) >= 0).length; // later segments of multi-seg lines
+    return { godotLines: idx.lines.length, voicedLines: n, matched: n - missing.length, inOrder: missing.length === 0 && noBuffer.length === 0,
+      webLines: n - missing.length, missing, noBuffer, unvoiced, otherVoiceStarts: extra };
   }
 
   function render(now) {

@@ -488,6 +488,11 @@ func _geo_state(g: GeometryInstance3D, w: int) -> Dictionary:
 		var mm := (g as MultiMeshInstance3D).multimesh
 		s["mmh"] = hash(mm.buffer) if mm else 0
 		s["mmv"] = mm.visible_instance_count if mm else 0
+	elif g is Sprite3D:
+		var sp := g as Sprite3D
+		s["spr"] = {"tex": _tex_id(sp.texture) if sp.texture else -1, "px": sp.pixel_size, "bb": sp.billboard, "shaded": sp.shaded,
+			"col": _ser(sp.modulate), "ds": sp.double_sided, "cen": sp.centered, "off": _ser(sp.offset), "fh": sp.flip_h,
+			"fv": sp.flip_v, "alpha": sp.alpha_cut, "size": _ser(sp.texture.get_size()) if sp.texture else [1, 1]}
 	elif g is Label3D:
 		var lb := g as Label3D
 		s["lbl"] = {"text": lb.text, "fs": lb.font_size, "px": lb.pixel_size, "col": _ser(lb.modulate), "shaded": lb.shaded,

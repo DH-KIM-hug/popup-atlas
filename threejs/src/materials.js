@@ -190,15 +190,19 @@ export function edgeMaterial(p, tex, side) {
   const u = {
     edge_color: { value: linearColor(p.edge_color || [0.96, 0.92, 0.82]) },
     fibre_tex: texU(tex(p.fibre_tex)), brightness: { value: p.brightness ?? 1.08 },
+    // cast_edge.gdshader: outside the card-local height band the edge wall takes the garment colour (puppet joins)
+    band_lo: { value: p.band_lo ?? -100 }, band_hi: { value: p.band_hi ?? 100 },
+    join_color: { value: linearColor(p.join_color || [0.3, 0.15, 0.08]) },
   };
   const m = new THREE.MeshStandardMaterial({ roughness: 1, metalness: 0, side });
   m.userData.u = u;
   m.onBeforeCompile = (s) => inject(s, {
-    uniforms: u, fragPars: 'uniform vec3 edge_color; uniform sampler2D fibre_tex; uniform float brightness;',
+    uniforms: u, fragPars: 'uniform vec3 edge_color, join_color; uniform sampler2D fibre_tex; uniform float brightness, band_lo, band_hi;',
     map: /* glsl */ `
       float f = texture(fibre_tex, vec2(vPUv.x * 9.0, vPUv.y * 0.08 + vPUv.x * 0.3)).r - 0.5;
       float lip = smoothstep(0.0, 0.25, vPUv.y) * smoothstep(1.0, 0.75, vPUv.y);
-      diffuseColor.rgb = edge_color * brightness * (0.93 + f * 0.14) * mix(0.86, 1.0, lip);`,
+      diffuseColor.rgb = edge_color * brightness * (0.93 + f * 0.14) * mix(0.86, 1.0, lip);
+      if (vLocalY < band_lo || vLocalY > band_hi) diffuseColor.rgb = join_color;`,
     emissive: BACKLIGHT('edge_color * 0.25'),
   });
   m.customProgramCacheKey = () => 'edge';

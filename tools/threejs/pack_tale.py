@@ -50,7 +50,7 @@ def main():
     os.makedirs(tdir, exist_ok=True)
     sh = os.path.join(out, 'shared')
     d = json.load(open(os.path.join(dump, 'scene.json')))
-    geo = open(os.path.join(dump, 'geo.bin'), 'rb').read()
+    geo = bytearray(open(os.path.join(dump, 'geo.bin'), 'rb').read())
     T, MAT, ME, NO, FR = d['textures'], d['materials'], d['meshes'], d['nodes'], d['frames']
     sizes = {'res_tex': 0, 'run_tex': 0, 'prints': 0, 'audio': 0}
     shared_new = {'res_tex': 0, 'run_tex': 0, 'prints': 0, 'audio': 0}
@@ -145,16 +145,18 @@ def main():
         rp = e.get('res')
         if rp:
             src = res_to_disk(rp)
-            rel = 'shared/res/' + os.path.splitext(rp.replace('res://', ''))[0] + '.webp'
+            rel = 'shared/img/' + os.path.splitext(rp.replace('res://', ''))[0] + '.webp'
             dst = os.path.join(out, rel)
             if not os.path.exists(dst):
                 os.makedirs(os.path.dirname(dst), exist_ok=True)
-                if src.lower().endswith('.webp'):
-                    shutil.copyfile(src, dst)
+                im = Image.open(src)
+                im = im.convert('RGBA') if im.mode in ('RGBA', 'LA', 'P') or 'transparency' in im.info else im.convert('RGB')
+                if re.search(r'paper_fibre|felt|noise|grain', rp, re.I):
+                    im.save(dst, 'WEBP', lossless=True, method=5)  # data textures (fibre / grain) stay exact
                 else:
-                    im = Image.open(src)
-                    im = im.convert('RGBA') if im.mode in ('RGBA', 'LA', 'P') else im.convert('RGB')
-                    im.save(dst, 'WEBP', quality=90, method=5)
+                    # the art sources are lossless webp / png; lossy q85 is ~1/4 the bytes (the Godot web build ships
+                    # lossy textures too)
+                    im.save(dst, 'WEBP', quality=85, alpha_quality=90, method=5)
                 shared_new['res_tex'] += os.path.getsize(dst)
             e['web'] = rel
             sizes['res_tex'] += os.path.getsize(dst)
@@ -241,6 +243,66 @@ def main():
         if f['set'] is None or not f['set']:
             f.pop('set', None)
 
+    # ---------------------------------------------------------------- MultiMesh keys as deltas
+    # Between two kept keys of a node only some cards move (a pop-up wave, a fold): a key stores the instances that
+    # changed since the node's previous key (indices + 16 floats each); the player rebuilds the full buffer.
+    import numpy as np
+    blob_cache = {}
+
+    def add_blob(b):
+        k = hashlib.sha1(b).hexdigest()
+        if k in blob_cache:
+            return blob_cache[k]
+        off = len(geo)
+        geo.extend(b)
+        geo.extend(b'\0' * ((4 - len(geo) % 4) % 4))
+        blob_cache[k] = [off, len(b)]
+        return blob_cache[k]
+
+    prev_xf = {}
+    full_b = delta_b = 0
+    for n in NO:
+        if n.get('mm') and n['mm'].get('xf'):
+            r = n['mm']['xf']
+            prev_xf[n['id']] = np.frombuffer(bytes(geo[r[0]:r[0] + r[1]]), dtype=np.float32).reshape(-1, 16)
+    for f in FR:
+        for c in f.get('set', []):
+            mm = c.get('mm')
+            if not mm or not mm.get('xf'):
+                continue
+            r = mm['xf']
+            cur = np.frombuffer(bytes(geo[r[0]:r[0] + r[1]]), dtype=np.float32).reshape(-1, 16)
+            prev = prev_xf.get(c['n'])
+            prev_xf[c['n']] = cur
+            if prev is None or prev.shape != cur.shape:
+                full_b += r[1]
+                continue
+            ch = np.nonzero(np.any(np.abs(cur - prev) > 1e-6, axis=1))[0].astype(np.uint32)
+            if len(ch) * 17 > len(cur) * 16 * 0.8:
+                full_b += r[1]
+                continue
+            mm['dx'] = add_blob(ch.tobytes())
+            mm['dv'] = add_blob(np.ascontiguousarray(cur[ch]).tobytes())
+            del mm['xf']
+            delta_b += len(ch) * 68
+    print(f'  MultiMesh keys: full {full_b / 1048576:.1f} MB, deltas {delta_b / 1048576:.1f} MB')
+
+    # ---------------------------------------------------------------- compact transforms
+    # 12 numbers (the last column is always 0,0,0,1), 4 decimals (0.1 mm in a ~10 m world): JSON about half the size
+    def cx(x):
+        return [round(v, 4) + 0.0 for k, v in enumerate(x) if k not in (3, 7, 11, 15)]
+    for f in FR:
+        for c in f.get('set', []):
+            if 'x' in c:
+                c['x'] = cx(c['x'])
+        if f.get('cam'):
+            for vn in f['cam']:
+                if 'x' in f['cam'][vn]:
+                    f['cam'][vn]['x'] = cx(f['cam'][vn]['x'])
+        for l in f.get('lights', []):
+            if 'x' in l:
+                l['x'] = cx(l['x'])
+
     # ---------------------------------------------------------------- dependency walk -> chunk of first use
     owner = {'tex': {}, 'mat': {}, 'mesh': {}, 'node': {}}
     blob_owner = {}  # (off, size) -> chunk
@@ -288,7 +350,7 @@ def main():
         if not mm:
             return
         need_mesh(mm.get('mesh', -1), c)
-        for k in ('xf', 'cu', 'co'):
+        for k in ('xf', 'cu', 'co', 'dx', 'dv'):
             if k in mm:
                 blob(mm[k], c)
 
@@ -313,6 +375,8 @@ def main():
                 need_mm(s['mm'], c)
             if 'ip' in s:
                 need_params(s['ip'], c)
+            if s.get('spr') and s['spr'].get('tex', -1) >= 0:
+                need_tex(s['spr']['tex'], c)
         for mc in f.get('mat', []):
             need_mat(mc['mat'], c)
             need_params(mc['p'], c)
@@ -349,7 +413,7 @@ def main():
 
     def fix_mm(mm):
         if mm:
-            for k in ('xf', 'cu', 'co'):
+            for k in ('xf', 'cu', 'co', 'dx', 'dv'):
                 if k in mm:
                     mm[k] = rr(mm[k])
 
@@ -398,10 +462,18 @@ def main():
                 lines.append([m.group(1), float(m.group(2))])
     sc = json.load(open(os.path.join(GAME, 'stories', tale, 'script.json')))
     clip_line = {}
+    line_clips = {}
     for l in sc.get('lines', []):
         for s in l.get('segs', []):
             if s.get('audio') and s['audio'] in amap:
-                clip_line[amap[s['audio']][0]] = l['id']
+                clip_line[amap[s['audio']][0]] = l['id']  # display only: one clip can serve two lines
+                line_clips.setdefault(l['id'], []).append(amap[s['audio']][0])
+    # lines whose voice is generated (NameVoice) or shared: take the clip the runner actually started for each LINE
+    vstarts = [(f.get('clock', f['t']), a['path']) for f in FR for a in f.get('audio', []) if a.get('ev') == 'start' and a.get('voice')]
+    for lid, lt in lines:
+        for ck, pth in vstarts:
+            if abs(ck - lt) < 0.3 and pth not in line_clips.setdefault(lid, []):
+                line_clips[lid].append(pth)
     cover = {}
     cj = os.path.join(GAME, 'stories', tale, 'cover.json')
     if os.path.exists(cj):
@@ -409,13 +481,21 @@ def main():
     meta = d['meta']
     idx = {'tale': tale, 'title': sc.get('title', tale), 'fps': meta['fps'], 'viewport': meta['viewport'], 'godot': meta['godot'],
            'made': meta['made'], 'done_at': meta.get('done_at'), 'unhandled': meta.get('unhandled'), 'shaders': meta.get('shaders'),
-           'chunks': chunks, 'lines': lines, 'clip_line': clip_line, 'taps': meta.get('taps'), 'cover': cover}
+           'chunks': chunks, 'lines': lines, 'clip_line': clip_line, 'line_clips': line_clips, 'taps': meta.get('taps'), 'cover': cover}
     json.dump(idx, open(os.path.join(tdir, 'index.json'), 'w'), ensure_ascii=False, separators=(',', ':'))
 
     # ---------------------------------------------------------------- report
     tot_json = sum(c['json_gz'] for c in chunks)
     tot_bin = sum(c['bin_bytes'] for c in chunks)
-    wire = tot_json + tot_bin + sizes['res_tex'] + sizes['run_tex'] + sizes['prints'] + sizes['audio']
+    # each shared file once (the same print / clip can be listed by several batch materials and chunks)
+    used = set()
+    for c in chunks:
+        used |= set(c['tex']) | set(c['audio'])
+    kind = lambda p: 'prints' if '/prints/' in p else 'audio' if p.endswith(('.mp3', '.wav')) else 'run_tex' if '/tex/' in p else 'res_tex'
+    sizes = {'res_tex': 0, 'run_tex': 0, 'prints': 0, 'audio': 0}
+    for pth in used:
+        sizes[kind(pth)] += os.path.getsize(os.path.join(out, pth))
+    wire = tot_json + tot_bin + sum(sizes.values())
     MB = 1048576
     print(f'{tale}: {len(FR)} frames, {n_chunks} chunks, {len(lines)} lines, audio clips {len(amap)}, MultiMesh dumps dropped {dropped}')
     for c in chunks:
