@@ -118,6 +118,7 @@ SHOTS = {"stage": [4.6, 13.0, 0.3, 20.0], "story": [3.7, 13.0, 0.28, 20.0], "clo
          "huff_two": [2.2, 7.0, 0.36, 22.0, 10.0],        # huff two-shot: the wolf's face foreground left, the house right
          "pull_back": [10.5, 26.0, 0.3, 24.0, 0.0],       # ending: the whole village
          "chase": [3.8, 22.0, 0.3, 20.0, 0.0],              # the wolf's escape: close behind and above him
+         "roof_close": [2.9, 14.0, 0.62, 20.0, 0.0],        # the ladder climb, closer than "roof"
          # inside the brick house (camera just behind the closed front wall, looking at the hearth)
          "inside": [0.6, 5.0, 0.26, 68.0]}
 CAST = {
@@ -229,6 +230,9 @@ VILLAGE["est"] = [round((VILLAGE["s_lot"][0] + VILLAGE["b_lot"][0]) * 0.5 + 0.3,
                  round((VILLAGE["s_lot"][1] + VILLAGE["b_lot"][1]) * 0.5, 3)]
 VILLAGE["b_door"] = [VILLAGE["b_lot"][0], round(VILLAGE["b_lot"][1] + 0.12, 3)]  # at the brick door (file runs)
 VILLAGE["ladder_find"] = [VILLAGE["b_lot"][0] - 1.12, VILLAGE["b_lot"][1] + 0.3]
+# the climb shot looks between the ladder (lot x -0.56) and the chimney (+0.33): aimed at the lot the wolf on the
+# ladder was half out of the left frame edge (2026-11-25 gate run t14)
+VILLAGE["b_climb"] = [round(VILLAGE["b_lot"][0] - 0.15, 3), VILLAGE["b_lot"][1]]
 VILLAGE["s_wolf_from"] = [VILLAGE["s_wolf"][0] - 0.75, VILLAGE["s_wolf"][1]]
 # every camera station of the page (sightlines): the build / wolf shots at each lot, the roof and the escape tracking
 VILLAGE_SIGHT = [["establish", "est"], ["medium", "s_focus"], ["medium", "b_focus"], ["low_up", "s_lot"],
@@ -236,7 +240,7 @@ VILLAGE_SIGHT = [["establish", "est"], ["medium", "s_focus"], ["medium", "b_focu
                  ["ots", "b_wolf_focus"], ["window", "s_win"], ["front", "w_lot"], ["huff_two", "s_huff"], ["huff_two", "w_huff"],
                  ["low_wolf", "s_wolf_from"], ["high", "road", "s_door", "w_front"], ["high", "road", "w_front", "b_front"],
                  ["story", "s_focus"], ["story", "s_wolf_focus"], ["story", "w_focus"], ["story", "w_wolf_focus"],
-                 ["story", "b_focus"], ["story", "b_wolf_focus"], ["roof", "b_lot"], ["stage", "b_focus"],
+                 ["story", "b_focus"], ["story", "b_wolf_focus"], ["roof", "b_lot"], ["roof_close", "b_climb"], ["stage", "b_focus"],
                  ["story", "road", "s_door", "w_door"], ["story", "road", "w_door", "b_front"]]
 VILLAGE_SET = [
     {"card": "story_houses_00", "at": "s_lot", "stage": 0, "name": "straw_house",
@@ -401,9 +405,9 @@ BEATS = [
         {"do": "say", "line": "tp_033"},
         # ESCAPE: both run along the road to the brick house, the camera follows; in through the door
         # 2026-11-24 (gate audit v1: "the pigs run through the wolf"): in single file round the wolf (who stands on the
-        # road by the wood house), straight to the brick door
-        {"do": "walk", "who": ["pig_a", "pig_b"], "to": "b_door", "pose": "run", "speed": 0.8,
-         "path": [[0.72, -1.08], [0.22, -1.62], [-0.3, -2.02], [-0.533, -2.2], "b_door"], "file": True, "spacing": 0.16,
+        # road by the wood house), to the brick house's front, then in through the door one after the other
+        {"do": "walk", "who": ["pig_a", "pig_b"], "to": "b_front", "pose": "run", "speed": 0.8,
+         "path": [[0.72, -1.08], [0.22, -1.62], [-0.3, -2.02], [-0.533, -2.2], "b_front"], "file": True, "spacing": 0.24,
          "follow": "pig_a", "shot": "high", "line": "tp_034"},
         {"do": "cam", "shot": "story", "at": "b_focus", "wait": 0.2},
         {"do": "go_inside", "who": ["pig_a", "pig_b"], "house": "house", "windows": [1, -1], "speed": 0.45},
@@ -436,7 +440,7 @@ BEATS = [
         # he finds the ladder lying in the grass and stands it up against the wall under the eave
         {"do": "walk", "who": "wolf", "to": "ladder_find", "dir": "right", "pose": "side_prowl", "speed": 0.3, "follow": "wolf",
          "shot": "roof"},
-        {"do": "cam", "shot": "roof", "at": "b_lot", "wait": 0.3},
+        {"do": "cam", "shot": "roof_close", "at": "b_climb", "wait": 0.3, "rate": 0.8},  # 2026-11-24: the climb reads closer
         {"do": "fx", "fx": "ladder_up", "wait": 0.7},
         # he walks to the ladder, climbs it (back view), walks up the roof slope and along the ridge (side view),
         # steps onto the chimney top and sinks into it
@@ -513,4 +517,6 @@ EXTRA = {"overlap_check": True, "inside_margin": 0.5,
          "overlap_ok": [["pig_a", "straw_pile"], ["wolf", "ladder"], ["wolf", "house"], ["wolf", "k_hearth"],
                         ["wolf", "fire_l"], ["wolf", "fire_m"], ["wolf", "fire"], ["wolf", "k_back"], ["wolf", "k_pot"],
                         ["wolf", "k_logs"], ["wolf", "k_flue"], ["pig_a", "house"], ["pig_b", "house"],
-                        ["pig_c", "house"], ["wolf", "brick_pile"]]}
+                        ["pig_c", "house"], ["wolf", "brick_pile"],
+                        # the brothers come out where their house stood (the ruin card lies round them)
+                        ["pig_a", "wood_ruin"], ["pig_b", "wood_ruin"], ["pig_a", "straw_ruin"]]}

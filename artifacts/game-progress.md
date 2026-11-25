@@ -2637,3 +2637,23 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
   tower still shows behind the cottage in the reunion two-shot / hand-hold close (the field wide is clear of it); the
   ~1 s glides into and out of the garden shot still pass close to the father (no line plays then); Gothel's front walk
   far behind the running prince is a small card drifting; nobody has listened to the mix.
+
+## 2026-11-25 — three_pigs v25: GATE PASS (5:10; artifacts/video/three_pigs_v25.mp4)
+- Kept the earlier agent's uncommitted wave-2 edits after review (they were already in the v24 run t11): the brothers leave
+  the brick build in file on one road (fx brothers_leave: 둘째 0.55 s behind 첫째, fold down once out of the shot), the
+  escape run ends at the brick front (b_front, spacing 0.24) and go_inside takes them in one by one, overlap_ok for the
+  brothers standing in their ruins, and a closer `roof_close` shot for the ladder climb.
+- Fixed this round: roof_close aimed at the lot put the wolf on the ladder half out of the left frame edge (t14,
+  228-236 s). New spot `b_climb` (lot x -0.15, between the ladder at -0.56 and the chimney at +0.33); the climb shot
+  aims there (tale table + script.json patched by hand: a --force reseed drifts lines / music from the 톡톡 source).
+- Run t15 (full_rec.sh, 1200x900, --log-sound --log-track): STORY_DONE 310.5 s, mp4 312.5 s, FROZEN_VIDEO 0 (t14 too),
+  CHECK_LINES OK 39, VOICE_DUP / CAM_JUMP / CAM_JERK / SPEAKER_OFF / OVERLAP / SET_CHECK 0, missing_audio / sound empty,
+  22 motion rows ok (verdicts in artifacts/three_pigs/motion/motion_review.md). house_orbit_all.sh (orbit_w3):
+  three_pigs closed_red=0. gate.py: GATE PASS (artifacts/three_pigs/rec/t15.log 1ff0c8246c; output t15_gate.out).
+- Accepted exceptions (gate.md): OCCLUDE_COUNT 1 (pig_a in front of pig_b at the wood doorway, 150.7 s); MOTION_FLAG 21
+  (the wolf's drop down the flue starts above the room shot); MOTION_FLAG 22 (SPEED_JUMP = the burst start of the escape).
+- Sheet: artifacts/three_pigs/fixes_sheet.jpg (audit v1 video vs v25 per audit item; v24 vs v25 for the climb shot).
+- Still off: on the ridge walk the wolf's head grazes the top edge for ~1 s and on the lower ladder rungs his legs sit
+  behind the caption; the pull out of the room passes the wall top (~0.5 s orange band at 269.5 s); the 0:37 meadow
+  shot between home and the straw lot is empty for ~2 s of camera travel; pig_b passes just in front of pig_a as they
+  reach the brick front (185 s). 5:10 is inside the 4-5 min aim's upper edge. Nobody has listened to the mix.

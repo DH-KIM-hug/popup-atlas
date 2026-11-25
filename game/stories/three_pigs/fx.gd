@@ -217,22 +217,32 @@ func fx(name: String) -> bool:
 				p.follow(rt, 0.7, "side_walk", false)  # (2026-11-22) a brisker stroll: the tease waits until they are in frame
 				p.pose = "tease" if k == 0 else "violin"
 		"brothers_leave":
-			# back home along the road (첫째 to the straw house, 둘째 to the wood house)
-			var homes := {"pig_a": "s_door", "pig_b": "w_door"}
-			for r in homes:
+			# back home along the road (첫째 to the straw house, 둘째 to the wood house), in file on one trail:
+			# 2026-11-24 (gate OFF_FRAME + OVERLAP): only the stretch that leaves the shot (once out of it they fold
+			# down; the next beat puts them inside their houses), 둘째 half a second behind 첫째 on the same road points
+			var lead := _a("pig_a")
+			var goal2 := stage.spot_point("s_door") if stage.spots.has("s_door") else stage.dir_vec("right") * 2.4
+			var road: Array = stage.road_route(lead.global_position, goal2) if lead else []
+			var k2 := 0
+			for r in ["pig_a", "pig_b"]:
 				var p2 := _a(r)
-				if p2 and p2.pop_target > 0.5:
-					var goal2 := stage.spot_point(homes[r]) if stage.spots.has(homes[r]) else p2.global_position + stage.dir_vec("right") * 2.4
-					# 2026-11-24 (gate OFF_FRAME): only the stretch that leaves the shot; once out of it they fold down
-					# (the next beat puts them inside their houses)
-					var rt2 := _route_head([p2.global_position] + stage.road_route(p2.global_position, goal2), 1.15 if r == "pig_a" else 1.3)
-					p2.follow(rt2, 0.45, "side_walk", false)
-					p2.pose = "calm"
-					var p3 := p2
-					get_tree().create_timer(_route_len(rt2) / 0.45 + 0.1).timeout.connect(func():
-						if is_instance_valid(p3) and not p3.moving():
-							p3.pop_delay = 0.0
-							p3.pop_target = 0.02)
+				if p2 == null or p2.pop_target < 0.5 or road.is_empty():
+					continue
+				var rt2 := _route_head([p2.global_position] + road, 1.15)  # 둘째 starts 0.22 behind: he stops short of 첫째
+				var p3 := p2
+				var go := func():
+					if is_instance_valid(p3):
+						p3.follow(rt2, 0.45, "side_walk", false)
+						p3.pose = "calm"
+				if k2 == 0:
+					go.call()
+				else:
+					get_tree().create_timer(0.55).timeout.connect(go)
+				get_tree().create_timer(_route_len(rt2) / 0.45 + 0.15 + 0.55 * k2).timeout.connect(func():
+					if is_instance_valid(p3) and not p3.moving():
+						p3.pop_delay = 0.0
+						p3.pop_target = 0.02)
+				k2 += 1
 			_music.clear()
 		"straw_fly", "wood_wobble", "brick_huff":
 			_huff_wind(name)
