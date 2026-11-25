@@ -121,6 +121,11 @@ measures an actor from the ground, so the handler's `speaker_point` returns the 
 - A pop-out jump (kids out of the wolf's belly, wolf_goats v2) is a handler leap: a parabola in the move's own state
   holding the drawn "pop" figure, a bounce and a soft thud on landing (fx.gd `_leap`). `follow(...)` through a mid-air
   point walked the walk cycle along two straight legs in the air at constant speed ("kids float out of the belly").
+- A climber who stops part way (rapunzel v3, the empty tower: `climb_braid stop 0.75`) must be held there: stage
+  spacing / place_at put him back on the grass the frame the climb ended (TRACK screen y jumped 343 -> 1251), so the
+  magic-wind "fall" later slid him along the ground off frame (GLIDE + OFF_FRAME). The handler keeps a `_hang` spot
+  per role and rewrites the position each frame until the next move. Frame a descent from where it starts (a shot
+  at the start height, then a slow glide down with him), not from the landing spot.
 - A character on a roof: `lift` (not a raised position) keeps the overlap check off the building's base line; the hop
   down is a handler arc on lift (turnip's cat).
 - Handler-driven moves that keep a fixed figure (roll, float, hop): keep the path height in the move's own state;

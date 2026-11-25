@@ -2619,3 +2619,21 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
 - Slot: rapunzel's house_orbit_all.sh held the Godot lock and then called with_godot.sh again inside it (house_orbit.sh),
   waiting on itself for 50 min; that outer wrapper (pid 13504) was killed to free the slot. house_orbit_all.sh run
   through with_godot.sh self-deadlocks: run it bare (it takes the slot per house).
+
+## 2026-11-25 — rapunzel v3: GATE PASS (6:00; artifacts/video/rapunzel_v3.mp4)
+- After the disk was freed: full run at 1200x900 (movie maker, --import, --log-sound --log-track; mp4 362.3 s vs
+  STORY_DONE 360.2, 14 MOVE segments, freezedetect 0). gate.py: GATE PASS (full_v3.log f4b3b610e2): CHECK_LINES OK 47,
+  VOICE_DUP / CAM_JUMP / CAM_JERK / SPEAKER_OFF / OVERLAP / OCCLUDE / SET_CHECK 0, missing_audio / sound empty,
+  MOTION_FLAGS 0 (14 segments, every tile looked at, verdicts in artifacts/rapunzel/motion/motion_review.md), visual
+  checklist ticked; no accepted exceptions needed (the v2 GLIDE exception is gone: the float now starts on the braid).
+- The first v3 full run flagged three things, all fixed and re-recorded (e9826a36, a819b337): the prince stopped 3/4
+  up the braid was dropped to the grass by stage spacing the frame the climb ended, so the magic-wind float slid along
+  the ground off frame (handler `_hang` holds him; float shot starts at his height and glides down); Gothel's walk to
+  the tower started off frame (the camera finds her first); the reunion run went away from the lens after the shot
+  turn (meet / hear spots now placed from the shot yaw: a side run, side by side in the two-shot). Beat review also
+  moved the garden shot over the wall higher and tighter (the father's head was in the lens; the bed reads bigger).
+- Fixes sheet (v2 vs v3, 7 rows): artifacts/rapunzel/fixes_sheet.jpg. Length 6:35 -> 6:00, every line kept.
+- Still off: 6:00 is over the 5 min aim (the long parts are the climbs, the room pivot and the ending card); the
+  tower still shows behind the cottage in the reunion two-shot / hand-hold close (the field wide is clear of it); the
+  ~1 s glides into and out of the garden shot still pass close to the father (no line plays then); Gothel's front walk
+  far behind the running prince is a small card drifting; nobody has listened to the mix.
