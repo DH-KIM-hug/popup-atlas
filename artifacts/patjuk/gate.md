@@ -1,7 +1,7 @@
 # Gate: patjuk
 
-run: w2_r6.log 2a0ab211ac
-video: /Users/house_of_4k2b/orca/popup-atlas/artifacts/patjuk/rec/w2_r6.mp4
+run: w3_r1.log cb1a2fbfd2
+video: /Users/house_of_4k2b/orca/popup-atlas/artifacts/patjuk/rec/w3_r1.mp4
 
 Contact sheets (every 2.5 s): gate_contact_01.jpg, gate_contact_02.jpg, gate_contact_03.jpg, gate_contact_04.jpg, gate_contact_05.jpg
 
@@ -22,13 +22,20 @@ crops of every character and set piece). Untick-able? Fix the tale, re-record, r
 
 <!-- - <id gate.py printed>: <reason> -->
 
-## Review notes (wave 2, run w2_r6)
+## Review notes (re-check on the current build, run w3_r1, 2026-11-25)
 
-- Looked at gate_contact_01..05, beat sheets (12–20 frames per beat) and every motion tile.
-- rim: full-res crops of the tiger figures (slip, slip_fall, fallen, rolled_cry, swim) found no magenta / cream edge pixels; the helpers and the granny are cut in their own colours.
-- steam: only the cauldron steam in the kitchen. The night beat turns it off, so nothing floats into the door shot. The snow flakes read as snow.
-- holes: none in this tale; the floor crack where the awl hides is a flat dark slit.
-- houses: the cottage body is solid; the yard walls now have thin bodies (story_pj_yard_00/01), so low yard shots no longer show a card back.
-- empty: the tiger steps out with the camera already on the boulder. Helpers cross the floor mid-frame in a looking-down room shot. The night arrival is tracked from above the pines. The camera pans with the tiger from the hearth to the jar, then follows him out of the door. The carry to the sea is tracked and the throw is on screen. Short camera transitions (≤ 1 s, no line playing) remain at 3:07 and 5:20.
-- place: the bean field with its rows, the winter cottage on snow-paper ground (snow tinted in the handler), the kitchen (hearth, cauldron, water jar, shelf) and the sea behind the yard.
+- Why re-run: patjuk passed on 2026-11-24 (w2_r6); runner / spread_stage / StoryActor changes landed since (fc90fcc0,
+  42dab518, 54df5fff and other agents' uncommitted engine edits on disk), so the gate was re-run on today's build.
+- The audit-v1 crash (RUNNER_OFF_TREE spin) does not come back: the run reached STORY_DONE 353.0 s, mp4 355.0 s,
+  FROZEN_VIDEO 0, no SCRIPT ERROR / Failed loading.
+- Looked at gate_contact_01..05, all 41 motion tile sheets (37 rows, verdicts written), a 1 fps sheet of the swim.
+- rim: granny, tiger and the seven helpers are cut in their own colours; no cream edge on any figure.
+- steam: only the cauldron in the kitchen; snow reads as snow.
+- holes: none in this tale (the awl's floor crack is a flat dark slit).
+- houses: house_orbit_all.sh (artifacts/houses/orbit_w3/patjuk/patjuk_audit.jpg) closed_red=0; the cottage and the
+  korean template houses are closed volumes; the two open pavilions are open by design.
+- empty: helpers enter along the floor mid-frame (each is under the caption for its first ~0.4 s); the swim line plays
+  over the jige with the tiger small but in the water, swimming away; short camera glides with no line remain
+  (empty yard at 3:07, the shore at 5:20, the camera passing the door frame edges as the tiger runs out at 4:25).
+- place: bean field with rows, winter cottage on snow-paper ground, kitchen (hearth, cauldron, jar, shelf), yard, sea.
 - felt: matte paper throughout.

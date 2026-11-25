@@ -2657,3 +2657,19 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
   behind the caption; the pull out of the room passes the wall top (~0.5 s orange band at 269.5 s); the 0:37 meadow
   shot between home and the straw lot is empty for ~2 s of camera travel; pig_b passes just in front of pig_a as they
   reach the brick front (185 s). 5:10 is inside the 4-5 min aim's upper edge. Nobody has listened to the mix.
+
+## 2026-11-25 — patjuk v3: GATE PASS re-confirmed on today's build (5:53; artifacts/video/patjuk_v3.mp4)
+- State found: the gate audit v1 items (the runner crash / 14-min title stall, the helpers as static cards, the tiger's
+  off-frame entrances, the dazed "run", the static jige carry, the splash wall) were fixed in wave 2 (7e0248f8, GATE PASS
+  w2_r6 on 2026-11-24). Runner / stage / StoryActor commits and other agents' uncommitted engine edits landed since, so
+  the full gate was re-run on the current build; no tale change was needed.
+- Run w3_r1 (full_rec.sh, 1200x900, --log-sound --log-track): STORY_DONE 353.0 s, mp4 355.0 s, FROZEN_VIDEO 0, no
+  SCRIPT ERROR / RUNNER_OFF_TREE, CHECK_LINES OK 56, every counter 0, MOTION_FLAGS 0, 37 motion rows ok (verdicts in
+  artifacts/patjuk/motion/motion_review.md), house_orbit_all.sh (orbit_w3) patjuk closed_red=0 (pavilions open by
+  design). gate.py: GATE PASS (artifacts/patjuk/rec/w3_r1.log cb1a2fbfd2; output w3_r1_gate.out). No accepted exceptions.
+- Sheet: artifacts/patjuk/fixes_sheet_v3.jpg (audit v1 video vs v3, one row per audit finding); the wave-2 sheet
+  artifacts/patjuk/fixes_sheet.jpg stays.
+- Still off: 5:53 against the ~5 min aim (voice alone 221 s, no line cut); ≤ 1 s camera moves with no line (empty yard
+  3:07, the shore 5:20); as the tiger runs out of the kitchen (4:25) the camera passes the door frame edges for ~1 s;
+  each helper is under the caption for its first ~0.4 s on entering; the swimming tiger is small and the jige stands in
+  front of him for a moment as the swim line starts; mp4 29.5 MB is just under the 30 MB cap. Nobody has listened to the mix.
