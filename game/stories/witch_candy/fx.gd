@@ -784,7 +784,10 @@ func _walk_home(R: Node) -> void:
 		pts.append_array(_door_steps(true))
 		pts.append(home)
 		kid.follow(pts, 0.45, "", true)  # 2026-11-24 pace: 0.32 -> 0.45
-		await R._wait(0.3)
+		# 2026-11-24: the camera goes in once she is on the steps (it went in first and the room's wall hid her, OCCLUDE)
+		var gw := 0.0
+		while kid.moving() and kid._path.size() > 4 and gw < 8.0:
+			gw += await R._frame()
 		fx("inside_view")
 		var g := 0.0
 		while kid.moving() and g < 14.0:
@@ -1327,14 +1330,17 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			kid.set_pose(str(rs["figure"]))
 			await _while_line(R)
 		"roll_street":
-			await _go_out(R, "door_cam")
+			# 2026-11-25 (gate v16b: the ball rolled out under the caption / behind the roofs for ~2 s while the camera
+			# was still on its way from door_cam to the track shot): settle on the high track shot first, then roll
+			await _go_out(R, "track")
+			stage.follow_actor("kid", "track")
 			kid.set_pose("tf_strawberry_ball")
+			await R._wait(maxf(0.6, stage.cam_settle_left(0.9)))
 			_rolling = "kid"
 			_sfx("wc.roll", kid.centre())
 			var bump := stage.spot_point("pump_bump")
 			_glide("kid", [stage.spot_point("door") + _out() * 0.15, stage.spot_point("road_shop"),
 				stage.spot_point("road_mid") + _toward() * 0.1, bump + _right() * 0.14], 0.5, "roll", "tf_strawberry_ball")
-			stage.follow_actor("kid", "track")
 			R._say(act)
 			await _wait_glide(R, "kid")
 			_sfx("wc.bonk", bump)
@@ -1369,6 +1375,12 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			_sfx("wc.flap" if kind == "fly_moon" else "wc.bubble", up)
 			await R._wait(1.2)
 			await R._say(act)
+			# 2026-11-24: down from the loop the camera comes to the door first (from the sky shot she dropped behind
+			# house_7's roof: OCCLUDE)
+			var gl := 0.0
+			while _glides.has("kid") and (_glides["kid"]["pts"] as Array).size() > 2 and gl < 20.0:
+				gl += await R._frame()
+			stage.shot_to("door_wide", "door", {"rate": 1.6})
 			await _wait_glide(R, "kid")
 			for i in 3:
 				if _floaters.has("bat_%d" % i):
@@ -1377,7 +1389,7 @@ func _action(kind: String, rs: Dictionary, R: Node) -> void:
 			_flap = false
 			kid.lift = 0.0
 			kid.set_pose(fig)
-			stage.shot_to("door_cam", "door", {"rate": 1.6})
+			stage.shot_to("door_wide", "door", {"rate": 1.6})  # raised (door_cam's way down from the sky passed behind house_7)
 		"hop_roof":
 			await _go_out(R, "door_cam")
 			var shop := _sp("shop")
@@ -1484,7 +1496,8 @@ func _leave_shop(st: Dictionary, R: Node) -> void:
 			pts.push_front(stage.spot_point("in_via"))
 		var end := to + o * float(st.get("spacing", 0.15)) * float(roles.size() - 1 - i) * 0.0 - (to - stage.spot_point("door")).normalized() * float(st.get("spacing", 0.15)) * i
 		pts.append(Vector3(end.x, stage.world.ground.surface_y(Vector2(end.x, end.z)), end.z))
-		a.follow(pts, 0.78, str(st.get("pose", "")), true)  # 2026-11-24 pace: 0.55 -> 0.78
+		# 2026-11-24 pace: 0.55 -> 0.78 (the small cat 0.5: its turns on the steps read as a speed jump)
+		a.follow(pts, 0.5 if str(roles[i]) == "cat" else 0.78, str(st.get("pose", "")), true)
 		var g2 := 0.0
 		while a.moving() and a._path.size() > 3 and g2 < 8.0:  # the next one starts once this one is over the sill
 			g2 += await R._frame()
@@ -1611,6 +1624,10 @@ func _step_glides(dt: float) -> void:
 				a.puppet.rotation.z = 0.0
 			continue
 		var tgt: Vector3 = pts[0]
+		# 2026-11-25: a point below the ground at its spot (the pumpkin bump stands on a raised tier: 0.022 vs 0.044)
+		# was never reached (the actor is held on the ground, d stayed 0.022 > one step): the strawberry ball sat by
+		# the pumpkin for the 25 s _wait_glide timeout
+		tgt.y = maxf(tgt.y, stage.world.ground.surface_y(Vector2(tgt.x, tgt.z)))
 		var gp := stage.world.ground.surface_y(Vector2(a.global_position.x, a.global_position.z))
 		var cur := Vector3(a.global_position.x, gp + float(gd["y"]), a.global_position.z)
 		var to := tgt - cur

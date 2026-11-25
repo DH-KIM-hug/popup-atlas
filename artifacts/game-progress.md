@@ -2599,3 +2599,23 @@ User: "탑에 있는 라푼젤...뭔가 이상한디", "탑 위에서 만나는�
   over an hour (the AVIs every agent moved to ~/.Trash still hold the space; a full run needs ~6 GB): needs the
   Trash emptied (the user's call), then `tools/story/with_godot.sh sh tools/story/rp_rec.sh full 420
   /ABS/artifacts/rapunzel/rec/full_v3.mp4 --log-track`, motion_review, verdicts, gate.md, gate.py.
+
+## 2026-11-25 — wolf_goats v2 + witch_candy v16: GATE PASS (re-recorded once the disk was freed)
+- wolf_goats v2 (artifacts/video/wolf_goats_v2.mp4, 5:50, GATE PASS full_e.log 69a2f4d89a): the committed porch-shot fix
+  recorded: CAM_JUMP 0 (v2 full_c: 3.03 deg at 2:58), CAM_JERK / SPEAKER_OFF / VOICE_DUP / OVERLAP / OCCLUDE / SET_CHECK 0,
+  CHECK_LINES OK 53, FROZEN_VIDEO 0, 32 motion rows ok (MOTION_FLAG 30 the well tumble, accepted as before). Still soft:
+  the mother pops up on the road ~1 s into her line (3:04). Sheets: artifacts/wolf_goats/fixes_sheet.jpg (v1 / v2),
+  artifacts/wolf_goats/fixes_sheet_camjump.jpg (the glide out of the room, full_c vs full_e).
+- witch_candy v16 (artifacts/video/witch_candy_v16.mp4, 7:05, GATE PASS full_v16c.log 158c660384, recorded with
+  --wc-results=frog,strawberry,ghost): the v15 wave-2 fixes (pipelined entry led by the witch, left-of-pot via, raised
+  door_entry / parade shots, fly_loop over the road, cat's slower steps) committed with two new ones found in the first
+  v16 run: (1) the strawberry ball sat 25 s by the pumpkin: the glide target (pump_bump on the raised tier, y 0.022 vs
+  ground 0.044) was never reached because the actor is held on the ground; `_step_glides` now clamps a target up to the
+  ground (the roll lasts ~5 s); (2) the roll starts once the high track shot has settled (it rolled out under the caption
+  while the camera travelled from door_cam). The witch's "어디 가!" over the track shot is a speaker_insert. Counters 0
+  except OVERLAP 1 (bear / fox 0.05 in the queue at 0:49, accepted); MOTION_FLAGS 24 / 25 (GLIDE: the rolling ball) and
+  27 (OFF_FRAME: her face close-up) accepted; 54 motion rows ok. Length 7:05 is over the 4-5 min aim (every line kept).
+  Sheet: artifacts/witch_candy/fixes_sheet.jpg.
+- Slot: rapunzel's house_orbit_all.sh held the Godot lock and then called with_godot.sh again inside it (house_orbit.sh),
+  waiting on itself for 50 min; that outer wrapper (pid 13504) was killed to free the slot. house_orbit_all.sh run
+  through with_godot.sh self-deadlocks: run it bare (it takes the slot per house).

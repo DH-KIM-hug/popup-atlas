@@ -165,11 +165,11 @@
    -45.0
   ],
   "door_entry": [
-   2.3,
-   30.0,
+   3.0,
+   36.0,
    0.3,
    28.0,
-   -75.0
+   -67.0
   ],
   "roof_cam": [
    2.6,
@@ -249,14 +249,14 @@
    -57.0
   ],
   "parade_side": [
-   2.8,
+   3.8,
    58.0,
    0.22,
    28.0,
    -60.0
   ],
   "parade_back": [
-   2.8,
+   3.4,
    60.0,
    0.22,
    28.0,
@@ -394,6 +394,10 @@
    "pot"
   ],
   [
+   "bear",
+   "pot"
+  ],
+  [
    "kid",
    "room_floor"
   ],
@@ -405,7 +409,8 @@
  "speaker_insert": [
   "wc_009",
   "wc_010",
-  "wc_109"
+  "wc_109",
+  "wc_117"
  ],
  "cast": {
   "kid": {
@@ -566,12 +571,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -676,6 +677,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -2084,17 +2093,20 @@
     {
      "do": "cam",
      "shot": "door_entry",
-     "at": "door_view",
+     "at": [
+      "door",
+      "road_shop"
+     ],
      "rate": 1.4,
      "wait": 0.1
     },
     {
      "do": "go_inside",
      "who": [
+      "witch",
       "rabbit",
       "bear",
       "fox",
-      "witch",
       "kid",
       "cat"
      ],
@@ -2109,19 +2121,16 @@
      },
      "via": {
       "rabbit": [
-       "in_right0",
-       "in_right",
-       "in_right2"
+       "in_left0",
+       "in_left1"
       ],
       "bear": [
-       "in_right0",
-       "in_right",
-       "in_right2"
+       "in_left0",
+       "in_left1"
       ],
       "fox": [
-       "in_right0",
-       "in_right",
-       "in_right2"
+       "in_left0",
+       "in_left1"
       ]
      },
      "queue": "front",
@@ -2130,7 +2139,7 @@
      "house_facing": true,
      "door_clear": true,
      "climb_steps": true,
-     "speed": 0.8,
+     "speed": 0.7,
      "pipeline": true,
      "line": "wc_004"
     }
@@ -2222,12 +2231,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -2332,6 +2337,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -3624,6 +3637,11 @@
      "line": "wc_005"
     },
     {
+     "do": "fx",
+     "fx": "",
+     "wait": 0.8
+    },
+    {
      "do": "cam",
      "shot": "pot_low",
      "at": "in_pot",
@@ -3762,12 +3780,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -3872,6 +3886,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -5325,12 +5347,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -5435,6 +5453,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -6986,12 +7012,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -7096,6 +7118,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -8664,12 +8694,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -8774,6 +8800,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -10319,12 +10353,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -10429,6 +10459,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -11708,8 +11746,11 @@
     },
     {
      "do": "cam",
-     "shot": "door_wide",
-     "at": "door_view",
+     "shot": "door_entry",
+     "at": [
+      "door",
+      "road_shop"
+     ],
      "rate": 1.6,
      "wait": 0.4
     },
@@ -11725,7 +11766,7 @@
      ],
      "pose": "ghost",
      "to": "road_shop",
-     "spacing": 0.21
+     "spacing": 0.19
     },
     {
      "do": "fx",
@@ -11749,9 +11790,9 @@
       "parade_a"
      ],
      "file": true,
-     "spacing": 0.17,
+     "spacing": 0.2,
      "speed": 0.46,
-     "follow": "witch",
+     "follow": "rabbit",
      "shot": "parade_side",
      "line": "wc_135"
     },
@@ -11774,9 +11815,9 @@
       "road_shop"
      ],
      "file": true,
-     "spacing": 0.17,
+     "spacing": 0.2,
      "speed": 0.46,
-     "follow": "witch",
+     "follow": "rabbit",
      "shot": "parade_back",
      "line": "wc_x_ghost_all"
     },
@@ -11794,7 +11835,10 @@
     {
      "do": "cam",
      "shot": "door_entry",
-     "at": "door_view",
+     "at": [
+      "door",
+      "road_shop"
+     ],
      "rate": 1.4,
      "wait": 0.2
     },
@@ -11840,7 +11884,7 @@
      "house_facing": true,
      "door_clear": true,
      "climb_steps": true,
-     "speed": 0.8,
+     "speed": 0.7,
      "pipeline": true
     }
    ],
@@ -11931,12 +11975,8 @@
       -3.6
      ],
      "fly_loop": [
-      0.45,
+      -0.05,
       -1.6
-     ],
-     "roof": [
-      0.8,
-      -2.9
      ],
      "parade_a": [
       -0.22,
@@ -12041,6 +12081,14 @@
      "in_right0": [
       1.253,
       -2.787
+     ],
+     "in_left0": [
+      1.033,
+      -3.176
+     ],
+     "in_left1": [
+      1.245,
+      -3.388
      ],
      "in_floor": [
       0.814,
@@ -17804,7 +17852,7 @@
    "new": true
   }
  ],
- "inside_margin": 0.45,
+ "inside_margin": 0.75,
  "inside_door_hide": true,
  "occlude_subjects_only": true
 }
