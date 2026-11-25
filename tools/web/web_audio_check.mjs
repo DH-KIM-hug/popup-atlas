@@ -112,7 +112,7 @@ await page.goto(url, { waitUntil: "load", timeout: 120000 });
 await page.waitForFunction(() => { const s = document.getElementById("status"); return !s || getComputedStyle(s).display === "none" || s.style.visibility === "hidden"; }, null, { timeout: 300000 });
 await page.waitForTimeout(10000);
 const state = () => page.evaluate(() => ({ ctx: window.__audio.ctx.map((c) => c.state + "@" + c.sampleRate), starts: window.__audio.starts,
-  after: window.__audio.startsAfterTap, media: window.__audio.media, meters: window.__audio.ctx.map((c) => !!c.__an), peakRms: +window.__audio.peak.toFixed(4), rawPeak: +window.__audio.rawPeak.toFixed(4), bufs: window.__audio.bufs.slice(0, 12).join(' '), err: window.__audio.err, loudMs: window.__audio.loudMs }));
+  after: window.__audio.startsAfterTap, media: window.__audio.media, meters: window.__audio.ctx.map((c) => !!c.__an), peakRms: +window.__audio.peak.toFixed(4), rawPeak: +window.__audio.rawPeak.toFixed(4), bufs: window.__audio.bufs.slice(0, 12).join(' '), voiceLen: window.__audio.bufs.filter((b) => { const d = parseFloat(b); return d >= 1 && d <= 10; }).length, err: window.__audio.err, loudMs: window.__audio.loudMs }));
 console.log("before tap:", JSON.stringify(await state()));
 await page.evaluate(() => { window.__audio.tapped = true; });
 const [fx, fy] = tap.split(",").map(Number);

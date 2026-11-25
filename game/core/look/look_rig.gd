@@ -71,9 +71,9 @@ const POST_SHADER := preload("res://core/shaders/post_grade.gdshader")
 ## (with --rendering-method gl_compatibility) for tuning; iOS / desktop Mobile runs never take this path.
 const WEB_SHADOW_BIAS := 2.0  ## 0.08 ribbed the ground, 1.0 halved it, 2.0 clean with contact shadows kept
 const WEB_SHADOW_NORMAL_BIAS := 0.6
-const WEB_POST_PRE_GAMMA := 1.8  ## post_grade pre_gamma: undoes the lifted tone curve
-const WEB_POST_SATURATION := 1.14  ## multiplies post_saturation
-const WEB_POST_CONTRAST := 0.92  ## multiplies post_contrast (the gamma alone overshoots contrast)
+const WEB_POST_PRE_GAMMA := 1.7  ## post_grade pre_gamma: undoes the lifted tone curve (1.8 crushed dark scenes)
+const WEB_POST_SATURATION := 1.1  ## multiplies post_saturation
+const WEB_POST_CONTRAST := 0.86  ## multiplies post_contrast (the gamma alone overshoots contrast)
 
 
 static func web_look() -> bool:
