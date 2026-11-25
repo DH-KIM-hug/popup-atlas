@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>커다란 순무 · three.js</title>
+<style>
+  @font-face { font-family: 'Pretendard'; src: url('./fonts/PretendardVariable.woff2') format('woff2'); font-weight: 45 920; font-display: block; }
+  :root { --paper: #f6efdf; --ink: #3a2a1c; --edge: #d9c9a8; }
+  html, body { margin: 0; height: 100%; overflow: hidden; background: #1c120b; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+  #c { display: block; position: fixed; inset: 0; }
+  #cap { position: fixed; left: 12%; right: 12%; bottom: 2.54vh; min-height: 14vh; display: none; align-items: center; justify-content: center; gap: 18px;
+    background: var(--paper); border-radius: 22px; box-shadow: 0 4px 0 var(--edge), 0 10px 24px rgba(0,0,0,.25); padding: 12px 28px; box-sizing: border-box;
+    font: 500 4.69vh/1.3 Pretendard, "Apple SD Gothic Neo", system-ui, sans-serif; color: var(--ink); text-align: center; pointer-events: none; }
+  #cap.on { display: flex; }
+  #cap.off { display: none !important; }
+  .chipbtn { position: fixed; top: 2.4vh; background: var(--paper); color: var(--ink); border-radius: 1.2vh; padding: 1.1vh 2.4vh;
+    font: 700 2.6vh Pretendard, system-ui, sans-serif; box-shadow: 0 3px 0 var(--edge), 0 6px 14px rgba(0,0,0,.2); border: 0; }
+  #beat { left: 2vh; pointer-events: none; } #subs { right: 2vh; }
+  #cap .chip { background: #5b8a4a; color: #fffaf0; border-radius: 40px; padding: .4vh 2vh; font-size: 3.1vh; font-weight: 700; white-space: nowrap; }
+  #cap b { font-weight: 700; }
+  #ring { position: fixed; display: none; border: 4px solid rgba(255, 250, 235, .95); border-radius: 50%; box-shadow: 0 0 0 2px rgba(60,40,20,.25);
+    pointer-events: none; animation: pulse 1.2s ease-in-out infinite; box-sizing: border-box; }
+  @keyframes pulse { 0%,100% { transform: scale(1); opacity: .95 } 50% { transform: scale(1.08); opacity: .7 } }
+  .card { position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(28, 18, 11, .35); }
+  .card.on { display: flex; }
+  .card button { font: 700 clamp(22px, 3.4vh, 38px) "Apple SD Gothic Neo", system-ui, sans-serif; color: var(--ink); background: var(--paper);
+    border: 0; border-radius: 26px; padding: 22px 48px; box-shadow: 0 5px 0 var(--edge), 0 14px 30px rgba(0,0,0,.3); }
+  #load { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; color: #f6efdf; font: 600 22px system-ui, sans-serif; }
+  #hud { position: fixed; left: 10px; top: 8px; color: #fff; font: 12px ui-monospace, monospace; text-shadow: 0 1px 2px #000; pointer-events: none; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="cap"></div>
+<div id="ring"></div>
+<div id="beat" class="chipbtn">봄</div>
+<button id="subs" class="chipbtn">자막 켜짐</button>
+<div id="load">불러오는 중…</div>
+<div id="start" class="card"><button>톡! 눌러서 시작</button></div>
+<div id="again" class="card"><button>다시 보기</button></div>
+<div id="hud"></div>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
