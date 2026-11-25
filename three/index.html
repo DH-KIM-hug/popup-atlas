@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>커다란 순무 · three.js</title>
+<style>@font-face{font-family:Pretendard;src:url(./fonts/PretendardVariable.woff2)format("woff2");font-weight:45 920;font-display:block}:root{--paper:#f6efdf;--ink:#3a2a1c;--edge:#d9c9a8}html,body{touch-action:none;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;background:#1c120b;height:100%;margin:0;overflow:hidden}#c{display:block;position:fixed;inset:0}#cap{background:var(--paper);min-height:14vh;box-shadow:0 4px 0 var(--edge), 0 10px 24px #00000040;box-sizing:border-box;color:var(--ink);text-align:center;pointer-events:none;border-radius:22px;justify-content:center;align-items:center;gap:18px;padding:12px 28px;font:500 4.69vh/1.3 Pretendard,Apple SD Gothic Neo,system-ui,sans-serif;display:none;position:fixed;bottom:2.54vh;left:12%;right:12%}#cap.on{display:flex}#cap.off{display:none!important}.chipbtn{background:var(--paper);color:var(--ink);box-shadow:0 3px 0 var(--edge), 0 6px 14px #0003;border:0;border-radius:1.2vh;padding:1.1vh 2.4vh;font:700 2.6vh Pretendard,system-ui,sans-serif;position:fixed;top:2.4vh}#beat{pointer-events:none;left:2vh}#subs{right:2vh}#cap .chip{color:#fffaf0;white-space:nowrap;background:#5b8a4a;border-radius:40px;padding:.4vh 2vh;font-size:3.1vh;font-weight:700}#cap b{font-weight:700}#ring{pointer-events:none;box-sizing:border-box;border:4px solid #fffaebf2;border-radius:50%;animation:1.2s ease-in-out infinite pulse;display:none;position:fixed;box-shadow:0 0 0 2px #3c281440}@keyframes pulse{0%,to{opacity:.95;transform:scale(1)}50%{opacity:.7;transform:scale(1.08)}}.card{background:#1c120b59;justify-content:center;align-items:center;display:none;position:fixed;inset:0}.card.on{display:flex}.card button{color:var(--ink);background:var(--paper);box-shadow:0 5px 0 var(--edge), 0 14px 30px #0000004d;border:0;border-radius:26px;padding:22px 48px;font:700 clamp(22px,3.4vh,38px) Apple SD Gothic Neo,system-ui,sans-serif}#load{color:#f6efdf;justify-content:center;align-items:center;font:600 22px system-ui,sans-serif;display:flex;position:fixed;inset:0}#hud{color:#fff;text-shadow:0 1px 2px #000;pointer-events:none;font:12px ui-monospace,monospace;position:fixed;top:8px;left:10px}</style>
+  <script type="module" crossorigin src="./assets/index-B_Va9FTI.js"></script>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="cap"></div>
+<div id="ring"></div>
+<div id="beat" class="chipbtn">봄</div>
+<button id="subs" class="chipbtn">자막 켜짐</button>
+<div id="load">불러오는 중…</div>
+<div id="start" class="card"><button>톡! 눌러서 시작</button></div>
+<div id="again" class="card"><button>다시 보기</button></div>
+<div id="hud"></div>
+</body>
+</html>
