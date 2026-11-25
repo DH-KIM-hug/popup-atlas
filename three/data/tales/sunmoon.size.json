@@ -1,0 +1,86 @@
+{
+ "tale": "sunmoon",
+ "wire_bytes": 38350049,
+ "json_gz": 4972137,
+ "geo_gz": 9250329,
+ "sizes": {
+  "res_tex": 3332720,
+  "run_tex": 2798684,
+  "prints": 6239820,
+  "audio": 11756359
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17608,
+   "bin_bytes": 2776,
+   "audio_bytes": 240412
+  },
+  {
+   "id": "morning",
+   "json_gz": 529238,
+   "bin_bytes": 5310642,
+   "audio_bytes": 2233710
+  },
+  {
+   "id": "rich_house",
+   "json_gz": 472438,
+   "bin_bytes": 1240121,
+   "audio_bytes": 2748705
+  },
+  {
+   "id": "pass1",
+   "json_gz": 239551,
+   "bin_bytes": 83246,
+   "audio_bytes": 2061780
+  },
+  {
+   "id": "pass2",
+   "json_gz": 87881,
+   "bin_bytes": 121495,
+   "audio_bytes": 1817683
+  },
+  {
+   "id": "pass3",
+   "json_gz": 216847,
+   "bin_bytes": 49115,
+   "audio_bytes": 2092974
+  },
+  {
+   "id": "door",
+   "json_gz": 689475,
+   "bin_bytes": 833969,
+   "audio_bytes": 2040419
+  },
+  {
+   "id": "backyard",
+   "json_gz": 165687,
+   "bin_bytes": 180632,
+   "audio_bytes": 1419373
+  },
+  {
+   "id": "tree",
+   "json_gz": 876485,
+   "bin_bytes": 263922,
+   "audio_bytes": 2453389
+  },
+  {
+   "id": "rope",
+   "json_gz": 360112,
+   "bin_bytes": 42923,
+   "audio_bytes": 2020963
+  },
+  {
+   "id": "old_rope",
+   "json_gz": 434427,
+   "bin_bytes": 125688,
+   "audio_bytes": 2184131
+  },
+  {
+   "id": "sky",
+   "json_gz": 882388,
+   "bin_bytes": 995800,
+   "audio_bytes": 2222020
+  }
+ ]
+}

@@ -1,0 +1,124 @@
+{
+ "tales": [
+  {
+   "id": "sun_wind",
+   "name": "해와 바람",
+   "cloth": "#2f5d7c",
+   "cloth_dark": "#22445c",
+   "title_rect": [
+    0.5,
+    0.14,
+    0.8
+   ],
+   "ready": true,
+   "art_img": "shared/covers/sun_wind_art.webp",
+   "title_img": "shared/covers/sun_wind_title.webp",
+   "bytes": 32157416
+  },
+  {
+   "id": "three_pigs",
+   "name": "아기 돼지 삼형제",
+   "cloth": "#8a3b2a",
+   "cloth_dark": "#5e2a1e",
+   "title_rect": [
+    0.5,
+    0.185,
+    0.6
+   ],
+   "ready": true,
+   "art_img": "shared/covers/three_pigs_art.webp",
+   "title_img": "shared/covers/three_pigs_title.webp",
+   "bytes": 35221548
+  },
+  {
+   "id": "witch_candy",
+   "name": "사탕 마녀의 핼러윈",
+   "cloth": "#3d3566",
+   "cloth_dark": "#2a2348",
+   "title_rect": [
+    0.5,
+    0.2,
+    0.74
+   ],
+   "ready": true,
+   "art_img": "shared/covers/witch_candy_art.webp",
+   "title_img": "shared/covers/witch_candy_title.webp",
+   "bytes": 37771372
+  },
+  {
+   "id": "sunmoon",
+   "name": "해님 달님",
+   "cloth": "#26305e",
+   "cloth_dark": "#1b2246",
+   "title_rect": [
+    0.5,
+    0.115,
+    0.78
+   ],
+   "ready": true,
+   "art_img": "shared/covers/sunmoon_art.webp",
+   "title_img": "shared/covers/sunmoon_title.webp",
+   "bytes": 38350049
+  },
+  {
+   "id": "wolf_goats",
+   "name": "늑대와 일곱 아기염소",
+   "cloth": "#c8473c",
+   "cloth_dark": "#8e2f27",
+   "title_rect": [
+    0.5,
+    0.17,
+    0.66
+   ],
+   "ready": true,
+   "art_img": "shared/covers/wolf_goats_art.webp",
+   "title_img": "shared/covers/wolf_goats_title.webp",
+   "bytes": 37278982
+  },
+  {
+   "id": "patjuk",
+   "name": "팥죽할멈과 호랑이",
+   "cloth": "#2f3f7a",
+   "cloth_dark": "#1f2a56",
+   "title_rect": [
+    0.5,
+    0.15,
+    0.72
+   ],
+   "ready": true,
+   "art_img": "shared/covers/patjuk_art.webp",
+   "title_img": "shared/covers/patjuk_title.webp",
+   "bytes": 39800984
+  },
+  {
+   "id": "turnip",
+   "name": "커다란 순무",
+   "cloth": "#5e8c3a",
+   "cloth_dark": "#3f6b2a",
+   "title_rect": [
+    0.5,
+    0.15,
+    0.74
+   ],
+   "ready": true,
+   "art_img": "shared/covers/turnip_art.webp",
+   "title_img": "shared/covers/turnip_title.webp",
+   "bytes": 28392347
+  },
+  {
+   "id": "rapunzel",
+   "name": "라푼젤",
+   "cloth": "#3f6b3a",
+   "cloth_dark": "#2c4f29",
+   "title_rect": [
+    0.5,
+    0.15,
+    0.74
+   ],
+   "ready": true,
+   "art_img": "shared/covers/rapunzel_art.webp",
+   "title_img": "shared/covers/rapunzel_title.webp",
+   "bytes": 35563870
+  }
+ ]
+}

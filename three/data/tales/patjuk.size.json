@@ -1,0 +1,68 @@
+{
+ "tale": "patjuk",
+ "wire_bytes": 39800984,
+ "json_gz": 9478696,
+ "geo_gz": 6963519,
+ "sizes": {
+  "res_tex": 2423974,
+  "run_tex": 2684814,
+  "prints": 6214922,
+  "audio": 12035059
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17596,
+   "bin_bytes": 2790,
+   "audio_bytes": 244174
+  },
+  {
+   "id": "field",
+   "json_gz": 879209,
+   "bin_bytes": 5066980,
+   "audio_bytes": 2669839
+  },
+  {
+   "id": "winter",
+   "json_gz": 584393,
+   "bin_bytes": 1249347,
+   "audio_bytes": 1814123
+  },
+  {
+   "id": "helpers",
+   "json_gz": 1133929,
+   "bin_bytes": 64280,
+   "audio_bytes": 2359492
+  },
+  {
+   "id": "yard",
+   "json_gz": 1313297,
+   "bin_bytes": 39401,
+   "audio_bytes": 2436661
+  },
+  {
+   "id": "night",
+   "json_gz": 1437061,
+   "bin_bytes": 133515,
+   "audio_bytes": 2484191
+  },
+  {
+   "id": "uproar",
+   "json_gz": 949425,
+   "bin_bytes": 153197,
+   "audio_bytes": 1532891
+  },
+  {
+   "id": "sea",
+   "json_gz": 1685293,
+   "bin_bytes": 57763,
+   "audio_bytes": 2285337
+  },
+  {
+   "id": "feast",
+   "json_gz": 1478493,
+   "bin_bytes": 196246,
+   "audio_bytes": 3151844
+  }
+ ]
+}

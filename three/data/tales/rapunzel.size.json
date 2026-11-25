@@ -1,0 +1,92 @@
+{
+ "tale": "rapunzel",
+ "wire_bytes": 35563870,
+ "json_gz": 3368008,
+ "geo_gz": 9698029,
+ "sizes": {
+  "res_tex": 2615234,
+  "run_tex": 2684814,
+  "prints": 7160306,
+  "audio": 10037479
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17551,
+   "bin_bytes": 2789,
+   "audio_bytes": 244174
+  },
+  {
+   "id": "home",
+   "json_gz": 254039,
+   "bin_bytes": 5254353,
+   "audio_bytes": 2057917
+  },
+  {
+   "id": "night",
+   "json_gz": 109657,
+   "bin_bytes": 253338,
+   "audio_bytes": 2910626
+  },
+  {
+   "id": "baby",
+   "json_gz": 83354,
+   "bin_bytes": 245372,
+   "audio_bytes": 1768323
+  },
+  {
+   "id": "tower",
+   "json_gz": 358155,
+   "bin_bytes": 2916459,
+   "audio_bytes": 1570235
+  },
+  {
+   "id": "hair",
+   "json_gz": 313497,
+   "bin_bytes": 126725,
+   "audio_bytes": 976070
+  },
+  {
+   "id": "song",
+   "json_gz": 156278,
+   "bin_bytes": 14882,
+   "audio_bytes": 1318793
+  },
+  {
+   "id": "prince",
+   "json_gz": 344492,
+   "bin_bytes": 163781,
+   "audio_bytes": 2171462
+  },
+  {
+   "id": "climb",
+   "json_gz": 156625,
+   "bin_bytes": 90698,
+   "audio_bytes": 805899
+  },
+  {
+   "id": "meet",
+   "json_gz": 282585,
+   "bin_bytes": 111541,
+   "audio_bytes": 1168127
+  },
+  {
+   "id": "snip",
+   "json_gz": 493656,
+   "bin_bytes": 264509,
+   "audio_bytes": 2219565
+  },
+  {
+   "id": "empty",
+   "json_gz": 396381,
+   "bin_bytes": 63588,
+   "audio_bytes": 1750024
+  },
+  {
+   "id": "reunion",
+   "json_gz": 401738,
+   "bin_bytes": 189994,
+   "audio_bytes": 3719141
+  }
+ ]
+}

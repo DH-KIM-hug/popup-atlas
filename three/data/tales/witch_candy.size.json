@@ -1,0 +1,68 @@
+{
+ "tale": "witch_candy",
+ "wire_bytes": 37771372,
+ "json_gz": 7051416,
+ "geo_gz": 7249195,
+ "sizes": {
+  "res_tex": 4023320,
+  "run_tex": 2688170,
+  "prints": 6905810,
+  "audio": 9853461
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17628,
+   "bin_bytes": 2792,
+   "audio_bytes": 244174
+  },
+  {
+   "id": "invite",
+   "json_gz": 574628,
+   "bin_bytes": 6134577,
+   "audio_bytes": 3154221
+  },
+  {
+   "id": "fire",
+   "json_gz": 448233,
+   "bin_bytes": 63932,
+   "audio_bytes": 1884992
+  },
+  {
+   "id": "shelf",
+   "json_gz": 583672,
+   "bin_bytes": 103974,
+   "audio_bytes": 2046050
+  },
+  {
+   "id": "round1",
+   "json_gz": 1128254,
+   "bin_bytes": 106699,
+   "audio_bytes": 3551052
+  },
+  {
+   "id": "round2",
+   "json_gz": 1054381,
+   "bin_bytes": 37872,
+   "audio_bytes": 3355907
+  },
+  {
+   "id": "ghost_candy",
+   "json_gz": 928933,
+   "bin_bytes": 83060,
+   "audio_bytes": 2144553
+  },
+  {
+   "id": "parade",
+   "json_gz": 655479,
+   "bin_bytes": 521522,
+   "audio_bytes": 3136125
+  },
+  {
+   "id": "finale",
+   "json_gz": 1660208,
+   "bin_bytes": 194767,
+   "audio_bytes": 1770877
+  }
+ ]
+}

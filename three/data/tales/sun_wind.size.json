@@ -1,0 +1,56 @@
+{
+ "tale": "sun_wind",
+ "wire_bytes": 32157416,
+ "json_gz": 3741480,
+ "geo_gz": 10822098,
+ "sizes": {
+  "res_tex": 1377782,
+  "run_tex": 2867504,
+  "prints": 7632764,
+  "audio": 5715788
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17559,
+   "bin_bytes": 2796,
+   "audio_bytes": 240412
+  },
+  {
+   "id": "sky",
+   "json_gz": 379455,
+   "bin_bytes": 5198885,
+   "audio_bytes": 1924506
+  },
+  {
+   "id": "bet",
+   "json_gz": 328094,
+   "bin_bytes": 1238504,
+   "audio_bytes": 1808380
+  },
+  {
+   "id": "wind_turn",
+   "json_gz": 1145979,
+   "bin_bytes": 287697,
+   "audio_bytes": 2456227
+  },
+  {
+   "id": "sun_turn",
+   "json_gz": 746610,
+   "bin_bytes": 1336816,
+   "audio_bytes": 2156554
+  },
+  {
+   "id": "stream",
+   "json_gz": 575131,
+   "bin_bytes": 1352313,
+   "audio_bytes": 2020476
+  },
+  {
+   "id": "ending",
+   "json_gz": 548652,
+   "bin_bytes": 1405087,
+   "audio_bytes": 3592039
+  }
+ ]
+}

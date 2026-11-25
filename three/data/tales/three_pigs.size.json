@@ -1,0 +1,74 @@
+{
+ "tale": "three_pigs",
+ "wire_bytes": 35221548,
+ "json_gz": 3423343,
+ "geo_gz": 7799777,
+ "sizes": {
+  "res_tex": 2674212,
+  "run_tex": 2569084,
+  "prints": 7254192,
+  "audio": 11500940
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17547,
+   "bin_bytes": 2795,
+   "audio_bytes": 242920
+  },
+  {
+   "id": "home",
+   "json_gz": 485166,
+   "bin_bytes": 5313933,
+   "audio_bytes": 2265081
+  },
+  {
+   "id": "straw_build",
+   "json_gz": 521613,
+   "bin_bytes": 1383621,
+   "audio_bytes": 3264463
+  },
+  {
+   "id": "wood_build",
+   "json_gz": 210893,
+   "bin_bytes": 78183,
+   "audio_bytes": 2460064
+  },
+  {
+   "id": "brick_build",
+   "json_gz": 147562,
+   "bin_bytes": 138682,
+   "audio_bytes": 2635707
+  },
+  {
+   "id": "wolf_straw",
+   "json_gz": 563250,
+   "bin_bytes": 256360,
+   "audio_bytes": 2943801
+  },
+  {
+   "id": "wolf_wood",
+   "json_gz": 272342,
+   "bin_bytes": 163974,
+   "audio_bytes": 2821254
+  },
+  {
+   "id": "brick_wolf",
+   "json_gz": 142877,
+   "bin_bytes": 31670,
+   "audio_bytes": 2547966
+  },
+  {
+   "id": "chimney",
+   "json_gz": 743681,
+   "bin_bytes": 346737,
+   "audio_bytes": 5092642
+  },
+  {
+   "id": "ending",
+   "json_gz": 318412,
+   "bin_bytes": 83822,
+   "audio_bytes": 3411955
+  }
+ ]
+}

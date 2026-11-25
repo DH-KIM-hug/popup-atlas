@@ -1,0 +1,80 @@
+{
+ "tale": "wolf_goats",
+ "wire_bytes": 37278982,
+ "json_gz": 3082586,
+ "geo_gz": 9009909,
+ "sizes": {
+  "res_tex": 4180138,
+  "run_tex": 2568700,
+  "prints": 7212550,
+  "audio": 11225099
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17553,
+   "bin_bytes": 2789,
+   "audio_bytes": 244174
+  },
+  {
+   "id": "home",
+   "json_gz": 511034,
+   "bin_bytes": 5476757,
+   "audio_bytes": 2327120
+  },
+  {
+   "id": "knock",
+   "json_gz": 172072,
+   "bin_bytes": 203982,
+   "audio_bytes": 1952390
+  },
+  {
+   "id": "chalk",
+   "json_gz": 303613,
+   "bin_bytes": 93472,
+   "audio_bytes": 2282820
+  },
+  {
+   "id": "paw",
+   "json_gz": 234301,
+   "bin_bytes": 267231,
+   "audio_bytes": 2108997
+  },
+  {
+   "id": "hide",
+   "json_gz": 407194,
+   "bin_bytes": 716263,
+   "audio_bytes": 2367937
+  },
+  {
+   "id": "mother",
+   "json_gz": 255028,
+   "bin_bytes": 207329,
+   "audio_bytes": 3045902
+  },
+  {
+   "id": "tree",
+   "json_gz": 302424,
+   "bin_bytes": 1234448,
+   "audio_bytes": 1490276
+  },
+  {
+   "id": "belly",
+   "json_gz": 301179,
+   "bin_bytes": 248686,
+   "audio_bytes": 2137138
+  },
+  {
+   "id": "well",
+   "json_gz": 233966,
+   "bin_bytes": 298895,
+   "audio_bytes": 2233461
+  },
+  {
+   "id": "together",
+   "json_gz": 344222,
+   "bin_bytes": 260057,
+   "audio_bytes": 3068513
+  }
+ ]
+}

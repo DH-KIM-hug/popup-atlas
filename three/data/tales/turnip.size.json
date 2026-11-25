@@ -1,0 +1,80 @@
+{
+ "tale": "turnip",
+ "wire_bytes": 28392347,
+ "json_gz": 1691280,
+ "geo_gz": 6738781,
+ "sizes": {
+  "res_tex": 2336908,
+  "run_tex": 2568700,
+  "prints": 6701172,
+  "audio": 8355506
+ },
+ "chunks": [
+  {
+   "id": "cover",
+   "json_gz": 17551,
+   "bin_bytes": 2795,
+   "audio_bytes": 244174
+  },
+  {
+   "id": "seed",
+   "json_gz": 250561,
+   "bin_bytes": 5393769,
+   "audio_bytes": 2095088
+  },
+  {
+   "id": "grow",
+   "json_gz": 80619,
+   "bin_bytes": 197493,
+   "audio_bytes": 1892865
+  },
+  {
+   "id": "grandpa",
+   "json_gz": 134009,
+   "bin_bytes": 136731,
+   "audio_bytes": 1630547
+  },
+  {
+   "id": "grandma",
+   "json_gz": 120816,
+   "bin_bytes": 60579,
+   "audio_bytes": 1399871
+  },
+  {
+   "id": "girl",
+   "json_gz": 98997,
+   "bin_bytes": 76058,
+   "audio_bytes": 1373780
+  },
+  {
+   "id": "dog",
+   "json_gz": 109407,
+   "bin_bytes": 131559,
+   "audio_bytes": 1397747
+  },
+  {
+   "id": "cat",
+   "json_gz": 155097,
+   "bin_bytes": 186829,
+   "audio_bytes": 1528538
+  },
+  {
+   "id": "mouse",
+   "json_gz": 140376,
+   "bin_bytes": 100877,
+   "audio_bytes": 1464295
+  },
+  {
+   "id": "pop",
+   "json_gz": 183709,
+   "bin_bytes": 138105,
+   "audio_bytes": 1550240
+  },
+  {
+   "id": "feast",
+   "json_gz": 400138,
+   "bin_bytes": 313986,
+   "audio_bytes": 3572013
+  }
+ ]
+}
