@@ -27,19 +27,28 @@ uniform vec3 keyColor;
 varying vec2 vPUv;
 varying vec3 vWPos;
 varying float vLocalY;
-// cotangent frame normal perturbation for Godot NORMAL_MAP (no tangents needed)
+varying vec4 vGT;  // Godot mesh tangent in view space (w = binormal sign); zero when the mesh has none
+// Godot NORMAL_MAP: tangent frame from the mesh tangents (binormal = cross(N, T) * w) like Godot; meshes without
+// tangents fall back to a cotangent frame from the UV derivatives
 vec3 pPerturb(vec3 n, vec3 viewPos, vec2 uv, vec3 nm, float depth) {
+  vec2 mxy = nm.xy * 2.0 - 1.0;
+  float mz = sqrt(max(0.0, 1.0 - dot(mxy, mxy)));
+  vec3 T, B;
+  if (dot(vGT.xyz, vGT.xyz) > 0.25) {
+    T = normalize(vGT.xyz - n * dot(n, vGT.xyz));
+    // sign measured against Godot frames (turnip close-ups: puppet faces / coats match with -cross(N, T) * w)
+    B = -cross(n, T) * (vGT.w < 0.0 ? -1.0 : 1.0);
+    return normalize(mix(n, T * mxy.x + B * mxy.y + n * mz, depth));
+  }
   vec3 dp1 = dFdx(viewPos); vec3 dp2 = dFdy(viewPos);
   vec2 duv1 = dFdx(uv); vec2 duv2 = dFdy(uv);
   vec3 dp2perp = cross(dp2, n); vec3 dp1perp = cross(n, dp1);
-  vec3 T = dp2perp * duv1.x + dp1perp * duv2.x;
-  vec3 B = dp2perp * duv1.y + dp1perp * duv2.y;
+  T = dp2perp * duv1.x + dp1perp * duv2.x;
+  B = dp2perp * duv1.y + dp1perp * duv2.y;
   float det = max(dot(T, T), dot(B, B));
   float s = det == 0.0 ? 0.0 : inversesqrt(det);
-  vec3 m = nm * 2.0 - 1.0;
-  m.xy *= depth;
   // Godot's normal map is +Y up in a v-down UV space
-  return normalize(T * s * m.x - B * s * m.y + n * m.z);
+  return normalize(mix(n, T * s * mxy.x - B * s * mxy.y + n * mz, depth));
 }
 `;
 
@@ -82,8 +91,13 @@ function inject(shader, { uniforms = {}, vertPars = '', vertMain = '', vertProje
   map = null, rough = null, normal = null, emissive = null }) {
   Object.assign(shader.uniforms, uniforms, { keyDirView: shared.keyDirView, keyColor: shared.keyColor });
   shader.vertexShader = shader.vertexShader
-    .replace('#include <common>', `#include <common>\nvarying vec2 vPUv;\nvarying vec3 vWPos;\nvarying float vLocalY;\n${vertPars}`)
-    .replace('#include <begin_vertex>', `#include <begin_vertex>\n vPUv = uv; vLocalY = position.y;\n${vertMain}`);
+    .replace('#include <common>', `#include <common>\nvarying vec2 vPUv;\nvarying vec3 vWPos;\nvarying float vLocalY;\nattribute vec4 gTangent;\nvarying vec4 vGT;\n${vertPars}`)
+    .replace('#include <begin_vertex>', `#include <begin_vertex>\n vPUv = uv; vLocalY = position.y;
+ { mat4 gtM = modelViewMatrix;
+   #ifdef USE_INSTANCING
+     gtM = modelViewMatrix * instanceMatrix;
+   #endif
+   mat3 gt3 = mat3(gtM); vGT = vec4(gt3 * gTangent.xyz, gTangent.w * sign(determinant(gt3))); }\n${vertMain}`);
   if (vertProject) {
     shader.vertexShader = shader.vertexShader
       .replace('#include <project_vertex>', vertProject)
@@ -432,4 +446,56 @@ export function flatMaterial(name, p) {
   const c = FLAT[name](p);
   return new THREE.MeshStandardMaterial({ color: linearColor(c), roughness: 0.95, metalness: 0,
     side: name === 'folded_rock' ? THREE.DoubleSide : THREE.FrontSide });
+}
+
+// cover_book.gdshader (game/story/cover_book.gd): the book on the table, one shader with a mode switch:
+// 0 printed board (art), 1 page block fore-edge lines, 2 endpaper motif, 3 wooden table planks, 4 plain paper / cloth.
+const NOISE_GLSL = /* glsl */ `
+float cbH21(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+float cbNoise(vec2 p) { vec2 i = floor(p); vec2 f = fract(p); f = f * f * (3.0 - 2.0 * f);
+  return mix(mix(cbH21(i), cbH21(i + vec2(1, 0)), f.x), mix(cbH21(i + vec2(0, 1)), cbH21(i + vec2(1, 1)), f.x), f.y); }
+float cbFbm(vec2 p) { float a = 0.5; float s = 0.0; for (int i = 0; i < 4; i++) { s += a * cbNoise(p); p *= 2.03; a *= 0.5; } return s; }`;
+export function coverBookMaterial(p, tex) {
+  const u = {
+    cbMode: { value: p.mode ?? 0 }, cbTex: texU(p.tex ? tex(p.tex) : null), cbHasTex: { value: p.tex ? 1 : 0 },
+    tint: { value: linearColor(p.tint || [1, 1, 1, 1]) }, tint2: { value: linearColor(p.tint2 || [0.8, 0.7, 0.5, 1]) },
+    lines: { value: p.lines ?? 220 }, motif: { value: p.motif ?? 9 }, roughness_v: { value: p.roughness_v ?? 0.88 },
+    uv_rect: { value: new THREE.Vector4(...(p.uv_rect || [0, 0, 1, 1])) },
+  };
+  const m = new THREE.MeshStandardMaterial({ roughness: 0.88, metalness: 0 });
+  m.userData.u = u;
+  m.onBeforeCompile = (s) => inject(s, {
+    uniforms: u,
+    fragPars: `uniform int cbMode; uniform sampler2D cbTex; uniform float cbHasTex; uniform vec3 tint, tint2;
+      uniform float lines, motif, roughness_v; uniform vec4 uv_rect; float cbRough; ${NOISE_GLSL}`,
+    map: /* glsl */ `
+      vec2 UV = vPUv; vec3 c = tint; cbRough = roughness_v;
+      float fib = cbFbm(UV * vec2(520.0, 360.0)) - 0.5;
+      if (cbMode == 0) {
+        c = (cbHasTex > 0.5 ? texture(cbTex, uv_rect.xy + UV * uv_rect.zw).rgb : vec3(1.0)) * tint;
+        c *= 1.0 + fib * 0.05; cbRough = 0.74;
+      } else if (cbMode == 1) {
+        float v = UV.y * lines; float l = smoothstep(0.35, 0.5, abs(fract(v) - 0.5));
+        float n = cbNoise(vec2(UV.x * 40.0, floor(v))) * 0.06;
+        c = tint * (0.93 + 0.07 * (1.0 - l) - n);
+      } else if (cbMode == 2) {
+        vec2 q = UV * vec2(motif, motif * 0.66); vec2 cell = floor(q); vec2 f = fract(q) - 0.5;
+        f.x += (mod(cell.y, 2.0) - 0.5) * 0.5; f = fract(f + 0.5) - 0.5;
+        float star = smoothstep(0.17, 0.14, length(f) + 0.06 * sin(atan(f.y, f.x) * 5.0));
+        c = mix(tint, tint2, star * 0.85); c *= 1.0 + fib * 0.08;
+      } else if (cbMode == 3) {
+        vec2 p = UV * 13.0; float plank = floor(p.y / 0.34); float py = fract(p.y / 0.34);
+        float off = cbH21(vec2(plank, 3.0)) * 10.0;
+        float g = cbFbm(vec2((p.x + off) * 0.9, p.y * 22.0 + plank * 7.0));
+        float rings = sin((p.y * 30.0 + g * 6.0 + off)) * 0.5 + 0.5;
+        vec3 base = mix(tint, tint2, cbH21(vec2(plank, 9.0)) * 0.5 + g * 0.5);
+        c = base * (0.86 + 0.14 * rings);
+        float seam = smoothstep(0.0, 0.025, py) * smoothstep(1.0, 0.975, py);
+        c *= mix(0.55, 1.0, seam); cbRough = 0.62 + 0.2 * g;
+      } else { c *= 1.0 + fib * 0.07; }
+      diffuseColor.rgb = c;`,
+    rough: 'float roughnessFactor = cbRough;',
+  });
+  m.customProgramCacheKey = () => 'coverbook';
+  return m;
 }

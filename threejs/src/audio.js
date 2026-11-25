@@ -16,15 +16,39 @@ export class AudioPlayer {
     this.log = [];
   }
 
-  unlock() {
+  // the context exists from the start (suspended until a tap) so clips can be decoded while the page loads
+  ensure() {
     if (!this.ctx) {
-      try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* older Safari */ }
+      const AC = window.AudioContext || window.webkitAudioContext;
+      this.ctx = new AC({ latencyHint: 'playback' });
+      this.master = this.ctx.createGain();
+      this.master.connect(this.ctx.destination);
+      // output meter (tests: tools/threejs/check_tale.mjs reads it)
+      this.meter = this.ctx.createAnalyser();
+      this.meter.fftSize = 1024;
+      this.master.connect(this.meter);
+    }
+    return this.ctx;
+  }
+
+  level() {
+    if (!this.meter) return 0;
+    const a = new Float32Array(this.meter.fftSize);
+    this.meter.getFloatTimeDomainData(a);
+    let s = 0;
+    for (const v of a) s += v * v;
+    return Math.sqrt(s / a.length);
+  }
+
+  unlock() {
+    try { if (navigator.audioSession && navigator.audioSession.type !== 'playback') navigator.audioSession.type = 'playback'; } catch (e) { /* older Safari */ }
+    if (!this.ctx) {
       const AC = window.AudioContext || window.webkitAudioContext;
       this.ctx = new AC({ latencyHint: 'playback' });
       this.master = this.ctx.createGain();
       this.master.connect(this.ctx.destination);
     }
-    if (this.ctx.state !== 'running') this.ctx.resume();
+    if (this.ctx.state !== 'running') { this.ctx.resume(); this.poke(); }
     return this.ctx;
   }
 
@@ -53,6 +77,7 @@ export class AudioPlayer {
   load(path) {
     if (this.buffers.has(path)) return Promise.resolve(this.buffers.get(path));
     if (this.loading.has(path)) return this.loading.get(path);
+    this.ensure();
     const p = fetch(this.url(path))
       .then((r) => { if (!(r.ok || r.status === 0)) throw new Error(path + ' ' + r.status); return r.arrayBuffer(); })
       .then((ab) => { this.bytes += ab.byteLength; return this.ctx.decodeAudioData(ab); })
@@ -112,4 +137,15 @@ export class AudioPlayer {
   }
 
   stopAll() { for (const id of [...this.voices.keys()]) this.stop(id); }
+
+  // a short buffer played on the unlocking tap: iOS only opens the output on a sound started inside the gesture
+  poke() {
+    if (!this.ctx) return;
+    const b = this.ctx.createBuffer(1, 1, 22050);
+    const s = this.ctx.createBufferSource();
+    s.buffer = b; s.connect(this.ctx.destination); s.start(0);
+  }
+
+  // between tales: drop decoded clips that are not shared (keeps memory flat over a long session)
+  clear() { this.stopAll(); this.buffers.clear(); this.loading.clear(); this.log.length = 0; this.started = 0; }
 }
