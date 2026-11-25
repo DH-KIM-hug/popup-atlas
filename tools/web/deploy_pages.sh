@@ -18,6 +18,10 @@ for f in "$WEB"/index.html "$WEB"/index.js "$WEB"/index.wasm "$WEB"/index.pck.* 
   [ -f "$f" ] && case "$f" in *.gz) ;; *) cp "$f" . ;; esac
 done
 touch .nojekyll
+# keep the three.js pilot (published separately by tools/threejs_pilot/deploy_three.sh at /popup-atlas/three/)
+if git -C "$ROOT" fetch -q origin gh-pages 2>/dev/null && git cat-file -e origin/gh-pages:three 2>/dev/null; then
+  git checkout origin/gh-pages -- three && echo "kept three/ from the current gh-pages"
+fi
 for f in *; do s=$(stat -f %z "$f"); [ "$s" -lt 99000000 ] || { echo "$f is $s bytes (over the Pages limit)"; exit 1; }; done
 git add -A
 git commit -qm "web build $(git -C "$ROOT" rev-parse --short HEAD)"

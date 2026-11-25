@@ -51,9 +51,11 @@ static func for_card(id: String, tex: Texture2D, card_h: float, card_thick: floa
 	var c := PaperCard._contour(tex, 1.6)
 	if c.is_empty():
 		return null
-	var full: Vector2 = c["full"]
-	var mn: Vector2 = c["mn"]
-	var mx: Vector2 = c["mx"]
+	# web build: the traced image is smaller than the source px bodies.json is drawn in (PaperCard.src_px_scale)
+	var k := PaperCard.src_px_scale(tex)
+	var full: Vector2 = c["full"] * k
+	var mn: Vector2 = c["mn"] * k
+	var mx: Vector2 = c["mx"] * k
 	# the template draws the rim-stripped copy (art/atlas_clean, cropped by clean_off px)
 	var off := Vector2.ZERO
 	if "atlas_clean" in tex.resource_path and sp.has("clean_off"):

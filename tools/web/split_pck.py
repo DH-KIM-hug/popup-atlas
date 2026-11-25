@@ -21,13 +21,40 @@ with open(pck, "rb") as f:
             o.write(b)
         parts.append(name)
         i += 1
-trash = os.path.expanduser(f"~/.Trash/web_pck_{time.strftime('%Y%m%d_%H%M%S')}.pck")
-shutil.move(pck, trash)  # the single file must not be deployed (it is over the limit)
+os.remove(pck)  # the single file must not be deployed (over the limit); deleted for good, not to the Trash
 
 LOADER = """
 // split_pck.py: the main pack is served in parts (GitHub Pages 100 MB file limit); join them, then start.
 const PCK_PARTS = %s;
 const PCK_SIZE = %d;
+// Test jump (docs/WEB_BUILD.md): ?tale=turnip&beat=seed&autoplay=1&mute=1 become the same user args as a desktop
+// command-line story run (`-- --tale=turnip --beat=seed --autoplay`). Without a query the shelf opens as usual.
+function queryArgs() {
+	const q = new URLSearchParams(window.location.search);
+	const a = [];
+	const id = /^[a-z0-9_]+$/;
+	if (q.get('tale') && id.test(q.get('tale'))) a.push('--tale=' + q.get('tale'));
+	if (q.get('beat') && id.test(q.get('beat'))) a.push('--beat=' + q.get('beat'));
+	if (q.get('autoplay') === '1') a.push('--autoplay');
+	if (q.get('mute') === '1') a.push('--mute');
+	if (q.get('logsound') === '1') a.push('--log-sound');
+	return a.length ? ['--'].concat(a) : [];
+}
+// iPad / iPhone: Web Audio follows the ring / silent switch unless the page asks for media playback. Safari 16.4+
+// has navigator.audioSession; older iOS needs an <audio> element played inside the first touch (a silent clip), after
+// which Web Audio plays like media too.
+(function iosAudio() {
+	try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (e) { /* not supported */ }
+	const unlock = () => {
+		const a = new Audio('data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=');
+		a.setAttribute('playsinline', '');
+		a.play().catch(() => {});
+		window.removeEventListener('touchend', unlock, true);
+		window.removeEventListener('mousedown', unlock, true);
+	};
+	window.addEventListener('touchend', unlock, true);
+	window.addEventListener('mousedown', unlock, true);
+})();
 function startSplitGame(override) {
 	const onProgress = override['onProgress'];
 	const buf = new Uint8Array(PCK_SIZE);
@@ -47,7 +74,7 @@ function startSplitGame(override) {
 	let chain = Promise.resolve(0);
 	PCK_PARTS.forEach((_, i) => { chain = chain.then((off) => fetchPart(i, off)); });
 	engine.config.update(override);
-	engine.config.args = ['--main-pack', 'index.pck'].concat(engine.config.args);
+	engine.config.args = ['--main-pack', 'index.pck'].concat(engine.config.args).concat(queryArgs());
 	return Promise.all([engine.init(engine.config.executable), chain]).then(() => {
 		if (got !== PCK_SIZE) throw new Error('pck size mismatch ' + got + ' / ' + PCK_SIZE);
 		return engine.preloadFile(buf.buffer, 'index.pck');  // an ArrayBuffer: a typed array would be stringified as a fileSizes key (OOM in Safari)

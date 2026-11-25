@@ -1,0 +1,17 @@
+{
+  "_doc": "Story moments for the web-vs-native comparison (tools/web/fidelity_native.sh, tools/web/web_fidelity.mjs). t = seconds after the beat's first spoken LINE (autoplay).",
+  "moments": [
+    {"tale": "turnip", "beat": "seed", "t": [3, 9, 15]},
+    {"tale": "three_pigs", "beat": "home", "t": [3, 8, 14]},
+    {"tale": "three_pigs", "beat": "straw_build", "t": [4, 10]},
+    {"tale": "three_pigs", "beat": "wood_build", "t": [4, 10]},
+    {"tale": "three_pigs", "beat": "brick_build", "t": [4, 10]},
+    {"tale": "witch_candy", "beat": "invite", "t": [4, 10]},
+    {"tale": "sunmoon", "beat": "morning", "t": [4, 10]},
+    {"tale": "wolf_goats", "beat": "home", "t": [4, 10]},
+    {"tale": "patjuk", "beat": "field", "t": [4, 10]},
+    {"tale": "rapunzel", "beat": "home", "t": [4, 10]},
+    {"tale": "rapunzel", "beat": "tower", "t": [4, 10]},
+    {"tale": "sun_wind", "beat": "bet", "t": [4, 10]}
+  ]
+}

@@ -64,6 +64,22 @@ const POST_SHADER := preload("res://core/shaders/post_grade.gdshader")
 @export var haze_length := 14.0
 @export var haze_amount := 0.45
 
+## Web build only (docs/WEB_BUILD.md "Look on the web"): the browser runs the Compatibility (WebGL 2) renderer, which
+## draws the same rig with shadow acne ribs on flat ground ("corduroy": its depth bias is in other units) and a lifted,
+## greyer tone (web ~ native^0.62). These overrides bring it back to the Mobile (iOS) look; tuned 2026-11-25 against
+## native captures (tools/web/look_variants.sh, tools/web/fidelity_*). `--web-look` applies them on a desktop run too
+## (with --rendering-method gl_compatibility) for tuning; iOS / desktop Mobile runs never take this path.
+const WEB_SHADOW_BIAS := 2.0  ## 0.08 ribbed the ground, 1.0 halved it, 2.0 clean with contact shadows kept
+const WEB_SHADOW_NORMAL_BIAS := 0.6
+const WEB_POST_PRE_GAMMA := 1.8  ## post_grade pre_gamma: undoes the lifted tone curve
+const WEB_POST_SATURATION := 1.14  ## multiplies post_saturation
+const WEB_POST_CONTRAST := 0.92  ## multiplies post_contrast (the gamma alone overshoots contrast)
+
+
+static func web_look() -> bool:
+	return OS.has_feature("web") or OS.get_cmdline_user_args().has("--web-look")
+
+
 var camera: Camera3D
 var key: DirectionalLight3D
 var fill: DirectionalLight3D
@@ -133,6 +149,9 @@ func _build() -> void:
 	key.directional_shadow_mode = DirectionalLight3D.SHADOW_PARALLEL_2_SPLITS
 	key.directional_shadow_max_distance = shadow_distance
 	key.directional_shadow_blend_splits = true
+	if web_look():
+		key.shadow_bias = WEB_SHADOW_BIAS
+		key.shadow_normal_bias = WEB_SHADOW_NORMAL_BIAS
 	key.rotation_degrees = Vector3(-key_elevation_deg, yaw_deg + key_yaw_deg, 0)
 	add_child(key)
 
@@ -172,8 +191,11 @@ func _build() -> void:
 		m.set_shader_parameter("band_half", tilt_band_half)
 		m.set_shader_parameter("band_soft", tilt_band_soft)
 		m.set_shader_parameter("top_bias", tilt_top_bias)
-		m.set_shader_parameter("saturation", post_saturation)
-		m.set_shader_parameter("contrast", post_contrast)
+		var web := web_look()
+		m.set_shader_parameter("saturation", post_saturation * (WEB_POST_SATURATION if web else 1.0))
+		m.set_shader_parameter("contrast", post_contrast * (WEB_POST_CONTRAST if web else 1.0))
+		if web:
+			m.set_shader_parameter("pre_gamma", WEB_POST_PRE_GAMMA)
 		m.set_shader_parameter("base_lod", lens_soft)
 		m.set_shader_parameter("grain", grain)
 		m.set_shader_parameter("toe", toe)

@@ -103,6 +103,27 @@ static func _materials(tex: Texture2D, back_print_: bool, edge: Color, size: Vec
 	return mats
 
 
+## Web build only (docs/WEB_BUILD.md): textures there import smaller than the source art (tools/web/web_imports.py),
+## while art data in pixels (bodies.json outlines, stages.json facade bands) stays in source px. Returns
+## source px per image px of `tex` (1.0 everywhere else, so iOS / desktop never change).
+static var _src_sizes: Variant = null
+
+
+static func src_px_scale(tex: Texture2D) -> float:
+	if tex == null or not OS.has_feature("web"):
+		return 1.0
+	if _src_sizes == null:
+		_src_sizes = {}
+		if FileAccess.file_exists("res://web_src_sizes.json"):
+			var d: Variant = JSON.parse_string(FileAccess.get_file_as_string("res://web_src_sizes.json"))
+			if d is Dictionary:
+				_src_sizes = d
+	var sz: Variant = (_src_sizes as Dictionary).get(tex.resource_path)
+	if not sz is Array or tex.get_width() <= 0:
+		return 1.0
+	return float(sz[0]) / float(tex.get_width())
+
+
 static func _source_image(tex: Texture2D) -> Image:
 	var img := tex.get_image()
 	if img == null:

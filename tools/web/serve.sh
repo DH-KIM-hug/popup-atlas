@@ -12,7 +12,7 @@ if [ -f "$PIDS" ]; then
   while read -r name pid; do
     [ -n "$pid" ] && kill -0 "$pid" 2>/dev/null && kill "$pid" && echo "stopped $name $pid"
   done < "$PIDS"
-  mv "$PIDS" "$HOME/.Trash/serve_pids_$(date +%Y%m%d_%H%M%S).txt"
+  rm -f -- "$PIDS"
 fi
 [ "$1" = "stop" ] && exit 0
 [ -f "$WEB/index.html" ] || { echo "no build/web/index.html: run tools/web/export_web.sh first"; exit 1; }

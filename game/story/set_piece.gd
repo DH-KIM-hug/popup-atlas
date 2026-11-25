@@ -146,6 +146,9 @@ func setup(entry: Dictionary, scale_: float, banded: bool, n_up: int, flat_ := f
 				img = img.duplicate()
 				img.decompress()
 			used = img.get_used_rect()
+			var kk := PaperCard.src_px_scale(tex)  # web build: the band image is smaller than its facade px
+			if kk != 1.0:
+				used = Rect2i(Vector2i((Vector2(used.position) * kk).round()), Vector2i((Vector2(used.size) * kk).round()))
 		var root := Node3D.new()
 		root.name = "Band%d" % k
 		# hinge at the band's straight cut row y1; the card's own origin is the bottom-centre of its opaque rect,

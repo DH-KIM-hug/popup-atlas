@@ -18,6 +18,7 @@ uniform float contrast = 1.0;
 uniform float lift = 0.012;
 uniform float grain = 0.0;          // LOOKF r1: sensor grain (photo, not vector-clean)
 uniform float toe = 0.0;            // LOOKF r1: crush the darkest stops a little (real shadow depth)
+uniform float pre_gamma = 1.0;      // web only (LookRig.web_look): the Compatibility renderer's lifted tone curve, undone
 
 vec3 sample_blur(vec2 uv, float lod, vec2 px) {
 	if (lod < 0.02) return textureLod(screen_tex, uv, 0.0).rgb;
@@ -36,6 +37,7 @@ void fragment() {
 	float d = max(abs(dy) - band_half, 0.0) / band_soft;
 	float lod = base_lod + clamp(d, 0.0, 1.0) * max_lod * (dy < 0.0 ? top_bias : 1.0);
 	vec3 c = sample_blur(uv, lod, SCREEN_PIXEL_SIZE);
+	if (pre_gamma != 1.0) c = pow(max(c, vec3(0.0)), vec3(pre_gamma));
 	// Grade: split-tone shadows warm-brown, highlights cream; saturation, contrast, lift.
 	float l = dot(c, vec3(0.2126, 0.7152, 0.0722));
 	vec3 g = c * mix(shadow_tint.rgb * 2.0 + 0.68, highlight_tint.rgb, smoothstep(0.05, 0.75, l));
