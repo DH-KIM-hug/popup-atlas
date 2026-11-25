@@ -74,7 +74,7 @@ python3 tools/web/fidelity_sheet.py artifacts/web_fidelity/sheet.jpg native=arti
 
 Moments are in `tools/web/fidelity_moments.json` (26 frames over all 8 tales, t = seconds after the beat's first
 spoken line). The sheet prints mean luma / contrast / saturation over the 3D area (buttons and caption masked).
-2026-11-25 (build a6a7364f..64dbeaab): native 0.471 / 0.178 / 0.585; web before 0.579 / 0.190 / 0.491; web after
+2026-11-25 (build 46cf0fa7..64dbeaab): native 0.471 / 0.178 / 0.585; web before 0.579 / 0.190 / 0.491; web after
 0.466 / 0.186 / 0.581. House bodies and facades now match native, and the ground ribs are gone. What is left: the
 browser has no camera DOF, so far backgrounds read crisper than on iOS (the tilt-shift pass is the only blur), and
 the very darkest scenes sit a little darker (rapunzel home 0.33 vs 0.36 luma).
