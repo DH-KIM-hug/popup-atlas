@@ -101,7 +101,7 @@ SHOTS = {"story": [3.0, 12.0, 0.26, 22.0], "close": [2.4, 12.0, 0.28, 20.0],
          # home: the parents' cottage, the wall, the witch's garden
          "h_est": [5.0, 16.0, 0.35, 24.0, 0.0],
          "parents": [1.9, 8.0, 0.26, 26.0, -12.0],
-         "garden": [2.4, 16.0, 0.2, 26.0, 8.0],           # over the wall into the garden
+         "garden": [2.4, 22.0, 0.16, 19.0, 8.0],           # over the wall into the garden (v3: higher, the father's head was in the lens)
          "night_gate": [2.6, 12.0, 0.25, 26.0, -15.0],
          "rampion": [1.4, 12.0, 0.18, 28.0, 10.0],
          "caught": [1.8, 6.0, 0.3, 28.0, 20.0],           # the witch and the father across the bed
