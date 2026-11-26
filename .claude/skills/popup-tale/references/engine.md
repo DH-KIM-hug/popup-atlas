@@ -66,3 +66,8 @@ never set).
   the seeder marks any nested line id used (`_ids_in`), and check_lines is branch-aware: it accepts exactly one
   result's lines per round.
 - Branch coverage: force results with a tale arg (`--wc-results=a,b`) and run every result at least once.
+- go_inside `pipeline: true` (with `climb_steps`): the next steps up while the one before is over the sill, no fixed
+  queue wait, and an actor already nearer its queue place than the end of the path walks straight there (the host at
+  her door); witch_candy's entry went from ~21 s to ~12 s.
+- Pace: `python3 tools/story/silence_map.py <tale> <log>` lists every stretch > 3 s with no line playing, per beat;
+  trim those (camera waits, slow walks / glides, long silent flights), never the lines.
